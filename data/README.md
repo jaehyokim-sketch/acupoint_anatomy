@@ -37,6 +37,14 @@
     - `papers`: PubMed, Europe PMC, OpenAlex, Crossref 등에서 검증된 논문 목록(PMID, DOI, 저자, 초록 요약, 실증 수준)
     - `ari_profile`: ARI v3.0 4개 구성 점수($S_{orig}, S_{clarity}, S_{reflex}, S_{safety}$), ARI-Core, 안전지수 SI, 게이트 판정값
 
+### 4. `classics/` (핵심 3대 원전 정제 파싱 마크다운 및 청크 DB)
+- **크기/용량**: 65개 정제 텍스트 마크다운 파일 (약 25.8 MB)
+- **구성**:
+  - `中国针灸穴位通鉴_parsed_refined.md` (6.85 MB) 및 `中国针灸穴位通鉴/chunks_refined/` (29개 청크 파일)
+  - `中国针灸证治通鉴_parsed_refined.md` (1.26 MB) 및 `中国针灸证治通鉴/chunks_refined/` (14개 청크 파일)
+  - `针灸腧穴通考_parsed_refined.md` (4.05 MB) 및 `针灸腧穴通考/chunks_refined/` (19개 청크 파일)
+- **주요 활용**: `search_classic_records` 도구를 통한 3대 원전 정위 변천, 단독 효능($P_{single}$), 황룡상 교수 고증·교감 원문 실시간 대조.
+
 ---
 
 ## 🔄 데이터 동기화 및 갱신 방법
