@@ -49,7 +49,7 @@
 
 ### 1. 저장소 복제 및 의존성 설치
 ```bash
-git clone https://github.com/<YOUR_GITHUB_ID>/acupoint_anatomy.git
+git clone https://github.com/jaehyokim-sketch/acupoint_anatomy.git
 cd acupoint_anatomy
 python -m venv .venv
 # Windows:
@@ -80,7 +80,7 @@ python scripts/check_environment.py
       "command": "python",
       "args": [
         "C:/Users/<USER>/acupoint_anatomy/mcp_server/remote_server.py",
-        "--repo", "<YOUR_GITHUB_ID>/acupoint_anatomy",
+        "--repo", "jaehyokim-sketch/acupoint_anatomy",
         "--branch", "main",
         "--token", "<YOUR_GITHUB_PERSONAL_ACCESS_TOKEN>"
       ],
@@ -100,7 +100,7 @@ python scripts/check_environment.py
       "command": "python",
       "args": [
         "C:/Users/<USER>/acupoint_anatomy/mcp_server/remote_server.py",
-        "--repo", "<YOUR_GITHUB_ID>/acupoint_anatomy",
+        "--repo", "jaehyokim-sketch/acupoint_anatomy",
         "--branch", "main"
       ],
       "env": {
@@ -120,7 +120,7 @@ python scripts/check_environment.py
       "command": "python",
       "args": [
         "C:/Users/<USER>/acupoint_anatomy/mcp_server/remote_server.py",
-        "--repo", "<YOUR_GITHUB_ID>/acupoint_anatomy",
+        "--repo", "jaehyokim-sketch/acupoint_anatomy",
         "--branch", "main",
         "--token", "<YOUR_GITHUB_PERSONAL_ACCESS_TOKEN>"
       ]

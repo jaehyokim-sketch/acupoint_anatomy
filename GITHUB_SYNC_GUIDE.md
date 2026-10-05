@@ -48,7 +48,7 @@ git commit -m "feat: Initial release of Acupoint Anatomy MCP Server (Framework v
 
 # 5. 원격 저장소 연결 (본인의 GitHub ID로 변경)
 # 예시: git remote add origin https://github.com/jaehyokim-sketch/acupoint_anatomy.git
-git remote add origin https://github.com/<YOUR_GITHUB_ID>/acupoint_anatomy.git
+git remote add origin https://github.com/jaehyokim-sketch/acupoint_anatomy.git
 
 # 6. main 브랜치로 Push
 git push -u origin main
@@ -85,7 +85,7 @@ git push -u origin main
 $env:GITHUB_TOKEN = "ghp_xxxxxxxxxxxxxxxxxxxx"
 
 # 경혈 프로필 조회 도구 테스트 (예: ST36 족삼리)
-python mcp_server/remote_server.py --repo <YOUR_GITHUB_ID>/acupoint_anatomy --branch main --token ghp_xxxxxxxxxxxxxxxxxxxx
+python mcp_server/remote_server.py --repo jaehyokim-sketch/acupoint_anatomy --branch main --token ghp_xxxxxxxxxxxxxxxxxxxx
 ```
 
 정상 실행 시 JSON-RPC 프로토콜 대기 상태로 진입합니다 (`Ctrl + C`로 종료).

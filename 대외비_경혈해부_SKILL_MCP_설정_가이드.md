@@ -55,7 +55,7 @@ cd "d:\도서 번역\acupoint_anatomy"
 git init -b main
 git add .
 git commit -m "feat: Release Acupoint Anatomy MCP Server v2.7 & ARI v3.0"
-git remote add origin https://github.com/<YOUR_GITHUB_ID>/acupoint_anatomy.git
+git remote add origin https://github.com/jaehyokim-sketch/acupoint_anatomy.git
 git push -u origin main
 ```
 
@@ -79,7 +79,7 @@ git push -u origin main
       "command": "python",
       "args": [
         "d:/도서 번역/acupoint_anatomy/mcp_server/remote_server.py",
-        "--repo", "<YOUR_GITHUB_ID>/acupoint_anatomy",
+        "--repo", "jaehyokim-sketch/acupoint_anatomy",
         "--branch", "main",
         "--token", "<YOUR_GITHUB_PAT_TOKEN>"
       ],
@@ -100,7 +100,7 @@ git push -u origin main
       "command": "python",
       "args": [
         "d:/도서 번역/acupoint_anatomy/mcp_server/remote_server.py",
-        "--repo", "<YOUR_GITHUB_ID>/acupoint_anatomy",
+        "--repo", "jaehyokim-sketch/acupoint_anatomy",
         "--branch", "main"
       ],
       "env": {

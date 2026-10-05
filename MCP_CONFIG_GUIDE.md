@@ -15,7 +15,7 @@
 
 ## 1. AI IDE별 원격 MCP 설정 (Remote Streaming Mode)
 
-> ⚠️ `<YOUR_GITHUB_ID>`를 본인의 GitHub 사용자명(예: `jaehyokim-sketch`)으로 변경하고, Private 저장소인 경우 `<YOUR_GITHUB_TOKEN>`에 발급받은 Personal Access Token (`ghp_...`)을 입력하십시오.
+> ⚠️ `jaehyokim-sketch`를 본인의 GitHub 사용자명(예: `jaehyokim-sketch`)으로 변경하고, Private 저장소인 경우 `<YOUR_GITHUB_TOKEN>`에 발급받은 Personal Access Token (`ghp_...`)을 입력하십시오.
 
 ### 🌐 1) Antigravity IDE
 - **설정 파일 위치**: `C:\Users\<사용자명>\.gemini\antigravity-ide\mcp_config.json`
@@ -27,7 +27,7 @@
       "command": "python",
       "args": [
         "d:/도서 번역/acupoint_anatomy/mcp_server/remote_server.py",
-        "--repo", "<YOUR_GITHUB_ID>/acupoint_anatomy",
+        "--repo", "jaehyokim-sketch/acupoint_anatomy",
         "--branch", "main",
         "--token", "<YOUR_GITHUB_TOKEN>"
       ],
@@ -53,7 +53,7 @@
       "command": "python",
       "args": [
         "d:/도서 번역/acupoint_anatomy/mcp_server/remote_server.py",
-        "--repo", "<YOUR_GITHUB_ID>/acupoint_anatomy",
+        "--repo", "jaehyokim-sketch/acupoint_anatomy",
         "--branch", "main"
       ],
       "env": {
@@ -77,7 +77,7 @@
       "command": "python",
       "args": [
         "d:/도서 번역/acupoint_anatomy/mcp_server/remote_server.py",
-        "--repo", "<YOUR_GITHUB_ID>/acupoint_anatomy",
+        "--repo", "jaehyokim-sketch/acupoint_anatomy",
         "--branch", "main",
         "--token", "<YOUR_GITHUB_TOKEN>"
       ]
@@ -98,7 +98,7 @@
       "command": "python",
       "args": [
         "d:/도서 번역/acupoint_anatomy/mcp_server/remote_server.py",
-        "--repo", "<YOUR_GITHUB_ID>/acupoint_anatomy",
+        "--repo", "jaehyokim-sketch/acupoint_anatomy",
         "--branch", "main",
         "--token", "<YOUR_GITHUB_TOKEN>"
       ],
