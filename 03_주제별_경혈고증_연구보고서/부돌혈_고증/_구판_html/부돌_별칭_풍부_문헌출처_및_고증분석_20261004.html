@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부돌 별칭 풍부 문헌 출처 및 고증 분석 리포트</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <style>
+    :root {
+      --primary: #0F172A;
+      --secondary: #0284C7;
+      --teal: #0D9488;
+      --accent: #F59E0B;
+      --bg: #F8FAFC;
+      --card: #FFFFFF;
+      --text: #1E293B;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --border-dark: #CBD5E1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans KR', 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+      padding: 40px 20px;
+      margin: 0;
+    }
+    .nav-bar {
+      max-width: 1080px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .nav-bar a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-bar a:hover { text-decoration: underline; }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: var(--card);
+      padding: 50px 60px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #0D9488, #0284C7);
+      color: #FFFFFF;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin: 0 0 10px 0;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.3;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.0rem;
+      margin-bottom: 35px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 18px;
+    }
+    h2 {
+      font-size: 1.45rem;
+      color: var(--primary);
+      margin: 40px 0 18px 0;
+      border-left: 5px solid var(--secondary);
+      padding-left: 14px;
+      line-height: 1.4;
+    }
+    h3 {
+      font-size: 1.2rem;
+      color: #334155;
+      margin: 25px 0 12px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.93rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th {
+      background: #F1F5F9;
+      color: var(--primary);
+      font-weight: 600;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 2px solid var(--border-dark);
+    }
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:nth-child(even) { background: #F8FAFC; }
+    tr:hover { background: #F1F5F9; }
+    pre, code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      background: #0F172A;
+      color: #F8FAFC;
+      padding: 18px 22px;
+      border-radius: 10px;
+      overflow-x: auto;
+      line-height: 1.6;
+    }
+    code:not(pre code) {
+      background: #F1F5F9;
+      color: #0369A1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid #E2E8F0;
+    }
+    blockquote {
+      margin: 20px 0;
+      padding: 16px 22px;
+      background: #F0FDF4;
+      border-left: 4px solid #16A34A;
+      border-radius: 0 8px 8px 0;
+      color: #166534;
+    }
+    hr {
+      border: none;
+      height: 1px;
+      background: var(--border);
+      margin: 40px 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin: 16px 0;
+    }
+    footer {
+      margin-top: 50px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-bar">
+    <a href="../index.html">← 경혈 해부생리학 포털 홈으로 이동</a>
+    <span style="font-size:0.85rem; color:#64748B;">Acupoint Anatomy & Clinical Acupuncture</span>
+  </div>
+  <div class="container">
+    <span class="badge">Acupoint Anatomy Logic Framework v2.6</span>
+    <div class="content">
+      <h1 id="_1">📜 부돌(扶突)의 별칭 풍부(風府) 문헌 출처 및 수혈고증 분석 보고서</h1>
+<p>《중국침구혈位통감》, 《中国针灸证治通鉴》, 《针灸腧穴通考》 3대 침구 전문 서적의 腧穴考證(수혈고증) 및 고대 문헌 조문 분석을 바탕으로, <strong>부돌(扶突, LI18)</strong>의 별칭이 <strong>풍부(風府, GV16)</strong>와 연관되어 나타나는 문헌 출처와 그 의학사적 형성 배경을 정밀 정리한 보고서입니다.</p>
+<hr />
+<h3 id="1">📜 1. 핵심 문헌 출처 및 원문 조문</h3>
+<h4 id="1_1">① 《황제내경·한열병(黄帝内经·灵枢·寒热病)》 (원형 조문)</h4>
+<blockquote>
+<p><strong>"暴喑气硬, 取扶突与舌本出血."</strong>
+<em>(갑자기 목이 쉬어 말을 못 하고 숨이 차는 폭암(暴喑) 증상에는 </em><em>부돌(扶突)</em><em>을 취하고, </em><em>설본(舌本)</em><em>에서 피를 낸다.)</em></p>
+</blockquote>
+<h4 id="2-21">② 《황제내경태소(黄帝内经太素)》 권21 &lt;한열잡설(寒热杂说)&gt; (당대 양상선 주석)</h4>
+<blockquote>
+<p><strong>"舌本，一名风府，在项人发际一寸督脉上."</strong>
+<em>(여기서 </em><em>'설본(舌本)'은 일명 '풍부(風府)'</em><em>라고도 하며, 목 뒤 머리카락 경계 위 1寸 독맥 상에 위치한다.)</em></p>
+</blockquote>
+<h4 id="3-39">③ 《외대필요(外台秘要)》 권39 (당대 왕도 輯錄)</h4>
+<blockquote>
+<p><strong>"主目赤痛不可视，面赤肿，舌本出血，风眩... 扶突主之."</strong>
+<em>(눈이 붉고 아프며 붓고, </em><em>설본(舌本/風府)에 출혈</em><em>이 나며 풍증으로 어지러운 것을 </em><em>부돌(扶突)</em><em>이 주치한다.)</em></p>
+</blockquote>
+<hr />
+<h3 id="2">🔬 2. 문헌적 전이(傳移) 및 별명 공유가 일어난 고증적 원인</h3>
+<p>《침구수혈통고(针灸腧穴通考)》 하권(p. 58, 62~65)의 수혈 고증(腧穴考證)에 따르면, 부돌(扶突)과 풍부(風府)가 이명 및 주치증으로 문헌상 얽히게 된 데에는 <strong>두 가지 주요 의학사적 원인</strong>이 있습니다.</p>
+<h4 id="1_2">① 당대(唐代) 《외대필요》 편찬 시의 구절 오독(斷句 錯誤)</h4>
+<ul>
+<li>본래 《영추·한열병》의 원문은 <strong>"부돌(扶突)을 침으로 찌르고, 설본(舌本 = 風府)에서 출혈을 시킨다"</strong>는 <strong>두 경혈의 상하 배혈(配穴) 처방</strong>이었습니다.</li>
+<li>그러나 당대 《외대필요》를 편찬한 왕도(王焘)가 《침구갑을경》 및 《천금방》의 조문을 묶어 집록하는 과정에서 문장의 <strong>구획(斷句)을 잘못 나누는 오류(斷句 錯誤)</strong>를 범했습니다.</li>
+<li>이로 인해 <strong>설본(舌本/風府)</strong>의 조문과 <strong>부돌(扶突)</strong>의 주치 조문이 하나로 합쳐져 필사되면서, 후대 일부 침구 문헌에서 <strong>부돌(扶突)의 별명이 풍부(風府/舌本)로 표기되거나 두 혈의 적응증이 문헌상 상호 전이</strong>되었습니다.</li>
+</ul>
+<h4 id="2_1">② 《영추·본수(本输)》 '천오부(天五部)' 경항부(頸部) 인접 수혈군</h4>
+<ul>
+<li>《영추·본수》 및 《내경》 체계에서 목 부위에 위치한 수혈군인 <strong>'천오부(天五部 / 天五會)'</strong> (천돌, 부돌, 인영, 천창, 천용, 천주, 풍부 등)는 모두 머리와 목의 풍증(风证) 및 언어 장애(失音/暴喑)를 치료하는 경항부 관문(關門) 수혈들입니다.</li>
+<li>목 측면에 위치한 <strong>부돌(扶突 - 수양명대장경)</strong>과 목 뒤 정중선에 위치한 <strong>풍부(風府 - 독맥)</strong>는 고대 임상에서 폭암(暴喑/갑작스러운 후두 마비) 치료 시 상호 짝을 이루어 투침/배혈되던 수혈이었기에 문헌 기록상 이명과 주치증의 혼용이 더욱 가속화되었습니다.</li>
+</ul>
+<hr />
+<h3 id="_2">💡 요약 정리</h3>
+<ul>
+<li><strong>별칭/연관 출처</strong>: 《황제내경·영추》, 《황제내경태소》, 《외대필요》 권39.</li>
+<li><strong>발생 기전</strong>: 《영추》의 <strong>"부돌(扶突) + 설본(舌本/風府)" 배혈 처방</strong>이 당대 《외대필요》 輯錄 과정의 <strong>단구 오류(斷句 錯誤)</strong>로 인해 두 수혈의 별명 및 주치증이 융합·전이된 한의학사적 결과입니다.</li>
+</ul>
+    </div>
+    <footer>
+      <div>자료 출처: <strong>경혈 해부생리학 스킬 분석보고 시스템</strong></div>
+      <div>게시 저장소: <a href="https://github.com/jaehyokim-sketch/acupoint-anatomy-acupuncture-clinics" target="_blank" style="color:var(--secondary); text-decoration:none;">GitHub Repository</a></div>
+    </footer>
+  </div>
+</body>
+</html>

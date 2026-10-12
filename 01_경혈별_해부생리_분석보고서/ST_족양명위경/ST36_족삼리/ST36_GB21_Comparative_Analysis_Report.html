@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>족삼리(ST36) 대 견정(GB21) 해부학적 실체 비교 분석 보고서</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>
+:root {
+  --bg: #f7f8fa; --card: #ffffff; --text: #1d2433; --muted: #5b6577; --border: #dfe3ea;
+  --accent: #0b6e8a; --accent-soft: #e3f2f7; --warn: #a15c00; --warn-soft: #fff4e0;
+  --th: #eef2f6; --code: #f1f3f6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12151b; --card: #1a1f27; --text: #e4e8ee; --muted: #9aa5b5; --border: #2d3440;
+    --accent: #5cc3df; --accent-soft: #15303a; --warn: #f0b45a; --warn-soft: #33270f;
+    --th: #222935; --code: #222935;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12151b; --card: #1a1f27; --text: #e4e8ee; --muted: #9aa5b5; --border: #2d3440;
+  --accent: #5cc3df; --accent-soft: #15303a; --warn: #f0b45a; --warn-soft: #33270f;
+  --th: #222935; --code: #222935;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: "Noto Sans KR", system-ui, sans-serif; line-height: 1.7; font-size: 16px; }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 16px 80px; }
+article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px clamp(16px, 4vw, 48px); }
+h1, h2, h3 { font-family: "Noto Serif KR", serif; line-height: 1.35; }
+h1 { font-size: 1.75rem; margin-top: 0; }
+h2 { font-size: 1.35rem; margin-top: 2.2em; padding-bottom: .3em; border-bottom: 2px solid var(--accent-soft); }
+h3 { font-size: 1.12rem; margin-top: 1.6em; color: var(--accent); }
+h4 { font-size: 1rem; margin-top: 1.4em; }
+a { color: var(--accent); }
+blockquote { margin: 1em 0; padding: .6em 1em; background: var(--accent-soft); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; color: var(--text); }
+.table-wrap { overflow-x: auto; margin: 1em 0; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { border: 1px solid var(--border); padding: 6px 10px; vertical-align: top; }
+th { background: var(--th); text-align: left; }
+code { font-family: "JetBrains Mono", monospace; background: var(--code); padding: .1em .35em; border-radius: 4px; font-size: .88em; }
+pre { background: var(--code); padding: 12px 14px; border-radius: 8px; overflow-x: auto; }
+pre code { background: none; padding: 0; }
+pre.mermaid { background: var(--card); text-align: center; }
+figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
+figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
+figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+.meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
+.katex-display { overflow-x: auto; overflow-y: hidden; }
+</style>
+</head>
+<body>
+<main>
+<article>
+<h1 id="st36-gb21">족삼리(ST36) 대 견정(GB21) 해부학적 실체 비교 분석 보고서</h1>
+<blockquote>
+<p><strong>프레임워크</strong>: v2.7 (2026-10-04 개정) · <strong>성격</strong>: 두 개별 보고서의 확정 결과를 비교하는 요약 보고서(독자 채점 없음)
+<strong>ST36</strong>: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 77.1 (B, 등급 불변) — <a href="ST36_족삼리_해부생리_실체판명_보고서.md">ST36 보고서</a>
+<strong>GB21</strong>: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 65.6 (C, 등급 불변) — <a href="../../GB_족소양담경/GB21_견정/GB21_견정_해부생리_실체판명_보고서.md">GB21 보고서</a>
+<strong>정본</strong>: <code>01_Framework/acupoint_anatomical_logic_framework.md</code> (Framework v2.7) · 근거 원칙: <code>02_Master_Datasets/경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx</code></p>
+</blockquote>
+<hr>
+<h2 id="1">1. 개요 및 비교 목적</h2>
+<p>이 보고서는 족양명위경의 <strong>족삼리(ST36)</strong>와 족소양담경의 <strong>견정(GB21)</strong>을 같은 기준(Framework v2.7, ARI v3.0)으로 비교한다. 수치와 판정은 모두 두 개별 보고서의 이중 채점·조정 결과를 그대로 옮긴 것이며, 이 보고서에서 새로 채점하지 않는다.</p>
+<blockquote>
+<p><strong>⚠ 안전 경고 우선</strong>: GB21은 흉막정·폐첨 바로 위에 있는 기흉 고위험 혈위다. 《针灸腧穴通考》는 침자 기흉의 약 9할이 肩井에서 생긴다고 적고, 자침깊이 DB의 동의보감(인용 '동인') 값은 <code>0</code>(금침)이다. 전하방 자입과 과심 직자를 피한다.</p>
+</blockquote>
+<hr>
+<h2 id="2-st36-vs-gb21">2. 족삼리(ST36) vs 견정(GB21) 핵심 특성 비교 매트릭스</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">비교 차원</th>
+<th style="text-align: left;">족삼리 (足三里, ST36)</th>
+<th style="text-align: left;">견정 (肩井, GB21)</th>
+<th style="text-align: left;">비교 해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>경혈 분류</strong></td>
+<td style="text-align: left;">족양명위경 합혈·하합혈</td>
+<td style="text-align: left;">족소양담경, 수소양·족소양·양유맥 교회혈</td>
+<td style="text-align: left;">분류 자체는 해부 실체 판정의 근거가 아니다</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>최초 기술</strong></td>
+<td style="text-align: left;">《灵枢·本输》 "下陵者，膝下三寸，胻外三里也"</td>
+<td style="text-align: left;">《黄帝明堂经》 "在肩上陷解中" · 《甲乙》 3:44 "在肩上陷者中"</td>
+<td style="text-align: left;">둘 다 체표 함요·골도 기준의 위치 기술이다</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>공간 변위 분기 (Rank 5)</strong></td>
+<td style="text-align: left;">분기 없음(고전·현대 세로 위치 동일, 횡향 Δ ≤ 15mm 추정)</td>
+<td style="text-align: left;"><strong>분기 철회</strong>: 《通考》 名实考가 고전 기술을 견우–제7경추 연결선 중점으로 해석 → 고전 = WHO, Δ ≤ 15mm</td>
+<td style="text-align: left;">구판의 "GB21 고전·WHO 이탈 &gt; 1.5cm 분리"는 원문에 없는 인용에 근거했으므로 철회</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>자침 깊이 (DB, 1푼 = 2.3mm)</strong></td>
+<td style="text-align: left;">고전 10푼 = 23.0mm, 현대 교재 10~20푼 = 23.0~46.0mm, 최대 《窦太师针经》 25푼 = 57.5mm</td>
+<td style="text-align: left;">고전 5푼 = 11.5mm, 현대 교재 5~8푼 = 11.5~18.4mm, <strong>동의보감 0 = 금침</strong></td>
+<td style="text-align: left;">ST36은 심부 근육 직자형, GB21은 깊이보다 <strong>방향(전하방 금지)</strong>이 핵심</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>해부 실체 (두 교재 공통)</strong></td>
+<td style="text-align: left;">앞정강근 심층 깊은종아리신경·앞정강동정맥</td>
+<td style="text-align: left;">등세모근, 빗장위신경, 등쪽어깨신경, 가로목동정맥</td>
+<td style="text-align: left;">GB21은 두 교재의 심층 구조 기재가 서로 다르다</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>주요 층위</strong></td>
+<td style="text-align: left;">Layer 2~3(앞정강근) — 46mm 이상 직자 시 Layer 4 신경혈관속</td>
+<td style="text-align: left;">Layer 2~3(등세모근) — 그 아래 Layer 5 흉막정·폐첨 위험 구역</td>
+<td style="text-align: left;">GB21은 Layer 5 위험이 결정적</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>B-Check (6항목, 12점)</strong></td>
+<td style="text-align: left;"><strong>9/12 부합</strong> · ③~⑤ 마우스·쥐 한정 표지</td>
+<td style="text-align: left;"><strong>7/12 미부합</strong> → 반사 기전은 가설</td>
+<td style="text-align: left;">ST36만 기전 기술 기준(≥ 8/12)을 충족</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>핵심 기전 근거</strong></td>
+<td style="text-align: left;">미주-부신 축·심부 근막 PROKR2 감각섬유(B3-15, B3-16, B3-17, 마우스), 국소 아데노신(B3-18)</td>
+<td style="text-align: left;">GB21 특이 기전 연구 없음. 관문조절·DNIC 등 일반 진통 경로 유추(B3-07, B3-08)</td>
+<td style="text-align: left;">구판의 GB21 '옥시토신 신경내분비 반사'는 근거 없음으로 삭제됨</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>혈위 특이 실측</strong></td>
+<td style="text-align: left;">인체 fMRI(papers.id 237), 다혈위 TEAS RCT(1843)</td>
+<td style="text-align: left;">국소해부·안전 심도 영상(1876 PMID 15270272, 1431, 1432), 혈류 관찰(1874)</td>
+<td style="text-align: left;">ST36은 기전, GB21은 안전 해부 실측이 상대적으로 많다</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>안전 (SI)</strong></td>
+<td style="text-align: left;">75 — 금침 문헌 없음, 46mm 이상 직자 시 각도로 회피</td>
+<td style="text-align: left;"><strong>0 ⚠</strong> — 금침 문헌 존재, 기흉</td>
+<td style="text-align: left;">GB21은 등급과 무관하게 안전주의 표지</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ARI v3.0</strong></td>
+<td style="text-align: left;">ARI-Core 77.5 ± 0, <strong>B(개연)</strong></td>
+<td style="text-align: left;">ARI-Core 67.5 ± 1.2, <strong>C(가능·가설)</strong></td>
+<td style="text-align: left;">차이 10.0, ± 구간 비중첩</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="3">3. 종합 소견 및 임상적 지침</h2>
+<ol>
+<li><strong>족삼리(ST36)</strong>는 앞정강근 심층의 깊은종아리신경·앞정강동정맥을 해부 실체로 하는 개연(B) 수준의 혈위다. 미주-부신 축 기전은 B-Check 9/12로 부합하지만 마우스 근거이고, 자극 강도 의존성(B3-16), 위운동 이중 효과(papers.id 34), 혈위 특이성 반증(B4-04, B4-05)이 있어 인체 적용은 제한적으로 기술해야 한다. 척수 분절(L4~S1)은 위(T6~T9)와 맞지 않아 위장 주치는 상척수 경로로만 설명된다.</li>
+<li><strong>견정(GB21)</strong>은 등세모근과 그 아래 신경혈관 구조를 해부 실체로 하는 가능·가설(C) 수준의 혈위다. 반사 기전은 B-Check 7/12로 가설에 머문다. 임상에서 가장 중요한 사실은 기흉 위험이며, 침은 얕게 두고 전하방으로 향하지 않는다. 45° 사자의 수직 성분 계산만으로는 안전이 보장되지 않는다.</li>
+<li>두 혈위 모두 ARI 가중치는 잠정값(0.40/0.35/0.25)이며, 등가중치 민감도에서도 등급은 바뀌지 않았다.</li>
+</ol>
+<hr>
+<h2 id="v27-2026-10-04">v2.7 개정 이력 (2026-10-04)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">위치</th>
+<th style="text-align: left;">원래 내용</th>
+<th style="text-align: left;">바꾼 내용</th>
+<th style="text-align: left;">근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">머리말</td>
+<td style="text-align: left;">근거 알고리즘 경로만 표기</td>
+<td style="text-align: left;">v2.7 정본, 두 보고서의 ARI v3.0 표기</td>
+<td style="text-align: left;">두 개별 보고서 개정 결과</td>
+</tr>
+<tr>
+<td style="text-align: left;">ARI 행</td>
+<td style="text-align: left;">ST36 95.5 / GB21 95.0 (Class A)</td>
+<td style="text-align: left;">ST36 77.5 ± 0 (B) / GB21 67.5 ± 1.2 (C, SI 0 ⚠)</td>
+<td style="text-align: left;">구판 점수는 비교 불가</td>
+</tr>
+<tr>
+<td style="text-align: left;">표면 이탈 행</td>
+<td style="text-align: left;">GB21 고전·WHO 이탈 &gt; 1.5cm로 분리</td>
+<td style="text-align: left;">분기 철회(고전 = WHO)</td>
+<td style="text-align: left;">GB21 보고서 7절, 《通考》 名实考</td>
+</tr>
+<tr>
+<td style="text-align: left;">자침 심도 행</td>
+<td style="text-align: left;">ST36 25~50mm, GB21 12.5~20mm, 수직 10.6~14.1mm로 흉막 천공 방지</td>
+<td style="text-align: left;">DB 값 기준 mm 환산, 수직 성분 논리 삭제</td>
+<td style="text-align: left;">자침깊이 DB ST36 행 121, GB21 행 326</td>
+</tr>
+<tr>
+<td style="text-align: left;">기전 행</td>
+<td style="text-align: left;">ST36 '미경신경 NTS 반사', GB21 'MTrP 이완 &amp; Oxytocin 신경내분비 반사'</td>
+<td style="text-align: left;">ST36 미주-부신 축(마우스 한정), GB21 특이 기전 없음</td>
+<td style="text-align: left;">B-Check 결과, 옥시토신 반사는 근거 없음</td>
+</tr>
+<tr>
+<td style="text-align: left;">위험성 행</td>
+<td style="text-align: left;">ST36 '안전', GB21 '孕婦禁針' 중심</td>
+<td style="text-align: left;">GB21 SI 0 ⚠ 기흉 우선, ST36 46mm 이상 직자 시 Layer 4</td>
+<td style="text-align: left;">GB21 보고서 결론, ST36 보고서 5절</td>
+</tr>
+</tbody>
+</table></div>
+<p class="meta">생성: 2026-10-04 10:21 · 원본: ST36_GB21_Comparative_Analysis_Report.md · build_report_html.py (Framework v2.7)</p>
+</article>
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+</body>
+</html>

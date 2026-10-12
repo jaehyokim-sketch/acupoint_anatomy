@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동의보감(東醫寶鑑) 두통(頭痛) 증상·징후 및 침구치료법 종합 분석 보고서</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #151d2a;
+            --bg-card-hover: #1c2638;
+            --accent-gold: #fbbf24;
+            --accent-amber: #f59e0b;
+            --accent-teal: #14b8a6;
+            --accent-cyan: #06b6d4;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #2d3748;
+            --danger-color: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #f59e0b, #14b8a6, #3b82f6);
+        }
+
+        .badge-header {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            word-break: keep-all;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            word-break: keep-all;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--accent-teal);
+        }
+
+        /* Section Styling */
+        section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid rgba(251, 191, 36, 0.2);
+            padding-bottom: 0.75rem;
+        }
+
+        /* Callout Box */
+        .callout {
+            background: rgba(15, 23, 42, 0.8);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 1.5rem;
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.05rem;
+        }
+
+        .callout p {
+            margin-bottom: 0.5rem;
+        }
+
+        .callout-source {
+            font-size: 0.875rem;
+            color: var(--accent-teal);
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        /* Table Styling */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #1e293b;
+            color: var(--accent-gold);
+            padding: 1rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background-color: var(--bg-card-hover);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tag-danger { background: rgba(239, 68, 68, 0.2); color: var(--danger-color); border: 1px solid rgba(239, 68, 68, 0.4); }
+        .tag-warning { background: rgba(245, 158, 11, 0.2); color: var(--accent-amber); border: 1px solid rgba(245, 158, 11, 0.4); }
+        .tag-info { background: rgba(20, 184, 166, 0.2); color: var(--accent-teal); border: 1px solid rgba(20, 184, 166, 0.4); }
+
+        /* Grid Cards */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card-item {
+            background: #0f172a;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-teal);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.25rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        /* Acu Points List */
+        .acu-list {
+            list-style: none;
+        }
+
+        .acu-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .acu-list li::before {
+            content: '📌';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.85rem;
+        }
+
+        /* Action Bar */
+        .action-bar {
+            text-align: center;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-print {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .btn-print:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media print {
+            body { background-color: #fff; color: #000; }
+            section, header { background: #fff; border: 1px solid #ccc; color: #000; box-shadow: none; }
+            h1, .card-title, .section-title { color: #000; }
+            th { background: #eee; color: #000; }
+            .btn-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <span class="badge-header">동의보감(東醫寶鑑) 의학 학술 보고서</span>
+        <h1>동의보감 두통(頭痛) 증상·징후 및 침구치료법 종합 분석</h1>
+        <p class="subtitle">한의학 고전 문헌에 기록된 16대 두통 분류 체계, 원인별 병리 징후 및 경혈 자침·구법(針灸法) 정밀 보고서</p>
+        <div class="meta-info">
+            <span>📚 대상 서적: 동의보감 (Mediclassics Book ID 8)</span>
+            <span>📂 관련 편목: 外形篇 卷一 「頭」 / 雜病篇 卷二 「頭痛」</span>
+            <span>📅 보고서 작성일: 2026년 9월 15일</span>
+        </div>
+    </header>
+
+    <!-- Section 1: Overview -->
+    <section>
+        <h2 class="section-title">1. 동의보감(東醫寶鑑) 내 두통의 병리 및 기본 개념</h2>
+        <div class="callout">
+            <p><strong>"頭者 諸陽之會 腦者 髓之海... 邪在頭者 頭痛目眩"</strong></p>
+            <p class="callout-source">— 『동의보감(東醫寶鑑)』 외형편 권1 「頭」</p>
+        </div>
+        <p>머리는 모든 양기(陽氣)가 모이는 곳(諸陽之會)이며 뇌는 뇌수(髓)가 모이는 바다(髓海)입니다. 외감사기(外感邪氣) 또는 내상장부(內傷臟腑)의 불균형이 머리로 상충할 때 장부 기혈의 조화가 깨지며 두통과 함께 눈 앞이 어두워지는 목현(目眩) 증상이 나타납니다.</p>
+        <p style="margin-top: 1rem;">동의보감은 두통을 단순한 통증이 아닌, <strong>원인 장부, 수반 증상, 통증의 양상 및 유발 요인</strong>에 따라 16가지로 미세하게 분류하여 치법과 경혈 선택을 다르게 제시합니다.</p>
+    </section>
+
+    <!-- Section 2: 16 Categories Table -->
+    <section>
+        <h2 class="section-title">2. 두통의 원인 및 유형별 16대 증상·징후 매트릭스</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>두통 분류</th>
+                        <th>한자 명칭</th>
+                        <th>구분 / 특징</th>
+                        <th>주요 증상 및 임상 징후 (Symptoms & Signs)</th>
+                        <th>예후 / 위험도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>풍두통</strong></td>
+                        <td>風頭痛</td>
+                        <td>외감 풍사</td>
+                        <td>바람을 싫어함(惡風), 발열, 통증 부위가 고정되지 않고 머리 전체로 뻗치며 어지럼증 동반</td>
+                        <td><span class="tag tag-info">경증</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>편두통</strong></td>
+                        <td>偏頭痛</td>
+                        <td>좌/우 편측성</td>
+                        <td>머리의 한쪽(좌측 또는 우측) 관자놀이 및 뇌각 통증. 좌측(혈허·풍), 우측(기허·담열)</td>
+                        <td><span class="tag tag-warning">만성화</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>뇌역두통</strong></td>
+                        <td>腦逆頭痛</td>
+                        <td>심한 한기 침범</td>
+                        <td>극심한 한기가 뇌 속까지 파고들어 뇌가 시리고 아프며, 머리와 치아가 동시에 아픔</td>
+                        <td><span class="tag tag-warning">중등도</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>궐역두통</strong></td>
+                        <td>厥逆頭痛</td>
+                        <td>기혈 순환 장애</td>
+                        <td>두통이 목덜미와 이빨까지 이어지며, <strong>손발이 얼음처럼 차가워짐(厥冷)</strong></td>
+                        <td><span class="tag tag-warning">중등도</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>담궐두통</strong></td>
+                        <td>痰厥頭痛</td>
+                        <td>담음 상충</td>
+                        <td><strong>머리가 깨질 듯 아픔(頭痛如裂)</strong>, 어지럼증(眩暈), 심한 구토, 발이 차가움</td>
+                        <td><span class="tag tag-warning">중등도</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>기궐두통</strong></td>
+                        <td>氣厥頭痛</td>
+                        <td>기허 상충</td>
+                        <td>양쪽 관자놀이(太陽穴)와 눈썹뼈(眉稜骨)가 당기고 아프며, 따뜻한 온찜질을 선호함</td>
+                        <td><span class="tag tag-info">경증</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>혈궐두통</strong></td>
+                        <td>血厥頭痛</td>
+                        <td>음혈 부족</td>
+                        <td>정수리(頭頂部)가 바늘로 찌르는 듯이 아픔(痛如針刺), 밤이 되면 통증 심화</td>
+                        <td><span class="tag tag-info">경증</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>신궐두통</strong></td>
+                        <td>腎厥頭痛</td>
+                        <td>신정 허손</td>
+                        <td>머리 속 깊은 곳이 텅 빈 듯 은은하게 아프며, 이빨이 흔들리고 맥이 침세(沉細)함</td>
+                        <td><span class="tag tag-warning">만성화</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>진두통</strong></td>
+                        <td>眞頭痛</td>
+                        <td>위중 사증(死證)</td>
+                        <td><strong>뇌 전체가 극심하게 아프고 손발의 한기가 손목·발목까지 올라옴 (뇌막염/뇌출혈성 응급)</strong></td>
+                        <td><span class="tag tag-danger">불치(死證)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>취포두통</strong></td>
+                        <td>醉飽頭痛</td>
+                        <td>식적 및 습열</td>
+                        <td>음주 후 또는 배부르게 먹은 후 습열이 머리로 상충하여 발생. 눈이 붉어지고 갈증 유발</td>
+                        <td><span class="tag tag-info">일시적</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>기허두통</strong></td>
+                        <td>氣虛頭痛</td>
+                        <td>기력 저하</td>
+                        <td>과로 시 심해지고 낮/오후에 악화. 머리가 텅 빈 듯 은은한 통증 및 피로감</td>
+                        <td><span class="tag tag-info">만성</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>혈허두통</strong></td>
+                        <td>血虛頭痛</td>
+                        <td>음혈 허손</td>
+                        <td>정수리 통증, 야간 심화, 가슴 두근거림(心悸), 어지럼증 동반</td>
+                        <td><span class="tag tag-info">만성</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>습열두통</strong></td>
+                        <td>濕熱頭痛</td>
+                        <td>습열 뭉침</td>
+                        <td><strong>머리가 무겁기가 돌이나 수건을 얹어 놓은 것 같고(頭重如裹)</strong>, 전신 찌뿌둥함</td>
+                        <td><span class="tag tag-info">중등도</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Section 3: Acupuncture & Moxibustion Treatment -->
+    <section>
+        <h2 class="section-title">3. 침구 치료법 (針灸法: 핵심 경혈 및 시술 지침)</h2>
+        <p>『동의보감』 잡병편 두통 단원의 <strong>【針灸法】</strong> 및 관련 경혈 조문에서 권장하는 핵심 침구 치료 지침입니다.</p>
+
+        <div class="grid-2">
+            <!-- Card 1 -->
+            <div class="card-item">
+                <div class="card-header">
+                    <span class="card-title">👑 百會 (백회 - 독맥 GV20)</span>
+                    <span class="tag tag-warning">두통의 요혈</span>
+                </div>
+                <ul class="acu-list">
+                    <li><strong>위치:</strong> 머리 정수리 중앙, 양쪽 귀 연장선과 정중선이 만나는 곳.</li>
+                    <li><strong>적응증:</strong> 諸陽之會. 뇌역두통, 정두통, 기허두통, 뇌풍(腦風).</li>
+                    <li><strong>시술법:</strong> 자침(3~5분) 또는 <strong>뜸(灸) 3~7장</strong>. 양기를 올려주고 뇌압을 조절함.</li>
+                </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card-item">
+                <div class="card-header">
+                    <span class="card-title">⚡ 合谷 (합곡 - 대장경 LI4)</span>
+                    <span class="tag tag-info">원위 취혈 필수</span>
+                </div>
+                <ul class="acu-list">
+                    <li><strong>위치:</strong> 손등 제1, 2 손가락 사이 (사관혈).</li>
+                    <li><strong>적응증:</strong> 전두통, 양명두통, 치통 동반 두통, 얼굴/머리의 모든 상충열.</li>
+                    <li><strong>시술법:</strong> 3~5분 깊이로 직자(直刺)하여 강력한 기운을 순환시킴.</li>
+                </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card-item">
+                <div class="card-header">
+                    <span class="card-title">💨 風池 (풍지 - 담경 GB20)</span>
+                    <span class="tag tag-info">풍사 흩어냄</span>
+                </div>
+                <ul class="acu-list">
+                    <li><strong>위치:</strong> 목 뒤 후두골 아래 양쪽 목근육 외측 오목한 곳.</li>
+                    <li><strong>적응증:</strong> 풍두통, 뇌풍, 후두통, 목덜미 뻐근함, 눈 앞 어지럼증(目眩).</li>
+                    <li><strong>시술법:</strong> 반대편 눈 방향으로 침 끝을 향해 사침(斜刺).</li>
+                </ul>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card-item">
+                <div class="card-header">
+                    <span class="card-title">🩸 太陽 (태양 - 奇穴)</span>
+                    <span class="tag tag-danger">사혈 특효혈</span>
+                </div>
+                <ul class="acu-list">
+                    <li><strong>위치:</strong> 눈썹 외측 끝과 눈 외찬 중간 뒤쪽 오목한 관자놀이.</li>
+                    <li><strong>적응증:</strong> 편두통, 뇌각통, 미릉골통, 혈열(血熱)성 두통.</li>
+                    <li><strong>시술법:</strong> 삼침(三稜針)으로 <strong>점자출혈(點刺出血 - 사혈)</strong>을 시행하여 즉각 통증 완화.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Extra Acupuncture Guidelines -->
+        <div style="margin-top: 2rem; background: #0f172a; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color);">
+            <h3 style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.75rem;">💡 증상별 림상 침구 자침 원칙</h3>
+            <ul style="padding-left: 1.25rem; font-size: 0.95rem;">
+                <li style="margin-bottom: 0.5rem;"><strong>풍두통(風頭痛) & 두풍(頭風):</strong> 風池(풍지), 風府(풍부), 百會(백회), 合谷(합곡)에 얕게 침을 놓고 사법(瀉法) 적용.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>편두통(偏頭痛):</strong> 아픈 쪽(患側) 太陽(태양혈)과 絲竹空(사죽공)에 사혈(瀉血)을 시행하여 어혈을 제거.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>담궐/기허두통:</strong> 족삼리(足三里) 및 중완(中脘)에 뜸을 떠 비위(脾胃) 기운을 보강함.</li>
+                <li><strong>진두통(眞頭痛 - 사증):</strong> 뇌 전체가 극심하게 아프고 손발 마디까지 차가워지므로 침구 시술을 삼가야 함 (응급 위험).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Download/Print Button -->
+    <div class="action-bar">
+        <button class="btn-print" onclick="window.print()">🖨️ 보고서 인쇄 및 PDF/HTML 다운로드</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>본 보고서는 한국고전종합DB (ITKC) 및 Mediclassics (한의학DB Book ID 8 동의보감) 원문 데이터에 기반하여 작성되었습니다.</p>
+        <p>© 2026 Antigravity Classics & Medical Cognitive Research Lab.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

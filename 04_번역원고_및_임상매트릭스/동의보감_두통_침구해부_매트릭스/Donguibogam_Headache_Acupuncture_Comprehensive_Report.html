@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동의보감 두통 원인별 증상·징후 및 침구치료 해부학적 9×36 매트릭스 종합 보고서</title>
+    <style>
+        :root {
+            --primary: #1F497D;
+            --primary-light: #2F5597;
+            --accent: #C53030;
+            --bg: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --border: #CBD5E0;
+            --text: #2D3748;
+            --text-muted: #718096;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', '맑은 고딕', -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1650px;
+            margin: 0 auto;
+        }
+
+        /* Hero Header */
+        header.hero {
+            background: linear-gradient(135deg, #1F497D 0%, #2F5597 100%);
+            color: white;
+            padding: 40px 48px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(31, 73, 125, 0.2);
+            margin-bottom: 36px;
+        }
+
+        header.hero h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        header.hero p {
+            font-size: 15px;
+            opacity: 0.92;
+            margin-bottom: 24px;
+            max-width: 1200px;
+        }
+
+        .download-btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .btn-download:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-download.primary-btn {
+            background-color: #ECC94B;
+            color: #1A365D;
+            border: none;
+        }
+
+        .btn-download.primary-btn:hover {
+            background-color: #D69E2E;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 36px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--primary);
+            border-radius: 3px;
+        }
+
+        /* Image Display Composite Box */
+        .composite-images-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .comp-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            text-align: center;
+        }
+
+        .comp-card h3 {
+            font-size: 17px;
+            color: var(--primary);
+            margin-bottom: 14px;
+        }
+
+        .comp-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid #E2E8F0;
+        }
+
+        /* 16 Cause Gallery Grid */
+        .cause-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .cause-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease;
+        }
+
+        .cause-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(31, 73, 125, 0.12);
+        }
+
+        .cause-header {
+            background-color: #EDF2F7;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cause-header h3 {
+            font-size: 18px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .badge-type {
+            font-size: 12px;
+            background-color: #E2E8F0;
+            color: #2D3748;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .cause-body {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 16px;
+            padding: 20px;
+        }
+
+        .cause-img-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .cause-info-box p {
+            font-size: 13px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .symptom-text { color: #2C5282; background: #EBF8FF; padding: 8px 12px; border-radius: 6px; }
+        .point-text { color: #C53030; font-weight: 700; }
+        .anatomy-text { color: #22543D; }
+        .method-text { color: #744210; }
+        .citation-text { color: #553C9A; font-style: italic; }
+
+        footer {
+            text-align: center;
+            padding: 36px;
+            color: var(--text-muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>東醫寶鑑 두통 원인별 증상·징후 및 경혈 해부구조 가로 9 × 세로 36 매트릭스 종합 보고서</h1>
+            <p>
+                본 종합 보고서는 『동의보감(東醫寶鑑)』 16대 두통 분류 체계, 『중국침구증치통감(中國針灸證治通鑑)』 원원전 침구 처방, 
+                및 원광대학교 한의과대학 김재효 교수의 『경혈 해부구조 데이터셋』(361개 WHO 경혈)을 정밀 결합하여 
+                가로 9 × 세로 36 인체 공간 해부학적 매트릭스(Anatomy Human Matrix Grid)로 종합 구현한 결정판 보고서입니다.
+            </p>
+            <div class="download-btn-group">
+                <a href="Donguibogam_Acupuncture_Anatomy_Human_Matrix.xlsx" class="btn-download primary-btn">📊 엑셀 통합 해부 매트릭스 DB 다운로드 (.xlsx)</a>
+                <a href="Donguibogam_vs_Acupuncture_Headache_Matrix.xlsx" class="btn-download">📑 원전 대조 엑셀 DB 다운로드 (.xlsx)</a>
+                <a href="Headache_Matrix_All_16_Causes.zip" class="btn-download primary-btn">📦 16대 두통 9x36 매트릭스 이미지 압축팩 (.zip)</a>
+                <a href="Anatomical_Headache_9x36_Position_Matrix.png" class="btn-download">🖼️ 인체 수직축 9x36 그래픽 (.png)</a>
+                <a href="Headache_Symptoms_9x36_Matrix.png" class="btn-download">🎨 원인별 증상 9x36 열지도 (.png)</a>
+            </div>
+        </header>
+
+        <div class="section-title">1. 대표 공간 해부학 9 × 36 격자 매트릭스 조감도</div>
+        <div class="composite-images-grid">
+            <div class="comp-card">
+                <h3>🩺 인체 전신 수직 축 & 9 × 36 위치 매트릭스 복합 그래픽</h3>
+                <img src="Anatomical_Headache_9x36_Position_Matrix.png" alt="Anatomical 9x36 Position Matrix">
+            </div>
+            <div class="comp-card">
+                <h3>🎨 16대 두통 원인별 증상·징후 9 × 36 공간 열지도 매트릭스</h3>
+                <img src="Headache_Symptoms_9x36_Matrix.png" alt="Headache Symptoms 9x36 Matrix">
+            </div>
+        </div>
+
+        <div class="section-title">2. 『동의보감』 16대 두통 원인별 9 × 36 해부학 매트릭스 상세 갤러리</div>
+        <div class="cause-gallery-grid">
+            
+    <div class="cause-card" id="01_wind">
+        <div class="cause-header">
+            <h3>풍두통 (風頭痛) <span class="badge-type">외감 풍사 (外感風邪)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_01_wind.png" alt="풍두통 (風頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 바람을 싫어함(惡風), 발열, 통증 부위가 고정되지 않고 머리 전체로 뻗치며 어지럼증(目眩) 동반</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 風池(GB20), 風府(GV16), 百會(GV20), 合谷(LI4), 攢竹(BL2), 通天(BL7), 崑崙(BL60)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 등세모근, 머리널판근, 머리반가시근, 머리덮개널힘줄, 큰/작은뒤통수신경, 얕은관자동·정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 瀉諸陽熱氣, 淺刺, 瀉法 적용. 風池 사침 0.8~1.2寸, 風府 직자 0.5~0.8寸</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《明堂經》 "主頭項惡風, 風眩目痛", 《千金要方》 "主頭風, 頭重風勞"</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="02_migraine">
+        <div class="cause-header">
+            <h3>편두통 (偏頭痛) <span class="badge-type">좌/우 편측성 (좌: 혈허·풍 / 우: 기허·담열)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_02_migraine.png" alt="편두통 (偏頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 한쪽 관자놀이(太陽穴) 및 뇌각(腦角) 통증, 미릉골 당김</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 太陽(奇穴), 絲竹空(TE23), 率谷(GB8), 角孫(TE20), 懸顱(GB5), 頭維(ST8)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 관자근(Temporalis), 눈둘레근, 광대관자신경, 귓바퀴관자신경, 얕은관자동·정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 아픈 쪽(患側) 太陽·絲竹空 삼릉침 점자출혈(瀉血). 率谷 평자 0.3~0.5寸</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《千金要方》 "偏頭痛 刺絲竹空 瀉血", 《明堂經》 "主偏頭痛 熱病"</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="03_cold_brain">
+        <div class="cause-header">
+            <h3>뇌역두통 (腦逆頭痛) <span class="badge-type">심한 한기 침범 (極寒侵襲)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_03_cold_brain.png" alt="뇌역두통 (腦逆頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 극심한 한기가 뇌 속까지 파고들어 뇌가 시리고 머리와 치아가 함께 아픔(頭齒俱痛)</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 百會(GV20), 風府(GV16), 天柱(BL10), 合谷(LI4), 太溪(KI3), 迎香(LI20)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 머리덮개널힘줄, 머리반가시근, 큰뒤통수신경, 눈확아래신경(V2), 척추동정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 百會 溫灸 3~7장으로 陽氣 승제. 風府 瀉風寒, 合谷 사관혈 자침</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《明堂經》 "風到腦中寒", 《銅人經》 "主腦痛", 《東醫寶鑑》 百會 諸陽之會</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="04_cold_inversion">
+        <div class="cause-header">
+            <h3>궐역두통 (厥逆頭痛) <span class="badge-type">기혈 순환 장애 (氣血循環障礙)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_04_cold_inversion.png" alt="궐역두통 (厥逆頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 두통이 목덜미와 이빨까지 이어지며, 손발이 얼음처럼 차가워짐(厥冷·手足淸)</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 湧泉(KI1), 太衝(LR3), 太白(SP3), 商丘(SP5), 合谷(LI4)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 발바닥널힘줄, 첫째 등쪽뼈사이근, 안쪽발바닥신경, 깊은종아리신경, 바닥쪽동맥활</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 湧泉 직자 0.5~1.0寸 (厥頭痛 요혈). 合谷+太衝 사관혈(四關穴) 배오</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《明堂經》 "主厥頭痛 足暴淸", 《靈樞·雜病》 "厥頭痛 取足少陰·厥陰"</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="05_phlegm">
+        <div class="cause-header">
+            <h3>담궐두통 (痰厥頭痛) <span class="badge-type">담음 상충 (痰陰上衝)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_05_phlegm.png" alt="담궐두통 (痰厥頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 머리가 깨질 듯 아픔(頭痛如裂), 어지럼증(眩暈), 심한 구토, 발이 차가움</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 豐隆(ST40), 中脘(CV12), 足三里(ST36), 內關(PC6), 崑崙(BL60)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 앞정강근, 배곧은근, 긴손바닥근, 깊은종아리신경, 정중신경(Median N), 앞정강동정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 豐隆 직자 1.0~1.5寸 (化痰 降逆). 足三里·中脘 溫灸 7~14장 (健脾)</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《明堂經》 "風頭痛如破 足寒如水 欲嘔 崑崙主之", 《靈樞》 邪在胃脘 取三里</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="06_qi_inversion">
+        <div class="cause-header">
+            <h3>기궐두통 (氣厥頭痛) <span class="badge-type">기허 상충 (氣虛上衝)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_06_qi_inversion.png" alt="기궐두통 (氣厥頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 양쪽 관자놀이와 눈썹뼈(眉稜骨)가 당기고 아프며, 따뜻한 온찜질 선호</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 攢竹(BL2), 太陽(奇穴), 氣海(CV6), 關元(CV4), 足三里(ST36)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 눈썹주름근, 뒤통수이마근 이마힘살, 백색선, 눈확위신경(V1), 얕은배벽동정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 攢竹 내하향 사침 0.3~0.5寸. 氣海·關元 하단전 溫灸 5~7장 (培元補氣)</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《明堂經》 "主風頭痛 眉頭痛", 《針灸大成》 眉稜骨痛 針攢竹·太陽</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="07_blood_stasis">
+        <div class="cause-header">
+            <h3>혈궐두통 (血厥頭痛) <span class="badge-type">음혈 부족 (陰血不足)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_07_blood_stasis.png" alt="혈궐두통 (血厥頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 정수리가 바늘로 찌르는 듯 아픔(痛如針刺), 밤이 되면 통증 심화(夜間加重)</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 百會(GV20), 膈俞(BL17), 三陰交(SP6), 太衝(LR3), 血海(SP10)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 머리덮개널힘줄, 등세모근, 가자미근, 큰뒤통수신경, 일곱째 가슴신경 뒤가지, 뒤정강동정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 膈俞 補法 자침 0.5~0.8寸 (血會). 三陰交 滋陰養血, 太衝 降火</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《素問·臟氣法時論》 "厥陰氣逆則頭痛", 《針灸治療學》 血虛頭痛 補三陰交·膈俞</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="08_kidney_def">
+        <div class="cause-header">
+            <h3>신궐두통 (腎厥頭痛) <span class="badge-type">신정 허손 (腎精虛損)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_08_kidney_def.png" alt="신궐두통 (腎厥頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 머리 깊은 곳이 텅 빈 듯 은은히 아픔(腦中空痛), 이빨 흔들림, 맥 침세(沉細)</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 腎俞(BL23), 太溪(KI3), 命門(GV4), 關元(CV4), 懸鍾(GB39)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 등허리근막, 허리네모근, 뭇갈래근, 둘째 허리신경 뒤가지, 정강신경, 허리동맥 등쪽가지</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 腎俞 溫灸 10~20장 (補腎益精). 懸鍾 직자 1.0~1.5寸 (髓會 補髓)</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《明堂經》 "腎虛 骨髓煩疼 烙腎俞·關元", 《靈樞·海論》 髓海不足 則腦轉耳鳴</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="09_true_emergency">
+        <div class="cause-header">
+            <h3>진두통 (眞頭痛 - 응급) <span class="badge-type">위중 사증 (死證 / 응급 위중)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_09_true_emergency.png" alt="진두통 (眞頭痛 - 응급) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 뇌 전체 극통, 손발 한기가 팔팔꿈치/무릎까지 올라옴 (손발 厥冷)</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 水溝/人中(GV26), 十宣(EX-UE11), 湧泉(KI1) [禁針禁灸]</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 입둘레근, 손가락 유두층 널힘줄, 눈확아래신경 위입술가지, 고유바닥쪽손가락신경</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 일반 자침·구법 엄금 (禁針禁灸). 의식불명 시 인중/십선 삼릉침 사혈 구급 후 즉시 이송</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《靈樞·厥病》 "眞頭痛頭痛甚 手足寒至節 不可治", 《東醫寶鑑》 眞頭痛 嚴禁針灸</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="10_alcohol">
+        <div class="cause-header">
+            <h3>취포두통 (醉飽頭痛) <span class="badge-type">식적 및 습열 (食積·濕熱)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_10_alcohol.png" alt="취포두통 (醉飽頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 음주 후/과식 후 습열 상충, 눈이 붉어지고(目赤) 갈증 유발</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 中脘(CV12), 內庭(ST44), 足三里(ST36), 曲池(LI11), 內關(PC6)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 백색선, 긴발가락폄근, 위팔노근, 갈비사이신경, 얕은종아리신경, 위배벽동정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 中脘 직자 1.0~1.5寸 (瀉法). 內庭 瀉胃熱, 曲池 淸熱瀉火</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《勉學堂針灸集成》 "食積 針中脘·三里", 《明堂經》 "主傷寒余熱 目赤痛 瀉曲池"</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="11_qi_def">
+        <div class="cause-header">
+            <h3>기허두통 (氣虛頭痛) <span class="badge-type">기력 저하 (氣力低下)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_11_qi_def.png" alt="기허두통 (氣虛頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 과로 시 심해지고 낮/오후 악화, 머리가 텅 빈 듯 피로감 동반</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 百會(GV20), 足三里(ST36), 氣海(CV6), 脾俞(BL20), 胃俞(BL21)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 머리덮개널힘줄, 앞정강근, 백색선, 큰뒤통수신경, 가쪽장딴지피부신경, 앞정강동정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 百會 溫灸 3~7장 (升陽舉陷). 足三里 溫灸 7~14장 (健脾益氣)</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《東醫寶鑑》 담궐/기허두통 족삼리·중완 뜸 보강, 《針灸大成》 氣虛頭痛 灸百會·三里</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="12_blood_def">
+        <div class="cause-header">
+            <h3>혈허두통 (血虛頭痛) <span class="badge-type">음혈 허손 (陰血虛損)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_12_blood_def.png" alt="혈허두통 (血虛頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 정수리 통증, 야간 심화, 가슴 두근거림(心悸), 어지럼증(眩暈)</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 膈俞(BL17), 三陰交(SP6), 血海(SP10), 上星(GV23), 足三里(ST36)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 등세모근, 가자미근, 안쪽넓은근, 일곱째 가슴신경 뒤가지, 정강신경, 넙다리동정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 膈俞 補法 자침, 三陰交 滋陰, 血海 補血活血</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《針灸治療學》 "血虛頭痛 取上星·血海·足三里·三陰交", 《千金要方》 血虛治法</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="13_damp_heat">
+        <div class="cause-header">
+            <h3>습열두통 (濕熱頭痛) <span class="badge-type">습열 뭉침 (濕熱蘊結)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_13_damp_heat.png" alt="습열두통 (濕熱頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 머리가 수건을 얹어 놓은 것 같이 무겁고(頭重如裹), 전신 찌뿌둥함</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 陰陵泉(SP9), 曲池(LI11), 合谷(LI4), 豐隆(ST40), 脾俞(BL20)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 오금근, 가자미근, 위팔노근, 첫째 등쪽뼈사이근, 두렁신경, 정강신경, 큰두렁정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 陰陵泉 직자 1.0~1.5寸 (利濕淸熱). 豐隆 化濕清熱</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《針灸聚英》 "濕寒濕熱下定", 《明堂經》 利濕淸熱 穴位處方</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="14_heat">
+        <div class="cause-header">
+            <h3>열두통 (熱頭痛) <span class="badge-type">풍열 상충 (風熱上衝)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_14_heat.png" alt="열두통 (熱頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 머리에 열감이 심하고 쪼개지는 듯 아프며 붉은 얼굴, 갈증, 번조 동반</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 大椎(GV14), 曲池(LI11), 合谷(LI4), 內庭(ST44)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 등세모근 힘줄, 가시위인대, 위팔노근, 여덟째 목신경 뒤가지, 노신경, 노쪽되돌이동맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 大椎 점자출혈 또는 瀉法 (해열). 曲池·合谷 淸熱瀉火</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《素問·刺熱》 "病始於頭首 先刺項太陽 出血", 《明堂經》 淸熱瀉火法</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="15_dampness">
+        <div class="cause-header">
+            <h3>습두통 (濕頭痛) <span class="badge-type">한습 정체 (寒濕停滯)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_15_dampness.png" alt="습두통 (濕頭痛) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 비온 뒤나 습한 곳에서 악화, 머리가 무겁고 아프며 목 뻐근함</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 水分(CV9), 陰陵泉(SP9), 足三里(ST36), 風池(GB20)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 백색선, 오금근, 가자미근, 앞정강근, 아홉째 갈비사이신경, 두렁신경, 위배벽동정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 水分·陰陵泉 溫灸 및 자침으로 溫化寒濕</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《針灸資生經》 寒濕頭痛 灸水分·陰陵泉</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cause-card" id="16_head_wind">
+        <div class="cause-header">
+            <h3>두풍증 (頭風證) <span class="badge-type">만성 풍사 체류 (風邪久留)</span></h3>
+        </div>
+        <div class="cause-body">
+            <div class="cause-img-box">
+                <img src="Headache_Matrix_16_head_wind.png" alt="두풍증 (頭風證) 9x36 매트릭스" loading="lazy">
+            </div>
+            <div class="cause-info-box">
+                <p class="symptom-text"><strong>📖 동의보감 주요 증상:</strong> 오랜 두통, 머리 가죽이 마비되거나 가렵고 감각 이상, 바람 쏘이면 즉시 유발</p>
+                <p class="point-text"><strong>🎯 주요 치료 경혈:</strong> 風府(GV16), 風池(GB20), 百會(GV20), 前頂(GV21), 率谷(GB8), 合谷(LI4)</p>
+                <p class="anatomy-text"><strong>🧬 해부학적 타겟(근육/신경/혈관):</strong> 등세모근, 머리널판근, 머리덮개널힘줄, 관자근, 큰/작은뒤통수신경, 얕은관자동정맥</p>
+                <p class="method-text"><strong>💉 침구 자침·구법 수기:</strong> 風府·風池 瀉風, 前頂·百會 溫灸. 두피 미세 침 사침(斜刺)</p>
+                <p class="citation-text"><strong>📚 원전 출처:</strong> 《扁鵲心書》 "患頭風兼頭暈者 刺風府穴", 《聖惠方》 頭風項痛 灸前頂·率谷</p>
+            </div>
+        </div>
+    </div>
+    
+        </div>
+
+        <footer>
+            <p>© 2026 Antigravity Medical Cognitive Research Lab. All rights reserved.</p>
+            <p style="margin-top: 6px; font-size: 12px;">대상 서적: 『동의보감』 (Book ID 8) / 『중국침구증치통감』 / 김재효 교수 『경혈 해부구조 데이터셋』</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>📜 [혈위고증 종합권위본] 숭골(崇骨) 경외기혈 고증 및 가설검증 종합보고서</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>
+:root {
+  --bg: #f7f8fa; --card: #ffffff; --text: #1d2433; --muted: #5b6577; --border: #dfe3ea;
+  --accent: #0b6e8a; --accent-soft: #e3f2f7; --warn: #a15c00; --warn-soft: #fff4e0;
+  --th: #eef2f6; --code: #f1f3f6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12151b; --card: #1a1f27; --text: #e4e8ee; --muted: #9aa5b5; --border: #2d3440;
+    --accent: #5cc3df; --accent-soft: #15303a; --warn: #f0b45a; --warn-soft: #33270f;
+    --th: #222935; --code: #222935;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12151b; --card: #1a1f27; --text: #e4e8ee; --muted: #9aa5b5; --border: #2d3440;
+  --accent: #5cc3df; --accent-soft: #15303a; --warn: #f0b45a; --warn-soft: #33270f;
+  --th: #222935; --code: #222935;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: "Noto Sans KR", system-ui, sans-serif; line-height: 1.7; font-size: 16px; }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 16px 80px; }
+article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px clamp(16px, 4vw, 48px); }
+h1, h2, h3 { font-family: "Noto Serif KR", serif; line-height: 1.35; }
+h1 { font-size: 1.75rem; margin-top: 0; }
+h2 { font-size: 1.35rem; margin-top: 2.2em; padding-bottom: .3em; border-bottom: 2px solid var(--accent-soft); }
+h3 { font-size: 1.12rem; margin-top: 1.6em; color: var(--accent); }
+h4 { font-size: 1rem; margin-top: 1.4em; }
+a { color: var(--accent); }
+blockquote { margin: 1em 0; padding: .6em 1em; background: var(--accent-soft); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; color: var(--text); }
+.table-wrap { overflow-x: auto; margin: 1em 0; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { border: 1px solid var(--border); padding: 6px 10px; vertical-align: top; }
+th { background: var(--th); text-align: left; }
+code { font-family: "JetBrains Mono", monospace; background: var(--code); padding: .1em .35em; border-radius: 4px; font-size: .88em; }
+pre { background: var(--code); padding: 12px 14px; border-radius: 8px; overflow-x: auto; }
+pre code { background: none; padding: 0; }
+pre.mermaid { background: var(--card); text-align: center; }
+figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
+figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
+figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+.meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
+.katex-display { overflow-x: auto; overflow-y: hidden; }
+</style>
+</head>
+<body>
+<main>
+<article>
+<h1 id="_1">📜 [혈위고증 종합권위본] 숭골(崇骨) 경외기혈 고증 및 가설검증 종합보고서</h1>
+<blockquote>
+<p><strong>프레임워크</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: <code>숭골_경외기혈_고증_및_가설검증_피어리뷰_분석.csv</code>, <code>숭골_경외기혈_고증_및_가설검증_피어리뷰_분석.xlsx</code> (3대 원전 대조: <code>针灸腧穴通考(下)_401-480.md</code> L1620-1666)<br>
+<strong>구판</strong>: Version 2.6 (2026-10-03, "Rank 0~7 완전 적용" 표기) 원본은 <code>_구판_v2.6/</code>에 보관. 실제로는 Rank 6·7(Layer A·B 대조, ARI 채점)을 수행한 기록이 없어 적용 범위를 Rank 1~4로 정정함<br>
+<strong>마스터 근거 원칙</strong>: <a href="file:///g:/내%20드라이브/도서%20번역/02_Master_Datasets/%EA%B2%BD%ED%98%88%EC%9D%98%20%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81%20%EC%8B%A4%EC%B2%B4%EB%A5%BC%20%ED%8C%90%EB%AA%85%ED%95%98%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EB%A1%9C%EC%A7%81%28logic%29%20%EC%9B%90%EC%B9%99.xlsx"><code>경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx</code></a><br>
+<strong>근거 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》<br>
+<strong>통합 이력</strong>: 2개 분산 문서(피어리뷰 보고서 및 C7/T1 시대변천 보고서)를 50% 이상 중복 통합 원칙에 따라 단일 권위본으로 완결 융합.</p>
+</blockquote>
+<hr>
+<h2 id="1">🏛️ 1. 고증 배경 및 숭골(崇骨)의 정의</h2>
+<ul>
+<li><strong>숭골(崇骨, EX-HN)</strong>: 역대 의서에서 주로 경외기혈(經外奇穴)로 수록된 혈위로, "在後正中線上, 第6頸椎棘突下凹陷中" (C6 극돌기 하단) 또는 "第7頸椎棘突上凹陷中" (C7 극돌기 상단)으로 정의됨.</li>
+<li><em>(v2.7 대조 주)</em> 이 두 정위 문구는 3대 원전에서 검출되지 않는다(출처 미기재 현대 기혈 정위). 3대 원전에서 崇骨은 《腧穴通考》에만 나오며, 穴名으로서의 최초 기재는 조선 허임 《针灸经验方》(1644) "崇骨一穴，在大椎上，第一小椎是也"이고, 황룡상은 이를 <strong>"相当于第七颈椎棘突尖"(C7 극돌기 끝)</strong> 으로 본다. 같은 폴더 xlsx(<code>숭골_대추_백로_수혈고증_대조</code> 시트)도 "제7경추 극돌기 정상부"로 적는다. 따라서 'C6-C7 극간' 정위는 원전 정위와 다르다.</li>
+<li><strong>고대 골격 명칭으로서의 숭골</strong>: </li>
+<li>"崇"은 높고 솟아오른 뼈를 의미함. 고대 의가들은 목 뒤에서 가장 높이 솟은 뼈인 <strong>제7경추(C7) 극돌기 자체</strong>를 '崇骨'이라 칭하기도 하였음.</li>
+<li>따라서 "崇骨下"는 C7 극돌기 아래(C7-T1 극간 = 대추혈)가 되고, "崇骨上"은 C7 극돌기 위(C6-C7 극간 = 기혈 숭골혈)가 되는 상대적 정위 체계가 형성됨.</li>
+</ul>
+<hr>
+<h2 id="2">📑 2. 원전문헌 비교 대조 및 피어리뷰 가설 검증</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">검증 항목</th>
+<th style="text-align: left;">원전 기재 내용</th>
+<th style="text-align: left;">학술 피어리뷰 평가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>《千金要方》</strong></td>
+<td style="text-align: left;">"崇骨... 主頸項强急, 不能回顧." <em>(3대 원전 미검출 — 원출처 확인 필요)</em></td>
+<td style="text-align: left;">숭골혈 자침 시 항강증 개선을 기대할 수 있다는 해석(작성 시 판단, 정량 미검증). 《腧穴通考》는 허임의 崇骨穴에 "无主治病症及相关刺灸法"이라 하여, 崇骨 고유 주치가 원전에서 확인되지 않음을 밝힌다.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>《針灸大成》</strong></td>
+<td style="text-align: left;">"崇骨在第七椎上, 灸三壯." <em>(3대 원전 미검출 — 원출처 확인 필요)</em></td>
+<td style="text-align: left;">7경추 상방으로 기재되었다면 대추혈(C7 극하)의 윗마디로 구분된다. 다만 원전에서 확인되는 허임의 정위는 C7 극돌기 끝이며, C6-C7 극간이라는 해석은 작성 시 판단이다.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>《针灸腧穴通考》</strong></td>
+<td style="text-align: left;">"黃龍祥 考: 崇骨之名, 實起於後世對頸椎骨之俗稱. 與大椎相表裏." <em>(이 문장은 <code>chunks_refined</code>에서 검출되지 않음. 실제 조문: 《小品方》 "大椎上节以上属颈崇骨也。大椎与崇骨相接处，其节最高硕也"; 문헌분석 "颈椎只辨出三椎，称项骨，又曰'柱骨'、'天柱骨'或'崇骨'…最高大者为与大椎骨相邻的崇骨——即第七颈椎…无主治病症及相关刺灸法…可见并非出自许任的临床实践")</em></td>
+<td style="text-align: left;">원전 기준으로 崇骨은 본래 <strong>骨名(C7, 또는 項骨 일반)</strong> 이고, 穴名 崇骨은 허임이 이 骨名을 바탕으로 둔 것이며 임상 실천에서 나온 혈이 아니라는 것이 황룡상의 판단이다. "경신경총 상부 분지를 조절하는 독립 혈위"는 원전 근거가 없는 해부 실체 가설이다.</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="3-ari">🧬 3. 해부학적 실체 및 신경생리 기전 — 해부 실체 가설(ARI 미산정)</h2>
+<blockquote>
+<p><strong>v2.7 표기</strong>: Rank 6·7을 거치지 않은 가설이다. 층차는 C6-C7 극간 정위를 전제로 하므로 원전 정위(C7 극돌기 끝)를 쓰면 바뀐다. 발통점(MTrP) 이완 주장은 근막 발통점 체계(B2-06) 범위의 유추이며, 발통점–경혈 대응 자체가 논쟁 중이다(B2-03 대 반증 B2-04). 인체 전환 근거(B4)는 검토하지 않았다.</p>
+</blockquote>
+<ol>
+<li><strong>해부 구조물</strong>:
+   * 피부 ➔ 목덜미인대(Ligamentum nuchae) ➔ C6-C7 극간인대 ➔ 척추주위 심층근육(반극근, 회선근).</li>
+<li><strong>지배 신경</strong>:
+   * C6-C7 경신경 후지의 내측지(Medial branch of posterior ramus).</li>
+<li><strong>신경반사 작용</strong>:
+   * 경판상근 및 두반극근 MTrP(통증유발점)를 이완시켜 경추성 두통, 경견완 증후군 및 후두 신경통을 완화할 수 있다는 가설("즉각 이완" 효과는 정량 미검증).</li>
+<li><strong>자침 안전 기준</strong>:
+   * 침자 깊이: <strong>10~15mm</strong> 직자/약간 상향사자. 20mm 이상 깊이 자침 시 황색인대 통과 및 척수막 접촉 위험 차단. <em>(작성 시 판단, 정량 미검증 — 원전에는 崇骨 刺灸法 기재가 없음)</em></li>
+</ol>
+<hr>
+<h2 id="4">📊 4. 최종 학술 결론</h2>
+<blockquote>
+<p>숭골(崇骨)은 본래 <strong>骨名</strong>(C7 또는 項骨)이었고, 穴名으로는 조선 허임 《针灸经验方》(1644)에 처음 기재되었으며 그 위치는 <strong>C7 극돌기 끝</strong>(대추 GV14의 바로 위)이다(《腧穴通考》). 원전에는 숭골 고유의 주치와 자법이 없고, 같은 폴더 데이터 파일도 "독자적 주치 구축 미약"으로 판정한다. 따라서 "C6-C7 극간의 공인 경외기혈로서 상부 경신경총을 선택적으로 조절하는 독립 수혈"이라는 결론은 <strong>확정이 아니라 해부 실체 가설(ARI 미산정)</strong> 이며, 정위(C7 극돌기 끝 대 C6-C7 극간)부터 원전과 다시 맞춰야 한다.</p>
+</blockquote>
+<h2 id="v27-2026-10-04">v2.7 정제 이력 (2026-10-04)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th style="text-align: left;">위치</th>
+<th style="text-align: left;">원래 표현</th>
+<th style="text-align: left;">바꾼 표현</th>
+<th style="text-align: left;">근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">머리말</td>
+<td style="text-align: left;">Version 2.6, "Rank 0~7 완전 적용"</td>
+<td style="text-align: left;">프레임워크 v2.7 정제 블록, 적용 범위 Rank 1~4, ARI 미산정</td>
+<td style="text-align: left;">지침 1. Rank 6·7 수행 기록 없음</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">1절 정의</td>
+<td style="text-align: left;">C6 극하 / C7 극상 정위(무출처)</td>
+<td style="text-align: left;">원전 미검출 표기, 원전 정위는 C7 극돌기 끝(허임 1644)</td>
+<td style="text-align: left;">《腧穴通考》 大椎 문헌분석, 같은 폴더 xlsx</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">2절 《千金要方》 행</td>
+<td style="text-align: left;">"탁월한 효능 발휘 확인"</td>
+<td style="text-align: left;">원전 미검출 표기, "기대할 수 있다는 해석(정량 미검증)", 원전은 숭골 주치 없음</td>
+<td style="text-align: left;">《腧穴通考》 "无主治病症及相关刺灸法"</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">2절 《針灸大成》 행</td>
+<td style="text-align: left;">"C6-C7 극간으로 명정 … 명확히 분별"</td>
+<td style="text-align: left;">원전 미검출 표기, C6-C7 해석은 작성 시 판단</td>
+<td style="text-align: left;">위와 같음</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">2절 《腧穴通考》 행</td>
+<td style="text-align: left;">"黃龍祥 考: 崇骨之名…與大椎相表裏" + "독립 혈위임"</td>
+<td style="text-align: left;">원전 미검출·재구성 표기, 실제 조문 병기, "독립 혈위"는 해부 실체 가설</td>
+<td style="text-align: left;">《腧穴通考》(下) L1646·L1660·L1666</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">3절</td>
+<td style="text-align: left;">해부·신경반사 기술(무표기)</td>
+<td style="text-align: left;">"해부 실체 가설(ARI 미산정)", B2-06 유추, B2-03·B2-04 논쟁 병기</td>
+<td style="text-align: left;">지침 4, Layer B 등록부</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">3절 신경반사</td>
+<td style="text-align: left;">"즉각 이완시켜 … 완화"</td>
+<td style="text-align: left;">"완화할 수 있다는 가설(정량 미검증)"</td>
+<td style="text-align: left;">지침 2</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">3절 자침</td>
+<td style="text-align: left;">10~15mm, 20mm(무근거)</td>
+<td style="text-align: left;">작성 시 판단 표기, 원전 刺灸法 없음</td>
+<td style="text-align: left;">《腧穴通考》</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">4절 결론</td>
+<td style="text-align: left;">"공인된 경외기혈 … 독립 수혈로 확정 판명됨"</td>
+<td style="text-align: left;">骨名 기원·허임 1644·C7 극돌기 끝으로 재서술, "확정"을 "해부 실체 가설"로</td>
+<td style="text-align: left;">위 근거 종합, 데이터 파일 판정</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>PMID/DOI: 본문에 없음(확인 대상 0건). 생의학 문헌 인용 없음 — Layer B는 가설 표기에 등록부 ID(B2-03·B2-04·B2-06)를 참조로만 추가.</li>
+<li>데이터 파일: csv·xlsx의 "100% 입증"(가설 1)과 "주치증과 100% 융합"(숭골 행)은 정량 근거가 없어 각각 "지지 — 骨名·穴名 인접 혼용 기술 확인, 정량 미검증"과 "독자적 주치 없음 — 원전 고유 주치 미기재"로 고쳤다(원본은 <code>_구판_v2.6/</code>에 보관).</li>
+<li>남은 한계: 《千金要方》·《針灸大成》의 崇骨 조문은 3대 원전 밖이어서 직접 대조하지 못했다. 원서에서 확인되면 3·4번 정정을 다시 검토한다.</li>
+</ul>
+<p class="meta">생성: 2026-10-04 10:21 · 원본: 숭골_경외기혈_고증_및_가설검증_종합보고서.md · build_report_html.py (Framework v2.7)</p>
+</article>
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+</body>
+</html>

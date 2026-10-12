@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>📜 [혈위고증 보고서] 천추(ST25)·관원(CV4) 모혈의 신경분절 정합성 고증 및 질의응답 검증</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>
+:root {
+  --bg: #f7f8fa; --card: #ffffff; --text: #1d2433; --muted: #5b6577; --border: #dfe3ea;
+  --accent: #0b6e8a; --accent-soft: #e3f2f7; --warn: #a15c00; --warn-soft: #fff4e0;
+  --th: #eef2f6; --code: #f1f3f6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12151b; --card: #1a1f27; --text: #e4e8ee; --muted: #9aa5b5; --border: #2d3440;
+    --accent: #5cc3df; --accent-soft: #15303a; --warn: #f0b45a; --warn-soft: #33270f;
+    --th: #222935; --code: #222935;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12151b; --card: #1a1f27; --text: #e4e8ee; --muted: #9aa5b5; --border: #2d3440;
+  --accent: #5cc3df; --accent-soft: #15303a; --warn: #f0b45a; --warn-soft: #33270f;
+  --th: #222935; --code: #222935;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: "Noto Sans KR", system-ui, sans-serif; line-height: 1.7; font-size: 16px; }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 16px 80px; }
+article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px clamp(16px, 4vw, 48px); }
+h1, h2, h3 { font-family: "Noto Serif KR", serif; line-height: 1.35; }
+h1 { font-size: 1.75rem; margin-top: 0; }
+h2 { font-size: 1.35rem; margin-top: 2.2em; padding-bottom: .3em; border-bottom: 2px solid var(--accent-soft); }
+h3 { font-size: 1.12rem; margin-top: 1.6em; color: var(--accent); }
+h4 { font-size: 1rem; margin-top: 1.4em; }
+a { color: var(--accent); }
+blockquote { margin: 1em 0; padding: .6em 1em; background: var(--accent-soft); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; color: var(--text); }
+.table-wrap { overflow-x: auto; margin: 1em 0; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { border: 1px solid var(--border); padding: 6px 10px; vertical-align: top; }
+th { background: var(--th); text-align: left; }
+code { font-family: "JetBrains Mono", monospace; background: var(--code); padding: .1em .35em; border-radius: 4px; font-size: .88em; }
+pre { background: var(--code); padding: 12px 14px; border-radius: 8px; overflow-x: auto; }
+pre code { background: none; padding: 0; }
+pre.mermaid { background: var(--card); text-align: center; }
+figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
+figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
+figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+.meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
+.katex-display { overflow-x: auto; overflow-y: hidden; }
+</style>
+</head>
+<body>
+<main>
+<article>
+<h1 id="st25cv4">📜 [혈위고증 보고서] 천추(ST25)·관원(CV4) 모혈의 신경분절 정합성 고증 및 질의응답 검증</h1>
+<blockquote>
+<p><strong>프레임워크</strong>: v2.7 (Tier 3, Rank 0~7 전개) · <strong>ARI</strong>: v3.0 이중 채점 · <strong>작성일</strong>: 2026-10-12
+<strong>분석 대상</strong>: 강의 질의("배꼽 높이 T10의 천추와 T11~12 높이의 관원 — 모혈이 신경분절 반응점이라면 모순 아닌가?")와 그에 대한 강의 답변("관원은 해부학적 소장이 아니라 '소장'이라는 병증 유형을 치료하는 혈이다")
+<strong>근거 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》(정제본 <code>chunks_refined</code>)
+<strong>근거 데이터</strong>: <code>천추_관원_모혈분절_문헌고증_DB.xlsx</code> (본 폴더) · 통합 생의학 DB v3.0 (<code>02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json</code>, 2026-10-12 Rank 6 동기화)
+<strong>연관 분석</strong>: 같은 질의의 문헌사 측면은 황룡상 스킬 검토(2026-10-12 대화)에서 다루었으며, 본 보고서는 해부·신경분절·반사 기전 측면을 맡는다.</p>
+</blockquote>
+<hr>
+<h2 id="0-executive-summary">0. 요약 (Executive Summary)</h2>
+<ol>
+<li><strong>질의의 관찰은 해부학적으로 맞다.</strong> 배꼽 높이(T10 피절)의 천추는 중장(中腸) 유래 장관, 곧 소장과 근위 대장의 연관통 구역과 겹친다. 관원(T12~L1 피절)은 후장(後腸) 유래 원위 대장과 방광·자궁의 연관통 구역에 더 가깝다. 따라서 "모혈 = 해당 부(腑)의 분절 반응점"이라는 전제를 세우면 천추는 부분적으로, 관원은 거의 맞지 않는다.</li>
+<li><strong>모순은 전제에서 생긴다.</strong> 고전의 모혈 귀속은 분절 원리로 만들어지지 않았다. 문헌상 두 혈 모두 귀속된 부(腑)의 병을 치료하는 대표 혈도 아니었다. 《영추》는 대장병을 상거허로, 《명당경》은 소장창(小肠胀)을 관원이 아닌 중료로 치료했다.</li>
+<li><strong>분절 모델만으로는 천추의 작용도 다 설명되지 않는다.</strong> 2025년 마우스 연구에서 천추 전침의 대장염 개선은 T10 분절의 교감신경절(SMG·IMG)을 거치지 않았고, 천수(S2~4) 부교감 경로(골반신경절)를 거쳤다(papers.id 2023). 다른 연구에서는 자극 강도에 따라 척수 분절성 교감 경로가 동원되었다(B3-16). 천추의 효과는 분절 반사와 비분절 경로가 섞여 있다.</li>
+<li><strong>강의 답변은 결론이 타당하지만 근거 하나는 바꿔야 한다.</strong> 관원이 '소장병'이라는 병증 범주, 특히 하복통·산증(疝症)을 치료한다는 결론은 해부 분석으로도 지지된다. 관원의 분절은 골반 장기와 맞고, 서혜부 탈장 주머니에는 실제로 소장 고리가 들어간다. 반면 "소장 병증 = 방광의 소변 배출 기능"이라는 설명은 초기 문헌 층차에서 확인되지 않는다. 관원의 배뇨장애 주치는 T11~L2 분절의 방광과 맞는 하복부 국소 주치로 설명하는 편이 낫다.</li>
+<li><strong>ARI v3.0</strong>(이중 채점, 10절): 천추는 <strong>ARI-Core 71 (B, 가중치 민감)</strong>, 관원은 <strong>ARI-Core 68 (C)</strong>이며, 두 혈 모두 <strong>SI 25 ⚠ 안전주의</strong>다. 두 혈 모두 실체 판명의 병목은 반사 기전의 인체 근거 부족(B-Check 7/12, 기전은 "가설")이다. 관원은 교재 간 심층 구조 기술이 다르다는 점도 감점 요인이다. 안전 측면에서는 관원 《명당경》 "刺入二寸"(약 46mm)이 복막을 넘을 수 있다는 점이 핵심이다.</li>
+<li><strong>이전 답변 정정</strong>: 같은 날 천추·소아 질의에 대한 Tier 1 답변에서 "천추와 소아를 연결한 기록을 찾지 못했다"고 했다. 그러나 《针灸腧穴通考》 정제본의 【提要索隐】에 "灸治小儿慢性消化道症状"이 있다. 그 출처는 1957년 남경 《针灸学》 "小儿慢性疾患灸之大有效"로, 현대 교재 층차다(9절). 결론(현대 층차의 관행)은 유지되지만, "기록 없음"은 틀렸으므로 정정한다.</li>
+</ol>
+<hr>
+<h2 id="1-3">1. 문헌 스크리닝 표 (3대 원전 대조)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">항목</th>
+<th style="text-align: left;">천추(ST25)</th>
+<th style="text-align: left;">관원(CV4)</th>
+<th style="text-align: left;">출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">최초 출전</td>
+<td style="text-align: left;">《黄帝明堂经》</td>
+<td style="text-align: left;">《灵枢·寒热病》 "脐下三寸关元也"</td>
+<td style="text-align: left;">《通考》(上) p.321 / (下) p.1292</td>
+</tr>
+<tr>
+<td style="text-align: left;">모혈 귀속</td>
+<td style="text-align: left;">"天枢，大肠募也。一名长溪，一名谷门。去肓俞一寸五分，夹脐两旁各二寸陷者中。足阳明脉气所发。"</td>
+<td style="text-align: left;">"关元，小肠募也，一名次门，在脐下三寸，足三阴、任脉之会。"</td>
+<td style="text-align: left;">《明堂经》(《通考》 수록)</td>
+</tr>
+<tr>
+<td style="text-align: left;">《명당경》 자침</td>
+<td style="text-align: left;">"刺入五分，留七呼，灸三壮"</td>
+<td style="text-align: left;">"刺入二寸，留七呼，灸七壮"</td>
+<td style="text-align: left;">《通考》 【操作】</td>
+</tr>
+<tr>
+<td style="text-align: left;">《명당경》 주치 핵심</td>
+<td style="text-align: left;">대장병(肠中切痛而鸣濯濯, 冬日重感于寒则泄, 当脐而痛, 食不化), 산증(脐疝·气疝·阴疝·奔肫), 부인 월경병, 학질</td>
+<td style="text-align: left;">石水, 胞转不得溺, 少腹满, 奔肫, 溺血, 小便数, 腰背脐痛引阴, 后泄不止, 暴疝痛, 女子绝子</td>
+<td style="text-align: left;">《证治通鉴》·《通考》</td>
+</tr>
+<tr>
+<td style="text-align: left;">침 금기 기록</td>
+<td style="text-align: left;">《千金》 "魂魄之舍，不可针", "勿针", "忌针"</td>
+<td style="text-align: left;">《圣惠方》 "若怀胎必不针"; 현대 교재 "孕妇慎用。针前让患者排尿"</td>
+<td style="text-align: left;">《通考》</td>
+</tr>
+<tr>
+<td style="text-align: left;">소아 관련</td>
+<td style="text-align: left;">1957 남경《针灸学》 "小儿慢性疾患灸之大有效"; 1986 《中国针灸》 소아 단순성 소화불량 天枢·中脘</td>
+<td style="text-align: left;">2001 소아 신경성 빈뇨 관원 자침, 1995 신생아 무뇨 관원 외敷</td>
+<td style="text-align: left;">《通考》 임상 응용 예</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>검색 경로: 《针灸腧穴通考》 <code>chunks_refined/针灸腧穴通考(上)_321-400.md</code> L1050~1310(천추), <code>(下)_481-560.md</code> L1396~1586(관원). 《中国针灸证治通鉴》 <code>_1-80.md</code> L2006(천추), <code>_81-160.md</code> L1684(관원). 《中国针灸穴位通鉴》 관원 주치 인용 <code>(上卷)_1-80.md</code> L1526.</p>
+</blockquote>
+<h2 id="2">2. 원천/재인용 구분 표</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">시기</th>
+<th style="text-align: left;">천추</th>
+<th style="text-align: left;">관원</th>
+<th style="text-align: left;">판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">선진·한대</td>
+<td style="text-align: left;">《명당경》: 위치·심도·모혈 귀속·대장병 주치</td>
+<td style="text-align: left;">《영추·寒热病》: 위치("三结交"). 《명당경》: 소장모 귀속·심도 2촌·하복부 주치</td>
+<td style="text-align: left;"><strong>원천</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">위진·수당</td>
+<td style="text-align: left;">《千金》: "夹脐相去五寸"(배꼽 직경 1촌), 다량 뜸(百壮)과 금침</td>
+<td style="text-align: left;">《千金》: 기림·석림·고환 치우침 뜸</td>
+<td style="text-align: left;">원천 확장</td>
+</tr>
+<tr>
+<td style="text-align: left;">송·금·원</td>
+<td style="text-align: left;">《铜人》: "可灸百壮"</td>
+<td style="text-align: left;">《铜人》: 灸量을 "百壮至三百壮"으로 개편(《圣惠方》 "日灸三十壮，至三百壮止"의 오독)</td>
+<td style="text-align: left;">재편, 오류 혼입</td>
+</tr>
+<tr>
+<td style="text-align: left;">명·청</td>
+<td style="text-align: left;">《针灸大成》: 脐中 기준 오해 계열</td>
+<td style="text-align: left;">《针灸大成·玉龙歌》: "阑门"을 "关元"으로 오기</td>
+<td style="text-align: left;">재인용 오류</td>
+</tr>
+<tr>
+<td style="text-align: left;">현대</td>
+<td style="text-align: left;">1957 교재: 소아 만성질환 뜸 추가</td>
+<td style="text-align: left;">7판 교재: 비뇨·생식·원기허손 6계통으로 확대</td>
+<td style="text-align: left;">현대 확장</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>원문/해석 분리</strong>: 황룡상은 천추의 정위가 '배꼽 가장자리에서 2촌(除脐)'이라고 교감했다. 후대의 '배꼽 중심 2촌'은 '脐'를 오해한 재해석이다. 천추의 대장병 주치는 《명당경》 편자가 하합혈(상거허) 주치를 모혈로 옮긴 결과이므로, 원천 기술이지만 귀속 자체는 편찬 단계의 판단으로 본다.</p>
+<h2 id="3-kjh-db">3. 이명·별칭 검증 표 (KJH DB 대조)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">혈</th>
+<th style="text-align: left;">KJH DB 이명</th>
+<th style="text-align: left;">혼용 위험</th>
+<th style="text-align: left;">처리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">長溪·長谿·谷門·長谷·循際·循元·補元·穀門</td>
+<td style="text-align: left;">魂舍(夹脐相去三寸)·長谷을 별도 기혈로 세운 현대 오류. "長谷"은 "長谿"의 坏字. 1957 교재 "循元·補元"은 일본 교재를 거친 오류</td>
+<td style="text-align: left;">정명과 일치하는 것은 長溪·谷門·循際뿐(황룡상 교감). 魂舍 정위 정보는 천추 정위에서 분리</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">三結交·上氣海·下肓·下記·丹田·大中極·太中極·次門·肓原</td>
+<td style="text-align: left;"><strong>丹田</strong>: CV4·CV5·CV6·CV7이 공유하며, 도가 단전과 침가 개념이 섞였다. <strong>下肓</strong>: CV4·CV6 공유. 《大成》 "关元" = "阑门" 오기. 関元兪(BL26)는 별개</td>
+<td style="text-align: left;">丹田 계열 주치("下元虚冷" 등)는 도가 문헌 혼입 가능성을 표시. 《玉龙歌》 疝气 조문의 "关元"은 阑门(급맥 부근)으로 분리</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-3d-layer-15">4. 3D 공간 좌표 및 Layer 1~5 층차 구조</h2>
+<p>좌표계: X = 정중선 기준 외측(mm), Y = 배꼽(0) 기준 하방(+), Z = 피부 기준 심도(mm). 촌→mm 환산은 성인 평균 체형을 가정한 추정이다(1 B-cun ≈ 24~30mm).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">혈</th>
+<th style="text-align: left;">X</th>
+<th style="text-align: left;">Y</th>
+<th style="text-align: left;">표준 Z 범위(현대)</th>
+<th style="text-align: left;">비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ST25 Target 2(WHO, 배꼽 중심 2촌)</td>
+<td style="text-align: left;">약 50~60</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">20~40</td>
+<td style="text-align: left;">배곧은근 근복 위</td>
+</tr>
+<tr>
+<td style="text-align: left;">ST25 Target 1(명당경, 배꼽 가장자리 2촌)</td>
+<td style="text-align: left;">약 60~72</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">동일</td>
+<td style="text-align: left;">Δ ≈ 10~15mm (7절)</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">약 72~90 (3촌)</td>
+<td style="text-align: left;">20~40</td>
+<td style="text-align: left;">활꼴선(arcuate line) 아래 백색선</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="4-1">4-1. 천추 층차 (배꼽 높이, 활꼴선 위)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">구조</th>
+<th style="text-align: left;">근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">L1 피부·피하</td>
+<td style="text-align: left;">제9~11 갈비사이신경 앞피부가지(T10 중심), 얕은배벽동·정맥 분지</td>
+<td style="text-align: left;">김재효 교재, B1-03</td>
+</tr>
+<tr>
+<td style="text-align: left;">L2 표층 근막</td>
+<td style="text-align: left;">배곧은근집 앞층(배바깥빗근·배속빗근 널힘줄)</td>
+<td style="text-align: left;">김재효 교재, B1-01</td>
+</tr>
+<tr>
+<td style="text-align: left;">L3 근육</td>
+<td style="text-align: left;">배곧은근 근복, 갈비사이신경 근가지</td>
+<td style="text-align: left;">두 교재 공통</td>
+</tr>
+<tr>
+<td style="text-align: left;">L4 신경혈관속</td>
+<td style="text-align: left;">배곧은근 뒤면의 위·아랫배벽동·정맥 문합부(배꼽 높이), 갈비사이신경 본줄기</td>
+<td style="text-align: left;">두 교재(위배벽동·정맥), B1-01(배꼽 높이 문합)</td>
+</tr>
+<tr>
+<td style="text-align: left;">L5 심부</td>
+<td style="text-align: left;">배곧은근집 뒤층·가로근막·복막전지방·벽측복막 → <strong>복강(소장 고리·큰그물막, 체위에 따라 횡행결장)</strong></td>
+<td style="text-align: left;">B1-01</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="4-2-3">4-2. 관원 층차 (배꼽 아래 3촌, 활꼴선 아래)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">구조</th>
+<th style="text-align: left;">근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">L1 피부·피하</td>
+<td style="text-align: left;">갈비밑신경(T12) 앞피부가지, (공통교재) 엉덩아랫배신경(L1) 앞피부가지, 얕은배벽동·정맥</td>
+<td style="text-align: left;">두 교재</td>
+</tr>
+<tr>
+<td style="text-align: left;">L2 표층 근막</td>
+<td style="text-align: left;">백색선(정중선 널힘줄 교차부)</td>
+<td style="text-align: left;">두 교재 공통</td>
+</tr>
+<tr>
+<td style="text-align: left;">L3 근육</td>
+<td style="text-align: left;">정중선이므로 근복 없음. 양옆에 배곧은근</td>
+<td style="text-align: left;">B1-01</td>
+</tr>
+<tr>
+<td style="text-align: left;">L4 신경혈관속</td>
+<td style="text-align: left;">아랫배벽동·정맥은 배곧은근 뒤 외측을 지나며 정중선 직하에는 없다</td>
+<td style="text-align: left;">두 교재(혈관 명칭), B1-01(주행)</td>
+</tr>
+<tr>
+<td style="text-align: left;">L5 심부</td>
+<td style="text-align: left;">활꼴선 아래라 배곧은근집 뒤층이 없다. 가로근막 → 복막 → <strong>방광(충만 시 치골 위로 상승)·소장 고리·임신 자궁</strong></td>
+<td style="text-align: left;">김재효 교재(배가로근막), B1-01</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="diagram diagram-mermaid"><img src="data:image/png;base64,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beWfobaOl6D06hKJhCiD69dfe/XV33n00a8JlE7k24n6W/Y2td4qKtx3X31t996/aXmIL54rpVdeGXn88ZfF5lpe/vq2bVuamqqt7hWPJr5zcceDnfsENubbL/3VE78tqs/i4vOHD0/U128XZcCVEQAAhRDMAAAohGAGAEAhBDMAAAohmAEAUAjBDACAQriPucL8xf987Qd/+TNRNjdu3Hj33Rv19Vvq6spYafvpj97avVcAKov/1S9enfuBUNjbb7+9ZcuWrVu3ClQXgrmSHDhUd8/9b8vyKMrmj//4T//FC//2+eeHWlubRTntuKNOAKrafVdd15cSQrwpFPaFLwwfOXLoK185JhS29T2U9KIRzJXklh3yX3nP8vfe+su/fTO2/c63du6jOKF21b9HqF8EZFG9Uf+3FNXqwxgzAAAKIZgBAFAIwQwAgEIIZgAAFEIwAwCgEIIZAACFEMwAACiEYAYAQCEEMwAACiGYAQBQCMEMAIBCCGYAABRCMAMAoBCCGQAAhRDMAAAohGAGAEAhBDMAAAohmAEAUAjBDACAQghmAAAUQjADAKAQghkAAIUQzAAAKIRgBgBAIQQzAAAKIZgBAFAIwQwAgELqBSDEY4/11te/J5EQ169fTyQSQ0OBrVvrt2wR77zz7uLivxUA1PDJTz7z7rs3tmypu3Ej8e677/7hH/63//pf/4dcfuPGjX373v/yy6cFKh/BDM3tt9929eoPjcd1dXW/+MUvU8t3CADK+OAHG5eWvrNli9bZKYvq9etvX7/+t/LxrbduP3bMK1AV6MqG5oEHPiwLee7yT32qQwBQxpNPfur9778zd/muXXd85jOfEKgKBDM0x4/37NmzM2vhnj27nnnmCQFAGY888lBDw56shbfddmtf32cFqgXBDI3LdVdb2/1ZjeajR399x45tAoBKnnnm2J133m5e0ti4u6urQ6BaEMxIko3mffven37a0LD76ad7BADFPProQ83N+9NPt2+/5YknPilQRQhmJN19911u90eNx1u3bvF6D+/YsV0AUM9TT31aDiobj+WQc3f3YwJVhGBGxlNPfWbv3l3ywZ133valL31OAFDSI4886HI1ygfbtr1PhrRAdSGYkSH7xx54oFU+6O5+fPt2RpcBdT355KfvuONWOfzU08Nk7GpTSfcxv/6TxOt/I1BWX/jUU7G/rPuN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" alt="Mermaid 다이어그램" loading="lazy"></figure>
+<h2 id="5-1-23mm">5. 자침 깊이 계산표 (1푼 = 2.3mm)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">문헌</th>
+<th style="text-align: center;">천추 푼수</th>
+<th style="text-align: center;">천추 mm</th>
+<th style="text-align: center;">관원 푼수</th>
+<th style="text-align: center;">관원 mm</th>
+<th style="text-align: left;">도달 Layer(성인 추정)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">《黄帝明堂经》(황룡상 감수)</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">11.5</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;"><strong>46.0</strong></td>
+<td style="text-align: left;">천추 L1~L2 / 관원 <strong>L5 이상(복막 관통 가능)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">《针灸甲乙经》</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">11.5</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">46.0</td>
+<td style="text-align: left;">동일</td>
+</tr>
+<tr>
+<td style="text-align: left;">《针灸经验方》</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">11.5</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">18.4</td>
+<td style="text-align: left;">천추 L1~L2 / 관원 L1~L2</td>
+</tr>
+<tr>
+<td style="text-align: left;">《东医宝鉴》(동인 인용)</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">18.4</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">18.4</td>
+<td style="text-align: left;">L2~L3</td>
+</tr>
+<tr>
+<td style="text-align: left;">공통교재</td>
+<td style="text-align: center;">10~15(현대 촌)</td>
+<td style="text-align: center;">체형 비례</td>
+<td style="text-align: center;">10~15(현대 촌)</td>
+<td style="text-align: center;">체형 비례</td>
+<td style="text-align: left;">1~1.5 B-cun ≈ 24~45mm</td>
+</tr>
+<tr>
+<td style="text-align: left;">《针灸腧穴通考》 현대 권장</td>
+<td style="text-align: center;">0.8~1.2촌</td>
+<td style="text-align: center;">체형 비례</td>
+<td style="text-align: center;">1~1.5촌</td>
+<td style="text-align: center;">체형 비례</td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>자침깊이 DB에 '0'(금침)은 없다. 다만 천추에는 《千金》의 "不可针·勿针·忌针" 기록이 있고, 관원에는 임신 시 금침 기록이 있다(DB 미반영, 원전 확인).</li>
+<li><strong>참고 실측</strong>: 상복부 정중선 CV12의 초음파 허용 자침 깊이(ANIR)는 성인 83명 평균 <strong>25.3 ± 10.2mm</strong>였다(papers.id 1444, DOI 10.3390/healthcare10091707). 관원은 같은 정중선이고 활꼴선 아래라 뒤층이 없으므로, 비만하지 않은 성인에서 46mm는 복막을 넘을 가능성이 높다. 천추는 배곧은근이 더해져 CV12보다 두꺼울 것으로 추정되지만, 경혈 특이 실측은 없다.</li>
+<li><strong>[해석·교차 참조]</strong> 《명당경》 관원 "刺入二寸"은 복강 내 막 층위를 겨냥한 고전 심자법일 가능성이 있다. 이는 황룡상의 '기병치막(器病治膜)·장침모자법' 고증과 맞물리는 부분이다. 그러나 현대 임상 심도로 쓸 수는 없다.</li>
+</ul>
+<h2 id="6">6. 해부학 구조 교재 비교표</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">혈</th>
+<th style="text-align: left;">구분</th>
+<th style="text-align: left;">공통교재</th>
+<th style="text-align: left;">김재효 교재</th>
+<th style="text-align: left;">판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">근육</td>
+<td style="text-align: left;">배곧은근</td>
+<td style="text-align: left;">배바깥빗근·배속빗근·배곧은근·배가로근</td>
+<td style="text-align: left;">일치(김재효가 상위 집합)</td>
+</tr>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">신경</td>
+<td style="text-align: left;">갈비사이신경</td>
+<td style="text-align: left;">제9~11 갈비사이신경 + 앞피부가지</td>
+<td style="text-align: left;">일치(김재효가 분절 명시)</td>
+</tr>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">혈관</td>
+<td style="text-align: left;">위배벽동·정맥</td>
+<td style="text-align: left;">위배벽동·정맥 + 얕은배벽동·정맥</td>
+<td style="text-align: left;">일치(김재효가 표층 추가)</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">근육·근막</td>
+<td style="text-align: left;">백색선·배곧은근집</td>
+<td style="text-align: left;">백색선·배가로근막</td>
+<td style="text-align: left;"><strong>부분 불일치</strong>: 활꼴선 아래에는 배곧은근집 뒤층이 없으므로 깊은 층은 김재효 교재(가로근막)가 해부학적으로 정확</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">신경</td>
+<td style="text-align: left;">엉덩아랫배신경(L1) + 갈비밑신경(T12) 앞피부가지</td>
+<td style="text-align: left;">갈비밑신경(T12) 앞피부가지</td>
+<td style="text-align: left;"><strong>부분 불일치</strong>: L1 포함 여부. 배꼽-치골 3/5 지점은 T12와 L1 피절의 경계 부근이므로 두 기술 모두 가능 범위</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">혈관</td>
+<td style="text-align: left;">얕은·아랫배벽동·정맥</td>
+<td style="text-align: left;">동일</td>
+<td style="text-align: left;">일치</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>추가 지적(B1-01)</strong>: 두 교재 모두 천추의 깊은 혈관을 '위배벽동·정맥'으로만 적었다. 그러나 배꼽 높이는 위배벽동맥과 아랫배벽동맥의 문합부이므로 '위·아랫배벽동·정맥 문합부'로 적는 것이 더 정확하다.</p>
+</blockquote>
+<h2 id="7">7. 공간 변위 분기 추론</h2>
+<ul>
+<li><strong>천추</strong>: Target 1(명당경, 除脐 2촌)과 Target 2(WHO, 脐中 2촌)의 차이는 배꼽 반지름(약 0.5 B-cun)이다. 성인 기준 Δ ≈ 10~15mm로 기준값 15mm 이하이므로 <strong>분기 분석을 하지 않는다.</strong> 두 지점은 같은 배곧은근 근복 위에 있고 피절(T10)도 같다.</li>
+<li><strong>관원</strong>: 고금 정위가 모두 "脐下三寸"이므로 Δ ≈ 0, 분기 불필요.</li>
+</ul>
+<h2 id="8">8. 생의학적 반사 기전과 외부 검색 로그</h2>
+<h3 id="8-1">8-1. 질의의 핵심: 분절 정합 분석</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">표적</th>
+<th style="text-align: left;">내장 구심·자율 분절(B1-03)</th>
+<th style="text-align: left;">연관통 체표 구역(B3-01·B3-02)</th>
+<th style="text-align: center;">천추(T10)와의 정합</th>
+<th style="text-align: center;">관원(T12~L1)과의 정합</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">소장(중장)</td>
+<td style="text-align: left;">교감 T8~T11</td>
+<td style="text-align: left;">배꼽 주위(T10)</td>
+<td style="text-align: center;"><strong>정합</strong></td>
+<td style="text-align: center;">부분</td>
+</tr>
+<tr>
+<td style="text-align: left;">근위 대장: 맹장~횡행결장 근위 2/3(중장)</td>
+<td style="text-align: left;">교감 T10~T12, 미주신경</td>
+<td style="text-align: left;">배꼽 주위</td>
+<td style="text-align: center;"><strong>정합</strong></td>
+<td style="text-align: center;">부분</td>
+</tr>
+<tr>
+<td style="text-align: left;">원위 대장: 횡행결장 원위~직장(후장)</td>
+<td style="text-align: left;">교감 L1~L2, 부교감 S2~S4</td>
+<td style="text-align: left;">치골상부(하복부)</td>
+<td style="text-align: center;">불일치</td>
+<td style="text-align: center;"><strong>정합</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">방광</td>
+<td style="text-align: left;">교감 T11~L2, 부교감 S2~S4</td>
+<td style="text-align: left;">치골상부</td>
+<td style="text-align: center;">불일치</td>
+<td style="text-align: center;"><strong>정합</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">자궁</td>
+<td style="text-align: left;">교감 T10~L1</td>
+<td style="text-align: left;">하복부·요천부</td>
+<td style="text-align: center;">부분</td>
+<td style="text-align: center;"><strong>정합</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">고환(산증 방사통 표적)</td>
+<td style="text-align: left;">T10~T11(고환은 발생상 높은 분절)</td>
+<td style="text-align: left;">서혜부·음낭</td>
+<td style="text-align: center;">부분</td>
+<td style="text-align: center;">부분</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="diagram diagram-mermaid"><img src="data:image/png;base64,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" alt="Mermaid 다이어그램" loading="lazy"></figure>
+<p><strong>판독</strong>:
+- 천추는 소장과 근위 대장의 분절 모두와 겹친다. 분절로 보면 '대장 모혈'이 아니라 '중장 모혈'이다.
+- 관원은 원위 대장·방광·자궁의 분절과 겹치고, 소장 분절과는 1~3분절 떨어져 있다.
+- 따라서 분절 지도로는 오히려 "천추 = 소장·근위 대장, 관원 = 원위 대장·골반 장기"가 된다. 질의자의 지적은 해부학적으로 정확하다.
+- 이 불일치는 <strong>모혈 귀속이 분절 원리로 정해지지 않았다</strong>는 문헌적 사실과 함께 보아야 해소된다. 황룡상의 고증에 따르면, 모혈은 장부의 막이 매달린 '원(原)'으로서 삼초 구획(중초 = 배꼽 옆, 하초 = 배꼽 아래)에 따라 배치되었다.
+- <strong>[해석·B1]</strong> 고전 '소장병'의 핵심 증후는 "小腹痛，腰脊控睾而痛"(《영추·邪气藏府病形》)이다. 송대 이후 산증이 '小肠气'로 불린 것도 같은 맥락이다. 이는 서혜부 탈장 주머니에 소장 고리가 실제로 들어가는 해부학적 사실과 맞는다. 관원(하복부, T12~L1)이 '소장병'을 치료한다는 귀속은, 병증이 나타나는 자리(하복·서혜·고환)와 일치한다는 점에서 해부학적 근거가 있다.</p>
+<h3 id="8-2-layer-a-rank-6-2026-10-12">8-2. Layer A 주요 논문 (Rank 6, 2026-10-12)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: center;">papers.id</th>
+<th style="text-align: center;">PMID</th>
+<th style="text-align: left;">대상·설계</th>
+<th style="text-align: left;">핵심 결과</th>
+<th style="text-align: left;">분절 쟁점과의 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">40854853</td>
+<td style="text-align: left;">마우스 DSS 대장염, 양측 ST25 전침 2mA·10Hz</td>
+<td style="text-align: left;">원위 대장 ACh 증가, NE 무변화. SMG·IMG 교감 뉴런 c-Fos 무변화, 골반신경절 콜린성 뉴런 c-Fos 증가</td>
+<td style="text-align: left;"><strong>천추의 원위 대장 효과가 T10 분절 교감이 아닌 천수 부교감을 거침</strong> → 단순 분절 모델 반증</td>
+</tr>
+<tr>
+<td style="text-align: center;">2009</td>
+<td style="text-align: center;">40763037</td>
+<td style="text-align: left;">수술 후 장폐색 동물, ST25 전침</td>
+<td style="text-align: left;">복강 교감 과활성 억제, NE-α2 수용체 경로로 장운동 개선. 교감신경절제가 효과 모사</td>
+<td style="text-align: left;">교감(분절성) 경로 관여</td>
+</tr>
+<tr>
+<td style="text-align: center;">2018</td>
+<td style="text-align: center;">42343522</td>
+<td style="text-align: left;">감염 후 IBS 쥐, ST25+BL25</td>
+<td style="text-align: left;">내장과민 감소</td>
+<td style="text-align: left;">모혈·배수혈 배오(단독 아님)</td>
+</tr>
+<tr>
+<td style="text-align: center;">2017</td>
+<td style="text-align: center;">42443084</td>
+<td style="text-align: left;">서행성 변비 쥐, 대장 모혈·배수혈</td>
+<td style="text-align: left;">카할 사이질세포 자가포식 조절</td>
+<td style="text-align: left;">배오</td>
+</tr>
+<tr>
+<td style="text-align: center;">2011</td>
+<td style="text-align: center;">38750560</td>
+<td style="text-align: left;">만성 염증성 내장통 쥐, 뜸</td>
+<td style="text-align: left;">척수 circRNA 네트워크</td>
+<td style="text-align: left;">뜸 자극의 척수 수준 작용</td>
+</tr>
+<tr>
+<td style="text-align: center;">317</td>
+<td style="text-align: center;">34646018</td>
+<td style="text-align: left;">마우스(B3-17)</td>
+<td style="text-align: left;">ST25에는 PROKR2 섬유가 없어 저강도로 미주-부신 축을 구동하지 못함</td>
+<td style="text-align: left;">복부 경혈의 비사지형 기전</td>
+</tr>
+<tr>
+<td style="text-align: center;">2031</td>
+<td style="text-align: center;">41194515</td>
+<td style="text-align: left;">골반염 쥐, CV4 전침 2/100Hz</td>
+<td style="text-align: left;">교감 활성(TH)·신경염증 억제로 통증 완화</td>
+<td style="text-align: left;">관원-골반 장기 분절(T11~L2) 정합</td>
+</tr>
+<tr>
+<td style="text-align: center;">2052</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">노년 여성 복압성 요실금 31례(비대조), 침+뜸</td>
+<td style="text-align: left;">임상 개선 보고</td>
+<td style="text-align: left;">관원-방광, 인체 간접</td>
+</tr>
+<tr>
+<td style="text-align: center;">2036</td>
+<td style="text-align: center;">42343515</td>
+<td style="text-align: left;">원발성 월경통 뜸 RCT</td>
+<td style="text-align: left;">임상 효과·경제성</td>
+<td style="text-align: left;">관원-자궁, 인체</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="8-3-b-check-6">8-3. B-Check 6항목 채점표</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">항목</th>
+<th style="text-align: center;">천추(표적: 대장)</th>
+<th style="text-align: left;">근거</th>
+<th style="text-align: center;">관원(표적: 골반 장기)</th>
+<th style="text-align: left;">근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">① 말초 실체</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">B2-09 교재 일치, 경혈 특이 실측 없음</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">B2-09(부분 불일치), 실측 없음</td>
+</tr>
+<tr>
+<td style="text-align: left;">② 분절 정합</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">B1-03·B3-01: T10 ↔ 중장(근위 대장)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">B1-03: T12~L1 ↔ 방광·자궁·후장</td>
+</tr>
+<tr>
+<td style="text-align: left;">③ 구심 섬유</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">B3-16·B3-17(마우스, 강도 의존·PROKR2 부재)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">B3-05(마취 쥐 일반)</td>
+</tr>
+<tr>
+<td style="text-align: left;">④ 중추 경로</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">B3-16 척수-교감, 2023 천수 부교감(동물)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">2031 척수 신경염증(동물)</td>
+</tr>
+<tr>
+<td style="text-align: left;">⑤ 효과 방향</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">2009·2023: 장운동·염증 개선이 대장병 주치와 일치하나 경로가 연구마다 다름(동물)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">2031: 하복통 완화가 주치와 일치(동물)</td>
+</tr>
+<tr>
+<td style="text-align: left;">⑥ 인체 전환</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">수술 후 장기능·소화불량 임상(간접), 자율신경 지표 없음</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">2036 RCT·2052 증례군(간접), 기전 지표 없음</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>합계</strong></td>
+<td style="text-align: center;"><strong>7/12</strong></td>
+<td style="text-align: left;"><strong>부합 기준(≥8) 미달 → "가설"</strong></td>
+<td style="text-align: center;"><strong>7/12</strong></td>
+<td style="text-align: left;"><strong>부합 기준 미달 → "가설"</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="8-4-api-_metadatasync_log">8-4. 외부 API 검색 로그 (<code>_metadata.sync_log</code>)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">일시</th>
+<th style="text-align: center;">경혈</th>
+<th style="text-align: left;">소스</th>
+<th style="text-align: left;">쿼리(요약)</th>
+<th style="text-align: center;">HTTP</th>
+<th style="text-align: center;">수집</th>
+<th style="text-align: left;">비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2026-10-12 15:25:11</td>
+<td style="text-align: center;">ST25</td>
+<td style="text-align: left;">PubMed</td>
+<td style="text-align: left;">ST25/Tianshu/天枢 × acupuncture × nerve·reflex·autonomic + 中国针灸·针刺研究</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-12 15:25:11</td>
+<td style="text-align: center;">ST25</td>
+<td style="text-align: left;">OpenAlex</td>
+<td style="text-align: left;">doi 10.13703·10.13702 + 일반</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-12 15:25:11</td>
+<td style="text-align: center;">ST25</td>
+<td style="text-align: left;">Crossref</td>
+<td style="text-align: left;">Tianshu acupuncture nerve reflex</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-12 15:25:11</td>
+<td style="text-align: center;">ST25</td>
+<td style="text-align: left;">합계</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: left;">신규 20, 기존 병합 9, 배치 중복 11</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-12 15:25:28</td>
+<td style="text-align: center;">CV4</td>
+<td style="text-align: left;">PubMed</td>
+<td style="text-align: left;">CV4/Guanyuan/关元 동일 구조</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-12 15:25:28</td>
+<td style="text-align: center;">CV4</td>
+<td style="text-align: left;">OpenAlex</td>
+<td style="text-align: left;">동일</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-12 15:25:28</td>
+<td style="text-align: center;">CV4</td>
+<td style="text-align: left;">Crossref</td>
+<td style="text-align: left;">Guanyuan acupuncture nerve reflex</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-12 15:25:28</td>
+<td style="text-align: center;">CV4</td>
+<td style="text-align: left;">합계</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: left;">신규 25, 기존 병합 9, 배치 중복 8</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>validate</code> 두 번 모두 OK. 통합 DB는 2,036편(외부 266편)으로 갱신되었다.</p>
+<h2 id="9-math0-vs">9. 주치증 분리 표 ($P_{single}$ vs 배오)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">혈</th>
+<th style="text-align: left;">단독 주치($P_{single}$, 《명당경》·단독 처방)</th>
+<th style="text-align: left;">배오 파생</th>
+<th style="text-align: left;">현대 확장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">대장병(泄·당제통·장명), 산증, 월경병, 《千金》 단독 뜸(설사·이질·복통)</td>
+<td style="text-align: left;">《脉经》 灸天枢+针关元(척맥 긴·배꼽 아래 통증), 《针经摘英集》 中脘·气海+天枢·气冲·三里(기가 아랫배에서 치밀 때), 1986 소아 소화불량 天枢+中脘</td>
+<td style="text-align: left;">1957 교재 "小儿慢性疾患灸之大有效" → 《通考》 提要 "灸治小儿慢性消化道症状"</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">배뇨장애(胞转不得溺·小便数·溺血), 하복통·산증, 부인 불임, 石水</td>
+<td style="text-align: left;">《金匮》 劳宫+关元(임신 소변불리), 《席弘赋》 气海+关元(칠산), 《针灸大全》 白环俞·太溪·三阴交+关元</td>
+<td style="text-align: left;">《扁鹊心书》 이후 '원기허손' 다량 뜸(도가 단전 개념 혼입 가능), 7판 교재 6계통</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>판정</strong>: 관원의 단독 주치는 처음부터 하복·배뇨·산증·생식 계열이며, 소장 소화 기능과 관련된 단독 주치는 확인되지 않는다. 천추의 소아 소화장애 사용은 단독·뜸 형태로는 1957년 교재가 처음이고, 그 이전 층차에서는 확인되지 않는다.</p>
+<h2 id="10-ari-v30">10. ARI v3.0 프로파일 평가표 및 최종 결론</h2>
+<h3 id="10-1-1-2">10-1. 이중 채점 (채점 1: 분석자, 채점 2: 근거 패키지만 받은 독립 에이전트)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">혈</th>
+<th style="text-align: left;">항목</th>
+<th style="text-align: center;">채점 1</th>
+<th style="text-align: center;">채점 2</th>
+<th style="text-align: center;">차이</th>
+<th style="text-align: center;">조정 후</th>
+<th style="text-align: left;">근거 포인터</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">S_orig ① 최초 기술</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: left;">《명당경》 위치·심도 명시, '脐' 기준 모호</td>
+</tr>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">S_orig ② 후대 일치율</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: left;">脐旁二寸 계열 약 69~80%</td>
+</tr>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">S_orig ③ 이명 해소</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: left;">KJH DB, 魂舍·长谷 분리</td>
+</tr>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">S_orig ④ 통고 교정</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;"><strong>25</strong></td>
+<td style="text-align: center;"><strong>100</strong></td>
+<td style="text-align: left;">황룡상이 除脐 2촌으로 정위 난립을 완전히 교정</td>
+</tr>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;"><strong>S_orig 평균</strong></td>
+<td style="text-align: center;">75.0</td>
+<td style="text-align: center;">81.25</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>81.25</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">S_clarity</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: left;">두 교재 상충 없음(김재효가 상위 집합), B1-03, 실측 없음</td>
+</tr>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">S_reflex</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">B-Check 7/12, 동물 다수 + 인체 임상 간접</td>
+</tr>
+<tr>
+<td style="text-align: left;">ST25</td>
+<td style="text-align: left;">S_safety(SI)</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: left;">현대 1~1.5촌 직자 시 복막까지 10mm 이내 가능, 《千金》 不可针</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">S_orig ①</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">《영추·寒热病》 위치 + 《명당경》 심도</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">S_orig ②</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">거의 전 문헌 脐下三寸</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">S_orig ③</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: left;">丹田·下肓 공유, 阑门 오기</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">S_orig ④</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;"><strong>25</strong></td>
+<td style="text-align: center;"><strong>100</strong></td>
+<td style="text-align: left;">정위 관련 전사 오류 없음, 이명·灸量 오류는 황룡상이 완전히 교정</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;"><strong>S_orig 평균</strong></td>
+<td style="text-align: center;">93.75</td>
+<td style="text-align: center;">87.5</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>93.75</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">S_clarity</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;"><strong>25</strong></td>
+<td style="text-align: center;"><strong>50</strong></td>
+<td style="text-align: left;">두 교재가 깊은 층(배곧은근집 vs 배가로근막)과 신경(L1 포함 여부)에서 서로 다른 구조를 지목한다. 활꼴선·피절 경계라는 B1 추론으로 조정해야 하므로 루브릭 50 단계에 해당</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">S_reflex</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">B-Check 7/12</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4</td>
+<td style="text-align: left;">S_safety(SI)</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: left;">《명당경》 46mm, 정중선 복막·충만 방광, 임신 금침</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>조정 메모</strong>: 세 항목의 차이는 모두 루브릭 문구를 해석하는 방식의 차이였다. ④는 "완전 교정"을 정위 오류 기준으로 읽어 두 혈 모두 100으로 맞추었다. CV4 S_clarity는 두 교재가 서로 다른 구조를 기술하고 있어(생략 관계가 아니라 지목 대상의 차이) 50으로 확정했다. 조정 전 ARI-Core 범위는 ST25 68.75~71.25, CV4 67.5~73.75였다.</p>
+<h3 id="10-2-ari-v30">10-2. ARI v3.0 프로파일</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">혈</th>
+<th style="text-align: center;">ARI-Core (0.40/0.35/0.25)</th>
+<th style="text-align: center;">등급</th>
+<th style="text-align: left;">게이트</th>
+<th style="text-align: center;">SI</th>
+<th style="text-align: center;">등가중치 민감도</th>
+<th style="text-align: center;">B-Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ST25 천추</td>
+<td style="text-align: center;">0.40×81.25 + 0.35×75 + 0.25×50 = <strong>71.25</strong></td>
+<td style="text-align: center;"><strong>B (개연)</strong></td>
+<td style="text-align: left;">게이트 1·2 미적용, 게이트 3 적용</td>
+<td style="text-align: center;"><strong>25 ⚠</strong></td>
+<td style="text-align: center;">68.75 → <strong>C (가중치 민감)</strong></td>
+<td style="text-align: center;">7/12, 기전 "가설"</td>
+</tr>
+<tr>
+<td style="text-align: left;">CV4 관원</td>
+<td style="text-align: center;">0.40×93.75 + 0.35×50 + 0.25×50 = <strong>67.5</strong></td>
+<td style="text-align: center;"><strong>C (가능·가설)</strong></td>
+<td style="text-align: left;">게이트 1·2 미적용, 게이트 3 적용</td>
+<td style="text-align: center;"><strong>25 ⚠</strong></td>
+<td style="text-align: center;">64.6 → C (등급 불변)</td>
+<td style="text-align: center;">7/12, 기전 "가설"</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>표준 표기</strong>
+- <code>ARI v3.0 | ST25 ARI-Core 71 ± 0 (조정 후, 조정 전 69~71) (B) | SI 25 ⚠ | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 69 (C, 가중치 민감)</code>
+- <code>ARI v3.0 | CV4 ARI-Core 68 ± 0 (조정 후, 조정 전 68~74) (C) | SI 25 ⚠ | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 65 (C, 등급 불변)</code></p>
+<p><strong>민감 항목</strong>: CV4는 S_clarity를 75로 보면 76.25(B)가 되고, B-Check ⑥을 2점으로 보면(RCT를 명시 근거로 인정) S_reflex가 75가 되어 73.75(B)가 된다. ST25는 S_clarity를 50으로 보면 62.5(C)로 내려간다.</p>
+<h3 id="10-3">10-3. 최종 결론</h3>
+<ol>
+<li><strong>두 혈의 위치와 층차 구조는 비교적 분명하다.</strong> 위치는 S_orig 81~94점이다. 천추는 배곧은근 근복 위(T10), 관원은 활꼴선 아래 백색선(T12~L1)이다.</li>
+<li><strong>"모혈 = 해당 부(腑)의 분절 반응점"이라는 가설은 지지되지 않는다.</strong> 분절로는 천추가 중장 전체(소장 + 근위 대장), 관원이 골반 장기(방광·자궁·원위 대장)와 맞는다. 문헌상 모혈 귀속은 삼초 구획과 병증이 나타나는 자리에 따른 것이다.</li>
+<li><strong>반사 기전은 두 혈 모두 "가설" 단계다.</strong> 천추에서는 강도에 따라 분절성 교감 반사(B3-16, papers.id 2009)와 비분절 천수 부교감 경로(papers.id 2023)가 함께 보고되었다. 인체 자율신경 지표 연구가 나와야 B-Check ⑥을 채울 수 있다.</li>
+<li><strong>⚠ 안전</strong>: 관원은 시술 전 배뇨, 임신 확인, 정중선 직자 심도를 성인 기준 약 25mm 안팎으로 제한해야 한다(CV12 실측 유추). 천추는 마른 체형과 소아에서 복막까지의 여유가 작다. 고전 심도(5푼, 11.5mm)가 오히려 안전 범위에 든다.</li>
+<li><strong>후속 과제</strong>: ST25·CV4 초음파 허용 자침 깊이 실측(소아 포함), B1 교과서의 판·장·쪽 대조, 천추 전침의 인체 자율신경 지표 연구 검색.</li>
+</ol>
+<h2 id="11">11. 강의 질의·답변 검증 결론</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">쟁점</th>
+<th style="text-align: left;">판정</th>
+<th style="text-align: left;">해부·기전 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">질의: "천추 바로 아래는 소장이다"</td>
+<td style="text-align: left;"><strong>타당</strong></td>
+<td style="text-align: left;">배꼽 높이 배곧은근 아래 복강에는 주로 소장 고리와 큰그물막이 있다(B1-01). 횡행결장은 체위에 따라 이 높이를 지난다</td>
+</tr>
+<tr>
+<td style="text-align: left;">질의: "대장 병변 반응은 바깥쪽 배벽에 나타난다"</td>
+<td style="text-align: left;"><strong>부분 타당</strong></td>
+<td style="text-align: left;">상행·하행결장은 옆구리 쪽 후복벽에 붙어 있어 국소 압통이 바깥쪽에 나타날 수 있다. 다만 연관통은 중장 부분이 배꼽 주위, 후장 부분이 치골상부로 간다(B1-03)</td>
+</tr>
+<tr>
+<td style="text-align: left;">질의: "천추 T10은 중장 분절과 겹치고, 관원 T11~12는 원위 대장 쪽에 가깝다"</td>
+<td style="text-align: left;"><strong>타당</strong></td>
+<td style="text-align: left;">8-1 분절 정합표</td>
+</tr>
+<tr>
+<td style="text-align: left;">답변: "관원은 해부학적 소장보다 '소장'이라는 병증 유형을 치료한다"</td>
+<td style="text-align: left;"><strong>타당</strong></td>
+<td style="text-align: left;">관원의 단독 주치(하복·배뇨·산증)는 T12~L1 분절의 골반 장기·서혜부와 정합한다(B-Check ② = 2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">답변: "소장 병증 = 방광의 소변 배출 과정"</td>
+<td style="text-align: left;"><strong>수정 필요</strong></td>
+<td style="text-align: left;">《영추》에서 소변 장애는 삼초병·방광병 조문에 있다. 관원의 배뇨 주치는 방광 분절(T11~L2) 국소 주치로 설명된다</td>
+</tr>
+<tr>
+<td style="text-align: left;">답변: "하복부 산증을 소장 범주로 분류"</td>
+<td style="text-align: left;"><strong>타당</strong></td>
+<td style="text-align: left;">서혜부 탈장의 내용물이 소장이라는 해부 사실, '小肠气' 용어와 일치</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>수정 답변 제안(해부학 관점 보충)</strong></p>
+<blockquote>
+<p>모혈을 신경분절 반응점으로만 보면 천추(T10)는 소장과 근위 대장, 관원(T12~L1)은 원위 대장과 방광·자궁의 분절에 놓입니다. 그래서 '대장모-천추, 소장모-관원'은 분절 지도와 맞지 않습니다. 이 모순은 모혈 귀속이 분절 원리로 정해지지 않았기 때문에 생깁니다.</p>
+<p>고전에서 '소장병'은 아랫배가 아프고 허리와 고환으로 당기는 병, 곧 산증 유형입니다. 서혜부 탈장 주머니에 소장이 실제로 들어간다는 점을 생각하면, 하복부의 관원이 이 병을 맡은 것은 병이 나타나는 자리와 맞습니다. 관원의 배뇨장애 주치는 소장의 기능이 아니라 같은 분절(T11~L2)에 있는 방광에 대한 국소 주치로 이해하는 것이 정확합니다.</p>
+<p>천추의 효과도 분절만으로는 설명되지 않습니다. 동물 실험에서 천추 전침의 대장 효과는 T10 교감신경절이 아니라 천수 부교감 경로를 거치기도 했습니다. 따라서 모혈은 분절 반응점으로 보기보다, 국소 분절 반사와 비분절 경로가 함께 작동하는 복부 자극점으로 보는 것이 현재 근거에 맞습니다.</p>
+</blockquote>
+<hr>
+<h2 id="a-audit">부록 A. 감사 기록 (Audit)</h2>
+<ul>
+<li>Rank 0: <code>sync_skill_settings.py --check</code> → 드리프트 없음(<code>.claude/CLAUDE.md</code> 변경만 표시). 정본 v2.7 적용.</li>
+<li>Rank 6: <code>sync_master_db.py --dry-run</code> 확인 후 실제 반영. ST25·CV4 모두 PubMed·OpenAlex·Crossref HTTP 200, <code>validate</code> OK. 핵심 3편(papers.id 2009·2023·2031)의 초록은 NCBI E-utilities로 원문을 확인했다.</li>
+<li>해부 기술 중 B1(규범 해부) 근거는 일반 해부학 지식으로 적었고, Moore·Gray's의 판·장·쪽은 대조하지 못했다(등록부 규칙 ⑤ 미충족). 분절 범위는 교과서마다 1분절 정도 차이가 날 수 있다.</li>
+<li>ST25·CV4 모두 경혈 특이 영상 실측 논문이 없다. 5절의 mm 추정은 CV12 실측(papers.id 1444)을 유추한 것이다.</li>
+<li>이전 Tier 1 답변(천추·소아) 정정: 0절 6항, 1절, 9절 참조.</li>
+</ul>
+<p class="meta">생성: 2026-10-12 15:34 · 원본: 천추_관원_모혈분절정합성_고증_보고서.md · build_report_html.py (Framework v2.7)</p>
+</article>
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+</body>
+</html>

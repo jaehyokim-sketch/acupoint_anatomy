@@ -1,0 +1,563 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>사총혈·천성십이혈 피어리뷰</title><style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b6470;--line:#d9d5cc;--head:#efebe2;--accent:#8a3b12;--quote:#f3efe6;--code:#f1eee8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181b;--fg:#e6e3dd;--muted:#a3a9b1;--line:#3a3d42;--head:#24272b;--accent:#e0915f;--quote:#1f2226;--code:#1d2024}}
+:root[data-theme="dark"]{--bg:#16181b;--fg:#e6e3dd;--muted:#a3a9b1;--line:#3a3d42;--head:#24272b;--accent:#e0915f;--quote:#1f2226;--code:#1d2024}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.7 "Noto Sans KR","Malgun Gothic","Microsoft YaHei",system-ui,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:32px 16px 64px}
+h1{font-size:1.7rem;line-height:1.35;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:.4em}
+h2{font-size:1.25rem;margin-top:2.4em;border-left:4px solid var(--accent);padding-left:.6em}
+h3{font-size:1.05rem;margin-top:1.6em}
+blockquote{margin:1em 0;padding:.6em 1em;background:var(--quote);border-left:3px solid var(--line);color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top}
+th{background:var(--head);white-space:nowrap}
+pre{background:var(--code);padding:12px;overflow-x:auto;font-size:.8rem;line-height:1.45;border-radius:4px}
+code{font-family:"D2Coding",Consolas,monospace;background:var(--code);padding:0 3px;border-radius:3px}
+pre code{padding:0}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+</style></head><body><main><h1>사총혈·천성십이혈 구성원리 논문 타당도 검증 (피어리뷰 보고서)</h1>
+<blockquote>
+<p><strong>대상 논문</strong>: 윤다은, 문희영, 류연희, 채윤병. 〈주요 경혈 구성원리 고찰: 사총혈과 천성십이혈을 중심으로〉. <em>대한한의학회지</em> 45(3):226-233, 2024. https://doi.org/10.13048/jkm.24052 (Review Article)<br />
+<strong>로컬 원문</strong>: <code>학습자료/실험 및 연구 논문/2024_대한한의학회지_윤다은_주요 경혈 구성원리 고찰 - 사총혈과 천성십이혈을 중심으로.pdf</code><br />
+<strong>검증 체계</strong>: 경혈 해부학적 실체 판명 로직 체계 v2.6을 적용함</p>
+<ul>
+<li>Rank 1~3: 3대 원전 직접 대조, 원천 대 재인용 구분, 문헌 층차 정렬</li>
+<li>Rank 4: 노이즈·편향 점검</li>
+<li>Rank 5~6: 해부·신경분절 검증, Layer A·B 대조</li>
+</ul>
+<p><strong>작성일</strong>: 2026-10-03</p>
+</blockquote>
+<hr />
+<h2>0. 종합 판정 요약</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">영역</th>
+<th style="text-align: center;">판정</th>
+<th style="text-align: left;">핵심 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>연구방법</strong></td>
+<td style="text-align: center;"><strong>C (미흡)</strong></td>
+<td style="text-align: left;">검토 대상 문헌의 선정 기준과 검색 범위를 밝히지 않음. 부위별 선혈을 다룬 가부가 여럿인데 4~6종만 골라 검토함. 원리의 1차 연원(《灵枢·终始》, 《小品方》)을 빠뜨림. 원문 인용 오류가 있음</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>결과 1: 질병 부위 → 관련 경맥</strong></td>
+<td style="text-align: center;"><strong>B (대체로 타당)</strong></td>
+<td style="text-align: left;">사총혈 4혈 중 3혈은 경맥 유주로 바로 설명됨. 열결→두항은 유주가 아니라 낙혈·표리 논리가 필요함. 천성십이혈 6쌍 중 2쌍(태충–곤륜, 통리–열결)은 서로 다른 경맥의 짝이라 "같은 경맥 짝" 설명에서 벗어남</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>결과 2: 주슬관절 이하 원위혈</strong></td>
+<td style="text-align: center;"><strong>C+ (반례 존재)</strong></td>
+<td style="text-align: left;"><strong>환도(GB30, 고관절부)</strong>가 천성십일혈·천성십이혈·천금십일혈 모두에 들어 있어 원리의 보편성을 반박함</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>결과 3: 주치 유사성 기반 대표혈</strong></td>
+<td style="text-align: center;"><strong>D (검증 안 됨)</strong></td>
+<td style="text-align: left;">이 원리를 뒷받침하는 자료·분석이 제시되지 않음. 저자들도 "향후 실험적 검증이 필요"하다고 인정함</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>"사총혈 → 천성십이혈 확장" 모형</strong></td>
+<td style="text-align: center;"><strong>D (연대 역전)</strong></td>
+<td style="text-align: left;">천성십일혈(《玉龙经》, 元 1329)이 사총혈 문헌(明 《乾坤生意》·《针灸大全》 1439)보다 앞섬. 확장보다 <strong>압축(천성 → 사총)</strong> 방향이 연대에 맞음</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>결론</strong></td>
+<td style="text-align: center;"><strong>C+ (부분 과잉일반화)</strong></td>
+<td style="text-align: left;">결론의 "가장 효과적인 것으로 추정"이라는 표현은 신중함. 그러나 4~6종 가부만으로 "주요 경혈 구성의 공통 원리"를 일반화했고, 임상 선혈에 도움이 된다는 주장에는 근거가 없음</td>
+</tr>
+</tbody>
+</table>
+<p><strong>한 줄 평가</strong>: 사총혈 계열 가부를 "부위별·원위·대표혈"이라는 총론적 선혈 틀로 정리한 점은 교육적으로 유용하다. 다만 이것은 <strong>가설을 제안한 수준</strong>이다. 1차 원천 대조, 연대 정렬, 반례 처리, 주치 유사성의 정량 검증이 빠져 있어 "공통 구성원리를 밝혔다(revealed)"는 결론의 강도는 근거를 넘어선다.</p>
+<hr />
+<h2>1. 논문 개요</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">항목</th>
+<th style="text-align: left;">내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">목적</td>
+<td style="text-align: left;">361혈 중 주요 경혈이 어떤 원리로 선정되었는지 규명</td>
+</tr>
+<tr>
+<td style="text-align: left;">방법</td>
+<td style="text-align: left;">고전 의서에 근거해 사총혈·육총혈·팔맥교회혈과 천성십일혈·천성십이혈·천금십일혈의 구성을 검토. 방법 기술은 초록의 2문장이 전부임</td>
+</tr>
+<tr>
+<td style="text-align: left;">결과</td>
+<td style="text-align: left;">① 질병 부위와 관련된 경맥의 경혈을 고르며, 주슬관절 이하 원위부에 위치함 ② 주치가 비슷한 경혈 중 대표혈을 고름. 동시에 쓰지 않고 부위에 따라 선택적으로 씀</td>
+</tr>
+<tr>
+<td style="text-align: left;">결론</td>
+<td style="text-align: left;">주요 경혈 구성의 공통 원리를 밝혔으며, 이해하면 적절한 선혈에 도움이 됨</td>
+</tr>
+<tr>
+<td style="text-align: left;">연구 유형</td>
+<td style="text-align: left;">서술적 문헌 고찰(narrative review). 체계적 문헌 고찰이나 정량 분석이 아님</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 원전 대조 스크리닝 (Rank 1·2)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th style="text-align: left;">논문 기술</th>
+<th style="text-align: left;">3대 원전·서지 대조</th>
+<th style="text-align: center;">판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">《四总穴歌》 "肚腹三里留, 腰背委中求, 頭項列缺尋, <strong>面目</strong>合谷收" (각주 2), 본문 "면목"</td>
+<td style="text-align: left;">《徐氏针灸大全》 3:11(《穴位通鉴》 인용), 《针灸腧穴通考》 총론, 《证治通鉴》 모두 "<strong>面口</strong>合谷收" (<code>针灸腧穴通考(上)_1-80.md</code> L2116; <code>中国针灸穴位通鉴(上卷)_801-880.md</code> L3618)</td>
+<td style="text-align: center;"><strong>인용 오류</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">사총혈은 明 《乾坤生意》 이후 徐凤 《针灸大全》 《四总穴歌》</td>
+<td style="text-align: left;">《乾坤生意》 明·朱权, 《针灸大全》 明·徐凤 1439 (《证治通鉴》 인용서목)</td>
+<td style="text-align: center;">타당</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">천성십일혈은 元 王国瑞 《扁鹊神应针灸玉龙经》, 태충 불포함</td>
+<td style="text-align: left;">《扁鹊神应针灸玉龙经》 元·王国瑞 1329 (《穴位通鉴》 인용서목). 《证治通鉴》 L158 "已上穴諸見前天星十一穴內"</td>
+<td style="text-align: center;">타당</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">천성십이혈은 "명대 『침구대성』의 마단양 《천성십이혈치잡병가》" → 이어서 "서봉 『침구대전』의 《마단양천성십이혈병치잡병가》"</td>
+<td style="text-align: left;">《针灸大全》 1439가 초출이고 《针灸大成》 1601은 전재. 《穴位通鉴》은 《秘传常山杨敬斋针灸全书》·《针灸大成》 등도 인용</td>
+<td style="text-align: center;"><strong>서술 순서 혼선</strong> (초출서를 명확히 해야 함)</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">천금십일혈은 실제 10혈 (승산·통리 없음, 후계 있음)</td>
+<td style="text-align: left;">각주 6 원문 "三里內庭…委中崑崙…後谿幷列缺…還跳與陽陵" = 10혈. 《通考》·《穴位通鉴》에 "曲池與合谷, 頭面病可徹", "委中、崑崙治腰背痛相連" 확인</td>
+<td style="text-align: center;">타당</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Table 1 구성 (13혈 × 4개 가부)</td>
+<td style="text-align: left;">각주 4~6의 원문과 대조한 결과 일치</td>
+<td style="text-align: center;">타당</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">"수궐음심포경의 <strong>대릉(PC6)</strong>"</td>
+<td style="text-align: left;">대릉은 <strong>PC7</strong>. PC6은 내관</td>
+<td style="text-align: center;"><strong>경혈코드 오류</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">원위 취혈 원리를 《의학입문》(明 1575)에서 끌어옴</td>
+<td style="text-align: left;">1차 연원은 더 이르다. 《灵枢·终始》 "從腰以上者, 手太陰陽明皆主之; 從腰以下者, 足太陰陽明皆主之", 《小品方》(인 《曹氏灸经》) "頭病皆灸手臂穴; 心腹病皆灸脛足穴". 《证治通鉴》 按語: "《四總穴歌》…即是對上述兩條取穴原則的具體闡述" (<code>中国针灸证治通鉴_81-160.md</code> L2626-2632)</td>
+<td style="text-align: center;"><strong>1차 원천 누락</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">부위별 대표혈 가부로 사총혈·천성 계열만 검토</td>
+<td style="text-align: left;">《通考》는 같은 "작용 부위 개괄" 사례로 《四总穴歌》와 함께 《通玄指要赋》("心胸病求掌後之大陵; 肩背患責肘前之三里…頭項痛擬後溪"), 《肘后歌》 등을 나란히 듦</td>
+<td style="text-align: center;"><strong>선정 편향 가능성</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">사총혈의 "삼리" = 족삼리</td>
+<td style="text-align: left;">《穴位通鉴》(手三里 조)에 "'肚腹三里留', 皆不專指'足三里'也"라는 이견이 수록됨</td>
+<td style="text-align: center;">이견 미언급 (소수설이나 각주 처리 권장)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 원천 대 재인용 및 연대 정렬 (Rank 3)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">연대</th>
+<th style="text-align: left;">문헌</th>
+<th style="text-align: left;">관련 내용</th>
+<th style="text-align: center;">원천/재인용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">선진·한</td>
+<td style="text-align: left;">《灵枢·终始》</td>
+<td style="text-align: left;">허리 위는 手太陰·陽明, 허리 아래는 足太陰·陽明이 주관 (원위 상하 대응)</td>
+<td style="text-align: center;">1차</td>
+</tr>
+<tr>
+<td style="text-align: left;">東晉~南北朝</td>
+<td style="text-align: left;">《小品方》(인 《曹氏灸经》)</td>
+<td style="text-align: left;">머리 병은 팔 혈, 심복 병은 정강이·발 혈</td>
+<td style="text-align: center;">1차</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>元 1329</strong></td>
+<td style="text-align: left;">《扁鹊神应针灸玉龙经》 《天星十一穴歌诀》</td>
+<td style="text-align: left;">11혈 (태충 없음)</td>
+<td style="text-align: center;"><strong>1차 (가장 이른 주요혈 가부)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">明初</td>
+<td style="text-align: left;">朱权 《乾坤生意》</td>
+<td style="text-align: left;">사총혈 초견 (논문 기술)</td>
+<td style="text-align: center;">1차</td>
+</tr>
+<tr>
+<td style="text-align: left;">明 1439</td>
+<td style="text-align: left;">徐凤 《针灸大全》</td>
+<td style="text-align: left;">《四总穴歌》, 《千金十一穴歌》, 《马丹阳天星十二穴并治杂病歌》(태충 추가)</td>
+<td style="text-align: center;">1차·정리</td>
+</tr>
+<tr>
+<td style="text-align: left;">明 1529</td>
+<td style="text-align: left;">高武 《针灸聚英》</td>
+<td style="text-align: left;">계승</td>
+<td style="text-align: center;">재인용</td>
+</tr>
+<tr>
+<td style="text-align: left;">明 1575</td>
+<td style="text-align: left;">李梴 《医学入门》</td>
+<td style="text-align: left;">360혈 → 66혈 → 8혈 총결, "百病一鍼爲率, 多則四鍼"</td>
+<td style="text-align: center;">재해석</td>
+</tr>
+<tr>
+<td style="text-align: left;">明 1601</td>
+<td style="text-align: left;">杨继洲 《针灸大成》</td>
+<td style="text-align: left;">천성십이혈 전재</td>
+<td style="text-align: center;">재인용</td>
+</tr>
+<tr>
+<td style="text-align: left;">清 1742</td>
+<td style="text-align: left;">《医宗金鉴》</td>
+<td style="text-align: left;">팔맥교회 배합 부위</td>
+<td style="text-align: center;">재해석</td>
+</tr>
+</tbody>
+</table>
+<p><strong>연대 정렬 결과</strong>: 논문은 사총혈을 "단순 모형", 천성십이혈을 사총혈이 "확장된 버전"으로 설명한다(p.229). 그러나 현존 문헌의 순서는 <strong>천성십일혈(1329) → 사총혈(明初~1439)</strong>이다. 따라서 사총혈은 천성 계열을 <strong>압축·요약</strong>한 형태로 보는 편이 연대에 맞는다. 논문 자신도 3절에서 "족삼리와 내정은 비슷한 주치 작용을 가지니 족삼리로 대표"라는 압축 논리를 쓰고 있어, 이를 "확장"이라는 틀로 설명한 것과 내적으로 충돌한다.</p>
+<hr />
+<h2>4. 결과별 타당도 검증</h2>
+<h3>4.1 원리 ①: 질병 부위 → 관련 경맥의 경혈</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">가부</th>
+<th style="text-align: left;">혈 (짝)</th>
+<th style="text-align: left;">주치 부위</th>
+<th style="text-align: center;">경맥 유주로 설명되는가</th>
+<th style="text-align: left;">비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">사총혈</td>
+<td style="text-align: left;">족삼리 ST36</td>
+<td style="text-align: left;">肚腹</td>
+<td style="text-align: center;">예</td>
+<td style="text-align: left;">족양명이 복부를 지남</td>
+</tr>
+<tr>
+<td style="text-align: left;">사총혈</td>
+<td style="text-align: left;">위중 BL40</td>
+<td style="text-align: left;">腰背</td>
+<td style="text-align: center;">예</td>
+<td style="text-align: left;">족태양이 배요부를 지남</td>
+</tr>
+<tr>
+<td style="text-align: left;">사총혈</td>
+<td style="text-align: left;">열결 LU7</td>
+<td style="text-align: left;">頭項</td>
+<td style="text-align: center;"><strong>아니오</strong></td>
+<td style="text-align: left;">수태음 본경은 두항에 이르지 않음. 낙혈로 수양명에 통하는 논리(표리·낙맥)가 필요함</td>
+</tr>
+<tr>
+<td style="text-align: left;">사총혈</td>
+<td style="text-align: left;">합곡 LI4</td>
+<td style="text-align: left;">面口</td>
+<td style="text-align: center;">예</td>
+<td style="text-align: left;">수양명이 얼굴·입을 지남</td>
+</tr>
+<tr>
+<td style="text-align: left;">천성12</td>
+<td style="text-align: left;">족삼리–내정</td>
+<td style="text-align: left;">복부</td>
+<td style="text-align: center;">예 (같은 경맥 짝)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">천성12</td>
+<td style="text-align: left;">곡지–합곡</td>
+<td style="text-align: left;">두면</td>
+<td style="text-align: center;">예 (같은 경맥 짝)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">천성12</td>
+<td style="text-align: left;">위중–승산</td>
+<td style="text-align: left;">요배·하지</td>
+<td style="text-align: center;">예 (같은 경맥 짝)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">천성12</td>
+<td style="text-align: left;">환도–양릉천</td>
+<td style="text-align: left;">측면</td>
+<td style="text-align: center;">예 (같은 경맥 짝)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">천성12</td>
+<td style="text-align: left;"><strong>태충–곤륜</strong></td>
+<td style="text-align: left;">머리·눈 / 요배·하지</td>
+<td style="text-align: center;"><strong>다른 경맥 짝</strong> (LR+BL)</td>
+<td style="text-align: left;">4개 사총혈에 짝을 하나씩 붙이고 측면 쌍을 더했다는 확장 모형으로 설명되지 않는 쌍</td>
+</tr>
+<tr>
+<td style="text-align: left;">천성12</td>
+<td style="text-align: left;"><strong>통리–열결</strong></td>
+<td style="text-align: left;">심흉 / 폐·인후</td>
+<td style="text-align: center;"><strong>다른 경맥 짝</strong> (HT+LU)</td>
+<td style="text-align: left;">천금십일혈은 대신 "후계–열결"을 짝지음</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>판정</strong>: 혈 단위로 보면 원리 ①은 대체로 맞는다(13혈 중 12혈은 본경 유주로 설명 가능).</li>
+<li>그러나 <strong>"짝짓기" 수준의 설명은 6쌍 중 4쌍에만 맞는다.</strong></li>
+<li>본문(p.229)은 천금십일혈의 짝(위중–곤륜, 후계–열결)으로, Fig.1B는 천성십이혈의 짝(위중–승산, 곤륜–태충, 열결–통리)으로 설명한다. <strong>서로 다른 가부의 짝을 섞어 쓴 셈</strong>이다.</li>
+</ul>
+<h3>4.2 원리 ②: 주슬관절 이하 원위혈</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">혈</th>
+<th style="text-align: left;">위치</th>
+<th style="text-align: center;">주슬관절 이하인가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ST36, ST44, LI4, LU7, BL57, BL60, HT5, LR3, SI3, GB34</td>
+<td style="text-align: left;">아래팔·손, 종아리·발</td>
+<td style="text-align: center;">예</td>
+</tr>
+<tr>
+<td style="text-align: left;">LI11 곡지, BL40 위중</td>
+<td style="text-align: left;">팔꿈치·무릎 높이 (합혈)</td>
+<td style="text-align: center;">경계 (오수혈 체계상 "이하"에 포함 가능)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GB30 환도</strong></td>
+<td style="text-align: left;"><strong>볼기부, 고관절 부위</strong></td>
+<td style="text-align: center;"><strong>아니오</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>판정</strong>: 환도는 천성십일혈·천성십이혈·천금십일혈 세 가부에 <strong>모두</strong> 들어 있다. 그런데도 논문은 "주슬관절 이하 원위부에서 선정하였다"를 공통 원리로 제시하면서 <strong>환도 반례를 다루지 않았다.</strong></li>
+<li>원리 ②는 "대부분(12/13)"이라는 경향으로 낮추어 서술해야 한다.</li>
+<li>또한 《医学入门》의 "360 → 66 → 8" 총결론과 사총혈을 연결한 부분은 유비(類比)이며, 구성 근거로서 입증된 것은 아니다.</li>
+</ul>
+<h3>4.3 원리 ③: 주치 유사성 기반 대표혈</h3>
+<ul>
+<li>논문은 족양명경 원위혈(ST36·37·39·41·43·44·45)과 수양명경 원위혈(LI1~5, LI11) 가운데 "대표성이 있는 것"을 골랐다고 서술한다.</li>
+<li>그러나 <strong>대표성을 판정하는 기준·자료·분석이 제시되지 않았다.</strong></li>
+<li>원혈 주치 유사도 군집 연구(참고문헌 12, Jung 2015)를 인용했지만, 사총혈·천성혈과 같은 경맥의 다른 혈을 비교한 분석은 아니다.</li>
+<li>근거로 든 예시에도 <strong>코드 오류(대릉 PC6 → PC7)</strong>가 있다.</li>
+<li><strong>판정</strong>: 검증되지 않은 가설이다. 저자들 스스로 "가장 효과적인 경혈인지 향후 실험적으로 검증이 필요"하다고 밝혔다.</li>
+</ul>
+<hr />
+<h2>5. 해부·신경분절 검증 (Rank 5·6: Layer A·B)</h2>
+<p>논문은 "원위 취혈"을 하나의 원리로 묶었다. 신경분절로 보면 사총혈 4혈의 작용 경로는 <strong>분절성</strong>과 <strong>비분절성(상위중추 경유)</strong>으로 갈린다. 아래 표에서 신경 지배는 김재효 데이터셋과 공통교재 데이터셋을 따랐고, 척수 분절은 일반 해부학 지식(Layer B)이다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">혈</th>
+<th style="text-align: left;">지배 신경 (김재효 / 공통교재)</th>
+<th style="text-align: center;">혈 위치의 분절</th>
+<th style="text-align: left;">표적 부위의 분절·신경</th>
+<th style="text-align: left;">관계</th>
+<th style="text-align: center;">마스터 DB 역색인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ST36 족삼리</td>
+<td style="text-align: left;">가쪽장딴지피부신경, 깊은종아리신경</td>
+<td style="text-align: center;">L4-S1</td>
+<td style="text-align: left;">복부 내장 (교감 T5-L2, 미주신경)</td>
+<td style="text-align: left;"><strong>비분절</strong> (상위중추·미주 경로)</td>
+<td style="text-align: center;">102편</td>
+</tr>
+<tr>
+<td style="text-align: left;">BL40 위중</td>
+<td style="text-align: left;">뒤넙다리피부신경, 정강신경</td>
+<td style="text-align: center;">L4-S3</td>
+<td style="text-align: left;">허리·등 (요천추 L1-S1 포함)</td>
+<td style="text-align: left;"><strong>부분 분절 중첩</strong></td>
+<td style="text-align: center;">27편</td>
+</tr>
+<tr>
+<td style="text-align: left;">LU7 열결</td>
+<td style="text-align: left;">가쪽아래팔피부신경, 노신경 얕은가지</td>
+<td style="text-align: center;">C5-C7</td>
+<td style="text-align: left;">목 (C2-C6), 머리 (삼차신경·C2-C3)</td>
+<td style="text-align: left;"><strong>부분 중첩</strong> (아래 목)</td>
+<td style="text-align: center;">5편</td>
+</tr>
+<tr>
+<td style="text-align: left;">LI4 합곡</td>
+<td style="text-align: left;">등쪽손가락신경(노신경), 자신경 깊은가지</td>
+<td style="text-align: center;">C6-T1</td>
+<td style="text-align: left;">얼굴·입 (삼차신경 V2·V3)</td>
+<td style="text-align: left;"><strong>비분절</strong> (가설: 손–얼굴 피질 체성지도의 인접성, DNIC)</td>
+<td style="text-align: center;">71편</td>
+</tr>
+<tr>
+<td style="text-align: left;">GB30 환도</td>
+<td style="text-align: left;">위·아래엉덩피부신경, 궁둥신경</td>
+<td style="text-align: center;">L4-S3</td>
+<td style="text-align: left;">슬전·액협 (주치 기술)</td>
+<td style="text-align: left;">국소·분절</td>
+<td style="text-align: center;">8편</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Layer A (확인된 실측 근거)</strong><br />
+- ST36: Liu S <em>et al.</em> (2021). 생쥐 뒷다리 ST36 저강도 전침이 PROKR2 감각신경을 거쳐 미주–부신 축을 구동했다. 복부 ST25에서는 같은 효과가 나지 않았다. <em>Nature</em> 598:641-645. PMID 34646018, <a href="https://doi.org/10.1038/s41586-021-04001-4">doi:10.1038/s41586-021-04001-4</a>. (PubMed 확인)<br />
+  - 이 결과는 "원위혈이 근위혈과 다른 경로를 구동한다"는 논문의 원리 ②에 <strong>부분적인 생리학적 근거</strong>가 된다.<br />
+  - 다만 동물 실험이고, 대상은 족삼리 1혈과 항염증 표현형에 한정된다.<br />
+- 체성-자율신경 반사의 부위 특이성: Sato A, Sato Y, Schmidt RF (1997). <em>Rev Physiol Biochem Pharmacol</em> 130:1-328. PMID 9019119. (PubMed 확인)<br />
+  - ※ 마스터 DB의 ST36 항목은 이 문헌을 "<em>Physiol Rev</em> 1997, PMID 9234958"로 기재하고 있으나, 해당 PMID는 바이러스학 논문이다. <strong>DB 정정이 필요하다</strong> (DB는 수정하지 않음).<br />
+- LU7·SI3·ST44는 역색인 논문이 5편 이하라 근거가 희박하다.</p>
+<p><strong>종합</strong><br />
+- 논문의 "원위 취혈"은 해부학적으로 <strong>분절성 근거(위중·열결)</strong>와 <strong>비분절성 근거(족삼리·합곡)</strong>가 섞인 범주다.<br />
+- 따라서 "원위"라는 위치 기준만으로는 <strong>작용 기전을 하나로 설명할 수 없다.</strong><br />
+- 논문의 2개 원리를 통합 원리로 내세우려면 이 이질성을 언급해야 한다. 이것이 논문 범위 밖의 요구라는 점은 인정한다.</p>
+<hr />
+<h2>6. 결론 타당도</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">결론 문장</th>
+<th style="text-align: center;">근거 충족도</th>
+<th style="text-align: left;">평가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">"주요 경혈 구성의 공통 원리를 밝혔다(revealed)"</td>
+<td style="text-align: center;">낮음</td>
+<td style="text-align: left;">표본이 4~6종 가부이고, 반례(환도, 다른 경맥 짝)를 처리하지 않았으며, 다른 부위별 가부(《通玄指要赋》 등)를 검토하지 않음. "제안했다(proposed)"가 적절함. 본문 4절 첫머리는 실제로 "다음과 같이 제안한다"라고 씀</td>
+</tr>
+<tr>
+<td style="text-align: left;">"질병 부위를 유주하는 경맥 상 주슬관절 이하 원위혈 중 대표혈 선정"</td>
+<td style="text-align: center;">중간</td>
+<td style="text-align: left;">혈 단위 경향으로는 맞지만 보편 원리로는 반례가 있음</td>
+</tr>
+<tr>
+<td style="text-align: left;">"주치 유사성에 기반하여 가장 효과적인 것으로 추정되는 경혈"</td>
+<td style="text-align: center;">낮음</td>
+<td style="text-align: left;">추정 근거가 제시되지 않음 (저자도 인정)</td>
+</tr>
+<tr>
+<td style="text-align: left;">"선혈 원리를 이해하면 효율적·효과적 치료가 가능"</td>
+<td style="text-align: center;">근거 없음</td>
+<td style="text-align: left;">임상 자료가 없는 규범적 주장</td>
+</tr>
+<tr>
+<td style="text-align: left;">사총혈·천성십이혈은 "총론적 접근", 질환별 혈은 "각론적 접근"</td>
+<td style="text-align: center;">중간~높음</td>
+<td style="text-align: left;">개념 구분으로 유용하며, 참고문헌 16(Kye &amp; Kim 2020)과도 정합</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>7. 오류·정정 목록</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th style="text-align: left;">위치</th>
+<th style="text-align: left;">원문</th>
+<th style="text-align: left;">정정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">p.227 각주 2, 본문 "면목"</td>
+<td style="text-align: left;">面目合谷收</td>
+<td style="text-align: left;"><strong>面口合谷收</strong> (《针灸大全》)</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">p.229</td>
+<td style="text-align: left;">대릉(PC6)</td>
+<td style="text-align: left;"><strong>대릉(PC7)</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">p.228</td>
+<td style="text-align: left;">천성십이혈이 "명대 『침구대성』"에서 전해짐</td>
+<td style="text-align: left;">초출은 《针灸大全》(1439). 《针灸大成》(1601)은 전재</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">p.229</td>
+<td style="text-align: left;">천성십이혈 = 사총혈의 "확장된 버전"</td>
+<td style="text-align: left;">연대상 천성십일혈(1329)이 앞서므로 "확장"보다 "압축" 관계로 보는 것이 타당</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">p.230 원리 ②</td>
+<td style="text-align: left;">주슬관절 이하 원위부에서 선정</td>
+<td style="text-align: left;"><strong>환도(GB30) 예외</strong>를 명시해야 함</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">p.229 본문 대 Fig.1B</td>
+<td style="text-align: left;">짝 구성이 서로 다름</td>
+<td style="text-align: left;">천금십일혈 짝과 천성십이혈 짝을 구분해서 기술해야 함</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">초록·결론</td>
+<td style="text-align: left;">revealed / 밝혔다</td>
+<td style="text-align: left;">proposed / 제안한다</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">방법</td>
+<td style="text-align: left;">문헌 선정 기준이 기술되지 않음</td>
+<td style="text-align: left;">검토 대상 가부의 선정 기준, 판본, 배제 사유를 명시해야 함</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>8. 보완 제언</h2>
+<ol>
+<li><strong>1차 연원 추가</strong>: 《灵枢·终始》와 《小品方》의 원위 상하 대응 원칙을 원리 ②의 기원으로 제시해야 한다(《证治通鉴》 按語가 이미 둘을 연결함).</li>
+<li><strong>가부 표본 확대</strong>: 《通玄指要赋》, 《肘后歌》, 《杂病穴法歌》 등 부위별 대표혈 가부를 함께 표로 만들어, 원리 ①·②가 얼마나 일관되게 나타나는지 정량화해야 한다(예: 원위혈 비율, 같은 경맥 비율).</li>
+<li><strong>원리 ③의 정량 검증</strong>: 같은 경맥 원위혈들의 주치를 벡터로 만들어(《穴位通鉴》·《证治通鉴》 주치 전수 추출) 군집 분석한 뒤, 사총혈·천성혈이 군집 중심(medoid)에 가까운지 검정해야 한다. 이는 저자들이 참고문헌 14에서 제안한 방향과 같다.</li>
+<li><strong>반례 처리</strong>: 환도와 다른 경맥 짝(태충–곤륜, 통리–열결)을 별도로 논의해야 한다. 예컨대 천성 계열이 하지 비증·운동 장애를 독립 영역으로 다룬다는 해석이 가능하다.</li>
+<li><strong>기전 층위 구분</strong>: 원위 취혈을 분절성(위중·열결)과 비분절성(족삼리·합곡)으로 나누어 기술하면 서양의학적 "주요 경혈" 논의와의 비교가 정밀해진다.</li>
+</ol>
+<hr />
+<p><em>근거 파일</em><br />
+- 원전 chunks: <code>01_도서_번역_및_원전/中国针灸证治通鉴/chunks_refined/中国针灸证治通鉴_81-160.md</code>(L2626-2632), <code>_161-240.md</code>(L158), <code>_481-543.md</code>(인용서목) / <code>中国针灸穴位通鉴/chunks_refined/(上卷)_321-400.md</code>, <code>_481-560.md</code>, <code>_801-880.md</code>, <code>_1041-1120.md</code> / <code>针灸腧穴通考/chunks_refined/(上)_1-80.md</code>(L2100-2125)<br />
+- 마스터 데이터셋: <code>02_Master_Datasets/김재효 수업_경혈_해부구조_데이터셋.xlsx</code>, <code>경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx</code>, <code>경혈_생의학_신경반사_마스터DB.json</code><br />
+- 데이터북: <code>사총혈_천성십이혈_문헌고증_DB.xlsx</code> / 웹리포트: <code>사총혈_천성십이혈_구성원리_가설검증_및_피어리뷰_보고서.html</code></p></main></body></html>
