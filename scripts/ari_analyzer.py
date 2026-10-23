@@ -4,7 +4,7 @@ ari_analyzer.py — 경혈 해부생리학 실체 판명 분석 엔진 (Framewor
 
 정본: 01_Framework/acupoint_anatomical_logic_framework.md (Version 2.7)
 Rank 0~7 통합 표준 프로토콜 및 10대 필수 구성 요소 자동 분석·산출
-산출물 3종 세트: .md, .html, .xlsx 동시 생성 (경혈해부 스킬 분석보고/01_경혈별_해부생리_분석보고서/)
+산출물 3종 세트: .md, .html, .xlsx 동시 생성 (acupoint_anatomy/01_경혈별_해부생리_분석보고서/)
 - 스마트 원전 색인 (TOC 오인식 방지 및 경맥별 우선 매핑)
 - 기존 심층 보고서/엑셀 보존 보호 기능 (--force 플래그로 덮어쓰기 제어)
 - 고해상도 HTML 리포트 자동 빌드 (build_report_html 연동: KaTeX, Mermaid, 문자도식 PNG 내장)
@@ -45,7 +45,7 @@ LOGIC_EXCEL = os.path.join(BASE_DIR, "02_Master_Datasets", "경혈의 해부학�
 BIOMED_JSON = os.path.join(BASE_DIR, "02_Master_Datasets", "경혈_생의학_신경반사_마스터DB.json")
 LAYER_B_JSON = os.path.join(BASE_DIR, "02_Master_Datasets", "layer_b_reference_registry.json")
 
-OUTPUT_ROOT = os.path.join(BASE_DIR, "경혈해부 스킬 분석보고", "01_경혈별_해부생리_분석보고서")
+OUTPUT_ROOT = os.path.join(BASE_DIR, "acupoint_anatomy", "01_경혈별_해부생리_분석보고서")
 os.makedirs(OUTPUT_ROOT, exist_ok=True)
 
 MERIDIAN_SUBDIRS = {
