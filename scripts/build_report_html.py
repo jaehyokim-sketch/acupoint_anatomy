@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-build_report_html.py — [경혈해부] Markdown (.md) to High-Fidelity HTML (.html) Builder
-- KaTeX auto-render for formulas ($...$, $$...$$)
-- Fixed-grid PNG rendering for Unicode text diagrams
-- Pre-rendered high-res Mermaid PNG injection via Playwright/Chromium (with client Mermaid.js fallback)
-- Self-contained single HTML output with base64 Data URIs
-- Dark/Light responsive themes
+build_report_html.py — [경혈해부] 보고서 .md → .html 변환 (Claude Code · Antigravity 공용)
 
-Usage:
-  python build_report_html.py <report.md> [--no-archive] [--no-images]
+- 수식($...$, $$...$$)은 보존 후 KaTeX auto-render로 렌더링, ```mermaid 블록은 Mermaid로 렌더링
+- 표·코드·목차 지원(python-markdown), 라이트/다크 테마 자동 대응
+- 기존 .html이 있으면 같은 폴더의 `_구판_html/` 에 날짜 붙여 보관한 뒤 새로 쓴다(--no-archive로 끔)
+- 도식은 이미지로 삽입(render_diagrams.py): 상자 그림·화살표가 든 코드 블록은 고정 격자 PNG,
+  Mermaid는 로컬 Chrome/Edge(Playwright)로 렌더링한 PNG. 이미지는 data URI로 내장해 html 한 파일로 열린다.
+  렌더링에 실패하면 기존 방식(코드 블록 / 브라우저 Mermaid)으로 대체한다. --no-images로 끔.
+
+사용: python build_report_html.py <report.md> [<report2.md> ...] [--no-archive] [--no-images]
 """
 import html
 import re
@@ -21,8 +22,8 @@ import markdown
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 try:
-    import render_diagrams
-except Exception:
+    import render_diagrams  # 도식 → PNG (상자 그림, Mermaid)
+except Exception:  # Pillow·fontTools·Playwright가 없으면 기존 방식으로 동작
     render_diagrams = None
 
 if sys.stdout and hasattr(sys.stdout, "reconfigure"):
@@ -106,16 +107,19 @@ mermaid.initialize({{ startOnLoad: true, theme: dark ? "dark" : "default" }});
 MATH_BLOCK = re.compile(r"\$\$(.+?)\$\$", re.S)
 MATH_INLINE = re.compile(r"(?<![\\$])\$(?!\s)([^$\n]+?)(?<!\s)\$(?!\d)")
 MERMAID = re.compile(r"```mermaid\s*\n(.*?)```", re.S)
+
+
 FENCE = re.compile(r"^([ \t]*)```([A-Za-z0-9_+-]*)[ \t]*\n(.*?)\n[ \t]*```[ \t]*$", re.S | re.M)
 
 
 def _img_tag(png: bytes, alt: str, kind: str) -> str:
-    return f'<figure class="diagram diagram-{kind}"><img src="{render_diagrams.data_uri(png)}" alt="{html.escape(alt)}" loading="lazy"></figure>'
+    return (f'<figure class="diagram diagram-{kind}"><img src="{render_diagrams.data_uri(png)}" alt="{html.escape(alt)}" loading="lazy"></figure>')
 
 
 def convert(md_text: str, images: bool = True):
     md_text = md_text.replace("\r\n", "\n")
     store = []
+
 
     def keep(s):
         store.append(s)
@@ -127,6 +131,7 @@ def convert(md_text: str, images: bool = True):
         mermaids.append(m.group(1))
         return f"\n\n\u0000MERMAID{len(mermaids) - 1}\u0000\n\n"
 
+    # 문자 도식(상자 그림·화살표 코드 블록)은 PNG로 미리 렌더링해 자리표시자로 바꾼다
     diagrams = []
 
     def keep_diagram(m):
@@ -142,6 +147,7 @@ def convert(md_text: str, images: bool = True):
 
     t = MERMAID.sub(keep_mermaid, md_text)
     t = FENCE.sub(keep_diagram, t)
+    # 코드 블록 안의 $는 수식이 아니므로 펜스 코드 구간을 먼저 분리한다
     parts = re.split(r"(```.*?```)", t, flags=re.S)
     for i, part in enumerate(parts):
         if part.startswith("```"):
@@ -158,7 +164,7 @@ def convert(md_text: str, images: bool = True):
         i = int(m.group(2))
         if mpng[i]:
             return _img_tag(mpng[i], "Mermaid 다이어그램", "mermaid")
-        return '<pre class="mermaid">' + html.escape(mermaids[i]) + "</pre>"
+        return '<pre class="mermaid">' + html.escape(mermaids[i]) + "</pre>"  # 렌더링 실패 시 브라우저 렌더링으로 대체
 
     body = re.sub(r"(<p>)?\u0000MERMAID(\d+)\u0000(</p>)?", put_mermaid, body)
     body = re.sub(r"(<p>)?\u0000DIAGRAM(\d+)\u0000(</p>)?", lambda m: _img_tag(diagrams[int(m.group(2))][0], "도식", "text"), body)

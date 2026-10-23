@@ -64,7 +64,7 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
 # 경로 · 상수
 # --------------------------------------------------------------------------------------
 SCRIPT_DIR = Path(__file__).resolve().parent
-DEFAULT_ROOT = SCRIPT_DIR.parent  # acupoint_anatomy root
+DEFAULT_ROOT = SCRIPT_DIR.parents[3]  # .agents/skills/acupoint-anatomy/scripts → 프로젝트 루트
 
 JSON_NAME = "경혈_생의학_신경반사_마스터DB.json"
 XLSX_NAME = "경혈_생의학_신경반사_마스터DB.xlsx"
@@ -101,12 +101,7 @@ class Ctx:
         self.root = root
         self.dry_run = dry_run
         self.trigger = trigger
-        if (root / "data").exists():
-            self.ds = root / "data"
-        elif (root / "02_Master_Datasets").exists():
-            self.ds = root / "02_Master_Datasets"
-        else:
-            self.ds = root / "data"
+        self.ds = root / "02_Master_Datasets"
         self.json_path = self.ds / JSON_NAME
         self.xlsx_path = self.ds / XLSX_NAME
         self.csv_path = self.ds / CSV_NAME

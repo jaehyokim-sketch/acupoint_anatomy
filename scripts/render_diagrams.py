@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-render_diagrams.py — Render report diagrams to PNG (used by build_report_html.py)
-1) Fixed-grid PNG rendering for Unicode box-drawing diagrams & ASCII art.
-2) High-res Mermaid PNG rendering via local Playwright/Chromium engine.
+render_diagrams.py — 보고서 도식을 PNG로 렌더링 (build_report_html.py가 사용, Claude Code · Antigravity 공용)
+
+1) 문자 도식(상자 그림·화살표가 든 코드 블록) → 고정 격자 PNG
+   - 한글·한자 등 전각 문자는 정확히 2칸, 반각은 1칸에 배치(브라우저 글꼴 폭 차이로 선이 어긋나는 문제 제거)
+   - 상자 선(U+2500–257F)은 글꼴을 쓰지 않고 선분으로 직접 그려 끊김이 없다
+   - 글꼴은 글자마다 대체 체인(Consolas → 맑은 고딕 → 나눔고딕 → MS YaHei → 한바탕확장 …)에서 글리프가 있는 것을 고른다
+2) Mermaid 다이어그램 → 로컬 Chrome/Edge(Playwright)로 렌더링 후 PNG 캡처
+   - 실패하면 None을 돌려주고 호출 측이 기존 방식(브라우저 렌더링)으로 대체한다
 """
 import base64
 import hashlib
@@ -17,23 +22,17 @@ from PIL import Image, ImageDraw, ImageFont
 
 try:
     from fontTools.ttLib import TTFont, TTCollection
-except Exception:
+except Exception:  # pragma: no cover
     TTFont = TTCollection = None
 
-FONT_DIRS = [
-    Path(os.environ.get("WINDIR", r"C:\Windows")) / "Fonts",
-    Path(os.environ.get("LOCALAPPDATA", "")) / "Microsoft" / "Windows" / "Fonts",
-    Path("/usr/share/fonts"),
-    Path("/System/Library/Fonts"),
-    Path("/Library/Fonts"),
-]
-FONT_CHAIN = [
-    "consola.ttf", "malgun.ttf", "NanumGothic.ttf", "NotoSansKR-VF.ttf", "msyh.ttc", "simsun.ttc",
-    "HANBatang.ttf", "HANBatangExt.ttf", "HANBatangExtB.ttf", "SimsunExtG.ttf", "seguisym.ttf", "segoeui.ttf",
-    "arialuni.ttf", "NotoSansCJK-Regular.ttc", "AppleSDGothicNeo.ttc"
-]
-SCALE = 2
-FONT_PX = 15
+FONT_DIRS = [Path(os.environ.get("WINDIR", r"C:\Windows")) / "Fonts",
+             Path(os.environ.get("LOCALAPPDATA", "")) / "Microsoft" / "Windows" / "Fonts",
+             Path("/usr/share/fonts"), Path("/System/Library/Fonts"), Path("/Library/Fonts")]
+FONT_CHAIN = ["consola.ttf", "malgun.ttf", "NanumGothic.ttf", "NotoSansKR-VF.ttf", "msyh.ttc", "simsun.ttc",
+              "HANBatang.ttf", "HANBatangExt.ttf", "HANBatangExtB.ttf", "SimsunExtG.ttf", "seguisym.ttf", "segoeui.ttf",
+              "arialuni.ttf", "NotoSansCJK-Regular.ttc", "AppleSDGothicNeo.ttc"]
+SCALE = 2          # 고해상도 출력
+FONT_PX = 15       # 기준 글자 크기(px, SCALE 적용 전)
 PAD = 14
 BG = (255, 255, 255)
 FG = (29, 36, 51)
@@ -44,6 +43,7 @@ ARROW_RE = re.compile(r"[←↑→↓↔↕⇒⇐⇑⇓➔➜➝➞▶◀▲▼�
 
 
 def is_text_diagram(lang: str, code: str) -> bool:
+    """언어 지정이 없거나 text/diagram인 코드 블록 중 상자 선·화살표가 있는 것만 도식으로 본다."""
     if (lang or "").lower() not in ("", "text", "txt", "plain", "plaintext", "diagram", "ascii"):
         return False
     if (lang or "").lower() in ("diagram", "ascii"):
@@ -52,6 +52,7 @@ def is_text_diagram(lang: str, code: str) -> bool:
     box_lines = sum(1 for l in lines if BOX_RE.search(l))
     arrow_lines = sum(1 for l in lines if ARROW_RE.search(l))
     return box_lines >= 1 or (box_lines >= 1 and arrow_lines >= 1) or arrow_lines >= 2
+
 
 
 def _find_font(name):
@@ -64,6 +65,7 @@ def _find_font(name):
 
 @lru_cache(maxsize=None)
 def _font_table():
+    """(경로, ttc 인덱스, cmap 집합) 목록."""
     out = []
     for name in FONT_CHAIN:
         p = _find_font(name)
@@ -108,6 +110,7 @@ def _width(ch):
     return 2 if unicodedata.east_asian_width(ch) in ("W", "F") else 1
 
 
+# 상자 선: (위, 아래, 왼쪽, 오른쪽) 각 0=없음 1=가는 선 2=굵은 선 3=이중 선
 def _box_spec():
     S = {}
     def add(chars, u, d, l, r):
@@ -152,12 +155,12 @@ def _draw_box(dr, ch, x0, y0, cw, lh):
                 dr.line([(cx, a), (cx, b)], fill=LINE, width=w)
             else:
                 dr.line([(a, cy), (b, cy)], fill=LINE, width=w)
-    ext = thick / 2
+    ext = thick / 2  # 모서리 이음새가 비지 않게 중심을 살짝 넘겨 그린다
     seg(y0, cy + (ext if u else 0), u, True)
     seg(cy - (ext if d else 0), y0 + lh, d, True)
     seg(x0, cx + (ext if l else 0), l, False)
     seg(cx - (ext if r else 0), x0 + cw, r, False)
-    if ch in "╌┄┈╎┆┊":
+    if ch in "╌┄┈╎┆┊":  # 점선: 흰색으로 간격을 낸다
         n = 3 if ch in "┄┆" else 4 if ch in "┈┊" else 2
         if ch in "╌┄┈":
             step = cw / n
@@ -191,9 +194,10 @@ def render_text_diagram(code: str) -> bytes:
                 f = _font_for(ch, size)
                 gw = f.getlength(ch)
                 box_w = cw * max(w, 1)
-                if gw > box_w * 1.02:
+                if gw > box_w * 1.02:  # 칸보다 넓은 글리프는 칸에 맞춰 축소
                     f = _font_for(ch, max(8, int(size * box_w / gw)))
                     gw = f.getlength(ch)
+                # 기준선 정렬: 글리프 외곽 상자가 아니라 글꼴 ascent·descent로 세로 위치를 잡아 . , 같은 문장부호가 뜨지 않게 한다
                 asc, desc = f.getmetrics()
                 dr.text((x0 + (box_w - gw) / 2, y0 + (lh - (asc + desc)) / 2), ch, font=f, fill=FG)
             col += w
@@ -214,6 +218,7 @@ window.ready = true;
 
 
 def render_mermaid_batch(codes):
+    """여러 Mermaid 코드를 한 번의 브라우저 세션으로 PNG 바이트 목록으로 렌더링. 실패 항목은 None."""
     out = [None] * len(codes)
     if not codes:
         return out

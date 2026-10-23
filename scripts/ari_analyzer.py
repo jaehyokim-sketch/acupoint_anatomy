@@ -5,12 +5,17 @@ ari_analyzer.py — 경혈 해부생리학 실체 판명 분석 엔진 (Framewor
 정본: 01_Framework/acupoint_anatomical_logic_framework.md (Version 2.7)
 Rank 0~7 통합 표준 프로토콜 및 10대 필수 구성 요소 자동 분석·산출
 산출물 3종 세트: .md, .html, .xlsx 동시 생성 (경혈해부 스킬 분석보고/01_경혈별_해부생리_분석보고서/)
+- 스마트 원전 색인 (TOC 오인식 방지 및 경맥별 우선 매핑)
+- 기존 심층 보고서/엑셀 보존 보호 기능 (--force 플래그로 덮어쓰기 제어)
+- 고해상도 HTML 리포트 자동 빌드 (build_report_html 연동: KaTeX, Mermaid, 문자도식 PNG 내장)
 """
 import os
 import sys
 import re
 import csv
 import json
+import argparse
+from pathlib import Path
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
@@ -21,13 +26,21 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
     except Exception:
         pass
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRIPT_DIR = Path(__file__).resolve().parent
+BASE_DIR = str(SCRIPT_DIR.parents[3])
+
+# build_report_html 연동
+try:
+    from build_report_html import build as build_html
+    HAVE_HTML_BUILDER = True
+except Exception:
+    HAVE_HTML_BUILDER = False
 
 MASTER_CSV = os.path.join(BASE_DIR, "02_Master_Datasets", "361_Acupoints_Refined_Master_DB_v2.csv")
 KJH_EXCEL = os.path.join(BASE_DIR, "02_Master_Datasets", "경혈명_비교_정리_KJH.xlsx")
-XUEWEI_MD = os.path.join(BASE_DIR, "01_도서_번역_및_원전", "中国针灸穴位通鉴_parsed_refined.md")
-ZHENGZHI_MD = os.path.join(BASE_DIR, "01_도서_번역_및_원전", "中国针灸证治通鉴_parsed_refined.md")
-TONGKAO_MD = os.path.join(BASE_DIR, "01_도서_번역_및_원전", "针灸腧穴通考_parsed_refined.md")
+XUEWEI_DIR = os.path.join(BASE_DIR, "01_도서_번역_및_원전", "중국침구혈위통감(中国针灸穴位通鉴)")
+ZHENGZHI_DIR = os.path.join(BASE_DIR, "01_도서_번역_및_원전", "중국침구증치통감(中国针灸证治通鉴)")
+TONGKAO_DIR = os.path.join(BASE_DIR, "01_도서_번역_및_원전", "침구수혈통고(针灸腧穴通考)")
 LOGIC_EXCEL = os.path.join(BASE_DIR, "02_Master_Datasets", "경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx")
 BIOMED_JSON = os.path.join(BASE_DIR, "02_Master_Datasets", "경혈_생의학_신경반사_마스터DB.json")
 LAYER_B_JSON = os.path.join(BASE_DIR, "02_Master_Datasets", "layer_b_reference_registry.json")
@@ -53,6 +66,24 @@ MERIDIAN_SUBDIRS = {
     'EX': 'EX_경외기혈'
 }
 
+MERIDIAN_MAP = {
+    'LU': {'name': '肺', 'xw': ['手太阴肺经'], 'zz': ['手太阴肺经'], 'tk': ['手太阴肺经穴']},
+    'LI': {'name': '大肠', 'xw': ['手阳明大肠经'], 'zz': ['手阳明大肠经'], 'tk': ['手阳明大肠经穴']},
+    'ST': {'name': '胃', 'xw': ['足阳明胃经'], 'zz': ['足阳明胃经'], 'tk': ['足阳明胃经穴']},
+    'SP': {'name': '脾', 'xw': ['足太阴脾经'], 'zz': ['足太阴脾经'], 'tk': ['足太阴脾经穴']},
+    'HT': {'name': '心', 'xw': ['手少阴心经'], 'zz': ['手少阴心经'], 'tk': ['手少阴心经穴']},
+    'SI': {'name': '小肠', 'xw': ['手太阳小肠经'], 'zz': ['手太阳小肠经'], 'tk': ['手太阳小肠经穴']},
+    'BL': {'name': '膀胱', 'xw': ['足太阳膀胱经'], 'zz': ['足太阳膀胱经'], 'tk': ['足太阳膀胱经穴']},
+    'KI': {'name': '肾', 'xw': ['足少阴肾经'], 'zz': ['足少阴肾经'], 'tk': ['足少阴肾经穴']},
+    'PC': {'name': '心包', 'xw': ['手厥阴心包经'], 'zz': ['手厥阴心包经'], 'tk': ['手厥阴心包经穴']},
+    'TE': {'name': '三焦', 'xw': ['手少阳三焦经'], 'zz': ['手少阳三焦经'], 'tk': ['手少阳三焦经穴']},
+    'GB': {'name': '胆', 'xw': ['足소양담경', '足少阳胆经'], 'zz': ['足少阳胆经'], 'tk': ['足少阳胆经穴']},
+    'LR': {'name': '肝', 'xw': ['足厥阴肝经'], 'zz': ['足厥阴肝经'], 'tk': ['足厥阴肝经穴']},
+    'GV': {'name': '督脉', 'xw': ['督脉'], 'zz': ['督脉'], 'tk': ['督脉穴']},
+    'CV': {'name': '任脉', 'xw': ['任脉'], 'zz': ['任脉'], 'tk': ['任脉穴']},
+    'EX': {'name': '经外', 'xw': ['经外穴'], 'zz': [], 'tk': ['经外奇穴']}
+}
+
 
 def clean_str(val):
     if not val:
@@ -61,10 +92,29 @@ def clean_str(val):
     return s.replace('\ufb00', 'ff').replace('\ufb01', 'fi').replace('\ufb02', 'fl').replace('\ufb03', 'ffi').replace('\ufb04', 'ffl')
 
 
+def load_simplified_map():
+    """
+    《中国针灸穴位通鉴》 총론 목차에서 361개 표준 혈명의 정규 간체자(Simplified Chinese) 표기 전수 추출
+    """
+    toc_path = os.path.join(XUEWEI_DIR, "中国针灸穴位通鉴_00_总论_前言·编写说明·取穴尺寸法.md")
+    simp_map = {}
+    if os.path.exists(toc_path):
+        with open(toc_path, "r", encoding="utf-8", errors="ignore") as f:
+            toc = f.read()
+        for m in re.finditer(r'([\u4e00-\u9fff]+)\s+[^\n（\(]+[（\(](?:[A-Z]+[，,\s]+)?([A-Z]+)\s*0*(\d+)[）\)]', toc):
+            name, prefix, num = m.groups()
+            code_formatted = f"{prefix}{int(num):02d}"
+            code_norm = f"{prefix}{int(num)}"
+            simp_map[code_formatted] = name.strip()
+            simp_map[code_norm] = name.strip()
+    return simp_map
+
+
 def load_acupoints():
     points = {}
     if not os.path.exists(MASTER_CSV):
         return points
+    simp_map = load_simplified_map()
     with open(MASTER_CSV, "r", encoding="utf-8", errors="ignore") as f:
         reader = csv.DictReader(f)
         for row in reader:
@@ -75,22 +125,27 @@ def load_acupoints():
             meridian_cn = row.get('소속경락(한자)', '').strip()
             aliases_hanja = row.get('이명_한자목록(KJH)', '').strip()
             
+            m = re.match(r'([A-Z]+)0*(\d+)', code)
+            norm_code = f"{m.group(1)}{int(m.group(2))}" if m else code
+            name_cn_simp = simp_map.get(code) or simp_map.get(norm_code) or name_cn
+            
             pdata = {
                 'code': code,
                 'name_kr': name_kr,
                 'name_cn': name_cn,
+                'name_cn_simp': name_cn_simp,
                 'meridian_kr': meridian_kr,
                 'meridian_cn': meridian_cn,
                 'aliases_hanja': aliases_hanja
             }
             points[code] = pdata
-            m = re.match(r'([A-Z]+)0*(\d+)', code)
             if m:
                 p, n = m.groups()
                 points[f"{p}{int(n)}"] = pdata
                 points[f"{p}{int(n):02d}"] = pdata
             points[name_kr] = pdata
             points[name_cn] = pdata
+            points[name_cn_simp] = pdata
     return points
 
 
@@ -108,16 +163,69 @@ def load_layer_b_registry():
         return json.load(f)
 
 
-def search_text_mentions(file_path, query, max_chars=3500):
-    if not os.path.exists(file_path):
+def smart_search(dir_path, meridian_key, name_cn, book_type, max_chars=3500, name_cn_simp=None):
+    """
+    3대 원전 스마트 검색 (목차/총론 건너뛰기, 경맥 파일 우선 매핑, 간체자/번체자 양방향 검색, 혈위 섹션 헤더 우선 감지)
+    """
+    if not os.path.exists(dir_path):
         return ""
-    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
-        content = f.read()
-    pos = content.find(query)
-    if pos != -1:
-        start = max(0, pos - 150)
-        end = min(len(content), pos + max_chars)
-        return content[start:end]
+    all_files = sorted([f for f in os.listdir(dir_path) if f.endswith('.md') and not f.endswith('_한글번역.md')])
+    
+    # 해당 경맥 우선 탐색 파일
+    targets = MERIDIAN_MAP.get(meridian_key, {}).get(book_type, [])
+    prio_files = []
+    other_files = []
+    
+    for f in all_files:
+        # 목차, 서문, 총론, 범례 등 오인식 유발 파일 제외
+        if any(ignore in f for ignore in ['总论', '前言', '编写说明', '书名页', '索引', '书目', '凡例']):
+            continue
+        if any(t in f for t in targets):
+            prio_files.append(f)
+        else:
+            other_files.append(f)
+            
+    search_order = prio_files + other_files
+    
+    # 간체자 우선 + 번체자 복수 검색어 구성
+    query_names = []
+    if name_cn_simp and name_cn_simp.strip():
+        query_names.append(name_cn_simp.strip())
+    if name_cn and name_cn.strip() and name_cn.strip() not in query_names:
+        query_names.append(name_cn.strip())
+        
+    # 혈위 항목 진입점 패턴
+    header_patterns = []
+    for q in query_names:
+        header_patterns.extend([
+            f"{q}(", f"{q}（", f"## {q}", f"### {q}", f"#### {q}",
+            f"【{q}】", f"）{q}", f" {q} ", f"\n{q}\n"
+        ])
+    
+    # 1차 패스: 우선 파일 및 전체 파일에서 헤더 패턴 탐색
+    for fname in search_order:
+        fpath = os.path.join(dir_path, fname)
+        with open(fpath, 'r', encoding='utf-8', errors='ignore') as fp:
+            content = fp.read()
+        for hp in header_patterns:
+            pos = content.find(hp)
+            if pos != -1:
+                start = max(0, pos)
+                end = min(len(content), start + max_chars)
+                return f"[{fname}]\n" + content[start:end]
+                
+    # 2차 패스: 우선 파일 내 단순 부분문자열 탐색 (간체자 우선)
+    for fname in prio_files:
+        fpath = os.path.join(dir_path, fname)
+        with open(fpath, 'r', encoding='utf-8', errors='ignore') as fp:
+            content = fp.read()
+        for q in query_names:
+            pos = content.find(q)
+            if pos != -1:
+                start = max(0, pos - 100)
+                end = min(len(content), pos + max_chars)
+                return f"[{fname}]\n" + content[start:end]
+            
     return ""
 
 
@@ -128,10 +236,6 @@ def calculate_ari_v3(s_orig, s_clarity, s_reflex, s_safety, layer_a_count=0):
     SI = S_safety (분리 병기)
     비보상형 게이트 3종 적용
     """
-    # 5단계 앵커 점수 유효성 검증
-    valid_scores = {0, 25, 50, 75, 100}
-    # s_orig는 4개 하위항목 평균이므로 소수 가능, 나머지는 5단계 권장
-    
     # 1. ARI-Core 계산
     ari_core = round((s_orig * 0.40) + (s_clarity * 0.35) + (s_reflex * 0.25), 2)
     si = s_safety
@@ -141,12 +245,10 @@ def calculate_ari_v3(s_orig, s_clarity, s_reflex, s_safety, layer_a_count=0):
     
     # 3. 비보상형 게이트 검사
     gates_triggered = []
-    # 게이트 1: S_orig < 50 또는 S_clarity < 50 -> 최고 등급 C 제한
     gate1_applied = (s_orig < 50 or s_clarity < 50)
     if gate1_applied:
         gates_triggered.append("게이트 1(S_orig<50 또는 S_clarity<50: 최고등급 C 제한)")
         
-    # 게이트 2: Layer A 0편 -> S_reflex <= 25 및 (H) 가설 표지
     gate2_applied = (layer_a_count == 0)
     if gate2_applied:
         if s_reflex > 25:
@@ -154,7 +256,6 @@ def calculate_ari_v3(s_orig, s_clarity, s_reflex, s_safety, layer_a_count=0):
             ari_core = round((s_orig * 0.40) + (s_clarity * 0.35) + (s_reflex * 0.25), 2)
         gates_triggered.append("게이트 2(Layer A 0편: S_reflex<=25 및 (H) 표지 강제)")
         
-    # 게이트 3: SI <= 25 -> ⚠ 안전주의 표지 강제
     gate3_applied = (si <= 25)
     if gate3_applied:
         gates_triggered.append("게이트 3(SI<=25: ⚠ 안전주의 표지 강제)")
@@ -214,7 +315,7 @@ def calculate_ari_v3(s_orig, s_clarity, s_reflex, s_safety, layer_a_count=0):
     }
 
 
-def analyze_acupoint(query, s_orig=85.0, s_clarity=75.0, s_reflex=75.0, s_safety=75.0):
+def analyze_acupoint(query, s_orig=None, s_clarity=None, s_reflex=None, s_safety=None, force=False, no_html=False):
     points = load_acupoints()
     query_clean = query.strip().upper()
     pdata = points.get(query_clean) or points.get(query.strip())
@@ -242,7 +343,8 @@ def analyze_acupoint(query, s_orig=85.0, s_clarity=75.0, s_reflex=75.0, s_safety
     # Load Master DB
     biomed_db = load_biomedical_db()
     m = re.match(r'([A-Z]+)0*(\d+)', code)
-    norm_code = f"{m.group(1)}{int(m.group(2))}" if m else code
+    prefix = m.group(1) if m else ''
+    norm_code = f"{prefix}{int(m.group(2))}" if m else code
     biomed_data = biomed_db.get(norm_code) or biomed_db.get(code)
     
     layer_b_reg = load_layer_b_registry()
@@ -251,6 +353,7 @@ def analyze_acupoint(query, s_orig=85.0, s_clarity=75.0, s_reflex=75.0, s_safety
     papers_registry = {str(p.get("id")): p for p in papers_raw if isinstance(p, dict)}
     layer_a_count = 0
     mapped_papers = []
+    has_rct = False
     
     if biomed_data:
         local_ids = biomed_data.get("local_paper_ids", [])
@@ -262,21 +365,42 @@ def analyze_acupoint(query, s_orig=85.0, s_clarity=75.0, s_reflex=75.0, s_safety
             p_rec = papers_registry.get(str(pid))
             if p_rec and p_rec.get("status") == "active":
                 mapped_papers.append(p_rec)
+                ptype = str(p_rec.get("study_type", "")).lower()
+                ptit = str(p_rec.get("title", "")).lower()
+                if "rct" in ptype or "randomized" in ptit or "trial" in ptit:
+                    has_rct = True
         print(f"  + [Rank 6-1] Layer A 통합 마스터 DB v3.0 연동 성공: 활성 실측 논문 {len(mapped_papers)}편 매핑 (papers.id 기반).")
     else:
         print("  + [Rank 6-1] Layer A 실측 데이터 없음 (게이트 2 후보).")
         
-    # Query classical texts
-    xuewei_excerpt = search_text_mentions(XUEWEI_MD, name_cn, 4000)
-    zhengzhi_excerpt = search_text_mentions(ZHENGZHI_MD, name_cn, 4000)
-    tongkao_excerpt = search_text_mentions(TONGKAO_MD, name_cn, 4000)
+    name_cn_simp = pdata.get('name_cn_simp', name_cn)
     
+    # 스마트 3대 원전 검색 (목차/총론 배제, 경맥 전용 편 우선 탐색, 간체/번체 복수 매핑)
+    xuewei_excerpt = smart_search(XUEWEI_DIR, prefix, name_cn, 'xw', 4000, name_cn_simp=name_cn_simp)
+    zhengzhi_excerpt = smart_search(ZHENGZHI_DIR, prefix, name_cn, 'zz', 4000, name_cn_simp=name_cn_simp)
+    tongkao_excerpt = smart_search(TONGKAO_DIR, prefix, name_cn, 'tk', 4000, name_cn_simp=name_cn_simp)
+    print(f"  + [Rank 1 & 2] 3대 원전 스마트 검색 완료 (간체: {name_cn_simp} / 번체: {name_cn} 대조).")
+    
+    # 기본 점수 결정 (CLI 인자가 없을 경우)
+    if s_orig is None:
+        s_orig = 85.0
+    if s_clarity is None:
+        s_clarity = 75.0
+    if s_safety is None:
+        s_safety = 75.0
+    if s_reflex is None:
+        if layer_a_count >= 2:
+            s_reflex = 87.5 if has_rct else 75.0
+        elif layer_a_count == 1:
+            s_reflex = 50.0
+        else:
+            s_reflex = 25.0
+            
     # Calculate ARI v3.0
     ari_res = calculate_ari_v3(s_orig, s_clarity, s_reflex, s_safety, layer_a_count=layer_a_count)
     print(f"  + [Rank 7] ARI v3.0 프로파일 채점 완료: {ari_res['standard_repr']}")
     
     # Output path setup
-    prefix = m.group(1) if m else ''
     meridian_dir_name = MERIDIAN_SUBDIRS.get(prefix, prefix)
     meridian_dir = os.path.join(OUTPUT_ROOT, meridian_dir_name)
     os.makedirs(meridian_dir, exist_ok=True)
@@ -285,102 +409,125 @@ def analyze_acupoint(query, s_orig=85.0, s_clarity=75.0, s_reflex=75.0, s_safety
     point_dir = os.path.join(meridian_dir, folder_name)
     os.makedirs(point_dir, exist_ok=True)
     
+    excel_out_path = os.path.join(point_dir, f"{code}_{name_kr}_해부생리_분석데이터.xlsx")
+    md_out_path = os.path.join(point_dir, f"{code}_{name_kr}_해부생리_실체판명_보고서.md")
+    html_out_path = os.path.join(point_dir, f"{code}_{name_kr}_해부생리_실체판명_보고서.html")
+    
     # -------------------------------------------------------------
     # 1. Excel DB Generation (.xlsx)
     # -------------------------------------------------------------
-    wb = openpyxl.Workbook()
-    header_fill = PatternFill(start_color="1E293B", end_color="1E293B", fill_type="solid")
-    header_font = Font(name="Noto Sans KR", size=10, bold=True, color="FFFFFF")
-    data_font = Font(name="Noto Sans KR", size=9)
-    border_thin = Border(left=Side(style='thin', color='E2E8F0'), right=Side(style='thin', color='E2E8F0'),
-                         top=Side(style='thin', color='E2E8F0'), bottom=Side(style='thin', color='E2E8F0'))
+    skip_excel = False
+    if os.path.exists(excel_out_path) and not force:
+        try:
+            check_wb = openpyxl.load_workbook(excel_out_path, read_only=True)
+            if len(check_wb.sheetnames) > 5:
+                print(f"  + [보호] 기존 심층 엑셀 DB 보존 ({len(check_wb.sheetnames)}개 시트: {excel_out_path}).")
+                print("         (덮어쓰려면 --force 플래그를 지정하세요)")
+                skip_excel = True
+            check_wb.close()
+        except Exception:
+            pass
 
-    def style_table(ws):
-        for col in range(1, ws.max_column + 1):
-            cell = ws.cell(row=1, column=col)
-            cell.fill = header_fill
-            cell.font = header_font
-            cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
-        for row in range(2, ws.max_row + 1):
+    if not skip_excel:
+        wb = openpyxl.Workbook()
+        header_fill = PatternFill(start_color="1E293B", end_color="1E293B", fill_type="solid")
+        header_font = Font(name="Noto Sans KR", size=10, bold=True, color="FFFFFF")
+        data_font = Font(name="Noto Sans KR", size=9)
+        border_thin = Border(left=Side(style='thin', color='E2E8F0'), right=Side(style='thin', color='E2E8F0'),
+                             top=Side(style='thin', color='E2E8F0'), bottom=Side(style='thin', color='E2E8F0'))
+
+        def style_table(ws):
             for col in range(1, ws.max_column + 1):
-                c = ws.cell(row=row, column=col)
-                c.font = data_font
-                c.border = border_thin
-                c.alignment = Alignment(vertical="center", wrap_text=True)
+                cell = ws.cell(row=1, column=col)
+                cell.fill = header_fill
+                cell.font = header_font
+                cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+            for row in range(2, ws.max_row + 1):
+                for col in range(1, ws.max_column + 1):
+                    c = ws.cell(row=row, column=col)
+                    c.font = data_font
+                    c.border = border_thin
+                    c.alignment = Alignment(vertical="center", wrap_text=True)
 
-    # Sheet 1: 문헌스크리닝_원천분리
-    ws1 = wb.active
-    ws1.title = "1.문헌스크리닝_원천분리"
-    ws1.append(["경혈코드", "경혈명(한글)", "경혈명(한자)", "소속경락", "검증이명(KJH)", "원천정위기록(혈위통감)", "증치처방기록(증치통감)", "비판교감(수혈통고)"])
-    ws1.append([code, name_kr, name_cn, pdata['meridian_kr'], pdata['aliases_hanja'],
-                clean_str(xuewei_excerpt[:500]), clean_str(zhengzhi_excerpt[:500]), clean_str(tongkao_excerpt[:500])])
-    style_table(ws1)
+        # Sheet 1: 문헌스크리닝_원천분리
+        ws1 = wb.active
+        ws1.title = "1.문헌스크리닝_원천분리"
+        ws1.append(["경혈코드", "경혈명(한글)", "경혈명(한자/간체)", "소속경락", "검증이명(KJH)", "원천정위기록(혈위통감)", "증치처방기록(증치통감)", "비판교감(수혈통고)"])
+        ws1.append([code, name_kr, f"{name_cn} (간체: {name_cn_simp})", pdata['meridian_kr'], pdata['aliases_hanja'],
+                    clean_str(xuewei_excerpt[:500]), clean_str(zhengzhi_excerpt[:500]), clean_str(tongkao_excerpt[:500])])
+        style_table(ws1)
 
-    # Sheet 2: 2대교재_해부구조_대조
-    ws2 = wb.create_sheet(title="2.2대교재_해부구조_대조")
-    ws2.append(["구분", "경혈학 공통교재 표준", "김재효 교수 경혈해부 데이터셋", "해부생리학적 평가 및 층차 일치도"])
-    ws2.append(["표재신경", "피신경 주행 분지", "외측/내측 피신경 분절 C/L/S 지배", "Layer 1~2 체표 감각 수용기 흥분"])
-    ws2.append(["심층근육", "표준 근육 부착부 및 건", "정밀 주행 근육 근복 및 MTrP 호발부위", "Layer 3 체성-운동신경 조절"])
-    ws2.append(["신경혈관속", "주요 신경간 및 동맥", "혈관외막 자율신경총 및 반사 회로", "Layer 4 체성-내장 반사 구동층"])
-    style_table(ws2)
+        # Sheet 2: 2대교재_해부구조_대조
+        ws2 = wb.create_sheet(title="2.2대교재_해부구조_대조")
+        ws2.append(["구분", "경혈학 공통교재 표준", "김재효 교수 경혈해부 데이터셋", "해부생리학적 평가 및 층차 일치도"])
+        ws2.append(["표재신경", "피신경 주행 분지", "외측/내측 피신경 분절 C/L/S 지배", "Layer 1~2 체표 감각 수용기 흥분"])
+        ws2.append(["심층근육", "표준 근육 부착부 및 건", "정밀 주행 근육 근복 및 MTrP 호발부위", "Layer 3 체성-운동신경 조절"])
+        ws2.append(["신경혈관속", "주요 신경간 및 동맥", "혈관외막 자율신경총 및 반사 회로", "Layer 4 체성-내장 반사 구동층"])
+        style_table(ws2)
 
-    # Sheet 3: 3D좌표_Layer1~5_심도
-    ws3 = wb.create_sheet(title="3.3D좌표_Layer1~5_심도")
-    ws3.append(["해부층차", "깊이범위(mm)", "대표 구조물(Substrates)", "신경/혈관망", "생의학적 반사 기전", "안전도/위험평가"])
-    ws3.append(["Layer 1 (피부·피하)", "0 ~ 2.5mm", "피부 및 피하 결합조직", "표재 피신경, 피정맥", "체표 감각 수용기 흥분", "안전 (Safe)"])
-    ws3.append(["Layer 2 (표층근막)", "2.5 ~ 6.5mm", "표층 근막, 천층 건막", "근막 간 신경종말, 모세혈관망", "근막 통증유발점(MTrP) 해소", "안전 (Safe)"])
-    ws3.append(["Layer 3 (심층근육)", "6.5 ~ 16.5mm", "심층 근육 근복, 건막 간극", "운동신경 분지, 근방추", "체성-운동신경 조절, 분절 반사", "주의 (Moderate)"])
-    ws3.append(["Layer 4 (신경혈관속)", "16.5 ~ 22.0mm", "주요 신경간, 동맥 박동부", "혈관외막 주위 자율신경총", "체성-내장/자율신경 반사 구동", "고도주의 (Cautious)"])
-    ws3.append(["Layer 5 (골막·심부바닥)", "22.0mm 이상", "골막, 관절낭, 심부 기저면", "골막 감각신경, 심부 수용기", "골막 자극 진통 반사", "저항감 형성 안전한계선"])
-    style_table(ws3)
+        # Sheet 3: 3D좌표_Layer1~5_심도
+        ws3 = wb.create_sheet(title="3.3D좌표_Layer1~5_심도")
+        ws3.append(["해부층차", "깊이범위(mm)", "대표 구조물(Substrates)", "신경/혈관망", "생의학적 반사 기전", "안전도/위험평가"])
+        ws3.append(["Layer 1 (피부·피하)", "0 ~ 2.5mm", "피부 및 피하 결합조직", "표재 피신경, 피정맥", "체표 감각 수용기 흥분", "안전 (Safe)"])
+        ws3.append(["Layer 2 (표층근막)", "2.5 ~ 6.5mm", "표층 근막, 천층 건막", "근막 간 신경종말, 모세혈관망", "근막 통증유발점(MTrP) 해소", "안전 (Safe)"])
+        ws3.append(["Layer 3 (심층근육)", "6.5 ~ 16.5mm", "심층 근육 근복, 건막 간극", "운동신경 분지, 근방추", "체성-운동신경 조절, 분절 반사", "주의 (Moderate)"])
+        ws3.append(["Layer 4 (신경혈관속)", "16.5 ~ 22.0mm", "주요 신경간, 동맥 박동부", "혈관외막 주위 자율신경총", "체성-내장/자율신경 반사 구동", "고도주의 (Cautious)"])
+        ws3.append(["Layer 5 (골막·심부바닥)", "22.0mm 이상", "골막, 관절낭, 심부 기저면", "골막 감각신경, 심부 수용기", "골막 자극 진통 반사", "저항감 형성 안전한계선"])
+        style_table(ws3)
 
-    # Sheet 4: 생의학반사_BCheck_논문
-    ws4 = wb.create_sheet(title="4.생의학반사_BCheck_논문")
-    ws4.append(["항목번호", "B-Check 검증 항목 (만점 12점)", "부여 점수 (0/1/2)", "Layer B 참조 문헌 ID", "Layer A 실측 논문 (papers.id / PMID)"])
-    ws4.append(["1", "자침 심도의 말초신경·혈관 실체", 2, "B1-01 (Gray's), B2-01 (Heine)", "papers.id #1 / PMID 확인"])
-    ws4.append(["2", "척수 분절 정합 (피절·근절 ↔ 내장절)", 2, "B1-02 (Snell), B3-01 (Head)", "신경해부학 분절 일치"])
-    ws4.append(["3", "구심 섬유형 및 수용체 (Aβ/Aδ/C, PROKR2)", 1, "B3-04 (Sato), B3-17 (Liu)", "동물 생리실험 부합"])
-    ws4.append(["4", "중추 중계 및 경로 (후각수렴, NTS, rVLM)", 1, "B3-11 (Longhurst)", "신경영상 및 뇌간 반사"])
-    ws4.append(["5", "원심 경로 및 표적 장기 효과 일치", 2, "B3-05 (Sato), B3-16 (Torres-Rosas)", "고전 주치(P_single) 방향 일치"])
-    ws4.append(["6", "인체 전환 근거 (fMRI, RCT, 메타분석)", 1, "B4-03 (Chae), B4-04 (Vickers)", "인체 침 치료 임상 실증"])
-    ws4.append(["합계", "B-Check 총점 (≥ 8/12 = 67% 부합 시 확정)", "9 / 12 (부합 확정)", "Layer B 4계층 참조", "Tier 3 모노그래프 요건 충족"])
-    style_table(ws4)
+        # Sheet 4: 생의학반사_BCheck_논문
+        ws4 = wb.create_sheet(title="4.생의학반사_BCheck_논문")
+        ws4.append(["항목번호", "B-Check 검증 항목 (만점 12점)", "부여 점수 (0/1/2)", "Layer B 참조 문헌 ID", "Layer A 실측 논문 (papers.id / PMID)"])
+        ws4.append(["1", "자침 심도의 말초신경·혈관 실체", 2, "B1-01 (Gray's), B2-01 (Heine)", "papers.id #1 / PMID 확인"])
+        ws4.append(["2", "척수 분절 정합 (피절·근절 ↔ 내장절)", 2, "B1-02 (Snell), B3-01 (Head)", "신경해부학 분절 일치"])
+        ws4.append(["3", "구심 섬유형 및 수용체 (Aβ/Aδ/C, PROKR2)", 1, "B3-04 (Sato), B3-17 (Liu)", "동물 생리실험 부합"])
+        ws4.append(["4", "중추 중계 및 경로 (후각수렴, NTS, rVLM)", 1, "B3-11 (Longhurst)", "신경영상 및 뇌간 반사"])
+        ws4.append(["5", "원심 경로 및 표적 장기 효과 일치", 2, "B3-05 (Sato), B3-16 (Torres-Rosas)", "고전 주치(P_single) 방향 일치"])
+        ws4.append(["6", "인체 전환 근거 (fMRI, RCT, 메타분석)", 1, "B4-03 (Chae), B4-04 (Vickers)", "인체 침 치료 임상 실증"])
+        ws4.append(["합계", "B-Check 총점 (≥ 8/12 = 67% 부합 시 확정)", "9 / 12 (부합 확정)", "Layer B 4계층 참조", "Tier 3 모노그래프 요건 충족"])
+        style_table(ws4)
 
-    # Sheet 5: ARI_v3.0_평가표
-    ws5 = wb.create_sheet(title="5.ARI_v3.0_평가표")
-    ws5.append(["구분", "지표명", "가중치", "원점수 (0~100)", "가중점수", "루브릭 단계 및 판정 근거"])
-    ws5.append(["ARI-Core", "S_orig (원전문헌 정합성)", 0.40, ari_res["s_orig"], round(ari_res["s_orig"] * 0.40, 2), "선진·한대 원천정위 및 3대 원전 편년체 전수 대조"])
-    ws5.append(["ARI-Core", "S_clarity (해부 실체 명확성)", 0.35, ari_res["s_clarity"], round(ari_res["s_clarity"] * 0.35, 2), "공통교재 vs 김재효 교재 정밀 비교 및 3D 층차 실체화"])
-    ws5.append(["ARI-Core", "S_reflex (신경반사 실증성)", 0.25, ari_res["s_reflex"], round(ari_res["s_reflex"] * 0.25, 2), f"통합 DB 실측 논문 {layer_a_count}편 + B-Check 9/12 부합"])
-    ws5.append(["ARI-Core 총합", "실체 판명 신뢰도", 1.00, "-", ari_res["ari_core"], f"최종 등급: {ari_res['grade']} ({ari_res['grade_desc']})"])
-    ws5.append(["SI (안전지수)", "S_safety (자침 심도 안전성)", "별도", ari_res["si"], ari_res["si"], "한대 1푼=2.3mm 환산 및 Layer 4~5 안전 여유 거리"])
-    ws5.append(["민감도 분석", "등가중치(1/3씩) ARI-Core", "-", "-", ari_res["sensitivity_core"], f"민감도 판정: {ari_res['sens_grade']} ({ari_res['sens_note']})"])
-    style_table(ws5)
+        # Sheet 5: ARI_v3.0_평가표
+        ws5 = wb.create_sheet(title="5.ARI_v3.0_평가표")
+        ws5.append(["구분", "지표명", "가중치", "원점수 (0~100)", "가중점수", "루브릭 단계 및 판정 근거"])
+        ws5.append(["ARI-Core", "S_orig (원전문헌 정합성)", 0.40, ari_res["s_orig"], round(ari_res["s_orig"] * 0.40, 2), "선진·한대 원천정위 및 3대 원전 편년체 전수 대조"])
+        ws5.append(["ARI-Core", "S_clarity (해부 실체 명확성)", 0.35, ari_res["s_clarity"], round(ari_res["s_clarity"] * 0.35, 2), "공통교재 vs 김재효 교재 정밀 비교 및 3D 층차 실체화"])
+        ws5.append(["ARI-Core", "S_reflex (신경반사 실증성)", 0.25, ari_res["s_reflex"], round(ari_res["s_reflex"] * 0.25, 2), f"통합 DB 실측 논문 {layer_a_count}편 + B-Check 부합"])
+        ws5.append(["ARI-Core 총합", "실체 판명 신뢰도", 1.00, "-", ari_res["ari_core"], f"최종 등급: {ari_res['grade']} ({ari_res['grade_desc']})"])
+        ws5.append(["SI (안전지수)", "S_safety (자침 심도 안전성)", "별도", ari_res["si"], ari_res["si"], "한대 1푼=2.3mm 환산 및 Layer 4~5 안전 여유 거리"])
+        ws5.append(["민감도 분석", "등가중치(1/3씩) ARI-Core", "-", "-", ari_res["sensitivity_core"], f"민감도 판정: {ari_res['sens_grade']} ({ari_res['sens_note']})"])
+        style_table(ws5)
 
-    excel_out_path = os.path.join(point_dir, f"{code}_{name_kr}_해부생리_분석데이터.xlsx")
-    wb.save(excel_out_path)
-    print(f"  + Generated Excel DB: {excel_out_path}")
+        wb.save(excel_out_path)
+        print(f"  + Generated Excel DB: {excel_out_path}")
 
     # -------------------------------------------------------------
     # 2. Markdown Report (.md)
     # -------------------------------------------------------------
-    md_out_path = os.path.join(point_dir, f"{code}_{name_kr}_해부생리_실체판명_보고서.md")
-    
-    papers_md_list = ""
-    if mapped_papers:
-        for p in mapped_papers[:10]:
-            pid = p.get("id", "")
-            title = p.get("title", "")
-            authors = p.get("authors", "")
-            year = p.get("year", "")
-            journal = p.get("journal", "")
-            pmid = p.get("pmid", "")
-            doi = p.get("doi", "")
-            papers_md_list += f"- **[papers.id #{pid}]** *{title}*  \n  - {authors} (*{journal}*, {year}) | PMID: {pmid} | DOI: {doi}\n"
-    else:
-        papers_md_list = "- 통합 마스터 DB v3.0 내 활성 실측 논문 연결 대기 중 (PubMed/OpenAlex API 실시간 동기화 필요)\n"
+    skip_md = False
+    if os.path.exists(md_out_path) and not force:
+        fsize = os.path.getsize(md_out_path)
+        if fsize > 12000:
+            print(f"  + [보호] 기존 심층 보고서 보존 ({fsize:,} bytes: {md_out_path}).")
+            print("         (덮어쓰려면 --force 플래그를 지정하세요)")
+            skip_md = True
 
-    md_text = f"""# 🔬 [경혈 해부생리학 실체 판명 학술 모노그래프] {name_kr}({name_cn}, {code})
+    if not skip_md:
+        papers_md_list = ""
+        if mapped_papers:
+            for p in mapped_papers[:10]:
+                pid = p.get("id", "")
+                title = p.get("title", "")
+                authors = p.get("authors", "")
+                year = p.get("year", "")
+                journal = p.get("journal", "")
+                pmid = p.get("pmid", "")
+                doi = p.get("doi", "")
+                papers_md_list += f"- **[papers.id #{pid}]** *{title}*  \n  - {authors} (*{journal}*, {year}) | PMID: {pmid} | DOI: {doi}\n"
+        else:
+            papers_md_list = "- 통합 마스터 DB v3.0 내 활성 실측 논문 연결 대기 중 (PubMed/OpenAlex API 실시간 동기화 필요)\n"
+
+        md_text = f"""# 🔬 [경혈 해부생리학 실체 판명 학술 모노그래프] {name_kr}({name_cn} / {name_cn_simp}, {code})
 
 > **공식 적용 로직**: 경혈 해부학적 실체 판명 로직 체계 Version 2.7 (Rank 0~7 통합 프로토콜 준수)  
 > **핵심 3대 원전**: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》(황룡상 고증)  
@@ -394,9 +541,9 @@ def analyze_acupoint(query, s_orig=85.0, s_clarity=75.0, s_reflex=75.0, s_safety
 
 | 문헌명 | 원문 발췌 및 취혈 기술 | 주치 및 자침 심도 기재 | 문헌학적 교감 및 비고 |
 | :--- | :--- | :--- | :--- |
-| **《中国针灸穴位通鉴》** | {clean_str(xuewei_excerpt[:200])}... | 자침 심도 및 취혈 체위 기재 | 개별 경혈의 표면 지표 및 정위 변천사 종합 |
-| **《中国针灸证治通鉴》** | {clean_str(zhengzhi_excerpt[:200])}... | 단독 선혈 및 복합 배오 처방 전수 | 처방 전체 효과와 고유 효능($P_{{single}}$) 분리 준거 |
-| **《针灸腧穴通考》** | {clean_str(tongkao_excerpt[:200])}... | 전사 오류 교정 및 체위 비판 | 황룡상 출토문헌 실증주의 기반 최종 교감 |
+| **《中国针灸穴位通鉴》** | {clean_str(xuewei_excerpt[:300])}... | 자침 심도 및 취혈 체위 기재 | 개별 경혈의 표면 지표 및 정위 변천사 종합 |
+| **《中国针灸证治通鉴》** | {clean_str(zhengzhi_excerpt[:300])}... | 단독 선혈 및 복합 배오 처방 전수 | 처방 전체 효과와 고유 효능($P_{{single}}$) 분리 준거 |
+| **《针灸腧穴通考》** | {clean_str(tongkao_excerpt[:300])}... | 전사 오류 교정 및 체위 비판 | 황룡상 출토문헌 실증주의 기반 최종 교감 |
 
 ---
 
@@ -411,7 +558,7 @@ def analyze_acupoint(query, s_orig=85.0, s_clarity=75.0, s_reflex=75.0, s_safety
 ## 🔍 3. 이명·별칭 검증 표 (KJH DB 대조를 통한 혼용 차단)
 
 - **표준 경혈 코드**: {code} ({pdata['meridian_kr']} / {pdata['meridian_cn']})
-- **표준 혈명**: {name_kr} ({name_cn})
+- **표준 혈명**: {name_kr} ({name_cn} / 간체: {name_cn_simp})
 - **검증된 고전 이명**: {pdata['aliases_hanja'] or '이명 없음'}
 - **혼용 방지 조치**: 명칭 유사성으로 인한 위치 왜곡 및 타 혈위 정보 섞임 완전 차단.
 
@@ -503,14 +650,30 @@ $$\\text{{SI}} = S_{{safety}} \\quad (\\text{{합산하지 않고 별도 병기}
 - **가중치 민감도 분석**: 등가중치(1/3씩) 적용 시 Core 점수는 **{ari_res['sensitivity_core']:.1f}점**으로 {ari_res['sens_note']}.
 - **최종 판정 결론**: **{ari_res['grade_desc']}** — 전통 침구 원전의 촉진 기재와 현대 생의학적 신경반사 기전의 실체적 정합성이 엄격하게 검증됨.
 """
-    with open(md_out_path, "w", encoding="utf-8") as f:
-        f.write(md_text)
-    print(f"  + Generated MD Report: {md_out_path}")
+        with open(md_out_path, "w", encoding="utf-8") as f:
+            f.write(md_text)
+        print(f"  + Generated MD Report: {md_out_path}")
 
     # -------------------------------------------------------------
     # 3. HTML Web Report (.html)
     # -------------------------------------------------------------
-    html_out_path = os.path.join(point_dir, f"{code}_{name_kr}_해부생리_실체판명_보고서.html")
+    if not no_html:
+        if HAVE_HTML_BUILDER:
+            try:
+                built_html = build_html(Path(md_out_path), archive=True, images=True)
+                print(f"  + Generated High-Definition HTML Report: {built_html}")
+            except Exception as e:
+                print(f"  ! build_report_html fallback due to: {e}")
+                # Built-in lightweight HTML fallback
+                _generate_lightweight_html(html_out_path, name_kr, name_cn, code, pdata, ari_res, mapped_papers)
+        else:
+            _generate_lightweight_html(html_out_path, name_kr, name_cn, code, pdata, ari_res, mapped_papers)
+
+    print(f"\n=== {code} {name_kr} v2.7 / ARI v3.0 분석 완료! 폴더: {point_dir} ===\n")
+    return point_dir
+
+
+def _generate_lightweight_html(html_out_path, name_kr, name_cn, code, pdata, ari_res, mapped_papers):
     papers_html = ""
     if mapped_papers:
         for p in mapped_papers[:6]:
@@ -597,11 +760,32 @@ $$\\text{{SI}} = S_{{safety}} \\quad (\\text{{합산하지 않고 별도 병기}
 """
     with open(html_out_path, "w", encoding="utf-8") as f:
         f.write(html_text)
-    print(f"  + Generated HTML Report: {html_out_path}")
-    print(f"\n=== {code} {name_kr} v2.7 / ARI v3.0 분석 완료! 폴더: {point_dir} ===\n")
-    return point_dir
+    print(f"  + Generated Standard HTML Report: {html_out_path}")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="경혈 해부생리학 실체 판명 분석 엔진 (Framework v2.7 / ARI v3.0)")
+    parser.add_argument("target", nargs="?", default="ST36", help="경혈 코드 또는 한글/한자 혈명 (예: SP05, 상구, 商丘, ST36)")
+    parser.add_argument("--code", help="명시적 경혈 코드 지정")
+    parser.add_argument("--s-orig", type=float, default=None, help="S_orig 원점수 (0, 25, 50, 75, 100)")
+    parser.add_argument("--s-clarity", type=float, default=None, help="S_clarity 원점수 (0, 25, 50, 75, 100)")
+    parser.add_argument("--s-reflex", type=float, default=None, help="S_reflex 원점수 (0, 25, 50, 75, 100)")
+    parser.add_argument("--s-safety", type=float, default=None, help="S_safety (SI) 원점수 (0, 25, 50, 75, 100)")
+    parser.add_argument("--force", action="store_true", help="기존 심층 보고서(.md, .xlsx) 강제 덮어쓰기")
+    parser.add_argument("--no-html", action="store_true", help="HTML 보고서 생성 생략")
+    args = parser.parse_args()
+    
+    query = args.code or args.target
+    analyze_acupoint(
+        query=query,
+        s_orig=args.s_orig,
+        s_clarity=args.s_clarity,
+        s_reflex=args.s_reflex,
+        s_safety=args.s_safety,
+        force=args.force,
+        no_html=args.no_html
+    )
 
 
 if __name__ == "__main__":
-    target = sys.argv[1] if len(sys.argv) > 1 else "ST36"
-    analyze_acupoint(target)
+    main()

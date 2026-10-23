@@ -1,4 +1,4 @@
-﻿# 📍 Acupoint Anatomy & Substrate Identification MCP Server
+# 📍 Acupoint Anatomy & Substrate Identification MCP Server
 ### 경혈 해부생리학 실체 판명 및 신경반사 분석 모델 컨텍스트 프로토콜 (Framework v2.7 & ARI v3.0)
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -10,7 +10,7 @@
 본 저장소는 한의학 경혈학의 고전 원전(《中国针灸穴位通鉴》·《中国针灸证治通鉴》·《针灸腧穴通考》) 고증과 현대 신경해부학·생의학 실증(PubMed/Crossref/Europe PMC)을 융합하여 경혈의 해부학적 5층차(Layer 1~5) 실체, 3D 공간 좌표, 1푼=2.3mm 한대 도량형 자침 심도, 체성-내장/자율신경 반사 회로 및 ARI v3.0 신뢰도 프로파일을 도출하는 **경혈 해부생리학 표준 MCP(Model Context Protocol) 서버 및 스킬 패키지**입니다.
 
 > **🌐 온라인 연구 포털 & 아카이브 (GitHub Pages)**: [https://jaehyokim-sketch.github.io/acupoint_anatomy/](https://jaehyokim-sketch.github.io/acupoint_anatomy/)  
-> (21편 전문 리포트, 3대 침구 원전 비교분석, 동의보감 두통 임상 매트릭스 수록)
+> (24편 전문 리포트, 3대 침구 원전 비교분석, 동의보감 두통 임상 매트릭스 수록)
 
 ---
 

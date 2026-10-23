@@ -1,7 +1,7 @@
 # Layer B 참조 등록부 (Four-Tier Reference Registry) v1.0
 
 > **용도**: [`acupoint_anatomical_logic_framework.md`](acupoint_anatomical_logic_framework.md) Rank 6 Layer B 대조와 B-Check 6항목 채점에 사용할 수 있는 참조 문헌의 **폐쇄 목록**. 보고서는 참조 ID(예: B3-17)로 인용하고 연구자 이름만으로 '모델'을 지칭하지 않는다.
-> **생성일**: 2026-10-04 · PubMed 저자·연도·저널 제약 검색으로 PMID 30/30편 확인(제목 토큰 일치 ≥ 0.6) · 기계용 사본: `data/layer_b_reference_registry.json`
+> **생성일**: 2026-10-04 · PubMed 저자·연도·저널 제약 검색으로 PMID 30/30편 확인(제목 토큰 일치 ≥ 0.6) · 기계용 사본: `02_Master_Datasets/layer_b_reference_registry.json`
 > **추가 규칙**: 등록부 밖 문헌을 쓰려면 먼저 이 표에 행을 추가하고 PMID/DOI를 확인한다. 책은 판·장·쪽을, 논문은 종·마취 여부·검증 경혈을 함께 적는다.
 
 ## B-Check 6항목과 계층의 대응
@@ -29,7 +29,6 @@
 | B1-04 | 참고서 | Tubbs RS, Shoja MM, Loukas M (eds). Bergman's Comprehensive Encyclopedia of Human Anatomic Variation. Wiley; 2016. | 사람, 신경·혈관·근육 변이 빈도 | ① | 변이 빈도는 집단별 차이 큼. SI(안전지수) 채점에 반영 | — | 서지(비논문) |
 | B1-05 | 표준 | WHO Regional Office for the Western Pacific. WHO Standard Acupuncture Point Locations in the Western Pacific Region. Manila: WHO; 2008. | 361 경혈 표준 정위 | ① | 정위 기준이지 해부 실체 근거는 아님. 고전 원위와의 Δ 산출 기준(Rank 5) | — | 서지(비논문) |
 | B1-06 | 교과서 | Lumley JSP. Surface Anatomy: The Anatomical Basis of Clinical Examination. 4th ed. Churchill Livingstone; 2008. | 사람, 촉진 랜드마크 | ① | 경혈 언급 없음 | — | 서지(비논문) |
-
 ## B2 경혈 특이 해부 실증 (Acupoint-Specific Anatomical Evidence)
 
 > 항목 ①의 2점 조건(경혈 특이 실측). 반증 문헌(B2-04)과 병기
@@ -46,7 +45,6 @@
 | B2-08 | 단면 도해 | 严振国 主编. 经穴断面解剖图解(四肢部·头颈胸部·腹盆部). 上海: 上海科学技术出版社. | 사람 사체 단면, 경혈 전반(중국 표준) | ①② | PubMed 미색인. 판차·쪽 명기 | — | 서지(비논문) |
 | B2-09 | 국내 교재 | 경혈학 공통교재 해부구조 데이터셋 · 김재효 교수 경혈 해부구조 데이터셋 (Rank 5, 02_Master_Datasets) | 361 경혈, 국내 표준 | ①② | 교재 간 불일치는 Rank 5 비교표로 처리 | — | 서지(비논문) |
 | B2-10 | 유형(수집) | 영상 기반 안전 자침 심도 연구군(초음파·CT·MRI). 경혈별 개별 논문은 Layer A 파이프라인(sync_master_db.py)으로 수집하여 papers.id로 인용 | 사람, 경혈별 | ① | 등록부에는 유형만 두고 개별 PMID는 Layer A에서 관리 | — | 서지(비논문) |
-
 ## B3 일반 신경생리 기전 체계 (General Neurophysiological Frameworks)
 
 > 항목 ③④⑤. 종·마취·검증 경혈 범위 밖이면 1점(유추) 상한
@@ -73,7 +71,6 @@
 | B3-18 | 실험 | Goldman N, Chen M, Fujita T, et al. Adenosine A1 receptors mediate local anti-nociceptive effects of acupuncture. Nat Neurosci. 2010;13(7):883-888. | 마우스, ST36 국소 아데노신 | ③ | 국소 진통 한정 | [20512135](https://pubmed.ncbi.nlm.nih.gov/20512135/) | PubMed 확인(저자·연도·저널 제약, 제목 일치 1.0) |
 | B3-19 | 가설 | Burnstock G. Acupuncture: a novel hypothesis for the involvement of purinergic signalling. Med Hypotheses. 2009;73(4):470-472. | 가설, 퓨린 신호 | ③ | 가설 수준(1점 상한) | [19628336](https://pubmed.ncbi.nlm.nih.gov/19628336/) | PubMed 확인(저자·연도·저널 제약, 제목 일치 1.0) |
 | B3-20 | 교과서 | Filshie J, White A, Cummings M (eds). Medical Acupuncture: A Western Scientific Approach. 2nd ed. Elsevier; 2016. | 사람 임상, 분절 침술 체계 | ②④⑤ | 서양 의학적 침술 틀. 고전 주치 해석과 분리 | — | 서지(비논문) |
-
 ## B4 인체 전환·임상 근거 및 반증 (Human Translation, Clinical Evidence & Counter-Evidence)
 
 > 항목 ⑥. 인체 전환 여부와 혈위 특이성 반증을 반드시 검토
@@ -87,7 +84,6 @@
 | B4-05 | 종설(반증) | Choi EM, Jiang F, Longhurst JC. Point specificity in acupuncture. Chin Med. 2012;7:4. | 사람·동물, 혈위 특이성 논쟁 | ⑥ | 특이성 지지·반증 근거 균형 검토용 | [22373514](https://pubmed.ncbi.nlm.nih.gov/22373514/) | PubMed 확인(저자·연도·저널 제약, 제목 일치 1.0) |
 | B4-06 | 보고 표준 | MacPherson H, Altman DG, Hammerschlag R, et al. Revised STandards for Reporting Interventions in Clinical Trials of Acupuncture (STRICTA). PLoS Med. 2010;7(6):e1000261. | 임상시험 보고 표준 | ⑥ | Layer A 인체 RCT의 S_reflex 100점 조건(STRICTA 준수) 판정용 | [20543992](https://pubmed.ncbi.nlm.nih.gov/20543992/) | PubMed 확인(저자·연도·저널 제약, 제목 일치 1.0) |
 | B4-07 | 근거 등급 | Guyatt GH, Oxman AD, Vist GE, et al. GRADE: an emerging consensus on rating quality of evidence and strength of recommendations. BMJ. 2008;336(7650):924-926. | 근거 수준 체계 | ⑥ | Rank 7 게이트·루브릭 방법론 준거 | [18436948](https://pubmed.ncbi.nlm.nih.gov/18436948/) | PubMed 확인(저자·연도·저널 제약, 제목 일치 1.0) |
-
 ## 적용 예시: 종전 '4대 모델'의 재배치
 
 | 종전 표기 | 등록부 ID | 적용 범위 명시 |
