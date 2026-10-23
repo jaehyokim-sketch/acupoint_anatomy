@@ -210,3 +210,21 @@ python sync_master_db.py migrate-v3 [--dry-run]   # 1회 실행
 | 배치 옵션 | `scan-local --enrich --enrich-limit N`으로 보강 건수를 제한해 시험 실행 가능. 주간 배치 `weekly_sync.cmd`(작업 스케줄러 `AcupointMasterDB_WeeklySync`, 일요일 03:00)는 `--trigger batch scan-local --enrich` 전량 실행, 로그는 `sync_logs/batch_YYYYMMDD.log` |
 | Crossref 필터 | `query.bibliographic`의 느슨한 매칭 때문에 제목·초록에 경혈 코드·병음이 없는 결과는 제외(LU6 시험 적재에서 무관 8편 superseded) |
 | 미구현·후속 | ChinaDOI/공식 사이트 중국어 원제 보강(`cn_title`) 자동 수집, `evidence_level` 자동 분류, Windows 작업 스케줄러 배치 등록, 기존 보고서 7건의 Layer A 재인용(`papers.id` 포인터) |
+
+## 10. 경혈 연결 정확도 개정 (2026-10-23)
+
+경혈 병음이 지명·기관명과 같거나(太原 Taiyuan → LU9, 商丘 Shangqiu → SP5, 天府 Tianfu → LU3), 코드가 다른 약어와 같아(Sp5 = 삼차신경 척수핵) 무관 논문이 경혈에 연결되던 문제를 고쳤다. 계기: LU9 역색인 41편 중 실제 LU9 자극 연구 15편(LU09 보고서), SP5 33편 중 6편(SP05 보고서).
+
+| 항목 | 변경 |
+| :--- | :--- |
+| 경혈 언급 판정 `acupoint_mentioned()` | `sync-api`의 모든 후보(PubMed·OpenAlex·Crossref·Europe PMC)는 제목+초록 **전문**에 경혈이 경혈로서 나올 때만 연결한다. 인정: ① 대문자 코드(`LU9`·`LU 9`·`LU-9`·`LU09`) ② 혼합 대소문자 코드(`Gb21`, 침구 맥락 있을 때만, `Sp`는 제외) ③ 한자명(뒤에 市·县·区·省·大学·医院 등이 오면 제외) ④ 병음(침구 맥락이 있고, 뒤에 City·Province·University·Hospital·First·People's 등이 오지 않을 때). 기존 레코드에 병합될 때도 같은 검사를 거친다. 제외 후보는 `_metadata.relevance_rejections[<코드>]`(최근 200건)에 사유와 함께 남는다 |
+| PubMed 쿼리 | 경혈 용어를 `[tiab]`(제목·초록)으로 한정 — 저자 소속(예: 太原 소재 병원) 적중 차단 |
+| 로컬 PDF 감지 | 코드 패턴을 대소문자 구분으로, 한자명 패턴에 지명·기관명 후행 제외를 적용. 반영하려면 `scan-local --full-rescan` |
+| 로컬 사본 중복 | DOI 없는 로컬 PDF가 정규화 제목+연도로 같으면 최소 ID만 active, 나머지 `status=duplicate`·`duplicate_reason`(`mark_local_title_duplicates`). `scan-local`·`relink`에서 실행 |
+| `relink` 명령(신규) | 외부 레코드(manual 제외)의 제목+초록을 PMID(efetch)·DOI(OpenAlex)로 다시 받아 경혈 연결을 재검사하고, 실패한 연결을 제거한다. 제거 내역은 레코드의 `relink_removed[]`(코드·사유·초록 전문 여부·시각)에 남아 되돌릴 수 있다. 초록을 못 받은 레코드는 확실한 경우만 제거 |
+| 병음 저장 | `sync-api`가 경혈 항목에 `pinyin`을 저장한다(`relink`는 과거 레코드의 병음을 `sync_log` PubMed 쿼리에서 복원) |
+| 실행 결과 | `relink`: 외부 341편 재검사(초록 재수집 341편) → 연결 38건 제거(LU9 15, LU6 12, LU3 5, SP5 3, GB21·CV4·GB39 각 1), 로컬 사본 134편 duplicate 표시. validate OK. 제거된 연결은 모두 각 보고서가 이미 '오적중'으로 판정해 인용하지 않은 논문이었다 |
+| 로컬 감지 보완 | 1차 전면 재스캔에서 대문자 전용 규칙 때문에 "Li 4"·"St36"·"St-36" 표기 논문(Hsieh 2001, Zhu 2004 등)이 빠졌다. 침구 맥락이 있을 때 혼합 대소문자 코드(`Sp` 제외)와 병음(`KNOWN_PINYIN` + 항목 `pinyin`)도 인정하도록 보완 |
+| 연결 보존 필드 | `api_linked_acupoints`: sync-api가 초록으로 확인해 기존 레코드에 붙인 경혈. `manual_linked_acupoints`: 보고서 Layer A 표에서 사람이 확인한 경혈(2026-10-23, 11개 보고서의 경혈-논문 연결 126건 등록(LU03-LU04 통합 보고서의 8편은 LU3·LU4 양쪽) — 예: papers.id 294 Liu 2020 Neuron은 초록에 'ST36' 표기가 없어 자동 규칙으로는 확인 불가). 두 필드는 `scan-local`(전면 재스캔 포함)에서 본문 감지와 합집합으로 유지되고, `relink`에서도 제거하지 않는다 |
+| 전면 재스캔 결과 | 1차(대문자 전용): KI8 138→2, BL41 121→0, LI20 153→27, BL49 135→54 등 대소문자 무시 오적중(예: 'Li 20', 'ki8') 대량 제거. 2차(혼합 대소문자·병음 보완 후, 272 s): 오적중 제거는 유지(KI8 2, BL41 0, LI20 27, BL49 54)하면서 진짜 연결 회복·증가 — ST36 109→111, LI4 74→78, PC6 33→34, LU9 9→10. 로컬 사본 duplicate 164편. validate OK |
+| 백업 | `02_Master_Datasets/backup/sync_master_db.py.20261023_before_relink.bak`, `…마스터DB_20261023_before_relink.json`·`.xlsx` |

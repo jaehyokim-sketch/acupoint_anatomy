@@ -1,0 +1,19 @@
+{
+ "n_images": 3092,
+ "n_subjects": 1021,
+ "csa_px2": {
+  "median": 52589.5,
+  "p25": 41396.5,
+  "p75": 63966.75
+ },
+ "mean_gray": {
+  "median": 78.0,
+  "p25": 67.8,
+  "p75": 87.0
+ },
+ "echo_ratio_inside_over_ring": {
+  "median": 0.913
+ },
+ "example": "anon_1669_3.png",
+ "source": "Marzola F et al. Comput Biol Med 2021;135:104623, dataset doi:10.17632/3jykz7wz8d.1 (CC BY 4.0)"
+}

@@ -269,9 +269,11 @@ def load_acupoint_dictionary(csv_path: Path) -> Dict[str, Dict[str, Any]]:
             cn = (row.get("본혈명(한자)") or "").strip()
             pats = []
             if m:
-                pats.append(re.compile(rf"\b{m.group(1)}[- ]?0?{m.group(2)}\b", re.IGNORECASE))
+                # 대소문자 구분: 'Sp5'(삼차신경 척수핵)·'li4' 같은 다른 약어가 경혈 코드로 잡히지 않게 대문자 경락 기호만 인정
+                pats.append(re.compile(rf"\b{m.group(1)}[- ]?0?{m.group(2)}\b"))
             if cn:
-                pats.append(re.compile(re.escape(cn)))
+                # 지명·기관명(商丘市, 太原医院 등) 제외
+                pats.append(re.compile(re.escape(cn) + CN_PLACE_LOOKAHEAD))
             if kr:
                 # 한글 2자 이름 오탐 방지: 뒤에 '혈' 또는 괄호/코드가 따라오는 경우만 본문 일치로 인정
                 pats.append(re.compile(re.escape(kr) + r"(?=혈|\s*[\(（]|\s*[A-Z]{1,2}\d)"))
@@ -280,9 +282,58 @@ def load_acupoint_dictionary(csv_path: Path) -> Dict[str, Dict[str, Any]]:
     return d
 
 
-def detect_acupoints(text: str, filename: str, adict: Dict[str, Dict[str, Any]]) -> List[str]:
+# --------------------------------------------------------------------------------------
+# 경혈 언급 판정 (외부 검색 결과의 경혈 연결 전 필수 검사, 2026-10-23)
+#   경혈 병음이 지명(太原 Taiyuan, 商丘 Shangqiu)·기관명과 같거나, 코드가 다른 약어(Sp5 = 삼차신경 척수핵)와 같아
+#   무관 논문이 연결되던 문제를 막는다. 제목·초록에 경혈 식별자가 '경혈로서' 나와야 연결한다.
+# --------------------------------------------------------------------------------------
+CN_PLACE_LOOKAHEAD = r"(?![市县縣区區省镇鎮村]|大学|大學|医院|醫院|医学|醫學|人民|中医院|地区|地區)"
+_EN_PLACE_AFTER = re.compile(r"^\W{0,3}(city|province|county|district|municipal|university|hospital|medical|people'?s|"
+                             r"college|institute|region|prefecture|china\b|first|second|third|fourth|fifth|central|affiliated|"
+                             r"traditional|tcm\b|no\.|normal|cancer|maternal|children|shanxi|henan|area|urban|rural|residents?)", re.I)
+_ACU_CONTEXT = re.compile(r"acupunct|electroacupunct|acupoint|acu-point|moxibust|needl|\bTEAS\b|\bpoint\b|穴|针刺|針刺|电针|電針|艾灸", re.I)
+
+
+def code_variants_regex(sc: str) -> Optional[re.Pattern]:
+    m = re.match(r"^([A-Z]+)(\d+)$", sc)
+    return re.compile(rf"\b{m.group(1)}[- ]?0?{m.group(2)}\b") if m else None
+
+
+def acupoint_mentioned(text: str, sc: str, pinyins: List[str], names_cn: List[str]) -> Tuple[bool, str]:
+    """제목·초록(text)에 경혈 sc가 경혈로서 언급되었는가. (판정, 근거) 반환."""
+    if not text:
+        return False, "본문 없음"
+    rx = code_variants_regex(sc)
+    if rx and rx.search(text):
+        return True, "code"
+    # 혼합 대소문자(Gb21, Lu9, St36)는 침구 맥락이 있을 때만 인정. 'Sp'는 spinal 약어(Sp5 = 삼차신경 척수핵)와 겹쳐 제외
+    m = re.match(r"^([A-Z]+)(\d+)$", sc)
+    if m and m.group(1) != "SP" and _ACU_CONTEXT.search(text):
+        if re.search(rf"\b{m.group(1)[0]}{m.group(1)[1:].lower()}[- ]?0?{m.group(2)}\b", text):
+            return True, "code(mixed-case)"
+    for cn in [c for c in names_cn if c]:
+        if re.search(re.escape(cn) + CN_PLACE_LOOKAHEAD, text):
+            return True, "cn"
+    if not _ACU_CONTEXT.search(text):
+        return False, "침구 맥락 없음"
+    for py in [p for p in pinyins if p]:
+        for mm in re.finditer(rf"\b{re.escape(py)}\b", text, re.I):
+            if not _EN_PLACE_AFTER.match(text[mm.end():mm.end() + 30]):
+                return True, "pinyin"
+    return False, "식별자 없음(또는 지명·기관명으로만 등장)"
+
+
+KNOWN_PINYIN = {  # 로컬 PDF 감지용 보조 병음(침구 맥락이 있을 때만). sync-api가 저장한 entry.pinyin도 함께 쓴다
+    "ST36": ["Zusanli"], "LI4": ["Hegu", "Hoku"], "SP6": ["Sanyinjiao"], "PC6": ["Neiguan"], "GV20": ["Baihui"],
+    "LR3": ["Taichong"], "GB34": ["Yanglingquan"], "BL40": ["Weizhong"], "CV12": ["Zhongwan"], "ST25": ["Tianshu"],
+    "CV4": ["Guanyuan"], "GB20": ["Fengchi"], "LI11": ["Quchi"], "KI3": ["Taixi"], "HT7": ["Shenmen"],
+}
+
+
+def detect_acupoints(text: str, filename: str, adict: Dict[str, Dict[str, Any]], pinyin_map: Optional[Dict[str, List[str]]] = None) -> List[str]:
     found = set()
     fl = filename.lower()
+    acu_ctx = bool(text) and bool(_ACU_CONTEXT.search(text))
     for sc, info in adict.items():
         if (info["kr"] and info["kr"] in filename) or (info["cn"] and info["cn"] in filename) or sc.lower() in fl:
             found.add(sc)
@@ -292,6 +343,18 @@ def detect_acupoints(text: str, filename: str, adict: Dict[str, Dict[str, Any]])
                 if pat.search(text):
                     found.add(sc)
                     break
+            else:
+                if acu_ctx:
+                    # 혼합 대소문자 코드(Li 4, St36, St-36) — 침구 맥락이 있을 때만, 'Sp'는 spinal 약어와 겹쳐 제외
+                    m = re.match(r"^([A-Z]+)(\d+)$", sc)
+                    if m and m.group(1) != "SP" and re.search(rf"\b{m.group(1)[0]}{m.group(1)[1:].lower()}[- .]{{0,2}}0?{m.group(2)}\b(?![.,]?\d)", text):
+                        found.add(sc)
+                        continue
+                    for py in (pinyin_map or {}).get(sc, []) + KNOWN_PINYIN.get(sc, []):
+                        mm = re.search(rf"\b{re.escape(py)}\b", text, re.I)
+                        if mm and not _EN_PLACE_AFTER.match(text[mm.end():mm.end() + 30]):
+                            found.add(sc)
+                            break
     return sorted(found)
 
 
@@ -495,6 +558,9 @@ def extract_text(path: Path) -> Tuple[str, bool]:
     return "", False
 
 
+PINYIN_MAP: Dict[str, List[str]] = {}   # cmd_scan_local이 DB에서 채운다(경혈 코드 → 병음)
+
+
 def build_local_record(path: Path, base: Path, adict: Dict[str, Dict[str, Any]], pid: int, existing: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     text, ok = extract_text(path)
     meta = parse_filename_meta(path.name)
@@ -513,7 +579,9 @@ def build_local_record(path: Path, base: Path, adict: Dict[str, Dict[str, Any]],
         "id": pid, "origin": "local", "status": "active",
         "title": meta["title"], "authors": meta["author"], "journal": meta["journal"], "year": meta["year"],
         "volume_issue": str(meta["year"] or ""), "doi": doi or rec.get("doi", ""), "pmid": pmid or rec.get("pmid", ""),
-        "abstract_snippet": snippet, "snippet": snippet, "detected_acupoints": detect_acupoints(text, path.name, adict),
+        "abstract_snippet": snippet, "snippet": snippet,
+        # 본문 감지 ∪ sync-api가 초록으로 확인해 붙인 연결(api_linked_acupoints) — 전면 재스캔에도 API 연결이 사라지지 않게 한다
+        "detected_acupoints": sorted(set(detect_acupoints(text, path.name, adict, PINYIN_MAP)) | set(as_list(rec.get("api_linked_acupoints"))) | set(as_list(rec.get("manual_linked_acupoints")))),
         "keywords": rec.get("keywords", []), "mesh": rec.get("mesh", []), "language": rec.get("language", ""),
         "evidence_level": rec.get("evidence_level"),
         "file_path": relpath_norm(path, base), "filename": path.name, "ext": path.suffix.lower(),
@@ -528,6 +596,11 @@ def build_local_record(path: Path, base: Path, adict: Dict[str, Dict[str, Any]],
 # scan-local
 # --------------------------------------------------------------------------------------
 def cmd_scan_local(ctx: Ctx, db: Dict[str, Any], full_rescan=False, enrich=False, enrich_limit: int = 0) -> Dict[str, Any]:
+    PINYIN_MAP.clear()
+    PINYIN_MAP.update(_pinyin_map_from_logs(db))
+    for _sc, _e in acupoint_entries(db).items():
+        if _e.get("pinyin") and _e["pinyin"] not in PINYIN_MAP.setdefault(_sc, []):
+            PINYIN_MAP[_sc].append(_e["pinyin"])
     t0 = time.time()
     base = local_dir(ctx, db)
     adict = ctx.acupoint_dict()
@@ -615,7 +688,7 @@ def cmd_scan_local(ctx: Ctx, db: Dict[str, Any], full_rescan=False, enrich=False
             print(f"    신규 처리 {added}/{len(new_paths)}")
 
     db["file_manifest"] = dict(sorted(manifest.items()))
-    dups = mark_local_duplicates(db)
+    dups = mark_local_duplicates(db) + mark_local_title_duplicates(db)
 
     enriched = 0
     if enrich:
@@ -748,7 +821,7 @@ def pubmed_efetch(ctx: Ctx, pmids: List[str]) -> Tuple[List[Dict[str, Any]], Opt
         out.append({
             "title": title, "authors": ", ".join(authors[:6]) + (" et al." if len(authors) > 6 else ""), "journal": journal,
             "year": as_int(year, None), "volume_issue": vol_str, "pmid": pmid, "doi": doi,
-            "abstract_snippet": abstract[:300], "abstract_full_len": len(abstract),
+            "abstract_snippet": abstract[:300], "abstract_full_len": len(abstract), "_fulltext": f"{title} {abstract}",
             "keywords": [k.text.strip() for k in mc.findall("KeywordList/Keyword") if k.text],
             "mesh": [m.findtext("DescriptorName") for m in mc.findall("MeshHeadingList/MeshHeading") if m.findtext("DescriptorName")],
             "language": a.findtext("Language") or "", "source_db": "PubMed",
@@ -758,7 +831,8 @@ def pubmed_efetch(ctx: Ctx, pmids: List[str]) -> Tuple[List[Dict[str, Any]], Opt
 
 
 def search_pubmed(ctx: Ctx, code: str, pinyin: str, name_cn: str, max_n: int) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
-    terms = " OR ".join(f'"{t}"' for t in [code, pinyin, name_cn] if t)
+    # [tiab]: 저자 소속(예: 太原 Taiyuan 소재 병원)까지 검색되던 것을 제목·초록으로 한정 (2026-10-23)
+    terms = " OR ".join(f'"{t}"[tiab]' for t in [code, pinyin, name_cn] if t)
     queries = [
         (f"({terms}) AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy)", "relevance"),
         (f'({terms}) AND ("Zhongguo Zhen Jiu"[Journal] OR "Zhen Ci Yan Jiu"[Journal])', "pub_date"),
@@ -803,6 +877,7 @@ def openalex_record(w: dict, query: str) -> Dict[str, Any]:
         "pmid": pm.group(1) if pm else "", "doi": normalize_doi(w.get("doi")), "abstract_snippet": abstract[:300],
         "keywords": [k.get("display_name") for k in (w.get("keywords") or []) if k.get("display_name")][:10], "mesh": [],
         "language": w.get("language") or "", "source_db": "OpenAlex", "source_query": query, "url": w.get("id") or "",
+        "_fulltext": f"{(w.get('title') or '')} {abstract}",
     }
 
 
@@ -943,6 +1018,11 @@ def cmd_sync_api(ctx: Ctx, db: Dict[str, Any], code: str, name_kr: str, name_cn:
     name_kr = name_kr or info.get("kr", "")
     name_cn = name_cn or info.get("cn", "")
     entry = ensure_entry(db, sc, ctx, name_kr, name_cn, meridian)
+    if pinyin:
+        entry["pinyin"] = pinyin
+    pinyins = [x for x in {pinyin, entry.get("pinyin", "")} if x]
+    names_cn = [x for x in {name_cn, info.get("cn", ""), entry.get("name_cn", "")} if x]
+    rejected: List[Dict[str, Any]] = []
     print(f"\n[sync-api] {sc} ({name_kr} / {name_cn} / {pinyin}) max_per_source={max_n}")
 
     results: List[Tuple[List[Dict[str, Any]], Dict[str, Any]]] = []
@@ -968,6 +1048,11 @@ def cmd_sync_api(ctx: Ctx, db: Dict[str, Any], code: str, name_kr: str, name_cn:
     for recs, st in results:
         src = st["source"]
         for c in recs:
+            ftxt = c.pop("_fulltext", "") or f"{c.get('title', '')} {c.get('abstract_snippet', '')}"
+            ok, why = acupoint_mentioned(ftxt, sc, pinyins, names_cn)
+            if not ok:
+                rejected.append({"source": src, "pmid": c.get("pmid", ""), "doi": c.get("doi", ""), "title": (c.get("title") or "")[:120], "reason": why})
+                continue
             dup = find_duplicate(c, by_doi, by_pmid, by_hash)
             if dup is not None:
                 tgt = by_id[dup]
@@ -996,6 +1081,7 @@ def cmd_sync_api(ctx: Ctx, db: Dict[str, Any], code: str, name_kr: str, name_cn:
                     by_pmid[cpm] = dup
                 if sc not in [std_code(x) for x in as_list(tgt.get("detected_acupoints"))]:
                     tgt["detected_acupoints"] = sorted(set(as_list(tgt.get("detected_acupoints")) + [sc]))
+                tgt["api_linked_acupoints"] = sorted(set(as_list(tgt.get("api_linked_acupoints")) + [sc]))
                 if dup not in touched_ids:
                     touched_ids.append(dup)
                 continue
@@ -1044,10 +1130,136 @@ def cmd_sync_api(ctx: Ctx, db: Dict[str, Any], code: str, name_kr: str, name_cn:
                   http_status=st["http_status"], fetched=st["fetched"], duration_ms=dur)
     log_event(ctx, db, "sync-api-summary", source="all", acupoint=sc, http_status=None,
               fetched=sum(len(r) for r, _ in results), deduped=merged + deduped_batch, added=added, duration_ms=dur,
-              note=f"merged_into_existing={merged} batch_dups={deduped_batch} sources={src_status}")
-    print(f"[sync-api] 후보 {sum(len(r) for r, _ in results)} → 신규 {added}, 기존 병합 {merged}, 배치 내 중복 {deduped_batch} | {sc} 랜드마크 {len(lm)}편 ({dur} ms)")
+              note=f"merged_into_existing={merged} batch_dups={deduped_batch} rejected_not_mentioned={len(rejected)} sources={src_status}")
+    if rejected:
+        md = db["_metadata"].setdefault("relevance_rejections", {})
+        md[sc] = (md.get(sc, []) + [{**r, "ts": now_iso()} for r in rejected])[-200:]
+    print(f"[sync-api] 후보 {sum(len(r) for r, _ in results)} → 신규 {added}, 기존 병합 {merged}, 배치 내 중복 {deduped_batch}, "
+          f"경혈 미언급 제외 {len(rejected)} | {sc} 랜드마크 {len(lm)}편 ({dur} ms)")
     all_failed = all(st["http_status"] != 200 for _, st in results)
-    return {"code": sc, "added": added, "merged": merged, "sources": src_status, "all_failed": all_failed}
+    return {"code": sc, "added": added, "merged": merged, "rejected": len(rejected), "sources": src_status, "all_failed": all_failed}
+
+
+# --------------------------------------------------------------------------------------
+# relink — 기존 외부 논문의 경혈 연결 재검사 (2026-10-23)
+# --------------------------------------------------------------------------------------
+def _pinyin_map_from_logs(db: Dict[str, Any]) -> Dict[str, List[str]]:
+    """sync_log의 PubMed 쿼리 ("CODE" OR "Pinyin" OR "汉字")에서 경혈별 병음을 복원한다."""
+    out: Dict[str, set] = {}
+    for ev in db["_metadata"].get("sync_log", []):
+        q = ev.get("query") or ""
+        sc = std_code(ev.get("acupoint") or "")
+        if not sc or ev.get("source") != "pubmed":
+            continue
+        m = re.search(r'\(([^()]*?)\)\s*AND', q)
+        if not m:
+            continue
+        for t in re.findall(r'"([^"]+)"', m.group(1)):
+            if re.fullmatch(r"[A-Za-z][a-z]+", t):
+                out.setdefault(sc, set()).add(t)
+    return {k: sorted(v) for k, v in out.items()}
+
+
+def _refetch_texts(ctx: Ctx, papers: List[Dict[str, Any]]) -> Dict[int, str]:
+    """외부 논문의 제목+초록 전문을 PMID(PubMed efetch) 또는 DOI(OpenAlex)로 다시 받는다."""
+    texts: Dict[int, str] = {}
+    by_pmid = {str(p["pmid"]): p for p in papers if str(p.get("pmid") or "").strip() not in ("", "None")}
+    pm = list(by_pmid)
+    for i in range(0, len(pm), 150):
+        got, st = pubmed_efetch(ctx, pm[i:i + 150])
+        for g in got:
+            p = by_pmid.get(str(g.get("pmid")))
+            if p is not None:
+                texts[as_int(p["id"])] = g.get("_fulltext", "")
+    rest = [p for p in papers if as_int(p["id"]) not in texts and normalize_doi(p.get("doi"))]
+    for i in range(0, len(rest), 40):
+        chunk = rest[i:i + 40]
+        flt = "doi:" + "|".join(normalize_doi(p["doi"]) for p in chunk)
+        r, st, err = http_get("https://api.openalex.org/works", {"filter": flt, "per-page": 50, "select": "doi,title,abstract_inverted_index"})
+        if st != 200:
+            continue
+        idx = {normalize_doi(p["doi"]): p for p in chunk}
+        for w in (r.json().get("results") or []):
+            p = idx.get(normalize_doi(w.get("doi")))
+            if p is not None:
+                texts[as_int(p["id"])] = f"{w.get('title') or ''} {openalex_abstract(w.get('abstract_inverted_index'))}"
+    return texts
+
+
+def cmd_relink(ctx: Ctx, db: Dict[str, Any], refetch: bool = True) -> Dict[str, Any]:
+    t0 = time.time()
+    adict = ctx.acupoint_dict()
+    pmap = _pinyin_map_from_logs(db)
+    for sc, e in acupoint_entries(db).items():
+        if e.get("pinyin"):
+            pmap.setdefault(sc, [])
+            if e["pinyin"] not in pmap[sc]:
+                pmap[sc].append(e["pinyin"])
+    # manual(사람이 직접 등록·연결한 레코드)은 재검사 대상에서 뺀다
+    ext = [p for p in db["papers"] if p.get("origin", "local") not in ("local", "manual") and p.get("status") not in INACTIVE_STATUSES]
+    texts = _refetch_texts(ctx, ext) if refetch else {}
+    removed_total, kept_total, changed = 0, 0, 0
+    per_code: Dict[str, int] = {}
+    for p in ext:
+        pid = as_int(p["id"])
+        txt = texts.get(pid) or f"{p.get('title', '')} {p.get('official_title', '')} {p.get('abstract_snippet', '')}"
+        full = pid in texts
+        keep, drop = [], []
+        for c in as_list(p.get("detected_acupoints")):
+            sc = std_code(c)
+            info = adict.get(sc, {})
+            names_cn = [x for x in {info.get("cn", ""), (db.get(sc) or {}).get("name_cn", "")} if x]
+            ok, why = acupoint_mentioned(txt, sc, pmap.get(sc, []), names_cn)
+            # 보고서에서 사람이 확인한 연결(manual_linked_acupoints)은 유지. 초록 전문을 못 받은 레코드는 확실한 경우만 제거
+            if ok or sc in [std_code(x) for x in as_list(p.get("manual_linked_acupoints"))] or (not full and why == "본문 없음"):
+                keep.append(sc)
+            else:
+                drop.append({"code": sc, "reason": why, "fulltext": full})
+        if drop:
+            p["detected_acupoints"] = sorted(set(keep))
+            p.setdefault("relink_removed", []).extend([{**d, "ts": now_iso()} for d in drop])
+            p["updated_at"] = now_iso()
+            changed += 1
+            removed_total += len(drop)
+            for d in drop:
+                per_code[d["code"]] = per_code.get(d["code"], 0) + 1
+        kept_total += len(keep)
+    det_by_id = {as_int(q["id"]): {std_code(x) for x in as_list(q.get("detected_acupoints"))} for q in db["papers"]}
+    for sc, e in acupoint_entries(db).items():   # 연결이 끊긴 논문은 랜드마크 목록에서도 뺀다
+        e["landmark_paper_ids"] = [i for i in as_list(e.get("landmark_paper_ids")) if sc in det_by_id.get(as_int(i), set())]
+    recompute_derived(db, ctx)
+    dur = int((time.time() - t0) * 1000)
+    log_event(ctx, db, "relink", source="all", acupoint="", http_status=None, fetched=len(texts), deduped=None, added=None, duration_ms=dur,
+              note=f"external_checked={len(ext)} fulltext={len(texts)} papers_changed={changed} links_removed={removed_total}")
+    top = sorted(per_code.items(), key=lambda x: -x[1])[:15]
+    print(f"[relink] 외부 논문 {len(ext)}편 검사(초록 재수집 {len(texts)}편) → 연결 수정 {changed}편, 제거 {removed_total}건, 유지 {kept_total}건 ({dur} ms)")
+    print(f"         경혈별 제거 상위: {top}")
+    return {"changed": changed, "removed": removed_total, "per_code": per_code}
+
+
+def mark_local_title_duplicates(db: Dict[str, Any]) -> int:
+    """DOI 없는 로컬 PDF가 같은 제목·연도로 여러 개면(같은 파일의 사본) 가장 작은 ID만 active로 둔다."""
+    groups: Dict[Tuple[str, Any], List[Dict[str, Any]]] = {}
+    for p in db["papers"]:
+        if p.get("origin", "local") != "local" or p.get("status") in INACTIVE_STATUSES or normalize_doi(p.get("doi")):
+            continue
+        h = title_hash(p)
+        if h:
+            groups.setdefault((h, p.get("year")), []).append(p)
+    n = 0
+    for key, lst in groups.items():
+        if len(lst) < 2:
+            continue
+        lst.sort(key=lambda x: as_int(x["id"]))
+        keep = lst[0]
+        for dup in lst[1:]:
+            dup["status"] = "duplicate"
+            dup["duplicate_of"] = keep["id"]
+            dup["duplicate_reason"] = "same normalized title + year (no DOI)"
+            dup["updated_at"] = now_iso()
+            keep["detected_acupoints"] = sorted(set(as_list(keep.get("detected_acupoints")) + as_list(dup.get("detected_acupoints"))))
+            n += 1
+    return n
 
 
 # --------------------------------------------------------------------------------------
@@ -1407,6 +1619,8 @@ def main() -> int:
     s5.add_argument("--pinyin", default=""); s5.add_argument("--meridian", default=""); s5.add_argument("--max-papers", type=int, default=8)
     s5.add_argument("--enrich", action="store_true")
     sub.add_parser("migrate-v3")
+    s6 = sub.add_parser("relink", help="기존 외부 논문의 경혈 연결을 초록 전문으로 재검사(지명·약어 오적중 제거) + 로컬 사본 중복 표시")
+    s6.add_argument("--no-refetch", action="store_true", help="초록을 다시 받지 않고 저장된 제목·초록 앞부분만으로 검사")
     a = ap.parse_args()
 
     ctx = Ctx(Path(a.root), a.dry_run, a.trigger)
@@ -1452,6 +1666,11 @@ def main() -> int:
         return 1 if cmd_validate(ctx, db, check_xlsx=not ctx.dry_run) else 0
     if a.cmd == "validate":
         return 1 if cmd_validate(ctx, db) else 0
+    if a.cmd == "relink":
+        n_dup = mark_local_title_duplicates(db)
+        print(f"[relink] 로컬 사본(같은 제목·연도, DOI 없음) duplicate 표시 {n_dup}편")
+        cmd_relink(ctx, db, refetch=not a.no_refetch)
+        return finish()
     if a.cmd == "all":
         cmd_scan_local(ctx, db, False, a.enrich)
         res = cmd_sync_api(ctx, db, a.code, a.name_kr, a.name_cn, a.pinyin, a.meridian, a.max_papers)

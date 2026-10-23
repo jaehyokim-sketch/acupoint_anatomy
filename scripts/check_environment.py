@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-check_environment.py — Acupoint Anatomy MCP & Skill Environment Checker
-Validates Python runtime, dependencies, core dataset files, environment variables, and MCP config.
+check_environment.py — [경혈해부] 스킬 실행 환경 점검 (다른 PC에서 처음 사용할 때)
 
-Usage:
-  python check_environment.py [--json]
+점검: Python 버전 · 필수 패키지 · 프로젝트 루트/핵심 파일 · 로컬 논문 폴더 해석 · 환경변수 · 주간 배치 등록(Windows)
+사용: python check_environment.py [--json]
+종료코드: 0 = 모두 OK 또는 WARN, 1 = FAIL 존재
 """
 import importlib
 import json
 import os
 import platform
+import subprocess
 import sys
 from pathlib import Path
 
@@ -20,8 +21,8 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
         pass
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-ROOT = SCRIPT_DIR.parent
-
+ROOT = SCRIPT_DIR.parents[3]
+TASK_NAME = "AcupointMasterDB_WeeklySync"
 PACKAGES = [
     ("requests", True),
     ("openpyxl", True),
@@ -30,20 +31,29 @@ PACKAGES = [
     ("markdown", True),
     ("PIL", True),
     ("fontTools", True),
+    ("playwright", False),  # 선택: Mermaid 고해상도 PNG 캡처
     ("pandas", False),
-    ("playwright", False),
+    ("owlready2", False),  # FMA OWL 온톨로지 로컬 파싱
+    ("rdflib", False),     # FMA SPARQL 질의
+    ("neo4j", False),      # FMA 그래프 Cypher 질의
 ]
-
 KEY_PATHS = [
-    "framework/acupoint_anatomical_logic_framework.md",
-    "framework/layer_b_reference_registry.md",
-    "framework/biomedical_master_db_sync_design.md",
-    "data/361_Acupoints_Refined_Master_DB_v2.csv",
-    "data/layer_b_reference_registry.json",
-    "data/경혈_생의학_신경반사_마스터DB.json",
-    "skill/SKILL.md",
-    "mcp_server/server.py",
-    "mcp_server/remote_server.py",
+    "01_Framework/acupoint_anatomical_logic_framework.md",
+    "01_Framework/layer_b_reference_registry.md",
+    "01_Framework/biomedical_master_db_sync_design.md",
+    "02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json",
+    "02_Master_Datasets/경혈_생의학_신경반사_마스터DB.xlsx",
+    "02_Master_Datasets/361_Acupoints_Refined_Master_DB_v2.csv",
+    "02_Master_Datasets/layer_b_reference_registry.json",
+    "02_Master_Datasets/中国针灸穴位通鉴 분석데이터셋",
+    "02_Master_Datasets/FMA/acupoint_fma_mapping.json",
+    ".agents/skills/acupoint-anatomy/SKILL.md",
+    ".agents/rules/acupoint-anatomy-routing.md",
+    ".claude/skills/acupoint-anatomy/SKILL.md",
+    ".claude/CLAUDE.md",
+    "01_도서_번역_및_원전/중국침구혈위통감(中国针灸穴位通鉴)",
+    "01_도서_번역_및_원전/중국침구증치통감(中国针灸证治通鉴)",
+    "01_도서_번역_및_원전/침구수혈통고(针灸腧穴通考)",
 ]
 
 
@@ -51,10 +61,21 @@ def resolve_papers_dir():
     env = os.environ.get("ACUPOINT_PAPERS_DIR")
     if env:
         return Path(env), "환경변수 ACUPOINT_PAPERS_DIR"
-    cand = ROOT.parent / "02_Master_Datasets"
+    cand = ROOT.parent / "학습자료" / "실험 및 연구 논문"
     if cand.exists():
-        return cand, "상위 워크스페이스 02_Master_Datasets"
-    return ROOT / "data", "기본 data 폴더"
+        return cand, "프로젝트 루트 상위(내 드라이브)/학습자료"
+    try:
+        md = json.loads(io_read(ROOT / "02_Master_Datasets" / "경혈_생의학_신경반사_마스터DB.json"))["_metadata"]
+        if md.get("source_local_dir"):
+            return Path(md["source_local_dir"]), "DB _metadata.source_local_dir"
+    except Exception:
+        pass
+    return cand, "기본 추정(없음)"
+
+
+def io_read(p: Path) -> str:
+    with open(p, encoding="utf-8") as f:
+        return f.read()
 
 
 def main() -> int:
@@ -66,28 +87,36 @@ def main() -> int:
 
     v = sys.version_info
     add("OK" if v >= (3, 10) else "FAIL", "Python", f"{platform.python_version()} ({sys.executable})")
-
     for name, required in PACKAGES:
         try:
             importlib.import_module(name)
             add("OK", f"패키지 {name}", "설치됨")
         except Exception:
-            add("FAIL" if required else "WARN", f"패키지 {name}", "미설치 → pip install -r requirements.txt")
-
+            add("FAIL" if required else "WARN", f"패키지 {name}", "미설치 → pip install -r .agents/skills/acupoint-anatomy/scripts/requirements.txt")
     add("OK" if ROOT.exists() else "FAIL", "프로젝트 루트", str(ROOT))
-
     for rel in KEY_PATHS:
         p = ROOT / rel
-        add("OK" if p.exists() else "FAIL", "핵심 파일", rel + ("" if p.exists() else " (없음)"))
-
+        add("OK" if p.exists() else "FAIL", "핵심 경로", rel + ("" if p.exists() else " (없음)"))
+    pdir, how = resolve_papers_dir()
+    if pdir.exists():
+        n = sum(1 for r, _, fs in os.walk(pdir) for f in fs if f.lower().endswith((".pdf", ".hwp", ".hwpx")))
+        add("OK", "로컬 논문 폴더", f"{pdir} ({how}, PDF/HWP {n:,}편)")
+    else:
+        add("WARN", "로컬 논문 폴더", f"{pdir} 없음 ({how}) → ACUPOINT_PAPERS_DIR 설정 또는 Drive 동기화 확인")
     mail = os.environ.get("OPENALEX_MAILTO", "")
-    add("OK" if mail else "WARN", "환경변수 OPENALEX_MAILTO", mail or "미설정 (API 정중 요청용 이메일 권장)")
-
+    add("OK" if mail else "WARN", "환경변수 OPENALEX_MAILTO", mail or "미설정 → setx OPENALEX_MAILTO <이메일>")
     key = os.environ.get("NCBI_API_KEY", "")
-    add("OK" if key else "WARN", "환경변수 NCBI_API_KEY", ("설정됨" if key else "미설정 (무키 시 초당 3회 요청 제한)"))
-
-    pat = os.environ.get("GITHUB_TOKEN", "")
-    add("OK" if pat else "WARN", "환경변수 GITHUB_TOKEN", ("설정됨" if pat else "미설정 (비공개 저장소 원격 MCP 스트리밍 시 필요)"))
+    add("OK" if key else "WARN", "환경변수 NCBI_API_KEY", ("설정됨 (길이 %d)" % len(key)) if key else "미설정 → NCBI 계정에서 발급 후 setx NCBI_API_KEY <키> (무키 시 초당 3회)")
+    if platform.system() == "Windows":
+        try:
+            # 출력은 콘솔 코드페이지(cp949 등)로 나오므로 바이트로 받고 반환 코드만 사용한다
+            r = subprocess.run(["schtasks", "/Query", "/TN", TASK_NAME], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=20)
+            add("OK" if r.returncode == 0 else "WARN", "주간 배치 작업", f"{TASK_NAME} " + ("등록됨" if r.returncode == 0 else "미등록 → register_weekly_task.cmd 실행"))
+        except Exception as e:
+            add("WARN", "주간 배치 작업", f"조회 실패 ({type(e).__name__})")
+    else:
+        add("WARN", "주간 배치 작업", "Windows 작업 스케줄러 전용 (현재 OS: %s)" % platform.system())
+    add("OK", "호스트", f"{platform.node()} / {platform.system()} {platform.release()}")
 
     fails = [r for r in rows if r["level"] == "FAIL"]
     if as_json:
@@ -95,9 +124,8 @@ def main() -> int:
     else:
         print(f"[check-environment] {ROOT}")
         for r in rows:
-            print(f"  [{r['level']:4}] {r['item']:24} {r['detail']}")
+            print(f"  [{r['level']:4}] {r['item']:22} {r['detail']}")
         print("  결과:", "FAIL %d건" % len(fails) if fails else "OK (WARN %d건)" % sum(1 for r in rows if r["level"] == "WARN"))
-
     return 1 if fails else 0
 
 

@@ -42,14 +42,14 @@ description: >-
 ## 1. 데이터 소스 (정본 1절·머리말)
 
 - **3대 원전**: `01_도서_번역_및_원전/중국침구혈위통감(中国针灸穴位通鉴)`(41개편) · `중국침구증치통감(中国针灸证治通鉴)`(62개편) · `침구수혈통고(针灸腧穴通考)`(25개편) 정제 마크다운 디렉토리에서 해당 경맥/편별 파일을 직접 대조하고 전수 검색한다. 역할 분담은 정본 Rank 1 & 2를 따른다.
-- **6대 마스터 데이터셋**(`02_Master_Datasets/`): 361 경혈 마스터 CSV, KJH 이명 대조 xlsx, 자침깊이 xlsx(`'0'`=금침, `'blank'`=미기술, 정수=푼), 공통교재·김재효 해부구조 데이터셋 2종, 통합 생의학 마스터 DB(`경혈_생의학_신경반사_마스터DB.json` 정본 + 파생 `.xlsx` 5시트).
+- **8대 마스터 데이터셋**(`02_Master_Datasets/`): 361 경혈 마스터 CSV, KJH 이명 대조 xlsx, 자침깊이 xlsx(`'0'`=금침, `'blank'`=미기술, 정수=푼), 공통교재·김재효 해부구조 데이터셋 2종, 통합 생의학 마스터 DB(`경혈_생의학_신경반사_마스터DB.json` 정본 + 파생 `.xlsx` 5시트), 《中国针灸穴位通鉴》 파생 분석데이터셋 12종(`02_Master_Datasets/中国针灸穴位通鉴 분석데이터셋/`), 및 FMA 해부 온톨로지 매핑 데이터셋(`02_Master_Datasets/FMA/acupoint_fma_mapping.json` · `.xlsx`, 361개 경혈 6,122행).
 - 마스터 DB `.xlsx`는 파생물이므로 직접 편집하지 않는다. 레코드 `status`가 `duplicate`·`missing`·`superseded`이면 인용하지 않는다.
 
 ## 2. Tier 1~3 응답 체계 (정본 2절)
 
 - Tier 1(200단어 이내): 핵심 실체·표준 정위·지배신경·안전 심도 1~2문단.
 - Tier 2(200~1,000단어): Layer 1~5 층차표, 1푼=2.3mm 심도, 교재 비교, 반사 회로, **ARI v3.0 프로파일(예비 단일 채점)**. Rank 6-3 필수 외부 실증 검색을 수행한다.
-- Tier 3(1,000단어 이상): Rank 0~7 완전 전개, 10대 구성 요소, B-Check 채점표·외부 검색 로그 표, **ARI v3.0 이중 채점**, 4대 디렉토리에 `.md`·`.html`·`.xlsx` 3종 세트.
+- Tier 3(1,000단어 이상): Rank 0~7 완전 전개, 10대 구성 요소, B-Check 채점표·외부 검색 로그 표, **ARI v3.0 이중 채점**, 5대 디렉토리에 `.md`·`.html`·`.xlsx` 3종 세트.
 
 ## 3. Rank 0~7 요약과 정본 참조 위치 (정본 3절)
 
@@ -61,7 +61,7 @@ description: >-
 | 4 | 인과성 우선, 필사 오류 감별(《腧穴通考》), 배오 전이 배제, 노이즈 제거, 키네시올로지 | Rank 4 |
 | 5 | 자침깊이 해석, 1푼=2.3mm, 촉진 표현 실체화, X·Y·Z 좌표, Layer 1~5, Δ>15mm 분기, 2대 교재 비교 | Rank 5 |
 | 6 | Layer A 통합 DB v3.0 + 필수 외부 검색 ↔ Layer B 4계층 등록부 → B-Check 6항목(≥ 8/12) | Rank 6 (6-1~6-6) |
-| 7 | ARI v3.0: ARI-Core(0.40/0.35/0.25 잠정) + SI 분리, 5단계 루브릭, 게이트 3종, 등급 A~D, 이중 채점·민감도, 4대 디렉토리 저장, 50% 중복 시 통합 | Rank 7, 4절 |
+| 7 | ARI v3.0: ARI-Core(0.40/0.35/0.25 잠정) + SI 분리, 5단계 루브릭, 게이트 3종, 등급 A~D, 이중 채점·민감도, 5대 디렉토리 저장, 50% 중복 시 통합 | Rank 7, 4절 |
 
 ## 4. Rank 6 실행 — 통합 DB 동기화와 필수 외부 실증 검색
 
@@ -80,7 +80,29 @@ python .agents/skills/acupoint-anatomy/scripts/sync_master_db.py --trigger rank6
 - 등록부 참조 ID(예: B3-17)로만 인용하고 연구자명("Sato 모델"·"Ma 모델")으로 지칭하지 않는다. 종·마취·검증 경혈 범위 밖이면 B-Check 1점(유추) 상한.
 - B-Check 6항목(① 말초 실체 ② 분절 정합 ③ 구심 섬유·수용체 ④ 중추 경로 ⑤ 원심 효과 방향 ⑥ 인체 전환)을 각 0/1/2로 채점한다. 합계 ≥ 8/12이고 ①·② ≥ 1일 때만 기전을 확정 기술한다. ③~⑤가 동물 근거뿐이고 ⑥ = 0이면 "(동물 한정)", 상충 근거가 있으면 "가설"로 제한한다.
 
-## 6. Rank 7 — ARI v3.0 채점 요약 (정본 Rank 7·4절)
+## 6. FMA 온톨로지 연동과 해부 실체·분절 추적 (Claude Code ↔ Antigravity 공용 도구)
+
+워싱턴 대학교 FMA(Foundational Model of Anatomy, v5.1.0: 실체 104,720 · 관계 259,140) 및 `02_Master_Datasets/FMA/acupoint_fma_mapping.json` (361개 전 경혈 매핑 6,122행)을 연동하여, 교재 해부 용어를 국제 표준 실체 ID(FMA:ID)로 고정하고 지배신경·척수 분절·신경 줄기 경로를 정량적으로 추적한다.
+
+**실행 명령어** (`.agents/skills/acupoint-anatomy/scripts/fma/`, 프로젝트 루트에서 실행):
+```bash
+python .agents/skills/acupoint-anatomy/scripts/fma/fma_query.py profile <경혈코드> --md   # 보고서용 표준 마크다운 표 생성
+python .agents/skills/acupoint-anatomy/scripts/fma/fma_query.py entity "<구조명 또는 FMA ID>" # 특정 해부구조 상세 조회
+python .agents/skills/acupoint-anatomy/scripts/fma/fma_query.py path "<말초신경>" "<줄기신경>"  # 신경 주행 최단 경로 추적
+```
+
+**Rank 0~7 단계별 FMA 근거 보강 체계**:
+1. **Rank 5 (10대 요소 ④)**: Layer 1~5 층차표의 각 구조물에 표준 `FMA:ID` 병기 및 `contained_in`(구획) 확인.
+2. **Rank 5 (10대 요소 ⑥)**: `fma_query.py profile`의 2대 교재 해부구조 비교(공통 / 공통교재 단독 / 김재효 단독 실체 수)를 통해 동일 구조의 이명 표기를 FMA ID로 통합 판별.
+3. **Rank 6 (B-Check ① 말초 실체)**: 교재 해부구조가 FMA 표준 실체로 일치(`exact`, `exact+muscle/nerve`)하는지 판정.
+4. **Rank 6 (B-Check ② 분절 정합)**: FMA의 `segmental_supply` 및 신경 줄기 사슬(`spinal nerve`) 상향 순회에서 추출한 **분절 합집합(segment_union)**을 $P_{single}$ 표적 장기의 척수 분절과 대조.
+5. **Rank 6 (반사 기전도 ⑧)**: 말초 가지 → 본줄기 → 신경총 경로(`path`, `ancestors`)를 구심 경로 앞단 회로로 직접 활용.
+
+**인용 및 기술 원칙**:
+- 표기 형식: `FMA:44771 Deep fibular nerve (FMA 5.1.0)`. Layer B 등록부 미등재 항목은 "B1 보조(등록부 미등재)"로 표기.
+- 대응 수준: `exact`·`exact+…`만 확정 근거로 사용하고, `parent(branch_of)`는 "상위 구조 대응(가지 미등재)", `none`은 "FMA 미등재"로 기재.
+
+## 7. Rank 7 — ARI v3.0 채점 요약 (정본 Rank 7·4절)
 
 1. $S_{orig}$(4개 하위 항목 평균)·$S_{clarity}$·$S_{reflex}$·$S_{safety}$를 **0/25/50/75/100** 중 하나로만 부여하고 근거 포인터(chunk ID, `papers.id`, 참조 ID, 교재 행)를 `.xlsx`에 기록한다.
 2. 게이트: $S_{orig}<50$ 또는 $S_{clarity}<50$ → 최고 등급 C / Layer A 0편 → $S_{reflex}\le 25$ + (H) / SI ≤ 25 → ⚠ 안전주의.
@@ -89,7 +111,7 @@ python .agents/skills/acupoint-anatomy/scripts/sync_master_db.py --trigger rank6
 5. 분기 판정: ΔARI-Core ≥ 10이고 ± 구간 비중첩일 때만 우위 Target 선언.
 6. 표기: `ARI v3.0 | ARI-Core 78 ± 4 (B·H) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 76 (B, 등급 불변)`. 구판 점수는 비교하지 않고 재채점한다.
 
-## 7. 산출물 저장 (라우팅 규칙 제3조, 정본 Rank 7)
+## 8. 산출물 저장 (라우팅 규칙 제3조, 정본 Rank 7)
 
 `acupoint_anatomy/` 하위 5대 디렉토리(01 경혈별 보고서 / 02 3대 원전 비교 / 03 주제별 고증 / 04 번역원고·매트릭스 / 05 의료행정·정책보고서)에 자동 분류하여 저장하고, Tier 3는 `.md`·`.html`·`.xlsx` 3종을 함께 만든다. 기존 문서와 중복도 50% 이상이면 통합 갱신하며 구판 ARI는 v3.0으로 재채점한다.
 
@@ -113,15 +135,15 @@ python .agents/skills/acupoint-anatomy/scripts/sync_master_db.py --trigger rank6
 10. **ARI v3.0 프로파일 평가표 및 최종 결론**: 하위 점수별 루브릭 단계·근거 포인터, 게이트 적용 내역, ARI-Core(평균 ± 반범위)·등급·표지(H/⚠), SI, 등가중치 민감도, 버전 명기 및 감사 기록
 
 
-## 8. PC 독립성과 운영
+## 9. PC 독립성과 운영
 
-- 첫 사용 PC: `python .agents/skills/acupoint-anatomy/scripts/check_environment.py` → `pip install -r .agents/skills/acupoint-anatomy/scripts/requirements.txt`.
+- 첫 사용 PC: `python .agents/skills/acupoint-anatomy/scripts/check_environment.py` → `pip install -r .agents/skills/acupoint-anatomy/scripts/requirements.txt` (FMA 추가 패키지: `pip install -r .agents/skills/acupoint-anatomy/scripts/fma/requirements-fma.txt`).
 - 로컬 논문 폴더: `ACUPOINT_PAPERS_DIR` 환경변수 → 프로젝트 루트 상위 폴더의 `학습자료/실험 및 연구 논문` → DB 기록값 순으로 해석.
-- 환경변수(사용자 계정): `OPENALEX_MAILTO`(연구자 이메일), `NCBI_API_KEY`(선택).
+- 환경변수(사용자 계정): `OPENALEX_MAILTO`(연구자 이메일), `NCBI_API_KEY`(선택), `NEO4J_URI`/`USER`/`PASSWORD`(선택, FMA Neo4j 분석).
 - 주간 배치: `register_weekly_task.cmd`로 **한 PC에만** 등록(일요일 03:00, `weekly_sync.cmd`).
 
-## 9. 변경 관리
+## 10. 변경 관리
 
 - 규칙 변경은 정본 → `sync_skill_settings.py --apply`(references 사본·버전 표기 정렬) → 정본 6절 문서 이력 기록 순으로 한다. IDE 전용 실행 방법만 바뀌면 해당 래퍼만 고친다.
-- 공용 통합 파일(`scripts/`의 `sync_master_db.py`·`sync_skill_settings.py`·`check_environment.py`·`weekly_sync.cmd`·`register_weekly_task.cmd`·`requirements.txt`, `references/` 사본, `sync_state.json`)은 두 IDE가 함께 쓴다.
+- 공용 통합 파일(`scripts/`의 `sync_master_db.py`·`sync_skill_settings.py`·`check_environment.py`·`weekly_sync.cmd`·`register_weekly_task.cmd`·`requirements.txt`·`fma/`, `references/` 사본, `sync_state.json`)은 두 IDE가 함께 쓴다.
 - 편집기에 정본이 열려 있는 상태에서 도구가 파일을 갱신했으면 저장 전에 디스크 버전을 다시 불러온다.

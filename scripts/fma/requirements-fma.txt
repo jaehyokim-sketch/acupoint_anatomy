@@ -1,0 +1,7 @@
+# FMA(Foundational Model of Anatomy) 연동 — Claude Code 전용 추가 패키지
+# 설치: pip install -r .claude/skills/acupoint-anatomy/scripts/fma/requirements-fma.txt
+owlready2>=0.47      # OWL/RDF 로컬 파싱 → 영속 SQLite 저장소 (fma_build.py load)
+rdflib>=7.0          # 저장소 위 SPARQL 질의 (fma_query.py sparql)
+neo4j>=5.20          # Neo4j 공식 드라이버 (fma_neo4j.py, 기본)
+py2neo>=2021.2       # 구 드라이버 호환용 (fma_neo4j.py --driver py2neo). 2023년 개발 종료
+openpyxl>=3.1        # 교재 xlsx 읽기·대응표 xlsx 쓰기

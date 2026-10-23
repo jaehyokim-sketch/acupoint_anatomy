@@ -50,11 +50,14 @@ def find_project_root(start_path: Path) -> Path:
 
 BASE_DIR = str(find_project_root(SCRIPT_DIR))
 
-# build_report_html 연동: SCRIPT_DIR 및 후보 디렉토리 등록
+# build_report_html & fma 연동: SCRIPT_DIR 및 후보 디렉토리 등록
 for alt in [
     SCRIPT_DIR,
     Path(BASE_DIR) / ".agents" / "skills" / "acupoint-anatomy" / "scripts",
     Path(BASE_DIR) / "acupoint_anatomy" / "scripts",
+    Path(BASE_DIR) / ".agents" / "skills" / "acupoint-anatomy" / "scripts" / "fma",
+    Path(BASE_DIR) / ".claude" / "skills" / "acupoint-anatomy" / "scripts" / "fma",
+    Path(BASE_DIR) / "acupoint_anatomy" / "scripts" / "fma",
 ]:
     if alt.exists() and str(alt) not in sys.path:
         sys.path.insert(0, str(alt))
@@ -65,6 +68,17 @@ try:
 except Exception:
     HAVE_HTML_BUILDER = False
 
+try:
+    from fma_visualizer import cmd_all as gen_fma_imgs
+    HAVE_FMA_VISUALIZER = True
+except Exception:
+    HAVE_FMA_VISUALIZER = False
+
+try:
+    from inline_images import inline as inline_html_images
+except Exception:
+    inline_html_images = None
+
 MASTER_CSV = os.path.join(BASE_DIR, "02_Master_Datasets", "361_Acupoints_Refined_Master_DB_v2.csv")
 KJH_EXCEL = os.path.join(BASE_DIR, "02_Master_Datasets", "경혈명_비교_정리_KJH.xlsx")
 XUEWEI_DIR = os.path.join(BASE_DIR, "01_도서_번역_및_원전", "중국침구혈위통감(中国针灸穴位通鉴)")
@@ -73,6 +87,7 @@ TONGKAO_DIR = os.path.join(BASE_DIR, "01_도서_번역_및_원전", "침구수�
 LOGIC_EXCEL = os.path.join(BASE_DIR, "02_Master_Datasets", "경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx")
 BIOMED_JSON = os.path.join(BASE_DIR, "02_Master_Datasets", "경혈_생의학_신경반사_마스터DB.json")
 LAYER_B_JSON = os.path.join(BASE_DIR, "02_Master_Datasets", "layer_b_reference_registry.json")
+FMA_JSON = os.path.join(BASE_DIR, "02_Master_Datasets", "FMA", "acupoint_fma_mapping.json")
 
 # Fallback for standalone acupoint_anatomy repo
 if not os.path.exists(MASTER_CSV) and os.path.exists(os.path.join(BASE_DIR, "data", "361_Acupoints_Refined_Master_DB_v2.csv")):
@@ -204,6 +219,66 @@ def load_layer_b_registry():
         return json.load(f)
 
 
+def load_fma_profile(code):
+    """
+    FMA 온톨로지(v5.1.0) 매핑 프로파일 조회
+    1순위: 로컬 FMA SQLite 색인 질의 (fma_query.build_profile)
+    2순위: 02_Master_Datasets/FMA/acupoint_fma_mapping.json 정적 매핑 조회
+    """
+    m = re.fullmatch(r"([A-Za-z]+)-?(\d+)", code.strip())
+    if m:
+        code_norm = f"{m.group(1).upper()}{int(m.group(2)):02d}"
+    else:
+        code_norm = code.upper()
+
+    for alt in [
+        Path(BASE_DIR) / ".agents" / "skills" / "acupoint-anatomy" / "scripts" / "fma",
+        Path(BASE_DIR) / ".claude" / "skills" / "acupoint-anatomy" / "scripts" / "fma",
+        Path(BASE_DIR) / "acupoint_anatomy" / "scripts" / "fma",
+    ]:
+        if alt.exists() and str(alt) not in sys.path:
+            sys.path.insert(0, str(alt))
+    try:
+        from fma_query import FMA, build_profile
+        f = FMA()
+        p = build_profile(f, code_norm)
+        f.con.close()
+        return p
+    except Exception:
+        pass
+
+    if os.path.exists(FMA_JSON):
+        try:
+            with open(FMA_JSON, "r", encoding="utf-8") as fp:
+                data = json.load(fp)
+            rows = [r for r in data.get("rows", []) if r.get("code") == code_norm]
+            if rows:
+                structs = []
+                for r in rows:
+                    structs.append({
+                        "category": r.get("category", ""),
+                        "terms": {f"{r.get('term_kr','')} ({r.get('term_en','')})"},
+                        "fma_id": r.get("fma_id"),
+                        "fma_label": r.get("fma_label", ""),
+                        "match": {r.get("match", "")},
+                        "sources": {r.get("source", "")},
+                        "relations": {},
+                        "branch_chain": [],
+                        "nerve_trunks": {},
+                        "segments": {"direct": {}, "inferred_from_nerve_chain": []}
+                    })
+                return {
+                    "code": code_norm,
+                    "name_kr": rows[0].get("name_kr", ""),
+                    "structures": structs,
+                    "segment_union": {},
+                    "textbook_compare": {}
+                }
+        except Exception:
+            pass
+    return None
+
+
 def smart_search(dir_path, meridian_key, name_cn, book_type, max_chars=3500, name_cn_simp=None):
     """
     3대 원전 스마트 검색 (목차/총론 건너뛰기, 경맥 파일 우선 매핑, 간체자/번체자 양방향 검색, 혈위 섹션 헤더 우선 감지)
@@ -268,6 +343,29 @@ def smart_search(dir_path, meridian_key, name_cn, book_type, max_chars=3500, nam
                 return f"[{fname}]\n" + content[start:end]
             
     return ""
+
+
+RUBRIC_LEVELS = (0.0, 25.0, 50.0, 75.0, 100.0)
+
+
+def validate_or_snap_rubric(score: float, score_name: str) -> float:
+    """
+    Framework v2.7 4.2절 5단계 앵커 루브릭({0, 25, 50, 75, 100}) 검증 및 보정.
+    S_orig의 경우 4개 하위항목(각 0, 25, 50, 75, 100)의 평균(6.25 단위)을 허용하되,
+    그 외 임의의 비루브릭 점수는 가장 가까운 5단계 루브릭으로 경고와 함께 보정합니다.
+    """
+    if score in RUBRIC_LEVELS:
+        return score
+
+    if score_name == "S_orig":
+        step = 6.25
+        rounded = round(score / step) * step
+        if abs(score - rounded) < 1e-4 and 0.0 <= score <= 100.0:
+            return round(score, 2)
+
+    nearest = min(RUBRIC_LEVELS, key=lambda x: abs(x - score))
+    print(f"  [경고] {score_name}={score}점은 정본 5단계 루브릭({RUBRIC_LEVELS})에 없습니다. 가장 가까운 {nearest}점으로 보정합니다.")
+    return nearest
 
 
 def calculate_ari_v3(s_orig, s_clarity, s_reflex, s_safety, layer_a_count=0):
@@ -413,6 +511,16 @@ def analyze_acupoint(query, s_orig=None, s_clarity=None, s_reflex=None, s_safety
         print(f"  + [Rank 6-1] Layer A 통합 마스터 DB v3.0 연동 성공: 활성 실측 논문 {len(mapped_papers)}편 매핑 (papers.id 기반).")
     else:
         print("  + [Rank 6-1] Layer A 실측 데이터 없음 (게이트 2 후보).")
+
+    # FMA 온톨로지(v5.1.0) 연동
+    fma_profile = load_fma_profile(code)
+    fma_rows = fma_profile.get("structures", []) if fma_profile else []
+    fma_segments = list(fma_profile.get("segment_union", {}).keys()) if fma_profile else []
+    if fma_rows:
+        seg_str = ', '.join(fma_segments) if fma_segments else "분절 정보 없음"
+        print(f"  + [Rank 5 & 6] FMA 온톨로지(v5.1.0) 연동 성공: {len(fma_rows)}개 실체 매핑 (척수 분절: {seg_str}).")
+    else:
+        print("  + [Rank 5 & 6] FMA 온톨로지 데이터 없음 (선택 연동).")
         
     name_cn_simp = pdata.get('name_cn_simp', name_cn)
     
@@ -422,20 +530,35 @@ def analyze_acupoint(query, s_orig=None, s_clarity=None, s_reflex=None, s_safety
     tongkao_excerpt = smart_search(TONGKAO_DIR, prefix, name_cn, 'tk', 4000, name_cn_simp=name_cn_simp)
     print(f"  + [Rank 1 & 2] 3대 원전 스마트 검색 완료 (간체: {name_cn_simp} / 번체: {name_cn} 대조).")
     
-    # 기본 점수 결정 (CLI 인자가 없을 경우)
-    if s_orig is None:
-        s_orig = 85.0
-    if s_clarity is None:
+    # 기본 점수 결정 (정본 Framework v2.7 4.2절 5단계 앵커 루브릭 {0, 25, 50, 75, 100} 엄격 준수)
+    if s_orig is not None:
+        s_orig = validate_or_snap_rubric(float(s_orig), "S_orig")
+    else:
+        s_orig = 75.0
+        print("  * [안내] S_orig 미지정 -> 5단계 루브릭 기본값 75.0 적용 (정본 4.2: 3대 원전 정합성)")
+
+    if s_clarity is not None:
+        s_clarity = validate_or_snap_rubric(float(s_clarity), "S_clarity")
+    else:
         s_clarity = 75.0
-    if s_safety is None:
+        print("  * [안내] S_clarity 미지정 -> 5단계 루브릭 기본값 75.0 적용 (정본 4.2: 2대 교재 일치)")
+
+    if s_safety is not None:
+        s_safety = validate_or_snap_rubric(float(s_safety), "S_safety")
+    else:
         s_safety = 75.0
-    if s_reflex is None:
+        print("  * [안내] S_safety 미지정 -> 5단계 루브릭 기본값 75.0 적용 (정본 4.2: Layer 1~3 표준 안전)")
+
+    if s_reflex is not None:
+        s_reflex = validate_or_snap_rubric(float(s_reflex), "S_reflex")
+    else:
         if layer_a_count >= 2:
-            s_reflex = 87.5 if has_rct else 75.0
+            s_reflex = 100.0 if has_rct else 75.0
         elif layer_a_count == 1:
             s_reflex = 50.0
         else:
             s_reflex = 25.0
+        print(f"  * [안내] S_reflex 미지정 -> Layer A 근거 기반 5단계 루브릭 기본값 {s_reflex} 적용 (정본 4.2)")
             
     # Calculate ARI v3.0
     ari_res = calculate_ari_v3(s_orig, s_clarity, s_reflex, s_safety, layer_a_count=layer_a_count)
@@ -539,6 +662,31 @@ def analyze_acupoint(query, s_orig=None, s_clarity=None, s_reflex=None, s_safety
         ws5.append(["민감도 분석", "등가중치(1/3씩) ARI-Core", "-", "-", ari_res["sensitivity_core"], f"민감도 판정: {ari_res['sens_grade']} ({ari_res['sens_note']})"])
         style_table(ws5)
 
+        # Sheet 6: FMA_온톨로지_실체매핑
+        if fma_rows:
+            ws6 = wb.create_sheet(title="6.FMA_온톨로지_실체매핑")
+            ws6.append(["구분", "교재용어", "FMA ID", "FMA 표준 라벨", "대응수준", "출처교재", "신경지배 / 상위줄기", "척수분절"])
+            for s in fma_rows:
+                fid_str = f"FMA:{s['fma_id']}" if s.get("fma_id") else "미등재"
+                terms_str = "\n".join(sorted(s.get("terms", [])))
+                src_str = "·".join(sorted(s.get("sources", [])))
+                match_str = " / ".join(sorted(s.get("match", [])))
+                rel = s.get("relations", {})
+                nerve_str = "—"
+                if rel.get("nerve_supply"):
+                    nerve_str = "; ".join(f"FMA:{nid} {lab}" for nid, lab in rel["nerve_supply"][:2])
+                elif s.get("branch_chain"):
+                    nerve_str = " → ".join(f"{lab}" for _, lab in s["branch_chain"][:3])
+                seg_items = []
+                for lab in s.get("segments", {}).get("direct", {}):
+                    seg_items.append(f"{lab}(직접)")
+                for lab in s.get("segments", {}).get("inferred_from_nerve_chain", []):
+                    if lab not in [x.split('(')[0] for x in seg_items]:
+                        seg_items.append(f"{lab}(추론)")
+                seg_str = ", ".join(seg_items) if seg_items else "—"
+                ws6.append([s.get("category", ""), terms_str, fid_str, s.get("fma_label", "—"), match_str, src_str, nerve_str, seg_str])
+            style_table(ws6)
+
         wb.save(excel_out_path)
         print(f"  + Generated Excel DB: {excel_out_path}")
 
@@ -567,6 +715,60 @@ def analyze_acupoint(query, s_orig=None, s_clarity=None, s_reflex=None, s_safety
                 papers_md_list += f"- **[papers.id #{pid}]** *{title}*  \n  - {authors} (*{journal}*, {year}) | PMID: {pmid} | DOI: {doi}\n"
         else:
             papers_md_list = "- 통합 마스터 DB v3.0 내 활성 실측 논문 연결 대기 중 (PubMed/OpenAlex API 실시간 동기화 필요)\n"
+
+        # FMA 이미지 생성 (Neo4j 지식 그래프 & 횡단면 모식도)
+        target_dir_path = Path(point_dir)
+        graph_img_name = f"{code}_fma_network.png"
+        graph_img_path = target_dir_path / graph_img_name
+        if HAVE_FMA_VISUALIZER:
+            try:
+                gen_fma_imgs(code, str(target_dir_path))
+            except Exception as e:
+                pass
+
+        fma_img_md = ""
+        fma_img_html = ""
+        if graph_img_path.exists():
+            fma_img_md = f"\n\n### 🖼️ FMA 온톨로지 신경회로망 & 해부 구조 지식 그래프\n\n![{code} FMA 신경해부 지식 그래프]({graph_img_name})\n\n*위 지식 그래프는 FMA v5.1.0 온톨로지 및 Neo4j 그래프 데이터베이스(104,719개 실체·264,609개 관계망)를 순회 분석하여 생성된 {code}의 신경 지배 및 척수 분절 경로도입니다.*\n"
+            fma_img_html = f'\n<div style="margin: 20px 0; text-align: center;">\n  <img src="{graph_img_name}" alt="{code} FMA 신경해부 지식 그래프" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #E2E8F0;">\n  <div style="font-size: 0.85rem; color: #64748B; margin-top: 6px;">[FMA 5.1.0] {code} 경혈 신경해부 지식 그래프 (Neo4j 기반 자동 생성)</div>\n</div>\n'
+
+        fma_md_section = ""
+        fma_html_section = ""
+        if fma_rows:
+            fma_md_section = "\n### 🏛️ FMA 해부 온톨로지(v5.1.0) 국제 표준 실체 매핑 표\n\n"
+            fma_md_section += "| 구분 | 교재 용어 | FMA 실체 ID | FMA 표준 라벨 | 대응수준 | 출처 | 척수 분절 |\n"
+            fma_md_section += "| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n"
+            for s in fma_rows:
+                fid_str = f"`FMA:{s['fma_id']}`" if s.get("fma_id") else "미등재"
+                terms_str = "<br>".join(sorted(s.get("terms", [])))
+                src_str = "·".join(sorted(s.get("sources", [])))
+                match_str = "/".join(sorted(s.get("match", [])))
+                seg_str = ", ".join(sorted(set(s.get("segments", {}).get("direct", {}).keys()) | set(s.get("segments", {}).get("inferred_from_nerve_chain", [])))) or "—"
+                fma_md_section += f"| {s.get('category','')} | {terms_str} | {fid_str} | {s.get('fma_label','—')} | {match_str} | {src_str} | {seg_str} |\n"
+            if fma_segments:
+                fma_md_section += f"\n- **분절 합집합 (B-Check ② 분절 정합 입력값)**: {', '.join(fma_segments)}\n"
+            if fma_profile.get("textbook_compare"):
+                tc = fma_profile["textbook_compare"]
+                fma_md_section += f"- **2대 교재 FMA 비교**: 공통 실체 {len(tc.get('common', []))}개"
+                for k, v in tc.items():
+                    if k.startswith("only_"):
+                        fma_md_section += f" · {k.replace('only_', '')} 단독 {len(v)}개"
+                fma_md_section += "\n"
+            fma_md_section += fma_img_md
+
+            fma_html_section = "<h2>🏛️ 2-1. FMA 온톨로지(v5.1.0) 국제 표준 실체 매핑</h2>\n<table>\n"
+            fma_html_section += "<tr><th>구분</th><th>교재 용어</th><th>FMA 실체</th><th>대응수준</th><th>출처</th><th>척수 분절</th></tr>\n"
+            for s in fma_rows:
+                fid_str = f"<span class='paper-id'>FMA:{s['fma_id']}</span> {s.get('fma_label','—')}" if s.get("fma_id") else "미등재"
+                terms_str = "<br>".join(sorted(s.get("terms", [])))
+                src_str = "·".join(sorted(s.get("sources", [])))
+                match_str = "/".join(sorted(s.get("match", [])))
+                seg_str = ", ".join(sorted(set(s.get("segments", {}).get("direct", {}).keys()) | set(s.get("segments", {}).get("inferred_from_nerve_chain", [])))) or "—"
+                fma_html_section += f"<tr><td><strong>{s.get('category','')}</strong></td><td>{terms_str}</td><td>{fid_str}</td><td>{match_str}</td><td>{src_str}</td><td>{seg_str}</td></tr>\n"
+            fma_html_section += "</table>\n"
+            if fma_segments:
+                fma_html_section += f"<div style='margin-bottom:15px; font-size:0.9rem; color:#475569;'>• <strong>척수 분절 합집합 (B-Check ② 분절 정합)</strong>: {', '.join(fma_segments)}</div>\n"
+            fma_html_section += fma_img_html
 
         md_text = f"""# 🔬 [경혈 해부생리학 실체 판명 학술 모노그래프] {name_kr}({name_cn} / {name_cn_simp}, {code})
 
@@ -636,7 +838,7 @@ def analyze_acupoint(query, s_orig=None, s_clarity=None, s_reflex=None, s_safety
 | **근육 (Muscle)** | 표준 해부학적 근육명 기재 | 기시·정지·근복 주행 및 키네시올로지 분석 | 2대 교재 해부구조 일치 및 보완성 확인 |
 | **신경 (Nerve)** | 표재 신경 및 주행 신경간 | 신경 분절(피절·근절) 및 자율신경 연계 | 체성-내장 반사의 구심로 정합성 일치 |
 | **혈관 (Vessel)** | 동반 정맥 및 주행 동맥 | 혈관외막 교감신경총 및 혈류역학 조절 | 신경혈관속 관통층 자극 안전선 설정 |
-
+{fma_md_section}
 ---
 
 ## 🔀 7. 공간 변위 분기 추론도 (필요 시)
@@ -778,6 +980,8 @@ def _generate_lightweight_html(html_out_path, name_kr, name_cn, code, pdata, ari
       <tr><td><strong>Layer 5 (골막바닥)</strong></td><td>22.0mm 이상</td><td>골막, 관절낭 기저면</td><td>골막 자극 진통 반사 (안전선)</td></tr>
     </table>
 
+    {fma_html_section}
+
     <h2>🧬 3. Layer A 실측 논문 & Layer B 4계층 참조 (Rank 6)</h2>
     {papers_html}
 
@@ -802,6 +1006,13 @@ def _generate_lightweight_html(html_out_path, name_kr, name_cn, code, pdata, ari
     with open(html_out_path, "w", encoding="utf-8") as f:
         f.write(html_text)
     print(f"  + Generated Standard HTML Report: {html_out_path}")
+
+    # HTML 내 로컬 이미지 Data URI 자동 인라인 (단일 파일화)
+    if inline_html_images:
+        try:
+            inline_html_images(Path(html_out_path))
+        except Exception:
+            pass
 
 
 def main():
