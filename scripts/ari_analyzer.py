@@ -27,9 +27,38 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
         pass
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-BASE_DIR = str(SCRIPT_DIR.parents[3])
 
-# build_report_html 연동
+def find_project_root(start_path: Path) -> Path:
+    curr = start_path.resolve()
+    for _ in range(6):
+        if (curr / "01_Framework").exists() and (curr / "02_Master_Datasets").exists():
+            return curr
+        if curr.parent == curr:
+            break
+        curr = curr.parent
+    cwd = Path.cwd().resolve()
+    if (cwd / "01_Framework").exists() and (cwd / "02_Master_Datasets").exists():
+        return cwd
+    curr = start_path.resolve()
+    for _ in range(4):
+        if (curr / "framework").exists() and (curr / "data").exists():
+            return curr
+        if curr.parent == curr:
+            break
+        curr = curr.parent
+    return start_path.resolve()
+
+BASE_DIR = str(find_project_root(SCRIPT_DIR))
+
+# build_report_html 연동: SCRIPT_DIR 및 후보 디렉토리 등록
+for alt in [
+    SCRIPT_DIR,
+    Path(BASE_DIR) / ".agents" / "skills" / "acupoint-anatomy" / "scripts",
+    Path(BASE_DIR) / "acupoint_anatomy" / "scripts",
+]:
+    if alt.exists() and str(alt) not in sys.path:
+        sys.path.insert(0, str(alt))
+
 try:
     from build_report_html import build as build_html
     HAVE_HTML_BUILDER = True
@@ -45,7 +74,19 @@ LOGIC_EXCEL = os.path.join(BASE_DIR, "02_Master_Datasets", "경혈의 해부학�
 BIOMED_JSON = os.path.join(BASE_DIR, "02_Master_Datasets", "경혈_생의학_신경반사_마스터DB.json")
 LAYER_B_JSON = os.path.join(BASE_DIR, "02_Master_Datasets", "layer_b_reference_registry.json")
 
-OUTPUT_ROOT = os.path.join(BASE_DIR, "acupoint_anatomy", "01_경혈별_해부생리_분석보고서")
+# Fallback for standalone acupoint_anatomy repo
+if not os.path.exists(MASTER_CSV) and os.path.exists(os.path.join(BASE_DIR, "data", "361_Acupoints_Refined_Master_DB_v2.csv")):
+    DATA_DIR = os.path.join(BASE_DIR, "data")
+    MASTER_CSV = os.path.join(DATA_DIR, "361_Acupoints_Refined_Master_DB_v2.csv")
+    BIOMED_JSON = os.path.join(DATA_DIR, "경혈_생의학_신경반사_마스터DB.json")
+    LAYER_B_JSON = os.path.join(DATA_DIR, "layer_b_reference_registry.json")
+
+if os.path.exists(os.path.join(BASE_DIR, "acupoint_anatomy", "01_경혈별_해부생리_분석보고서")):
+    OUTPUT_ROOT = os.path.join(BASE_DIR, "acupoint_anatomy", "01_경혈별_해부생리_분석보고서")
+elif os.path.exists(os.path.join(BASE_DIR, "01_경혈별_해부생리_분석보고서")):
+    OUTPUT_ROOT = os.path.join(BASE_DIR, "01_경혈별_해부생리_분석보고서")
+else:
+    OUTPUT_ROOT = os.path.join(BASE_DIR, "acupoint_anatomy", "01_경혈별_해부생리_분석보고서")
 os.makedirs(OUTPUT_ROOT, exist_ok=True)
 
 MERIDIAN_SUBDIRS = {

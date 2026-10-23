@@ -64,7 +64,28 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
 # 경로 · 상수
 # --------------------------------------------------------------------------------------
 SCRIPT_DIR = Path(__file__).resolve().parent
-DEFAULT_ROOT = SCRIPT_DIR.parents[3]  # .agents/skills/acupoint-anatomy/scripts → 프로젝트 루트
+
+def find_project_root(start_path: Path) -> Path:
+    curr = start_path.resolve()
+    for _ in range(6):
+        if (curr / "01_Framework").exists() and (curr / "02_Master_Datasets").exists():
+            return curr
+        if curr.parent == curr:
+            break
+        curr = curr.parent
+    cwd = Path.cwd().resolve()
+    if (cwd / "01_Framework").exists() and (cwd / "02_Master_Datasets").exists():
+        return cwd
+    curr = start_path.resolve()
+    for _ in range(4):
+        if (curr / "framework").exists() and (curr / "data").exists():
+            return curr
+        if curr.parent == curr:
+            break
+        curr = curr.parent
+    return start_path.resolve()
+
+DEFAULT_ROOT = find_project_root(SCRIPT_DIR)
 
 JSON_NAME = "경혈_생의학_신경반사_마스터DB.json"
 XLSX_NAME = "경혈_생의학_신경반사_마스터DB.xlsx"
