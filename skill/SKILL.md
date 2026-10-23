@@ -25,7 +25,7 @@ description: >-
 | 순서 | 파일 | 역할 | Tier 1 | Tier 2·3 |
 | :---: | :--- | :--- | :---: | :---: |
 | 1 | `01_Framework/acupoint_anatomical_logic_framework.md` | 로직 **정본**: Tier 1~3, Rank 0~7, ARI v3.0 루브릭·게이트, 10대 구성 요소 | 1·2절 | 전체 |
-| 2 | `.agents/rules/acupoint-anatomy-routing.md` | 트리거 규칙, 산출물 4대 디렉토리 분류·저장 규칙 | — | 읽음 |
+| 2 | `.agents/rules/acupoint-anatomy-routing.md` | 트리거 규칙, 산출물 5대 디렉토리 분류·저장 규칙 | — | 읽음 |
 | 3 | `01_Framework/layer_b_reference_registry.md` | Layer B 4계층 참조 등록부(B1~B4), B-Check 6항목 기준 | — | 읽음 |
 | 4 | `01_Framework/biomedical_master_db_sync_design.md` | 통합 DB v3.0 구조·동기화 설계(필요 시) | — | 참조 |
 | 5 | `references/acupoint_anatomical_logic_framework.md` | 정본의 오프라인 사본(`sync_skill_settings.py --apply`가 갱신). 정본을 읽을 수 없을 때만 사용 | — | 대체 |
@@ -37,7 +37,7 @@ description: >-
   python .agents/skills/acupoint-anatomy/scripts/sync_skill_settings.py --apply   # 드리프트 시
   ```
   `[CHG]`로 표시된 `claude_skill`·`claude_md`는 Claude Code 쪽 변경이다. 정본에 반영된 규칙은 자동으로 따르게 되며, 래퍼 전용 변경은 참고만 한다.
-- 마스터 원칙 xlsx(`02_Master_Datasets/경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx`)는 확인하되 정본과 다르면 정본을 우선한다(7행 ARI 식은 v2.6 기준, 갱신 대상).
+- 마스터 원칙 xlsx(`02_Master_Datasets/경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx`)는 확인하되 정본과 다르면 정본을 우선한다(Framework v2.7 및 ARI v3.0 기준 정합).
 
 ## 1. 데이터 소스 (정본 1절·머리말)
 
