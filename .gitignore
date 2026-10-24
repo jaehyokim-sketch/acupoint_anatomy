@@ -40,3 +40,8 @@ backup/
 *.bak
 *.orig
 scratch/
+
+# Archives & Legacy Builds
+_archive/
+_구판_html/
+*_구판*

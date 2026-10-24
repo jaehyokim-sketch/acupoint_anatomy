@@ -3,5 +3,5 @@ chcp 65001 > nul
 echo ========================================================
 echo   acupoint_anatomy Local -> Google Drive Deployer
 echo ========================================================
-python -u "%~dp0deploy_to_gdrive.py"
+python -u "%~dp0deploy_to_gdrive.py" --prune
 pause

@@ -1,279 +1,280 @@
-# Zanzhu (攅竹, BL02)(攢竹, BL2) 해부생리학적 실체 판명 보고서
+# [Acupoint Anatomical & Physiological Substrate Monograph] Cuanzhu (攢竹, BL2)
 
-> **Framework**: v2.7 (2026-10-04 개정) · **ARI**: ARI v3.0 | ARI-Core 81.2 ± 1.2 (B) | SI 0 ⚠ | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 80.2 (B, 등급 불변) · **이중 채점**: Independent dual-adjudication completed
-
----
-
-> **근거 원칙 문서**: `01_Framework/acupoint_anatomical_logic_framework.md` (v2.7) · `01_Framework/layer_b_reference_registry.md` (Layer B 참조 등록부 v1.0)
-> **근거 데이터셋** (`02_Master_Datasets/`):
-> 1. `침구문헌별 자침깊이 정리_AI 분석용.xlsx` 시트1 181행(BL02)
-> 2. `경혈명_비교_정리_KJH.xlsx` '경혈 종합 목록' 182행, '본명-이명 일치 목록(Case A)' 4행
-> 3. `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx` 179번(BL02, 경혈학 上 p.628) · `김재효 수업_경혈_해부구조_데이터셋.xlsx` 179번(BL02)
-> **3대 원전** (`01_도서_번역_및_원전/<원전>/chunks_refined/`): *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) `针灸腧穴通考(上)_561-640.md` (2310~2590행) · *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) `中国针灸穴位通鉴(上卷)_881-960.md` (2480~2712행) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) 각 장 처방 조문
-> **Anatomical Ontology**: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 `FMA:ID`로 고정하고 지배신경·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 `02_Master_Datasets/FMA/acupoint_fma_mapping.json`, 상세는 부록 A
-
-### 요약
-- **⚠ 안전주의 (SI 0)**: 3대 원전에 수록된 《医学入门》 卷一 "禁用针灸"(禁針·禁灸) 기록 때문에 루브릭상 SI가 0이다. 이 기록은 **명대 후대 문헌 1종의 단일 기록**이며, *Huangdi Mingtang Jing* (《黃帝明堂經》)·《甲乙经》 이래 대다수 문헌과 자침깊이 DB는 **1~3푼(2.3~6.9mm)** 자입을 기술한다. 자침깊이 DB에는 '0'(Contraindicated for Needling (禁鍼))이 없다. 실제 위험은 깊이보다 **방향**에 있다. 직자하면 얕은 깊이에서 전두골 额切迹 골면에 닿지만, 하후방(안와 쪽)으로 기울여 깊이 넣으면 안와 안으로 들어갈 수 있고 도르래위 혈관 출혈(혈종)이 생길 수 있다. 고전과 현대 문헌은 대부분 **沿皮 횡자(평자)**를 권한다.
-- **실체 판정 — 개연(B)**: BL2의 해부 실체는 额切迹(滑車上切迹)을 지나는 **도르래위(활차상) 신경·동정맥**과 그 위의 **눈썹주름근·눈둘레근**이라는 해석이 2대 교재, 《通考》 【相关解剖学基础】, 규범 해부서(B1-01·B1-03)에서 일치한다. 다만 BL2만 실측한 사체·초음파·MRI 연구가 없고, 반사 기전을 다룬 Layer A 논문도 모두 BL2를 포함한 **복합 혈위 처방**이다. 그래서 "확정"이 아닌 "개연"으로 판정한다.
+> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: ARI v3.0 | ARI-Core 81.2 ± 1.2 (B) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 80.2 (B, grade unchanged) · **Dual scoring**: two independent raters, adjudication completed
 
 ---
 
-## 1. Classical Literature Screening Table (Three Primary Classics Excerpts)
+> **Governing principle documents**: `01_Framework/acupoint_anatomical_logic_framework.md` (v2.7) · `01_Framework/layer_b_reference_registry.md` (Layer B Reference Registry v1.0)
+> **Source datasets** (`02_Master_Datasets/`):
+> 1. `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 181 (BL02)
+> 2. `경혈명_비교_정리_KJH.xlsx`, 'Comprehensive acupoint list' sheet, row 182; 'Primary name–alias match list (Case A)' sheet, row 4
+> 3. `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx` entry 179 (BL02, *Acupoint Studies* vol. 1, p. 628) · `김재효 수업_경혈_해부구조_데이터셋.xlsx` entry 179 (BL02)
+> **Three Primary Classics** (`01_도서_번역_및_원전/<원전>/chunks_refined/`): *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) `针灸腧穴通考(上)_561-640.md` (lines 2310–2590) · *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) `中国针灸穴位通鉴(上卷)_881-960.md` (lines 2480–2712) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), prescription entries in each chapter
+> **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: `02_Master_Datasets/FMA/acupoint_fma_mapping.json`; details in Appendix A
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
-| # | 문헌(시대) | 원문 (3대 원전 수록 그대로) | 국문 대조 | 원전 위치 |
+### Summary
+- **⚠ Safety caution (SI 0)**: Under the rubric the SI is 0 because the three primary classics record the statement "禁用針灸" (no needling, no moxibustion; 禁針·禁灸) from vol. 1 of *Yixue Rumen* (《醫學入門》). This is **a single record in one later, Ming-dynasty text**; most texts from the *Huangdi Mingtang Jing* (《黃帝明堂經》) and *Jiayi Jing* (《甲乙經》) onward, and the needling-depth DB, describe an insertion of **1–3 fen (2.3–6.9 mm)**. The needling-depth DB contains no '0' (contraindicated for needling) entry. The real risk lies in **direction** rather than depth. A perpendicular needle reaches the bony surface of the frontal bone at the frontal notch (額切跡) at a shallow depth, but a needle angled inferoposteriorly (toward the orbit) and inserted deeply can enter the orbit and may cause bleeding (haematoma) from the supratrochlear vessels. Most classical and modern texts recommend **transverse (horizontal) insertion along the skin (沿皮)**.
+- **Substrate verdict — probable (B)**: The two textbooks, the 【相關解剖學基礎】 (relevant anatomical basis) section of the *Tongkao* (《通考》) and the normative anatomy references (B1-01, B1-03) agree in interpreting the anatomical substrate of BL2 as the **supratrochlear nerve and artery/vein** passing through the frontal notch (額切跡, 滑車上切跡) and the overlying **corrugator supercilii and orbicularis oculi**. However, there is no cadaveric, ultrasound or MRI study that measures BL2 alone, and all Layer A papers dealing with reflex mechanisms use **multi-point prescriptions** that include BL2. The verdict is therefore "probable", not "confirmed".
+
+---
+
+## 1. Classical Literature Screening Table (Excerpts from the Three Primary Classics & Chinese–English Comparison)
+
+| # | Text (era) | Original text (as recorded in the three primary classics) | English rendering | Location in the classics |
 | :---: | :--- | :--- | :--- | :--- |
-| 1 | *Huangdi Mingtang Jing* (《黃帝明堂經》) (한대 계열, 《甲乙经》 卷三 보존) | 攒竹，一名员柱，一名始光，一名夜光，一名明光，在眉头陷者中，足太阳脉气所发。 | Zanzhu (攅竹, BL02)은 원주·시광·야광·명광이라고도 하며, 눈썹머리의 오목한 곳에 있다. 족태양 맥기가 나오는 곳이다. | 《通考》 名实考 3 (`针灸腧穴通考(上)_561-640.md` 2342행) |
-| 2 | *Huangdi Mingtang Jing* (《黃帝明堂經》) 佚文 (《甲乙经》 卷三) | 刺入三分，留六呼，灸三壮。 | 3푼 찔러 넣고 6호흡 동안 유침하며 뜸 3장. | 《通考》 【操作】 1(1) (2564행); 《穴位通鉴》 七.1 「*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)3:42」 |
-| 3 | 《素问·气穴论》 王冰注 (당) | 眉本二穴，王冰注曰：攒竹穴也。在眉头陷者中，足太阳脉气所发。 | '眉本 두 혈'을 왕빙은 Zanzhu (攅竹, BL02)으로 주석했다. | 《通考》 名实考 1 (2338행) |
-| 4 | 《素问·骨空论》 王冰注 | 在眉头陷者中，脉动应手。 | 눈썹머리 오목한 곳, 맥이 손에 닿는다. | 《通考》 【定位】 2 + 按 "'脉动应手'四字…当系错入" |
-| 5 | *Qianjin Yifang* (《千金翼方》) 卷二十七 (당) | 针入一分，留二呼，泻三吸，徐徐出之。忌灸。宜出血涂盐。 | 1푼 자입, 뜸 금기, 출혈 후 소금을 바른다. | 《通考》 【操作】 2 |
-| 6 | 《铜人腧穴针灸图经》 卷中 (송) | 宜以细三棱针刺之，宣泄热气。三度刺，目大明。 | 가는 삼릉침으로 찔러 열기를 빼며, 세 번 찌르면 눈이 크게 밝아진다. | 《通考》 【操作】 5; 《穴位通鉴》 七.7(針入一分) |
-| 7 | 《窦太师针经》 (금원) | 在两眉头内尖陷中…针入一分，沿皮向鱼腰穴。 | 눈썹머리 안쪽 끝 오목한 곳. 1푼 자입 후 피부를 따라 어요 쪽으로 눕혀 찌른다. | 《通考》 相关穴 1, 【操作】 6(1) |
-| 8 | 《针灸聚英》 卷一 (명) | 睛明刺一分半，攒竹刺一分三分，为适浅深之宜。今医家刺攒竹，卧针直抵睛明…非古人意也。 | Zanzhu (攅竹, BL02)은 1~3푼이 알맞다. 요즘 의가가 침을 눕혀 정명까지 밀어 넣는 것은 옛 뜻이 아니다. | 《通考》 【操作】 8 |
-| 9 | 《医学入门》 卷一 (명) | 禁用针灸。 | 침과 뜸을 모두 쓰지 않는다. | 《通考》 【操作】 9 (2594행); 《穴位通鉴》 七.16 「《医学入门》1:3」 |
-| 10 | 1957 南京《针灸学》 (현대) | 针三分，挤起眉端肌皮从眉端横针入之，即沿皮横刺。 | 3푼, 눈썹 끝 피부를 집어 올려 횡자. | 《通考》 【操作】 10(1) |
-| 11 | 7版《针灸学》 (현대) | 可向眉中或向眼眶内缘平刺或斜刺 0.5~0.8 寸。禁灸。 | 눈썹 중앙 또는 안와 내연 쪽으로 평자·사자 0.5~0.8촌. | 《通考》 【操作】 10(4) |
-| 12 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (黄龙祥, 현대 교감) | 部位：在面部，眉头凹陷中，额切迹处。…针刺操作：直刺 0.1~0.3 寸。 | 위치: 눈썹머리 오목한 곳, 额切迹(이마패임). 직자 0.1~0.3촌. | 【提要索隐】 (2316~2328행) |
-| 13 | 《通考》 【相关解剖学基础】 | 内侧者为额切迹或滑车上切迹，有滑车上动脉、静脉和滑车上神经通过。 | 안쪽 것은 额切迹(도르래위패임)이며 도르래위 동·정맥과 도르래위신경이 지난다. | 【定位】 (2390행 이하) |
-| 14 | 《通考》 定位 文献分析 | 本穴定位，古代文献无分歧，均定位于"眉头陷者中"。 | 고대 문헌의 위치 기술에는 이견이 없다. | 【定位】 文献分析 |
-| 15 | *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 呃逆…取穴：攒竹。指压。 / 腰痛…取穴：攒竹。 / 眉目疼痛不能当，攒竹沿皮刺不妨。 | 딸꾹질·요통에 Zanzhu (攅竹, BL02) 단독 / 미목동통에 Zanzhu (攅竹, BL02) 연피자. | `中国针灸证治通鉴_241-320.md` 2254행; `_321-400.md` 14행; `_401-480.md` 184행 |
-| 16 | WHO 표준 정위 (2008, B1-05) | In the depression at the medial end of the eyebrow. | 눈썹 내측단 오목한 곳. | B1-05 |
+| 1 | *Huangdi Mingtang Jing* (《黃帝明堂經》) (Han-dynasty lineage, preserved in vol. 3 of the *Jiayi Jing* (《甲乙經》)) | 攢竹，一名員柱，一名始光，一名夜光，一名明光，在眉頭陷者中，足太陽脈氣所發。 | Cuanzhu (攢竹) is also called Yuanzhu (員柱), Shiguang (始光), Yeguang (夜光) and Mingguang (明光); it lies in the depression at the head of the eyebrow, where the Qi (氣) of the Foot Taiyang Vessel (足太陽脈) emerges. | *Tongkao* (《通考》) 名實考 3 (`针灸腧穴通考(上)_561-640.md` line 2342) |
+| 2 | *Huangdi Mingtang Jing* (《黃帝明堂經》), lost text (vol. 3 of the *Jiayi Jing* (《甲乙經》)) | 刺入三分，留六呼，灸三壯。 | Insert 3 fen, retain for 6 breaths, moxibustion with 3 cones. | *Tongkao* (《通考》) 【操作】 1(1) (line 2564); *Xuewei Tongjian* (《穴位通鑑》) 七.1 「《針灸甲乙經》3:42」 |
+| 3 | Wang Bing's (王冰) commentary on 《素問·氣穴論》 (Tang) | 眉本二穴，王冰注曰：攢竹穴也。在眉頭陷者中，足太陽脈氣所發。 | Wang Bing glosses 'the two Meiben (眉本) points' as Cuanzhu (攢竹). | *Tongkao* (《通考》) 名實考 1 (line 2338) |
+| 4 | Wang Bing's (王冰) commentary on 《素問·骨空論》 | 在眉頭陷者中，脈動應手。 | In the depression at the head of the eyebrow, where the pulse is felt under the finger. | *Tongkao* (《通考》) 【定位】 2 + note (按) "'脈動應手'四字…當係錯入" |
+| 5 | *Qianjin Yifang* (《千金翼方》) vol. 27 (Tang) | 針入一分，留二呼，瀉三吸，徐徐出之。忌灸。宜出血塗鹽。 | Insert 1 fen; moxibustion contraindicated; after bloodletting, apply salt. | *Tongkao* (《通考》) 【操作】 2 |
+| 6 | *Tongren Shuxue Zhenjiu Tujing* (《銅人腧穴針灸圖經》), middle volume (Song) | 宜以細三稜針刺之，宣泄熱氣。三度刺，目大明。 | Prick with a fine three-edged needle to drain heat Qi (熱氣); after three prickings the eyes become very bright. | *Tongkao* (《通考》) 【操作】 5; *Xuewei Tongjian* (《穴位通鑑》) 七.7 (針入一分) |
+| 7 | *Dou Taishi Zhenjing* (《竇太師針經》) (Jin–Yuan) | 在兩眉頭內尖陷中…針入一分，沿皮向魚腰穴。 | In the depression at the inner tip of the heads of both eyebrows. Insert 1 fen, then lay the needle along the skin toward Yuyao (魚腰). | *Tongkao* (《通考》) 相關穴 1, 【操作】 6(1) |
+| 8 | *Zhenjiu Juying* (《針灸聚英》) vol. 1 (Ming) | 睛明刺一分半，攢竹刺一分三分，為適淺深之宜。今醫家刺攢竹，臥針直抵睛明…非古人意也。 | 1–3 fen is appropriate for Cuanzhu (攢竹). Physicians today who lay the needle flat and push it all the way to Jingming (睛明) do not follow the intent of the ancients. | *Tongkao* (《通考》) 【操作】 8 |
+| 9 | *Yixue Rumen* (《醫學入門》) vol. 1 (Ming) | 禁用針灸。 | Use neither needling nor moxibustion. | *Tongkao* (《通考》) 【操作】 9 (line 2594); *Xuewei Tongjian* (《穴位通鑑》) 七.16 「《醫學入門》1:3」 |
+| 10 | 1957 Nanjing 《針灸學》 (modern) | 針三分，擠起眉端肌皮從眉端橫針入之，即沿皮橫刺。 | 3 fen; pinch up the skin at the end of the eyebrow and insert transversely. | *Tongkao* (《通考》) 【操作】 10(1) |
+| 11 | 7th-edition 《針灸學》 (modern) | 可向眉中或向眼眶內緣平刺或斜刺 0.5~0.8 寸。禁灸。 | Horizontal or oblique insertion of 0.5–0.8 cun toward the middle of the eyebrow or the inner margin of the orbit. | *Tongkao* (《通考》) 【操作】 10(4) |
+| 12 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (Huang Longxiang (黃龍祥), modern collation) | 部位：在面部，眉頭凹陷中，額切跡處。…針刺操作：直刺 0.1~0.3 寸。 | Location: in the depression at the head of the eyebrow, at the frontal notch (額切跡). Perpendicular insertion 0.1–0.3 cun. | 【提要索隱】 (lines 2316–2328) |
+| 13 | *Tongkao* (《通考》) 【相關解剖學基礎】 | 內側者為額切跡或滑車上切跡，有滑車上動脈、靜脈和滑車上神經通過。 | The medial one is the frontal notch (額切跡, supratrochlear notch), through which the supratrochlear artery, vein and nerve pass. | 【定位】 (line 2390 onward) |
+| 14 | *Tongkao* (《通考》), textual analysis of location (定位·文獻分析) | 本穴定位，古代文獻無分歧，均定位於"眉頭陷者中"。 | Ancient texts do not differ on the location. | 【定位】 文獻分析 |
+| 15 | *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 呃逆…取穴：攢竹。指壓。 / 腰痛…取穴：攢竹。 / 眉目疼痛不能當，攢竹沿皮刺不妨。 | Cuanzhu (攢竹) alone for hiccup (呃逆) and low back pain (腰痛) / transverse insertion along the skin at Cuanzhu (攢竹) for pain of the eyebrow and eye (眉目疼痛). | `中国针灸证治通鉴_241-320.md` line 2254; `_321-400.md` line 14; `_401-480.md` line 184 |
+| 16 | WHO standard location (2008, B1-05) | In the depression at the medial end of the eyebrow. | In the depression at the medial end of the eyebrow. | B1-05 |
 
-- **삭제한 인용 (원전 확인 불가)**: 구판의 《灵枢·本输》 "攢竹在顏下…眉頭陷者中"은 3대 원전 어디에도 없다(`chunks_refined` 전수 Grep: "在顏下/在颜下" 0건). 《通考》 표제가 "出*Huangdi Mingtang Jing* (《黃帝明堂經》)", 《穴位通鉴》 출처가 "*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)3:42"이므로 최초 기술은 *Huangdi Mingtang Jing* (《黃帝明堂經》)(《甲乙经》 卷三)이다.
-- **삭제한 인용 (가공 인용)**: 구판의 《通考》 인용 "眉頭凹陷處, 實爲滑車上神經與滑車上動脈處, 刺深宜斜刺/橫刺 (0.3~0.5寸)"은 《通考》 원문에 없다. 《通考》의 실제 기술은 위 12·13행("直刺 0.1~0.3 寸", "额切迹处", "有滑车上动脉、静脉和滑车上神经通过")이다. 《通考》는 사자·횡자를 자기 권고로 제시하지 않으며, 횡자는 窦氏·南京《针灸学》·7版 교재 등 수록 문헌의 기술이다.
+- **Deleted citation (cannot be verified in the classics)**: the earlier edition's 《靈樞·本輸》 "攢竹在顏下…眉頭陷者中" does not appear in any of the three primary classics (full Grep of `chunks_refined`: "在顏下/在颜下" 0 hits). Since the *Tongkao* (《通考》) heading reads "出《黃帝明堂經》" and the *Xuewei Tongjian* (《穴位通鑑》) source is "《針灸甲乙經》3:42", the earliest description is the *Huangdi Mingtang Jing* (《黃帝明堂經》) (vol. 3 of the *Jiayi Jing* (《甲乙經》)).
+- **Deleted citation (fabricated quotation)**: the earlier edition's *Tongkao* (《通考》) quotation "眉頭凹陷處, 實爲滑車上神經與滑車上動脈處, 刺深宜斜刺/橫刺 (0.3~0.5寸)" does not exist in the *Tongkao* (《通考》) text. What the *Tongkao* (《通考》) actually says is in rows 12 and 13 above ("直刺 0.1~0.3 寸", "額切跡處", "有滑車上動脈、靜脈和滑車上神經通過"). The *Tongkao* (《通考》) does not present oblique or transverse insertion as its own recommendation; transverse insertion is described by the texts it collects, such as Dou (竇氏), Nanjing 《針灸學》 and the 7th-edition textbook.
 
 ---
 
-## 2. Primary Source vs. Secondary Quotation Historical Stratification Table
+## 2. Primary Source vs. Secondary Quotation Table
 
-| 정보 항목 | 원천(최초 기술) | 재인용·주석·후대 변형 | 판정 |
+| Item | Primary source (earliest description) | Secondary quotation, commentary, later variants | Verdict |
 | :--- | :--- | :--- | :--- |
-| 위치 | *Huangdi Mingtang Jing* (《黃帝明堂經》) "在眉头陷者中" | 王冰注·《圣惠方》·*Tongren* (《銅人》)·《大成》 등 동일 문구 재인용. 窦氏 "眉头内尖陷中"은 정밀화 | 원천 일치. 고대 문헌 간 이견 없음(《通考》) |
-| 위치 부가 | — | 王冰注 《骨空论》 "脉动应手" | 《通考》 按: 다른 王冰注에 없으므로 **錯入**(혼입) |
-| 해부 용어 | — | 1990 국표·6版 교재 "眶上切迹处" | 《通考》 按: "额切迹"과 "眶上切迹"의 혼동. 2006 국표에서 "额切迹"으로 교정 |
-| 자입 심도 | *Huangdi Mingtang Jing* (《黃帝明堂經》)(《甲乙》) "刺入三分" | 《医心方》 2분, 《千金翼》·*Tongren* (《銅人》) 1분, 《聚英》 1~3분, 현대 교재 평자 0.5~0.8촌 | 원천 3푼. 후대 1~2푼으로 얕아지고 횡자로 전환 |
-| 뜸 | *Huangdi Mingtang Jing* (《黃帝明堂經》) "灸三壮" | 《千金翼》 "忌灸", 《圣惠·针经》 "不宜灸", 窦氏 "禁灸", 현대 교재 "禁灸" | 灸법은 원천과 후대가 상충. 후대 다수가 금구 |
-| Contraindicated for Needling (禁鍼) | — | 《医学入门》 卷一 "禁用针灸" | 단일 후대 기록. 원천·다수 문헌과 다름 → SI 0 사유(10절) |
-| 주치 | *Huangdi Mingtang Jing* (《黃帝明堂經》) 風頭痛·眉頭痛·目如欲脫·目䀮䀮不明·癲疾·小兒癇·痔痛 | 《聚英》·《大成》 "泪出，目眩，瞳子痒" | 《通考》 按: 承泣의 주치를 高武가 잘못 끊어 읽어 섞은 것 → Zanzhu (攅竹, BL02) 주치에서 제외 |
-| 이명 | *Huangdi Mingtang Jing* (《黃帝明堂經》) 员柱·始光·夜光·明光 | *Tongren* (《銅人》) "光明", 南京《针灸学》 员在·小竹·眉中·元柱 등 | 3절 참조 |
+| Location | *Huangdi Mingtang Jing* (《黃帝明堂經》) "在眉頭陷者中" | The same wording is re-quoted by Wang Bing's (王冰) commentary, 《聖惠方》, 《銅人》, 《大成》 and others. Dou's (竇氏) "眉頭內尖陷中" is a refinement | Consistent with the primary source. No disagreement among ancient texts (《通考》) |
+| Additional location detail | — | Wang Bing's (王冰) commentary on 《骨空論》 "脈動應手" | *Tongkao* (《通考》) note: absent from Wang Bing's other commentaries, therefore **錯入** (interpolation) |
+| Anatomical term | — | 1990 national standard and 6th-edition textbook "眶上切跡處" | *Tongkao* (《通考》) note: confusion of "額切跡" (frontal notch) with "眶上切跡" (supraorbital notch). Corrected to "額切跡" in the 2006 national standard |
+| Insertion depth | *Huangdi Mingtang Jing* (《黃帝明堂經》) (《甲乙》) "刺入三分" | 《醫心方》 2 fen, 《千金翼》 and 《銅人》 1 fen, 《聚英》 1–3 fen, modern textbooks horizontal insertion 0.5–0.8 cun | Primary source 3 fen. Later texts become shallower (1–2 fen) and switch to transverse insertion |
+| Moxibustion | *Huangdi Mingtang Jing* (《黃帝明堂經》) "灸三壯" | 《千金翼》 "忌灸", 《聖惠·針經》 "不宜灸", Dou (竇氏) "禁灸", modern textbooks "禁灸" | Moxibustion (灸法) conflicts between the primary source and later texts. Most later texts prohibit moxibustion |
+| Needling contraindication | — | *Yixue Rumen* (《醫學入門》) vol. 1 "禁用針灸" | A single later record, at variance with the primary source and most texts → reason for SI 0 (Section 10) |
+| Indications | *Huangdi Mingtang Jing* (《黃帝明堂經》): 風頭痛 · 眉頭痛 · 目如欲脫 · 目䀮䀮不明 · 癲疾 · 小兒癇 · 痔痛 | 《聚英》 and 《大成》 "淚出，目眩，瞳子癢" | *Tongkao* (《通考》) note: Gao Wu (高武) misread the punctuation and mixed in the indications of Chengqi (承泣) → excluded from the indications of Cuanzhu (攢竹) |
+| Aliases | *Huangdi Mingtang Jing* (《黃帝明堂經》) 員柱 · 始光 · 夜光 · 明光 | 《銅人》 "光明", Nanjing 《針灸學》 員在 · 小竹 · 眉中 · 元柱, etc. | See Section 3 |
 
 ---
 
-## 3. Nomenclature & Alias Collation Table (KJH DB Verification)
+## 3. Alias Verification Table (KJH DB Cross-check)
 
-KJH DB(`경혈명_비교_정리_KJH.xlsx` 경혈 종합 목록 182행) BL02 이명: **始光, 光明, 圓柱, 夜光, 明光, 眉頭圓柱, 眉本, 魚頭**
+BL02 aliases in the KJH DB (`경혈명_비교_정리_KJH.xlsx`, 'Comprehensive acupoint list' sheet, row 182): **始光, 光明, 圓柱, 夜光, 明光, 眉頭圓柱, 眉本, 魚頭**
 
-| 이명 | 최초 출처 (연대순) | KJH DB | 판정 (《通考》 名实考·按 근거) |
+| Alias | Earliest source (chronological) | KJH DB | Verdict (based on the *Tongkao* (《通考》) 名實考 and notes) |
 | :--- | :--- | :---: | :--- |
-| 员柱(圓柱) | *Huangdi Mingtang Jing* (《黃帝明堂經》) | ○ (圓柱) | 정식 이명 |
-| 始光 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | ○ | 정식 이명 |
-| 夜光 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | ○ | 정식 이명 |
-| 明光 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | ○ | 정식 이명 |
-| 眉本 · 眉头 | *Suwen* (《素問》) 气穴论·气府论 (王冰注) | ○ (眉本) | 《通考》: *Suwen* (《素問》)의 **부위명**이며 혈명이 아님 |
-| 光明 | 《铜人腧穴针灸图经》 (송) | ○ | 《通考》: "明光"의 **도치(倒文)**로 의심. **GB37 光明과 동명 충돌**(KJH '본명-이명 일치 목록' Case A: BL02 光明 ↔ GB37 광명). 또 敦煌 《新集备急灸法》·《银海精微》의 '光明'은 눈썹 중앙(鱼腰 위치)의 **동명이혈**로, Zanzhu (攅竹, BL02)과 다른 혈 |
-| 眉头圓柱 | KJH 슬라이드 표기 | ○ | 眉头(부위명) + 圓柱의 결합 표기로 보임. 원전 단독 근거 없음 |
-| 鱼头 | 1983 上海 《针灸治疗手册》 | ○ | 현대 별칭(鱼腰·鱼尾에 대응) |
-| 员在 | 《甲乙》 판본, 南京 《针灸学》 | × | 《通考》: "员柱"의 **형오(形誤)** |
-| 元柱 | 《古今医统大全》 | × | 《通考》: "员柱"의 **동음 차용** |
-| 小竹 | 南京 《针灸学》 | × | 《通考》: **眉冲(BL3)의 이명** → Zanzhu (攅竹, BL02) 이명에서 제외 |
-| 眉柱 · 矢光 · 眉中 | 《云岐子》·《杨敬斋》·南京《针灸学》 | × | 후대 이표기. 단독 정보 없음 |
-| ~~烏列 · 大空~~ | **근거 없음** | × | KJH DB·3대 원전 어디에도 없음 → **삭제**(구판 오류) |
+| 員柱 (圓柱) | *Huangdi Mingtang Jing* (《黃帝明堂經》) | ○ (圓柱) | Formal alias |
+| 始光 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | ○ | Formal alias |
+| 夜光 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | ○ | Formal alias |
+| 明光 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | ○ | Formal alias |
+| 眉本 · 眉頭 | 《素問》 氣穴論 · 氣府論 (Wang Bing's (王冰) commentary) | ○ (眉本) | *Tongkao* (《通考》): a **region name** in the *Suwen* (《素問》), not a point name |
+| 光明 | *Tongren Shuxue Zhenjiu Tujing* (《銅人腧穴針灸圖經》) (Song) | ○ | *Tongkao* (《通考》): suspected **inversion (倒文)** of "明光". **Same-name clash with Guangming (光明, GB37)** (KJH 'Primary name–alias match list' Case A: BL02 光明 ↔ GB37 Guangming). In addition, the '光明' of the Dunhuang 《新集備急灸法》 and 《銀海精微》 is a **different point with the same name (同名異穴)** at the middle of the eyebrow (the position of Yuyao (魚腰)), not Cuanzhu (攢竹) |
+| 眉頭圓柱 | KJH slide notation | ○ | Appears to be a combined notation of 眉頭 (region name) + 圓柱. No independent basis in the classics |
+| 魚頭 | 1983 Shanghai 《針灸治療手冊》 | ○ | Modern alias (corresponding to 魚腰 and 魚尾) |
+| 員在 | *Jiayi Jing* (《甲乙》) editions, Nanjing 《針灸學》 | × | *Tongkao* (《通考》): **graphic error (形誤)** for "員柱" |
+| 元柱 | 《古今醫統大全》 | × | *Tongkao* (《通考》): **homophonic substitution** for "員柱" |
+| 小竹 | Nanjing 《針灸學》 | × | *Tongkao* (《通考》): **alias of Meichong (眉衝, BL3)** → excluded from the aliases of Cuanzhu (攢竹) |
+| 眉柱 · 矢光 · 眉中 | 《雲岐子》 · 《楊敬齋》 · Nanjing 《針灸學》 | × | Later variant spellings. No independent information |
+| ~~烏列 · 大空~~ | **No basis** | × | Absent from the KJH DB and all three primary classics → **deleted** (error in the earlier edition) |
 
-**혼용 차단 기록**: '光明'으로 검색한 정보는 ① BL2 별명 光明(*Tongren* (《銅人》) 이후), ② GB37 광명(족소양 Luo-Connecting Point (絡穴), 하퇴), ③ 敦煌·《银海精微》 光明(눈썹 중앙, 鱼腰 위치) 세 갈래로 나누어 읽어야 한다. 본 보고서의 위치·해부·주치 정보에는 ②·③의 내용이 섞이지 않았다. 연대순 정렬로 해소되므로 S_orig ③ = 75이다.
+**Record of confusion blocking**: information retrieved under '光明' must be read as three separate strands: ① 光明 as an alias of BL2 (from 《銅人》 onward); ② Guangming (光明, GB37) (Connecting point (絡穴) of the Foot Shaoyang (足少陽), lower leg); ③ the 光明 of Dunhuang and 《銀海精微》 (middle of the eyebrow, the position of Yuyao (魚腰)). No content from ② or ③ has been mixed into the location, anatomy or indications in this report. Since the confusion is resolved by chronological ordering, S_orig ③ = 75.
 
 ---
 
-## 4. 3D Spatial Coordinates & Layer 1~5 Anatomical Substrate Diagram
+## 4. 3D Spatial Coordinates & Layer 1–5 Anatomical Substrate Diagram
 
-### 4.1 정위 이탈 검증 (Δ_discrepancy)
-- 고전 "眉头陷者中"과 WHO 2008 "medial end of the eyebrow"는 같은 촉진 랜드마크인 **额切迹(이마패임, 滑車上切迹)**을 가리킨다. 고전·현대 편차는 15mm 미만이므로 **Target 분기 없음**(단일 Target T1).
-- 용어 주의: 이 오목은 **额切迹(frontal notch)**이며, 그 외측의 **眶上切迹/孔(supraorbital notch/foramen)**과 다르다(《通考》 文献分析). 구판의 "화차상절노·안화상절노"는 오기이며 **额切迹(도르래위패임)**으로 고친다.
+### 4.1 Location Discrepancy Check (Δ_discrepancy)
+- The classical "眉頭陷者中" and the WHO 2008 "medial end of the eyebrow" point to the same palpable landmark, the **frontal notch (額切跡, 滑車上切跡)**. The classical–modern deviation is under 15 mm, so there is **no Target split** (single Target T1).
+- Terminology caution: this depression is the **frontal notch (額切跡)**, distinct from the more lateral **supraorbital notch/foramen (眶上切跡/孔)** (*Tongkao* (《通考》) textual analysis). The earlier edition's garbled terms "hwachasangjeolno / anhwasangjeolno" are errors and are corrected to **frontal notch (額切跡; supratrochlear notch)**.
 
-### 4.2 좌표계
-- **X축(내외측)**: 정중선에서 외측. 기준선 = 내안각 수직선(WHO). 额切迹은 眶上切迹보다 정중선에 가깝다.
-- **Y축(두미)**: 눈썹 내측단 = 안와상연 높이. 위로 眉冲(BL3, 额切迹 직상 입발제 0.5촌)이 이어진다.
-- **Z축(깊이)**: 피부에서 전두골 骨面까지. BL2만 연부조직 두께를 실측한 연구는 Layer A에 없다. 따라서 층 경계를 mm로 나누지 않고 **순서만** 제시한다(규범 해부 B1-01·B1-03, 2대 교재 B2-09).
+### 4.2 Coordinate System
+- **X axis (medial–lateral)**: lateral from the midline. Reference line = vertical line through the inner canthus (WHO). The frontal notch (額切跡) lies closer to the midline than the supraorbital notch (眶上切跡).
+- **Y axis (cranial–caudal)**: medial end of the eyebrow = level of the supraorbital margin. Above it lies Meichong (眉衝, BL3; directly above the frontal notch, 0.5 cun within the anterior hairline).
+- **Z axis (depth)**: from the skin to the bony surface of the frontal bone. Layer A contains no study measuring soft-tissue thickness at BL2 alone. Layer boundaries are therefore not given in mm; **only the order** is presented (normative anatomy B1-01 and B1-03, the two textbooks B2-09).
 
-### 4.3 Layer 1~5 층차 (프레임워크 정의 적용)
+### 4.3 Layers 1–5 (Framework Definitions Applied)
 
-| Layer (프레임워크 정의) | BL2 해당 구조 | 근거 | 비고 |
+| Layer (framework definition) | Corresponding structures at BL2 | Basis | Remarks |
 | :--- | :--- | :--- | :--- |
-| Layer 1 피부·피하 | 피부, 피하조직, 도르래위신경(V1, 이마신경 분지)의 피부 가지 | 김재효 교재, 공통교재(이마신경), B1-01 | 횡자 시 주 자극층 |
-| Layer 2 표층근육·근막 | 눈둘레근(안와부), 이마힘살 내측 섬유, 눈썹내림근 | 2대 교재 | 얼굴신경 관자가지 지배 |
-| Layer 3 심층근육·운동지 | 눈썹주름근(전두골 내측 기시), 얼굴신경 관자가지 분지 | 2대 교재 | 안검·미간 운동 |
-| Layer 4 신경혈관속 | **도르래위 신경·동맥·정맥**(额切迹 출구), 외측에 눈확위 신경혈관속 | 《通考》 相关解剖学基础, 김재효 교재, B1-01 | 출혈(혈종) 주의 |
-| Layer 5 골막·심부 | 전두골 额切迹 **골막**(직자 종점). 그 아래·뒤쪽 안와 격막 뒤에 안와 내용물 | B1-01·B1-03 | 안구는 안와상연 **아래·뒤**에 있다. 직자로는 골면에서 멈추며, **하후방 경사 자입** 때만 안와 진입 위험 |
+| Layer 1 Skin & subcutis | Skin, subcutaneous tissue, cutaneous branches of the supratrochlear nerve (V1, branch of the frontal nerve) | Kim Jaehyo textbook, Common Textbook (frontal nerve), B1-01 | Main stimulated layer in transverse insertion |
+| Layer 2 Superficial muscle & fascia | Orbicularis oculi (orbital part), medial fibres of frontalis, depressor supercilii | Both textbooks | Innervated by the temporal branches of the facial nerve |
+| Layer 3 Deep muscle & motor branches | Corrugator supercilii (arising from the medial frontal bone), temporal branches of the facial nerve | Both textbooks | Movement of the eyelid and glabella |
+| Layer 4 Neurovascular bundle | **Supratrochlear nerve, artery and vein** (exiting at the frontal notch (額切跡)); supraorbital neurovascular bundle laterally | *Tongkao* (《通考》) 相關解剖學基礎, Kim Jaehyo textbook, B1-01 | Caution: bleeding (haematoma) |
+| Layer 5 Periosteum & deep | **Periosteum** of the frontal bone at the frontal notch (額切跡) (end point of perpendicular insertion). Below and behind it, the orbital contents lie behind the orbital septum | B1-01, B1-03 | The eyeball lies **below and behind** the supraorbital margin. A perpendicular needle stops at the bone surface; there is a risk of entering the orbit **only with inferoposteriorly angled insertion** |
 
-- **구판 정정**: 구판의 "Layer 5 안구, z > 11.5mm 직자 시" 모델은 해부와 맞지 않는다. BL2에서 직자하면 수 mm 깊이에서 전두골에 닿고, 안구는 안와상연 아래에 있다. 위험은 깊이보다 **방향(안와 쪽 경사)**에 달려 있다. 구판의 층 순서(Layer 3=신경혈관, Layer 4=골막)도 프레임워크 정의(Layer 4=신경혈관속, Layer 5=골막)에 맞춰 고쳤다.
+- **Correction of the earlier edition**: the earlier model "Layer 5 eyeball, when inserted perpendicularly at z > 11.5 mm" does not fit the anatomy. A perpendicular needle at BL2 reaches the frontal bone at a depth of a few mm, and the eyeball lies below the supraorbital margin. The risk depends on **direction (angling toward the orbit)** rather than depth. The earlier edition's layer order (Layer 3 = neurovascular, Layer 4 = periosteum) has also been corrected to the framework definitions (Layer 4 = neurovascular bundle, Layer 5 = periosteum).
 
-### 4.4 단면 모식도
+### 4.4 Sectional Schematic
 
 ```
-                 【찬죽(BL2) 시상 단면 모식도 — 순서 표기, mm 경계는 미실측】
+                 [Cuanzhu (BL2) sagittal section — order only; mm boundaries not measured]
 
-  (위) 이마  ─────────────────────────────────────────────────────
-          피부 ── Layer 1: 피부·피하 (도르래위신경 피부가지 V1)
-          ─────── Layer 2: 눈둘레근 · 이마힘살 · 눈썹내림근
-          ─────── Layer 3: 눈썹주름근 (얼굴신경 관자가지)
-          ─────── Layer 4: 도르래위 신경·동정맥 (额切迹 출구)
-   ███████████████ Layer 5: 전두골 额切迹 골막  ← 직자(90°)는 여기서 정지
-   ███ 전두골 ███╲
-                  ╲  안와상연
-                   ╲___ 안와 격막 → 안와 내용물(안구는 아래·뒤쪽)
-  (아래) 눈
+  (up) Forehead  ─────────────────────────────────────────────────────
+          Skin ── Layer 1: Skin & subcutis (cutaneous branches of supratrochlear n., V1)
+          ─────── Layer 2: Orbicularis oculi · frontalis · depressor supercilii
+          ─────── Layer 3: Corrugator supercilii (temporal branches of facial n.)
+          ─────── Layer 4: Supratrochlear n., a. & v. (exit at frontal notch)
+   ███████████████ Layer 5: Periosteum of frontal bone at frontal notch  <- perpendicular (90°) stops here
+   ███ Frontal bone ███╲
+                       ╲  Supraorbital margin
+                        ╲___ Orbital septum -> orbital contents (eyeball lies below and behind)
+  (down) Eye
 
-  자침 경로 비교
-   ① 沿皮 횡자(窦氏 "沿皮向鱼腰"): Layer 1~2를 수평으로 통과 → 안전 여유 큼
-   ② 직자(《通考》 0.1~0.3촌): 骨面(Layer 5)에서 정지, Layer 4 혈관 접촉 가능
-   ③ 하후방 경사 심자(예: "卧针直抵睛明", 《聚英》이 비판): 안와 진입 위험 ⚠
+  Comparison of needle paths
+   ① Transverse along the skin (Dou: "沿皮向魚腰"): passes horizontally through Layers 1-2 -> wide safety margin
+   ② Perpendicular (Tongkao 0.1-0.3 cun): stops at bone surface (Layer 5); may contact Layer 4 vessels
+   ③ Deep insertion angled inferoposteriorly (e.g. "臥針直抵睛明", criticised in Juying): risk of entering the orbit ⚠
 ```
 
-![Zanzhu (攅竹, BL02)(BL02) 이마패임(额切迹)을 지나는 시상 단면 해부 실체 모식도](BL02_Zanzhu (攅竹, BL02)_횡단면_해부모식도.png)
+![Sagittal-section schematic of the anatomical substrate of Cuanzhu (攢竹, BL02) through the frontal notch (額切跡)](BL02_찬죽_횡단면_해부모식도.png)
 
-*그림 4-1. Zanzhu (攅竹, BL02) 높이 시상 단면 모식도(왼쪽 얼굴을 바깥쪽에서 봄, 앞쪽=왼쪽, 축척 아님). 직자(검은 화살표)는 수 mm에서 이마뼈 额切迹 골막에 닿아 멈추고, 沿皮 횡자(⊙)는 지면 밖 바깥쪽(鱼腰 방향)으로 ①~② 층을 지난다. 아래·뒤쪽 경사 심자(빨간 점선)만 눈확사이막을 지나 눈확 안으로 들어간다. 층 두께·거리는 BL02 실측값이 없어 임의로 배치했다.*
+*Figure 4-1. Schematic sagittal section at the level of Cuanzhu (攢竹) (left side of the face viewed from the lateral side, anterior = left, not to scale). A perpendicular needle (black arrow) reaches and stops at the periosteum of the frontal bone at the frontal notch (額切跡) within a few mm, while transverse insertion along the skin (沿皮, ⊙) passes through layers ①–② outward, out of the plane of the page (toward Yuyao (魚腰)). Only deep insertion angled inferoposteriorly (red dashed line) passes through the orbital septum into the orbit. Layer thicknesses and distances are arbitrary because no BL02-specific measurements exist.*
 
-### 4.5 FMA 실체 대조 (Layer별)
+### 4.5 FMA Substrate Cross-check (by Layer)
 
-구조명은 2대 교재, ID·관계는 FMA 5.1.0(`fma_query.py profile BL02`).
+Structure names from the two textbooks; IDs and relations from FMA 5.1.0 (`fma_query.py profile BL02`).
 
-| Layer | 구조 | FMA | FMA 관계 | 지배신경 / 줄기 (FMA) | 척수 분절 |
+| Layer | Structure | FMA | FMA relation | Innervation / trunk (FMA) | Spinal segment |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 피하 | 도르래위신경 피부가지 *(김재효: 도르래위신경)* | FMA:52642 | is_a Branch of frontal nerve | 이마신경(FMA:52638) → 눈신경(FMA:52621) → 삼차신경(FMA:50866) | 해당 없음(뇌신경 V1) |
-| 1 피하 | 이마신경 *(공통교재)* | FMA:52638 | is_a Branch of ophthalmic nerve | 눈신경 → 삼차신경 | 해당 없음 |
-| 2 표층근 | 눈둘레근 *[공통]* | FMA:46779 | is_a Circumorbital muscle | 얼굴신경 광대가지·관자가지의 눈둘레근 가지(FMA:53314·53377) | 해당 없음(뇌신경 VII) |
-| 2 표층근 | 이마힘살 *[공통]* | FMA:46757 | is_a Subdivision of occipitofrontalis | **FMA 미기재**(B1-01: 얼굴신경 관자가지) | 해당 없음 |
-| 2 표층근 | 눈썹내림근 *(김재효)* | FMA:46798 | is_a Depressor muscle | Nerve to depressor supercilii(FMA:82674) | 해당 없음 |
-| 3 심층근 | 눈썹주름근 *[공통]* | FMA:46794 | is_a Circumorbital muscle | Nerve to corrugator supercilii(FMA:53379) → 얼굴신경 관자가지(FMA:53291) → 얼굴신경(FMA:50868) | 해당 없음 |
-| 3 운동지 | 얼굴신경 관자가지 *(김재효)* / 얼굴신경 *(공통교재)* | FMA:53291 / 50868 | is_a Branch of facial nerve | 얼굴신경 | 해당 없음 |
-| 4 신경혈관속 | 도르래위동맥 *[공통]* | FMA:50025 | is_a Terminal branch of ophthalmic artery | 눈동맥(FMA:49868) → 속목동맥(FMA:3947) | — |
-| 4 신경혈관속 | 도르래위정맥 *[공통]* | FMA:50898 | drains_into Angular vein | 눈구석정맥(FMA:50893) → 얼굴정맥(FMA:50874) → 속목정맥(FMA:4724) | — |
-| 4 외측 인접 | 눈확위동·정맥·신경 *(김재효)* | FMA:49973 · 50904 · 52655 | 눈확위패임(FMA:57390) 통과 — 단면 밖 | 이마신경 → 눈신경 | — |
-| 5 골막 | 이마뼈 · 이마패임(额切迹) | FMA:52734 · FMA:57409 (synonym Frontal notch) | — | — | — |
+| 1 Subcutis | Cutaneous branches of supratrochlear nerve *(Kim Jaehyo: supratrochlear nerve)* | FMA:52642 | is_a Branch of frontal nerve | Frontal nerve (FMA:52638) → ophthalmic nerve (FMA:52621) → trigeminal nerve (FMA:50866) | Not applicable (cranial nerve V1) |
+| 1 Subcutis | Frontal nerve *(Common Textbook)* | FMA:52638 | is_a Branch of ophthalmic nerve | Ophthalmic nerve → trigeminal nerve | Not applicable |
+| 2 Superficial muscle | Orbicularis oculi *[both]* | FMA:46779 | is_a Circumorbital muscle | Branches to orbicularis oculi from the zygomatic and temporal branches of the facial nerve (FMA:53314 · 53377) | Not applicable (cranial nerve VII) |
+| 2 Superficial muscle | Frontalis *[both]* | FMA:46757 | is_a Subdivision of occipitofrontalis | **Not recorded in FMA** (B1-01: temporal branches of the facial nerve) | Not applicable |
+| 2 Superficial muscle | Depressor supercilii *(Kim Jaehyo)* | FMA:46798 | is_a Depressor muscle | Nerve to depressor supercilii (FMA:82674) | Not applicable |
+| 3 Deep muscle | Corrugator supercilii *[both]* | FMA:46794 | is_a Circumorbital muscle | Nerve to corrugator supercilii (FMA:53379) → temporal branch of facial nerve (FMA:53291) → facial nerve (FMA:50868) | Not applicable |
+| 3 Motor branch | Temporal branch of facial nerve *(Kim Jaehyo)* / facial nerve *(Common Textbook)* | FMA:53291 / 50868 | is_a Branch of facial nerve | Facial nerve | Not applicable |
+| 4 Neurovascular bundle | Supratrochlear artery *[both]* | FMA:50025 | is_a Terminal branch of ophthalmic artery | Ophthalmic artery (FMA:49868) → internal carotid artery (FMA:3947) | — |
+| 4 Neurovascular bundle | Supratrochlear vein *[both]* | FMA:50898 | drains_into Angular vein | Angular vein (FMA:50893) → facial vein (FMA:50874) → internal jugular vein (FMA:4724) | — |
+| 4 Lateral neighbour | Supraorbital artery, vein & nerve *(Kim Jaehyo)* | FMA:49973 · 50904 · 52655 | Pass through the supraorbital notch (FMA:57390) — outside the section | Frontal nerve → ophthalmic nerve | — |
+| 5 Periosteum | Frontal bone · frontal notch (額切跡) | FMA:52734 · FMA:57409 (synonym Frontal notch) | — | — | — |
 
-- **FMA 주석 1 — 분절**: BL02 구조의 신경은 모두 뇌신경(삼차신경 V1, 얼굴신경 VII)이라 FMA `segmental_supply`가 없다. 8.3 B-Check ②는 척수 분절 대신 **V1 신경 영역 정합**으로 판정한다(기존 판정 유지).
-- **FMA 주석 2 — 눈구석정맥 교통**: FMA는 눈구석정맥을 얼굴정맥 지류로만 기록하고, 위눈정맥(→ 해면정맥굴)과의 교통은 기재하지 않는다. 이 교통은 규범 해부(B1-01)에 근거하며, 도르래위정맥 출혈·감염 시 고려할 경로로만 기술한다.
-- **FMA 주석 3 — 이마힘살 지배**: FMA에 이마힘살의 `nerve_supply`가 없다. 얼굴신경 관자가지 지배는 B1-01로 기술한다.
+- **FMA note 1 — segments**: all nerves of the BL02 structures are cranial nerves (trigeminal V1, facial VII), so FMA has no `segmental_supply`. B-Check ② in 8.3 is judged by **concordance within the V1 nerve territory** instead of spinal segments (existing verdict kept).
+- **FMA note 2 — angular vein communication**: FMA records the angular vein only as a tributary of the facial vein and does not record its communication with the superior ophthalmic vein (→ cavernous sinus). This communication is based on normative anatomy (B1-01) and is described only as a route to consider in supratrochlear venous bleeding or infection.
+- **FMA note 3 — innervation of frontalis**: FMA has no `nerve_supply` for frontalis. Innervation by the temporal branches of the facial nerve is stated on the basis of B1-01.
 
 ---
 
-## 5. Classical Needling Depth Calculation Table (Han Dynasty 1 fen = 2.3 mm)
+## 5. Needling Depth Calculation Table
 
-출처: `침구문헌별 자침깊이 정리_AI 분석용.xlsx` 시트1 181행(BL02). 규칙: 정수 = 푼, '0' = Contraindicated for Needling (禁鍼), blank = 미기술. 환산: 1푼 = 2.3mm(한대 기준).
+Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 181 (BL02). Rules: integer = fen, '0' = contraindicated for needling (禁針), blank = not described. Conversion: 1 fen = 2.3 mm (Han-dynasty standard).
 
-| 문헌 (DB 열) | DB 값(푼) | 환산 심도(mm) | 도달 Layer (직자 가정) | 비고 |
+| Text (DB column) | DB value (fen) | Converted depth (mm) | Layer reached (assuming perpendicular insertion) | Remarks |
 | :--- | :---: | :---: | :--- | :--- |
-| 황제명당경 (황룡상 감수편찬) | 3 | 6.9 | Layer 4~5 (骨面 근접) | 원천 |
-| 침구갑을경 | 3 | 6.9 | Layer 4~5 | 원천 보존본 |
-| 침구경험방 | 1 | 2.3 | Layer 1~2 | |
-| 동의보감 (인용: 동인) | **1** | **2.3** | Layer 1~2 | 구판의 '3푼'은 오류 → DB 값 1푼으로 정정 |
-| 경락수혈학 공통교재 (최소~최대) | 2~3 | 4.6~6.9 | Layer 2~5 | 구판의 '현대 교재 3~5푼'은 오류 |
-| 침구의학 공통교재 (최소~최대) | 2~3 | 4.6~6.9 | Layer 2~5 | |
-| 침구수혈통고 (최소~최대) | 1~3 | 2.3~6.9 | Layer 1~5 | 《通考》 "直刺 0.1~0.3 寸" |
-| 선호 자침법 열 (경락수혈학·통고) | blank | — | — | 미기술(결측) |
-| *(DB 밖)* 《医学入门》 卷一 | *Contraindicated for Needling (禁鍼) 기술* | — | — | "禁用针灸". DB에 '0'으로 들어 있지 않음. 3대 원전에만 수록 |
+| *Huangdi Mingtang Jing* (《黃帝明堂經》, ed. Huang Longxiang) | 3 | 6.9 | Layer 4–5 (near the bone surface) | Primary source |
+| *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | 3 | 6.9 | Layer 4–5 | Text preserving the primary source |
+| *Chimgu Gyeongheombang* (《鍼灸經驗方》) | 1 | 2.3 | Layer 1–2 | |
+| *Dongui Bogam* (《東醫寶鑑》, citing 《銅人》) | **1** | **2.3** | Layer 1–2 | The earlier edition's '3 fen' was an error → corrected to the DB value of 1 fen |
+| Korean common textbook, *Meridian and Acupoint Studies* (經絡腧穴學) (min–max) | 2–3 | 4.6–6.9 | Layer 2–5 | The earlier edition's 'modern textbooks 3–5 fen' was an error |
+| Korean common textbook, *Acupuncture and Moxibustion Medicine* (鍼灸醫學) (min–max) | 2–3 | 4.6–6.9 | Layer 2–5 | |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (min–max) | 1–3 | 2.3–6.9 | Layer 1–5 | *Tongkao* (《通考》) "直刺 0.1~0.3 寸" |
+| Preferred-needling-method columns (*Meridian and Acupoint Studies*, *Tongkao*) | blank | — | — | Not described (missing) |
+| *(outside the DB)* *Yixue Rumen* (《醫學入門》) vol. 1 | *contraindication described* | — | — | "禁用針灸". Not entered as '0' in the DB. Recorded only in the three primary classics |
 
-- **범위**: DB 값 전체 2.3~6.9mm. DB에 '0'은 없다. 구판의 평균 μ = 9.2mm, 표준편차 σ = 1.8mm는 출처가 없고 DB와 맞지 않아 **삭제**했다.
-- **각도 보정 예시** ($z_{vertical} = L \times \sin\theta$): 窦氏 沿皮자(θ ≈ 15°)로 원천 3푼(L = 6.9mm)을 넣으면 $z = 6.9 \times \sin 15^\circ \approx 1.8\text{mm}$로 Layer 1~2에 머문다. 이것은 각도 효과를 보여 주는 계산 예시이며, BL2 실측값이 아니다. 구판의 $11.5 \times \sin 20^\circ$ 계산은 근거 없는 5푼 입력을 써서 삭제했다.
+- **Range**: all DB values 2.3–6.9 mm. There is no '0' in the DB. The earlier edition's mean μ = 9.2 mm and standard deviation σ = 1.8 mm had no source and did not match the DB, so they were **deleted**.
+- **Angle-correction example** ($z_{vertical} = L \times \sin\theta$): inserting the primary-source 3 fen (L = 6.9 mm) along the skin as Dou (竇氏) describes (θ ≈ 15°) gives $z = 6.9 \times \sin 15^\circ \approx 1.8\text{mm}$, remaining in Layer 1–2. This is a worked example of the angle effect, not a BL2 measurement. The earlier edition's $11.5 \times \sin 20^\circ$ calculation used an unsupported 5-fen input and was deleted.
 
 ---
 
-## 6. Textbook Comparison Table & FMA Ontology Mapping (Common Textbook vs. Prof. Kim Jaehyo)
+## 6. Textbook Comparison Table of Anatomical Structures (Common Textbook vs. Kim Jaehyo Textbook)
 
-| 비교 항목 | 경혈학 공통교재 (refine.xlsx 179번, 경혈학 上 p.628) | 김재효 교재 데이터셋 (179번) | FMA 판별 | 공통점 / 차이점 |
+| Category | Common Textbook of Acupoint Studies (refine.xlsx entry 179, *Acupoint Studies* vol. 1, p. 628) | Kim Jaehyo textbook dataset (entry 179) | FMA adjudication | Similarities / differences |
 | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 눈둘레근, 이마힘살, 눈썹주름근 | 눈둘레근, 눈썹내림근, 눈썹주름근, 뒤통수이마근의 이마힘살 | 공통 FMA:46779·46757·46794 / 김재효 단독 FMA:46798 | 공통 3종. 김재효 교재는 눈썹내림근을 더함 |
-| 신경 | 얼굴신경, 이마신경 | 눈확위신경, 도르래위신경, 얼굴신경의 관자가지 | 공통교재 FMA:50868·52638 / 김재효 FMA:52655·52642·53291 — **FMA `is_a`·줄기상 공통교재 항목이 김재효 항목의 상위 줄기** | 이마신경(frontal n.)은 눈확위·도르래위신경의 모신경이므로 계층상 맞다. 김재효 교재가 분지 수준으로 더 구체적 |
-| 혈관 | 도르래위동·정맥 | 눈확위동·정맥, 도르래위동·정맥 | 공통 FMA:50025·50898 / 김재효 단독 FMA:49973·50904 | 도르래위동·정맥은 공통. 김재효 교재는 외측 눈확위동·정맥을 더함 |
+| Muscles | Orbicularis oculi, frontalis, corrugator supercilii | Orbicularis oculi, depressor supercilii, corrugator supercilii, frontal belly of occipitofrontalis | Shared FMA:46779 · 46757 · 46794 / Kim Jaehyo only FMA:46798 | 3 shared. The Kim Jaehyo textbook adds depressor supercilii |
+| Nerves | Facial nerve, frontal nerve | Supraorbital nerve, supratrochlear nerve, temporal branches of the facial nerve | Common Textbook FMA:50868 · 52638 / Kim Jaehyo FMA:52655 · 52642 · 53291 — **in FMA `is_a` and trunk relations, the Common Textbook items are the parent trunks of the Kim Jaehyo items** | The frontal nerve is the parent nerve of the supraorbital and supratrochlear nerves, so the hierarchy is consistent. The Kim Jaehyo textbook is more specific, at branch level |
+| Vessels | Supratrochlear artery & vein | Supraorbital artery & vein, supratrochlear artery & vein | Shared FMA:50025 · 50898 / Kim Jaehyo only FMA:49973 · 50904 | Supratrochlear artery and vein are shared. The Kim Jaehyo textbook adds the lateral supraorbital artery and vein |
 
-**FMA로 본 교재 차이의 의미**: FMA 프로파일의 두 교재 비교는 공통 5 · 공통교재 단독 2 · 김재효 단독 6이지만, 공통교재 단독 2종(이마신경 FMA:52638, 얼굴신경 FMA:50868)은 김재효 단독 신경 3종(도르래위신경·눈확위신경 → 이마신경, 관자가지 → 얼굴신경)의 **FMA상 직속 줄기**다. 따라서 신경 항목의 차이는 상충이 아니라 **기재 수준(줄기 vs 가지)의 차이**이고, 실질 차이는 김재효 교재의 눈썹내림근과 바깥쪽 눈확위 신경혈관속(额切迹 바깥 眶上切迹, BL02 직하가 아님)뿐이다. 기존 판정($S_{clarity}$ 75)을 바꾸지 않는다.
+**What FMA shows about the textbook differences**: in the FMA profile comparison of the two textbooks there are 5 shared, 2 Common-Textbook-only and 6 Kim-Jaehyo-only items, but the 2 Common-Textbook-only items (frontal nerve FMA:52638, facial nerve FMA:50868) are the **direct parent trunks in FMA** of the 3 Kim-Jaehyo-only nerves (supratrochlear and supraorbital nerves → frontal nerve; temporal branches → facial nerve). The difference in the nerve items is therefore not a conflict but **a difference in the level recorded (trunk vs. branch)**; the only substantive differences are depressor supercilii in the Kim Jaehyo textbook and the lateral supraorbital neurovascular bundle (at the supraorbital notch (眶上切跡) lateral to the frontal notch (額切跡), not directly beneath BL02). The existing verdict ($S_{clarity}$ 75) is unchanged.
 
-- **판정**: 핵심 구조(눈둘레근·눈썹주름근·이마힘살, 도르래위 혈관, 이마신경 계통)가 일치한다. 《通考》 【相关解剖学基础】(额切迹 = 도르래위 동정맥·신경 통과)와 규범 해부서 B1-01·B1-03도 같다. 단 BL2 특이 실측 논문이 없어 S_clarity = 75이다.
-- **도식 표기**: 4.4 모식도의 Layer 1~5에 두 교재 공통 구조를 반영했다. 눈확위 신경혈관속은 额切迹 외측(眶上切迹)에 있으므로 BL2 직하가 아니라 **외측 인접 구조**로 본다.
+- **Verdict**: the core structures (orbicularis oculi, corrugator supercilii, frontalis, supratrochlear vessels, frontal nerve system) agree. The *Tongkao* (《通考》) 【相關解剖學基礎】 (frontal notch (額切跡) = passage of the supratrochlear artery, vein and nerve) and the normative anatomy references B1-01 and B1-03 say the same. However, there is no BL2-specific measurement paper, so S_clarity = 75.
+- **Diagram notation**: the structures shared by both textbooks are reflected in Layers 1–5 of the 4.4 schematic. The supraorbital neurovascular bundle lies lateral to the frontal notch (額切跡) (at the supraorbital notch (眶上切跡)), so it is treated not as directly beneath BL2 but as a **lateral neighbouring structure**.
 
 ---
 
-## 7. Spatial Discrepancy Dual-Target Analysis (Discrepancy Δ > 15 mm)
+## 7. Spatial Displacement Branching Diagram
 
-**해당 없음.** 고전("眉头陷者中")과 WHO 2008 정위가 같은 额切迹을 가리키고 편차가 15mm 미만이다. Target 1 단일 분석이며 ΔARI-Core 판정도 적용하지 않는다.
+**Not applicable.** The classical ("眉頭陷者中") and WHO 2008 locations point to the same frontal notch (額切跡), with a deviation under 15 mm. Single Target 1 analysis; the ΔARI-Core verdict is not applied either.
 
 ---
 
 ## 8. Biomedical Reflex Pathway Diagram & External Search Log
 
-### 8.1 반사 기전도 (Layer B 매핑)
+### 8.1 Reflex Pathway Diagram (Layer B Mapping)
 
 ```
-[구심] BL2 피부·근막 자극 → 도르래위신경 (V1 안신경 → 이마신경 분지)        B1-01, B1-02
-          │  섬유형: 직접 측정 없음 (동물 삼차신경절 P2X3만, papers.id 1998)  B3-06 (유추)
+[Afferent] BL2 skin/fascia stimulation -> supratrochlear n. (V1 ophthalmic n. -> branch of frontal n.)   B1-01, B1-02
+          │  Fibre type: no direct measurement (animal trigeminal ganglion P2X3 only, papers.id 1998)   B3-06 (inference)
           ▼
-[중추] 삼차신경절 → 삼차신경 척수핵 (관문조절·진통)                           B3-07, B3-11 (유추)
-          │        → 위침분비핵(상타액핵) → 날개입천장신경절 → 눈물샘        B3-05 (유추)
+[Central] Trigeminal ganglion -> spinal trigeminal nucleus (gate control, analgesia)              B3-07, B3-11 (inference)
+          │        -> superior salivatory nucleus -> pterygopalatine ganglion -> lacrimal gland   B3-05 (inference)
           ▼
-[원심·표적] 눈물 분비·안표면 염증 조절 (동물: VIP/AQP5, α7nAChR/NF-κB)       B3-14 (범위 밖 틀, 유추)
-            papers.id 1981, 1997, 1999 (동물·복합 혈위)
-[인체] 건성안·안면신경염 임상 (복합 혈위·점안제 병용)                         B4-04, B4-05
+[Efferent/target] Tear secretion, modulation of ocular-surface inflammation (animal: VIP/AQP5, α7nAChR/NF-κB)   B3-14 (out-of-scope framework, inference)
+            papers.id 1981, 1997, 1999 (animal, multi-point)
+[Human] Clinical studies in dry eye and facial neuritis (multi-point, with eye drops)             B4-04, B4-05
             papers.id 1979, 1994, 2000
 ```
 
-**말초 구심 경로의 FMA 고정**: 위 회로의 첫 구간(자침점 → 삼차신경)은 FMA 관계로 아래와 같이 고정된다. 실선은 FMA에 기재된 관계, 점선은 FMA에 없어 B1로 보완한 연결이다.
+**Pinning the peripheral afferent pathway with FMA**: the first segment of the circuit above (needling site → trigeminal nerve) is pinned by FMA relations as follows. Solid lines are relations recorded in FMA; dashed lines are links absent from FMA and supplemented from B1.
 
 ```mermaid
 flowchart TB
-  P(("BL02<br/>자침점")) -.피하.-> STN["도르래위신경<br/>FMA:52642 · 김재효"]
-  P -.외측 인접.-> SON["눈확위신경<br/>FMA:52655 · 김재효"]
-  P --> CS["눈썹주름근 FMA:46794"]
-  P --> OO["눈둘레근 FMA:46779"]
-  STN -- "is_a: branch" --> FN["이마신경<br/>FMA:52638 · 공통교재"]
+  P(("BL02<br/>needling site")) -.subcutaneous.-> STN["Supratrochlear nerve<br/>FMA:52642 · Kim Jaehyo"]
+  P -.lateral neighbour.-> SON["Supraorbital nerve<br/>FMA:52655 · Kim Jaehyo"]
+  P --> CS["Corrugator supercilii FMA:46794"]
+  P --> OO["Orbicularis oculi FMA:46779"]
+  STN -- "is_a: branch" --> FN["Frontal nerve<br/>FMA:52638 · Common Textbook"]
   SON -- "is_a: branch" --> FN
-  FN -- "is_a: branch" --> OPH["눈신경 V1<br/>FMA:52621"]
-  OPH -- "is_a: branch" --> TRI["삼차신경<br/>FMA:50866"]
-  TRI -. "B1: 삼차신경절 → 삼차신경 척수핵" .-> SP5["뇌간 (B3 유추)"]
+  FN -- "is_a: branch" --> OPH["Ophthalmic nerve V1<br/>FMA:52621"]
+  OPH -- "is_a: branch" --> TRI["Trigeminal nerve<br/>FMA:50866"]
+  TRI -. "B1: trigeminal ganglion → spinal trigeminal nucleus" .-> SP5["Brainstem (B3 inference)"]
   CS -- nerve_supply --> NCS["Nerve to corrugator<br/>FMA:53379"]
-  NCS -- branch_of --> TB["얼굴신경 관자가지<br/>FMA:53291"]
+  NCS -- branch_of --> TB["Temporal branch of facial nerve<br/>FMA:53291"]
   OO -- nerve_supply --> TB
-  TB -- branch_of --> FAC["얼굴신경 VII<br/>FMA:50868 · 공통교재"]
+  TB -- branch_of --> FAC["Facial nerve VII<br/>FMA:50868 · Common Textbook"]
 ```
 
-*그림 8-1. FMA 5.1.0 관계로 그린 BL02 말초 경로. 감각(구심)은 V1, 근육 운동은 VII 계통으로 나뉜다. 근육 지배(VII)는 운동 원심 경로이므로 반사 구심 경로로 쓰지 않는다.*
+*Figure 8-1. Peripheral pathway of BL02 drawn from FMA 5.1.0 relations. Sensation (afferent) belongs to the V1 system and muscle movement to the VII system. Muscle innervation (VII) is a motor efferent pathway and is not used as the afferent limb of the reflex.*
 
-- **정정**: 구판의 "상뇌간 신경절"은 존재하지 않는 구조다. 눈물샘 부교감 경로는 **위침분비핵(상타액핵) → 얼굴신경(큰바위신경) → 날개입천장신경절 → 눈물샘**이다(B1-02 범위). 구판의 "활차상동정맥 자율신경 수용체" 주장은 근거가 없어 삭제했다.
-- **분절 대응(②)**: 두면부는 척수 분절 대신 **삼차신경 V1 영역**으로 판단한다. 자극 부위(도르래위신경)와 표적(각막·결막·눈물샘 감각)이 같은 V1 분포 안에 있다.
-- **혈위 특이성 한계 (중요)**: 아래 Layer A 논문은 **모두 BL2를 포함한 복합 혈위 처방**이다. BL2만 자극하여 안과 효과나 기전을 측정한 연구는 **0편**이다. pack에서 BL2 단독 자침 논문은 papers.id 2008 하나뿐이다. 이 논문은 급성 요추 염좌 증례군(2003)으로, 안과 주치·기전과 관계없어 채점에 쓰지 않았다. 따라서 위 회로의 ③·④·⑤ 단계는 BL2 고유 기전이 아니라 "**눈 주위 복합 자극의 기전을 BL2에 유추**"한 수준이다(B4-05 혈위 특이성 반증 측면).
+- **Correction**: the earlier edition's "upper brainstem ganglion" is a non-existent structure. The parasympathetic pathway to the lacrimal gland is **superior salivatory nucleus → facial nerve (greater petrosal nerve) → pterygopalatine ganglion → lacrimal gland** (scope of B1-02). The earlier edition's claim of "autonomic receptors of the supratrochlear artery and vein" had no basis and was deleted.
+- **Segmental correspondence (②)**: for the head and face, the judgement is made by the **trigeminal V1 territory** instead of spinal segments. The stimulation site (supratrochlear nerve) and the target (sensation of the cornea, conjunctiva and lacrimal gland) lie within the same V1 distribution.
+- **Limit of point specificity (important)**: the Layer A papers below are **all multi-point prescriptions that include BL2**. There are **0** studies that stimulated BL2 alone and measured an ophthalmic effect or mechanism. The only paper in the pack using BL2 alone is papers.id 2008, a case series of acute lumbar sprain (2003) unrelated to the ophthalmic indications and mechanisms, and it was not used for scoring. Steps ③, ④ and ⑤ of the circuit above are therefore not a BL2-specific mechanism but "**an inference to BL2 from the mechanism of combined periocular stimulation**" (the counter-evidence aspect of point specificity, B4-05).
 
-### 8.2 Layer A 논문 표 (pack_BL2.md)
+### 8.2 Layer A Papers (pack_BL2.md)
 
-| papers.id | 연도 | 저널 | 제목 | PMID / DOI | 설계 (BL2 관련성) |
+| papers.id | Year | Journal | Title | PMID / DOI | Design (relevance to BL2) |
 | :---: | :---: | :--- | :--- | :--- | :--- |
-| 1979 | 2022 | Zhongguo Zhen Jiu | Effect of acupuncture on dry eye and tear inflammatory factors | 36484191 / 10.13703/j.0255-2930.20220318-0001 | 인체 임상, 건성안(pack 분류: 비RCT, 채점자는 RCT로 기술). 복합 혈위 |
-| 1981 | 2022 | Zhen Ci Yan Jiu | Acupuncture mitigates ocular surface inflammatory response via α7nAChR/NF-κB p65 signaling in dry eye guinea pigs | 36453674 / 10.13702/j.1000-0607.20220015 | 동물(기니피그). 복합 혈위 |
-| 1994 | 2025 | Zhongguo Zhen Jiu | Penetrating needling of three eye acupoints combined with sodium hyaluronate eye drops for dry eye: a randomized controlled trial | 40369920 / 10.13703/j.0255-2930.20240521-0002 | 인체 RCT. 눈 주위 3혈 투자 + 점안제 병용 |
-| 1997 | 2023 | Zhen Ci Yan Jiu | Acupuncture promotes tear secretion by up-regulating VIP/cAMP/PKA/AQP5 signaling in guinea pigs with aqueous tear deficiency | 37879953 / 10.13702/j.1000-0607.20230061 | 동물(기니피그). 복합 혈위 |
-| 1998 | 2022 | Zhen Ci Yan Jiu | Effect of electroacupuncture on ocular surface sensory neuralgia and expression of P2X3 receptor and PKC in cornea and trigeminal ganglion… | 35616412 / 10.13702/j.1000-0607.20210607 | 동물(기니피그). 복합 혈위 |
-| 1999 | 2020 | Zhen Ci Yan Jiu | Effect of acupuncture on expression of transfer growth factor-β1 in lacrimal gland of rabbits with dry eye | 32959555 / 10.13702/j.1000-0607.190977 | 동물(토끼). 복합 혈위 |
-| 2000 | 2020 | Zhen Ci Yan Jiu | Influence on orbicularis oculi muscle in the patients with facial neuritis treated with the penetrating needling… | 32959557 / 10.13702/j.1000-0607.190894 | 인체 비RCT. BL2→EX-HN4(鱼腰) 투자 + BL62 |
-| 2001 | 2019 | Zhen Ci Yan Jiu | Acupuncture of intraorbital and extraorbital acupoints reduces apoptosis of retinal ganglion… | 31056882 / 10.13702/j.1000-0607.180440 | 동물(토끼 NAION). 복합 혈위 |
-| 2003 | 2026 | PubMed (pack 표기) | Acupuncture alleviates form-deprivation myopia by promoting dopamine secretion and suppressing ferroptosis… | 42779258 / 10.14670/hh-25-141 | 동물(근시 모델). 복합 혈위. 채점자 B만 계수 |
-| *(참고)* 2008 | 2003 | J Acupunct Tuina Sci | Treatment of 55 cases of acute lumbar sprain by puncturing acupoint Cuanzhu (BL 2) | — / 10.1007/bf02845431 | 인체 증례군. **BL2 단독**이나 요추 염좌(안과 주치·기전 아님). 채점 미사용 |
+| 1979 | 2022 | Zhongguo Zhen Jiu | Effect of acupuncture on dry eye and tear inflammatory factors | 36484191 / 10.13703/j.0255-2930.20220318-0001 | Human clinical, dry eye (pack classification: non-RCT; raters described it as an RCT). Multi-point |
+| 1981 | 2022 | Zhen Ci Yan Jiu | Acupuncture mitigates ocular surface inflammatory response via α7nAChR/NF-κB p65 signaling in dry eye guinea pigs | 36453674 / 10.13702/j.1000-0607.20220015 | Animal (guinea pig). Multi-point |
+| 1994 | 2025 | Zhongguo Zhen Jiu | Penetrating needling of three eye acupoints combined with sodium hyaluronate eye drops for dry eye: a randomized controlled trial | 40369920 / 10.13703/j.0255-2930.20240521-0002 | Human RCT. Penetrating needling of 3 periocular points + eye drops |
+| 1997 | 2023 | Zhen Ci Yan Jiu | Acupuncture promotes tear secretion by up-regulating VIP/cAMP/PKA/AQP5 signaling in guinea pigs with aqueous tear deficiency | 37879953 / 10.13702/j.1000-0607.20230061 | Animal (guinea pig). Multi-point |
+| 1998 | 2022 | Zhen Ci Yan Jiu | Effect of electroacupuncture on ocular surface sensory neuralgia and expression of P2X3 receptor and PKC in cornea and trigeminal ganglion… | 35616412 / 10.13702/j.1000-0607.20210607 | Animal (guinea pig). Multi-point |
+| 1999 | 2020 | Zhen Ci Yan Jiu | Effect of acupuncture on expression of transfer growth factor-β1 in lacrimal gland of rabbits with dry eye | 32959555 / 10.13702/j.1000-0607.190977 | Animal (rabbit). Multi-point |
+| 2000 | 2020 | Zhen Ci Yan Jiu | Influence on orbicularis oculi muscle in the patients with facial neuritis treated with the penetrating needling… | 32959557 / 10.13702/j.1000-0607.190894 | Human non-RCT. Penetrating needling BL2 → EX-HN4 (Yuyao (魚腰)) + BL62 |
+| 2001 | 2019 | Zhen Ci Yan Jiu | Acupuncture of intraorbital and extraorbital acupoints reduces apoptosis of retinal ganglion… | 31056882 / 10.13702/j.1000-0607.180440 | Animal (rabbit NAION). Multi-point |
+| 2003 | 2026 | PubMed (as given in the pack) | Acupuncture alleviates form-deprivation myopia by promoting dopamine secretion and suppressing ferroptosis… | 42779258 / 10.14670/hh-25-141 | Animal (myopia model). Multi-point. Counted by rater B only |
+| *(reference)* 2008 | 2003 | J Acupunct Tuina Sci | Treatment of 55 cases of acute lumbar sprain by puncturing acupoint Cuanzhu (BL 2) | — / 10.1007/bf02845431 | Human case series. **BL2 alone**, but lumbar sprain (not an ophthalmic indication or mechanism). Not used in scoring |
 
-- 채점자별 BL2 포함 Layer A 계수: A 8편, B 9편(2003 포함). pack의 다른 논문(안면마비·삼차신경통 등 1980~1996, 2004~2007)은 제목상 BL2 포함 여부가 확인되지 않아 채점에 쓰지 않았다. 로컬 매핑 506·795는 종설·영상 일반 연구이고, 2002는 쥐 혈위 아틀라스로 BL2 실측이 아니다.
+- Layer A papers including BL2 counted by each rater: A 8, B 9 (including 2003). The other papers in the pack (facial palsy, trigeminal neuralgia, etc.; 1980–1996, 2004–2007) could not be confirmed from their titles to include BL2 and were not used in scoring. Locally mapped 506 and 795 are reviews or general imaging studies, and 2002 is a rat acupoint atlas, not a BL2 measurement.
 
-### 8.3 B-Check 6항목 채점표
+### 8.3 B-Check Six-Item Scoring Table
 
-| 항목 | 채점자 A | 채점자 B | 최종 | Layer B 참조 ID | papers.id | 근거 요지 |
+| Item | Rater A | Rater B | Final | Layer B reference IDs | papers.id | Rationale |
 | :---: | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① 자침 심도의 말초신경·혈관 실체 | 2 | 2 | **2** | B1-01, B1-03, B1-05, B2-09 (+FMA) | — | 2대 교재와 규범 해부서, 《通考》가 额切迹의 도르래위 신경혈관속·눈썹주름근·눈둘레근을 일치하게 기술. 교재 구조 13종 모두 FMA 정확 대응(FMA:52642·50025·50898·46794·46779 등, 4.5절). 영상 실측 없음 |
-| ② 분절 정합 (삼차신경 V1 영역) | 2 | 2 | **2** | B1-01, B1-02 (+FMA) | — | 도르래위신경(V1) 피부영역 ↔ 각막·결막·눈물샘 감각(V1). FMA 줄기: 도르래위신경 → 이마신경 → 눈신경(FMA:52621) → 삼차신경(FMA:50866). 척수 분절 대신 뇌신경 영역으로 판정(FMA segmental_supply 해당 없음) |
-| ③ 구심 섬유형·수용체 | 1 | 1 | **1** | B3-06 | 1998 | 기니피그 삼차신경절 P2X3/PKC(동물·복합 혈위). BL2 구심 섬유형 직접 측정 없음 |
-| ④ 중추 중계·경로 | 1 | 1 | **1** | B3-05, B3-07, B3-11 | 1998 | 삼차신경 척수핵·위침분비핵 경로는 등록부 범위 밖 유추. 중추 경로 측정 논문 없음 |
-| ⑤ 원심 경로·효과 방향 | 1 | 1 | **1** | B3-14 | 1981, 1997, 1999 | 동물에서 눈물 분비 증가·안표면 항염증. 고전 '流泪/迎风冷泪'(유루 과다)와 건성안 모델(분비 촉진)은 방향이 직접 대응하지 않아 유추 |
-| ⑥ 인체 전환 근거 | 1 | 1 | **1** | B4-04, B4-05 | 1979, 1994, 2000 | 인체 RCT·임상 있으나 복합 혈위·점안제 병용으로 BL2 특이성 분리 불가. 신경영상·자율신경 지표 없음 |
-| **합계** | **8** | **8** | **8 / 12** | | | **판정: 부합** (≥ 8, ①·② ≥ 1). ⑥ = 1이므로 '동물 한정' 표지 없음. 상충(0점) 항목 없음 → '가설' 제한 없음 |
+| ① Peripheral nerve/vessel substrate at needling depth | 2 | 2 | **2** | B1-01, B1-03, B1-05, B2-09 (+FMA) | — | The two textbooks, normative anatomy and the *Tongkao* (《通考》) agree in describing the supratrochlear neurovascular bundle, corrugator supercilii and orbicularis oculi at the frontal notch (額切跡). All 13 textbook structures map exactly to FMA (FMA:52642 · 50025 · 50898 · 46794 · 46779, etc.; Section 4.5). No imaging measurement |
+| ② Segmental concordance (trigeminal V1 territory) | 2 | 2 | **2** | B1-01, B1-02 (+FMA) | — | Cutaneous territory of the supratrochlear nerve (V1) ↔ sensation of the cornea, conjunctiva and lacrimal gland (V1). FMA trunk: supratrochlear nerve → frontal nerve → ophthalmic nerve (FMA:52621) → trigeminal nerve (FMA:50866). Judged by cranial nerve territory instead of spinal segments (FMA segmental_supply not applicable) |
+| ③ Afferent fibre type & receptors | 1 | 1 | **1** | B3-06 | 1998 | Guinea-pig trigeminal ganglion P2X3/PKC (animal, multi-point). No direct measurement of BL2 afferent fibre type |
+| ④ Central relay & pathway | 1 | 1 | **1** | B3-05, B3-07, B3-11 | 1998 | The spinal trigeminal nucleus and superior salivatory nucleus pathways are inferences outside the registry's scope. No paper measures the central pathway |
+| ⑤ Efferent pathway & direction of effect | 1 | 1 | **1** | B3-14 | 1981, 1997, 1999 | Increased tear secretion and ocular-surface anti-inflammation in animals. The classical '流淚 / 迎風冷淚' (excessive lacrimation) and the dry-eye model (promotion of secretion) do not correspond directly in direction, hence inference |
+| ⑥ Human translation | 1 | 1 | **1** | B4-04, B4-05 | 1979, 1994, 2000 | Human RCTs and clinical studies exist, but multi-point designs and concomitant eye drops make BL2 specificity impossible to isolate. No neuroimaging or autonomic indices |
+| **Total** | **8** | **8** | **8 / 12** | | | **Verdict: concordant** (≥ 8, ① and ② ≥ 1). ⑥ = 1, so no 'animal only' flag. No conflicting (0-point) item → no 'hypothesis' restriction |
 
-- 부합 판정은 **복합 혈위 연구를 BL2에 유추**한 결과다. BL2 단독 연구가 생기기 전까지는 8.1의 회로를 "BL2 포함 눈 주위 자극의 개연 기전"으로 읽는다.
+- The concordant verdict is the result of **inferring to BL2 from multi-point studies**. Until BL2-alone studies exist, the circuit in 8.1 should be read as "the probable mechanism of periocular stimulation including BL2".
 
-### 8.4 외부 검색 로그 (sync_log, 2026-10-04·2026-10-23 Rank 6 실행)
+### 8.4 External Search Log (sync_log; Rank 6 runs of 2026-10-04 and 2026-10-23)
 
-| 일시 | 소스 | HTTP | 수집 | 중복제거 | 신규 | 쿼리 |
+| Timestamp | Source | HTTP | Fetched | Duplicates removed | New | Query |
 |---|---|---|---|---|---|---|
 | 2026-10-04T09:52:17 | pubmed | 200 | 16 | — | — | ("BL2" OR "Cuanzhu" OR "攢竹") AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) |
 | 2026-10-04T09:52:17 | openalex | 200 | 23 | — | — | doi_starts_with:10.13703,title_and_abstract.search:"Cuanzhu" OR "BL2" \| doi_starts_with:10.13702,title_and_abstract.search:"Cuanzhu" OR "BL2" \| has_doi:true,tit… |
@@ -282,154 +283,165 @@ flowchart TB
 | 2026-10-23T21:43:19 | pubmed | 200 | 16 | — | — | ("BL2" OR "Cuanzhu" OR "攒竹") AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) |
 | 2026-10-23T21:43:19 | openalex | 200 | 23 | — | — | doi_starts_with:10.13703 / 10.13702 · title_and_abstract.search:"Cuanzhu" OR "BL2" … |
 | 2026-10-23T21:43:19 | crossref | 200 | 1 | — | — | Cuanzhu acupuncture nerve reflex |
-| 2026-10-23T21:43:19 | all | — | 40 | 37 | 3 | 기존 병합 27 · 배치 내 중복 10 |
+| 2026-10-23T21:43:19 | all | — | 40 | 37 | 3 | 27 already merged · 10 duplicates within the batch |
 
-- **2026-10-23 재실행 신규 3편**: papers.id 2246(PMID 34085472, 말초성 안면마비 회복기 흉쇄유돌근 배열자), 2247(PMID 38373760, 부등시성 약시 아동 시력), 2248(PMID 21823275, 급성기 특발성 안면마비). 세 편 모두 BL2를 포함한 **복합 혈위 임상**이고 BL2 단독 기전 측정이 없어 B-Check·ARI 판정을 바꾸지 않는다(8.1 "복합 혈위 한계" 그대로).
+- **3 new papers in the 2026-10-23 re-run**: papers.id 2246 (PMID 34085472, row-needling of sternocleidomastoid in the recovery phase of peripheral facial palsy), 2247 (PMID 38373760, visual acuity in children with anisometropic amblyopia), 2248 (PMID 21823275, acute idiopathic facial palsy). All three are **multi-point clinical studies** that include BL2 and do not measure a BL2-alone mechanism, so they do not change the B-Check or ARI verdict (the "multi-point limitation" of 8.1 stands).
 
 ---
 
-## 9. Classical Indications Stratification Table (Single-Point P_single vs. Complex Formulae)
+## 9. Classical Indications Stratification Table (Single-Point Needling vs. Combination Prescriptions)
 
-$P_{single}$은 **정량 산출하지 않는다**. 구판의 0.90~0.94와 'Level A'는 산출 근거가 없어 삭제했다. 아래는 원전 조문을 단독 기록과 배오 기록으로 나눈 질적 분류다.
+$P_{single}$ is **not calculated quantitatively**. The earlier edition's 0.90–0.94 and 'Level A' had no basis for calculation and were deleted. Below is a qualitative classification of classical entries into single-point records and combination records.
 
-| 주치 | 단독(BL2만) 기록 | 복합 배오 기록 | 판정 |
+| Indication | Single-point (BL2 only) records | Combination records | Verdict |
 | :--- | :--- | :--- | :--- |
-| 目不明·目中熱痛·瞼瞤動 (눈 침침·안통·눈꺼풀 떨림) | *Huangdi Mingtang Jing* (《黃帝明堂經》) 주치(목䀮䀮不明), 《千金翼》 "攒竹主目视不明，目中热痛及瞤", *Tongren* (《銅人》) "三度刺，目大明" | 《针灸集成》 眼 처방 다수(睛明·丝竹空·太阳·合谷 배합) | **단독 근거 있음**. 《通考》: 고금 주치가 안질환에 집중 |
-| 目赤腫痛 (결막 충혈·부종) | 《世医得效方》 "赤眼…针攒竹穴即安"(耳後 紅筋 挑刺 병행), 《通玄指要赋》 "脑昏目赤，泻攒竹" | 《针灸集成》 第十六方 등 | 단독 근거 있음. 삼릉침 출혈법과 연결 |
-| 眉棱骨痛·前頭痛 | *Huangdi Mingtang Jing* (《黃帝明堂經》) "眉頭痛", 《玉龙歌》 "眉目疼痛…攒竹沿皮刺" | 《玉龙歌》 头维 병용, 《针灸集要》 丰隆 병용 | 단독·배오 혼재 |
-| 流淚·迎風冷淚 | — | 《针灸集成》 第十一方(合谷·大小骨空), 현대 처방(睛明·风池·肝俞) | **배오 파생**. 《聚英》의 "泪出，目眩，瞳子痒"은 承泣 주치 오귀속(《通考》 按) |
-| 風頭痛·項强·癲疾·小兒癇 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 《千金》 다혈 배합 | 《通考》: 눈 증상(目如欲脫·目系急·目上插)이 함께 있을 때만 취혈 |
-| 痔痛 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | — | 《通考》: 고금 임상 사례 없음, 검증 필요 |
-| 呃逆 (딸꾹질) | 《证治通鉴》 "取穴：攒竹。指压" | 《针灸治疗学》(中脘·内关 등) | 현대 단독 보고. 《通考》: 특이성 미검증, 주치에서 보류 |
-| 腰痛·急性腰扭傷 | 《证治通鉴》 "取穴：攒竹"(中国针灸 1982); papers.id 2008 | 《江西中医药》 2002(阳陵泉 병용) | 현대 단독 보고. 해부 기전 미상 |
+| Blurred vision (目不明) · heat and pain in the eye (目中熱痛) · twitching of the eyelid (瞼瞤動) | Indications in the *Huangdi Mingtang Jing* (《黃帝明堂經》) (目䀮䀮不明), 《千金翼》 "攢竹主目視不明，目中熱痛及瞤", 《銅人》 "三度刺，目大明" | Many eye prescriptions in 《針灸集成》 (combined with Jingming (睛明), Sizhukong (絲竹空), Taiyang (太陽), Hegu (合谷)) | **Single-point basis exists**. *Tongkao* (《通考》): indications past and present concentrate on eye disorders |
+| Red, swollen and painful eyes (目赤腫痛) (conjunctival injection and swelling) | 《世醫得效方》 "赤眼…針攢竹穴即安" (together with pricking of the red vessels behind the ear (耳後紅筋)), 《通玄指要賦》 "腦昏目赤，瀉攢竹" | 《針灸集成》 prescription 16 and others | Single-point basis exists. Linked to bloodletting with the three-edged needle |
+| Pain of the supraorbital ridge (眉棱骨痛) · frontal headache (前頭痛) | *Huangdi Mingtang Jing* (《黃帝明堂經》) "眉頭痛", 《玉龍歌》 "眉目疼痛…攢竹沿皮刺" | 《玉龍歌》 with Touwei (頭維), 《針灸集要》 with Fenglong (豐隆) | Mixture of single-point and combination |
+| Lacrimation (流淚) · cold tears on exposure to wind (迎風冷淚) | — | 《針灸集成》 prescription 11 (Hegu (合谷), Dagukong (大骨空), Xiaogukong (小骨空)), modern prescriptions (Jingming (睛明), Fengchi (風池), Ganshu (肝俞)) | **Derived from combinations**. The "淚出，目眩，瞳子癢" of 《聚英》 is a misattribution of Chengqi (承泣) indications (*Tongkao* (《通考》) note) |
+| Wind headache (風頭痛) · stiff neck (項強) · epilepsy (癲疾) · infantile convulsions (小兒癇) | *Huangdi Mingtang Jing* (《黃帝明堂經》) | Multi-point combinations in 《千金》 | *Tongkao* (《通考》): selected only when eye symptoms (目如欲脫 · 目系急 · 目上插) are also present |
+| Haemorrhoidal pain (痔痛) | *Huangdi Mingtang Jing* (《黃帝明堂經》) | — | *Tongkao* (《通考》): no clinical cases past or present; needs verification |
+| Hiccup (呃逆) | 《證治通鑑》 "取穴：攢竹。指壓" | 《針灸治療學》 (Zhongwan (中脘), Neiguan (內關), etc.) | Modern single-point report. *Tongkao* (《通考》): specificity unverified; withheld from the indications |
+| Low back pain (腰痛) · acute lumbar sprain (急性腰扭傷) | 《證治通鑑》 "取穴：攢竹" (中國針灸 1982); papers.id 2008 | 《江西中醫藥》 2002 (with Yanglingquan (陽陵泉)) | Modern single-point report. Anatomical mechanism unknown |
 
 ---
 
-## 10. ARI v3.0 Quantitative Profile Evaluation & Final Conclusion
+## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-**Target T1 (단일)**: *Huangdi Mingtang Jing* (《黃帝明堂經》)·《甲乙经》 "在眉頭陷者中" = WHO 2008 "눈썹 내측단 오목, 내안각 직상"(额切迹/滑車上切迹)
+**Target T1 (single)**: *Huangdi Mingtang Jing* (《黃帝明堂經》) and *Jiayi Jing* (《甲乙經》) "在眉頭陷者中" = WHO 2008 "depression at the medial end of the eyebrow, directly above the inner canthus" (frontal notch (額切跡) / 滑車上切跡)
 
-### 10.1 하위 점수 표
+### 10.1 Sub-scores
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| S_orig | 93.75 | 87.5 | **90.6** | 원천이 위치·심도를 모두 지정, 고대 위치 이견 없음, 光明 혼용은 연대순으로 해소, 《通考》 교감 반영 | `针灸腧穴通考(上)_561-640.md` 名实考·定位·操作; `中国针灸穴位通鉴(上卷)_881-960.md` 二.别名·七; KJH Case A |
-| S_clarity | 75 | 75 | **75** | 2대 교재 일치 + 규범 해부서·FMA 표준 실체 확인(신경 차이는 FMA상 줄기/가지 수준 차이). BL2 특이 사체·영상 실측 없음 → 100 미달 | refine.xlsx·김재효 179번; 《通考》 相关解剖学基础; B1-01, B1-05, B2-09; FMA:52642·52638 |
-| S_reflex | 75 | 75 | **75** | 인체 연구 + 동물 다수 + B-Check 8. 모두 복합 혈위라 100 불가 | papers.id 1979, 1981, 1994, 1997, 1998, 1999, 2000, 2001, 2003 |
-| S_safety → SI | 0 | 0 (조정 전 75) | **0** | Contraindicated for Needling (禁鍼) 문헌(《医学入门》 "禁用针灸") 존재 → 루브릭 0 | 《通考》 【操作】 9; 《穴位通鉴》 七.16; 자침깊이 DB 181행('0' 없음) |
+| S_orig | 93.75 | 87.5 | **90.6** | The primary source specifies both location and depth; no ancient disagreement on location; the 光明 confusion is resolved chronologically; *Tongkao* (《通考》) collation reflected | `针灸腧穴通考(上)_561-640.md` 名實考 · 定位 · 操作; `中国针灸穴位通鉴(上卷)_881-960.md` 二.別名 · 七; KJH Case A |
+| S_clarity | 75 | 75 | **75** | The two textbooks agree + standard entities confirmed by normative anatomy and FMA (the nerve difference is a trunk/branch-level difference in FMA). No BL2-specific cadaveric or imaging measurement → below 100 | refine.xlsx and Kim Jaehyo entry 179; *Tongkao* (《通考》) 相關解剖學基礎; B1-01, B1-05, B2-09; FMA:52642 · 52638 |
+| S_reflex | 75 | 75 | **75** | Human studies + many animal studies + B-Check 8. All multi-point, so 100 not possible | papers.id 1979, 1981, 1994, 1997, 1998, 1999, 2000, 2001, 2003 |
+| S_safety → SI | 0 | 0 (75 before adjudication) | **0** | A text prohibiting needling exists (*Yixue Rumen* (《醫學入門》) "禁用針灸") → rubric 0 | *Tongkao* (《通考》) 【操作】 9; *Xuewei Tongjian* (《穴位通鑑》) 七.16; needling-depth DB row 181 (no '0') |
 
-### 10.2 S_orig 하위 4항목
+### 10.2 S_orig Sub-items
 
-| 하위 항목 | A | B | 평균 | 근거 |
+| Sub-item | A | B | Mean | Basis |
 | :--- | :---: | :---: | :---: | :--- |
-| ① 최초 기술 명확성 | 100 | 100 | 100 | *Huangdi Mingtang Jing* (《黃帝明堂經》)(《甲乙》 卷三) "在眉頭陷者中" + "刺入三分" |
-| ② 후대 문헌 일치율 | 100 | 100 | 100 | 《通考》 "古代文献无分歧"; 《穴位通鉴》 "历代文献记载一致" |
-| ③ 이명 혼용 해소 | 75 | 75 | 75 | 光明 ↔ GB37·敦煌 光明 동명 → 연대순 정렬로 해소 |
-| ④ 《通考》 교감에 의한 전사 오류 교정 | 100 | 75 | 87.5 | 员在 형오, "脉动应手" 錯入, 《聚英》 承泣 주치 오귀속, 眶上切迹/额切迹 혼동 교정 |
+| ① Clarity of earliest description | 100 | 100 | 100 | *Huangdi Mingtang Jing* (《黃帝明堂經》) (vol. 3 of 《甲乙》) "在眉頭陷者中" + "刺入三分" |
+| ② Agreement in later texts | 100 | 100 | 100 | *Tongkao* (《通考》) "古代文獻無分歧"; *Xuewei Tongjian* (《穴位通鑑》) "歷代文獻記載一致" |
+| ③ Resolution of alias confusion | 75 | 75 | 75 | 光明 ↔ same name as GB37 and the Dunhuang 光明 → resolved by chronological ordering |
+| ④ Correction of transcription errors by *Tongkao* (《通考》) collation | 100 | 75 | 87.5 | Corrections: graphic error 員在, interpolation "脈動應手", misattribution of Chengqi (承泣) indications in 《聚英》, confusion of 眶上切跡 / 額切跡 |
 | **S_orig** | **93.75** | **87.5** | **90.6** | |
 
-### 10.3 게이트 적용 내역
+### 10.3 Gates Applied
 
-| 게이트 | 조건 | 적용 여부 |
+| Gate | Condition | Applied |
 | :--- | :--- | :--- |
-| 게이트 1 | S_orig < 50 또는 S_clarity < 50 → 최고 C | 미적용 (90.6 / 75) |
-| 게이트 2 | Layer A 0편 → S_reflex ≤ 25, (H) | 미적용 (BL2 포함 Layer A 8~9편. 단 모두 복합 혈위) |
-| 게이트 3 | SI ≤ 25 → ⚠ 안전주의 | **적용** (SI 0) |
+| Gate 1 | S_orig < 50 or S_clarity < 50 → maximum C | Not applied (90.6 / 75) |
+| Gate 2 | 0 Layer A papers → S_reflex ≤ 25, (H) | Not applied (8–9 Layer A papers including BL2, though all multi-point) |
+| Gate 3 | SI ≤ 25 → ⚠ safety caution | **Applied** (SI 0) |
 
-### 10.4 종합 프로파일
+### 10.4 Overall Profile
 
-| 항목 | 값 |
+| Item | Value |
 | :--- | :--- |
-| ARI-Core (잠정 가중치 0.40/0.35/0.25) | 채점자 A 82.5, 채점자 B 80.0 → **81.2 ± 1.2** |
-| 등급·표지 | **B (개연, Probable)** — H 표지 없음 |
-| SI | **0 ⚠** (안전주의) |
-| 등가중치 민감도 (1/3씩) | 80.2 → B, **등급 불변** |
-| 분기 판정 | 해당 없음 (단일 Target) |
+| ARI-Core (provisional weights 0.40/0.35/0.25) | Rater A 82.5, Rater B 80.0 → **81.2 ± 1.2** |
+| Grade & flags | **B (Probable)** — no H flag |
+| SI | **0 ⚠** (safety caution) |
+| Equal-weight sensitivity (1/3 each) | 80.2 → B, **grade unchanged** |
+| Branch decision | Not applicable (single Target) |
 
-**표준 표기**: `ARI v3.0 | ARI-Core 81.2 ± 1.2 (B) | SI 0 ⚠ | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 80.2 (B, 등급 불변)`
+**Standard notation**: `ARI v3.0 | ARI-Core 81.2 ± 1.2 (B) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 80.2 (B, grade unchanged)`
 
-### 10.5 조정 기록
+### 10.5 Adjudication Record
 
-- 조정 후 15점 이상 불일치 항목: 없음(`needs_adjudication` 빈 목록).
-- **S_safety 조정 (A 0 / B 75 → 0)**: 두 채점자 모두 《穴位通鉴》·*Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)(上)_561-640.md 【操作】 9에 수록된 《医学入门》 卷一 "禁用针灸"를 확인했다. 정본 4.2의 SI 0단계("Contraindicated for Needling (禁鍼) 문헌 존재")를 문언대로 적용하여 B를 0으로 조정했다 → ⚠ 안전주의. 자침깊이 DB의 다수 문헌은 1~3푼(2.3~6.9mm)이고 Contraindicated for Needling (禁鍼) 기록은 단일 후대 문헌임을 본문에 함께 적었다. DB 기준만 쓰면 SI는 75(사자·횡자로 회피 가능, 문헌에 각도·심도 제한 명시)가 된다.
-- 灸법 상충(《甲乙》 灸三壯 vs 《千金翼》 忌灸·窦氏 禁灸)과 ⑤항 효과 방향(고전 流淚 vs 건성안 분비 촉진)은 직접 상충이 아니므로 B-Check '가설' 제한을 적용하지 않았다.
+- Items differing by 15 points or more after adjudication: none (`needs_adjudication` empty).
+- **S_safety adjudication (A 0 / B 75 → 0)**: both raters confirmed the *Yixue Rumen* (《醫學入門》) vol. 1 "禁用針灸" recorded in the *Xuewei Tongjian* (《穴位通鑑》) and in `针灸腧穴通考(上)_561-640.md` 【操作】 9. Level 0 of canonical section 4.2 ("a text prohibiting needling exists") was applied literally and B was adjusted to 0 → ⚠ safety caution. The text also notes that most texts in the needling-depth DB give 1–3 fen (2.3–6.9 mm) and that the prohibition is a single record in a later text. On the DB criterion alone, the SI would be 75 (avoidable by oblique or transverse insertion; angle and depth limits stated in the literature).
+- The conflict over moxibustion (灸法) (《甲乙》 灸三壯 vs. 《千金翼》 忌灸 and Dou (竇氏) 禁灸) and the direction of effect in item ⑤ (classical 流淚 vs. promotion of secretion in dry eye) are not direct conflicts, so the B-Check 'hypothesis' restriction was not applied.
 
-### 10.6 최종 결론
+### 10.6 Final Conclusion
 
-1. **⚠ 안전 경고 (먼저 읽을 것)**: SI 0은 《医学入门》 卷一 "禁用针灸"라는 **명대 후대 문헌 1종의 단일 기록**에서 나온다. *Huangdi Mingtang Jing* (《黃帝明堂經》)·《甲乙经》(3푼)부터 《千金翼》·*Tongren* (《銅人》)·窦氏(1분), 《聚英》(1~3분), 현대 교재와 《通考》(0.1~0.3촌)까지 **대다수 문헌은 1~3푼(2.3~6.9mm)** 자입을 인정한다. 실제 주의점은 다음과 같다. ① 안와 쪽(하후방)으로 기울여 깊이 넣지 않는다(《聚英》이 비판한 "卧针直抵睛明" 포함). ② 额切迹을 지나는 도르래위 혈관 출혈(혈종)에 주의한다. ③ 沿皮 횡자(평자)를 기본으로 한다. 이 혈은 뜸도 후대 다수 문헌이 금지한다.
-2. **실체 판정 — 개연(B, ARI-Core 81.2 ± 1.2)**: BL2의 해부 실체는 **额切迹(도르래위패임)에서 나오는 도르래위 신경(V1)·동정맥**과 그 위의 **눈썹주름근·눈둘레근**으로 보는 것이 가장 개연성이 높다. 고전 정위·2대 교재·《通考》 해부 기술·규범 해부서가 이 점에서 일치한다. 하지만 BL2만 실측한 사체·영상 연구가 없어 "확정"으로 올리지 않는다.
-3. **반사 기전**: B-Check 8/12로 부합한다. 삼차신경 V1 구심 → 삼차신경 척수핵·위침분비핵 → 눈물샘·안표면으로 이어지는 경로는 **BL2를 포함한 복합 혈위 연구(동물 다수, 인체 3편)를 BL2에 유추**한 것이다. BL2 단독 기전 연구는 없다.
-4. **고전 주치**: 안질환(目不明·目赤腫痛·瞼瞤動)과 眉棱骨痛은 단독 기록이 있다. 流淚 계열은 배오 파생이거나 承泣 주치가 잘못 섞인 것이다.
-5. **산출식 버전**: ARI v3.0, 잠정 가중치(미검증). 구판 v2.6 점수와 비교하지 않는다. 동일 산출물 간(.md ↔ .xlsx) 수치 대조는 정합성 감사일 뿐 신뢰도 근거가 아니다. 신뢰도는 이중 채점으로만 판단한다.
+1. **⚠ Safety warning (read first)**: SI 0 derives from **a single record in one later, Ming-dynasty text**, the "禁用針灸" of *Yixue Rumen* (《醫學入門》) vol. 1. From the *Huangdi Mingtang Jing* (《黃帝明堂經》) and *Jiayi Jing* (《甲乙經》) (3 fen), through 《千金翼》, 《銅人》 and Dou (竇氏) (1 fen) and 《聚英》 (1–3 fen), to modern textbooks and the *Tongkao* (《通考》) (0.1–0.3 cun), **most texts accept an insertion of 1–3 fen (2.3–6.9 mm)**. The practical precautions are: ① do not angle the needle toward the orbit (inferoposteriorly) and insert deeply (including the "臥針直抵睛明" criticised in 《聚英》); ② beware of bleeding (haematoma) from the supratrochlear vessels passing through the frontal notch (額切跡); ③ use transverse (horizontal) insertion along the skin (沿皮) as the default. Most later texts also prohibit moxibustion at this point.
+2. **Substrate verdict — probable (B, ARI-Core 81.2 ± 1.2)**: the most probable anatomical substrate of BL2 is the **supratrochlear nerve (V1), artery and vein emerging from the frontal notch (額切跡; supratrochlear notch)** and the overlying **corrugator supercilii and orbicularis oculi**. The classical location, the two textbooks, the anatomical description in the *Tongkao* (《通考》) and the normative anatomy references agree on this. However, there is no cadaveric or imaging study measuring BL2 alone, so the verdict is not raised to "confirmed".
+3. **Reflex mechanism**: concordant at B-Check 8/12. The pathway trigeminal V1 afferent → spinal trigeminal nucleus and superior salivatory nucleus → lacrimal gland and ocular surface is **inferred to BL2 from multi-point studies that include BL2 (mostly animal, 3 human)**. There is no BL2-alone mechanism study.
+4. **Classical indications**: eye disorders (目不明 · 目赤腫痛 · 瞼瞤動) and pain of the supraorbital ridge (眉棱骨痛) have single-point records. The lacrimation (流淚) group is either derived from combinations or results from the mistaken inclusion of Chengqi (承泣) indications.
+5. **Formula version**: ARI v3.0, provisional weights (unvalidated). Not compared with the earlier v2.6 score. Numerical comparison between outputs of the same work (.md ↔ .xlsx) is only a consistency audit, not evidence of reliability. Reliability is judged only by dual scoring.
 
 ---
 
-## 부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)
+## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-생성: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile BL02 --md` (2026-10-23). 대응 수준 `exact`는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다(김재효 교재의 오탈자 "supraorbial"도 정규화로 정확 대응).
+Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile BL02 --md` (2026-10-23). Match level `exact` means the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation (the Kim Jaehyo textbook's typo "supraorbial" also matched exactly after normalisation).
 
-| 구분 | 교재 용어 | FMA 실체 | 대응 | 출처 | 신경 지배 / 상위 줄기 |
+| Category | Textbook term | FMA substrate | Match | Source | Innervation / parent trunk |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 눈썹주름근 (corrugator supercilii) | FMA:46794 Corrugator supercilii | exact | 공통교재·김재효 | FMA:53379 → 얼굴신경 관자가지 → 얼굴신경 |
-| 근육 | 눈썹내림근 (depressor supercilii) | FMA:46798 Depressor supercilii | exact | 김재효 | FMA:82674 Nerve to depressor supercilii |
-| 근육 | 이마힘살 (frontal belly of occipitofrontalis) | FMA:46757 Frontalis | exact | 공통교재·김재효 | FMA 미기재 |
-| 근육 | 눈둘레근 (orbicularis oculi) | FMA:46779 Orbicularis oculi | exact | 공통교재·김재효 | FMA:53314 · 53377 (얼굴신경 광대·관자가지의 눈둘레근 가지) |
-| 신경 | 얼굴신경 (facial nerve) | FMA:50868 Facial nerve | exact | 공통교재 | is_a Cranial nerve |
-| 신경 | 이마신경 (frontal nerve) | FMA:52638 Frontal nerve | exact | 공통교재 | FMA:52621 Ophthalmic nerve → FMA:50866 Trigeminal nerve |
-| 신경 | 눈확위신경 (supraorbital nerve) | FMA:52655 Supra-orbital nerve | exact | 김재효 | FMA:52638 → 52621 → 50866 |
-| 신경 | 도르래위신경 (supratrochlear nerve) | FMA:52642 Supratrochlear nerve | exact | 김재효 | FMA:52638 → 52621 → 50866 |
-| 신경 | 얼굴신경의 관자가지 | FMA:53291 Temporal branch of facial nerve | exact | 김재효 | FMA:50868 |
-| 혈관 | 눈확위동맥 | FMA:49973 Supra-orbital artery | exact | 김재효 | FMA:49868 Ophthalmic artery → FMA:3947 Internal carotid artery |
-| 혈관 | 눈확위정맥 | FMA:50904 Supra-orbital vein | exact | 김재효 | FMA:50893 Angular vein → FMA:50874 Facial vein |
-| 혈관 | 도르래위동맥 | FMA:50025 Supratrochlear artery | exact | 공통교재·김재효 | FMA:49868 → 3947 |
-| 혈관 | 도르래위정맥 | FMA:50898 Supratrochlear vein | exact | 공통교재·김재효 | FMA:50893 → 50874 → FMA:4724 Internal jugular vein |
+| Muscle | Corrugator supercilii | FMA:46794 Corrugator supercilii | exact | Common Textbook · Kim Jaehyo | FMA:53379 → temporal branch of facial nerve → facial nerve |
+| Muscle | Depressor supercilii | FMA:46798 Depressor supercilii | exact | Kim Jaehyo | FMA:82674 Nerve to depressor supercilii |
+| Muscle | Frontal belly of occipitofrontalis | FMA:46757 Frontalis | exact | Common Textbook · Kim Jaehyo | Not recorded in FMA |
+| Muscle | Orbicularis oculi | FMA:46779 Orbicularis oculi | exact | Common Textbook · Kim Jaehyo | FMA:53314 · 53377 (branches to orbicularis oculi from the zygomatic and temporal branches of the facial nerve) |
+| Nerve | Facial nerve | FMA:50868 Facial nerve | exact | Common Textbook | is_a Cranial nerve |
+| Nerve | Frontal nerve | FMA:52638 Frontal nerve | exact | Common Textbook | FMA:52621 Ophthalmic nerve → FMA:50866 Trigeminal nerve |
+| Nerve | Supraorbital nerve | FMA:52655 Supra-orbital nerve | exact | Kim Jaehyo | FMA:52638 → 52621 → 50866 |
+| Nerve | Supratrochlear nerve | FMA:52642 Supratrochlear nerve | exact | Kim Jaehyo | FMA:52638 → 52621 → 50866 |
+| Nerve | Temporal branches of the facial nerve | FMA:53291 Temporal branch of facial nerve | exact | Kim Jaehyo | FMA:50868 |
+| Vessel | Supraorbital artery | FMA:49973 Supra-orbital artery | exact | Kim Jaehyo | FMA:49868 Ophthalmic artery → FMA:3947 Internal carotid artery |
+| Vessel | Supraorbital vein | FMA:50904 Supra-orbital vein | exact | Kim Jaehyo | FMA:50893 Angular vein → FMA:50874 Facial vein |
+| Vessel | Supratrochlear artery | FMA:50025 Supratrochlear artery | exact | Common Textbook · Kim Jaehyo | FMA:49868 → 3947 |
+| Vessel | Supratrochlear vein | FMA:50898 Supratrochlear vein | exact | Common Textbook · Kim Jaehyo | FMA:50893 → 50874 → FMA:4724 Internal jugular vein |
 
-- 분절 합집합: **FMA 기재 없음**(모두 뇌신경 V1·VII 계통).
-- 두 교재 비교: 공통 FMA 실체 5 · 공통교재 단독 2(FMA:50868·52638) · 김재효 단독 6. 공통교재 단독 2종은 김재효 단독 신경의 FMA상 줄기다(6절).
-- 인용 한계: FMA는 정상 성인 규범 해부 온톨로지로 혈위 특이 심도·변이·반사 기능의 근거가 아니다. 이마힘살 지배 미기재, 눈구석정맥-위눈정맥 교통 미기재는 B1-01로 보완했다(4.5절).
-
----
-
-## v2.7 FMA 보강 이력 (2026-10-23)
-
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
-| :--- | :--- | :--- | :--- |
-| 머리말 | — | FMA 5.1.0 해부 온톨로지 줄 추가 | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
-| 4.4절 | 문자 시상 단면도만 | 그림 4-1 시상 단면 해부 모식도(PNG) 추가 | `.claude/skills/acupoint-anatomy/scripts/fma/figures/BL02_cross_section.py` |
-| 4.5절 신설 | — | Layer별 FMA 대조표, FMA 주석 3건(분절 해당 없음, 눈구석정맥 교통 미기재, 이마힘살 지배 미기재) | `fma_query.py profile BL02`, `entity 50893`, `ancestors 53379` |
-| 6절 | 교재 비교 4열 | FMA 판별 열, 신경 차이 = 줄기/가지 기재 수준 차이 해석 | FMA is_a·branch_of 사슬 |
-| 8.1절 | 문자 반사 기전도 | 그림 8-1 FMA 말초 경로(Mermaid) 추가 | FMA:52642→52638→52621→50866; 53379→53291→50868 |
-| 8.3절 | B-Check ①·② 근거 | FMA ID·줄기 포인터 추가(점수 불변: ①=2, ②=2) | 4.5절 |
-| 8.4절 | 2026-10-04 로그 | 2026-10-23 Rank 6 재실행 행 추가(신규 3편: papers.id 2246·2247·2248, 모두 복합 혈위 → 판정 불변) | `_metadata.sync_log` 2026-10-23T21:43:19 |
-| 10.1절 | $S_{clarity}$ 근거 | FMA 표준 실체 확인 병기(점수 불변 75) | 6절·부록 A |
-| 부록 A 신설 | — | FMA 프로파일 표 | `fma_query.py profile BL02 --md` |
-| ARI | ARI-Core 81.2 ± 1.2 (B), SI 0 ⚠ | **변경 없음** — FMA는 B1 보조 근거로 루브릭 단계를 바꾸지 않음 | 스킬 5-1절 |
-| 정본 정합 점검 | — | v2.7 대비 구판 표현·비루브릭 점수·'확정' 판정 문구 없음 확인(S_orig 평균 93.75/87.5는 루브릭 하위 4항목 평균으로 허용) | 정본 Rank 7·4.2 |
-| 구판 보관 | — | 보강 전 md·html·xlsx를 `_구판_v2.7_20261023/`에 보관 | — |
+- Union of segments: **not recorded in FMA** (all cranial nerve V1 and VII systems).
+- Comparison of the two textbooks: 5 shared FMA entities · 2 Common Textbook only (FMA:50868 · 52638) · 6 Kim Jaehyo only. The 2 Common-Textbook-only items are the FMA parent trunks of the Kim-Jaehyo-only nerves (Section 6).
+- Limits of citation: FMA is a normative ontology of adult anatomy and is not evidence of point-specific depth, variation or reflex function. The missing innervation of frontalis and the missing angular vein–superior ophthalmic vein communication were supplemented from B1-01 (Section 4.5).
 
 ---
 
-## v2.7 개정 이력 (2026-10-04)
+## v2.7 FMA Supplement History (2026-10-23)
 
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
+| Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| 머리말 | "Version 2.6", "22대 Master ASIA Algorithm" | v2.7 프레임워크·ARI v3.0 표기 블록 | `01_Framework/acupoint_anatomical_logic_framework.md` |
-| 구 2.1-1 | 《灵枢·本输》 "攢竹在顏下…眉頭陷者中"을 원천 기술로 인용 | 삭제. 최초 기술 = *Huangdi Mingtang Jing* (《黃帝明堂經》)(《甲乙》 卷三) | `针灸腧穴通考(上)_561-640.md` 2310·2342행; `中国针灸穴位通鉴(上卷)_881-960.md` 2482행; chunks_refined 전수 Grep 0건 |
-| 구 2.1-4, 8.1 | 《通考》 "實爲滑車上神經與滑車上動脈處, 刺深宜斜刺/橫刺(0.3~0.5寸)" | 가공 인용 삭제. 실제 원문 "直刺 0.1~0.3 寸", "额切迹处", 相关解剖学基础 문구로 대체 | `针灸腧穴通考(上)_561-640.md` 2316~2328행, 【定位】, 【操作】 |
-| 구 2.1-3, 5절 | *Donguibogam* (《東醫寶鑑》)(동인) 자입 3푼 | 1푼(2.3mm) | 자침깊이 xlsx 시트1 181행 '동의보감'=1, 인용=동인 |
-| 구 5절 | 현대 교재 3~5푼(6.9~11.5mm), μ = 9.2mm, σ = 1.8mm | 공통교재 2~3푼(4.6~6.9mm). μ·σ 삭제, DB 범위 2.3~6.9mm | 자침깊이 xlsx 181행 |
-| 구 5절 | 침구경험방 누락 | 침구경험방 1푼 추가 | 자침깊이 xlsx 181행 |
-| 구 1절 | 이명 烏列·大空·元柱 | 烏列·大空 삭제(근거 없음), 元柱 = 员柱 동음 차용. KJH 이명 8종 표로 정리 | `경혈명_비교_정리_KJH.xlsx` 경혈 종합 목록 182행; 《通考》 名实考 7 按 |
-| 구 1절 | 光明 동명 충돌 미기술, "완전 여과" 백분율 표현 | GB37 光明·敦煌 光明 동명이혈 분리 기록 추가 | KJH '본명-이명 일치 목록' 4행; 《通考》 同名异穴 按 |
-| 구 4.1·7절 | "화차상절노/안화상절노(Supratrochlear Notch)" | 额切迹(도르래위패임, frontal notch). 眶上切迹과 구분 | 《通考》 국표 수정 按, 文献分析 |
-| 구 4.2·7절 | Layer 5 = 안구, "z > 11.5mm 직자 시" 위험 | 직자는 전두골 额切迹 골막에서 정지. 위험은 하후방 경사 자입. 층 순서를 프레임워크 정의로 정정 | 프레임워크 Rank 5 Layer 정의; B1-01·B1-03; final_BL02 rationale S_safety |
-| 구 5절 | $11.5 \times \sin 20^\circ = 3.9$mm, "안구 위험 완전 차단" | 근거 없는 입력 삭제, 6.9mm × sin15° 예시로 교체(실측 아님 명기) | 자침깊이 xlsx 181행 |
-| 구 3절·6절 | P_single 0.90~0.94, 'Level A' | 삭제. 9절 단독/배오 질적 분리표로 대체 | 산출 근거 없음; 《证治通鉴》·《通考》 适应症 조문 |
-| 구 6절 | "상뇌간 신경절", "활차상동정맥 자율신경 수용체" | 위침분비핵 → 날개입천장신경절 경로로 정정, 수용체 주장 삭제. Layer B ID·papers.id 부착 | B1-02, B3-05; papers.id 1981·1997·1998·1999 |
-| 신설 8절 | Layer A·B-Check·검색 로그 없음 | Layer A 표, B-Check 표(8/12 부합), sync_log 표 추가. 복합 혈위 한계 명기 | pack_BL2.md; final_BL02.json bcheck |
-| 구 8.2절 | 5요인 ARI 평가표(S_tongkao 포함) | ARI v3.0 프로파일(10절)로 교체 | final_BL02.json |
-| 구 9절 | md ↔ xlsx 수치 일치를 신뢰도 근거로 서술 | 삭제. 정합성 감사일 뿐 신뢰도 근거가 아님을 명기 | 프레임워크 Rank 7 상호 검증 조항 |
-| 신설 2·3·5·9절 | 원천/재인용 표, 이명 표, 자침 깊이 계산표, 주치 분리표 없음 | 원자료로 작성 | 《通考》·《穴位通鉴》·《证治通鉴》 chunks; KJH·자침깊이 xlsx |
-| 구 4·5·6절 | LaTeX 이스케이프 손상(탭·개행 문자로 깨진 `\text`, `\rightarrow`) | 수식 재작성 | — |
-| 구판 점수 | 구판 v2.6 점수 96.5(5요인, 비교 불가) | ARI v3.0: ARI-Core 81.2 ± 1.2 (B), SI 0 ⚠ | final_BL02.json |
-| 미확인 | *Donguibogam* (《東醫寶鑑》) 원문 자체 | 3대 원전·로컬 자료에 *Donguibogam* (《東醫寶鑑》) 원문 chunk가 없어 자침깊이 DB 값(1푼, 동인 인용)만 반영 | 자침깊이 xlsx 181행 |
+| Header | — | Added FMA 5.1.0 anatomical ontology line | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
+| Section 4.4 | Text sagittal-section diagram only | Added Figure 4-1, sagittal-section anatomical schematic (PNG) | `.claude/skills/acupoint-anatomy/scripts/fma/figures/BL02_cross_section.py` |
+| Section 4.5 (new) | — | FMA cross-check table by layer; 3 FMA notes (segments not applicable, angular vein communication not recorded, innervation of frontalis not recorded) | `fma_query.py profile BL02`, `entity 50893`, `ancestors 53379` |
+| Section 6 | 4-column textbook comparison | FMA adjudication column; interpretation of the nerve difference as a difference in recorded level (trunk/branch) | FMA is_a / branch_of chains |
+| Section 8.1 | Text reflex pathway diagram | Added Figure 8-1, FMA peripheral pathway (Mermaid) | FMA:52642→52638→52621→50866; 53379→53291→50868 |
+| Section 8.3 | B-Check ①, ② rationale | Added FMA IDs and trunk pointers (scores unchanged: ① = 2, ② = 2) | Section 4.5 |
+| Section 8.4 | 2026-10-04 log | Added rows for the 2026-10-23 Rank 6 re-run (3 new papers: papers.id 2246 · 2247 · 2248, all multi-point → verdict unchanged) | `_metadata.sync_log` 2026-10-23T21:43:19 |
+| Section 10.1 | $S_{clarity}$ rationale | Noted FMA confirmation of standard entities (score unchanged at 75) | Section 6, Appendix A |
+| Appendix A (new) | — | FMA profile table | `fma_query.py profile BL02 --md` |
+| ARI | ARI-Core 81.2 ± 1.2 (B), SI 0 ⚠ | **No change** — FMA is B1-supplementary evidence and does not change rubric levels | Skill section 5-1 |
+| Canonical consistency check | — | Confirmed against v2.7 that there is no earlier-edition wording, no non-rubric score and no 'confirmed' verdict wording (S_orig means 93.75/87.5 are allowed as means of the 4 rubric sub-items) | Canonical Rank 7 · 4.2 |
+| Archive of earlier edition | — | Pre-supplement md, html and xlsx kept in `_구판_v2.7_20261023/` | — |
+
+---
+
+## v2.7 Revision History (2026-10-04)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | "Version 2.6", "22nd-generation Master ASIA Algorithm" | v2.7 framework and ARI v3.0 notation block | `01_Framework/acupoint_anatomical_logic_framework.md` |
+| Former 2.1-1 | 《靈樞·本輸》 "攢竹在顏下…眉頭陷者中" cited as the primary description | Deleted. Earliest description = *Huangdi Mingtang Jing* (《黃帝明堂經》) (vol. 3 of 《甲乙》) | `针灸腧穴通考(上)_561-640.md` lines 2310, 2342; `中国针灸穴位通鉴(上卷)_881-960.md` line 2482; full Grep of chunks_refined, 0 hits |
+| Former 2.1-4, 8.1 | *Tongkao* (《通考》) "實爲滑車上神經與滑車上動脈處, 刺深宜斜刺/橫刺(0.3~0.5寸)" | Fabricated quotation deleted. Replaced by the actual text "直刺 0.1~0.3 寸", "額切跡處" and the 相關解剖學基礎 wording | `针灸腧穴通考(上)_561-640.md` lines 2316–2328, 【定位】, 【操作】 |
+| Former 2.1-3, Section 5 | *Dongui Bogam* (《東醫寶鑑》) (citing 《銅人》) insertion 3 fen | 1 fen (2.3 mm) | Needling-depth xlsx sheet 1 row 181, 'Dongui Bogam' = 1, cited source = 《銅人》 |
+| Former Section 5 | Modern textbooks 3–5 fen (6.9–11.5 mm), μ = 9.2 mm, σ = 1.8 mm | Common textbooks 2–3 fen (4.6–6.9 mm). μ and σ deleted; DB range 2.3–6.9 mm | Needling-depth xlsx row 181 |
+| Former Section 5 | *Chimgu Gyeongheombang* (《鍼灸經驗方》) missing | Added *Chimgu Gyeongheombang* (《鍼灸經驗方》) 1 fen | Needling-depth xlsx row 181 |
+| Former Section 1 | Aliases 烏列 · 大空 · 元柱 | 烏列 and 大空 deleted (no basis); 元柱 = homophonic substitution for 員柱. The 8 KJH aliases arranged in a table | `경혈명_비교_정리_KJH.xlsx` 'Comprehensive acupoint list' row 182; *Tongkao* (《通考》) 名實考 7, note |
+| Former Section 1 | Same-name clash of 光明 not described; percentage expression "complete filtering" | Added separate records of the same-name different points GB37 光明 and Dunhuang 光明 | KJH 'Primary name–alias match list' row 4; *Tongkao* (《通考》) 同名異穴 note |
+| Former 4.1, Section 7 | "hwachasangjeolno / anhwasangjeolno (Supratrochlear Notch)" | Frontal notch (額切跡; supratrochlear notch). Distinguished from the supraorbital notch (眶上切跡) | *Tongkao* (《通考》) note on the national-standard correction, textual analysis |
+| Former 4.2, Section 7 | Layer 5 = eyeball, risk "when inserted perpendicularly at z > 11.5 mm" | A perpendicular needle stops at the periosteum of the frontal bone at the frontal notch (額切跡). The risk lies in inferoposteriorly angled insertion. Layer order corrected to the framework definitions | Framework Rank 5 Layer definitions; B1-01 · B1-03; final_BL02 rationale S_safety |
+| Former Section 5 | $11.5 \times \sin 20^\circ = 3.9$ mm, "risk to the eyeball completely eliminated" | Unsupported input deleted; replaced by the example 6.9 mm × sin 15° (stated as not a measurement) | Needling-depth xlsx row 181 |
+| Former Sections 3, 6 | P_single 0.90–0.94, 'Level A' | Deleted. Replaced by the qualitative single/combination table in Section 9 | No basis for calculation; indication entries in 《證治通鑑》 and 《通考》 |
+| Former Section 6 | "Upper brainstem ganglion", "autonomic receptors of the supratrochlear artery and vein" | Corrected to the superior salivatory nucleus → pterygopalatine ganglion pathway; receptor claim deleted. Layer B IDs and papers.id attached | B1-02, B3-05; papers.id 1981 · 1997 · 1998 · 1999 |
+| New Section 8 | No Layer A, B-Check or search log | Added Layer A table, B-Check table (8/12 concordant) and sync_log table. Multi-point limitation stated | pack_BL2.md; final_BL02.json bcheck |
+| Former Section 8.2 | Five-factor ARI evaluation table (including S_tongkao) | Replaced by the ARI v3.0 profile (Section 10) | final_BL02.json |
+| Former Section 9 | md ↔ xlsx numerical agreement described as evidence of reliability | Deleted. Stated that this is only a consistency audit, not evidence of reliability | Framework Rank 7 cross-verification clause |
+| New Sections 2, 3, 5, 9 | No primary/secondary table, alias table, needling depth table or indication separation table | Compiled from the source data | *Tongkao* (《通考》), *Xuewei Tongjian* (《穴位通鑑》) and *Zhengzhi Tongjian* (《證治通鑑》) chunks; KJH and needling-depth xlsx |
+| Former Sections 4, 5, 6 | Damaged LaTeX escapes (`\text`, `\rightarrow` broken by tab and newline characters) | Formulae rewritten | — |
+| Earlier-edition score | Earlier v2.6 score 96.5 (five factors, not comparable) | ARI v3.0: ARI-Core 81.2 ± 1.2 (B), SI 0 ⚠ | final_BL02.json |
+| Unverified | The original text of *Dongui Bogam* (《東醫寶鑑》) itself | No chunk of the *Dongui Bogam* (《東醫寶鑑》) original is available in the three primary classics or local materials, so only the needling-depth DB value (1 fen, citing 《銅人》) is reflected | Needling-depth xlsx row 181 |
+
+---
+
+## English Edition Revision History (2026-10-24)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Whole document | Automatically generated "English" edition: Korean body text with only some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `BL02_찬죽_해부생리_실체판명_보고서.md` |
+| Title, body | Duplicated annotations such as "Zanzhu (攅竹, BL02)(BL02)" and the misspelt pinyin 'Zanzhu' / variant character '攅' | Duplicates removed; standard form Cuanzhu (攢竹) used | — |
+| Figure 4-1 | Image path corrupted by term replacement (`BL02_Zanzhu (攅竹, BL02)_…png`), so the image was missing from the HTML | Restored to the actual file name | File in the report folder |
+| Classical quotations | Simplified characters (e.g. 攒竹, 针, 额切迹) | Converted to Traditional characters; file names, line pointers and search-query strings unchanged | Routing rule on Traditional Chinese collation |

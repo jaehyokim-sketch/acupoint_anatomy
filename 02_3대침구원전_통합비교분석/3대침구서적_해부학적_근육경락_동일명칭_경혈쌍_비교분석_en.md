@@ -1,101 +1,102 @@
-# 🏛️ 3대 침구 서적 및 구글 시트 361 경혈 비교 대조 기반 해부학적·근육경락 동일 명칭 공유 경혈쌍 심층 분석 보고서
+# 🏛️ In-Depth Analysis of Acupoint Pairs Sharing the Same Name on an Anatomical and Muscle-Meridian Basis, from a Comparison of the Three Acupuncture Classics with the Google-Sheet List of 361 Points
 
-> **Framework**: v2.7 (2026-10-04 정제) · **적용 범위**: Rank 1~4 문헌 고증(필요 시 Rank 5) · **ARI**: 미산정(고증 보고서) · **근거 데이터**: `3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.csv/.xlsx`(18쌍, 정량 주치 대조 열 없음) · 원전 대조: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) 각 경혈 '别名'조 및 「针灸穴名别名索引」(파싱 899항), *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 「提要索隐·穴名」
+> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: `3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.csv/.xlsx` (18 pairs, no column comparing indications quantitatively) · Collation against the classics: the 'alias (別名)' entry of each point and the 「針灸穴名別名索引」 (899 parsed items) in *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), and 「提要索隱·穴名」 in *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so file names in `code` refer to those files as they are named on disk.
 
-> ⚠️ **v2.7 검증 요약**: 18쌍 각각의 "공유 명칭"을 3대 원전 별명 기재와 대조한 결과 **원전 별명으로 공유가 확인된 쌍은 3쌍(17%: #5 清冷渊–青灵, #8 横骨–曲骨[屈骨], #17 犊鼻–膝眼)**, 후대 문헌에만 있는 쌍 1쌍(#7), 정명의 글자만 겹치는 쌍 1쌍(#4), **원전 별명으로 확인되지 않은 쌍 13쌍(72%)**입니다. 데이터 파일(csv/xlsx)에는 주치 대조 수치가 없어 "주치 100% 동일/일치"는 모두 **작성 시 판단, 정량 미검증**입니다. "구글 시트 361 경혈 100% 일치 매칭"은 해당 시트가 이 폴더에 없어 확인할 수 없습니다.
+> ⚠️ **v2.7 verification summary**: Collating the "shared name" of each of the 18 pairs against the alias records of the three classics, **3 pairs (17%) were confirmed as sharing an alias in the classics: #5 清冷淵–青靈, #8 橫骨–曲骨 [屈骨], #17 犢鼻–膝眼**; 1 pair appears only in later literature (#7), 1 pair merely shares characters of the standard names (#4), and **13 pairs (72%) are not confirmed as aliases in the classics**. The data files (csv/xlsx) contain no figures comparing indications, so every statement of "100% identical/matching indications" is **the author's judgement, not quantitatively verified**. The "100% matching against the Google Sheet of 361 points" cannot be checked because that sheet is not in this folder.
 
-*Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 3대 침구 전문 서적 전수 데이터베이스(45개 PDF, 4,200여 페이지)와 새로 제공해 주신 **"구글 시트 표준 경혈 361명 및 강의 슬라이드 정보 데이터"**를 비교 대조하여, **유형 1(기능적·효능적 일치형) 및 유형 3(거허하합혈 문헌 전이형)을 제외**하고, **[유형 2: 해부학적·근육경락 일치형]**에 해당하는 동일 명칭/별명 공유 경혈쌍을 정밀 분석한 최종 보고서입니다.
+This final report compares the complete database (45 PDFs, some 4,200 pages) of the three specialist acupuncture classics *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) and *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) with the newly supplied **"Google Sheet of the 361 standard acupoint names and lecture-slide data"**, and, **excluding Type 1 (functional/efficacy alignment) and Type 3 (textual transmission of the Juxu lower He-Sea points)**, analyses in detail the acupoint pairs sharing the same name or alias that fall under **[Type 2: anatomical / muscle-meridian alignment]**.
 
 ---
 
-## 🎯 연구 가설 및 분석 범위 정의
+## 🎯 Research Hypothesis and Definition of the Scope of Analysis
 
-> **핵심 가설**: 
-> **"동일한 명칭 및 별칭을 공유한 경혈들은 인체 해부학적 관절·근육·경락 구조의 대칭성 및 인접성에 기반하고 있으며, 이로 인해 역사적으로 침구 치료에서 국소 통증, 마비, 경련 주치증이 혼용·통합되었다." ➔ [v2.7 판정: 미입증 — 18쌍 중 원전 별명 공유 확인 3쌍(17%), 주치 혼용은 정량 미검증]**
+> **Core hypothesis**: 
+> **"Acupoints sharing the same name or alias are based on the symmetry and adjacency of the anatomical joint, muscle and meridian structures of the human body, and because of this their indications for local pain, paralysis and spasm were historically mixed and integrated in acupuncture treatment." ➔ [v2.7 verdict: not proven — of 18 pairs, 3 (17%) confirmed as sharing an alias in the classics; indication mixing not quantitatively verified]**
 >
-> **Rank 4 편향 점검**: 이 가설은 "해부학적으로 대칭·인접한 경혈쌍"을 먼저 고른 뒤 이름 공유를 붙인 구조여서, 위치가 가까우면 주치가 겹친다는 일반 현상(국소 주치)을 이름 공유의 결과로 해석하는 **경혈 중심 통합 편향**이 있습니다. 위치 인접·대칭(#9·#11·#12·#13·#14·#15·#16·#18 등)은 이름 공유의 근거가 아니며, 이 쌍들의 주치 중첩은 이름과 무관하게 국소 취혈로 설명될 수 있습니다.
+> **Rank 4 bias check**: This hypothesis is structured by first selecting "anatomically symmetrical or adjacent point pairs" and then attaching name sharing to them, so it carries an **acupoint-centred integration bias** that interprets a general phenomenon — indications overlap when locations are close (local indications) — as a consequence of name sharing. Positional adjacency or symmetry (#9, #11, #12, #13, #14, #15, #16, #18, etc.) is not evidence of name sharing, and the overlap of indications in these pairs can be explained by local point selection regardless of name.
 
-### 🚫 제외 조건 (Exclusion Criteria):
-- **유형 1 (기능적·효능적 일치형)**: 위치가 서로 완전히 떨어져 있고 단순 장부 효능(안신, 신양, 원기, 명목)만 같은 경혈쌍 (예: `석문-명문`, `Zanzhu (攅竹, BL02)-광명`, `대저-본신` 등) **[제외 완료]**
-- **유형 3 (문헌 전이 및 거허하합혈 호환형)**: 고대 사본 필사 시 '巨虚' 약칭 생략으로 전이된 경혈쌍 (예: `상거허-상렴`, `하거허-하렴` 등) **[제외 완료]**
+### 🚫 Exclusion Criteria:
+- **Type 1 (functional/efficacy alignment)**: point pairs that are completely separated in location and share only simple organ efficacies (calming the Spirit (安神), kidney Yang (腎陽), Original Qi (元氣), brightening the eyes (明目)) (e.g. `Shimen (石門)–Mingmen (命門)`, `Cuanzhu (攢竹)–Guangming (光明)`, `Dazhu (大杼)–Benshen (本神)`) **[excluded]**
+- **Type 3 (textual transmission & lower He-Sea compatibility)**: point pairs transmitted through omission of the abbreviation '巨虛' in the copying of ancient manuscripts (e.g. `Shangjuxu (上巨虛)–Shanglian (上廉)`, `Xiajuxu (下巨虛)–Xialian (下廉)`) **[excluded]**
 
-### ✅ 포함 조건 (Inclusion Criteria):
-- **유형 2 (해부학적·근육경락 일치형)**: 주관절(팔꿈치), 슬관절(무릎), 어깨(臑部), 치골, 안면 턱관절, 척추/경항부 관문 등 **해부학적 관절·근육 오목(凹)/언덕(凸) 구조가 대칭이거나 인접한 동일 명칭 공유 경혈쌍**
-
----
-
-## 🔬 해부학적 구조별 4대 세부 메커니즘 분류
-
-> 아래 "해부학적 대칭/인접 구조"는 **해부 실체 가설(ARI 미산정)**이며 Rank 5~7(3D 좌표·교재 비교·생의학 검증)을 거치지 않았습니다. 각 쌍의 "공유 명칭" 원전 확인 결과는 아래 대조표의 `v2.7 원전 별명 확인` 열을 따릅니다.
-
-### 1. 관절 굴곡부 및 오목(凹)·언덕(凸) 부위 해부학적 대칭 구조
-- **HT03 음소해(少海) vs SI08 양소해(小海)** (공유 명칭: `少海/小海`): 주관절(팔꿈치) 내외측 해부학적 대칭 구조로서, 테니스 엘보, 팔꿈치 통증, 상지 마비 주치증 범주가 중첩됨(작성 시 판단, 정량 미검증).
-- **SP09 음릉천(陰陵泉) vs GB34 양릉천(陽陵泉)** (공유 명칭: `陵泉`): 무릎 관절 내외측 해부학적 대칭 구조로서, 무릎 관절통, 하지 마비, 수액 대사 조절 범주 중첩(작성 시 판단, 정량 미검증).
-- **LU05 척택(尺澤) vs KI10 음곡(陰谷)** (공유 명칭: `澤/谷`): 팔꿈치 및 무릎 관절 굴곡 오목 부위로서 사지 관절 굴곡 장애 및 마비 치료 상하 배혈.
-
-### 2. 골격 모서리(骨角) 및 근육 부위 해부학적 대칭/인접 구조
-- **ST32 복토(伏兔) vs GB36 외구(外丘)** (공유 명칭: `外丘/丘`): 대퇴 및 종아리 전외측 근육 언덕(丘) 구조로서, 하지 근육 마비, Hemiplegia (半身不遂), 다리 통증 주치 범주 중첩(작성 시 판단, 정량 미검증).
-- **KI11 횡골(橫骨) vs CV02 곡골(曲骨)** (공유 명칭: `曲骨/橫骨`): 치골 상연(恥骨 上緣) 해부학적 인접 구조로서, 소변불리, 유정, 부인과 임증 주치 범주 중첩(작성 시 판단, 정량 미검증).
-- **TE11 청랭연(淸冷淵) vs HT02 청령(青靈)** (공유 명칭: `淸靈`): 팔꿈치 상방 상비부 근육 인접 구조로서, 견비통, 상지 근육통 범주 중첩(작성 시 판단, 정량 미검증).
-- **TE13 노회(臑會) vs SI10 노수(臑俞)** (공유 명칭: `臑部`): 어깨 삼각근/노부 해부학적 인접 구조로서, 오십견, 견비통 범주 중첩(작성 시 판단, 정량 미검증).
-
-### 3. 안면 두목부 및 턱관절 해부학적 인접 구조
-- **GB02 청회(聽會) vs GB03 상관(上關)** (공유 명칭: `上關`): 귓바퀴 앞/위 턱관절 인접혈로 이명, 이롱, 턱관절 장애, 안면마비 범주 중첩(작성 시 판단, 정량 미검증).
-- **TE23 사죽공(絲竹空) vs ST03 거료(巨髎)** (공유 명칭: `巨髎`): 안면 골격 및 두목부 인접혈로 안면마비, Facial paralysis (口眼喎斜), 안통 범주 중첩(작성 시 판단, 정량 미검증).
-- **ST06 협거(頰車) vs ST07 하관(下關)** (공유 명칭: `下關/車`): 안면 턱관절(下頷關節) 인접 구조로 턱관절 통증, 치통, 안면 마비 범주 중첩(작성 시 판단, 정량 미검증).
-
-### 4. 척추 및 경항부/복부 정중선 해부학적 인접 구조
-- **GV14 Dazhui (大椎, GV14) vs GV13 Taodao (陶道, GV13)** (공유 명칭: `大椎/脊椎`): 경추/흉추 극돌기 관절 인접 구조로 경항부 강통, 발열, 척추 통증 범주 중첩(작성 시 판단, 정량 미검증).
-- **CV03 중극(中極) vs CV04 Guanyuan (關元, CV04)** (공유 명칭: `關元/極`): 하복부 치골 상방 정중선 인접 구조로 비뇨생식기, 소변불리, 유정 범주 중첩(작성 시 판단, 정량 미검증).
-- **BL40 Weizhong (委中, BL40) vs BL39 위양(委陽)** (공유 명칭: `委中/委陽`): 오금(腘横纹) 내외측 대칭 구조로 요통, 무릎 통증, 하지 마비 범주 중첩(작성 시 판단, 정량 미검증).
+### ✅ Inclusion Criteria:
+- **Type 2 (anatomical / muscle-meridian alignment)**: **point pairs sharing the same name whose anatomical joint or muscle depression (凹) / eminence (凸) structures are symmetrical or adjacent**, such as at the elbow joint, the knee joint, the shoulder (upper arm, 臑部), the pubis, the temporomandibular joint of the face, and the gateways of the spine / nape region
 
 ---
 
-## 📊 해부학적·근육경락 동일 명칭 공유 경혈쌍 전수 대조표
+## 🔬 Classification of Four Detailed Mechanisms by Anatomical Structure
 
-| 연번 | 기준 경혈 | 공유 명칭 (한자) | 대상 경혈 | 해부학적 대칭/인접 메커니즘 분류 | 구글 시트 361 경혈 대조 | 주치 혼용 및 실증 결론 | v2.7 원전 별명 확인 |
+> The "anatomically symmetrical/adjacent structures" below are **anatomical-substrate hypotheses (ARI not scored)** and have not passed through Ranks 5–7 (3D coordinates, textbook comparison, biomedical verification). The result of checking each pair's "shared name" against the classics follows the `v2.7 confirmation of alias in the classics` column of the comparison table below.
+
+### 1. Anatomically symmetrical structures at joint flexures and depressions (凹) / eminences (凸)
+- **HT03 Yin Shaohai (少海) vs SI08 Yang Shaohai (小海)** (shared name: `少海/小海`): an anatomically symmetrical structure on the medial and lateral sides of the elbow joint; the indication categories of tennis elbow, elbow pain and upper-limb paralysis overlap (author's judgement, not quantitatively verified).
+- **SP09 Yinlingquan (陰陵泉) vs GB34 Yanglingquan (陽陵泉)** (shared name: `陵泉`): an anatomically symmetrical structure on the medial and lateral sides of the knee joint; overlapping categories of knee arthralgia, lower-limb paralysis and regulation of fluid metabolism (author's judgement, not quantitatively verified).
+- **LU05 Chize (尺澤) vs KI10 Yingu (陰谷)** (shared name: `澤/谷`): flexural depressions of the elbow and knee joints; upper-lower point combination for treating flexion disorders and paralysis of the limb joints.
+
+### 2. Anatomically symmetrical/adjacent structures at bony angles (骨角) and muscles
+- **ST32 Futu (伏兔) vs GB36 Waiqiu (外丘)** (shared name: `外丘/丘`): muscular eminence (丘) structures on the anterolateral thigh and calf; overlapping indication categories of lower-limb muscle paralysis, hemiplegia and leg pain (author's judgement, not quantitatively verified).
+- **KI11 Henggu (橫骨) vs CV02 Qugu (曲骨)** (shared name: `曲骨/橫骨`): anatomically adjacent structures on the upper border of the pubis (恥骨上緣); overlapping indication categories of difficult urination, seminal emission and gynaecological strangury (淋證) (author's judgement, not quantitatively verified).
+- **TE11 Qinglengyuan (淸冷淵) vs HT02 Qingling (青靈)** (shared name: `淸靈`): adjacent muscle structures of the upper arm above the elbow; overlapping categories of shoulder-arm pain and upper-limb myalgia (author's judgement, not quantitatively verified).
+- **TE13 Naohui (臑會) vs SI10 Naoshu (臑俞)** (shared name: `臑部`): anatomically adjacent structures of the shoulder deltoid / upper-arm (臑) region; overlapping categories of frozen shoulder and shoulder-arm pain (author's judgement, not quantitatively verified).
+
+### 3. Anatomically adjacent structures of the face, head and eyes, and the temporomandibular joint
+- **GB02 Tinghui (聽會) vs GB03 Shangguan (上關)** (shared name: `上關`): points adjacent to the temporomandibular joint in front of / above the auricle; overlapping categories of tinnitus, deafness, temporomandibular disorders and facial paralysis (author's judgement, not quantitatively verified).
+- **TE23 Sizhukong (絲竹空) vs ST03 Juliao (巨髎)** (shared name: `巨髎`): points adjacent to the facial skeleton and the head-eye region; overlapping categories of facial paralysis, deviation of the mouth and eye (口眼喎斜), eye pain (author's judgement, not quantitatively verified).
+- **ST06 Jiache (頰車) vs ST07 Xiaguan (下關)** (shared name: `下關/車`): structures adjacent to the temporomandibular joint (下頷關節) of the face; overlapping categories of temporomandibular pain, toothache and facial paralysis (author's judgement, not quantitatively verified).
+
+### 4. Anatomically adjacent structures of the spine, the nape and the abdominal midline
+- **GV14 Dazhui (大椎) vs GV13 Taodao (陶道)** (shared name: `大椎/脊椎`): structures adjacent to the spinous-process joints of the cervical/thoracic vertebrae; overlapping categories of stiffness and pain of the nape, fever and spinal pain (author's judgement, not quantitatively verified).
+- **CV03 Zhongji (中極) vs CV04 Guanyuan (關元)** (shared name: `關元/極`): adjacent midline structures of the lower abdomen above the pubis; overlapping categories of the urogenital organs, difficult urination and seminal emission (author's judgement, not quantitatively verified).
+- **BL40 Weizhong (委中) vs BL39 Weiyang (委陽)** (shared name: `委中/委陽`): symmetrical structures on the medial and lateral popliteal crease (膕橫紋); overlapping categories of low-back pain, knee pain and lower-limb paralysis (author's judgement, not quantitatively verified).
+
+---
+
+## 📊 Complete Comparison Table of Acupoint Pairs Sharing the Same Name on an Anatomical / Muscle-Meridian Basis
+
+| No. | Reference point | Shared name (Chinese characters) | Target point | Classification of anatomical symmetry/adjacency mechanism | Comparison with the Google Sheet of 361 points | Indication mixing and empirical conclusion | v2.7 confirmation of alias in the classics |
 | :---: | :--- | :---: | :--- | :--- | :---: | :--- | :--- |
-| **1** | 음소해(少海) | **少海/小海/少海** | 양소해(小海/少海) | 유형 2: 해부학적·근육경락 일치형 (주관절(팔꿈치) 내외측 대칭 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 팔꿈치 통증, 테니스 엘보, 상지 마비, 신경질환 (범주 중첩, 정량 미검증) | **✗ 미확인** — 少海(HT3) 별명은 '曲节'(*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)3:51 이하)뿐. 小海와 공유하는 별명 미확인 — 독음 유사(shào/xiǎo) 명칭 |
-| **2** | 척택(尺澤) | **尺澤/陰谷** | 음곡(陰谷) | 유형 2: 해부학적·근육경락 일치형 (주관절/슬관절 횡문 오목(凹) 부위) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 사지 관절 굴곡 장애 및 마비 통증 상하 원근 배혈 | **✗ 미확인** — 尺泽 별명 '鬼受'·'鬼堂'(《备急千金要方》·*Qianjin Yifang* (《千金翼方》)). 阴谷과 공유 별명 없음 |
-| **3** | 곡지(曲池) | **曲池/三里/曲池** | Zusanli (足三里, ST36)(三里/曲池) | 유형 2: 해부학적·근육경락 일치형 (주관절/슬관절 주위 다기다혈(多气多血) 부위) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 상하 원근 배혈로 사지 마비 및 관절 통증 조절 | **✗ 미확인(코드 혼동)** — '三里'는 手三里(LI10)·足三里(ST36)의 宋以前 古稱(*Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)). 曲池(LI11)의 별명 아님 |
-| **4** | 음릉천(陰陵泉) | **陰陵泉/陽陵泉/陵泉** | 양릉천(陽陵泉/陵泉) | 유형 2: 해부학적·근육경락 일치형 (무릎 관절 내외측 해부학적 대칭 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 무릎 관절통, 하지 마비, 수액 대사 조절 (범주 중첩, 정량 미검증) | **△ 글자 공유** — '陵泉'은 두 정명의 공통 글자일 뿐 별명으로 수록되지 않음 |
-| **5** | 청랭연(淸冷淵) | **淸冷淵/青靈/淸靈** | 청령(青靈/淸靈) | 유형 2: 해부학적·근육경락 일치형 (팔꿈치 상방 상비부 근육 인접 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 견비통, 상지 근육통, 열증 청리 (범주 중첩, 정량 미검증) | **✓ 확인** — 清冷渊 '又名青灵'(《西方子明堂灸经》·《普济方》), '青灵泉'(*Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)); 青灵 별명 '青灵泉'(《针灸学》) |
-| **6** | 노회(臑會) | **臑會/臑俞/臑部** | 노수(臑俞/臑部) | 유형 2: 해부학적·근육경락 일치형 (어깨 삼각근/노부 해부학적 인접 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 오십견, 견비통, 어깨 마비 주치 (범주 중첩, 정량 미검증) | **✗ 미확인** — 臑会·臑俞 별명조에서 상호 별명 미확인(파싱본 '臑' 자 OCR 누락 가능성 있음) |
-| **7** | 복토(伏兔) | **外丘** | 외구(外丘) | 유형 2: 해부학적·근육경락 일치형 (대퇴 및 종아리 전외측 근육 언덕(丘) 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 하지 근육 마비, Hemiplegia (半身不遂), 무릎/다리 통증 (범주 중첩, 정량 미검증) | **△ 후대 한정** — 伏兔 '一名外丘'는 《勉学堂针灸集成》·《中华针灸学》 등 후대 문헌만; 주 별명은 '外勾'(《徐氏针灸大全》) |
-| **8** | 횡골(橫骨) | **橫骨/曲骨/橫骨** | 곡골(曲骨/橫骨) | 유형 2: 해부학적·근육경락 일치형 (치골 상연(恥骨 上緣) 해부학적 인접 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 소변불리, 유정, 부인과 임증, 산기 (범주 중첩, 정량 미검증) | **✓ 확인** — '屈骨'을 공유(별명색인 屈骨→CV2·KI11; 曲骨 '一名屈骨端·屈骨') |
-| **9** | 청회(聽會) | **上關** | 상관(上關) | 유형 2: 해부학적·근육경락 일치형 (귓바퀴 앞/위 턱관절 인접 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 이명, 이롱, 턱관절 장애, 안면마비 (범주 중첩, 정량 미검증) | **✗ 미확인** — 听会 별명 '耳门'·'听呵'·'后关'(*Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)). '上关'은 GB3 정명(=客主人) |
-| **10** | 사죽공(絲竹空) | **巨髎** | 거료(巨髎) | 유형 2: 해부학적·근육경락 일치형 (안면 골격 및 두목부 인접 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 안면마비, Facial paralysis (口眼喎斜), 안통, Headache (頭痛) (범주 중첩, 정량 미검증) | **✗ 미확인** — 丝竹空 별명 '目髎'(*Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)·별명색인). '巨髎'는 ST3 정명 — 目髎/巨髎 혼동 가능성 |
-| **11** | 협거(頰車) | **下關** | 하관(下關) | 유형 2: 해부학적·근육경락 일치형 (안면 턱관절(下頷關節) 인접 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 턱관절 통증, 치통, 안면 마비 (범주 중첩, 정량 미검증) | **✗ 미확인** — 颊车 별명 '机关'·'曲牙'. 下关 '别名无'(*Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)) |
-| **12** | Dazhui (大椎, GV14) | **大椎/陶道** | Taodao (陶道, GV13) | 유형 2: 해부학적·근육경락 일치형 (경추/흉추 극돌기 관절 인접 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 경항부 강통, 발열, 감기, 척추 통증 (범주 중첩, 정량 미검증) | **✗ 미확인** — 大椎 별명 '百劳' 등. 陶道와 공유 별명 없음 |
-| **13** | 중극(中極) | **中極/關元** | Guanyuan (關元, CV04) | 유형 2: 해부학적·근육경락 일치형 (하복부 치골 상방 정중선 인접 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 비뇨생식기, 소변불리, 유정, 월경불순 (범주 중첩, 정량 미검증) | **✗ 미확인** — 中极 별명 '气原'·'玉泉'(*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)). 关元 별명 '下纪'·'次门'·'三结交'·'丹田' 등. 공유 없음 |
-| **14** | Weizhong (委中, BL40) | **委中/委陽** | 위양(委陽) | 유형 2: 해부학적·근육경락 일치형 (오금(腘横纹) 내외측 대칭 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 요통, 무릎 통증, 하지 마비 (범주 중첩, 정량 미검증) | **✗ 미확인** — 委阳 '别名无'(*Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)) |
-| **15** | Baihui (百會, GV20) | **百會/前頂** | 전정(前頂) | 유형 2: 해부학적·근육경락 일치형 (두정부 정중선 인접 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | Headache (頭痛), 어지럼증, 안신, 뇌질환 (범주 중첩, 정량 미검증) | **✗ 미확인** — 前顶 '别名无'; 百会 별명 '三阳五会'·'天满' |
-| **16** | 천주(天柱) | **天柱/風府** | Fengfu (風府, GV16) | 유형 2: 해부학적·근육경락 일치형 (후두부 머리카락 경계 인접 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | Headache (頭痛), 목 뻣뻣함(项强), 풍증 (범주 중첩, 정량 미검증) | **✗ 미확인** — 天柱 '别名无'(*Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)) |
-| **17** | 독비(犢鼻) | **膝眼** | 슬안(膝眼) | 유형 2: 해부학적·근육경락 일치형 (슬개골 하단 오목한 눈(眼) 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 무릎 관절염, 슬관절 부종 (범주 중첩, 정량 미검증) | **✓ 확인** — 별명색인 膝眼→犊鼻(ST35); Extraordinary Points (經外奇穴) 膝眼(EX-LE5)과 동명 이혈 |
-| **18** | 곤륜(崑崙) | **崑崙/申脈** | 신맥(申脈) | 유형 2: 해부학적·근육경락 일치형 (족관절 외복사뼈 인접 구조) | 구글 시트 대조 기재(시트 미보관, 일치율 미검증) | 발목 관절통, 요통, Headache (頭痛) (범주 중첩, 정량 미검증) | **✗ 미확인** — 申脉 별명 '鬼路'·'阳跷'. 昆仑 별명 '足太阳'·'巨阳'·'上昆仑'·'外昆仑' |
+| **1** | Yin Shaohai (少海) | **少海/小海/少海** | Yang Shaohai (小海/少海) | Type 2: anatomical / muscle-meridian alignment (medial-lateral symmetrical structure of the elbow joint) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Elbow pain, tennis elbow, upper-limb paralysis, neurological disorders (overlapping categories, not quantitatively verified) | **✗ Not confirmed** — the only alias of 少海 (HT3) is '曲節' (《針灸甲乙經》3:51 ff.). No alias shared with 小海 confirmed — names with similar readings (shào/xiǎo) |
+| **2** | Chize (尺澤) | **尺澤/陰谷** | Yingu (陰谷) | Type 2: anatomical / muscle-meridian alignment (depressions (凹) of the elbow/knee creases) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Upper-lower near-distant point combination for flexion disorders, paralysis and pain of the limb joints | **✗ Not confirmed** — aliases of 尺澤 are '鬼受' and '鬼堂' (《備急千金要方》, 《千金翼方》). No alias shared with 陰谷 |
+| **3** | Quchi (曲池) | **曲池/三里/曲池** | Zusanli (三里/曲池) | Type 2: anatomical / muscle-meridian alignment (regions of abundant Qi and Blood (多氣多血) around the elbow/knee joints) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Regulation of limb paralysis and joint pain through upper-lower near-distant point combination | **✗ Not confirmed (code confusion)** — '三里' is the pre-Song old name (宋以前古稱) of 手三里 (LI10) and 足三里 (ST36) (《針灸腧穴通考》). Not an alias of 曲池 (LI11) |
+| **4** | Yinlingquan (陰陵泉) | **陰陵泉/陽陵泉/陵泉** | Yanglingquan (陽陵泉/陵泉) | Type 2: anatomical / muscle-meridian alignment (medial-lateral anatomically symmetrical structure of the knee joint) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Knee arthralgia, lower-limb paralysis, regulation of fluid metabolism (overlapping categories, not quantitatively verified) | **△ Shared characters** — '陵泉' is merely the characters common to both standard names and is not recorded as an alias |
+| **5** | Qinglengyuan (淸冷淵) | **淸冷淵/青靈/淸靈** | Qingling (青靈/淸靈) | Type 2: anatomical / muscle-meridian alignment (adjacent muscle structure of the upper arm above the elbow) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Shoulder-arm pain, upper-limb myalgia, clearing heat patterns (overlapping categories, not quantitatively verified) | **✓ Confirmed** — 清冷淵 '又名青靈' (《西方子明堂灸經》, 《普濟方》), '青靈泉' (《針灸腧穴通考》); alias of 青靈 '青靈泉' (《針灸學》) |
+| **6** | Naohui (臑會) | **臑會/臑俞/臑部** | Naoshu (臑俞/臑部) | Type 2: anatomical / muscle-meridian alignment (anatomically adjacent structure of the shoulder deltoid / upper-arm region) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Indications of frozen shoulder, shoulder-arm pain and shoulder paralysis (overlapping categories, not quantitatively verified) | **✗ Not confirmed** — no mutual alias confirmed in the alias entries of 臑會 and 臑俞 (the character '臑' may have been dropped by OCR in the parsed edition) |
+| **7** | Futu (伏兔) | **外丘** | Waiqiu (外丘) | Type 2: anatomical / muscle-meridian alignment (muscular eminence (丘) structures of the anterolateral thigh and calf) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Lower-limb muscle paralysis, hemiplegia, knee/leg pain (overlapping categories, not quantitatively verified) | **△ Later literature only** — 伏兔 '一名外丘' appears only in later texts such as 《勉學堂針灸集成》 and 《中華針灸學》; the main alias is '外勾' (《徐氏針灸大全》) |
+| **8** | Henggu (橫骨) | **橫骨/曲骨/橫骨** | Qugu (曲骨/橫骨) | Type 2: anatomical / muscle-meridian alignment (anatomically adjacent structure of the upper border of the pubis (恥骨上緣)) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Difficult urination, seminal emission, gynaecological strangury, hernia (疝氣) (overlapping categories, not quantitatively verified) | **✓ Confirmed** — they share '屈骨' (alias index 屈骨→CV2 · KI11; 曲骨 '一名屈骨端 · 屈骨') |
+| **9** | Tinghui (聽會) | **上關** | Shangguan (上關) | Type 2: anatomical / muscle-meridian alignment (structure adjacent to the temporomandibular joint in front of / above the auricle) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Tinnitus, deafness, temporomandibular disorders, facial paralysis (overlapping categories, not quantitatively verified) | **✗ Not confirmed** — aliases of 聽會 are '耳門', '聽呵' and '後關' (《針灸腧穴通考》). '上關' is the standard name of GB3 (= 客主人) |
+| **10** | Sizhukong (絲竹空) | **巨髎** | Juliao (巨髎) | Type 2: anatomical / muscle-meridian alignment (structure adjacent to the facial skeleton and head-eye region) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Facial paralysis, deviation of the mouth and eye, eye pain, headache (overlapping categories, not quantitatively verified) | **✗ Not confirmed** — alias of 絲竹空 is '目髎' (《針灸腧穴通考》, alias index). '巨髎' is the standard name of ST3 — possible confusion of 目髎/巨髎 |
+| **11** | Jiache (頰車) | **下關** | Xiaguan (下關) | Type 2: anatomical / muscle-meridian alignment (structure adjacent to the temporomandibular joint (下頷關節) of the face) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Temporomandibular pain, toothache, facial paralysis (overlapping categories, not quantitatively verified) | **✗ Not confirmed** — aliases of 頰車 are '機關' and '曲牙'. 下關 '別名無' (《中國針灸穴位通鑑》) |
+| **12** | Dazhui (大椎) | **大椎/陶道** | Taodao (陶道) | Type 2: anatomical / muscle-meridian alignment (structure adjacent to the spinous-process joints of the cervical/thoracic vertebrae) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Stiffness and pain of the nape, fever, common cold, spinal pain (overlapping categories, not quantitatively verified) | **✗ Not confirmed** — aliases of 大椎 include '百勞'. No alias shared with 陶道 |
+| **13** | Zhongji (中極) | **中極/關元** | Guanyuan (關元) | Type 2: anatomical / muscle-meridian alignment (adjacent midline structure of the lower abdomen above the pubis) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Urogenital organs, difficult urination, seminal emission, irregular menstruation (overlapping categories, not quantitatively verified) | **✗ Not confirmed** — aliases of 中極 are '氣原' and '玉泉' (《針灸甲乙經》). Aliases of 關元 include '下紀', '次門', '三結交' and '丹田'. None shared |
+| **14** | Weizhong (委中) | **委中/委陽** | Weiyang (委陽) | Type 2: anatomical / muscle-meridian alignment (medial-lateral symmetrical structure of the popliteal crease (膕橫紋)) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Low-back pain, knee pain, lower-limb paralysis (overlapping categories, not quantitatively verified) | **✗ Not confirmed** — 委陽 '別名無' (《中國針灸穴位通鑑》) |
+| **15** | Baihui (百會) | **百會/前頂** | Qianding (前頂) | Type 2: anatomical / muscle-meridian alignment (adjacent midline structure of the vertex) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Headache, dizziness, calming the Spirit (安神), brain disorders (overlapping categories, not quantitatively verified) | **✗ Not confirmed** — 前頂 '別名無'; aliases of 百會 are '三陽五會' and '天滿' |
+| **16** | Tianzhu (天柱) | **天柱/風府** | Fengfu (風府) | Type 2: anatomical / muscle-meridian alignment (structure adjacent to the occipital hairline) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Headache, stiff neck (項強), wind disorders (風證) (overlapping categories, not quantitatively verified) | **✗ Not confirmed** — 天柱 '別名無' (《中國針灸穴位通鑑》) |
+| **17** | Dubi (犢鼻) | **膝眼** | Xiyan (膝眼) | Type 2: anatomical / muscle-meridian alignment (eye-like (眼) depression structure below the patella) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Knee arthritis, swelling of the knee joint (overlapping categories, not quantitatively verified) | **✓ Confirmed** — alias index 膝眼→犢鼻 (ST35); a different point with the same name as the extra point 膝眼 (EX-LE5) |
+| **18** | Kunlun (崑崙) | **崑崙/申脈** | Shenmai (申脈) | Type 2: anatomical / muscle-meridian alignment (structure adjacent to the lateral malleolus of the ankle joint) | Recorded as compared with the Google Sheet (sheet not kept, match rate not verified) | Ankle arthralgia, low-back pain, headache (overlapping categories, not quantitatively verified) | **✗ Not confirmed** — aliases of 申脈 are '鬼路' and '陽蹻'. Aliases of 崑崙 are '足太陽', '巨陽', '上崑崙' and '外崑崙' |
 
 ---
 
-## 📁 생성 완료된 파일 목록 (같은 폴더)
+## 📁 List of Generated Files (same folder)
 
-- 📊 **해부학적 동일 명칭 경혈쌍 비교분석 엑셀**: [3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.xlsx](3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.xlsx)
-- 📄 **해부학적 동일 명칭 경혈쌍 비교분석 CSV**: [3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.csv](3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.csv)
-- 📝 **해부학적 동일 명칭 경혈쌍 비교분석 마크다운**: [3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.md](3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.md)
+- 📊 **Excel comparison of anatomical same-name acupoint pairs**: [3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.xlsx](3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.xlsx)
+- 📄 **CSV comparison of anatomical same-name acupoint pairs**: [3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.csv](3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.csv)
+- 📝 **Markdown comparison of anatomical same-name acupoint pairs**: [3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.md](3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.md)
 
 ---
 
-## v2.7 정제 이력 (2026-10-04)
+## v2.7 Refinement History (2026-10-04)
 
-| 위치 | 원래 표현 | 바꾼 표현 | 근거 |
+| Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
-| 제목 아래 | (머리말 없음) | v2.7 머리말 블록 + 검증 요약 | LIT_BRIEF 1항 |
-| 핵심 가설 | "주치증이 100% 동일하게 혼용·통합" ➔ "[100% 실증 입증]" | "[미입증 — 원전 별명 공유 확인 3/18쌍(17%), 주치 혼용 정량 미검증]" | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) 별명조·별명색인, *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 提要索隐; csv에 주치 대조 수치 없음 |
-| 핵심 가설 뒤 | (없음) | Rank 4 경혈 중심 통합 편향 점검 문단 | 정본 Rank 4 "병증 통합 왜곡 방지" |
-| 제외 조건 | "엄격히 제외" | "제외" | 표현 완화 |
-| 4대 메커니즘 절 머리 | (없음) | "해부 실체 가설(ARI 미산정)" 표기 | LIT_BRIEF 4항 |
-| 4대 메커니즘 bullet 12곳 | "… 100% 동일/일치" | "범주 중첩(작성 시 판단, 정량 미검증)" | 데이터 근거 없음 |
-| 대조표 18행 '구글 시트 대조' 열 | "구글 시트 … 및 3대 서적 DB 100% 일치 매칭" | "구글 시트 대조 기재(시트 미보관, 일치율 미검증)" | 시트 파일이 폴더에 없음 |
-| 대조표 '주치 혼용' 열 16곳 | "… 100% 동일/일치/동일 혼용" | "(범주 중첩, 정량 미검증)" | 동일 |
-| 대조표 | (없음) | `v2.7 원전 별명 확인` 열 추가(✓3·△2·✗13) | 3대 원전 별명 기재 대조 |
-| 파일 안내 | `file:///D:/…` 절대 링크 | 같은 폴더 상대 링크 | 실제 저장 위치 |
-| PMID/DOI·Layer B | 본문에 없음 | — | 확인·교정 대상 0건 |
+| Below the title | (no header) | v2.7 header block + verification summary | LIT_BRIEF item 1 |
+| Core hypothesis | "indications mixed and integrated 100% identically" ➔ "[100% empirically proven]" | "[not proven — alias sharing confirmed in the classics for 3/18 pairs (17%), indication mixing not quantitatively verified]" | 《中國針灸穴位通鑑》 alias entries and alias index, 《針灸腧穴通考》 提要索隱; no indication-comparison figures in the csv |
+| After the core hypothesis | (none) | Paragraph checking Rank 4 acupoint-centred integration bias | Canonical Rank 4 "prevention of distortion through disease-pattern integration" |
+| Exclusion criteria | "strictly excluded" | "excluded" | Wording moderated |
+| Head of the four-mechanism section | (none) | Marked as "anatomical-substrate hypothesis (ARI not scored)" | LIT_BRIEF item 4 |
+| 12 bullets in the four-mechanism section | "… 100% identical/matching" | "overlapping categories (author's judgement, not quantitatively verified)" | No supporting data |
+| 'Google Sheet comparison' column, 18 rows of the comparison table | "100% matching against the Google Sheet … and the three-classics DB" | "Recorded as compared with the Google Sheet (sheet not kept, match rate not verified)" | The sheet file is not in the folder |
+| 'Indication mixing' column of the comparison table, 16 places | "… 100% identical / matching / identically mixed" | "(overlapping categories, not quantitatively verified)" | Same |
+| Comparison table | (none) | Added the `v2.7 confirmation of alias in the classics` column (✓3 · △2 · ✗13) | Collation with the alias records of the three classics |
+| File guide | Absolute link `file:///D:/…` | Relative link within the same folder | Actual storage location |
+| PMID/DOI · Layer B | None in the text | — | 0 items to check or correct |

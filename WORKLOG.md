@@ -20,6 +20,8 @@
 | 2026-10-23 | Claude Code | **외부 폴더 `G:\내 드라이브\03_경혈_해부생리_분석결과` 보고서 5건을 `acupoint_anatomy/` 해당 경혈 폴더의 구판 보관 폴더로 이동**(2절), 원 폴더 비움. 1분류 보고서 11건 refine 착수(Rank 6 재실행 11건 validate OK) | [CC] 이 문서 2·3절 |
 | 2026-10-23 | Claude Code | **공용 검색 스크립트·통합 DB 근본 수정**(사용자 승인): `sync_master_db.py`에 경혈 언급 판정(`acupoint_mentioned`) 도입 — 지명·기관명 병음(Taiyuan·Shangqiu·Tianfu)과 다른 약어(Sp5) 오적중 차단, PubMed `[tiab]` 한정, 로컬 코드 패턴 대소문자 구분 + 침구 맥락 시 혼합 대소문자·병음 인정, 로컬 사본 중복(제목+연도) 표시, `relink` 명령 신설, 연결 보존 필드(`api_linked_acupoints`·`manual_linked_acupoints`). 실행: relink 외부 연결 38건 제거, 전면 재스캔 2회(1차에서 빠진 진짜 연결 회복), 보고서 Layer A 연결 126건을 manual로 등록, 로컬 사본 164편 duplicate. 모든 단계 validate OK | `01_Framework/biomedical_master_db_sync_design.md` 10절; 백업 `02_Master_Datasets/backup/*20261023_before_relink*` |
 | 2026-10-23 | Claude Code | LI04 합곡·SP06 삼음교 Rank 6(수정된 스크립트, LI4 신규 24·SP6 신규 15) 후 Tier 3 신규 작성 완료(10-24). Layer A 34건을 manual 연결로 등록(재추가 0 — 새 필터가 이미 정확히 연결). Neo4j 서버 종료 | — |
+| 2026-10-24 | Claude Code | **영문본 전면 재번역**: 자동 생성 `_en.md` 22건이 한국어 본문을 그대로 두고 용어만 치환한 상태(이름 주석 중복·그림 경로 파손)여서, ST36 완역본을 기준으로 한국어 원본에서 새로 완역(번체자 병기, 점수·근거 포인터 불변). 01분류 11건 + 02분류 4건 + 03분류 6건 + 05분류 1건, `ST36_GB21_Comparative_Analysis_Report_en.md` 신규. `build_report_html.py` → `inline_images.py`로 HTML 재빌드(구판은 `_구판_html/`), Drive 배포 | [CC] |
+| 2026-10-24 | Antigravity | **구판 정리 및 영문 보고서 24종 GitHub/Drive 완전 동기화**: 워크스페이스 내 산재한 구판 파일 153건(54개 폴더) 단일 zip(`_archive/`) 압축 보관 후 개별 디렉토리에서 제거, `.gitignore` 최신화, `deploy_to_gdrive.py`에 `--prune` 기능 추가 후 Drive 동기화, `index.html` 내 ST36 vs GB21 영문 리포트 연결 보강(24종 완비) 및 GitHub main 브랜치 동기화 | [AG:98c7e13e] |
 
 ## 2. 외부 폴더 이관 기록 (2026-10-23)
 

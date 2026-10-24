@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>🏛️ 3대 침구 전문 서적 전수 데이터베이스 기반 동일 별명(別名) 공유 경혈 전체 마스터 주치 혼용 실증 검증 보고서</title>
+<title>🏛️ Master Verification of Indication Mixing Among All Acupoint Pairs Sharing the Same Alias (別名), Based on the Complete Database of the Three Specialist Acupuncture Classics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
@@ -54,600 +54,620 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <body>
 <main>
 <article>
-<h1 id="3">🏛️ 3대 침구 전문 서적 전수 데이터베이스 기반 동일 별명(別名) 공유 경혈 전체 마스터 주치 혼용 실증 검증 보고서</h1>
+<h1 id="master-verification-of-indication-mixing-among-all-acupoint-pairs-sharing-the-same-alias-based-on-the-complete-database-of-the-three-specialist-acupuncture-classics">🏛️ Master Verification of Indication Mixing Among All Acupoint Pairs Sharing the Same Alias (別名), Based on the Complete Database of the Three Specialist Acupuncture Classics</h1>
 <blockquote>
-<p><strong>Framework</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: <code>3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.csv/.xlsx</code>(48쌍, 주치 대조 열 없음) · 원전 대조: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) '别名'조·「针灸穴名别名索引」(파싱 899항), <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) 「提要索隐·穴名」 · <strong>기초 분석 데이터셋</strong>: <a href="file:///g:/내%20드라이브/도서%20번역/02_Master_Datasets/%E4%B8%AD%E5%9B%BD%E9%92%88%E7%81%B8%E7%A9%B4%E4%BD%8D%E9%80%9A%E9%89%B4%20%EB%B6%84%EC%84%9D%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B"><code>02_Master_Datasets/中国针灸穴位通鉴 분석데이터셋/</code></a> (<code>중국침구혈Epigastric / Stomach pain (胃痛)감_동일별명_공유경혈_목록.csv</code> 등 12종)</p>
-<p>⚠️ <strong>v2.7 검증 요약</strong>: 48쌍의 "공유 별명"을 3대 원전 별명 기재와 대조한 결과 <strong>두 경혈 모두의 별명으로 확인된 쌍은 1쌍(2%: #15 手三里–足三里 '三里')</strong>, 유사명·한쪽만 확인 3쌍(#27·#29·#30), <strong>미확인 44쌍(92%)</strong>입니다. 미확인 쌍의 "공유 별명"(云门·气穴·风府·风池·上星·通天·承灵·脑空·曲差·委中 등)은 대부분 다른 경혈의 정명으로, 원전 본문에서 인접해 나온 경혈명이 별명으로 잘못 추출된 것으로 추정됩니다. 또 이 48쌍 목록에는 본문이 "포함"한다고 한 구글 시트 24쌍(석문–명문, Zanzhu (攅竹, BL02)–광명 등)이 들어 있지 않으며, 표의 '작용 메커니즘 분류'(예: 气穴 쌍을 "거허하합혈 호환형"으로 분류)도 본문 정의와 맞지 않습니다. 이 보고서의 "100% 입증"은 성립하지 않으며, 48행의 결론 문구는 모두 같은 문장이 자동 반복된 것입니다.</p>
+<p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual verification (Rank 5 where needed) · <strong>ARI</strong>: not scored (textual-verification report) · <strong>Source data</strong>: <code>3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.csv/.xlsx</code> (48 pairs, no indication-comparison column) · Collation against the classics: the 'alias (別名)' entries and the 「針灸穴名別名索引」 (899 parsed items) of <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》), and 「提要索隱·穴名」 of <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) · <strong>Base analysis dataset</strong>: <a href="../../02_Master_Datasets/%E4%B8%AD%E5%9B%BD%E9%92%88%E7%81%B8%E7%A9%B4%E4%BD%8D%E9%80%9A%E9%89%B4%20%EB%B6%84%EC%84%9D%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B"><code>02_Master_Datasets/中国针灸穴位通鉴 분석데이터셋/</code></a> (12 files including <code>중국침구혈위통감_동일별명_공유경혈_목록.csv</code>)
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so file names and strings in <code>code</code> are given exactly as they appear on disk and in the data.</p>
+<p>⚠️ <strong>v2.7 verification summary</strong>: Collating the "shared aliases" of the 48 pairs against the alias records of the three classics, <strong>only 1 pair was confirmed as an alias of both points (2%: #15 手三里–足三里 '三里')</strong>, 3 pairs are similar names or confirmed on one side only (#27, #29, #30), and <strong>44 pairs (92%) are not confirmed</strong>. Most of the "shared aliases" of the unconfirmed pairs (雲門, 氣穴, 風府, 風池, 上星, 通天, 承靈, 腦空, 曲差, 委中, etc.) are the standard names of other points; it is presumed that point names appearing adjacently in the body text of the classics were wrongly extracted as aliases. Moreover, this 48-pair list does not contain the 24 Google-Sheet pairs (Shimen (石門)–Mingmen (命門), Cuanzhu (攢竹)–Guangming (光明), etc.) that the text said it "included", and the 'mechanism classification' in the table (e.g. classifying the 氣穴 pairs as "lower He-Sea compatibility type") does not match the definitions in the text. The "100% proof" in this report does not hold, and the conclusion wording in all 48 rows is the same sentence repeated automatically.</p>
 </blockquote>
-<p><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》), <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》), <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) 3대 침구 전문 서적 전수 데이터베이스(45개 PDF, 4,200여 페이지)를 전수 스캔 및 훈고학적 고증 분석하여, <strong>48개 동일 별명 공유 경혈쌍 후보</strong>를 추출하고(구글 시트 24쌍은 실제 목록에 미포함), <strong>"별칭 또는 명칭이 동일한 경혈로 인해 시대적으로 침구치료에서 혼용되거나 배혈로 통합되었다"</strong>는 핵심 가설을 검토한 마스터 보고서입니다(v2.7 판정: 후보 48쌍 중 원전 별명 공유 확인 1쌍, 가설 미입증).</p>
+<p>This master report, based on a full scan and exegetical (訓詁學) textual analysis of the complete database (45 PDFs, some 4,200 pages) of the three specialist acupuncture classics <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》), <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) and <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》), extracted <strong>48 candidate acupoint pairs sharing the same alias</strong> (the 24 Google-Sheet pairs are not actually in the list) and examined the core hypothesis that <strong>"because of points with the same alias or name, they were mixed in acupuncture practice over the eras or integrated into point combinations"</strong> (v2.7 verdict: of the 48 candidate pairs, 1 pair confirmed as sharing an alias in the classics; hypothesis not proven).</p>
 <hr>
-<h2 id="_1">🎯 핵심 가설 검증 결과 및 학술적 성과</h2>
+<h2 id="results-of-the-core-hypothesis-test-and-academic-findings">🎯 Results of the Core Hypothesis Test and Academic Findings</h2>
 <blockquote>
-<p><strong>핵심 가설 검증</strong>: 
-<strong>"별칭 또는 명칭이 동일한 경혈로 인해 시대적으로 침구치료에서 주치증이 혼용되거나, 상하 원근 배혈(配穴)로 통합 운용되었다." ➔ [v2.7 판정: 미입증 — 후보 48쌍 중 원전 별명 공유 확인 1쌍(2%), 주치 혼용은 정량 미검증]</strong></p>
-<p>3대 서적 4,200여 페이지 데이터베이스 분석 결과, 동일 별칭(別名)의 발생과 주치증의 혼용은 <strong>① 장부 효능 일치형</strong>, <strong>② 해부학적 대칭 구조 일치형</strong>, <strong>③ 문헌 사본 필사 축약 및 거허하합혈(巨虚下合穴) 문헌 전이형</strong>이라는 3대 메커니즘으로 분류해 볼 수 있다는 작성 시 해석입니다(분류 기준·정량 근거 미제시, 아래 표의 분류와도 불일치).</p>
+<p><strong>Core hypothesis test</strong>: 
+<strong>"Because of points with the same alias or name, indications were mixed in acupuncture practice over the eras, or the points were operated together in upper-lower, near-distant point combinations (配穴)." ➔ [v2.7 verdict: not proven — of 48 candidate pairs, 1 pair (2%) confirmed as sharing an alias in the classics; indication mixing not quantitatively verified]</strong></p>
+<p>It is the author's interpretation that, from the analysis of the 4,200-page database of the three classics, the occurrence of identical aliases (別名) and the mixing of indications can be classified into three mechanisms: <strong>① organ-efficacy alignment</strong>, <strong>② anatomically symmetrical structure alignment</strong>, and <strong>③ abbreviation in manuscript copying and textual transmission of the Juxu lower He-Sea points (巨虛下合穴)</strong> (no classification criteria or quantitative basis given; also inconsistent with the classification in the table below).</p>
 </blockquote>
 <hr>
-<h2 id="3_1">🔬 동일 별명 공유 경혈의 3대 작용 메커니즘 분류</h2>
-<h3 id="1-1-functionalpathological-alignment">1. 유형 1: 기능적·효능적 일치형 (Functional/Pathological Alignment)</h3>
+<h2 id="classification-of-three-mechanisms-among-points-sharing-the-same-alias">🔬 Classification of Three Mechanisms Among Points Sharing the Same Alias</h2>
+<h3 id="1-type-1-functional-efficacy-alignment-functionalpathological-alignment">1. Type 1: Functional / Efficacy Alignment (Functional/Pathological Alignment)</h3>
 <ul>
-<li><strong>메커니즘</strong>: 위치는 서로 떨어져 있으나 장부 효능(신양, 원기, 안신, 명목)이 같아 같은 별명을 공유했다는 해석(작성 시 판단 — 효능 일치가 별명 공유의 원인이라는 근거는 원전에서 확인되지 않음, Rank 4 사변적 해석 주의). 대표 3쌍의 별명 자체는 원전에서 확인됨(石门 一名命门·攒竹 一名光明·大杼 本神).</li>
-<li><strong>대표 경혈쌍</strong>:</li>
-<li><code>CV05 석문</code> - <code>GV04 명문</code> (공유 이명: <strong>命門</strong>) ➔ 신양(肾阳) 및 원기 온후, 유정/불임/요통 주치 일치.</li>
-<li><code>BL02 Zanzhu (攅竹, BL02)</code> - <code>GB37 광명</code> (공유 이명: <strong>光明</strong>) ➔ 안과 질환, 안구 전적, 명목(明目) 주치 일치.</li>
-<li><code>BL11 대저</code> - <code>GB13 본신</code> (공유 이명: <strong>本神</strong>) ➔ 뇌/척수 신경, 뇌졸중 후유증, 안신 주치 일치.</li>
+<li><strong>Mechanism</strong>: The interpretation that points that are physically separate share the same alias because their organ efficacies (kidney Yang (腎陽), Original Qi (元氣), calming the Spirit (安神), brightening the eyes (明目)) are the same (author's judgement — no evidence was found in the classics that efficacy alignment is the cause of alias sharing; caution regarding Rank 4 speculative interpretation). The aliases of the three representative pairs themselves are confirmed in the classics (石門 一名命門 · 攢竹 一名光明 · 大杼 本神).</li>
+<li><strong>Representative pairs</strong>:</li>
+<li><code>CV05 Shimen (石門)</code> - <code>GV04 Mingmen (命門)</code> (shared alternative name: <strong>命門</strong>) ➔ warming kidney Yang (腎陽) and Original Qi; aligned indications of seminal emission, infertility and low-back pain.</li>
+<li><code>BL02 Cuanzhu (攢竹)</code> - <code>GB37 Guangming (光明)</code> (shared alternative name: <strong>光明</strong>) ➔ aligned indications of eye diseases, red eyes and brightening the eyes (明目).</li>
+<li><code>BL11 Dazhu (大杼)</code> - <code>GB13 Benshen (本神)</code> (shared alternative name: <strong>本神</strong>) ➔ aligned indications of brain/spinal-cord nerves, sequelae of stroke and calming the Spirit (安神).</li>
 </ul>
-<h3 id="2-2-anatomicalkinetic-alignment">2. 유형 2: 해부학적·근육경락 일치형 (Anatomical/Kinetic Alignment)</h3>
+<h3 id="2-type-2-anatomical-muscle-meridian-alignment-anatomicalkinetic-alignment">2. Type 2: Anatomical / Muscle-Meridian Alignment (Anatomical/Kinetic Alignment)</h3>
 <ul>
-<li><strong>메커니즘</strong>: 팔꿈치, 무릎, 어깨, 안면, 치골 등 해부학적 대칭 및 인접 관절 근육 구조에 위치하여 국소 통증·운동 마비 주치 범주가 중첩된다는 해부 실체 가설(ARI 미산정, 정량 미검증). ※ 아래 대표 쌍 4개 중 원전 별명 공유 확인은 横骨–曲骨(屈骨) 1쌍뿐이며, 少海·上关은 미확인, 外丘는 후대 문헌 한정.</li>
-<li><strong>대표 경혈쌍</strong>:</li>
-<li><code>HT03 음소해</code> - <code>SI08 양소해</code> (공유 이명: <strong>少海</strong>) ➔ 주관절 내외측 대칭으로 팔꿈치 통증/테니스 엘보 주치 범주 중첩(정량 미검증).</li>
-<li><code>ST32 복토</code> - <code>GB36 외구</code> (공유 이명: <strong>外丘</strong>) ➔ 대퇴/종아리 외측 근육부로 하지 마비 주치 범주 중첩(정량 미검증).</li>
-<li><code>GB02 청회</code> - <code>GB03 상관</code> (공유 이명: <strong>上關</strong>) ➔ 귓바퀴 앞/위 인접혈로 이명/이롱/턱관절 주치 범주 중첩(정량 미검증).</li>
-<li><code>KI11 횡골</code> - <code>CV02 곡골</code> (공유 이명: <strong>曲骨</strong>) ➔ 치골 상연 인접혈로 비뇨생식기 주치 범주 중첩(정량 미검증).</li>
+<li><strong>Mechanism</strong>: The anatomical-substrate hypothesis that, being located on anatomically symmetrical structures or adjacent joint-muscle structures of the elbow, knee, shoulder, face and pubis, the points overlap in their categories of indication for local pain and motor paralysis (ARI not scored, not quantitatively verified). ※ Of the four representative pairs below, only 橫骨–曲骨 (屈骨) is confirmed in the classics as sharing an alias; 少海 and 上關 are not confirmed, and 外丘 is limited to later literature.</li>
+<li><strong>Representative pairs</strong>:</li>
+<li><code>HT03 Yin Shaohai (陰少海)</code> - <code>SI08 Yang Shaohai (陽少海)</code> (shared alternative name: <strong>少海</strong>) ➔ medial-lateral symmetry of the elbow joint; overlapping indication categories of elbow pain / tennis elbow (not quantitatively verified).</li>
+<li><code>ST32 Futu (伏兔)</code> - <code>GB36 Waiqiu (外丘)</code> (shared alternative name: <strong>外丘</strong>) ➔ lateral muscles of the thigh/calf; overlapping indication categories of lower-limb paralysis (not quantitatively verified).</li>
+<li><code>GB02 Tinghui (聽會)</code> - <code>GB03 Shangguan (上關)</code> (shared alternative name: <strong>上關</strong>) ➔ adjacent points in front of / above the auricle; overlapping indication categories of tinnitus, deafness and temporomandibular joint disorders (not quantitatively verified).</li>
+<li><code>KI11 Henggu (橫骨)</code> - <code>CV02 Qugu (曲骨)</code> (shared alternative name: <strong>曲骨</strong>) ➔ adjacent points on the upper border of the pubis; overlapping indication categories of the urogenital organs (not quantitatively verified).</li>
 </ul>
-<h3 id="3-3-textual-transmission-lower-sea-compatibility">3. 유형 3: 문헌 전이 및 거허하합혈 호환형 (Textual Transmission &amp; Lower Sea Compatibility)</h3>
+<h3 id="3-type-3-textual-transmission-and-lower-he-sea-compatibility-textual-transmission-lower-sea-compatibility">3. Type 3: Textual Transmission and Lower He-Sea Compatibility (Textual Transmission &amp; Lower Sea Compatibility)</h3>
 <ul>
-<li><strong>메커니즘</strong>: 고대 문헌(내경·갑을경)의 약칭(예: <code>巨虚上廉</code> ➔ <code>上廉</code>, 필사 오류인지 원천 약칭인지는 미확정) 또는 양명경 상하 순경 라인으로 주치가 전이된 형태.</li>
-<li><strong>대표 경혈쌍</strong>:</li>
-<li><code>ST37 상거허</code> - <code>LI09 상렴</code> (공유 이명: <strong>上廉</strong>) ➔ 고대 "巨虚上廉" 약칭으로 인한 이름 공유 확인(上巨虚 별명 '上廉'); 대장염/Dysentery (痢疾) 주치 호환·배혈은 정량 미검증(대장병증 보고서: '상렴' 36행 중 ST37 명시 18행).</li>
-<li><code>ST39 하거허</code> - <code>LI08 하렴</code> (공유 이명: <strong>下廉</strong>) ➔ 고대 "巨虚下廉" 약칭으로 인한 이름 공유 확인(下巨虚 별명 '下廉'); 주치 호환은 정량 미검증.</li>
+<li><strong>Mechanism</strong>: Transfer of indications through abbreviations in the ancient literature (<em>Neijing</em> (《內經》), <em>Jiayi Jing</em> (《甲乙經》)) (e.g. <code>巨虚上廉</code> ➔ <code>上廉</code>; whether a copying error or an original abbreviation is undetermined), or along the upper-lower course of the Yangming meridians (陽明經).</li>
+<li><strong>Representative pairs</strong>:</li>
+<li><code>ST37 Shangjuxu (上巨虛)</code> - <code>LI09 Shanglian (上廉)</code> (shared alternative name: <strong>上廉</strong>) ➔ name sharing due to the ancient abbreviation of "巨虛上廉" is confirmed (上巨虛 alias '上廉'); compatibility of colitis/dysentery indications and point combination is not quantitatively verified (large-intestine disorders report: of 36 'Shanglian' rows, 18 explicitly ST37).</li>
+<li><code>ST39 Xiajuxu (下巨虛)</code> - <code>LI08 Xialian (下廉)</code> (shared alternative name: <strong>下廉</strong>) ➔ name sharing due to the ancient abbreviation of "巨虛下廉" is confirmed (下巨虛 alias '下廉'); compatibility of indications is not quantitatively verified.</li>
 </ul>
 <hr>
-<h2 id="3-48">📊 3대 서적 전체 마스터 공유 별명 경혈쌍 전수 목록표 (48쌍 전수 수록)</h2>
+<h2 id="complete-list-of-acupoint-pairs-sharing-an-alias-across-the-three-classics-all-48-pairs">📊 Complete List of Acupoint Pairs Sharing an Alias Across the Three Classics (all 48 pairs)</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: center;">연번</th>
-<th style="text-align: left;">기준 경혈</th>
-<th style="text-align: center;">공유 이명</th>
-<th style="text-align: left;">대상 경혈</th>
-<th style="text-align: left;">작용 메커니즘 분류</th>
-<th style="text-align: left;">주치증 혼용 및 시대별 변천 검증</th>
-<th style="text-align: left;">v2.7 원전 별명 확인</th>
+<th style="text-align: center;">No.</th>
+<th style="text-align: left;">Reference point</th>
+<th style="text-align: center;">Shared alternative name</th>
+<th style="text-align: left;">Target point</th>
+<th style="text-align: left;">Mechanism classification</th>
+<th style="text-align: left;">Verification of indication mixing and historical change</th>
+<th style="text-align: left;">v2.7 confirmation of alias in the classics</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: center;"><strong>1</strong></td>
-<td style="text-align: left;">중부(中府)</td>
-<td style="text-align: center;"><strong>云门</strong></td>
-<td style="text-align: left;">Weizhong (委中, BL40)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '云门'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '云门'은 LU2 정명; 中府·委中·腰俞의 별명으로 미확인</td>
+<td style="text-align: left;">Zhongfu (中府)</td>
+<td style="text-align: center;"><strong>雲門</strong></td>
+<td style="text-align: left;">Weizhong (委中)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '雲門', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '雲門' is the standard name of LU2; not confirmed as an alias of 中府, 委中 or 腰俞</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>2</strong></td>
-<td style="text-align: left;">중부(中府)</td>
-<td style="text-align: center;"><strong>云门</strong></td>
-<td style="text-align: left;">Yaoyu (腰兪, GV02)(腰俞)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '云门'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '云门'은 LU2 정명; 中府·委中·腰俞의 별명으로 미확인</td>
+<td style="text-align: left;">Zhongfu (中府)</td>
+<td style="text-align: center;"><strong>雲門</strong></td>
+<td style="text-align: left;">Yaoshu (腰俞)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '雲門', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '雲門' is the standard name of LU2; not confirmed as an alias of 中府, 委中 or 腰俞</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>3</strong></td>
-<td style="text-align: left;">Weizhong (委中, BL40)</td>
-<td style="text-align: center;"><strong>云门</strong></td>
-<td style="text-align: left;">Yaoyu (腰兪, GV02)(腰俞)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '云门'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '云门'은 LU2 정명; 中府·委中·腰俞의 별명으로 미확인</td>
+<td style="text-align: left;">Weizhong (委中)</td>
+<td style="text-align: center;"><strong>雲門</strong></td>
+<td style="text-align: left;">Yaoshu (腰俞)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '雲門', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '雲門' is the standard name of LU2; not confirmed as an alias of 中府, 委中 or 腰俞</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>4</strong></td>
-<td style="text-align: left;">중부(中府)</td>
-<td style="text-align: center;"><strong>气穴</strong></td>
-<td style="text-align: left;">수도(水道)</td>
-<td style="text-align: left;">유형 3: 문헌 전이 및 거허하합혈 호환형</td>
-<td style="text-align: left;">동일 별명 '气穴'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '气穴'은 KI13 정명; 中府·水道·完骨·天突의 별명으로 미확인</td>
+<td style="text-align: left;">Zhongfu (中府)</td>
+<td style="text-align: center;"><strong>氣穴</strong></td>
+<td style="text-align: left;">Shuidao (水道)</td>
+<td style="text-align: left;">Type 3: textual transmission &amp; lower He-Sea (巨虛下合穴) compatibility</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '氣穴', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '氣穴' is the standard name of KI13; not confirmed as an alias of 中府, 水道, 完骨 or 天突</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>5</strong></td>
-<td style="text-align: left;">중부(中府)</td>
-<td style="text-align: center;"><strong>气穴</strong></td>
-<td style="text-align: left;">완골(完骨)</td>
-<td style="text-align: left;">유형 3: 문헌 전이 및 거허하합혈 호환형</td>
-<td style="text-align: left;">동일 별명 '气穴'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '气穴'은 KI13 정명; 中府·水道·完骨·天突의 별명으로 미확인</td>
+<td style="text-align: left;">Zhongfu (中府)</td>
+<td style="text-align: center;"><strong>氣穴</strong></td>
+<td style="text-align: left;">Wangu (完骨)</td>
+<td style="text-align: left;">Type 3: textual transmission &amp; lower He-Sea (巨虛下合穴) compatibility</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '氣穴', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '氣穴' is the standard name of KI13; not confirmed as an alias of 中府, 水道, 完骨 or 天突</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>6</strong></td>
-<td style="text-align: left;">중부(中府)</td>
-<td style="text-align: center;"><strong>气穴</strong></td>
-<td style="text-align: left;">천돌(天突)</td>
-<td style="text-align: left;">유형 3: 문헌 전이 및 거허하합혈 호환형</td>
-<td style="text-align: left;">동일 별명 '气穴'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '气穴'은 KI13 정명; 中府·水道·完骨·天突의 별명으로 미확인</td>
+<td style="text-align: left;">Zhongfu (中府)</td>
+<td style="text-align: center;"><strong>氣穴</strong></td>
+<td style="text-align: left;">Tiantu (天突)</td>
+<td style="text-align: left;">Type 3: textual transmission &amp; lower He-Sea (巨虛下合穴) compatibility</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '氣穴', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '氣穴' is the standard name of KI13; not confirmed as an alias of 中府, 水道, 完骨 or 天突</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>7</strong></td>
-<td style="text-align: left;">수도(水道)</td>
-<td style="text-align: center;"><strong>气穴</strong></td>
-<td style="text-align: left;">완골(完骨)</td>
-<td style="text-align: left;">유형 3: 문헌 전이 및 거허하합혈 호환형</td>
-<td style="text-align: left;">동일 별명 '气穴'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '气穴'은 KI13 정명; 中府·水道·完骨·天突의 별명으로 미확인</td>
+<td style="text-align: left;">Shuidao (水道)</td>
+<td style="text-align: center;"><strong>氣穴</strong></td>
+<td style="text-align: left;">Wangu (完骨)</td>
+<td style="text-align: left;">Type 3: textual transmission &amp; lower He-Sea (巨虛下合穴) compatibility</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '氣穴', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '氣穴' is the standard name of KI13; not confirmed as an alias of 中府, 水道, 完骨 or 天突</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>8</strong></td>
-<td style="text-align: left;">수도(水道)</td>
-<td style="text-align: center;"><strong>气穴</strong></td>
-<td style="text-align: left;">천돌(天突)</td>
-<td style="text-align: left;">유형 3: 문헌 전이 및 거허하합혈 호환형</td>
-<td style="text-align: left;">동일 별명 '气穴'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '气穴'은 KI13 정명; 中府·水道·完骨·天突의 별명으로 미확인</td>
+<td style="text-align: left;">Shuidao (水道)</td>
+<td style="text-align: center;"><strong>氣穴</strong></td>
+<td style="text-align: left;">Tiantu (天突)</td>
+<td style="text-align: left;">Type 3: textual transmission &amp; lower He-Sea (巨虛下合穴) compatibility</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '氣穴', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '氣穴' is the standard name of KI13; not confirmed as an alias of 中府, 水道, 完骨 or 天突</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>9</strong></td>
-<td style="text-align: left;">완골(完骨)</td>
-<td style="text-align: center;"><strong>气穴</strong></td>
-<td style="text-align: left;">천돌(天突)</td>
-<td style="text-align: left;">유형 3: 문헌 전이 및 거허하합혈 호환형</td>
-<td style="text-align: left;">동일 별명 '气穴'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '气穴'은 KI13 정명; 中府·水道·完骨·天突의 별명으로 미확인</td>
+<td style="text-align: left;">Wangu (完骨)</td>
+<td style="text-align: center;"><strong>氣穴</strong></td>
+<td style="text-align: left;">Tiantu (天突)</td>
+<td style="text-align: left;">Type 3: textual transmission &amp; lower He-Sea (巨虛下合穴) compatibility</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '氣穴', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '氣穴' is the standard name of KI13; not confirmed as an alias of 中府, 水道, 完骨 or 天突</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>10</strong></td>
-<td style="text-align: left;">Tianfu (天府, LU03)</td>
+<td style="text-align: left;">Tianfu (天府)</td>
 <td style="text-align: center;"><strong>天池</strong></td>
-<td style="text-align: left;">인영(人迎)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '天池'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '天池'는 承浆(CV24) 별명·PC1 정명; '天府'는 LU3 정명. 人迎 별명은 '天五会'·'五会'</td>
+<td style="text-align: left;">Renying (人迎)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '天池', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '天池' is an alias of 承漿 (CV24) and the standard name of PC1; '天府' is the standard name of LU3. The aliases of 人迎 are '天五會' and '五會'</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>11</strong></td>
-<td style="text-align: left;">Tianfu (天府, LU03)</td>
+<td style="text-align: left;">Tianfu (天府)</td>
 <td style="text-align: center;"><strong>人迎</strong></td>
-<td style="text-align: left;">천지(天池)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '人迎'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '人迎'은 ST9 정명; 天府('别名无')·天池의 별명으로 미확인</td>
+<td style="text-align: left;">Tianchi (天池)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '人迎', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '人迎' is the standard name of ST9; not confirmed as an alias of 天府 ('別名無') or 天池</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>12</strong></td>
-<td style="text-align: left;">Hegu (合谷, LI04)</td>
-<td style="text-align: center;"><strong>阳明</strong></td>
-<td style="text-align: left;">수삼리(手三里)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '阳明'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '阳明'은 合谷·手三里·足三里의 별명으로 미확인</td>
+<td style="text-align: left;">Hegu (合谷)</td>
+<td style="text-align: center;"><strong>陽明</strong></td>
+<td style="text-align: left;">Shousanli (手三里)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '陽明', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '陽明' is not confirmed as an alias of 合谷, 手三里 or 足三里</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>13</strong></td>
-<td style="text-align: left;">Hegu (合谷, LI04)</td>
-<td style="text-align: center;"><strong>阳明</strong></td>
-<td style="text-align: left;">Zusanli (足三里, ST36)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '阳明'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '阳明'은 合谷·手三里·足三里의 별명으로 미확인</td>
+<td style="text-align: left;">Hegu (合谷)</td>
+<td style="text-align: center;"><strong>陽明</strong></td>
+<td style="text-align: left;">Zusanli (足三里)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '陽明', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '陽明' is not confirmed as an alias of 合谷, 手三里 or 足三里</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>14</strong></td>
-<td style="text-align: left;">수삼리(手三里)</td>
-<td style="text-align: center;"><strong>阳明</strong></td>
-<td style="text-align: left;">Zusanli (足三里, ST36)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '阳明'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '阳明'은 合谷·手三里·足三里의 별명으로 미확인</td>
+<td style="text-align: left;">Shousanli (手三里)</td>
+<td style="text-align: center;"><strong>陽明</strong></td>
+<td style="text-align: left;">Zusanli (足三里)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '陽明', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '陽明' is not confirmed as an alias of 合谷, 手三里 or 足三里</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>15</strong></td>
-<td style="text-align: left;">수삼리(手三里)</td>
+<td style="text-align: left;">Shousanli (手三里)</td>
 <td style="text-align: center;"><strong>三里</strong></td>
-<td style="text-align: left;">Zusanli (足三里, ST36)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '三里'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✓ 확인</strong> — '三里'는 手三里(LI10)·足三里(ST36)의 宋以前 古稱(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》), 별명색인 三里→LI10·ST36)</td>
+<td style="text-align: left;">Zusanli (足三里)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '三里', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✓ Confirmed</strong> — '三里' is the pre-Song old name (宋以前古稱) of both 手三里 (LI10) and 足三里 (ST36) (《針灸腧穴通考》; alias index 三里→LI10·ST36)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>16</strong></td>
-<td style="text-align: left;">Futu (扶突, LI18)</td>
-<td style="text-align: center;"><strong>风府</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风府'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 텍스트 혼입</strong> — '风府'는 GV16 정명. 원전에는 '舌本，一名风府'(杨上善注)와 <em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)이 '舌本出血'을 扶突 주치로 오록한 사례(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))만 있음 — 별명 공유 아님</td>
+<td style="text-align: left;">Futu (扶突)</td>
+<td style="text-align: center;"><strong>風府</strong></td>
+<td style="text-align: left;">Qucha (曲差)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風府', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Text contamination</strong> — '風府' is the standard name of GV16. The classics contain only '舌本，一名風府' (楊上善 commentary) and the case in which 《黃帝明堂經》 mis-recorded '舌本出血' as an indication of 扶突 (《針灸腧穴通考》) — not a shared alias</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>17</strong></td>
-<td style="text-align: left;">Futu (扶突, LI18)</td>
-<td style="text-align: center;"><strong>风府</strong></td>
-<td style="text-align: left;">통천(通天)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风府'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 텍스트 혼입</strong> — '风府'는 GV16 정명. 원전에는 '舌本，一名风府'(杨上善注)와 <em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)이 '舌本出血'을 扶突 주치로 오록한 사례(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))만 있음 — 별명 공유 아님</td>
+<td style="text-align: left;">Futu (扶突)</td>
+<td style="text-align: center;"><strong>風府</strong></td>
+<td style="text-align: left;">Tongtian (通天)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風府', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Text contamination</strong> — '風府' is the standard name of GV16. The classics contain only '舌本，一名風府' (楊上善 commentary) and the case in which 《黃帝明堂經》 mis-recorded '舌本出血' as an indication of 扶突 (《針灸腧穴通考》) — not a shared alias</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>18</strong></td>
-<td style="text-align: left;">Futu (扶突, LI18)</td>
-<td style="text-align: center;"><strong>风府</strong></td>
-<td style="text-align: left;">염천(廉泉)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风府'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 텍스트 혼입</strong> — '风府'는 GV16 정명. 원전에는 '舌本，一名风府'(杨上善注)와 <em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)이 '舌本出血'을 扶突 주치로 오록한 사례(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))만 있음 — 별명 공유 아님</td>
+<td style="text-align: left;">Futu (扶突)</td>
+<td style="text-align: center;"><strong>風府</strong></td>
+<td style="text-align: left;">Lianquan (廉泉)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風府', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Text contamination</strong> — '風府' is the standard name of GV16. The classics contain only '舌本，一名風府' (楊上善 commentary) and the case in which 《黃帝明堂經》 mis-recorded '舌本出血' as an indication of 扶突 (《針灸腧穴通考》) — not a shared alias</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>19</strong></td>
-<td style="text-align: left;">Futu (扶突, LI18)</td>
-<td style="text-align: center;"><strong>风府</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风府'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 텍스트 혼입</strong> — '风府'는 GV16 정명. 원전에는 '舌本，一名风府'(杨上善注)와 <em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)이 '舌本出血'을 扶突 주치로 오록한 사례(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))만 있음 — 별명 공유 아님</td>
+<td style="text-align: left;">Futu (扶突)</td>
+<td style="text-align: center;"><strong>風府</strong></td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風府', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Text contamination</strong> — '風府' is the standard name of GV16. The classics contain only '舌本，一名風府' (楊上善 commentary) and the case in which 《黃帝明堂經》 mis-recorded '舌本出血' as an indication of 扶突 (《針灸腧穴通考》) — not a shared alias</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>20</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
-<td style="text-align: center;"><strong>风府</strong></td>
-<td style="text-align: left;">통천(通天)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风府'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 텍스트 혼입</strong> — '风府'는 GV16 정명. 원전에는 '舌本，一名风府'(杨上善注)와 <em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)이 '舌本出血'을 扶突 주치로 오록한 사례(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))만 있음 — 별명 공유 아님</td>
+<td style="text-align: left;">Qucha (曲差)</td>
+<td style="text-align: center;"><strong>風府</strong></td>
+<td style="text-align: left;">Tongtian (通天)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風府', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Text contamination</strong> — '風府' is the standard name of GV16. The classics contain only '舌本，一名風府' (楊上善 commentary) and the case in which 《黃帝明堂經》 mis-recorded '舌本出血' as an indication of 扶突 (《針灸腧穴通考》) — not a shared alias</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>21</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
-<td style="text-align: center;"><strong>风府</strong></td>
-<td style="text-align: left;">염천(廉泉)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风府'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 텍스트 혼입</strong> — '风府'는 GV16 정명. 원전에는 '舌本，一名风府'(杨上善注)와 <em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)이 '舌本出血'을 扶突 주치로 오록한 사례(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))만 있음 — 별명 공유 아님</td>
+<td style="text-align: left;">Qucha (曲差)</td>
+<td style="text-align: center;"><strong>風府</strong></td>
+<td style="text-align: left;">Lianquan (廉泉)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風府', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Text contamination</strong> — '風府' is the standard name of GV16. The classics contain only '舌本，一名風府' (楊上善 commentary) and the case in which 《黃帝明堂經》 mis-recorded '舌本出血' as an indication of 扶突 (《針灸腧穴通考》) — not a shared alias</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>22</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
-<td style="text-align: center;"><strong>风府</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风府'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 텍스트 혼입</strong> — '风府'는 GV16 정명. 원전에는 '舌本，一名风府'(杨上善注)와 <em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)이 '舌本出血'을 扶突 주치로 오록한 사례(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))만 있음 — 별명 공유 아님</td>
+<td style="text-align: left;">Qucha (曲差)</td>
+<td style="text-align: center;"><strong>風府</strong></td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風府', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Text contamination</strong> — '風府' is the standard name of GV16. The classics contain only '舌本，一名風府' (楊上善 commentary) and the case in which 《黃帝明堂經》 mis-recorded '舌本出血' as an indication of 扶突 (《針灸腧穴通考》) — not a shared alias</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>23</strong></td>
-<td style="text-align: left;">통천(通天)</td>
-<td style="text-align: center;"><strong>风府</strong></td>
-<td style="text-align: left;">염천(廉泉)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风府'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 텍스트 혼입</strong> — '风府'는 GV16 정명. 원전에는 '舌本，一名风府'(杨上善注)와 <em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)이 '舌本出血'을 扶突 주치로 오록한 사례(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))만 있음 — 별명 공유 아님</td>
+<td style="text-align: left;">Tongtian (通天)</td>
+<td style="text-align: center;"><strong>風府</strong></td>
+<td style="text-align: left;">Lianquan (廉泉)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風府', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Text contamination</strong> — '風府' is the standard name of GV16. The classics contain only '舌本，一名風府' (楊上善 commentary) and the case in which 《黃帝明堂經》 mis-recorded '舌本出血' as an indication of 扶突 (《針灸腧穴通考》) — not a shared alias</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>24</strong></td>
-<td style="text-align: left;">통천(通天)</td>
-<td style="text-align: center;"><strong>风府</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风府'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 텍스트 혼입</strong> — '风府'는 GV16 정명. 원전에는 '舌本，一名风府'(杨上善注)와 <em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)이 '舌本出血'을 扶突 주치로 오록한 사례(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))만 있음 — 별명 공유 아님</td>
+<td style="text-align: left;">Tongtian (通天)</td>
+<td style="text-align: center;"><strong>風府</strong></td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風府', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Text contamination</strong> — '風府' is the standard name of GV16. The classics contain only '舌本，一名風府' (楊上善 commentary) and the case in which 《黃帝明堂經》 mis-recorded '舌本出血' as an indication of 扶突 (《針灸腧穴通考》) — not a shared alias</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>25</strong></td>
-<td style="text-align: left;">염천(廉泉)</td>
-<td style="text-align: center;"><strong>风府</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风府'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 텍스트 혼입</strong> — '风府'는 GV16 정명. 원전에는 '舌本，一名风府'(杨上善注)와 <em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)이 '舌本出血'을 扶突 주치로 오록한 사례(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))만 있음 — 별명 공유 아님</td>
+<td style="text-align: left;">Lianquan (廉泉)</td>
+<td style="text-align: center;"><strong>風府</strong></td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風府', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Text contamination</strong> — '風府' is the standard name of GV16. The classics contain only '舌本，一名風府' (楊上善 commentary) and the case in which 《黃帝明堂經》 mis-recorded '舌本出血' as an indication of 扶突 (《針灸腧穴通考》) — not a shared alias</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>26</strong></td>
-<td style="text-align: left;">인영(人迎)</td>
+<td style="text-align: left;">Renying (人迎)</td>
 <td style="text-align: center;"><strong>天府</strong></td>
-<td style="text-align: left;">천지(天池)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '天府'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '天池'는 承浆(CV24) 별명·PC1 정명; '天府'는 LU3 정명. 人迎 별명은 '天五会'·'五会'</td>
+<td style="text-align: left;">Tianchi (天池)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '天府', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '天池' is an alias of 承漿 (CV24) and the standard name of PC1; '天府' is the standard name of LU3. The aliases of 人迎 are '天五會' and '五會'</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>27</strong></td>
-<td style="text-align: left;">루곡(漏谷)</td>
-<td style="text-align: center;"><strong>太阴</strong></td>
-<td style="text-align: left;">Zhongdu (中都, LR06)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '太阴'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>△ 유사명</strong> — 별명색인 太阴→中都(LR6)·三阴交(SP6); 漏谷은 '太阴络'(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)) — 동일 별명 아님</td>
+<td style="text-align: left;">Lougu (漏谷)</td>
+<td style="text-align: center;"><strong>太陰</strong></td>
+<td style="text-align: left;">Zhongdu (中都)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '太陰', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>△ Similar name</strong> — alias index 太陰→中都 (LR6) · 三陰交 (SP6); 漏谷 is '太陰絡' (《針灸腧穴通考》) — not the same alias</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>28</strong></td>
-<td style="text-align: left;">통리(通里)</td>
-<td style="text-align: center;"><strong>少阴</strong></td>
-<td style="text-align: left;">연곡(然谷)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '少阴'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '少阴'은 太溪 古稱·阴郄(HT6) 별명; 通里·然谷 별명 아님</td>
+<td style="text-align: left;">Tongli (通里)</td>
+<td style="text-align: center;"><strong>少陰</strong></td>
+<td style="text-align: left;">Rangu (然谷)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '少陰', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '少陰' is the old name (古稱) of 太溪 and an alias of 陰郄 (HT6); not an alias of 通里 or 然谷</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>29</strong></td>
-<td style="text-align: left;">통리(通里)</td>
-<td style="text-align: center;"><strong>少阴</strong></td>
-<td style="text-align: left;">태계(太溪)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '少阴'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>△ 한쪽만</strong> — '少阴'은 太溪의 古稱(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))·阴郄(HT6)의 별명; 通里·然谷의 별명으로는 미확인</td>
+<td style="text-align: left;">Tongli (通里)</td>
+<td style="text-align: center;"><strong>少陰</strong></td>
+<td style="text-align: left;">Taixi (太溪)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '少陰', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>△ One side only</strong> — '少陰' is the old name (古稱) of 太溪 (《針灸腧穴通考》) and an alias of 陰郄 (HT6); not confirmed as an alias of 通里 or 然谷</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>30</strong></td>
-<td style="text-align: left;">연곡(然谷)</td>
-<td style="text-align: center;"><strong>少阴</strong></td>
-<td style="text-align: left;">태계(太溪)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '少阴'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>△ 한쪽만</strong> — '少阴'은 太溪의 古稱(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》))·阴郄(HT6)의 별명; 通里·然谷의 별명으로는 미확인</td>
+<td style="text-align: left;">Rangu (然谷)</td>
+<td style="text-align: center;"><strong>少陰</strong></td>
+<td style="text-align: left;">Taixi (太溪)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '少陰', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>△ One side only</strong> — '少陰' is the old name (古稱) of 太溪 (《針灸腧穴通考》) and an alias of 陰郄 (HT6); not confirmed as an alias of 通里 or 然谷</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>31</strong></td>
-<td style="text-align: left;">천창(天窗)</td>
-<td style="text-align: center;"><strong>太阳</strong></td>
-<td style="text-align: left;">방광유(膀胱俞)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '太阳'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 별명색인 太阳→瞳子髎(GB1)·上关(GB3); 天窗·膀胱俞·本神 아님</td>
+<td style="text-align: left;">Tianchuang (天窗)</td>
+<td style="text-align: center;"><strong>太陽</strong></td>
+<td style="text-align: left;">Pangguangshu (膀胱俞)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '太陽', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — alias index 太陽→瞳子髎 (GB1) · 上關 (GB3); not 天窗, 膀胱俞 or 本神</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>32</strong></td>
-<td style="text-align: left;">천창(天窗)</td>
-<td style="text-align: center;"><strong>太阳</strong></td>
-<td style="text-align: left;">본신(本神)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '太阳'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 별명색인 太阳→瞳子髎(GB1)·上关(GB3); 天窗·膀胱俞·本神 아님</td>
+<td style="text-align: left;">Tianchuang (天窗)</td>
+<td style="text-align: center;"><strong>太陽</strong></td>
+<td style="text-align: left;">Benshen (本神)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '太陽', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — alias index 太陽→瞳子髎 (GB1) · 上關 (GB3); not 天窗, 膀胱俞 or 本神</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>33</strong></td>
-<td style="text-align: left;">방광유(膀胱俞)</td>
-<td style="text-align: center;"><strong>太阳</strong></td>
-<td style="text-align: left;">본신(本神)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '太阳'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 별명색인 太阳→瞳子髎(GB1)·上关(GB3); 天窗·膀胱俞·本神 아님</td>
+<td style="text-align: left;">Pangguangshu (膀胱俞)</td>
+<td style="text-align: center;"><strong>太陽</strong></td>
+<td style="text-align: left;">Benshen (本神)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '太陽', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — alias index 太陽→瞳子髎 (GB1) · 上關 (GB3); not 天窗, 膀胱俞 or 本神</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>34</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
-<td style="text-align: center;"><strong>风池</strong></td>
-<td style="text-align: left;">통천(通天)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风池'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Qucha (曲差)</td>
+<td style="text-align: center;"><strong>風池</strong></td>
+<td style="text-align: left;">Tongtian (通天)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風池', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>35</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
-<td style="text-align: center;"><strong>风池</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风池'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Qucha (曲差)</td>
+<td style="text-align: center;"><strong>風池</strong></td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風池', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>36</strong></td>
-<td style="text-align: left;">통천(通天)</td>
-<td style="text-align: center;"><strong>风池</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '风池'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Tongtian (通天)</td>
+<td style="text-align: center;"><strong>風池</strong></td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '風池', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>37</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
+<td style="text-align: left;">Qucha (曲差)</td>
 <td style="text-align: center;"><strong>上星</strong></td>
-<td style="text-align: left;">통천(通天)</td>
-<td style="text-align: left;">유형 3: 문헌 전이 및 거허하합혈 호환형</td>
-<td style="text-align: left;">동일 별명 '上星'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '上星'은 GV23 정명이며 그 별명 '神堂'(《针灸聚英》)이 BL44와 동명(24쌍 보고서 #10); 曲差·通天과 무관</td>
+<td style="text-align: left;">Tongtian (通天)</td>
+<td style="text-align: left;">Type 3: textual transmission &amp; lower He-Sea (巨虛下合穴) compatibility</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '上星', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '上星' is the standard name of GV23, and its alias '神堂' (《針灸聚英》) is a homonym of BL44 (24-pair report #10); unrelated to 曲差 and 通天</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>38</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
+<td style="text-align: left;">Qucha (曲差)</td>
 <td style="text-align: center;"><strong>上星</strong></td>
-<td style="text-align: left;">신당(神堂)</td>
-<td style="text-align: left;">유형 3: 문헌 전이 및 거허하합혈 호환형</td>
-<td style="text-align: left;">동일 별명 '上星'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '上星'은 GV23 정명이며 그 별명 '神堂'(《针灸聚英》)이 BL44와 동명(24쌍 보고서 #10); 曲差·通天과 무관</td>
+<td style="text-align: left;">Shentang (神堂)</td>
+<td style="text-align: left;">Type 3: textual transmission &amp; lower He-Sea (巨虛下合穴) compatibility</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '上星', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '上星' is the standard name of GV23, and its alias '神堂' (《針灸聚英》) is a homonym of BL44 (24-pair report #10); unrelated to 曲差 and 通天</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>39</strong></td>
-<td style="text-align: left;">통천(通天)</td>
+<td style="text-align: left;">Tongtian (通天)</td>
 <td style="text-align: center;"><strong>上星</strong></td>
-<td style="text-align: left;">신당(神堂)</td>
-<td style="text-align: left;">유형 3: 문헌 전이 및 거허하합혈 호환형</td>
-<td style="text-align: left;">동일 별명 '上星'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — '上星'은 GV23 정명이며 그 별명 '神堂'(《针灸聚英》)이 BL44와 동명(24쌍 보고서 #10); 曲差·通天과 무관</td>
+<td style="text-align: left;">Shentang (神堂)</td>
+<td style="text-align: left;">Type 3: textual transmission &amp; lower He-Sea (巨虛下合穴) compatibility</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '上星', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — '上星' is the standard name of GV23, and its alias '神堂' (《針灸聚英》) is a homonym of BL44 (24-pair report #10); unrelated to 曲差 and 通天</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>40</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
+<td style="text-align: left;">Qucha (曲差)</td>
 <td style="text-align: center;"><strong>通天</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '通天'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '通天', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>41</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
-<td style="text-align: center;"><strong>承灵</strong></td>
-<td style="text-align: left;">통천(通天)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '承灵'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Qucha (曲差)</td>
+<td style="text-align: center;"><strong>承靈</strong></td>
+<td style="text-align: left;">Tongtian (通天)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '承靈', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>42</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
-<td style="text-align: center;"><strong>承灵</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '承灵'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Qucha (曲差)</td>
+<td style="text-align: center;"><strong>承靈</strong></td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '承靈', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>43</strong></td>
-<td style="text-align: left;">통천(通天)</td>
-<td style="text-align: center;"><strong>承灵</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '承灵'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Tongtian (通天)</td>
+<td style="text-align: center;"><strong>承靈</strong></td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '承靈', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>44</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
-<td style="text-align: center;"><strong>脑空</strong></td>
-<td style="text-align: left;">통천(通天)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '脑空'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Qucha (曲差)</td>
+<td style="text-align: center;"><strong>腦空</strong></td>
+<td style="text-align: left;">Tongtian (通天)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '腦空', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>45</strong></td>
-<td style="text-align: left;">곡차(曲差)</td>
-<td style="text-align: center;"><strong>脑空</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '脑空'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Qucha (曲差)</td>
+<td style="text-align: center;"><strong>腦空</strong></td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '腦空', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>46</strong></td>
-<td style="text-align: left;">통천(通天)</td>
-<td style="text-align: center;"><strong>脑空</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '脑空'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Tongtian (通天)</td>
+<td style="text-align: center;"><strong>腦空</strong></td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '腦空', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>47</strong></td>
-<td style="text-align: left;">통천(通天)</td>
+<td style="text-align: left;">Tongtian (通天)</td>
 <td style="text-align: center;"><strong>曲差</strong></td>
-<td style="text-align: left;">상성(上星)</td>
-<td style="text-align: left;">유형 1: 기능적·효능적 일치형</td>
-<td style="text-align: left;">동일 별명 '曲差'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Shangxing (上星)</td>
+<td style="text-align: left;">Type 1: functional/efficacy alignment</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '曲差', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>48</strong></td>
-<td style="text-align: left;">Zhongdu (中都, LR06)</td>
+<td style="text-align: left;">Zhongdu (中都)</td>
 <td style="text-align: center;"><strong>委中</strong></td>
-<td style="text-align: left;">Yaoyu (腰兪, GV02)(腰俞)</td>
-<td style="text-align: left;">유형 3: 문헌 전이 및 거허하합혈 호환형</td>
-<td style="text-align: left;">동일 별명 '委中'을(를) 공유함으로써 고대~근현대 침구 임상에서 주치증이 상호 혼용되거나 상하 원근 배혈(配穴)로 통합되었다는 가설(정량 미검증).</td>
-<td style="text-align: left;"><strong>✗ 미확인</strong> — 해당 이름은 다른 경혈의 정명이며 두 경혈의 별명으로 원전에서 미확인(인접 경혈명 추출 오류 추정)</td>
+<td style="text-align: left;">Yaoshu (腰俞)</td>
+<td style="text-align: left;">Type 3: textual transmission &amp; lower He-Sea (巨虛下合穴) compatibility</td>
+<td style="text-align: left;">Hypothesis that, by sharing the same alias '委中', the indications of the two points were mixed with each other or integrated into upper-lower, near-distant point combinations (配穴) in acupuncture practice from antiquity to the modern era (not quantitatively verified).</td>
+<td style="text-align: left;"><strong>✗ Not confirmed</strong> — the name is the standard name of another point and is not confirmed in the classics as an alias of either point (presumed extraction error picking up an adjacent point name)</td>
 </tr>
 </tbody>
 </table></div>
 <hr>
-<h2 id="_2">🏛️ 시대별 주치증 혼용 및 배혈 융합의 역사의 변천 패턴</h2>
+<h2 id="historical-patterns-of-indication-mixing-and-fusion-through-point-combination-by-era">🏛️ Historical Patterns of Indication Mixing and Fusion Through Point Combination by Era</h2>
 <ol>
-<li><strong>선진~위진남북조 시대 (先秦·魏晋南北朝)</strong>:
-   - <em>Huangdi Neijing</em> (《黃帝內經》)·<em>Zhen Jiu Jia Yi Jing</em> (《針灸甲乙經》)의 약칭(예: <code>거허상렴</code> ➔ <code>상렴</code>)으로 수양명 '상렴'과 이름이 겹침(주치 혼용의 "발단"이라는 인과는 작성 시 판단).</li>
-<li><strong>수당~송금원 시대 (隋唐·宋金元)</strong>:
-   - 전후·상하 원근 배혈법(예: <code>상렴 + 상거허</code>, <code>음소해 + 양소해</code>) 정립은 3대 원전에서 해당 처방을 확인하지 못함(작성 시 판단, 정량 미검증).</li>
-<li><strong>명~청 시대 (明清时代)</strong>:
-   - [v2.7 정정] <strong>手上廉/足上廉</strong> 구분 표기는 송대 《圣济总录》 권191에서 시작되었으나 후대 문헌이 채택하지 않았고, 명대 《针灸聚英》은 ST37 주치를 LI9에 섞어 넣음(<em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)). 명청대 "구분 완성·혼동 해소"는 원전과 맞지 않음.</li>
-<li><strong>근현대 시대 (近代·现代)</strong>:
-   - WHO 국제 표준 명칭·정위(B1-05)로 정리됨. "정밀 배혈 지침 확립"은 작성 시 판단(지침 문헌 미인용).</li>
+<li><strong>Pre-Qin to Wei, Jin and Northern-Southern Dynasties (先秦·魏晉南北朝)</strong>:
+   - Through abbreviations in the <em>Huangdi Neijing</em> (《黃帝內經》) and <em>Zhenjiu Jiayi Jing</em> (《針灸甲乙經》) (e.g. <code>Juxu Shanglian (巨虛上廉)</code> ➔ <code>Shanglian (上廉)</code>), the name overlaps with Shanglian of the Hand Yangming (the causal claim that this was the "origin" of indication mixing is the author's judgement).</li>
+<li><strong>Sui-Tang to Song-Jin-Yuan (隋唐·宋金元)</strong>:
+   - For the establishment of front-back and upper-lower near-distant point combinations (e.g. <code>Shanglian + Shangjuxu</code>, <code>Yin Shaohai + Yang Shaohai</code>), the corresponding prescriptions were not found in the three classics (author's judgement, not quantitatively verified).</li>
+<li><strong>Ming-Qing period (明清時代)</strong>:
+   - [v2.7 correction] The <strong>手上廉/足上廉</strong> distinction began in Volume 191 of the Song-dynasty 《聖濟總錄》 but was not adopted by later texts, and the Ming-dynasty 《針灸聚英》 mixed the indications of ST37 into LI9 (《針灸腧穴通考》). The claim of "completion of the distinction and resolution of confusion" in the Ming-Qing period does not match the classics.</li>
+<li><strong>Modern and contemporary period (近代·現代)</strong>:
+   - Settled by the WHO international standard names and locations (B1-05). "Establishment of precise point-combination guidelines" is the author's judgement (no guideline literature cited).</li>
 </ol>
 <hr>
-<h2 id="_3">📁 생성 완료된 마스터 분석 파일 목록 (같은 폴더)</h2>
+<h2 id="list-of-generated-master-analysis-files-same-folder">📁 List of Generated Master Analysis Files (same folder)</h2>
 <ul>
-<li>📝 <strong>마스터 마크다운 보고서</strong>: <a href="3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.md">3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.md</a></li>
-<li>📊 <strong>마스터 엑셀 파일</strong>: <a href="3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.xlsx">3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.xlsx</a></li>
-<li>📄 <strong>마스터 CSV 파일</strong>: <a href="3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.csv">3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.csv</a></li>
+<li>📝 <strong>Master Markdown report</strong>: <a href="3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.md">3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.md</a></li>
+<li>📊 <strong>Master Excel file</strong>: <a href="3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.xlsx">3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.xlsx</a></li>
+<li>📄 <strong>Master CSV file</strong>: <a href="3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.csv">3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.csv</a></li>
 </ul>
 <hr>
-<h2 id="v27-2026-10-04">v2.7 정제 이력 (2026-10-04)</h2>
+<h2 id="v27-refinement-history-2026-10-04">v2.7 Refinement History (2026-10-04)</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">위치</th>
-<th style="text-align: left;">원래 표현</th>
-<th style="text-align: left;">바꾼 표현</th>
-<th style="text-align: left;">근거</th>
+<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Original wording</th>
+<th style="text-align: left;">Revised wording</th>
+<th style="text-align: left;">Basis</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">제목 아래</td>
-<td style="text-align: left;">(머리말 없음)</td>
-<td style="text-align: left;">v2.7 머리말 블록 + 검증 요약</td>
-<td style="text-align: left;">LIT_BRIEF 1항</td>
+<td style="text-align: left;">Below the title</td>
+<td style="text-align: left;">(no header)</td>
+<td style="text-align: left;">v2.7 header block + verification summary</td>
+<td style="text-align: left;">LIT_BRIEF item 1</td>
 </tr>
 <tr>
-<td style="text-align: left;">도입 문단</td>
-<td style="text-align: left;">"구글 시트 24개 경혈쌍을 포함한 전수 48개 … 핵심 가설을 100% 실증 증명"</td>
-<td style="text-align: left;">"48개 후보(24쌍 미포함) … 가설 검토, 원전 확인 1쌍, 미입증"</td>
-<td style="text-align: left;">csv 48행과 24쌍 csv 대조(겹치는 쌍 0)</td>
+<td style="text-align: left;">Introductory paragraph</td>
+<td style="text-align: left;">"all 48 pairs including the 24 Google-Sheet pairs … 100% empirical proof of the core hypothesis"</td>
+<td style="text-align: left;">"48 candidates (24 pairs not included) … hypothesis examined, 1 pair confirmed in the classics, not proven"</td>
+<td style="text-align: left;">Collation of the 48-row csv against the 24-pair csv (0 overlapping pairs)</td>
 </tr>
 <tr>
-<td style="text-align: left;">핵심 가설 검증</td>
-<td style="text-align: left;">"➔ [100% 입증 완료]"</td>
-<td style="text-align: left;">"[미입증 — 원전 별명 공유 확인 1/48쌍(2%)]"</td>
-<td style="text-align: left;"><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) 별명조·별명색인, <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)</td>
+<td style="text-align: left;">Core hypothesis test</td>
+<td style="text-align: left;">"➔ [100% proof complete]"</td>
+<td style="text-align: left;">"[not proven — alias sharing confirmed in the classics for 1/48 pairs (2%)]"</td>
+<td style="text-align: left;">《中國針灸穴位通鑑》 alias entries and alias index, 《針灸腧穴通考》</td>
 </tr>
 <tr>
-<td style="text-align: left;">핵심 가설 검증</td>
-<td style="text-align: left;">"3대 메커니즘에 의해 발생했음이 실증"</td>
-<td style="text-align: left;">"분류해 볼 수 있다는 작성 시 해석(표 분류와 불일치)"</td>
-<td style="text-align: left;">표의 气穴 쌍이 '거허하합혈 호환형'으로 분류됨</td>
+<td style="text-align: left;">Core hypothesis test</td>
+<td style="text-align: left;">"proven to have arisen through three mechanisms"</td>
+<td style="text-align: left;">"author's interpretation that they can be classified (inconsistent with the table's classification)"</td>
+<td style="text-align: left;">The 氣穴 pairs in the table are classified as 'lower He-Sea compatibility type'</td>
 </tr>
 <tr>
-<td style="text-align: left;">유형 1 메커니즘</td>
-<td style="text-align: left;">"효능이 동일하여 같은 별명을 공유"</td>
-<td style="text-align: left;">인과는 작성 시 판단, 대표 3쌍 별명 자체는 원전 확인</td>
-<td style="text-align: left;">Rank 4 사변적 해석 배제</td>
+<td style="text-align: left;">Type 1 mechanism</td>
+<td style="text-align: left;">"share the same alias because their efficacy is the same"</td>
+<td style="text-align: left;">Causation is the author's judgement; the aliases of the three representative pairs themselves are confirmed in the classics</td>
+<td style="text-align: left;">Rank 4 exclusion of speculative interpretation</td>
 </tr>
 <tr>
-<td style="text-align: left;">유형 2 메커니즘·사례 4곳</td>
-<td style="text-align: left;">"100% 동일한 국소 주치통", "대량 혼용", "주치 100% 동일" ×3</td>
-<td style="text-align: left;">"범주 중첩(정량 미검증)", 해부 실체 가설(ARI 미산정), 대표 4쌍 중 원전 확인 1쌍</td>
-<td style="text-align: left;">원전 대조, LIT_BRIEF 4항</td>
+<td style="text-align: left;">Type 2 mechanism and 4 examples</td>
+<td style="text-align: left;">"100% identical local indications", "mixed on a large scale", "indications 100% identical" ×3</td>
+<td style="text-align: left;">"overlapping categories (not quantitatively verified)", anatomical-substrate hypothesis (ARI not scored), 1 of the 4 representative pairs confirmed in the classics</td>
+<td style="text-align: left;">Collation with the classics, LIT_BRIEF item 4</td>
 </tr>
 <tr>
-<td style="text-align: left;">유형 3 메커니즘·사례 2곳</td>
-<td style="text-align: left;">"필사 시 자명 생략", "주치 100% 호환/배혈"</td>
-<td style="text-align: left;">"약칭(필사 오류 여부 미확정)", "이름 공유 확인, 호환 정량 미검증"</td>
-<td style="text-align: left;"><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) 上巨虚 별명조, 대장병증 보고서 재판독</td>
+<td style="text-align: left;">Type 3 mechanism and 2 examples</td>
+<td style="text-align: left;">"characters omitted in copying", "100% compatibility of indications / point combination"</td>
+<td style="text-align: left;">"abbreviation (whether a copying error is undetermined)", "name sharing confirmed, compatibility not quantitatively verified"</td>
+<td style="text-align: left;">《中國針灸穴位通鑑》 上巨虛 alias entry, re-reading in the large-intestine disorders report</td>
 </tr>
 <tr>
-<td style="text-align: left;">전수 목록표 48행 결론 열</td>
-<td style="text-align: left;">"… 통합되었음이 입증됨."</td>
-<td style="text-align: left;">"… 통합되었다는 가설(정량 미검증)."</td>
-<td style="text-align: left;">동일 문장 자동 반복, 근거 수치 없음</td>
+<td style="text-align: left;">Conclusion column of all 48 rows</td>
+<td style="text-align: left;">"… proven to have been integrated."</td>
+<td style="text-align: left;">"… hypothesis that they were integrated (not quantitatively verified)."</td>
+<td style="text-align: left;">Same sentence repeated automatically, no supporting figures</td>
 </tr>
 <tr>
-<td style="text-align: left;">전수 목록표</td>
-<td style="text-align: left;">(없음)</td>
-<td style="text-align: left;"><code>v2.7 원전 별명 확인</code> 열 추가(✓1·△3·✗44)</td>
-<td style="text-align: left;">3대 원전 별명 기재 대조</td>
+<td style="text-align: left;">Complete list table</td>
+<td style="text-align: left;">(none)</td>
+<td style="text-align: left;">Added the <code>v2.7 confirmation of alias in the classics</code> column (✓1 · △3 · ✗44)</td>
+<td style="text-align: left;">Collation with the alias records of the three classics</td>
 </tr>
 <tr>
-<td style="text-align: left;">시대별 변천 1~4</td>
-<td style="text-align: left;">"혼용 발단", "배혈법 정립", "명청대 구분 완성·혼동 해소", "배혈 지침 확립"</td>
-<td style="text-align: left;">인과 판단 / 처방 미확인 / 송대 시도→명대 재혼입 / WHO B1-05, 지침 미인용</td>
-<td style="text-align: left;"><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) 上廉(LI9) 명실고, Layer B B1-05</td>
+<td style="text-align: left;">Historical change 1–4</td>
+<td style="text-align: left;">"origin of mixing", "establishment of point-combination methods", "completion of the distinction and resolution of confusion in the Ming-Qing period", "establishment of point-combination guidelines"</td>
+<td style="text-align: left;">Causal judgement / prescriptions not found / Song-dynasty attempt → Ming-dynasty re-mixing / WHO B1-05, no guideline cited</td>
+<td style="text-align: left;">《針灸腧穴通考》 name-and-substance study of 上廉 (LI9), Layer B B1-05</td>
 </tr>
 <tr>
-<td style="text-align: left;">파일 안내</td>
-<td style="text-align: left;"><code>file:///D:/…</code> 절대 링크</td>
-<td style="text-align: left;">같은 폴더 상대 링크</td>
-<td style="text-align: left;">실제 저장 위치</td>
+<td style="text-align: left;">File guide</td>
+<td style="text-align: left;">Absolute link <code>file:///D:/…</code></td>
+<td style="text-align: left;">Relative link within the same folder</td>
+<td style="text-align: left;">Actual storage location</td>
 </tr>
 <tr>
-<td style="text-align: left;">PMID/DOI·Layer B</td>
-<td style="text-align: left;">본문에 없음</td>
+<td style="text-align: left;">PMID/DOI · Layer B</td>
+<td style="text-align: left;">None in the text</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">확인·교정 대상 0건</td>
+<td style="text-align: left;">0 items to check or correct</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 09:21 · 원본: 3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증_en.md · build_report_html.py (Framework v2.7)</p>
+<h2 id="refinement-history-2026-10-24">Refinement History (2026-10-24)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Original wording</th>
+<th style="text-align: left;">Revised wording</th>
+<th style="text-align: left;">Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Header links</td>
+<td style="text-align: left;">Absolute <code>file:///g:/내 드라이브/도서 번역/…</code> links (do not open on other PCs)</td>
+<td style="text-align: left;">Links relative to the project root (<code>도서 번역</code>)</td>
+<td style="text-align: left;">Skill path rule (no drive-letter absolute paths)</td>
+</tr>
+</tbody>
+</table></div>
+<p class="meta">생성: 2026-10-24 13:20 · 원본: 3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증_en.md · build_report_html.py (Framework v2.7)</p>
 </article>
 </main>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>

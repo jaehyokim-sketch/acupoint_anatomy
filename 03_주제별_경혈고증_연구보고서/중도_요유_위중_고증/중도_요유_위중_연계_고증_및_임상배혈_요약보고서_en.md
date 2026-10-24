@@ -1,91 +1,92 @@
-# 📜 Zhongdu (中都, LR06)와 Yaoyu (腰兪, GV02)(腰俞)가 'Weizhong (委中, BL40)' 이명으로 연관된 문헌 고증 및 임상 배혈 요약 보고서
+# 📜 Textual Verification and Clinical Point Combination of Zhongdu (中都) and Yaoshu (腰俞) as Linked Through the Alternative Name 'Weizhong (委中)': A Summary Report
 
-> **Framework**: v2.7 (2026-10-04 정제) · **적용 범위**: Rank 1~4 문헌 고증(필요 시 Rank 5) · **ARI**: 미산정(고증 보고서) · **근거 데이터**: 같은 폴더에 csv/xlsx 없음 — 3대 원전 `chunks_refined`(`针灸腧穴通考(上)_721-800.md` L1-12, `(下)_161-240.md` L2487, `(下)_401-480.md` L595-603·L1009-1010; `中国针灸穴位通鉴(上卷)_1041-1120.md` L3144, `(上卷)_161-240.md` L2188, `(下卷)_161-240.md` L784)로 대조
+> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: no csv/xlsx in this folder — collated against the three classics in `chunks_refined` (`针灸腧穴通考(上)_721-800.md` L1-12, `(下)_161-240.md` L2487, `(下)_401-480.md` L595-603 · L1009-1010; `中国针灸穴位通鉴(上卷)_1041-1120.md` L3144, `(上卷)_161-240.md` L2188, `(下卷)_161-240.md` L784)
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 >
-> **v2.7 핵심 정정**: 원전에서 확인되는 '이명' 연결은 **Zhongdu (中都, LR06)–Weizhong (委中, BL40) 한 쌍뿐**이다. Zhongdu (中都, LR06)의 별명 **中郄**(원래 Zhongdu (中都, LR06)의 정명)이 1957년 남경 《针灸学》에서 Weizhong (委中, BL40)의 별명으로 잘못 실렸고(일본 교재 전재), 한국 교재가 이를 이었다(《腧穴通考》 委中 조 按; 《穴位通鉴》 委中 [别名] 按 "'中郄'原为中都穴正名，作为本穴别名不妥"). Yaoyu (腰兪, GV02)와 Weizhong (委中, BL40) 사이에는 이명 관계가 없고, 같은 조문에 함께 열거되거나 같은 처방에 함께 쓰인 관계만 확인된다.
+> **v2.7 key correction**: The only 'alternative-name' link confirmed in the classics is **the single pair Zhongdu–Weizhong**. Zhongdu's alias **中郄** (originally the standard name of Zhongdu) was wrongly entered as an alias of Weizhong in the 1957 Nanjing 《針灸學》 (copied from a Japanese textbook), and Korean textbooks followed it (《腧穴通考》, 委中 entry, editor's note (按); 《穴位通鑑》, 委中 [別名] note: "'中郄'原為中都穴正名，作為本穴別名不妥"). There is no alternative-name relationship between Yaoshu and Weizhong; only the relationships of being listed together in the same passage or used together in the same prescription are confirmed.
 
-《중국침구혈Epigastric / Stomach pain (胃痛)감(中国针灸穴位通鉴)》, 《중국침구증치통감(中国针灸证治通鉴)》, 《침구수혈통고(针灸腧穴通考)》 3대 침구 전문 서적의 腧穴考證(수혈고증) 및 고대 문헌 조문(*Suwen* (《素問》)·*Lingshu* (《靈樞》)·*Zhenjiu Dacheng* (《針灸大成》))을 바탕으로, **Liver Meridian of Foot-Jueyin (足厥陰肝經)의 Zhongdu (中都, LR06)(中都, LR06)**와 **Governor Vessel (督脈, GV)의 Yaoyu (腰兪, GV02)(腰俞, GV02)**가 **방광경의 Weizhong (委中, BL40)(委中, BL40)**이라는 경혈명 및 이명으로 상호 연관되는 문헌학적 이유와 임상 배혈 메커니즘을 종합 정리한 보고서입니다.
+Based on the acupoint textual verification (腧穴考證) of the three specialist acupuncture classics *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) and *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》), and on passages in ancient texts (《素問》 · 《靈樞》 · 《針灸大成》), this report summarises the philological reasons and the clinical point-combination mechanisms by which **Zhongdu (中都, LR06) of the Liver Meridian of Foot Jueyin (足厥陰肝經)** and **Yaoshu (腰俞, GV02) of the Governor Vessel (督脈)** are linked to each other through the point name and alternative name of **Weizhong (委中, BL40) of the Bladder Meridian (膀胱經)**.
 
 ---
 
-## 🎯 핵심 연계 요약
+## 🎯 Summary of the Core Links
 
-> **결론**: 
-> **Zhongdu (中都, LR06)**, **Yaoyu (腰兪, GV02)(腰俞)**, **Weizhong (委中, BL40)** 세 수혈이 문헌과 임상에서 깊게 연관된 이유는 **① *Huangdi Neijing* (《黃帝內經》) 고대 조문에서의 사지(四肢) 열증 및 요경통(腰胫痛) 치료 짝 구조**, **② 간주근(肝主筋 - Zhongdu (中都, LR06))과 Bladder Meridian of Foot-Taiyang (足太陽膀胱經)(Weizhong (委中, BL40))의 근육/인대 마비 치료 결합**, **③ 고대 명의(王冰·徐鳳)들의 'Yaoyu (腰兪, GV02)(허리) + Weizhong (委中, BL40)(오금) + Zhongdu (中都, LR06)(종아리)' 하지 삼각 처방(三角 處方)**에 근거합니다.
+> **Conclusion**: 
+> The reasons the three points **Zhongdu (中都)**, **Yaoshu (腰俞)** and **Weizhong (委中)** are closely linked in the literature and in practice rest on **① the paired structure for treating heat in the four limbs (四肢) and lumbar-shin pain (腰脛痛) in ancient passages of the *Huangdi Neijing* (《黃帝內經》)**, **② the combination of "the liver governs the sinews" (肝主筋 — Zhongdu) with the Bladder Meridian of Foot Taiyang (Weizhong) in treating muscle/ligament paralysis**, and **③ the 'Yaoshu (lower back) + Weizhong (popliteal fossa) + Zhongdu (calf)' lower-limb triangular prescription (三角處方) of famous ancient physicians (王冰 · 徐鳳)**.
 >
-> *(v2.7 정정)* 원전으로 확인되는 근거는 다음 셋이다. ① 《素问·水热穴论》에서 Weizhong (委中, BL40)과 髓空(=Yaoyu (腰兪, GV02), 王冰 注)이 "사지의 열을 사하는 8혈"에 **함께 열거**됨(짝 처방이 아님). ② **Zhongdu (中都, LR06)–Weizhong (委中, BL40) 이명 연결은 中郄 별명의 오귀속**(1957 남경 《针灸学》)에서 생긴 현대 교재 문제이며, 肝主筋 배혈 논리에서 나온 것이 아님. ③ 徐凤 《针灸大全》 卷四에 Yaoyu (腰兪, GV02)+Weizhong (委中, BL40)이 함께 든 처방 3건이 있으나(王冰은 주석자일 뿐 처방자가 아님), **세 혈을 모두 포함한 '삼각 처방'은 3대 원전에서 찾지 못했다.** ②의 肝主筋 결합과 ③의 삼각 처방은 작성 시 판단으로 둔다.
+> *(v2.7 correction)* The evidence confirmed in the classics is the following three items. ① In 《素問·水熱穴論》, Weizhong and Suikong (髓空 = Yaoshu, 王冰 commentary) are **listed together** among "the 8 points that drain heat from the four limbs" (not a paired prescription). ② **The Zhongdu–Weizhong alternative-name link arises from the misattribution of the alias 中郄** (1957 Nanjing 《針灸學》), a problem of modern textbooks, and does not derive from point-combination logic based on 肝主筋. ③ Xu Feng's (徐鳳) 《針灸大全》 Volume 4 contains 3 prescriptions in which Yaoshu + Weizhong appear together (王冰 was only a commentator, not a prescriber), but **no 'triangular prescription' including all three points was found in the three classics.** The 肝主筋 combination of ② and the triangular prescription of ③ are left as the author's judgement.
 
 ---
 
-## 🔬 1. 《황제내경(黄帝内经)》 문헌 고증: Yaoyu (腰兪, GV02)(腰俞)와 Weizhong (委中, BL40)의 원형 짝
+## 🔬 1. Textual Verification in the *Huangdi Neijing* (《黃帝內經》): The Original Pair of Yaoshu (腰俞) and Weizhong (委中)
 
-### ① 《소문·수열혈론(素问·水热穴论)》 원문 및 왕빙(王冰) 주석
+### ① Original text of 《素問·水熱穴論》 and Wang Bing's (王冰) commentary
 
-*(v2.7 대조: 원문과 王冰 注 모두 《腧穴通考》(下) L2487, 《证治通鉴》, 《穴位通鉴》 3종에서 확인)*
-> **"云门、髃骨、委中、髓空，此八者以写四支之热也."**
-> *(운문, 견우, Weizhong (委中, BL40), 수공... 이 여덟 혈은 사지(四肢 - 팔다리)의 열을 사(瀉)하는 핵심혈이다.)*
+*(v2.7 collation: both the original text and 王冰's commentary are confirmed in three works — 《腧穴通考》 (Vol. 2) L2487, 《證治通鑑》 and 《穴位通鑑》)*
+> **"雲門、髃骨、委中、髓空，此八者以寫四支之熱也."**
+> *(Yunmen (雲門), Jianyu (髃骨), Weizhong, Suikong … these eight points are the key points for draining (瀉) heat from the four limbs (四肢 — arms and legs).)*
 >
-> **[당대(唐代) 왕빙(王冰) 注]**:
-> **"髓空者，正名腰俞，在脊中第二十一椎节下间，督脉气所发."**
-> *(여기서 **'수공(髓空)'의 정식 명칭은 'Yaoyu (腰兪, GV02)(腰俞)'**이며, 제21추[선골] 아래 Governor Vessel (督脈, GV)에 위치한다.)*
+> **[Commentary of Wang Bing (王冰), Tang dynasty (唐代)]**:
+> **"髓空者，正名腰俞，在脊中第二十一椎節下間，督脈氣所發."**
+> *(Here **the formal name of 'Suikong (髓空)' is 'Yaoshu (腰俞)'**, located on the Governor Vessel below the 21st vertebra [sacrum].)*
 
-### ② 문헌학적 의미
-- 고대 《내경》 성서 시기, 사지(팔다리)의 기혈 순환 장애 및 열증, 하지 마비/요통을 치료하는 대표적인 상하 전후 대칭혈로 **Weizhong (委中, BL40)(委中 - 오금)**과 **Yaoyu (腰兪, GV02)(腰俞 - 허리 정중선, 고대명: 髓空)**가 짝을 이루었습니다.
-  - *(v2.7 Rank 4 주)* 원문은 云门·髃骨·委中·髓空 네 혈(좌우 8혈)을 "사지의 열을 사하는" 열혈 59혈의 한 군으로 열거한 것이다. 여기서 '하지 마비/요통'과 '상하 전후 대칭 짝'은 원문에 없는 해석이며, 4혈 군 가운데 2혈만 떼어 짝으로 읽은 것은 경혈 중심 병증 통합 편향에 해당한다. 이 군을 그대로 쓴 후대 처방은 《针经摘英集》 "治伤寒四肢热不已，泻…云门…肩髃…委中…腰俞"이다(《腧穴通考》 腰俞 조).
-- 후대 수혈 고증 과정에서 사지열과 하지통 치료의 대표혈인 **Weizhong (委中, BL40)**의 명칭 및 주치 영역이 Governor Vessel (督脈, GV)의 **Yaoyu (腰兪, GV02)(腰俞)** 조문과 긴밀하게 연계되어 기술되었습니다.
-  - *(v2.7 대조 주)* Yaoyu (腰兪, GV02)의 별명은 髓空·背解·腰户·髓孔·腰柱·髓俞·髓府이고(《穴位通鉴》), Weizhong (委中, BL40)의 명칭이 Yaoyu (腰兪, GV02) 조문에 들어간 예는 확인되지 않는다. "긴밀하게 연계"는 위 열혈 군 동시 열거와 《针灸大全》 처방 동시 사용 수준으로 한정한다.
-
----
-
-## 🔬 2. 간경 Zhongdu (中都, LR06)와 Weizhong (委中, BL40)의 경락·근육학적 연계
-
-### ① 간주근(肝主筋)과 간경 Xi-Cleft Point (郄穴)(中都, LR06)의 역할
-- **Zhongdu (中都, LR06)**는 Liver Meridian of Foot-Jueyin (足厥陰肝經)의 **Xi-Cleft Point (郄穴)(郄穴)**로서 족내과 상 7寸 경골 부위에 위치하며, 간기(肝气) 울결, 하지 근육 쥐남(转筋), 하지 마비(下肢 痿痹), 산기(疝气), 하복통을 급성 진통하는 핵심혈입니다.
-  - *(v2.7 대조 주)* 《腧穴通考》에 따르면 이 혈의 본래 정명은 **中郄**이며, 《甲乙经》 "中郄，一名中都"의 앞 네 글자가 빠져 별명 '中都'가 정명이 되었다. "급성 진통 핵심혈"은 원전 주치 비교로 확인한 것이 아니므로 작성 시 판단으로 둔다.
-
-### ② Weizhong (委中, BL40)(委中, BL40)과의 임상적 결합 메커니즘
-- 한의학 생리상 **"간은 근육을 관할한다(肝主筋)"**고 하며, 방광경의 **Weizhong (委中, BL40)**은 오금 오목한 부위에 위치하여 **"근육이 모이는 곳(筋之会)"**이자 하지 근육 질환의 최고 치료혈입니다.
-  - *(v2.7 대조 주)* Eight Convergence Points (八會穴)의 '筋会'는 **양릉천(GB34)** 이다(《难经·四十五难》 "筋会阳陵泉", 《穴位通鉴》 인용). Weizhong (委中, BL40)을 '筋之会'라 한 근거는 3대 원전에서 찾지 못했다. "최고 치료혈"도 비교 근거가 없는 표현이다.
-- 이에 따라 하지 근육 마비, 관절 강직, 요경통(腰胫痛) 변증 치료 시 간경의 Xi-Cleft Point (郄穴)인 **Zhongdu (中都, LR06)**와 방광경의 합혈인 **Weizhong (委中, BL40)**을 짝으로 찌르는 배혈법이 정립되었으며, 고대 일부 필사본에서 이들 수혈 간의 이명 명칭 표기가 상호 연계되어 기재되었습니다.
-  - *(v2.7 정정)* Zhongdu (中都, LR06)+Weizhong (委中, BL40) 배혈 처방은 3대 원전에서 찾지 못했다. 이명 연결의 실제 경로는 "고대 필사본"이 아니라 **현대 교재**다: 1957년 남경 《针灸学》이 일본 침구 교재를 옮기면서 Zhongdu (中都, LR06)의 별명 '中郄'를 Weizhong (委中, BL40)의 별명 목록(委中央·血郄·中郄·郄中·腿凹·曲脉内)에 넣었고, 한국 침구학 교재가 이를 다시 이었다(《腧穴通考》(上) 委中 조 按, 인쇄 701쪽). 따라서 이 절의 배혈 기전 설명은 원전 근거가 없는 해석(작성 시 판단)이다.
+### ② Philological significance
+- In the period when the ancient *Neijing* was compiled, **Weizhong (委中 — popliteal fossa)** and **Yaoshu (腰俞 — lumbar midline, ancient name 髓空)** formed a pair as representative upper-lower, front-back symmetrical points for treating disorders of Qi and Blood circulation and heat patterns of the four limbs, lower-limb paralysis and low-back pain.
+  - *(v2.7 Rank 4 note)* The original text lists the four points 雲門 · 髃骨 · 委中 · 髓空 (8 points bilaterally) as one group of the 59 heat points (熱穴) that "drain heat from the four limbs". 'Lower-limb paralysis / low-back pain' and 'upper-lower, front-back symmetrical pair' here are interpretations not in the original, and reading two points detached from the four-point group as a pair is an acupoint-centred disease-pattern integration bias. A later prescription that uses this group as it stands is 《針經摘英集》 "治傷寒四肢熱不已，瀉…雲門…肩髃…委中…腰俞" (《腧穴通考》, 腰俞 entry).
+- In later textual verification of the points, the name and indication range of **Weizhong (委中)**, the representative point for heat in the limbs and lower-limb pain, came to be described in close connection with the passage on **Yaoshu (腰俞)** of the Governor Vessel.
+  - *(v2.7 collation note)* The aliases of Yaoshu are 髓空 · 背解 · 腰戶 · 髓孔 · 腰柱 · 髓俞 · 髓府 (《穴位通鑑》), and no instance of the name of Weizhong entering the Yaoshu passage has been confirmed. "Close connection" is limited to the simultaneous listing in the heat-point group above and the joint use in prescriptions of 《針灸大全》.
 
 ---
 
-## 📊 3. 고대 명의(名醫) 임상서에서의 'Yaoyu (腰兪, GV02) - Weizhong (委中, BL40) - Zhongdu (中都, LR06)' 삼각 처방
+## 🔬 2. Meridian and Myological Links Between Zhongdu (中都) of the Liver Meridian and Weizhong (委中)
 
-명대 《침구대성(针灸大成)》 및 《침구大全》 등 주요 임상 침구서에서는 요통과 하지 마비 치료 시 이 세 수혈을 다음과 같이 표준 공식 처방으로 운용했습니다.
+### ① "The liver governs the sinews" (肝主筋) and the role of the Xi-Cleft point of the Liver Meridian (中都, LR06)
+- **Zhongdu (中都)** is the **Xi-Cleft point (郄穴)** of the Liver Meridian of Foot Jueyin, located on the tibia 7 cun above the medial malleolus, and is a key point for acute pain relief in liver Qi (肝氣) stagnation, cramps of the lower-limb muscles (轉筋), lower-limb atrophy-bi (下肢痿痹), hernia (疝氣) and lower abdominal pain.
+  - *(v2.7 collation note)* According to 《腧穴通考》, the original standard name of this point is **中郄**; the first four characters of 《甲乙經》 "中郄，一名中都" were lost, and the alias '中都' became the standard name. "Key point for acute pain relief" was not confirmed by comparing indications in the classics and is left as the author's judgement.
 
-> *(v2.7 대조 주)* 아래 표 가운데 1·2행은 《徐氏针灸大全》 卷四(*Zhenjiu Dacheng* (《針灸大成》) 전재)에서 확인된다(《腧穴通考》 腰俞 조, 《穴位通鉴》). 3행(Zhongdu (中都, LR06)+Weizhong (委中, BL40)+Zusanli (足三里, ST36))은 3대 원전에서 찾지 못했다. 세 혈이 한 처방에 함께 든 예는 없으므로 "이 세 수혈을 표준 공식 처방으로 운용"은 "Yaoyu (腰兪, GV02)·Weizhong (委中, BL40)이 함께 든 처방이 있다"로 낮추어 읽는다. 같은 출처에 "虚损湿滞，腰痛行动无力：脊中·腰俞·肾俞·委中" 처방도 있다.
+### ② Mechanism of clinical combination with Weizhong (委中, BL40)
+- In Korean medicine physiology it is said that **"the liver governs the sinews (肝主筋)"**, and **Weizhong (委中)** of the Bladder Meridian, located in the hollow of the popliteal fossa, is **"the meeting place of the sinews (筋之會)"** and the foremost point for treating lower-limb muscle disorders.
+  - *(v2.7 collation note)* The Influential Point (八會穴) '筋會' is **Yanglingquan (陽陵泉, GB34)** (《難經·四十五難》 "筋會陽陵泉", cited in 《穴位通鑑》). No basis was found in the three classics for calling Weizhong '筋之會'. "Foremost point" is also an expression without comparative evidence.
+- Accordingly, a point-combination method of needling **Zhongdu (中都)**, the Xi-Cleft point of the Liver Meridian, together with **Weizhong (委中)**, the He-Sea point of the Bladder Meridian, was established for pattern-based treatment of lower-limb muscle paralysis, joint stiffness and lumbar-shin pain (腰脛痛), and some ancient manuscripts recorded the alternative names of these points as linked to each other.
+  - *(v2.7 correction)* No Zhongdu + Weizhong prescription was found in the three classics. The actual route of the alternative-name link is not "ancient manuscripts" but **modern textbooks**: when the 1957 Nanjing 《針灸學》 adapted a Japanese acupuncture textbook, it put Zhongdu's alias '中郄' into the list of Weizhong's aliases (委中央 · 血郄 · 中郄 · 郄中 · 腿凹 · 曲脈內), and Korean acupuncture textbooks followed it in turn (《腧穴通考》 (Vol. 1), 委中 entry, editor's note, printed p. 701). The explanation of the point-combination mechanism in this section is therefore an interpretation without basis in the classics (author's judgement).
 
-| 임상 병증 분류 | 표준 침구 처방 (配穴) | 3개 수혈의 작용 메커니즘 |
+---
+
+## 📊 3. The 'Yaoshu – Weizhong – Zhongdu' Triangular Prescription in the Clinical Books of Famous Ancient Physicians
+
+Major clinical acupuncture books such as the Ming-dynasty *Zhenjiu Dacheng* (《針灸大成》) and 《針灸大全》 operated these three points as the following standard formula prescriptions for treating low-back pain and lower-limb paralysis.
+
+> *(v2.7 collation note)* Of the table below, rows 1 and 2 are confirmed in Volume 4 of 《徐氏針灸大全》 (reproduced in 《針灸大成》) (《腧穴通考》, 腰俞 entry; 《穴位通鑑》). Row 3 (Zhongdu + Weizhong + Zusanli) was not found in the three classics. Because there is no instance of all three points in one prescription, "operated these three points as standard formula prescriptions" is to be read down to "there are prescriptions in which Yaoshu and Weizhong appear together". The same source also has the prescription "虛損濕滯，腰痛行動無力：脊中 · 腰俞 · 腎俞 · 委中".
+
+| Clinical disease category | Standard acupuncture prescription (配穴) | Mechanism of action of the three points |
 | :--- | :--- | :--- |
-| **좌섬요통 (闪挫腰痛)**<br>(갑작스러운 요추 염좌) | **Yaoyu (腰兪, GV02)(腰俞) + 척중(脊中) + 신유(肾俞) + Weizhong (委中, BL40)** | 요척 정중선(Yaoyu (腰兪, GV02))의 기혈을 소통시키고 오금(Weizhong (委中, BL40))에서 사혈 진통함. |
-| **요배강통 (腰背强痛)**<br>(요배가 뻣뻣하여 굽히지 못함) | **Yaoyu (腰兪, GV02)(腰俞) + 고황(膏肓) + Weizhong (委中, BL40)(委中 - 자색 피를 뺌)** | Governor Vessel (督脈, GV)(Yaoyu (腰兪, GV02))과 방광경(Weizhong (委中, BL40) 사혈)을 연계하여 요배 인대를 즉각 이완시킴. |
-| **하지 위비·근육 쥐남**<br>(下肢 痿痹·转筋) | **Zhongdu (中都, LR06) + Weizhong (委中, BL40) + Zusanli (足三里, ST36)** *(3대 원전 미검출)* | 간경 Xi-Cleft Point (郄穴)(Zhongdu (中都, LR06))로 근육 경련을 풀고 방광경 합혈(Weizhong (委中, BL40))로 하지를 소통시킴. *(작성 시 판단)* |
+| **Acute lumbar sprain (閃挫腰痛)**<br>(sudden lumbar sprain) | **Yaoshu (腰俞) + Jizhong (脊中) + Shenshu (腎俞) + Weizhong (委中)** | Frees the Qi and Blood of the lumbar-spinal midline (Yaoshu) and relieves pain by bloodletting at the popliteal fossa (Weizhong). |
+| **Stiffness and pain of the lower back (腰背強痛)**<br>(lower back so stiff it cannot bend) | **Yaoshu (腰俞) + Gaohuang (膏肓) + Weizhong (委中 — letting purple blood)** | Links the Governor Vessel (Yaoshu) and the Bladder Meridian (bloodletting at Weizhong) to relax the lumbar-back ligaments immediately. |
+| **Lower-limb atrophy-bi and muscle cramps**<br>(下肢痿痹 · 轉筋) | **Zhongdu (中都) + Weizhong (委中) + Zusanli (足三里)** *(not found in the three classics)* | Relieves muscle spasm through the Xi-Cleft point of the Liver Meridian (Zhongdu) and frees the lower limb through the He-Sea point of the Bladder Meridian (Weizhong). *(author's judgement)* |
 
 ---
 
-## 💡 요약 정리
+## 💡 Summary
 
-1. **Yaoyu (腰兪, GV02)(腰俞)와 Weizhong (委中, BL40)**: 《황제내경·수열혈론》에서 Weizhong (委中, BL40)과 髓空(=Yaoyu (腰兪, GV02))은 云门·髃骨과 함께 **사지열을 사하는 4혈(8혈) 군에 함께 열거**되었고, 《针灸大全》 卷四의 요통 처방 3건에서 함께 쓰였다. 둘 사이의 이명 관계는 확인되지 않는다. (원래 표현 "상하 전후 대칭 대표 짝(配穴)"은 원문에 없는 해석)
-2. **Zhongdu (中都, LR06)와 Weizhong (委中, BL40)**: 원전으로 확인되는 연결은 **Zhongdu (中都, LR06)의 별명 '中郄'가 1957년 남경 《针灸学》에서 Weizhong (委中, BL40) 별명으로 잘못 실린 이명 오귀속**이다. "肝主筋에 따른 상호 융합 운용"은 원전 처방으로 확인되지 않는다.
-3. **학술적 의의**: 세 혈을 한 처방에 묶은 원전 예는 없으므로, '요척 ➔ 오금 ➔ 종아리' **삼각 라인은 작성자의 해석(작성 시 판단, 정량 미검증)** 이다. 이 보고서의 문헌학적 가치는 오히려 ① Weizhong (委中, BL40) 별명 목록의 '中郄' 오류를 바로잡을 근거와 ② Yaoyu (腰兪, GV02)·Weizhong (委中, BL40) 동시 열거가 배혈 짝이 아니라 열혈 군의 일부라는 점을 보여 주는 데 있다.
+1. **Yaoshu (腰俞) and Weizhong (委中)**: In 《黃帝內經·水熱穴論》, Weizhong and 髓空 (= Yaoshu) are **listed together, with 雲門 and 髃骨, in the group of 4 points (8 points) that drain heat from the four limbs**, and they were used together in 3 low-back-pain prescriptions in Volume 4 of 《針灸大全》. No alternative-name relationship between them is confirmed. (The original expression "representative upper-lower, front-back symmetrical pair (配穴)" is an interpretation not found in the original text.)
+2. **Zhongdu (中都) and Weizhong (委中)**: The link confirmed in the classics is **the alternative-name misattribution by which Zhongdu's alias '中郄' was wrongly entered as an alias of Weizhong in the 1957 Nanjing 《針灸學》**. "Mutually fused operation based on 肝主筋" is not confirmed by any prescription in the classics.
+3. **Academic significance**: Because there is no instance in the classics of the three points bound into one prescription, the **'lumbar spine ➔ popliteal fossa ➔ calf' triangular line is the author's interpretation (author's judgement, not quantitatively verified)**. The philological value of this report lies rather in showing ① the evidence for correcting the '中郄' error in Weizhong's list of aliases and ② that the simultaneous listing of Yaoshu and Weizhong is part of a heat-point group, not a point-combination pair.
 
-## v2.7 정제 이력 (2026-10-04)
+## v2.7 Refinement History (2026-10-04)
 
-| # | 위치 | 원래 표현 | 바꾼 표현 | 근거 |
+| # | Location | Original wording | Revised wording | Basis |
 | :-: | :--- | :--- | :--- | :--- |
-| 1 | 머리말 | (버전 표기 없음) | 프레임워크 v2.7 정제 블록, ARI 미산정, 핵심 정정 요지 | 지침 1 |
-| 2 | 핵심 연계 요약 | ①짝 구조 ②肝主筋 결합 ③王冰·徐鳳 삼각 처방 | 원전 확인 3항(동시 열거, 中郄 오귀속, 《针灸大全》 처방 3건)으로 정정, 삼각 처방 미검출 | 《腧穴通考》·《穴位通鉴》 |
-| 3 | 1절 ① | (출처 표기 없음) | 3대 원전 3종에서 원문·王冰 注 확인 표기 | `chunks_refined` 대조 |
-| 4 | 1절 ② | "상하 전후 대칭혈로 짝을 이룸" | 4혈 군 동시 열거, 짝 해석은 Rank 4 병증 통합 편향, 《针经摘英集》 실제 용례 병기 | 《腧穴通考》 腰俞 조 |
-| 5 | 1절 ② | Weizhong (委中, BL40) 명칭이 Yaoyu (腰兪, GV02) 조문과 "긴밀하게 연계" | Yaoyu (腰兪, GV02) 별명 목록에 Weizhong (委中, BL40) 관련 없음, 연계 범위 한정 | 《穴位通鉴》 腰俞 [别名] |
-| 6 | 2절 ① | Zhongdu (中都, LR06) "급성 진통 핵심혈" | 정명 中郄 주 추가, 작성 시 판단 표기 | 《腧穴通考》 총론 |
-| 7 | 2절 ② | Weizhong (委中, BL40) "筋之会", "최고 치료혈" | 筋会는 양릉천, 근거 미검출 | 《难经·四十五难》(《穴位通鉴》 인용) |
-| 8 | 2절 ② | Zhongdu (中都, LR06)+Weizhong (委中, BL40) 배혈 정립, "고대 필사본" 이명 연계 | 배혈 미검출, 이명 경로는 1957 남경 《针灸学》 → 한국 교재 | 《腧穴通考》(上) 委中 조 按 |
-| 9 | 3절 도입 | "세 수혈을 표준 공식 처방으로 운용" | 1·2행만 《针灸大全》 卷四 확인, 3행 미검출, 세 혈 동시 처방 없음 | 《腧穴通考》 腰俞 临床应用 |
-| 10 | 3절 표 3행 | Zhongdu (中都, LR06)+Weizhong (委中, BL40)+Zusanli (足三里, ST36) 처방 | "3대 원전 미검출", 기전 "작성 시 판단" | `chunks_refined` 검색 0건 |
-| 11 | 요약 1~3 | "대표 짝(配穴)", "상호 융합 운용", "삼각 라인 … 핵심 수혈군" | 동시 열거·처방 동시 사용, 이명 오귀속, 삼각 라인은 작성 시 판단 | 위 근거 종합 |
+| 1 | Header | (no version stated) | Framework v2.7 refinement block, ARI not scored, gist of the key correction | Guideline 1 |
+| 2 | Summary of the core links | ① paired structure ② 肝主筋 combination ③ triangular prescription of 王冰 · 徐鳳 | Corrected to the 3 items confirmed in the classics (simultaneous listing, misattribution of 中郄, 3 prescriptions in 《針灸大全》); triangular prescription not found | 《腧穴通考》 · 《穴位通鑑》 |
+| 3 | Section 1 ① | (no source stated) | Noted that the original text and 王冰's commentary are confirmed in all 3 classics | Collation with `chunks_refined` |
+| 4 | Section 1 ② | "formed a pair as upper-lower, front-back symmetrical points" | Simultaneous listing in a four-point group; the pair interpretation is a Rank 4 disease-pattern integration bias; actual usage in 《針經摘英集》 added | 《腧穴通考》, 腰俞 entry |
+| 5 | Section 1 ② | The name of Weizhong "closely connected" with the Yaoshu passage | Nothing related to Weizhong in Yaoshu's alias list; scope of the link limited | 《穴位通鑑》 腰俞 [別名] |
+| 6 | Section 2 ① | Zhongdu "key point for acute pain relief" | Note on the standard name 中郄 added; marked as author's judgement | 《腧穴通考》 general discussion |
+| 7 | Section 2 ② | Weizhong "筋之會", "foremost point" | 筋會 is Yanglingquan; no basis found | 《難經·四十五難》 (cited in 《穴位通鑑》) |
+| 8 | Section 2 ② | Zhongdu + Weizhong combination established; alternative-name link in "ancient manuscripts" | Combination not found; the alternative-name route is the 1957 Nanjing 《針灸學》 → Korean textbooks | 《腧穴通考》 (Vol. 1), 委中 entry, editor's note |
+| 9 | Section 3 introduction | "operated the three points as standard formula prescriptions" | Only rows 1 and 2 confirmed in 《針灸大全》 Volume 4; row 3 not found; no prescription with all three points | 《腧穴通考》 腰俞, clinical application (臨床應用) |
+| 10 | Section 3 table, row 3 | Zhongdu + Weizhong + Zusanli prescription | "Not found in the three classics", mechanism "author's judgement" | 0 hits in a `chunks_refined` search |
+| 11 | Summary 1–3 | "representative pair (配穴)", "mutually fused operation", "triangular line … core point group" | Simultaneous listing / joint use in prescriptions, alternative-name misattribution, triangular line is the author's judgement | Synthesis of the above evidence |
 
-- PMID/DOI: 본문에 없음(확인 대상 0건). 생의학 기전 인용 없음(Layer B 대상 0건).
-- 남은 한계: 제목의 "Yaoyu (腰兪, GV02)가 'Weizhong (委中, BL40)' 이명으로 연관"은 원전으로 지지되지 않지만 작업명이라 그대로 두고 머리말에서 정정했다. *Zhenjiu Dacheng* (《針灸大成》) 원서의 처방 위치(권·쪽)는 직접 확인하지 못했다.
+- PMID/DOI: none in the text (0 items to check). No citation of biomedical mechanisms (0 Layer B items).
+- Remaining limitation: the title's "Yaoshu linked through the alternative name 'Weizhong'" is not supported by the classics, but as it is the working title it was left unchanged and corrected in the header. The location (volume, page) of the prescriptions in the original 《針灸大成》 was not checked directly.

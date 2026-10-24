@@ -1,605 +1,615 @@
-# Tianfu (天府, LU03)(天府, LU3)·Xiabai (俠白, LU04)(俠白, LU4) 해부생리학적 실체 판명 통합 보고서
+# [Acupoint Anatomical & Physiological Substrate Monograph] Tianfu (天府, LU3) and Xiabai (俠白, LU4): Integrated Report
 
-> **Framework**: v2.7 (2026-10-04 개정) · **ARI**: 아래 Target별 표기 · **이중 채점**: Independent dual-adjudication completed
-> - cLU3: `ARI v3.0 | ARI-Core 56.2 ± 2.5 (C·H) | SI 50 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 52.1 (D, 등급 변동 → 가중치 민감)`
-> - cLU4: `ARI v3.0 | ARI-Core 62.5 ± 1.2 (C·H) | SI 50 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 57.3 (C, 등급 불변)`
-> - pLU3: `ARI v3.0 | ARI-Core 41.2 ± 0 (D·H) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 39.6 (D, 등급 불변)`
-> - pLU4: `ARI v3.0 | ARI-Core 43.8 ± 2.5 (D·H) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 41.7 (D, 등급 불변)`
+> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: given per Target below · **Dual scoring**: completed by two independent raters, adjudicated
+> - cLU3: `ARI v3.0 | ARI-Core 56.2 ± 2.5 (C·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 52.1 (D, grade changes → weight-sensitive)`
+> - cLU4: `ARI v3.0 | ARI-Core 62.5 ± 1.2 (C·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 57.3 (C, grade unchanged)`
+> - pLU3: `ARI v3.0 | ARI-Core 41.2 ± 0 (D·H) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 39.6 (D, grade unchanged)`
+> - pLU4: `ARI v3.0 | ARI-Core 43.8 ± 2.5 (D·H) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 41.7 (D, grade unchanged)`
 
-> **통합 일자**: 2026-10-03 (v2.7 개정 2026-10-04, FMA 보강 2026-10-23, 맨 끝 개정 이력 참조)
-> **Anatomical Ontology**: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 `FMA:ID`로 고정하고 지배신경·척수 분절·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 `02_Master_Datasets/FMA/acupoint_fma_mapping.json`, 상세는 부록 A
-> **통합 대상 (원본은 `_원본_보관/`, 개정 전 판은 `_구판_v2.6/`에 보존)**:
-> - `LU03_Tianfu (天府, LU03)/LU03_Tianfu (天府, LU03)_해부생리_실체판명_보고서.md·.html·.xlsx`
-> - `LU04_Xiabai (俠白, LU04)/LU04_Xiabai (俠白, LU04)_해부생리_실체판명_보고서.md·.html·.xlsx`
+> **Date of integration**: 2026-10-03 (v2.7 revision 2026-10-04, FMA supplement 2026-10-23; see the revision histories at the end)
+> **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: `02_Master_Datasets/FMA/acupoint_fma_mapping.json`; details in Appendix A.
+> **Reports integrated (originals kept in `_원본_보관/`, pre-revision edition kept in `_구판_v2.6/`)**:
+> - `LU03_천부/LU03_천부_해부생리_실체판명_보고서.md·.html·.xlsx`
+> - `LU04_협백/LU04_협백_해부생리_실체판명_보고서.md·.html·.xlsx`
 > - `_원본_보관/LU_비교분석_구판/LU3_LU4_Comparative_Analysis_Report.md·.html`
-> **통합 원칙**: 세 보고서의 내용 중복도가 50%를 넘으므로 비교분석 보고서를 중심으로 단일 권위본으로 합침(Merge). 통합 과정에서 3대 원전·마스터 데이터셋·논문 원문과 다시 대조하여, 기존 보고서 사이의 모순과 사실 오류를 바로잡음(§11 정정 감사표).
+> **Principle of integration**: because content overlap among the three reports exceeded 50%, they were merged into a single authoritative edition built around the comparative-analysis report. During integration the text was re-checked against the Three Primary Classics, the master datasets and the original papers, and contradictions and factual errors among the earlier reports were corrected (§11, correction audit table).
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk. In evidence pointers, "Xuewei Tongjian" = 《中國針灸穴位通鑑》, "Zhengzhi Tongjian" = 《中國針灸證治通鑑》 and "Tongkao" = 《針灸腧穴通考》, followed by the chunk-file range and line number.
 
 ---
 
-## 0. 요약 (Executive Summary)
+## 0. Executive Summary
 
-1. **고전 Tianfu (天府, LU03)·Xiabai (俠白, LU04)은 위팔 안쪽 위팔동맥 박동점으로 보는 것이 개연적이다(ARI-Core C·H, 가능·가설 수준).** *Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)·《黄帝内经明堂》은 Tianfu (天府, LU03)를 "腋下三寸, 臂臑內廉動脈中", Xiabai (俠白, LU04)을 "在天府下, 去肘五寸動脈中"으로 기술한다. 송석모(2022)와 황룡상(*Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》))은 이 "動脈"을 모두 위팔두갈래근 안쪽고랑을 지나는 **위팔동맥(brachial artery)**으로 본다. 다만 혈위 특이 실측(사체·초음파)과 경혈 특이 Layer A 연구가 없어 "실체 확정"이 아니라 **가능·가설(C·H)**로 판정한다.
-2. **현대 WHO 정위는 위팔두갈래근 가쪽 모서리로, 고전 정위와 다른 장소다.** 두 지점의 공간 편차는 해부학적 추정으로 약 25~35mm(모델값 ≈ 29mm)이며, Δ > 15mm 기준을 넘으므로 **Target 1(고전 동맥점, cLU3/cLU4)과 Target 2(WHO점, pLU3/pLU4)로 나누어 분석**한다. 기존 Tianfu (天府, LU03) 보고서의 "Δ ≈ 3mm, 단일 타깃" 판정은 철회한다.
-3. **두 연구자는 진단에서는 같지만 처방은 다르다.**
-   - 송석모: WHO 위치는 오류이므로 **Tianfu (天府, LU03)·Xiabai (俠白, LU04)을 위팔동맥 위로 되돌려야 한다.**
-   - 황룡상: 《灵枢·经脉》 단계에서 이미 수태음 노선이 위팔 노쪽으로 옮겨갔고, 현대 정위는 그 변화를 늦게 반영한 것이다. 문제는 위치가 아니라 **위치는 바뀌었는데 주치·층차해부·자법은 고전 동맥점의 것을 그대로 물려받은 "명실분리(名實分離)"**에 있다. "今之天府已非古之天府"
-4. **이 보고서의 판정 (이원 타깃 병존 모델)**:
-   - 고전 주치(鼻衄·喘咳 / 心痛·煩滿)는 **Target 1(cLU3·cLU4)**에 귀속한다.
-   - Target 2(pLU3·pLU4)는 **국소 위팔 통증**이 주 적응증이며, 고전 주치를 그대로 옮겨 붙이는 것을 경계한다.
-   - 분기 판정(§10.5): cLU3 vs pLU3 ΔARI-Core 15.0, cLU4 vs pLU4 18.7로 모두 ≥ 10이고 ± 구간이 겹치지 않으므로 **두 쌍 모두 Target 1(고전 동맥점)의 실체 판명 신뢰도 우위**를 선언한다. 단 SI는 Target 2가 더 높다(75 vs 50).
-5. **생의학 근거 수준**: 2026-10-04 동기화 후 마스터 DB에는 WHO Tianfu (天府, LU03)·Xiabai (俠白, LU04)을 다른 혈위와 함께 자침한 인체 연구(papers.id 1819·1822·1832·1833, 대조군 없는 전후 비교)와 LU4 포함 견관절주위염 무작위 비교 연구(1836)가 있다. 그러나 모두 7~11혈 병용 처방이라 **경혈 특이 Layer A는 0편**이며 게이트 2(S_reflex ≤ 25, H)가 적용된다. B-Check는 cLU3 5/12, cLU4 7/12, pLU3·pLU4 6/12로 모두 8/12 미만이므로 아래 반사 기전은 **가설**이다.
-6. **ARI v3.0 (이중 채점 조정 완료)**:
+1. **The classical Tianfu (天府) and Xiabai (俠白) are most plausibly the pulsation points of the brachial artery on the medial side of the arm (ARI-Core C·H, possible/hypothetical level).** *Zhenjiu Jiayi Jing* (《針灸甲乙經》) and *Huangdi Neijing Mingtang* (《黃帝內經明堂》) describe Tianfu (天府) as "腋下三寸，臂臑內廉動脈中" and Xiabai (俠白) as "在天府下，去肘五寸動脈中". Song Seok-mo (2022) and Huang Longxiang (黃龍祥, *Zhenjiu Shuxue Tongkao* 《針灸腧穴通考》) both identify this "動脈" (artery) as the **brachial artery**, which runs in the medial bicipital groove. However, there are no point-specific measurements (cadaveric or ultrasound) and no point-specific Layer A studies, so the verdict is **possible/hypothetical (C·H)**, not "substrate established".
+2. **The modern WHO location is on the lateral border of biceps brachii, a different place from the classical location.** The spatial discrepancy between the two sites is estimated anatomically at about 25–35 mm (model value ≈ 29 mm), which exceeds the Δ > 15 mm criterion, so **the analysis is split into Target 1 (classical arterial points, cLU3/cLU4) and Target 2 (WHO points, pLU3/pLU4)**. The earlier Tianfu report's verdict of "Δ ≈ 3 mm, single target" is withdrawn.
+3. **The two researchers agree on the diagnosis but differ on the remedy.**
+   - Song Seok-mo: the WHO location is an error, so **Tianfu (天府) and Xiabai (俠白) should be returned to their position over the brachial artery.**
+   - Huang Longxiang (黃龍祥): already at the stage of 《靈樞·經脈》 the course of the Hand-Taiyin (手太陰) channel had shifted to the radial side of the arm, and the modern location reflects that change belatedly. The problem lies not in the location but in the **"separation of name and substance" (名實分離): the location has changed, yet the indications, layer anatomy and needling methods were inherited unchanged from the classical arterial point.** "今之天府已非古之天府"
+4. **Verdict of this report (dual-target coexistence model)**:
+   - The classical indications (鼻衄·喘咳 / 心痛·煩滿) are assigned to **Target 1 (cLU3, cLU4)**.
+   - The main indication of Target 2 (pLU3, pLU4) is **local pain of the upper arm**; transferring the classical indications to it unchanged is cautioned against.
+   - Branch decision (§10.5): ΔARI-Core is 15.0 for cLU3 vs pLU3 and 18.7 for cLU4 vs pLU4, both ≥ 10 with non-overlapping ± intervals, so **for both pairs Target 1 (the classical arterial point) is declared superior in substrate-identification reliability**. The SI, however, is higher for Target 2 (75 vs 50).
+5. **Level of biomedical evidence**: after the 2026-10-04 sync the master DB contains human studies in which the WHO Tianfu (天府) and Xiabai (俠白) were needled together with other points (papers.id 1819, 1822, 1832, 1833; uncontrolled before–after comparisons) and a randomised comparative study of periarthritis of the shoulder that includes LU4 (1836). All of them, however, use prescriptions of 7–11 combined points, so **point-specific Layer A = 0 papers**, and Gate 2 (S_reflex ≤ 25, H) applies. B-Check scores are cLU3 5/12, cLU4 7/12 and pLU3 and pLU4 6/12, all below 8/12, so the reflex mechanisms below are **hypotheses**.
+6. **ARI v3.0 (dual scoring, adjudicated)**:
 
-   | 타깃 | ARI-Core (평균 ± 반범위) | 등급·표지 | SI | 등가중치 민감도 |
+   | Target | ARI-Core (mean ± half-range) | Grade·flag | SI | Equal-weight sensitivity |
    | :--- | :---: | :---: | :---: | :--- |
-   | cLU3 | 56.2 ± 2.5 | C·H | 50 | 52.1 (D, 가중치 민감) |
-   | cLU4 | 62.5 ± 1.2 | C·H | 50 | 57.3 (C, 불변) |
-   | pLU3 | 41.2 ± 0 | D·H | 75 | 39.6 (D, 불변) |
-   | pLU4 | 43.8 ± 2.5 | D·H | 75 | 41.7 (D, 불변) |
+   | cLU3 | 56.2 ± 2.5 | C·H | 50 | 52.1 (D, weight-sensitive) |
+   | cLU4 | 62.5 ± 1.2 | C·H | 50 | 57.3 (C, unchanged) |
+   | pLU3 | 41.2 ± 0 | D·H | 75 | 39.6 (D, unchanged) |
+   | pLU4 | 43.8 ± 2.5 | D·H | 75 | 41.7 (D, unchanged) |
 
-   구판 v2.6 점수는 v3.0과 비교할 수 없다(개정 이력 참조).
+   Scores of the earlier v2.6 edition are not comparable with v3.0 (see revision history).
 
 ---
 
-## 1. Classical Literature Screening Table (Three Primary Classics Excerpts)
+## 1. Classical Literature Screening Table (Rank 1·2: Direct Collation of the Three Primary Classics)
 
-| 원전 | 검색 위치 | Tianfu (天府, LU03)(LU3) | Xiabai (俠白, LU04)(LU4) |
+| Classic | Location searched | Tianfu (天府, LU3) | Xiabai (俠白, LU4) |
 | :--- | :--- | :--- | :--- |
-| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)** | `中国针灸穴位通鉴/chunks_refined/中国针灸穴位通鉴(上卷)_321-400.md` | **출처**: "腋内动脉，手太阴也，名曰天府"(《灵枢·本输》, 맥명), "天府二穴"(《素问·气穴论》 王冰注 15:108, 혈명) (L144·L146). **부위**: "在腋下三寸，臂內廉動脈中，手太陰脈氣所發"(《甲乙》3:50). **별명**: 无. **자법**: "禁不可灸，灸之令人逆氣。刺入四分，留三呼"(《甲乙》, L282). **부위 결어**: "历代文献记载基本一致"(L332). 단 결어의 针法 요약(L388)은 《甲乙》을 "刺入四分、留五呼"로 적어 조문(L282 "留三呼")과 다르다(통감 내부 이문) | **부위**: "在天府下去肘五寸動脈中"(《甲乙》3:50). **별명**: 无. **귀경**: "手太陰之別". **자법**: "刺入四分，留三呼，灸七壯"(《甲乙》, L482), "刺入三分"(*Tongren* (《銅人》)). **부위 결어**: "历代文献记载基本一致"(L510) |
-| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** | `中国针灸证治通鉴/chunks_refined/中国针灸证治通鉴_401-480.md` | **鼻衄**: "暴瘅內逆，肝肺相搏，血溢鼻口，取天府"; 《外台》 "灸兩膊上大脈…以鼻嗅臂" 安語 "此方所取穴即天府穴"; 《百证赋》 "天府合谷，鼻中衄血宜追". **瘿**: "瘿恶气，灸天府五十壮" 등 | **皮膚**: 《古今医统》 "治赤白汗斑，灸夾白穴即愈"(安語 "夾白即肺經侠白穴"); 현대 白癜风 "侠白(點刺出血再行拔火罐)" |
-| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)** | `针灸腧穴通考/chunks_refined/针灸腧穴通考(上)_81-160.md` (L1653~2025) | **명실고**: "今之天府已非古之天府". 고대 "臂臑內廉動脈中", 현대 "肱二頭肌橈側緣". 위팔동맥은 위팔두갈래근 안쪽고랑을 따라 내려가므로 "此處已相當於今之手少陰經穴分布區域". 가쪽 모서리 해부학 용어를 처음 쓴 것은 일본 침구서다. 中国 교재는 1957년 南京 《针灸学》·1~2판 《讲义》까지 "臑內廉動脈中"을 유지하다가 4판부터 "肱二頭肌外緣"으로 바꿨다 | **명실고**: "本穴定位，古今不同". 1판 《讲义》의 "重按有動脈應手"에 대해 "按如今之定位，無論如何重按，也不會觸及動脈搏動". "侠白部位在動脈中，故該穴仍可能由手太陰標脈'天府脈'演變而來". 주치 "心痛" = 胸痹心痛 계열 |
+| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)** | `中国针灸穴位通鉴/chunks_refined/中国针灸穴位通鉴(上卷)_321-400.md` | **Source**: "腋內動脈，手太陰也，名曰天府" (《靈樞·本輸》, vessel name), "天府二穴" (Wang Bing's (王冰) commentary on 《素問·氣穴論》 15:108, point name) (L144, L146). **Location**: "在腋下三寸，臂內廉動脈中，手太陰脈氣所發" (《甲乙》 3:50). **Aliases**: 無 (none). **Needling**: "禁不可灸，灸之令人逆氣。刺入四分，留三呼" (《甲乙》, L282). **Concluding note on location**: "歷代文獻記載基本一致" (L332). However, the needling summary in the concluding note (L388) gives the 《甲乙》 as "刺入四分、留五呼", differing from the entry itself (L282 "留三呼") (an internal variant within the Tongjian) | **Location**: "在天府下去肘五寸動脈中" (《甲乙》 3:50). **Aliases**: 無 (none). **Channel attribution**: "手太陰之別". **Needling**: "刺入四分，留三呼，灸七壯" (《甲乙》, L482), "刺入三分" (《銅人》). **Concluding note on location**: "歷代文獻記載基本一致" (L510) |
+| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** | `中国针灸证治通鉴/chunks_refined/中国针灸证治通鉴_401-480.md` | **Epistaxis (鼻衄)**: "暴癉內逆，肝肺相搏，血溢鼻口，取天府"; 《外臺》 "灸兩膊上大脈…以鼻嗅臂", with the editorial note (按語) "此方所取穴即天府穴"; 《百證賦》 "天府合谷，鼻中衄血宜追". **Goitre (癭)**: "癭惡氣，灸天府五十壯", etc. | **Skin (皮膚)**: 《古今醫統》 "治赤白汗斑，灸夾白穴即愈" (editorial note "夾白即肺經俠白穴"); modern vitiligo (白癜風) "俠白(點刺出血再行拔火罐)" |
+| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)** | `针灸腧穴通考/chunks_refined/针灸腧穴通考(上)_81-160.md` (L1653–2025) | **Study of name and substance (名實考)**: "今之天府已非古之天府". Ancient "臂臑內廉動脈中", modern "肱二頭肌橈側緣". Because the brachial artery descends along the medial bicipital groove, "此處已相當於今之手少陰經穴分布區域". The first to use the anatomical term for the lateral border were Japanese acupuncture books. Chinese textbooks kept "臑內廉動脈中" through the 1957 Nanjing (南京) 《針灸學》 and the 1st–2nd editions of the 《講義》 (*Lecture Notes*), and changed it to "肱二頭肌外緣" from the 4th edition | **Study of name and substance (名實考)**: "本穴定位，古今不同". On the statement "重按有動脈應手" in the 1st edition of the 《講義》: "按如今之定位，無論如何重按，也不會觸及動脈搏動". "俠白部位在動脈中，故該穴仍可能由手太陰標脈'天府脈'演變而來". The indication "心痛" = the chest bi heart pain (胸痹心痛) group |
 
-- **이문 메모**: Tianfu (天府, LU03) 부위 문구는 《穴位通鉴》이 "臂內廉"(《甲乙》 3:50 인용, L172), 《通考》·《明堂》 집교가 "臂臑內廉"으로 적는다. 의미(위팔 안쪽 모서리)는 같아 정위 판정에 영향이 없다.
+- **Variant note**: the location wording for Tianfu (天府) is "臂內廉" in the Xuewei Tongjian (《穴位通鑑》, quoting 《甲乙》 3:50, L172) and "臂臑內廉" in the Tongkao (《通考》) and the collated *Mingtang* (《明堂》). The meaning (medial border of the upper arm) is the same, so this does not affect the location verdict.
 
-**보조 원천 (논문 원문 대조)**: 송석모, 〈Lung Meridian of Hand-Taiyin (手太陰肺經) 노선에 대한 고찰: Tianfu (天府, LU03)ㆍXiabai (俠白, LU04)을 중심으로〉, *Korean Journal of Acupuncture* 39(4):172-183, 2022. https://doi.org/10.14406/acu.2022.024 (papers.id 440; 로컬 PDF: `학습자료/실험 및 연구 논문/2022_Korean Journal of Acupuncture_송석모_…pdf`)
-- 《穴位通鉴》 수록 36종 문헌 가운데 18종이 Tianfu (天府, LU03)를 위팔뼈 안쪽에, 28종이 동맥 위에 기재함
-- 張壽頤 "臑內前廉動脈中", 惲鐵樵 "臑內廉動脈中": 20세기 초까지 안쪽 동맥으로 기재
+**Supplementary source (checked against the original paper)**: Song Seok-mo, "A Study on the Course of the Lung Meridian of Hand-Taiyin (手太陰肺經): Focusing on Tianfu (天府) and Xiabai (俠白)", *Korean Journal of Acupuncture* 39(4):172-183, 2022. https://doi.org/10.14406/acu.2022.024 (papers.id 440; local PDF: `학습자료/실험 및 연구 논문/2022_Korean Journal of Acupuncture_송석모_…pdf`)
+- Of the 36 texts collected in the Xuewei Tongjian (《穴位通鑑》), 18 place Tianfu (天府) on the medial side of the humerus and 28 place it over the artery
+- Zhang Shouyi (張壽頤) "臑內前廉動脈中", Yun Tieqiao (惲鐵樵) "臑內廉動脈中": recorded as the medial artery up to the early 20th century
 
 ---
 
-## 2. 원천 vs 재인용·주석 분리 표 (Rank 3)
+## 2. Primary Source vs. Secondary Quotation & Commentary Table (Rank 3)
 
-| 시기 | 문헌 | 기술 | 판정 | 평가 |
+| Period | Text | Description | Classification | Assessment |
 | :--- | :--- | :--- | :---: | :--- |
-| 선진 | 《足臂十一脉灸经》 / 《阴阳十一脉灸经》 | 臂太陰脈 "以奏臑內" / 臂鉅陰脈 "出臂內陰" | 1차 | 위팔 안쪽 노선. 종착은 心 |
-| 선진·한 | 《灵枢·本输》·《寒热病》 | "腋內動脈，手太陰也，名曰天府" / "腋下動脈，臂太陰也，名曰天府…暴瘅內逆，肝肺相搏，血溢鼻口，取天府" | 1차 | **天府는 본래 맥명(標脈)**이며, 진단 맥후가 주치로 전환됨(황룡상) |
-| 선진·한 | 《素问·气穴论》 王冰注 | "天府二穴" | 1차 (혈명) | 《穴位通鉴》은 혈명 출전으로 이 조를 함께 제시함. 위치·심도 기술은 없음 |
-| 선진·한 | 《灵枢·经脉》 | "下循臑內，行少陰心主之前" | 1차 | 해석이 갈림. 송석모는 "內"를 안쪽(medial)으로, 황룡상은 帛書보다 노쪽으로 이동한 단계로 봄 |
-| 진(晉) | *Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)(=*Huangdi Mingtang Jing* (《黃帝明堂經》) 계열) | 天府 "腋下三寸，臂臑內廉動脈中…禁不可灸，刺入四分" / 侠白 "在天府下，去肘五寸動脈中，手太陰之別，刺入四分，灸五壯(또는 七壯)" | **1차 (정위 원천)** | 위치를 정하는 3요소(방향·거리·범위축소 "動脈中")를 모두 갖춤 |
-| 당 | *Waitai Miyao* (《外臺秘要》) 인 《深师方》 | "灸兩臂中脈…以鼻嗅臂，點其鼻所著處是穴" | 1차 (灸方) | 간편취혈법(以鼻取之)의 원출처. 원문은 "臂脈"으로 기재하며 Tianfu (天府, LU03)라고 명시하지 않음 |
-| 송 | 《铜人腧穴针灸图经》 | 天府 "在腋下三寸動脈中，以鼻取之…今附刺鼻衄血不止" / 侠白 "針入三分" | 2차 | 간편취혈법과 "動脈中"을 함께 기재. 자침 3분이 등장 |
-| 명 | 正统仿宋铜人 | 天府·侠白·尺泽을 **위팔 굽힘면 노쪽**에 표시 | 2차 (도상) | 문자(동맥중)와 도상(노쪽)이 어긋남. 史素·丘濬·太医院 铜人图는 자쪽에 표시 |
-| 명 | *Zhenjiu Dacheng* (《針灸大成》) | "腋下三寸，肘腕上五寸動脈中，用鼻尖點墨，到處是穴" | 2차 | 동맥 기재 유지 |
-| 현대 | 中国 统编教材 4판~ / WHO 2008 (B1-05) | "肱二頭肌外緣/橈側緣", "lateral border of the biceps brachii" | 현대 개정 | 동맥 기재가 빠짐. 위치만 노쪽으로 확정 |
+| Pre-Qin | 《足臂十一脈灸經》 / 《陰陽十一脈灸經》 | Arm-Taiyin vessel (臂太陰脈) "以奏臑內" / Arm-Juyin vessel (臂鉅陰脈) "出臂內陰" | Primary | Course on the medial side of the upper arm; terminates at the Heart (心) |
+| Pre-Qin & Han | 《靈樞·本輸》 · 《寒熱病》 | "腋內動脈，手太陰也，名曰天府" / "腋下動脈，臂太陰也，名曰天府…暴癉內逆，肝肺相搏，血溢鼻口，取天府" | Primary | **天府 was originally a vessel name (標脈, marker pulse)**, and the diagnostic pulse-taking site (脈候) was converted into an indication (Huang Longxiang 黃龍祥) |
+| Pre-Qin & Han | Wang Bing's (王冰) commentary on 《素問·氣穴論》 | "天府二穴" | Primary (point name) | The Xuewei Tongjian (《穴位通鑑》) cites this entry together as the source of the point name. No description of location or depth |
+| Pre-Qin & Han | 《靈樞·經脈》 | "下循臑內，行少陰心主之前" | Primary | Interpretations diverge. Song Seok-mo reads "內" as medial; Huang Longxiang (黃龍祥) sees it as a stage shifted radially relative to the silk manuscripts (帛書) |
+| Jin (晉) | *Zhenjiu Jiayi Jing* (《針灸甲乙經》) (= *Huangdi Mingtang Jing* 《黃帝明堂經》 lineage) | 天府 "腋下三寸，臂臑內廉動脈中…禁不可灸，刺入四分" / 俠白 "在天府下，去肘五寸動脈中，手太陰之別，刺入四分，灸五壯 (or 七壯)" | **Primary (source of location)** | Contains all three elements that fix a location (direction, distance, and the narrowing qualifier "動脈中") |
+| Tang | 《深師方》 quoted in *Waitai Miyao* (《外臺秘要》) | "灸兩臂中脈…以鼻嗅臂，點其鼻所著處是穴" | Primary (moxibustion prescription) | Original source of the simplified locating method (以鼻取之, locating with the nose). The original text says "臂脈" and does not name Tianfu (天府) |
+| Song | 《銅人腧穴針灸圖經》 | 天府 "在腋下三寸動脈中，以鼻取之…今附刺鼻衄血不止" / 俠白 "針入三分" | Secondary | Records both the simplified locating method and "動脈中". Needling of 3 fen appears |
+| Ming | Zhengtong replica of the Song bronze figure (正統仿宋銅人) | Marks 天府, 俠白 and 尺澤 on the **radial side of the flexor surface of the arm** | Secondary (illustration) | Text (動脈中) and illustration (radial side) diverge. The bronze-figure charts of 史素, 丘濬 and the Imperial Medical Academy (太醫院) mark the ulnar side |
+| Ming | *Zhenjiu Dacheng* (《針灸大成》) | "腋下三寸，肘腕上五寸動脈中，用鼻尖點墨，到處是穴" | Secondary | Arterial description retained |
+| Modern | Chinese unified textbooks (統編教材), 4th edition onward / WHO 2008 (B1-05) | "肱二頭肌外緣/橈側緣", "lateral border of the biceps brachii" | Modern revision | Arterial description dropped; only the location is fixed on the radial side |
 
 ---
 
-## 3. Nomenclature & Alias Collation Table (KJH DB Verification)
+## 3. Nomenclature & Alias Collation Table (Rank 3)
 
-| 코드 | 표준명 | KJH DB (`경혈명_비교_정리_KJH.xlsx`) | 《穴位通鉴》 | 판정 |
+| Code | Standard name | KJH DB (`경혈명_비교_정리_KJH.xlsx`) | Xuewei Tongjian (《穴位通鑑》) | Verdict |
 | :---: | :---: | :---: | :---: | :--- |
-| LU03 | Tianfu (天府, LU03) 天府 | 天會 (행 57) | 别名无 | **天會는 Tianfu (天府, LU03)의 이명이 아니라 天池(PC1)의 이명이다.** 《甲乙》 3:46 天池 "一名天會"(《穴位通鉴(上卷)_401-480》 L822·L994; 《通考(下)_81-160》 L549·L567 "天池，一名天会。在乳后一寸，腋下三寸"). Tianfu (天府, LU03)의 이명으로 天會를 적은 원전은 확인되지 않음 → **Tianfu (天府, LU03) 이명 목록에서 제외** |
-| LU04 | Xiabai (俠白, LU04) 俠白 | – (행 58) | 别名无 | 이명 없음. 표기 변이 "夾白·挾白"(宋 이후)만 있음. 기존 LU4 보고서의 이명 "白雄"은 **근거 없음 → 삭제** |
+| LU03 | Tianfu (天府) | 天會 (row 57) | 別名無 (no alias) | **天會 is not an alias of Tianfu (天府) but of Tianchi (天池, PC1).** 《甲乙》 3:46 天池 "一名天會" (Xuewei Tongjian (上卷)_401-480 L822, L994; Tongkao (下)_81-160 L549, L567 "天池，一名天會。在乳後一寸，腋下三寸"). No classic giving 天會 as an alias of Tianfu (天府) was found → **removed from the alias list of Tianfu (天府)** |
+| LU04 | Xiabai (俠白) | – (row 58) | 別名無 (no alias) | No alias. Only the spelling variants "夾白·挾白" (Song onward). The alias "白雄" in the earlier LU4 report is **unsupported → deleted** |
 
-**天會 오귀속 경위 (데이터셋 대조)**
-- 현행 KJH(행 57 LU03, 행 274 PC01)와 공통교재·김재효 데이터셋(`경혈_기본정보_마스터` 행 55 LU03, 행 272 PC01)은 모두 LU03과 PC01에 똑같이 '天會'를 적고 있다.
-- 강의 슬라이드에서 처음 추출한 `경혈명_비교_정리_KJH_backup.xlsx`는 LU03 이명을 '–'(01_Lung Meridian of Hand-Taiyin (手太陰肺經)_각론 slide31), PC01 이명을 '天會'(03_Pericardium Meridian of Hand-Jueyin (手厥陰心包經) slide33)로 적는다. 따라서 LU03의 '天會'는 원 슬라이드가 아니라 **데이터셋 정리 과정에서 PC01 값이 잘못 옮겨진 것으로 추정**된다.
-- 혼입 배경(추정): 天池와 天府는 모두 "腋下三寸"으로 기술되고, 《灵枢·本输》의 '天' 자 혈 목록에 함께 나온다(《通考(下)_81-160》 L557). Tianfu (天府, LU03)와 이름·위치 표현이 겹쳐 혼동되기 쉽다.
-- 처리: 보고서에서 Tianfu (天府, LU03) 이명 '天會'를 삭제했다. 원 데이터셋(KJH·2대 교재 xlsx)은 이 개정에서 수정하지 않았으며, 데이터셋 담당자 확인이 필요하다.
+**How 天會 came to be misattributed (dataset collation)**
+- The current KJH file (row 57 LU03, row 274 PC01) and the Common Textbook and Kim Jaehyo datasets (`경혈_기본정보_마스터` row 55 LU03, row 272 PC01) all record the same '天會' for both LU03 and PC01.
+- `경혈명_비교_정리_KJH_backup.xlsx`, first extracted from the lecture slides, gives the LU03 alias as '–' (`01_수태음폐경_각론` slide 31) and the PC01 alias as '天會' (`03_수궐음심포경` slide 33). The '天會' for LU03 is therefore **presumed to be a PC01 value copied in error during dataset compilation**, not something on the original slide.
+- Background to the contamination (presumed): Tianchi (天池) and Tianfu (天府) are both described as "腋下三寸" and appear together in the list of '天'-character points in 《靈樞·本輸》 (Tongkao (下)_81-160 L557). Their names and location wording overlap, making them easy to confuse.
+- Action: the alias '天會' of Tianfu (天府) has been deleted from the report. The original datasets (KJH and the two textbook xlsx files) were not modified in this revision and need to be checked by the dataset maintainer.
 
-인접 혈과의 혼동:
-- 《窦太师针经》이 Tianfu (天府, LU03)를 "肘腕上五寸"으로 적은 것은 Xiabai (俠白, LU04) 정위와 섞인 것이다(《通考》).
-- 일본 江户 이후 상완 골도 1척 설 때문에 "天府下二寸" 변이가 생겼다(1933 包天白, 1947 赵尔康, 《中华针灸学》 "天府下二寸").
-- Extraordinary Points (經外奇穴) **下侠白**(Xiabai (俠白, LU04) 아래 2촌, 위팔두갈래근 노쪽)과 구별해야 한다.
+Confusion with neighbouring points:
+- 《竇太師針經》's description of Tianfu (天府) as "肘腕上五寸" is a conflation with the location of Xiabai (俠白) (《通考》).
+- In Japan from the Edo (江戶) period onward, the theory of a 1-chi (尺) bone-proportional length for the upper arm produced the variant "天府下二寸" (Bao Tianbai 包天白 1933, Zhao Erkang 趙爾康 1947, 《中華針灸學》 "天府下二寸").
+- It must be distinguished from the extra point **Xiaxiabai (下俠白)** (2 cun below Xiabai (俠白), radial side of biceps brachii).
 
 ---
 
-## 4. 3D 공간 좌표 및 Layer 1~5 층차 구조 (Rank 5)
+## 4. 3D Spatial Coordinates & Layer 1–5 Layer Structure (Rank 5)
 
-### 4.1 좌표계와 이원 분기
+### 4.1 Coordinate System and Dual-Target Split
 
-좌표 원점은 해당 높이에서 위팔 앞면 정중선이다.
-- X: 안쪽 −, 가쪽 +
-- Y: 앞겨드랑주름에서 먼쪽 방향 (mm)
-- Z: 피부면에서의 깊이
+The origin of the coordinates is the anterior midline of the upper arm at the relevant level.
+- X: medial −, lateral +
+- Y: distal direction from the anterior axillary fold (mm)
+- Z: depth from the skin surface
 
-| 지표 | Target 1: 고전 동맥점 (cLU3 / cLU4) | Target 2: WHO 정위 (pLU3 / pLU4) |
+| Indicator | Target 1: classical arterial point (cLU3 / cLU4) | Target 2: WHO location (pLU3 / pLU4) |
 | :--- | :--- | :--- |
-| 체표 정위 | 위팔 안쪽면, 위팔두갈래근 **안쪽 모서리**의 안쪽고랑, 위팔동맥 박동 위. cLU3 = 앞겨드랑주름 아래 3촌, cLU4 = 그 아래 1촌(팔꿈치 위 5촌) | 위팔 앞가쪽면, 위팔두갈래근 **가쪽 모서리**. pLU3 = 앞겨드랑주름 아래 3촌, pLU4 = 4촌 |
-| 취혈 지표 | "動脈應手". 손바닥을 앞으로 둔 자세에서 안쪽고랑의 맥박을 촉진 | 위팔두갈래근 긴갈래의 가쪽 모서리, 노쪽피부정맥 주행선 |
-| 모델 좌표 (기존 비교보고서 값 유지) | cLU3 (X −14.5, Y 69, Z 18.2) / cLU4 (X −13.2, Y 92, Z 17.5) | pLU3 (X +13.8, Y 69, Z 12.0) / pLU4 (X +14.5, Y 92, Z 11.5) |
-| 공간 편차 Δ | **cLU3–pLU3: √(28.3² + 6.2²) ≈ 29.0mm**, **cLU4–pLU4: √(27.7² + 6.0²) ≈ 28.3mm** | 기준점 |
-| 분기 판정 | **Δ > 15mm → 이원 분기** (모델값 기준) | — |
+| Surface location | Medial surface of the arm, in the medial groove at the **medial border** of biceps brachii, over the pulsation of the brachial artery. cLU3 = 3 cun below the anterior axillary fold; cLU4 = 1 cun below that (5 cun above the elbow) | Anterolateral surface of the arm, **lateral border** of biceps brachii. pLU3 = 3 cun below the anterior axillary fold; pLU4 = 4 cun |
+| Locating landmark | "動脈應手" (pulsation felt under the finger). The pulse is palpated in the medial groove with the palm facing forward | Lateral border of the long head of biceps brachii; course of the cephalic vein |
+| Model coordinates (values of the earlier comparative report retained) | cLU3 (X −14.5, Y 69, Z 18.2) / cLU4 (X −13.2, Y 92, Z 17.5) | pLU3 (X +13.8, Y 69, Z 12.0) / pLU4 (X +14.5, Y 92, Z 11.5) |
+| Spatial discrepancy Δ | **cLU3–pLU3: √(28.3² + 6.2²) ≈ 29.0 mm**, **cLU4–pLU4: √(27.7² + 6.0²) ≈ 28.3 mm** | Reference point |
+| Branch decision | **Δ > 15 mm → dual split** (based on model values) | — |
 
-> 좌표값은 실측이 아니라 성인 위팔두갈래근 폭(약 25~40mm)에 근거한 **모델 추정값**이다. Y는 1촌 ≈ 23mm(앞겨드랑주름~팔오금 9촌 기준)로 환산했다. 기존 비교보고서의 Y값(220/195mm)은 기준점이 명시되지 않아 앞겨드랑주름 기준으로 바꾸었다. Z는 각 Target의 **표적 구조 중심 깊이**(cLU = 신경혈관속 중심, pLU = 위팔두갈래근 가쪽 근복 중심)를 뜻하는 모델값이며, 동맥 박동이 처음 촉지되는 깊이(마른 체형 약 5~10mm)와는 다르다. 실측(초음파)으로 확인해야 한다.
+> The coordinates are not measurements but **model estimates** based on the width of the adult biceps brachii (about 25–40 mm). Y was converted with 1 cun ≈ 23 mm (based on 9 cun from the anterior axillary fold to the cubital crease). The Y values of the earlier comparative report (220/195 mm) did not state a reference point and have been changed to the anterior axillary fold reference. Z is a model value denoting the **central depth of each Target's target structure** (cLU = centre of the neurovascular bundle, pLU = centre of the lateral belly of biceps brachii), and differs from the depth at which the arterial pulse is first palpable (about 5–10 mm in lean individuals). It must be confirmed by measurement (ultrasound).
 
-### 4.2 Layer 1~5 층차 (프레임워크 Rank 5 구조 기반 정의)
+### 4.2 Layers 1–5 (Structure-Based Definition of Framework Rank 5)
 
-프레임워크의 Layer는 **구조 유형**으로 정의되며 mm 구간이 아니다(L1 피부·피하 / L2 표층근육·근막 / L3 심층근육·신경천지 / L4 신경혈관속 / L5 골막·심부장기). 안쪽 동맥점에서는 신경혈관속(L4)이 깊은근막 바로 아래에 있어 심층근육(L3)보다 얕을 수 있으므로, 층 번호는 깊이 순서가 아니라 구조 분류로 읽어야 한다.
+The Framework defines Layers by **structure type**, not by mm ranges (L1 skin/subcutis / L2 superficial muscle and fascia / L3 deep muscle and nerve plane / L4 neurovascular bundle / L5 periosteum and deep organs). At the medial arterial point the neurovascular bundle (L4) lies just beneath the deep fascia and can be shallower than the deep muscle (L3), so the layer numbers should be read as a structural classification, not a depth order.
 
-| Layer (구조) | Target 1: cLU3 / cLU4 (안쪽 동맥점) | Target 2: pLU3 / pLU4 (가쪽 모서리) |
+| Layer (structure) | Target 1: cLU3 / cLU4 (medial arterial point) | Target 2: pLU3 / pLU4 (lateral border) |
 | :--- | :--- | :--- |
-| **L1** 피부·피하 | 안쪽위팔피부신경(T1), 갈비사이위팔신경(T2) 영역. 피하지방. 자쪽피부정맥은 위팔 중간쯤에서 깊은근막을 뚫음(cLU4 높이 부근) | 위가쪽위팔피부신경(겨드랑신경, C5; pLU3 높이), 아래가쪽위팔피부신경(노신경, C5-6; pLU4 높이). **노쪽피부정맥(cephalic v.)**, 가쪽 위팔두갈래근고랑 |
-| **L2** 표층근육·근막 | 깊은근막(위팔근막), 위팔두갈래근 안쪽 모서리 | 위팔두갈래근 긴갈래 가쪽 근복·근막, 운동점 |
-| **L3** 심층근육·신경천지 | 부리위팔근(cLU3), 위팔근 안쪽(cLU4), 안쪽 근육사이막 | 위팔근 |
-| **L4** 신경혈관속 | **위팔동맥·동반정맥, 정중신경**(위팔 위쪽에서는 동맥 가쪽, 중간에서 앞으로 교차), 자신경(위쪽에서 동맥 안쪽), 안쪽아래팔피부신경, 동맥주위 교감신경망. 깊은근막 바로 아래에 있어 마른 체형은 약 5~10mm에서 박동 촉지 | **근피신경**(위팔두갈래근과 위팔근 사이). 위팔동맥·정중신경은 안쪽으로 약 25mm 이상 떨어짐 |
-| **L5** 골막·심부장기 | 위팔뼈 안쪽면 골막 | 위팔뼈 앞가쪽면 골막. 심부 장기 없음 |
+| **L1** Skin/subcutis | Territory of the medial cutaneous nerve of arm (T1) and intercostobrachial nerve (T2). Subcutaneous fat. The basilic vein pierces the deep fascia at about mid-arm (near the level of cLU4) | Superior lateral cutaneous nerve of arm (axillary nerve, C5; level of pLU3), inferior lateral cutaneous nerve of arm (radial nerve, C5-6; level of pLU4). **Cephalic vein**, lateral bicipital groove |
+| **L2** Superficial muscle/fascia | Deep fascia (brachial fascia), medial border of biceps brachii | Lateral belly and fascia of the long head of biceps brachii; motor point |
+| **L3** Deep muscle/nerve plane | Coracobrachialis (cLU3), medial part of brachialis (cLU4), medial intermuscular septum | Brachialis |
+| **L4** Neurovascular bundle | **Brachial artery and venae comitantes, median nerve** (lateral to the artery in the upper arm, crossing anteriorly at mid-arm), ulnar nerve (medial to the artery proximally), medial cutaneous nerve of forearm, periarterial sympathetic plexus. Lies just beneath the deep fascia; in lean individuals the pulse is palpable at about 5–10 mm | **Musculocutaneous nerve** (between biceps brachii and brachialis). The brachial artery and median nerve lie about 25 mm or more medially |
+| **L5** Periosteum/deep organs | Periosteum of the medial surface of the humerus | Periosteum of the anterolateral surface of the humerus. No deep organs |
 
-> 깊이 수치는 일반 해부 지식(B1-01, B1-03, B1-06)에 근거한 추정이며 피하지방 두께에 따라 크게 달라진다. 혈위 특이 실측 논문은 없다.
+> Depth values are estimates based on general anatomical knowledge (B1-01, B1-03, B1-06) and vary greatly with subcutaneous fat thickness. There are no point-specific measurement papers.
 
-![Tianfu (天府, LU03)(LU3)·Xiabai (俠白, LU04)(LU4) 높이 위팔 위·중간 1/3 횡단면 해부 실체 모식도](LU03-LU04_Tianfu (天府, LU03)-Xiabai (俠白, LU04)_횡단면_해부모식도.png)
+![Schematic transverse section of the upper and middle thirds of the arm at the level of Tianfu (LU3) and Xiabai (LU4)](LU03-LU04_천부-협백_횡단면_해부모식도.png)
 
-*그림 4-1. Tianfu (天府, LU03)·Xiabai (俠白, LU04) 높이 위팔 위·중간 1/3 횡단면 모식도(오른팔, 위에서 내려다봄, 축척 아님). 보라 화살표 T1(cLU3/4)은 안쪽 면에서 위팔두갈래근 안쪽고랑의 위팔동맥·정중신경 다발로, 검은 화살표 T2(pLU3/4)는 위팔두갈래근 가쪽 모서리에서 근육층으로 들어가는 경로다. LU3·LU4는 1촌 차이로 단면 구성이 거의 같아 한 장에 그렸고, 높이에 따라 달라지는 구조(부리위팔근·어깨세모근·큰가슴근 정지부)는 점선이다. 층 두께·Δ는 모델 추정값이다.*
+*Figure 4-1. Schematic transverse section of the upper/middle third of the arm at the level of Tianfu (天府) and Xiabai (俠白) (right arm, viewed from above, not to scale). The purple arrow T1 (cLU3/4) runs from the medial surface to the brachial artery–median nerve bundle in the medial bicipital groove; the black arrow T2 (pLU3/4) is the path entering the muscle layer at the lateral border of biceps brachii. LU3 and LU4 are 1 cun apart and their sectional composition is almost identical, so they are drawn in a single figure; structures that vary with level (coracobrachialis, deltoid and the insertion of pectoralis major) are dashed. Layer thicknesses and Δ are model estimates.*
 
-### 4.3 FMA 실체 대조 (Target·Layer별) — 구조명은 2대 교재·규범 해부, ID·관계는 FMA 5.1.0
+### 4.3 FMA Substrate Collation (by Target and Layer) — structure names from the two textbooks and normative anatomy; IDs and relations from FMA 5.1.0
 
-| Target·Layer | 구조 | FMA | FMA 관계 | 줄기 / 분절 (FMA) | 교재 |
+| Target·Layer | Structure | FMA | FMA relation | Trunk / segment (FMA) | Textbook |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| T1 L1 | 안쪽위팔피부신경 | FMA:65246 | continuous_proximally_with Medial cord of brachial plexus (FMA:45236) | 안쪽다발(T1, B1-03) | 교재 미기재 |
-| T1 L1 | 갈비사이위팔신경 | FMA:11307 (Lateral cutaneous branch of second intercostal nerve) | branch_of Intercostal nerve → Thoracic nerve | **둘째 갈비사이신경(T2)** | 교재 미기재 |
-| T1 L1 | 자쪽피부정맥 | FMA:22908 | — | — | 교재 미기재 |
-| T1 L3 | 부리위팔근 (cLU3 높이) | FMA:37664 | contained_in 앞칸 공간 | Branch of musculocutaneous nerve to coracobrachialis · C5·C6 | 교재 미기재 |
-| T1 L4 | 위팔동맥 · 위팔정맥 | FMA:22689 · FMA:22934 | 동맥 is_a Segment of subclavian artery(FMA 모델링, 아래 주석) / 정맥 → Axillary vein | — | 공통교재 |
-| T1 L4 | 정중신경 | FMA:14385 | continuous_proximally_with Lateral cord of brachial plexus (FMA:45235) | FMA 분절 미기재(B1: C6~T1) | 공통교재 |
-| T1 L4 | 자신경 | FMA:37319 | — | FMA 분절 미기재(B1: C8~T1) | 교재 미기재 |
-| T1 L4 | 안쪽 근육사이막 | FMA:37886 | — | — | — |
-| T2 L1 | 노쪽피부정맥 | FMA:13324 | → Subclavian vein | — | **두 교재 공통** |
-| T2 L1 | 위가쪽위팔피부신경 (LU3 높이) | FMA:65303 (수동 대응) | 겨드랑신경 계통 | B1: C5 | 김재효 |
-| T2 L1 | 아래가쪽위팔피부신경 (LU4 높이) | FMA:44949 | → Peripheral segment of radial nerve | B1: C5~C6 | 공통교재 |
-| T2 L2 | 위팔두갈래근 (긴갈래) | FMA:37670 (긴갈래 FMA:37683) | contained_in Space of anterior compartment of arm (FMA:85160) | 근육피부신경 가지 · **C5·C6** | 공통교재(전체) · 김재효(긴갈래) |
-| T2 L3 | 위팔근 | FMA:37667 | — | — | 교재 미기재 |
-| T2 L4 | 근육피부신경 | FMA:37064 | continuous_proximally_with Lateral cord of brachial plexus (FMA:45235) | FMA 분절 미기재(B1: C5~C7) | 김재효 |
-| (LU3 높이) | 어깨세모근 · 큰가슴근 정지부 | FMA:32521 · FMA:9627 | 어깨세모근 ← 겨드랑신경 가지 · C5(주)·C6 | — | 김재효 |
-| L5 | 위팔뼈 | FMA:13303 | — | — | — |
+| T1 L1 | Medial cutaneous nerve of arm | FMA:65246 | continuous_proximally_with Medial cord of brachial plexus (FMA:45236) | Medial cord (T1, B1-03) | Not in textbooks |
+| T1 L1 | Intercostobrachial nerve | FMA:11307 (Lateral cutaneous branch of second intercostal nerve) | branch_of Intercostal nerve → Thoracic nerve | **Second intercostal nerve (T2)** | Not in textbooks |
+| T1 L1 | Basilic vein | FMA:22908 | — | — | Not in textbooks |
+| T1 L3 | Coracobrachialis (level of cLU3) | FMA:37664 | contained_in anterior compartment space | Branch of musculocutaneous nerve to coracobrachialis · C5, C6 | Not in textbooks |
+| T1 L4 | Brachial artery · brachial vein | FMA:22689 · FMA:22934 | Artery is_a Segment of subclavian artery (FMA modelling, see note below) / vein → Axillary vein | — | Common Textbook |
+| T1 L4 | Median nerve | FMA:14385 | continuous_proximally_with Lateral cord of brachial plexus (FMA:45235) | No FMA segment (B1: C6–T1) | Common Textbook |
+| T1 L4 | Ulnar nerve | FMA:37319 | — | No FMA segment (B1: C8–T1) | Not in textbooks |
+| T1 L4 | Medial intermuscular septum | FMA:37886 | — | — | — |
+| T2 L1 | Cephalic vein | FMA:13324 | → Subclavian vein | — | **Both textbooks** |
+| T2 L1 | Superior lateral cutaneous nerve of arm (level of LU3) | FMA:65303 (manual mapping) | Axillary nerve system | B1: C5 | Kim Jaehyo |
+| T2 L1 | Inferior lateral cutaneous nerve of arm (level of LU4) | FMA:44949 | → Peripheral segment of radial nerve | B1: C5–C6 | Common Textbook |
+| T2 L2 | Biceps brachii (long head) | FMA:37670 (long head FMA:37683) | contained_in Space of anterior compartment of arm (FMA:85160) | Branch of musculocutaneous nerve · **C5, C6** | Common Textbook (whole muscle) · Kim Jaehyo (long head) |
+| T2 L3 | Brachialis | FMA:37667 | — | — | Not in textbooks |
+| T2 L4 | Musculocutaneous nerve | FMA:37064 | continuous_proximally_with Lateral cord of brachial plexus (FMA:45235) | No FMA segment (B1: C5–C7) | Kim Jaehyo |
+| (level of LU3) | Deltoid · insertion of pectoralis major | FMA:32521 · FMA:9627 | Deltoid ← branch of axillary nerve · C5 (primary), C6 | — | Kim Jaehyo |
+| L5 | Humerus | FMA:13303 | — | — | — |
 
-- FMA는 위팔동맥(FMA:22689)을 *Segment of subclavian artery*로 분류한다(빗장밑–겨드랑–위팔동맥을 하나의 연속 줄기 구간으로 모델링). 규범 해부의 "겨드랑동맥의 연속"과 모순되지 않으나 계통 명칭으로는 인용하지 않는다.
-- 김재효 교재 용어 중 "superior lateral cutaneous nerve"(위가쪽위팔피부신경)는 "of arm"이 빠져 자동 대응이 실패했다. FMA:65303 *Superior lateral cutaneous nerve of arm*으로 수동 대응한다. "dorsal antebrachial cutaneous n., C5-6"(등쪽아래팔피부신경)은 같은 교재의 뒤아래팔피부신경(FMA:39145 *Posterior cutaneous nerve of forearm*)과 같은 구조의 중복 표기로 본다(자동 대응 none).
-- FMA 분절은 근육의 `segmental_supply`(위팔두갈래근·부리위팔근 C5·C6, 어깨세모근 C5 주·C6)에만 있고 신경 자체에는 없다. 신경 분절은 B1-01·B1-03으로 기술한다. 위 T1 L1의 T1·T2 피부신경은 교재 데이터셋에 없고 FMA·규범 해부로 보충한 것이다(8.2 H1의 분절 근거).
+- FMA classifies the brachial artery (FMA:22689) as a *Segment of subclavian artery* (modelling the subclavian–axillary–brachial arteries as segments of one continuous trunk). This does not contradict "continuation of the axillary artery" in normative anatomy, but it is not cited as a systemic name.
+- Among the Kim Jaehyo textbook terms, "superior lateral cutaneous nerve" lacks "of arm", so automatic mapping failed; it is mapped manually to FMA:65303 *Superior lateral cutaneous nerve of arm*. "dorsal antebrachial cutaneous n., C5-6" is regarded as a duplicate designation of the same structure as the textbook's posterior cutaneous nerve of forearm (FMA:39145 *Posterior cutaneous nerve of forearm*) (automatic mapping: none).
+- FMA segments exist only in the muscles' `segmental_supply` (biceps brachii and coracobrachialis C5, C6; deltoid C5 primary, C6), not in the nerves themselves. Nerve segments are described from B1-01 and B1-03. The T1 and T2 cutaneous nerves in T1 L1 above are not in the textbook datasets and have been supplemented from FMA and normative anatomy (segmental basis of H1 in 8.2).
 
 ---
 
-## 5. Classical Needling Depth Calculation Table (Han Dynasty 1 fen = 2.3 mm)
+## 5. Needling Depth Calculation Table (Rank 5: 1 fen = 2.3 mm)
 
-`침구문헌별 자침깊이 정리_AI 분석용.xlsx` 시트1 행 56(LU03)·57(LU04) (두 혈 값 동일) 및 원전 대조:
+`침구문헌별 자침깊이 정리_AI 분석용.xlsx` Sheet 1, rows 56 (LU03) and 57 (LU04) (identical values for the two points), collated with the classics:
 
-| 문헌 | Tianfu (天府, LU03) | Xiabai (俠白, LU04) | 한대 환산 z | 도달 Layer |
+| Text | Tianfu (天府) | Xiabai (俠白) | Han-dynasty conversion z | Layer reached |
 | :--- | :---: | :---: | :---: | :--- |
-| *Huangdi Mingtang Jing* (《黃帝明堂經》)(황룡상 집교) | 4푼, 禁灸 | 4푼, 灸五壯 | 9.2mm | cLU: **L4 위팔동맥·정중신경**(마른 체형에서 접촉) |
-| *Zhen Jiu Jia Yi Jing* (《針灸甲乙經》) | 4푼, 留三呼, 禁灸 | 4푼, 留三呼, 灸七壯 | 9.2mm | 같음 |
-| 《东医宝鉴》(인 동인) | 3푼 | 3푼 | 6.9mm | cLU: L1~L2(체형에 따라 L4 근접) |
-| *Taiping Shenghui Fang* (《太平聖惠方》) | 4푼, 留七呼, 灸二七壯~百壯 | — | 9.2mm | — |
-| 경락수혈학·침구의학 공통교재 / 《通考》 | 5~10푼 | 5~10푼 | 11.5~23mm | pLU: L2~L3 위팔두갈래근·위팔근, 하한에서 L4 근피신경 도달 가능 |
-| 침구경험방 | blank (미기술, 결측) | blank (결측) | — | — |
+| *Huangdi Mingtang Jing* (《黃帝明堂經》) (collated by Huang Longxiang 黃龍祥) | 4 fen, 禁灸 (no moxibustion) | 4 fen, 灸五壯 | 9.2 mm | cLU: **L4 brachial artery and median nerve** (contact in lean individuals) |
+| *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | 4 fen, 留三呼, 禁灸 | 4 fen, 留三呼, 灸七壯 | 9.2 mm | Same |
+| *Donguibogam* (《東醫寶鑑》) (quoting the *Tongren* 《銅人》) | 3 fen | 3 fen | 6.9 mm | cLU: L1–L2 (close to L4 depending on build) |
+| *Taiping Shenghui Fang* (《太平聖惠方》) | 4 fen, 留七呼, 灸二七壯–百壯 | — | 9.2 mm | — |
+| Common textbooks of Meridian & Acupoint Studies / Acupuncture Medicine / 《通考》 | 5–10 fen | 5–10 fen | 11.5–23 mm | pLU: L2–L3 biceps brachii and brachialis; at the lower limit may reach the L4 musculocutaneous nerve |
+| *Chimgu Gyeongheombang* (《鍼灸經驗方》) | blank (not described, missing) | blank (missing) | — | — |
 
-- Contraindicated for Needling (禁鍼) 값 `'0'`은 두 혈 모두 없다.
+- Neither point has the needling-prohibition value `'0'`.
 
-**해석**
-- 고전의 4푼(≈9.2mm)은 **안쪽 동맥점에서 L4 신경혈관속 깊이와 겹친다.** 고전의 얕은 자침 규정과 Tianfu (天府, LU03) 금구(禁灸)는 "大脈 위의 혈"이라는 특성에서 나온 것이다. 《通考》는 "古代文獻所言'禁灸'是針對位於大脈中的'天府'而言，現代的定位已不在脈中"이라고 적는다.
-- 현대의 0.5~1촌 직자는 가쪽 근육점(pLU)을 전제로 한 깊이다. **이 깊이를 안쪽 동맥점(cLU)에 그대로 적용하면 위팔동맥·정중신경 손상 위험이 있다.**
-- **cLU 자침 안전 수칙 (제안)**:
-  1. 맥박을 촉지한 뒤 손가락으로 동맥을 비켜 고정한다.
-  2. 동맥 옆으로 얕게(≤ 3~4푼, 약 7~9mm) 자입한다.
-  3. 전격감(정중신경 자극)이 나타나면 즉시 침을 뺀다.
-  4. 직접 뜸은 하지 않는다.
-- 기존 비교보고서의 "동맥벽을 스치듯이 사침"이라는 권고는 **안전상 철회한다.**
+**Interpretation**
+- The classical 4 fen (≈ 9.2 mm) **overlaps the depth of the L4 neurovascular bundle at the medial arterial point.** The shallow classical needling rule and the moxibustion prohibition (禁灸) at Tianfu (天府) derive from its character as "a point over a great vessel (大脈)". The 《通考》 states: "古代文獻所言'禁灸'是針對位於大脈中的'天府'而言，現代的定位已不在脈中".
+- The modern perpendicular insertion of 0.5–1 cun presupposes the lateral muscular point (pLU). **Applying this depth unchanged to the medial arterial point (cLU) risks injury to the brachial artery and median nerve.**
+- **Needling safety rules for cLU (proposed)**:
+  1. Palpate the pulse, then displace and hold the artery aside with a finger.
+  2. Insert shallowly beside the artery (≤ 3–4 fen, about 7–9 mm).
+  3. Withdraw the needle immediately if an electric-shock sensation (median-nerve stimulation) occurs.
+  4. Do not apply direct moxibustion.
+- The earlier comparative report's recommendation of "oblique needling as if grazing the arterial wall" is **withdrawn for safety reasons.**
 
 ---
 
-## 6. Textbook Comparison Table & FMA Ontology Mapping (Common Textbook vs. Prof. Kim Jaehyo)
+## 6. Textbook Comparison Table of Anatomical Structures (Common Textbook vs. Kim Jaehyo)
 
-| 구분 | 《경혈학 공통교재》 데이터셋 (상권 p.40·44) | 김재효 교수 데이터셋 | 공통점·차이점 분석 |
+| Category | *Common Textbook of Acupoint Studies* dataset (vol. 1, pp. 40, 44) | Prof. Kim Jaehyo dataset | Similarities and differences |
 | :--- | :--- | :--- | :--- |
-| **근육** | Tianfu (天府, LU03)·Xiabai (俠白, LU04) 모두 위팔두갈래근 | Tianfu (天府, LU03): 어깨세모근, 큰가슴근, 위팔두갈래근 긴갈래 / Xiabai (俠白, LU04): 위팔두갈래근 긴갈래 | 둘 다 가쪽 정위(pLU)를 전제로 함. 김재효 데이터셋은 Tianfu (天府, LU03) 높이의 어깨세모근 정지부와 큰가슴근 정지부까지 포함 |
-| **신경** | **정중신경**, 가쪽아래팔피부신경, 아래가쪽위팔피부신경 | 위가쪽위팔피부신경, **근육피부신경**, 뒤아래팔피부신경, 등쪽아래팔피부신경(C5-6) | **핵심 차이.** 공통교재의 정중신경은 안쪽 동맥점(cLU)의 구조물이다. 김재효 데이터셋은 가쪽 정위와 맞는 근피신경 계열로 일관됨 |
-| **혈관** | **위팔동·정맥**, 노쪽피부정맥 | 노쪽피부정맥 | 공통교재의 위팔동·정맥 역시 안쪽 동맥점의 구조물이다. 노쪽피부정맥은 두 교재 공통 |
-| **판정** | **혼합형**: 가쪽 정위 위에 고전 동맥점의 구조물(정중신경·위팔동맥)이 섞여 있음 | **가쪽 정위 일관형** | 두 교재는 근육·노쪽피부정맥에서만 일치하고 신경·혈관은 **불일치**한다. 공통교재의 혼합은 황룡상이 지적한 "**부위는 바뀌었는데 층차해부는 고전을 따른다**"는 명실분리가 교재 수준에서 재현된 사례다. 《穴位通鉴》에 인용된 1930~40년대 《高等针灸学讲义》·《中华针灸学》의 "循上膊動脈…分布正中神經" 기술이 계승된 것으로 추정됨 |
+| **Muscles** | Biceps brachii for both Tianfu (天府) and Xiabai (俠白) | Tianfu (天府): deltoid, pectoralis major, long head of biceps brachii / Xiabai (俠白): long head of biceps brachii | Both presuppose the lateral location (pLU). The Kim Jaehyo dataset also includes the insertions of deltoid and pectoralis major at the level of Tianfu (天府) |
+| **Nerves** | **Median nerve**, lateral cutaneous nerve of forearm, inferior lateral cutaneous nerve of arm | Superior lateral cutaneous nerve of arm, **musculocutaneous nerve**, posterior cutaneous nerve of forearm, dorsal antebrachial cutaneous nerve (C5-6) | **Key difference.** The median nerve in the Common Textbook is a structure of the medial arterial point (cLU). The Kim Jaehyo dataset is consistently musculocutaneous-related, matching the lateral location |
+| **Vessels** | **Brachial artery and vein**, cephalic vein | Cephalic vein | The brachial artery and vein in the Common Textbook are likewise structures of the medial arterial point. The cephalic vein is common to both textbooks |
+| **Verdict** | **Mixed type**: structures of the classical arterial point (median nerve, brachial artery) mixed onto the lateral location | **Consistently lateral type** | The two textbooks agree only on the muscle and the cephalic vein, and **disagree** on nerves and vessels. The Common Textbook's mixture reproduces at textbook level the separation of name and substance (名實分離) pointed out by Huang Longxiang (黃龍祥): "**the location changed, but the layer anatomy follows the classics**". Presumed to inherit the description "循上膊動脈…分布正中神經" of the 1930s–40s 《高等針灸學講義》 and 《中華針灸學》 quoted in the Xuewei Tongjian (《穴位通鑑》) |
 
-출처: `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx` `해부구조_개별항목_상세` 행 273~284, `김재효 수업_경혈_해부구조_데이터셋.xlsx` `해부구조_개별항목_상세` 행 399~412 (등록부 B2-09).
+Sources: `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx` `해부구조_개별항목_상세` rows 273–284, `김재효 수업_경혈_해부구조_데이터셋.xlsx` `해부구조_개별항목_상세` rows 399–412 (registry B2-09).
 
-**FMA 판별** (부록 A): LU03 공통 FMA 실체 1개(노쪽피부정맥 FMA:13324) · 공통교재 단독 6개 · 김재효 단독 5개, LU04 공통 1 · 공통교재 단독 6 · 김재효 단독 3. 위팔두갈래근은 공통교재가 근육 전체(FMA:37670), 김재효가 긴갈래(FMA:37683, 전체의 부분)로 적어 ID가 다를 뿐 같은 근육이므로 실제 공통 구조는 **위팔두갈래근 + 노쪽피부정맥** 두 개다.
+**FMA adjudication** (Appendix A): LU03 has 1 shared FMA entity (cephalic vein FMA:13324) · 6 Common Textbook only · 5 Kim Jaehyo only; LU04 has 1 shared · 6 Common Textbook only · 3 Kim Jaehyo only. For biceps brachii the Common Textbook records the whole muscle (FMA:37670) and Kim Jaehyo the long head (FMA:37683, a part of the whole); only the IDs differ and it is the same muscle, so the structures actually shared are two: **biceps brachii + cephalic vein**.
 
-- **FMA로 본 차이의 의미**: 공통교재의 정중신경(FMA:14385)·위팔동정맥(FMA:22689·22934)은 안쪽 위팔두갈래근고랑(FMA:74569 Medial bicipital groove)의 신경혈관다발, 즉 **T1 쪽 구조**다. 김재효의 근육피부신경(FMA:37064)·위가쪽위팔피부신경(FMA:65303)·뒤아래팔피부신경(FMA:39145)은 위팔두갈래근과 위팔근 사이·가쪽 피부의 **T2 쪽 구조**다. FMA상 근육피부신경과 정중신경은 모두 팔신경얼기 가쪽다발(FMA:45235)에서 이어지지만 위팔에서의 위치가 다르므로, 위 "혼합형(공통교재) vs 가쪽 정위 일관형(김재효)" 판정을 ID 수준에서 확인한다. 이 판별은 $S_{clarity}$ 단계를 바꾸지 않는다.
+- **Meaning of the difference seen through FMA**: the Common Textbook's median nerve (FMA:14385) and brachial artery/vein (FMA:22689, 22934) form the neurovascular bundle of the medial bicipital groove (FMA:74569 Medial bicipital groove), i.e. **T1-side structures**. Kim Jaehyo's musculocutaneous nerve (FMA:37064), superior lateral cutaneous nerve of arm (FMA:65303) and posterior cutaneous nerve of forearm (FMA:39145) are **T2-side structures** between biceps brachii and brachialis and in the lateral skin. In FMA both the musculocutaneous and median nerves continue from the lateral cord of the brachial plexus (FMA:45235), but their positions in the arm differ, so the verdict above — "mixed type (Common Textbook) vs consistently lateral type (Kim Jaehyo)" — is confirmed at the ID level. This adjudication does not change the $S_{clarity}$ level.
 
-**도식**
+**Diagram**
 
 ```
-            [위팔 중간 높이 횡단면 모식 — 앞에서 본 방향, 왼쪽=안쪽]
+        [Schematic transverse section at mid-arm level — viewed from the front, left = medial]
 
- 안쪽(medial)                                                가쪽(lateral)
-   │ 자쪽피부정맥                                       노쪽피부정맥  │
-   │ ● 위팔동맥 + 정중신경   ┌───── 위팔두갈래근 ─────┐  ◇ pLU3/4     │
-   │ ▲ cLU3/4 (고전·송석모)  └── 위팔근 / 근피신경 ───┘  (WHO·교재)   │
-   │  안쪽 근육사이막                [ 위팔뼈 ]       가쪽 근육사이막 │
-   └─────────────────────── Δ ≈ 28~29mm (모델) ───────────────────────┘
-   공통교재 신경·혈관 목록 = ▲ 쪽 구조물    김재효 신경·혈관 목록 = ◇ 쪽 구조물
+ Medial                                                              Lateral
+   │ Basilic v.                                             Cephalic v.  │
+   │ ● Brachial a. + median n.  ┌──── Biceps brachii ────┐  ◇ pLU3/4     │
+   │ ▲ cLU3/4 (classical·Song)  └─ Brachialis / MC n. ───┘  (WHO·texts)  │
+   │  Medial intermuscular septum   [ Humerus ]  Lat. interm. septum    │
+   └─────────────────────── Δ ≈ 28–29 mm (model) ────────────────────────┘
+   Common Textbook nerve/vessel list = ▲-side structures   Kim Jaehyo nerve/vessel list = ◇-side structures
 ```
 
 ---
 
-## 7. 공간 변위 분기 추론 (Dual-Target Bifurcation)
+## 7. Spatial Displacement Bifurcation Reasoning (Dual-Target Bifurcation)
 
-| 쟁점 | 송석모(2022) | 황룡상 *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 본 보고서 판정 |
+| Issue | Song Seok-mo (2022) | Huang Longxiang (黃龍祥), *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Verdict of this report |
 | :--- | :--- | :--- | :--- |
-| 고전 Tianfu (天府, LU03)·Xiabai (俠白, LU04)의 실체 | 위팔동맥 박동점(안쪽) | 위팔동맥 박동점(안쪽). 오늘날 수소음경 부위에 해당 | **두 출처 일치. 개연(실측 미확인)** |
-| 《灵枢·经脉》 "下循臑內" | 위팔 안쪽 = 위팔동맥 노선 | 帛書보다 노쪽으로 이동한 단계 ("已較…移向上臂橈側"). 혈위 정위는 이를 늦게 따라감 | **해석 분기.** "行少陰心主之前"이 노쪽 이동을 시사한다는 황룡상의 견해를 배제할 수 없음 |
-| 가쪽으로 바뀐 경위 | 20세기 중반 이후. 동맥 기재가 빠지고 간편취혈법(팔을 들어 코끝이 닿는 곳)의 모호성 때문에 오인했다는 **추정** | 明正统铜人이 이미 굽힘면 노쪽에 표시. 해부학 용어로 "외측연"을 처음 쓴 것은 일본 침구서. 중국 교재는 4판부터 | **다원적 경위.** 기존 비교보고서의 "1950년대 비묵인비 자세 오인" 단일 원인설은 **두 출처 모두 그렇게 단정하지 않으므로 수정함** |
-| 처방 | **WHO 위치를 오류로 보고 안쪽 동맥점으로 복원** | **현대 위치를 인정하고 주치·자법·층차해부를 새 위치에 맞게 고침** (天府는 비부·상완 국소 위주, 폐 증상은 부차적으로) | **이원 타깃 병존**: 고전 주치는 cLU에, 국소 주치는 pLU에 귀속. 표준 개정 여부는 학계 판단 사항으로 남김 |
-| ΔARI-Core 판정 (§10.5) | — | — | cLU3 > pLU3 (Δ 15.0, 비중첩), cLU4 > pLU4 (Δ 18.7, 비중첩) → **Target 1 우위 선언** |
+| Substrate of the classical Tianfu (天府) and Xiabai (俠白) | Pulsation point of the brachial artery (medial) | Pulsation point of the brachial artery (medial); corresponds to today's Hand-Shaoyin Meridian (手少陰經) region | **The two sources agree. Probable (not confirmed by measurement)** |
+| 《靈樞·經脈》 "下循臑內" | Medial side of the arm = course of the brachial artery | A stage shifted radially relative to the silk manuscripts (帛書) ("已較…移向上臂橈側"). The point location followed this belatedly | **Interpretations diverge.** Huang Longxiang's (黃龍祥) view that "行少陰心主之前" implies a radial shift cannot be excluded |
+| How the location moved laterally | From the mid-20th century; a **conjecture** that it was misread because the arterial description was dropped and the simplified locating method (where the nose tip touches the raised arm) was ambiguous | The Ming Zhengtong bronze figure (明正統銅人) already marks the radial side of the flexor surface. The first to use the anatomical term "lateral border" were Japanese acupuncture books. Chinese textbooks from the 4th edition | **Multiple pathways.** The earlier comparative report's single-cause theory of "misreading of the nose-to-arm posture in the 1950s" has been **revised, because neither source asserts it** |
+| Remedy | **Treat the WHO location as an error and restore the medial arterial point** | **Accept the modern location and revise the indications, needling methods and layer anatomy to fit the new location** (天府 mainly for local arm and upper-arm problems, with lung symptoms secondary) | **Dual-target coexistence**: classical indications assigned to cLU, local indications to pLU. Whether to revise the standard is left to the academic community |
+| ΔARI-Core verdict (§10.5) | — | — | cLU3 > pLU3 (Δ 15.0, non-overlapping), cLU4 > pLU4 (Δ 18.7, non-overlapping) → **Target 1 declared superior** |
 
 ---
 
-## 8. Biomedical Reflex Pathway Diagram & External Search Log
+## 8. Biomedical Reflex Pathway Diagram & External Search Log (Rank 6)
 
-### 8.1 Layer A 논문 (`경혈_생의학_신경반사_마스터DB.json`, 2026-10-04 동기화 후)
+### 8.1 Layer A Papers (`경혈_생의학_신경반사_마스터DB.json`, after the 2026-10-04 sync)
 
-**경혈 특이 연구(cLU·pLU 단독 자극의 기전·임상): 0편.** 아래는 LU3·LU4가 처방에 포함된 연구와 문헌 연구이다.
+**Point-specific studies (mechanistic or clinical studies of cLU or pLU stimulation alone): 0 papers.** Below are studies whose prescriptions include LU3 or LU4, and literature studies.
 
-| papers.id | 연도 | 저널 | 제목 | PMID / DOI | 설계 | 관련 Target·평가 |
+| papers.id | Year | Journal | Title | PMID / DOI | Design | Relevant Target·assessment |
 | :---: | :---: | :--- | :--- | :--- | :--- | :--- |
-| 1819 | 2020 | Evid Based Complement Alternat Med | Effect of Acupuncture on Muscle Endurance in the Female Shoulder Joint: A Pilot Study | PMID 32952592 | 인체, 다혈위(7~11혈) 동시 자침, 대조군 없는 전후 비교 | pLU3·pLU4 포함. 경혈 특이 아님 |
-| 1822 | 2020 | Evid Based Complement Alternat Med | Effects of Acupuncture on Explosive Force Production by the Healthy Female Shoulder Joint | PMID 33343681 | 같음 | 같음 |
-| 1832 | 2021 | Int J Environ Res Public Health | Effect of Acupuncture on Timeliness of Male Shoulder Joint Endurance | PMID 34070380 / 10.3390/ijerph18115638 | 같음 | 같음 |
-| 1833 | 2021 | Evid Based Complement Alternat Med | Effect of Acupuncture on the Timeliness of Explosive Forces Generated by the Male Shoulder Joint | PMID 33815552 / 10.1155/2021/5585605 | 같음 | 같음 |
-| 1836 | 2013 | Zhongguo Zhen Jiu | Efficacy comparison of different stimulation therapies for periarthritis of shoulder | PMID 23620934 | 인체, 견관절주위염 무작위 비교(동일 다혈 처방에서 EA·TENS·지압 비교) | pLU4 포함 가능. 경혈 특이 아님 |
-| 1827 | 2026 | Zhongguo Zhen Jiu | Thoughts on the descriptions of acupoint indications in contemporary teaching materials: can Tianfu (LU3) treat shoulder-arm pain? | PMID 42618253 / 10.13703/j.0255-2930.20250624-k0001 | 문헌 논평(비실험) | LU3 주치 기술 논평. 기전 편수 불산입 |
-| 1829, 1837 | 2020 | Zhongguo Zhen Jiu | 기능성 소화불량·만성 Diarrhea (泄瀉) 다혈 처방 임상 관찰 | PMID 33788483 / 32100510 | 인체(비RCT), 다혈위 | LU4 관련성 낮음 |
-| 1838 | 2021 | Korean J Acupunct | De Quervain 화침·온침 연구 종설 | 10.14406/acu.2021.031 | 종설 | 기전 편수 불산입 |
-| 440 | 2022 | Korean J Acupunct | Lung Meridian of Hand-Taiyin (手太陰肺經) 노선에 대한 고찰 - Tianfu (天府, LU03)ㆍXiabai (俠白, LU04)을 중심으로 (송석모) | 10.14406/acu.2022.024 | 문헌 연구 | 정위 고증(§1·§7) |
+| 1819 | 2020 | Evid Based Complement Alternat Med | Effect of Acupuncture on Muscle Endurance in the Female Shoulder Joint: A Pilot Study | PMID 32952592 | Human, simultaneous needling of multiple points (7–11), uncontrolled before–after comparison | Includes pLU3 and pLU4. Not point-specific |
+| 1822 | 2020 | Evid Based Complement Alternat Med | Effects of Acupuncture on Explosive Force Production by the Healthy Female Shoulder Joint | PMID 33343681 | Same | Same |
+| 1832 | 2021 | Int J Environ Res Public Health | Effect of Acupuncture on Timeliness of Male Shoulder Joint Endurance | PMID 34070380 / 10.3390/ijerph18115638 | Same | Same |
+| 1833 | 2021 | Evid Based Complement Alternat Med | Effect of Acupuncture on the Timeliness of Explosive Forces Generated by the Male Shoulder Joint | PMID 33815552 / 10.1155/2021/5585605 | Same | Same |
+| 1836 | 2013 | Zhongguo Zhen Jiu | Efficacy comparison of different stimulation therapies for periarthritis of shoulder | PMID 23620934 | Human, randomised comparison in periarthritis of the shoulder (EA, TENS and acupressure compared within the same multi-point prescription) | May include pLU4. Not point-specific |
+| 1827 | 2026 | Zhongguo Zhen Jiu | Thoughts on the descriptions of acupoint indications in contemporary teaching materials: can Tianfu (LU3) treat shoulder-arm pain? | PMID 42618253 / 10.13703/j.0255-2930.20250624-k0001 | Literature commentary (non-experimental) | Commentary on the description of LU3 indications. Not counted among mechanistic papers |
+| 1829, 1837 | 2020 | Zhongguo Zhen Jiu | Clinical observations of multi-point prescriptions for functional dyspepsia and chronic diarrhoea | PMID 33788483 / 32100510 | Human (non-RCT), multiple points | Low relevance to LU4 |
+| 1838 | 2021 | Korean J Acupunct | Review of fire-needle and warm-needle studies in De Quervain's disease | 10.14406/acu.2021.031 | Review | Not counted among mechanistic papers |
+| 440 | 2022 | Korean J Acupunct | A study on the course of the Lung Meridian of Hand-Taiyin (手太陰肺經): focusing on Tianfu (天府) and Xiabai (俠白) (Song Seok-mo) | 10.14406/acu.2022.024 | Literature study | Location collation (§1, §7) |
 
-- **인용 제외(superseded)**: papers.id **1676**(PMID 8937575, "Sympathetic control of nasal mucosal vasculature…", Am J Rhinol 1996)은 PMID가 실제로는 다른 논문(Chen YT, Nelson WJ. *Anal Biochem* 1996)을 가리키고 기재 DOI가 존재하지 않아, 마스터 DB에서 **검증 불가 인용으로 superseded 처리**되었다(2026-10-04). papers.id **1677**(Travell & Simons 위팔두갈래근 장 수기 등록)도 같은 사유로 superseded이며, 해당 서적은 Layer B 등록부 **B2-06**으로만 인용한다.
-- **기타 자동 감지 논문**(1810, 1820, 1821, 1823~1826, 1828[HT1 연구], 1830, 1831, 1834, 1835)은 제목 확인 결과 LU3·LU4와 무관하거나 다른 혈위 연구여서 제외했다. 로컬 소장 문헌사 연구(373, 938, 1458, 1461, 1485, 1489, 1506, 1511, 1512, 1514, 1519, 554)는 원전 고증 자료이며 기전 근거가 아니다.
-- **DB 메모**: 1819·1822의 DB 기재 DOI(10.3727/…, 10.1152/jappl.…)는 다른 논문의 DOI로 보여 PMID로만 인용했다(확인 필요). 마스터 DB의 LU3 신경지배·반사회로 항목(근피신경 C5-C7, 성상신경절→키셀바흐 혈관총)은 이 보고서의 이원 분기 결론과 맞지 않고 LU4 항목은 비어 있다. DB 쪽 정정이 필요하다.
-- **판정**: 다혈위 인체 연구는 있으나 경혈 특이 Layer A는 0편 → 게이트 2 적용(S_reflex ≤ 25, H). B-Check는 4개 Target 모두 8/12 미만이므로 아래 기전은 **가설**이다.
+- **Excluded from citation (superseded)**: papers.id **1676** (PMID 8937575, "Sympathetic control of nasal mucosal vasculature…", Am J Rhinol 1996) was marked **superseded as an unverifiable citation** in the master DB (2026-10-04), because the PMID actually points to a different paper (Chen YT, Nelson WJ. *Anal Biochem* 1996) and the recorded DOI does not exist. papers.id **1677** (a manual entry for the Travell & Simons chapter on biceps brachii) is likewise superseded for the same reason; that book is cited only as Layer B registry entry **B2-06**.
+- **Other automatically detected papers** (1810, 1820, 1821, 1823–1826, 1828 [an HT1 study], 1830, 1831, 1834, 1835) were excluded because on checking their titles they are unrelated to LU3 and LU4 or study other points. The locally held studies of textual history (373, 938, 1458, 1461, 1485, 1489, 1506, 1511, 1512, 1514, 1519, 554) are materials for classical collation, not mechanistic evidence.
+- **DB note**: the DOIs recorded in the DB for 1819 and 1822 (10.3727/…, 10.1152/jappl.…) appear to belong to other papers, so these are cited by PMID only (to be checked). The master DB's LU3 innervation and reflex-circuit entries (musculocutaneous nerve C5-C7, stellate ganglion → Kiesselbach's plexus) do not fit this report's dual-split conclusion, and the LU4 entry is empty. The DB needs correcting.
+- **Verdict**: multi-point human studies exist, but point-specific Layer A = 0 papers → Gate 2 applies (S_reflex ≤ 25, H). B-Check is below 8/12 for all four Targets, so the mechanisms below are **hypotheses**.
 
-### 8.2 Layer B 신경회로 매핑 (등록부 참조 ID)
+### 8.2 Layer B Neural Circuit Mapping (registry reference IDs)
 
-| 가설 | 근거 구조 (참조 ID) | 정합성 평가 |
+| Hypothesis | Supporting structures (reference IDs) | Assessment of consistency |
 | :--- | :--- | :--- |
-| **H1. cLU4–心痛 (분절 수렴)** | 심장 구심섬유는 T1~T4(T5) 척수로 들어간다(B3-03). 위팔 안쪽 피부(안쪽위팔피부신경 T1, 갈비사이위팔신경 T2; B1-03)는 협심통 연관통이 퍼지는 대표 부위다(Head zone, B3-01; 내장-체성 수렴, B3-02·B3-03) | **분절 일치는 명시적(B-Check ② = 2).** 그러나 체성 자극→심장 반사의 근거는 마취 동물 체성-자율신경 반사(B3-04, B3-05)와 다른 경혈(정중신경 위 PC5-6)의 심혈관 반사(B3-12, B3-13)에서 나온 **유추**이며 cLU4 자체 근거는 없다 → **가설** |
-| **H2. pLU4–心痛** | 가쪽 피부는 C5~C6 분절이다(B1-03) | **분절 불일치.** WHO점에 心痛 주치를 그대로 귀속하는 근거가 약하다. 황룡상의 명실분리 지적을 생리학적으로 뒷받침함 |
-| **H3. cLU3–鼻衄** | 머리·코점막의 교감신경 절전섬유는 T1~T3 → 위목신경절 → 코점막 혈관수축으로 이어진다(B1-01, B3-05). cLU3 피부·혈관주위 구조는 T1~T2 분절과 겹친다 | **부분 정합, 가설 수준.** 원심 효과 방향(⑤)을 뒷받침하는 등록부 참조가 없다(⑤ = 0). 황룡상은 天府의 비뉵·폐 주치가 "天府脈"을 **진단(맥후)**하던 데서 유래했다고 본다. 즉 자극 효과의 증거라기보다 진단 부위의 병후일 수 있다(상충 → 가설 고정) |
-| **H4. pLU3/pLU4–상완 국소통** | 위팔두갈래근 근막통증유발점·근피신경 운동점(B2-06; 발통점–경혈 대응 논쟁 B2-03·B2-04), 근육 구심·결합조직면(B2-02, B3-06), 관문조절·분절 진통(B3-07, B3-11) | **국소 효과로는 정합.** 다만 Layer A(1819·1822·1832·1833·1836)는 근력·통증 다혈 처방 결과라 pLU 단독 귀속이 불가하다 → 가설 |
+| **H1. cLU4 – heart pain (心痛) (segmental convergence)** | Cardiac afferent fibres enter the spinal cord at T1–T4 (T5) (B3-03). The skin of the medial arm (medial cutaneous nerve of arm T1, intercostobrachial nerve T2; B1-03) is a typical area to which anginal referred pain spreads (Head zone, B3-01; viscero-somatic convergence, B3-02, B3-03) | **Segmental concordance is explicit (B-Check ② = 2).** However, the evidence for a somatic stimulus → cardiac reflex is an **inference** from somato-autonomic reflexes in anaesthetised animals (B3-04, B3-05) and cardiovascular reflexes at another point (PC5-6, over the median nerve) (B3-12, B3-13); there is no evidence for cLU4 itself → **hypothesis** |
+| **H2. pLU4 – heart pain (心痛)** | The lateral skin belongs to segments C5–C6 (B1-03) | **Segmental mismatch.** The basis for assigning the heart pain (心痛) indication unchanged to the WHO point is weak. This physiologically supports Huang Longxiang's (黃龍祥) point about the separation of name and substance |
+| **H3. cLU3 – epistaxis (鼻衄)** | Sympathetic preganglionic fibres to the head and nasal mucosa run from T1–T3 → superior cervical ganglion → vasoconstriction of the nasal mucosa (B1-01, B3-05). The skin and periarterial structures of cLU3 overlap segments T1–T2 | **Partially consistent, hypothesis level.** No registry reference supports the direction of the efferent effect (⑤) (⑤ = 0). Huang Longxiang (黃龍祥) holds that Tianfu's (天府) epistaxis and lung indications derive from its use in **diagnosing (pulse-taking, 脈候)** the "天府脈". In other words, they may be signs of disease at a diagnostic site rather than evidence of a stimulation effect (conflict → fixed as hypothesis) |
+| **H4. pLU3/pLU4 – local upper-arm pain** | Myofascial trigger points of biceps brachii and the motor point of the musculocutaneous nerve (B2-06; trigger point–acupoint correspondence debate B2-03, B2-04), muscle afferents and connective-tissue planes (B2-02, B3-06), gate control and segmental analgesia (B3-07, B3-11) | **Consistent as a local effect.** However, the Layer A studies (1819, 1822, 1832, 1833, 1836) report outcomes of multi-point prescriptions for muscle strength and pain, so they cannot be attributed to pLU alone → hypothesis |
 
-**말초 구심 경로의 FMA 고정**: H1~H4의 첫 구간(자침점 → 척수)은 FMA 관계로 아래와 같이 고정된다. T1(cLU)은 안쪽다발·갈비사이신경(T1~T2)과 가쪽다발 정중신경 쪽, T2(pLU)는 가쪽다발 근육피부신경(C5~C6) 쪽에서 시작해 **들어가는 척수 분절이 다르다** — H1(cLU4 분절 일치)과 H2(pLU4 분절 불일치)의 해부 앞단이다. 이 구조 사슬은 B-Check 점수를 바꾸지 않는다.
+**Pinning the peripheral afferent pathway with FMA**: the first segment of H1–H4 (needling site → spinal cord) is pinned by FMA relations as shown below. T1 (cLU) starts from the medial cord and intercostal nerve (T1–T2) and the median nerve of the lateral cord, while T2 (pLU) starts from the musculocutaneous nerve (C5–C6) of the lateral cord, so **they enter different spinal segments** — this is the anatomical front end of H1 (cLU4 segmental concordance) and H2 (pLU4 segmental mismatch). This structural chain does not change the B-Check scores.
 
 ```mermaid
 flowchart TB
-  C(("T1 cLU3/4<br/>안쪽 위팔두갈래근고랑")) --> BA["위팔동맥 FMA:22689<br/>(공통교재)"]
-  C --> MN["정중신경 FMA:14385<br/>(공통교재)"]
-  C -.피하.-> MCA["안쪽위팔피부신경<br/>FMA:65246"]
-  C -.피하.-> ICB["갈비사이위팔신경<br/>FMA:11307"]
-  P(("T2 pLU3/4<br/>위팔두갈래근 가쪽 모서리")) --> BB["위팔두갈래근 FMA:37670<br/>분절 C5·C6"]
-  P --> MC["근육피부신경 FMA:37064<br/>(김재효)"]
-  P -.피하.-> CV["노쪽피부정맥 FMA:13324<br/>(두 교재 공통)"]
+  C(("T1 cLU3/4<br/>medial bicipital groove")) --> BA["Brachial artery FMA:22689<br/>(Common Textbook)"]
+  C --> MN["Median nerve FMA:14385<br/>(Common Textbook)"]
+  C -.subcutaneous.-> MCA["Medial cutaneous nerve of arm<br/>FMA:65246"]
+  C -.subcutaneous.-> ICB["Intercostobrachial nerve<br/>FMA:11307"]
+  P(("T2 pLU3/4<br/>lateral border of biceps brachii")) --> BB["Biceps brachii FMA:37670<br/>segments C5, C6"]
+  P --> MC["Musculocutaneous nerve FMA:37064<br/>(Kim Jaehyo)"]
+  P -.subcutaneous.-> CV["Cephalic vein FMA:13324<br/>(both textbooks)"]
   BB -- nerve_supply --> MC
-  MN -- continuous_proximally_with --> LC["팔신경얼기 가쪽다발<br/>FMA:45235"]
+  MN -- continuous_proximally_with --> LC["Lateral cord of brachial plexus<br/>FMA:45235"]
   MC -- continuous_proximally_with --> LC
-  MCA -- continuous_proximally_with --> MCO["팔신경얼기 안쪽다발<br/>FMA:45236"]
-  ICB -- branch_of --> IC["둘째 갈비사이신경 FMA:8602<br/>(T2)"]
-  LC --> SEGL["척수 C5~C7<br/>(B1)"]
-  MCO --> SEGM["척수 C8~T1<br/>(B1)"]
-  IC --> SEGT["척수 T2"]
+  MCA -- continuous_proximally_with --> MCO["Medial cord of brachial plexus<br/>FMA:45236"]
+  ICB -- branch_of --> IC["Second intercostal nerve FMA:8602<br/>(T2)"]
+  LC --> SEGL["Spinal cord C5–C7<br/>(B1)"]
+  MCO --> SEGM["Spinal cord C8–T1<br/>(B1)"]
+  IC --> SEGT["Spinal cord T2"]
 ```
 
-*그림 8-1. FMA 5.1.0 관계로 그린 Tianfu (天府, LU03)·Xiabai (俠白, LU04) 말초 구심 경로. 실선은 FMA 관계(`nerve_supply`·`continuous_proximally_with`·`branch_of`), 점선은 피하 경로다. 신경다발의 척수 분절은 FMA에 없어 B1-03으로 표시했다.*
+*Figure 8-1. Peripheral afferent pathways of Tianfu (天府) and Xiabai (俠白) drawn from FMA 5.1.0 relations. Solid lines are FMA relations (`nerve_supply`, `continuous_proximally_with`, `branch_of`); dashed lines are subcutaneous paths. Spinal segments of the nerve cords are not in FMA and are shown from B1-03.*
 
-### 8.3 B-Check 6항목 채점표 (조정 완료)
+### 8.3 B-Check 6-Item Scoring Tables (adjudicated)
 
-항목: ① 자침 심도의 말초신경·혈관 실체 ② 척수 분절 정합 ③ 구심 섬유형·수용체 ④ 중추 중계·경로 ⑤ 원심 경로·효과 방향과 P_single 일치 ⑥ 인체 전환 근거.
+Items: ① peripheral nerve/vessel substrate at needling depth ② spinal segmental concordance ③ afferent fibre type & receptors ④ central relay & pathway ⑤ efferent pathway & effect direction matching P_single ⑥ human translation.
 
-**cLU3 (고전 Tianfu (天府, LU03), 표적 주치: 鼻衄·喘咳)**
+**cLU3 (classical Tianfu 天府; target indications: epistaxis 鼻衄 · dyspnoea and cough 喘咳)**
 
-| 항목 | 채점자 A | 채점자 B | 최종 | 참조 ID | papers.id | 근거 요지 |
+| Item | Rater A | Rater B | Final | Reference IDs | papers.id | Rationale |
 | :---: | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① | 2 | 2 | **2** | B1-01, B1-03, B1-06 (+FMA) | — | '動脈中' 촉진 지표 = 안쪽 위팔두갈래근고랑(FMA:74569)의 위팔동맥(FMA:22689)·정중신경(FMA:14385)·안쪽위팔피부신경(FMA:65246)(규범 해부서 명시) |
-| ② | 1 | 1 | **1** | B1-03, B3-01, B3-05 (+FMA) | — | 안쪽 위팔 피부 T1~T2(FMA: 안쪽위팔피부신경 ← 안쪽다발, 갈비사이위팔신경 = 둘째 갈비사이신경 가쪽피부가지 FMA:11307)와 코점막 교감 절전(T1~T3)·폐(T2~T5) 분절 부분 중첩. 정중신경 C6~T1 혼재, 간접 |
-| ③ | 1 | 1 | **1** | B3-04, B3-05, B3-06 | — | 혈관주위·피부 구심 섬유는 마취 동물 근거로만 유추(범위 밖) |
-| ④ | 1 | 1 | **1** | B3-02, B3-04, B3-05 | — | 척수 분절 수렴·성상신경절 경로는 이론적 유추 |
-| ⑤ | 1 | 0 | **0** | B3-05 | — | 鼻衄 지혈 방향을 뒷받침하는 등록부 참조 없음. 鼻衄 주치는 맥후(진단) 기원일 수 있음(상충). 1676은 superseded로 미사용 |
-| ⑥ | 0 | 0 | **0** | B4-05 | — | cLU 인체 전환 근거 없음 |
-| **합계** | 6 | 5 | **5/12** | | | **판정: 가설** (8 미만, ⑤ 상충) |
+| ① | 2 | 2 | **2** | B1-01, B1-03, B1-06 (+FMA) | — | The '動脈中' palpation landmark = brachial artery (FMA:22689), median nerve (FMA:14385) and medial cutaneous nerve of arm (FMA:65246) in the medial bicipital groove (FMA:74569) (explicit in normative anatomy texts) |
+| ② | 1 | 1 | **1** | B1-03, B3-01, B3-05 (+FMA) | — | Medial arm skin T1–T2 (FMA: medial cutaneous nerve of arm ← medial cord; intercostobrachial nerve = lateral cutaneous branch of the second intercostal nerve FMA:11307) partly overlaps the segments of the sympathetic preganglionic supply to the nasal mucosa (T1–T3) and the lung (T2–T5). Median nerve C6–T1 mixed in; indirect |
+| ③ | 1 | 1 | **1** | B3-04, B3-05, B3-06 | — | Periarterial and cutaneous afferent fibres inferred only from anaesthetised-animal evidence (outside scope) |
+| ④ | 1 | 1 | **1** | B3-02, B3-04, B3-05 | — | Spinal segmental convergence and the stellate-ganglion pathway are theoretical inferences |
+| ⑤ | 1 | 0 | **0** | B3-05 | — | No registry reference supports a haemostatic direction for epistaxis (鼻衄). The epistaxis indication may originate in pulse diagnosis (脈候) (conflict). 1676 not used (superseded) |
+| ⑥ | 0 | 0 | **0** | B4-05 | — | No evidence of human translation for cLU |
+| **Total** | 6 | 5 | **5/12** | | | **Verdict: hypothesis** (below 8, conflict at ⑤) |
 
-**cLU4 (고전 Xiabai (俠白, LU04), 표적 주치: 心痛·煩滿)**
+**cLU4 (classical Xiabai 俠白; target indications: heart pain 心痛 · vexation and fullness 煩滿)**
 
-| 항목 | 채점자 A | 채점자 B | 최종 | 참조 ID | papers.id | 근거 요지 |
+| Item | Rater A | Rater B | Final | Reference IDs | papers.id | Rationale |
 | :---: | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① | 2 | 2 | **2** | B1-01, B1-03, B1-06 (+FMA) | — | 위팔 중간 안쪽고랑의 위팔동맥·정중신경 다발(FMA:22689·14385 exact)은 규범 해부로 명시 |
-| ② | 2 | 2 | **2** | B1-03, B3-01, B3-03 (+FMA) | — | 위팔 안쪽 T1~T2 피절(FMA: 안쪽위팔피부신경 FMA:65246 ← 안쪽다발, 갈비사이위팔신경 FMA:11307 = 둘째 갈비사이신경 가지)과 심장 구심 T1~T4·협심통 연관통 부위가 명시적으로 일치 |
-| ③ | 1 | 1 | **1** | B3-04, B3-05, B3-06, B3-12 | — | 정중신경 위 PC5-6 검증 마취 동물 연구에서 유추(범위 밖) |
-| ④ | 1 | 1 | **1** | B3-03, B3-12 | — | 후각 수렴·rVLM 경로 유추 |
-| ⑤ | 1 | 1 | **1** | B3-12, B3-13 | — | 교감 흥분성 심혈관 반응 억제 방향이 心痛 주치와 개념상 정합하나 타 경혈·동물 근거 |
-| ⑥ | 0 | 0 | **0** | B4-05 | — | cLU4 인체 전환 근거 없음 |
-| **합계** | 7 | 7 | **7/12** | | | **판정: 미부합**(8 미만) → 기전은 가설로 기술 |
+| ① | 2 | 2 | **2** | B1-01, B1-03, B1-06 (+FMA) | — | The brachial artery–median nerve bundle in the medial groove at mid-arm (FMA:22689, 14385 exact) is explicit in normative anatomy |
+| ② | 2 | 2 | **2** | B1-03, B3-01, B3-03 (+FMA) | — | The T1–T2 dermatome of the medial arm (FMA: medial cutaneous nerve of arm FMA:65246 ← medial cord; intercostobrachial nerve FMA:11307 = branch of the second intercostal nerve) explicitly matches cardiac afferents T1–T4 and the area of anginal referred pain |
+| ③ | 1 | 1 | **1** | B3-04, B3-05, B3-06, B3-12 | — | Inferred from anaesthetised-animal studies verified at PC5-6 over the median nerve (outside scope) |
+| ④ | 1 | 1 | **1** | B3-03, B3-12 | — | Inference of dorsal-horn convergence and the rVLM pathway |
+| ⑤ | 1 | 1 | **1** | B3-12, B3-13 | — | The direction of inhibiting sympathoexcitatory cardiovascular responses is conceptually consistent with the heart pain (心痛) indication, but the evidence comes from other points and animals |
+| ⑥ | 0 | 0 | **0** | B4-05 | — | No evidence of human translation for cLU4 |
+| **Total** | 7 | 7 | **7/12** | | | **Verdict: not concordant** (below 8) → mechanism described as a hypothesis |
 
-**pLU3 (WHO Tianfu (天府, LU03), 표적: 상완 국소통 / 고전 주치 귀속 시 상충)**
+**pLU3 (WHO Tianfu 天府; target: local upper-arm pain / conflict if the classical indications are assigned)**
 
-| 항목 | 채점자 A | 채점자 B | 최종 | 참조 ID | papers.id | 근거 요지 |
+| Item | Rater A | Rater B | Final | Reference IDs | papers.id | Rationale |
 | :---: | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① | 1 | 2 | **1** | B1-01, B1-05, B2-09 (+FMA) | — | 근육·근피신경 실체(FMA:37670·37064 exact)는 규범 해부로 지지되나 2대 교재 신경 목록 불일치, 혈위 특이 실측 없음 |
-| ② | 1 | 1 | **1** | B1-03 (+FMA) | — | C5~C6 피절·근절(FMA 분절 합집합 C5·C6)은 국소 위팔과 일치, 고전 표적(폐·코)과는 불일치 |
-| ③ | 1 | 1 | **1** | B2-02, B3-06, B3-18 | — | 근육 구심·결합조직면·국소 아데노신 유추(범위 밖) |
-| ④ | 1 | 1 | **1** | B3-07, B3-11 | — | 관문조절·분절 진통 일반 기전 |
-| ⑤ | 1 | 1 | **1** | B2-03, B2-04, B2-06 | 1819, 1822 | 국소 근막 효과 방향만 정합. Layer A 결과는 근력 지표로 통증 주치와 직접 일치하지 않음 |
-| ⑥ | 1 | 1 | **1** | B4-04, B4-05 | 1819, 1822, 1832, 1833 | 다혈위·무대조 전후 비교 인체 연구로 간접 근거 |
-| **합계** | 6 | 7 | **6/12** | | | **판정: 가설** (8 미만, 고전 주치 귀속 시 분절 상충) |
+| ① | 1 | 2 | **1** | B1-01, B1-05, B2-09 (+FMA) | — | The muscle and musculocutaneous-nerve substrate (FMA:37670, 37064 exact) is supported by normative anatomy, but the nerve lists of the two textbooks disagree and there is no point-specific measurement |
+| ② | 1 | 1 | **1** | B1-03 (+FMA) | — | The C5–C6 dermatome and myotome (union of FMA segments C5, C6) match the local upper arm but not the classical targets (lung, nose) |
+| ③ | 1 | 1 | **1** | B2-02, B3-06, B3-18 | — | Inference from muscle afferents, connective-tissue planes and local adenosine (outside scope) |
+| ④ | 1 | 1 | **1** | B3-07, B3-11 | — | General mechanisms of gate control and segmental analgesia |
+| ⑤ | 1 | 1 | **1** | B2-03, B2-04, B2-06 | 1819, 1822 | Only the direction of a local myofascial effect is consistent. The Layer A outcomes are muscle-strength measures and do not directly match the pain indication |
+| ⑥ | 1 | 1 | **1** | B4-04, B4-05 | 1819, 1822, 1832, 1833 | Indirect evidence from multi-point, uncontrolled before–after human studies |
+| **Total** | 6 | 7 | **6/12** | | | **Verdict: hypothesis** (below 8; segmental conflict if the classical indications are assigned) |
 
-**pLU4 (WHO Xiabai (俠白, LU04), 표적: 상완 국소통 / 고전 주치 귀속 시 상충)**
+**pLU4 (WHO Xiabai 俠白; target: local upper-arm pain / conflict if the classical indications are assigned)**
 
-| 항목 | 채점자 A | 채점자 B | 최종 | 참조 ID | papers.id | 근거 요지 |
+| Item | Rater A | Rater B | Final | Reference IDs | papers.id | Rationale |
 | :---: | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① | 1 | 2 | **1** | B1-01, B1-05, B2-09 (+FMA) | — | 가쪽 모서리 근육·신경 실체(FMA:37670·37064 exact)는 확인되나 교재 신경 목록 불일치, 실측 없음 |
-| ② | 1 | 1 | **1** | B1-03 (+FMA) | — | C5~C6 국소 분절(FMA 분절 합집합 C5·C6) 일치, 고전 心痛(T1~T4)과는 불일치(H2) |
-| ③ | 1 | 1 | **1** | B2-02, B3-06 | — | 근육 구심 일반 유추 |
-| ④ | 1 | 1 | **1** | B3-07, B3-11 | — | 분절 진통 일반 기전 |
-| ⑤ | 1 | 1 | **1** | B2-03, B2-04, B2-06 | 1836 | 견비통 개선 방향은 국소 주치와 일치하나 다혈위 처방 |
-| ⑥ | 1 | 1 | **1** | B4-04, B4-05 | 1819, 1822, 1832, 1833, 1836 | 다혈 병용 인체 연구로 간접 근거, 혈위 특이성 없음 |
-| **합계** | 6 | 7 | **6/12** | | | **판정: 가설** |
+| ① | 1 | 2 | **1** | B1-01, B1-05, B2-09 (+FMA) | — | The muscle and nerve substrate at the lateral border (FMA:37670, 37064 exact) is confirmed, but the textbook nerve lists disagree and there is no measurement |
+| ② | 1 | 1 | **1** | B1-03 (+FMA) | — | Local segments C5–C6 (union of FMA segments C5, C6) match; mismatch with the classical heart pain (心痛) (T1–T4) (H2) |
+| ③ | 1 | 1 | **1** | B2-02, B3-06 | — | General inference from muscle afferents |
+| ④ | 1 | 1 | **1** | B3-07, B3-11 | — | General mechanism of segmental analgesia |
+| ⑤ | 1 | 1 | **1** | B2-03, B2-04, B2-06 | 1836 | The direction of improvement in shoulder–arm pain matches the local indication, but the prescription is multi-point |
+| ⑥ | 1 | 1 | **1** | B4-04, B4-05 | 1819, 1822, 1832, 1833, 1836 | Indirect evidence from human studies of combined multi-point prescriptions; no point specificity |
+| **Total** | 6 | 7 | **6/12** | | | **Verdict: hypothesis** |
 
-### 8.4 외부 검색 로그 (`sync_log`, 2026-10-04·2026-10-23 Rank 6 실행)
+### 8.4 External Search Log (`sync_log`, Rank 6 runs of 2026-10-04 and 2026-10-23)
 
-**LU3 Tianfu (天府, LU03)**
+**LU3 Tianfu (天府)**
 
-| 일시 | 소스 | HTTP | 수집 | 중복제거 | 신규 | 쿼리 |
+| Timestamp | Source | HTTP | Fetched | Duplicates removed | New | Query |
 |---|---|---|---|---|---|---|
 | 2026-10-04T09:51:18 | pubmed | 200 | 13 | — | — | ("LU3" OR "Tianfu" OR "天府") AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) \| ("LU3" OR "Tianfu" OR "天府") AND |
 | 2026-10-04T09:51:18 | openalex | 200 | 11 | — | — | doi_starts_with:10.13703,title_and_abstract.search:"Tianfu" OR "LU3" \| doi_starts_with:10.13702,title_and_abstract.search:"Tianfu" OR "LU3" \| has_doi:true,title |
 | 2026-10-04T09:51:18 | crossref | 200 | 0 | — | — | Tianfu acupuncture nerve reflex |
 | 2026-10-04T09:51:18 | all | — | 24 | 7 | 17 |  |
-| 2026-10-23T21:44:08 | pubmed | 200 | 13 | — | — | 같은 쿼리 + ("Zhongguo Zhen Jiu"[Journal] OR "Zhen Ci Yan Jiu"[Journal]) |
+| 2026-10-23T21:44:08 | pubmed | 200 | 13 | — | — | Same query + ("Zhongguo Zhen Jiu"[Journal] OR "Zhen Ci Yan Jiu"[Journal]) |
 | 2026-10-23T21:44:08 | openalex | 200 | 11 | — | — | doi_starts_with:10.13703 / 10.13702 / has_doi:true, "Tianfu" OR "LU3" |
 | 2026-10-23T21:44:08 | crossref | 200 | 0 | — | — | Tianfu acupuncture nerve reflex |
 | 2026-10-23T21:44:08 | all | — | 24 | 24 | 0 | merged_into_existing=18, batch_dups=6 |
 
-**LU4 Xiabai (俠白, LU04)**
+**LU4 Xiabai (俠白)**
 
-| 일시 | 소스 | HTTP | 수집 | 중복제거 | 신규 | 쿼리 |
+| Timestamp | Source | HTTP | Fetched | Duplicates removed | New | Query |
 |---|---|---|---|---|---|---|
 | 2026-10-04T09:51:24 | pubmed | 200 | 5 | — | — | ("LU4" OR "Xiabai" OR "俠白") AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) \| ("LU4" OR "Xiabai" OR "俠白") AND |
 | 2026-10-04T09:51:24 | openalex | 200 | 9 | — | — | doi_starts_with:10.13703,title_and_abstract.search:"Xiabai" OR "LU4" \| doi_starts_with:10.13702,title_and_abstract.search:"Xiabai" OR "LU4" \| has_doi:true,title |
 | 2026-10-04T09:51:24 | crossref | 200 | 0 | — | — | Xiabai acupuncture nerve reflex |
 | 2026-10-04T09:51:24 | all | — | 14 | 11 | 3 |  |
-| 2026-10-23T21:44:22 | pubmed | 200 | 5 | — | — | 같은 쿼리 + ("Zhongguo Zhen Jiu"[Journal] OR "Zhen Ci Yan Jiu"[Journal]) |
+| 2026-10-23T21:44:22 | pubmed | 200 | 5 | — | — | Same query + ("Zhongguo Zhen Jiu"[Journal] OR "Zhen Ci Yan Jiu"[Journal]) |
 | 2026-10-23T21:44:22 | openalex | 200 | 9 | — | — | doi_starts_with:10.13703 / 10.13702 / has_doi:true, "Xiabai" OR "LU4" |
 | 2026-10-23T21:44:22 | crossref | 200 | 0 | — | — | Xiabai acupuncture nerve reflex |
 | 2026-10-23T21:44:22 | all | — | 14 | 14 | 0 | merged_into_existing=11, batch_dups=3 |
 
-- PubMed·OpenAlex·Crossref 모두 HTTP 200으로 성공하여 "외부 검색 미완"·"보완 검색 미완" 표지는 없다. 2026-10-23 재실행은 두 혈 모두 신규 0편이어서 8.1 Layer A 표와 판정은 그대로다.
+- PubMed, OpenAlex and Crossref all succeeded with HTTP 200, so there are no "external search incomplete" or "supplementary search incomplete" flags. The 2026-10-23 re-run returned 0 new papers for both points, so the Layer A table in 8.1 and the verdict are unchanged.
 
 ---
 
-## 9. Classical Indications Stratification Table (Single-Point P_single vs. Complex Formulae)
+## 9. Classical Indications Stratification Table (P_single vs. Combinations)
 
-| 경혈 | 주치 | 출전 | 구분 | 귀속 타깃 |
+| Point | Indication | Source | Category | Assigned Target |
 | :---: | :--- | :--- | :---: | :---: |
-| Tianfu (天府, LU03) | 鼻衄·血溢鼻口 | 《灵枢·寒热病》 "取天府"(단독), 《外台》 臂脈 灸(단독), *Tongren* (《銅人》) "今附刺鼻衄" | **P_single** | cLU3 |
-| Tianfu (天府, LU03) | 咳·上氣·喘不得息·逆息不得臥 | 《甲乙》 "天府主之" | **P_single** | cLU3 |
-| Tianfu (天府, LU03) | 恍惚善忘·嗜臥, 悲泣鬼語, 卒中惡 | 《明堂》, 《千金》 佚名明堂 灸方 | P_single (灸) | cLU3 |
-| Tianfu (天府, LU03) | 鼻衄 | 《百证赋》 "天府合谷" | 배오 | — |
-| Tianfu (天府, LU03) | 瘿 | 《千金翼》 "灸天府五十壯，又灸胸堂百壯", 《聚英》 등은 《资生经》 전록 | 배오 / 전록 | — |
-| Tianfu (天府, LU03) | 目疾·瘰疬·紫白癜風 | 《圣惠》·窦太师 계열, 《针灸集成》 처방 | 후대 증보·배오 | 위치 불명 (《通考》: 안쪽·가쪽 판단 불가) |
-| Tianfu (天府, LU03) | 上臂痛·臑痛 | 《循经考穴编》, 현대 교재 (현대 교재 기술에 대한 논평: papers.id 1827) | P_single (국소) | **pLU3** |
-| Xiabai (俠白, LU04) | 心痛 | 《甲乙》 "心痛，侠白主之" | **P_single** | cLU4 |
-| Xiabai (俠白, LU04) | 咳·乾嘔·煩滿 | 《甲乙》 "侠白主之" | **P_single** | cLU4 |
-| Xiabai (俠白, LU04) | 心痛短氣 | 《千金》 "期門、長強、天突、侠白、中衝主心痛短氣" | **배오** (《通考》: 侠白 원문이 아님) | — |
-| Xiabai (俠白, LU04) | 紫白癜風·赤白汗斑 | 《循经考穴编》, 《古今医统》 灸夾白 | 후대 증보 (단독 灸) | 불명 |
-| Xiabai (俠白, LU04) | 上臂痛 | 현대 교재 | P_single (국소) | **pLU4** |
+| Tianfu (天府) | Epistaxis (鼻衄) · blood spilling from nose and mouth (血溢鼻口) | 《靈樞·寒熱病》 "取天府" (single point), 《外臺》 moxibustion of the 臂脈 (single point), 《銅人》 "今附刺鼻衄" | **P_single** | cLU3 |
+| Tianfu (天府) | Cough (咳) · ascending Qi (上氣) · dyspnoea with inability to catch the breath (喘不得息) · counterflow breathing preventing lying down (逆息不得臥) | 《甲乙》 "天府主之" | **P_single** | cLU3 |
+| Tianfu (天府) | Abstraction and forgetfulness (恍惚善忘) · somnolence (嗜臥), weeping and ghost talk (悲泣鬼語), sudden attack by noxious influence (卒中惡) | 《明堂》, moxibustion prescription of an anonymous *Mingtang* (佚名明堂) in 《千金》 | P_single (moxibustion) | cLU3 |
+| Tianfu (天府) | Epistaxis (鼻衄) | 《百證賦》 "天府合谷" | Combination | — |
+| Tianfu (天府) | Goitre (癭) | 《千金翼》 "灸天府五十壯，又灸胸堂百壯"; 《聚英》 etc. transmit the 《資生經》 | Combination / transmitted record | — |
+| Tianfu (天府) | Eye disorders (目疾) · scrofula (瘰癧) · purple and white patch wind (紫白癜風) | 《聖惠》 and Doutaishi (竇太師) lineage, prescriptions in 《針灸集成》 | Later addition / combination | Location unclear (《通考》: medial or lateral cannot be determined) |
+| Tianfu (天府) | Upper-arm pain (上臂痛) · arm pain (臑痛) | 《循經考穴編》, modern textbooks (commentary on the modern textbook description: papers.id 1827) | P_single (local) | **pLU3** |
+| Xiabai (俠白) | Heart pain (心痛) | 《甲乙》 "心痛，俠白主之" | **P_single** | cLU4 |
+| Xiabai (俠白) | Cough (咳) · dry retching (乾嘔) · vexation and fullness (煩滿) | 《甲乙》 "俠白主之" | **P_single** | cLU4 |
+| Xiabai (俠白) | Heart pain with shortness of breath (心痛短氣) | 《千金》 "期門、長強、天突、俠白、中衝主心痛短氣" | **Combination** (《通考》: not original text for 俠白) | — |
+| Xiabai (俠白) | Purple and white patch wind (紫白癜風) · red and white sweat patches (赤白汗斑) | 《循經考穴編》, 《古今醫統》 moxibustion of 夾白 | Later addition (single-point moxibustion) | Unclear |
+| Xiabai (俠白) | Upper-arm pain (上臂痛) | Modern textbooks | P_single (local) | **pLU4** |
 
 ---
 
-## 10. ARI v3.0 Quantitative Profile Evaluation & Final Conclusion
+## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-- 산출식: **ARI v3.0** — ARI-Core = S_orig × 0.40 + S_clarity × 0.35 + S_reflex × 0.25 (**잠정 가중치, 미검증**). SI = S_safety (합산하지 않음).
-- 하위 점수는 0/25/50/75/100 5단계 루브릭(프레임워크 4.2절). S_orig는 4개 하위 항목 평균.
-- 독립 채점자 2인(A·B)이 채점했고, 15점 이상 불일치 항목은 조정했다(§10.6). ARI-Core = 두 채점 평균, ± = 반범위.
+- Formula: **ARI v3.0** — ARI-Core = S_orig × 0.40 + S_clarity × 0.35 + S_reflex × 0.25 (**provisional weights, not validated**). SI = S_safety (not summed).
+- Sub-scores use the 5-level rubric 0/25/50/75/100 (Framework section 4.2). S_orig is the mean of 4 sub-items.
+- Scored by two independent raters (A, B); items differing by 15 points or more were adjudicated (§10.6). ARI-Core = mean of the two scores, ± = half-range.
 
-### 10.1 cLU3 — 고전 Tianfu (天府, LU03) (《甲乙》·《明堂》 '腋下三寸, 臂臑內廉動脈中')
+### 10.1 cLU3 — Classical Tianfu (天府) (《甲乙》·《明堂》 '腋下三寸, 臂臑內廉動脈中')
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| S_orig | 87.5 | 75.0 | **81.25** | 한대 《明堂》이 위치·심도를 모두 지정, 후대 동맥 기재 유지율 60~79%, 이명 天會 혼입 미식별(채점 시점), 《通考》 교감 | 穴位通鉴(上卷)_321-400 L144·L164·L282; 通考(上)_81-160 L1665·L1688~1690; 송석모(papers.id 440) |
-| S_clarity | 50 | 50 | **50** | 동맥 박동 지표는 B1로 확인되나 2대 교재가 WHO 가쪽 정위 기준이고 서로 불일치 → 추론 조정. 실측 없음, 좌표 모델값 | B1-01, B1-03, B1-06, B2-09; 교재 xlsx 행 273~278 / 399~406 |
-| S_reflex | 25 | 25 | **25** | 고전 주치(鼻衄·喘咳)에 대한 cLU3 연구 0편. Layer B 유추만 존재 | B-Check 5/12; 게이트 2 |
-| S_safety (SI) | 50 | 50 | **50** | 고전 4푼(9.2mm) 직자 시 L4 위팔동맥·정중신경 직접 접촉 가능, 현대 심도 적용 시 관통 위험. 심도 상한만 있고 각도 제한 없음. Contraindicated for Needling (禁鍼) '0' 없음 | 자침깊이 xlsx 행 56 |
+| S_orig | 87.5 | 75.0 | **81.25** | The Han-dynasty 《明堂》 specifies both location and depth; arterial description retained in 60–79% of later texts; alias 天會 contamination not identified (at time of scoring); collated in the 《通考》 | Xuewei Tongjian (上卷)_321-400 L144, L164, L282; Tongkao (上)_81-160 L1665, L1688–1690; Song Seok-mo (papers.id 440) |
+| S_clarity | 50 | 50 | **50** | The arterial pulse landmark is confirmed by B1, but the two textbooks are based on the WHO lateral location and disagree with each other → inferential adjustment. No measurement; coordinates are model values | B1-01, B1-03, B1-06, B2-09; textbook xlsx rows 273–278 / 399–406 |
+| S_reflex | 25 | 25 | **25** | 0 cLU3 studies on the classical indications (鼻衄·喘咳). Only Layer B inference | B-Check 5/12; Gate 2 |
+| S_safety (SI) | 50 | 50 | **50** | Perpendicular insertion of the classical 4 fen (9.2 mm) can directly contact the L4 brachial artery and median nerve; applying modern depths risks penetration. Only an upper depth limit, no angle restriction. No needling-prohibition '0' | Needling-depth xlsx row 56 |
 
-| S_orig 하위 항목 | A | B | 평균 |
+| S_orig sub-item | A | B | Mean |
 | :--- | :---: | :---: | :---: |
-| ① 최초 기술 명확성 | 100 | 100 | 100 |
-| ② 후대 문헌 일치율 | 75 | 75 | 75 |
-| ③ 이명 혼용 해소 | 75 | 50 | 62.5 |
-| ④ 《通考》 교감 전사 오류 교정 | 100 | 75 | 87.5 |
+| ① Clarity of earliest description | 100 | 100 | 100 |
+| ② Agreement in later texts | 75 | 75 | 75 |
+| ③ Resolution of alias confusion | 75 | 50 | 62.5 |
+| ④ Correction of transcription errors by collation in the 《通考》 | 100 | 75 | 87.5 |
 
-- 게이트: **게이트 2**(경혈 특이 Layer A 0편 → S_reflex ≤ 25, H). 게이트 1·3 해당 없음.
-- **ARI-Core 56.2 ± 2.5 → C·H (가능·가설)**, SI 50.
-- 등가중치 민감도: 52.1 → D. **등급 변동 → "가중치 민감"**.
-- 참고: ③의 채점자 B 50점은 이명 天會 혼입 미식별 때문이다. 이번 개정에서 天會를 PC1 이명으로 바로잡았으나(§3), 점수는 조정 결과를 그대로 두었다.
+- Gates: **Gate 2** (0 point-specific Layer A papers → S_reflex ≤ 25, H). Gates 1 and 3 not applicable.
+- **ARI-Core 56.2 ± 2.5 → C·H (possible/hypothetical)**, SI 50.
+- Equal-weight sensitivity: 52.1 → D. **Grade changes → "weight-sensitive"**.
+- Note: Rater B's 50 for ③ reflects the unidentified 天會 alias contamination. This revision corrected 天會 to an alias of PC1 (§3), but the score retains the adjudicated result.
 
-### 10.2 cLU4 — 고전 Xiabai (俠白, LU04) (《甲乙》·《明堂》 '在天府下, 去肘五寸動脈中')
+### 10.2 cLU4 — Classical Xiabai (俠白) (《甲乙》·《明堂》 '在天府下, 去肘五寸動脈中')
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| S_orig | 93.75 | 100 | **96.875** | 한대 《明堂》 위치·심도 지정, 역대 문헌 '基本一致', 이명 없음·白雄 삭제·下侠白 구분, 《通考》로 '天府下二寸'·《千金》 배오 교정 | 穴位通鉴(上卷)_321-400 L394·L416·L510·L546; 通考(上)_81-160 L1964·L1970 |
-| S_clarity | 50 | 50 | **50** | cLU3과 같음. 높이는 Tianfu (天府, LU03) 기준과 '去肘五寸'에 의존 | B1-01, B1-03, B2-09; 교재 xlsx 행 279~284 / 407~412 |
-| S_reflex | 25 | 25 | **25** | cLU4 자체 Layer A 0편. 분절 수렴(H1)은 명시적이나 기전은 동물 유추 | B-Check 7/12; 게이트 2 |
-| S_safety (SI) | 50 | 50 | **50** | 위팔 중간에서 정중신경이 동맥 앞을 교차, 직자 시 L4 직접 접촉 가능. 심도 상한만 명시 | 자침깊이 xlsx 행 57 |
+| S_orig | 93.75 | 100 | **96.875** | The Han-dynasty 《明堂》 specifies location and depth; successive texts '基本一致'; no alias, 白雄 deleted, 下俠白 distinguished; the 《通考》 corrects '天府下二寸' and the 《千金》 combination | Xuewei Tongjian (上卷)_321-400 L394, L416, L510, L546; Tongkao (上)_81-160 L1964, L1970 |
+| S_clarity | 50 | 50 | **50** | Same as cLU3. The level depends on the Tianfu (天府) reference and '去肘五寸' | B1-01, B1-03, B2-09; textbook xlsx rows 279–284 / 407–412 |
+| S_reflex | 25 | 25 | **25** | 0 Layer A papers for cLU4 itself. Segmental convergence (H1) is explicit, but the mechanism is inferred from animals | B-Check 7/12; Gate 2 |
+| S_safety (SI) | 50 | 50 | **50** | At mid-arm the median nerve crosses in front of the artery; perpendicular insertion can directly contact L4. Only an upper depth limit stated | Needling-depth xlsx row 57 |
 
-| S_orig 하위 항목 | A | B | 평균 |
+| S_orig sub-item | A | B | Mean |
 | :--- | :---: | :---: | :---: |
-| ① 최초 기술 명확성 | 100 | 100 | 100 |
-| ② 후대 문헌 일치율 | 75 | 100 | 87.5 |
-| ③ 이명 혼용 해소 | 100 | 100 | 100 |
-| ④ 《通考》 교감 전사 오류 교정 | 100 | 100 | 100 |
+| ① Clarity of earliest description | 100 | 100 | 100 |
+| ② Agreement in later texts | 75 | 100 | 87.5 |
+| ③ Resolution of alias confusion | 100 | 100 | 100 |
+| ④ Correction of transcription errors by collation in the 《通考》 | 100 | 100 | 100 |
 
-- 게이트: **게이트 2** 적용(H).
-- **ARI-Core 62.5 ± 1.2 → C·H (가능·가설)**, SI 50.
-- 등가중치 민감도: 57.3 → C, 등급 불변.
+- Gates: **Gate 2** applied (H).
+- **ARI-Core 62.5 ± 1.2 → C·H (possible/hypothetical)**, SI 50.
+- Equal-weight sensitivity: 57.3 → C, grade unchanged.
 
-### 10.3 pLU3 — WHO Tianfu (天府, LU03) (앞겨드랑주름 아래 3촌, 위팔두갈래근 가쪽 모서리)
+### 10.3 pLU3 — WHO Tianfu (天府) (3 cun below the anterior axillary fold, lateral border of biceps brachii)
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| S_orig | 43.75 | 43.75 | **43.75** | 가쪽 정위의 고전 문자 근거 없음(明 铜人 도상·일본서·4판 교재 이후), 가쪽 일치율 < 40%, 《通考》는 변천 해명 | 通考(上)_81-160 L1699·L1740·L1756 |
-| S_clarity | 50 | 50 | **50** | 근육 지표는 명확하나 **2대 교재는 근육·노쪽피부정맥만 일치하고 신경·혈관은 불일치**(§6) → 추론 조정. 실측 없음 | B1-01, B1-05, B2-09 |
-| S_reflex | 25 | 25 (조정 전 50) | **25** | LU3 포함 인체 연구 4편(1819·1822·1832·1833)은 7~11혈 병용·비대조라 경혈 특이 근거 아님 → 게이트 2 | B-Check 6/12 |
-| S_safety (SI) | 75 | 75 | **75** | 5~10푼(11.5~23mm) 직자 시 하한에서 L4 근피신경 도달 가능하나 각도·심도 조절로 회피. 위팔동맥 ≥ 10mm 이격, 심부 장기 없음, Contraindicated for Needling (禁鍼) 없음 | 자침깊이 xlsx 행 56 |
+| S_orig | 43.75 | 43.75 | **43.75** | No classical textual basis for the lateral location (only from the Ming bronze-figure (明銅人) illustration, Japanese books and the 4th-edition textbook onward); lateral agreement < 40%; the 《通考》 explains the change | Tongkao (上)_81-160 L1699, L1740, L1756 |
+| S_clarity | 50 | 50 | **50** | The muscle landmark is clear, but **the two textbooks agree only on the muscle and the cephalic vein and disagree on nerves and vessels** (§6) → inferential adjustment. No measurement | B1-01, B1-05, B2-09 |
+| S_reflex | 25 | 25 (50 before adjudication) | **25** | The 4 human studies including LU3 (1819, 1822, 1832, 1833) use 7–11 combined points without controls and are not point-specific evidence → Gate 2 | B-Check 6/12 |
+| S_safety (SI) | 75 | 75 | **75** | Perpendicular insertion of 5–10 fen (11.5–23 mm) may reach the L4 musculocutaneous nerve at the lower limit, but this is avoided by adjusting angle and depth. Brachial artery ≥ 10 mm away, no deep organs, no needling prohibition | Needling-depth xlsx row 56 |
 
-| S_orig 하위 항목 | A | B | 평균 |
+| S_orig sub-item | A | B | Mean |
 | :--- | :---: | :---: | :---: |
-| ① 최초 기술 명확성 | 25 | 25 | 25 |
-| ② 후대 문헌 일치율 | 25 | 25 | 25 |
-| ③ 이명 혼용 해소 | 75 | 50 | 62.5 |
-| ④ 《通考》 교감 전사 오류 교정 | 50 | 75 | 62.5 |
+| ① Clarity of earliest description | 25 | 25 | 25 |
+| ② Agreement in later texts | 25 | 25 | 25 |
+| ③ Resolution of alias confusion | 75 | 50 | 62.5 |
+| ④ Correction of transcription errors by collation in the 《通考》 | 50 | 75 | 62.5 |
 
-- 게이트: **게이트 1**(S_orig 43.75 < 50 → 최고 C), **게이트 2**(H).
-- **ARI-Core 41.2 ± 0 → D·H (미판정)**, SI 75.
-- 등가중치 민감도: 39.6 → D, 등급 불변.
+- Gates: **Gate 1** (S_orig 43.75 < 50 → C at most), **Gate 2** (H).
+- **ARI-Core 41.2 ± 0 → D·H (undetermined)**, SI 75.
+- Equal-weight sensitivity: 39.6 → D, grade unchanged.
 
-### 10.4 pLU4 — WHO Xiabai (俠白, LU04) (앞겨드랑주름 아래 4촌, 위팔두갈래근 가쪽 모서리)
+### 10.4 pLU4 — WHO Xiabai (俠白) (4 cun below the anterior axillary fold, lateral border of biceps brachii)
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| S_orig | 43.75 | 56.25 | **50.0** | 가쪽 정위는 《新针灸学》 '肱二頭肌外側沟' 등 근대 문헌과 明 铜人 도상뿐, 일치율 < 40%, 이명 없음, 《通考》 "按如今之定位…也不會觸及動脈搏動" | 穴位通鉴(上卷)_321-400 L434·L438; 通考(上)_81-160 L1942·L1952 |
-| S_clarity | 50 | 50 | **50** | pLU3과 같음(교재 불일치, 실측 없음) | B1-01, B1-05, B2-09 |
-| S_reflex | 25 | 25 (조정 전 50) | **25** | 1819·1822·1832·1833·1836 모두 다혈 병용, 경혈 특이 0편 → 게이트 2 | B-Check 6/12 |
-| S_safety (SI) | 75 | 75 | **75** | pLU3과 같음 | 자침깊이 xlsx 행 57 |
+| S_orig | 43.75 | 56.25 | **50.0** | The lateral location appears only in modern texts such as 《新針灸學》 '肱二頭肌外側溝' and the Ming bronze-figure (明銅人) illustration; agreement < 40%; no alias; 《通考》 "按如今之定位…也不會觸及動脈搏動" | Xuewei Tongjian (上卷)_321-400 L434, L438; Tongkao (上)_81-160 L1942, L1952 |
+| S_clarity | 50 | 50 | **50** | Same as pLU3 (textbooks disagree, no measurement) | B1-01, B1-05, B2-09 |
+| S_reflex | 25 | 25 (50 before adjudication) | **25** | 1819, 1822, 1832, 1833 and 1836 all use combined multi-point prescriptions; 0 point-specific papers → Gate 2 | B-Check 6/12 |
+| S_safety (SI) | 75 | 75 | **75** | Same as pLU3 | Needling-depth xlsx row 57 |
 
-| S_orig 하위 항목 | A | B | 평균 |
+| S_orig sub-item | A | B | Mean |
 | :--- | :---: | :---: | :---: |
-| ① 최초 기술 명확성 | 25 | 25 | 25 |
-| ② 후대 문헌 일치율 | 25 | 25 | 25 |
-| ③ 이명 혼용 해소 | 75 | 100 | 87.5 |
-| ④ 《通考》 교감 전사 오류 교정 | 50 | 75 | 62.5 |
+| ① Clarity of earliest description | 25 | 25 | 25 |
+| ② Agreement in later texts | 25 | 25 | 25 |
+| ③ Resolution of alias confusion | 75 | 100 | 87.5 |
+| ④ Correction of transcription errors by collation in the 《通考》 | 50 | 75 | 62.5 |
 
-- 게이트: **게이트 2**(H). S_orig 평균 50.0으로 게이트 1 해당 없음.
-- **ARI-Core 43.8 ± 2.5 → D·H (미판정)**, SI 75.
-- 등가중치 민감도: 41.7 → D, 등급 불변.
+- Gates: **Gate 2** (H). Mean S_orig is 50.0, so Gate 1 does not apply.
+- **ARI-Core 43.8 ± 2.5 → D·H (undetermined)**, SI 75.
+- Equal-weight sensitivity: 41.7 → D, grade unchanged.
 
-### 10.5 분기 판정 (ΔARI-Core ≥ 10 그리고 ± 구간 비중첩)
+### 10.5 Branch Decision (ΔARI-Core ≥ 10 and non-overlapping ± intervals)
 
-| 비교 | Target 1 (구간) | Target 2 (구간) | ΔARI-Core | 구간 중첩 | 판정 |
+| Comparison | Target 1 (interval) | Target 2 (interval) | ΔARI-Core | Interval overlap | Verdict |
 | :--- | :--- | :--- | :---: | :---: | :--- |
-| cLU3 vs pLU3 | 56.2 ± 2.5 (53.7~58.7) | 41.2 ± 0 (41.2) | **15.0** | 없음 | **cLU3 우위 선언** |
-| cLU4 vs pLU4 | 62.5 ± 1.2 (61.3~63.7) | 43.8 ± 2.5 (41.3~46.3) | **18.7** | 없음 | **cLU4 우위 선언** |
+| cLU3 vs pLU3 | 56.2 ± 2.5 (53.7–58.7) | 41.2 ± 0 (41.2) | **15.0** | None | **cLU3 declared superior** |
+| cLU4 vs pLU4 | 62.5 ± 1.2 (61.3–63.7) | 43.8 ± 2.5 (41.3–46.3) | **18.7** | None | **cLU4 declared superior** |
 
-- 우위는 **실체 판명 신뢰도(ARI-Core)**의 우위다. 자침 안전성(SI)은 반대로 Target 2가 높다(75 vs 50). 두 Target 모두 C 이하·H 표지이므로 "실체 확정"이 아니다.
-- cLU3은 등가중치에서 D로 떨어지는 가중치 민감 Target이다(52.1 vs pLU3 39.6; 등가중치에서도 Δ 12.5).
+- The superiority is in **substrate-identification reliability (ARI-Core)**. Needling safety (SI) is, conversely, higher for Target 2 (75 vs 50). Both Targets are C or lower with an H flag, so this is not "substrate established".
+- cLU3 is a weight-sensitive Target that drops to D under equal weights (52.1 vs pLU3 39.6; Δ 12.5 even under equal weights).
 
-### 10.6 조정 기록 (15점 이상 불일치)
+### 10.6 Adjudication Record (discrepancies of 15 points or more)
 
-| Target | 지표 | A | B | 조정 | 사유 |
+| Target | Index | A | B | Adjudication | Reason |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| cLU3 | — | — | — | 없음 | 15점 이상 불일치 없음(S_orig 차이 12.5). 상충: 《通考》·황룡상의 天府脈 진단 병후 해석이 반사 기전 가설과 긴장 → B-Check '가설' 유지. 이명 天會는 《甲乙》 3:46상 天池(PC1)의 이명(채점자 B 확인) |
-| cLU4 | — | — | — | 없음 | 15점 이상 불일치 없음(S_orig 차이 6.25) |
-| pLU3 | S_reflex | 25 | 50 | **B → 25** | Layer A(1819·1822·1832·1833)는 7~11혈 병용·비대조 연구로 채점자 B 스스로 경혈 특이 근거가 아니라고 기록함. 정본 Rank 7 게이트 2 적용. 상충(고전 鼻衄·喘咳 주치 vs C5~6 분절) 유지 → '가설' |
-| pLU4 | S_reflex | 25 | 50 | **B → 25** | Layer A(1819·1822·1832·1833, 견관절주위염 1836)는 다혈 병용으로 경혈 특이 근거 아님 → 게이트 2. 상충(고전 心痛 주치 vs C5~6 분절) 유지 → '가설' |
+| cLU3 | — | — | — | None | No discrepancy of 15 points or more (S_orig difference 12.5). Conflict: the interpretation in the 《通考》 and by Huang Longxiang (黃龍祥) of signs of disease at the diagnostic 天府脈 is in tension with the reflex-mechanism hypothesis → B-Check 'hypothesis' retained. The alias 天會 is an alias of Tianchi (天池, PC1) according to 《甲乙》 3:46 (confirmed by Rater B) |
+| cLU4 | — | — | — | None | No discrepancy of 15 points or more (S_orig difference 6.25) |
+| pLU3 | S_reflex | 25 | 50 | **B → 25** | The Layer A studies (1819, 1822, 1832, 1833) use 7–11 combined points without controls; Rater B himself recorded that they are not point-specific evidence. Gate 2 of canonical Rank 7 applied. Conflict (classical 鼻衄·喘咳 indications vs C5–6 segments) retained → 'hypothesis' |
+| pLU4 | S_reflex | 25 | 50 | **B → 25** | The Layer A studies (1819, 1822, 1832, 1833; periarthritis of the shoulder 1836) use combined multi-point prescriptions and are not point-specific evidence → Gate 2. Conflict (classical heart pain 心痛 indication vs C5–6 segments) retained → 'hypothesis' |
 
-### 최종 판명 결론
+### Final Conclusion on Substrate Identification
 
-1. **고전 Tianfu (天府, LU03)·Xiabai (俠白, LU04)의 해부학적 실체 (cLU3 C·H, cLU4 C·H — 가능·가설)**: 위팔두갈래근 안쪽고랑의 **위팔동맥 박동부와 그 신경혈관다발**(L4: 정중신경, 혈관주위 교감신경망)로 보는 것이 원전·해부 양면에서 가장 개연적이다. 원래 **수태음 標脈(진단 맥동처)이 혈위로 전환된 것**이다. 혈위 특이 실측과 경혈 특이 Layer A가 없어 확정하지 않는다. 반사 기전(H1·H3)은 **가설**이다.
-2. **현대 WHO Tianfu (天府, LU03)·Xiabai (俠白, LU04)의 해부학적 실체 (pLU3 D·H, pLU4 D·H — 미판정)**: 위팔두갈래근 긴갈래 가쪽 모서리의 **근육·근막점**(노쪽피부정맥, 근피신경 영역, C5~6)이며 고전 혈위와 **다른 장소**다. 고전 원전 근거가 약해 실체 판명 등급은 미판정이고, 국소 효과 기전(H4)도 가설이다.
-3. **분기 판정**: 두 쌍 모두 ΔARI-Core ≥ 10, ± 구간 비중첩 → **Target 1(고전 동맥점) 우위**.
-4. **임상 적용**:
-   - 鼻衄·喘咳(Tianfu (天府, LU03))과 心痛·煩滿(Xiabai (俠白, LU04))을 고전 근거로 쓸 때는 cLU를 촉진하여 취혈하되, SI 50(L4 직접 접촉 가능)이므로 §5의 안전 수칙과 심도 상한(≤ 4푼)을 지킨다.
-   - 위팔 국소 통증에는 pLU를 쓴다(SI 75).
-   - 교재의 층차해부 기술(정중신경·위팔동맥)은 정위에 맞게 분리 기재할 것을 제안한다.
-5. **남은 과제**:
-   - 초음파로 cLU·pLU의 실측 깊이와 Δ 계측
-   - cLU 단독 자극 인체 연구(Layer A) 확보
-   - 마스터 DB LU3·LU4 항목(신경지배·반사회로)과 KJH·2대 교재 데이터셋의 LU03 이명 '天會' 정정
-   - 《灵枢·经脉》 "行少陰心主之前" 해석을 둘러싼 송석모와 황룡상 견해의 추가 검토
+1. **Anatomical substrate of the classical Tianfu (天府) and Xiabai (俠白) (cLU3 C·H, cLU4 C·H — possible/hypothetical)**: on both classical and anatomical grounds it is most plausibly the **pulsation site of the brachial artery and its neurovascular bundle** in the medial bicipital groove (L4: median nerve, periarterial sympathetic plexus). It was originally **a Hand-Taiyin marker pulse (手太陰標脈, a diagnostic pulsation site) converted into an acupoint**. Because there are no point-specific measurements and no point-specific Layer A, it is not established. The reflex mechanisms (H1, H3) are **hypotheses**.
+2. **Anatomical substrate of the modern WHO Tianfu (天府) and Xiabai (俠白) (pLU3 D·H, pLU4 D·H — undetermined)**: a **muscular/fascial point** at the lateral border of the long head of biceps brachii (cephalic vein, musculocutaneous-nerve territory, C5–6), at **a different place** from the classical points. Classical textual support is weak, so the substrate-identification grade is undetermined, and the local-effect mechanism (H4) is also a hypothesis.
+3. **Branch decision**: for both pairs ΔARI-Core ≥ 10 with non-overlapping ± intervals → **Target 1 (classical arterial point) superior**.
+4. **Clinical application**:
+   - When using epistaxis and dyspnoea/cough (鼻衄·喘咳, Tianfu 天府) or heart pain and vexation/fullness (心痛·煩滿, Xiabai 俠白) on classical grounds, locate cLU by palpation, but since SI is 50 (direct contact with L4 possible), observe the safety rules in §5 and the upper depth limit (≤ 4 fen).
+   - For local upper-arm pain, use pLU (SI 75).
+   - It is proposed that textbooks record the layer anatomy (median nerve, brachial artery) separately according to location.
+5. **Remaining tasks**:
+   - Ultrasound measurement of the actual depths of cLU and pLU and of Δ
+   - Obtain human studies of cLU stimulation alone (Layer A)
+   - Correct the LU3 and LU4 entries (innervation, reflex circuits) of the master DB and the LU03 alias '天會' in the KJH and two-textbook datasets
+   - Further review of the views of Song Seok-mo and Huang Longxiang (黃龍祥) on the interpretation of 《靈樞·經脈》 "行少陰心主之前"
 
 ---
 
-## 11. 정정 감사표 (2026-10-03 통합 과정에서 바로잡은 사항)
+## 11. Correction Audit Table (items corrected during integration on 2026-10-03)
 
-| # | 원 보고서 | 기존 기술 | 원전·데이터 대조 결과 | 처리 |
+| # | Original report | Earlier statement | Result of collation with classics and data | Action |
 | :-: | :--- | :--- | :--- | :--- |
-| 1 | LU03 | Δ ≈ 3mm, 단일 타깃 | 《通考》 "今之天府已非古之天府". 안쪽 동맥점과 가쪽 모서리는 Δ ≈ 29mm(모델값) | 이원 분기로 정정 |
-| 2 | LU03 | 자침 "鍼三分 (甲乙經, 千金方)" | 《甲乙》·《明堂》은 "刺入四分，留三呼". 3분은 *Tongren* (《銅人》)·《医学入门》 | 정정 |
-| 3 | LU03 | 이명 없음 | KJH DB는 '天會'. 《穴位通鉴》은 无 | (2026-10-04 재정정) 天會는 天池(PC1) 이명 → Tianfu (天府, LU03) 이명에서 제외(§3) |
-| 4 | LU03 | 실체 = 가쪽고랑 근피신경 (고전·현대 공통) | 고전 실체는 위팔동맥. 가쪽은 현대점에만 해당 | 정정 |
-| 5 | LU03 xlsx | PMID 8937575 = Lacroix/Lundberg 1996 | 실제로는 Chen & Nelson, *Anal Biochem* 1996 (무관) | 인용 삭제. 마스터 DB papers.id 1676은 2026-10-04 superseded 처리 |
-| 6 | LU03 xlsx | 문헌스크리닝 셀에 파싱 원문 덤프(목차 조각) 혼입 | — | 정제된 원문으로 교체 |
-| 7 | LU04 | 이명 "白雄" | KJH '–', 《穴位通鉴》 别名无 | 삭제 |
-| 8 | LU04 | 《甲乙》 "刺入三分，留五呼" | 《甲乙》 "刺入四分，留三呼，灸七壯". 3분은 *Tongren* (《銅人》) | 정정 |
-| 9 | LU04 | 《通考》 원문 "在天府下一寸, 臂二頭肌動脈處" | 《通考》에 해당 문장 없음 | 삭제 (실제 문장으로 교체) |
-| 10 | LU04 | 《영추·본수》 "天府下一寸" (Xiabai (俠白, LU04)) | 《本输》에는 天府(맥명)만 있음. Xiabai (俠白, LU04)은 《明堂》/《甲乙》이 원출처 | 정정 |
-| 11 | LU04 | "22대 Master ASIA Algorithm", Δ > 1.5cm 근거 미기재 | 현행 프레임워크 Rank 0~7 | 프레임워크 용어로 통일 |
-| 12 | 비교분석 | 송석모 DOI 10.14406/acu.2022.028, pp.173-183 | 논문 원문: **10.14406/acu.2022.024, pp.172-183** | 정정 |
-| 13 | 비교분석 | 1950년대 "비묵인비법 자세 혼동"이 원인 (단정) | 송석모는 간편취혈법 모호성을 **추정**으로 제시. 황룡상은 明 铜人·일본서·4판 교재의 다원 경위 | 정정 |
-| 14 | 비교분석 | 송석모 논문이 "황룡상 실증주의와 완전히 일치"(백분율 표기) | 진단은 일치하나 처방(복원 vs 주치 개정)은 다름 | 정정 |
-| 15 | 비교분석 | 문헌·공간 타당도·생의학 정합을 백분율로 표기 | Layer A 경혈 특이 실측 0편이므로 정량 백분율의 근거가 없음 | 정성 판정으로 대체 |
-| 16 | 비교분석 | cLU 자침: "동맥벽을 스치듯이 사침" | 위팔동맥·정중신경 손상 위험 | 철회, 안전 수칙으로 대체 |
-| 17 | 비교분석 | 수식 깨짐(`\t`·`\a` 이스케이프: "28.5	ext{mm}", "pprox") | — | 복구. Δ 28.5 → 29.0mm 재계산 |
-| 18 | 전체 | 세 보고서 사이 ARI 불일치 | — | §10으로 단일화(2026-10-04 ARI v3.0으로 재채점) |
+| 1 | LU03 | Δ ≈ 3 mm, single target | 《通考》 "今之天府已非古之天府". The medial arterial point and the lateral border are Δ ≈ 29 mm apart (model value) | Corrected to a dual split |
+| 2 | LU03 | Needling "鍼三分 (甲乙經, 千金方)" | 《甲乙》 and 《明堂》 give "刺入四分，留三呼". 3 fen is from 《銅人》 and 《醫學入門》 | Corrected |
+| 3 | LU03 | No alias | KJH DB gives '天會'. Xuewei Tongjian (《穴位通鑑》): 無 (none) | (Re-corrected 2026-10-04) 天會 is an alias of Tianchi (天池, PC1) → removed from Tianfu's (天府) aliases (§3) |
+| 4 | LU03 | Substrate = musculocutaneous nerve in the lateral groove (common to classical and modern) | The classical substrate is the brachial artery. The lateral position applies only to the modern point | Corrected |
+| 5 | LU03 xlsx | PMID 8937575 = Lacroix/Lundberg 1996 | Actually Chen & Nelson, *Anal Biochem* 1996 (unrelated) | Citation deleted. Master DB papers.id 1676 marked superseded on 2026-10-04 |
+| 6 | LU03 xlsx | Parsed raw-text dump (table-of-contents fragments) mixed into the literature-screening cell | — | Replaced with refined original text |
+| 7 | LU04 | Alias "白雄" | KJH '–', Xuewei Tongjian (《穴位通鑑》) 別名無 (no alias) | Deleted |
+| 8 | LU04 | 《甲乙》 "刺入三分，留五呼" | 《甲乙》 "刺入四分，留三呼，灸七壯". 3 fen is from 《銅人》 | Corrected |
+| 9 | LU04 | 《通考》 original text "在天府下一寸, 臂二頭肌動脈處" | No such sentence in the 《通考》 | Deleted (replaced with the actual sentence) |
+| 10 | LU04 | 《靈樞·本輸》 "天府下一寸" (Xiabai 俠白) | 《本輸》 has only 天府 (vessel name). The original source for Xiabai (俠白) is 《明堂》/《甲乙》 | Corrected |
+| 11 | LU04 | "22-stage Master ASIA Algorithm"; basis for Δ > 1.5 cm not stated | Current Framework Rank 0–7 | Unified to Framework terminology |
+| 12 | Comparative analysis | Song Seok-mo DOI 10.14406/acu.2022.028, pp.173-183 | Original paper: **10.14406/acu.2022.024, pp.172-183** | Corrected |
+| 13 | Comparative analysis | Cause asserted to be "confusion of the nose-to-arm locating posture" in the 1950s | Song Seok-mo presents the ambiguity of the simplified locating method as a **conjecture**. Huang Longxiang (黃龍祥) gives multiple pathways: Ming bronze figure (明銅人), Japanese books, 4th-edition textbook | Corrected |
+| 14 | Comparative analysis | Song Seok-mo's paper "completely agrees with Huang Longxiang's positivism" (stated as a percentage) | They agree on diagnosis but differ on remedy (restoration vs revision of indications) | Corrected |
+| 15 | Comparative analysis | Textual, spatial-validity and biomedical consistency stated as percentages | With 0 point-specific Layer A measurements there is no basis for quantitative percentages | Replaced with qualitative verdicts |
+| 16 | Comparative analysis | cLU needling: "oblique needling as if grazing the arterial wall" | Risk of injury to the brachial artery and median nerve | Withdrawn, replaced with safety rules |
+| 17 | Comparative analysis | Broken formulas (`\t`, `\a` escapes: "28.5	ext{mm}", "pprox") | — | Restored. Δ 28.5 → 29.0 mm recalculated |
+| 18 | All | ARI inconsistent among the three reports | — | Unified in §10 (rescored with ARI v3.0 on 2026-10-04) |
 
 ---
 
-## 부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)
+## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-생성: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LU03 --md` / `profile LU04 --md` (2026-10-23). 대응 수준 `exact`는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다. LU04는 LU03에서 어깨세모근·큰가슴근(김재효, Tianfu (天府, LU03) 높이)을 뺀 구성과 같다.
+Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LU03 --md` / `profile LU04 --md` (2026-10-23). Mapping level `exact` means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation. LU04 has the same composition as LU03 minus deltoid and pectoralis major (Kim Jaehyo, at the level of Tianfu 天府).
 
-| 구분 | 교재 용어 | FMA 실체 | 대응 | 출처 (LU03 / LU04) | 신경 지배 / 상위 줄기 | 척수 분절 |
+| Category | Textbook term | FMA entity | Mapping | Source (LU03 / LU04) | Innervation / parent trunk | Spinal segments |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 위팔두갈래근 (biceps brachii) | FMA:37670 Biceps brachii | exact | 공통교재 / 공통교재 | (근육 전체에는 nerve_supply 없음, 긴갈래 가지 → 근육피부신경) | C5, C6 |
-| 근육 | 위팔두갈래근의 긴갈래 | FMA:37683 Long head of biceps brachii | exact | 김재효 / 김재효 | FMA:81239 Branch of musculocutaneous nerve to long head → Musculocutaneous nerve | — |
-| 근육 | 어깨세모근 (deltoid) | FMA:32521 Deltoid | exact | 김재효 / — | 겨드랑신경 앞·뒤가지의 어깨세모근 가지 → Axillary nerve | C5(주), C6(부) |
-| 근육 | 큰가슴근 (pectoralis major) | FMA:9627 Pectoralis major | exact | 김재효 / — | 안쪽가슴신경 가지 → Medial pectoral nerve | — |
-| 신경 | 아래가쪽위팔피부신경 | FMA:44949 Inferior lateral cutaneous nerve of arm | exact | 공통교재 / 공통교재 | FMA:288541 Peripheral segment of radial nerve | — |
-| 신경 | 가쪽아래팔피부신경 | FMA:39080 Lateral cutaneous nerve of forearm | exact | 공통교재 / 공통교재 | FMA:288511 Peripheral segment of musculocutaneous nerve | — |
-| 신경 | 정중신경 | FMA:14385 Median nerve | exact | 공통교재 / 공통교재 | (continuous_proximally_with Lateral cord FMA:45235) | — |
-| 신경 | 근육피부신경 | FMA:37064 Musculocutaneous nerve | exact | 김재효 / 김재효 | (continuous_proximally_with Lateral cord FMA:45235) | — |
-| 신경 | 뒤아래팔피부신경 | FMA:39145 Posterior cutaneous nerve of forearm | exact | 김재효 / 김재효 | FMA:288541 Peripheral segment of radial nerve | — |
-| 신경 | 위가쪽위팔피부신경 (superior lateral cutaneous nerve) | FMA:65303 Superior lateral cutaneous nerve of arm | **수동**(자동 none) | 김재효 / 김재효 | 겨드랑신경 계통(B1) | — |
-| 신경 | 등쪽 아래팔 피부신경 (dorsal antebrachial cutaneous n., C5-6) | (FMA:39145와 같은 구조로 판단) | none | 김재효 / 김재효 | — | — |
-| 혈관 | 위팔동맥 | FMA:22689 Brachial artery | exact | 공통교재 / 공통교재 | (is_a Segment of subclavian artery — 4.3 주석) | — |
-| 혈관 | 위팔정맥 | FMA:22934 Brachial vein | exact | 공통교재 / 공통교재 | FMA:13329 Axillary vein → FMA:4725 Subclavian vein → FMA:4723 Brachiocephalic vein | — |
-| 혈관 | 노쪽피부정맥 (cephalic vein) | FMA:13324 Cephalic vein | exact | 공통 / 공통 | FMA:4725 Subclavian vein → FMA:4723 Brachiocephalic vein | — |
+| Muscle | Biceps brachii | FMA:37670 Biceps brachii | exact | Common Textbook / Common Textbook | (no nerve_supply for the whole muscle; branch to the long head → musculocutaneous nerve) | C5, C6 |
+| Muscle | Long head of biceps brachii | FMA:37683 Long head of biceps brachii | exact | Kim Jaehyo / Kim Jaehyo | FMA:81239 Branch of musculocutaneous nerve to long head → Musculocutaneous nerve | — |
+| Muscle | Deltoid | FMA:32521 Deltoid | exact | Kim Jaehyo / — | Deltoid branches of the anterior and posterior branches of the axillary nerve → Axillary nerve | C5 (primary), C6 (secondary) |
+| Muscle | Pectoralis major | FMA:9627 Pectoralis major | exact | Kim Jaehyo / — | Branch of medial pectoral nerve → Medial pectoral nerve | — |
+| Nerve | Inferior lateral cutaneous nerve of arm | FMA:44949 Inferior lateral cutaneous nerve of arm | exact | Common Textbook / Common Textbook | FMA:288541 Peripheral segment of radial nerve | — |
+| Nerve | Lateral cutaneous nerve of forearm | FMA:39080 Lateral cutaneous nerve of forearm | exact | Common Textbook / Common Textbook | FMA:288511 Peripheral segment of musculocutaneous nerve | — |
+| Nerve | Median nerve | FMA:14385 Median nerve | exact | Common Textbook / Common Textbook | (continuous_proximally_with Lateral cord FMA:45235) | — |
+| Nerve | Musculocutaneous nerve | FMA:37064 Musculocutaneous nerve | exact | Kim Jaehyo / Kim Jaehyo | (continuous_proximally_with Lateral cord FMA:45235) | — |
+| Nerve | Posterior cutaneous nerve of forearm | FMA:39145 Posterior cutaneous nerve of forearm | exact | Kim Jaehyo / Kim Jaehyo | FMA:288541 Peripheral segment of radial nerve | — |
+| Nerve | Superior lateral cutaneous nerve of arm (superior lateral cutaneous nerve) | FMA:65303 Superior lateral cutaneous nerve of arm | **manual** (automatic: none) | Kim Jaehyo / Kim Jaehyo | Axillary nerve system (B1) | — |
+| Nerve | Dorsal antebrachial cutaneous nerve (dorsal antebrachial cutaneous n., C5-6) | (judged to be the same structure as FMA:39145) | none | Kim Jaehyo / Kim Jaehyo | — | — |
+| Vessel | Brachial artery | FMA:22689 Brachial artery | exact | Common Textbook / Common Textbook | (is_a Segment of subclavian artery — note in 4.3) | — |
+| Vessel | Brachial vein | FMA:22934 Brachial vein | exact | Common Textbook / Common Textbook | FMA:13329 Axillary vein → FMA:4725 Subclavian vein → FMA:4723 Brachiocephalic vein | — |
+| Vessel | Cephalic vein | FMA:13324 Cephalic vein | exact | Both / Both | FMA:4725 Subclavian vein → FMA:4723 Brachiocephalic vein | — |
 
-- 분절 합집합(B-Check ② 입력): **C5, C6** (두 교재 구조 기준, T2 쪽). T1 쪽의 T1·T2 분절은 교재 데이터셋 밖 구조(안쪽위팔피부신경·갈비사이위팔신경, 4.3)에서 온다.
-- 두 교재 비교: LU03 공통 1 · 공통교재 단독 6 · 김재효 단독 5 / LU04 공통 1 · 공통교재 단독 6 · 김재효 단독 3 (위팔두갈래근 전체 vs 긴갈래를 같은 근육으로 보면 공통 2).
-- 인용 한계: FMA는 정상 성인 규범 해부 온톨로지로, 혈위 특이 심도·변이 빈도·반사 기능의 근거가 아니다. "動脈中" 촉진 지표 자체는 FMA 대상이 아니다(정위 쟁점).
-
----
-
-## v2.7 FMA 보강 이력 (2026-10-23)
-
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
-| :--- | :--- | :--- | :--- |
-| 머리 인용 블록 | — | FMA 5.1.0 해부 온톨로지 줄 추가, 통합 일자 줄에 FMA 보강일 병기 | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
-| 4절 | 좌표·Layer 표 | 그림 4-1 횡단면 모식도(T1·T2 병기), 4.3 Target·Layer별 FMA 대조표, FMA 주석 3건(위팔동맥 분류, 김재효 용어 2건 수동·중복 판정, 분절 기재 범위) | `fma_query.py profile LU03/LU04`, `entity`, `path`; 그림 스크립트 `.claude/skills/acupoint-anatomy/scripts/fma/figures/LU03-LU04_cross_section.py` |
-| 6절 | 교재 비교·판정 | FMA 판별 문단(공통 1, 위팔두갈래근 전체/긴갈래 동일 근육), 혼합형 vs 일관형 판정을 FMA 위치·다발로 확인 | FMA:14385·22689·37064·45235·74569 |
-| 8.2 | H1~H4 표 | 그림 8-1 FMA 말초 구심 경로(Mermaid) | FMA continuous_proximally_with·branch_of |
-| 8.3 | B-Check ①·② 근거 | 4개 Target 모두 FMA ID·분절 포인터 추가(**점수 불변**: cLU3 5/12, cLU4 7/12, pLU3 6/12, pLU4 6/12) | FMA:65246·11307 등 |
-| 8.4 | 2026-10-04 로그 | 2026-10-23 Rank 6 재실행 행 추가(LU3 13·11·0, LU4 5·9·0, 신규 0) | `_metadata.sync_log` LU3 21:44:08, LU4 21:44:22 |
-| 부록 A | — | FMA 프로파일 표(LU03·LU04 통합) | `fma_query.py profile` |
-| ARI | cLU3 56.2 ± 2.5 / cLU4 62.5 ± 1.2 / pLU3 41.2 ± 0 / pLU4 43.8 ± 2.5 | **변경 없음** — FMA는 B1 보조 근거로 루브릭 단계를 바꾸지 않음 | 스킬 5-1절 |
-| 구판 보관 | — | 보강 전 md·html·xlsx를 `_구판_v2.7_20261023/`에 보관(`_원본_보관/`은 손대지 않음) | — |
+- Union of segments (input to B-Check ②): **C5, C6** (based on the structures of the two textbooks, T2 side). The T1 and T2 segments on the T1 side come from structures outside the textbook datasets (medial cutaneous nerve of arm, intercostobrachial nerve; 4.3).
+- Comparison of the two textbooks: LU03 1 shared · 6 Common Textbook only · 5 Kim Jaehyo only / LU04 1 shared · 6 Common Textbook only · 3 Kim Jaehyo only (2 shared if the whole biceps brachii and its long head are counted as the same muscle).
+- Limits of citation: FMA is an ontology of normative adult anatomy and is not evidence for point-specific depth, frequency of variation or reflex function. The "動脈中" palpation landmark itself is outside the scope of FMA (an issue of location).
 
 ---
 
-## v2.7 개정 이력 (2026-10-04)
+## v2.7 FMA Supplement History (2026-10-23)
 
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
+| Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| 머리 인용 블록 | "Version 2.6 (Rank 0~7, Tier 3)" | v2.7 표기 + Target별 ARI v3.0 notation 4줄 + 이중 채점 조정 완료 | `final_LU0304.json` notation |
-| §0-1, 결론 1 | 고전 실체 "확정" 취지 | C·H 등급에 맞춰 "개연·가능·가설"로 완화, 실측 부재 명시 | final cLU3/cLU4 grade C·H |
-| §0-5, §8.1 | "실측 생리·임상 논문 0편(LU3 13편, LU4 1편 모두 문헌사)", 구 기준 Refinement 미통과 | 2026-10-04 동기화 후 다혈위 인체 연구 1819·1822·1832·1833, LU4 견관절 무작위 연구 1836 존재 명시. 경혈 특이 0편 → 게이트 2 유지. B-Check 점수로 판정 | 마스터DB papers 1819·1822·1832·1833·1836; pack_LU3.md·pack_LU4.md |
-| §0-6, §10 | v2.6 4요인 ARI(0.35/0.30/0.20/0.15)와 임의 중간값 점수표, 검산 | ARI v3.0 프로파일(ARI-Core ± 반범위·등급·표지·SI·민감도·게이트·S_orig 하위 4항목·조정 기록) | `final_LU0304.json`, 프레임워크 Rank 7·4절 |
-| 구판 점수 | cLU3 82.75 / cLU4 81.10 / pLU3 66.05 / pLU4 66.05 | **구판 v2.6 점수 cLU3 82.75·cLU4 81.10·pLU3 66.05·pLU4 66.05 (비교 불가)** | `_구판_v2.6/` 사본 |
-| §1 | Tianfu (天府, LU03) 출처를 《灵枢·本输》 맥명만 제시 | 《素问·气穴论》 王冰注 "天府二穴"(혈명) 추가, 통감 결어 '留五呼'와 조문 '留三呼' 이문, '臂內廉'/'臂臑內廉' 이문 메모 추가 | 穴位通鉴(上卷)_321-400 L144·L146·L172·L282·L388 |
-| §3 | 이명 '天會' = "출처 미확인 보류" | 天會는 《甲乙》 3:46 天池(PC1) 이명 → Tianfu (天府, LU03) 이명에서 제외. KJH 백업본 LU03 '–' 대조로 데이터셋 오귀속 경위 설명 | 穴位通鉴(上卷)_401-480 L822·L994; 通考(下)_81-160 L549·L557·L567; KJH 행 57·274, KJH_backup 행 57·274; 교재 xlsx `경혈_기본정보_마스터` 행 55·272 |
-| §4.2 | "프레임워크 v2.6 표준 구간" mm 구간(L1 0~3mm … L3 8~16mm), 신경혈관다발을 L3에 배치 | 프레임워크 Rank 5 구조 기반 정의로 교체: 위팔동맥·정중신경·근피신경 = **L4 신경혈관속**. 모델 Z와 박동 촉지 깊이의 관계 설명 추가 | 프레임워크 Rank 5 "Layer 1~5 층차 안전성 평가" |
-| §5 | 도달 Layer "L3 상단 = 위팔동맥·정중신경 높이" | "L4 위팔동맥·정중신경"으로 수정, 행 번호·Contraindicated for Needling (禁鍼) '0' 없음·blank 결측 명시 | 자침깊이 xlsx 시트1 행 56·57 |
-| §6 판정 | — | "두 교재는 근육·노쪽피부정맥만 일치, 신경·혈관 불일치" 명시 | 교재 xlsx 행 273~284 / 399~412 |
-| §10 pLU 산출근거 | "근육 지표 명확, 두 교재 정합" | §6과 일치하도록 "2대 교재 신경·혈관 불일치를 추론 조정"으로 정정 | §6, final rationale S_clarity |
-| §8.1 | "PMID 8937575 인용 삭제" | 마스터 DB papers.id 1676이 검증 불가 인용으로 superseded 처리됨을 명시(PMID는 Anal Biochem 논문, DOI 미존재). papers.id 1677(Travell & Simons 수기 등록)도 superseded, 서적은 B2-06으로 인용 | 마스터DB papers 1676·1677 `status`·`superseded_reason` |
-| §8.2 | 연구자명 계열 모델 표현(체성-자율신경 반사), "Head zone", Travell & Simons 서명 인용 | 등록부 ID로 교체(B3-04·B3-05, B3-01·B3-03, B2-06 등). 범위 밖 적용은 "유추"로 표기 | `layer_b_reference_registry.md` |
-| §0-5, §8.1, §10 | 구판 백분율 Refinement 기준 표현 | B-Check 6항목 점수(≥ 8/12 기준)로 대체 | 프레임워크 6-5 |
-| §8.3·§8.4 신설 | B-Check 채점표·외부 검색 로그 없음 | 4개 Target B-Check 표(A/B/최종·참조 ID·papers.id), LU3·LU4 sync_log 표 추가 | final bcheck; pack sync_log |
-| §10.5 신설 | ΔARI 판정 없음 | cLU3 vs pLU3 Δ 15.0, cLU4 vs pLU4 Δ 18.7, 비중첩 → Target 1 우위 | final ari_core·half_range |
-| §11 #14·#15 | 구판 백분율 일치 표현 인용 | 백분율 문자열 없이 서술 | 구판 표현 제거 원칙 |
-| 미변경 | 원전 인용문 | 채점자 B가 원문 대조로 정확함을 확인 → 유지 | score_LU0304_B.json |
-| 미해결 | 마스터 DB LU3 신경지배·반사회로(근피신경, 성상신경절→키셀바흐), LU4 항목 공란; 1819·1822 DB DOI 불일치 의심 | 보고서에 메모만 남김(DB 미수정) | pack_LU3.md·pack_LU4.md |
+| Header block | — | Line on the FMA 5.1.0 anatomical ontology added; FMA supplement date added to the date-of-integration line | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
+| Section 4 | Coordinate and Layer tables | Figure 4-1 cross-sectional schematic (T1 and T2 shown together), 4.3 FMA collation table by Target and Layer, 3 FMA notes (classification of the brachial artery, manual/duplicate judgement on 2 Kim Jaehyo terms, scope of segment records) | `fma_query.py profile LU03/LU04`, `entity`, `path`; figure script `.claude/skills/acupoint-anatomy/scripts/fma/figures/LU03-LU04_cross_section.py` |
+| Section 6 | Textbook comparison and verdict | FMA adjudication paragraph (1 shared; whole biceps brachii / long head the same muscle); the mixed vs consistent verdict confirmed by FMA position and cord | FMA:14385, 22689, 37064, 45235, 74569 |
+| 8.2 | H1–H4 table | Figure 8-1 FMA peripheral afferent pathway (Mermaid) | FMA continuous_proximally_with, branch_of |
+| 8.3 | B-Check ① and ② rationale | FMA ID and segment pointers added for all four Targets (**scores unchanged**: cLU3 5/12, cLU4 7/12, pLU3 6/12, pLU4 6/12) | FMA:65246, 11307, etc. |
+| 8.4 | 2026-10-04 log | Rows for the 2026-10-23 Rank 6 re-run added (LU3 13·11·0, LU4 5·9·0, 0 new) | `_metadata.sync_log` LU3 21:44:08, LU4 21:44:22 |
+| Appendix A | — | FMA profile table (LU03 and LU04 combined) | `fma_query.py profile` |
+| ARI | cLU3 56.2 ± 2.5 / cLU4 62.5 ± 1.2 / pLU3 41.2 ± 0 / pLU4 43.8 ± 2.5 | **No change** — FMA is B1 supplementary evidence and does not change rubric levels | Skill section 5-1 |
+| Earlier-edition archive | — | Pre-supplement md, html and xlsx archived in `_구판_v2.7_20261023/` (`_원본_보관/` untouched) | — |
 
-*근거 파일*: `01_도서_번역_및_원전/{中国针灸穴位通鉴, 中国针灸证治通鉴, 针灸腧穴通考}/chunks_refined/`, `02_Master_Datasets/` (KJH, 자침깊이, 공통교재, 김재효, 생의학 마스터DB, 361 CSV), `01_Framework/layer_b_reference_registry.md`, 송석모(2022) 원문 PDF.
-*데이터북*: `LU03-LU04_Tianfu (天府, LU03)-Xiabai (俠白, LU04)_해부생리_통합분석데이터.xlsx` / *웹리포트*: `LU03-LU04_Tianfu (天府, LU03)-Xiabai (俠白, LU04)_해부생리_실체판명_통합보고서.html`
+---
+
+## v2.7 Revision History (2026-10-04)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header block | "Version 2.6 (Rank 0~7, Tier 3)" | v2.7 notation + 4 lines of ARI v3.0 notation per Target + dual scoring adjudicated | `final_LU0304.json` notation |
+| §0-1, Conclusion 1 | Classical substrate presented as "established" | Softened to "probable/possible/hypothetical" in line with grade C·H; absence of measurement stated | final cLU3/cLU4 grade C·H |
+| §0-5, §8.1 | "0 measured physiological or clinical papers (LU3 13 papers, LU4 1 paper, all textual history)"; failed the old Refinement criterion | After the 2026-10-04 sync, existence of multi-point human studies 1819, 1822, 1832, 1833 and the LU4 randomised shoulder study 1836 stated. 0 point-specific papers → Gate 2 retained. Verdict by B-Check score | Master DB papers 1819, 1822, 1832, 1833, 1836; pack_LU3.md, pack_LU4.md |
+| §0-6, §10 | v2.6 four-factor ARI (0.35/0.30/0.20/0.15) with arbitrary intermediate-value score tables and checks | ARI v3.0 profile (ARI-Core ± half-range, grade, flag, SI, sensitivity, gates, 4 S_orig sub-items, adjudication record) | `final_LU0304.json`, Framework Rank 7 and section 4 |
+| Earlier-edition scores | cLU3 82.75 / cLU4 81.10 / pLU3 66.05 / pLU4 66.05 | **Earlier v2.6 scores cLU3 82.75 · cLU4 81.10 · pLU3 66.05 · pLU4 66.05 (not comparable)** | Copy in `_구판_v2.6/` |
+| §1 | Only the vessel name from 《靈樞·本輸》 given as the source of Tianfu (天府) | Added Wang Bing's (王冰) commentary on 《素問·氣穴論》 "天府二穴" (point name), the variant between '留五呼' in the Tongjian concluding note and '留三呼' in the entry, and a note on the '臂內廉'/'臂臑內廉' variant | Xuewei Tongjian (上卷)_321-400 L144, L146, L172, L282, L388 |
+| §3 | Alias '天會' = "source unconfirmed, on hold" | 天會 is an alias of Tianchi (天池, PC1) in 《甲乙》 3:46 → removed from Tianfu's (天府) aliases. Misattribution in the dataset explained by collation with the KJH backup (LU03 '–') | Xuewei Tongjian (上卷)_401-480 L822, L994; Tongkao (下)_81-160 L549, L557, L567; KJH rows 57, 274, KJH_backup rows 57, 274; textbook xlsx `경혈_기본정보_마스터` rows 55, 272 |
+| §4.2 | mm ranges of the "Framework v2.6 standard intervals" (L1 0–3 mm … L3 8–16 mm), with the neurovascular bundle placed in L3 | Replaced by the structure-based definition of Framework Rank 5: brachial artery, median nerve and musculocutaneous nerve = **L4 neurovascular bundle**. Explanation of the relation between model Z and the depth at which the pulse is palpable added | Framework Rank 5 "Layer 1–5 layer safety assessment" |
+| §5 | Layer reached: "upper L3 = level of brachial artery and median nerve" | Corrected to "L4 brachial artery and median nerve"; row numbers, absence of needling-prohibition '0' and blank = missing stated | Needling-depth xlsx Sheet 1 rows 56, 57 |
+| §6 verdict | — | "The two textbooks agree only on the muscle and the cephalic vein, and disagree on nerves and vessels" stated | Textbook xlsx rows 273–284 / 399–412 |
+| §10 pLU rationale | "Muscle landmark clear, the two textbooks consistent" | Corrected to "inferential adjustment for the disagreement of the two textbooks on nerves and vessels", in line with §6 | §6, final rationale S_clarity |
+| §8.1 | "Citation of PMID 8937575 deleted" | Stated that master DB papers.id 1676 was marked superseded as an unverifiable citation (the PMID is an Anal Biochem paper; the DOI does not exist). papers.id 1677 (manual entry for Travell & Simons) is also superseded; the book is cited as B2-06 | Master DB papers 1676, 1677 `status`, `superseded_reason` |
+| §8.2 | Model expressions named after researchers (somato-autonomic reflex), "Head zone", citation of the Travell & Simons title | Replaced with registry IDs (B3-04, B3-05, B3-01, B3-03, B2-06, etc.). Out-of-scope application marked "inference" | `layer_b_reference_registry.md` |
+| §0-5, §8.1, §10 | Wording of the earlier percentage-based Refinement criterion | Replaced by the B-Check 6-item score (≥ 8/12 criterion) | Framework 6-5 |
+| §8.3 and §8.4 added | No B-Check scoring tables or external search log | B-Check tables for the 4 Targets (A/B/final, reference IDs, papers.id) and LU3 and LU4 sync_log tables added | final bcheck; pack sync_log |
+| §10.5 added | No ΔARI decision | cLU3 vs pLU3 Δ 15.0, cLU4 vs pLU4 Δ 18.7, non-overlapping → Target 1 superior | final ari_core, half_range |
+| §11 #14, #15 | Earlier percentage-agreement wording quoted | Described without percentage strings | Principle of removing earlier-edition wording |
+| Unchanged | Classical quotations | Rater B confirmed their accuracy by collation with the original texts → retained | score_LU0304_B.json |
+| Unresolved | Master DB LU3 innervation and reflex circuit (musculocutaneous nerve, stellate ganglion → Kiesselbach's plexus), LU4 entry blank; suspected DB DOI mismatch for 1819 and 1822 | Only a note left in the report (DB not modified) | pack_LU3.md, pack_LU4.md |
+
+---
+
+## English Edition Revision History (2026-10-24)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Whole document | Automatically generated "English" edition: Korean body text with only some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.md` |
+| Classical quotations | Simplified characters (e.g. 针, 灵枢, 动脉, 侠白) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |
+
+*Evidence files*: `01_도서_번역_및_원전/{中国针灸穴位通鉴, 中国针灸证治通鉴, 针灸腧穴通考}/chunks_refined/`, `02_Master_Datasets/` (KJH, needling depth, Common Textbook, Kim Jaehyo, biomedical master DB, 361 CSV), `01_Framework/layer_b_reference_registry.md`, original PDF of Song Seok-mo (2022).
+*Data book*: `LU03-LU04_천부-협백_해부생리_통합분석데이터.xlsx` / *Web report*: `LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.html`

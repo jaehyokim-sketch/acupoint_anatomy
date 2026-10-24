@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>📜 [혈위고증 보고서] Tianshu (天樞, ST25)(ST25)·Guanyuan (關元, CV04)(CV4) Front-Mu Point (募穴)의 신경분절 정합성 고증 및 질의응답 검증</title>
+<title>📜 [Textual Research Report on Acupoints] Neural-Segment Consistency of the Front-Mu Points (募穴) Tianshu (天樞, ST25) and Guanyuan (關元, CV4): Textual Research and Verification of a Lecture Q&amp;A</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
@@ -54,604 +54,605 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <body>
 <main>
 <article>
-<h1 id="tianshu-st25st25guanyuan-cv04cv4-front-mu-point">📜 [혈위고증 보고서] Tianshu (天樞, ST25)(ST25)·Guanyuan (關元, CV04)(CV4) Front-Mu Point (募穴)의 신경분절 정합성 고증 및 질의응답 검증</h1>
+<h1 id="textual-research-report-on-acupoints-neural-segment-consistency-of-the-front-mu-points-tianshu-st25-and-guanyuan-cv4-textual-research-and-verification-of-a-lecture-qa">📜 [Textual Research Report on Acupoints] Neural-Segment Consistency of the Front-Mu Points (募穴) Tianshu (天樞, ST25) and Guanyuan (關元, CV4): Textual Research and Verification of a Lecture Q&amp;A</h1>
 <blockquote>
-<p><strong>Framework</strong>: v2.7 (Tier 3, Rank 0~7 전개) · <strong>ARI</strong>: v3.0 이중 채점 · <strong>작성일</strong>: 2026-10-12
-<strong>분석 대상</strong>: 강의 질의("배꼽 높이 T10의 Tianshu (天樞, ST25)와 T11~12 높이의 Guanyuan (關元, CV04) — Front-Mu Point (募穴)이 신경분절 반응점이라면 모순 아닌가?")와 그에 대한 강의 답변("Guanyuan (關元, CV04)은 해부학적 소장이 아니라 '소장'이라는 병증 유형을 치료하는 혈이다")
-<strong>근거 원전</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)(정제본 <code>chunks_refined</code>)
-<strong>근거 데이터</strong>: <code>Tianshu (天樞, ST25)_Guanyuan (關元, CV04)_Front-Mu Point (募穴)분절_문헌고증_DB.xlsx</code> (본 폴더) · 통합 생의학 DB v3.0 (<code>02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json</code>, 2026-10-12 Rank 6 동기화)
-<strong>연관 분석</strong>: 같은 질의의 문헌사 측면은 황룡상 스킬 검토(2026-10-12 대화)에서 다루었으며, 본 보고서는 해부·신경분절·반사 기전 측면을 맡는다.</p>
+<p><strong>Framework</strong>: v2.7 (Tier 3, Rank 0–7 executed) · <strong>ARI</strong>: v3.0 dual scoring · <strong>Date</strong>: 2026-10-12
+<strong>Subject of analysis</strong>: a lecture question ("Tianshu (天樞) lies at the level of the umbilicus, T10, and Guanyuan (關元) at the level of T11–12 — if the Front-Mu points (募穴) are neural-segment reaction points, isn't this a contradiction?") and the lecturer's answer ("Guanyuan does not treat the anatomical small intestine; it treats the disease pattern called 'Small Intestine (小腸)'")
+<strong>Source classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) (refined edition <code>chunks_refined</code>)
+<strong>Source data</strong>: <code>천추_관원_모혈분절_문헌고증_DB.xlsx</code> (this folder) · Integrated Biomedical DB v3.0 (<code>02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json</code>, synchronised at Rank 6 on 2026-10-12)
+<strong>Related analysis</strong>: The literary-historical side of the same question was covered in the Huang Longxiang (黃龍祥) skill review (conversation of 2026-10-12); this report covers the anatomical, neural-segment and reflex-mechanism side.
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
 </blockquote>
 <hr>
-<h2 id="0-executive-summary">0. 요약 (Executive Summary)</h2>
+<h2 id="0-executive-summary">0. Executive Summary</h2>
 <ol>
-<li><strong>질의의 관찰은 해부학적으로 맞다.</strong> 배꼽 높이(T10 피절)의 Tianshu (天樞, ST25)는 중장(中腸) 유래 장관, 곧 소장과 근위 대장의 연관통 구역과 겹친다. Guanyuan (關元, CV04)(T12~L1 피절)은 후장(後腸) 유래 원위 대장과 방광·자궁의 연관통 구역에 더 가깝다. 따라서 "Front-Mu Point (募穴) = 해당 부(腑)의 분절 반응점"이라는 전제를 세우면 Tianshu (天樞, ST25)는 부분적으로, Guanyuan (關元, CV04)은 거의 맞지 않는다.</li>
-<li><strong>모순은 전제에서 생긴다.</strong> 고전의 Front-Mu Point (募穴) 귀속은 분절 원리로 만들어지지 않았다. 문헌상 두 혈 모두 귀속된 부(腑)의 병을 치료하는 대표 혈도 아니었다. <em>Lingshu</em> (《靈樞》)는 대장병을 상거허로, 《명당경》은 소장창(小肠胀)을 Guanyuan (關元, CV04)이 아닌 중료로 치료했다.</li>
-<li><strong>분절 모델만으로는 Tianshu (天樞, ST25)의 작용도 다 설명되지 않는다.</strong> 2025년 마우스 연구에서 Tianshu (天樞, ST25) 전침의 대장염 개선은 T10 분절의 교감신경절(SMG·IMG)을 거치지 않았고, 천수(S2~4) 부교감 경로(골반신경절)를 거쳤다(papers.id 2023). 다른 연구에서는 자극 강도에 따라 척수 분절성 교감 경로가 동원되었다(B3-16). Tianshu (天樞, ST25)의 효과는 분절 반사와 비분절 경로가 섞여 있다.</li>
-<li><strong>강의 답변은 결론이 타당하지만 근거 하나는 바꿔야 한다.</strong> Guanyuan (關元, CV04)이 '소장병'이라는 병증 범주, 특히 하복통·산증(疝症)을 치료한다는 결론은 해부 분석으로도 지지된다. Guanyuan (關元, CV04)의 분절은 골반 장기와 맞고, 서혜부 탈장 주머니에는 실제로 소장 고리가 들어간다. 반면 "소장 병증 = 방광의 소변 배출 기능"이라는 설명은 초기 문헌 층차에서 확인되지 않는다. Guanyuan (關元, CV04)의 배뇨장애 주치는 T11~L2 분절의 방광과 맞는 하복부 국소 주치로 설명하는 편이 낫다.</li>
-<li><strong>ARI v3.0</strong>(이중 채점, 10절): Tianshu (天樞, ST25)는 <strong>ARI-Core 71 (B, 가중치 민감)</strong>, Guanyuan (關元, CV04)은 <strong>ARI-Core 68 (C)</strong>이며, 두 혈 모두 <strong>SI 25 ⚠ 안전주의</strong>다. 두 혈 모두 실체 판명의 병목은 반사 기전의 인체 근거 부족(B-Check 7/12, 기전은 "가설")이다. Guanyuan (關元, CV04)은 교재 간 심층 구조 기술이 다르다는 점도 감점 요인이다. 안전 측면에서는 Guanyuan (關元, CV04) 《명당경》 "刺入二寸"(약 46mm)이 복막을 넘을 수 있다는 점이 핵심이다.</li>
-<li><strong>이전 답변 정정</strong>: 같은 날 Tianshu (天樞, ST25)·소아 질의에 대한 Tier 1 답변에서 "Tianshu (天樞, ST25)와 소아를 연결한 기록을 찾지 못했다"고 했다. 그러나 <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) 정제본의 【提要索隐】에 "灸治小儿慢性消化道症状"이 있다. 그 출처는 1957년 남경 《针灸学》 "小儿慢性疾患灸之大有效"로, 현대 교재 층차다(9절). 결론(현대 층차의 관행)은 유지되지만, "기록 없음"은 틀렸으므로 정정한다.</li>
+<li><strong>The questioner's observation is anatomically correct.</strong> Tianshu (天樞), at the level of the umbilicus (T10 dermatome), overlaps the referred-pain zone of midgut-derived bowel, i.e. the small intestine and proximal large intestine. Guanyuan (關元) (T12–L1 dermatome) lies closer to the referred-pain zone of the hindgut-derived distal large intestine and of the bladder and uterus. Hence, if one adopts the premise "Front-Mu point = segmental reaction point of the corresponding Fu organ (腑)", Tianshu fits only partly and Guanyuan hardly at all.</li>
+<li><strong>The contradiction arises from the premise.</strong> The classical Front-Mu attributions were not built on a segmental principle. In the literature, neither point was the representative point for treating disease of the Fu organ to which it is assigned. The <em>Lingshu</em> (《靈樞》) treats large-intestine disease with Shangjuxu (上巨虛, ST37), and the <em>Mingtang Jing</em> (《明堂經》) treats small-intestine distension (小腸脹) with Zhongliao (中髎, BL33), not Guanyuan.</li>
+<li><strong>The segmental model alone cannot fully explain even Tianshu's action.</strong> In a 2025 mouse study, the improvement of colitis by electroacupuncture at Tianshu did not pass through the T10-segment sympathetic ganglia (SMG, IMG) but through the sacral (S2–4) parasympathetic pathway (pelvic ganglion) (papers.id 2023). In another study, a spinal segmental sympathetic pathway was recruited depending on stimulus intensity (B3-16). Tianshu's effects are a mixture of segmental reflexes and non-segmental pathways.</li>
+<li><strong>The lecturer's conclusion is sound, but one of its supporting arguments must be replaced.</strong> The conclusion that Guanyuan treats the disease category "Small Intestine disease (小腸病)", especially lower abdominal pain and Shan disorders (疝症), is also supported by anatomical analysis: Guanyuan's segments match the pelvic organs, and loops of small intestine do enter inguinal hernial sacs. By contrast, the explanation "Small Intestine disease = the bladder's function of voiding urine" is not confirmed in the early literary strata. Guanyuan's indication for urinary disorders is better explained as a local lower-abdominal indication matching the bladder in segments T11–L2.</li>
+<li><strong>ARI v3.0</strong> (dual scoring, Section 10): Tianshu scores <strong>ARI-Core 71 (B, weight-sensitive)</strong> and Guanyuan <strong>ARI-Core 68 (C)</strong>; both are <strong>SI 25 ⚠ safety caution</strong>. For both points the bottleneck for substrate identification is the lack of human evidence for the reflex mechanism (B-Check 7/12, mechanism "hypothesis"). For Guanyuan, the discrepancy between textbooks in describing the deep structures is a further deduction. On the safety side, the key point is that the <em>Mingtang Jing</em>'s (《明堂經》) Guanyuan depth "刺入二寸" (about 46 mm) may pass through the peritoneum.</li>
+<li><strong>Correction of an earlier answer</strong>: In a Tier 1 answer the same day to a question on Tianshu and children, it was stated that "no record linking Tianshu to children was found". However, the 【提要索隱】 section of the refined <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) contains "灸治小兒慢性消化道症狀". Its source is the 1957 Nanjing <em>Zhenjiu Xue</em> (《針灸學》) "小兒慢性疾患灸之大有效", i.e. the modern-textbook stratum (Section 9). The conclusion (a practice of the modern stratum) stands, but "no record" was wrong and is hereby corrected.</li>
 </ol>
 <hr>
-<h2 id="1-classical-literature-screening-table-three-primary-classics-excerpts">1. Classical Literature Screening Table (Three Primary Classics Excerpts)</h2>
+<h2 id="1-literature-screening-table-comparison-of-the-three-primary-classics">1. Literature Screening Table (Comparison of the Three Primary Classics)</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">항목</th>
-<th style="text-align: left;">Tianshu (天樞, ST25)(ST25)</th>
-<th style="text-align: left;">Guanyuan (關元, CV04)(CV4)</th>
-<th style="text-align: left;">출처</th>
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Tianshu (天樞, ST25)</th>
+<th style="text-align: left;">Guanyuan (關元, CV4)</th>
+<th style="text-align: left;">Source</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">최초 출전</td>
-<td style="text-align: left;"><em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)</td>
-<td style="text-align: left;">《灵枢·寒热病》 "脐下三寸关元也"</td>
-<td style="text-align: left;">《通考》(上) p.321 / (下) p.1292</td>
+<td style="text-align: left;">Earliest source</td>
+<td style="text-align: left;">《黃帝明堂經》</td>
+<td style="text-align: left;">《靈樞·寒熱病》 "臍下三寸關元也"</td>
+<td style="text-align: left;">《通考》 (vol. 1) p.321 / (vol. 2) p.1292</td>
 </tr>
 <tr>
-<td style="text-align: left;">Front-Mu Point (募穴) 귀속</td>
-<td style="text-align: left;">"天枢，大肠募也。一名长溪，一名谷门。去肓俞一寸五分，夹脐两旁各二寸陷者中。足阳明脉气所发。"</td>
-<td style="text-align: left;">"关元，小肠募也，一名次门，在脐下三寸，足三阴、任脉之会。"</td>
-<td style="text-align: left;">《明堂经》(《通考》 수록)</td>
+<td style="text-align: left;">Front-Mu attribution</td>
+<td style="text-align: left;">"天樞，大腸募也。一名長溪，一名谷門。去肓俞一寸五分，夾臍兩旁各二寸陷者中。足陽明脈氣所發。"</td>
+<td style="text-align: left;">"關元，小腸募也，一名次門，在臍下三寸，足三陰、任脈之會。"</td>
+<td style="text-align: left;">《明堂經》 (as collected in 《通考》)</td>
 </tr>
 <tr>
-<td style="text-align: left;">《명당경》 자침</td>
-<td style="text-align: left;">"刺入五分，留七呼，灸三壮"</td>
-<td style="text-align: left;">"刺入二寸，留七呼，灸七壮"</td>
+<td style="text-align: left;">Needling in the <em>Mingtang Jing</em> (《明堂經》)</td>
+<td style="text-align: left;">"刺入五分，留七呼，灸三壯"</td>
+<td style="text-align: left;">"刺入二寸，留七呼，灸七壯"</td>
 <td style="text-align: left;">《通考》 【操作】</td>
 </tr>
 <tr>
-<td style="text-align: left;">《명당경》 주치 핵심</td>
-<td style="text-align: left;">대장병(肠中切痛而鸣濯濯, 冬日重感于寒则泄, 当脐而痛, 食不化), 산증(脐疝·气疝·阴疝·奔肫), 부인 월경병, 학질</td>
-<td style="text-align: left;">石水, 胞转不得溺, 少腹满, 奔肫, 溺血, 小便数, 腰背脐痛引阴, 后泄不止, 暴疝痛, 女子绝子</td>
-<td style="text-align: left;">《证治通鉴》·《通考》</td>
+<td style="text-align: left;">Core indications in the <em>Mingtang Jing</em> (《明堂經》)</td>
+<td style="text-align: left;">Large-intestine disease (腸中切痛而鳴濯濯, 冬日重感於寒則泄, 當臍而痛, 食不化), Shan disorders (臍疝·氣疝·陰疝·奔肫), women's menstrual disorders, malaria (瘧)</td>
+<td style="text-align: left;">石水, 胞轉不得溺, 少腹滿, 奔肫, 溺血, 小便數, 腰背臍痛引陰, 後泄不止, 暴疝痛, 女子絕子</td>
+<td style="text-align: left;">《證治通鑑》·《通考》</td>
 </tr>
 <tr>
-<td style="text-align: left;">침 금기 기록</td>
-<td style="text-align: left;">《千金》 "魂魄之舍，不可针", "勿针", "忌针"</td>
-<td style="text-align: left;">《圣惠方》 "若怀胎必不针"; 현대 교재 "孕妇慎用。针前让患者排尿"</td>
+<td style="text-align: left;">Records of needling prohibition</td>
+<td style="text-align: left;">《千金》 "魂魄之舍，不可針", "勿針", "忌針"</td>
+<td style="text-align: left;">《聖惠方》 "若懷胎必不針"; modern textbooks "孕婦慎用。針前讓患者排尿"</td>
 <td style="text-align: left;">《通考》</td>
 </tr>
 <tr>
-<td style="text-align: left;">소아 관련</td>
-<td style="text-align: left;">1957 남경《针灸学》 "小儿慢性疾患灸之大有效"; 1986 《中国针灸》 소아 단순성 소화불량 天枢·中脘</td>
-<td style="text-align: left;">2001 소아 신경성 빈뇨 Guanyuan (關元, CV04) 자침, 1995 신생아 무뇨 Guanyuan (關元, CV04) 외敷</td>
-<td style="text-align: left;">《通考》 임상 응용 예</td>
+<td style="text-align: left;">Paediatric use</td>
+<td style="text-align: left;">1957 Nanjing 《針灸學》 "小兒慢性疾患灸之大有效"; 1986 《中國針灸》 simple dyspepsia in children with 天樞·中脘</td>
+<td style="text-align: left;">2001 needling of Guanyuan for paediatric nervous urinary frequency; 1995 external application on Guanyuan for neonatal anuria</td>
+<td style="text-align: left;">《通考》 examples of clinical application</td>
 </tr>
 </tbody>
 </table></div>
 <blockquote>
-<p>검색 경로: <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) <code>chunks_refined/针灸腧穴通考(上)_321-400.md</code> L1050~1310(Tianshu (天樞, ST25)), <code>(下)_481-560.md</code> L1396~1586(Guanyuan (關元, CV04)). <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) <code>_1-80.md</code> L2006(Tianshu (天樞, ST25)), <code>_81-160.md</code> L1684(Guanyuan (關元, CV04)). <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) Guanyuan (關元, CV04) 주치 인용 <code>(上卷)_1-80.md</code> L1526.</p>
+<p>Search paths: <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) <code>chunks_refined/针灸腧穴通考(上)_321-400.md</code> L1050–1310 (Tianshu), <code>(下)_481-560.md</code> L1396–1586 (Guanyuan). <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) <code>_1-80.md</code> L2006 (Tianshu), <code>_81-160.md</code> L1684 (Guanyuan). <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) quotation of Guanyuan indications <code>(上卷)_1-80.md</code> L1526.</p>
 </blockquote>
-<h2 id="2-primary-source-vs-secondary-quotation-historical-stratification-table">2. Primary Source vs. Secondary Quotation Historical Stratification Table</h2>
+<h2 id="2-primary-source-vs-secondary-quotation-table">2. Primary Source vs. Secondary Quotation Table</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">시기</th>
-<th style="text-align: left;">Tianshu (天樞, ST25)</th>
-<th style="text-align: left;">Guanyuan (關元, CV04)</th>
-<th style="text-align: left;">판정</th>
+<th style="text-align: left;">Period</th>
+<th style="text-align: left;">Tianshu (天樞)</th>
+<th style="text-align: left;">Guanyuan (關元)</th>
+<th style="text-align: left;">Verdict</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">선진·한대</td>
-<td style="text-align: left;">《명당경》: 위치·심도·Front-Mu Point (募穴) 귀속·대장병 주치</td>
-<td style="text-align: left;">《영추·寒热病》: 위치("三结交"). 《명당경》: 소장모 귀속·심도 2촌·하복부 주치</td>
-<td style="text-align: left;"><strong>원천</strong></td>
+<td style="text-align: left;">Pre-Qin &amp; Han</td>
+<td style="text-align: left;">《明堂經》: location, depth, Front-Mu attribution, indication for large-intestine disease</td>
+<td style="text-align: left;">《靈樞·寒熱病》: location ("三結交"). 《明堂經》: attribution as Small Intestine Mu (小腸募), depth 2 cun, lower-abdominal indications</td>
+<td style="text-align: left;"><strong>Primary source</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;">위진·수당</td>
-<td style="text-align: left;">《千金》: "夹脐相去五寸"(배꼽 직경 1촌), 다량 뜸(百壮)과 Contraindicated for Needling (禁鍼)</td>
-<td style="text-align: left;">《千金》: 기림·석림·고환 치우침 뜸</td>
-<td style="text-align: left;">원천 확장</td>
+<td style="text-align: left;">Wei-Jin &amp; Sui-Tang</td>
+<td style="text-align: left;">《千金》: "夾臍相去五寸" (umbilical diameter 1 cun), heavy moxibustion (百壯) and needling prohibition</td>
+<td style="text-align: left;">《千金》: moxibustion for Qi-strangury (氣淋), stone strangury (石淋) and testicular deviation</td>
+<td style="text-align: left;">Extension of primary source</td>
 </tr>
 <tr>
-<td style="text-align: left;">송·금·원</td>
-<td style="text-align: left;"><em>Tongren</em> (《銅人》): "可灸百壮"</td>
-<td style="text-align: left;"><em>Tongren</em> (《銅人》): 灸量을 "百壮至三百壮"으로 개편(《圣惠方》 "日灸三十壮，至三百壮止"의 오독)</td>
-<td style="text-align: left;">재편, 오류 혼입</td>
+<td style="text-align: left;">Song, Jin &amp; Yuan</td>
+<td style="text-align: left;">《銅人》: "可灸百壯"</td>
+<td style="text-align: left;">《銅人》: moxibustion dose revised to "百壯至三百壯" (a misreading of 《聖惠方》 "日灸三十壯，至三百壯止")</td>
+<td style="text-align: left;">Reorganisation, errors introduced</td>
 </tr>
 <tr>
-<td style="text-align: left;">명·청</td>
-<td style="text-align: left;"><em>Zhenjiu Dacheng</em> (《針灸大成》): 脐中 기준 오해 계열</td>
-<td style="text-align: left;">《针灸大成·玉龙歌》: "阑门"을 "关元"으로 오기</td>
-<td style="text-align: left;">재인용 오류</td>
+<td style="text-align: left;">Ming &amp; Qing</td>
+<td style="text-align: left;">《針灸大成》: line of misunderstanding based on 臍中</td>
+<td style="text-align: left;">《針灸大成·玉龍歌》: "闌門" miswritten as "關元"</td>
+<td style="text-align: left;">Errors in secondary quotation</td>
 </tr>
 <tr>
-<td style="text-align: left;">현대</td>
-<td style="text-align: left;">1957 교재: 소아 만성질환 뜸 추가</td>
-<td style="text-align: left;">7판 교재: 비뇨·생식·원기허손 6계통으로 확대</td>
-<td style="text-align: left;">현대 확장</td>
+<td style="text-align: left;">Modern</td>
+<td style="text-align: left;">1957 textbook: moxibustion for chronic paediatric diseases added</td>
+<td style="text-align: left;">7th-edition textbook: expanded to six systems (urinary, reproductive, depletion of Original Qi (元氣虛損), etc.)</td>
+<td style="text-align: left;">Modern extension</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>원문/해석 분리</strong>: 황룡상은 Tianshu (天樞, ST25)의 정위가 '배꼽 가장자리에서 2촌(除脐)'이라고 교감했다. 후대의 '배꼽 중심 2촌'은 '脐'를 오해한 재해석이다. Tianshu (天樞, ST25)의 대장병 주치는 《명당경》 편자가 하합혈(상거허) 주치를 Front-Mu Point (募穴)로 옮긴 결과이므로, 원천 기술이지만 귀속 자체는 편찬 단계의 판단으로 본다.</p>
-<h2 id="3-nomenclature-alias-collation-table-kjh-db-verification">3. Nomenclature &amp; Alias Collation Table (KJH DB Verification)</h2>
+<p><strong>Separation of original text and interpretation</strong>: Huang Longxiang (黃龍祥) collated the location of Tianshu as "2 cun from the edge of the umbilicus (除臍)". The later "2 cun from the centre of the umbilicus" is a reinterpretation arising from a misunderstanding of '臍'. Tianshu's indication for large-intestine disease is the result of the <em>Mingtang Jing</em> (《明堂經》) compiler transferring the indications of the Lower He-Sea point (下合穴) (Shangjuxu (上巨虛)) to the Front-Mu point; it is therefore primary-source text, but the attribution itself is regarded as a judgement made at the compilation stage.</p>
+<h2 id="3-alias-alternative-name-verification-table-cross-checked-with-kjh-db">3. Alias / Alternative-Name Verification Table (Cross-checked with KJH DB)</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">혈</th>
-<th style="text-align: left;">KJH DB 이명</th>
-<th style="text-align: left;">혼용 위험</th>
-<th style="text-align: left;">처리</th>
+<th style="text-align: left;">Point</th>
+<th style="text-align: left;">Aliases in KJH DB</th>
+<th style="text-align: left;">Risk of confusion</th>
+<th style="text-align: left;">Handling</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">ST25</td>
 <td style="text-align: left;">長溪·長谿·谷門·長谷·循際·循元·補元·穀門</td>
-<td style="text-align: left;">魂舍(夹脐相去三寸)·長谷을 별도 기혈로 세운 현대 오류. "長谷"은 "長谿"의 坏字. 1957 교재 "循元·補元"은 일본 교재를 거친 오류</td>
-<td style="text-align: left;">정명과 일치하는 것은 長溪·谷門·循際뿐(황룡상 교감). 魂舍 정위 정보는 Tianshu (天樞, ST25) 정위에서 분리</td>
+<td style="text-align: left;">A modern error established 魂舍 (夾臍相去三寸) and 長谷 as separate extra points. "長谷" is a corrupted character (坏字) for "長谿". "循元·補元" in the 1957 textbook are errors that passed through a Japanese textbook</td>
+<td style="text-align: left;">Only 長溪·谷門·循際 agree with the standard name (collation by Huang Longxiang (黃龍祥)). The locating information of 魂舍 is separated from the location of Tianshu</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
 <td style="text-align: left;">三結交·上氣海·下肓·下記·丹田·大中極·太中極·次門·肓原</td>
-<td style="text-align: left;"><strong>丹田</strong>: CV4·CV5·CV6·CV7이 공유하며, 도가 단전과 침가 개념이 섞였다. <strong>下肓</strong>: CV4·CV6 공유. 《大成》 "关元" = "阑门" 오기. 関元兪(BL26)는 별개</td>
-<td style="text-align: left;">丹田 계열 주치("下元虚冷" 등)는 도가 문헌 혼입 가능성을 표시. 《玉龙歌》 疝气 조문의 "关元"은 阑门(급맥 부근)으로 분리</td>
+<td style="text-align: left;"><strong>丹田 (Dantian)</strong>: shared by CV4, CV5, CV6 and CV7, mixing the Daoist Dantian with the acupuncturists' concept. <strong>下肓</strong>: shared by CV4 and CV6. 《大成》 "關元" = miswriting of "闌門". Guanyuanshu (關元俞, BL26) is a separate point</td>
+<td style="text-align: left;">Indications of the 丹田 lineage (e.g. "下元虛冷") are flagged as possibly contaminated by Daoist literature. The "關元" in the 疝氣 clause of 《玉龍歌》 is separated out as 闌門 (near Jimai (急脈))</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="4-3d-layer-15">4. 3D 공간 좌표 및 Layer 1~5 층차 구조</h2>
-<p>좌표계: X = 정중선 기준 외측(mm), Y = 배꼽(0) 기준 하방(+), Z = 피부 기준 심도(mm). 촌→mm 환산은 성인 평균 체형을 가정한 추정이다(1 B-cun ≈ 24~30mm).</p>
+<h2 id="4-3d-spatial-coordinates-and-layer-15-stratified-structure">4. 3D Spatial Coordinates and Layer 1–5 Stratified Structure</h2>
+<p>Coordinate system: X = lateral distance from the midline (mm), Y = distance below the umbilicus (0) (+), Z = depth from the skin (mm). The cun→mm conversion is an estimate assuming an average adult build (1 B-cun ≈ 24–30 mm).</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">혈</th>
+<th style="text-align: left;">Point</th>
 <th style="text-align: left;">X</th>
 <th style="text-align: left;">Y</th>
-<th style="text-align: left;">표준 Z 범위(현대)</th>
-<th style="text-align: left;">비고</th>
+<th style="text-align: left;">Standard Z range (modern)</th>
+<th style="text-align: left;">Remarks</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">ST25 Target 2(WHO, 배꼽 중심 2촌)</td>
-<td style="text-align: left;">약 50~60</td>
+<td style="text-align: left;">ST25 Target 2 (WHO, 2 cun from the centre of the umbilicus)</td>
+<td style="text-align: left;">approx. 50–60</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">20~40</td>
-<td style="text-align: left;">배곧은근 근복 위</td>
+<td style="text-align: left;">20–40</td>
+<td style="text-align: left;">Over the belly of rectus abdominis</td>
 </tr>
 <tr>
-<td style="text-align: left;">ST25 Target 1(명당경, 배꼽 가장자리 2촌)</td>
-<td style="text-align: left;">약 60~72</td>
+<td style="text-align: left;">ST25 Target 1 (<em>Mingtang Jing</em>, 2 cun from the edge of the umbilicus)</td>
+<td style="text-align: left;">approx. 60–72</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">동일</td>
-<td style="text-align: left;">Δ ≈ 10~15mm (7절)</td>
+<td style="text-align: left;">Same</td>
+<td style="text-align: left;">Δ ≈ 10–15 mm (Section 7)</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">약 72~90 (3촌)</td>
-<td style="text-align: left;">20~40</td>
-<td style="text-align: left;">활꼴선(arcuate line) 아래 백색선</td>
+<td style="text-align: left;">approx. 72–90 (3 cun)</td>
+<td style="text-align: left;">20–40</td>
+<td style="text-align: left;">Linea alba below the arcuate line</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="4-1-tianshu-st25">4-1. Tianshu (天樞, ST25) 층차 (배꼽 높이, 활꼴선 위)</h3>
+<h3 id="4-1-layers-of-tianshu-level-of-the-umbilicus-above-the-arcuate-line">4-1. Layers of Tianshu (level of the umbilicus, above the arcuate line)</h3>
 <div class="table-wrap"><table>
 <thead>
 <tr>
 <th style="text-align: left;">Layer</th>
-<th style="text-align: left;">구조</th>
-<th style="text-align: left;">근거</th>
+<th style="text-align: left;">Structure</th>
+<th style="text-align: left;">Evidence</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">L1 피부·피하</td>
-<td style="text-align: left;">제9~11 갈비사이신경 앞피부가지(T10 중심), 얕은배벽동·정맥 분지</td>
-<td style="text-align: left;">김재효 교재, B1-03</td>
+<td style="text-align: left;">L1 Skin &amp; subcutis</td>
+<td style="text-align: left;">Anterior cutaneous branches of the 9th–11th intercostal nerves (centred on T10), branches of the superficial epigastric artery and vein</td>
+<td style="text-align: left;">Kim Jae-hyo textbook, B1-03</td>
 </tr>
 <tr>
-<td style="text-align: left;">L2 표층 근막</td>
-<td style="text-align: left;">배곧은근집 앞층(배바깥빗근·배속빗근 널힘줄)</td>
-<td style="text-align: left;">김재효 교재, B1-01</td>
+<td style="text-align: left;">L2 Superficial fascia</td>
+<td style="text-align: left;">Anterior layer of the rectus sheath (aponeuroses of external and internal oblique)</td>
+<td style="text-align: left;">Kim Jae-hyo textbook, B1-01</td>
 </tr>
 <tr>
-<td style="text-align: left;">L3 근육</td>
-<td style="text-align: left;">배곧은근 근복, 갈비사이신경 근가지</td>
-<td style="text-align: left;">두 교재 공통</td>
+<td style="text-align: left;">L3 Muscle</td>
+<td style="text-align: left;">Belly of rectus abdominis, muscular branches of the intercostal nerves</td>
+<td style="text-align: left;">Common to both textbooks</td>
 </tr>
 <tr>
-<td style="text-align: left;">L4 신경혈관속</td>
-<td style="text-align: left;">배곧은근 뒤면의 위·아랫배벽동·정맥 문합부(배꼽 높이), 갈비사이신경 본줄기</td>
-<td style="text-align: left;">두 교재(위배벽동·정맥), B1-01(배꼽 높이 문합)</td>
+<td style="text-align: left;">L4 Neurovascular bundle</td>
+<td style="text-align: left;">Anastomosis of the superior and inferior epigastric arteries and veins on the posterior surface of rectus abdominis (at the level of the umbilicus), main trunks of the intercostal nerves</td>
+<td style="text-align: left;">Both textbooks (superior epigastric artery and vein), B1-01 (anastomosis at the umbilical level)</td>
 </tr>
 <tr>
-<td style="text-align: left;">L5 심부</td>
-<td style="text-align: left;">배곧은근집 뒤층·가로근막·복막전지방·벽측복막 → <strong>복강(소장 고리·큰그물막, 체위에 따라 횡행결장)</strong></td>
+<td style="text-align: left;">L5 Deep</td>
+<td style="text-align: left;">Posterior layer of the rectus sheath · transversalis fascia · preperitoneal fat · parietal peritoneum → <strong>peritoneal cavity (loops of small intestine, greater omentum, and the transverse colon depending on posture)</strong></td>
 <td style="text-align: left;">B1-01</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="4-2-guanyuan-cv04-3">4-2. Guanyuan (關元, CV04) 층차 (배꼽 아래 3촌, 활꼴선 아래)</h3>
+<h3 id="4-2-layers-of-guanyuan-3-cun-below-the-umbilicus-below-the-arcuate-line">4-2. Layers of Guanyuan (3 cun below the umbilicus, below the arcuate line)</h3>
 <div class="table-wrap"><table>
 <thead>
 <tr>
 <th style="text-align: left;">Layer</th>
-<th style="text-align: left;">구조</th>
-<th style="text-align: left;">근거</th>
+<th style="text-align: left;">Structure</th>
+<th style="text-align: left;">Evidence</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">L1 피부·피하</td>
-<td style="text-align: left;">갈비밑신경(T12) 앞피부가지, (공통교재) 엉덩아랫배신경(L1) 앞피부가지, 얕은배벽동·정맥</td>
-<td style="text-align: left;">두 교재</td>
+<td style="text-align: left;">L1 Skin &amp; subcutis</td>
+<td style="text-align: left;">Anterior cutaneous branch of the subcostal nerve (T12), (common textbook) anterior cutaneous branch of the iliohypogastric nerve (L1), superficial epigastric artery and vein</td>
+<td style="text-align: left;">Both textbooks</td>
 </tr>
 <tr>
-<td style="text-align: left;">L2 표층 근막</td>
-<td style="text-align: left;">백색선(정중선 널힘줄 교차부)</td>
-<td style="text-align: left;">두 교재 공통</td>
+<td style="text-align: left;">L2 Superficial fascia</td>
+<td style="text-align: left;">Linea alba (decussation of the aponeuroses in the midline)</td>
+<td style="text-align: left;">Common to both textbooks</td>
 </tr>
 <tr>
-<td style="text-align: left;">L3 근육</td>
-<td style="text-align: left;">정중선이므로 근복 없음. 양옆에 배곧은근</td>
+<td style="text-align: left;">L3 Muscle</td>
+<td style="text-align: left;">No muscle belly, as it lies in the midline; rectus abdominis on either side</td>
 <td style="text-align: left;">B1-01</td>
 </tr>
 <tr>
-<td style="text-align: left;">L4 신경혈관속</td>
-<td style="text-align: left;">아랫배벽동·정맥은 배곧은근 뒤 외측을 지나며 정중선 직하에는 없다</td>
-<td style="text-align: left;">두 교재(혈관 명칭), B1-01(주행)</td>
+<td style="text-align: left;">L4 Neurovascular bundle</td>
+<td style="text-align: left;">The inferior epigastric artery and vein run posterolaterally behind rectus abdominis and are not directly beneath the midline</td>
+<td style="text-align: left;">Both textbooks (vessel names), B1-01 (course)</td>
 </tr>
 <tr>
-<td style="text-align: left;">L5 심부</td>
-<td style="text-align: left;">활꼴선 아래라 배곧은근집 뒤층이 없다. 가로근막 → 복막 → <strong>방광(충만 시 치골 위로 상승)·소장 고리·임신 자궁</strong></td>
-<td style="text-align: left;">김재효 교재(배가로근막), B1-01</td>
+<td style="text-align: left;">L5 Deep</td>
+<td style="text-align: left;">Below the arcuate line there is no posterior layer of the rectus sheath. Transversalis fascia → peritoneum → <strong>bladder (rises above the pubis when full), loops of small intestine, gravid uterus</strong></td>
+<td style="text-align: left;">Kim Jae-hyo textbook (transversalis fascia), B1-01</td>
 </tr>
 </tbody>
 </table></div>
-<figure class="diagram diagram-mermaid"><img src="data:image/png;base64,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beWfobaOl6D06hKJhCiD69dfe/XV33n00a8JlE7k24n6W/Y2td4qKtx3X31t996/aXmIL54rpVdeGXn88ZfF5lpe/vq2bVuamqqt7hWPJr5zcceDnfsENubbL/3VE78tqs/i4vOHD0/U128XZcCVEQAAhRDMAAAohGAGAEAhBDMAAAohmAEAUAjBDACAQriPucL8xf987Qd/+TNRNjdu3Hj33Rv19Vvq6spYafvpj97avVcAKov/1S9enfuBUNjbb7+9ZcuWrVu3ClQXgrmSHDhUd8/9b8vyKMrmj//4T//FC//2+eeHWlubRTntuKNOAKrafVdd15cSQrwpFPaFLwwfOXLoK185JhS29T2U9KIRzJXklh3yX3nP8vfe+su/fTO2/c63du6jOKF21b9HqF8EZFG9Uf+3FNXqwxgzAAAKIZgBAFAIwQwAgEIIZgAAFEIwAwCgEIIZAACFEMwAACiEYAYAQCEEMwAACiGYAQBQCMEMAIBCCGYAABRCMAMAoBCCGQAAhRDMAAAohGAGAEAhBDMAAAohmAEAUAjBDACAQghmAAAUQjADAKAQghkAAIUQzAAAKIRgBgBAIQQzAAAKIZgBAFAIwQwAgELqBSDEY4/11te/J5EQ169fTyQSQ0OBrVvrt2wR77zz7uLivxUA1PDJTz7z7rs3tmypu3Ej8e677/7hH/63//pf/4dcfuPGjX373v/yy6cFKh/BDM3tt9929eoPjcd1dXW/+MUvU8t3CADK+OAHG5eWvrNli9bZKYvq9etvX7/+t/LxrbduP3bMK1AV6MqG5oEHPiwLee7yT32qQwBQxpNPfur9778zd/muXXd85jOfEKgKBDM0x4/37NmzM2vhnj27nnnmCQFAGY888lBDw56shbfddmtf32cFqgXBDI3LdVdb2/1ZjeajR399x45tAoBKnnnm2J133m5e0ti4u6urQ6BaEMxIko3mffven37a0LD76ad7BADFPProQ83N+9NPt2+/5YknPilQRQhmJN19911u90eNx1u3bvF6D+/YsV0AUM9TT31aDiobj+WQc3f3YwJVhGBGxlNPfWbv3l3ywZ133valL31OAFDSI4886HI1ygfbtr1PhrRAdSGYkSH7xx54oFU+6O5+fPt2RpcBdT355KfvuONWOfzU08Nk7GpTSfcxv/6TxOt/I1BWX/jUU7G/rPuN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" alt="Mermaid 다이어그램" loading="lazy"></figure>
-<h2 id="5-classical-needling-depth-calculation-table-han-dynasty-1-fen-23-mm">5. Classical Needling Depth Calculation Table (Han Dynasty 1 fen = 2.3 mm)</h2>
+<figure class="diagram diagram-mermaid"><img src="data:image/png;base64,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" alt="Mermaid 다이어그램" loading="lazy"></figure>
+<h2 id="5-needling-depth-calculation-table-1-fen-23-mm">5. Needling Depth Calculation Table (1 fen = 2.3 mm)</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">문헌</th>
-<th style="text-align: center;">Tianshu (天樞, ST25) 푼수</th>
-<th style="text-align: center;">Tianshu (天樞, ST25) mm</th>
-<th style="text-align: center;">Guanyuan (關元, CV04) 푼수</th>
-<th style="text-align: center;">Guanyuan (關元, CV04) mm</th>
-<th style="text-align: left;">도달 Layer(성인 추정)</th>
+<th style="text-align: left;">Text</th>
+<th style="text-align: center;">Tianshu fen</th>
+<th style="text-align: center;">Tianshu mm</th>
+<th style="text-align: center;">Guanyuan fen</th>
+<th style="text-align: center;">Guanyuan mm</th>
+<th style="text-align: left;">Layer reached (adult estimate)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><em>Huangdi Mingtang Jing</em> (《黃帝明堂經》)(황룡상 감수)</td>
+<td style="text-align: left;">《黃帝明堂經》 (ed. Huang Longxiang)</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">11.5</td>
 <td style="text-align: center;">20</td>
 <td style="text-align: center;"><strong>46.0</strong></td>
-<td style="text-align: left;">Tianshu (天樞, ST25) L1~L2 / Guanyuan (關元, CV04) <strong>L5 이상(복막 관통 가능)</strong></td>
+<td style="text-align: left;">Tianshu L1–L2 / Guanyuan <strong>L5 or beyond (may penetrate peritoneum)</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;"><em>Zhen Jiu Jia Yi Jing</em> (《針灸甲乙經》)</td>
+<td style="text-align: left;">《針灸甲乙經》</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">11.5</td>
 <td style="text-align: center;">20</td>
 <td style="text-align: center;">46.0</td>
-<td style="text-align: left;">동일</td>
+<td style="text-align: left;">Same</td>
 </tr>
 <tr>
-<td style="text-align: left;">《针灸经验方》</td>
+<td style="text-align: left;">《針灸經驗方》</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">11.5</td>
 <td style="text-align: center;">8</td>
 <td style="text-align: center;">18.4</td>
-<td style="text-align: left;">Tianshu (天樞, ST25) L1~L2 / Guanyuan (關元, CV04) L1~L2</td>
+<td style="text-align: left;">Tianshu L1–L2 / Guanyuan L1–L2</td>
 </tr>
 <tr>
-<td style="text-align: left;">《东医宝鉴》(동인 인용)</td>
+<td style="text-align: left;">《東醫寶鑑》 (citing 《銅人》)</td>
 <td style="text-align: center;">8</td>
 <td style="text-align: center;">18.4</td>
 <td style="text-align: center;">8</td>
 <td style="text-align: center;">18.4</td>
-<td style="text-align: left;">L2~L3</td>
+<td style="text-align: left;">L2–L3</td>
 </tr>
 <tr>
-<td style="text-align: left;">공통교재</td>
-<td style="text-align: center;">10~15(현대 촌)</td>
-<td style="text-align: center;">체형 비례</td>
-<td style="text-align: center;">10~15(현대 촌)</td>
-<td style="text-align: center;">체형 비례</td>
-<td style="text-align: left;">1~1.5 B-cun ≈ 24~45mm</td>
+<td style="text-align: left;">Common textbook</td>
+<td style="text-align: center;">10–15 (modern cun)</td>
+<td style="text-align: center;">Proportional to build</td>
+<td style="text-align: center;">10–15 (modern cun)</td>
+<td style="text-align: center;">Proportional to build</td>
+<td style="text-align: left;">1–1.5 B-cun ≈ 24–45 mm</td>
 </tr>
 <tr>
-<td style="text-align: left;"><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) 현대 권장</td>
-<td style="text-align: center;">0.8~1.2촌</td>
-<td style="text-align: center;">체형 비례</td>
-<td style="text-align: center;">1~1.5촌</td>
-<td style="text-align: center;">체형 비례</td>
+<td style="text-align: left;">《針灸腧穴通考》 modern recommendation</td>
+<td style="text-align: center;">0.8–1.2 cun</td>
+<td style="text-align: center;">Proportional to build</td>
+<td style="text-align: center;">1–1.5 cun</td>
+<td style="text-align: center;">Proportional to build</td>
 <td style="text-align: left;">—</td>
 </tr>
 </tbody>
 </table></div>
 <ul>
-<li>자침깊이 DB에 '0'(Contraindicated for Needling (禁鍼))은 없다. 다만 Tianshu (天樞, ST25)에는 《千金》의 "不可针·勿针·忌针" 기록이 있고, Guanyuan (關元, CV04)에는 임신 시 Contraindicated for Needling (禁鍼) 기록이 있다(DB 미반영, 원전 확인).</li>
-<li><strong>참고 실측</strong>: 상복부 정중선 CV12의 초음파 허용 자침 깊이(ANIR)는 성인 83명 평균 <strong>25.3 ± 10.2mm</strong>였다(papers.id 1444, DOI 10.3390/healthcare10091707). Guanyuan (關元, CV04)은 같은 정중선이고 활꼴선 아래라 뒤층이 없으므로, 비만하지 않은 성인에서 46mm는 복막을 넘을 가능성이 높다. Tianshu (天樞, ST25)는 배곧은근이 더해져 CV12보다 두꺼울 것으로 추정되지만, 경혈 특이 실측은 없다.</li>
-<li><strong>[해석·교차 참조]</strong> 《명당경》 Guanyuan (關元, CV04) "刺入二寸"은 복강 내 막 층위를 겨냥한 고전 심자법일 가능성이 있다. 이는 황룡상의 '기병치막(器病治膜)·장침모자법' 고증과 맞물리는 부분이다. 그러나 현대 임상 심도로 쓸 수는 없다.</li>
+<li>The needling-depth DB contains no '0' (needling prohibited) entries. However, Tianshu has the records "不可針·勿針·忌針" in 《千金》, and Guanyuan has a record of needling prohibition during pregnancy (not reflected in the DB; confirmed in the source texts).</li>
+<li><strong>Reference measurement</strong>: The ultrasound-based allowable needle insertion depth (ANIR) at the upper-abdominal midline point CV12 averaged <strong>25.3 ± 10.2 mm</strong> in 83 adults (papers.id 1444, DOI 10.3390/healthcare10091707). Guanyuan lies on the same midline and below the arcuate line, without a posterior layer, so in non-obese adults 46 mm is likely to pass the peritoneum. Tianshu is presumed to be thicker than CV12 because of the added rectus abdominis, but there is no point-specific measurement.</li>
+<li><strong>[Interpretation · cross-reference]</strong> The <em>Mingtang Jing</em>'s (《明堂經》) Guanyuan depth "刺入二寸" may be a classical deep-needling method aimed at the membranous layers within the abdominal cavity. This links with Huang Longxiang's (黃龍祥) textual research on "treating organ disease through the membranes (器病治膜)" and the long-needle Mu-point needling method. It cannot, however, be used as a modern clinical depth.</li>
 </ul>
-<h2 id="6-textbook-comparison-table-fma-ontology-mapping-common-textbook-vs-prof-kim-jaehyo">6. Textbook Comparison Table &amp; FMA Ontology Mapping (Common Textbook vs. Prof. Kim Jaehyo)</h2>
+<h2 id="6-comparison-of-anatomical-structures-between-textbooks">6. Comparison of Anatomical Structures Between Textbooks</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">혈</th>
-<th style="text-align: left;">구분</th>
-<th style="text-align: left;">공통교재</th>
-<th style="text-align: left;">김재효 교재</th>
-<th style="text-align: left;">판정</th>
+<th style="text-align: left;">Point</th>
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Common textbook</th>
+<th style="text-align: left;">Kim Jae-hyo textbook</th>
+<th style="text-align: left;">Verdict</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">ST25</td>
-<td style="text-align: left;">근육</td>
-<td style="text-align: left;">배곧은근</td>
-<td style="text-align: left;">배바깥빗근·배속빗근·배곧은근·배가로근</td>
-<td style="text-align: left;">일치(김재효가 상위 집합)</td>
+<td style="text-align: left;">Muscle</td>
+<td style="text-align: left;">Rectus abdominis</td>
+<td style="text-align: left;">External oblique · internal oblique · rectus abdominis · transversus abdominis</td>
+<td style="text-align: left;">Agreement (Kim Jae-hyo is a superset)</td>
 </tr>
 <tr>
 <td style="text-align: left;">ST25</td>
-<td style="text-align: left;">신경</td>
-<td style="text-align: left;">갈비사이신경</td>
-<td style="text-align: left;">제9~11 갈비사이신경 + 앞피부가지</td>
-<td style="text-align: left;">일치(김재효가 분절 명시)</td>
+<td style="text-align: left;">Nerve</td>
+<td style="text-align: left;">Intercostal nerves</td>
+<td style="text-align: left;">9th–11th intercostal nerves + anterior cutaneous branches</td>
+<td style="text-align: left;">Agreement (Kim Jae-hyo specifies segments)</td>
 </tr>
 <tr>
 <td style="text-align: left;">ST25</td>
-<td style="text-align: left;">혈관</td>
-<td style="text-align: left;">위배벽동·정맥</td>
-<td style="text-align: left;">위배벽동·정맥 + 얕은배벽동·정맥</td>
-<td style="text-align: left;">일치(김재효가 표층 추가)</td>
+<td style="text-align: left;">Vessels</td>
+<td style="text-align: left;">Superior epigastric artery and vein</td>
+<td style="text-align: left;">Superior epigastric artery and vein + superficial epigastric artery and vein</td>
+<td style="text-align: left;">Agreement (Kim Jae-hyo adds the superficial layer)</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
-<td style="text-align: left;">근육·근막</td>
-<td style="text-align: left;">백색선·배곧은근집</td>
-<td style="text-align: left;">백색선·배가로근막</td>
-<td style="text-align: left;"><strong>부분 불일치</strong>: 활꼴선 아래에는 배곧은근집 뒤층이 없으므로 깊은 층은 김재효 교재(가로근막)가 해부학적으로 정확</td>
+<td style="text-align: left;">Muscle &amp; fascia</td>
+<td style="text-align: left;">Linea alba · rectus sheath</td>
+<td style="text-align: left;">Linea alba · transversalis fascia</td>
+<td style="text-align: left;"><strong>Partial disagreement</strong>: below the arcuate line there is no posterior layer of the rectus sheath, so for the deep layer the Kim Jae-hyo textbook (transversalis fascia) is anatomically correct</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
-<td style="text-align: left;">신경</td>
-<td style="text-align: left;">엉덩아랫배신경(L1) + 갈비밑신경(T12) 앞피부가지</td>
-<td style="text-align: left;">갈비밑신경(T12) 앞피부가지</td>
-<td style="text-align: left;"><strong>부분 불일치</strong>: L1 포함 여부. 배꼽-치골 3/5 지점은 T12와 L1 피절의 경계 부근이므로 두 기술 모두 가능 범위</td>
+<td style="text-align: left;">Nerve</td>
+<td style="text-align: left;">Anterior cutaneous branches of the iliohypogastric nerve (L1) + subcostal nerve (T12)</td>
+<td style="text-align: left;">Anterior cutaneous branch of the subcostal nerve (T12)</td>
+<td style="text-align: left;"><strong>Partial disagreement</strong>: whether L1 is included. The point 3/5 of the way from umbilicus to pubis lies near the boundary of the T12 and L1 dermatomes, so both descriptions fall within the possible range</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
-<td style="text-align: left;">혈관</td>
-<td style="text-align: left;">얕은·아랫배벽동·정맥</td>
-<td style="text-align: left;">동일</td>
-<td style="text-align: left;">일치</td>
+<td style="text-align: left;">Vessels</td>
+<td style="text-align: left;">Superficial and inferior epigastric arteries and veins</td>
+<td style="text-align: left;">Same</td>
+<td style="text-align: left;">Agreement</td>
 </tr>
 </tbody>
 </table></div>
 <blockquote>
-<p><strong>추가 지적(B1-01)</strong>: 두 교재 모두 Tianshu (天樞, ST25)의 깊은 혈관을 '위배벽동·정맥'으로만 적었다. 그러나 배꼽 높이는 위배벽동맥과 아랫배벽동맥의 문합부이므로 '위·아랫배벽동·정맥 문합부'로 적는 것이 더 정확하다.</p>
+<p><strong>Additional remark (B1-01)</strong>: Both textbooks list the deep vessels of Tianshu only as the "superior epigastric artery and vein". However, the umbilical level is the anastomosis of the superior and inferior epigastric arteries, so "anastomosis of the superior and inferior epigastric arteries and veins" is more accurate.</p>
 </blockquote>
-<h2 id="7">7. 공간 변위 분기 추론</h2>
+<h2 id="7-inference-on-spatial-displacement-branching">7. Inference on Spatial-Displacement Branching</h2>
 <ul>
-<li><strong>Tianshu (天樞, ST25)</strong>: Target 1(명당경, 除脐 2촌)과 Target 2(WHO, 脐中 2촌)의 차이는 배꼽 반지름(약 0.5 B-cun)이다. 성인 기준 Δ ≈ 10~15mm로 기준값 15mm 이하이므로 <strong>분기 분석을 하지 않는다.</strong> 두 지점은 같은 배곧은근 근복 위에 있고 피절(T10)도 같다.</li>
-<li><strong>Guanyuan (關元, CV04)</strong>: 고금 정위가 모두 "脐下三寸"이므로 Δ ≈ 0, 분기 불필요.</li>
+<li><strong>Tianshu</strong>: The difference between Target 1 (<em>Mingtang Jing</em>, 2 cun from the edge of the umbilicus (除臍)) and Target 2 (WHO, 2 cun from the centre of the umbilicus (臍中)) is the radius of the umbilicus (about 0.5 B-cun). In adults Δ ≈ 10–15 mm, at or below the 15 mm threshold, so <strong>no branching analysis is performed.</strong> Both sites lie over the same belly of rectus abdominis and share the same dermatome (T10).</li>
+<li><strong>Guanyuan</strong>: Both ancient and modern locations are "臍下三寸", so Δ ≈ 0 and no branching is needed.</li>
 </ul>
-<h2 id="8">8. 생의학적 반사 기전과 외부 검색 로그</h2>
-<h3 id="8-1">8-1. 질의의 핵심: 분절 정합 분석</h3>
+<h2 id="8-biomedical-reflex-mechanisms-and-external-search-log">8. Biomedical Reflex Mechanisms and External Search Log</h2>
+<h3 id="8-1-core-of-the-question-segmental-consistency-analysis">8-1. Core of the Question: Segmental Consistency Analysis</h3>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">표적</th>
-<th style="text-align: left;">내장 구심·자율 분절(B1-03)</th>
-<th style="text-align: left;">연관통 체표 구역(B3-01·B3-02)</th>
-<th style="text-align: center;">Tianshu (天樞, ST25)(T10)와의 정합</th>
-<th style="text-align: center;">Guanyuan (關元, CV04)(T12~L1)과의 정합</th>
+<th style="text-align: left;">Target</th>
+<th style="text-align: left;">Visceral afferent / autonomic segments (B1-03)</th>
+<th style="text-align: left;">Referred-pain surface zone (B3-01, B3-02)</th>
+<th style="text-align: center;">Consistency with Tianshu (T10)</th>
+<th style="text-align: center;">Consistency with Guanyuan (T12–L1)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">소장(중장)</td>
-<td style="text-align: left;">교감 T8~T11</td>
-<td style="text-align: left;">배꼽 주위(T10)</td>
-<td style="text-align: center;"><strong>정합</strong></td>
-<td style="text-align: center;">부분</td>
+<td style="text-align: left;">Small intestine (midgut)</td>
+<td style="text-align: left;">Sympathetic T8–T11</td>
+<td style="text-align: left;">Periumbilical (T10)</td>
+<td style="text-align: center;"><strong>Consistent</strong></td>
+<td style="text-align: center;">Partial</td>
 </tr>
 <tr>
-<td style="text-align: left;">근위 대장: 맹장~횡행결장 근위 2/3(중장)</td>
-<td style="text-align: left;">교감 T10~T12, 미주신경</td>
-<td style="text-align: left;">배꼽 주위</td>
-<td style="text-align: center;"><strong>정합</strong></td>
-<td style="text-align: center;">부분</td>
+<td style="text-align: left;">Proximal large intestine: caecum to proximal 2/3 of transverse colon (midgut)</td>
+<td style="text-align: left;">Sympathetic T10–T12, vagus nerve</td>
+<td style="text-align: left;">Periumbilical</td>
+<td style="text-align: center;"><strong>Consistent</strong></td>
+<td style="text-align: center;">Partial</td>
 </tr>
 <tr>
-<td style="text-align: left;">원위 대장: 횡행결장 원위~직장(후장)</td>
-<td style="text-align: left;">교감 L1~L2, 부교감 S2~S4</td>
-<td style="text-align: left;">치골상부(하복부)</td>
-<td style="text-align: center;">불일치</td>
-<td style="text-align: center;"><strong>정합</strong></td>
+<td style="text-align: left;">Distal large intestine: distal transverse colon to rectum (hindgut)</td>
+<td style="text-align: left;">Sympathetic L1–L2, parasympathetic S2–S4</td>
+<td style="text-align: left;">Suprapubic (lower abdomen)</td>
+<td style="text-align: center;">Inconsistent</td>
+<td style="text-align: center;"><strong>Consistent</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;">방광</td>
-<td style="text-align: left;">교감 T11~L2, 부교감 S2~S4</td>
-<td style="text-align: left;">치골상부</td>
-<td style="text-align: center;">불일치</td>
-<td style="text-align: center;"><strong>정합</strong></td>
+<td style="text-align: left;">Bladder</td>
+<td style="text-align: left;">Sympathetic T11–L2, parasympathetic S2–S4</td>
+<td style="text-align: left;">Suprapubic</td>
+<td style="text-align: center;">Inconsistent</td>
+<td style="text-align: center;"><strong>Consistent</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;">자궁</td>
-<td style="text-align: left;">교감 T10~L1</td>
-<td style="text-align: left;">하복부·요Tianfu (天府, LU03)</td>
-<td style="text-align: center;">부분</td>
-<td style="text-align: center;"><strong>정합</strong></td>
+<td style="text-align: left;">Uterus</td>
+<td style="text-align: left;">Sympathetic T10–L1</td>
+<td style="text-align: left;">Lower abdomen and lumbosacral region</td>
+<td style="text-align: center;">Partial</td>
+<td style="text-align: center;"><strong>Consistent</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;">고환(산증 방사통 표적)</td>
-<td style="text-align: left;">T10~T11(고환은 발생상 높은 분절)</td>
-<td style="text-align: left;">서혜부·음낭</td>
-<td style="text-align: center;">부분</td>
-<td style="text-align: center;">부분</td>
+<td style="text-align: left;">Testis (target of radiating pain in Shan disorders)</td>
+<td style="text-align: left;">T10–T11 (the testis derives from high segments developmentally)</td>
+<td style="text-align: left;">Groin and scrotum</td>
+<td style="text-align: center;">Partial</td>
+<td style="text-align: center;">Partial</td>
 </tr>
 </tbody>
 </table></div>
-<figure class="diagram diagram-mermaid"><img src="data:image/png;base64,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" alt="Mermaid 다이어그램" loading="lazy"></figure>
-<p><strong>판독</strong>:
-- Tianshu (天樞, ST25)는 소장과 근위 대장의 분절 모두와 겹친다. 분절로 보면 '대장 Front-Mu Point (募穴)'이 아니라 '중장 Front-Mu Point (募穴)'이다.
-- Guanyuan (關元, CV04)은 원위 대장·방광·자궁의 분절과 겹치고, 소장 분절과는 1~3분절 떨어져 있다.
-- 따라서 분절 지도로는 오히려 "Tianshu (天樞, ST25) = 소장·근위 대장, Guanyuan (關元, CV04) = 원위 대장·골반 장기"가 된다. 질의자의 지적은 해부학적으로 정확하다.
-- 이 불일치는 <strong>Front-Mu Point (募穴) 귀속이 분절 원리로 정해지지 않았다</strong>는 문헌적 사실과 함께 보아야 해소된다. 황룡상의 고증에 따르면, Front-Mu Point (募穴)은 장부의 막이 매달린 '원(原)'으로서 삼초 구획(중초 = 배꼽 옆, 하초 = 배꼽 아래)에 따라 배치되었다.
-- <strong>[해석·B1]</strong> 고전 '소장병'의 핵심 증후는 "小腹痛，腰脊控睾而痛"(《영추·邪气藏府病形》)이다. 송대 이후 산증이 '小肠气'로 불린 것도 같은 맥락이다. 이는 서혜부 탈장 주머니에 소장 고리가 실제로 들어가는 해부학적 사실과 맞는다. Guanyuan (關元, CV04)(하복부, T12~L1)이 '소장병'을 치료한다는 귀속은, 병증이 나타나는 자리(하복·서혜·고환)와 일치한다는 점에서 해부학적 근거가 있다.</p>
-<h3 id="8-2-layer-a-rank-6-2026-10-12">8-2. Layer A 주요 논문 (Rank 6, 2026-10-12)</h3>
+<figure class="diagram diagram-mermaid"><img src="data:image/png;base64,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" alt="Mermaid 다이어그램" loading="lazy"></figure>
+<p><strong>Reading</strong>:
+- Tianshu overlaps the segments of both the small intestine and the proximal large intestine. Segmentally it is a "midgut Mu point" rather than a "large-intestine Mu point".
+- Guanyuan overlaps the segments of the distal large intestine, bladder and uterus, and is 1–3 segments away from the small-intestine segments.
+- On the segmental map, therefore, one actually gets "Tianshu = small intestine and proximal large intestine; Guanyuan = distal large intestine and pelvic organs". The questioner's point is anatomically correct.
+- This inconsistency is resolved only when read together with the textual fact that <strong>the Front-Mu attributions were not determined by a segmental principle</strong>. According to Huang Longxiang's (黃龍祥) research, the Front-Mu points were arranged as the "Yuan (原)" from which the membranes of the Zang-Fu organs (臟腑) are suspended, following the Sanjiao (三焦) divisions (Middle Jiao (中焦) = beside the umbilicus, Lower Jiao (下焦) = below the umbilicus).
+- <strong>[Interpretation · B1]</strong> The core sign of classical "Small Intestine disease (小腸病)" is "小腹痛，腰脊控睪而痛" (《靈樞·邪氣藏府病形》). That Shan disorders came to be called "Small Intestine Qi (小腸氣)" from the Song dynasty onward belongs to the same context. This matches the anatomical fact that loops of small intestine actually enter inguinal hernial sacs. The attribution of Guanyuan (lower abdomen, T12–L1) to treating "Small Intestine disease" has an anatomical basis in that it coincides with the site where the disease manifests (lower abdomen, groin, testis).</p>
+<h3 id="8-2-key-layer-a-papers-rank-6-2026-10-12">8-2. Key Layer A Papers (Rank 6, 2026-10-12)</h3>
 <div class="table-wrap"><table>
 <thead>
 <tr>
 <th style="text-align: center;">papers.id</th>
 <th style="text-align: center;">PMID</th>
-<th style="text-align: left;">대상·설계</th>
-<th style="text-align: left;">핵심 결과</th>
-<th style="text-align: left;">분절 쟁점과의 관계</th>
+<th style="text-align: left;">Subjects &amp; design</th>
+<th style="text-align: left;">Key results</th>
+<th style="text-align: left;">Relation to the segmental issue</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: center;">2023</td>
 <td style="text-align: center;">40854853</td>
-<td style="text-align: left;">마우스 DSS 대장염, 양측 ST25 전침 2mA·10Hz</td>
-<td style="text-align: left;">원위 대장 ACh 증가, NE 무변화. SMG·IMG 교감 뉴런 c-Fos 무변화, 골반신경절 콜린성 뉴런 c-Fos 증가</td>
-<td style="text-align: left;"><strong>Tianshu (天樞, ST25)의 원위 대장 효과가 T10 분절 교감이 아닌 천수 부교감을 거침</strong> → 단순 분절 모델 반증</td>
+<td style="text-align: left;">Mouse DSS colitis, bilateral ST25 electroacupuncture 2 mA · 10 Hz</td>
+<td style="text-align: left;">ACh increased in the distal colon, NE unchanged. c-Fos unchanged in SMG/IMG sympathetic neurons, c-Fos increased in cholinergic neurons of the pelvic ganglion</td>
+<td style="text-align: left;"><strong>Tianshu's effect on the distal colon passes through sacral parasympathetic rather than T10 segmental sympathetic pathways</strong> → refutes the simple segmental model</td>
 </tr>
 <tr>
 <td style="text-align: center;">2009</td>
 <td style="text-align: center;">40763037</td>
-<td style="text-align: left;">수술 후 장폐색 동물, ST25 전침</td>
-<td style="text-align: left;">복강 교감 과활성 억제, NE-α2 수용체 경로로 장운동 개선. 교감신경절제가 효과 모사</td>
-<td style="text-align: left;">교감(분절성) 경로 관여</td>
+<td style="text-align: left;">Animal model of postoperative ileus, ST25 electroacupuncture</td>
+<td style="text-align: left;">Suppression of abdominal sympathetic overactivity; gut motility improved via the NE–α2 receptor pathway. Sympathectomy mimicked the effect</td>
+<td style="text-align: left;">Involvement of a sympathetic (segmental) pathway</td>
 </tr>
 <tr>
 <td style="text-align: center;">2018</td>
 <td style="text-align: center;">42343522</td>
-<td style="text-align: left;">감염 후 IBS 쥐, ST25+BL25</td>
-<td style="text-align: left;">내장과민 감소</td>
-<td style="text-align: left;">Front-Mu Point (募穴)·Back-Shu Point (背兪穴) 배오(단독 아님)</td>
+<td style="text-align: left;">Post-infectious IBS rats, ST25+BL25</td>
+<td style="text-align: left;">Reduced visceral hypersensitivity</td>
+<td style="text-align: left;">Front-Mu + Back-Shu combination (not single point)</td>
 </tr>
 <tr>
 <td style="text-align: center;">2017</td>
 <td style="text-align: center;">42443084</td>
-<td style="text-align: left;">서행성 변비 쥐, 대장 Front-Mu Point (募穴)·Back-Shu Point (背兪穴)</td>
-<td style="text-align: left;">카할 사Dysentery (痢疾)세포 자가포식 조절</td>
-<td style="text-align: left;">배오</td>
+<td style="text-align: left;">Slow-transit constipation rats, Large Intestine Front-Mu and Back-Shu points</td>
+<td style="text-align: left;">Modulation of autophagy in interstitial cells of Cajal</td>
+<td style="text-align: left;">Combination</td>
 </tr>
 <tr>
 <td style="text-align: center;">2011</td>
 <td style="text-align: center;">38750560</td>
-<td style="text-align: left;">만성 염증성 내장통 쥐, 뜸</td>
-<td style="text-align: left;">척수 circRNA 네트워크</td>
-<td style="text-align: left;">뜸 자극의 척수 수준 작용</td>
+<td style="text-align: left;">Chronic inflammatory visceral pain rats, moxibustion</td>
+<td style="text-align: left;">Spinal circRNA network</td>
+<td style="text-align: left;">Spinal-level action of moxibustion stimulation</td>
 </tr>
 <tr>
 <td style="text-align: center;">317</td>
 <td style="text-align: center;">34646018</td>
-<td style="text-align: left;">마우스(B3-17)</td>
-<td style="text-align: left;">ST25에는 PROKR2 섬유가 없어 저강도로 미주-부신 축을 구동하지 못함</td>
-<td style="text-align: left;">복부 경혈의 비사지형 기전</td>
+<td style="text-align: left;">Mouse (B3-17)</td>
+<td style="text-align: left;">ST25 lacks PROKR2 fibres and thus cannot drive the vagal–adrenal axis at low intensity</td>
+<td style="text-align: left;">Non-limb-type mechanism of abdominal points</td>
 </tr>
 <tr>
 <td style="text-align: center;">2031</td>
 <td style="text-align: center;">41194515</td>
-<td style="text-align: left;">골반염 쥐, CV4 전침 2/100Hz</td>
-<td style="text-align: left;">교감 활성(TH)·신경염증 억제로 통증 완화</td>
-<td style="text-align: left;">Guanyuan (關元, CV04)-골반 장기 분절(T11~L2) 정합</td>
+<td style="text-align: left;">Pelvic inflammatory disease rats, CV4 electroacupuncture 2/100 Hz</td>
+<td style="text-align: left;">Pain relief via suppression of sympathetic activity (TH) and neuroinflammation</td>
+<td style="text-align: left;">Consistent with Guanyuan–pelvic-organ segments (T11–L2)</td>
 </tr>
 <tr>
 <td style="text-align: center;">2052</td>
 <td style="text-align: center;">—</td>
-<td style="text-align: left;">노년 여성 복압성 요실금 31례(비대조), 침+뜸</td>
-<td style="text-align: left;">임상 개선 보고</td>
-<td style="text-align: left;">Guanyuan (關元, CV04)-방광, 인체 간접</td>
+<td style="text-align: left;">31 elderly women with stress urinary incontinence (uncontrolled), acupuncture + moxibustion</td>
+<td style="text-align: left;">Clinical improvement reported</td>
+<td style="text-align: left;">Guanyuan–bladder, indirect human evidence</td>
 </tr>
 <tr>
 <td style="text-align: center;">2036</td>
 <td style="text-align: center;">42343515</td>
-<td style="text-align: left;">원발성 월경통 뜸 RCT</td>
-<td style="text-align: left;">임상 효과·경제성</td>
-<td style="text-align: left;">Guanyuan (關元, CV04)-자궁, 인체</td>
+<td style="text-align: left;">RCT of moxibustion for primary dysmenorrhoea</td>
+<td style="text-align: left;">Clinical effect and cost-effectiveness</td>
+<td style="text-align: left;">Guanyuan–uterus, human</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="8-3-b-check-6">8-3. B-Check 6항목 채점표</h3>
+<h3 id="8-3-six-item-b-check-scoring-table">8-3. Six-Item B-Check Scoring Table</h3>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">항목</th>
-<th style="text-align: center;">Tianshu (天樞, ST25)(표적: 대장)</th>
-<th style="text-align: left;">근거</th>
-<th style="text-align: center;">Guanyuan (關元, CV04)(표적: 골반 장기)</th>
-<th style="text-align: left;">근거</th>
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Tianshu (target: large intestine)</th>
+<th style="text-align: left;">Evidence</th>
+<th style="text-align: center;">Guanyuan (target: pelvic organs)</th>
+<th style="text-align: left;">Evidence</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">① 말초 실체</td>
+<td style="text-align: left;">① Peripheral substrate</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">B2-09 교재 일치, 경혈 특이 실측 없음</td>
+<td style="text-align: left;">B2-09 textbooks agree, no point-specific measurement</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">B2-09(부분 불일치), 실측 없음</td>
+<td style="text-align: left;">B2-09 (partial disagreement), no measurement</td>
 </tr>
 <tr>
-<td style="text-align: left;">② 분절 정합</td>
+<td style="text-align: left;">② Segmental consistency</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: left;">B1-03·B3-01: T10 ↔ 중장(근위 대장)</td>
+<td style="text-align: left;">B1-03, B3-01: T10 ↔ midgut (proximal large intestine)</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: left;">B1-03: T12~L1 ↔ 방광·자궁·후장</td>
+<td style="text-align: left;">B1-03: T12–L1 ↔ bladder, uterus, hindgut</td>
 </tr>
 <tr>
-<td style="text-align: left;">③ 구심 섬유</td>
+<td style="text-align: left;">③ Afferent fibres</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">B3-16·B3-17(마우스, 강도 의존·PROKR2 부재)</td>
+<td style="text-align: left;">B3-16, B3-17 (mouse; intensity-dependent, absence of PROKR2)</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">B3-05(마취 쥐 일반)</td>
+<td style="text-align: left;">B3-05 (anaesthetised rats, general)</td>
 </tr>
 <tr>
-<td style="text-align: left;">④ 중추 경로</td>
+<td style="text-align: left;">④ Central pathway</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">B3-16 척수-교감, 2023 천수 부교감(동물)</td>
+<td style="text-align: left;">B3-16 spinal–sympathetic, 2023 sacral parasympathetic (animal)</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">2031 척수 신경염증(동물)</td>
+<td style="text-align: left;">2031 spinal neuroinflammation (animal)</td>
 </tr>
 <tr>
-<td style="text-align: left;">⑤ 효과 방향</td>
+<td style="text-align: left;">⑤ Direction of effect</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">2009·2023: 장운동·염증 개선이 대장병 주치와 일치하나 경로가 연구마다 다름(동물)</td>
+<td style="text-align: left;">2009, 2023: improvement of gut motility and inflammation matches the large-intestine indication, but the pathway differs between studies (animal)</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">2031: 하복통 완화가 주치와 일치(동물)</td>
+<td style="text-align: left;">2031: relief of lower abdominal pain matches the indication (animal)</td>
 </tr>
 <tr>
-<td style="text-align: left;">⑥ 인체 전환</td>
+<td style="text-align: left;">⑥ Human translation</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">수술 후 장기능·소화불량 임상(간접), 자율신경 지표 없음</td>
+<td style="text-align: left;">Clinical studies on postoperative bowel function and dyspepsia (indirect), no autonomic indices</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">2036 RCT·2052 증례군(간접), 기전 지표 없음</td>
+<td style="text-align: left;">2036 RCT, 2052 case series (indirect), no mechanistic indices</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>합계</strong></td>
+<td style="text-align: left;"><strong>Total</strong></td>
 <td style="text-align: center;"><strong>7/12</strong></td>
-<td style="text-align: left;"><strong>부합 기준(≥8) 미달 → "가설"</strong></td>
+<td style="text-align: left;"><strong>Below concordance threshold (≥ 8) → "hypothesis"</strong></td>
 <td style="text-align: center;"><strong>7/12</strong></td>
-<td style="text-align: left;"><strong>부합 기준 미달 → "가설"</strong></td>
+<td style="text-align: left;"><strong>Below concordance threshold → "hypothesis"</strong></td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="8-4-api-_metadatasync_log">8-4. 외부 API 검색 로그 (<code>_metadata.sync_log</code>)</h3>
+<h3 id="8-4-external-api-search-log-_metadatasync_log">8-4. External API Search Log (<code>_metadata.sync_log</code>)</h3>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">일시</th>
-<th style="text-align: center;">경혈</th>
-<th style="text-align: left;">소스</th>
-<th style="text-align: left;">쿼리(요약)</th>
+<th style="text-align: left;">Timestamp</th>
+<th style="text-align: center;">Point</th>
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">Query (summary)</th>
 <th style="text-align: center;">HTTP</th>
-<th style="text-align: center;">수집</th>
-<th style="text-align: left;">비고</th>
+<th style="text-align: center;">Collected</th>
+<th style="text-align: left;">Remarks</th>
 </tr>
 </thead>
 <tbody>
@@ -668,7 +669,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">2026-10-12 15:25:11</td>
 <td style="text-align: center;">ST25</td>
 <td style="text-align: left;">OpenAlex</td>
-<td style="text-align: left;">doi 10.13703·10.13702 + 일반</td>
+<td style="text-align: left;">doi 10.13703·10.13702 + general</td>
 <td style="text-align: center;">200</td>
 <td style="text-align: center;">24</td>
 <td style="text-align: left;"></td>
@@ -685,17 +686,17 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">2026-10-12 15:25:11</td>
 <td style="text-align: center;">ST25</td>
-<td style="text-align: left;">합계</td>
+<td style="text-align: left;">Total</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: center;">—</td>
 <td style="text-align: center;">40</td>
-<td style="text-align: left;">신규 20, 기존 병합 9, 배치 중복 11</td>
+<td style="text-align: left;">20 new, 9 merged with existing, 11 in-batch duplicates</td>
 </tr>
 <tr>
 <td style="text-align: left;">2026-10-12 15:25:28</td>
 <td style="text-align: center;">CV4</td>
 <td style="text-align: left;">PubMed</td>
-<td style="text-align: left;">CV4/Guanyuan/关元 동일 구조</td>
+<td style="text-align: left;">CV4/Guanyuan/关元, same structure</td>
 <td style="text-align: center;">200</td>
 <td style="text-align: center;">16</td>
 <td style="text-align: left;"></td>
@@ -704,7 +705,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">2026-10-12 15:25:28</td>
 <td style="text-align: center;">CV4</td>
 <td style="text-align: left;">OpenAlex</td>
-<td style="text-align: left;">동일</td>
+<td style="text-align: left;">Same</td>
 <td style="text-align: center;">200</td>
 <td style="text-align: center;">24</td>
 <td style="text-align: left;"></td>
@@ -721,95 +722,95 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">2026-10-12 15:25:28</td>
 <td style="text-align: center;">CV4</td>
-<td style="text-align: left;">합계</td>
+<td style="text-align: left;">Total</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: center;">—</td>
 <td style="text-align: center;">42</td>
-<td style="text-align: left;">신규 25, 기존 병합 9, 배치 중복 8</td>
+<td style="text-align: left;">25 new, 9 merged with existing, 8 in-batch duplicates</td>
 </tr>
 </tbody>
 </table></div>
-<p><code>validate</code> 두 번 모두 OK. 통합 DB는 2,036편(외부 266편)으로 갱신되었다.</p>
-<h2 id="9-classical-indications-stratification-table-single-point-p_single-vs-complex-formulae">9. Classical Indications Stratification Table (Single-Point P_single vs. Complex Formulae)</h2>
+<p><code>validate</code> returned OK both times. The integrated DB was updated to 2,036 papers (266 external).</p>
+<h2 id="9-indication-separation-table-math0-vs-combinations">9. Indication Separation Table ($P_{single}$ vs. Combinations)</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">혈</th>
-<th style="text-align: left;">단독 주치($P_{single}$, 《명당경》·단독 처방)</th>
-<th style="text-align: left;">배오 파생</th>
-<th style="text-align: left;">현대 확장</th>
+<th style="text-align: left;">Point</th>
+<th style="text-align: left;">Single-point indications ($P_{single}$, <em>Mingtang Jing</em> and single-point prescriptions)</th>
+<th style="text-align: left;">Derived from combinations</th>
+<th style="text-align: left;">Modern extensions</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">ST25</td>
-<td style="text-align: left;">대장병(泄·당제통·장명), 산증, 월경병, 《千金》 단독 뜸(Diarrhea (泄瀉)·Dysentery (痢疾)·복통)</td>
-<td style="text-align: left;">《脉经》 灸天枢+针关元(척맥 긴·배꼽 아래 통증), 《针经摘英集》 中脘·气海+天枢·气冲·三里(기가 아랫배에서 치밀 때), 1986 소아 소화불량 天枢+中脘</td>
-<td style="text-align: left;">1957 교재 "小儿慢性疾患灸之大有效" → 《通考》 提要 "灸治小儿慢性消化道症状"</td>
+<td style="text-align: left;">Large-intestine disease (diarrhoea (泄), periumbilical pain (當臍痛), borborygmus (腸鳴)), Shan disorders (疝), menstrual disorders, single-point moxibustion in 《千金》 (diarrhoea, dysentery, abdominal pain)</td>
+<td style="text-align: left;">《脈經》 灸天樞+針關元 (tight chi pulse, pain below the umbilicus); 《針經摘英集》 中脘·氣海+天樞·氣衝·三里 (when Qi surges up from the lower abdomen); 1986 paediatric dyspepsia 天樞+中脘</td>
+<td style="text-align: left;">1957 textbook "小兒慢性疾患灸之大有效" → 《通考》 提要 "灸治小兒慢性消化道症狀"</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
-<td style="text-align: left;">배뇨장애(胞转不得溺·小便数·溺血), 하복통·산증, 부인 불임, 石水</td>
-<td style="text-align: left;">《金匮》 劳宫+关元(임신 소변불리), 《席弘赋》 气海+关元(칠산), 《针灸大全》 白环俞·太溪·三阴交+关元</td>
-<td style="text-align: left;">《扁鹊心书》 이후 '원기허손' 다량 뜸(도가 단전 개념 혼입 가능), 7판 교재 6계통</td>
+<td style="text-align: left;">Urinary disorders (胞轉不得溺·小便數·溺血), lower abdominal pain and Shan disorders, female infertility, 石水</td>
+<td style="text-align: left;">《金匱》 勞宮+關元 (difficult urination in pregnancy); 《席弘賦》 氣海+關元 (seven Shan (七疝)); 《針灸大全》 白環俞·太溪·三陰交+關元</td>
+<td style="text-align: left;">Heavy moxibustion for "depletion of Original Qi (元氣虛損)" from 《扁鵲心書》 onward (possible contamination by the Daoist Dantian (丹田) concept); six systems in the 7th-edition textbook</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>판정</strong>: Guanyuan (關元, CV04)의 단독 주치는 처음부터 하복·배뇨·산증·생식 계열이며, 소장 소화 기능과 관련된 단독 주치는 확인되지 않는다. Tianshu (天樞, ST25)의 소아 소화장애 사용은 단독·뜸 형태로는 1957년 교재가 처음이고, 그 이전 층차에서는 확인되지 않는다.</p>
-<h2 id="10-ari-v30-quantitative-profile-evaluation-final-conclusion">10. ARI v3.0 Quantitative Profile Evaluation &amp; Final Conclusion</h2>
-<h3 id="10-1-1-2">10-1. 이중 채점 (채점 1: 분석자, 채점 2: 근거 패키지만 받은 독립 에이전트)</h3>
+<p><strong>Verdict</strong>: Guanyuan's single-point indications belong from the outset to the lower-abdominal, urinary, Shan and reproductive series; no single-point indication related to the digestive function of the small intestine is found. The use of Tianshu for paediatric digestive disorders in single-point moxibustion form appears first in the 1957 textbook and is not found in earlier strata.</p>
+<h2 id="10-ari-v30-profile-evaluation-and-final-conclusions">10. ARI v3.0 Profile Evaluation and Final Conclusions</h2>
+<h3 id="10-1-dual-scoring-rater-1-analyst-rater-2-independent-agent-given-only-the-evidence-package">10-1. Dual Scoring (Rater 1: analyst; Rater 2: independent agent given only the evidence package)</h3>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">혈</th>
-<th style="text-align: left;">항목</th>
-<th style="text-align: center;">채점 1</th>
-<th style="text-align: center;">채점 2</th>
-<th style="text-align: center;">차이</th>
-<th style="text-align: center;">조정 후</th>
-<th style="text-align: left;">근거 포인터</th>
+<th style="text-align: left;">Point</th>
+<th style="text-align: left;">Item</th>
+<th style="text-align: center;">Rater 1</th>
+<th style="text-align: center;">Rater 2</th>
+<th style="text-align: center;">Difference</th>
+<th style="text-align: center;">Adjusted</th>
+<th style="text-align: left;">Evidence pointer</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">ST25</td>
-<td style="text-align: left;">S_orig ① 최초 기술</td>
+<td style="text-align: left;">S_orig ① Earliest description</td>
 <td style="text-align: center;">75</td>
 <td style="text-align: center;">75</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">75</td>
-<td style="text-align: left;">《명당경》 위치·심도 명시, '脐' 기준 모호</td>
+<td style="text-align: left;"><em>Mingtang Jing</em> gives location and depth; the reference '臍' is ambiguous</td>
 </tr>
 <tr>
 <td style="text-align: left;">ST25</td>
-<td style="text-align: left;">S_orig ② 후대 일치율</td>
+<td style="text-align: left;">S_orig ② Later concordance rate</td>
 <td style="text-align: center;">75</td>
 <td style="text-align: center;">75</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">75</td>
-<td style="text-align: left;">脐旁二寸 계열 약 69~80%</td>
+<td style="text-align: left;">臍旁二寸 lineage approx. 69–80%</td>
 </tr>
 <tr>
 <td style="text-align: left;">ST25</td>
-<td style="text-align: left;">S_orig ③ 이명 해소</td>
+<td style="text-align: left;">S_orig ③ Alias resolution</td>
 <td style="text-align: center;">75</td>
 <td style="text-align: center;">75</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">75</td>
-<td style="text-align: left;">KJH DB, 魂舍·长谷 분리</td>
+<td style="text-align: left;">KJH DB, 魂舍 and 長谷 separated</td>
 </tr>
 <tr>
 <td style="text-align: left;">ST25</td>
-<td style="text-align: left;">S_orig ④ 통고 교정</td>
+<td style="text-align: left;">S_orig ④ Correction by <em>Tongkao</em></td>
 <td style="text-align: center;">75</td>
 <td style="text-align: center;">100</td>
 <td style="text-align: center;"><strong>25</strong></td>
 <td style="text-align: center;"><strong>100</strong></td>
-<td style="text-align: left;">황룡상이 除脐 2촌으로 정위 난립을 완전히 교정</td>
+<td style="text-align: left;">Huang Longxiang (黃龍祥) fully corrected the proliferation of locations to 除臍 2 cun</td>
 </tr>
 <tr>
 <td style="text-align: left;">ST25</td>
-<td style="text-align: left;"><strong>S_orig 평균</strong></td>
+<td style="text-align: left;"><strong>S_orig mean</strong></td>
 <td style="text-align: center;">75.0</td>
 <td style="text-align: center;">81.25</td>
 <td style="text-align: center;"></td>
@@ -823,7 +824,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">75</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">75</td>
-<td style="text-align: left;">두 교재 상충 없음(김재효가 상위 집합), B1-03, 실측 없음</td>
+<td style="text-align: left;">No conflict between the two textbooks (Kim Jae-hyo is a superset), B1-03, no measurement</td>
 </tr>
 <tr>
 <td style="text-align: left;">ST25</td>
@@ -832,16 +833,16 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">50</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">50</td>
-<td style="text-align: left;">B-Check 7/12, 동물 다수 + 인체 임상 간접</td>
+<td style="text-align: left;">B-Check 7/12, mostly animal + indirect human clinical evidence</td>
 </tr>
 <tr>
 <td style="text-align: left;">ST25</td>
-<td style="text-align: left;">S_safety(SI)</td>
+<td style="text-align: left;">S_safety (SI)</td>
 <td style="text-align: center;">25</td>
 <td style="text-align: center;">25</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">25</td>
-<td style="text-align: left;">현대 1~1.5촌 직자 시 복막까지 10mm 이내 가능, 《千金》 不可针</td>
+<td style="text-align: left;">Modern perpendicular needling of 1–1.5 cun may come within 10 mm of the peritoneum; 《千金》 不可針</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
@@ -850,7 +851,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">100</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">100</td>
-<td style="text-align: left;">《영추·寒热病》 위치 + 《명당경》 심도</td>
+<td style="text-align: left;">《靈樞·寒熱病》 location + <em>Mingtang Jing</em> depth</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
@@ -859,7 +860,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">100</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">100</td>
-<td style="text-align: left;">거의 전 문헌 脐下三寸</td>
+<td style="text-align: left;">Almost all texts give 臍下三寸</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
@@ -868,7 +869,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">75</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">75</td>
-<td style="text-align: left;">丹田·下肓 공유, 阑门 오기</td>
+<td style="text-align: left;">丹田 and 下肓 shared, 闌門 miswriting</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
@@ -877,11 +878,11 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">75</td>
 <td style="text-align: center;"><strong>25</strong></td>
 <td style="text-align: center;"><strong>100</strong></td>
-<td style="text-align: left;">정위 관련 전사 오류 없음, 이명·灸量 오류는 황룡상이 완전히 교정</td>
+<td style="text-align: left;">No transcription errors concerning location; alias and moxibustion-dose errors fully corrected by Huang Longxiang (黃龍祥)</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
-<td style="text-align: left;"><strong>S_orig 평균</strong></td>
+<td style="text-align: left;"><strong>S_orig mean</strong></td>
 <td style="text-align: center;">93.75</td>
 <td style="text-align: center;">87.5</td>
 <td style="text-align: center;"></td>
@@ -895,7 +896,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">75</td>
 <td style="text-align: center;"><strong>25</strong></td>
 <td style="text-align: center;"><strong>50</strong></td>
-<td style="text-align: left;">두 교재가 깊은 층(배곧은근집 vs 배가로근막)과 신경(L1 포함 여부)에서 서로 다른 구조를 지목한다. 활꼴선·피절 경계라는 B1 추론으로 조정해야 하므로 루브릭 50 단계에 해당</td>
+<td style="text-align: left;">The two textbooks point to different structures for the deep layer (rectus sheath vs. transversalis fascia) and the nerve (whether L1 is included). Because reconciliation requires B1 inference (arcuate line, dermatome boundary), this corresponds to rubric level 50</td>
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
@@ -908,120 +909,120 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">CV4</td>
-<td style="text-align: left;">S_safety(SI)</td>
+<td style="text-align: left;">S_safety (SI)</td>
 <td style="text-align: center;">25</td>
 <td style="text-align: center;">25</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">25</td>
-<td style="text-align: left;">《명당경》 46mm, 정중선 복막·충만 방광, 임신 Contraindicated for Needling (禁鍼)</td>
+<td style="text-align: left;"><em>Mingtang Jing</em> 46 mm, midline peritoneum and full bladder, needling prohibited in pregnancy</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>조정 메모</strong>: 세 항목의 차이는 모두 루브릭 문구를 해석하는 방식의 차이였다. ④는 "완전 교정"을 정위 오류 기준으로 읽어 두 혈 모두 100으로 맞추었다. CV4 S_clarity는 두 교재가 서로 다른 구조를 기술하고 있어(생략 관계가 아니라 지목 대상의 차이) 50으로 확정했다. 조정 전 ARI-Core 범위는 ST25 68.75~71.25, CV4 67.5~73.75였다.</p>
-<h3 id="10-2-ari-v30">10-2. ARI v3.0 프로파일</h3>
+<p><strong>Adjustment memo</strong>: All three discrepancies arose from different readings of the rubric wording. For ④, "fully corrected" was read with respect to locating errors, and both points were aligned at 100. CV4 S_clarity was fixed at 50 because the two textbooks describe different structures (a difference in the structures identified, not one of omission). Before adjustment, the ARI-Core ranges were ST25 68.75–71.25 and CV4 67.5–73.75.</p>
+<h3 id="10-2-ari-v30-profile">10-2. ARI v3.0 Profile</h3>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">혈</th>
+<th style="text-align: left;">Point</th>
 <th style="text-align: center;">ARI-Core (0.40/0.35/0.25)</th>
-<th style="text-align: center;">등급</th>
-<th style="text-align: left;">게이트</th>
+<th style="text-align: center;">Grade</th>
+<th style="text-align: left;">Gates</th>
 <th style="text-align: center;">SI</th>
-<th style="text-align: center;">등가중치 민감도</th>
+<th style="text-align: center;">Equal-weight sensitivity</th>
 <th style="text-align: center;">B-Check</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">ST25 Tianshu (天樞, ST25)</td>
+<td style="text-align: left;">ST25 Tianshu (天樞)</td>
 <td style="text-align: center;">0.40×81.25 + 0.35×75 + 0.25×50 = <strong>71.25</strong></td>
-<td style="text-align: center;"><strong>B (개연)</strong></td>
-<td style="text-align: left;">게이트 1·2 미적용, 게이트 3 적용</td>
+<td style="text-align: center;"><strong>B (probable)</strong></td>
+<td style="text-align: left;">Gates 1·2 not applied, Gate 3 applied</td>
 <td style="text-align: center;"><strong>25 ⚠</strong></td>
-<td style="text-align: center;">68.75 → <strong>C (가중치 민감)</strong></td>
-<td style="text-align: center;">7/12, 기전 "가설"</td>
+<td style="text-align: center;">68.75 → <strong>C (weight-sensitive)</strong></td>
+<td style="text-align: center;">7/12, mechanism "hypothesis"</td>
 </tr>
 <tr>
-<td style="text-align: left;">CV4 Guanyuan (關元, CV04)</td>
+<td style="text-align: left;">CV4 Guanyuan (關元)</td>
 <td style="text-align: center;">0.40×93.75 + 0.35×50 + 0.25×50 = <strong>67.5</strong></td>
-<td style="text-align: center;"><strong>C (가능·가설)</strong></td>
-<td style="text-align: left;">게이트 1·2 미적용, 게이트 3 적용</td>
+<td style="text-align: center;"><strong>C (possible / hypothesis)</strong></td>
+<td style="text-align: left;">Gates 1·2 not applied, Gate 3 applied</td>
 <td style="text-align: center;"><strong>25 ⚠</strong></td>
-<td style="text-align: center;">64.6 → C (등급 불변)</td>
-<td style="text-align: center;">7/12, 기전 "가설"</td>
+<td style="text-align: center;">64.6 → C (grade unchanged)</td>
+<td style="text-align: center;">7/12, mechanism "hypothesis"</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>표준 표기</strong>
-- <code>ARI v3.0 | ST25 ARI-Core 71 ± 0 (조정 후, 조정 전 69~71) (B) | SI 25 ⚠ | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 69 (C, 가중치 민감)</code>
-- <code>ARI v3.0 | CV4 ARI-Core 68 ± 0 (조정 후, 조정 전 68~74) (C) | SI 25 ⚠ | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 65 (C, 등급 불변)</code></p>
-<p><strong>민감 항목</strong>: CV4는 S_clarity를 75로 보면 76.25(B)가 되고, B-Check ⑥을 2점으로 보면(RCT를 명시 근거로 인정) S_reflex가 75가 되어 73.75(B)가 된다. ST25는 S_clarity를 50으로 보면 62.5(C)로 내려간다.</p>
-<h3 id="10-3">10-3. 최종 결론</h3>
+<p><strong>Standard notation</strong>
+- <code>ARI v3.0 | ST25 ARI-Core 71 ± 0 (adjusted; before adjustment 69–71) (B) | SI 25 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 69 (C, weight-sensitive)</code>
+- <code>ARI v3.0 | CV4 ARI-Core 68 ± 0 (adjusted; before adjustment 68–74) (C) | SI 25 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65 (C, grade unchanged)</code></p>
+<p><strong>Sensitive items</strong>: For CV4, taking S_clarity as 75 gives 76.25 (B); taking B-Check ⑥ as 2 points (accepting the RCT as explicit evidence) makes S_reflex 75 and gives 73.75 (B). For ST25, taking S_clarity as 50 lowers the score to 62.5 (C).</p>
+<h3 id="10-3-final-conclusions">10-3. Final Conclusions</h3>
 <ol>
-<li><strong>두 혈의 위치와 층차 구조는 비교적 분명하다.</strong> 위치는 S_orig 81~94점이다. Tianshu (天樞, ST25)는 배곧은근 근복 위(T10), Guanyuan (關元, CV04)은 활꼴선 아래 백색선(T12~L1)이다.</li>
-<li><strong>"Front-Mu Point (募穴) = 해당 부(腑)의 분절 반응점"이라는 가설은 지지되지 않는다.</strong> 분절로는 Tianshu (天樞, ST25)가 중장 전체(소장 + 근위 대장), Guanyuan (關元, CV04)이 골반 장기(방광·자궁·원위 대장)와 맞는다. 문헌상 Front-Mu Point (募穴) 귀속은 삼초 구획과 병증이 나타나는 자리에 따른 것이다.</li>
-<li><strong>반사 기전은 두 혈 모두 "가설" 단계다.</strong> Tianshu (天樞, ST25)에서는 강도에 따라 분절성 교감 반사(B3-16, papers.id 2009)와 비분절 천수 부교감 경로(papers.id 2023)가 함께 보고되었다. 인체 자율신경 지표 연구가 나와야 B-Check ⑥을 채울 수 있다.</li>
-<li><strong>⚠ 안전</strong>: Guanyuan (關元, CV04)은 시술 전 배뇨, 임신 확인, 정중선 직자 심도를 성인 기준 약 25mm 안팎으로 제한해야 한다(CV12 실측 유추). Tianshu (天樞, ST25)는 마른 체형과 소아에서 복막까지의 여유가 작다. 고전 심도(5푼, 11.5mm)가 오히려 안전 범위에 든다.</li>
-<li><strong>후속 과제</strong>: ST25·CV4 초음파 허용 자침 깊이 실측(소아 포함), B1 교과서의 판·장·쪽 대조, Tianshu (天樞, ST25) 전침의 인체 자율신경 지표 연구 검색.</li>
+<li><strong>The locations and layered structures of the two points are relatively clear.</strong> Location scores S_orig 81–94. Tianshu lies over the belly of rectus abdominis (T10); Guanyuan on the linea alba below the arcuate line (T12–L1).</li>
+<li><strong>The hypothesis "Front-Mu point = segmental reaction point of the corresponding Fu organ (腑)" is not supported.</strong> Segmentally, Tianshu matches the whole midgut (small intestine + proximal large intestine) and Guanyuan the pelvic organs (bladder, uterus, distal large intestine). In the literature, Front-Mu attribution followed the Sanjiao (三焦) divisions and the site at which disease manifests.</li>
+<li><strong>The reflex mechanism of both points is at the "hypothesis" stage.</strong> For Tianshu, both intensity-dependent segmental sympathetic reflexes (B3-16, papers.id 2009) and a non-segmental sacral parasympathetic pathway (papers.id 2023) have been reported. Human studies with autonomic indices are needed to satisfy B-Check ⑥.</li>
+<li><strong>⚠ Safety</strong>: For Guanyuan, the patient should void before treatment, pregnancy should be ruled out, and perpendicular midline depth should be limited to around 25 mm in adults (inferred from the CV12 measurement). For Tianshu, the margin to the peritoneum is small in thin individuals and children; the classical depth (5 fen, 11.5 mm) in fact falls within the safe range.</li>
+<li><strong>Follow-up tasks</strong>: ultrasound measurement of the allowable needling depth at ST25 and CV4 (including children); checking edition, chapter and page of the B1 textbooks; searching for human studies of autonomic indices with electroacupuncture at Tianshu.</li>
 </ol>
-<h2 id="11">11. 강의 질의·답변 검증 결론</h2>
+<h2 id="11-conclusions-on-the-lecture-qa">11. Conclusions on the Lecture Q&amp;A</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th style="text-align: left;">쟁점</th>
-<th style="text-align: left;">판정</th>
-<th style="text-align: left;">해부·기전 근거</th>
+<th style="text-align: left;">Issue</th>
+<th style="text-align: left;">Verdict</th>
+<th style="text-align: left;">Anatomical / mechanistic basis</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">질의: "Tianshu (天樞, ST25) 바로 아래는 소장이다"</td>
-<td style="text-align: left;"><strong>타당</strong></td>
-<td style="text-align: left;">배꼽 높이 배곧은근 아래 복강에는 주로 소장 고리와 큰그물막이 있다(B1-01). 횡행결장은 체위에 따라 이 높이를 지난다</td>
+<td style="text-align: left;">Question: "Directly beneath Tianshu lies the small intestine"</td>
+<td style="text-align: left;"><strong>Valid</strong></td>
+<td style="text-align: left;">In the peritoneal cavity beneath rectus abdominis at the umbilical level lie mainly loops of small intestine and the greater omentum (B1-01). The transverse colon passes this level depending on posture</td>
 </tr>
 <tr>
-<td style="text-align: left;">질의: "대장 병변 반응은 바깥쪽 배벽에 나타난다"</td>
-<td style="text-align: left;"><strong>부분 타당</strong></td>
-<td style="text-align: left;">상행·하행결장은 옆구리 쪽 후복벽에 붙어 있어 국소 압통이 바깥쪽에 나타날 수 있다. 다만 연관통은 중장 부분이 배꼽 주위, 후장 부분이 치골상부로 간다(B1-03)</td>
+<td style="text-align: left;">Question: "Reactions to large-intestine lesions appear on the lateral abdominal wall"</td>
+<td style="text-align: left;"><strong>Partly valid</strong></td>
+<td style="text-align: left;">The ascending and descending colon are attached to the posterior abdominal wall towards the flanks, so local tenderness can appear laterally. Referred pain, however, goes periumbilically for the midgut portion and suprapubically for the hindgut portion (B1-03)</td>
 </tr>
 <tr>
-<td style="text-align: left;">질의: "Tianshu (天樞, ST25) T10은 중장 분절과 겹치고, Guanyuan (關元, CV04) T11~12는 원위 대장 쪽에 가깝다"</td>
-<td style="text-align: left;"><strong>타당</strong></td>
-<td style="text-align: left;">8-1 분절 정합표</td>
+<td style="text-align: left;">Question: "Tianshu (T10) overlaps the midgut segments, while Guanyuan (T11–12) is closer to the distal large intestine"</td>
+<td style="text-align: left;"><strong>Valid</strong></td>
+<td style="text-align: left;">Segmental consistency table in 8-1</td>
 </tr>
 <tr>
-<td style="text-align: left;">답변: "Guanyuan (關元, CV04)은 해부학적 소장보다 '소장'이라는 병증 유형을 치료한다"</td>
-<td style="text-align: left;"><strong>타당</strong></td>
-<td style="text-align: left;">Guanyuan (關元, CV04)의 단독 주치(하복·배뇨·산증)는 T12~L1 분절의 골반 장기·서혜부와 정합한다(B-Check ② = 2)</td>
+<td style="text-align: left;">Answer: "Guanyuan treats the disease pattern called 'Small Intestine' rather than the anatomical small intestine"</td>
+<td style="text-align: left;"><strong>Valid</strong></td>
+<td style="text-align: left;">Guanyuan's single-point indications (lower abdomen, urination, Shan disorders) match the pelvic organs and groin of segments T12–L1 (B-Check ② = 2)</td>
 </tr>
 <tr>
-<td style="text-align: left;">답변: "소장 병증 = 방광의 소변 배출 과정"</td>
-<td style="text-align: left;"><strong>수정 필요</strong></td>
-<td style="text-align: left;"><em>Lingshu</em> (《靈樞》)에서 소변 장애는 삼초병·방광병 조문에 있다. Guanyuan (關元, CV04)의 배뇨 주치는 방광 분절(T11~L2) 국소 주치로 설명된다</td>
+<td style="text-align: left;">Answer: "Small Intestine disease = the bladder's process of voiding urine"</td>
+<td style="text-align: left;"><strong>Needs revision</strong></td>
+<td style="text-align: left;">In the <em>Lingshu</em> (《靈樞》), urinary disorders appear in the clauses on Sanjiao disease (三焦病) and Bladder disease (膀胱病). Guanyuan's urinary indication is explained as a local indication for the bladder segments (T11–L2)</td>
 </tr>
 <tr>
-<td style="text-align: left;">답변: "하복부 산증을 소장 범주로 분류"</td>
-<td style="text-align: left;"><strong>타당</strong></td>
-<td style="text-align: left;">서혜부 탈장의 내용물이 소장이라는 해부 사실, '小肠气' 용어와 일치</td>
+<td style="text-align: left;">Answer: "Lower-abdominal Shan disorders are classified under the Small Intestine category"</td>
+<td style="text-align: left;"><strong>Valid</strong></td>
+<td style="text-align: left;">Consistent with the anatomical fact that the contents of inguinal hernias are small intestine, and with the term "Small Intestine Qi (小腸氣)"</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>수정 답변 제안(해부학 관점 보충)</strong></p>
+<p><strong>Proposed revised answer (supplementing the anatomical perspective)</strong></p>
 <blockquote>
-<p>Front-Mu Point (募穴)을 신경분절 반응점으로만 보면 Tianshu (天樞, ST25)(T10)는 소장과 근위 대장, Guanyuan (關元, CV04)(T12~L1)은 원위 대장과 방광·자궁의 분절에 놓입니다. 그래서 '대장모-Tianshu (天樞, ST25), 소장모-Guanyuan (關元, CV04)'은 분절 지도와 맞지 않습니다. 이 모순은 Front-Mu Point (募穴) 귀속이 분절 원리로 정해지지 않았기 때문에 생깁니다.</p>
-<p>고전에서 '소장병'은 아랫배가 아프고 허리와 고환으로 당기는 병, 곧 산증 유형입니다. 서혜부 탈장 주머니에 소장이 실제로 들어간다는 점을 생각하면, 하복부의 Guanyuan (關元, CV04)이 이 병을 맡은 것은 병이 나타나는 자리와 맞습니다. Guanyuan (關元, CV04)의 배뇨장애 주치는 소장의 기능이 아니라 같은 분절(T11~L2)에 있는 방광에 대한 국소 주치로 이해하는 것이 정확합니다.</p>
-<p>Tianshu (天樞, ST25)의 효과도 분절만으로는 설명되지 않습니다. 동물 실험에서 Tianshu (天樞, ST25) 전침의 대장 효과는 T10 교감신경절이 아니라 천수 부교감 경로를 거치기도 했습니다. 따라서 Front-Mu Point (募穴)은 분절 반응점으로 보기보다, 국소 분절 반사와 비분절 경로가 함께 작동하는 복부 자극점으로 보는 것이 현재 근거에 맞습니다.</p>
+<p>If the Front-Mu points are regarded solely as neural-segment reaction points, Tianshu (T10) sits on the segments of the small intestine and proximal large intestine, and Guanyuan (T12–L1) on those of the distal large intestine, bladder and uterus. Therefore "Large Intestine Mu = Tianshu, Small Intestine Mu = Guanyuan" does not fit the segmental map. This contradiction arises because the Front-Mu attributions were not determined by a segmental principle.</p>
+<p>In the classics, "Small Intestine disease (小腸病)" is a condition in which the lower abdomen is painful and pulls towards the lower back and testes — that is, a Shan (疝) type of disorder. Considering that the small intestine actually enters inguinal hernial sacs, it fits the site of manifestation that Guanyuan in the lower abdomen should be responsible for this disease. Guanyuan's indication for urinary disorders is more accurately understood not as a function of the small intestine but as a local indication for the bladder, which lies in the same segments (T11–L2).</p>
+<p>Tianshu's effects, too, cannot be explained by segments alone. In animal experiments, the colonic effect of electroacupuncture at Tianshu sometimes passed not through the T10 sympathetic ganglia but through the sacral parasympathetic pathway. It therefore fits current evidence better to regard the Front-Mu points not merely as segmental reaction points but as abdominal stimulation sites at which local segmental reflexes and non-segmental pathways act together.</p>
 </blockquote>
 <hr>
-<h2 id="a-audit">부록 A. 감사 기록 (Audit)</h2>
+<h2 id="appendix-a-audit-record">Appendix A. Audit Record</h2>
 <ul>
-<li>Rank 0: <code>sync_skill_settings.py --check</code> → 드리프트 없음(<code>.claude/CLAUDE.md</code> 변경만 표시). 정본 v2.7 적용.</li>
-<li>Rank 6: <code>sync_master_db.py --dry-run</code> 확인 후 실제 반영. ST25·CV4 모두 PubMed·OpenAlex·Crossref HTTP 200, <code>validate</code> OK. 핵심 3편(papers.id 2009·2023·2031)의 초록은 NCBI E-utilities로 원문을 확인했다.</li>
-<li>해부 기술 중 B1(규범 해부) 근거는 일반 해부학 지식으로 적었고, Moore·Gray's의 판·장·쪽은 대조하지 못했다(등록부 규칙 ⑤ 미충족). 분절 범위는 교과서마다 1분절 정도 차이가 날 수 있다.</li>
-<li>ST25·CV4 모두 경혈 특이 영상 실측 논문이 없다. 5절의 mm 추정은 CV12 실측(papers.id 1444)을 유추한 것이다.</li>
-<li>이전 Tier 1 답변(Tianshu (天樞, ST25)·소아) 정정: 0절 6항, 1절, 9절 참조.</li>
+<li>Rank 0: <code>sync_skill_settings.py --check</code> → no drift (only a change to <code>.claude/CLAUDE.md</code> was shown). Canonical v2.7 applied.</li>
+<li>Rank 6: <code>sync_master_db.py --dry-run</code> checked, then applied. Both ST25 and CV4 returned HTTP 200 from PubMed, OpenAlex and Crossref; <code>validate</code> OK. The abstracts of the three key papers (papers.id 2009, 2023, 2031) were checked against the originals via NCBI E-utilities.</li>
+<li>B1 (normative anatomy) evidence in the anatomical descriptions was written from general anatomical knowledge; edition, chapter and page in Moore and Gray's were not cross-checked (registry rule ⑤ not satisfied). Segmental ranges may differ by about one segment between textbooks.</li>
+<li>Neither ST25 nor CV4 has a point-specific imaging measurement paper. The mm estimates in Section 5 are inferred from the CV12 measurement (papers.id 1444).</li>
+<li>Correction of the earlier Tier 1 answer (Tianshu and children): see Section 0 item 6, Section 1 and Section 9.</li>
 </ul>
-<p class="meta">생성: 2026-10-24 09:21 · 원본: 천추_관원_모혈분절정합성_고증_보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-24 13:03 · 원본: 천추_관원_모혈분절정합성_고증_보고서_en.md · build_report_html.py (Framework v2.7)</p>
 </article>
 </main>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>

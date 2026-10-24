@@ -1,305 +1,306 @@
-# GV20 (百會, Baihui (百會, GV20)) 해부생리 실체 판명 보고서
+# [Acupoint Anatomical & Physiological Substrate Monograph] Baihui (百會, GV20)
 
-> **Framework**: v2.7 (2026-10-04 개정) · **ARI**: ARI v3.0 | ARI-Core 71.2 ± 2.5 (B) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 68.8 (C, 등급 변동 → 가중치 민감) · **이중 채점**: Independent dual-adjudication completed
+> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: ARI v3.0 | ARI-Core 71.2 ± 2.5 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 68.8 (C, grade changes → weight-sensitive) · **Dual scoring**: completed by two independent raters
 
-> **근거 자료**: 3대 원전 `01_도서_번역_및_원전/<원전>/chunks_refined/` · 이명 DB `02_Master_Datasets/경혈명_비교_정리_KJH.xlsx` · 자침깊이 DB `02_Master_Datasets/침구문헌별 자침깊이 정리_AI 분석용.xlsx` · 교재 데이터셋 `02_Master_Datasets/경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx`, `02_Master_Datasets/김재효 수업_경혈_해부구조_데이터셋.xlsx` · Layer A `02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json` · Layer B `01_Framework/layer_b_reference_registry.md`
-> **최초 작성**: 2026-07-31 (v2.6) · **개정**: 2026-10-04 (v2.7, 구판은 `_구판_v2.6/` 보관) · **FMA 보강**: 2026-10-23 (보강 전 판은 `_구판_v2.7_20261023/`)
-> **Anatomical Ontology**: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 `FMA:ID`로 고정하고 신경 줄기·척수 분절·정맥 배출 사슬을 대조(B1 보조, 등록부 미등재). 대응표 `02_Master_Datasets/FMA/acupoint_fma_mapping.json`, 상세는 부록 A
-
----
-
-## 0. 요약 결론
-
-- **판정: 개연(Probable, 등급 B), 실체 확정 아님.** ARI-Core 71.2 ± 2.5이고 구간(68.8~73.8)이 B/C 경계(70)에 걸쳐 있다. 등가중치로 다시 계산하면 68.8(C)이므로 **가중치 민감** 표지를 단다.
-- **해부 실체(개연)**: 두정부 정중선 시상봉합 위의 두피. 피부·치밀 피하결합조직(큰뒤통수신경·삼차신경 V1 말단, 뒤통수동맥·얕은관자동맥 마루가지 문합) → 머리덮개널힘줄(galea) → 건막하 소성결합조직(마루이끌정맥 통과) → 머리뼈바깥막. 2대 교재가 핵심 구조에 일치하지만 GV20 부위를 사체·영상으로 직접 실측한 Layer A 논문은 없다.
-- **반사 기전: 가설.** B-Check 6/12로 **미부합**이다. Layer A는 동물 전침 연구(대부분 다른 혈과 병용)가 중심이고 인체 연구는 비RCT·소규모다.
-- **안전(SI 75)**: 자침깊이 DB에 Contraindicated for Needling (禁鍼)('0') 기록이 없다. 고전 심도 2~3푼(4.6~6.9mm)은 두피 전층 두께(약 5~7mm) 안팎이므로 직자하면 머리뼈바깥막(골막)에 닿을 수 있다. 그러나 두개골이 상시상정맥동과 뇌를 막고 있다. 원전은 직자 '刺入三分'(*Huangdi Mingtang Jing* (《黃帝明堂經》))도 허용하므로 "직자 절대 금지"는 원전과 맞지 않는다. 다만 소아 숫구멍(囟門)이 닫히지 않은 경우와 뇌수종에는 신중해야 한다(上海《针灸学》, 《通考》 인용).
+> **Source materials**: three primary classics `01_도서_번역_및_원전/<원전>/chunks_refined/` · alias DB `02_Master_Datasets/경혈명_비교_정리_KJH.xlsx` · needling-depth DB `02_Master_Datasets/침구문헌별 자침깊이 정리_AI 분석용.xlsx` · textbook datasets `02_Master_Datasets/경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx`, `02_Master_Datasets/김재효 수업_경혈_해부구조_데이터셋.xlsx` · Layer A `02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json` · Layer B `01_Framework/layer_b_reference_registry.md`
+> **First written**: 2026-07-31 (v2.6) · **Revised**: 2026-10-04 (v2.7; the earlier edition is kept in `_구판_v2.6/`) · **FMA supplement**: 2026-10-23 (the pre-supplement edition is kept in `_구판_v2.7_20261023/`)
+> **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their nerve trunks, spinal segments and venous drainage chains are cross-checked (B1 supplementary, not yet in the registry). Mapping table: `02_Master_Datasets/FMA/acupoint_fma_mapping.json`; details in Appendix A.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
 ---
 
-## 기본 정보
+## 0. Summary Conclusion
 
-| 항목 | 내용 | 근거 |
+- **Verdict: probable (grade B); the substrate is not established.** ARI-Core is 71.2 ± 2.5, and the interval (68.8–73.8) straddles the B/C boundary (70). Recomputed with equal weights it is 68.8 (C), so the report carries a **weight-sensitive** flag.
+- **Anatomical substrate (probable)**: the scalp over the sagittal suture on the parietal midline. Skin and dense subcutaneous connective tissue (terminals of the greater occipital nerve and of the trigeminal nerve V1; anastomosis of the occipital artery with the parietal branch of the superficial temporal artery) → epicranial aponeurosis (galea) → subaponeurotic loose connective tissue (traversed by the parietal emissary vein) → pericranium. The two textbooks agree on the core structures, but there is no Layer A paper with direct cadaveric or imaging measurement at the GV20 site.
+- **Reflex mechanism: hypothesis.** B-Check 6/12, i.e. **not concordant**. Layer A consists mainly of animal electroacupuncture studies (mostly combined with other points); human studies are non-RCT and small.
+- **Safety (SI 75)**: the needling-depth DB has no 'Contraindicated for needling (禁鍼)' ('0') record. The classical depth of 2–3 fen (分) (4.6–6.9 mm) is about the full thickness of the scalp (about 5–7 mm), so perpendicular insertion may touch the pericranium (periosteum). The skull, however, shields the superior sagittal sinus and the brain. The classics also allow perpendicular insertion, '刺入三分' (*Huangdi Mingtang Jing* (《黃帝明堂經》)), so "perpendicular insertion absolutely forbidden" is inconsistent with the classics. Caution is nonetheless required when an infant's fontanelle (囟門) has not closed and in hydrocephalus (Shanghai 《針灸學》, as cited in the *Tongkao* (《通考》)).
+
+---
+
+## Basic Information
+
+| Item | Content | Basis |
 |:---|:---|:---|
-| 경혈 부호 | GV20 (督脈) | — |
-| 명칭 | Baihui (百會, GV20) 百會 / 百会, Bǎihuì | — |
-| 최초 출전 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 针灸腧穴通考(下)_401-480.md L2387 "出*Huangdi Mingtang Jing* (《黃帝明堂經》)" |
-| 맥기소발 | **督脉、足太阳之会**(*Huangdi Mingtang Jing* (《黃帝明堂經》)). "手足少阳·足厥阴 교회"는 《针灸聚英》 등 후대 문헌의 기술 | 针灸腧穴通考(下)_401-480.md 【类属】; 穴位通鉴(上卷)_241-320.md 五.归经与穴性 2항 |
-| 고전 정위 | "在前顶后一寸五分，顶中央旋毛中，陷可容指" | 针灸腧穴通考(下)_401-480.md L2433 |
-| 현대 표준 정위 | 머리부위, 앞머리털경계 정중 직상 5촌(또는 두 귀끝 연결선 중점) | B1-05; 通考 【定位】 部位·取穴 |
-| 원전 자침 | 刺入三分(*Huangdi Mingtang Jing* (《黃帝明堂經》)) / 针入二分(*Tongren* (《銅人》)) / 窦氏 '沿皮向前·向后一寸' | 针灸腧穴通考(下)_401-480.md L2592~2600 |
-| 현대 자침 | 平刺 0.5~0.8寸(4~7판 《针灸学》); 국내 교재 5~8푼 횡자 | 通考 【操作】 7항; 자침깊이 DB 시트1 행46 |
+| Point code | GV20 (Governor Vessel (督脈)) | — |
+| Name | Baihui 百會 / 百会, Bǎihuì | — |
+| Earliest source | *Huangdi Mingtang Jing* (《黃帝明堂經》) | `针灸腧穴通考(下)_401-480.md` L2387 "出《黃帝明堂經》" |
+| Meridian qi convergence (脈氣所發) | **督脈、足太陽之會** (crossing point of the Governor Vessel (督脈) and the foot Taiyang (足太陽)) (《黃帝明堂經》). The "crossing point of the hand and foot Shaoyang (手足少陽) and the foot Jueyin (足厥陰)" is a statement of later texts such as *Zhenjiu Juying* (《針灸聚英》) | `针灸腧穴通考(下)_401-480.md` 【類屬】; `穴位通鉴(上卷)_241-320.md` 五.歸經與穴性, item 2 |
+| Classical location | "在前頂後一寸五分，頂中央旋毛中，陷可容指" | `针灸腧穴通考(下)_401-480.md` L2433 |
+| Modern standard location | On the head, 5 cun directly above the midpoint of the anterior hairline (or the midpoint of the line joining the apices of the two auricles) | B1-05; Tongkao 【定位】 location and point-finding |
+| Classical needling | 刺入三分 (《黃帝明堂經》) / 針入二分 (*Tongren* (《銅人》)) / Dou's (竇氏) '沿皮向前·向後一寸' | `针灸腧穴通考(下)_401-480.md` L2592–2600 |
+| Modern needling | 平刺 0.5–0.8 寸 (4th–7th editions of 《針灸學》); Korean textbooks: transverse insertion 5–8 fen | Tongkao 【操作】, item 7; needling-depth DB sheet 1, row 46 |
 
 ---
 
-## 1. Classical Literature Screening Table (Three Primary Classics Excerpts)
+## 1. Classical Literature Screening Table (Collation of the Three Primary Classics)
 
-| 원전 | 파일·행 | 원문 | 한국어 대조 |
+| Classic | File & line | Original text | English collation |
 |:---|:---|:---|:---|
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | 中国针灸穴位通鉴(上卷)_241-320.md L1374 | "百会，一名三阳五会，在前顶后一寸五分。顶中央旋毛中陷可容指。督脉足太阳之会。"（*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)3：39） | Baihui (百會, GV20)는 일명 삼양오회. 전정 뒤 1촌 5푼, 정수리 가운데 가마(旋毛) 속, 손가락이 들어갈 만한 오목. Governor Vessel (督脈, GV)·족태양의 회합 |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | 同 L1589 | "刺入三分，灸三壮。"（*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)3：39） | 3푼 찌르고 뜸 3장 |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | 同 L1654 | "[别名]有十 … 至于涅丸宫（出《中华针灸学》）泥丸宫、维会（出《针灸学》）均不见于古代针灸文献，不可从。" | 열환궁·니환궁·유회는 고대 침구 문헌에 보이지 않으므로 따를 수 없음 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 针灸腧穴通考(下)_401-480.md L2397 | "【名实考】一名三阳五会（*Huangdi Mingtang Jing* (《黃帝明堂經》)）；一名天满（*Zhenjiu Zisheng Jing* (《針灸資生經》)）。… 宋以前针灸方中'顶上回毛'、'顶上旋毛'、'顶上回发'等，均指本穴，今人不识，以为别是一穴，归入奇穴类。" | 이명은 삼양오회(명당경)와 천만(자생경). 송 이전 '정상회모·정상선모'도 본혈인데 오늘날 별혈(기혈)로 오인 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 同 L2414 | "《窦太师针经》'维会'者 … 乃'脐中'穴别名，吴崐注极是。现存甲抄本两见于'神阙'与本穴下，误也 …《针灸聚英》所说'巅上'乃本穴之部位" | '유회'는 제중(신궐)의 별명. 갑초본이 Baihui (百會, GV20) 아래에도 적은 것은 잘못. '전상'은 본혈의 부위어 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 同 L2462 | "今实际观察发现：头顶旋毛处确有明显的凹陷（也有个体不明显）… 应当优先采用体表标志定位 … 如果被检者有两个旋毛和凹陷者，以靠近中线者为准。" | 가마 부위에 실제로 오목이 있음(개인차). 골도 절량보다 체표 표지를 우선. 가마가 둘이면 정중선에 가까운 쪽 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 同 L2476~2479 | "主痎疟。癫疾。耳鸣。痉。顶上痛，风头重，目如脱，不可左右顾。热病汗出而善呕。小儿惊痫。（*Huangdi Mingtang Jing* (《黃帝明堂經》)）… 百会、玉枕主卒起僵仆 … **按**：此乃*Huangdi Mingtang Jing* (《黃帝明堂經》)'囟会'穴主治，孙思邈误录于此。" | 명당경 원주치. 《千金》 '졸기강부'는 신회 주치를 잘못 옮긴 것 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 同 L2501 | "不能因为本穴有治疗'脱肛'作用，就类推出：凡是脏器下垂的病症皆可治疗。因此 7 版教材中'胃下垂、肾下垂'二症暂不收录。" | 탈항 치료 효과로부터 모든 내장 하수를 유추하면 안 됨. 7판의 위하수·신하수 삭제 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 同 L2592~2612 | "【操作】斜刺或平刺。1. 刺入三分，灸五壮。（*Huangdi Mingtang Jing* (《黃帝明堂經》)）… 4. 针入二分，得气即泻 …（*Tongren* (《銅人》)）… 8. 可向前后或左右横刺 0.5~1.5 寸 … 注意：针刺时如小儿囟门未合，以及脑积水思考，均宜谨慎。（上海《针灸学》）" | 사자·평자. 명당경 3푼, 동인 2푼. 상해 《针灸学》: 소아 숫구멍 미폐쇄·뇌수종 시 신중 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 中国针灸证治通鉴_321-400.md L1543 | "小儿脱肛泻血，每厕脏腑撮痛不可忍者，灸百会一穴三壮，在头中心陷者是也，炷如小麦大。"（《太平圣惠方·明堂》卷一百） | 소아 탈항 하혈에 Baihui (百會, GV20) 한 혈에 뜸 3장 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 同 L1559 | "治脱肛刺督脉百会一穴，在顶中央旋毛中可容豆，针入二分，可灸七壮，至七七壮，即止。"（《针经摘英集》） | 탈항에 Baihui (百會, GV20) 한 혈 자침 2푼 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 中国针灸证治通鉴_161-240.md L3126 | "治风头痛方……又方：灸百会三、二七即瘥。" | 풍Headache (頭痛)에 Baihui (百會, GV20) 뜸 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 同 L1106 | "尸厥暴死不省人事：百会、人中、哑门、臑会、合谷、中冲。" | 시궐 — 배혈 처방(배오 파생) |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | `中国针灸穴位通鉴(上卷)_241-320.md` L1374 | "百會，一名三陽五會，在前頂後一寸五分。頂中央旋毛中陷可容指。督脈足太陽之會。"（《針灸甲乙經》3：39） | Baihui is also called Sanyang Wuhui (三陽五會). 1 cun 5 fen behind Qianding (前頂), in the hair whorl (旋毛) at the centre of the vertex, in a depression that admits a finger. Crossing point of the Governor Vessel (督脈) and the foot Taiyang (足太陽) |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | same, L1589 | "刺入三分，灸三壯。"（《針灸甲乙經》3：39） | Insert 3 fen; moxibustion 3 cones |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | same, L1654 | "[別名]有十 … 至於涅丸宮（出《中華針灸學》）泥丸宮、維會（出《針灸學》）均不見於古代針灸文獻，不可從。" | 涅丸宮, 泥丸宮 and 維會 do not appear in ancient acupuncture literature and should not be followed |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | `针灸腧穴通考(下)_401-480.md` L2397 | "【名實考】一名三陽五會（《黃帝明堂經》）；一名天滿（《針灸資生經》）。… 宋以前針灸方中'頂上回毛'、'頂上旋毛'、'頂上回髮'等，均指本穴，今人不識，以為別是一穴，歸入奇穴類。" | The aliases are 三陽五會 (*Mingtang Jing*) and 天滿 (*Zisheng Jing*). The pre-Song '頂上回毛' and '頂上旋毛' also denote this point, but are now mistaken for a separate (extra) point |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2414 | "《竇太師針經》'維會'者 … 乃'臍中'穴別名，吳崐注極是。現存甲抄本兩見於'神闕'與本穴下，誤也 …《針灸聚英》所說'巔上'乃本穴之部位" | '維會' is an alias of Qizhong (臍中, Shenque (神闕)). Its additional entry under Baihui in the Jia manuscript (甲抄本) is an error. '巔上' is a location term for this point |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2462 | "今實際觀察發現：頭頂旋毛處確有明顯的凹陷（也有個體不明顯）… 應當優先採用體表標誌定位 … 如果被檢者有兩個旋毛和凹陷者，以靠近中線者為準。" | A depression actually exists at the hair whorl (with individual variation). Surface landmarks take precedence over bone-proportional measurement. With two whorls, use the one closer to the midline |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2476–2479 | "主痎瘧。癲疾。耳鳴。痙。頂上痛，風頭重，目如脫，不可左右顧。熱病汗出而善嘔。小兒驚癇。（《黃帝明堂經》）… 百會、玉枕主卒起僵仆 … **按**：此乃《黃帝明堂經》'囟會'穴主治，孫思邈誤錄於此。" | Original indications in the *Mingtang Jing*. The 《千金》 indication 'sudden collapse on rising (卒起僵仆)' is a mistaken transfer of an indication of Xinhui (囟會) |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2501 | "不能因為本穴有治療'脫肛'作用，就類推出：凡是臟器下垂的病症皆可治療。因此 7 版教材中'胃下垂、腎下垂'二症暫不收錄。" | The effect on prolapse of the rectum (脫肛) must not be extrapolated to all visceral ptosis; gastroptosis (胃下垂) and nephroptosis (腎下垂) of the 7th edition are removed |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2592–2612 | "【操作】斜刺或平刺。1. 刺入三分，灸五壯。（《黃帝明堂經》）… 4. 針入二分，得氣即瀉 …（《銅人》）… 8. 可向前後或左右橫刺 0.5~1.5 寸 … 注意：針刺時如小兒囟門未合，以及腦積水思考[sic]，均宜謹慎。（上海《針灸學》）" | Oblique or transverse insertion. *Mingtang Jing* 3 fen, *Tongren* 2 fen. Shanghai 《針灸學》: caution with an unclosed infant fontanelle and in patients with hydrocephalus (the source's '思考' is read as a misprint for '患者', patients; the quotation is left as printed) |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | `中国针灸证治通鉴_321-400.md` L1543 | "小兒脫肛瀉血，每廁臟腑撮痛不可忍者，灸百會一穴三壯，在頭中心陷者是也，炷如小麥大。"（《太平聖惠方·明堂》卷一百） | For prolapse of the rectum with bloody stools (脫肛瀉血) in children, 3 moxa cones at Baihui alone |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | same, L1559 | "治脫肛刺督脈百會一穴，在頂中央旋毛中可容豆，針入二分，可灸七壯，至七七壯，即止。"（《針經摘英集》） | For prolapse of the rectum, needle Baihui alone to 2 fen |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | `中国针灸证治通鉴_161-240.md` L3126 | "治風頭痛方……又方：灸百會三、二七即瘥。" | Moxibustion at Baihui for wind headache (風頭痛) |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | same, L1106 | "尸厥暴死不省人事：百會、人中、啞門、臑會、合谷、中衝。" | Corpse-like reversal (尸厥) — multi-point prescription (derived from combination) |
 
-> 2.4·7.1절(구판)에 있던 《通考》 '해부 기술' 인용("帽狀腱膜 … 上矢狀竇 … 枕大神經·眶上神經 수렴")은 **원문에 없는 가공 인용이므로 삭제했다**. 《通考》 GV20 조(L2387~2612)에는 해부 구조 기술이 없다.
+> The *Tongkao* 'anatomical description' quotation in Sections 2.4 and 7.1 of the earlier edition ("帽狀腱膜 … 上矢狀竇 … convergence of 枕大神經 and 眶上神經") **was a fabricated quotation not found in the original text and has been deleted**. The *Tongkao* entry on GV20 (L2387–2612) contains no description of anatomical structures.
 
 ---
 
-## 2. Primary Source vs. Secondary Quotation Historical Stratification Table
+## 2. Primary Source vs. Secondary Quotation Table
 
-| 층차 | 시기 | 문헌 | 기술 내용 | 원천/재인용 | 근거 포인터 |
+| Stratum | Period | Classical source | Textual description | Primary / secondary | Evidence pointer |
 |:---|:---|:---|:---|:---|:---|
-| 원천 | 한대 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 위치("前顶后一寸五分，顶中央旋毛中，陷可容指"), 심도("刺入三分，灸五壮"), "督脉、足太阳之会", 주치(痎疟·癫疾·耳鸣·痉·顶上痛·小儿惊痫 등) | **원천(최우선)** | 通考 L2397, L2433, L2476, L2594 |
-| 재인용 | 진대 | *Zhen Jiu Jia Yi Jing* (《針灸甲乙經》) | 명당경 문구 승계, "一名三阳五会", "刺入三分，灸三壮" | 재인용(뜸 장수 이문) | 穴位通鉴 L1374, L1589 |
-| 별계 정위 | 진·당 | 《肘后备急方》·*Waitai Miyao* (《外臺秘要》) | "当鼻中，入发际五寸"; 外台 尸厥 "针入三分补之" | 독립 표현(같은 지점) | 通考 【定位】 2항; 穴位通鉴 L1518 |
-| 별계 정위 | 당 | *Qianjin Yaofang* (《千金要方》) | "穴在当顶上正中央是"; 卷三十 "卒起僵仆"(→ 囟会 주치 오록) | 재인용 + 전사 오류 | 通考 【定位】 3항, L2479 |
-| 후대 | 송 | *Taiping Shenghui Fang* (《太平聖惠方》)·*Tongren* (《銅人》) | "在头中心陷者中"; "针入二分，得气即泻"; 脱肛 단독 뜸 | 재인용 + 신규 주치 | 通考 【操作】 2·4항; 证治通鉴 L1543 |
-| 후대 | 송 | *Zhenjiu Zisheng Jing* (《針灸資生經》) | "一名天满" | 신규 이명 | 通考 L2402 |
-| 후대 | 원·명 | 窦太师针灸·《针方六集》 | "针入二分，前病者沿皮向前一寸，后病者沿皮向后一寸"; "维会" 오록 | 신규 자법 + 전사 오류 | 通考 L2404, L2600 |
-| 후대 | 명 | 《针灸聚英》·*Zhenjiu Dacheng* (《針灸大成》) | "一名巅上"(부위어), "直两耳尖", "手足三阳督脉之会", "百病皆治" | 재인용 + 과잉 확장 | 通考 【定位】 9항; 穴位通鉴 L1542 |
-| 현대 | 1957~ | 남경 《针灸学》·4~7판 교재 | 일본 교재 유래 별명(岭上·三阳·五会 등), 平刺 0.5~0.8寸, 阴挺·不寐·胃下垂 | 현대 해석 | 通考 L2408, L2498, 【操作】 7항 |
+| Primary | Han | *Huangdi Mingtang Jing* (《黃帝明堂經》) | Location ("前頂後一寸五分，頂中央旋毛中，陷可容指"), depth ("刺入三分，灸五壯"), "督脈、足太陽之會", indications (痎瘧 · 癲疾 · 耳鳴 · 痙 · 頂上痛 · 小兒驚癇, etc.) | **Primary (highest priority)** | Tongkao L2397, L2433, L2476, L2594 |
+| Secondary | Jin | *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | Inherits the *Mingtang Jing* wording; "一名三陽五會"; "刺入三分，灸三壯" | Secondary (variant number of moxa cones) | Xuewei Tongjian L1374, L1589 |
+| Independent location | Jin & Tang | *Zhouhou Beiji Fang* (《肘後備急方》) · *Waitai Miyao* (《外臺秘要》) | "當鼻中，入髮際五寸"; Waitai, for 尸厥, "針入三分補之" | Independent wording (same site) | Tongkao 【定位】, item 2; Xuewei Tongjian L1518 |
+| Independent location | Tang | *Qianjin Yaofang* (《千金要方》) | "穴在當頂上正中央是"; vol. 30, "卒起僵仆" (→ indication of 囟會 mistakenly transferred) | Secondary + transcription error | Tongkao 【定位】, item 3, L2479 |
+| Later | Song | *Taiping Shenghui Fang* (《太平聖惠方》) · *Tongren* (《銅人》) | "在頭中心陷者中"; "針入二分，得氣即瀉"; moxibustion at this point alone for 脫肛 | Secondary + new indication | Tongkao 【操作】, items 2 and 4; Zhengzhi Tongjian L1543 |
+| Later | Song | *Zhenjiu Zisheng Jing* (《針灸資生經》) | "一名天滿" | New alias | Tongkao L2402 |
+| Later | Yuan & Ming | Dou Taishi's acupuncture (竇太師針灸) · *Zhenfang Liuji* (《針方六集》) | "針入二分，前病者沿皮向前一寸，後病者沿皮向後一寸"; "維會" mistakenly recorded | New needling technique + transcription error | Tongkao L2404, L2600 |
+| Later | Ming | *Zhenjiu Juying* (《針灸聚英》) · *Zhenjiu Dacheng* (《針灸大成》) | "一名巔上" (location term), "直兩耳尖", "手足三陽督脈之會", "百病皆治" | Secondary + over-extension | Tongkao 【定位】, item 9; Xuewei Tongjian L1542 |
+| Modern | 1957– | Nanjing 《針灸學》 · 4th–7th edition textbooks | Aliases of Japanese-textbook origin (嶺上 · 三陽 · 五會, etc.), 平刺 0.5–0.8 寸, 陰挺 · 不寐 · 胃下垂 | Modern interpretation | Tongkao L2408, L2498, 【操作】, item 7 |
 
-> *Zhenjiu Dacheng* (《針灸大成》) "橫刺 0.5~1.0寸"(구판 2.2.1)은 3대 원전에서 확인되지 않는다. *Zhenjiu Dacheng* (《針灸大成》)은 정위 문구 승계(通考 【定位】 1항)와 별명 "三阳·五会"(穴位通鉴 L1654)에서만 확인되어 해당 행을 삭제했다.
+> The *Zhenjiu Dacheng* (《針灸大成》) "橫刺 0.5~1.0寸" (earlier edition, 2.2.1) cannot be confirmed in the three primary classics. The *Zhenjiu Dacheng* is attested only as inheriting the location wording (Tongkao 【定位】, item 1) and the aliases "三陽 · 五會" (Xuewei Tongjian L1654), so that row has been deleted.
 
 ---
 
-## 3. Nomenclature & Alias Collation Table (KJH DB Verification)
+## 3. Alias Verification Table (KJH DB Collation)
 
-KJH DB(`경혈명_비교_정리_KJH.xlsx`, '경혈 종합 목록' 행 47) GV20 이명: 三陽五會, 天山, 天滿, 巓上, 泥丸宮, 涅丸宮, 維會, 鬼門(天滿·巓上 중복 기재).
+GV20 aliases in the KJH DB (`경혈명_비교_정리_KJH.xlsx`, sheet `경혈 종합 목록`, row 47): 三陽五會, 天山, 天滿, 巓上, 泥丸宮, 涅丸宮, 維會, 鬼門 (天滿 and 巓上 entered twice).
 
-| 이명 | 최초 출전(원전 확인) | 판정 | 혼용 위험·조치 |
+| Alias | Earliest source (verified in the classics) | Adjudication | Risk of confusion & action |
 |:---|:---|:---|:---|
-| 三陽五會 | *Huangdi Mingtang Jing* (《黃帝明堂經》)(通考 L2397); 《甲乙》·《外台》 승계(穴位通鉴 L1654) | **확정 이명** | 낮음. "三陽"·"五會"로 나누는 것(《徐氏针灸大全》·*Zhenjiu Dacheng* (《針灸大成》))은 잘못(通考 L2414) |
-| 天滿 | *Zhenjiu Zisheng Jing* (《針灸資生經》) 卷一(通考 L2402) | **확정 이명(송대)** | 낮음. 《普济方》 '天蒲'는 오기(穴位通鉴 L1654) |
-| 巓上 | 《针灸聚英》 卷一(通考 L2407) | **부위어**(본혈의 부위 명칭) | 낮음. '岭上'은 '巓上'의 오기(通考 L2414) |
-| 頂上回毛·頂上旋毛·頂上回發 | 송 이전 침구방(《千金》 卷五 등) | **본혈 지칭**(通考 L2397) | 별혈(기혈)로 오인하지 말 것 |
-| 泥丸宮 / 泥丸 | 《普济本事方》 卷二(通考 L2403) — 도가 용어 | 도가 술어, 침구 이명 아님 | 해부 분석에서 제외 |
-| 涅丸宮 | 《中华针灸学》 (근대, 穴位通鉴 L1396) | 근대 문헌 이명, "不可从"(穴位通鉴 L1426) | 해부 분석에서 제외 |
-| **維會** | 《窦太师针经》 甲抄本 | **오록** — 원래 **脐中(神阙, CV8)** 별명(通考 L2404~2414, 吴崐 주) | **높음.** KJH DB에서도 CV08 신궐의 이명으로 등재(행 11). 《标幽赋》 "越人针维会"의 시궐 치험을 Baihui (百會, GV20)로 귀속하면 안 됨 |
-| **鬼門** | 원전에서 GV20 이명으로 확인 안 됨. *Qianjin Yaofang* (《千金要方》) 卷十四 "囟上主之。一名鬼门"은 **囟会(GV22)** | **타혈(GV22) 이명 혼입 의심** | **높음.** KJH DB도 GV22 신회 이명에 鬼門 등재(행 49). GV22 주치('邪病鬼癫')를 GV20에 섞지 말 것 |
-| **天山** | 3대 원전 검색에서 확인 안 됨 | **출전 미확인** | 보류. 정보 분리 대상(사용하지 않음) |
+| 三陽五會 | *Huangdi Mingtang Jing* (《黃帝明堂經》) (Tongkao L2397); inherited by 《甲乙》 and 《外臺》 (Xuewei Tongjian L1654) | **Confirmed alias** | Low. Splitting it into "三陽" and "五會" (《徐氏針灸大全》 · 《針灸大成》) is an error (Tongkao L2414) |
+| 天滿 | *Zhenjiu Zisheng Jing* (《針灸資生經》), vol. 1 (Tongkao L2402) | **Confirmed alias (Song dynasty)** | Low. 《普濟方》 '天蒲' is a scribal error (Xuewei Tongjian L1654) |
+| 巓上 | *Zhenjiu Juying* (《針灸聚英》), vol. 1 (Tongkao L2407) | **Location term** (name of the site of this point) | Low. '嶺上' is a scribal error for '巓上' (Tongkao L2414) |
+| 頂上回毛 · 頂上旋毛 · 頂上回髮 | Pre-Song acupuncture prescriptions (《千金》 vol. 5, etc.) | **Denote this point** (Tongkao L2397) | Do not mistake for a separate (extra) point |
+| 泥丸宮 / 泥丸 | *Puji Benshi Fang* (《普濟本事方》), vol. 2 (Tongkao L2403) — Daoist term | Daoist term, not an acupuncture alias | Excluded from anatomical analysis |
+| 涅丸宮 | 《中華針灸學》 (modern; Xuewei Tongjian L1396) | Alias from modern literature; "不可從" (Xuewei Tongjian L1426) | Excluded from anatomical analysis |
+| **維會** | Jia manuscript (甲抄本) of 《竇太師針經》 | **Mistaken entry** — originally an alias of **Qizhong (臍中, Shenque (神闕), CV8)** (Tongkao L2404–2414, Wu Kun's (吳崐) commentary) | **High.** The KJH DB also lists it as an alias of CV08 Shenque (row 11). The 尸厥 case of "越人針維會" in 《標幽賦》 must not be attributed to Baihui |
+| **鬼門** | Not confirmed as a GV20 alias in the classics. "囟上主之。一名鬼門" in *Qianjin Yaofang* (《千金要方》) vol. 14 refers to **Xinhui (囟會, GV22)** | **Suspected intrusion of another point's (GV22) alias** | **High.** The KJH DB also lists 鬼門 as an alias of GV22 Xinhui (row 49). Do not mix GV22 indications ('邪病鬼癲') into GV20 |
+| **天山** | Not found in a search of the three primary classics | **Source unverified** | On hold. To be kept separate (not used) |
 
 ---
 
-## 4. 3D Spatial Coordinates & Layer 1~5 Anatomical Substrate Diagram
+## 4. 3D Spatial Coordinates & Layer 1–5 Structure Diagram
 
-### 4.1 좌표
+### 4.1 Coordinates
 
-| 축 | 값 | 근거 |
+| Axis | Value | Basis |
 |:---:|:---|:---|
-| X (내외측) | 0 (정중선, 시상봉합 위) | 通考 【定位】; B1-05 |
-| Y (근위-원위) | 앞머리털경계 정중 직상 5촌(뒤머리털경계 위 7촌). 고전 표지: 가마(旋毛) 오목 | 通考 【定位】 1·8항; B1-05 |
-| Z (깊이) | 피부면 → 머리뼈바깥막 약 5~7mm(두정부 두피 전층, 개략값·실측 아님) | B1-01, B1-03 (규범 해부); GV20 특이 실측 없음 |
+| X (medial–lateral) | 0 (midline, over the sagittal suture) | Tongkao 【定位】; B1-05 |
+| Y (proximal–distal) | 5 cun directly above the midpoint of the anterior hairline (7 cun above the posterior hairline). Classical landmark: the depression at the hair whorl (旋毛) | Tongkao 【定位】, items 1 and 8; B1-05 |
+| Z (depth) | Skin surface → pericranium about 5–7 mm (full thickness of the parietal scalp; approximate, not measured) | B1-01, B1-03 (normative anatomy); no GV20-specific measurement |
 
-> 구판의 "Nasion 기준 약 135mm" 절대 거리는 근거가 없어 삭제했다.
+> The earlier edition's absolute distance of "about 135 mm from the nasion" had no basis and has been deleted.
 
-### 4.2 Layer 1~5 층차 (정본 Layer 정의에 맞춤, 깊이는 피부면 기준 누적 개략값)
+### 4.2 Layers 1–5 (aligned with the canonical Layer definitions; depths are approximate cumulative values from the skin surface)
 
-| 정본 Layer | 두피 층 | 누적 깊이(개략) | GV20 구조 (2대 교재 데이터셋) | 자침 관련 |
+| Canonical Layer | Scalp layer | Cumulative depth (approx.) | GV20 structures (two textbook datasets) | Relevance to needling |
 |:---:|:---|:---:|:---|:---|
-| Layer 1 (피부·피하) | 피부 + 치밀 피하결합조직 | 0 ~ 약 4mm | 큰뒤통수신경(C2)·삼차신경 V1 말단(위눈확·도르래위신경)·귓바퀴관자신경(V3) 말단; 뒤통수동·정맥, 얕은관자동·정맥 마루가지 | 평자 경로의 주 통과층 |
-| Layer 2 (표층 근막) | 머리덮개널힘줄(galea / epicranial aponeurosis) | 약 4 ~ 5mm | 이마힘살·뒤통수힘살을 잇는 널힘줄 | 평자 시 galea 위 또는 아래로 진행 |
-| Layer 3 (건막 간극) | 건막하 소성결합조직 | 약 5 ~ 6.5mm | 마루이끌정맥(parietal emissary vein)이 통과 | 활주층 |
-| Layer 4 (신경혈관속) | 해당 없음 | — | GV20 부위에는 주요 신경간·동맥 박동부가 없음(두피 혈관·신경은 Layer 1에 분포) | — |
-| Layer 5 (골막) | 머리뼈바깥막(pericranium) → 두정골(시상봉합) | 약 5.5 ~ 7mm 이후 | 그 아래 두개골(두정부 약 5~7mm, B1-01) → 경막 → 상시상정맥동 | 직자 3푼(6.9mm) 시 골막 접촉 가능. 두개골이 심부 차단 |
+| Layer 1 (skin & subcutis) | Skin + dense subcutaneous connective tissue | 0 to about 4 mm | Greater occipital nerve (C2), terminals of trigeminal V1 (supraorbital and supratrochlear nerves) and of the auriculotemporal nerve (V3); occipital artery and vein, parietal branches of the superficial temporal artery and vein | Main layer traversed by the transverse-insertion path |
+| Layer 2 (superficial fascia) | Epicranial aponeurosis (galea / epicranial aponeurosis) | about 4 to 5 mm | Aponeurosis joining the frontal and occipital bellies | In transverse insertion the needle runs above or below the galea |
+| Layer 3 (aponeurotic space) | Subaponeurotic loose connective tissue | about 5 to 6.5 mm | Traversed by the parietal emissary vein | Gliding layer |
+| Layer 4 (neurovascular bundle) | Not applicable | — | No major nerve trunk or palpable arterial pulse at the GV20 site (scalp vessels and nerves are distributed in Layer 1) | — |
+| Layer 5 (periosteum) | Pericranium → parietal bone (sagittal suture) | from about 5.5 to 7 mm | Below it the skull (about 5–7 mm at the vertex, B1-01) → dura mater → superior sagittal sinus | Perpendicular insertion of 3 fen (6.9 mm) may touch the periosteum. The skull blocks deeper penetration |
 
-> 구판 수치(모상건막 1~6mm, 골막 8~12mm, 외판 12~18mm, 상시상정맥동 17mm)는 두피 전층 약 5~7mm와 맞지 않고 출처도 없어 폐기했다. 위 깊이도 규범 해부서에서 추정한 개략값이며, GV20 부위 초음파·MRI 실측 논문(B2-10 유형)은 Layer A에서 찾지 못했다.
+> The earlier edition's figures (galea aponeurotica 1–6 mm, periosteum 8–12 mm, outer table 12–18 mm, superior sagittal sinus 17 mm) did not fit a full scalp thickness of about 5–7 mm and had no source, so they were discarded. The depths above are also approximate values estimated from normative anatomy texts; no ultrasound or MRI measurement paper at the GV20 site (B2-10 type) was found in Layer A.
 
-### 4.3 단면 모식도
+### 4.3 Cross-sectional Schematic
 
 ```
- 피부면 ─────────── 旋毛 오목 (X=0, 앞머리털경계 위 5촌) ────────────
-  Layer 1  피부 + 치밀 피하결합조직     ~0–4mm
-           [큰뒤통수N(C2) · V1(위눈확/도르래위N) · 귓바퀴관자N(V3) 말단]
-           [뒤통수A·V + 얕은관자A·V 마루가지 문합]
-           ←── 평자(平刺)/沿皮刺 경로: 窦氏 '沿皮向前/向後一寸' ──→
-  Layer 2  머리덮개널힘줄 (galea)        ~4–5mm
-  Layer 3  건막하 소성결합조직           ~5–6.5mm   [마루이끌정맥 관통]
-  Layer 5  머리뼈바깥막 (pericranium)    ~5.5–7mm   ← 직자 刺入三分(6.9mm) 도달 가능
-  ═══════  두정골 (시상봉합)  약 5–7mm 두께 ═══════════════════════════
-           경막 · 상시상정맥동 · 대뇌 (두개골로 차단)
+ Skin surface ───── depression at 旋毛 (X=0, 5 cun above anterior hairline) ─────
+  Layer 1  Skin + dense subcutaneous CT      ~0–4mm
+           [greater occipital N (C2) · V1 (supraorbital/supratrochlear N) · auriculotemporal N (V3) terminals]
+           [anastomosis of occipital A·V + parietal br. of superficial temporal A·V]
+           ←── transverse (平刺)/沿皮刺 path: Dou's '沿皮向前/向後一寸' ──→
+  Layer 2  Epicranial aponeurosis (galea)    ~4–5mm
+  Layer 3  Subaponeurotic loose CT           ~5–6.5mm   [traversed by parietal emissary v.]
+  Layer 5  Pericranium                       ~5.5–7mm   ← reachable by perpendicular 刺入三分 (6.9mm)
+  ═══════  Parietal bone (sagittal suture)  about 5–7mm thick ════════════════
+           Dura mater · superior sagittal sinus · cerebrum (shielded by the skull)
 ```
 
-![Baihui (百會, GV20)(GV20) 정수리 시상봉합 관상 단면 해부 실체 모식도](GV20_Baihui (百會, GV20)_횡단면_해부모식도.png)
+![Coronal schematic of the anatomical substrate of Baihui (百會, GV20) over the sagittal suture at the vertex](GV20_백회_횡단면_해부모식도.png)
 
-*그림 4-1. Baihui (百會, GV20) 높이 관상 단면 모식도(앞에서 봄, 두피 5층을 과장해 그림, 축척 아님). 직자 2~3푼은 머리뼈바깥막에서 멈추고 두정골이 경막·상시상정맥동·뇌를 차단한다. 평자(沿皮刺)는 피부·치밀 피하결합조직 안을 앞뒤로 진행한다. 마루이끌정맥은 건막하층을 두개 안 상시상정맥동과 잇는다. 층 두께는 4.2절 개략값을 과장한 것이며 GV20 실측이 아니다.*
+*Figure 4-1. Coronal schematic at the level of Baihui (百會, GV20) (viewed from the front; the five scalp layers are exaggerated; not to scale). Perpendicular insertion of 2–3 fen stops at the pericranium, and the parietal bone shields the dura mater, superior sagittal sinus and brain. Transverse insertion (沿皮刺) runs forward or backward within the skin and dense subcutaneous connective tissue. The parietal emissary vein connects the subaponeurotic layer with the intracranial superior sagittal sinus. Layer thicknesses exaggerate the approximate values of Section 4.2 and are not GV20 measurements.*
 
-### 4.4 FMA 실체 대조 (Layer별)
+### 4.4 FMA Substrate Cross-check (by Layer)
 
-구조명은 2대 교재, ID·관계는 FMA 5.1.0(`fma_query.py profile GV20`).
+Structure names from the two textbooks; IDs and relations from FMA 5.1.0 (`fma_query.py profile GV20`).
 
-| Layer | 구조 | FMA | FMA 관계 | 신경 줄기 / 혈관 사슬 (FMA) | 척수 분절 |
+| Layer | Structure | FMA | FMA relation | Nerve trunk / vascular chain (FMA) | Spinal segment |
 |:---|:---|:---|:---|:---|:---|
-| 1 피하 | 큰뒤통수신경 *[공통]* | FMA:65443 | is_a Branch of posterior ramus of second cervical nerve | C2 뒤가지(FMA:8788) → 목신경 | **C2**(신경 경로 추론) |
-| 1 피하 | 눈확위·도르래위신경 말단 *(김재효)* | FMA:52655 · 52642 | is_a Branch of frontal nerve | 이마신경 → 눈신경 V1 → 삼차신경 | 해당 없음(뇌신경) |
-| 1 피하 | 귓바퀴관자신경 *(공통교재)* | FMA:53000 | is_a Branch of mandibular nerve | 아래턱신경 V3(FMA:52996) → 삼차신경 | 해당 없음(뇌신경) |
-| 1 피하 | 뒤통수동맥 *[공통]* | FMA:49586 | is_a Subdivision of external carotid artery | 바깥목동맥(FMA:10635) | — |
-| 1 피하 | 얕은관자동맥 *(공통교재)* · 마루가지 *(김재효)* | FMA:49650 · 49670 | 마루가지 is_a Branch of superficial temporal artery | 얕은관자동맥 → 바깥목동맥 | — |
-| 1 피하 | 뒤통수정맥 *[공통]* · 얕은관자정맥 *[공통]* | FMA:50802 · 50932 | 얕은관자정맥 drains_into Retromandibular vein | 뒤통수정맥 → 깊은목정맥(FMA:4746) / 얕은관자정맥 → 턱뒤정맥 → 바깥목정맥 | — |
-| 2 표층 근막 | 머리덮개널힘줄 *[공통]* | FMA:46768 | is_a Aponeurosis | — | — |
-| 3 건막 간극 | 마루이끌정맥 *[공통]* | FMA:50791 | is_a Emissary vein | 상시상정맥동(FMA:50767) → 가로정맥굴 → 구불정맥굴 → 속목정맥 | — |
-| 5 골막 | 머리뼈바깥막 *(김재효)* · 두정골 · 시상봉합 · 마루뼈구멍 | FMA:76623 · 9613 · 52929 · 53145 | — | — | — |
+| 1 Subcutis | Greater occipital nerve *[both textbooks]* | FMA:65443 | is_a Branch of posterior ramus of second cervical nerve | Posterior ramus of C2 (FMA:8788) → cervical nerve | **C2** (inferred from the nerve path) |
+| 1 Subcutis | Supraorbital and supratrochlear nerve terminals *(Kim Jaehyo)* | FMA:52655 · 52642 | is_a Branch of frontal nerve | Frontal n. → ophthalmic n. V1 → trigeminal n. | Not applicable (cranial nerve) |
+| 1 Subcutis | Auriculotemporal nerve *(Common Textbook)* | FMA:53000 | is_a Branch of mandibular nerve | Mandibular n. V3 (FMA:52996) → trigeminal n. | Not applicable (cranial nerve) |
+| 1 Subcutis | Occipital artery *[both textbooks]* | FMA:49586 | is_a Subdivision of external carotid artery | External carotid a. (FMA:10635) | — |
+| 1 Subcutis | Superficial temporal artery *(Common Textbook)* · parietal branch *(Kim Jaehyo)* | FMA:49650 · 49670 | parietal branch is_a Branch of superficial temporal artery | Superficial temporal a. → external carotid a. | — |
+| 1 Subcutis | Occipital vein *[both textbooks]* · superficial temporal vein *[both textbooks]* | FMA:50802 · 50932 | superficial temporal vein drains_into Retromandibular vein | Occipital v. → deep cervical v. (FMA:4746) / superficial temporal v. → retromandibular v. → external jugular v. | — |
+| 2 Superficial fascia | Epicranial aponeurosis *[both textbooks]* | FMA:46768 | is_a Aponeurosis | — | — |
+| 3 Aponeurotic space | Parietal emissary vein *[both textbooks]* | FMA:50791 | is_a Emissary vein | Superior sagittal sinus (FMA:50767) → transverse sinus → sigmoid sinus → internal jugular v. | — |
+| 5 Periosteum | Pericranium *(Kim Jaehyo)* · parietal bone · sagittal suture · parietal foramen | FMA:76623 · 9613 · 52929 · 53145 | — | — | — |
 
-- **FMA 주석 1 — 뒤통수정맥 분류 오류**: FMA는 뒤통수정맥(FMA:50802)을 `is_a Superior superficial cerebral vein`(대뇌 표재정맥)으로 분류한다. 뒤통수정맥은 두피 정맥이므로 이 분류는 FMA 모델링 오류로 보고 인용하지 않는다(배출 사슬 `tributary_of Deep cervical vein`만 참고).
-- **FMA 주석 2 — 분절**: FMA 분절은 큰뒤통수신경의 C2(신경 줄기 추론)만 있다. V1·V3 말단은 뇌신경이라 분절이 없다. 8.3 B-Check ②(1점)의 "V1·C2 수렴" 판단과 같다.
-- **FMA 주석 3 — 신경 분포**: FMA는 신경의 피부 분포 영역(어디까지 닿는지)을 기록하지 않는다. 눈확위·도르래위신경·귓바퀴관자신경이 정수리에 닿는다는 것은 교재·B1-01에 근거하며, FMA는 구조의 동일성과 줄기만 고정한다.
+- **FMA note 1 — misclassification of the occipital vein**: FMA classifies the occipital vein (FMA:50802) as `is_a Superior superficial cerebral vein` (a superficial cerebral vein). The occipital vein is a scalp vein, so this classification is regarded as an FMA modelling error and is not cited (only the drainage chain `tributary_of Deep cervical vein` is used for reference).
+- **FMA note 2 — segments**: the only FMA segment is C2 of the greater occipital nerve (inferred from the nerve trunk). The V1 and V3 terminals are cranial nerves and have no segment. This agrees with the "V1–C2 convergence" judgement of B-Check ② (1 point) in Section 8.3.
+- **FMA note 3 — nerve distribution**: FMA does not record the cutaneous territory of nerves (how far they reach). That the supraorbital, supratrochlear and auriculotemporal nerves reach the vertex rests on the textbooks and B1-01; FMA pins only the identity of structures and their trunks.
 
 ---
 
-## 5. Classical Needling Depth Calculation Table (Han Dynasty 1 fen = 2.3 mm)
+## 5. Needling Depth Calculation Table
 
-자침깊이 DB(`침구문헌별 자침깊이 정리_AI 분석용.xlsx`, 시트1 행46, N0=44) 원값. 1푼 = 2.3mm.
+Raw values from the needling-depth DB (`침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 46, N0 = 44). 1 fen = 2.3 mm.
 
-| DB 열 | 값 | 해석 | 환산 심도 | 도달 Layer(직자 가정) |
+| DB column | Value | Interpretation | Converted depth | Layer reached (assuming perpendicular insertion) |
 |:---|:---:|:---|:---:|:---|
-| 황제명당경_황룡상 감수편찬 | 3 | 3푼 | 6.9mm | Layer 5 골막 접촉 가능(두개골 차단) |
-| 갑을경 경혈 분류 및 배열순서 | 2 | **배열 순서 값(심도 아님)** | — | — |
-| 침구갑을경 | 3 | 3푼 | 6.9mm | Layer 5 골막 접촉 가능 |
-| 침구경험방 | 2 | 2푼 | 4.6mm | Layer 1~2 |
-| 동의보감 (인용: 동인) | 2 | 2푼 | 4.6mm | Layer 1~2 |
-| 경락수혈학 공통교재 최소~최대 | 5~8 | 5~8푼, **선호 자침법: 횡자** | 11.5~18.4mm(경로 길이) | 평자이므로 수직 심도는 두피 두께 이내 |
-| 침구의학 공통교재 최소~최대 | 5~8 | 5~8푼 | 11.5~18.4mm(경로 길이) | 同上 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 최소·최대 | '.' | **blank(미기술)** — 결측 처리, Contraindicated for Needling (禁鍼) 아님 | — | — |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 선호 자침법 | 횡자 | 通考 【操作】 "斜刺或平刺" | — | — |
+| *Huangdi Mingtang Jing*, ed. Huang Longxiang (`황제명당경_황룡상 감수편찬`) | 3 | 3 fen | 6.9 mm | May touch Layer 5 periosteum (skull blocks deeper penetration) |
+| *Jiayi Jing* point classification and ordering (`갑을경 경혈 분류 및 배열순서`) | 2 | **Ordering value (not a depth)** | — | — |
+| *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | 3 | 3 fen | 6.9 mm | May touch Layer 5 periosteum |
+| *Chimgu Gyeongheombang* (《鍼灸經驗方》) | 2 | 2 fen | 4.6 mm | Layer 1–2 |
+| *Dongui Bogam* (《東醫寶鑑》, citing 《銅人》) | 2 | 2 fen | 4.6 mm | Layer 1–2 |
+| Korean common textbook, *Meridian and Acupoint Studies* (經絡經穴學), min–max | 5–8 | 5–8 fen, **preferred technique: transverse insertion** | 11.5–18.4 mm (path length) | Transverse insertion, so the vertical depth stays within the scalp thickness |
+| Korean common textbook, *Acupuncture and Moxibustion Medicine* (鍼灸醫學), min–max | 5–8 | 5–8 fen | 11.5–18.4 mm (path length) | As above |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》), min · max | '.' | **blank (not described)** — treated as missing, not as contraindicated | — | — |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》), preferred technique | Transverse insertion | Tongkao 【操作】 "斜刺或平刺" | — | — |
 
-- **Contraindicated for Needling (禁鍼)('0') 기록: 없음.**
-- 고전 직자 범위: 2~3푼 = 4.6~6.9mm. 원전에 각도 기재는 없으며(명당경 "刺入三分", 동인 "针入二分"), 窦氏 이후 沿皮刺가 명시된다.
-- 현대 평자 5~8푼은 두피 안을 지나는 경로 길이이므로 수직 심도로 환산하지 않는다(구판의 θ=15°/20° 삼각법과 μ 2.6푼·σ 0.4푼은 근거 없는 임의값이어서 삭제했다).
-- 체형 변수: 소아 숫구멍 미폐쇄·뇌수종에는 신중(上海《针灸学》, 通考 L2612).
+- **'Contraindicated for needling (禁鍼)' ('0') record: none.**
+- Classical perpendicular range: 2–3 fen = 4.6–6.9 mm. The classics give no angle (*Mingtang Jing* "刺入三分", *Tongren* "針入二分"); 沿皮刺 is stated explicitly from Dou (竇氏) onward.
+- The modern transverse 5–8 fen is a path length within the scalp and is not converted to vertical depth (the earlier edition's θ = 15°/20° trigonometry and μ 2.6 fen · σ 0.4 fen were arbitrary values without basis and have been deleted).
+- Body-type variables: caution with an unclosed infant fontanelle and with hydrocephalus (Shanghai 《針灸學》, Tongkao L2612).
 
 ---
 
-## 6. Textbook Comparison Table & FMA Ontology Mapping (Common Textbook vs. Prof. Kim Jaehyo)
+## 6. Anatomical Structure Textbook Comparison Table
 
-| 구분 | 경혈학 공통교재 (refine.xlsx, 해부구조_개별항목_상세 행216~221, 《경혈학 하》 p.761) | 김재효 교재 (데이터셋, 해부구조_개별항목_상세 행321~330) | FMA 판별 | 공통점 / 차이점 |
+| Category | Common Textbook of Acupoint Studies (refine.xlsx, sheet `해부구조_개별항목_상세` rows 216–221; *Acupoint Studies* vol. 2, p. 761) | Kim Jaehyo textbook (dataset, sheet `해부구조_개별항목_상세` rows 321–330) | FMA adjudication | Similarities / differences |
 |:---|:---|:---|:---|:---|
-| 근육·근막 | 머리덮개널힘줄(galea aponeurotica) | 머리덮개널힘줄(epicranial aponeurosis), **머리뼈바깥막(pericranium)** | 공통 FMA:46768(두 영문 표기가 같은 실체) / 김재효 단독 FMA:76623 | 공통: galea. 김재효만 골막 기재(Layer 5 표기) |
-| 신경 | 큰뒤통수신경, **귓바퀴관자신경** | 큰뒤통수신경, **위도르래신경·위눈확신경**(2026 수업자료에서 도르래위신경·눈확위신경 CN5로 중복 기재) | 공통 FMA:65443 / 공통교재 단독 FMA:53000(V3) / 김재효 단독 FMA:52642·52655(V1) — 줄기가 서로 다름 | 공통: 큰뒤통수신경(C2). 차이: 공통교재는 V3(귓바퀴관자), 김재효는 V1(위눈확·도르래위) |
-| 혈관 | 뒤통수동·정맥, 얕은관자동·정맥, 마루이끌정맥 | 뒤통수동·정맥, 얕은관자동·정맥의 마루가지, 마루이끌정맥 | 공통 FMA:49586·50802·50932·50791 / 공통교재 단독 FMA:49650(줄기) / 김재효 단독 FMA:49670(마루가지) | 일치(김재효가 마루가지로 구체화) |
+| Muscle & fascia | Epicranial aponeurosis (galea aponeurotica) | Epicranial aponeurosis, **pericranium** | Shared FMA:46768 (the two English terms denote the same entity) / Kim Jaehyo only FMA:76623 | Shared: galea. Only Kim Jaehyo lists the periosteum (Layer 5 entry) |
+| Nerves | Greater occipital nerve, **auriculotemporal nerve** | Greater occipital nerve, **supratrochlear and supraorbital nerves** (entered twice in the 2026 lecture materials as supratrochlear and supraorbital nerves, CN5) | Shared FMA:65443 / Common Textbook only FMA:53000 (V3) / Kim Jaehyo only FMA:52642 · 52655 (V1) — different trunks | Shared: greater occipital nerve (C2). Difference: the Common Textbook gives V3 (auriculotemporal), Kim Jaehyo gives V1 (supraorbital, supratrochlear) |
+| Vessels | Occipital artery and vein, superficial temporal artery and vein, parietal emissary vein | Occipital artery and vein, parietal branches of the superficial temporal artery and vein, parietal emissary vein | Shared FMA:49586 · 50802 · 50932 · 50791 / Common Textbook only FMA:49650 (trunk) / Kim Jaehyo only FMA:49670 (parietal branch) | Agree (Kim Jaehyo specifies the parietal branch) |
 
-> 정수리 피부는 V1·V3·C2 분포가 수렴하는 부위이므로(B1-01, B1-03) 두 교재의 신경 차이는 상충이 아니라 상보로 본다. 구판 표의 "공통교재: 이마힘살·도르래위신경", "김재효: 뒤통수이마근"은 데이터셋과 맞지 않아 고쳤다.
+> The skin of the vertex is where the V1, V3 and C2 territories converge (B1-01, B1-03), so the difference in nerves between the two textbooks is regarded as complementary rather than conflicting. The earlier edition's table entries "Common Textbook: frontal belly · supratrochlear nerve" and "Kim Jaehyo: occipitofrontalis" did not match the datasets and have been corrected.
 
-**FMA로 본 교재 차이의 의미**: FMA 프로파일의 두 교재 비교는 공통 6 · 공통교재 단독 2 · 김재효 단독 4다. 혈관 차이(얕은관자동맥 FMA:49650 vs 마루가지 FMA:49670)는 FMA상 **줄기와 그 가지**로 같은 계통이다. 반면 신경 차이는 줄기가 다르다 — 공통교재의 귓바퀴관자신경은 **아래턱신경(V3)**, 김재효의 눈확위·도르래위신경은 **이마신경 → 눈신경(V1)** 계통이다. 따라서 신경 항목은 "같은 신경을 다른 수준으로 적은 것"이 아니라 **정수리에 닿는 서로 다른 신경 영역을 각각 하나씩 적은 것**이며, 위 상보 판정을 FMA가 뒷받침한다. $S_{clarity}$ 단계는 바꾸지 않는다.
+**What FMA shows about the textbook differences**: the FMA profile comparison of the two textbooks gives 6 shared · 2 Common Textbook only · 4 Kim Jaehyo only. The vascular difference (superficial temporal artery FMA:49650 vs its parietal branch FMA:49670) is, in FMA, **a trunk and its branch** in the same system. The nerve difference, by contrast, involves different trunks — the Common Textbook's auriculotemporal nerve belongs to the **mandibular nerve (V3)**, and Kim Jaehyo's supraorbital and supratrochlear nerves to the **frontal nerve → ophthalmic nerve (V1)** system. The nerve entries are therefore not "the same nerve recorded at different levels" but **each records one of the different nerve territories reaching the vertex**, and FMA supports the complementary verdict above. The $S_{clarity}$ level is unchanged.
 
 ---
 
-## 7. 공간 변위 분기 추론
+## 7. Spatial Displacement Branching Inference
 
-| 구분 | 정위 | 근거 |
+| Category | Location | Basis |
 |:---|:---|:---|
-| 고전 원전 위치 | 가마(旋毛) 오목 — 체표 표지 우선, 가마가 둘이면 정중선에 가까운 쪽 | 通考 L2462 |
-| 현대 WHO 위치 | 앞머리털경계 정중 직상 5촌 / 두 귀끝 연결선 중점 | B1-05 |
-| Δ_discrepancy | **미실측.** 구판의 "0.5~1.0cm"는 근거가 없다 | — |
+| Classical location | Depression at the hair whorl (旋毛) — surface landmark takes precedence; with two whorls, the one closer to the midline | Tongkao L2462 |
+| Modern WHO location | 5 cun directly above the midpoint of the anterior hairline / midpoint of the line joining the auricular apices | B1-05 |
+| Δ_discrepancy | **Not measured.** The earlier edition's "0.5–1.0 cm" has no basis | — |
 
-- papers.id **1961** (PMID 42343518, 《中国针灸》 2026, 체표 형태 기반 GV20 정위 연구)은 가마의 투영 위치와 귀끝 연결선 중점–앞머리털경계 거리가 이론적 골도 위치와 다르다고 보고한다(초록 스니펫). 따라서 가마 위치와 골도 위치는 일치한다고 가정할 수 없다.
-- 판정: 조정 결과에 따라 **단일 Target(T1)**으로 채점했다. 두 위치는 같은 두정부 정중선 두피 층에 있어서 해부 층 구성이 바뀌지 않는다. 다만 Δ가 15mm를 넘는지는 검증되지 않았으므로, 1961의 수치를 확인한 뒤 분기 여부를 다시 판단해야 한다(미판정 쟁점).
+- papers.id **1961** (PMID 42343518, *Zhongguo Zhen Jiu* (《中國針灸》) 2026, a study of GV20 location based on surface morphology) reports that the projected position of the hair whorl and the distance from the midpoint of the auricular-apex line to the anterior hairline differ from the theoretical bone-proportional position (abstract snippet). It therefore cannot be assumed that the whorl position and the bone-proportional position coincide.
+- Verdict: following adjudication, scored as a **single Target (T1)**. Both positions lie in the same scalp layers on the parietal midline, so the layer composition does not change. However, whether Δ exceeds 15 mm has not been verified, so the branching decision must be revisited once the figures in 1961 have been checked (unresolved issue).
 
 ---
 
 ## 8. Biomedical Reflex Pathway Diagram & External Search Log
 
-### 8.1 Layer A 논문 (마스터 DB `papers.id`)
+### 8.1 Layer A Papers (master DB `papers.id`)
 
-**GV20 정위 연구**
+**GV20 location study**
 
-| papers.id | 연도 | 저널 | 제목 | PMID / DOI | 설계 |
+| papers.id | Year | Journal | Title | PMID / DOI | Design |
 |:---:|:---:|:---|:---|:---|:---|
-| 1961 | 2026 | Zhongguo Zhen Jiu | Identification and investigation of acupoint localization based on the surface morphological characteristics of governor vessel on the head: taking Baihui (GV20) as an example | 42343518 / 10.13703/j.0255-2930.20250402-k0003 | 체표 형태 측정(정위, 기전 편수 불산입) |
+| 1961 | 2026 | Zhongguo Zhen Jiu | Identification and investigation of acupoint localization based on the surface morphological characteristics of governor vessel on the head: taking Baihui (GV20) as an example | 42343518 / 10.13703/j.0255-2930.20250402-k0003 | Surface morphometry (location; not counted among mechanism papers) |
 
-**인체 연구 (GV20 포함)**
+**Human studies (including GV20)**
 
-| papers.id | 연도 | 저널 | 제목 | PMID / DOI | 설계 |
+| papers.id | Year | Journal | Title | PMID / DOI | Design |
 |:---:|:---:|:---|:---|:---|:---|
-| 1977 | 2009 | J Acupunct Meridian Stud | Acute Effects of Acupuncture Treatment with Baihui (GV20) on Human Arterial Stiffness and Wave Reflection | — / 10.1016/s2005-2901(09)60045-5 | 인체 생리실험(추정) |
-| 1978 | 2010 | J Acupunct Tuina Sci | Clinical observation on suspended moxibustion at Baihui (GV 20) for insomnia | — / 10.1007/s11726-010-0042-7 | 인체 관찰(비RCT) |
-| 1974 | 2026 | Front Neurosci | Immediate large-scale cortical network changes following acupuncture in patients with disorders of consciousness: a resting-state fNIRS study | — / 10.3389/fnins.2026.1917107 | 인체(비RCT) |
-| 1976 | 2026 | Front Neurol | Clinical and neurophysiological effects of manual acupuncture for upper-limb motor dysfunction after ischemic stroke | 42712438 / 10.3389/fneur.2026.1886740 | 인체 RCT(GV20 단독 여부 불명) |
-| 1972 | 2026 | Preprints.org | Modulation of Implicit Sequence Learning and Neural Oscillations by Acupuncture at Baihui (GV20) and Sishencong (EX-HN1) … 256-Channel EEG | — / 10.20944/preprints202609.2422.v1 | 인체 EEG, 비심사 preprint, 배혈 병용 |
+| 1977 | 2009 | J Acupunct Meridian Stud | Acute Effects of Acupuncture Treatment with Baihui (GV20) on Human Arterial Stiffness and Wave Reflection | — / 10.1016/s2005-2901(09)60045-5 | Human physiological experiment (presumed) |
+| 1978 | 2010 | J Acupunct Tuina Sci | Clinical observation on suspended moxibustion at Baihui (GV 20) for insomnia | — / 10.1007/s11726-010-0042-7 | Human observational (non-RCT) |
+| 1974 | 2026 | Front Neurosci | Immediate large-scale cortical network changes following acupuncture in patients with disorders of consciousness: a resting-state fNIRS study | — / 10.3389/fnins.2026.1917107 | Human (non-RCT) |
+| 1976 | 2026 | Front Neurol | Clinical and neurophysiological effects of manual acupuncture for upper-limb motor dysfunction after ischemic stroke | 42712438 / 10.3389/fneur.2026.1886740 | Human RCT (unclear whether GV20 alone) |
+| 1972 | 2026 | Preprints.org | Modulation of Implicit Sequence Learning and Neural Oscillations by Acupuncture at Baihui (GV20) and Sishencong (EX-HN1) … 256-Channel EEG | — / 10.20944/preprints202609.2422.v1 | Human EEG, non-peer-reviewed preprint, combined with other points |
 
-**동물 연구 (대부분 GV26·GV24 등과 병용 전침)**
+**Animal studies (mostly electroacupuncture combined with GV26, GV24, etc.)**
 
-| papers.id | 연도 | 저널 | 제목(요약) | PMID / DOI | 설계 |
+| papers.id | Year | Journal | Title (summary) | PMID / DOI | Design |
 |:---:|:---:|:---|:---|:---|:---|
-| 1946 | 2024 | CNS Neurosci Ther | EA ameliorates neuroinflammation by inhibiting TRPV4 channel in ischemic stroke | 38334061 / 10.1111/cns.14618 | 동물 |
-| 1948 | 2025 | Biomolecules | Multi-omics integration: EA ameliorates cognitive impairment in AD | 41301403 / 10.3390/biom15111486 (저널·DOI 불일치, 확인 필요) | 동물 |
-| 1949 | 2022 | CNS Neurosci Ther | EA ameliorates postoperative cognitive dysfunction via NLRP3 | 34951130 / 10.1111/cns.13784 | 동물 |
-| 1950 | 2025 | Transl Psychiatry | 5-HT necessary for EA-mediated improvement of post-stroke depression | 41053079 / 10.1038/s41398-025-03621-y | 동물 |
-| 1951 | 2022 | J Surg Res | EA relieves hippocampal injury by HO-1 | 35016152 / 10.1016/j.jss.2021.12.013 | 동물 |
-| 1952 | 2025 | CNS Neurosci Ther | EA prevents AD-like phenotypes in APP/PS1 mice | 41367129 / 10.1002/cns.70696 | 동물 |
-| 1953 | 2022 | Zhen Ci Yan Jiu | EA on complement C1q and microglia phagocytosis in hippocampus of SAMP8 mice | 35764513 / 10.13702/j.1000-0607.20210573 | 동물 |
-| 1954 | 2026 | Zhen Ci Yan Jiu | EA at different time points on cuproptosis-related proteins | 42779400 / 10.13702/j.1000-0607.20260490 | 동물 |
-| 1849 | 2026 | Zhen Ci Yan Jiu | EA improves glycolysis in AD model mice via HIF-1α/PFKFB3 | 42779398 / 10.13702/j.1000-0607.20251094 | 동물 |
-| 1955 | 2026 | Zhen Ci Yan Jiu | EA improving central sensitization in NERD rats | 42621713 / 10.13702/j.1000-0607.20260161 | 동물 |
-| 1956 | 2026 | Zhen Ci Yan Jiu | "Tiaoshen Tongluo" EA improves learning-memory via microglial polarization | 42621712 / 10.13702/j.1000-0607.20251014 | 동물 |
-| 1957 | 2026 | Zhen Ci Yan Jiu | EA improves synaptic plasticity via Glu/GABA balance in mPFC | 42621709 / 10.13702/j.1000-0607.20250806 | 동물 |
-| 1958 | 2026 | Zhen Ci Yan Jiu | EA on motor function and PGC-1α/FNDC5/BDNF in SAMP8 mice | 42482583 / 10.13702/j.1000-0607.20250437 | 동물 |
-| 1966 | 2026 | Zhen Ci Yan Jiu | EA on hippocampal myelin and Rac1/PAK1/LIMK1/cofilin in AD | 42185061 / 10.13702/j.1000-0607.20250434 | 동물 |
-| 1967 | 2026 | Zhen Ci Yan Jiu | EA brain-gut co-treatment in cerebral ischemia (TMAO-HMGB1/NLRP3) | 42015634 / 10.13702/j.1000-0607.20250084 | 동물 |
-| 1968 | 2026 | Zhen Ci Yan Jiu | Scalp-acupoint cluster puncture and hippocampal synaptic plasticity | 42015638 / 10.13702/j.1000-0607.20250733 | 동물 |
-| 1969 | 2026 | Zhen Ci Yan Jiu | EA alleviating learning and memory impairment in post-stroke cognitive impairment | 42015633 / 10.13702/j.1000-0607.20250123 | 동물 |
-| 1971 | 2026 | Front Aging Neurosci | EA inhibits pyroptosis to improve motor function in MPTP mouse PD model | — / 10.3389/fnagi.2026.1968826 | 동물 |
+| 1946 | 2024 | CNS Neurosci Ther | EA ameliorates neuroinflammation by inhibiting TRPV4 channel in ischemic stroke | 38334061 / 10.1111/cns.14618 | Animal |
+| 1948 | 2025 | Biomolecules | Multi-omics integration: EA ameliorates cognitive impairment in AD | 41301403 / 10.3390/biom15111486 (journal–DOI mismatch, to be checked) | Animal |
+| 1949 | 2022 | CNS Neurosci Ther | EA ameliorates postoperative cognitive dysfunction via NLRP3 | 34951130 / 10.1111/cns.13784 | Animal |
+| 1950 | 2025 | Transl Psychiatry | 5-HT necessary for EA-mediated improvement of post-stroke depression | 41053079 / 10.1038/s41398-025-03621-y | Animal |
+| 1951 | 2022 | J Surg Res | EA relieves hippocampal injury by HO-1 | 35016152 / 10.1016/j.jss.2021.12.013 | Animal |
+| 1952 | 2025 | CNS Neurosci Ther | EA prevents AD-like phenotypes in APP/PS1 mice | 41367129 / 10.1002/cns.70696 | Animal |
+| 1953 | 2022 | Zhen Ci Yan Jiu | EA on complement C1q and microglia phagocytosis in hippocampus of SAMP8 mice | 35764513 / 10.13702/j.1000-0607.20210573 | Animal |
+| 1954 | 2026 | Zhen Ci Yan Jiu | EA at different time points on cuproptosis-related proteins | 42779400 / 10.13702/j.1000-0607.20260490 | Animal |
+| 1849 | 2026 | Zhen Ci Yan Jiu | EA improves glycolysis in AD model mice via HIF-1α/PFKFB3 | 42779398 / 10.13702/j.1000-0607.20251094 | Animal |
+| 1955 | 2026 | Zhen Ci Yan Jiu | EA improving central sensitization in NERD rats | 42621713 / 10.13702/j.1000-0607.20260161 | Animal |
+| 1956 | 2026 | Zhen Ci Yan Jiu | "Tiaoshen Tongluo" EA improves learning-memory via microglial polarization | 42621712 / 10.13702/j.1000-0607.20251014 | Animal |
+| 1957 | 2026 | Zhen Ci Yan Jiu | EA improves synaptic plasticity via Glu/GABA balance in mPFC | 42621709 / 10.13702/j.1000-0607.20250806 | Animal |
+| 1958 | 2026 | Zhen Ci Yan Jiu | EA on motor function and PGC-1α/FNDC5/BDNF in SAMP8 mice | 42482583 / 10.13702/j.1000-0607.20250437 | Animal |
+| 1966 | 2026 | Zhen Ci Yan Jiu | EA on hippocampal myelin and Rac1/PAK1/LIMK1/cofilin in AD | 42185061 / 10.13702/j.1000-0607.20250434 | Animal |
+| 1967 | 2026 | Zhen Ci Yan Jiu | EA brain-gut co-treatment in cerebral ischemia (TMAO-HMGB1/NLRP3) | 42015634 / 10.13702/j.1000-0607.20250084 | Animal |
+| 1968 | 2026 | Zhen Ci Yan Jiu | Scalp-acupoint cluster puncture and hippocampal synaptic plasticity | 42015638 / 10.13702/j.1000-0607.20250733 | Animal |
+| 1969 | 2026 | Zhen Ci Yan Jiu | EA alleviating learning and memory impairment in post-stroke cognitive impairment | 42015633 / 10.13702/j.1000-0607.20250123 | Animal |
+| 1971 | 2026 | Front Aging Neurosci | EA inhibits pyroptosis to improve motor function in MPTP mouse PD model | — / 10.3389/fnagi.2026.1968826 | Animal |
 
-> 종설·데이터마이닝(1947, 1970, 1973, 478)은 기전 편수에 넣지 않았다. GV20 혈위 특이 사체·초음파·MRI 심도 실측 논문은 없다(506은 두침 표적 영상 분석으로 GV20 심도 실측이 아님).
+> Reviews and data-mining papers (1947, 1970, 1973, 478) were not counted among mechanism papers. There is no GV20-specific cadaveric, ultrasound or MRI depth-measurement paper (506 is an imaging analysis of scalp-acupuncture targets, not a depth measurement at GV20).
 
-### 8.2 Layer B 신경회로 매핑 (가설)
+### 8.2 Layer B Neural Circuit Mapping (Hypothesis)
 
-B-Check가 미부합(6/12)이므로 아래 경로는 모두 **가설**이다.
+Because the B-Check is not concordant (6/12), all pathways below are **hypotheses**.
 
-| 고전 주치(P_single) | 가설 경로 | Layer B 참조 | Layer A |
+| Classical indication (P_single) | Hypothesised pathway | Layer B reference | Layer A |
 |:---|:---|:---|:---|
-| 顶上痛·头痛 | 정수리 피부 V1·C2 구심 → 삼차-경수 복합체 수렴 (유추) | B1-01, B1-02, B3-20 | 직접 근거 없음 |
-| 中风·神昏·癫疾 | 두피 구심 자극 → 중추 신경염증·시냅스 가소성 변화 (동물, 중계 경로 미규명) | B3-11, B3-14 | 1946, 1949, 1952, 1956, 1967, 1969; 인체 1974 |
-| 小儿惊痫·神志 | 동물 5-HT·mPFC Glu/GABA 변화 (동물 한정) | B3-10, B3-11 | 1950, 1957 |
-| 不寐(현대 주치) | 근거 미흡 — 관찰 연구만 있음 | B4-04, B4-05 | 1978 |
+| Vertex pain (頂上痛) · headache (頭痛) | V1 and C2 afferents from the skin of the vertex → convergence in the trigeminocervical complex (by analogy) | B1-01, B1-02, B3-20 | No direct evidence |
+| Stroke (中風) · clouded consciousness (神昏) · epilepsy/madness (癲疾) | Scalp afferent stimulation → central neuroinflammation and changes in synaptic plasticity (animal; relay pathway not identified) | B3-11, B3-14 | 1946, 1949, 1952, 1956, 1967, 1969; human 1974 |
+| Infantile convulsions (小兒驚癇) · mental state (神志) | Changes in 5-HT and mPFC Glu/GABA in animals (animal only) | B3-10, B3-11 | 1950, 1957 |
+| Insomnia (不寐) (modern indication) | Insufficient evidence — observational studies only | B4-04, B4-05 | 1978 |
 
-> 구판 6장의 "RAS 각성", "전정-피질 경로", "세로토닌/멜라토닌 분비", "두정부 피질 직접 진동 자극(역설적 억제)", "DMN 활성 조절"은 Layer A·B 근거가 없어 삭제했다.
+> The earlier edition's Chapter 6 claims of "RAS arousal", "vestibulo-cortical pathway", "serotonin/melatonin secretion", "direct vibratory stimulation of the parietal cortex (paradoxical inhibition)" and "modulation of DMN activity" had no Layer A or B basis and have been deleted.
 
-**말초 구심 경로의 FMA 고정**: 가설 회로의 첫 구간(자침점 → 척수·뇌간 입구)은 FMA 관계로 아래와 같이 고정된다. 실선은 FMA 기재 관계, "is_a"는 클래스명에서 이은 줄기, 점선은 FMA 밖(B1·B3 유추)이다. 이 구간은 해부 고정일 뿐이며 B-Check 미부합(6/12) 판정을 바꾸지 않는다.
+**Pinning the peripheral afferent pathway with FMA**: the first segment of the hypothesised circuit (needling site → entry into the spinal cord and brainstem) is pinned by FMA relations as shown below. Solid lines are relations recorded in FMA, "is_a" marks trunks linked through class names, and dashed lines lie outside FMA (B1 and B3 analogy). This segment is an anatomical pinning only and does not change the not-concordant (6/12) B-Check verdict.
 
 ```mermaid
 flowchart TB
-  P(("GV20<br/>자침점")) -.피하.-> GON["큰뒤통수신경<br/>FMA:65443 · 공통"]
-  P -.피하.-> SON["눈확위·도르래위신경 말단<br/>FMA:52655 · 52642 · 김재효"]
-  P -.피하.-> ATN["귓바퀴관자신경<br/>FMA:53000 · 공통교재"]
-  GON -- "is_a: branch" --> C2R["C2 뒤가지<br/>FMA:8788"]
-  C2R --> C2["척수 C2<br/>(삼차-경수 복합체 수렴: B3-20 유추)"]
-  SON -- "is_a: branch" --> FN["이마신경 FMA:52638"]
-  FN -- "is_a: branch" --> V1["눈신경 V1 FMA:52621"]
-  ATN -- "is_a: branch" --> V3["아래턱신경 V3 FMA:52996"]
-  V1 --> TRI["삼차신경 FMA:50866"]
+  P(("GV20<br/>needling site")) -.subcutaneous.-> GON["Greater occipital nerve<br/>FMA:65443 · both textbooks"]
+  P -.subcutaneous.-> SON["Supraorbital & supratrochlear<br/>nerve terminals<br/>FMA:52655 · 52642 · Kim Jaehyo"]
+  P -.subcutaneous.-> ATN["Auriculotemporal nerve<br/>FMA:53000 · Common Textbook"]
+  GON -- "is_a: branch" --> C2R["Posterior ramus of C2<br/>FMA:8788"]
+  C2R --> C2["Spinal cord C2<br/>(trigeminocervical convergence: B3-20 analogy)"]
+  SON -- "is_a: branch" --> FN["Frontal nerve FMA:52638"]
+  FN -- "is_a: branch" --> V1["Ophthalmic nerve V1 FMA:52621"]
+  ATN -- "is_a: branch" --> V3["Mandibular nerve V3 FMA:52996"]
+  V1 --> TRI["Trigeminal nerve FMA:50866"]
   V3 --> TRI
-  TRI -. "B1: 삼차신경 척수로핵" .-> C2
-  P -.건막하층.-> EV["마루이끌정맥<br/>FMA:50791"]
-  EV -- tributary_of --> SSS["상시상정맥동<br/>FMA:50767"]
+  TRI -. "B1: spinal trigeminal nucleus" .-> C2
+  P -.subaponeurotic layer.-> EV["Parietal emissary vein<br/>FMA:50791"]
+  EV -- tributary_of --> SSS["Superior sagittal sinus<br/>FMA:50767"]
 ```
 
-*그림 8-1. FMA 5.1.0 관계로 그린 GV20 말초 경로. 구심 신경은 C2와 삼차신경(V1·V3) 두 계통이고, 두 계통은 삼차-경수 복합체에서 수렴한다는 것이 B3-20 유추다(FMA 밖). 마루이끌정맥 → 상시상정맥동 사슬은 반사 경로가 아니라 해부적 연결(감염 확산 경로, B1-01)로만 표시했다.*
+*Figure 8-1. Peripheral pathway of GV20 drawn from FMA 5.1.0 relations. The afferent nerves belong to two systems, C2 and the trigeminal nerve (V1 · V3); that the two converge in the trigeminocervical complex is a B3-20 analogy (outside FMA). The parietal emissary vein → superior sagittal sinus chain is shown only as an anatomical connection (a route of infection spread, B1-01), not as a reflex pathway.*
 
-### 8.3 B-Check 채점표
+### 8.3 B-Check Scoring Table
 
-| 항목 | 채점자 A | 채점자 B | 최종 | 참조 ID | papers.id | 근거 요지 |
+| Item | Rater A | Rater B | Final | Reference IDs | papers.id | Rationale |
 |:---|:---:|:---:|:---:|:---|:---|:---|
-| ① 자침 심도의 말초신경·혈관 실체 | 2 | 1 | **1** | B1-01, B1-03, B2-09 (+FMA) | 1961 | 2대 교재와 규범 해부서가 galea·큰뒤통수신경·V1 말단·뒤통수/얕은관자동맥·마루이끌정맥을 기재. 교재 구조 12종 모두 FMA 대응(FMA:46768·65443·50791 등, 4.4절; 얕은관자정맥 1행만 마루가지→줄기 상위 대응). 그러나 GV20 특이 사체·영상 심도 실측이 없음(1961은 체표 형태 측정) |
-| ② 척수 분절 정합 | 1 | 1 | **1** | B1-01, B1-02, B3-20 (+FMA) | — | V1·C2 피절 수렴과 Headache (頭痛)·Nuchal rigidity / Neck stiffness (項强)은 분절 대응을 유추할 수 있음(FMA: 큰뒤통수신경 → C2 뒤가지, 분절 합집합 C2). 신지·중풍·탈항은 분절 정합으로 설명되지 않음 |
-| ③ 구심 섬유형·수용체 | 1 | 1 | **1** | B3-06, B3-10, B3-11 | 1946 | GV20 특이 구심 섬유 실측 없음. 1946(TRPV4)은 뇌 조직 표적. 일반 침 구심 체계에서 유추 |
-| ④ 중추 중계·경로 | 1 | 1 | **1** | B1-02, B3-11 | 1949, 1950, 1955, 1957, 1969 | 동물에서 해마·mPFC·배측솔기핵 5-HT 변화(다혈 병용). 말초→중추 중계 경로 미규명 |
-| ⑤ 원심 경로·효과 방향 | 1 | 1 | **1** | B3-14 | 1946, 1949, 1950, 1952, 1956, 1967 | 신경염증 억제·인지 개선 방향이 중풍·신지 주치와 일치하나 동물·병용 한정 |
-| ⑥ 인체 전환 근거 | 1 | 1 | **1** | B4-03, B4-04, B4-05 | 1972, 1974, 1976, 1977, 1978 | 인체 피질 네트워크·동맥경직도·EEG 연구가 있으나 비RCT·preprint·병용. 혈위 특이성 반증(B4-04, B4-05) 미해결 |
-| **합계** | 7 | 6 | **6 / 12** | | | |
-| **판정·표지** | | | **미부합** | | | ①·② 각 1점이나 합계 < 8. ⑥ = 1이므로 "(동물 한정)" 표지 없음. 상충 근거 없음(1961은 정위 쟁점이며 기전 상충이 아니어서 "가설" 등급 제한 미적용, 조정 기록 참조). 반사 기전 기술은 가설로 한정 |
+| ① Peripheral nerve/vessel substrate at needling depth | 2 | 1 | **1** | B1-01, B1-03, B2-09 (+FMA) | 1961 | The two textbooks and normative anatomy texts list the galea, greater occipital nerve, V1 terminals, occipital/superficial temporal arteries and parietal emissary vein. All 12 textbook structures map to FMA (FMA:46768 · 65443 · 50791, etc., Section 4.4; only the superficial temporal vein row maps from parietal branch to the parent trunk). But there is no GV20-specific cadaveric or imaging depth measurement (1961 is surface morphometry) |
+| ② Spinal segmental concordance | 1 | 1 | **1** | B1-01, B1-02, B3-20 (+FMA) | — | For headache and neck stiffness, segmental correspondence can be inferred from V1–C2 dermatomal convergence (FMA: greater occipital nerve → posterior ramus of C2; union of segments C2). Mental state, stroke and prolapse of the rectum are not explained by segmental concordance |
+| ③ Afferent fibre type & receptors | 1 | 1 | **1** | B3-06, B3-10, B3-11 | 1946 | No measurement of GV20-specific afferent fibres. 1946 (TRPV4) targets brain tissue. Inferred from the general acupuncture afferent system |
+| ④ Central relay & pathway | 1 | 1 | **1** | B1-02, B3-11 | 1949, 1950, 1955, 1957, 1969 | Changes in hippocampus, mPFC and dorsal raphe 5-HT in animals (multi-point combinations). Peripheral → central relay pathway not identified |
+| ⑤ Efferent pathway & direction of effect | 1 | 1 | **1** | B3-14 | 1946, 1949, 1950, 1952, 1956, 1967 | Suppression of neuroinflammation and improved cognition point in the same direction as the stroke and mental-state indications, but animal and combination studies only |
+| ⑥ Human translation | 1 | 1 | **1** | B4-03, B4-04, B4-05 | 1972, 1974, 1976, 1977, 1978 | Human studies of cortical networks, arterial stiffness and EEG exist, but they are non-RCT, preprint or combination studies. Counter-evidence on point specificity (B4-04, B4-05) unresolved |
+| **Total** | 7 | 6 | **6 / 12** | | | |
+| **Verdict & flags** | | | **Not concordant** | | | ① and ② score 1 each, but the total is < 8. Because ⑥ = 1, no "(animal only)" flag. No conflicting evidence (1961 concerns location, not a mechanistic conflict, so the "hypothesis" grade restriction is not applied; see the adjudication record). Description of the reflex mechanism is limited to hypothesis |
 
-### 8.4 외부 검색 로그 (sync_log, 2026-10-04·2026-10-23 Rank 6 실행)
+### 8.4 External Search Log (sync_log; Rank 6 runs of 2026-10-04 and 2026-10-23)
 
-| 일시 | 소스 | HTTP | 수집 | 중복제거 | 신규 | 쿼리 |
+| Timestamp | Source | HTTP | Fetched | Duplicates removed | New | Query |
 |---|---|---|---|---|---|---|
 | 2026-10-04T09:52:10 | pubmed | 200 | 16 | — | — | ("GV20" OR "Baihui" OR "百會") AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) \| ("GV20" OR "Baihui" OR "百會") A |
 | 2026-10-04T09:52:10 | openalex | 200 | 24 | — | — | doi_starts_with:10.13703,title_and_abstract.search:"Baihui" OR "GV20" \| doi_starts_with:10.13702,title_and_abstract.search:"Baihui" OR "GV20" \| has_doi:true,tit |
@@ -308,192 +309,208 @@ flowchart TB
 | 2026-10-23T21:43:54 | pubmed | 200 | 16 | — | — | ("GV20" OR "Baihui" OR "百会") AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) |
 | 2026-10-23T21:43:54 | openalex | 200 | 24 | — | — | doi_starts_with:10.13703 / 10.13702 · title_and_abstract.search:"Baihui" OR "GV20" … |
 | 2026-10-23T21:43:54 | crossref | 200 | 2 | — | — | Baihui acupuncture nerve reflex |
-| 2026-10-23T21:43:54 | all | — | 42 | 32 | 10 | 기존 병합 29 · 배치 내 중복 3 |
+| 2026-10-23T21:43:54 | all | — | 42 | 32 | 10 | 29 already merged · 3 duplicates within the batch |
 
-- **2026-10-23 재실행 신규 10편**(papers.id 2256~2265): 전침 뇌허혈·미세아교세포(2256 PMID 40831324, 2259 PMID 39834103 — GV14·GV20 등 병용 동물), 급성 허혈성 뇌졸중 혈장 IL-17/IL-10(2257 PMID 35938325), 전침 예처치 종설(2258 PMID 39361504), 교대근무 수면장애 调神针法 RCT(2260 PMID 42864286, 다혈 처방), 혈관성 치매 종설의 종설(2261), GV24·GV20 MCAO/R 쥐(2262, preprint), 고혈압 심근비대(2263), 한의 진료지침 혈위 데이터마이닝(2264), 안면마비 증례(2265). 모두 **다혈 병용·동물·종설**이며 GV20 단독 구심 경로를 측정한 연구가 없어 B-Check(6/12, 미부합)·ARI 판정을 바꾸지 않는다. 2260은 인체 RCT이나 다혈 처방이라 ⑥ = 1 유지.
+- **10 new papers from the 2026-10-23 re-run** (papers.id 2256–2265): electroacupuncture in cerebral ischaemia and microglia (2256 PMID 40831324, 2259 PMID 39834103 — animal studies combining GV14, GV20, etc.), plasma IL-17/IL-10 in acute ischaemic stroke (2257 PMID 35938325), a review of electroacupuncture pretreatment (2258 PMID 39361504), an RCT of the 調神針法 (spirit-regulating needling) for shift-work sleep disorder (2260 PMID 42864286, multi-point prescription), an overview of reviews on vascular dementia (2261), GV24 · GV20 in MCAO/R rats (2262, preprint), hypertensive cardiac hypertrophy (2263), data mining of acupoints in Korean medicine clinical practice guidelines (2264), and a facial palsy case report (2265). All are **multi-point, animal or review** studies, and none measures a GV20-only afferent pathway, so they do not change the B-Check (6/12, not concordant) or the ARI verdict. 2260 is a human RCT but uses a multi-point prescription, so ⑥ = 1 is kept.
 
 ---
 
-## 9. Classical Indications Stratification Table (Single-Point P_single vs. Complex Formulae)
+## 9. Indication Separation Table (P_single vs. Derived from Combinations)
 
-### 9.1 노이즈 여과
+### 9.1 Noise Filtering
 
-| 항목 | 출전 | 처리 |
+| Item | Source | Handling |
 |:---|:---|:---|
-| 泥丸宮·泥丸 | 《普济本事方》 卷二 — 도가 술어(通考 L2414) | 해부 분석에서 제외 |
-| "百病皆治" | 《针灸聚英》 1:122, 《古今医统大全》(穴位通鉴 L1542 일대) | 과잉 확장. P_single에서 제외 |
-| "百脉之所会"(穴名 해석) | 穴名释义(穴位通鉴 L1404·L1414) | 경락론적 명칭 해석. 제외 |
-| 卒起僵仆 | *Qianjin Yaofang* (《千金要方》) 卷三十 → 囟会 주치 오록(通考 L2479) | **GV20 주치에서 삭제** |
-| 维会 尸厥 치험(《标幽赋》·《通玄指要赋》) | 脐中(神阙) 별명 오록(通考 L2414) | **GV20 근거에서 삭제** |
-| 胃下垂·肾下垂 | 7판 《针灸学》 | 通考가 "暂不收录"(L2501). 제외 |
-| (구판) "通百脈", "督脈統諸陽", "火穴 성질" | 3대 원전 chunk 검색에서 확인 안 됨 | 출전 미확인 — 삭제 |
+| 泥丸宮 · 泥丸 | *Puji Benshi Fang* (《普濟本事方》), vol. 2 — Daoist term (Tongkao L2414) | Excluded from anatomical analysis |
+| "百病皆治" (treats all diseases) | *Zhenjiu Juying* (《針灸聚英》) 1:122, *Gujin Yitong Daquan* (《古今醫統大全》) (around Xuewei Tongjian L1542) | Over-extension. Excluded from P_single |
+| "百脈之所會" (interpretation of the point name) | 穴名釋義 (Xuewei Tongjian L1404 · L1414) | Meridian-theoretical interpretation of the name. Excluded |
+| Sudden collapse on rising (卒起僵仆) | *Qianjin Yaofang* (《千金要方》) vol. 30 → indication of 囟會 mistakenly transferred (Tongkao L2479) | **Deleted from GV20 indications** |
+| 維會 尸厥 case records (《標幽賦》 · 《通玄指要賦》) | Mistaken entry of an alias of 臍中 (神闕) (Tongkao L2414) | **Deleted from GV20 evidence** |
+| Gastroptosis (胃下垂) · nephroptosis (腎下垂) | 7th edition 《針灸學》 | The Tongkao says "暫不收錄" (L2501). Excluded |
+| (earlier edition) "通百脈", "督脈統諸陽", "nature of a fire point (火穴)" | Not found in a chunk search of the three primary classics | Source unverified — deleted |
 
-### 9.2 단독(P_single) vs 배오 분리
+### 9.2 Single-point (P_single) vs. Combination
 
-| 주치 | 원전 단독 기록 | 배오 기록 | 판정 |
+| Indication | Single-point record in the classics | Combination record | Adjudication |
 |:---|:---|:---|:---|
-| 顶上痛·风头重·头痛 | *Huangdi Mingtang Jing* (《黃帝明堂經》) 원주치(通考 L2476); "治风头痛方……灸百会"(证治通鉴_161-240 L3126) | 《针灸集要》 百会+合谷·攒竹 등 | **P_single** |
-| 癫疾·小儿惊痫 | *Huangdi Mingtang Jing* (《黃帝明堂經》) 원주치; 仓公法 "狂痫不识人 … 灸百会九壮"(《千金》 卷十四) | 多穴 灸方(《千金》 卷五) | **P_single** |
-| 痎疟·耳鸣·痉·目如脱·热病汗出善呕 | *Huangdi Mingtang Jing* (《黃帝明堂經》) 원주치 | — | **P_single(원전)** — 현대 교재에서는 대부분 누락 |
-| 眩晕(头目眩痛) | 《太平圣惠方·明堂》 "主头目眩痛"(通考 【适应症】 4항) | 风池+百会 등 | P_single(송대 추가) |
-| 中风·神昏·尸厥 | 《针经摘英集》 "治中风，手足不遂，针百会 … 针入二分"; 《外台》 尸厥 "针百会 … 针入三分补之" | 《千金》 卷八 다혈 灸방; 证治通鉴_161-240 L1106 尸厥 6혈 처방 | 단독 + 배오 혼재 |
-| **脱肛** | ***Qianjin Yaofang* (《千金要方》) 卷五 "小儿脱肛方：灸顶上旋毛中三壮"; 《太平圣惠方·明堂》 "灸百会一穴三壮"; 《针经摘英集》 "刺督脉百会一穴"**(通考 L2575; 证治通鉴_321-400 L1543·L1559) | 百会+长强·鸠尾 등(《席弘赋》, 현대 논문) | **P_single** (구판의 "배오 파생"은 오류) |
-| 阴挺(子宫脱垂) | 원전 단독 기록 미확인 | — | 현대 교재(2판 이후) 주치. 고전 근거 보류 |
-| 不寐(失眠) | 원전 단독 기록 없음(*Taiping Shenghui Fang* (《太平聖惠方》)은 오히려 "多睡") | 현대 灸 百会+涌泉 등 | 현대 교재(5판 이후) 주치. P_single 고전 근거 없음 |
-| 健忘 | 《太平圣惠方·针经》 "忘前失后", *Tongren* (《銅人》) "健忘" | — | P_single(송대 추가) |
+| Vertex pain (頂上痛) · heavy head from wind (風頭重) · headache (頭痛) | Original *Huangdi Mingtang Jing* (《黃帝明堂經》) indication (Tongkao L2476); "治風頭痛方……灸百會" (Zhengzhi Tongjian `_161-240` L3126) | 《針灸集要》 百會 + 合谷 · 攢竹, etc. | **P_single** |
+| Epilepsy/madness (癲疾) · infantile convulsions (小兒驚癇) | Original *Huangdi Mingtang Jing* indication; Canggong's method (倉公法) "狂癇不識人 … 灸百會九壯" (《千金》 vol. 14) | Multi-point (多穴) moxibustion prescriptions (《千金》 vol. 5) | **P_single** |
+| Malaria (痎瘧) · tinnitus (耳鳴) · convulsive spasm (痙) · eyes as if bulging out (目如脫) · febrile disease with sweating and frequent vomiting (熱病汗出善嘔) | Original *Huangdi Mingtang Jing* indications | — | **P_single (classical)** — mostly omitted from modern textbooks |
+| Dizziness (眩暈) (頭目眩痛) | *Taiping Shenghui Fang · Mingtang* (《太平聖惠方·明堂》) "主頭目眩痛" (Tongkao 【適應症】, item 4) | 風池 + 百會, etc. | P_single (added in the Song) |
+| Stroke (中風) · clouded consciousness (神昏) · corpse-like reversal (尸厥) | 《針經摘英集》 "治中風，手足不遂，針百會 … 針入二分"; 《外臺》 尸厥 "針百會 … 針入三分補之" | Multi-point moxibustion prescriptions in 《千金》 vol. 8; 6-point 尸厥 prescription in Zhengzhi Tongjian `_161-240` L1106 | Mixed single-point and combination |
+| **Prolapse of the rectum (脫肛)** | ***Qianjin Yaofang* (《千金要方》) vol. 5 "小兒脫肛方：灸頂上旋毛中三壯"; 《太平聖惠方·明堂》 "灸百會一穴三壯"; 《針經摘英集》 "刺督脈百會一穴"** (Tongkao L2575; Zhengzhi Tongjian `_321-400` L1543 · L1559) | 百會 + 長強 · 鳩尾, etc. (《席弘賦》, modern papers) | **P_single** (the earlier edition's "derived from combination" was an error) |
+| Uterine prolapse (陰挺, 子宮脫垂) | No single-point record found in the classics | — | Indication of modern textbooks (2nd edition onward). Classical basis on hold |
+| Insomnia (不寐, 失眠) | No single-point record in the classics (the *Taiping Shenghui Fang* (《太平聖惠方》) instead gives "多睡", somnolence) | Modern moxibustion 百會 + 湧泉, etc. | Indication of modern textbooks (5th edition onward). No classical basis for P_single |
+| Forgetfulness (健忘) | 《太平聖惠方·針經》 "忘前失後", 《銅人》 "健忘" | — | P_single (added in the Song) |
 
 ---
 
-## 10. ARI v3.0 Quantitative Profile Evaluation & Final Conclusion
+## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-**Target T1**: 고전 원전 정위(*Huangdi Mingtang Jing* (《黃帝明堂經》) "在前顶后一寸五分，顶中央旋毛中，陷可容指") ≈ WHO 앞머리털경계 정중 직상 5촌. 단일 Target(분기 없음, Δ 미실측은 7절 참조).
+**Target T1**: classical location (*Huangdi Mingtang Jing* (《黃帝明堂經》) "在前頂後一寸五分，頂中央旋毛中，陷可容指") ≈ WHO 5 cun directly above the midpoint of the anterior hairline. Single Target (no branching; Δ not measured, see Section 7).
 
-### 10.1 하위 점수
+### 10.1 Sub-scores
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 |:---|:---:|:---:|:---:|:---|:---|
-| S_orig (0.40, 잠정) | 75.0 | 87.5 | **81.25** | 최초 기술이 위치·심도를 명시하고 후대 일치율 ≥ 80%. 이명 혼용과 전사 오류 교정은 원전으로 해소할 수 있으나 구판 보고서가 적용하지 못함(A 50/50, B 75/75) | 通考 L2397~2414, L2433, L2479, L2594 |
-| S_clarity (0.35, 잠정) | 75 | 75 | **75** | 2대 교재가 galea·큰뒤통수신경·뒤통수/얕은관자 혈관·마루이끌정맥에 일치하고 B1·FMA 표준 실체로 확인(신경 차이는 V1/V3 서로 다른 줄기의 상보, 6절). GV20 특이 실측 논문 없음 → 100 불가 | 교재 데이터셋 행216~221 / 행321~330; B1-01, B1-03; papers.id 1961; FMA:46768·65443·50791 |
-| S_reflex (0.25, 잠정) | 50 | 50 | **50** | 동물 연구 다수 + 인체 비RCT. B-Check 6~7 → 50 단계 | papers.id 1946~1978(8.1절); B-Check 6/12 |
-| S_safety → SI | 75 | 75 | **75** | Contraindicated for Needling (禁鍼) 없음. 직자 6.9mm는 골막 접촉 가능하나 두개골이 심부를 차단. 원전이 사자·평자·沿皮刺를 명시하여 회피 가능. ≥ 10mm 여유 조건(100)은 충족 못 함 | 자침깊이 DB 행46; 通考 【操作】, L2612 |
+| S_orig (0.40, provisional) | 75.0 | 87.5 | **81.25** | The earliest description specifies location and depth, and agreement in later texts is ≥ 80%. Alias confusion and transcription errors can be resolved from the classics, but the earlier report did not apply this (A 50/50, B 75/75) | Tongkao L2397–2414, L2433, L2479, L2594 |
+| S_clarity (0.35, provisional) | 75 | 75 | **75** | The two textbooks agree on the galea, greater occipital nerve, occipital/superficial temporal vessels and parietal emissary vein, confirmed as standard entities by B1 and FMA (the nerve difference is complementary V1/V3 from different trunks, Section 6). No GV20-specific measurement paper → 100 not possible | Textbook datasets rows 216–221 / rows 321–330; B1-01, B1-03; papers.id 1961; FMA:46768 · 65443 · 50791 |
+| S_reflex (0.25, provisional) | 50 | 50 | **50** | Many animal studies + human non-RCT. B-Check 6–7 → level 50 | papers.id 1946–1978 (Section 8.1); B-Check 6/12 |
+| S_safety → SI | 75 | 75 | **75** | No contraindication. Perpendicular 6.9 mm may touch the periosteum, but the skull shields the deep structures. The classics specify oblique, transverse and 沿皮刺 insertion, so contact is avoidable. The ≥ 10 mm margin condition (100) is not met | Needling-depth DB row 46; Tongkao 【操作】, L2612 |
 
-### 10.2 S_orig 하위 4항목
+### 10.2 S_orig Sub-items
 
-| 하위 항목 | 채점자 A | 채점자 B | 근거 |
+| Sub-item | Rater A | Rater B | Rationale |
 |:---|:---:|:---:|:---|
-| ① 최초 기술 명확성 | 100 | 100 | *Huangdi Mingtang Jing* (《黃帝明堂經》)이 위치와 심도("刺入三分")를 모두 지정 |
-| ② 후대 문헌 일치율 | 100 | 100 | 《通考》 【定位】 1항에서 14종이 같은 문구를 승계. 肘后·外台·千金·聚英·金鉴도 같은 지점 → ≥ 80% |
-| ③ 이명 혼용 해소 | 50 | 75 | 원전은 维会(神阙 오록)·巅上(부위어)·岭上(오기)·泥丸宫(도가 술어)을 해소함. 구판 보고서는 维会를 확정 이명으로 분류하고 天满·巅上 출전을 잘못 적었으며 KJH의 天山·涅丸宫·鬼门을 누락함(본 개정에서 3절로 정정) |
-| ④ 《通考》 전사 오류 교정 | 50 | 75 | 《通考》가 《千金》 '卒起僵仆'(囟会 오록), 维会 중복 기재, 7판 胃下垂·肾下垂를 교정. 구판의 《通考》 인용은 가공이었음(본 개정에서 삭제·정정) |
-| 평균 | 75.0 | 87.5 | |
+| ① Clarity of earliest description | 100 | 100 | The *Huangdi Mingtang Jing* (《黃帝明堂經》) specifies both location and depth ("刺入三分") |
+| ② Agreement in later texts | 100 | 100 | In the *Tongkao* (《通考》) 【定位】, item 1, 14 texts inherit the same wording. 肘後 · 外臺 · 千金 · 聚英 · 金鑑 also give the same site → ≥ 80% |
+| ③ Resolution of alias confusion | 50 | 75 | The classics resolve 維會 (mistaken entry for 神闕), 巔上 (location term), 嶺上 (scribal error) and 泥丸宮 (Daoist term). The earlier report classified 維會 as a confirmed alias, misattributed the sources of 天滿 and 巔上, and omitted KJH's 天山, 涅丸宮 and 鬼門 (corrected in Section 3 in this revision) |
+| ④ Collation of transcription errors in the *Tongkao* (《通考》) | 50 | 75 | The *Tongkao* corrects 《千金》 '卒起僵仆' (mistaken transfer from 囟會), the duplicate entry of 維會, and the 7th-edition 胃下垂 · 腎下垂. The earlier edition's *Tongkao* quotations were fabricated (deleted and corrected in this revision) |
+| Mean | 75.0 | 87.5 | |
 
-### 10.3 게이트 적용 내역
+### 10.3 Gates Applied
 
-| 게이트 | 조건 | 결과 |
+| Gate | Condition | Result |
 |:---|:---|:---|
-| 게이트 1 | S_orig < 50 또는 S_clarity < 50 → 최고 C | 미적용 (81.25, 75) |
-| 게이트 2 | Layer A 0편 → S_reflex ≤ 25, (H) | 미적용 (Layer A 23편, 혈위 관련 17편) |
-| 게이트 3 | SI ≤ 25 → ⚠ | 미적용 (SI 75) |
+| Gate 1 | S_orig < 50 or S_clarity < 50 → maximum C | Not triggered (81.25, 75) |
+| Gate 2 | 0 Layer A papers → S_reflex ≤ 25, (H) | Not triggered (23 Layer A papers, 17 related to the point) |
+| Gate 3 | SI ≤ 25 → ⚠ | Not triggered (SI 75) |
 
-### 10.4 ARI-Core·등급·SI·민감도
+### 10.4 ARI-Core, Grade, SI and Sensitivity
 
-| 항목 | 값 |
+| Item | Value |
 |:---|:---|
-| ARI-Core 채점자 A | 0.40×75 + 0.35×75 + 0.25×50 = **68.75** |
-| ARI-Core 채점자 B | 0.40×87.5 + 0.35×75 + 0.25×50 = **73.75** |
-| **ARI-Core (평균 ± 반범위)** | **71.2 ± 2.5** |
-| 등급·표지 | **B (개연, Probable)**, 표지 없음. ± 구간 하단(68.75)은 C 구간 |
-| SI | **75** (등급 미부여) |
-| 등가중치 민감도 | (81.25 + 75 + 50) / 3 = **68.8 (C)** → 등급 변동 → **가중치 민감** |
-| 산출식 | ARI v3.0, 잠정 가중치 0.40/0.35/0.25(미검증) |
+| ARI-Core, Rater A | 0.40×75 + 0.35×75 + 0.25×50 = **68.75** |
+| ARI-Core, Rater B | 0.40×87.5 + 0.35×75 + 0.25×50 = **73.75** |
+| **ARI-Core (mean ± half-range)** | **71.2 ± 2.5** |
+| Grade & flags | **B (Probable)**, no flags. The lower bound of the ± interval (68.75) falls in the C range |
+| SI | **75** (no grade assigned) |
+| Equal-weight sensitivity | (81.25 + 75 + 50) / 3 = **68.8 (C)** → grade changes → **weight-sensitive** |
+| Formula | ARI v3.0, provisional weights 0.40/0.35/0.25 (unvalidated) |
 
-### 10.5 분기 판정
+### 10.5 Branch Decision
 
-Target이 하나이므로 ΔARI-Core 판정은 해당 없다. 1961의 정위 쟁점으로 Δ > 15mm가 확인되면 Target 2(WHO 골도 위치)를 따로 채점해야 한다.
+There is one Target, so the ΔARI-Core decision does not apply. If the location issue raised by 1961 confirms Δ > 15 mm, Target 2 (the WHO bone-proportional position) must be scored separately.
 
-### 10.6 조정 기록
+### 10.6 Adjudication Record
 
-| 지표 | A–B 차이 | 15점 이상 | 조정 내용 |
+| Index | A–B difference | ≥ 15 points | Adjudication |
 |:---|:---:|:---:|:---|
-| S_orig | 12.5 | 아니오 | 평균 사용 |
-| S_clarity | 0 | 아니오 | — |
-| S_reflex | 0 | 아니오 | — |
-| S_safety | 0 | 아니오 | — |
-| 조정 메모 | needs_adjudication: 없음 | | 채점자 B의 상충 기록(papers.id 1961, 旋毛 위치 ≠ 골도 위치)은 정위 쟁점이며 반사 기전 상충이 아니므로 B-Check 판정에 '가설'을 적용하지 않음. 해당 쟁점은 본문 정위·분기 절(7절)에 명시. 15점 이상 불일치 항목 없음. |
+| S_orig | 12.5 | No | Mean used |
+| S_clarity | 0 | No | — |
+| S_reflex | 0 | No | — |
+| S_safety | 0 | No | — |
+| Adjudication note | needs_adjudication: none | | Rater B's conflict record (papers.id 1961, 旋毛 position ≠ bone-proportional position) is a location issue, not a conflict over the reflex mechanism, so 'hypothesis' is not applied to the B-Check verdict. The issue is stated in the location and branching section of the main text (Section 7). No item differed by 15 points or more. |
 
-### 10.7 최종 결론
+### 10.7 Final Conclusion
 
-1. GV20의 해부 실체는 **개연(B)** 수준이다. 두정부 정중선 시상봉합 위 두피에서 피부·치밀 피하층(큰뒤통수신경 C2 + 삼차신경 V1/V3 말단, 뒤통수동맥–얕은관자동맥 마루가지 문합)과 머리덮개널힘줄(galea)이 핵심이고, 그 아래가 건막하 소성결합조직(마루이끌정맥)과 머리뼈바깥막이다. 혈위 특이 실측이 없어 "확정"은 아니다.
-2. 원전 정위는 체표 표지인 **가마 오목(旋毛中，陷可容指)**이고, 《通考》는 골도 절량보다 체표 표지를 우선하라고 한다. 가마와 골도 5촌 위치의 차이는 papers.id 1961이 시사하지만 수치 검증은 남아 있다.
-3. 반사 기전은 **가설**이다(B-Check 6/12, 미부합). 동물 전침 연구는 중풍·인지·신지 방향과 일치하지만 다른 혈과 병용한 것이 많고, 인체 전환 근거는 비RCT 수준이다.
-4. 안전: SI 75. 원전 심도(2~3푼, 4.6~6.9mm)는 직자도 허용되며 두개골이 심부를 차단한다. 평자·沿皮刺는 골막 접촉을 피하는 선택지다. 소아 숫구멍 미폐쇄·뇌수종에는 신중해야 한다.
-5. 원전 고유 주치는 头痛·顶上痛, 癫疾·小儿惊痫, 痎疟·耳鸣·痉이고, 脱肛도 단독 시술 기록이 있다. 不寐·阴挺·胃下垂는 현대 교재가 추가한 주치다.
+1. The anatomical substrate of GV20 is at the **probable (B)** level. In the scalp over the sagittal suture on the parietal midline, the core consists of the skin and dense subcutaneous layer (greater occipital nerve C2 + trigeminal V1/V3 terminals; anastomosis of the occipital artery with the parietal branch of the superficial temporal artery) and the epicranial aponeurosis (galea), beneath which lie the subaponeurotic loose connective tissue (parietal emissary vein) and the pericranium. There is no point-specific measurement, so it is not "established".
+2. The classical location is the surface landmark of the **depression at the hair whorl (旋毛中，陷可容指)**, and the *Tongkao* (《通考》) advises giving surface landmarks precedence over bone-proportional measurement. papers.id 1961 suggests a difference between the whorl and the 5-cun bone-proportional position, but numerical verification remains outstanding.
+3. The reflex mechanism is a **hypothesis** (B-Check 6/12, not concordant). Animal electroacupuncture studies point in the same direction as the stroke, cognitive and mental-state indications, but many combine other points, and evidence of human translation is at the non-RCT level.
+4. Safety: SI 75. The classical depth (2–3 fen, 4.6–6.9 mm) permits perpendicular insertion, and the skull shields the deep structures. Transverse insertion and 沿皮刺 are options that avoid contact with the periosteum. Caution is required with an unclosed infant fontanelle and with hydrocephalus.
+5. The original classical indications are headache (頭痛) · vertex pain (頂上痛), epilepsy/madness (癲疾) · infantile convulsions (小兒驚癇), and malaria (痎瘧) · tinnitus (耳鳴) · convulsive spasm (痙); prolapse of the rectum (脫肛) also has single-point treatment records. Insomnia (不寐), uterine prolapse (陰挺) and gastroptosis (胃下垂) are indications added by modern textbooks.
 
 ---
 
-## 부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)
+## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-생성: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile GV20 --md` (2026-10-23).
+Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile GV20 --md` (2026-10-23).
 
-| 구분 | 교재 용어 | FMA 실체 | 대응 | 출처 | 상위 줄기 / 배출 사슬 | 분절 |
+| Category | Textbook term | FMA substrate | Match | Source | Parent trunk / drainage chain | Segment |
 |:---|:---|:---|:---|:---|:---|:---|
-| 근막 | 머리덮개널힘줄 (galea aponeurotica / epicranial aponeurosis) | FMA:46768 Aponeurosis of epicranius | exact | 공통교재·김재효 | — | — |
-| 근막 | 머리뼈바깥막 (pericranium) | FMA:76623 Pericranium | exact | 김재효 | — | — |
-| 신경 | 귓바퀴관자신경 (auriculotemporal nerve) | FMA:53000 Auriculotemporal nerve | exact | 공통교재 | FMA:52996 Mandibular nerve → FMA:50866 Trigeminal nerve | — |
-| 신경 | 큰뒤통수신경 (greater occipital nerve) | FMA:65443 Greater occipital nerve | exact | 공통교재·김재효 | FMA:8788 Posterior ramus of second cervical nerve | C2(추론) |
-| 신경 | 눈확위신경 (supraorbital nerve) | FMA:52655 Supra-orbital nerve | exact | 김재효 | FMA:52638 → 52621 Ophthalmic nerve → 50866 | — |
-| 신경 | 도르래위신경 (supratrochlear nerve) | FMA:52642 Supratrochlear nerve | exact | 김재효 | FMA:52638 → 52621 → 50866 | — |
-| 혈관 | 뒤통수동맥 | FMA:49586 Occipital artery | exact | 공통교재·김재효 | FMA:10635 External carotid artery | — |
-| 혈관 | 뒤통수정맥 | FMA:50802 Occipital vein | exact | 공통교재·김재효 | FMA:4746 Deep cervical vein (is_a 분류 오류, 4.4절 주석 1) | — |
-| 혈관 | 얕은관자동맥의 마루가지 | FMA:49670 Parietal branch of superficial temporal artery | exact | 김재효 | FMA:49650 → 10635 | — |
-| 혈관 | 얕은관자동맥 | FMA:49650 Superficial temporal artery | exact | 공통교재 | FMA:10635 → FMA:3939 Common carotid artery | — |
-| 혈관 | 얕은관자정맥 (마루가지 포함) | FMA:50932 Superficial temporal vein | exact / parent(branch_of) | 공통교재·김재효 | FMA:50928 Retromandibular vein → FMA:13110 External jugular vein | — |
-| 혈관 | 마루이끌정맥 (parietal emissary vein) | FMA:50791 Parietal emissary vein | exact | 공통교재·김재효 | FMA:50767 Superior sagittal sinus → 가로·구불정맥굴 → 속목정맥 | — |
+| Fascia | Epicranial aponeurosis (galea aponeurotica / epicranial aponeurosis) | FMA:46768 Aponeurosis of epicranius | exact | Common Textbook · Kim Jaehyo | — | — |
+| Fascia | Pericranium | FMA:76623 Pericranium | exact | Kim Jaehyo | — | — |
+| Nerve | Auriculotemporal nerve | FMA:53000 Auriculotemporal nerve | exact | Common Textbook | FMA:52996 Mandibular nerve → FMA:50866 Trigeminal nerve | — |
+| Nerve | Greater occipital nerve | FMA:65443 Greater occipital nerve | exact | Common Textbook · Kim Jaehyo | FMA:8788 Posterior ramus of second cervical nerve | C2 (inferred) |
+| Nerve | Supraorbital nerve | FMA:52655 Supra-orbital nerve | exact | Kim Jaehyo | FMA:52638 → 52621 Ophthalmic nerve → 50866 | — |
+| Nerve | Supratrochlear nerve | FMA:52642 Supratrochlear nerve | exact | Kim Jaehyo | FMA:52638 → 52621 → 50866 | — |
+| Vessel | Occipital artery | FMA:49586 Occipital artery | exact | Common Textbook · Kim Jaehyo | FMA:10635 External carotid artery | — |
+| Vessel | Occipital vein | FMA:50802 Occipital vein | exact | Common Textbook · Kim Jaehyo | FMA:4746 Deep cervical vein (is_a misclassification, Section 4.4 note 1) | — |
+| Vessel | Parietal branch of superficial temporal artery | FMA:49670 Parietal branch of superficial temporal artery | exact | Kim Jaehyo | FMA:49650 → 10635 | — |
+| Vessel | Superficial temporal artery | FMA:49650 Superficial temporal artery | exact | Common Textbook | FMA:10635 → FMA:3939 Common carotid artery | — |
+| Vessel | Superficial temporal vein (including parietal branch) | FMA:50932 Superficial temporal vein | exact / parent(branch_of) | Common Textbook · Kim Jaehyo | FMA:50928 Retromandibular vein → FMA:13110 External jugular vein | — |
+| Vessel | Parietal emissary vein | FMA:50791 Parietal emissary vein | exact | Common Textbook · Kim Jaehyo | FMA:50767 Superior sagittal sinus → transverse and sigmoid sinuses → internal jugular vein | — |
 
-- 분절 합집합(B-Check ② 입력): **C2**(큰뒤통수신경). V1·V3는 뇌신경이라 분절 없음.
-- 두 교재 비교: 공통 6 · 공통교재 단독 2(FMA:53000·49650) · 김재효 단독 4(FMA:76623·52655·52642·49670).
-- 대응 수준: 김재효의 "얕은관자정맥의 마루가지"는 FMA에 정맥 마루가지 실체가 없어 얕은관자정맥(FMA:50932)에 **상위 구조 대응**(parent)으로 연결했다.
-- 인용 한계: FMA는 규범 해부 온톨로지로 혈위 특이 심도·피부 분포 영역·반사 기능의 근거가 아니다. 뒤통수정맥 is_a 오류는 인용하지 않았다.
-
----
-
-## v2.7 FMA 보강 이력 (2026-10-23)
-
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
-|:---|:---|:---|:---|
-| 머리말 | — | FMA 5.1.0 해부 온톨로지 줄, FMA 보강 일자 추가 | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
-| 4.3절 | 문자 단면도만 | 그림 4-1 관상 단면 해부 모식도(PNG) 추가 | `.claude/skills/acupoint-anatomy/scripts/fma/figures/GV20_cross_section.py` |
-| 4.4절 신설 | — | Layer별 FMA 대조표, FMA 주석 3건(뒤통수정맥 is_a 분류 오류, 분절 C2만, 피부 분포 미기재) | `fma_query.py profile GV20`, `entity 50802` |
-| 6절 | 교재 비교 4열 | FMA 판별 열, 신경 차이 = V1/V3 서로 다른 줄기(상보) 해석, 혈관 차이 = 줄기/가지 | FMA is_a 사슬 |
-| 8.2절 | 가설 회로 표 | 그림 8-1 FMA 말초 경로(Mermaid) 추가 — 판정(미부합 6/12) 불변 | FMA:65443→8788; 52655→52638→52621; 53000→52996; 50791→50767 |
-| 8.3절 | B-Check ①·② 근거 | FMA ID·분절(C2) 포인터 추가(점수 불변: ①=1, ②=1) | 4.4절 |
-| 8.4절 | 2026-10-04 로그 | 2026-10-23 Rank 6 재실행 행 추가(신규 10편 papers.id 2256~2265, 모두 다혈·동물·종설 → 판정 불변) | `_metadata.sync_log` 2026-10-23T21:43:54 |
-| 10.1절 | $S_{clarity}$ 근거 | FMA 확인 병기(점수 불변 75) | 6절·부록 A |
-| 부록 A 신설 | — | FMA 프로파일 표 | `fma_query.py profile GV20 --md` |
-| ARI | ARI-Core 71.2 ± 2.5 (B, 가중치 민감), SI 75 | **변경 없음** | 스킬 5-1절 |
-| 정본 정합 점검 | — | v2.7 대비 구판 표현·비루브릭 점수·'확정' 판정 문구 없음 확인('확정 이명'은 이명 판정 용어로 B-Check 판정과 무관) | 정본 Rank 7·4.2 |
-| 구판 보관 | — | 보강 전 md·html·xlsx를 `_구판_v2.7_20261023/`에 보관 | — |
+- Union of segments (input to B-Check ②): **C2** (greater occipital nerve). V1 and V3 are cranial nerves and have no segment.
+- Comparison of the two textbooks: 6 shared · 2 Common Textbook only (FMA:53000 · 49650) · 4 Kim Jaehyo only (FMA:76623 · 52655 · 52642 · 49670).
+- Match level: Kim Jaehyo's "parietal branch of the superficial temporal vein" has no venous parietal-branch entity in FMA, so it is linked to the superficial temporal vein (FMA:50932) as a **parent-structure match** (parent).
+- Limits of citation: FMA is a normative anatomical ontology and is not evidence of point-specific depth, cutaneous territory or reflex function. The is_a error for the occipital vein is not cited.
 
 ---
 
-## v2.7 개정 이력 (2026-10-04)
+## v2.7 FMA Supplement History (2026-10-23)
 
-| 위치(구판) | 원래 내용 | 바꾼 내용 | 근거 |
+| Location | Original content | Change | Basis |
 |:---|:---|:---|:---|
-| 머리말 | Framework v2.6, 22대 Master ASIA, Principle n·Line n | v2.7 표기 블록, 구판 프레임워크 참조 삭제 | 01_Framework/acupoint_anatomical_logic_framework.md |
-| 머리말 링크 | 자침깊이 DB 링크가 로직 원칙 xlsx로 연결 | 올바른 파일명 `침구문헌별 자침깊이 정리_AI 분석용.xlsx` | 02_Master_Datasets 파일 목록 |
-| 1. 경혈 성질 | 足太陽·手少陽·足少陽·足厥陰 교회 | 원전은 "督脉、足太阳之会". 手足少阳·厥阴은 후대 | 通考 【类属】; 穴位通鉴 五.归经 |
-| 1. 고전 정위 | 《甲乙經》 "…旋毛中" | *Huangdi Mingtang Jing* (《黃帝明堂經》) "…旋毛中，陷可容指" | 通考 L2433 |
-| 1. 고전 자침법 | 사자 2–3푼 | 원전은 각도 미기재 刺入三分/针入二分, 窦氏 沿皮刺 | 通考 L2594~2600 |
-| 2.1 이명 | 三陽五會 출전 《甲乙》·《千金》 | *Huangdi Mingtang Jing* (《黃帝明堂經》)(《甲乙》·《外台》 승계) | 通考 L2397; 穴位通鉴 L1654 |
-| 2.1 이명 | 天滿 출전 《甲乙經》 주 | *Zhenjiu Zisheng Jing* (《針灸資生經》) 卷一 | 通考 L2402; 穴位通鉴 L1382 |
-| 2.1 이명 | 巔上 출전 *Qianjin Yaofang* (《千金要方》), 확정 이명 | 《针灸聚英》 卷一, 부위어 | 通考 L2407, L2414 |
-| 2.1 이명 | 維會 = 《外臺秘要》 확정 이명, 위험 低 | 脐中(神阙) 별명 오록, 위험 高 | 通考 L2404~2414; KJH 행11 |
-| 2.1 이명 | 天山·涅丸宮·鬼門 누락 | 추가(鬼門 = 囟会 이명 혼입 의심, 天山 출전 미확인) | KJH 행47·49; 通考 L2703 |
-| 2.1 이명 | 泥丸宮 출전 "道家 내단 문헌" | 《普济本事方》 卷二(도가 술어) | 通考 L2403, L2414 |
-| 2.2.1 | 《針灸大成》 "橫刺0.5~1.0寸" | 원전 확인 불가로 삭제 | 通考 【操作】; 穴位通鉴 L1589~1704 |
-| 2.2.2 | '갑을경 경혈 분류 기준 순서' 2 = 2푼(4.6mm) | 배열 순서 값(심도 아님) | 자침깊이 DB 시트1 행2 열머리, 행46 |
-| 2.2.3 | μ 2.6푼, σ 0.4푼 | 삭제(근거 없는 통계) | 자침깊이 DB 행46 |
-| 2.3 | 증치통감 원문 없음 | 원문 4건 수록 | 证治通鉴_321-400 L1543·L1559, _161-240 L1106·L3126 |
-| 2.4 | 《通考》 "帽狀腱膜…上矢狀竇…枕大神經…眶上神經" 인용 | **가공 인용 삭제**, 실제 名实考·定位·适应症·操作 구절로 교체 | 通考 L2387~2612(해부 기술 없음) |
-| 3.1 | "通百脈" 여과 | 원전 미확인. 실제 "百脉之所会" 穴名释义로 교체 | 穴位通鉴 L1404·L1414 |
-| 3.2 | 脫肛 = 배오 파생(長强·承山 필수) | P_single(단독 뜸·침 기록) | 通考 L2575; 证治通鉴_321-400 L1543·L1559 |
-| 3.2 | 失眠 = 단독 유효 | 원전 근거 없음, 현대 교재 주치 | 通考 L2498(5판 이후) |
-| 3.2 | 子宮脫垂 = 배오 파생(氣海·足三里) | 현대 교재 주치, 고전 근거 보류(배오 출전 미확인) | 通考 【适应症】 9항 |
-| 2.3 | 胃下垂 選穴 | 7판 교재 주치, 《通考》가 삭제 권고 | 通考 L2501 |
-| 3.2 / 신설 | 《千金》 卒起僵仆 미반영 | 囟会 주치 오록으로 삭제 | 通考 L2479 |
-| 3.3 | "督脈統諸陽", "火穴" 여과 | 원전 미확인으로 삭제 | 3대 원전 chunk Grep 0건 |
-| 4.1 | Nasion 기준 135mm | 삭제(근거 없음) | — |
-| 4.2 | Δ 0.5–1.0cm, 분리 불필요 | Δ 미실측, 1961 정위 쟁점 명시 | papers.id 1961 |
-| 5.2 | θ=15°/20° 삼각법 수직 심도 | 삭제(임의 각도) | 자침깊이 DB 행46 |
-| 5.2 | "외판 두께 5–7mm, 직자 3푼 = 외판 도달" | 직자 3푼 = 골막 접촉 가능, 두개골 차단 | B1-01, B1-03 |
-| 5.3·8.1 | Layer 2 galea 1–6mm, 골막 8–12mm, 외판 12–18mm, 上矢狀竇 17mm | 두피 전층 약 5–7mm 기준 개략값으로 재작성, 정본 Layer 정의(골막=Layer 5)에 맞춤 | B1-01, B1-03; framework Rank 5 |
-| 6.1 | RAS 각성·전정-피질·세로토닌/멜라토닌·역설적 억제·DMN | 삭제, Layer B ID·papers.id 기반 가설 표로 교체 | B-Check 6/12; 8.1절 |
-| 6.2 | 신경 표의 枕小神經 등 | 교재 데이터셋 기반으로 재구성 | 교재 데이터셋 |
-| 7.1 | 《通考》 교차 검증 5항목 "완전 일치" | **가공 비교 삭제** | 通考 L2387~2612 |
-| 7.2 | 구판 5요인 ARI 94.9 | ARI v3.0 프로파일 71.2 ± 2.5 (B), SI 75 | final_GV20.json |
-| 8.2 | 정합성 감사(전 항목 일치) | 삭제(동일 산출물 대조는 신뢰도 근거 아님) | framework Rank 7 |
-| Rank 5 비교표 | 공통교재 "이마힘살·도르래위신경", 김재효 "뒤통수이마근" | 데이터셋 값(공통: 큰뒤통수신경·귓바퀴관자신경; 김재효: 머리뼈바깥막·위눈확·도르래위신경) | refine.xlsx 행216~221; 김재효 행321~330 |
-| 9. 결론 | "최종 확정 해부학적 실체", "직자 절대 금지" | 개연(B), 직자 원전 허용·두개골 차단, 소아 신중 | 通考 L2594, L2612 |
-| 신설 | — | 8절(Layer A·B-Check·검색 로그), 10절(ARI v3.0), 1·2·3·5·6·9절 재구성 | WRITER_BRIEF |
-| 구판 점수 | — | 구판 v2.6 점수 94.9(비교 불가) | _구판_v2.6/ |
+| Header | — | Added FMA 5.1.0 anatomical ontology line and FMA supplement date | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
+| Section 4.3 | Text cross-section only | Added Figure 4-1 coronal anatomical schematic (PNG) | `.claude/skills/acupoint-anatomy/scripts/fma/figures/GV20_cross_section.py` |
+| Section 4.4 (new) | — | FMA cross-check table by layer; 3 FMA notes (is_a misclassification of the occipital vein, C2 as the only segment, cutaneous territory not recorded) | `fma_query.py profile GV20`, `entity 50802` |
+| Section 6 | 4-column textbook comparison | FMA adjudication column; nerve difference interpreted as V1/V3 different trunks (complementary), vascular difference as trunk/branch | FMA is_a chains |
+| Section 8.2 | Hypothesised circuit table | Added Figure 8-1 FMA peripheral pathway (Mermaid) — verdict (not concordant, 6/12) unchanged | FMA:65443→8788; 52655→52638→52621; 53000→52996; 50791→50767 |
+| Section 8.3 | B-Check ①, ② rationale | Added FMA IDs and segment (C2) pointers (scores unchanged: ① = 1, ② = 1) | Section 4.4 |
+| Section 8.4 | 2026-10-04 log | Added rows for the 2026-10-23 Rank 6 re-run (10 new papers, papers.id 2256–2265, all multi-point, animal or review → verdict unchanged) | `_metadata.sync_log` 2026-10-23T21:43:54 |
+| Section 10.1 | $S_{clarity}$ rationale | Noted FMA confirmation (score unchanged at 75) | Section 6, Appendix A |
+| Appendix A (new) | — | FMA profile table | `fma_query.py profile GV20 --md` |
+| ARI | ARI-Core 71.2 ± 2.5 (B, weight-sensitive), SI 75 | **No change** | Skill section 5-1 |
+| Canonical consistency check | — | Confirmed absence of earlier-edition wording relative to v2.7, non-rubric scores and 'established' verdict wording ('confirmed alias' is an alias-adjudication term unrelated to the B-Check verdict) | Canonical Rank 7, 4.2 |
+| Archive | — | Pre-supplement md, html and xlsx kept in `_구판_v2.7_20261023/` | — |
+
+---
+
+## v2.7 Revision History (2026-10-04)
+
+| Location (earlier edition) | Original content | Change | Basis |
+|:---|:---|:---|:---|
+| Header | Framework v2.6, 22 Master ASIA, Principle n · Line n | v2.7 notation block; references to the earlier framework deleted | 01_Framework/acupoint_anatomical_logic_framework.md |
+| Header link | Needling-depth DB link pointed to the logic-principles xlsx | Correct file name `침구문헌별 자침깊이 정리_AI 분석용.xlsx` | File list of 02_Master_Datasets |
+| 1. Point properties | Crossing point of 足太陽 · 手少陽 · 足少陽 · 足厥陰 | The classics give "督脈、足太陽之會". 手足少陽 · 厥陰 are later | Tongkao 【類屬】; Xuewei Tongjian 五.歸經 |
+| 1. Classical location | 《甲乙經》 "…旋毛中" | 《黃帝明堂經》 "…旋毛中，陷可容指" | Tongkao L2433 |
+| 1. Classical needling | Oblique insertion 2–3 fen | The classics give no angle: 刺入三分 / 針入二分; Dou's (竇氏) 沿皮刺 | Tongkao L2594–2600 |
+| 2.1 Aliases | Source of 三陽五會 given as 《甲乙》 · 《千金》 | 《黃帝明堂經》 (inherited by 《甲乙》 · 《外臺》) | Tongkao L2397; Xuewei Tongjian L1654 |
+| 2.1 Aliases | Source of 天滿 given as a note in 《甲乙經》 | 《針灸資生經》 vol. 1 | Tongkao L2402; Xuewei Tongjian L1382 |
+| 2.1 Aliases | Source of 巔上 given as 《千金要方》, confirmed alias | 《針灸聚英》 vol. 1, location term | Tongkao L2407, L2414 |
+| 2.1 Aliases | 維會 = confirmed alias from 《外臺秘要》, low risk | Mistaken entry of an alias of 臍中 (神闕), high risk | Tongkao L2404–2414; KJH row 11 |
+| 2.1 Aliases | 天山 · 涅丸宮 · 鬼門 omitted | Added (鬼門 = suspected intrusion of a 囟會 alias; source of 天山 unverified) | KJH rows 47 · 49; Tongkao L2703 |
+| 2.1 Aliases | Source of 泥丸宮 given as "Daoist inner-alchemy literature" | 《普濟本事方》 vol. 2 (Daoist term) | Tongkao L2403, L2414 |
+| 2.2.1 | 《針灸大成》 "橫刺0.5~1.0寸" | Deleted (cannot be confirmed in the classics) | Tongkao 【操作】; Xuewei Tongjian L1589–1704 |
+| 2.2.2 | 'Jiayi Jing point classification order' 2 = 2 fen (4.6 mm) | Ordering value (not a depth) | Needling-depth DB sheet 1, row 2 column headers, row 46 |
+| 2.2.3 | μ 2.6 fen, σ 0.4 fen | Deleted (statistics without basis) | Needling-depth DB row 46 |
+| 2.3 | No original text from the Zhengzhi Tongjian | 4 original passages included | Zhengzhi Tongjian `_321-400` L1543 · L1559, `_161-240` L1106 · L3126 |
+| 2.4 | *Tongkao* quotation "帽狀腱膜…上矢狀竇…枕大神經…眶上神經" | **Fabricated quotation deleted**; replaced with actual 名實考 · 定位 · 適應症 · 操作 passages | Tongkao L2387–2612 (no anatomical description) |
+| 3.1 | "通百脈" filtered | Not found in the classics. Replaced with the actual 穴名釋義 "百脈之所會" | Xuewei Tongjian L1404 · L1414 |
+| 3.2 | 脫肛 = derived from combination (長強 · 承山 required) | P_single (single-point moxibustion and needling records) | Tongkao L2575; Zhengzhi Tongjian `_321-400` L1543 · L1559 |
+| 3.2 | 失眠 = effective as a single point | No classical basis; modern textbook indication | Tongkao L2498 (5th edition onward) |
+| 3.2 | 子宮脫垂 = derived from combination (氣海 · 足三里) | Modern textbook indication; classical basis on hold (source of the combination unverified) | Tongkao 【適應症】, item 9 |
+| 2.3 | Point selection for 胃下垂 | 7th-edition textbook indication; the *Tongkao* recommends deletion | Tongkao L2501 |
+| 3.2 / new | 《千金》 卒起僵仆 not reflected | Deleted as an indication of 囟會 mistakenly transferred | Tongkao L2479 |
+| 3.3 | "督脈統諸陽", "火穴" filtered | Deleted (not found in the classics) | Grep of the three classics' chunks: 0 hits |
+| 4.1 | 135 mm from the nasion | Deleted (no basis) | — |
+| 4.2 | Δ 0.5–1.0 cm, no split needed | Δ not measured; location issue of 1961 stated | papers.id 1961 |
+| 5.2 | θ = 15°/20° trigonometric vertical depth | Deleted (arbitrary angle) | Needling-depth DB row 46 |
+| 5.2 | "Outer table 5–7 mm thick; perpendicular 3 fen = reaches the outer table" | Perpendicular 3 fen = may touch the periosteum; skull blocks deeper penetration | B1-01, B1-03 |
+| 5.3 · 8.1 | Layer 2 galea 1–6 mm, periosteum 8–12 mm, outer table 12–18 mm, 上矢狀竇 17 mm | Rewritten as approximate values based on a full scalp thickness of about 5–7 mm, aligned with the canonical Layer definitions (periosteum = Layer 5) | B1-01, B1-03; framework Rank 5 |
+| 6.1 | RAS arousal · vestibulo-cortical · serotonin/melatonin · paradoxical inhibition · DMN | Deleted; replaced with a hypothesis table based on Layer B IDs and papers.id | B-Check 6/12; Section 8.1 |
+| 6.2 | 枕小神經 etc. in the nerve table | Reconstructed from the textbook datasets | Textbook datasets |
+| 7.1 | *Tongkao* cross-validation of 5 items, "complete agreement" | **Fabricated comparison deleted** | Tongkao L2387–2612 |
+| 7.2 | Earlier 5-factor ARI 94.9 | ARI v3.0 profile 71.2 ± 2.5 (B), SI 75 | final_GV20.json |
+| 8.2 | Consistency audit (all items agree) | Deleted (comparing identical outputs is no ground for reliability) | framework Rank 7 |
+| Rank 5 comparison table | Common Textbook "frontal belly · supratrochlear nerve", Kim Jaehyo "occipitofrontalis" | Dataset values (Common Textbook: greater occipital nerve · auriculotemporal nerve; Kim Jaehyo: pericranium · supraorbital · supratrochlear nerves) | refine.xlsx rows 216–221; Kim Jaehyo rows 321–330 |
+| 9. Conclusion | "Final established anatomical substrate", "perpendicular insertion absolutely forbidden" | Probable (B); perpendicular insertion allowed by the classics, skull blocks deeper penetration; caution in children | Tongkao L2594, L2612 |
+| New | — | Section 8 (Layer A · B-Check · search log), Section 10 (ARI v3.0); Sections 1, 2, 3, 5, 6, 9 restructured | WRITER_BRIEF |
+| Earlier-edition score | — | Earlier v2.6 score 94.9 (not comparable) | `_구판_v2.6/` |
+
+---
+
+## English Edition Revision History (2026-10-24)
+
+| Location | Original content | Change | Basis |
+|:---|:---|:---|:---|
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `GV20_백회_해부생리_실체판명_보고서.md` |
+| Title | "GV20 (百會, Baihui (百會, GV20))" duplicated annotation | Title in the standard monograph form | — |
+| Classical quotations | Simplified characters (e.g. 百会, 针灸, 脱肛) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |
+
+## Refinement History (2026-10-24)
+
+| Location | Original wording | Revised wording | Basis |
+| :--- | :--- | :--- | :--- |
+| Section 1, 《針灸腧穴通考》 needling row | "以及腦積水思考" (no misprint marker) | Quotation kept + `[sic]`; the interpretation column reads '思考' as a misprint for '患者' | `침구수혈통고(针灸腧穴通考)/针灸腧穴通考_22_下_督脉穴-2.md` L1035 — the printed edition itself reads "思考", so the quotation is not altered. From context (listed alongside an unclosed infant fontanelle) the intended word is '患者' |

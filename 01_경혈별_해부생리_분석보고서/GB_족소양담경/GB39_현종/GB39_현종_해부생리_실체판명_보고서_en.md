@@ -1,236 +1,238 @@
-# 🔬 [경혈 해부생리학 실체 판명 학술 모노그래프] Xuanzhong (懸鐘, GB39)(懸鍾, GB39) — 이명 絶骨
+# [Acupoint Anatomical & Physiological Substrate Monograph] Xuanzhong (懸鍾, GB39) — alias Juegu (絕骨)
 
-> **Framework**: v2.7 (2026-10-04 개정) · **ARI**: T1 `ARI v3.0 | ARI-Core 51.2 ± 0 (D·H) | SI 50 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 47.9 (D, 등급 불변)`
-> T2 `ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 54.2 (D, 등급 변동 → 가중치 민감)` · **이중 채점**: Independent dual-adjudication completed
+> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: T1 `ARI v3.0 | ARI-Core 51.2 ± 0 (D·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 47.9 (D, grade unchanged)`
+> T2 `ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 54.2 (D, grade changes → weight-sensitive)` · **Dual scoring**: two independent raters, adjudicated
 
-> **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)(黄龙祥)
-> **Layer A Empirical Database**: [`경혈_생의학_신경반사_마스터DB.json`](file:///g:/내%20드라이브/도서%20번역/02_Master_Datasets/%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json) — GB39 근거 묶음: 랜드마크 29편·로컬 매핑 18편 중 **GB39가 실제 포함된 기전·임상 연구 5편**(papers.id 1610·1612·1615·1902·1903, 모두 복합 혈위 또는 동물) + 정위 문헌 연구 1편(1624)
-> **Layer B Reference Registry**: [`layer_b_reference_registry.md`](file:///g:/내%20드라이브/도서%20번역/01_Framework/layer_b_reference_registry.md) (B-Check 6항목, 부합 기준 ≥ 8/12)
-> **자침깊이 DB**: [`침구문헌별 자침깊이 정리_AI 분석용.xlsx`](file:///g:/내%20드라이브/도서%20번역/02_Master_Datasets/%EC%B9%A8%EA%B5%AC%EB%AC%B8%ED%97%8C%EB%B3%84%20%EC%9E%90%EC%B9%A8%EA%B9%8A%EC%9D%B4%20%EC%A0%95%EB%A6%AC_AI%20%EB%B6%84%EC%84%9D%EC%9A%A9.xlsx) 시트1 344행(N0=342)
-> **Anatomical Ontology**: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 `FMA:ID`로 고정하고 지배신경·척수 분절·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 `02_Master_Datasets/FMA/acupoint_fma_mapping.json`, 상세는 부록 A
-> **Metrological Standard**: 한대(漢代) 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$), 1촌 = 10푼 = 23mm(심도 환산용. 체표 위치는 골도 비례 촌)
-> **분석 Target**: **T1** 고전 원전 정위(*Huangdi Mingtang Jing* (《黃帝明堂經》) "在足外踝上三寸動者(脈)中, 足三陽絡, 按之陽明脈絶乃取之" = 경골 쪽 앞정강동맥 박동점) / **T2** WHO·현행 교재 정위(外踝尖上 3寸, 腓骨前緣)
+> **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (Huang Longxiang, 黃龍祥)
+> **Layer A Empirical Database**: [`경혈_생의학_신경반사_마스터DB.json`](../../../../02_Master_Datasets/%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json) — GB39 evidence pack: of 29 landmark papers and 18 locally mapped papers, **5 mechanistic/clinical studies that actually include GB39** (papers.id 1610 · 1612 · 1615 · 1902 · 1903, all multi-point or animal) + 1 textual study on location (1624)
+> **Layer B Reference Registry**: [`layer_b_reference_registry.md`](../../../../01_Framework/layer_b_reference_registry.md) (6-item B-Check, concordance threshold ≥ 8/12)
+> **Needling-depth DB**: [`침구문헌별 자침깊이 정리_AI 분석용.xlsx`](../../../../02_Master_Datasets/%EC%B9%A8%EA%B5%AC%EB%AC%B8%ED%97%8C%EB%B3%84%20%EC%9E%90%EC%B9%A8%EA%B9%8A%EC%9D%B4%20%EC%A0%95%EB%A6%AC_AI%20%EB%B6%84%EC%84%9D%EC%9A%A9.xlsx) sheet 1, row 344 (N0 = 342)
+> **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: `02_Master_Datasets/FMA/acupoint_fma_mapping.json`; details in Appendix A.
+> **Metrological Standard**: Han-dynasty (漢代) standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$), 1 cun = 10 fen = 23 mm (for depth conversion; surface positions use bone-proportional cun)
+> **Analysis Targets**: **T1** classical source location (*Huangdi Mingtang Jing* (《黃帝明堂經》) "在足外踝上三寸動者(脈)中, 足三陽絡, 按之陽明脈絕乃取之" = the anterior tibial artery pulse point on the tibial side) / **T2** WHO and current-textbook location (外踝尖上 3寸, 腓骨前緣)
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
-> **요약**: 구판 보고서는 고전 "動脈中"을 종아리동맥 관통가지로 보고 Δ 3~7mm로 단일 분석했다. 그러나 *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)와 papers.id 1624는 그 맥이 **앞정강동맥**이고 원위치가 **경골 쪽**이라고 본다. 두 채점자가 각각 추정한 Δ는 약 20~35mm(> 15mm)이므로 T1·T2로 분기했다. ΔARI-Core = 3.8(< 10)이어서 **어느 Target도 우위로 선언하지 않고 둘을 병기**한다. 두 Target 모두 B-Check 미부합이므로 반사 기전은 **가설**이다.
+> **Summary**: The earlier edition took the classical "動脈中" to be the perforating branch of the fibular artery and analysed a single point with Δ 3–7 mm. However, the *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) and papers.id 1624 hold that the vessel is the **anterior tibial artery** and that the original position is **on the tibial side**. The Δ estimated independently by each of the two raters is about 20–35 mm (> 15 mm), so the analysis branches into T1 and T2. ΔARI-Core = 3.8 (< 10), so **neither Target is declared superior and both are reported side by side**. For both Targets the B-Check is not concordant, so the reflex mechanism is a **hypothesis**.
 
 ---
 
-## 🏛️ 1. 문헌 스크리닝 표 (3대 원전 원문 발췌 및 한중 대조)
+## 🏛️ 1. Classical Literature Screening Table (Excerpts from the Three Primary Classics with Chinese–Korean Collation)
 
-| 문헌 (출처 파일·행) | 원문 발췌 (정위·심도) | 주치 | 교감 및 비고 |
+| Text (source file & line) | Original excerpt (location & depth) | Indications | Collation & remarks |
 | :--- | :--- | :--- | :--- |
-| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)** 悬钟 조 (`针灸腧穴通考(下)_321-400.md` L529–658, 인쇄 p.1106–1109) 및 阳辅 조 "'阳辅'、'悬钟'与'绝骨'穴辨" (같은 파일 L414–437) | "悬钟，在足外踝上三寸动者中，足三阳络，按之阳明脉绝乃取之。"(*Huangdi Mingtang Jing* (《黃帝明堂經》), L421) / "悬钟，一名绝骨，在外踝上三寸动者中，足三阳络。"(*Qianjin Yaofang* (《千金要方》)卷二十九, L426·558) / 현대 【定位】 "外踝尖上 3 寸，腓骨前缘"(L569) | "主腹满，胃中有热不嗜食，小儿腹满不能食饮。"(*Huangdi Mingtang Jing* (《黃帝明堂經》), L542) | ① "*Huangdi Mingtang Jing* (《黃帝明堂經》)所谓'阳明脉'……也即足背动脉，由于它是胫前动脉的下行支……人体测量学调查的结果表明：在外踝上三寸，靠近足阳明经脉行处，用力按压，则冲阳脉搏动消失……后人及今人……将悬钟穴定于足少阳经脉线上……此处不仅不能触及动脉搏动，通过按压也不能使足背处的冲阳脉搏动消失"(L548–552). ② "既是'按之阳明脉绝'处，则定位宜略偏向胫侧……因而出现了名实分离的现象"(L431). ③ "'绝骨'穴不见于*Huangdi Mingtang Jing* (《黃帝明堂經》)"(L431), "'绝骨'归入奇穴类"(L437). ④ 归经 按: "将这样一个位于阳明脉上而又主治阳明胃病的腧穴归入足少阳经，难以成立"(L615). ⑤ "*Huangdi Mingtang Jing* (《黃帝明堂經》)的'悬钟'已经名存实亡了"(L658). **《通考》에는 淺腓骨神經·腓骨動脈 관통가지에 관한 기술이 없다.** |
-| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)** 悬钟 조 (`中国针灸穴位通鉴(下卷)_161-240.md` L52–346) | 出处 "悬钟，在足外踝上三寸动者脉中，足三阳经，按之阳明脉绝乃取之。"(*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)3:55, L54 — OCR "经"은 《通考》·L136 "足三阳络"에 따라 "络"으로 읽음) / 部位 24항(L80–132), 예: "在足外踝上三寸动脉中。"(*Tongren* (《銅人》)5:20·《聚英》·《大成》, L90), "足外踝上三寸动脉中，寻摸尖骨者是。足三阳之大络，按之阳明脉绝乃取之。"(*Zhenjiu Dacheng* (《針灸大成》)7:209, L110) / "刺入六分，留七呼，灸五壮。"(《甲乙》 등, L236) | "腹满，胃中有热，不嗜食，悬钟主之。"(《甲乙》9:124), "小儿腹满，不能食饮，悬钟主之。"(《甲乙》12:154) (L154–156) | 释义: "穴在足外踝上三寸动者脉中，即胫前动脉处"(《经穴释义汇解》, L74). 局部解剖: "在腓骨前缘……有胫前动脉的分支，分布着腓浅神经"(《新针灸学》), "腓浅神经；腓深神经；胫前动脉"(《针灸学简编》) (L276–288). 简要结语: 별명 绝骨 "首出《备急千金要方》卷29"(L342), "髓会不宜作别名"(L292) |
-| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** (`中国针灸证治通鉴_*.md` 7개 청크, 悬钟·绝骨 출현 196회/165행) | (처방집 — 정위 기술 거의 없음) | "乃若胃热治悬钟"(`_161-240.md` L4132), "腹满不食：中脘针，绝骨、下三里"(`_241-320.md` L2972) | 출현 문맥(±80자, 중복 허용 참고치): 하지 痿·痹·足·胫·膝 113, 脚气 20, 中风 16, 疟 11, 项·颈 9, 胃·腹满 7, 落枕 2. 대부분 足三里 등과의 **배오** 처방. `_1-80.md` L1236 按: "'绝骨'穴不见于《明堂经》，后世医家或以之为悬钟穴，或以之为阳辅穴" |
+| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)**, entry 懸鍾 (`针灸腧穴通考(下)_321-400.md` L529–658, printed pp.1106–1109) and the entry 陽輔 "'陽輔'、'懸鍾'與'絕骨'穴辨" (same file, L414–437) | "懸鍾，在足外踝上三寸動者中，足三陽絡，按之陽明脈絕乃取之。" (《黃帝明堂經》, L421) / "懸鍾，一名絕骨，在外踝上三寸動者中，足三陽絡。" (《千金要方》 卷二十九, L426 · 558) / modern 【定位】 "外踝尖上 3 寸，腓骨前緣" (L569) | "主腹滿，胃中有熱不嗜食，小兒腹滿不能食飲。" (《黃帝明堂經》, L542) | ① "《黃帝明堂經》所謂'陽明脈'……也即足背動脈，由於它是脛前動脈的下行支……人體測量學調查的結果表明：在外踝上三寸，靠近足陽明經脈行處，用力按壓，則衝陽脈搏動消失……後人及今人……將懸鍾穴定於足少陽經脈線上……此處不僅不能觸及動脈搏動，通過按壓也不能使足背處的衝陽脈搏動消失" (L548–552). ② "既是'按之陽明脈絕'處，則定位宜略偏向脛側……因而出現了名實分離的現象" (L431). ③ "'絕骨'穴不見於《黃帝明堂經》" (L431), "'絕骨'歸入奇穴類" (L437). ④ Meridian attribution (歸經), note (按): "將這樣一個位於陽明脈上而又主治陽明胃病的腧穴歸入足少陽經，難以成立" (L615). ⑤ "《黃帝明堂經》的'懸鍾'已經名存實亡了" (L658). **The 《通考》 contains no description of the superficial fibular nerve (淺腓骨神經) or the perforating branch of the fibular artery (腓骨動脈).** |
+| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)**, entry 懸鍾 (`中国针灸穴位通鉴(下卷)_161-240.md` L52–346) | Source (出處) "懸鍾，在足外踝上三寸動者脈中，足三陽經，按之陽明脈絕乃取之。" (《針灸甲乙經》 3:55, L54 — the OCR reading "經" is read as "絡" following the 《通考》 and L136 "足三陽絡") / 24 location (部位) entries (L80–132), e.g. "在足外踝上三寸動脈中。" (《銅人》 5:20 · 《聚英》 · 《大成》, L90), "足外踝上三寸動脈中，尋摸尖骨者是。足三陽之大絡，按之陽明脈絕乃取之。" (《針灸大成》 7:209, L110) / "刺入六分，留七呼，灸五壯。" (《甲乙》 etc., L236) | "腹滿，胃中有熱，不嗜食，懸鍾主之。" (《甲乙》 9:124), "小兒腹滿，不能食飲，懸鍾主之。" (《甲乙》 12:154) (L154–156) | Explanation of the name (釋義): "穴在足外踝上三寸動者脈中，即脛前動脈處" (《經穴釋義匯解》, L74). Regional anatomy: "在腓骨前緣……有脛前動脈的分支，分佈著腓淺神經" (《新針灸學》), "腓淺神經；腓深神經；脛前動脈" (《針灸學簡編》) (L276–288). Concluding remarks: the alias 絕骨 "首出《備急千金要方》卷29" (L342), "髓會不宜作別名" (L292) |
+| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** (`中国针灸证治通鉴_*.md`, 7 chunks; 懸鍾 and 絕骨 occur 196 times on 165 lines) | (Prescription collection — almost no location descriptions) | "乃若胃熱治懸鍾" (`_161-240.md` L4132), "腹滿不食：中脘針，絕骨、下三里" (`_241-320.md` L2972) | Context of occurrences (±80 characters, overlap allowed, reference values): lower-limb wei (痿), bi (痹), foot (足), shin (脛), knee (膝) 113; leg qi (腳氣) 20; stroke (中風) 16; malaria (瘧) 11; nape/neck (項 · 頸) 9; stomach/abdominal fullness (胃 · 腹滿) 7; stiff neck (落枕) 2. Mostly **combination** prescriptions with 足三里 and others. `_1-80.md` L1236, note (按): "'絕骨'穴不見於《明堂經》，後世醫家或以之為懸鍾穴，或以之為陽輔穴" |
 
 ---
 
-## 📜 2. 원천/재인용 구분 표 (시대별 문헌 층차 정렬)
+## 📜 2. Primary Source vs. Secondary Quotation Table (Historical Stratification by Era)
 
-| 층차 | 문헌 | 정위 | 심도 | 주치 | 판정 |
+| Stratum | Text | Location | Depth | Indications | Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 원천 (한) | *Huangdi Mingtang Jing* (《黃帝明堂經》)(《甲乙》 3:55 경유) | 在足外踝上三寸**動者(脈)中**, 足三陽絡, **按之陽明脈絶乃取之** | 刺入六分, 留七呼, 灸五壮 | 腹满, 胃中有热, 不嗜食; 小儿腹满不能食饮 | **원천 = T1** (맥 기준 정위, 골성 지표 없음) |
-| 별계 (진) | 《脉经》 10:88 | "在外踝上三寸，直绝骨是也" (陽蹻/陽維 자침처) | 刺入五分 | — | 같은 높이의 다른 계통 기술 |
-| 수당 재인용 | *Qianjin Yaofang* (《千金要方》) 卷29 | "悬钟，一名绝骨，在外踝上三寸动者中" | — | — | **絶骨을 Xuanzhong (懸鐘, GB39) 이명으로 처음 연결** |
-| 수당 별계 | *Qianjin Yaofang* (《千金要方》) 卷7·8·18, 《外台》 19, 《医心方》 8 | 絶骨: "外踝上一夫，亦云四寸"(卷7), "外踝上三寸宛宛中"(卷18), "外踝上骨绝头陷中"(《外台》) | — | 卷18 絶骨 22病(逆气, 虚劳, 喉痹, **颈项强**, 肠痔…); 卷30 悬钟 五淋·湿痹流肿 | 골성 정위로 이동 시작. 卷30 주치는 《明堂》 **陽輔** 주치(《通考》 按) |
-| 송대 재인용 | *Taiping Shenghui Fang* (《太平聖惠方》), *Tongren* (《銅人》) 5:20 | "在外踝上三寸宛宛中" / "在足外踝上三寸動脈中" | 针六分, 灸三~五壮 | 腹满·不嗜食 + 腿胯连膝胫痹麻(陽輔 주치 혼입) | 원정위 문구 유지, 주치 혼입 |
-| 명대 변형 | 《针灸聚英》, *Zhenjiu Dacheng* (《針灸大成》) 7:209, 《循经考穴编》, 《类经图翼》 | "足外踝上三寸動脈中, 尋摸尖骨者是 … 按之陽明脈絶乃取之", "绝骨尖间筋骨缝中是悬钟", "当骨尖前动脉中" | 《指微》 斜入二寸許, 窦氏 二寸半, 横透三阴交 | 《资生经》 경유 《千金》 絶骨 주치(颈项强 등) 전재 | 골성 지표("尖骨·筋骨缝") 병기 |
-| 현대 | 통편 교재 2·4·5판 "腓骨后缘" → 6·7판·WHO "腓骨前缘" | 外踝尖上 3寸, 腓骨前缘 | 直刺 0.5~0.8寸 | 项强, 胸胁胀痛, 下肢痿痹; 7판 痴呆·中风(髓海) | **T2**. 원주치(위병) 탈락 |
+| Primary (Han) | *Huangdi Mingtang Jing* (《黃帝明堂經》) (via 《甲乙》 3:55) | 在足外踝上三寸**動者(脈)中**, 足三陽絡, **按之陽明脈絕乃取之** | 刺入六分, 留七呼, 灸五壯 | 腹滿, 胃中有熱, 不嗜食; 小兒腹滿不能食飲 | **Primary = T1** (location defined by the pulse; no bony landmark) |
+| Separate tradition (Jin) | 《脈經》 10:88 | "在外踝上三寸，直絕骨是也" (needling site for 陽蹻/陽維) | 刺入五分 | — | Description from a different tradition at the same height |
+| Sui–Tang secondary | 《千金要方》 卷29 | "懸鍾，一名絕骨，在外踝上三寸動者中" | — | — | **First to link 絕骨 as an alias of Xuanzhong (懸鍾)** |
+| Sui–Tang separate tradition | 《千金要方》 卷7 · 8 · 18, 《外臺》 19, 《醫心方》 8 | 絕骨: "外踝上一夫，亦云四寸" (卷7), "外踝上三寸宛宛中" (卷18), "外踝上骨絕頭陷中" (《外臺》) | — | 卷18 絕骨, 22 disorders (逆氣, 虛勞, 喉痹, **頸項強**, 腸痔…); 卷30 懸鍾 五淋 · 濕痹流腫 | Shift towards a bony location begins. The 卷30 indications are the 《明堂》 indications of **陽輔** (《通考》 note) |
+| Song secondary | 《太平聖惠方》, 《銅人》 5:20 | "在外踝上三寸宛宛中" / "在足外踝上三寸動脈中" | 針六分, 灸三~五壯 | 腹滿 · 不嗜食 + 腿胯連膝脛痹麻 (陽輔 indications mixed in) | Wording of the original location kept; indications mixed |
+| Ming modification | 《針灸聚英》, 《針灸大成》 7:209, 《循經考穴編》, 《類經圖翼》 | "足外踝上三寸動脈中, 尋摸尖骨者是 … 按之陽明脈絕乃取之", "絕骨尖間筋骨縫中是懸鍾", "當骨尖前動脈中" | 《指微》 斜入二寸許, 竇氏 二寸半, 橫透三陰交 | 《千金》 絕骨 indications (頸項強 etc.) reproduced via 《資生經》 | Bony landmarks ("尖骨 · 筋骨縫") added alongside |
+| Modern | Unified textbooks, 2nd, 4th and 5th editions "腓骨後緣" → 6th and 7th editions and WHO "腓骨前緣" | 外踝尖上 3寸, 腓骨前緣 | 直刺 0.5~0.8寸 | 項強, 胸脇脹痛, 下肢痿痹; 7th edition 痴呆 · 中風 (髓海) | **T2**. Original indications (stomach disorders) dropped |
 
 ---
 
-## 🔍 3. 이명·별칭 검증 표 (KJH DB 대조를 통한 혼용 차단)
+## 🔍 3. Alias & Nomenclature Verification Table (Blocking Conflation by KJH DB Collation)
 
-| 이명 | KJH DB (`경혈명_비교_정리_KJH.xlsx` 경혈 종합 목록) | 2대 교재 이명 열 | 원전 근거 | 혼용 위험 | 처리 |
+| Alias | KJH DB (`경혈명_비교_정리_KJH.xlsx`, comprehensive acupoint list) | Alias columns of the two textbooks | Classical basis | Risk of conflation | Handling |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **絶骨** | GB39 행 345 "絶骨, 足三陽絡, 髓會" **및** GB38 陽輔 행 344 "分肉, 分間, 絶骨" | 공통교재 343행·김재효 343행(GB39), 각 342행(GB38)에 모두 등재 | 《明堂》에 없음(《通考》 L431). Xuanzhong (懸鐘, GB39) 이명으로는 《千金》 卷29가 처음(《通鉴》 L342). 초기 "絶骨" = 外踝上七寸 위(陽輔 부근), 수당 이후 = 外踝上三四寸 | **높음** — 같은 이명이 GB38·GB39 두 혈에 걸림 | 연대순 분리: 《千金》 卷7·8·18·30의 "絶骨" 정위·주치는 Xuanzhong (懸鐘, GB39) 원주치와 구분. 《通考》는 "絶骨"을 기혈로 분리 제안(L437) |
-| 足三陽絡 | GB39 행 345 | 두 교재 등재 | 《甲乙》 3:55 "足三陽絡" | 낮음 | 혈성(穴性) 기술이지 독립 명칭은 아님 |
-| 髓會 | GB39 행 345 | 두 교재 등재 | 《難經》 45難 "髓會絶骨" — "絶骨"이 어느 혈인지 문헌상 확정되지 않음 | 중간 | 《通鉴》 "髓会不宜作别名"(L292). 이론 분류로만 취급 |
-| 懸鍾/悬钟 | 본명 懸鍾 | — | 《甲乙》 3:55 | 없음 | 본명 이체자. 구판의 "縣鍾" 표기는 출전 미확인으로 삭제 |
+| **絕骨** | GB39 row 345 "絕骨, 足三陽絡, 髓會" **and** GB38 陽輔 row 344 "分肉, 分間, 絕骨" | Listed in both the Common Textbook row 343 and Kim Jaehyo row 343 (GB39), and in row 342 of each (GB38) | Not in the 《明堂》 (《通考》 L431). First given as an alias of Xuanzhong (懸鍾) in 《千金》 卷29 (《通鑑》 L342). Early "絕骨" = 7 cun above the lateral malleolus (外踝上七寸, near 陽輔); from the Sui–Tang onwards = 3–4 cun above the lateral malleolus (外踝上三四寸) | **High** — the same alias attaches to two points, GB38 and GB39 | Separated chronologically: the "絕骨" locations and indications in 《千金》 卷7 · 8 · 18 · 30 are kept apart from the original indications of Xuanzhong. The 《通考》 proposes treating "絕骨" separately as an extra point (L437) |
+| 足三陽絡 | GB39 row 345 | Listed in both textbooks | 《甲乙》 3:55 "足三陽絡" | Low | A description of point character (穴性), not an independent name |
+| 髓會 | GB39 row 345 | Listed in both textbooks | 《難經》 Difficulty 45 (45難) "髓會絕骨" — which point "絕骨" denotes is not settled in the literature | Medium | 《通鑑》 "髓會不宜作別名" (L292). Treated only as a theoretical classification |
+| 懸鍾/悬钟 | Standard name 懸鍾 | — | 《甲乙》 3:55 | None | Character variants of the standard name. The earlier edition's spelling "縣鍾" was deleted because its source could not be confirmed |
 
-> 구판의 "絶骨은 甲乙經 이후 모든 문헌에서 GB39와 동일혈, 혼용 위험 없음", "絶骨 = 비골의 고대 이칭"은 원자료와 맞지 않아 삭제했다.
+> The earlier edition's statements "絕骨 is the same point as GB39 in all texts since the *Jiayi Jing* (甲乙經), with no risk of conflation" and "絕骨 = an ancient name for the fibula" do not match the source data and have been deleted.
 
 ---
 
-## 📐 4. 3D 공간 좌표 및 Layer 1~5 층차 구조도
+## 📐 4. 3D Spatial Coordinates & Layer 1–5 Structural Diagram
 
-### 4-1. Target별 좌표 (추정 — 혈위 특이 영상 실측 없음)
+### 4-1. Coordinates by Target (Estimated — No Point-Specific Imaging Measurement)
 
-| 축 | T1 고전 맥동점 | T2 WHO 비골 전연 |
+| Axis | T1 classical pulse point | T2 WHO anterior border of fibula |
 | :--- | :--- | :--- |
-| Y (근위–원위) | 外踝(尖) 위 3寸(골도 비례, 체형 의존) | 外踝尖 위 3寸 |
-| X (내–외측) | 경골 앞모서리와 종아리뼈 앞모서리 사이, 경골 쪽으로 치우친 앞정강동맥 주행선(《通考》 L431 "宜略偏向胫侧"; papers.id 1624 "胫骨前嵴与腓骨前缘之间") | 종아리뼈 앞모서리 |
-| Z (깊이) | 앞정강동·정맥과 깊은종아리신경이 골간막 앞에 있는 깊이(규범 해부상 체형에 따라 대략 10~20mm, 채점자 추정) | 표준 직자 5~8푼 = 11.5~18.4mm |
-| 촉진 지표 | 박동 촉지(마른 사람) 또는 세게 눌러 冲阳(족등동맥) 박동 소실 | 골성 지표(종아리뼈 앞모서리) |
+| Y (proximal–distal) | 3 cun above the (tip of the) lateral malleolus (外踝(尖)) (bone-proportional, depends on body build) | 3 cun above the tip of the lateral malleolus (外踝尖) |
+| X (medial–lateral) | Between the anterior border of the tibia and the anterior border of the fibula, on the course of the anterior tibial artery, shifted towards the tibia (《通考》 L431 "宜略偏向脛側"; papers.id 1624 "脛骨前嵴與腓骨前緣之間") | Anterior border of the fibula |
+| Z (depth) | Depth at which the anterior tibial artery and veins and the deep fibular nerve lie in front of the interosseous membrane (roughly 10–20 mm depending on body build in normative anatomy; raters' estimate) | Standard perpendicular insertion 5–8 fen = 11.5–18.4 mm |
+| Palpation landmark | Palpable pulse (in thin subjects), or the point where firm pressure abolishes the 衝陽 (dorsalis pedis) pulse | Bony landmark (anterior border of the fibula) |
 
-### 4-2. Layer 구조 (규범 해부 B1-01·B1-03·B1-06 및 2대 교재 기준, 깊이는 추정)
+### 4-2. Layer Structure (Based on Normative Anatomy B1-01 · B1-03 · B1-06 and the Two Textbooks; Depths Estimated)
 
-| Layer | T1 고전 맥동점 | T2 WHO 비골 전연 |
+| Layer | T1 classical pulse point | T2 WHO anterior border of fibula |
 | :---: | :--- | :--- |
-| 1 피부·피하 | 얕은종아리신경 피부가지(이 높이에서는 이미 근막을 뚫고 피하 주행), 피정맥 | **얕은종아리신경**(피하 주행), 가쪽장딴지피부신경(김재효) |
-| 2 표층근·근막 | 종아리 근막, 폄근지지대 근위부 | 종아리 근막, 짧은종아리근·긴종아리근 힘줄, 긴발가락폄근 |
-| 3 심층근 | 긴엄지폄근·긴발가락폄근(앞정강근 힘줄과의 사이) | 긴발가락폄근 심부, 셋째종아리근(김재효) |
-| **4 신경혈관속** | **앞정강동·정맥 + 깊은종아리신경** — 6푼(13.8mm) 직자로 직접 접촉 가능 | **앞정강동·정맥 + 깊은종아리신경**(앞칸 깊은 곳, 채점자 추정 18mm 안팎), 종아리동맥 관통가지(골간막 관통, 김재효) |
-| 5 골막 | 경골 외측면·골간막 | 종아리뼈 골막 |
+| 1 Skin & subcutis | Cutaneous branches of the superficial fibular nerve (at this level it has already pierced the fascia and runs subcutaneously), cutaneous veins | **Superficial fibular nerve** (subcutaneous course), lateral sural cutaneous nerve (Kim Jaehyo) |
+| 2 Superficial muscle & fascia | Crural fascia, proximal part of the extensor retinaculum | Crural fascia, tendons of fibularis brevis and fibularis longus, extensor digitorum longus |
+| 3 Deep muscle | Extensor hallucis longus and extensor digitorum longus (between them and the tendon of tibialis anterior) | Deep part of extensor digitorum longus, fibularis tertius (Kim Jaehyo) |
+| **4 Neurovascular bundle** | **Anterior tibial artery and veins + deep fibular nerve** — can be contacted directly by perpendicular insertion of 6 fen (13.8 mm) | **Anterior tibial artery and veins + deep fibular nerve** (deep in the anterior compartment, raters' estimate around 18 mm), perforating branch of the fibular artery (piercing the interosseous membrane, Kim Jaehyo) |
+| 5 Periosteum | Lateral surface of the tibia · interosseous membrane | Periosteum of the fibula |
 
 ```
-   (내측) 경골 앞모서리                             종아리뼈 앞모서리 (외측)
-        │앞정강근건 긴엄지폄근건 긴발가락폄근             │  짧은/긴종아리근
+   (medial) anterior border of tibia                 anterior border of fibula (lateral)
+        │TA tendon  EHL tendon  EDL                    │  fibularis brevis/longus
         │          │          ●T1            │            ●T2
-피부────┼──────────┼──────────┼──────────────┼────────────┼──── L1 (얕은종아리신경: T2 쪽 피하)
-근막────┼──────────┼──────────┼──────────────┼────────────┼──── L2
-        │          │          ▼ 약 10~20mm   │            ▼ 11.5~18.4mm(5~8푼)
-        │ [L4 앞정강동·정맥 + 깊은종아리신경 — 골간막 앞]   ◀── T2에서 깊게 찌르면 도달 가능
- 골간막 ═══════════════════════════════════════════════════════ L5 (경골·종아리뼈 골막)
-                              ●─────── Δ ≈ 20~35mm ───────●
-                          (X 20~30mm · 3D 20~35mm, 채점자 2인 독립 추정)
+Skin────┼──────────┼──────────┼──────────────┼────────────┼──── L1 (superficial fibular n.: subcutaneous on T2 side)
+Fascia──┼──────────┼──────────┼──────────────┼────────────┼──── L2
+        │          │          ▼ ~10–20 mm    │            ▼ 11.5–18.4 mm (5–8 fen)
+        │ [L4 anterior tibial a./vv. + deep fibular n. — in front of interosseous membrane]  ◀── reachable by deep insertion at T2
+ Interosseous membrane ════════════════════════════════════════ L5 (tibial and fibular periosteum)
+                              ●─────── Δ ≈ 20–35 mm ───────●
+                          (X 20–30 mm · 3D 20–35 mm, independent estimates by 2 raters)
 ```
 
-![Xuanzhong (懸鐘, GB39)(GB39) 높이 하퇴 하1/3 횡단면 해부 실체 모식도](GB39_Xuanzhong (懸鐘, GB39)_횡단면_해부모식도.png)
+![Schematic cross-section of the lower third of the leg at the level of Xuanzhong (懸鍾, GB39)](GB39_현종_횡단면_해부모식도.png)
 
-*그림 4-1. Xuanzhong (懸鐘, GB39) 높이(外踝上3寸) 하퇴 하1/3 횡단면 모식도(오른다리, 위에서 내려다봄, 축척 아님). 보라 화살표 T1은 경골 쪽 앞정강동맥 박동점에서 6푼 직자 시 Layer 4 신경혈관속에 이르는 경로, 검은 화살표 T2는 비골 전연 5~8푼 직자 경로다. 층 두께·거리와 Δ는 실측값이 아니다(채점자 추정).*
+*Figure 4-1. Schematic cross-section of the lower third of the leg at the level of Xuanzhong (懸鍾) (外踝上3寸) (right leg, viewed from above, not to scale). The purple arrow T1 is the path by which perpendicular insertion of 6 fen at the anterior tibial artery pulse point on the tibial side reaches the Layer 4 neurovascular bundle; the black arrow T2 is the path of perpendicular insertion of 5–8 fen at the anterior border of the fibula. Layer thicknesses, distances and Δ are not measured values (raters' estimates).*
 
-### 4-3. FMA 실체 대조 (Layer별) — 구조명은 2대 교재, ID·관계는 FMA 5.1.0
+### 4-3. FMA Substrate Cross-check by Layer — Structure Names from the Two Textbooks; IDs and Relations from FMA 5.1.0
 
-| Layer | 구조 | FMA | FMA 구획·관계 | 지배신경 / 줄기 (FMA) | 척수 분절 (FMA) |
+| Layer | Structure | FMA | FMA compartment / relation | Innervation / trunk (FMA) | Spinal segment (FMA) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 피하 | 얕은종아리신경 | FMA:44699 | is_a Branch of common fibular nerve | 온종아리신경 → 궁둥신경 → 엉치신경얼기 | FMA 미기재 |
-| 1 피하 | 가쪽장딴지피부신경 *(김재효)* | FMA:44697 | is_a Cutaneous branch of common fibular nerve | 온종아리신경 → 궁둥신경 → 엉치신경얼기 | FMA 미기재 |
-| 2~3 앞칸 | 긴발가락폄근 | FMA:22534 | contained_in Space of anterior compartment of leg (FMA:85203) | Nerve to EDL (FMA:80068) ← 깊은종아리신경 | **L5(주)**·S1 |
-| 2~3 앞칸 | 긴엄지폄근 | FMA:22533 | contained_in 앞칸 공간(FMA:85203) | Nerve to EHL (FMA:80065) ← 깊은종아리신경 | **L5(주)**·S1 |
-| 2~3 앞칸 | 셋째종아리근 *(김재효)* | FMA:22538 | contained_in 앞칸 공간(FMA:85203) | Nerve to fibularis tertius (FMA:80071) ← 깊은종아리신경 | L5·S1 |
-| 2~3 가쪽칸 | 짧은종아리근 | FMA:22540 | contained_in Space of lateral compartment of leg (FMA:85206) | Nerve to fibularis brevis (FMA:80082) ← **얕은종아리신경** | L5·S1 |
-| 2~3 가쪽칸 | 긴종아리근 *(공통교재)* | FMA:22539 | contained_in 가쪽칸 공간(FMA:85206) | Nerve to fibularis longus (FMA:80079) ← 얕은종아리신경 | L4·L5·S1 |
-| 4 신경혈관속 | 깊은종아리신경 | FMA:44771 | is_a Branch of common fibular nerve | 온종아리신경 → 궁둥신경 → 엉치신경얼기 | FMA 미기재 |
-| 4 신경혈관속 | 앞정강동맥 · 앞정강정맥 | FMA:43894 · FMA:44331 | branch_of External iliac artery(FMA 모델링) / tributary_of Popliteal vein | — | — |
-| (뒤칸) | 긴엄지굽힘근 *(김재효)* | FMA:22593 | contained_in Space of deep part of posterior compartment of leg (FMA:312109) | Nerve to FHL (FMA:80098) ← **정강신경** | **S1·S2(주)**·L5 |
-| (뒤칸) | 종아리동맥 · 종아리정맥 *(김재효)* | FMA:43921 · FMA:44558 | 종아리정맥: drains_into Femoral vein(아래 주석) | — | — |
-| (뒤칸→앞) | 종아리동맥 관통가지 *(김재효)* | FMA:44033 | branch of Peroneal artery(FMA:43921) | — | — |
-| 5 골막 | 정강뼈 · 종아리뼈 · 종아리뼈사이막 | FMA:24476 · FMA:24479 · FMA:35187 | — | — | — |
+| 1 Subcutis | Superficial fibular nerve | FMA:44699 | is_a Branch of common fibular nerve | Common fibular n. → sciatic n. → sacral plexus | Not recorded in FMA |
+| 1 Subcutis | Lateral sural cutaneous nerve *(Kim Jaehyo)* | FMA:44697 | is_a Cutaneous branch of common fibular nerve | Common fibular n. → sciatic n. → sacral plexus | Not recorded in FMA |
+| 2–3 Anterior compartment | Extensor digitorum longus | FMA:22534 | contained_in Space of anterior compartment of leg (FMA:85203) | Nerve to EDL (FMA:80068) ← deep fibular n. | **L5 (primary)** · S1 |
+| 2–3 Anterior compartment | Extensor hallucis longus | FMA:22533 | contained_in anterior compartment space (FMA:85203) | Nerve to EHL (FMA:80065) ← deep fibular n. | **L5 (primary)** · S1 |
+| 2–3 Anterior compartment | Fibularis tertius *(Kim Jaehyo)* | FMA:22538 | contained_in anterior compartment space (FMA:85203) | Nerve to fibularis tertius (FMA:80071) ← deep fibular n. | L5 · S1 |
+| 2–3 Lateral compartment | Fibularis brevis | FMA:22540 | contained_in Space of lateral compartment of leg (FMA:85206) | Nerve to fibularis brevis (FMA:80082) ← **superficial fibular n.** | L5 · S1 |
+| 2–3 Lateral compartment | Fibularis longus *(Common Textbook)* | FMA:22539 | contained_in lateral compartment space (FMA:85206) | Nerve to fibularis longus (FMA:80079) ← superficial fibular n. | L4 · L5 · S1 |
+| 4 Neurovascular bundle | Deep fibular nerve | FMA:44771 | is_a Branch of common fibular nerve | Common fibular n. → sciatic n. → sacral plexus | Not recorded in FMA |
+| 4 Neurovascular bundle | Anterior tibial artery · anterior tibial vein | FMA:43894 · FMA:44331 | branch_of External iliac artery (FMA modelling) / tributary_of Popliteal vein | — | — |
+| (Posterior compartment) | Flexor hallucis longus *(Kim Jaehyo)* | FMA:22593 | contained_in Space of deep part of posterior compartment of leg (FMA:312109) | Nerve to FHL (FMA:80098) ← **tibial n.** | **S1 · S2 (primary)** · L5 |
+| (Posterior compartment) | Fibular artery · fibular vein *(Kim Jaehyo)* | FMA:43921 · FMA:44558 | Fibular vein: drains_into Femoral vein (see note below) | — | — |
+| (Posterior → anterior) | Perforating branch of fibular artery *(Kim Jaehyo)* | FMA:44033 | branch of Peroneal artery (FMA:43921) | — | — |
+| 5 Periosteum | Tibia · fibula · interosseous membrane of leg | FMA:24476 · FMA:24479 · FMA:35187 | — | — | — |
 
-- FMA는 앞칸 근육(긴발가락폄근·긴엄지폄근·셋째종아리근)의 근육가지를 깊은종아리신경의 *안쪽종말가지(FMA:44777, 발목 아래 구간)* 가지로 기록한다. 규범 해부(B1-01)에서 이 근육가지는 하퇴에서 깊은종아리신경 줄기에서 나오므로 **깊은종아리신경 수준까지만** FMA를 인용한다.
-- FMA는 종아리정맥(FMA:44558)을 *Tributary of femoral vein*(drains_into Femoral vein)으로 둔다. 규범 해부에서 종아리정맥은 뒤정강정맥과 합쳐 오금정맥으로 가므로 이 관계는 FMA 모델링 특성으로 보고 인용하지 않는다(B1-01로 기술).
-- FMA 분절은 근육의 `segmental_supply`에만 있고 신경 자체에는 없다. 신경 분절(온종아리신경 L4~S2 등)은 B1-01·B1-02로 기술한다.
+- FMA records the muscular branches to the anterior-compartment muscles (extensor digitorum longus, extensor hallucis longus, fibularis tertius) as branches of the *medial terminal branch of the deep fibular nerve (FMA:44777, the segment below the ankle)*. In normative anatomy (B1-01) these muscular branches arise from the trunk of the deep fibular nerve in the leg, so this report cites FMA **only down to the level of the deep fibular nerve**.
+- FMA places the fibular vein (FMA:44558) as a *Tributary of femoral vein* (drains_into Femoral vein). In normative anatomy the fibular veins join the posterior tibial veins and continue into the popliteal vein, so this relation is regarded as a feature of FMA modelling and is not cited (described per B1-01).
+- FMA gives segments only in the `segmental_supply` of muscles, not for nerves themselves. Nerve segments (e.g. common fibular nerve L4–S2) are given per B1-01 and B1-02.
 
 ---
 
-## 📏 5. 자침 깊이 계산표 (한대 2.3mm 환산 및 Layer 도달 범위)
+## 📏 5. Needling Depth Calculation Table (Han-Dynasty 2.3 mm Conversion and Layer Reached)
 
-| 문헌 | 값 | 환산 | T1 도달 Layer | T2 도달 Layer | 출처 |
+| Text | Value | Conversion | Layer reached at T1 | Layer reached at T2 | Source |
 | :--- | :---: | :---: | :--- | :--- | :--- |
-| 황제명당경(황룡상 감수편찬) | 6푼 | 13.8mm | L4 (박동점 바로 아래 신경혈관속) | L2~3 | 자침깊이 DB 344행 |
-| 침구갑을경 | 6푼 | 13.8mm | L4 | L2~3 | 같은 행 |
-| 침구경험방 | 6푼 | 13.8mm | L4 | L2~3 | 같은 행 |
-| 동의보감(동인 인용) | 6푼 | 13.8mm | L4 | L2~3 | 같은 행 |
-| 경락수혈학 공통교재 | 5~8푼 | 11.5~18.4mm | L3~4 | L2~4 | 같은 행 (선호 자침법 blank = 미기술) |
-| 침구의학 공통교재 | 5~8푼 | 11.5~18.4mm | L3~4 | L2~4 | 같은 행 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 5~8푼 | 11.5~18.4mm | L3~4 | L2~4 | 같은 행 (선호 자침법 blank) |
-| 《脉经》 10:88 | 5푼 | 11.5mm | — | — | 《通鉴》 L234 (DB 미수록) |
-| 《扁鹊神应针灸玉龙经》 | 横针 2.5푼 / 针 3푼 | 5.75 / 6.9mm | — | — | 《通鉴》 L248 |
-| 《针灸聚英》·《大成》 引 《指微》 | 斜入 2寸許 | ≈ 46mm | — | 사자 시 앞칸 관통 가능 | 《通鉴》 L250·256 |
-| 《针方六集》 窦氏 | 针入 2寸半 | 57.5mm | — | 하퇴 앞·뒤칸 관통, 종아리동맥 도달 가능 | 《通鉴》 L258 |
-| 《循经考穴编》 | 横透三阴交 / 凌氏 横针 1寸 | 횡자 | — | 앞·뒤칸 관통 | 《通鉴》 L260 |
-| 《针灸学简编》 | 3~5푼 | 6.9~11.5mm | — | L1~3 | 《通鉴》 L274 |
+| *Huangdi Mingtang Jing* (《黃帝明堂經》, compiled and edited by Huang Longxiang) | 6 fen | 13.8 mm | L4 (neurovascular bundle directly beneath the pulse point) | L2–3 | Needling-depth DB row 344 |
+| *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | 6 fen | 13.8 mm | L4 | L2–3 | Same row |
+| *Chimgu Gyeongheombang* (《鍼灸經驗方》) | 6 fen | 13.8 mm | L4 | L2–3 | Same row |
+| *Dongui Bogam* (《東醫寶鑑》, citing 《銅人》) | 6 fen | 13.8 mm | L4 | L2–3 | Same row |
+| Korean common textbook, *Meridian and Acupoint Studies* (經絡經穴學) | 5–8 fen | 11.5–18.4 mm | L3–4 | L2–4 | Same row (preferred needling method blank = not described) |
+| Korean common textbook, *Acupuncture and Moxibustion Medicine* (鍼灸醫學) | 5–8 fen | 11.5–18.4 mm | L3–4 | L2–4 | Same row |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 5–8 fen | 11.5–18.4 mm | L3–4 | L2–4 | Same row (preferred needling method blank) |
+| 《脈經》 10:88 | 5 fen | 11.5 mm | — | — | 《通鑑》 L234 (not in the DB) |
+| 《扁鵲神應針灸玉龍經》 | transverse needle (橫針) 2.5 fen / needle (針) 3 fen | 5.75 / 6.9 mm | — | — | 《通鑑》 L248 |
+| 《針灸聚英》 · 《大成》 citing 《指微》 | 斜入 2寸許 | ≈ 46 mm | — | Oblique insertion may traverse the anterior compartment | 《通鑑》 L250 · 256 |
+| 《針方六集》 竇氏 | 針入 2寸半 | 57.5 mm | — | May traverse the anterior and posterior compartments of the leg and reach the fibular artery | 《通鑑》 L258 |
+| 《循經考穴編》 | 橫透三陰交 / 凌氏 橫針 1寸 | Transverse insertion | — | Traverses the anterior and posterior compartments | 《通鑑》 L260 |
+| 《針灸學簡編》 | 3–5 fen | 6.9–11.5 mm | — | L1–3 | 《通鑑》 L274 |
 
-- 자침깊이 DB에 **Contraindicated for Needling (禁鍼)('0') 없음**. "갑을경 경혈 분류 및 배열순서" 열의 34는 배열 번호이지 깊이가 아니다(구판이 깊이 표에 넣은 것을 삭제).
-- 구판의 μ = 6.2푼, σ = 1.0푼은 산출 근거가 없어 삭제했다.
-- **T1 안전 주의**: 정의상 동맥 박동점 바로 위에 찌르므로 6푼 직자로 Layer 4에 닿는다. 박동을 확인하고 동맥을 비껴 찌르거나 깊이를 약 10mm 이내로 제한해야 한다(채점자 A 권고, 실측 없음).
-- **T2 안전 주의**: 5~6푼은 Layer 2~3에 머물지만 8푼(18.4mm) 이상, 마른 사람, 《指微》·窦氏 심자에서는 앞정강동맥·깊은종아리신경(Layer 4)에 닿을 수 있다. 영상 실측이 없어 10mm 여유는 확인되지 않았다.
+- The needling-depth DB contains **no contraindication ('0')**. The value 34 in the column "Jiayi Jing point classification and order" is a sequence number, not a depth (the earlier edition had entered it in the depth table; deleted).
+- The earlier edition's μ = 6.2 fen and σ = 1.0 fen had no derivation and have been deleted.
+- **T1 safety caution**: by definition the needle is inserted directly over an arterial pulse point, so perpendicular insertion of 6 fen reaches Layer 4. The pulse should be located and the artery avoided, or the depth limited to about 10 mm (Rater A's recommendation; no measurement).
+- **T2 safety caution**: 5–6 fen stays within Layers 2–3, but at 8 fen (18.4 mm) or more, in thin subjects, and with the deep insertions of the 《指微》 and 竇氏, the needle may reach the anterior tibial artery and deep fibular nerve (Layer 4). Without imaging measurements a 10 mm margin has not been confirmed.
 
 ---
 
-## 📚 6. 해부학 구조 교재 비교표 (공통교재 vs 김재효 교재)
+## 📚 6. Anatomical Structure Textbook Comparison Table (Common Textbook vs. Kim Jaehyo Textbook)
 
-| 구분 | 경혈학 공통교재 (`경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx` 343행, 경혈학 하 p.457) | 김재효 교재 (`김재효 수업_경혈_해부구조_데이터셋.xlsx` 343행) | 공통 | 차이 및 해석 |
+| Category | Common Textbook of Acupoint Studies (`경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx` row 343; *Acupoint Studies* vol. 2, p.457) | Kim Jaehyo textbook (`김재효 수업_경혈_해부구조_데이터셋.xlsx` row 343) | Common | Differences & interpretation |
 | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 긴발가락폄근, 긴엄지폄근, 짧은종아리근, 긴종아리근 | 짧은종아리근, 긴발가락폄근, 긴엄지폄근, 셋째종아리근, **긴엄지굽힘근** | 긴발가락폄근, 긴엄지폄근, 짧은종아리근 | 공통교재만 긴종아리근(이 높이에서는 주로 힘줄). 김재효만 셋째종아리근과 **뒤칸 근육인 긴엄지굽힘근** — 깊이 찌르거나 비골 뒤쪽(구 교재 "腓骨后缘")까지 포함한 목록으로 보임 |
-| 신경 | 얕은종아리신경, 깊은종아리신경 | 가쪽장딴지피부신경, 깊은종아리신경, 얕은종아리신경 | 얕은·깊은종아리신경 | 김재효는 피부신경(가쪽장딴지피부신경) 추가 |
-| 혈관 | 앞정강동·정맥 | 앞정강동·정맥, **종아리동맥 관통가지**, **종아리동·정맥** | 앞정강동·정맥 | 김재효는 골간막을 관통하는 가지와 뒤칸의 종아리동·정맥 추가 |
+| Muscles | Extensor digitorum longus, extensor hallucis longus, fibularis brevis, fibularis longus | Fibularis brevis, extensor digitorum longus, extensor hallucis longus, fibularis tertius, **flexor hallucis longus** | Extensor digitorum longus, extensor hallucis longus, fibularis brevis | Fibularis longus only in the Common Textbook (mainly tendon at this level). Fibularis tertius and the **posterior-compartment muscle flexor hallucis longus** only in Kim Jaehyo — apparently a list that includes deep insertion or the region behind the fibula (older textbooks' "腓骨後緣") |
+| Nerves | Superficial fibular nerve, deep fibular nerve | Lateral sural cutaneous nerve, deep fibular nerve, superficial fibular nerve | Superficial and deep fibular nerves | Kim Jaehyo adds a cutaneous nerve (lateral sural cutaneous nerve) |
+| Vessels | Anterior tibial artery and veins | Anterior tibial artery and veins, **perforating branch of the fibular artery**, **fibular artery and veins** | Anterior tibial artery and veins | Kim Jaehyo adds the branch piercing the interosseous membrane and the fibular artery and veins of the posterior compartment |
 
-- 두 교재 모두 혈관 첫 항목으로 **앞정강동·정맥**을 든다. 이는 고전 "動者中"의 실체를 앞정강동맥으로 보는 《通考》·《经穴释义汇解》·papers.id 1624와 같은 구조다. 다만 두 교재의 정위 문구는 비골 전연(T2)이어서 **좌표는 T1과 다르다**.
-- 구판의 "상호 보완적 정합", "층차별 신경 지배 완벽 대조"는 실제 차이(뒤칸 구조 포함 여부)를 가렸으므로 삭제했다. 이 불일치를 추론으로 조정해야 하므로 두 Target 모두 $S_{clarity}$ 50 단계다.
-**FMA 판별** (부록 A): 두 교재 공통 FMA 실체 7개 · 공통교재 단독 1개(긴종아리근 FMA:22539) · 김재효 단독 6개(셋째종아리근 22538, 긴엄지굽힘근 22593, 가쪽장딴지피부신경 44697, 종아리동맥 43921·정맥 44558, 종아리동맥 관통가지 44033). "fibularis/peroneus" 영문 이표기는 같은 FMA ID로 판별되어 실제 차이가 아니다.
+- Both textbooks list the **anterior tibial artery and veins** first among the vessels. This is the same structure as the one the 《通考》, the 《經穴釋義匯解》 and papers.id 1624 identify as the substrate of the classical "動者中". However, both textbooks' location wording is the anterior border of the fibula (T2), so **the coordinates differ from T1**.
+- The earlier edition's "mutually complementary consistency" and "perfect layer-by-layer collation of innervation" concealed the actual difference (whether posterior-compartment structures are included) and have been deleted. Because this discrepancy has to be reconciled by inference, both Targets are at the $S_{clarity}$ 50 level.
+**FMA adjudication** (Appendix A): 7 FMA entities common to both textbooks · 1 only in the Common Textbook (fibularis longus FMA:22539) · 6 only in Kim Jaehyo (fibularis tertius 22538, flexor hallucis longus 22593, lateral sural cutaneous nerve 44697, fibular artery 43921 and vein 44558, perforating branch of the fibular artery 44033). The English spelling variants "fibularis/peroneus" resolve to the same FMA IDs and are not real differences.
 
-- **FMA로 본 차이의 의미**: 공통 구조와 공통교재 단독 긴종아리근은 모두 FMA상 앞칸·가쪽칸(FMA:85203·85206)과 **온종아리신경 줄기**(깊은·얕은종아리신경)에 속한다. 김재효 단독 구조 가운데 긴엄지굽힘근은 *뒤칸 깊은층*(FMA:312109)이고 **정강신경** 지배(S1·S2 주)이며, 종아리동·정맥도 뒤칸 구조다. 따라서 두 교재 차이는 같은 칸 안의 기재 범위 차이가 아니라 **김재효 목록이 종아리뼈사이막 뒤(다른 칸·다른 신경 줄기)까지 포함하는가**의 차이이며, 위 해석("깊이 찌르거나 비골 뒤쪽까지 포함한 목록")을 FMA 구획·신경 계통으로 뒷받침한다. 이 판별은 $S_{clarity}$ 50 단계(추론 조정)를 바꾸지 않는다.
-- 구판이 "動脈中"의 실체로 지목한 **종아리동맥 관통가지**는 김재효 교재에만 있고, 골간막을 뚫고 나오는 깊은 가지라서 체표 박동 촉지점으로 보기 어렵다(B1-01). 고전 원전·《通考》에 이 해석의 근거는 없다.
+- **Meaning of the differences in the light of FMA**: the common structures and fibularis longus (Common Textbook only) all belong, in FMA, to the anterior and lateral compartments (FMA:85203 · 85206) and to the **common fibular nerve trunk** (deep and superficial fibular nerves). Among the Kim Jaehyo-only structures, flexor hallucis longus lies in the *deep part of the posterior compartment* (FMA:312109) and is innervated by the **tibial nerve** (S1 · S2 primary), and the fibular artery and veins are also posterior-compartment structures. The difference between the two textbooks is therefore not a difference in coverage within the same compartment but **whether the Kim Jaehyo list extends behind the interosseous membrane of the leg (a different compartment and a different nerve trunk)**, and the FMA compartments and nerve systems support the interpretation above ("a list that includes deep insertion or the region behind the fibula"). This adjudication does not change the $S_{clarity}$ 50 level (reconciliation by inference).
+- The **perforating branch of the fibular artery**, which the earlier edition identified as the substrate of "動脈中", appears only in the Kim Jaehyo textbook and, as a deep branch emerging through the interosseous membrane, is unlikely to be a surface-palpable pulse point (B1-01). The classical sources and the 《通考》 give no basis for this interpretation.
 
 ---
 
-## 🔀 7. 공간 변위 분기 추론도
+## 🔀 7. Spatial Discrepancy Branch Inference Diagram
 
 ```
-       경골 앞모서리                                                                종아리뼈 앞모서리
+   anterior border of tibia                                                     anterior border of fibula
              │                                                                              │
-             │   [T1 고전 맥동점]                              [T2 WHO 현행]                │
-             │   外踝上三寸 動者(脈)中                         外踝尖上3寸                  │
-             │   按之陽明脈絶 → 冲阳 박동 소실                 腓骨前緣                     │
-             │   실체: 앞정강동맥 + 깊은종아리신경 (L4)        실체: 얕은종아리신경(L1)     │
-             │   주치: 腹满·胃中有热·不嗜食 (《明堂》)              + 폄근·종아리근 (L2~3)  │
-             │   근거: 《通考》 L431·552, 《经穴释义汇解》,    주치: 项强·下肢痿痹          │
-             │         papers.id 1624                                (《千金》 絶骨 계통)   │
-             │   ●────────────────────── Δ ≈ 20~35 mm (> 15 mm) ───────────────────────●    │
+             │   [T1 classical pulse point]                    [T2 current WHO]             │
+             │   外踝上三寸 動者(脈)中                          外踝尖上3寸                  │
+             │   按之陽明脈絕 → 衝陽 pulse abolished            腓骨前緣                     │
+             │   Substrate: anterior tibial a. + deep          Substrate: superficial       │
+             │              fibular n. (L4)                    fibular n. (L1)              │
+             │   Indications: 腹滿·胃中有熱·不嗜食 (《明堂》)     + extensors/fibulares (L2–3) │
+             │   Basis: 《通考》 L431·552, 《經穴釋義匯解》,     Indications: 項強·下肢痿痹    │
+             │          papers.id 1624                         (《千金》 絕骨 tradition)     │
+             │   ●────────────────────── Δ ≈ 20–35 mm (> 15 mm) ───────────────────────●    │
 ```
 
-| 항목 | 내용 |
+| Item | Content |
 | :--- | :--- |
-| Y축 차이 | 없음(둘 다 外踝 위 3寸). 단 《千金》 卷7 "一夫, 亦云四寸" 계열은 별도 |
-| X축 차이 | 앞정강동맥 주행선(경골 쪽) ↔ 종아리뼈 앞모서리: 약 20~30mm (채점자 B, 중앙값 약 25mm) |
-| 3D 차이 | 약 20~35mm (채점자 A, X축 + 깊이 차 포함) |
-| 판정 | $\Delta_{discrepancy} > 15\text{mm}$ → **T1·T2 독립 분기** (정본 Rank 5) |
-| 구판 Δ | 0.3~0.7cm — "動脈中 = 종아리동맥 관통가지"라는 근거 없는 동정에 기댄 과소 추정이어서 폐기 |
-| 이견 | papers.id 1624는 T1 위치(胫骨前嵴과 腓骨前缘 사이)를 지지하면서도 "在外踝上３寸处，用手摸到跳动的动脉是很难的……也不容易"라 하여 박동·冲阳 소실의 **재현성**에 의문을 둔다. 《通考》의 "人体测量学调查"는 서지가 제시되지 않았다. 이 이견은 정위 쟁점이며 기전 상충은 아니다 |
+| Y-axis difference | None (both 3 cun above the lateral malleolus (外踝)). The 《千金》 卷7 "一夫, 亦云四寸" tradition is separate |
+| X-axis difference | Course of the anterior tibial artery (tibial side) ↔ anterior border of the fibula: about 20–30 mm (Rater B, median about 25 mm) |
+| 3D difference | About 20–35 mm (Rater A, including X-axis and depth difference) |
+| Verdict | $\Delta_{discrepancy} > 15\text{mm}$ → **independent T1 and T2 branches** (canonical Rank 5) |
+| Earlier-edition Δ | 0.3–0.7 cm — an underestimate resting on the unsupported identification "動脈中 = perforating branch of the fibular artery"; discarded |
+| Dissent | papers.id 1624 supports the T1 position (between 脛骨前嵴 and 腓骨前緣) but, stating "在外踝上３寸處，用手摸到跳動的動脈是很難的……也不容易", questions the **reproducibility** of the pulse and of the abolition of the 衝陽 pulse. No bibliographic reference is given for the 《通考》's "人體測量學調查". This dissent concerns location, not a conflict about mechanism |
 
-**분기 판정**: ΔARI-Core = 55.0 − 51.2 = **3.8 (< 10)**. 두 구간 [51.2, 51.2]·[55, 55]는 겹치지 않지만 Δ 기준을 충족하지 못한다 → **우위 Target 없음. T1·T2를 병기한다.**
+**Branch decision**: ΔARI-Core = 55.0 − 51.2 = **3.8 (< 10)**. The two intervals [51.2, 51.2] and [55, 55] do not overlap, but the Δ criterion is not met → **no superior Target. T1 and T2 are reported side by side.**
 
 ---
 
-## 🧬 8. 생의학적 반사 기전도 및 외부 검색 로그
+## 🧬 8. Biomedical Reflex Mechanism Diagram & External Search Log
 
-### ① Layer A 논문 표 (GB39 자체 연구 우선)
+### ① Layer A Papers (GB39-specific studies first)
 
-| papers.id | 연도 | 저널 | 제목 | PMID / DOI | 설계 | 사용 |
+| papers.id | Year | Journal | Title | PMID / DOI | Design | Use |
 | :---: | :---: | :--- | :--- | :--- | :--- | :--- |
-| 1624 | 2021 | 针刺研究 46(1) (DB 저널 표기: World Journal of Acupuncture-Moxibustion) | 关于悬钟穴定位的探讨 / Location of acupoint Xuanzhong (GB39) — 刘佳男 등 | PMID 없음 / DOI 10.13702/j.1000-0607.200282 (본문 PDF) | 문헌 연구(정위) | T1 정위 근거: "悬钟穴定位应该准确描述为：'足外踝上３寸，胫骨前嵴与腓骨前缘之间'", "动者脉中" = 胫前动脉(李鼎 인용). 박동 촉지 곤란 지적 |
-| 1610 | 2003 | 대한침구학회지 | 치매와 관련된 뇌영역에 투사되는 경혈(SJ5, PC6, SP6 및 GB39)의 탐색에 관한 신경해부학적 연구 | — | 동물 신경추적 | T2 B-Check ④ |
-| 1612 | 2006 | 대한한의학회지 | 양릉천-Xuanzhong (懸鐘, GB39) 전침치료가 뇌경색환자 및 정상인의 뇌혈류에 미치는 영향 | — | 인체 비RCT(배혈) | T2 B-Check ④⑥ |
-| 1615 | 2013 | 대한침구의학회지 | 懸鍾(GB39)·陽陵泉(GB34)의 電鍼 및 레이저침이 白鼠의 神經病理性 疼痛에 미치는 영향 | DOI 10.13045/acupunct.2013012 | 동물(배혈) | T2 B-Check ③⑤ |
-| 1903 | 2019 | Zhen Ci Yan Jiu | Electroacupuncture at "Zusanli"(ST36) and "Xuanzhong"(GB39) improves inflammatory reactions… | 31532135 / 10.13702/j.1000-0607.180555 | 동물(배혈) | T2 B-Check ⑤ |
-| 1902 | 2024 | Zhongguo Zhen Jiu | Electroacupuncture for the prevention of chemotherapy-induced peripheral neuropathy: a randomized controlled trial | 39658376 / 10.13703/j.0255-2930.20240222-k0001 | 인체 RCT(다혈위) | T2 B-Check ⑥ (GB39 단독 효과 분리 불가) |
-| 1904 | 2002 | Am J Physiol Regul Integr Comp Physiol | Effect of electroacupuncture on pressor reflex during gastric distension | 12388466 / 10.1152/ajpregu.00192.2002 | 동물 | T1 B-Check ③~⑤ **유추**(다른 혈위·동물) |
-| 1620 | 2017 | 针灸临床杂志 | 髓会绝骨的文献研究及临床应用概论 | — | 문헌 연구 | 髓會 이론 참고(채점 불산입) |
+| 1624 | 2021 | 針刺研究 46(1) (journal as recorded in the DB: World Journal of Acupuncture-Moxibustion) | 關於懸鍾穴定位的探討 / Location of acupoint Xuanzhong (GB39) — Liu Jianan (劉佳男) et al. | No PMID / DOI 10.13702/j.1000-0607.200282 (full-text PDF) | Textual study (location) | Basis for the T1 location: "懸鍾穴定位應該準確描述為：'足外踝上３寸，脛骨前嵴與腓骨前緣之間'", "動者脈中" = 脛前動脈 (citing Li Ding, 李鼎). Notes the difficulty of palpating the pulse |
+| 1610 | 2003 | Journal of Korean Acupuncture & Moxibustion Society | A neuroanatomical study of acupoints (SJ5, PC6, SP6 and GB39) projecting to brain regions related to dementia [in Korean] | — | Animal neural tracing | T2 B-Check ④ |
+| 1612 | 2006 | Journal of the Korean Oriental Medicine Society | Effects of Yanglingquan (陽陵泉)–Xuanzhong (懸鍾) electroacupuncture on cerebral blood flow in patients with cerebral infarction and in healthy subjects [in Korean] | — | Human non-RCT (point combination) | T2 B-Check ④⑥ |
+| 1615 | 2013 | Journal of Korean Acupuncture & Moxibustion Medicine Society | Effects of electroacupuncture and laser acupuncture at 懸鍾 (GB39) and 陽陵泉 (GB34) on neuropathic pain in rats (白鼠) [in Korean] | DOI 10.13045/acupunct.2013012 | Animal (point combination) | T2 B-Check ③⑤ |
+| 1903 | 2019 | Zhen Ci Yan Jiu | Electroacupuncture at "Zusanli"(ST36) and "Xuanzhong"(GB39) improves inflammatory reactions… | 31532135 / 10.13702/j.1000-0607.180555 | Animal (point combination) | T2 B-Check ⑤ |
+| 1902 | 2024 | Zhongguo Zhen Jiu | Electroacupuncture for the prevention of chemotherapy-induced peripheral neuropathy: a randomized controlled trial | 39658376 / 10.13703/j.0255-2930.20240222-k0001 | Human RCT (multiple points) | T2 B-Check ⑥ (effect of GB39 alone cannot be separated) |
+| 1904 | 2002 | Am J Physiol Regul Integr Comp Physiol | Effect of electroacupuncture on pressor reflex during gastric distension | 12388466 / 10.1152/ajpregu.00192.2002 | Animal | T1 B-Check ③–⑤ **analogy** (other points, animal) |
+| 1620 | 2017 | 針灸臨床雜誌 | 髓會絕骨的文獻研究及臨床應用概論 | — | Textual study | Reference for the 髓會 theory (not counted in scoring) |
 
-- **불산입**: 1842·1905·1845·1922(종설·데이터마이닝), 1910·1915·1924·1925·1911(제목상 GB39 포함 또는 단독성 미확인), 1913(근막 발통점 초음파 유도 임상 — GB39 해부 실측 아님), 그 밖의 로컬 매핑 논문(관련성 없음).
-- **T1 기준 경혈 특이 Layer A = 0편**(위 연구는 모두 현행 비골 쪽 정위에 자침) → 게이트 2. **T2 기준 = 4편**(1610·1612·1615·1903, 조정 결과 `layerA_point_specific`).
+- **Not counted**: 1842 · 1905 · 1845 · 1922 (reviews, data mining), 1910 · 1915 · 1924 · 1925 · 1911 (GB39 inclusion or single-point status unconfirmed from the title), 1913 (ultrasound-guided myofascial trigger-point clinical study — not an anatomical measurement at GB39), and other locally mapped papers (not relevant).
+- **Point-specific Layer A for T1 = 0 papers** (all the studies above needle the current fibular-side location) → Gate 2. **For T2 = 4 papers** (1610 · 1612 · 1615 · 1903; adjudicated result `layerA_point_specific`).
 
-### ② B-Check 채점표
+### ② B-Check Scoring Tables
 
-**T1 고전 맥동점**
+**T1 classical pulse point**
 
-| 항목 | 내용 | 채점자 A | 채점자 B | 최종 | Layer B 참조 ID | papers.id | 근거 요지 |
+| Item | Content | Rater A | Rater B | Final | Layer B reference IDs | papers.id | Rationale |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① | 자침 심도의 말초신경·혈관 실체 | 1 | 1 | **1** | B1-01, B1-03, B1-06, B2-09 (+FMA) | 1624 | 앞정강동·정맥 + 깊은종아리신경은 규범 해부·2대 교재·FMA(FMA:43894·44331·44771 exact)로 확인되나 T1 위치 실측 없음, 1624는 박동 촉지 곤란 지적 |
-| ② | 척수 분절 정합 | 1 | 1 | **1** | B1-03, B3-05 (+FMA) | — | 깊은종아리신경 L4~L5(S1)(FMA: 앞칸 근육 segmental_supply L5 주·S1) vs 원주치 위(T6~T9 내장절·미주) 분절 불일치, 상척수성 유추만 가능 |
-| ③ | 구심 섬유형·수용체 | 1 | 1 | **1** | B3-05, B3-06, B3-12 | 1904 | 심부 근·혈관주위 Ⅲ/Ⅳ군 구심은 마취 동물 일반 기전, T1 미검증 |
-| ④ | 중추 중계·경로 | 1 | 1 | **1** | B3-05, B3-12 | 1904 | 뒷다리 체성 자극 → 연수(rVLM/NTS·미주) 경로는 동물·다른 혈위 근거 |
-| ⑤ | 원심 경로·효과 방향 vs $P_{single}$ | 1 | 1 | **1** | B3-05 | 1904 | 원주치(腹满·胃中有热·不嗜食)와 하지 자극의 미주성 위운동 조절 방향은 개념상 부합하나 T1 직접 근거 없음 |
-| ⑥ | 인체 전환 근거 | 0 | 0 | **0** | B4-05 | — | T1 정위로 자침한 인체 연구 없음 |
-| **합계** | | 5 | 5 | **5/12** | | | **미부합 → 가설(H)**. ③~⑤ 동물·유추, ⑥ = 0 → (동물 한정) |
+| ① | Peripheral nerve/vessel substrate at needling depth | 1 | 1 | **1** | B1-01, B1-03, B1-06, B2-09 (+FMA) | 1624 | The anterior tibial artery and veins + deep fibular nerve are confirmed by normative anatomy, the two textbooks and FMA (FMA:43894 · 44331 · 44771 exact), but there is no measurement at the T1 position, and 1624 notes the difficulty of palpating the pulse |
+| ② | Spinal segmental concordance | 1 | 1 | **1** | B1-03, B3-05 (+FMA) | — | Deep fibular nerve L4–L5 (S1) (FMA: segmental_supply of the anterior-compartment muscles, L5 primary, S1) vs the stomach (T6–T9 visceral segments, vagal) of the original indications: segments do not match; only a supraspinal analogy is possible |
+| ③ | Afferent fibre type & receptors | 1 | 1 | **1** | B3-05, B3-06, B3-12 | 1904 | Group III/IV afferents from deep muscle and perivascular tissue are a general mechanism in anaesthetised animals; not verified at T1 |
+| ④ | Central relay & pathway | 1 | 1 | **1** | B3-05, B3-12 | 1904 | The hindlimb somatic stimulation → medulla (rVLM/NTS, vagal) pathway rests on animal evidence from other points |
+| ⑤ | Efferent pathway & direction of effect vs $P_{single}$ | 1 | 1 | **1** | B3-05 | 1904 | The original indications (腹滿 · 胃中有熱 · 不嗜食) and vagal regulation of gastric motility by lower-limb stimulation agree conceptually in direction, but there is no direct evidence for T1 |
+| ⑥ | Human translation | 0 | 0 | **0** | B4-05 | — | No human study needling at the T1 location |
+| **Total** | | 5 | 5 | **5/12** | | | **Not concordant → hypothesis (H)**. ③–⑤ animal/analogy, ⑥ = 0 → (animal only) |
 
-**T2 WHO 비골 전연**
+**T2 WHO anterior border of fibula**
 
-| 항목 | 내용 | 채점자 A | 채점자 B | 최종 | Layer B 참조 ID | papers.id | 근거 요지 |
+| Item | Content | Rater A | Rater B | Final | Layer B reference IDs | papers.id | Rationale |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① | 자침 심도의 말초신경·혈관 실체 | 1 | 1 | **1** | B1-01, B1-03, B2-09 (+FMA) | — | 얕은·깊은종아리신경, 앞정강동·정맥은 규범 해부·2대 교재·FMA(FMA:44699·44771·43894 exact)로 확인되나 교재 간 혈관 구성이 다르고(김재효 뒤칸 구조 포함, FMA 구획으로 확인) GB39 실측 없음 |
-| ② | 척수 분절 정합 | 1 | 1 | **1** | B1-03, B3-05, B3-20 (+FMA) | — | L4~S1 피절·근절(FMA 분절 합집합 L4·L5·S1·S2, S2는 김재효 단독 뒤칸 긴엄지굽힘근)은 국소 하지 주치와 맞음. 원주치 위병(T6~T9)·구판 頸項强痛(C3~C5)과는 분절 불일치 |
-| ③ | 구심 섬유형·수용체 | 1 | 1 | **1** | B3-04, B3-06, B3-11, B3-17 | 1615 | 일반 구심 섬유 틀과 GB39·GB34 배혈 동물 연구뿐. B3-17은 ST36 검증 범위 밖 → 유추 |
-| ④ | 중추 중계·경로 | 1 | 1 | **1** | B3-05, B3-07, B3-11 | 1610, 1612 | GB39 뇌 투사 신경추적(동물), GB34-GB39 전침 뇌혈류(인체, 배혈) — 경로 특정 근거 없음 |
-| ⑤ | 원심 경로·효과 방향 vs $P_{single}$ | 1 | 1 | **1** | B3-05, B3-11, B3-16 | 1615, 1903 | 국소 진통·항염 방향은 하지 주치와 동물 수준에서 부합. 위병 원주치·경항 원격 효과의 GB39 근거 없음 |
-| ⑥ | 인체 전환 근거 | 1 | 1 | **1** | B4-03, B4-04, B4-05 | 1612, 1902 | 인체 근거는 배혈 전침(비RCT 뇌혈류, 다혈위 RCT)뿐. 혈위 비특이성 반증(B4-04·B4-05) 병기 |
-| **합계** | | 6 | 6 | **6/12** | | | **미부합 → 반사 기전은 가설**. 동물 위주, ⑥은 배혈 근거 |
+| ① | Peripheral nerve/vessel substrate at needling depth | 1 | 1 | **1** | B1-01, B1-03, B2-09 (+FMA) | — | The superficial and deep fibular nerves and anterior tibial artery and veins are confirmed by normative anatomy, the two textbooks and FMA (FMA:44699 · 44771 · 43894 exact), but the vascular composition differs between the textbooks (Kim Jaehyo includes posterior-compartment structures, confirmed by FMA compartments) and there is no measurement at GB39 |
+| ② | Spinal segmental concordance | 1 | 1 | **1** | B1-03, B3-05, B3-20 (+FMA) | — | L4–S1 dermatomes and myotomes (FMA segment union L4 · L5 · S1 · S2; S2 comes only from flexor hallucis longus, a posterior-compartment muscle listed only by Kim Jaehyo) fit the local lower-limb indications. Segments do not match the original stomach indications (T6–T9) or the earlier edition's 頸項強痛 (C3–C5) |
+| ③ | Afferent fibre type & receptors | 1 | 1 | **1** | B3-04, B3-06, B3-11, B3-17 | 1615 | Only a general afferent-fibre framework and an animal study combining GB39 and GB34. B3-17 lies outside the scope verified at ST36 → analogy |
+| ④ | Central relay & pathway | 1 | 1 | **1** | B3-05, B3-07, B3-11 | 1610, 1612 | Neural tracing of GB39 brain projections (animal); GB34–GB39 electroacupuncture and cerebral blood flow (human, combination) — no evidence specifying the pathway |
+| ⑤ | Efferent pathway & direction of effect vs $P_{single}$ | 1 | 1 | **1** | B3-05, B3-11, B3-16 | 1615, 1903 | Local analgesic and anti-inflammatory directions agree with the lower-limb indications at the animal level. No GB39 evidence for the original stomach indications or for remote effects on the neck |
+| ⑥ | Human translation | 1 | 1 | **1** | B4-03, B4-04, B4-05 | 1612, 1902 | Human evidence consists only of combined-point electroacupuncture (non-RCT cerebral blood flow, multi-point RCT). Counter-evidence on point non-specificity (B4-04 · B4-05) stated alongside |
+| **Total** | | 6 | 6 | **6/12** | | | **Not concordant → reflex mechanism is a hypothesis**. Mainly animal; ⑥ rests on combined-point evidence |
 
-### ③ 외부 검색 로그 (sync_log, 2026-10-04·2026-10-23 Rank 6 실행)
+### ③ External Search Log (sync_log; Rank 6 runs of 2026-10-04 and 2026-10-23)
 
-| 일시 | 소스 | HTTP | 수집 | 중복제거 | 신규 | 쿼리 |
+| Timestamp | Source | HTTP | Fetched | Duplicates removed | New | Query |
 | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
 | 2026-10-04T09:51:54 | pubmed | 200 | 16 | — | — | ("GB39" OR "Xuanzhong" OR "懸鍾") AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) |
 | 2026-10-04T09:51:54 | openalex | 200 | 24 | — | — | doi_starts_with:10.13703,title_and_abstract.search:"Xuanzhong" OR "GB39" \| doi_starts_with:10.13702,title_and_abstract.search:"Xuanzhong" OR "GB39" \| has_doi:tr… |
@@ -241,205 +243,228 @@
 | 2026-10-23T21:43:36 | crossref | 200 | 0 | — | — | Xuanzhong acupuncture nerve reflex |
 | 2026-10-23T21:43:36 | all | — | 40 | 33 | 7 | merged_into_existing=23, batch_dups=10 |
 
-- 2026-10-23 재실행의 신규 7편은 이번 FMA 보강에서 판정에 넣지 않았다(B-Check·ARI 불변). 다음 정기 개정에서 GB39 단독성·설계를 검토해 반영한다.
+- The 7 new papers from the 2026-10-23 re-run were not included in the verdict in this FMA supplement (B-Check and ARI unchanged). Their GB39 single-point status and design will be reviewed and reflected in the next scheduled revision.
 
-### ④ 반사 기전 가설도 (두 Target 모두 B-Check 미부합 → 가설)
+### ④ Reflex Mechanism Hypothesis Diagram (B-Check not concordant for both Targets → hypothesis)
 
 ```
-T1 (가설, 동물·유추)                               T2 (가설, 동물·배혈 근거)
-앞정강동맥 주위·깊은종아리신경 구심(L4~L5)          얕은종아리신경(피하)·폄근/종아리근 구심(L4~S1)
-   │ 분절 불일치(위 T6~T9) → 상척수성 경로만 가능        │ 분절성: 국소 하지 진통(B3-07·B3-11, 1615)
-   ▼                                                    ▼
-연수 NTS/rVLM·미주 운동핵 (B3-05·B3-12, 1904 유추)    상척수 진통·뇌혈류 조절(1610·1612, 배혈)
-   ▼                                                    ▼
-위운동·위 기능 조절 → 腹满·胃中有热·不嗜食(원주치)     下肢痿痹·足胫痛(국소 주치)
+T1 (hypothesis, animal/analogy)                          T2 (hypothesis, animal/combined-point evidence)
+Afferents around anterior tibial a. · deep fibular n.     Superficial fibular n. (subcutis) · extensor/fibularis
+(L4–L5)                                                   afferents (L4–S1)
+   │ segmental mismatch (stomach T6–T9)                      │ segmental: local lower-limb analgesia
+   │ → only a supraspinal pathway possible                   │ (B3-07 · B3-11, 1615)
+   ▼                                                         ▼
+Medullary NTS/rVLM · vagal motor nucleus                  Supraspinal analgesia · cerebral blood flow
+(B3-05 · B3-12, analogy from 1904)                        regulation (1610 · 1612, combined points)
+   ▼                                                         ▼
+Regulation of gastric motility/function                   下肢痿痹 · 足脛痛 (local indications)
+→ 腹滿 · 胃中有熱 · 不嗜食 (original indications)
 ```
 
-- 구판의 "공통비골신경(L4-S1) 자극 → 척수 C3-C5 분절 상행 → 경항부 근이완 반사"는 Layer B 등록부와 Layer A 어디에도 근거가 없어 **삭제**했다.
-- 구판의 "8푼 자침 시 비골 골막 자극 = 髓會의 해부학적 기반"도 근거가 없어 삭제했다(髓會는 이론 분류로만 취급).
+- The earlier edition's "stimulation of the common fibular nerve (L4-S1) → ascent to spinal segments C3-C5 → reflex relaxation of neck muscles" has no basis in either the Layer B registry or Layer A and has been **deleted**.
+- The earlier edition's "stimulation of the fibular periosteum at 8-fen needling = the anatomical basis of 髓會" also has no basis and has been deleted (髓會 is treated only as a theoretical classification).
 
-### ⑤ 말초 구심 경로의 FMA 고정 (두 Target 공통 앞단)
+### ⑤ FMA Anchoring of the Peripheral Afferent Pathway (Front End Common to Both Targets)
 
-위 가설도의 첫 구간(자침점 → 척수)은 FMA 관계로 아래와 같이 고정된다. T1·T2 모두 같은 **온종아리신경 → 궁둥신경 → 엉치신경얼기** 줄기로 모이고, 차이는 T1이 깊은종아리신경·앞정강동맥 쪽(Layer 4), T2가 얕은종아리신경·가쪽칸 쪽(Layer 1~3)에서 시작한다는 점이다. 김재효 단독 뒤칸 구조(긴엄지굽힘근)는 정강신경 계통이다. 이 구조 사슬은 가설도의 해부 앞단일 뿐이며 B-Check 점수를 바꾸지 않는다.
+The first segment of the hypothesis diagram above (needling point → spinal cord) is anchored by FMA relations as follows. Both T1 and T2 converge on the same trunk, **common fibular nerve → sciatic nerve → sacral plexus**; the difference is that T1 starts on the side of the deep fibular nerve and anterior tibial artery (Layer 4) and T2 on the side of the superficial fibular nerve and lateral compartment (Layers 1–3). The posterior-compartment structure listed only by Kim Jaehyo (flexor hallucis longus) belongs to the tibial nerve system. This structural chain is only the anatomical front end of the hypothesis diagram and does not change the B-Check score.
 
 ```mermaid
 flowchart TB
-  T1(("T1 고전 맥동점<br/>경골 쪽")) --> ATA["앞정강동맥 FMA:43894"]
-  T1 --> DFN["깊은종아리신경<br/>FMA:44771"]
-  T2(("T2 비골 전연")) --> SFN["얕은종아리신경<br/>FMA:44699 (피하)"]
-  T2 --> FB["짧은종아리근 FMA:22540<br/>분절 L5·S1"]
-  T2 --> EDL["긴발가락폄근 FMA:22534<br/>분절 L5(주)·S1"]
-  T2 -. "깊이 찌르면" .-> DFN
+  T1(("T1 classical pulse point<br/>tibial side")) --> ATA["Anterior tibial artery FMA:43894"]
+  T1 --> DFN["Deep fibular nerve<br/>FMA:44771"]
+  T2(("T2 anterior border of fibula")) --> SFN["Superficial fibular nerve<br/>FMA:44699 (subcutaneous)"]
+  T2 --> FB["Fibularis brevis FMA:22540<br/>segments L5·S1"]
+  T2 --> EDL["Extensor digitorum longus FMA:22534<br/>segments L5 (primary)·S1"]
+  T2 -. "deep insertion" .-> DFN
   EDL -- nerve_supply --> DFN
   FB -- nerve_supply --> SFN
-  DFN -- "is_a: branch" --> CFN["온종아리신경<br/>FMA:19039"]
+  DFN -- "is_a: branch" --> CFN["Common fibular nerve<br/>FMA:19039"]
   SFN -- "is_a: branch" --> CFN
-  CFN -- branch_of --> SCI["궁둥신경<br/>FMA:19034"]
-  FHL["긴엄지굽힘근 FMA:22593<br/>김재효 · 뒤칸 · S1·S2(주)"] -- nerve_supply --> TIB["정강신경<br/>FMA:19035"]
+  CFN -- branch_of --> SCI["Sciatic nerve<br/>FMA:19034"]
+  FHL["Flexor hallucis longus FMA:22593<br/>Kim Jaehyo · posterior compartment · S1·S2 (primary)"] -- nerve_supply --> TIB["Tibial nerve<br/>FMA:19035"]
   TIB -- branch_of --> SCI
-  SCI -- branch_of --> SAC["엉치신경얼기<br/>FMA:5909"]
-  SAC --> SEG["척수 L4~S2<br/>(분절: 근육 segmental_supply)"]
+  SCI -- branch_of --> SAC["Sacral plexus<br/>FMA:5909"]
+  SAC --> SEG["Spinal cord L4–S2<br/>(segments: muscle segmental_supply)"]
 ```
 
-*그림 8-1. FMA 5.1.0 관계로 그린 GB39 말초 구심 경로. 실선은 FMA에 기재된 관계(`nerve_supply`·`branch_of`), "is_a"는 클래스명에서 이은 줄기, 점선은 T2 심자 시 도달 가능 경로다.*
+*Figure 8-1. Peripheral afferent pathway of GB39 drawn from FMA 5.1.0 relations. Solid lines are relations recorded in FMA (`nerve_supply` · `branch_of`); "is_a" marks trunks linked from class names; the dashed line is the path reachable by deep insertion at T2.*
 
 ---
 
-## ⚖️ 9. 주치증 분리 표 (단독 자침 $P_{single}$ vs 복합 배오 처방)
+## ⚖️ 9. Indication Separation Table (Single-Point Needling $P_{single}$ vs. Combination Prescriptions)
 
-| 주치 | 최초 출전 | 구분 | 판정 | 근거 |
+| Indication | Earliest source | Type | Verdict | Basis |
 | :--- | :--- | :--- | :--- | :--- |
-| **腹满, 胃中有热, 不嗜食** | *Huangdi Mingtang Jing* (《黃帝明堂經》)(《甲乙》 9:124) | **$P_{single}$ (원주치)** | Xuanzhong (懸鐘, GB39) 고유 주치. T1(앞정강동맥·족양명 맥상)과 정합 | 《通考》 L542·647·658; 《通鉴》 L154 |
-| **小儿腹满不能食饮** | *Huangdi Mingtang Jing* (《黃帝明堂經》)(《甲乙》 12:154) | **$P_{single}$ (원주치)** | 같음 | 《通鉴》 L156 |
-| 五淋; 湿痹流肿, 髀筋急瘈, 胫痛 | *Qianjin Yaofang* (《千金要方》) 卷30 "悬钟主…" | 혼입 | 《明堂》 **陽輔** 주치의 오록 | 《通考》 L627–630 按 |
-| 腿胯连膝胫痹麻; 膝胫连腰痛, 筋挛急, 足不收履 | 《太平圣惠方·明堂》 | 혼입 | 陽輔·臨泣 주치 혼입 | 《通考》 L563–566·632–638 按 |
-| 颈项强, 喉痹, 鼻衄, 肠痔, 逆气, 虚劳 등 | *Qianjin Yaofang* (《千金要方》) 卷18 "絶骨" 22病 (外踝上三寸宛宛中, 灸) | 혼입(이명 경유) | 《资生经》 경유로 《聚英》·《大成》 Xuanzhong (懸鐘, GB39) 조에 전재된 **絶骨** 주치 | 《通考》 L645–647 按 |
-| 落枕 | 현대 《针灸学简编》 ("配大椎、后溪治落枕"), 임상 보고(针灸临床杂志 1999) | 배오·현대 | 고전 근거 없음. 단독 근거로 보지 않음 | 《通鉴》 L230·342; 《通考》 L686 |
-| 下肢痿痹, 足胫挛痛, 脚气 | 《千金》·《外台》 脚气 灸法(三里 + 絶骨), 현대 교재 | 배오 중심 | 국소 주치로 T2 해부와 정합하나 고전 출전은 絶骨 배오 처방 | 《通鉴》 L158–176; 《证治通鉴》 문맥 빈도 |
-| 中风, 半身不遂 | *Taiping Shenghui Fang* (《太平聖惠方》)(三里 + 絶骨 灸), 7판 교재 "髓海不足" | $P_{comb}$ / 이론 | 배오 처방 및 髓會 이론 파생 | 《通考》 L670–672 临床应用 (4)–(6) |
-| 髓病, 痴呆(髓海) | 《難經》 45難, 7판 교재 | 이론 | 관념 이론 확장 → 여과 | 《通鉴》 L146–148 |
+| **Abdominal fullness (腹滿), heat in the stomach (胃中有熱), no desire to eat (不嗜食)** | *Huangdi Mingtang Jing* (《黃帝明堂經》) (《甲乙》 9:124) | **$P_{single}$ (original indication)** | Indication proper to Xuanzhong (懸鍾). Consistent with T1 (anterior tibial artery, on the foot-yangming vessel) | 《通考》 L542 · 647 · 658; 《通鑑》 L154 |
+| **Abdominal fullness and inability to eat or drink in children (小兒腹滿不能食飲)** | *Huangdi Mingtang Jing* (《黃帝明堂經》) (《甲乙》 12:154) | **$P_{single}$ (original indication)** | Same | 《通鑑》 L156 |
+| 五淋; 濕痹流腫, 髀筋急瘈, 脛痛 | 《千金要方》 卷30 "懸鍾主…" | Mixed in | Misrecorded 《明堂》 indications of **陽輔** | 《通考》 L627–630, note |
+| 腿胯連膝脛痹麻; 膝脛連腰痛, 筋攣急, 足不收履 | 《太平聖惠方·明堂》 | Mixed in | Indications of 陽輔 and 臨泣 mixed in | 《通考》 L563–566 · 632–638, note |
+| 頸項強, 喉痹, 鼻衄, 腸痔, 逆氣, 虛勞, etc. | 《千金要方》 卷18 "絕骨", 22 disorders (外踝上三寸宛宛中, moxibustion) | Mixed in (via the alias) | **絕骨** indications reproduced in the Xuanzhong entries of the 《聚英》 and 《大成》 via the 《資生經》 | 《通考》 L645–647, note |
+| Stiff neck (落枕) | Modern 《針灸學簡編》 ("配大椎、後溪治落枕"), clinical report (針灸臨床雜誌 1999) | Combination · modern | No classical basis. Not regarded as single-point evidence | 《通鑑》 L230 · 342; 《通考》 L686 |
+| Wei-bi of the lower limb (下肢痿痹), spasm and pain of the foot and shin (足脛攣痛), leg qi (腳氣) | 《千金》 · 《外臺》 moxibustion for 腳氣 (三里 + 絕骨), modern textbooks | Mainly combination | Local indication consistent with T2 anatomy, but the classical source is a 絕骨 combination prescription | 《通鑑》 L158–176; context frequency in the 《證治通鑑》 |
+| Stroke (中風), hemiplegia (半身不遂) | 《太平聖惠方》 (三里 + 絕骨 moxibustion), 7th-edition textbook "髓海不足" | $P_{comb}$ / theory | Derived from combination prescriptions and the 髓會 theory | 《通考》 L670–672, clinical application (臨床應用) (4)–(6) |
+| Marrow disorders (髓病), dementia (痴呆) (sea of marrow, 髓海) | 《難經》 Difficulty 45 (45難), 7th-edition textbook | Theory | Extension of speculative theory → filtered out | 《通鑑》 L146–148 |
 
-> 구판의 $P_{single}$ "頸項强痛·落枕·下肢痿痹·足脛疼痛"은 원주치(비위병)를 빠뜨리고 《千金》 絶骨 계통·현대 배오 주치를 단독 효능으로 잘못 분류했다. 위 표로 교체한다.
+> The earlier edition's $P_{single}$ "頸項強痛 · 落枕 · 下肢痿痹 · 足脛疼痛" omitted the original indications (spleen–stomach disorders) and misclassified indications from the 《千金》 絕骨 tradition and modern combinations as single-point effects. It is replaced by the table above.
 
 ---
 
-## 📊 10. ARI v3.0 프로파일 평가표 및 최종 결론
+## 📊 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-$$\text{ARI-Core} = 0.40\,S_{orig} + 0.35\,S_{clarity} + 0.25\,S_{reflex} \quad (\text{잠정 가중치, 미검증})$$
-$$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$
+$$\text{ARI-Core} = 0.40\,S_{orig} + 0.35\,S_{clarity} + 0.25\,S_{reflex} \quad (\text{provisional weights, unvalidated})$$
+$$\text{SI} = S_{safety} \quad (\text{not added in})$$
 
-### 10-1. T1 고전 맥동점 (外踝上三寸 動者脈中, 按之陽明脈絶)
+### 10-1. T1 Classical Pulse Point (外踝上三寸 動者脈中, 按之陽明脈絕)
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| $S_{orig}$ | 68.75 | 68.75 | **68.75** | 하위 4항목 평균(아래 표) | 《通考》 L414–437·529–658; 《通鉴》 L54–132 |
-| $S_{clarity}$ | 50 (조정 전 75) | 50 | **50** | 앞정강동맥 + 깊은종아리신경은 B1·교재 혈관 목록과 맞으나 교재 정위는 T2 좌표이고 T1 실측 없음 → "교재와 정위 불일치를 추론으로 조정" | B1-01·B1-03·B1-06; 교재 xlsx 343행; papers.id 1624 |
-| $S_{reflex}$ | 25 | 25 | **25** | T1 정위 자침 Layer A 0편 → 게이트 2 | B-Check 5/12; 1904는 유추 근거 |
-| $S_{safety}$ → SI | 50 | 50 | **50** | 박동점 직자 6~8푼이 Layer 4 신경혈관속에 직접 닿음 → 심도 상한·동맥 회피 명시 필수. Contraindicated for Needling (禁鍼) 없음, 심부 장기 없음 | 자침깊이 DB 344행 |
+| $S_{orig}$ | 68.75 | 68.75 | **68.75** | Mean of the 4 sub-items (table below) | 《通考》 L414–437 · 529–658; 《通鑑》 L54–132 |
+| $S_{clarity}$ | 50 (75 before adjudication) | 50 | **50** | The anterior tibial artery + deep fibular nerve agree with B1 and the textbooks' vessel lists, but the textbooks' location is the T2 coordinate and there is no measurement at T1 → "discrepancy between textbook and location reconciled by inference" | B1-01 · B1-03 · B1-06; textbook xlsx row 343; papers.id 1624 |
+| $S_{reflex}$ | 25 | 25 | **25** | 0 Layer A papers needling at the T1 location → Gate 2 | B-Check 5/12; 1904 is analogical evidence |
+| $S_{safety}$ → SI | 50 | 50 | **50** | Perpendicular insertion of 6–8 fen at the pulse point directly reaches the Layer 4 neurovascular bundle → a depth limit and arterial avoidance must be stated. No contraindication, no deep organs | Needling-depth DB row 344 |
 
-| $S_{orig}$ 하위 항목 | A | B | 평균 | 근거 |
+| $S_{orig}$ sub-item | A | B | Mean | Rationale |
 | :--- | :---: | :---: | :---: | :--- |
-| ① 최초 기술 명확성 | 75 | 75 | 75 | 《明堂》 높이·심도·촉진 조작 기준 명확, 횡위치(경골 쪽)는 "按之陽明脈絶"에서 추론 |
-| ② 후대 문헌 일치율 | 50 | 50 | 50 | "動(者)脈中·按之陽明脈絶" 유지 약 12~13/24항(약 50~55%), 나머지는 宛宛中·尖骨·筋骨缝·腓骨前/后缘으로 이동 |
-| ③ 이명 혼용 해소 | 75 | 75 | 75 | 絶骨의 GB38·GB39 혼용을 《通考》가 연대순으로 정리 |
-| ④ 《通考》 교감 | 75 | 75 | 75 | 陽輔 주치 혼입·宋臣 순서 개변·이문 교감, 원정위 복원 제시. "人体测量学调查" 서지 미제시 |
-| **평균** | 68.75 | 68.75 | **68.75** | |
+| ① Clarity of earliest description | 75 | 75 | 75 | The 《明堂》 is clear on height, depth and the palpation procedure; the transverse position (tibial side) is inferred from "按之陽明脈絕" |
+| ② Agreement in later texts | 50 | 50 | 50 | About 12–13 of 24 entries (about 50–55 %) keep "動(者)脈中 · 按之陽明脈絕"; the rest move to 宛宛中 · 尖骨 · 筋骨縫 · 腓骨前/後緣 |
+| ③ Resolution of alias confusion | 75 | 75 | 75 | The 《通考》 sorts out chronologically the conflation of 絕骨 between GB38 and GB39 |
+| ④ Collation in the 《通考》 | 75 | 75 | 75 | Collation of the mixed-in 陽輔 indications, the reordering by Song officials (宋臣) and textual variants; restoration of the original location proposed. No bibliographic reference for the "人體測量學調查" |
+| **Mean** | 68.75 | 68.75 | **68.75** | |
 
-- **게이트**: 게이트 2(경혈 특이 Layer A 0편 → $S_{reflex}$ ≤ 25, H 표지). 게이트 1·3 해당 없음.
-- **ARI-Core** = 0.40×68.75 + 0.35×50 + 0.25×25 = **51.2 ± 0 → D·H (미판정·가설)**.
+- **Gates**: Gate 2 (0 point-specific Layer A papers → $S_{reflex}$ ≤ 25, H flag). Gates 1 and 3 not applicable.
+- **ARI-Core** = 0.40×68.75 + 0.35×50 + 0.25×25 = **51.2 ± 0 → D·H (undetermined / hypothesis)**.
 - **SI** = **50**.
-- **등가중치 민감도**: (68.75 + 50 + 25) / 3 = **47.9 → D**, 등급 불변.
+- **Equal-weight sensitivity**: (68.75 + 50 + 25) / 3 = **47.9 → D**, grade unchanged.
 
-### 10-2. T2 WHO 비골 전연 (外踝尖上 3寸, 腓骨前緣)
+### 10-2. T2 WHO Anterior Border of Fibula (外踝尖上 3寸, 腓骨前緣)
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| $S_{orig}$ | 62.5 | 62.5 | **62.5** | 하위 4항목 평균(아래 표) | 《通考》 L529–658; KJH 344·345행 |
-| $S_{clarity}$ | 50 | 50 | **50** | 2대 교재 혈관·심층 구조 불일치(뒤칸 구조 포함 여부), 고전 촉진 지표가 현 위치에서 재현되지 않음, GB39 실측(PMID) 없음 → 추론 조정 | 교재 xlsx 343행; 《通考》 L552 |
-| $S_{reflex}$ | 50 | 50 | **50** | GB39 포함 동물 연구 3편 + 인체 배혈 연구, B-Check 6/12 → "동물 연구 + B-Check 6~7" 단계 | papers.id 1610·1612·1615·1902·1903 |
-| $S_{safety}$ → SI | 75 | 75 | **75** | 표준 5~8푼은 Layer 2~3 중심, 깊으면 Layer 4(앞정강동맥·깊은종아리신경) 도달 가능하나 0.5~0.8寸 제한으로 회피 가능. Contraindicated for Needling (禁鍼) 없음 | 자침깊이 DB 344행; 《通鉴》 L250–260 |
+| $S_{orig}$ | 62.5 | 62.5 | **62.5** | Mean of the 4 sub-items (table below) | 《通考》 L529–658; KJH rows 344 · 345 |
+| $S_{clarity}$ | 50 | 50 | **50** | Vessels and deep structures differ between the two textbooks (whether posterior-compartment structures are included), the classical palpation landmark cannot be reproduced at the current position, no GB39 measurement (PMID) → reconciliation by inference | Textbook xlsx row 343; 《通考》 L552 |
+| $S_{reflex}$ | 50 | 50 | **50** | 3 animal studies including GB39 + human combined-point studies, B-Check 6/12 → "animal studies + B-Check 6–7" level | papers.id 1610 · 1612 · 1615 · 1902 · 1903 |
+| $S_{safety}$ → SI | 75 | 75 | **75** | Standard 5–8 fen is centred on Layers 2–3; deeper insertion may reach Layer 4 (anterior tibial artery, deep fibular nerve), avoidable by the 0.5–0.8 cun limit. No contraindication | Needling-depth DB row 344; 《通鑑》 L250–260 |
 
-| $S_{orig}$ 하위 항목 | A | B | 평균 | 근거 |
+| $S_{orig}$ sub-item | A | B | Mean | Rationale |
 | :--- | :---: | :---: | :---: | :--- |
-| ① 최초 기술 명확성 | 75 | 75 | 75 | 《明堂》 높이·심도 명확, 비골 전연이라는 골성 지표는 원전에 없음 |
-| ② 후대 문헌 일치율 | 50 | 50 | 50 | 횡위치가 宛宛中·筋骨缝·腓骨后缘(2·4·5판)·腓骨前缘(6·7판)으로 갈림 |
-| ③ 이명 혼용 해소 | 50 | 50 | 50 | KJH·2대 교재가 絶骨을 GB38·GB39 양쪽에 등재 — 현행 표준에서 일부 미해소 |
-| ④ 《通考》 교감 | 75 | 75 | 75 | 《通考》 교감 존재(주치 혼입·순서 개변) |
-| **평균** | 62.5 | 62.5 | **62.5** | |
+| ① Clarity of earliest description | 75 | 75 | 75 | The 《明堂》 is clear on height and depth; the bony landmark 'anterior border of the fibula' is not in the original source |
+| ② Agreement in later texts | 50 | 50 | 50 | The transverse position splits into 宛宛中 · 筋骨縫 · 腓骨後緣 (2nd, 4th, 5th editions) · 腓骨前緣 (6th, 7th editions) |
+| ③ Resolution of alias confusion | 50 | 50 | 50 | KJH and the two textbooks list 絕骨 under both GB38 and GB39 — partly unresolved in the current standard |
+| ④ Collation in the 《通考》 | 75 | 75 | 75 | Collation exists in the 《通考》 (mixed-in indications, reordering) |
+| **Mean** | 62.5 | 62.5 | **62.5** | |
 
-- **게이트**: 해당 없음($S_{orig}$·$S_{clarity}$ ≥ 50, 경혈 특이 Layer A 4편, SI > 25).
-- **ARI-Core** = 0.40×62.5 + 0.35×50 + 0.25×50 = **55.0 ± 0 → C (가능·가설)**.
+- **Gates**: not applicable ($S_{orig}$ and $S_{clarity}$ ≥ 50, 4 point-specific Layer A papers, SI > 25).
+- **ARI-Core** = 0.40×62.5 + 0.35×50 + 0.25×50 = **55.0 ± 0 → C (possible / hypothesis)**.
 - **SI** = **75**.
-- **등가중치 민감도**: (62.5 + 50 + 50) / 3 = **54.2 → D**, 등급 변동 → **가중치 민감**.
+- **Equal-weight sensitivity**: (62.5 + 50 + 50) / 3 = **54.2 → D**, grade changes → **weight-sensitive**.
 
-### 10-3. 분기 판정
+### 10-3. Branch Decision
 
-| Target | ARI-Core (± 반범위) | 구간 | 등급·표지 | SI |
+| Target | ARI-Core (± half-range) | Interval | Grade · flag | SI |
 | :--- | :---: | :---: | :---: | :---: |
-| T1 고전 맥동점 | 51.2 ± 0 | [51.2, 51.2] | D·H | 50 |
-| T2 WHO 비골 전연 | 55.0 ± 0 | [55, 55] | C (가중치 민감) | 75 |
+| T1 classical pulse point | 51.2 ± 0 | [51.2, 51.2] | D·H | 50 |
+| T2 WHO anterior border of fibula | 55.0 ± 0 | [55, 55] | C (weight-sensitive) | 75 |
 
-ΔARI-Core = **3.8 < 10** → 정본 규칙에 따라 **우위 Target을 선언하지 않는다.** 두 Target을 병기한다. (T2의 C 등급도 등가중치에서는 D로 내려가므로 두 Target의 실질 차이는 작다.)
+ΔARI-Core = **3.8 < 10** → under the canonical rule **no superior Target is declared.** The two Targets are reported side by side. (T2's grade C also drops to D under equal weights, so the substantive difference between the two Targets is small.)
 
-### 10-4. 조정 기록
+### 10-4. Adjudication Record
 
-| Target | 항목 | 불일치 | 조정 내용 |
+| Target | Item | Disagreement | Adjudication |
 | :---: | :--- | :--- | :--- |
-| T1 | $S_{clarity}$ | A 75 / B 50 (25점 차, ≥ 15) | 두 교재의 앞정강동·정맥 기재는 WHO 위치의 심층 구조 기술이며 고전 맥동점 자체의 실측·교재 일치가 아니므로 정본 4.2의 50단계("교재와 정위 불일치를 추론으로 조정") 적용 → A를 50으로 조정 |
-| T1 | 분기 근거 | — | 두 채점자 독립 추정 Δ ≈ 20~35mm(중앙값 약 25mm) > 15mm → T1·T2 분기. papers.id 1624의 "박동 촉지 곤란"은 정위 쟁점이며 기전 상충 아님 |
-| T2 | — | 15점 이상 불일치 없음 | 구판 "L4-S1→C3-C5 체성-체성 이완 반사"는 근거 없는 서술로 삭제(B-Check에 반영 안 함). 頸項强 주치는 《千金》 "絶骨" 주치 혼입(Rank 3) |
+| T1 | $S_{clarity}$ | A 75 / B 50 (25-point difference, ≥ 15) | The two textbooks' listing of the anterior tibial artery and veins describes the deep structures at the WHO position and is not a measurement or textbook agreement for the classical pulse point itself, so level 50 of canonical 4.2 ("discrepancy between textbook and location reconciled by inference") applies → A adjusted to 50 |
+| T1 | Basis for branching | — | Independent estimates by the two raters, Δ ≈ 20–35 mm (median about 25 mm) > 15 mm → T1/T2 branch. The "difficulty of palpating the pulse" in papers.id 1624 concerns location, not a conflict about mechanism |
+| T2 | — | No disagreement of 15 points or more | The earlier edition's "L4-S1 → C3-C5 somato-somatic relaxation reflex" was an unsupported statement and has been deleted (not reflected in the B-Check). The 頸項強 indication is the 《千金》 "絕骨" indication mixed in (Rank 3) |
 
-### 10-5. 최종 결론
+### 10-5. Final Conclusion
 
-- **T1 고전 맥동점** — **미판정·가설(D·H)**. *Huangdi Mingtang Jing* (《黃帝明堂經》)의 Xuanzhong (懸鐘, GB39)은 골성 지표가 아니라 맥으로 정한 혈이다. 外踝 위 3寸의 박동처를 세게 눌러 족등(冲阳) 박동이 사라지는 곳이다. 이 맥은 **앞정강동맥**이며(《通考》 L548–552, 《经穴释义汇解》, papers.id 1624), 위치는 경골 앞모서리와 종아리뼈 앞모서리 사이의 경골 쪽이다. 실체 후보는 **앞정강동·정맥 + 깊은종아리신경(Layer 4)**이고, 원주치는 **腹满·胃中有热·不嗜食**(위병)이다. 다만 이 위치에 자침한 Layer A 연구가 없고(게이트 2), 1624가 박동 촉지·冲阳 소실의 재현이 어렵다고 보고해 촉진 표지의 재현성은 검증되지 않았다. 반사 기전(하지 체성 구심 → 연수·미주 → 위 기능)은 동물·다른 혈위 근거에서 유추한 **가설(동물 한정)**이다. 박동점 바로 위에 찌르므로 동맥을 비껴 찌르고 깊이를 제한해야 한다(SI 50).
-- **T2 WHO 비골 전연** — **가능·가설(C, 가중치 민감)**. 실체는 피하의 **얕은종아리신경**과 긴발가락폄근·짧은종아리근(Layer 1~3)이며, 깊이 찌르면 앞칸의 앞정강동맥·깊은종아리신경(Layer 4)에 닿을 수 있다. 이 위치는 《千金》 이후 絶骨 계통의 골성 정위가 쌓여 생긴 것이고, 《通考》는 여기서는 박동도 冲阳 소실도 재현되지 않아 원래의 Xuanzhong (懸鐘, GB39)과 "名实分离"되었다고 본다. 현대 주치(项强·下肢痿痹)는 《千金》 絶骨·陽輔 주치에서 왔다. GB39 포함 연구는 모두 배혈·동물 수준이며 B-Check 6/12로 미부합이므로 반사 기전은 **가설**이다.
-- **분기**: ΔARI-Core 3.8 < 10 → 우위 없음. 두 Target을 병기한다. 구판의 "실체 확정" 결론과 《通考》 교차 "완전 일치" 주장은 가공 인용에 근거한 것이어서 철회한다.
+- **T1 classical pulse point** — **undetermined / hypothesis (D·H)**. Xuanzhong (懸鍾) in the *Huangdi Mingtang Jing* (《黃帝明堂經》) is a point defined not by a bony landmark but by a pulse: the pulsating site 3 cun above the lateral malleolus (外踝) where firm pressure abolishes the pulse on the dorsum of the foot (衝陽). This vessel is the **anterior tibial artery** (《通考》 L548–552, 《經穴釋義匯解》, papers.id 1624), and the position lies between the anterior border of the tibia and the anterior border of the fibula, on the tibial side. The candidate substrate is the **anterior tibial artery and veins + deep fibular nerve (Layer 4)**, and the original indications are **abdominal fullness (腹滿), heat in the stomach (胃中有熱) and no desire to eat (不嗜食)** (stomach disorders). However, there is no Layer A study needling at this position (Gate 2), and 1624 reports that palpation of the pulse and abolition of the 衝陽 pulse are hard to reproduce, so the reproducibility of the palpation landmark is unverified. The reflex mechanism (lower-limb somatic afferents → medulla and vagus → gastric function) is a **hypothesis (animal only)** inferred from animal evidence at other points. Because the needle is inserted directly over the pulse point, the artery must be avoided and the depth limited (SI 50).
+- **T2 WHO anterior border of fibula** — **possible / hypothesis (C, weight-sensitive)**. The substrate is the subcutaneous **superficial fibular nerve** and extensor digitorum longus and fibularis brevis (Layers 1–3); deep insertion may reach the anterior tibial artery and deep fibular nerve of the anterior compartment (Layer 4). This position results from the accumulation, from the 《千金》 onwards, of bony locations of the 絕骨 tradition, and the 《通考》 holds that, since neither the pulse nor abolition of the 衝陽 pulse can be reproduced here, it has undergone "名實分離" from the original Xuanzhong. The modern indications (項強 · 下肢痿痹) come from the 《千金》 indications of 絕骨 and 陽輔. All studies including GB39 are at the combined-point or animal level, and with B-Check 6/12 (not concordant) the reflex mechanism is a **hypothesis**.
+- **Branch**: ΔARI-Core 3.8 < 10 → no superiority. The two Targets are reported side by side. The earlier edition's conclusion of a "confirmed substrate" and its claim of "complete agreement" with the 《通考》 rested on fabricated quotations and are withdrawn.
 
 ---
 
-## 부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)
+## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-생성: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile GB39 --md` (2026-10-23). 대응 수준 `exact`는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다.
+Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile GB39 --md` (2026-10-23). The match level `exact` means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.
 
-| Category | Textbook Term | FMA Substrate (ID & Label) | Match | Source | Innervation & Nerve Trunk Chain | Spinal Segment |
+| Category | Textbook term | FMA entity | Match | Source | Innervation / parent trunk | Spinal segments |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 긴발가락폄근 (extensor digitorum longus) | FMA:22534 Extensor digitorum longus | exact | 공통교재·김재효 | FMA:80068 Nerve to EDL → 깊은종아리신경 → 온종아리신경 | L5(주), S1(부) |
-| 근육 | 긴엄지폄근 (extensor hallucis longus) | FMA:22533 Extensor hallucis longus | exact | 공통교재·김재효 | FMA:80065 Nerve to EHL → 깊은종아리신경 → 온종아리신경 | L5(주), S1(부) |
-| 근육 | 짧은종아리근 (fibularis / peroneus brevis) | FMA:22540 Fibularis brevis | exact | 공통교재·김재효 | FMA:80082 Nerve to fibularis brevis → 얕은종아리신경 → 온종아리신경 → 궁둥신경 | L5, S1 |
-| 근육 | 긴종아리근 (peroneus longus) | FMA:22539 Fibularis longus | exact | 공통교재 | FMA:80079 Nerve to fibularis longus → 얕은종아리신경 → 온종아리신경 → 궁둥신경 | L4, L5, S1 |
-| 근육 | 셋째종아리근 (fibularis tertius) | FMA:22538 Fibularis tertius | exact | 김재효 | FMA:80071 Nerve to fibularis tertius → 깊은종아리신경 → 온종아리신경 | L5, S1 |
-| 근육 | 긴엄지굽힘근 (flexor hallucis longus) | FMA:22593 Flexor hallucis longus | exact | 김재효 | FMA:80098 Nerve to FHL → 정강신경 → 궁둥신경 → 엉치신경얼기 | S1·S2(주), L5(부) |
-| 신경 | 깊은종아리신경 (deep fibular / deep peroneal nerve) | FMA:44771 Deep fibular nerve | exact | 공통교재·김재효 | FMA:19039 → FMA:19034 → FMA:5909 | — |
-| 신경 | 가쪽장딴지피부신경 | FMA:44697 Lateral sural cutaneous nerve | exact | 김재효 | FMA:19039 → FMA:19034 → FMA:5909 | — |
-| 신경 | 얕은종아리신경 (superficial fibular / peroneal nerve) | FMA:44699 Superficial fibular nerve | exact | 공통교재·김재효 | FMA:19039 → FMA:19034 → FMA:5909 | — |
-| 혈관 | 앞정강동맥 | FMA:43894 Anterior tibial artery | exact | 공통교재·김재효 | FMA:18805 External iliac artery → FMA:14764 Common iliac artery | — |
-| 혈관 | 앞정강정맥 | FMA:44331 Anterior tibial vein | exact | 공통교재·김재효 | FMA:44327 Popliteal vein → … → Inferior vena cava | — |
-| 혈관 | 종아리동맥 | FMA:43921 Peroneal artery | exact | 김재효 | — | — |
-| 혈관 | 종아리정맥 | FMA:44558 Fibular vein | exact | 김재효 | (FMA: drains_into Femoral vein — 4-3 주석, 인용 안 함) | — |
-| 혈관 | 종아리동맥의 관통가지 | FMA:44033 Perforating branch of fibular artery | exact | 김재효 | FMA:43921 Peroneal artery | — |
+| Muscle | Extensor digitorum longus | FMA:22534 Extensor digitorum longus | exact | Common Textbook · Kim Jaehyo | FMA:80068 Nerve to EDL → deep fibular n. → common fibular n. | L5 (primary), S1 (secondary) |
+| Muscle | Extensor hallucis longus | FMA:22533 Extensor hallucis longus | exact | Common Textbook · Kim Jaehyo | FMA:80065 Nerve to EHL → deep fibular n. → common fibular n. | L5 (primary), S1 (secondary) |
+| Muscle | Fibularis brevis (fibularis / peroneus brevis) | FMA:22540 Fibularis brevis | exact | Common Textbook · Kim Jaehyo | FMA:80082 Nerve to fibularis brevis → superficial fibular n. → common fibular n. → sciatic n. | L5, S1 |
+| Muscle | Fibularis longus (peroneus longus) | FMA:22539 Fibularis longus | exact | Common Textbook | FMA:80079 Nerve to fibularis longus → superficial fibular n. → common fibular n. → sciatic n. | L4, L5, S1 |
+| Muscle | Fibularis tertius | FMA:22538 Fibularis tertius | exact | Kim Jaehyo | FMA:80071 Nerve to fibularis tertius → deep fibular n. → common fibular n. | L5, S1 |
+| Muscle | Flexor hallucis longus | FMA:22593 Flexor hallucis longus | exact | Kim Jaehyo | FMA:80098 Nerve to FHL → tibial n. → sciatic n. → sacral plexus | S1 · S2 (primary), L5 (secondary) |
+| Nerve | Deep fibular nerve (deep fibular / deep peroneal nerve) | FMA:44771 Deep fibular nerve | exact | Common Textbook · Kim Jaehyo | FMA:19039 → FMA:19034 → FMA:5909 | — |
+| Nerve | Lateral sural cutaneous nerve | FMA:44697 Lateral sural cutaneous nerve | exact | Kim Jaehyo | FMA:19039 → FMA:19034 → FMA:5909 | — |
+| Nerve | Superficial fibular nerve (superficial fibular / peroneal nerve) | FMA:44699 Superficial fibular nerve | exact | Common Textbook · Kim Jaehyo | FMA:19039 → FMA:19034 → FMA:5909 | — |
+| Vessel | Anterior tibial artery | FMA:43894 Anterior tibial artery | exact | Common Textbook · Kim Jaehyo | FMA:18805 External iliac artery → FMA:14764 Common iliac artery | — |
+| Vessel | Anterior tibial vein | FMA:44331 Anterior tibial vein | exact | Common Textbook · Kim Jaehyo | FMA:44327 Popliteal vein → … → Inferior vena cava | — |
+| Vessel | Fibular artery | FMA:43921 Peroneal artery | exact | Kim Jaehyo | — | — |
+| Vessel | Fibular vein | FMA:44558 Fibular vein | exact | Kim Jaehyo | (FMA: drains_into Femoral vein — note in 4-3, not cited) | — |
+| Vessel | Perforating branch of fibular artery | FMA:44033 Perforating branch of fibular artery | exact | Kim Jaehyo | FMA:43921 Peroneal artery | — |
 
-- 분절 합집합(B-Check ② 입력): **L4, L5, S1, S2** (S2는 김재효 단독 뒤칸 긴엄지굽힘근에서만 옴)
-- 두 교재 비교: 공통 FMA 실체 7 · 공통교재 단독 1 · 김재효 단독 6
-- 인용 한계: FMA는 정상 성인 규범 해부 온톨로지로, 혈위 특이 심도·변이 빈도·반사 기능의 근거가 아니다. 앞칸 근육가지의 기원(안쪽종말가지 기록), 종아리정맥의 넙다리정맥 직접 유입 기록, 신경 분절 미기재는 4-3 주석대로 B1로 보완했다. T1 경골 쪽 맥동점 자체는 FMA 대상이 아니다(정위 쟁점).
-
----
-
-## v2.7 FMA 보강 이력 (2026-10-23)
-
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
-| :--- | :--- | :--- | :--- |
-| 머리말 | — | FMA 5.1.0 해부 온톨로지 줄 추가 | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
-| 4절 | 문자 층차도만 | 그림 4-1 횡단면 모식도(T1·T2 병기), 4-3 Layer별 FMA 대조표, FMA 모델링 한계 주석 3건 | `fma_query.py profile GB39`; 그림 스크립트 `.claude/skills/acupoint-anatomy/scripts/fma/figures/GB39_cross_section.py` |
-| 6절 | 교재 비교 | FMA 판별(공통 7·공통교재 단독 1·김재효 단독 6), 김재효 단독 구조의 뒤칸·정강신경 소속을 FMA 구획으로 확인 | FMA contained_in FMA:85203·85206·312109 |
-| 8절 ② | B-Check ①·② 근거 | T1·T2 모두 FMA ID·segmental_supply 포인터 추가(**점수 불변**: T1 5/12, T2 6/12) | FMA segmental_supply |
-| 8절 ③ | 2026-10-04 로그 | 2026-10-23 Rank 6 재실행 행 추가(PubMed 16·OpenAlex 24·Crossref 0, 신규 7) — 신규 논문은 판정 미반영 | `_metadata.sync_log` GB39 2026-10-23T21:43:36 |
-| 8절 ⑤ | — | 그림 8-1 FMA 말초 구심 경로(Mermaid) | FMA:44771·44699→19039→19034→5909; FMA:22593→19035 |
-| 부록 A | — | FMA 프로파일 표 | `fma_query.py profile GB39 --md` |
-| ARI | T1 51.2 ± 0 (D·H) / T2 55.0 ± 0 (C) | **변경 없음** — FMA는 B1 보조 근거로 루브릭 단계를 바꾸지 않음 | 스킬 5-1절 |
-| 구판 보관 | — | 보강 전 md·html·xlsx를 `_구판_v2.7_20261023/`에 보관 | — |
+- Segment union (input to B-Check ②): **L4, L5, S1, S2** (S2 comes only from flexor hallucis longus, a posterior-compartment muscle listed only by Kim Jaehyo)
+- Comparison of the two textbooks: 7 common FMA entities · 1 Common Textbook only · 6 Kim Jaehyo only
+- Limits of citation: FMA is an ontology of normative adult anatomy and is not evidence for point-specific depth, frequency of variation or reflex function. The origin of the anterior-compartment muscular branches (recorded from the medial terminal branch), the recorded direct drainage of the fibular vein into the femoral vein, and the absence of nerve segments were supplemented from B1 as noted in 4-3. The T1 pulse point on the tibial side is itself not an FMA object (a question of location).
 
 ---
 
-## v2.7 개정 이력 (2026-10-04)
+## v2.7 FMA Supplement History (2026-10-23)
 
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
+| Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| 머리말 | v2.6, 자침깊이 DB 링크가 로직 원칙 xlsx로 잘못 연결 | v2.7 인용 블록(T1·T2 ARI 표기), 자침깊이 DB 링크 정정 | final_GB39M.json notation; 02_Master_Datasets |
-| 2.4·7.1·9절 《通考》 인용 | "懸鍾(絶骨)穴位於外踝上三寸, 腓骨前緣… 淺腓骨神經(L4-S1)… 腓骨動脈 관통지… '動脈'은 腓骨動脈 관통지의 박동"(통고 고증란), "5개 항목 완전 일치" | **가공 인용으로 삭제.** 실제 《通考》 원문(맥 기준 정위, 앞정강동맥, 경골 쪽, 名实分离, 名存实亡, 归经 불합리)으로 교체. 《通考》에 淺腓骨神經·腓骨動脈 관통가지 기술 없음 | `针灸腧穴通考(下)_321-400.md` L431·437·542·548–552·615·658 |
-| 1·2.2.1·5.1절 원문 | 《甲乙》 "在足外踝上三寸動脈中", 《明堂》 "在足外踝上三寸" | "在足外踝上三寸動者脈中, 足三陽絡, 按之陽明脈絶乃取之" 전문 복원 | `中国针灸穴位通鉴(下卷)_161-240.md` L54; 《通考》 L421 |
-| 2.2.1절 銅人·千金·大成 | 《銅人》 "絶骨穴在足外踝上三寸", 《千金》 "絶骨, 在外踝上三寸", 《大成》 "足外踝上三寸, 足少陽, 陽維之會" | 《銅人》 5:20 "在足外踝上三寸動脈中", 《千金》 卷29 "悬钟，一名绝骨，在外踝上三寸动者中，足三阳络", 《大成》 7:209 "足外踝上三寸動脈中，尋摸尖骨者是。足三陽之大絡，按之陽明脈絶乃取之" | 《通鉴》 L90·110; 《通考》 L426 |
-| 2.1절 이명 | 絶骨 "甲乙經 이후 모든 문헌에서 동일혈, 혼용 위험 없음", "비골의 고대 이칭", 縣鍾 | 絶骨은 《明堂》에 없고 《千金》 卷29에서 처음 Xuanzhong (懸鐘, GB39) 이명. KJH·2대 교재가 GB38에도 등재 → 혼용 위험 높음. 縣鍾 삭제, 足三陽絡 추가 | KJH 경혈 종합 목록 344·345행; 공통교재·김재효 xlsx 342·343행; 《通鉴》 L342; 《通考》 L431 |
-| 2.2.2·2.2.3절 깊이 | "갑을경 34"를 깊이 값처럼 수록, μ 6.2푼·σ 1.0푼 | 34는 배열 번호로 명시, 통계 삭제, 《脉经》·《玉龙经》·《指微》·窦氏·横透 등 Dysentery (痢疾) 심도 추가 | 자침깊이 xlsx 시트1 344행; 《通鉴》 L234–274 |
-| 2.3·3.2절 주치 | $P_{single}$ = 頸項强痛·落枕·下肢痿痹·足脛疼痛, 원주치 누락 | $P_{single}$ = 腹满·胃中有热·不嗜食·小儿腹满(《明堂》). 頸項强 = 《千金》 卷18 絶骨 주치 혼입, 落枕 = 현대 《针灸学简编》(배오), 五淋·湿痹 = 陽輔 주치 혼입 | 《通考》 L542·627–647·686; 《通鉴》 L154–156·230·342 |
-| 4.2절 Δ | 0.3~0.7cm, "분리 기준 미달, 단일 분석" | Δ ≈ 20~35mm(채점자 2인 독립 추정) → T1·T2 분기, 7절 신설 | final_GB39M.json override_note; papers.id 1624 |
-| 5.1·6.2절 "動脈中" 실체 | 종아리동맥 관통가지 | 앞정강동맥(종아리동맥 관통가지 해석은 원전 근거 없음) | 《通考》 L548–552; 《通鉴》 L74; papers.id 1624 |
-| 5.3·8.1절 Layer | 얕은종아리신경 8~14mm(Layer 3b), 비골 골막 Layer 4, 피질골 "金禁" | 얕은종아리신경 = Layer 1(피하), Layer 4 = 앞정강동·정맥 + 깊은종아리신경, Layer 5 = 골막. "金禁" 삭제(DB에 '0' 없음) | 정본 Rank 5 Layer 정의; 자침깊이 xlsx 344행; B1-01·B1-03 |
-| 5.2절 안전 | "비골동맥 본간 손상 위험 없음", Layer 4 위험 구조 누락 | T1·T2별 Layer 4(앞정강동맥·깊은종아리신경) 접촉 가능성과 심자 기록(《指微》 46mm, 窦氏 57.5mm) 명시 | final_GB39M.json S_safety 근거 |
-| 6.1·9절 기전 | "L4-S1 → C3-C5 분절 상행 → 경항부 근이완 반사", "골막 자극 = 髓會 기반" | 삭제. B-Check 근거 기반 가설도로 교체 | 등록부·Layer A 근거 없음(final T2 override_note) |
-| Rank 5 교재표 | "상호 보완적 정합", "완벽 대조" | 실제 차이(긴엄지굽힘근·종아리동정맥·셋째종아리근 vs 긴종아리근) 분석 | 공통교재·김재효 xlsx 각 343행 |
-| 8절 | Layer A·B-Check·검색 로그 없음 | papers.id 표(1624 정위 결론 인용 포함), T1·T2 B-Check(5/12·6/12), sync_log 표 추가 | pack_GB39.md; final_GB39M.json bcheck; 1624 본문 PDF |
-| 8절 papers.id 1624 서지 | (인용 없음) | 针刺研究 2021;46(1), DOI 10.13702/j.1000-0607.200282. 마스터 DB의 저널 표기(World Journal of Acupuncture-Moxibustion)는 본문 PDF와 다름(DB 정정 필요) | `03_주제별_경혈고증_연구보고서/Xuanzhong (懸鐘, GB39)혈_고증_및_문헌연구/04_참고논문_PDF/2021-침자연구-Location of acupoint Xuanzhong_GB39.pdf` |
-| 8절 감사표 | 보고서↔엑셀 "전 항목 일치" 정합성 감사 | 삭제(동일 산출물 간 대조는 신뢰도 근거가 아님, 정본 Rank 7) | 정본 Rank 7 상호 검증 조항 |
-| 10절 | v2.6 5요인 ARI | T1 51.2 ± 0 (D·H) / T2 55 ± 0 (C, 가중치 민감), 하위 항목·게이트·분기·조정 기록 | final_GB39M.json |
-| 10절 | — | 구판 v2.6 점수 93.6(비교 불가) | 구판 보고서 `_구판_v2.6/` |
-| 확인 못 한 항목 | — | 《難經》 45難 "髓會絶骨"의 陽輔 귀속설은 3대 원전 청크에서 원문을 직접 찾지 못해 "귀속 미확정"으로만 기술. 《通考》 "人体测量学调查"의 서지 미확인. T1·T2의 mm 단위 Δ·깊이는 채점자 추정이며 영상 실측 없음 | — |
+| Header | — | FMA 5.1.0 anatomical ontology line added | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
+| Section 4 | Text layer diagram only | Figure 4-1 cross-sectional schematic (T1 and T2 shown together), 4-3 FMA cross-check table by layer, 3 notes on the limits of FMA modelling | `fma_query.py profile GB39`; figure script `.claude/skills/acupoint-anatomy/scripts/fma/figures/GB39_cross_section.py` |
+| Section 6 | Textbook comparison | FMA adjudication (7 common · 1 Common Textbook only · 6 Kim Jaehyo only); membership of the Kim Jaehyo-only structures in the posterior compartment and tibial nerve confirmed by FMA compartments | FMA contained_in FMA:85203 · 85206 · 312109 |
+| Section 8 ② | Basis of B-Check ① and ② | FMA ID and segmental_supply pointers added for both T1 and T2 (**scores unchanged**: T1 5/12, T2 6/12) | FMA segmental_supply |
+| Section 8 ③ | 2026-10-04 log | Rows added for the 2026-10-23 Rank 6 re-run (PubMed 16 · OpenAlex 24 · Crossref 0, 7 new) — new papers not reflected in the verdict | `_metadata.sync_log` GB39 2026-10-23T21:43:36 |
+| Section 8 ⑤ | — | Figure 8-1 FMA peripheral afferent pathway (Mermaid) | FMA:44771 · 44699 → 19039 → 19034 → 5909; FMA:22593 → 19035 |
+| Appendix A | — | FMA profile table | `fma_query.py profile GB39 --md` |
+| ARI | T1 51.2 ± 0 (D·H) / T2 55.0 ± 0 (C) | **No change** — FMA is B1 supplementary evidence and does not change rubric levels | Skill section 5-1 |
+| Archive of earlier edition | — | md, html and xlsx before the supplement archived in `_구판_v2.7_20261023/` | — |
+
+---
+
+## v2.7 Revision History (2026-10-04)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | v2.6; needling-depth DB link wrongly pointing to the logic-principles xlsx | v2.7 citation block (T1 and T2 ARI notation); needling-depth DB link corrected | final_GB39M.json notation; 02_Master_Datasets |
+| 《通考》 quotations in Sections 2.4, 7.1 and 9 | "懸鍾(絕骨)穴位於外踝上三寸, 腓骨前緣… 淺腓骨神經(L4-S1)… 腓骨動脈 perforating branch… '動脈' is the pulse of the perforating branch of the fibular artery" (Tongkao collation column), "complete agreement on 5 items" | **Deleted as fabricated quotations.** Replaced by the actual text of the 《通考》 (pulse-based location, anterior tibial artery, tibial side, 名實分離, 名存實亡, implausible meridian attribution). The 《通考》 contains no description of the 淺腓骨神經 or the perforating branch of the 腓骨動脈 | `针灸腧穴通考(下)_321-400.md` L431 · 437 · 542 · 548–552 · 615 · 658 |
+| Original text in Sections 1, 2.2.1 and 5.1 | 《甲乙》 "在足外踝上三寸動脈中", 《明堂》 "在足外踝上三寸" | Full text "在足外踝上三寸動者脈中, 足三陽絡, 按之陽明脈絕乃取之" restored | `中国针灸穴位通鉴(下卷)_161-240.md` L54; 《通考》 L421 |
+| 銅人 · 千金 · 大成 in Section 2.2.1 | 《銅人》 "絕骨穴在足外踝上三寸", 《千金》 "絕骨, 在外踝上三寸", 《大成》 "足外踝上三寸, 足少陽, 陽維之會" | 《銅人》 5:20 "在足外踝上三寸動脈中", 《千金》 卷29 "懸鍾，一名絕骨，在外踝上三寸動者中，足三陽絡", 《大成》 7:209 "足外踝上三寸動脈中，尋摸尖骨者是。足三陽之大絡，按之陽明脈絕乃取之" | 《通鑑》 L90 · 110; 《通考》 L426 |
+| Aliases in Section 2.1 | 絕骨 "the same point in all texts since the *Jiayi Jing* (甲乙經), no risk of conflation", "ancient name for the fibula", 縣鍾 | 絕骨 is absent from the 《明堂》 and first becomes an alias of Xuanzhong in 《千金》 卷29. KJH and the two textbooks also list it under GB38 → high risk of conflation. 縣鍾 deleted, 足三陽絡 added | KJH comprehensive acupoint list rows 344 · 345; Common Textbook and Kim Jaehyo xlsx rows 342 · 343; 《通鑑》 L342; 《通考》 L431 |
+| Depth in Sections 2.2.2 and 2.2.3 | "Jiayi Jing 34" entered as if it were a depth value; μ 6.2 fen, σ 1.0 fen | 34 stated to be a sequence number; statistics deleted; heterogeneous depths from the 《脈經》, 《玉龍經》, 《指微》, 竇氏, 橫透 etc. added | Needling-depth xlsx sheet 1 row 344; 《通鑑》 L234–274 |
+| Indications in Sections 2.3 and 3.2 | $P_{single}$ = 頸項強痛 · 落枕 · 下肢痿痹 · 足脛疼痛; original indications omitted | $P_{single}$ = 腹滿 · 胃中有熱 · 不嗜食 · 小兒腹滿 (《明堂》). 頸項強 = 《千金》 卷18 絕骨 indication mixed in; 落枕 = modern 《針灸學簡編》 (combination); 五淋 · 濕痹 = 陽輔 indications mixed in | 《通考》 L542 · 627–647 · 686; 《通鑑》 L154–156 · 230 · 342 |
+| Δ in Section 4.2 | 0.3–0.7 cm, "below the separation criterion, single analysis" | Δ ≈ 20–35 mm (independent estimates by 2 raters) → T1/T2 branch; Section 7 newly created | final_GB39M.json override_note; papers.id 1624 |
+| Substrate of "動脈中" in Sections 5.1 and 6.2 | Perforating branch of the fibular artery | Anterior tibial artery (the perforating-branch interpretation has no basis in the classical sources) | 《通考》 L548–552; 《通鑑》 L74; papers.id 1624 |
+| Layers in Sections 5.3 and 8.1 | Superficial fibular nerve at 8–14 mm (Layer 3b), fibular periosteum as Layer 4, cortical bone "金禁" | Superficial fibular nerve = Layer 1 (subcutis), Layer 4 = anterior tibial artery and veins + deep fibular nerve, Layer 5 = periosteum. "金禁" deleted (no '0' in the DB) | Canonical Rank 5 layer definitions; needling-depth xlsx row 344; B1-01 · B1-03 |
+| Safety in Section 5.2 | "No risk of injury to the main trunk of the fibular artery"; Layer 4 risk structures omitted | Possibility of contact with Layer 4 (anterior tibial artery, deep fibular nerve) stated for T1 and T2 separately, together with records of deep insertion (《指微》 46 mm, 竇氏 57.5 mm) | final_GB39M.json S_safety rationale |
+| Mechanism in Sections 6.1 and 9 | "L4-S1 → ascent to segments C3-C5 → reflex relaxation of neck muscles", "periosteal stimulation = basis of 髓會" | Deleted. Replaced by a hypothesis diagram based on the B-Check evidence | No basis in the registry or Layer A (final T2 override_note) |
+| Rank 5 textbook table | "Mutually complementary consistency", "perfect collation" | Actual differences analysed (flexor hallucis longus, fibular artery and veins, fibularis tertius vs fibularis longus) | Common Textbook and Kim Jaehyo xlsx, row 343 each |
+| Section 8 | No Layer A, B-Check or search log | papers.id table (including quotation of the location conclusion of 1624), B-Check for T1 and T2 (5/12 · 6/12), sync_log table added | pack_GB39.md; final_GB39M.json bcheck; 1624 full-text PDF |
+| Section 8, bibliographic data for papers.id 1624 | (Not cited) | 針刺研究 2021;46(1), DOI 10.13702/j.1000-0607.200282. The journal name recorded in the master DB (World Journal of Acupuncture-Moxibustion) differs from the full-text PDF (DB correction needed) | `03_주제별_경혈고증_연구보고서/현종혈_고증_및_문헌연구/04_참고논문_PDF/2021-침자연구-Location of acupoint Xuanzhong_GB39.pdf` |
+| Section 8 audit table | Consistency audit of report ↔ Excel, "all items agree" | Deleted (comparing outputs of the same process is not grounds for reliability; canonical Rank 7) | Canonical Rank 7 cross-validation clause |
+| Section 10 | v2.6 five-factor ARI | T1 51.2 ± 0 (D·H) / T2 55 ± 0 (C, weight-sensitive); sub-items, gates, branch and adjudication record | final_GB39M.json |
+| Section 10 | — | Earlier v2.6 score 93.6 (not comparable) | Earlier report in `_구판_v2.6/` |
+| Items not confirmed | — | The attribution of 《難經》 Difficulty 45 (45難) "髓會絕骨" to 陽輔 could not be found directly in the chunks of the three primary classics and is described only as "attribution undetermined". Bibliographic data for the 《通考》's "人體測量學調查" unconfirmed. The mm-level Δ and depths for T1 and T2 are raters' estimates, without imaging measurement | — |
+
+---
+
+## English Edition Revision History (2026-10-24)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `GB39_현종_해부생리_실체판명_보고서.md` |
+| Title | Korean title with duplicated name annotations | Title in the common English-edition format "[Acupoint Anatomical & Physiological Substrate Monograph] Xuanzhong (懸鍾, GB39)"; duplicates removed | ST36 English edition |
+| Figure 4-1 | Image path checked | Kept as the actual file name `GB39_현종_횡단면_해부모식도.png` | File in the report folder |
+| Layer A papers 1610, 1612, 1615 | Korean-language titles | Given as English translations marked "[in Korean]" | Master DB |
+| Diagrams (text and Mermaid) | Korean labels | Labels translated into English; structure, FMA IDs and relations unchanged | — |
+| Classical quotations | Simplified characters (e.g. 悬钟, 绝骨, 胫, 针) | Converted to Traditional characters; file names, links and line pointers unchanged | Routing rule on Traditional Chinese collation |
+
+## Refinement History (2026-10-24)
+
+| Location | Original wording | Revised wording | Basis |
+| :--- | :--- | :--- | :--- |
+| Header links | Absolute `file:///g:/내 드라이브/도서 번역/…` links (do not open on other PCs) | Links relative to the project root (`도서 번역`) | Skill path rule (no drive-letter absolute paths) |

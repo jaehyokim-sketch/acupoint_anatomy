@@ -1,331 +1,343 @@
-# Jianjing (肩井, GB21)(肩井, GB21) 해부생리학적 실체 판명 보고서
+# [Acupoint Anatomical & Physiological Substrate Monograph] Jianjing (肩井, GB21)
 
-> **Framework**: v2.7 (2026-10-04 개정) · **ARI**: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 65.6 (C, 등급 불변) · **이중 채점**: Independent dual-adjudication completed
+> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65.6 (C, grade unchanged) · **Dual scoring**: two independent raters, adjudicated
 
-> **⚠ 안전 경고 (SI 0)**: Jianjing (肩井, GB21) 바로 아래에는 흉막정(胸膜頂)과 폐첨(肺尖)이 있다. *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)는 "不可向前下方刺入或直刺过深，以免损伤胸膜顶和肺尖引起气胸"이라 하고, 침자 기흉의 약 9할이 肩井에서 생긴다고 적는다. 자침깊이 DB에서 *Donguibogam* (《東醫寶鑑》) 값은 `0`(Contraindicated for Needling (禁鍼), 인용 문헌 '동인')이고, 《类经图翼》 이후 문헌은 "孕妇禁针"을 적는다. 이 보고서는 안전 자침 심도를 하나의 고정값으로 제시하지 않는다(5절·10절 참조).
+> **⚠ Safety warning (SI 0)**: Directly beneath Jianjing (肩井) lie the pleural cupula (胸膜頂) and the apex of the lung (肺尖). The *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) states "不可向前下方刺入或直刺過深，以免損傷胸膜頂和肺尖引起氣胸" and records that about 90 % of needling-induced pneumothoraces occur at 肩井. In the needling-depth DB the *Dongui Bogam* (《東醫寶鑑》) value is `0` (contraindicated for needling, 禁鍼; cited source 'Tongren' (銅人)), and texts from 《類經圖翼》 onwards record "孕婦禁針" (needling forbidden in pregnancy). This report does not give a single fixed safe needling depth (see Sections 5 and 10).
 
-> **근거 데이터셋**: `02_Master_Datasets/침구문헌별 자침깊이 정리_AI 분석용.xlsx`(시트1 Excel 326행, N0 324) · `경혈명_비교_정리_KJH.xlsx`(경혈 종합 목록 327행) · `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx`(경혈별_해부구조_종합 325행, 경혈학 하 p.384) · `김재효 수업_경혈_해부구조_데이터셋.xlsx`(경혈별_해부구조_종합 325행) · 마스터 DB `경혈_생의학_신경반사_마스터DB.json`
+> **Source datasets**: `02_Master_Datasets/침구문헌별 자침깊이 정리_AI 분석용.xlsx` (sheet 1, Excel row 326, N0 324) · `경혈명_비교_정리_KJH.xlsx` (comprehensive acupoint list, row 327) · `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx` (sheet `경혈별_해부구조_종합`, row 325; *Acupoint Studies* vol. 2, p.384) · `김재효 수업_경혈_해부구조_데이터셋.xlsx` (sheet `경혈별_해부구조_종합`, row 325) · master DB `경혈_생의학_신경반사_마스터DB.json`
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
 ---
 
-## 1. Classical Literature Screening Table (Three Primary Classics Excerpts)
+## 1. Classical Literature Screening Table (Collation of the Three Primary Classics)
 
-| 원전 | 출처 파일 | 원문 발췌 | 한국어 요지 |
+| Classic | Source file | Original excerpt | English summary |
 | :--- | :--- | :--- | :--- |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | `针灸腧穴通考/chunks_refined/针灸腧穴通考(下)_241-320.md` (二十一) 肩井 | "肩井　Jiānjǐng（GB21）　出*Huangdi Mingtang Jing* (《黃帝明堂經》)" / 名实考: "*Huangdi Mingtang Jing* (《黃帝明堂經》)作'在肩上陷解中，缺盆上大骨前'" | 최초 출전은 *Huangdi Mingtang Jing* (《黃帝明堂經》). |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 같은 파일, 名实考 | "肩胛冈有较大的宽度，不是一个确定的点 … 直到《圣济总录》才给出了具体的说明。根据这个取穴法，实际折量得知穴约在肩部的中央处，相当于肩髃与第七颈椎连线的中点处" | '大骨'(견갑극)은 폭이 넓어 한 점이 되지 않는다. 《圣惠方》 '一寸半'으로 보완하고 《圣济总录》 취혈법을 실측하면 견우–제7경추 연결선의 중점이 된다. 즉 고전 기술과 현대 정위는 같은 자리를 가리킨다. |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 같은 파일, 名实考 | "今天我们知道真正的原因是本穴下正当肺尖，刺太深易刺穿胸膜，引起气胸。据现代临床报道，针刺引起的气胸几乎九成发生于针刺肩井穴" | 甄权 《针经》의 "深即令人闷 … 令人短寿"는 기흉·훈침 기록이다. |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 같은 파일, 【操作】 | "直刺 0.5~0.8 寸。不可向前下方刺入或直刺过深，以免损伤胸膜顶和肺尖引起气胸" | 직자 5~8푼, 전하방 자입·과심 직자 금지. |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 같은 파일, *Qianjin Yaofang* (《千金要方》)"肩井"穴辨误 | "宋校本*Qianjin Yaofang* (《千金要方》)此条'在'字系'及'之误，将二穴混作一穴" | *Qianjin Yaofang* (《千金要方》) 卷24 "灸肩井，在肩解臂接处"의 '在'는 '及'의 오자이다. 肩井과 肩解臂接處는 별개의 두 곳이다. |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | `中国针灸穴位通鉴_parsed_refined.md` 86166행 이하 肩井(GB21) | "一.出处 '肩井，在肩上陷者中，缺盆上，大骨前。'（*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)3：44）" | 출처를 《甲乙经》 3:44로 명시. 《灵枢·根结》 기재 없음. |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | 같은 파일, 四.部位 1~23 | 《圣惠方》 "大骨前一寸半，以三指按之"; 《新编针灸学》 "僧帽肌游离缘的正中点，即肩峰与第七颈椎的正中点" | 송대 이후 '大骨前一寸半'과 삼지 취혈법이 주류였고, 근대에 C7–견봉 중점으로 정리되었다. |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | `中国针灸证治通鉴_parsed_refined.md` 3726~3730행 | "《明堂经》主肩背痹痛，臂不举，寒热凄索气上，不得眠卧 … *Qianjin Yaofang* (《千金要方》)难产 … 小结*Qianjin Yaofang* (《千金要方》)*Qianjin Yifang* (《千金翼方》)均针肩井穴以治难产，并谓'泻之，须臾即生'，值得研究" | 고유 주치는 국소 견배통이고, 난산은 《千金》에서 추가되었으며 "연구가 필요하다"고 평가. |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | `针灸腧穴通考/chunks_refined/针灸腧穴通考(下)_241-320.md` (二十一) 肩井 | "肩井　Jiānjǐng（GB21）　出《黃帝明堂經》" / 名實考: "《黃帝明堂經》作'在肩上陷解中，缺盆上大骨前'" | The earliest source is the *Huangdi Mingtang Jing* (《黃帝明堂經》). |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Same file, 名實考 (examination of name and substance) | "肩胛岡有較大的寬度，不是一個確定的點 … 直到《聖濟總錄》才給出了具體的說明。根據這個取穴法，實際折量得知穴約在肩部的中央處，相當於肩髃與第七頸椎連線的中點處" | '大骨' (the spine of the scapula) is broad and does not define a single point. Supplemented by '一寸半' in the *Shenghui Fang* (《聖惠方》) and measured with the locating method of the *Shengji Zonglu* (《聖濟總錄》), the point falls at the midpoint of the line joining Jianyu (肩髃) and the 7th cervical vertebra. In other words, the classical description and the modern location designate the same spot. |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Same file, 名實考 | "今天我們知道真正的原因是本穴下正當肺尖，刺太深易刺穿胸膜，引起氣胸。據現代臨床報道，針刺引起的氣胸幾乎九成發生於針刺肩井穴" | Zhen Quan's (甄權) "深即令人悶 … 令人短壽" in the *Zhenjing* (《針經》) is a record of pneumothorax and needle syncope (暈針). |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Same file, 【操作】 (manipulation) | "直刺 0.5~0.8 寸。不可向前下方刺入或直刺過深，以免損傷胸膜頂和肺尖引起氣胸" | Perpendicular insertion of 5–8 fen; insertion in the anterior-inferior direction and excessively deep perpendicular insertion are forbidden. |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Same file, 《千金要方》"肩井"穴辨誤 (correction of the 'Jianjing' entry in the *Qianjin Yaofang*) | "宋校本《千金要方》此條'在'字係'及'之誤，將二穴混作一穴" | In vol. 24 of the *Qianjin Yaofang* (《千金要方》), "灸肩井，在肩解臂接處", '在' is a scribal error for '及'. 肩井 and 肩解臂接處 are two separate sites. |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | `中国针灸穴位通鉴_parsed_refined.md` line 86166 ff., 肩井 (GB21) | "一.出處 '肩井，在肩上陷者中，缺盆上，大骨前。'（《針灸甲乙經》3：44）" | Gives the source as the *Jiayi Jing* (《甲乙經》) 3:44. Not recorded in 《靈樞·根結》. |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | Same file, 四.部位 (location) 1–23 | 《聖惠方》 "大骨前一寸半，以三指按之"; 《新編針灸學》 "僧帽肌游離緣的正中點，即肩峰與第七頸椎的正中點" | From the Song dynasty onwards '大骨前一寸半' and the three-finger locating method were mainstream; in modern times the location was standardised as the midpoint between C7 and the acromion. |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | `中国针灸证治通鉴_parsed_refined.md` lines 3726–3730 | "《明堂經》主肩背痹痛，臂不舉，寒熱淒索氣上，不得眠臥 … 《千金要方》難產 … 小結《千金要方》《千金翼方》均針肩井穴以治難產，並謂'瀉之，須臾即生'，值得研究" | The original indication is local shoulder and upper-back pain; difficult labour (難產) was added in the *Qianjin* (《千金》) texts and is assessed as "worth investigating". |
 
-현대 표준 정위: 제7경추 극돌기와 견봉 최외측점을 잇는 선의 중점(《通考》 提要 "第7颈椎棘突与肩峰最外侧点连线的中点"; WHO 2008, 등록부 B1-05). 구판의 "GV14–acromion" 표기는 이 문구로 바로잡았다.
+Modern standard location: the midpoint of the line joining the spinous process of the 7th cervical vertebra and the most lateral point of the acromion (《通考》 提要 "第7頸椎棘突與肩峰最外側點連線的中點"; WHO 2008, registry B1-05). The earlier edition's wording "GV14–acromion" has been corrected to this wording.
 
-## 2. Primary Source vs. Secondary Quotation Historical Stratification Table
+## 2. Primary Source vs. Secondary Quotation Table
 
-| 층차 | 문헌 | 기술 | 구분 |
+| Stratum | Text | Description | Classification |
 | :--- | :--- | :--- | :--- |
-| 한대 | *Huangdi Mingtang Jing* (《黃帝明堂經》)(《通考》 경유) | "在肩上陷解中，缺盆上大骨前 … 刺入五分，灸三壮" / 주치 "肩背痹痛，臂不举，寒热凄索" | **원천** |
-| 위진 | *Zhen Jiu Jia Yi Jing* (《針灸甲乙經》) 3:44 (《通鉴》) | "在肩上陷者中，缺盆上，大骨前" ; "手少阳、阳维之会" | 원천 계승(陷解中 → 陷者中 이문) |
-| 한·당(주석) | 《素问·气穴论》 王冰 주 | "肩解二穴（谓肩井也）" | 주석에 의한 이명 부여 |
-| 당 | *Qianjin Yaofang* (《千金要方》) 卷2·*Qianjin Yifang* (《千金翼方》) 卷26 | "难产，针两肩井入一寸，泻之，须臾即分娩" | 후대 추가 주치(신규) |
-| 당 | *Qianjin Yaofang* (《千金要方》) 卷24 | "灸肩井，在肩解臂接处" → 《通考》: '在'는 '及'의 오자 | 전사 오류(교정됨) |
-| 송 | 《太平圣惠方·针经》(甄权) | "大骨前一寸半，以三指按之" ; "针入四分 … 针不得深，深即令人闷 … 令人短寿" | 정위 보완 + 최초의 기흉·훈침 기록 |
-| 송 | 《圣济总录》 卷193 | "坐以手指从膊骨罅向项筋上捼之，中指下即是也" | 취혈법(현대 중점 정위의 근거) |
-| 명 | 《类经图翼》 卷8 | "孕妇禁针" | 난산 주치에서 파생된 금기 |
-| 조선 | *Donguibogam* (《東醫寶鑑》)(자침깊이 DB) | 값 `0`(Contraindicated for Needling (禁鍼)), 인용 문헌 '동인' | Contraindicated for Needling (禁鍼) 전승. 원문 구절은 이번 개정에서 원전 파일로 확인하지 못함 |
-| 현대 | 4·5·7版《针灸学》, 《通考》 | "大椎穴与肩峰连线的中点" ; "直刺 0.5~0.8 寸 … 深部正当肺尖，不可深刺，孕妇禁针"(6·7版) | 표준화 |
+| Han | *Huangdi Mingtang Jing* (《黃帝明堂經》) (via the 《通考》) | "在肩上陷解中，缺盆上大骨前 … 刺入五分，灸三壯" / indications "肩背痹痛，臂不舉，寒熱淒索" | **Primary** |
+| Wei–Jin | *Zhenjiu Jiayi Jing* (《針灸甲乙經》) 3:44 (《通鑑》) | "在肩上陷者中，缺盆上，大骨前" ; "手少陽、陽維之會" | Continuation of the primary source (variant: 陷解中 → 陷者中) |
+| Han–Tang (commentary) | Wang Bing's (王冰) commentary on 《素問·氣穴論》 | "肩解二穴（謂肩井也）" | Alias assigned by commentary |
+| Tang | *Qianjin Yaofang* (《千金要方》) vol. 2 · *Qianjin Yifang* (《千金翼方》) vol. 26 | "難產，針兩肩井入一寸，瀉之，須臾即分娩" | Later added indication (new) |
+| Tang | *Qianjin Yaofang* (《千金要方》) vol. 24 | "灸肩井，在肩解臂接處" → 《通考》: '在' is a scribal error for '及' | Transcription error (corrected) |
+| Song | 《太平聖惠方·針經》 (Zhen Quan, 甄權) | "大骨前一寸半，以三指按之" ; "針入四分 … 針不得深，深即令人悶 … 令人短壽" | Supplementary location + the earliest record of pneumothorax and needle syncope |
+| Song | *Shengji Zonglu* (《聖濟總錄》) vol. 193 | "坐以手指從膊骨罅向項筋上捼之，中指下即是也" | Locating method (basis of the modern midpoint location) |
+| Ming | 《類經圖翼》 vol. 8 | "孕婦禁針" | Contraindication derived from the difficult-labour indication |
+| Joseon | *Dongui Bogam* (《東醫寶鑑》) (needling-depth DB) | Value `0` (contraindicated for needling), cited source 'Tongren' (銅人) | Transmission of the needling contraindication. The original passage could not be confirmed in a source file during this revision |
+| Modern | 4th, 5th and 7th editions of 《針灸學》; 《通考》 | "大椎穴與肩峰連線的中點" ; "直刺 0.5~0.8 寸 … 深部正當肺尖，不可深刺，孕婦禁針" (6th and 7th editions) | Standardisation |
 
-## 3. Nomenclature & Alias Collation Table (KJH DB Verification)
+## 3. Alias & Nomenclature Verification Table (KJH DB Collation)
 
-| 이명 | KJH DB(327행) | 원전 근거 | 판정 |
+| Alias | KJH DB (row 327) | Classical basis | Verdict |
 | :--- | :---: | :--- | :--- |
-| 膊井 | 있음 | *Taiping Shenghui Fang* (《太平聖惠方》) 99 "一名膊井" 외 다수(《通鉴》 二.别名 2) ; 《通考》 "一名膊井，又写作'髆井'，字异义同" | 확정 이명 |
-| 膽肩井 | 있음 | 경락명 접두 표기(KJH) | 동일 혈위 표기 |
-| 肩解 | 없음 | 《素问·气穴论》 王冰 주 "肩解二穴（谓肩井也）"(《通鉴》 二.别名 1) | 고대 이명. 단 《千金》 '肩解臂接處'와 혼동 주의 |
-| 井 | 없음 | *Tongren* (《銅人》) 4:43 "一名井"(《通鉴》 二.别名 3) | 약칭 이명 |
-| ~~少陽~~ | 없음 | 원전 근거 확인 안 됨 | **구판 오기 — 삭제** |
+| 膊井 | Listed | 《太平聖惠方》 99 "一名膊井" and many others (《通鑑》 二.別名 2) ; 《通考》 "一名膊井，又寫作'髆井'，字異義同" | Confirmed alias |
+| 膽肩井 | Listed | Notation prefixed with the meridian name (KJH) | Notation of the same point |
+| 肩解 | Not listed | Wang Bing's (王冰) commentary on 《素問·氣穴論》 "肩解二穴（謂肩井也）" (《通鑑》 二.別名 1) | Ancient alias. Caution: not to be confused with 肩解臂接處 in the *Qianjin* (《千金》) |
+| 井 | Not listed | 《銅人》 4:43 "一名井" (《通鑑》 二.別名 3) | Abbreviated alias |
+| ~~少陽~~ | Not listed | No classical basis found | **Error in the earlier edition — deleted** |
 
-혼용 정보 분리: *Qianjin Yaofang* (《千金要方》) 卷24 "灸肩井，在肩解臂接处"는 '在→及' 오자 때문에 肩井과 肩解臂接處 두 곳이 한 곳으로 합쳐진 조문이다(《通考》 辨误). 이 조문의 위치 기술은 Jianjing (肩井, GB21) 정위에 반영하지 않는다. 구판의 肩貞·肩髎 혼용을 "완전히 여과했다"는 주장은 근거가 없어 삭제했다.
+Separation of conflated information: the *Qianjin Yaofang* (《千金要方》) vol. 24 entry "灸肩井，在肩解臂接處" merges two sites, 肩井 and 肩解臂接處, into one because of the scribal error '在 → 及' (《通考》 辨誤). The location given in this entry is not used for locating Jianjing. The earlier edition's claim to have "completely filtered out" confusion with Jianzhen (肩貞) and Jianliao (肩髎) was unsupported and has been deleted.
 
-## 4. 3D Spatial Coordinates & Layer 1~5 Anatomical Substrate Diagram
+## 4. 3D Spatial Coordinates & Layer 1–5 Structural Diagram (Linked to the FMA v5.1.0 Ontology)
 
-- **X축(내외측)**: 후정중선(C7 극돌기) → 견봉 최외측점(Acromion)을 잇는 가상선의 **중점(Midpoint)**.
-- **Y축(두미)**: 견갑극(Spine of scapula) 위, 쇄골상와(Supraclavicular fossa, 缺盆) 직상(《明堂》 "缺盆上大骨前").
-- **Z축(깊이)**: 아래 FMA 온톨로지 공인 해부 구조 층차에 따름. 층별 mm 경계는 고정값이 아니며 체형(BMI)·자세·호흡 주기에 따라 변동한다(5-1절; papers.id 1431).
+- **X (medial–lateral)**: the **midpoint** of the imaginary line joining the posterior midline (spinous process of C7) and the most lateral point of the acromion.
+- **Y (cranial–caudal)**: above the spine of the scapula, directly above the supraclavicular fossa (缺盆) (《明堂》 "缺盆上大骨前").
+- **Z (depth)**: follows the layer order of the FMA-recognised anatomical structures below. Millimetre boundaries between layers are not fixed values; they vary with body build (BMI), posture and the respiratory cycle (Section 5-1; papers.id 1431).
 
-![Jianjing (肩井, GB21)(GB21) 높이 견상부 시상 단면 해부 실체 모식도](GB21_Jianjing (肩井, GB21)_횡단면_해부모식도.png)
+![Schematic sagittal section of the suprascapular region at the level of Jianjing (肩井, GB21)](GB21_견정_횡단면_해부모식도.png)
 
-*그림 4-1. Jianjing (肩井, GB21) 높이 견상부 시상(앞뒤) 단면 모식도(오른어깨, 바깥쪽에서 봄, 축척 아님). 검은 실선은 5~8푼 직자, 빨간 점선은 금지 방향(전하방 → 흉막정·폐첨, 《通考》)이다. [공통교재]·[김재효]는 한 교재만 기재한 구조. 층 두께·거리는 임의 배치.*
+*Figure 4-1. Schematic sagittal (anteroposterior) section of the suprascapular region at the level of Jianjing (肩井) (right shoulder, viewed from lateral, not to scale). The solid black line is perpendicular insertion of 5–8 fen; the dashed red line is the forbidden direction (anterior-inferior → pleural cupula and lung apex, 《通考》). [Common Textbook] and [Kim Jaehyo] mark structures listed by only one textbook. Layer thicknesses and distances are arbitrary.*
 
 ```
-                【견정(GB21) 단일 Target 좌표 · FMA 층차 모식도 (실측 축척 아님)】
+                【Jianjing (GB21) single-Target coordinates · FMA layer schematic (not to scale)】
 
-   [X] C7 극돌기 ●──────────────── ◎ GB21 ────────────────● 견봉 최외측점
-                                   (고전 '肩上陷解中, 缺盆上, 大骨前' = 현대 중점, 《通考》)
+   [X] C7 spinous process ●──────────── ◎ GB21 ────────────● most lateral point of acromion
+                                   (classical '肩上陷解中, 缺盆上, 大骨前' = modern midpoint, 《通考》)
    [Z]
-   Layer 1  피부·피하결합조직 : 빗장위신경 (Supraclavicular nerve, FMA:65414, 두 교재 공통)
-   Layer 2  표층 근육 : 등세모근 (Trapezius, FMA:9626, 두 교재 공통) ─ 더부신경 (Spinal accessory nerve, FMA:6720, 김재효)
-   Layer 3  심층 근육 및 신경혈관속 :
-            - 내측/경항부: 어깨올림근 (Levator scapulae, FMA:32519, 김재효) · 목널판근 (Splenius cervicis, FMA:22681, 김재효)
-            - 외측/극상와: 가시위근 (Supraspinatus, FMA:9629, 공통교재)
-            - 신경: 등쪽어깨신경 (Dorsal scapular nerve, FMA:65279, 두 교재 공통) · 어깨위신경 (Suprascapular nerve, FMA:37025, 공통교재)
-            - 혈관: 가로목동맥 (Transverse cervical artery, FMA:10664, 두 교재 공통) · 가로목정맥 (Transverse cervical vein, FMA:50858, 두 교재 공통)
-                    어깨위동맥 (Suprascapular artery, FMA:10663, 공통교재) · 어깨위정맥 (Suprascapular vein, FMA:14319, 공통교재)
-   Layer 4  골격 지지 : 제1늑골 (First rib, FMA:7597) 상면
-   ─────────────── 흉막정·폐첨 (깊이는 개인차 큼, 고정 경계값 없음 — 5-1절) ───────────────
-   Layer 5  ★ 기흉 고위험 구역 : 흉막정 (Pleural cupula, FMA:27534) · 폐첨 (Anatomical apex of lung, FMA:7319)
-            → 기흉(Pneumothorax) 발생 고위험 영역 (SI 0). 전하방 자입 및 과심 직자 절대 엄금(《通考》)
+   Layer 1  Skin & subcutaneous tissue : Supraclavicular nerve (FMA:65414, both textbooks)
+   Layer 2  Superficial muscle : Trapezius (FMA:9626, both textbooks) ─ Spinal accessory nerve (FMA:6720, Kim Jaehyo)
+   Layer 3  Deep muscles & neurovascular bundle :
+            - Medial/nuchal: Levator scapulae (FMA:32519, Kim Jaehyo) · Splenius cervicis (FMA:22681, Kim Jaehyo)
+            - Lateral/supraspinous fossa: Supraspinatus (FMA:9629, Common Textbook)
+            - Nerves: Dorsal scapular nerve (FMA:65279, both textbooks) · Suprascapular nerve (FMA:37025, Common Textbook)
+            - Vessels: Transverse cervical artery (FMA:10664, both textbooks) · Transverse cervical vein (FMA:50858, both textbooks)
+                       Suprascapular artery (FMA:10663, Common Textbook) · Suprascapular vein (FMA:14319, Common Textbook)
+   Layer 4  Skeletal support : upper surface of the First rib (FMA:7597)
+   ─────────── Pleural cupula · lung apex (depth varies widely between individuals; no fixed boundary — Section 5-1) ───────────
+   Layer 5  ★ High-risk zone for pneumothorax : Pleural cupula (FMA:27534) · Anatomical apex of lung (FMA:7319)
+            → High-risk area for pneumothorax (SI 0). Anterior-inferior insertion and excessively deep perpendicular insertion are strictly forbidden (《通考》)
 ```
 
-구판 도식의 "고전 오목점(후방 −1cm, 승모근·능형근 오목점)"과 "WHO 최고점(전방 +1cm)" 두 점, 그리고 "Layer 4 능형근 + 경부 교감신경절 인접"은 삭제했다. 능형근은 견상부(肩上)에 있지 않고, 경부 교감신경절(척추 앞외측)은 Jianjing (肩井, GB21) 자침 경로에 있지 않다.
+The two points in the earlier diagram — the "classical depression point (posterior −1 cm, trapezius/rhomboid depression)" and the "WHO highest point (anterior +1 cm)" — and "Layer 4 rhomboid + adjacent cervical sympathetic ganglion" have been deleted. The rhomboids do not lie in the suprascapular region (肩上), and the cervical sympathetic ganglia (anterolateral to the vertebral column) are not on the needling path of Jianjing.
 
-## 5. Classical Needling Depth Calculation Table (Han Dynasty 1 fen = 2.3 mm)
+## 5. Needling Depth Calculation Table (1 fen = 2.3 mm)
 
-자침깊이 DB 시트1 Excel 326행(N0 324, GB21).
+Needling-depth DB, sheet 1, Excel row 326 (N0 324, GB21).
 
-| 문헌 | 값(푼) | 환산(mm) | 해석 |
+| Text | Value (fen) | Conversion (mm) | Interpretation |
 | :--- | :---: | :---: | :--- |
-| 황제명당경(황룡상 감수) | 5 | 11.5 | 정수 = 푼 |
-| 침구갑을경 | 5 | 11.5 | 정수 = 푼 |
-| 침구경험방 | 5 | 11.5 | 정수 = 푼 |
-| **동의보감** | **0** | — | **Contraindicated for Needling (禁鍼)(禁鍼)**, 인용 문헌 '동인' → SI 0 조건 |
-| 경락수혈학 공통교재 | 5~8 | 11.5~18.4 | 직자 |
-| 침구의학 공통교재 | 5~8 | 11.5~18.4 | 직자 |
-| 침구수혈통고 | 5~8 | 11.5~18.4 | 직자, 전하방·과심 금지 |
-| (참고, 《通考》 【操作】) 《圣惠方》 4푼 · 《医学入门》 6푼 · 《千金》 난산 1寸 · 《窦太师针经》 2寸半 | 4 / 6 / 10 / 25 | 9.2 / 13.8 / 23.0 / 57.5 | DB 밖 문헌. 《通考》는 2寸半에 대해 "若为直刺，恐太深"이라 평가 |
+| *Huangdi Mingtang Jing* (《黃帝明堂經》, ed. Huang Longxiang) | 5 | 11.5 | Integer = fen |
+| *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | 5 | 11.5 | Integer = fen |
+| *Chimgu Gyeongheombang* (《鍼灸經驗方》) | 5 | 11.5 | Integer = fen |
+| ***Dongui Bogam* (《東醫寶鑑》)** | **0** | — | **Contraindicated for needling (禁鍼)**, cited source 'Tongren' (銅人) → SI 0 condition |
+| Korean common textbook, *Meridian and Acupoint Studies* (經絡經穴學) | 5–8 | 11.5–18.4 | Perpendicular |
+| Korean common textbook, *Acupuncture and Moxibustion Medicine* (鍼灸醫學) | 5–8 | 11.5–18.4 | Perpendicular |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 5–8 | 11.5–18.4 | Perpendicular; anterior-inferior and excessively deep insertion forbidden |
+| (Reference, 《通考》 【操作】) 《聖惠方》 4 fen · 《醫學入門》 6 fen · 《千金》 difficult labour 1 cun · 《竇太師針經》 2.5 cun | 4 / 6 / 10 / 25 | 9.2 / 13.8 / 23.0 / 57.5 | Texts outside the DB. The 《通考》 comments on 2.5 cun: "若為直刺，恐太深" |
 
-**구판의 모순 정정**: 구판은 폐첨 경계를 15mm로 두면서 공통교재·통고 상한 8푼(18.4mm) 직자를 그대로 두었고, 45° 사자의 수직 성분(18.4 × sin45° ≈ 13.0mm)만 계산해 "폐첨 안전 확보"라고 결론지었다. 이 결론을 철회한다.
+**Correction of contradictions in the earlier edition**: the earlier edition set the lung-apex boundary at 15 mm while retaining perpendicular insertion up to the 8-fen upper limit (18.4 mm) of the common textbooks and the *Tongkao*, calculated only the vertical component of 45° oblique insertion (18.4 × sin45° ≈ 13.0 mm), and concluded that "safety from the lung apex is ensured". This conclusion is withdrawn.
 
-1. 15mm 경계값은 출처가 없다. GB21에서 흉막까지의 거리는 자세·호흡·체형에 따라 달라진다(papers.id 1431, 1432; 국소해부 1876, PMID 15270272).
-2. 8푼 직자(18.4mm)는 구판이 스스로 둔 15mm 경계를 넘는다.
-3. 사자할 때 수직 성분만으로는 안전을 보장할 수 없다. 《通考》는 각도보다 **방향**(전하방 금지)과 **과심 직자 금지**를 명시한다.
-4. Contraindicated for Needling (禁鍼) 문헌(동의보감 `0`)이 있으므로 SI는 0이다.
+1. The 15 mm boundary has no source. The distance from GB21 to the pleura varies with posture, respiration and body build (papers.id 1431, 1432; regional anatomy 1876, PMID 15270272).
+2. Perpendicular insertion of 8 fen (18.4 mm) exceeds the 15 mm boundary the earlier edition itself set.
+3. In oblique insertion the vertical component alone cannot guarantee safety. The 《通考》 specifies **direction** (no anterior-inferior insertion) and the **prohibition of excessively deep perpendicular insertion** rather than angle.
+4. Because a text contraindicates needling (*Dongui Bogam* `0`), the SI is 0.
 
-$$z = \text{푼} \times 2.3\,\text{mm}, \qquad z_{\perp} = L \cdot \sin\theta \quad (\text{수직 성분일 뿐 안전 기준이 아님})$$
+$$z = \text{fen} \times 2.3\,\text{mm}, \qquad z_{\perp} = L \cdot \sin\theta \quad (\text{vertical component only, not a safety criterion})$$
 
-### 5-1. 초음파 실측 근거 (원문 확인분만)
+### 5-1. Ultrasound Measurement Evidence (Values Confirmed in the Original Papers Only)
 
-GB21에서 초음파로 깊이를 직접 잰 Layer A 논문의 수치를 원문에서 확인한 것만 적는다. 층별 두께(피하·등세모근·어깨올림근)와 첫째 갈비뼈 깊이를 따로 보고한 GB21 연구는 확인하지 못했다.
+Only values from Layer A papers that measured depth at GB21 directly by ultrasound and that were confirmed in the original text are given. No GB21 study reporting layer-by-layer thicknesses (subcutis, trapezius, levator scapulae) and the depth of the first rib separately could be found.
 
-| papers.id | 연구 | 방법 | 원문 수치 (평균 ± SD) | 확인 출처 |
+| papers.id | Study | Method | Original values (mean ± SD) | Source of confirmation |
 | :---: | :--- | :--- | :--- | :--- |
-| 1431 | Chu H et al. *Evid Based Complement Alternat Med* 2018;2308102 (PMID 29507586) | 건강 성인 52명(남 24·여 28), 초음파로 피부~흉막 안전 자침 깊이(SND) 실시간 측정 | 앉은 자세 38.08 ± 6.42 mm(남 42.27 ± 5.71, 여 34.48 ± 4.36) · 엎드림(팔 내림) 40.41 ± 6.74 · 엎드림(팔 올림) 42.11 ± 7.00 · 최대 흡기 36.85 ± 6.44 vs 최대 호기 38.13 ± 6.40. 흡·호기 차는 대부분 1 mm 미만이나 일부 4.5 mm 이상, 한 피험자는 자세 간 19.5 mm 차이 | PMC5817322 본문 표 2·3·고찰 |
-| 1896 | Choi DH et al. *Integr Med Res* 2026;15:101305 (PMID 42500462) | 39명, 초음파 유도 측정으로 유효 깊이(ED₅₀)와 위험 깊이(HD₅₀)의 비 = 치료 지수(TI) 산출 | GB21 TI 1.54(ST36 1.09) — 저자는 "탐색적, 대규모 확인 필요"로 단서를 닮 | PubMed 초록 |
-| 1432 | Determining maximal safe needling depth based on anthropometric measurements — GB21 (*Eur J Integr Med* 2018, doi:10.1016/j.eujim.2018.05.006) | 체격 계측 기반 최대 안전 깊이 | **원문 미확인** — 수치를 인용하지 않는다 | — |
+| 1431 | Chu H et al. *Evid Based Complement Alternat Med* 2018;2308102 (PMID 29507586) | 52 healthy adults (24 men, 28 women); real-time ultrasound measurement of the safe needling depth (SND) from skin to pleura | Sitting 38.08 ± 6.42 mm (men 42.27 ± 5.71, women 34.48 ± 4.36) · prone (arms down) 40.41 ± 6.74 · prone (arms raised) 42.11 ± 7.00 · maximal inspiration 36.85 ± 6.44 vs maximal expiration 38.13 ± 6.40. Inspiration–expiration differences were mostly < 1 mm but ≥ 4.5 mm in some subjects; one subject differed by 19.5 mm between postures | PMC5817322, main text, Tables 2 and 3, Discussion |
+| 1896 | Choi DH et al. *Integr Med Res* 2026;15:101305 (PMID 42500462) | 39 participants; ultrasound-guided measurement; ratio of effective depth (ED₅₀) to hazardous depth (HD₅₀) = therapeutic index (TI) | GB21 TI 1.54 (ST36 1.09) — the authors qualify this as "exploratory; large-scale confirmation needed" | PubMed abstract |
+| 1432 | Determining maximal safe needling depth based on anthropometric measurements — GB21 (*Eur J Integr Med* 2018, doi:10.1016/j.eujim.2018.05.006) | Maximal safe depth based on anthropometric measurements | **Original not checked** — no values cited | — |
 
-해석:
-1. 1431의 집단 평균(약 38 mm)은 교재·《通考》 직자 상한 8푼(18.4 mm)보다 깊다. 그러나 저자들은 "집단 내 차이가 집단 간 차이보다 커서 성별·BMI 기준으로 깊이를 정하는 것은 위험하다"고 결론지었다. 따라서 평균값을 안전 경계로 쓰지 않는다(5절 1번 유지).
-2. 1896의 TI 1.54는 GB21의 유효·위험 깊이 사이에 여유가 있음을 보이지만, 39명 탐색 연구이므로 SI 단계를 바꾸는 근거로 쓰지 않는다.
-3. SI 0은 Contraindicated for Needling (禁鍼) 문헌(동의보감 `0`)과 《通考》의 기흉 기록에 근거하며, 초음파 수치로 바뀌지 않는다. 시술 원칙은 《通考》대로 **전하방 자입과 과심 직자를 피하는 것**이고, 직자 자체를 금하는 원전·교재 근거는 없다.
-4. 2026-10-23 다른 도구가 이 절에 넣었던 수치(흉막 20.5 ± 3.2 mm, 최소 15.2 mm, 층별 두께 3.5·7.8·8.5 mm, 첫째 갈비뼈 19.5 mm, 안전 마진 0.2~2.0 mm)와 '초음파 B-mode 구조도' 그림은 인용 논문 원문에 없는 값이라 삭제했다(10절 뒤 개정 이력, `_구판_antigravity_20261023/` 보관).
+Interpretation:
+1. The group mean of 1431 (about 38 mm) is deeper than the 8-fen (18.4 mm) upper limit for perpendicular insertion in the textbooks and the 《通考》. However, the authors concluded that "within-group differences are larger than between-group differences, so setting depth by sex or BMI is dangerous". The mean is therefore not used as a safety boundary (point 1 of Section 5 stands).
+2. The TI of 1.54 in 1896 indicates a margin between the effective and hazardous depths at GB21, but as an exploratory study of 39 participants it is not used as grounds for changing the SI level.
+3. SI 0 rests on the text contraindicating needling (*Dongui Bogam* `0`) and on the pneumothorax record in the 《通考》, and is not altered by the ultrasound values. The procedural principle, following the 《通考》, is **to avoid anterior-inferior insertion and excessively deep perpendicular insertion**; there is no classical or textbook basis for forbidding perpendicular insertion as such.
+4. The values that another tool inserted into this section on 2026-10-23 (pleura 20.5 ± 3.2 mm, minimum 15.2 mm, layer thicknesses 3.5 · 7.8 · 8.5 mm, first rib 19.5 mm, safety margin 0.2–2.0 mm) and the 'ultrasound B-mode structural diagram' figure have been deleted because these values do not appear in the original texts of the cited papers (revision history after Section 10; archived in `_구판_antigravity_20261023/`).
 
-## 6. Textbook Comparison Table & FMA Ontology Mapping (Common Textbook vs. Prof. Kim Jaehyo)
+## 6. Anatomical Structure Textbook Comparison Table (Common Textbook vs. Kim Jaehyo Textbook)
 
-| 구분 | 경혈학 공통교재(refine 325행, 경혈학 하 p.384) | 김재효 교재(325행) | 공통 | 차이 |
+| Category | Common Textbook of Acupoint Studies (refine row 325; *Acupoint Studies* vol. 2, p.384) | Kim Jaehyo textbook (row 325) | Common | Differences |
 | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 등세모근, 가시위근 | 등세모근, 어깨올림근, 목널판근 | 등세모근 | 공통교재만 가시위근 / 김재효만 어깨올림근·목널판근 |
-| 신경 | 빗장위신경, 등쪽어깨신경, 어깨위신경 | 빗장위신경, 더부신경, 등쪽어깨신경 | 빗장위신경, 등쪽어깨신경 | 공통교재만 어깨위신경 / 김재효만 더부신경 |
-| 혈관 | 가로목동·정맥, 어깨위동·정맥 | 가로목동·정맥 | 가로목동·정맥 | 공통교재만 어깨위동·정맥 |
+| Muscles | Trapezius, supraspinatus | Trapezius, levator scapulae, splenius cervicis | Trapezius | Supraspinatus only in the Common Textbook / levator scapulae and splenius cervicis only in Kim Jaehyo |
+| Nerves | Supraclavicular nerve, dorsal scapular nerve, suprascapular nerve | Supraclavicular nerve, accessory nerve, dorsal scapular nerve | Supraclavicular nerve, dorsal scapular nerve | Suprascapular nerve only in the Common Textbook / accessory nerve only in Kim Jaehyo |
+| Vessels | Transverse cervical artery and vein, suprascapular artery and vein | Transverse cervical artery and vein | Transverse cervical artery and vein | Suprascapular artery and vein only in the Common Textbook |
 
-두 교재는 표층(등세모근·빗장위신경)과 등쪽어깨신경·가로목동정맥에서 일치하고, 심층 구조에서 갈린다. 공통교재는 외하방 구조(가시위근·어깨위신경혈관)를, 김재효 교재는 내측 구조(어깨올림근·목널판근·더부신경)를 기술한다. 구판의 "상호 보완적 정합성", "완벽 대조"는 이 불일치를 가리므로 삭제했다. 이 불일치가 $S_{clarity}$ 75(100 미달)의 근거다.
+The two textbooks agree on the superficial layer (trapezius, supraclavicular nerve) and on the dorsal scapular nerve and transverse cervical vessels, and diverge on the deep structures. The Common Textbook describes the lateral-inferior structures (supraspinatus, suprascapular nerve and vessels); the Kim Jaehyo textbook describes the medial structures (levator scapulae, splenius cervicis, accessory nerve). The earlier edition's phrases "mutually complementary consistency" and "perfect collation" concealed this discrepancy and have been deleted. This discrepancy is the basis for $S_{clarity}$ 75 (below 100).
 
-### 6-1. FMA (Foundational Model of Anatomy v5.1.0) 12대 온톨로지 실체 매핑 및 지식그래프 분석
+### 6-1. Mapping to 12 Ontological Entities of the FMA (Foundational Model of Anatomy v5.1.0) and Knowledge-Graph Analysis
 
-Jianjing (肩井, GB21)(GB21)에 수록된 한의학 교재(경혈학 공통교재 및 김재효 교수 교재)의 해부 구조물 12종을 FMA v5.1.0 온톨로지와 1:1 대조한 결과, 12개 실체 전수(100%)가 FMA 표준 온톨로지 엔티티와 `exact` 매칭되었다.
+The 12 anatomical structures recorded for Jianjing (肩井, GB21) in the Korean Medicine textbooks (the Common Textbook of Acupoint Studies and Prof. Kim Jaehyo's textbook) were collated one-to-one against the FMA v5.1.0 ontology; all 12 entities (100 %) matched FMA standard ontology entities `exact`.
 
-| 구분 | 교재 수록 용어 | FMA ID | FMA 표준 라벨 | 매칭 수준 | 출처 교재 | 신경 지배 및 상위 줄기 사슬 (FMA Ontological Hierarchy) | 척수 신경 분절 (Spinal Segments) |
+| Category | Textbook term | FMA ID | FMA standard label | Match level | Source textbook | Innervation & parent trunk chain (FMA Ontological Hierarchy) | Spinal segments |
 | :--- | :--- | :---: | :--- | :---: | :---: | :--- | :--- |
-| **근육** | 등세모근 (trapezius) | `FMA:9626` | Trapezius | exact | 공통 · 김재효 | 지배: Accessory nerve (더부신경) + Cervical plexus branch (C3-C4) | **C3, C4** |
-| **근육** | 어깨올림근 (levator scapulae) | `FMA:32519` | Levator scapulae | exact | 김재효 단독 | 지배: Dorsal scapular nerve + Cervical nerves (C3, C4) | **C3, C4, C5** |
-| **근육** | 목널판근 (splenius cervicis) | `FMA:22681` | Splenius cervicis | exact | 김재효 단독 | 지배: Posterior rami of cervical nerves (C2-C6) | **C2, C3, C4, C5, C6** (T1-T6 광역) |
-| **근육** | 가시위근 (supraspinatus) | `FMA:9629` | Supraspinatus | exact | 공통교재 단독 | 지배: Suprascapular nerve (어깨위신경) | **C5, C6** |
-| **신경** | 빗장위신경 (supraclavicular nerve) | `FMA:65414` | Supraclavicular nerve | exact | 공통 · 김재효 | 줄기: Cervical plexus (C3, C4 앞가지) | **C3, C4** |
-| **신경** | 등쪽어깨신경 (dorsal scapular nerve) | `FMA:65279` | Dorsal scapular nerve | exact | 공통 · 김재효 | 줄기: Brachial plexus trunk (C5 복측지) | **C5** |
-| **신경** | 더부신경 (accessory nerve) | `FMA:6720` | Spinal accessory nerve | exact | 김재효 단독 | 뇌신경 XI (FMA에 상위 줄기·분절 기재 없음) | FMA 미기재 (척수근 C1~C5는 B1-01 일반 해부) |
-| **신경** | 어깨위신경 (suprascapular nerve) | `FMA:37025` | Suprascapular nerve | exact | 공통교재 단독 | 줄기: Superior trunk of brachial plexus (C5, C6) | **C5, C6** |
-| **혈관** | 가로목동맥 (transverse cervical artery) | `FMA:10664` | Transverse cervical artery | exact | 공통 · 김재효 | 줄기: Thyrocervical trunk → Subclavian artery | — |
-| **혈관** | 가로목정맥 (transverse cervical vein) | `FMA:50858` | Transverse cervical vein | exact | 공통 · 김재효 | 줄기: External jugular vein / Subclavian vein | — |
-| **혈관** | 어깨위동맥 (suprascapular artery) | `FMA:10663` | Suprascapular artery | exact | 공통교재 단독 | 줄기: Thyrocervical trunk → Subclavian artery | — |
-| **혈관** | 어깨위정맥 (suprascapular vein) | `FMA:14319` | Suprascapular vein | exact | 공통교재 단독 | 줄기: External jugular vein | — |
+| **Muscle** | Trapezius | `FMA:9626` | Trapezius | exact | Common · Kim Jaehyo | Innervation: Accessory nerve + Cervical plexus branch (C3-C4) | **C3, C4** |
+| **Muscle** | Levator scapulae | `FMA:32519` | Levator scapulae | exact | Kim Jaehyo only | Innervation: Dorsal scapular nerve + Cervical nerves (C3, C4) | **C3, C4, C5** |
+| **Muscle** | Splenius cervicis | `FMA:22681` | Splenius cervicis | exact | Kim Jaehyo only | Innervation: Posterior rami of cervical nerves (C2-C6) | **C2, C3, C4, C5, C6** (wide range T1-T6) |
+| **Muscle** | Supraspinatus | `FMA:9629` | Supraspinatus | exact | Common Textbook only | Innervation: Suprascapular nerve | **C5, C6** |
+| **Nerve** | Supraclavicular nerve | `FMA:65414` | Supraclavicular nerve | exact | Common · Kim Jaehyo | Trunk: Cervical plexus (anterior rami of C3, C4) | **C3, C4** |
+| **Nerve** | Dorsal scapular nerve | `FMA:65279` | Dorsal scapular nerve | exact | Common · Kim Jaehyo | Trunk: Brachial plexus trunk (ventral ramus of C5) | **C5** |
+| **Nerve** | Accessory nerve | `FMA:6720` | Spinal accessory nerve | exact | Kim Jaehyo only | Cranial nerve XI (no parent trunk or segment recorded in FMA) | Not recorded in FMA (spinal roots C1–C5 from B1-01 normative anatomy) |
+| **Nerve** | Suprascapular nerve | `FMA:37025` | Suprascapular nerve | exact | Common Textbook only | Trunk: Superior trunk of brachial plexus (C5, C6) | **C5, C6** |
+| **Vessel** | Transverse cervical artery | `FMA:10664` | Transverse cervical artery | exact | Common · Kim Jaehyo | Trunk: Thyrocervical trunk → Subclavian artery | — |
+| **Vessel** | Transverse cervical vein | `FMA:50858` | Transverse cervical vein | exact | Common · Kim Jaehyo | Trunk: External jugular vein / Subclavian vein | — |
+| **Vessel** | Suprascapular artery | `FMA:10663` | Suprascapular artery | exact | Common Textbook only | Trunk: Thyrocervical trunk → Subclavian artery | — |
+| **Vessel** | Suprascapular vein | `FMA:14319` | Suprascapular vein | exact | Common Textbook only | Trunk: External jugular vein | — |
 
-#### FMA 지식그래프 기반 온톨로지 분석 및 교재 간 차이의 해부학적 해명:
+#### Ontological analysis based on the FMA knowledge graph and anatomical explanation of the differences between textbooks:
 
-1. **교재 수록 차이의 3차원 해부학적 기원**:
-   - **공통교재 기술의 지향성 (외하방/견봉 방향)**: 공통교재에만 수록된 가시위근(`FMA:9629`), 어깨위신경(`FMA:37025`), 어깨위동정맥(`FMA:10663`/`14319`)은 견갑골 가시위오목(Supraspinous fossa)과 견봉 방향(외하방)으로 주행하는 신경혈관 다발이다.
-   - **김재효 교재 기술의 지향성 (내상방/경항부 방향)**: 김재효 교재에만 수록된 어깨올림근(`FMA:32519`), 목널판근(`FMA:22681`), 더부신경(`FMA:6720`)은 경추 횡돌기 및 경항부 근막과 연결되는 내측·심층 구조물이다.
-   - **FMA 지식그래프의 종합 판정**: 제7경추 극돌기와 견봉 외측단을 잇는 능선(견상부)의 중심점에 위치하는 Jianjing (肩井, GB21)(GB21)은, 표층의 등세모근(`FMA:9626`) 아래에서 내측의 어깨올림근 건막과 외측의 가시위근 건막이 이행·교차하는 해부학적 경계부에 해당한다. 따라서 취혈 편차(내측 편위 시 어깨올림근·더부신경, 외측 편위 시 가시위근·어깨위신경)에 따라 침첨이 도달하는 구조물이 달라질 수 있다는 해석이 가능하다. 다만 이는 FMA 관계와 교재 기술에서 나온 추론이며 GB21 높이의 실측 확인은 없다. 두 교재의 심층 불일치는 그대로 남기며 $S_{clarity}$ 75의 근거로 둔다(6절).
-2. **척수 신경 분절 합집합(Segment Union) 및 수렴성**:
-   - FMA 신경 지배 사슬 및 상위 척수신경 뿌리(Spinal root) 추적 결과, 12개 실체의 척수 분절 합집합은 **`C2, C3, C4, C5, C6, C7, C8, T1, T2, T3, T4, T5, T6`** 에 이른다.
-   - 그러나 이 중 자침 시 직접 자극되는 주요 구심 분절은 등세모근(C3, C4), 어깨올림근(C3, C4, C5), 빗장위신경(C3, C4), 등쪽어깨신경(C5)이 공유하는 **`C3, C4, C5`** 로 강력하게 수렴한다.
-   - 이 분절(C3~C5)은 국소 견배통·경Nuchal rigidity / Neck stiffness (項强) 주치와 같은 분절 범위에 있다. 분절 일치는 해부 수준의 정합일 뿐 반사 기전의 실증은 아니다(8절 B-Check ② = 1).
+1. **Three-dimensional anatomical origin of the differences between textbooks**:
+   - **Orientation of the Common Textbook (lateral-inferior / towards the acromion)**: the supraspinatus (`FMA:9629`), suprascapular nerve (`FMA:37025`) and suprascapular artery and vein (`FMA:10663`/`14319`), listed only in the Common Textbook, form a neurovascular bundle running towards the supraspinous fossa of the scapula and the acromion (lateral-inferior).
+   - **Orientation of the Kim Jaehyo textbook (medial-superior / towards the neck)**: the levator scapulae (`FMA:32519`), splenius cervicis (`FMA:22681`) and accessory nerve (`FMA:6720`), listed only in the Kim Jaehyo textbook, are medial and deep structures connected to the transverse processes of the cervical vertebrae and the nuchal fascia.
+   - **Overall verdict from the FMA knowledge graph**: Jianjing (肩井, GB21), located at the centre of the ridge (suprascapular region) joining the spinous process of C7 and the lateral end of the acromion, corresponds to an anatomical boundary zone beneath the superficial trapezius (`FMA:9626`) where the aponeurosis of the levator scapulae medially and that of the supraspinatus laterally meet and cross. It is therefore possible to interpret that the structures reached by the needle tip may differ with locating deviation (medial deviation: levator scapulae and accessory nerve; lateral deviation: supraspinatus and suprascapular nerve). This is, however, an inference drawn from FMA relations and textbook descriptions, with no measured confirmation at the level of GB21. The deep-layer discrepancy between the two textbooks is retained as it is and serves as the basis for $S_{clarity}$ 75 (Section 6).
+2. **Spinal segment union and convergence**:
+   - Tracing the FMA innervation chains and parent spinal roots, the union of spinal segments for the 12 entities extends to **`C2, C3, C4, C5, C6, C7, C8, T1, T2, T3, T4, T5, T6`**.
+   - Of these, however, the main afferent segments directly stimulated during needling converge strongly on **`C3, C4, C5`**, shared by the trapezius (C3, C4), levator scapulae (C3, C4, C5), supraclavicular nerve (C3, C4) and dorsal scapular nerve (C5).
+   - These segments (C3–C5) lie in the same segmental range as the indications of local shoulder/upper-back pain (肩背痛) and neck stiffness (頸項強). Segmental agreement is only concordance at the anatomical level, not empirical demonstration of a reflex mechanism (Section 8 B-Check ② = 1).
 
-## 7. Spatial Discrepancy Dual-Target Analysis (Discrepancy Δ > 15 mm)
+## 7. Spatial Discrepancy Branch Inference — Not Applicable (Branch Withdrawn)
 
-구판은 "고전 오목점"(Target 1)과 "WHO 최고점"(Target 2)을 Δ > 15mm로 나누었다. 이 분기는 다음 이유로 성립하지 않는다.
+The earlier edition split the point into a "classical depression point" (Target 1) and a "WHO highest point" (Target 2) with Δ > 15 mm. This split does not hold, for the following reasons.
 
-1. 분기 근거로 쓴 《通考》 인용문 "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危"는 《通考》 원문(`针灸腧穴通考(下)_241-320.md` 1228~1390행)에 없는 **가공 인용**이다.
-2. 《通考》 名实考는 오히려 《明堂》의 '肩上陷解中, 缺盆上大骨前'을 《圣惠方》 '一寸半'과 《圣济总录》 취혈법으로 실측하면 "肩髃与第七颈椎连线的中点"이 된다고 해석한다. 고전 기술과 현대 정위는 같은 점이다.
-3. 구판 도식 자체의 편차도 ±1cm(≤ 15mm)여서 정본 Rank 5 분기 요건(Δ > 15mm)을 채우지 않는다.
-4. 두 채점자 모두 Δ ≤ 15mm로 판단했다(10-6 조정 기록).
+1. The 《通考》 quotation used as the basis for the split, "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危", does not exist in the original text of the 《通考》 (`针灸腧穴通考(下)_241-320.md` lines 1228–1390); it is a **fabricated quotation**.
+2. On the contrary, the 名實考 of the 《通考》 interprets the 《明堂》 '肩上陷解中, 缺盆上大骨前', measured with the '一寸半' of the 《聖惠方》 and the locating method of the 《聖濟總錄》, as "肩髃與第七頸椎連線的中點". The classical description and the modern location are the same point.
+3. The deviation in the earlier diagram itself was ±1 cm (≤ 15 mm), which does not meet the canonical Rank 5 branching requirement (Δ > 15 mm).
+4. Both raters judged Δ ≤ 15 mm (adjudication record 10-6).
 
-따라서 **단일 Target(고전 = 현대 표준 정위)** 으로 분석한다. 참고로 '고전 정위'를 따로 채점한 값(채점자 A: S_orig 62.5 / S_clarity 50 / S_reflex 50 / S_safety 0, 채점자 B: 68.75 / 50 / 50 / 0)은 최종값으로 채택하지 않았다.
+The analysis therefore uses a **single Target (classical = modern standard location)**. For reference, the scores given separately to the 'classical location' (Rater A: S_orig 62.5 / S_clarity 50 / S_reflex 50 / S_safety 0; Rater B: 68.75 / 50 / 50 / 0) were not adopted as final values.
 
-## 8. Biomedical Reflex Pathway Diagram & External Search Log
+## 8. Biomedical Reflex Mechanism Diagram & External Search Log
 
-### 8-1. Layer A 논문 (papers.id)
+### 8-1. Layer A Papers (papers.id)
 
-| papers.id | 연도 | 저널 | 제목 | PMID / DOI | 설계 | 용도 |
+| papers.id | Year | Journal | Title | PMID / DOI | Design | Use |
 | :---: | :---: | :--- | :--- | :--- | :--- | :--- |
-| 1876 | 2004 | J Tradit Chin Med | Topography of acupoint Jianjing (GB 21). | PMID 15270272 | 인체 국소해부(MeSH: Humans, Pneumothorax) | ① 실체·안전 |
-| 1431 | 2018 | Evid Based Complement Alternat Med | Change of Safe Needling Depth at Acupoint GB21 according to Posture and Breathing | DOI 10.1155/2018/2308102 | 해부·영상 | ① 실체·SI |
-| 1432 | 2018 | Eur J Integr Med | Determining maximal safe needling depth based on anthropometric measurements – Focusing on acupoint GB21 | DOI 10.1016/j.eujim.2018.05.006 | 해부·영상 | ① 실체·SI |
-| 1896 | 2026 | Integr Med Res | Quantifying the therapeutic index of acupoints using measurements of effective and hazardous depths | PMID 42500462 / DOI 10.1016/j.imr.2026.101305 | 해부·영상 | SI 보조 |
-| 1874 | 2007 | J Altern Complement Med | Noninvasive blood flow measurement over acupuncture points (Gb21): a pilot study. | PMID 17309375 / DOI 10.1089/acm.2006.9149 | 인체 관찰(비RCT, 레이저 도플러) | ⑥ · $S_{reflex}$의 유일한 GB21 자체 생리 연구 |
-| 1884 | 2026 | Zhongguo Zhen Jiu | Bloodletting at guasha marks combined with acupuncture for cervical spondylotic radiculopathy … | PMID 41558700 / DOI 10.13703/j.0255-2930.20241126-k0001 | 인체 RCT(다혈 배합) | ⑥ 보조(혈위 특이성 없음) |
-| 1891 | 2016 | Zhongguo Zhen Jiu | Acupuncture and moxibustion based on meridian differentiation for cervical spondylosis radiculopathy: a randomized … | PMID 29231452 / DOI 10.13703/j.0255-2930.2016.06.008 | 인체 RCT(다혈 배합) | ⑥ 보조 |
-| 1893 | 2021 | Zhen Ci Yan Jiu | Randomized controlled trial on cervical spondylotic radiculopathy of wind-cold-damp type … | PMID 34970881 / DOI 10.13702/j.1000-0607.20210006 | 인체 RCT(다혈 배합) | ⑥ 보조 |
+| 1876 | 2004 | J Tradit Chin Med | Topography of acupoint Jianjing (GB 21). | PMID 15270272 | Human regional anatomy (MeSH: Humans, Pneumothorax) | ① substrate · safety |
+| 1431 | 2018 | Evid Based Complement Alternat Med | Change of Safe Needling Depth at Acupoint GB21 according to Posture and Breathing | DOI 10.1155/2018/2308102 | Anatomy · imaging | ① substrate · SI |
+| 1432 | 2018 | Eur J Integr Med | Determining maximal safe needling depth based on anthropometric measurements – Focusing on acupoint GB21 | DOI 10.1016/j.eujim.2018.05.006 | Anatomy · imaging | ① substrate · SI |
+| 1896 | 2026 | Integr Med Res | Quantifying the therapeutic index of acupoints using measurements of effective and hazardous depths | PMID 42500462 / DOI 10.1016/j.imr.2026.101305 | Anatomy · imaging | SI supplementary |
+| 1874 | 2007 | J Altern Complement Med | Noninvasive blood flow measurement over acupuncture points (Gb21): a pilot study. | PMID 17309375 / DOI 10.1089/acm.2006.9149 | Human observational (non-RCT, laser Doppler) | ⑥ · the only GB21-specific physiological study for $S_{reflex}$ |
+| 1884 | 2026 | Zhongguo Zhen Jiu | Bloodletting at guasha marks combined with acupuncture for cervical spondylotic radiculopathy … | PMID 41558700 / DOI 10.13703/j.0255-2930.20241126-k0001 | Human RCT (multi-point combination) | ⑥ supplementary (no point specificity) |
+| 1891 | 2016 | Zhongguo Zhen Jiu | Acupuncture and moxibustion based on meridian differentiation for cervical spondylosis radiculopathy: a randomized … | PMID 29231452 / DOI 10.13703/j.0255-2930.2016.06.008 | Human RCT (multi-point combination) | ⑥ supplementary |
+| 1893 | 2021 | Zhen Ci Yan Jiu | Randomized controlled trial on cervical spondylotic radiculopathy of wind-cold-damp type … | PMID 34970881 / DOI 10.13702/j.1000-0607.20210006 | Human RCT (multi-point combination) | ⑥ supplementary |
 
-GB21 단독 자극의 인체 생리·기전 연구는 1874 한 편이고, 동물 기전 연구는 0편이다.
+There is one human physiological/mechanistic study of GB21 stimulation alone (1874) and no animal mechanistic study.
 
-### 8-2. 반사 기전 기술 (B-Check 미부합 → 가설)
+### 8-2. Description of Reflex Mechanisms (B-Check not concordant → hypothesis)
 
-- **국소 견배통·경Nuchal rigidity / Neck stiffness (項强)(고유 주치)**: 빗장위신경(C3–C4) 피부 구심, 등세모근 근막 자극 → 척수 후각 관문조절(B3-07)·광범위 억제(B3-08)·일반 침 진통 경로(B3-11) → 국소 근긴장·통증 완화. 근막 발통점 해석(B2-06)은 B2-03과 반증 문헌 B2-04를 함께 고려해야 하는 **유추**이다. 등급: **가설**.
-- **난산·乳痈·缺乳(후대 추가 주치)**: Jianjing (肩井, GB21)의 분절(C3–C5)은 자궁(T10–L1, S2–S4)·유방(T4 부근)과 맞지 않고, 원심 경로 근거가 없다. 구판의 "경부 교감신경절 자극 → 옥시토신 분비 → 자궁수축"은 해부학적으로 맞지 않고(경부 교감신경절은 Jianjing (肩井, GB21) 자침 경로에 없음) Layer A·B 근거가 없어 **삭제**했다(가설로도 남기지 않음).
+- **Local shoulder/upper-back pain and neck stiffness (original indications)**: cutaneous afferents of the supraclavicular nerve (C3–C4) and stimulation of the trapezius fascia → spinal dorsal-horn gate control (B3-07), diffuse noxious inhibitory control (B3-08) and general acupuncture analgesic pathways (B3-11) → relief of local muscle tension and pain. The myofascial trigger-point interpretation (B2-06) is an **analogy** that must be weighed together with B2-03 and the counter-evidence B2-04. Grade: **hypothesis**.
+- **Difficult labour (難產), mastitis (乳癰) and insufficient lactation (缺乳) (later added indications)**: the segments of Jianjing (C3–C5) do not match those of the uterus (T10–L1, S2–S4) or the breast (around T4), and there is no evidence for an efferent pathway. The earlier edition's "stimulation of the cervical sympathetic ganglia → oxytocin release → uterine contraction" is anatomically incorrect (the cervical sympathetic ganglia are not on the needling path of Jianjing) and has no Layer A or B support, so it has been **deleted** (not retained even as a hypothesis).
 
-### 8-3. B-Check 채점표
+### 8-3. B-Check Scoring Table
 
-| 항목 | 채점자 A | 채점자 B | 최종 | Layer B 참조 ID | papers.id | 근거 요지 |
+| Item | Rater A | Rater B | Final | Layer B reference IDs | papers.id | Rationale |
 | :---: | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① 자침 심도의 말초신경·혈관 실체 | 2 | 2 | **2** | B1-01, B2-07, B2-09, B2-10 | 1431, 1432, 1876 | 두 교재 공통 구조(등세모근·빗장위신경·등쪽어깨신경·가로목동정맥) + FMA v5.1.0 12개 실체 전수 exact 매칭 및 3대 초음파 실측(1431, 1432, 1896) 검증 |
-| ② 척수 분절 정합 | 1 | 1 | **1** | B1-03, B3-20 | — | FMA 분절 합집합(C2~C8, T1~T6) 중 주 구심 분절 C3~C5는 견항통과 같은 분절 범위(해부 수준 정합), 난산·乳痈과는 불일치 |
-| ③ 구심 섬유형·수용체 | 1 | 1 | **1** | B2-06, B3-06, B3-11 | — | GB21 특이 구심 섬유 연구 없음, 일반 유추 |
-| ④ 중추 중계·경로 | 1 | 1 | **1** | B3-07, B3-08, B3-11 | — | 관문조절·DNIC·일반 진통 경로 유추 |
-| ⑤ 원심 경로·효과 방향 | 1 | 1 | **1** | B2-03, B2-04, B2-06, B3-11 | — | 견배통 완화 방향은 유추로 일치, 난산 자궁수축은 근거 없음 |
-| ⑥ 인체 전환 근거 | 1 | 1 | **1** | B4-04, B4-05 | 1874, 1884, 1891, 1893 | 인체 혈류 관찰 1편 + 다혈 배합 RCT, 혈위 특이성 미확립 |
-| **합계** | 7 | 7 | **7 / 12** | | | **판정: 미부합**(≥ 8 미달; ①② 각 ≥ 1은 충족). 상충(0점) 항목 없음. 동물 한정 표지 해당 없음 |
+| ① Peripheral nerve/vessel substrate at needling depth | 2 | 2 | **2** | B1-01, B2-07, B2-09, B2-10 | 1431, 1432, 1876 | Structures common to both textbooks (trapezius, supraclavicular nerve, dorsal scapular nerve, transverse cervical vessels) + exact matching of all 12 entities to FMA v5.1.0 and verification by three ultrasound measurement studies (1431, 1432, 1896) |
+| ② Spinal segmental concordance | 1 | 1 | **1** | B1-03, B3-20 | — | Of the FMA segment union (C2–C8, T1–T6), the main afferent segments C3–C5 lie in the same segmental range as shoulder and neck pain (concordance at the anatomical level); no match with difficult labour or mastitis (乳癰) |
+| ③ Afferent fibre type & receptors | 1 | 1 | **1** | B2-06, B3-06, B3-11 | — | No GB21-specific study of afferent fibres; general analogy |
+| ④ Central relay & pathway | 1 | 1 | **1** | B3-07, B3-08, B3-11 | — | Analogy to gate control, DNIC and general analgesic pathways |
+| ⑤ Efferent pathway & direction of effect | 1 | 1 | **1** | B2-03, B2-04, B2-06, B3-11 | — | Relief of shoulder/upper-back pain agrees by analogy; no evidence for uterine contraction in difficult labour |
+| ⑥ Human translation | 1 | 1 | **1** | B4-04, B4-05 | 1874, 1884, 1891, 1893 | One human blood-flow observation + multi-point RCTs; point specificity not established |
+| **Total** | 7 | 7 | **7 / 12** | | | **Verdict: not concordant** (below ≥ 8; ① and ② each ≥ 1 satisfied). No conflicting (0-point) items. Animal-only flag not applicable |
 
-### 8-4. 외부 검색 로그 (sync_log, 2026-10-04 Rank 6 실행)
+### 8-4. External Search Log (sync_log; Rank 6 run of 2026-10-04)
 
-| 일시 | 소스 | HTTP | 수집 | 중복제거 | 신규 | 쿼리 |
+| Timestamp | Source | HTTP | Fetched | Duplicates removed | New | Query |
 |---|---|---|---|---|---|---|
 | 2026-10-04T09:51:47 | pubmed | 200 | 16 | — | — | ("GB21" OR "Jianjing" OR "肩井") AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) |
 | 2026-10-04T09:51:47 | openalex | 200 | 16 | — | — | doi_starts_with:10.13703,title_and_abstract.search:"Jianjing" OR "GB21" \| doi_starts_with:10.13702,title_and_abstract.search:"Jianjing" OR "GB21" \| has_doi:true |
 | 2026-10-04T09:51:47 | crossref | 200 | 0 | — | — | Jianjing acupuncture nerve reflex |
 | 2026-10-04T09:51:47 | all | — | 32 | 5 | 27 |  |
-| 2026-10-23T21:45:09 | pubmed | 200 | 16 | — | — | 위와 같은 쿼리 (재실행) |
-| 2026-10-23T21:45:09 | openalex | 200 | 16 | — | — | 위와 같은 쿼리 (재실행) |
+| 2026-10-23T21:45:09 | pubmed | 200 | 16 | — | — | Same query as above (re-run) |
+| 2026-10-23T21:45:09 | openalex | 200 | 16 | — | — | Same query as above (re-run) |
 | 2026-10-23T21:45:09 | crossref | 200 | 0 | — | — | Jianjing acupuncture nerve reflex |
-| 2026-10-23T21:45:09 | all | — | 32 | 26 | 6 | 기존 병합 23, 배치 내 중복 3. 신규 6편은 B-Check·ARI 판정을 바꾸지 않음(1896은 5-1절에 반영) |
+| 2026-10-23T21:45:09 | all | — | 32 | 26 | 6 | 23 already merged, 3 duplicates within the batch. The 6 new papers do not change the B-Check or ARI verdict (1896 is reflected in Section 5-1) |
 
-## 9. Classical Indications Stratification Table (Single-Point P_single vs. Complex Formulae)
+## 9. Indication Separation Table
 
-구판의 $P_{single}$ 0.88 / 0.92 / 0.75와 Level A/B는 산출 근거와 원전 포인터가 없어 **삭제**했다. 아래 표는 원전 조문을 단독/배오로만 분류한 것이며 확률값은 산출하지 않았다(미산출 — 증례 수 집계 자료 없음).
+The earlier edition's $P_{single}$ values 0.88 / 0.92 / 0.75 and Levels A/B had no derivation and no pointers to the classics, so they have been **deleted**. The table below only classifies classical entries as single-point or combination; no probability values were calculated (not calculated — no data aggregating case counts).
 
-| 주치 | 최초 문헌 | 단독 자침·뜸 조문 | 배오 조문 | 판정 |
+| Indication | Earliest text | Single-point needling/moxibustion entry | Combination entry | Verdict |
 | :--- | :--- | :--- | :--- | :--- |
-| 肩背痹痛, 臂不举, 颈项强 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 《明堂》 "主肩背痹痛，臂不举"; 《千金翼》 "臂重不举，灸肩井随年壮" | 《医学纲目》 肩背胛痛(昆仑·悬钟·肩井); 《针灸集成》 등 | **고유 주치**(단독 원천 기술 있음, 국소) |
-| 难产 | *Qianjin Yaofang* (《千金要方》) 卷2·*Qianjin Yifang* (《千金翼方》) | "难产，针两肩井入一寸，泻之，须臾即分娩" | — | 후대 추가 단독 조문. 《证治通鉴》 "值得研究", 《通考》 "当代有关这方面的临床观察还缺乏，有待实证研究". 기전 근거 없음 |
-| 乳痈·妒乳·缺乳 | 금원 이후(《通考》 문헌분석) | 《卫生易简方》 "无乳汁 … 针肩井亦效"; 《寿域神方》 "治无乳，针肩井二穴，效" | 《针灸大全》 乳根·少泽·肩井·膻中; 《盘石金直刺秘传》 灸肩井 + 少泽·合谷·三阴交 | 후대 확장, 배오 비중 큼 |
-| 堕胎后手足厥冷·弱 | *Taiping Shenghui Fang* (《太平聖惠方》)(甄权) | "妇人怀胎落讫 … 针肩井，手足立瘥" | — | 송대 추가 |
-| 瘰疬·九漏·中风 등 | *Qianjin Yaofang* (《千金要方》)·《针经摘英集》 | 《千金》 "九漏，灸肩井二百壮" | 《针经摘英集》 百会·风池·大椎·肩井·曲池 … | 배오 위주 |
+| Painful Bi of the shoulder and back (肩背痹痛), inability to raise the arm (臂不舉), neck stiffness (頸項強) | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 《明堂》 "主肩背痹痛，臂不舉"; 《千金翼》 "臂重不舉，灸肩井隨年壯" | 《醫學綱目》 pain of the shoulder, back and scapula (肩背胛痛) (昆侖 · 懸鐘 · 肩井); 《針灸集成》 etc. | **Original indication** (primary single-point description exists; local) |
+| Difficult labour (難產) | *Qianjin Yaofang* (《千金要方》) vol. 2 · *Qianjin Yifang* (《千金翼方》) | "難產，針兩肩井入一寸，瀉之，須臾即分娩" | — | Later added single-point entry. 《證治通鑑》 "值得研究"; 《通考》 "當代有關這方面的臨床觀察還缺乏，有待實證研究". No mechanistic evidence |
+| Mastitis (乳癰) · breast abscess (妒乳) · insufficient lactation (缺乳) | Jin–Yuan onwards (《通考》 textual analysis) | 《衛生易簡方》 "無乳汁 … 針肩井亦效"; 《壽域神方》 "治無乳，針肩井二穴，效" | 《針灸大全》 乳根 · 少澤 · 肩井 · 膻中; 《盤石金直刺秘傳》 moxibustion at 肩井 + 少澤 · 合谷 · 三陰交 | Later extension; combinations predominate |
+| Cold and weak limbs after miscarriage (墮胎後手足厥冷·弱) | 《太平聖惠方》 (Zhen Quan, 甄權) | "婦人懷胎落訖 … 針肩井，手足立瘥" | — | Added in the Song dynasty |
+| Scrofula (瘰癧) · nine fistulae (九漏) · stroke (中風), etc. | *Qianjin Yaofang* (《千金要方》) · 《針經摘英集》 | 《千金》 "九漏，灸肩井二百壯" | 《針經摘英集》 百會 · 風池 · 大椎 · 肩井 · 曲池 … | Mainly combinations |
 
-## 10. ARI v3.0 Quantitative Profile Evaluation & Final Conclusion
+## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-### 10-1. 하위 점수 (단일 Target: 고전 = WHO 표준 정위)
+### 10-1. Sub-scores (Single Target: classical = WHO standard location)
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| $S_{orig}$ | 68.75 | 75.0 | **71.875** | 최초 기술이 모호해 후대에 보완, 후대 문헌은 중점으로 수렴, 이명 혼용 해소, 《千金》 오자 교정 | `针灸腧穴通考(下)_241-320.md` 名实考·定位·辨误; 《通鉴》 86166행 |
-| $S_{clarity}$ | 75 | 75 | **75.0** | GB21 특이 실측(1876·1431·1432·1896)이 있으나 두 교재의 심층 구조가 불일치 → 100 미달 | 공통교재 325행(p.384), 김재효 325행; papers.id 1876, 1431, 1432, 1896 |
-| $S_{reflex}$ | 50 | 50 | **50.0** | GB21 자체 인체 생리 연구 1편(1874), 동물 0편, B-Check 7/12(< 8) → 75 불가 | papers.id 1874; 8-3 B-Check |
-| $S_{safety}$ → SI | 0 | 0 | **0** | 자침깊이 DB 동의보감 `0`(Contraindicated for Needling (禁鍼)) + 폐첨 직상 | 자침깊이 DB 326행; 《通考》 【操作】·名实考 |
+| $S_{orig}$ | 68.75 | 75.0 | **71.875** | Earliest description ambiguous and supplemented later; later texts converge on the midpoint; alias confusion resolved; scribal error in the 《千金》 corrected | `针灸腧穴通考(下)_241-320.md` 名實考 · 定位 · 辨誤; 《通鑑》 line 86166 |
+| $S_{clarity}$ | 75 | 75 | **75.0** | GB21-specific measurements exist (1876, 1431, 1432, 1896), but the deep structures differ between the two textbooks → below 100 | Common Textbook row 325 (p.384), Kim Jaehyo row 325; papers.id 1876, 1431, 1432, 1896 |
+| $S_{reflex}$ | 50 | 50 | **50.0** | One human physiological study of GB21 itself (1874), no animal studies, B-Check 7/12 (< 8) → 75 not possible | papers.id 1874; 8-3 B-Check |
+| $S_{safety}$ → SI | 0 | 0 | **0** | Needling-depth DB *Dongui Bogam* `0` (contraindicated for needling) + directly above the lung apex | Needling-depth DB row 326; 《通考》 【操作】 · 名實考 |
 
-### 10-2. $S_{orig}$ 하위 4항목
+### 10-2. $S_{orig}$ Sub-items
 
-| 하위 항목 | A | B | 평균 | 근거 |
+| Sub-item | A | B | Mean | Rationale |
 | :--- | :---: | :---: | :---: | :--- |
-| ① 최초 기술 명확성 | 50 | 50 | 50 | 《明堂》에 심도(5푼)는 있으나 '大骨前'이 한 점을 정하지 못해 《圣惠》·《圣济》로 보완 |
-| ② 후대 문헌 일치율 | 75 | 75 | 75 | 《明堂》 문구 계승 14종, 《圣惠》 '一寸半' 계승 3종, 교재 1~7판 중점 수렴. '略向前'·'前直乳中' 변이와 심도 분산(4푼~2寸半·Contraindicated for Needling (禁鍼)) |
-| ③ 이명 혼용 해소 | 75 | 75 | 75 | 膊井/髆井·井·肩解, KJH(膊井, 膽肩井)와 일치, 《千金》 혼동 해소 |
-| ④ 《通考》 교감 | 75 | 100 | 87.5 | *Qianjin Yaofang* (《千金要方》) '在→及' 교정. A는 '一寸半' 골도 미확정이 남은 점을 감점 |
+| ① Clarity of earliest description | 50 | 50 | 50 | The 《明堂》 gives a depth (5 fen), but '大骨前' does not fix a single point, so it was supplemented by the 《聖惠》 and 《聖濟》 |
+| ② Agreement in later texts | 75 | 75 | 75 | 14 texts continue the 《明堂》 wording, 3 continue the '一寸半' of the 《聖惠》, and textbook editions 1–7 converge on the midpoint. Variants '略向前' and '前直乳中', and dispersion of depth (4 fen to 2.5 cun, plus contraindication) |
+| ③ Resolution of alias confusion | 75 | 75 | 75 | 膊井/髆井, 井 and 肩解 agree with the KJH DB (膊井, 膽肩井); confusion in the 《千金》 resolved |
+| ④ Collation in the 《通考》 | 75 | 100 | 87.5 | Correction '在 → 及' in the *Qianjin Yaofang* (《千金要方》). A deducted points because the bone-proportional measure of '一寸半' remains undetermined |
 
-### 10-3. 게이트 적용 내역
+### 10-3. Gate Application
 
-| 게이트 | 조건 | 적용 |
+| Gate | Condition | Application |
 | :--- | :--- | :--- |
-| 게이트 1 | $S_{orig}$ < 50 또는 $S_{clarity}$ < 50 | 미적용(71.9 / 75) |
-| 게이트 2 | Layer A 실측 0편 | 미적용(GB21 특이 논문 있음: 1874, 1876 등) |
-| 게이트 3 | SI ≤ 25 | **적용 → ⚠ 안전주의** |
+| Gate 1 | $S_{orig}$ < 50 or $S_{clarity}$ < 50 | Not triggered (71.9 / 75) |
+| Gate 2 | No Layer A measurement | Not triggered (GB21-specific papers exist: 1874, 1876, etc.) |
+| Gate 3 | SI ≤ 25 | **Triggered → ⚠ safety caution** |
 
-### 10-4. ARI-Core·등급·SI·민감도
+### 10-4. ARI-Core, Grade, SI and Sensitivity
 
 $$\text{ARI-Core} = 0.40\,S_{orig} + 0.35\,S_{clarity} + 0.25\,S_{reflex}$$
 
-| 항목 | 값 |
+| Item | Value |
 | :--- | :--- |
-| ARI-Core 채점자 A | 0.40×68.75 + 0.35×75 + 0.25×50 = 66.25 |
-| ARI-Core 채점자 B | 0.40×75 + 0.35×75 + 0.25×50 = 68.75 |
-| **ARI-Core (평균 ± 반범위)** | **67.5 ± 1.2** |
-| 등급 | **C "가능·가설(Possible)"** |
+| ARI-Core, Rater A | 0.40×68.75 + 0.35×75 + 0.25×50 = 66.25 |
+| ARI-Core, Rater B | 0.40×75 + 0.35×75 + 0.25×50 = 68.75 |
+| **ARI-Core (mean ± half-range)** | **67.5 ± 1.2** |
+| Grade | **C "Possible / hypothesis"** |
 | SI | **0 ⚠** |
-| 등가중치 민감도 | (71.875 + 75 + 50) / 3 = 65.6 → C, 등급 불변(가중치 민감 표지 없음) |
-| 가중치 | 잠정 0.40/0.35/0.25(미검증) |
+| Equal-weight sensitivity | (71.875 + 75 + 50) / 3 = 65.6 → C, grade unchanged (no weight-sensitivity flag) |
+| Weights | Provisional 0.40/0.35/0.25 (unvalidated) |
 
-### 10-5. 분기 판정
+### 10-5. Branch Decision
 
-단일 Target이므로 ΔARI-Core 판정 대상이 없다(7절: 분기 철회).
+As there is a single Target, there is nothing to decide by ΔARI-Core (Section 7: branch withdrawn).
 
-### 10-6. 조정 기록
+### 10-6. Adjudication Record
 
-- 15점 이상 불일치 항목: **없음**(`needs_adjudication` 빈 목록). 하위 점수 최대 불일치는 $S_{orig}$ 6.25점(④ 하위 항목 75 vs 100).
-- override_note: "분기 해제: 두 채점자 모두 고전(明堂·甲乙 '在肩上陷者中, 缺盆上, 大骨前')과 WHO 정위의 차이가 Δ≤15mm임을 확인(A: 보고서 도식상 ±1cm, B: *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)가 고전 기술을 Dazhui (大椎, GV14)–견봉 중점으로 해석). 정본 Rank 5 분기 기준 미충족 → 단일 Target(고전=WHO)으로 조정하고 WHO 정위 채점(T2)을 최종값으로 채택. 참고: 고전 정위 별도 채점값 A 62.5/50/50/0, B 68.75/50/50/0. S_safety 0은 자침깊이 DB 동의보감 '0'(Contraindicated for Needling (禁鍼)) 근거로 두 채점자 일치 → ⚠."
+- Items differing by 15 points or more: **none** (`needs_adjudication` empty list). The largest sub-score difference is 6.25 points in $S_{orig}$ (sub-item ④, 75 vs 100).
+- override_note: "Branch removed: both raters confirmed that the difference between the classical location (明堂 · 甲乙 '在肩上陷者中, 缺盆上, 大骨前') and the WHO location is Δ ≤ 15 mm (A: ±1 cm in the report diagram; B: the 《針灸腧穴通考》 interprets the classical description as the midpoint between 大椎 and the acromion). The canonical Rank 5 branching criterion is not met → adjusted to a single Target (classical = WHO), and the WHO-location scoring (T2) was adopted as final. For reference, separate scores for the classical location: A 62.5/50/50/0, B 68.75/50/50/0. S_safety 0 agreed by both raters on the basis of the needling-depth DB *Dongui Bogam* '0' (contraindicated for needling) → ⚠."
 
-### 10-7. 최종 결론
+### 10-7. Final Conclusion
 
-1. **⚠ 안전 경고 우선**: Jianjing (肩井, GB21)은 흉막정·폐첨 바로 위에 있는 기흉 고위험 혈위다(《通考》: 침자 기흉의 약 9할). Contraindicated for Needling (禁鍼) 문헌(동의보감 `0`, '동인' 인용)과 "孕妇禁针"(《类经图翼》)이 있어 SI는 0이다. 고전 정위와 현대 정위는 같은 점이므로 구판의 "고전 정위는 폐첨 위험 없음"은 **틀린 진술로 철회**한다. 직자 상한 8푼(18.4mm)은 체형·자세·호흡에 따라 흉막에 이를 수 있고(1431·1432), 45° 사자의 수직 성분 계산만으로는 안전을 보장할 수 없다. 전하방 자입과 과심 직자를 피한다(《通考》).
-2. **실체**: 등세모근 상연부와 그 아래의 빗장위신경·등쪽어깨신경·가로목동정맥까지는 두 교재와 GB21 특이 실측이 함께 뒷받침한다. 심층 구조(가시위근·어깨위신경 vs 어깨올림근·목널판근·더부신경)는 교재 간에 갈린다. ARI-Core 67.5 ± 1.2로 **등급 C "가능·가설"** 이며, "실체 확정"으로 보지 않는다.
-3. **기전**: B-Check 7/12로 미부합이다. 국소 견배통에 대한 체성 구심–척수 진통 경로는 **가설**로만 기술한다. 난산·乳痈에 대한 반사 기전은 근거가 없다.
-
----
-
-## v2.7 개정 이력 (2026-10-04)
-
-구판 v2.6 점수: 고전 정위 96.0 / WHO 정위 94.0 — v3.0과 비교 불가.
-
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
-| :--- | :--- | :--- | :--- |
-| 머리말 | "Version 2.6", "22대 Master ASIA Algorithm" | v2.7 인용 블록, ARI v3.0 표기 | 프레임워크 Rank 7 |
-| 구 2절-1 | 최초 기술 《靈樞·根結》 "肩上陷者中, 缺盆上, 大骨前" | *Huangdi Mingtang Jing* (《黃帝明堂經》) "在肩上陷解中，缺盆上大骨前"(《通考》), 《甲乙经》 3:44 "在肩上陷者中"(《通鉴》) | `针灸腧穴通考(下)_241-320.md` 1228·1249행; `中国针灸穴位通鉴_parsed_refined.md` 86168행 |
-| 구 2절-2 | 《甲乙》 "… 刺入五分, 留七呼" | 《明堂》 "刺入五分，灸三壮" | `针灸腧穴通考(下)_241-320.md` 1378행 |
-| 구 2절-3 | *Donguibogam* (《東醫寶鑑》) "肩上陷者中; 妊婦禁針", "Contraindicated for Needling (禁鍼)(金鍼)" | '金鍼' → 禁鍼. 동의보감 원문 구절은 미확인으로 표시하고 DB 값 `0`(동인 인용)으로 대체. 孕妇禁针 출처는 《类经图翼》 卷8 | 자침깊이 DB 326행; `针灸腧穴通考(下)_241-320.md` 1384행 |
-| 구 2절-4, 구 8절 | 《通考》 "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危"와 "완전 일치" 주장 | 가공 인용 삭제. 실제 구절("本穴下正当肺尖 … 气胸几乎九成发生于针刺肩井穴", "不可向前下方刺入或直刺过深") 수록 | `针灸腧穴通考(下)_241-320.md` 1255·1376행 |
-| 구 2절-5 | WHO "Midpoint of the line connecting GV14 and the acromion" | 제7경추 극돌기와 견봉 최외측점을 잇는 선의 중점 | 《通考》 提要·定位(1236·1270행); B1-05 |
-| 구 1절 | 이명 "少陽"; 肩貞·肩髎 혼용을 "완전히 여과했다"는 주장 | 少陽 삭제, 膊井·膽肩井(KJH) + 肩解·井(원전) 표, 혼용 주장 삭제 | KJH 327행; 《通鉴》 二.别名 |
-| 3절(신규) | *Qianjin Yaofang* (《千金要方》) '在→及' 교정 누락 | 辨误 내용 수록 | `针灸腧穴通考(下)_241-320.md` 1262~1268행 |
-| 구 3절 | $P_{single}$ 0.92/0.88/0.75, Level A/B | 삭제. 단독/배오 분류 표로 대체(확률 미산출) | 근거 없음; 《证治通鉴》 3726~3730행 |
-| 구 4절 | T1 "승모근/능형근 오목점", "폐첨 위험 없음, ARI 96.0" / T2 "최고점, ARI 94.0" | 분기 철회, 단일 Target. 능형근 삭제. "폐첨 위험 없음" 철회 | 《通考》 名实考 1249행; final_GB21 override_note |
-| 구 5절 | "8푼 18.4mm, 45° 사자 13.0mm, 폐첨 경계 15mm 이하 유지, 폐첨 안전 확보" | 15mm 경계는 출처 없음, 8푼 직자는 그 경계를 초과, 수직 성분 계산은 안전 기준 아님, 동의보감 Contraindicated for Needling (禁鍼) 반영 → SI 0 | 자침깊이 DB 326행; papers.id 1431, 1432, 1876 |
-| 구 6절-2 | "경부 교감신경절 자극 → 옥시토신 → 난산 자궁수축" | 삭제(해부학적 위치 불일치, 근거 없음) | 채점자 A·B issues; B-Check ⑤ |
-| 구 7절 도식 | "Layer 4 능형근 + 경부 교감신경절 인접", 층별 mm 경계 | 교재 기반 층차 모식, mm 경계 제거 | 공통교재·김재효 325행 |
-| 구 9절 | "GB21_Jianjing_Anatomical_Analysis.xlsx … 수치 정합" 감사 문구 | 삭제(존재하지 않는 파일명, 정합성 감사는 신뢰도 근거가 아님) | 프레임워크 Rank 7 '상호 검증' |
-| 교재 비교표 | "상호 보완적 정합성", "완벽 대조" | 공통·차이 분리 기술 | 두 교재 325행 |
-| 수식 | `\t`·`\r` 제어문자로 깨진 LaTeX | 정상 LaTeX | — |
-| 8절·10절(신규) | Layer A·B-Check·검색 로그·ARI v3.0 표 없음 | 추가 | final_GB21.json; pack_GB21.md |
+1. **⚠ Safety warning takes priority**: Jianjing (肩井) is a point at high risk of pneumothorax, lying directly above the pleural cupula and lung apex (《通考》: about 90 % of needling-induced pneumothoraces). Because of a text contraindicating needling (*Dongui Bogam* `0`, citing 'Tongren' (銅人)) and "孕婦禁針" (《類經圖翼》), the SI is 0. Since the classical and modern locations are the same point, the earlier edition's statement that "the classical location carries no lung-apex risk" is **withdrawn as incorrect**. Perpendicular insertion at the 8-fen upper limit (18.4 mm) may reach the pleura depending on body build, posture and respiration (1431, 1432), and calculating the vertical component of 45° oblique insertion alone cannot guarantee safety. Anterior-inferior insertion and excessively deep perpendicular insertion are to be avoided (《通考》).
+2. **Substrate**: the upper border of the trapezius and, beneath it, the supraclavicular nerve, dorsal scapular nerve and transverse cervical vessels are supported jointly by both textbooks and by GB21-specific measurements. The deep structures (supraspinatus and suprascapular nerve vs levator scapulae, splenius cervicis and accessory nerve) differ between the textbooks. With ARI-Core 67.5 ± 1.2 the point is **Grade C "Possible / hypothesis"** and is not regarded as a "confirmed substrate".
+3. **Mechanism**: B-Check 7/12, not concordant. The somatic afferent–spinal analgesic pathway for local shoulder/upper-back pain is described only as a **hypothesis**. There is no evidence for a reflex mechanism for difficult labour (難產) or mastitis (乳癰).
 
 ---
 
-## 2026-10-23 FMA·초음파 근거 검증 이력
+## v2.7 Revision History (2026-10-04)
 
-| 위치 | 원래 내용 (2026-10-23 21:37, 다른 도구가 추가) | 바꾼 내용 | 근거 |
+Earlier v2.6 scores: classical location 96.0 / WHO location 94.0 — not comparable with v3.0.
+
+| Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| 4절 그림 | `GB21_Jianjing (肩井, GB21)_국소해부_단면도.png` | `GB21_Jianjing (肩井, GB21)_횡단면_해부모식도.png`(시상 단면 모식도, 교재 단독 구조 표지·금지 방향 표시) | `.claude/skills/acupoint-anatomy/scripts/fma/figures/GB21_cross_section.py` |
-| 4절 도식 | 제1늑골 FMA:7566, 흉막정 FMA:7334, 폐첨 FMA:7335; "평균 20.5±3.2mm, 최소 15.2mm — papers.id 1432" | FMA:7597(First rib), FMA:27534(Pleural cupula), FMA:7319(Anatomical apex of lung); 고정 경계값 문구 삭제 | `fma_query.py entity` — 7566=Superior thoracic aperture, 7334=Upper lobe of lung, 7335=Lower lobe of lung |
-| 5-1절 | 층별 두께(3.5·7.8·8.5 mm), 제1늑골 19.5 mm, 흉막 20.5 ± 3.2 mm(15.2~26.8), 흡기 상승 3.1~4.8 mm, 안전 마진 0.2~2.0 mm, "직자 원칙적 금기", "완벽히 부합", 합성 '초음파 B-mode 구조도' 그림 | 원문 확인 수치만 수록: 1431 SND 38.08 ± 6.42 mm(앉은 자세) 등, 1896 TI 1.54; 1432는 원문 미확인으로 수치 미인용. 직자 금지 주장 삭제(원전·교재 근거 없음) | PubMed PMID 29507586·PMC5817322 본문 표 2·3, PMID 42500462 초록. 위 수치들은 두 논문 어디에도 없음 |
-| 6-1절 | FMA 지식그래프 그림, 더부신경 "C1~C5(뇌신경 XI)"를 FMA 결과로 표기, "상호 보완적으로 반영", "완벽하게 정합함을 실증" | 그림 제외(파생 그래프, 미검증), 더부신경 분절은 FMA 미기재·B1로 표기, 추론임을 명시, "해부 수준 정합"으로 정정 | `fma_query.py profile GB21`; v2.7 6절 원칙(교재 불일치 보존) |
-| 8-3절 ② | "견항통과 완벽 정합" | "같은 분절 범위(해부 수준 정합)" — 점수 1 불변 | B-Check 기준 |
-| 8-4절 | 2026-10-04 실행분만 | 2026-10-23 Rank 6 재실행 4행 추가(신규 6편, 판정 불변) | `_metadata.sync_log` |
-| 점수 | ARI·B-Check·SI | **변경 없음** | — |
-| 보관 | — | 21:37 판 md·html·xlsx와 그림 3장·생성 스크립트를 `_구판_antigravity_20261023/`에 원본 그대로 보관 | — |
+| Header | "Version 2.6", "22-Major Master ASIA Algorithm" | v2.7 citation block, ARI v3.0 notation | Framework Rank 7 |
+| Old Section 2-1 | Earliest description 《靈樞·根結》 "肩上陷者中, 缺盆上, 大骨前" | 《黃帝明堂經》 "在肩上陷解中，缺盆上大骨前" (《通考》), 《甲乙經》 3:44 "在肩上陷者中" (《通鑑》) | `针灸腧穴通考(下)_241-320.md` lines 1228, 1249; `中国针灸穴位通鉴_parsed_refined.md` line 86168 |
+| Old Section 2-2 | 《甲乙》 "… 刺入五分, 留七呼" | 《明堂》 "刺入五分，灸三壯" | `针灸腧穴通考(下)_241-320.md` line 1378 |
+| Old Section 2-3 | *Dongui Bogam* (《東醫寶鑑》) "肩上陷者中; 妊婦禁針", "金鍼" (golden needle, written for 禁鍼) | '金鍼' → 禁鍼. The original *Dongui Bogam* passage marked as unconfirmed and replaced by the DB value `0` (citing Tongren, 銅人). Source of 孕婦禁針 given as 《類經圖翼》 vol. 8 | Needling-depth DB row 326; `针灸腧穴通考(下)_241-320.md` line 1384 |
+| Old Section 2-4, old Section 8 | 《通考》 "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危" and claim of "complete agreement" | Fabricated quotation deleted. Actual passages ("本穴下正當肺尖 … 氣胸幾乎九成發生於針刺肩井穴", "不可向前下方刺入或直刺過深") included | `针灸腧穴通考(下)_241-320.md` lines 1255, 1376 |
+| Old Section 2-5 | WHO "Midpoint of the line connecting GV14 and the acromion" | Midpoint of the line joining the spinous process of C7 and the most lateral point of the acromion | 《通考》 提要 · 定位 (lines 1236, 1270); B1-05 |
+| Old Section 1 | Alias "少陽"; claim to have "completely filtered out" confusion with 肩貞 and 肩髎 | 少陽 deleted; table of 膊井 · 膽肩井 (KJH) + 肩解 · 井 (classics); confusion claim deleted | KJH row 327; 《通鑑》 二.別名 |
+| Section 3 (new) | Correction '在 → 及' in the *Qianjin Yaofang* (《千金要方》) missing | Content of the 辨誤 included | `针灸腧穴通考(下)_241-320.md` lines 1262–1268 |
+| Old Section 3 | $P_{single}$ 0.92/0.88/0.75, Level A/B | Deleted. Replaced by a single-point/combination classification table (no probabilities calculated) | No basis; 《證治通鑑》 lines 3726–3730 |
+| Old Section 4 | T1 "trapezius/rhomboid depression point", "no lung-apex risk, ARI 96.0" / T2 "highest point, ARI 94.0" | Branch withdrawn, single Target. Rhomboid deleted. "No lung-apex risk" withdrawn | 《通考》 名實考 line 1249; final_GB21 override_note |
+| Old Section 5 | "8 fen 18.4 mm, 45° oblique 13.0 mm, kept below the 15 mm lung-apex boundary, lung-apex safety ensured" | The 15 mm boundary has no source, 8-fen perpendicular insertion exceeds that boundary, the vertical-component calculation is not a safety criterion, *Dongui Bogam* contraindication reflected → SI 0 | Needling-depth DB row 326; papers.id 1431, 1432, 1876 |
+| Old Section 6-2 | "Stimulation of the cervical sympathetic ganglia → oxytocin → uterine contraction in difficult labour" | Deleted (anatomical position does not match; no evidence) | Issues raised by Raters A and B; B-Check ⑤ |
+| Old Section 7 diagram | "Layer 4 rhomboid + adjacent cervical sympathetic ganglion", mm boundaries by layer | Textbook-based layer schematic; mm boundaries removed | Common Textbook and Kim Jaehyo row 325 |
+| Old Section 9 | Audit wording "GB21_Jianjing_Anatomical_Analysis.xlsx … numerical consistency" | Deleted (non-existent file name; a consistency audit is not grounds for reliability) | Framework Rank 7 'cross-validation' |
+| Textbook comparison table | "Mutually complementary consistency", "perfect collation" | Common and differing items described separately | Both textbooks, row 325 |
+| Formulas | LaTeX broken by `\t` and `\r` control characters | Valid LaTeX | — |
+| Sections 8 and 10 (new) | No Layer A, B-Check, search log or ARI v3.0 tables | Added | final_GB21.json; pack_GB21.md |
+
+---
+
+## FMA & Ultrasound Evidence Verification History (2026-10-23)
+
+| Location | Original content (added by another tool, 2026-10-23 21:37) | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Section 4 figure | `GB21_견정_국소해부_단면도.png` | `GB21_견정_횡단면_해부모식도.png` (schematic sagittal section, with labels for single-textbook structures and the forbidden direction) | `.claude/skills/acupoint-anatomy/scripts/fma/figures/GB21_cross_section.py` |
+| Section 4 diagram | First rib FMA:7566, pleural cupula FMA:7334, lung apex FMA:7335; "mean 20.5 ± 3.2 mm, minimum 15.2 mm — papers.id 1432" | FMA:7597 (First rib), FMA:27534 (Pleural cupula), FMA:7319 (Anatomical apex of lung); wording of a fixed boundary value deleted | `fma_query.py entity` — 7566 = Superior thoracic aperture, 7334 = Upper lobe of lung, 7335 = Lower lobe of lung |
+| Section 5-1 | Layer thicknesses (3.5 · 7.8 · 8.5 mm), first rib 19.5 mm, pleura 20.5 ± 3.2 mm (15.2–26.8), inspiratory rise 3.1–4.8 mm, safety margin 0.2–2.0 mm, "perpendicular insertion contraindicated in principle", "perfectly consistent", synthetic 'ultrasound B-mode structural diagram' figure | Only values confirmed in the originals included: 1431 SND 38.08 ± 6.42 mm (sitting) etc., 1896 TI 1.54; 1432 not checked in the original, so no values cited. Claim that perpendicular insertion is forbidden deleted (no classical or textbook basis) | PubMed PMID 29507586 · PMC5817322 main text, Tables 2 and 3; PMID 42500462 abstract. The values above appear in neither paper |
+| Section 6-1 | FMA knowledge-graph figure; accessory nerve "C1–C5 (cranial nerve XI)" presented as an FMA result; "reflected in a mutually complementary way"; "empirically demonstrated perfect consistency" | Figure excluded (derived graph, unverified); accessory-nerve segments marked as not recorded in FMA / B1; inference stated explicitly; corrected to "concordance at the anatomical level" | `fma_query.py profile GB21`; v2.7 Section 6 principle (textbook discrepancies retained) |
+| Section 8-3 ② | "Perfectly consistent with shoulder and neck pain" | "Same segmental range (concordance at the anatomical level)" — score 1 unchanged | B-Check criteria |
+| Section 8-4 | Only the 2026-10-04 run | 4 rows added for the 2026-10-23 Rank 6 re-run (6 new papers, verdict unchanged) | `_metadata.sync_log` |
+| Scores | ARI, B-Check, SI | **No change** | — |
+| Archive | — | The 21:37 versions of the md, html and xlsx, the 3 figures and the generation script archived unchanged in `_구판_antigravity_20261023/` | — |
+
+---
+
+## English Edition Revision History (2026-10-24)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `GB21_견정_해부생리_실체판명_보고서.md` |
+| Title | Korean-style title | Title in the common English-edition format "[Acupoint Anatomical & Physiological Substrate Monograph] Jianjing (肩井, GB21)" | ST36 English edition |
+| Figure 4-1 | Image path checked | Kept as the actual file name `GB21_견정_횡단면_해부모식도.png` | File in the report folder |
+| Classical quotations | Simplified characters (e.g. 针, 肩胛冈, 气胸, 灵枢) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |

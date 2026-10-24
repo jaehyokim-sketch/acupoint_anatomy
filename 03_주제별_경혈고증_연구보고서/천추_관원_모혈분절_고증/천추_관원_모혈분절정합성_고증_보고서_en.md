@@ -1,283 +1,284 @@
-# 📜 [혈위고증 보고서] Tianshu (天樞, ST25)(ST25)·Guanyuan (關元, CV04)(CV4) Front-Mu Point (募穴)의 신경분절 정합성 고증 및 질의응답 검증
+# 📜 [Textual Research Report on Acupoints] Neural-Segment Consistency of the Front-Mu Points (募穴) Tianshu (天樞, ST25) and Guanyuan (關元, CV4): Textual Research and Verification of a Lecture Q&A
 
-> **Framework**: v2.7 (Tier 3, Rank 0~7 전개) · **ARI**: v3.0 이중 채점 · **작성일**: 2026-10-12
-> **분석 대상**: 강의 질의("배꼽 높이 T10의 Tianshu (天樞, ST25)와 T11~12 높이의 Guanyuan (關元, CV04) — Front-Mu Point (募穴)이 신경분절 반응점이라면 모순 아닌가?")와 그에 대한 강의 답변("Guanyuan (關元, CV04)은 해부학적 소장이 아니라 '소장'이라는 병증 유형을 치료하는 혈이다")
-> **근거 원전**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)(정제본 `chunks_refined`)
-> **근거 데이터**: `Tianshu (天樞, ST25)_Guanyuan (關元, CV04)_Front-Mu Point (募穴)분절_문헌고증_DB.xlsx` (본 폴더) · 통합 생의학 DB v3.0 (`02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json`, 2026-10-12 Rank 6 동기화)
-> **연관 분석**: 같은 질의의 문헌사 측면은 황룡상 스킬 검토(2026-10-12 대화)에서 다루었으며, 본 보고서는 해부·신경분절·반사 기전 측면을 맡는다.
-
----
-
-## 0. 요약 (Executive Summary)
-
-1. **질의의 관찰은 해부학적으로 맞다.** 배꼽 높이(T10 피절)의 Tianshu (天樞, ST25)는 중장(中腸) 유래 장관, 곧 소장과 근위 대장의 연관통 구역과 겹친다. Guanyuan (關元, CV04)(T12~L1 피절)은 후장(後腸) 유래 원위 대장과 방광·자궁의 연관통 구역에 더 가깝다. 따라서 "Front-Mu Point (募穴) = 해당 부(腑)의 분절 반응점"이라는 전제를 세우면 Tianshu (天樞, ST25)는 부분적으로, Guanyuan (關元, CV04)은 거의 맞지 않는다.
-2. **모순은 전제에서 생긴다.** 고전의 Front-Mu Point (募穴) 귀속은 분절 원리로 만들어지지 않았다. 문헌상 두 혈 모두 귀속된 부(腑)의 병을 치료하는 대표 혈도 아니었다. *Lingshu* (《靈樞》)는 대장병을 상거허로, 《명당경》은 소장창(小肠胀)을 Guanyuan (關元, CV04)이 아닌 중료로 치료했다.
-3. **분절 모델만으로는 Tianshu (天樞, ST25)의 작용도 다 설명되지 않는다.** 2025년 마우스 연구에서 Tianshu (天樞, ST25) 전침의 대장염 개선은 T10 분절의 교감신경절(SMG·IMG)을 거치지 않았고, 천수(S2~4) 부교감 경로(골반신경절)를 거쳤다(papers.id 2023). 다른 연구에서는 자극 강도에 따라 척수 분절성 교감 경로가 동원되었다(B3-16). Tianshu (天樞, ST25)의 효과는 분절 반사와 비분절 경로가 섞여 있다.
-4. **강의 답변은 결론이 타당하지만 근거 하나는 바꿔야 한다.** Guanyuan (關元, CV04)이 '소장병'이라는 병증 범주, 특히 하복통·산증(疝症)을 치료한다는 결론은 해부 분석으로도 지지된다. Guanyuan (關元, CV04)의 분절은 골반 장기와 맞고, 서혜부 탈장 주머니에는 실제로 소장 고리가 들어간다. 반면 "소장 병증 = 방광의 소변 배출 기능"이라는 설명은 초기 문헌 층차에서 확인되지 않는다. Guanyuan (關元, CV04)의 배뇨장애 주치는 T11~L2 분절의 방광과 맞는 하복부 국소 주치로 설명하는 편이 낫다.
-5. **ARI v3.0**(이중 채점, 10절): Tianshu (天樞, ST25)는 **ARI-Core 71 (B, 가중치 민감)**, Guanyuan (關元, CV04)은 **ARI-Core 68 (C)**이며, 두 혈 모두 **SI 25 ⚠ 안전주의**다. 두 혈 모두 실체 판명의 병목은 반사 기전의 인체 근거 부족(B-Check 7/12, 기전은 "가설")이다. Guanyuan (關元, CV04)은 교재 간 심층 구조 기술이 다르다는 점도 감점 요인이다. 안전 측면에서는 Guanyuan (關元, CV04) 《명당경》 "刺入二寸"(약 46mm)이 복막을 넘을 수 있다는 점이 핵심이다.
-6. **이전 답변 정정**: 같은 날 Tianshu (天樞, ST25)·소아 질의에 대한 Tier 1 답변에서 "Tianshu (天樞, ST25)와 소아를 연결한 기록을 찾지 못했다"고 했다. 그러나 *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 정제본의 【提要索隐】에 "灸治小儿慢性消化道症状"이 있다. 그 출처는 1957년 남경 《针灸学》 "小儿慢性疾患灸之大有效"로, 현대 교재 층차다(9절). 결론(현대 층차의 관행)은 유지되지만, "기록 없음"은 틀렸으므로 정정한다.
+> **Framework**: v2.7 (Tier 3, Rank 0–7 executed) · **ARI**: v3.0 dual scoring · **Date**: 2026-10-12
+> **Subject of analysis**: a lecture question ("Tianshu (天樞) lies at the level of the umbilicus, T10, and Guanyuan (關元) at the level of T11–12 — if the Front-Mu points (募穴) are neural-segment reaction points, isn't this a contradiction?") and the lecturer's answer ("Guanyuan does not treat the anatomical small intestine; it treats the disease pattern called 'Small Intestine (小腸)'")
+> **Source classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (refined edition `chunks_refined`)
+> **Source data**: `천추_관원_모혈분절_문헌고증_DB.xlsx` (this folder) · Integrated Biomedical DB v3.0 (`02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json`, synchronised at Rank 6 on 2026-10-12)
+> **Related analysis**: The literary-historical side of the same question was covered in the Huang Longxiang (黃龍祥) skill review (conversation of 2026-10-12); this report covers the anatomical, neural-segment and reflex-mechanism side.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
 ---
 
-## 1. Classical Literature Screening Table (Three Primary Classics Excerpts)
+## 0. Executive Summary
 
-| 항목 | Tianshu (天樞, ST25)(ST25) | Guanyuan (關元, CV04)(CV4) | 출처 |
+1. **The questioner's observation is anatomically correct.** Tianshu (天樞), at the level of the umbilicus (T10 dermatome), overlaps the referred-pain zone of midgut-derived bowel, i.e. the small intestine and proximal large intestine. Guanyuan (關元) (T12–L1 dermatome) lies closer to the referred-pain zone of the hindgut-derived distal large intestine and of the bladder and uterus. Hence, if one adopts the premise "Front-Mu point = segmental reaction point of the corresponding Fu organ (腑)", Tianshu fits only partly and Guanyuan hardly at all.
+2. **The contradiction arises from the premise.** The classical Front-Mu attributions were not built on a segmental principle. In the literature, neither point was the representative point for treating disease of the Fu organ to which it is assigned. The *Lingshu* (《靈樞》) treats large-intestine disease with Shangjuxu (上巨虛, ST37), and the *Mingtang Jing* (《明堂經》) treats small-intestine distension (小腸脹) with Zhongliao (中髎, BL33), not Guanyuan.
+3. **The segmental model alone cannot fully explain even Tianshu's action.** In a 2025 mouse study, the improvement of colitis by electroacupuncture at Tianshu did not pass through the T10-segment sympathetic ganglia (SMG, IMG) but through the sacral (S2–4) parasympathetic pathway (pelvic ganglion) (papers.id 2023). In another study, a spinal segmental sympathetic pathway was recruited depending on stimulus intensity (B3-16). Tianshu's effects are a mixture of segmental reflexes and non-segmental pathways.
+4. **The lecturer's conclusion is sound, but one of its supporting arguments must be replaced.** The conclusion that Guanyuan treats the disease category "Small Intestine disease (小腸病)", especially lower abdominal pain and Shan disorders (疝症), is also supported by anatomical analysis: Guanyuan's segments match the pelvic organs, and loops of small intestine do enter inguinal hernial sacs. By contrast, the explanation "Small Intestine disease = the bladder's function of voiding urine" is not confirmed in the early literary strata. Guanyuan's indication for urinary disorders is better explained as a local lower-abdominal indication matching the bladder in segments T11–L2.
+5. **ARI v3.0** (dual scoring, Section 10): Tianshu scores **ARI-Core 71 (B, weight-sensitive)** and Guanyuan **ARI-Core 68 (C)**; both are **SI 25 ⚠ safety caution**. For both points the bottleneck for substrate identification is the lack of human evidence for the reflex mechanism (B-Check 7/12, mechanism "hypothesis"). For Guanyuan, the discrepancy between textbooks in describing the deep structures is a further deduction. On the safety side, the key point is that the *Mingtang Jing*'s (《明堂經》) Guanyuan depth "刺入二寸" (about 46 mm) may pass through the peritoneum.
+6. **Correction of an earlier answer**: In a Tier 1 answer the same day to a question on Tianshu and children, it was stated that "no record linking Tianshu to children was found". However, the 【提要索隱】 section of the refined *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) contains "灸治小兒慢性消化道症狀". Its source is the 1957 Nanjing *Zhenjiu Xue* (《針灸學》) "小兒慢性疾患灸之大有效", i.e. the modern-textbook stratum (Section 9). The conclusion (a practice of the modern stratum) stands, but "no record" was wrong and is hereby corrected.
+
+---
+
+## 1. Literature Screening Table (Comparison of the Three Primary Classics)
+
+| Item | Tianshu (天樞, ST25) | Guanyuan (關元, CV4) | Source |
 | :--- | :--- | :--- | :--- |
-| 최초 출전 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 《灵枢·寒热病》 "脐下三寸关元也" | 《通考》(上) p.321 / (下) p.1292 |
-| Front-Mu Point (募穴) 귀속 | "天枢，大肠募也。一名长溪，一名谷门。去肓俞一寸五分，夹脐两旁各二寸陷者中。足阳明脉气所发。" | "关元，小肠募也，一名次门，在脐下三寸，足三阴、任脉之会。" | 《明堂经》(《通考》 수록) |
-| 《명당경》 자침 | "刺入五分，留七呼，灸三壮" | "刺入二寸，留七呼，灸七壮" | 《通考》 【操作】 |
-| 《명당경》 주치 핵심 | 대장병(肠中切痛而鸣濯濯, 冬日重感于寒则泄, 当脐而痛, 食不化), 산증(脐疝·气疝·阴疝·奔肫), 부인 월경병, 학질 | 石水, 胞转不得溺, 少腹满, 奔肫, 溺血, 小便数, 腰背脐痛引阴, 后泄不止, 暴疝痛, 女子绝子 | 《证治通鉴》·《通考》 |
-| 침 금기 기록 | 《千金》 "魂魄之舍，不可针", "勿针", "忌针" | 《圣惠方》 "若怀胎必不针"; 현대 교재 "孕妇慎用。针前让患者排尿" | 《通考》 |
-| 소아 관련 | 1957 남경《针灸学》 "小儿慢性疾患灸之大有效"; 1986 《中国针灸》 소아 단순성 소화불량 天枢·中脘 | 2001 소아 신경성 빈뇨 Guanyuan (關元, CV04) 자침, 1995 신생아 무뇨 Guanyuan (關元, CV04) 외敷 | 《通考》 임상 응용 예 |
+| Earliest source | 《黃帝明堂經》 | 《靈樞·寒熱病》 "臍下三寸關元也" | 《通考》 (vol. 1) p.321 / (vol. 2) p.1292 |
+| Front-Mu attribution | "天樞，大腸募也。一名長溪，一名谷門。去肓俞一寸五分，夾臍兩旁各二寸陷者中。足陽明脈氣所發。" | "關元，小腸募也，一名次門，在臍下三寸，足三陰、任脈之會。" | 《明堂經》 (as collected in 《通考》) |
+| Needling in the *Mingtang Jing* (《明堂經》) | "刺入五分，留七呼，灸三壯" | "刺入二寸，留七呼，灸七壯" | 《通考》 【操作】 |
+| Core indications in the *Mingtang Jing* (《明堂經》) | Large-intestine disease (腸中切痛而鳴濯濯, 冬日重感於寒則泄, 當臍而痛, 食不化), Shan disorders (臍疝·氣疝·陰疝·奔肫), women's menstrual disorders, malaria (瘧) | 石水, 胞轉不得溺, 少腹滿, 奔肫, 溺血, 小便數, 腰背臍痛引陰, 後泄不止, 暴疝痛, 女子絕子 | 《證治通鑑》·《通考》 |
+| Records of needling prohibition | 《千金》 "魂魄之舍，不可針", "勿針", "忌針" | 《聖惠方》 "若懷胎必不針"; modern textbooks "孕婦慎用。針前讓患者排尿" | 《通考》 |
+| Paediatric use | 1957 Nanjing 《針灸學》 "小兒慢性疾患灸之大有效"; 1986 《中國針灸》 simple dyspepsia in children with 天樞·中脘 | 2001 needling of Guanyuan for paediatric nervous urinary frequency; 1995 external application on Guanyuan for neonatal anuria | 《通考》 examples of clinical application |
 
-> 검색 경로: *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) `chunks_refined/针灸腧穴通考(上)_321-400.md` L1050~1310(Tianshu (天樞, ST25)), `(下)_481-560.md` L1396~1586(Guanyuan (關元, CV04)). *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) `_1-80.md` L2006(Tianshu (天樞, ST25)), `_81-160.md` L1684(Guanyuan (關元, CV04)). *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) Guanyuan (關元, CV04) 주치 인용 `(上卷)_1-80.md` L1526.
+> Search paths: *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) `chunks_refined/针灸腧穴通考(上)_321-400.md` L1050–1310 (Tianshu), `(下)_481-560.md` L1396–1586 (Guanyuan). *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) `_1-80.md` L2006 (Tianshu), `_81-160.md` L1684 (Guanyuan). *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) quotation of Guanyuan indications `(上卷)_1-80.md` L1526.
 
-## 2. Primary Source vs. Secondary Quotation Historical Stratification Table
+## 2. Primary Source vs. Secondary Quotation Table
 
-| 시기 | Tianshu (天樞, ST25) | Guanyuan (關元, CV04) | 판정 |
+| Period | Tianshu (天樞) | Guanyuan (關元) | Verdict |
 | :--- | :--- | :--- | :--- |
-| 선진·한대 | 《명당경》: 위치·심도·Front-Mu Point (募穴) 귀속·대장병 주치 | 《영추·寒热病》: 위치("三结交"). 《명당경》: 소장모 귀속·심도 2촌·하복부 주치 | **원천** |
-| 위진·수당 | 《千金》: "夹脐相去五寸"(배꼽 직경 1촌), 다량 뜸(百壮)과 Contraindicated for Needling (禁鍼) | 《千金》: 기림·석림·고환 치우침 뜸 | 원천 확장 |
-| 송·금·원 | *Tongren* (《銅人》): "可灸百壮" | *Tongren* (《銅人》): 灸量을 "百壮至三百壮"으로 개편(《圣惠方》 "日灸三十壮，至三百壮止"의 오독) | 재편, 오류 혼입 |
-| 명·청 | *Zhenjiu Dacheng* (《針灸大成》): 脐中 기준 오해 계열 | 《针灸大成·玉龙歌》: "阑门"을 "关元"으로 오기 | 재인용 오류 |
-| 현대 | 1957 교재: 소아 만성질환 뜸 추가 | 7판 교재: 비뇨·생식·원기허손 6계통으로 확대 | 현대 확장 |
+| Pre-Qin & Han | 《明堂經》: location, depth, Front-Mu attribution, indication for large-intestine disease | 《靈樞·寒熱病》: location ("三結交"). 《明堂經》: attribution as Small Intestine Mu (小腸募), depth 2 cun, lower-abdominal indications | **Primary source** |
+| Wei-Jin & Sui-Tang | 《千金》: "夾臍相去五寸" (umbilical diameter 1 cun), heavy moxibustion (百壯) and needling prohibition | 《千金》: moxibustion for Qi-strangury (氣淋), stone strangury (石淋) and testicular deviation | Extension of primary source |
+| Song, Jin & Yuan | 《銅人》: "可灸百壯" | 《銅人》: moxibustion dose revised to "百壯至三百壯" (a misreading of 《聖惠方》 "日灸三十壯，至三百壯止") | Reorganisation, errors introduced |
+| Ming & Qing | 《針灸大成》: line of misunderstanding based on 臍中 | 《針灸大成·玉龍歌》: "闌門" miswritten as "關元" | Errors in secondary quotation |
+| Modern | 1957 textbook: moxibustion for chronic paediatric diseases added | 7th-edition textbook: expanded to six systems (urinary, reproductive, depletion of Original Qi (元氣虛損), etc.) | Modern extension |
 
-**원문/해석 분리**: 황룡상은 Tianshu (天樞, ST25)의 정위가 '배꼽 가장자리에서 2촌(除脐)'이라고 교감했다. 후대의 '배꼽 중심 2촌'은 '脐'를 오해한 재해석이다. Tianshu (天樞, ST25)의 대장병 주치는 《명당경》 편자가 하합혈(상거허) 주치를 Front-Mu Point (募穴)로 옮긴 결과이므로, 원천 기술이지만 귀속 자체는 편찬 단계의 판단으로 본다.
+**Separation of original text and interpretation**: Huang Longxiang (黃龍祥) collated the location of Tianshu as "2 cun from the edge of the umbilicus (除臍)". The later "2 cun from the centre of the umbilicus" is a reinterpretation arising from a misunderstanding of '臍'. Tianshu's indication for large-intestine disease is the result of the *Mingtang Jing* (《明堂經》) compiler transferring the indications of the Lower He-Sea point (下合穴) (Shangjuxu (上巨虛)) to the Front-Mu point; it is therefore primary-source text, but the attribution itself is regarded as a judgement made at the compilation stage.
 
-## 3. Nomenclature & Alias Collation Table (KJH DB Verification)
+## 3. Alias / Alternative-Name Verification Table (Cross-checked with KJH DB)
 
-| 혈 | KJH DB 이명 | 혼용 위험 | 처리 |
+| Point | Aliases in KJH DB | Risk of confusion | Handling |
 | :--- | :--- | :--- | :--- |
-| ST25 | 長溪·長谿·谷門·長谷·循際·循元·補元·穀門 | 魂舍(夹脐相去三寸)·長谷을 별도 기혈로 세운 현대 오류. "長谷"은 "長谿"의 坏字. 1957 교재 "循元·補元"은 일본 교재를 거친 오류 | 정명과 일치하는 것은 長溪·谷門·循際뿐(황룡상 교감). 魂舍 정위 정보는 Tianshu (天樞, ST25) 정위에서 분리 |
-| CV4 | 三結交·上氣海·下肓·下記·丹田·大中極·太中極·次門·肓原 | **丹田**: CV4·CV5·CV6·CV7이 공유하며, 도가 단전과 침가 개념이 섞였다. **下肓**: CV4·CV6 공유. 《大成》 "关元" = "阑门" 오기. 関元兪(BL26)는 별개 | 丹田 계열 주치("下元虚冷" 등)는 도가 문헌 혼입 가능성을 표시. 《玉龙歌》 疝气 조문의 "关元"은 阑门(급맥 부근)으로 분리 |
+| ST25 | 長溪·長谿·谷門·長谷·循際·循元·補元·穀門 | A modern error established 魂舍 (夾臍相去三寸) and 長谷 as separate extra points. "長谷" is a corrupted character (坏字) for "長谿". "循元·補元" in the 1957 textbook are errors that passed through a Japanese textbook | Only 長溪·谷門·循際 agree with the standard name (collation by Huang Longxiang (黃龍祥)). The locating information of 魂舍 is separated from the location of Tianshu |
+| CV4 | 三結交·上氣海·下肓·下記·丹田·大中極·太中極·次門·肓原 | **丹田 (Dantian)**: shared by CV4, CV5, CV6 and CV7, mixing the Daoist Dantian with the acupuncturists' concept. **下肓**: shared by CV4 and CV6. 《大成》 "關元" = miswriting of "闌門". Guanyuanshu (關元俞, BL26) is a separate point | Indications of the 丹田 lineage (e.g. "下元虛冷") are flagged as possibly contaminated by Daoist literature. The "關元" in the 疝氣 clause of 《玉龍歌》 is separated out as 闌門 (near Jimai (急脈)) |
 
-## 4. 3D 공간 좌표 및 Layer 1~5 층차 구조
+## 4. 3D Spatial Coordinates and Layer 1–5 Stratified Structure
 
-좌표계: X = 정중선 기준 외측(mm), Y = 배꼽(0) 기준 하방(+), Z = 피부 기준 심도(mm). 촌→mm 환산은 성인 평균 체형을 가정한 추정이다(1 B-cun ≈ 24~30mm).
+Coordinate system: X = lateral distance from the midline (mm), Y = distance below the umbilicus (0) (+), Z = depth from the skin (mm). The cun→mm conversion is an estimate assuming an average adult build (1 B-cun ≈ 24–30 mm).
 
-| 혈 | X | Y | 표준 Z 범위(현대) | 비고 |
+| Point | X | Y | Standard Z range (modern) | Remarks |
 | :--- | :--- | :--- | :--- | :--- |
-| ST25 Target 2(WHO, 배꼽 중심 2촌) | 약 50~60 | 0 | 20~40 | 배곧은근 근복 위 |
-| ST25 Target 1(명당경, 배꼽 가장자리 2촌) | 약 60~72 | 0 | 동일 | Δ ≈ 10~15mm (7절) |
-| CV4 | 0 | 약 72~90 (3촌) | 20~40 | 활꼴선(arcuate line) 아래 백색선 |
+| ST25 Target 2 (WHO, 2 cun from the centre of the umbilicus) | approx. 50–60 | 0 | 20–40 | Over the belly of rectus abdominis |
+| ST25 Target 1 (*Mingtang Jing*, 2 cun from the edge of the umbilicus) | approx. 60–72 | 0 | Same | Δ ≈ 10–15 mm (Section 7) |
+| CV4 | 0 | approx. 72–90 (3 cun) | 20–40 | Linea alba below the arcuate line |
 
-### 4-1. Tianshu (天樞, ST25) 층차 (배꼽 높이, 활꼴선 위)
+### 4-1. Layers of Tianshu (level of the umbilicus, above the arcuate line)
 
-| Layer | 구조 | 근거 |
+| Layer | Structure | Evidence |
 | :--- | :--- | :--- |
-| L1 피부·피하 | 제9~11 갈비사이신경 앞피부가지(T10 중심), 얕은배벽동·정맥 분지 | 김재효 교재, B1-03 |
-| L2 표층 근막 | 배곧은근집 앞층(배바깥빗근·배속빗근 널힘줄) | 김재효 교재, B1-01 |
-| L3 근육 | 배곧은근 근복, 갈비사이신경 근가지 | 두 교재 공통 |
-| L4 신경혈관속 | 배곧은근 뒤면의 위·아랫배벽동·정맥 문합부(배꼽 높이), 갈비사이신경 본줄기 | 두 교재(위배벽동·정맥), B1-01(배꼽 높이 문합) |
-| L5 심부 | 배곧은근집 뒤층·가로근막·복막전지방·벽측복막 → **복강(소장 고리·큰그물막, 체위에 따라 횡행결장)** | B1-01 |
+| L1 Skin & subcutis | Anterior cutaneous branches of the 9th–11th intercostal nerves (centred on T10), branches of the superficial epigastric artery and vein | Kim Jae-hyo textbook, B1-03 |
+| L2 Superficial fascia | Anterior layer of the rectus sheath (aponeuroses of external and internal oblique) | Kim Jae-hyo textbook, B1-01 |
+| L3 Muscle | Belly of rectus abdominis, muscular branches of the intercostal nerves | Common to both textbooks |
+| L4 Neurovascular bundle | Anastomosis of the superior and inferior epigastric arteries and veins on the posterior surface of rectus abdominis (at the level of the umbilicus), main trunks of the intercostal nerves | Both textbooks (superior epigastric artery and vein), B1-01 (anastomosis at the umbilical level) |
+| L5 Deep | Posterior layer of the rectus sheath · transversalis fascia · preperitoneal fat · parietal peritoneum → **peritoneal cavity (loops of small intestine, greater omentum, and the transverse colon depending on posture)** | B1-01 |
 
-### 4-2. Guanyuan (關元, CV04) 층차 (배꼽 아래 3촌, 활꼴선 아래)
+### 4-2. Layers of Guanyuan (3 cun below the umbilicus, below the arcuate line)
 
-| Layer | 구조 | 근거 |
+| Layer | Structure | Evidence |
 | :--- | :--- | :--- |
-| L1 피부·피하 | 갈비밑신경(T12) 앞피부가지, (공통교재) 엉덩아랫배신경(L1) 앞피부가지, 얕은배벽동·정맥 | 두 교재 |
-| L2 표층 근막 | 백색선(정중선 널힘줄 교차부) | 두 교재 공통 |
-| L3 근육 | 정중선이므로 근복 없음. 양옆에 배곧은근 | B1-01 |
-| L4 신경혈관속 | 아랫배벽동·정맥은 배곧은근 뒤 외측을 지나며 정중선 직하에는 없다 | 두 교재(혈관 명칭), B1-01(주행) |
-| L5 심부 | 활꼴선 아래라 배곧은근집 뒤층이 없다. 가로근막 → 복막 → **방광(충만 시 치골 위로 상승)·소장 고리·임신 자궁** | 김재효 교재(배가로근막), B1-01 |
+| L1 Skin & subcutis | Anterior cutaneous branch of the subcostal nerve (T12), (common textbook) anterior cutaneous branch of the iliohypogastric nerve (L1), superficial epigastric artery and vein | Both textbooks |
+| L2 Superficial fascia | Linea alba (decussation of the aponeuroses in the midline) | Common to both textbooks |
+| L3 Muscle | No muscle belly, as it lies in the midline; rectus abdominis on either side | B1-01 |
+| L4 Neurovascular bundle | The inferior epigastric artery and vein run posterolaterally behind rectus abdominis and are not directly beneath the midline | Both textbooks (vessel names), B1-01 (course) |
+| L5 Deep | Below the arcuate line there is no posterior layer of the rectus sheath. Transversalis fascia → peritoneum → **bladder (rises above the pubis when full), loops of small intestine, gravid uterus** | Kim Jae-hyo textbook (transversalis fascia), B1-01 |
 
 ```mermaid
 graph TD
-    subgraph ST25["천추 ST25 (배꼽 높이, T10)"]
-        S1["L1 피부·T9~11 앞피부가지"] --> S2["L2 배곧은근집 앞층"]
-        S2 --> S3["L3 배곧은근 근복"]
-        S3 --> S4["L4 위·아랫배벽 혈관 문합부"]
-        S4 --> S5["L5 뒤층·복막 → 소장 고리·그물막"]
+    subgraph ST25["Tianshu ST25 (umbilical level, T10)"]
+        S1["L1 Skin · anterior cutaneous branches T9–11"] --> S2["L2 Anterior layer of rectus sheath"]
+        S2 --> S3["L3 Belly of rectus abdominis"]
+        S3 --> S4["L4 Superior/inferior epigastric vessel anastomosis"]
+        S4 --> S5["L5 Posterior layer · peritoneum → small-intestine loops · omentum"]
     end
-    subgraph CV4["관원 CV4 (배꼽 아래 3촌, T12~L1)"]
-        C1["L1 피부·T12(L1) 앞피부가지"] --> C2["L2 백색선"]
-        C2 --> C5["L5 가로근막·복막 → 방광·소장 고리·자궁"]
+    subgraph CV4["Guanyuan CV4 (3 cun below umbilicus, T12–L1)"]
+        C1["L1 Skin · anterior cutaneous branch T12 (L1)"] --> C2["L2 Linea alba"]
+        C2 --> C5["L5 Transversalis fascia · peritoneum → bladder · small-intestine loops · uterus"]
     end
 ```
 
-## 5. Classical Needling Depth Calculation Table (Han Dynasty 1 fen = 2.3 mm)
+## 5. Needling Depth Calculation Table (1 fen = 2.3 mm)
 
-| 문헌 | Tianshu (天樞, ST25) 푼수 | Tianshu (天樞, ST25) mm | Guanyuan (關元, CV04) 푼수 | Guanyuan (關元, CV04) mm | 도달 Layer(성인 추정) |
+| Text | Tianshu fen | Tianshu mm | Guanyuan fen | Guanyuan mm | Layer reached (adult estimate) |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| *Huangdi Mingtang Jing* (《黃帝明堂經》)(황룡상 감수) | 5 | 11.5 | 20 | **46.0** | Tianshu (天樞, ST25) L1~L2 / Guanyuan (關元, CV04) **L5 이상(복막 관통 가능)** |
-| *Zhen Jiu Jia Yi Jing* (《針灸甲乙經》) | 5 | 11.5 | 20 | 46.0 | 동일 |
-| 《针灸经验方》 | 5 | 11.5 | 8 | 18.4 | Tianshu (天樞, ST25) L1~L2 / Guanyuan (關元, CV04) L1~L2 |
-| 《东医宝鉴》(동인 인용) | 8 | 18.4 | 8 | 18.4 | L2~L3 |
-| 공통교재 | 10~15(현대 촌) | 체형 비례 | 10~15(현대 촌) | 체형 비례 | 1~1.5 B-cun ≈ 24~45mm |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 현대 권장 | 0.8~1.2촌 | 체형 비례 | 1~1.5촌 | 체형 비례 | — |
+| 《黃帝明堂經》 (ed. Huang Longxiang) | 5 | 11.5 | 20 | **46.0** | Tianshu L1–L2 / Guanyuan **L5 or beyond (may penetrate peritoneum)** |
+| 《針灸甲乙經》 | 5 | 11.5 | 20 | 46.0 | Same |
+| 《針灸經驗方》 | 5 | 11.5 | 8 | 18.4 | Tianshu L1–L2 / Guanyuan L1–L2 |
+| 《東醫寶鑑》 (citing 《銅人》) | 8 | 18.4 | 8 | 18.4 | L2–L3 |
+| Common textbook | 10–15 (modern cun) | Proportional to build | 10–15 (modern cun) | Proportional to build | 1–1.5 B-cun ≈ 24–45 mm |
+| 《針灸腧穴通考》 modern recommendation | 0.8–1.2 cun | Proportional to build | 1–1.5 cun | Proportional to build | — |
 
-- 자침깊이 DB에 '0'(Contraindicated for Needling (禁鍼))은 없다. 다만 Tianshu (天樞, ST25)에는 《千金》의 "不可针·勿针·忌针" 기록이 있고, Guanyuan (關元, CV04)에는 임신 시 Contraindicated for Needling (禁鍼) 기록이 있다(DB 미반영, 원전 확인).
-- **참고 실측**: 상복부 정중선 CV12의 초음파 허용 자침 깊이(ANIR)는 성인 83명 평균 **25.3 ± 10.2mm**였다(papers.id 1444, DOI 10.3390/healthcare10091707). Guanyuan (關元, CV04)은 같은 정중선이고 활꼴선 아래라 뒤층이 없으므로, 비만하지 않은 성인에서 46mm는 복막을 넘을 가능성이 높다. Tianshu (天樞, ST25)는 배곧은근이 더해져 CV12보다 두꺼울 것으로 추정되지만, 경혈 특이 실측은 없다.
-- **[해석·교차 참조]** 《명당경》 Guanyuan (關元, CV04) "刺入二寸"은 복강 내 막 층위를 겨냥한 고전 심자법일 가능성이 있다. 이는 황룡상의 '기병치막(器病治膜)·장침모자법' 고증과 맞물리는 부분이다. 그러나 현대 임상 심도로 쓸 수는 없다.
+- The needling-depth DB contains no '0' (needling prohibited) entries. However, Tianshu has the records "不可針·勿針·忌針" in 《千金》, and Guanyuan has a record of needling prohibition during pregnancy (not reflected in the DB; confirmed in the source texts).
+- **Reference measurement**: The ultrasound-based allowable needle insertion depth (ANIR) at the upper-abdominal midline point CV12 averaged **25.3 ± 10.2 mm** in 83 adults (papers.id 1444, DOI 10.3390/healthcare10091707). Guanyuan lies on the same midline and below the arcuate line, without a posterior layer, so in non-obese adults 46 mm is likely to pass the peritoneum. Tianshu is presumed to be thicker than CV12 because of the added rectus abdominis, but there is no point-specific measurement.
+- **[Interpretation · cross-reference]** The *Mingtang Jing*'s (《明堂經》) Guanyuan depth "刺入二寸" may be a classical deep-needling method aimed at the membranous layers within the abdominal cavity. This links with Huang Longxiang's (黃龍祥) textual research on "treating organ disease through the membranes (器病治膜)" and the long-needle Mu-point needling method. It cannot, however, be used as a modern clinical depth.
 
-## 6. Textbook Comparison Table & FMA Ontology Mapping (Common Textbook vs. Prof. Kim Jaehyo)
+## 6. Comparison of Anatomical Structures Between Textbooks
 
-| 혈 | 구분 | 공통교재 | 김재효 교재 | 판정 |
+| Point | Category | Common textbook | Kim Jae-hyo textbook | Verdict |
 | :--- | :--- | :--- | :--- | :--- |
-| ST25 | 근육 | 배곧은근 | 배바깥빗근·배속빗근·배곧은근·배가로근 | 일치(김재효가 상위 집합) |
-| ST25 | 신경 | 갈비사이신경 | 제9~11 갈비사이신경 + 앞피부가지 | 일치(김재효가 분절 명시) |
-| ST25 | 혈관 | 위배벽동·정맥 | 위배벽동·정맥 + 얕은배벽동·정맥 | 일치(김재효가 표층 추가) |
-| CV4 | 근육·근막 | 백색선·배곧은근집 | 백색선·배가로근막 | **부분 불일치**: 활꼴선 아래에는 배곧은근집 뒤층이 없으므로 깊은 층은 김재효 교재(가로근막)가 해부학적으로 정확 |
-| CV4 | 신경 | 엉덩아랫배신경(L1) + 갈비밑신경(T12) 앞피부가지 | 갈비밑신경(T12) 앞피부가지 | **부분 불일치**: L1 포함 여부. 배꼽-치골 3/5 지점은 T12와 L1 피절의 경계 부근이므로 두 기술 모두 가능 범위 |
-| CV4 | 혈관 | 얕은·아랫배벽동·정맥 | 동일 | 일치 |
+| ST25 | Muscle | Rectus abdominis | External oblique · internal oblique · rectus abdominis · transversus abdominis | Agreement (Kim Jae-hyo is a superset) |
+| ST25 | Nerve | Intercostal nerves | 9th–11th intercostal nerves + anterior cutaneous branches | Agreement (Kim Jae-hyo specifies segments) |
+| ST25 | Vessels | Superior epigastric artery and vein | Superior epigastric artery and vein + superficial epigastric artery and vein | Agreement (Kim Jae-hyo adds the superficial layer) |
+| CV4 | Muscle & fascia | Linea alba · rectus sheath | Linea alba · transversalis fascia | **Partial disagreement**: below the arcuate line there is no posterior layer of the rectus sheath, so for the deep layer the Kim Jae-hyo textbook (transversalis fascia) is anatomically correct |
+| CV4 | Nerve | Anterior cutaneous branches of the iliohypogastric nerve (L1) + subcostal nerve (T12) | Anterior cutaneous branch of the subcostal nerve (T12) | **Partial disagreement**: whether L1 is included. The point 3/5 of the way from umbilicus to pubis lies near the boundary of the T12 and L1 dermatomes, so both descriptions fall within the possible range |
+| CV4 | Vessels | Superficial and inferior epigastric arteries and veins | Same | Agreement |
 
-> **추가 지적(B1-01)**: 두 교재 모두 Tianshu (天樞, ST25)의 깊은 혈관을 '위배벽동·정맥'으로만 적었다. 그러나 배꼽 높이는 위배벽동맥과 아랫배벽동맥의 문합부이므로 '위·아랫배벽동·정맥 문합부'로 적는 것이 더 정확하다.
+> **Additional remark (B1-01)**: Both textbooks list the deep vessels of Tianshu only as the "superior epigastric artery and vein". However, the umbilical level is the anastomosis of the superior and inferior epigastric arteries, so "anastomosis of the superior and inferior epigastric arteries and veins" is more accurate.
 
-## 7. 공간 변위 분기 추론
+## 7. Inference on Spatial-Displacement Branching
 
-- **Tianshu (天樞, ST25)**: Target 1(명당경, 除脐 2촌)과 Target 2(WHO, 脐中 2촌)의 차이는 배꼽 반지름(약 0.5 B-cun)이다. 성인 기준 Δ ≈ 10~15mm로 기준값 15mm 이하이므로 **분기 분석을 하지 않는다.** 두 지점은 같은 배곧은근 근복 위에 있고 피절(T10)도 같다.
-- **Guanyuan (關元, CV04)**: 고금 정위가 모두 "脐下三寸"이므로 Δ ≈ 0, 분기 불필요.
+- **Tianshu**: The difference between Target 1 (*Mingtang Jing*, 2 cun from the edge of the umbilicus (除臍)) and Target 2 (WHO, 2 cun from the centre of the umbilicus (臍中)) is the radius of the umbilicus (about 0.5 B-cun). In adults Δ ≈ 10–15 mm, at or below the 15 mm threshold, so **no branching analysis is performed.** Both sites lie over the same belly of rectus abdominis and share the same dermatome (T10).
+- **Guanyuan**: Both ancient and modern locations are "臍下三寸", so Δ ≈ 0 and no branching is needed.
 
-## 8. 생의학적 반사 기전과 외부 검색 로그
+## 8. Biomedical Reflex Mechanisms and External Search Log
 
-### 8-1. 질의의 핵심: 분절 정합 분석
+### 8-1. Core of the Question: Segmental Consistency Analysis
 
-| 표적 | 내장 구심·자율 분절(B1-03) | 연관통 체표 구역(B3-01·B3-02) | Tianshu (天樞, ST25)(T10)와의 정합 | Guanyuan (關元, CV04)(T12~L1)과의 정합 |
+| Target | Visceral afferent / autonomic segments (B1-03) | Referred-pain surface zone (B3-01, B3-02) | Consistency with Tianshu (T10) | Consistency with Guanyuan (T12–L1) |
 | :--- | :--- | :--- | :---: | :---: |
-| 소장(중장) | 교감 T8~T11 | 배꼽 주위(T10) | **정합** | 부분 |
-| 근위 대장: 맹장~횡행결장 근위 2/3(중장) | 교감 T10~T12, 미주신경 | 배꼽 주위 | **정합** | 부분 |
-| 원위 대장: 횡행결장 원위~직장(후장) | 교감 L1~L2, 부교감 S2~S4 | 치골상부(하복부) | 불일치 | **정합** |
-| 방광 | 교감 T11~L2, 부교감 S2~S4 | 치골상부 | 불일치 | **정합** |
-| 자궁 | 교감 T10~L1 | 하복부·요Tianfu (天府, LU03) | 부분 | **정합** |
-| 고환(산증 방사통 표적) | T10~T11(고환은 발생상 높은 분절) | 서혜부·음낭 | 부분 | 부분 |
+| Small intestine (midgut) | Sympathetic T8–T11 | Periumbilical (T10) | **Consistent** | Partial |
+| Proximal large intestine: caecum to proximal 2/3 of transverse colon (midgut) | Sympathetic T10–T12, vagus nerve | Periumbilical | **Consistent** | Partial |
+| Distal large intestine: distal transverse colon to rectum (hindgut) | Sympathetic L1–L2, parasympathetic S2–S4 | Suprapubic (lower abdomen) | Inconsistent | **Consistent** |
+| Bladder | Sympathetic T11–L2, parasympathetic S2–S4 | Suprapubic | Inconsistent | **Consistent** |
+| Uterus | Sympathetic T10–L1 | Lower abdomen and lumbosacral region | Partial | **Consistent** |
+| Testis (target of radiating pain in Shan disorders) | T10–T11 (the testis derives from high segments developmentally) | Groin and scrotum | Partial | Partial |
 
 ```mermaid
 graph LR
-    T10["T10 피절 (배꼽)"] --- ST25["천추 ST25 = 대장모"]
-    T12["T12~L1 피절 (하복부)"] --- CV4["관원 CV4 = 소장모"]
-    MID["중장: 소장 + 근위 대장"] -->|연관통 배꼽 주위| T10
-    HIND["후장: 원위 대장"] -->|연관통 치골상부| T12
-    PELV["방광·자궁"] -->|연관통 하복부| T12
+    T10["T10 dermatome (umbilicus)"] --- ST25["Tianshu ST25 = Large Intestine Mu"]
+    T12["T12–L1 dermatome (lower abdomen)"] --- CV4["Guanyuan CV4 = Small Intestine Mu"]
+    MID["Midgut: small intestine + proximal large intestine"] -->|referred pain periumbilical| T10
+    HIND["Hindgut: distal large intestine"] -->|referred pain suprapubic| T12
+    PELV["Bladder · uterus"] -->|referred pain lower abdomen| T12
 ```
 
-**판독**:
-- Tianshu (天樞, ST25)는 소장과 근위 대장의 분절 모두와 겹친다. 분절로 보면 '대장 Front-Mu Point (募穴)'이 아니라 '중장 Front-Mu Point (募穴)'이다.
-- Guanyuan (關元, CV04)은 원위 대장·방광·자궁의 분절과 겹치고, 소장 분절과는 1~3분절 떨어져 있다.
-- 따라서 분절 지도로는 오히려 "Tianshu (天樞, ST25) = 소장·근위 대장, Guanyuan (關元, CV04) = 원위 대장·골반 장기"가 된다. 질의자의 지적은 해부학적으로 정확하다.
-- 이 불일치는 **Front-Mu Point (募穴) 귀속이 분절 원리로 정해지지 않았다**는 문헌적 사실과 함께 보아야 해소된다. 황룡상의 고증에 따르면, Front-Mu Point (募穴)은 장부의 막이 매달린 '원(原)'으로서 삼초 구획(중초 = 배꼽 옆, 하초 = 배꼽 아래)에 따라 배치되었다.
-- **[해석·B1]** 고전 '소장병'의 핵심 증후는 "小腹痛，腰脊控睾而痛"(《영추·邪气藏府病形》)이다. 송대 이후 산증이 '小肠气'로 불린 것도 같은 맥락이다. 이는 서혜부 탈장 주머니에 소장 고리가 실제로 들어가는 해부학적 사실과 맞는다. Guanyuan (關元, CV04)(하복부, T12~L1)이 '소장병'을 치료한다는 귀속은, 병증이 나타나는 자리(하복·서혜·고환)와 일치한다는 점에서 해부학적 근거가 있다.
+**Reading**:
+- Tianshu overlaps the segments of both the small intestine and the proximal large intestine. Segmentally it is a "midgut Mu point" rather than a "large-intestine Mu point".
+- Guanyuan overlaps the segments of the distal large intestine, bladder and uterus, and is 1–3 segments away from the small-intestine segments.
+- On the segmental map, therefore, one actually gets "Tianshu = small intestine and proximal large intestine; Guanyuan = distal large intestine and pelvic organs". The questioner's point is anatomically correct.
+- This inconsistency is resolved only when read together with the textual fact that **the Front-Mu attributions were not determined by a segmental principle**. According to Huang Longxiang's (黃龍祥) research, the Front-Mu points were arranged as the "Yuan (原)" from which the membranes of the Zang-Fu organs (臟腑) are suspended, following the Sanjiao (三焦) divisions (Middle Jiao (中焦) = beside the umbilicus, Lower Jiao (下焦) = below the umbilicus).
+- **[Interpretation · B1]** The core sign of classical "Small Intestine disease (小腸病)" is "小腹痛，腰脊控睪而痛" (《靈樞·邪氣藏府病形》). That Shan disorders came to be called "Small Intestine Qi (小腸氣)" from the Song dynasty onward belongs to the same context. This matches the anatomical fact that loops of small intestine actually enter inguinal hernial sacs. The attribution of Guanyuan (lower abdomen, T12–L1) to treating "Small Intestine disease" has an anatomical basis in that it coincides with the site where the disease manifests (lower abdomen, groin, testis).
 
-### 8-2. Layer A 주요 논문 (Rank 6, 2026-10-12)
+### 8-2. Key Layer A Papers (Rank 6, 2026-10-12)
 
-| papers.id | PMID | 대상·설계 | 핵심 결과 | 분절 쟁점과의 관계 |
+| papers.id | PMID | Subjects & design | Key results | Relation to the segmental issue |
 | :---: | :---: | :--- | :--- | :--- |
-| 2023 | 40854853 | 마우스 DSS 대장염, 양측 ST25 전침 2mA·10Hz | 원위 대장 ACh 증가, NE 무변화. SMG·IMG 교감 뉴런 c-Fos 무변화, 골반신경절 콜린성 뉴런 c-Fos 증가 | **Tianshu (天樞, ST25)의 원위 대장 효과가 T10 분절 교감이 아닌 천수 부교감을 거침** → 단순 분절 모델 반증 |
-| 2009 | 40763037 | 수술 후 장폐색 동물, ST25 전침 | 복강 교감 과활성 억제, NE-α2 수용체 경로로 장운동 개선. 교감신경절제가 효과 모사 | 교감(분절성) 경로 관여 |
-| 2018 | 42343522 | 감염 후 IBS 쥐, ST25+BL25 | 내장과민 감소 | Front-Mu Point (募穴)·Back-Shu Point (背兪穴) 배오(단독 아님) |
-| 2017 | 42443084 | 서행성 변비 쥐, 대장 Front-Mu Point (募穴)·Back-Shu Point (背兪穴) | 카할 사Dysentery (痢疾)세포 자가포식 조절 | 배오 |
-| 2011 | 38750560 | 만성 염증성 내장통 쥐, 뜸 | 척수 circRNA 네트워크 | 뜸 자극의 척수 수준 작용 |
-| 317 | 34646018 | 마우스(B3-17) | ST25에는 PROKR2 섬유가 없어 저강도로 미주-부신 축을 구동하지 못함 | 복부 경혈의 비사지형 기전 |
-| 2031 | 41194515 | 골반염 쥐, CV4 전침 2/100Hz | 교감 활성(TH)·신경염증 억제로 통증 완화 | Guanyuan (關元, CV04)-골반 장기 분절(T11~L2) 정합 |
-| 2052 | — | 노년 여성 복압성 요실금 31례(비대조), 침+뜸 | 임상 개선 보고 | Guanyuan (關元, CV04)-방광, 인체 간접 |
-| 2036 | 42343515 | 원발성 월경통 뜸 RCT | 임상 효과·경제성 | Guanyuan (關元, CV04)-자궁, 인체 |
+| 2023 | 40854853 | Mouse DSS colitis, bilateral ST25 electroacupuncture 2 mA · 10 Hz | ACh increased in the distal colon, NE unchanged. c-Fos unchanged in SMG/IMG sympathetic neurons, c-Fos increased in cholinergic neurons of the pelvic ganglion | **Tianshu's effect on the distal colon passes through sacral parasympathetic rather than T10 segmental sympathetic pathways** → refutes the simple segmental model |
+| 2009 | 40763037 | Animal model of postoperative ileus, ST25 electroacupuncture | Suppression of abdominal sympathetic overactivity; gut motility improved via the NE–α2 receptor pathway. Sympathectomy mimicked the effect | Involvement of a sympathetic (segmental) pathway |
+| 2018 | 42343522 | Post-infectious IBS rats, ST25+BL25 | Reduced visceral hypersensitivity | Front-Mu + Back-Shu combination (not single point) |
+| 2017 | 42443084 | Slow-transit constipation rats, Large Intestine Front-Mu and Back-Shu points | Modulation of autophagy in interstitial cells of Cajal | Combination |
+| 2011 | 38750560 | Chronic inflammatory visceral pain rats, moxibustion | Spinal circRNA network | Spinal-level action of moxibustion stimulation |
+| 317 | 34646018 | Mouse (B3-17) | ST25 lacks PROKR2 fibres and thus cannot drive the vagal–adrenal axis at low intensity | Non-limb-type mechanism of abdominal points |
+| 2031 | 41194515 | Pelvic inflammatory disease rats, CV4 electroacupuncture 2/100 Hz | Pain relief via suppression of sympathetic activity (TH) and neuroinflammation | Consistent with Guanyuan–pelvic-organ segments (T11–L2) |
+| 2052 | — | 31 elderly women with stress urinary incontinence (uncontrolled), acupuncture + moxibustion | Clinical improvement reported | Guanyuan–bladder, indirect human evidence |
+| 2036 | 42343515 | RCT of moxibustion for primary dysmenorrhoea | Clinical effect and cost-effectiveness | Guanyuan–uterus, human |
 
-### 8-3. B-Check 6항목 채점표
+### 8-3. Six-Item B-Check Scoring Table
 
-| 항목 | Tianshu (天樞, ST25)(표적: 대장) | 근거 | Guanyuan (關元, CV04)(표적: 골반 장기) | 근거 |
+| Item | Tianshu (target: large intestine) | Evidence | Guanyuan (target: pelvic organs) | Evidence |
 | :--- | :---: | :--- | :---: | :--- |
-| ① 말초 실체 | 1 | B2-09 교재 일치, 경혈 특이 실측 없음 | 1 | B2-09(부분 불일치), 실측 없음 |
-| ② 분절 정합 | 2 | B1-03·B3-01: T10 ↔ 중장(근위 대장) | 2 | B1-03: T12~L1 ↔ 방광·자궁·후장 |
-| ③ 구심 섬유 | 1 | B3-16·B3-17(마우스, 강도 의존·PROKR2 부재) | 1 | B3-05(마취 쥐 일반) |
-| ④ 중추 경로 | 1 | B3-16 척수-교감, 2023 천수 부교감(동물) | 1 | 2031 척수 신경염증(동물) |
-| ⑤ 효과 방향 | 1 | 2009·2023: 장운동·염증 개선이 대장병 주치와 일치하나 경로가 연구마다 다름(동물) | 1 | 2031: 하복통 완화가 주치와 일치(동물) |
-| ⑥ 인체 전환 | 1 | 수술 후 장기능·소화불량 임상(간접), 자율신경 지표 없음 | 1 | 2036 RCT·2052 증례군(간접), 기전 지표 없음 |
-| **합계** | **7/12** | **부합 기준(≥8) 미달 → "가설"** | **7/12** | **부합 기준 미달 → "가설"** |
+| ① Peripheral substrate | 1 | B2-09 textbooks agree, no point-specific measurement | 1 | B2-09 (partial disagreement), no measurement |
+| ② Segmental consistency | 2 | B1-03, B3-01: T10 ↔ midgut (proximal large intestine) | 2 | B1-03: T12–L1 ↔ bladder, uterus, hindgut |
+| ③ Afferent fibres | 1 | B3-16, B3-17 (mouse; intensity-dependent, absence of PROKR2) | 1 | B3-05 (anaesthetised rats, general) |
+| ④ Central pathway | 1 | B3-16 spinal–sympathetic, 2023 sacral parasympathetic (animal) | 1 | 2031 spinal neuroinflammation (animal) |
+| ⑤ Direction of effect | 1 | 2009, 2023: improvement of gut motility and inflammation matches the large-intestine indication, but the pathway differs between studies (animal) | 1 | 2031: relief of lower abdominal pain matches the indication (animal) |
+| ⑥ Human translation | 1 | Clinical studies on postoperative bowel function and dyspepsia (indirect), no autonomic indices | 1 | 2036 RCT, 2052 case series (indirect), no mechanistic indices |
+| **Total** | **7/12** | **Below concordance threshold (≥ 8) → "hypothesis"** | **7/12** | **Below concordance threshold → "hypothesis"** |
 
-### 8-4. 외부 API 검색 로그 (`_metadata.sync_log`)
+### 8-4. External API Search Log (`_metadata.sync_log`)
 
-| 일시 | 경혈 | 소스 | 쿼리(요약) | HTTP | 수집 | 비고 |
+| Timestamp | Point | Source | Query (summary) | HTTP | Collected | Remarks |
 | :--- | :---: | :--- | :--- | :---: | :---: | :--- |
 | 2026-10-12 15:25:11 | ST25 | PubMed | ST25/Tianshu/天枢 × acupuncture × nerve·reflex·autonomic + 中国针灸·针刺研究 | 200 | 16 | |
-| 2026-10-12 15:25:11 | ST25 | OpenAlex | doi 10.13703·10.13702 + 일반 | 200 | 24 | |
+| 2026-10-12 15:25:11 | ST25 | OpenAlex | doi 10.13703·10.13702 + general | 200 | 24 | |
 | 2026-10-12 15:25:11 | ST25 | Crossref | Tianshu acupuncture nerve reflex | 200 | 0 | |
-| 2026-10-12 15:25:11 | ST25 | 합계 | — | — | 40 | 신규 20, 기존 병합 9, 배치 중복 11 |
-| 2026-10-12 15:25:28 | CV4 | PubMed | CV4/Guanyuan/关元 동일 구조 | 200 | 16 | |
-| 2026-10-12 15:25:28 | CV4 | OpenAlex | 동일 | 200 | 24 | |
+| 2026-10-12 15:25:11 | ST25 | Total | — | — | 40 | 20 new, 9 merged with existing, 11 in-batch duplicates |
+| 2026-10-12 15:25:28 | CV4 | PubMed | CV4/Guanyuan/关元, same structure | 200 | 16 | |
+| 2026-10-12 15:25:28 | CV4 | OpenAlex | Same | 200 | 24 | |
 | 2026-10-12 15:25:28 | CV4 | Crossref | Guanyuan acupuncture nerve reflex | 200 | 2 | |
-| 2026-10-12 15:25:28 | CV4 | 합계 | — | — | 42 | 신규 25, 기존 병합 9, 배치 중복 8 |
+| 2026-10-12 15:25:28 | CV4 | Total | — | — | 42 | 25 new, 9 merged with existing, 8 in-batch duplicates |
 
-`validate` 두 번 모두 OK. 통합 DB는 2,036편(외부 266편)으로 갱신되었다.
+`validate` returned OK both times. The integrated DB was updated to 2,036 papers (266 external).
 
-## 9. Classical Indications Stratification Table (Single-Point P_single vs. Complex Formulae)
+## 9. Indication Separation Table ($P_{single}$ vs. Combinations)
 
-| 혈 | 단독 주치($P_{single}$, 《명당경》·단독 처방) | 배오 파생 | 현대 확장 |
+| Point | Single-point indications ($P_{single}$, *Mingtang Jing* and single-point prescriptions) | Derived from combinations | Modern extensions |
 | :--- | :--- | :--- | :--- |
-| ST25 | 대장병(泄·당제통·장명), 산증, 월경병, 《千金》 단독 뜸(Diarrhea (泄瀉)·Dysentery (痢疾)·복통) | 《脉经》 灸天枢+针关元(척맥 긴·배꼽 아래 통증), 《针经摘英集》 中脘·气海+天枢·气冲·三里(기가 아랫배에서 치밀 때), 1986 소아 소화불량 天枢+中脘 | 1957 교재 "小儿慢性疾患灸之大有效" → 《通考》 提要 "灸治小儿慢性消化道症状" |
-| CV4 | 배뇨장애(胞转不得溺·小便数·溺血), 하복통·산증, 부인 불임, 石水 | 《金匮》 劳宫+关元(임신 소변불리), 《席弘赋》 气海+关元(칠산), 《针灸大全》 白环俞·太溪·三阴交+关元 | 《扁鹊心书》 이후 '원기허손' 다량 뜸(도가 단전 개념 혼입 가능), 7판 교재 6계통 |
+| ST25 | Large-intestine disease (diarrhoea (泄), periumbilical pain (當臍痛), borborygmus (腸鳴)), Shan disorders (疝), menstrual disorders, single-point moxibustion in 《千金》 (diarrhoea, dysentery, abdominal pain) | 《脈經》 灸天樞+針關元 (tight chi pulse, pain below the umbilicus); 《針經摘英集》 中脘·氣海+天樞·氣衝·三里 (when Qi surges up from the lower abdomen); 1986 paediatric dyspepsia 天樞+中脘 | 1957 textbook "小兒慢性疾患灸之大有效" → 《通考》 提要 "灸治小兒慢性消化道症狀" |
+| CV4 | Urinary disorders (胞轉不得溺·小便數·溺血), lower abdominal pain and Shan disorders, female infertility, 石水 | 《金匱》 勞宮+關元 (difficult urination in pregnancy); 《席弘賦》 氣海+關元 (seven Shan (七疝)); 《針灸大全》 白環俞·太溪·三陰交+關元 | Heavy moxibustion for "depletion of Original Qi (元氣虛損)" from 《扁鵲心書》 onward (possible contamination by the Daoist Dantian (丹田) concept); six systems in the 7th-edition textbook |
 
-**판정**: Guanyuan (關元, CV04)의 단독 주치는 처음부터 하복·배뇨·산증·생식 계열이며, 소장 소화 기능과 관련된 단독 주치는 확인되지 않는다. Tianshu (天樞, ST25)의 소아 소화장애 사용은 단독·뜸 형태로는 1957년 교재가 처음이고, 그 이전 층차에서는 확인되지 않는다.
+**Verdict**: Guanyuan's single-point indications belong from the outset to the lower-abdominal, urinary, Shan and reproductive series; no single-point indication related to the digestive function of the small intestine is found. The use of Tianshu for paediatric digestive disorders in single-point moxibustion form appears first in the 1957 textbook and is not found in earlier strata.
 
-## 10. ARI v3.0 Quantitative Profile Evaluation & Final Conclusion
+## 10. ARI v3.0 Profile Evaluation and Final Conclusions
 
-### 10-1. 이중 채점 (채점 1: 분석자, 채점 2: 근거 패키지만 받은 독립 에이전트)
+### 10-1. Dual Scoring (Rater 1: analyst; Rater 2: independent agent given only the evidence package)
 
-| 혈 | 항목 | 채점 1 | 채점 2 | 차이 | 조정 후 | 근거 포인터 |
+| Point | Item | Rater 1 | Rater 2 | Difference | Adjusted | Evidence pointer |
 | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
-| ST25 | S_orig ① 최초 기술 | 75 | 75 | 0 | 75 | 《명당경》 위치·심도 명시, '脐' 기준 모호 |
-| ST25 | S_orig ② 후대 일치율 | 75 | 75 | 0 | 75 | 脐旁二寸 계열 약 69~80% |
-| ST25 | S_orig ③ 이명 해소 | 75 | 75 | 0 | 75 | KJH DB, 魂舍·长谷 분리 |
-| ST25 | S_orig ④ 통고 교정 | 75 | 100 | **25** | **100** | 황룡상이 除脐 2촌으로 정위 난립을 완전히 교정 |
-| ST25 | **S_orig 평균** | 75.0 | 81.25 | | **81.25** | |
-| ST25 | S_clarity | 75 | 75 | 0 | 75 | 두 교재 상충 없음(김재효가 상위 집합), B1-03, 실측 없음 |
-| ST25 | S_reflex | 50 | 50 | 0 | 50 | B-Check 7/12, 동물 다수 + 인체 임상 간접 |
-| ST25 | S_safety(SI) | 25 | 25 | 0 | 25 | 현대 1~1.5촌 직자 시 복막까지 10mm 이내 가능, 《千金》 不可针 |
-| CV4 | S_orig ① | 100 | 100 | 0 | 100 | 《영추·寒热病》 위치 + 《명당경》 심도 |
-| CV4 | S_orig ② | 100 | 100 | 0 | 100 | 거의 전 문헌 脐下三寸 |
-| CV4 | S_orig ③ | 75 | 75 | 0 | 75 | 丹田·下肓 공유, 阑门 오기 |
-| CV4 | S_orig ④ | 100 | 75 | **25** | **100** | 정위 관련 전사 오류 없음, 이명·灸量 오류는 황룡상이 완전히 교정 |
-| CV4 | **S_orig 평균** | 93.75 | 87.5 | | **93.75** | |
-| CV4 | S_clarity | 50 | 75 | **25** | **50** | 두 교재가 깊은 층(배곧은근집 vs 배가로근막)과 신경(L1 포함 여부)에서 서로 다른 구조를 지목한다. 활꼴선·피절 경계라는 B1 추론으로 조정해야 하므로 루브릭 50 단계에 해당 |
+| ST25 | S_orig ① Earliest description | 75 | 75 | 0 | 75 | *Mingtang Jing* gives location and depth; the reference '臍' is ambiguous |
+| ST25 | S_orig ② Later concordance rate | 75 | 75 | 0 | 75 | 臍旁二寸 lineage approx. 69–80% |
+| ST25 | S_orig ③ Alias resolution | 75 | 75 | 0 | 75 | KJH DB, 魂舍 and 長谷 separated |
+| ST25 | S_orig ④ Correction by *Tongkao* | 75 | 100 | **25** | **100** | Huang Longxiang (黃龍祥) fully corrected the proliferation of locations to 除臍 2 cun |
+| ST25 | **S_orig mean** | 75.0 | 81.25 | | **81.25** | |
+| ST25 | S_clarity | 75 | 75 | 0 | 75 | No conflict between the two textbooks (Kim Jae-hyo is a superset), B1-03, no measurement |
+| ST25 | S_reflex | 50 | 50 | 0 | 50 | B-Check 7/12, mostly animal + indirect human clinical evidence |
+| ST25 | S_safety (SI) | 25 | 25 | 0 | 25 | Modern perpendicular needling of 1–1.5 cun may come within 10 mm of the peritoneum; 《千金》 不可針 |
+| CV4 | S_orig ① | 100 | 100 | 0 | 100 | 《靈樞·寒熱病》 location + *Mingtang Jing* depth |
+| CV4 | S_orig ② | 100 | 100 | 0 | 100 | Almost all texts give 臍下三寸 |
+| CV4 | S_orig ③ | 75 | 75 | 0 | 75 | 丹田 and 下肓 shared, 闌門 miswriting |
+| CV4 | S_orig ④ | 100 | 75 | **25** | **100** | No transcription errors concerning location; alias and moxibustion-dose errors fully corrected by Huang Longxiang (黃龍祥) |
+| CV4 | **S_orig mean** | 93.75 | 87.5 | | **93.75** | |
+| CV4 | S_clarity | 50 | 75 | **25** | **50** | The two textbooks point to different structures for the deep layer (rectus sheath vs. transversalis fascia) and the nerve (whether L1 is included). Because reconciliation requires B1 inference (arcuate line, dermatome boundary), this corresponds to rubric level 50 |
 | CV4 | S_reflex | 50 | 50 | 0 | 50 | B-Check 7/12 |
-| CV4 | S_safety(SI) | 25 | 25 | 0 | 25 | 《명당경》 46mm, 정중선 복막·충만 방광, 임신 Contraindicated for Needling (禁鍼) |
+| CV4 | S_safety (SI) | 25 | 25 | 0 | 25 | *Mingtang Jing* 46 mm, midline peritoneum and full bladder, needling prohibited in pregnancy |
 
-**조정 메모**: 세 항목의 차이는 모두 루브릭 문구를 해석하는 방식의 차이였다. ④는 "완전 교정"을 정위 오류 기준으로 읽어 두 혈 모두 100으로 맞추었다. CV4 S_clarity는 두 교재가 서로 다른 구조를 기술하고 있어(생략 관계가 아니라 지목 대상의 차이) 50으로 확정했다. 조정 전 ARI-Core 범위는 ST25 68.75~71.25, CV4 67.5~73.75였다.
+**Adjustment memo**: All three discrepancies arose from different readings of the rubric wording. For ④, "fully corrected" was read with respect to locating errors, and both points were aligned at 100. CV4 S_clarity was fixed at 50 because the two textbooks describe different structures (a difference in the structures identified, not one of omission). Before adjustment, the ARI-Core ranges were ST25 68.75–71.25 and CV4 67.5–73.75.
 
-### 10-2. ARI v3.0 프로파일
+### 10-2. ARI v3.0 Profile
 
-| 혈 | ARI-Core (0.40/0.35/0.25) | 등급 | 게이트 | SI | 등가중치 민감도 | B-Check |
+| Point | ARI-Core (0.40/0.35/0.25) | Grade | Gates | SI | Equal-weight sensitivity | B-Check |
 | :--- | :---: | :---: | :--- | :---: | :---: | :---: |
-| ST25 Tianshu (天樞, ST25) | 0.40×81.25 + 0.35×75 + 0.25×50 = **71.25** | **B (개연)** | 게이트 1·2 미적용, 게이트 3 적용 | **25 ⚠** | 68.75 → **C (가중치 민감)** | 7/12, 기전 "가설" |
-| CV4 Guanyuan (關元, CV04) | 0.40×93.75 + 0.35×50 + 0.25×50 = **67.5** | **C (가능·가설)** | 게이트 1·2 미적용, 게이트 3 적용 | **25 ⚠** | 64.6 → C (등급 불변) | 7/12, 기전 "가설" |
+| ST25 Tianshu (天樞) | 0.40×81.25 + 0.35×75 + 0.25×50 = **71.25** | **B (probable)** | Gates 1·2 not applied, Gate 3 applied | **25 ⚠** | 68.75 → **C (weight-sensitive)** | 7/12, mechanism "hypothesis" |
+| CV4 Guanyuan (關元) | 0.40×93.75 + 0.35×50 + 0.25×50 = **67.5** | **C (possible / hypothesis)** | Gates 1·2 not applied, Gate 3 applied | **25 ⚠** | 64.6 → C (grade unchanged) | 7/12, mechanism "hypothesis" |
 
-**표준 표기**
-- `ARI v3.0 | ST25 ARI-Core 71 ± 0 (조정 후, 조정 전 69~71) (B) | SI 25 ⚠ | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 69 (C, 가중치 민감)`
-- `ARI v3.0 | CV4 ARI-Core 68 ± 0 (조정 후, 조정 전 68~74) (C) | SI 25 ⚠ | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 65 (C, 등급 불변)`
+**Standard notation**
+- `ARI v3.0 | ST25 ARI-Core 71 ± 0 (adjusted; before adjustment 69–71) (B) | SI 25 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 69 (C, weight-sensitive)`
+- `ARI v3.0 | CV4 ARI-Core 68 ± 0 (adjusted; before adjustment 68–74) (C) | SI 25 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65 (C, grade unchanged)`
 
-**민감 항목**: CV4는 S_clarity를 75로 보면 76.25(B)가 되고, B-Check ⑥을 2점으로 보면(RCT를 명시 근거로 인정) S_reflex가 75가 되어 73.75(B)가 된다. ST25는 S_clarity를 50으로 보면 62.5(C)로 내려간다.
+**Sensitive items**: For CV4, taking S_clarity as 75 gives 76.25 (B); taking B-Check ⑥ as 2 points (accepting the RCT as explicit evidence) makes S_reflex 75 and gives 73.75 (B). For ST25, taking S_clarity as 50 lowers the score to 62.5 (C).
 
-### 10-3. 최종 결론
+### 10-3. Final Conclusions
 
-1. **두 혈의 위치와 층차 구조는 비교적 분명하다.** 위치는 S_orig 81~94점이다. Tianshu (天樞, ST25)는 배곧은근 근복 위(T10), Guanyuan (關元, CV04)은 활꼴선 아래 백색선(T12~L1)이다.
-2. **"Front-Mu Point (募穴) = 해당 부(腑)의 분절 반응점"이라는 가설은 지지되지 않는다.** 분절로는 Tianshu (天樞, ST25)가 중장 전체(소장 + 근위 대장), Guanyuan (關元, CV04)이 골반 장기(방광·자궁·원위 대장)와 맞는다. 문헌상 Front-Mu Point (募穴) 귀속은 삼초 구획과 병증이 나타나는 자리에 따른 것이다.
-3. **반사 기전은 두 혈 모두 "가설" 단계다.** Tianshu (天樞, ST25)에서는 강도에 따라 분절성 교감 반사(B3-16, papers.id 2009)와 비분절 천수 부교감 경로(papers.id 2023)가 함께 보고되었다. 인체 자율신경 지표 연구가 나와야 B-Check ⑥을 채울 수 있다.
-4. **⚠ 안전**: Guanyuan (關元, CV04)은 시술 전 배뇨, 임신 확인, 정중선 직자 심도를 성인 기준 약 25mm 안팎으로 제한해야 한다(CV12 실측 유추). Tianshu (天樞, ST25)는 마른 체형과 소아에서 복막까지의 여유가 작다. 고전 심도(5푼, 11.5mm)가 오히려 안전 범위에 든다.
-5. **후속 과제**: ST25·CV4 초음파 허용 자침 깊이 실측(소아 포함), B1 교과서의 판·장·쪽 대조, Tianshu (天樞, ST25) 전침의 인체 자율신경 지표 연구 검색.
+1. **The locations and layered structures of the two points are relatively clear.** Location scores S_orig 81–94. Tianshu lies over the belly of rectus abdominis (T10); Guanyuan on the linea alba below the arcuate line (T12–L1).
+2. **The hypothesis "Front-Mu point = segmental reaction point of the corresponding Fu organ (腑)" is not supported.** Segmentally, Tianshu matches the whole midgut (small intestine + proximal large intestine) and Guanyuan the pelvic organs (bladder, uterus, distal large intestine). In the literature, Front-Mu attribution followed the Sanjiao (三焦) divisions and the site at which disease manifests.
+3. **The reflex mechanism of both points is at the "hypothesis" stage.** For Tianshu, both intensity-dependent segmental sympathetic reflexes (B3-16, papers.id 2009) and a non-segmental sacral parasympathetic pathway (papers.id 2023) have been reported. Human studies with autonomic indices are needed to satisfy B-Check ⑥.
+4. **⚠ Safety**: For Guanyuan, the patient should void before treatment, pregnancy should be ruled out, and perpendicular midline depth should be limited to around 25 mm in adults (inferred from the CV12 measurement). For Tianshu, the margin to the peritoneum is small in thin individuals and children; the classical depth (5 fen, 11.5 mm) in fact falls within the safe range.
+5. **Follow-up tasks**: ultrasound measurement of the allowable needling depth at ST25 and CV4 (including children); checking edition, chapter and page of the B1 textbooks; searching for human studies of autonomic indices with electroacupuncture at Tianshu.
 
-## 11. 강의 질의·답변 검증 결론
+## 11. Conclusions on the Lecture Q&A
 
-| 쟁점 | 판정 | 해부·기전 근거 |
+| Issue | Verdict | Anatomical / mechanistic basis |
 | :--- | :--- | :--- |
-| 질의: "Tianshu (天樞, ST25) 바로 아래는 소장이다" | **타당** | 배꼽 높이 배곧은근 아래 복강에는 주로 소장 고리와 큰그물막이 있다(B1-01). 횡행결장은 체위에 따라 이 높이를 지난다 |
-| 질의: "대장 병변 반응은 바깥쪽 배벽에 나타난다" | **부분 타당** | 상행·하행결장은 옆구리 쪽 후복벽에 붙어 있어 국소 압통이 바깥쪽에 나타날 수 있다. 다만 연관통은 중장 부분이 배꼽 주위, 후장 부분이 치골상부로 간다(B1-03) |
-| 질의: "Tianshu (天樞, ST25) T10은 중장 분절과 겹치고, Guanyuan (關元, CV04) T11~12는 원위 대장 쪽에 가깝다" | **타당** | 8-1 분절 정합표 |
-| 답변: "Guanyuan (關元, CV04)은 해부학적 소장보다 '소장'이라는 병증 유형을 치료한다" | **타당** | Guanyuan (關元, CV04)의 단독 주치(하복·배뇨·산증)는 T12~L1 분절의 골반 장기·서혜부와 정합한다(B-Check ② = 2) |
-| 답변: "소장 병증 = 방광의 소변 배출 과정" | **수정 필요** | *Lingshu* (《靈樞》)에서 소변 장애는 삼초병·방광병 조문에 있다. Guanyuan (關元, CV04)의 배뇨 주치는 방광 분절(T11~L2) 국소 주치로 설명된다 |
-| 답변: "하복부 산증을 소장 범주로 분류" | **타당** | 서혜부 탈장의 내용물이 소장이라는 해부 사실, '小肠气' 용어와 일치 |
+| Question: "Directly beneath Tianshu lies the small intestine" | **Valid** | In the peritoneal cavity beneath rectus abdominis at the umbilical level lie mainly loops of small intestine and the greater omentum (B1-01). The transverse colon passes this level depending on posture |
+| Question: "Reactions to large-intestine lesions appear on the lateral abdominal wall" | **Partly valid** | The ascending and descending colon are attached to the posterior abdominal wall towards the flanks, so local tenderness can appear laterally. Referred pain, however, goes periumbilically for the midgut portion and suprapubically for the hindgut portion (B1-03) |
+| Question: "Tianshu (T10) overlaps the midgut segments, while Guanyuan (T11–12) is closer to the distal large intestine" | **Valid** | Segmental consistency table in 8-1 |
+| Answer: "Guanyuan treats the disease pattern called 'Small Intestine' rather than the anatomical small intestine" | **Valid** | Guanyuan's single-point indications (lower abdomen, urination, Shan disorders) match the pelvic organs and groin of segments T12–L1 (B-Check ② = 2) |
+| Answer: "Small Intestine disease = the bladder's process of voiding urine" | **Needs revision** | In the *Lingshu* (《靈樞》), urinary disorders appear in the clauses on Sanjiao disease (三焦病) and Bladder disease (膀胱病). Guanyuan's urinary indication is explained as a local indication for the bladder segments (T11–L2) |
+| Answer: "Lower-abdominal Shan disorders are classified under the Small Intestine category" | **Valid** | Consistent with the anatomical fact that the contents of inguinal hernias are small intestine, and with the term "Small Intestine Qi (小腸氣)" |
 
-**수정 답변 제안(해부학 관점 보충)**
+**Proposed revised answer (supplementing the anatomical perspective)**
 
-> Front-Mu Point (募穴)을 신경분절 반응점으로만 보면 Tianshu (天樞, ST25)(T10)는 소장과 근위 대장, Guanyuan (關元, CV04)(T12~L1)은 원위 대장과 방광·자궁의 분절에 놓입니다. 그래서 '대장모-Tianshu (天樞, ST25), 소장모-Guanyuan (關元, CV04)'은 분절 지도와 맞지 않습니다. 이 모순은 Front-Mu Point (募穴) 귀속이 분절 원리로 정해지지 않았기 때문에 생깁니다.
+> If the Front-Mu points are regarded solely as neural-segment reaction points, Tianshu (T10) sits on the segments of the small intestine and proximal large intestine, and Guanyuan (T12–L1) on those of the distal large intestine, bladder and uterus. Therefore "Large Intestine Mu = Tianshu, Small Intestine Mu = Guanyuan" does not fit the segmental map. This contradiction arises because the Front-Mu attributions were not determined by a segmental principle.
 >
-> 고전에서 '소장병'은 아랫배가 아프고 허리와 고환으로 당기는 병, 곧 산증 유형입니다. 서혜부 탈장 주머니에 소장이 실제로 들어간다는 점을 생각하면, 하복부의 Guanyuan (關元, CV04)이 이 병을 맡은 것은 병이 나타나는 자리와 맞습니다. Guanyuan (關元, CV04)의 배뇨장애 주치는 소장의 기능이 아니라 같은 분절(T11~L2)에 있는 방광에 대한 국소 주치로 이해하는 것이 정확합니다.
+> In the classics, "Small Intestine disease (小腸病)" is a condition in which the lower abdomen is painful and pulls towards the lower back and testes — that is, a Shan (疝) type of disorder. Considering that the small intestine actually enters inguinal hernial sacs, it fits the site of manifestation that Guanyuan in the lower abdomen should be responsible for this disease. Guanyuan's indication for urinary disorders is more accurately understood not as a function of the small intestine but as a local indication for the bladder, which lies in the same segments (T11–L2).
 >
-> Tianshu (天樞, ST25)의 효과도 분절만으로는 설명되지 않습니다. 동물 실험에서 Tianshu (天樞, ST25) 전침의 대장 효과는 T10 교감신경절이 아니라 천수 부교감 경로를 거치기도 했습니다. 따라서 Front-Mu Point (募穴)은 분절 반응점으로 보기보다, 국소 분절 반사와 비분절 경로가 함께 작동하는 복부 자극점으로 보는 것이 현재 근거에 맞습니다.
+> Tianshu's effects, too, cannot be explained by segments alone. In animal experiments, the colonic effect of electroacupuncture at Tianshu sometimes passed not through the T10 sympathetic ganglia but through the sacral parasympathetic pathway. It therefore fits current evidence better to regard the Front-Mu points not merely as segmental reaction points but as abdominal stimulation sites at which local segmental reflexes and non-segmental pathways act together.
 
 ---
 
-## 부록 A. 감사 기록 (Audit)
+## Appendix A. Audit Record
 
-- Rank 0: `sync_skill_settings.py --check` → 드리프트 없음(`.claude/CLAUDE.md` 변경만 표시). 정본 v2.7 적용.
-- Rank 6: `sync_master_db.py --dry-run` 확인 후 실제 반영. ST25·CV4 모두 PubMed·OpenAlex·Crossref HTTP 200, `validate` OK. 핵심 3편(papers.id 2009·2023·2031)의 초록은 NCBI E-utilities로 원문을 확인했다.
-- 해부 기술 중 B1(규범 해부) 근거는 일반 해부학 지식으로 적었고, Moore·Gray's의 판·장·쪽은 대조하지 못했다(등록부 규칙 ⑤ 미충족). 분절 범위는 교과서마다 1분절 정도 차이가 날 수 있다.
-- ST25·CV4 모두 경혈 특이 영상 실측 논문이 없다. 5절의 mm 추정은 CV12 실측(papers.id 1444)을 유추한 것이다.
-- 이전 Tier 1 답변(Tianshu (天樞, ST25)·소아) 정정: 0절 6항, 1절, 9절 참조.
+- Rank 0: `sync_skill_settings.py --check` → no drift (only a change to `.claude/CLAUDE.md` was shown). Canonical v2.7 applied.
+- Rank 6: `sync_master_db.py --dry-run` checked, then applied. Both ST25 and CV4 returned HTTP 200 from PubMed, OpenAlex and Crossref; `validate` OK. The abstracts of the three key papers (papers.id 2009, 2023, 2031) were checked against the originals via NCBI E-utilities.
+- B1 (normative anatomy) evidence in the anatomical descriptions was written from general anatomical knowledge; edition, chapter and page in Moore and Gray's were not cross-checked (registry rule ⑤ not satisfied). Segmental ranges may differ by about one segment between textbooks.
+- Neither ST25 nor CV4 has a point-specific imaging measurement paper. The mm estimates in Section 5 are inferred from the CV12 measurement (papers.id 1444).
+- Correction of the earlier Tier 1 answer (Tianshu and children): see Section 0 item 6, Section 1 and Section 9.

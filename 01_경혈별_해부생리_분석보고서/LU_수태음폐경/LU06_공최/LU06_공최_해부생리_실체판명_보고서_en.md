@@ -1,420 +1,438 @@
-# 🔬 [경혈 해부생리학 실체 판명 학술 모노그래프] Kongzui (孔最, LU06)(孔最, LU06)
+# [Acupoint Anatomical & Physiological Substrate Monograph] Kongzui (孔最, LU06)
 
-> **Framework**: v2.7 (2026-10-04 개정) · **ARI**: T1 `ARI v3.0 | ARI-Core 71.2 ± 0 (B) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 68.8 (C, 등급 변동 → 가중치 민감)`
-> T2 `ARI v3.0 | ARI-Core 35 ± 0 (D·H) | SI 50 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 33.3 (D, 등급 불변)` · **이중 채점**: Independent dual-adjudication completed
+> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: T1 `ARI v3.0 | ARI-Core 71.2 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 68.8 (C, grade changes → weight-sensitive)`
+> T2 `ARI v3.0 | ARI-Core 35 ± 0 (D·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 33.3 (D, grade unchanged)` · **Dual scoring**: completed by two independent raters
 
-> **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)(黄龙祥)
-> **Layer A Empirical Database**: [`경혈_생의학_신경반사_마스터DB.json`](file:///g:/내%20드라이브/도서%20번역/02_Master_Datasets/%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json) — LU6 근거 묶음: 랜드마크 32편(외부 28편 포함)·로컬 매핑 20편 중 **LU6 특이 기전·영상 연구 4편**(papers.id 1682·1683·1684·1806) + 인체 임상관찰 1편(1726)
-> **Layer B Reference Registry**: [`layer_b_reference_registry.md`](file:///g:/내%20드라이브/도서%20번역/01_Framework/layer_b_reference_registry.md) (B-Check 6항목, 부합 기준 ≥ 8/12)
-> **Anatomical Ontology**: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 `FMA:ID`로 고정하고 지배신경·척수 분절·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 `02_Master_Datasets/FMA/acupoint_fma_mapping.json`, 상세는 부록 A
-> **Metrological Standard**: 한대(漢代) 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$), 1촌 = 10푼 = 23mm
-> **분석 Target**: **T1** WHO·교재 표준 Kongzui (孔最, LU06)(腕上七寸, 尺泽–太渊 연선) / **T2** 사와다(泽田)식 Kongzui (孔最, LU06) Hemorrhoids (痔疾) 반응점(尺泽下二寸, 《针灸真髓》 1941)
+> **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》, Huang Longxiang 黃龍祥)
+> **Layer A Empirical Database**: [`경혈_생의학_신경반사_마스터DB.json`](../../../../02_Master_Datasets/%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json) — LU6 evidence pack: of 32 landmark papers (including 28 external) and 20 locally mapped papers, **4 LU6-specific mechanism/imaging studies** (papers.id 1682, 1683, 1684, 1806) + 1 human clinical observation (1726)
+> **Layer B Reference Registry**: [`layer_b_reference_registry.md`](../../../../01_Framework/layer_b_reference_registry.md) (6-item B-Check, concordance threshold ≥ 8/12)
+> **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: `02_Master_Datasets/FMA/acupoint_fma_mapping.json`; details in Appendix A.
+> **Metrological Standard**: Han-dynasty (漢代) standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$), 1 cun (寸) = 10 fen = 23 mm
+> **Analysis Targets**: **T1** WHO/textbook standard Kongzui (腕上七寸, on the line joining Chize (尺澤, LU05) and Taiyuan (太淵, LU09)) / **T2** Sawada-style (澤田) Kongzui haemorrhoid reaction point (尺澤下二寸, 《針灸真髓》 1941)
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
 ---
 
-## 🏛️ 1. 문헌 스크리닝 표 (3대 원전 원문 발췌 및 한중 대조)
+## 1. Classical Literature Screening Table (Three Primary Classics Excerpts & Chinese–Korean Collation)
 
-| 문헌 (출처 파일·행) | 원문 발췌 (정위·심도) | 주치 | 교감 및 비고 |
+| Classic (source file & line) | Original excerpt (location & depth) | Indications | Collation & remarks |
 | :--- | :--- | :--- | :--- |
-| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)** 孔最 조 (`针灸腧穴通考(上)_81-160.md` L2300–2467, 인쇄 p.123–126) | "孔冣……手太阴郄，在腕上七寸。"(《黄帝内经明堂》杨上善注, L2320) / "刺入三分，灸五壮。"(*Huangdi Mingtang Jing* (《黃帝明堂經》), 【操作】) / 泽田氏: "尺泽穴下二寸。"(《针灸真髓》, L2324) | "可以出汗。头痛，振寒，臂厥，热，汗不出。"(《黄帝内经明堂》) / "吐血失喑，肿痛恶血。"(《太平圣惠方·针经》) / "治热病汗不出……咳逆，臂厥痛。"(*Tongren* (《銅人》)) | ① 명대 《针灸集书》 "上骨以近骨边"·*Zhenjiu Dacheng* (《針灸大成》) "侧取"는 列缺 취혈과 혼동 → "仍以*Huangdi Mingtang Jing* (《黃帝明堂經》)、《铜人腧穴针灸图经》为准". ② 전완 골도 10·12·12.5寸 차이로 "文同而实不同". ③ 高武가 "肿痛"을 "咽肿痛"으로 오독. ④ **附: 孔最治痔溯源** — 교재의 "痔疾" 주치는 泽田 동명이위혈의 讹传 |
-| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)** 孔最 조 (`中国针灸穴位通鉴(上卷)_321-400.md` L880–1060) | 출처 "孔最，手太阳之。"(*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)3:49 — OCR 그대로, "太阴之郄"의 오식·결자로 봄; 《通考》 "手太阴郄") / 부위 "去腕七寸。"(《甲乙》·《千金》·《外台》·《圣惠》·*Tongren* (《銅人》) 등) / "刺入三分，留三呼，灸五壮。"(《甲乙》) | "热病汗不出，上□及孔最主之。"(OCR 결자) "厥头痛，孔最主之。"(《甲乙》 7·9권) / "头痛，振寒，臂厥，热，汗不出。"(《明堂类成》) | 별명 "无". 근대 문헌 위치 분산: 《针灸集成》 "尺泽下三寸半", 《中华针灸学》 "尺泽下三寸", 《新针灸学》 "离尺泽穴五寸". 국소해부: "上层是肱桡肌之内缘，下层为屈拇长肌之外缘，深部有桡动脉和神经通过"(《新针灸学》) |
-| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** (`中国针灸证治通鉴_161-240.md` L1738·1782; `_241-320.md` L704·854·856·1626–1638) | (정위 기술 없음 — 처방집) | "伤寒热病身无汗，细详孔最患无妨。"(《针灸玉龙经·玉龙歌》) / "热病烦心，汗不出：中冲、劳宫……孔最三壮至五壮，即汗。"(《针灸捷径》) / 咯血 "孔最配尺泽。强刺激为主。"(辽宁中医杂志 1980) / 哮喘 "孔最、鱼际。"(中医杂志 1989) | 고전 배오는 모두 **발한(汗不出)** 계열, 현대 배오는 **咯血·哮喘** 계열. Hemorrhoids (痔疾) 처방은 이 3대 원전 중 《通考》 부록(讹传 고증)에서만 다룸 |
+| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)**, entry 孔最 (`针灸腧穴通考(上)_81-160.md` L2300–2467, printed pp. 123–126) | "孔冣……手太陰郄，在腕上七寸。"(《黃帝內經明堂》, Yang Shangshan's (楊上善) commentary, L2320) / "刺入三分，灸五壯。"(《黃帝明堂經》, 【操作】) / Sawada (澤田氏): "尺澤穴下二寸。"(《針灸真髓》, L2324) | "可以出汗。頭痛，振寒，臂厥，熱，汗不出。"(《黃帝內經明堂》) / "吐血失喑，腫痛惡血。"(《太平聖惠方·針經》) / "治熱病汗不出……咳逆，臂厥痛。"(《銅人》) | ① The Ming-dynasty 《針灸集書》 "上骨以近骨邊" and 《針灸大成》 "側取" confuse the point with the location of Lieque (列缺, LU07) → "仍以《黃帝明堂經》、《銅人腧穴針灸圖經》為準". ② Forearm bone-proportional lengths of 10, 12 and 12.5 cun mean the texts are "identical in wording but different in fact" (文同而實不同). ③ Gao Wu (高武) misread "腫痛" as "咽腫痛". ④ **Appendix: tracing 'Kongzui treats haemorrhoids' (附: 孔最治痔溯源)** — the textbook indication "haemorrhoids (痔疾)" is a mistransmission (訛傳) from Sawada's homonymous point at a different location |
+| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)**, entry 孔最 (`中国针灸穴位通鉴(上卷)_321-400.md` L880–1060) | Source: "孔最，手太陽之。"(《針灸甲乙經》 3:49 — as given by the OCR; taken to be a misprint/lacuna for "太陰之郄"; the Tongkao has "手太陰郄") / Location: "去腕七寸。"(《甲乙》, 《千金》, 《外臺》, 《聖惠》, 《銅人》 etc.) / "刺入三分，留三呼，灸五壯。"(《甲乙》) | "熱病汗不出，上□及孔最主之。"(OCR lacuna) "厥頭痛，孔最主之。"(《甲乙》 vols. 7 and 9) / "頭痛，振寒，臂厥，熱，汗不出。"(《明堂類成》) | Alias: "無" (none). Locations scattered in early-modern texts: 《針灸集成》 "尺澤下三寸半", 《中華針灸學》 "尺澤下三寸", 《新針灸學》 "離尺澤穴五寸". Local anatomy: "上層是肱橈肌之內緣，下層為屈拇長肌之外緣，深部有橈動脈和神經通過"(《新針灸學》) |
+| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** (`中国针灸证治通鉴_161-240.md` L1738, 1782; `_241-320.md` L704, 854, 856, 1626–1638) | (no location given — a prescription compendium) | "傷寒熱病身無汗，細詳孔最患無妨。"(《針灸玉龍經·玉龍歌》) / "熱病煩心，汗不出：中衝、勞宮……孔最三壯至五壯，即汗。"(《針灸捷徑》) / haemoptysis (咯血) "孔最配尺澤。強刺激為主。"(遼寧中醫雜誌 1980) / asthma (哮喘) "孔最、魚際。"(中醫雜誌 1989) | Classical combinations all belong to the **diaphoresis (汗不出)** group; modern combinations to the **haemoptysis (咯血) and asthma (哮喘)** group. Among the three classics, haemorrhoid prescriptions are dealt with only in the Tongkao appendix (collation of the mistransmission) |
 
 ---
 
-## 📜 2. 원천/재인용 구분 표 (시대별 문헌 층차 정렬)
+## 2. Primary Source vs. Secondary Quotation: Historical Stratification Table
 
-| 층차 | 문헌 | 정위 | 심도 | 주치 | 판정 |
+| Stratum | Text | Location | Depth | Indications | Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 원천 | *Huangdi Mingtang Jing* (《黃帝明堂經》)(杨上善 《黄帝内经明堂》 주) | 在腕上七寸 | 刺入三分, 灸五壮 | 头痛, 振寒, 臂厥, 热, 汗不出 | **원천(T1)** |
-| 재록 | *Zhen Jiu Jia Yi Jing* (《針灸甲乙經》) 3:49 | 去腕七寸 | 刺入三分, 留三呼, 灸五壮 | 热病汗不出; 厥头痛 | 원천 재록 |
-| 송대 재인용·증보 | *Taiping Shenghui Fang* (《太平聖惠方》) 针经·明堂, *Tongren* (《銅人》), 《资生经》 | 在腕上七寸(陷者宛宛中) | 针入三分 / 灸三壮 | 吐血失喑, 肿痛恶血(针经); 肘臂厥痛(明堂); 咳逆(铜人) | 주치 증보(내상·국소) |
-| 명대 변형 | 《针灸集书》, *Zhenjiu Dacheng* (《針灸大成》), 《循经考穴编》 | 上骨以近骨边 / 侧取 | 三分 | 咽肿痛(《聚英》 高武) | **列缺 혼동·오독**(《通考》 교정) |
-| 근대 일본 | 《针灸真髓》(泽田健 구술, 代田文志 정리, 1941; 중문판 1958) | **尺泽下同身寸二寸** | 기재 없음 | 痔疾·痔痛 | **독립 신혈(T2)**, "泽田先生的独创穴" |
-| 근대 전이 | 本间祥白 《经络治疗讲话》(1950; 중문판 1957) → 1958 《针灸学讲义》(北京中医学校) | 위치 미주기 | — | 咯血, 痔出血 | 위치 정보 탈락 → **讹传 근원** |
-| 현대 교재 | 1판 《针灸学讲义》, 4·5·6판 《针灸学》 | 腕横纹上 7寸 | 直刺 0.5~1寸 | "痔疾" 추가 | T2 주치를 T1 위치에 이식(《通考》 L2432) |
-| 별도 중국 경험 | 张效林(新中医 1991) | 尺泽下 3寸 / 太渊上 3寸 | — | 痔疮 반응점 | 또 다른 신혈, 孔最 귀속 "欠妥" |
+| Primary | *Huangdi Mingtang Jing* (《黃帝明堂經》) (commentary in Yang Shangshan's 《黃帝內經明堂》) | 在腕上七寸 | 刺入三分, 灸五壯 | 頭痛, 振寒, 臂厥, 熱, 汗不出 | **Primary (T1)** |
+| Re-recorded | *Zhenjiu Jiayi Jing* (《針灸甲乙經》) 3:49 | 去腕七寸 | 刺入三分, 留三呼, 灸五壯 | 熱病汗不出; 厥頭痛 | Re-recording of the primary source |
+| Song secondary quotation & supplementation | 《太平聖惠方》 針經 and 明堂 sections, 《銅人》, 《資生經》 | 在腕上七寸(陷者宛宛中) | 針入三分 / 灸三壯 | 吐血失喑, 腫痛惡血 (針經); 肘臂厥痛 (明堂); 咳逆 (銅人) | Supplemented indications (internal damage, local) |
+| Ming variants | 《針灸集書》, 《針灸大成》, 《循經考穴編》 | 上骨以近骨邊 / 側取 | 三分 | 咽腫痛 (《聚英》, Gao Wu 高武) | **Confusion with 列缺 and misreading** (corrected by the Tongkao) |
+| Early-modern Japan | 《針灸真髓》 (dictated by Sawada Ken 澤田健, edited by Shirota Bunshi 代田文志, 1941; Chinese edition 1958) | **尺澤下同身寸二寸** | Not recorded | 痔疾, 痔痛 | **Independent new point (T2)**, "澤田先生的獨創穴" |
+| Early-modern transfer | Honma Shohaku (本間祥白), 《經絡治療講話》 (1950; Chinese edition 1957) → 1958 《針灸學講義》 (Beijing School of Chinese Medicine 北京中醫學校) | Location not annotated | — | 咯血, 痔出血 | Location information lost → **origin of the mistransmission** |
+| Modern textbooks | 1st-edition 《針灸學講義》, 4th/5th/6th-edition 《針灸學》 | 腕橫紋上 7寸 | 直刺 0.5~1寸 | "痔疾" added | T2 indication grafted onto the T1 location (Tongkao L2432) |
+| Separate Chinese experience | Zhang Xiaolin (張效林) (新中醫 1991) | 尺澤下 3寸 / 太淵上 3寸 | — | Haemorrhoid (痔瘡) reaction point | Yet another new point; attribution to 孔最 "欠妥" (inappropriate) |
 
-> 《金针梅花诗钞》(周树冬, 1982 간행)의 孔最 痔疾 1조는 중국 고대 문헌 유일 기록이나, 간행이 1958년 이후이므로 교재 기재의 출처가 될 수 없다(《通考》 L2412–2416).
+> The single 孔最 haemorrhoid (痔疾) entry in 《金針梅花詩鈔》 (Zhou Shudong 周樹冬, published 1982) is the only record in ancient Chinese literature, but since it was published after 1958 it cannot be the source of the textbook entry (Tongkao L2412–2416).
 
 ---
 
-## 🔍 3. 이명·별칭 검증 표 (KJH DB 대조를 통한 혼용 차단)
+## 3. Nomenclature & Alias Collation Table (KJH DB Verification to Prevent Conflation)
 
-| 항목 | 값 | 출처 | 처리 |
+| Item | Value | Source | Handling |
 | :--- | :--- | :--- | :--- |
-| 표준 코드·혈명 | LU06 Kongzui (孔最, LU06) 孔最 (Lung Meridian of Hand-Taiyin (手太陰肺經)) | KJH `경혈명_비교_정리_KJH.xlsx` 61행 | — |
-| KJH 이명 | **"-"** (기재 없음) | KJH 61행 E열 | 공통교재·김재효 교재 이명 칸도 공란 |
-| 이체자 | **孔冣** ("最"의 이체자) | 《通考》 L2306·2316 (《黄帝内经明堂》·《太素》·《圣惠方·明堂》) | 동일 혈위의 표기 차이 — 혼용 없음 |
-| 《穴位通鉴》 별명 | "无" | 《穴位通鉴》 L884 | — |
-| 동명이위혈 | 泽田氏 孔最 (尺泽下二寸) | 《通考》 L2324·2418–2422 | **T2로 분리**, T1 주치에서 痔疾 제외 |
-| 동명이위 파생 | 松元四郎平 "尺泽下三寸"(1척 골도), 张效林 "痔疮阿是 1·2" | 《通考》 L2422·2434·각주 [1] | T2 계열 이설로만 기록 |
-| 인접 혈 혼동 | 列缺(LU7) — 명대 "上骨以近骨边", "侧取" | 《通考》 文献分析 | 《明堂》·*Tongren* (《銅人》) 정위로 교정 |
+| Standard code & point name | LU06 Gongchoe / Kongzui (孔最) (Lung Meridian of Hand-Taiyin, 手太陰肺經) | KJH `경혈명_비교_정리_KJH.xlsx`, row 61 | — |
+| KJH alias | **"-"** (none recorded) | KJH row 61, column E | The alias columns of the Common Textbook and the Kim Jaehyo textbook are also blank |
+| Variant character | **孔冣** (冣 is a variant form of 最) | Tongkao L2306, 2316 (《黃帝內經明堂》, 《太素》, 《聖惠方·明堂》) | A difference of spelling for the same point — no conflation |
+| Alias in the *Xuewei Tongjian* (《穴位通鑑》) | "無" (none) | *Xuewei Tongjian* L884 | — |
+| Homonymous point at a different location | Sawada's 孔最 (尺澤下二寸) | Tongkao L2324, 2418–2422 | **Separated as T2**; 痔疾 excluded from the T1 indications |
+| Derivatives of the homonymous point | Matsumoto Shirōhei (松元四郎平) "尺澤下三寸" (1-chi bone-proportional scale), Zhang Xiaolin (張效林) "痔瘡阿是 1·2" | Tongkao L2422, 2434, footnote [1] | Recorded only as variant opinions within the T2 lineage |
+| Confusion with an adjacent point | Lieque (列缺, LU7) — Ming-dynasty "上骨以近骨邊", "側取" | Tongkao, textual analysis (文獻分析) | Corrected to the location in 《明堂》 and 《銅人》 |
 
 ---
 
-## 📐 4. 3D 공간 좌표 및 Layer 1~5 층차 구조도
+## 4. 3D Spatial Coordinates & Layer 1–5 Anatomical Substrate Diagram
 
-**좌표 기준**: 해부학적 자세(전완 회외, 손바닥 앞). X = 정중선→외측(요측), Y = 근위→원위, Z = 피부면에서의 깊이. 아래 mm 값은 **전완(尺泽–太渊) 길이 250mm 가정 추정치**이며 실측값이 아니다.
+**Coordinate reference**: anatomical position (forearm supinated, palm facing forward). X = midline → lateral (radial), Y = proximal → distal, Z = depth from the skin surface. The mm values below are **estimates assuming a forearm length (尺澤–太淵) of 250 mm**, not measurements.
 
-| Target | X (내외측) | Y (근위원위) | Z (자침 범위) | 근거 |
+| Target | X (medial–lateral) | Y (proximal–distal) | Z (needling range) | Basis |
 | :--- | :--- | :--- | :--- | :--- |
-| **T1** (12寸 골도, 현행 교재·WHO) | 전완 앞면 요측, 위팔노근 내측연 | 腕横纹 위 7寸 ≈ 146mm (尺泽 아래 5寸 ≈ 104mm) | 고전 6.9mm / 현대 11.5~23mm | 《通考》 【定位】, 교재 |
-| T1 변이 (10寸 골도: 《古今医统》·承淡安) | 동일 | 腕横纹 위 ≈ 175mm (12寸 기준보다 ≈ 29mm 근위) | — | 《通考》 文献分析 |
-| T1 변이 (12.5寸: 1957 南京 《针灸学》 "尺泽下五寸五分") | 동일 | 腕横纹 위 ≈ 140mm (≈ 6mm 원위) | — | 《通考》 L2352·2368 |
-| **T2** (泽田) | 전완 앞면 요측, "与手三里隔肌相对" | 尺泽 아래 2寸 ≈ 42mm (腕横纹 위 ≈ 208mm) | 문헌 기재 없음 | 《针灸真髓》(《通考》 L2418) |
+| **T1** (12-cun bone-proportional scale; current textbooks & WHO) | Radial side of the anterior forearm, medial border of brachioradialis | 7 cun above the wrist crease (腕橫紋) ≈ 146 mm (5 cun below 尺澤 ≈ 104 mm) | Classical 6.9 mm / modern 11.5–23 mm | Tongkao 【定位】, textbooks |
+| T1 variant (10-cun scale: 《古今醫統》, Cheng Dan'an 承淡安) | Same | ≈ 175 mm above the wrist crease (≈ 29 mm more proximal than on the 12-cun scale) | — | Tongkao, textual analysis |
+| T1 variant (12.5 cun: 1957 Nanjing 《針灸學》 "尺澤下五寸五分") | Same | ≈ 140 mm above the wrist crease (≈ 6 mm more distal) | — | Tongkao L2352, 2368 |
+| **T2** (Sawada 澤田) | Radial side of the anterior forearm, "與手三里隔肌相對" (opposite Shousanli (手三里, LI10) across the muscles) | 2 cun below 尺澤 ≈ 42 mm (≈ 208 mm above the wrist crease) | Not recorded in the literature | 《針灸真髓》 (Tongkao L2418) |
 
-**T1 층차 (2대 교재 + 《穴位通鉴》 국소해부 + B1-01·B1-03 규범 해부 대조, 심도 경계는 개체차가 커서 mm를 고정하지 않음)**
+**T1 layers (two textbooks + local anatomy in the *Xuewei Tongjian* + cross-check against B1-01 and B1-03 normative anatomy; depth boundaries are not fixed in mm because of large inter-individual variation)**
 
 ```
-[Layer 1 피부·피하]  가쪽아래팔피부신경(C5–C6), 노쪽피부정맥·덧노쪽피부정맥
-        │            ← 고전 3푼(6.9mm)은 대체로 피하~근막 표층
-[Layer 2 근막·표층근] 위팔노근 내측연, 노쪽손목굽힘근 (원엎침근 정지부 인접)
+[Layer 1 Skin/subcutis]       Lateral cutaneous n. of forearm (C5–C6), cephalic v. & accessory cephalic v.
+        │                     ← the classical 3 fen (6.9 mm) generally stays between the subcutis and the superficial fascia
+[Layer 2 Fascia/superf. muscle] Medial border of brachioradialis, flexor carpi radialis (near the insertion of pronator teres)
         │
-[Layer 3 심층근]     긴엄지굽힘근 외측연(김재효 교재·《新针灸学》), 얕은손가락굽힘근
+[Layer 3 Deep muscle]         Lateral border of flexor pollicis longus (Kim Jaehyo textbook, 《新針灸學》), flexor digitorum superficialis
         │
-[Layer 4 신경혈관속]  위팔노근 아래 노동·정맥 + 노신경 얕은가지  ← 현대 1寸(23mm) 직자 시 도달 가능
+[Layer 4 Neurovascular bundle] Radial a./vv. beneath brachioradialis + superficial branch of radial n.  ← reachable by a modern 1-cun (23 mm) perpendicular insertion
         │
-[Layer 5 골막]       노뼈 앞면 골막
+[Layer 5 Periosteum]          Periosteum of the anterior surface of the radius
 ```
 
-- 혈위 특이 실측: papers.id 1806(초음파, LU6·LI7과 근건이행부 관계, 10/12/12.5寸 골도 비교; DOI 10.14406/acu.2025.024, PMID 없음). 원문 수치는 이 보고서에서 미열람 — 층별 mm 확정에는 쓰지 않았다.
-- T2 부위(尺泽 아래 2寸)는 위팔노근·원엎침근 근위부로, 깊은 곳에 노신경 줄기가 얕은가지·깊은가지로 갈라지는 부위와 노쪽되돌이동맥이 있다(B1-01·B1-03 유추, 교재·실측 없음).
+- Point-specific measurement: papers.id 1806 (ultrasound; relation of LU6 and LI7 to the myotendinous junction; comparison of 10/12/12.5-cun bone-proportional scales; DOI 10.14406/acu.2025.024, no PMID). The original figures were not consulted for this report and were not used to fix mm boundaries for the layers.
+- The T2 site (2 cun below 尺澤) lies over the proximal parts of brachioradialis and pronator teres; deep to it are the region where the radial nerve trunk divides into its superficial and deep branches, and the radial recurrent artery (inferred from B1-01 and B1-03; no textbook entry or measurement).
 
-![Kongzui (孔最, LU06)(LU6) 높이 아래팔 중간 횡단면 해부 실체 모식도](LU06_Kongzui (孔最, LU06)_횡단면_해부모식도.png)
+![Schematic cross-section of the mid-forearm at the level of Kongzui (孔最, LU6)](LU06_공최_횡단면_해부모식도.png)
 
-*그림 4-1. Kongzui (孔最, LU06)(T1, 腕上七寸) 높이 아래팔 중간 횡단면 모식도(오른팔 해부학적 자세, 위에서 내려다봄, 축척 아님). 위팔노근 내측연 직자에서 고전 3푼(청록 띠)은 표층에 머물고, 1寸 직자는 위팔노근 밑 노동·정맥·노신경 얕은가지(Layer 4)에 이를 수 있다. T2(尺泽下二寸)는 다른 높이라 이 단면에 없다. 층 두께·거리는 실측값이 아니다.*
+*Figure 4-1. Schematic cross-section of the mid-forearm at the level of Kongzui (T1, 腕上七寸) (right arm in anatomical position, viewed from above, not to scale). With perpendicular insertion at the medial border of brachioradialis, the classical 3 fen (teal band) remains superficial, while a 1-cun insertion can reach the radial artery and veins and the superficial branch of the radial nerve beneath brachioradialis (Layer 4). T2 (尺澤下二寸) lies at a different level and is not in this section. Layer thicknesses and distances are not measured values.*
 
-**FMA 실체 대조 (T1, Layer별)** — 구조명은 2대 교재, ID·관계는 FMA 5.1.0
+**FMA substrate cross-check (T1, by layer)** — structure names from the two textbooks; IDs and relations from FMA 5.1.0
 
-| Layer | 구조 | FMA | 지배신경 / 줄기 (FMA) | 척수 분절 (FMA) | 교재 |
+| Layer | Structure | FMA | Innervation / trunk (FMA) | Spinal segment (FMA) | Textbook |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 피하 | 가쪽아래팔피부신경 | FMA:39080 | → Peripheral segment of musculocutaneous nerve | FMA 미기재(B1: C5~C6) | 공통 |
-| 1 피하 | 노쪽피부정맥 · 덧노쪽피부정맥 | FMA:13324 · FMA:22970 | 덧노쪽피부정맥 → 노쪽피부정맥 → Subclavian vein | — | 공통 |
-| 2 표층근 | 위팔노근 | FMA:38485 | Nerve to brachioradialis (FMA:65334) ← **노신경** | **C6(주)**·C5 | 공통 |
-| 2 표층근 | 노쪽손목굽힘근 | FMA:38459 | Nerve to FCR (FMA:44824) ← **정중신경** | **C6(주)**·C7 | 공통 |
-| 2 표층근 | 원엎침근 | FMA:38450 | Nerve to pronator teres (FMA:44823) ← 정중신경 | **C7(주)**·C6 | 공통 |
-| 2 표층근 | 긴손바닥근 *(공통교재)* | FMA:38462 | Nerve to palmaris longus (FMA:44825) ← 정중신경 | C7·C8 | 공통교재 |
-| 2 표층근 | 자쪽손목굽힘근 *(공통교재)* | FMA:38465 | Nerve to FCU (FMA:81220) ← **자신경** | **C8(주)**·C7·T1 | 공통교재 |
-| 3 중간·심층근 | 얕은손가락굽힘근 *(김재효)* | FMA:38469 | Nerve to FDS (FMA:44826) ← 정중신경 | **C8(주)**·T1 | 김재효 |
-| 3 심층근 | 긴엄지굽힘근 *(김재효, 교재 표기 '깊은엄지굽힘근')* | FMA:38481 | Nerve to FPL (FMA:44830) ← 앞뼈사이신경 ← 정중신경 | **C8(주)**·C7 | 김재효 |
-| 4 신경혈관속 | 노동맥 · 노정맥 | FMA:22730 · FMA:22947 | 동맥 → Subclavian artery(FMA 모델링: 위팔동맥을 빗장밑동맥 구간으로 둠) / 정맥 → Brachial vein | — | 공통 |
-| 4 신경혈관속 | 노신경 얕은가지 | FMA:292885 | → Radial nerve(FMA:37069) | FMA 미기재(B1: C6~C8) | 공통 |
-| 5 골막 | 노뼈 앞면 | — | — | — | — |
+| 1 Subcutis | Lateral cutaneous nerve of forearm | FMA:39080 | → Peripheral segment of musculocutaneous nerve | Not in FMA (B1: C5–C6) | Both |
+| 1 Subcutis | Cephalic vein · accessory cephalic vein | FMA:13324 · FMA:22970 | Accessory cephalic vein → cephalic vein → Subclavian vein | — | Both |
+| 2 Superficial muscle | Brachioradialis | FMA:38485 | Nerve to brachioradialis (FMA:65334) ← **radial nerve** | **C6 (primary)**, C5 | Both |
+| 2 Superficial muscle | Flexor carpi radialis | FMA:38459 | Nerve to FCR (FMA:44824) ← **median nerve** | **C6 (primary)**, C7 | Both |
+| 2 Superficial muscle | Pronator teres | FMA:38450 | Nerve to pronator teres (FMA:44823) ← median nerve | **C7 (primary)**, C6 | Both |
+| 2 Superficial muscle | Palmaris longus *(Common Textbook)* | FMA:38462 | Nerve to palmaris longus (FMA:44825) ← median nerve | C7, C8 | Common Textbook |
+| 2 Superficial muscle | Flexor carpi ulnaris *(Common Textbook)* | FMA:38465 | Nerve to FCU (FMA:81220) ← **ulnar nerve** | **C8 (primary)**, C7, T1 | Common Textbook |
+| 3 Intermediate/deep muscle | Flexor digitorum superficialis *(Kim Jaehyo)* | FMA:38469 | Nerve to FDS (FMA:44826) ← median nerve | **C8 (primary)**, T1 | Kim Jaehyo |
+| 3 Deep muscle | Flexor pollicis longus *(Kim Jaehyo; the textbook's label literally reads 'deep thumb flexor')* | FMA:38481 | Nerve to FPL (FMA:44830) ← anterior interosseous nerve ← median nerve | **C8 (primary)**, C7 | Kim Jaehyo |
+| 4 Neurovascular bundle | Radial artery · radial vein | FMA:22730 · FMA:22947 | Artery → Subclavian artery (FMA modelling: the brachial artery is treated as a segment of the subclavian artery) / vein → Brachial vein | — | Both |
+| 4 Neurovascular bundle | Superficial branch of radial nerve | FMA:292885 | → Radial nerve (FMA:37069) | Not in FMA (B1: C6–C8) | Both |
+| 5 Periosteum | Anterior surface of the radius | — | — | — | — |
 
-- FMA 분절은 근육의 `segmental_supply`에만 있다. 분절 합집합 C5~T1 가운데 **C8·T1은 공통교재 단독(자쪽손목굽힘근)·김재효 단독(얕은손가락굽힘근·긴엄지굽힘근) 구조에서만** 오고, 두 교재 공통 구조(위팔노근·노쪽손목굽힘근·원엎침근)는 **C5~C7**이다.
-- 김재효 교재 데이터셋의 "깊은엄지굽힘근 (flexor pollicis longus)"은 영문·FMA(FMA:38481 *Flexor pollicis longus*) 기준 **긴엄지굽힘근**의 오기다. 본문 표기를 바로잡고 교재 원표기를 병기한다.
+- FMA records segments only in the `segmental_supply` of muscles. Of the segment union C5–T1, **C8 and T1 come only from structures listed by one textbook — Common Textbook only (flexor carpi ulnaris) or Kim Jaehyo only (flexor digitorum superficialis, flexor pollicis longus)** — whereas the structures shared by both textbooks (brachioradialis, flexor carpi radialis, pronator teres) are **C5–C7**.
+- The Kim Jaehyo textbook dataset's "deep thumb flexor (flexor pollicis longus)" is, on the basis of the English term and FMA (FMA:38481 *Flexor pollicis longus*), a slip for **flexor pollicis longus** (literally 'long thumb flexor'). The body text corrects the label and gives the textbook's original label alongside it.
 
 
 ---
 
-## 📏 5. 자침 깊이 계산표 (한대 2.3mm 환산 및 Layer 도달 범위)
+## 5. Classical Needling Depth Calculation Table (Han Dynasty 2.3 mm Conversion & Layers Reached)
 
-출처: `침구문헌별 자침깊이 정리_AI 분석용.xlsx` 시트1 60행(LU06). '0'(Contraindicated for Needling (禁鍼)) 값 없음.
+Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 60 (LU06). No '0' ('Contraindicated for needling (禁針)') value.
 
-| 문헌 | 푼수 | 환산 깊이 | 도달 Layer (T1) |
+| Text | Fen | Converted depth | Layer reached (T1) |
 | :--- | :---: | :---: | :--- |
-| *Huangdi Mingtang Jing* (《黃帝明堂經》)(黄龙祥 집교) | 3 | 6.9mm | Layer 1~2 |
-| *Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)(배열순서 24) | 3 | 6.9mm | Layer 1~2 |
-| 《针灸经验方》 | 3 | 6.9mm | Layer 1~2 |
-| 《东医宝鉴》(인용: 동인) | 3 | 6.9mm | Layer 1~2 |
-| 경락수혈학 공통교재 | 5~10 | 11.5~23.0mm | Layer 2~4 |
-| 침구의학 공통교재 | 5~10 | 11.5~23.0mm | Layer 2~4 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 5~10 | 11.5~23.0mm | Layer 2~4 |
-| (참고) 1957 南京 《针灸学》·1판 讲义 "针三至七分" | 3~7 | 6.9~16.1mm | Layer 1~3 (《通考》 【操作】) |
-| (참고) 6판 《针灸学》 "直刺 0.5~1.2寸" | 5~12 | 11.5~27.6mm | Layer 2~4(5) (《通考》 【操作】) |
-| T2 (《针灸真髓》) | blank | 미기술(결측) | — |
+| *Huangdi Mingtang Jing* (《黃帝明堂經》, ed. Huang Longxiang) | 3 | 6.9 mm | Layer 1–2 |
+| *Zhenjiu Jiayi Jing* (《針灸甲乙經》) (sequence no. 24) | 3 | 6.9 mm | Layer 1–2 |
+| *Chimgu Gyeongheombang* (《針灸經驗方》) | 3 | 6.9 mm | Layer 1–2 |
+| *Dongui Bogam* (《東醫寶鑑》, citing 《銅人》) | 3 | 6.9 mm | Layer 1–2 |
+| Korean common textbook, *Meridian and Acupoint Studies* (經絡經穴學) | 5–10 | 11.5–23.0 mm | Layer 2–4 |
+| Korean common textbook, *Acupuncture and Moxibustion Medicine* (針灸醫學) | 5–10 | 11.5–23.0 mm | Layer 2–4 |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 5–10 | 11.5–23.0 mm | Layer 2–4 |
+| (Reference) 1957 Nanjing 《針灸學》 and 1st-edition 講義 "針三至七分" | 3–7 | 6.9–16.1 mm | Layer 1–3 (Tongkao 【操作】) |
+| (Reference) 6th-edition 《針灸學》 "直刺 0.5~1.2寸" | 5–12 | 11.5–27.6 mm | Layer 2–4(5) (Tongkao 【操作】) |
+| T2 (《針灸真髓》) | blank | Not described (missing) | — |
 
-- 고전 심도는 일관되게 3푼(6.9mm)으로 표층에 머문다. 근현대 상한 1寸(23mm) 직자는 위팔노근 아래 노동맥·노신경 얕은가지(Layer 4)에 닿을 수 있으므로, 박동을 확인하고 위팔노근 내측연에서 깊이를 조절하거나 사자한다(SI 75 근거).
+- The classical depth is consistently 3 fen (6.9 mm) and stays superficial. A perpendicular insertion at the early-modern/modern upper limit of 1 cun (23 mm) can reach the radial artery and the superficial branch of the radial nerve beneath brachioradialis (Layer 4), so the pulse should be checked and the depth controlled at the medial border of brachioradialis, or the needle inserted obliquely (basis for SI 75).
 
 ---
 
-## 📚 6. 해부학 구조 교재 비교표 (공통교재 vs 김재효 교재)
+## 6. Textbook Comparison Table (Common Textbook vs. Kim Jaehyo Textbook)
 
-출처: `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx` 경혈별_해부구조_종합 59행(경혈학 상 p.54) · `김재효 수업_경혈_해부구조_데이터셋.xlsx` 경혈별_해부구조_종합 59행.
+Source: `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx`, sheet `경혈별_해부구조_종합`, row 59 (*Acupoint Studies* vol. 1, p. 54) · `김재효 수업_경혈_해부구조_데이터셋.xlsx`, sheet `경혈별_해부구조_종합`, row 59.
 
-| 구분 | 경혈학 공통교재 | 김재효 교재 | 일치 여부 | FMA 판별 |
+| Category | Common Textbook of Acupoint Studies | Kim Jaehyo textbook | Agreement | FMA adjudication |
 | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 위팔노근, 원엎침근, 노쪽손목굽힘근, **긴손바닥근, 자쪽손목굽힘근** | 위팔노근, 원엎침근, 노쪽손목굽힘근, **얕은손가락굽힘근, 긴엄지굽힘근**(교재 표기 '깊은엄지굽힘근') | 5개 중 3개 일치, 부차 근육 2개 상이 | 공통 FMA:38485·38450·38459 / 공통교재 단독 38462·38465 / 김재효 단독 38469·38481 |
-| 신경 | 노신경의 얕은가지, 가쪽아래팔피부신경 | 가쪽아래팔피부신경, 노신경의 얕은가지 | 일치 | FMA:292885·39080 (영문 정관사 유무 표기 차이는 같은 ID) |
-| 혈관 | 노동·정맥, 노쪽피부정맥, 덧노쪽피부정맥 | 노쪽피부정맥, 덧노쪽피부정맥, 노동·정맥 | 일치 | FMA:22730·22947·13324·22970 |
+| Muscles | Brachioradialis, pronator teres, flexor carpi radialis, **palmaris longus, flexor carpi ulnaris** | Brachioradialis, pronator teres, flexor carpi radialis, **flexor digitorum superficialis, flexor pollicis longus** (textbook label 'deep thumb flexor') | 3 of 5 agree; 2 secondary muscles differ | Shared FMA:38485, 38450, 38459 / Common Textbook only 38462, 38465 / Kim Jaehyo only 38469, 38481 |
+| Nerves | Superficial branch of radial nerve, lateral cutaneous nerve of forearm | Lateral cutaneous nerve of forearm, superficial branch of radial nerve | Agree | FMA:292885, 39080 (presence or absence of the definite article in the English term is a spelling difference with the same ID) |
+| Vessels | Radial artery and veins, cephalic vein, accessory cephalic vein | Cephalic vein, accessory cephalic vein, radial artery and veins | Agree | FMA:22730, 22947, 13324, 22970 |
 
-- **차이 분석**: 공통교재의 자쪽손목굽힘근·긴손바닥근은 전완 자측~중앙 구조로, 요측 위팔노근 내측연에 있는 LU6 자침로와 맞지 않는다(검토 필요). 김재효 교재의 긴엄지굽힘근은 《新针灸学》 "下层为屈拇长肌之外缘"(《穴位通鉴》 局部解剖)과 일치한다.
-- **FMA로 본 차이의 의미**: 두 교재 공통 근육은 노신경(위팔노근)·정중신경(노쪽손목굽힘근·원엎침근) 지배, 분절 C5~C7이다. 공통교재 단독 자쪽손목굽힘근은 **자신경**(C8 주) 지배의 자쪽 구조여서 LU6 노쪽 자침로와 신경 계통도 다르다. 김재효 단독 두 근육은 정중신경·앞뼈사이신경 계통의 **중간·깊은층**(C8 주)으로, 같은 자침로의 더 깊은 층을 적은 것이다. 즉 공통교재의 차이는 자침로 밖(자쪽) 구조의 혼입, 김재효의 차이는 자침로 아래 깊이의 확장으로 성격이 다르다. 이 판별은 $S_{clarity}$ 75 단계를 바꾸지 않는다.
-- **판정**: 주 신경·혈관 구조와 주 근육(위팔노근·원엎침근·노쪽손목굽힘근)은 일치하므로 S_clarity 75(2대 교재 주 구조 일치 + B1 확인) 단계. 혈위 특이 실측(1806)이 PMID 없이 DOI만 있어 100 조건은 충족하지 않는다.
-
----
-
-## 🔀 7. 공간 변위 분기 추론도
-
-```
-尺泽(LU5)  ●─── 2寸(≈42mm) ────●─── 3寸(≈62mm) ───●──── 7寸(≈146mm) ────● 太渊(LU9)
-                               [T2 泽田 孔最]     [T1 표준 孔最]
-                               尺泽下二寸         腕上七寸
-                               《针灸真髓》1941   《黄帝明堂经》
-                               주치: 痔疾(경험)   주치: 汗不出·头痛·咳逆·吐血
-                               └─ Δ ≈ 3寸 ≈ 62mm ─┘ (> 15mm → 분기)
-```
-
-- **분기 사유**: T1과 T2의 거리 ≈ 3寸(약 62mm, 추정)으로 기준 15mm를 크게 넘는다. 泽田 본인이 "如依普通取法则不见效"라 하여 두 위치의 효과를 구분했다(《通考》 L2420).
-- **분기 판정**: ΔARI-Core = 71.2 − 35 = **36.2 (≥ 10)**, 구간 [71.2, 71.2]와 [35, 35]는 비중첩 → **T1 우위 선언**. 즉 Kongzui (孔最, LU06)의 해부학적 실체 판명은 T1(腕上七寸) 기준으로 하고, "孔最治痔"는 T2 위치의 경험 주장으로 분리한다.
+- **Analysis of the difference**: flexor carpi ulnaris and palmaris longus in the Common Textbook are structures of the ulnar-to-central forearm and do not fit the LU6 needling path at the medial border of brachioradialis on the radial side (review needed). Flexor pollicis longus in the Kim Jaehyo textbook agrees with 《新針灸學》 "下層為屈拇長肌之外緣" (*Xuewei Tongjian*, local anatomy 局部解剖).
+- **What FMA shows about the difference**: the muscles shared by both textbooks are supplied by the radial nerve (brachioradialis) and median nerve (flexor carpi radialis, pronator teres), segments C5–C7. Flexor carpi ulnaris, listed only in the Common Textbook, is an ulnar-side structure supplied by the **ulnar nerve** (primarily C8), so it also belongs to a different nerve system from the radial-side LU6 needling path. The two muscles listed only by Kim Jaehyo belong to the **intermediate and deep layers** of the median/anterior interosseous nerve system (primarily C8), i.e. they record deeper layers along the same needling path. The two differences are therefore of different kinds: in the Common Textbook, structures outside the needling path (ulnar side) have crept in; in the Kim Jaehyo textbook, the listing extends deeper beneath the needling path. This adjudication does not change the $S_{clarity}$ level of 75.
+- **Verdict**: the main nerve and vessel structures and the main muscles (brachioradialis, pronator teres, flexor carpi radialis) agree, so S_clarity is at the 75 level (main structures agree between the two textbooks + B1 confirmation). The point-specific measurement (1806) has a DOI but no PMID, so the condition for 100 is not met.
 
 ---
 
-## 🧬 8. 생의학적 반사 기전도 및 외부 검색 로그
+## 7. Spatial Discrepancy Branch Inference Diagram
 
-### ① Layer A 논문 표 (LU6 자체 연구 우선)
+```
+尺澤(LU5)  ●─── 2寸(≈42mm) ────●─── 3寸(≈62mm) ───●──── 7寸(≈146mm) ────● 太淵(LU9)
+                               [T2 Sawada 孔最]   [T1 standard 孔最]
+                               尺澤下二寸         腕上七寸
+                               《針灸真髓》1941   《黃帝明堂經》
+                               Ind.: 痔疾 (empir.) Ind.: 汗不出·頭痛·咳逆·吐血
+                               └─ Δ ≈ 3寸 ≈ 62mm ─┘ (> 15mm → split)
+```
 
-| papers.id | 연도 | 저널 | 제목 | PMID / DOI | 설계 | Target·용도 |
+- **Reason for the split**: the distance between T1 and T2 ≈ 3 cun (about 62 mm, estimated), far above the 15 mm threshold. Sawada himself distinguished the effects of the two locations, saying "如依普通取法則不見效" (Tongkao L2420).
+- **Branch decision**: ΔARI-Core = 71.2 − 35 = **36.2 (≥ 10)**, and the intervals [71.2, 71.2] and [35, 35] do not overlap → **T1 declared superior**. That is, the anatomical substrate of Kongzui is determined on the basis of T1 (腕上七寸), and "孔最治痔" (Kongzui treats haemorrhoids) is separated as an empirical claim about the T2 location.
+
+---
+
+## 8. Biomedical Reflex Pathway Diagram & External Search Log
+
+### ① Layer A Papers (LU6-specific studies first)
+
+| papers.id | Year | Journal | Title | PMID / DOI | Design | Target & use |
 | :---: | :---: | :--- | :--- | :--- | :--- | :--- |
-| 1682 | 2024 | Zhongguo Zhen Jiu | Effect and mechanism of acupuncture on airway smooth muscle relaxation during acute asthma attack in rats | 38467504 / 10.13703/j.0255-2930.20230426-k0004 | 동물(쥐), LU6+LU10 vs BL13+定喘 | T1 기전(β2-AR, ET-1) |
-| 1683 | 2023 | Zhongguo Zhen Jiu | Effects of acupuncture on pulmonary function and airway smooth muscle spasm in asthma rats | 37577892 / 10.13703/j.0255-2930.20220618-k0002 | 동물(쥐), LU6+LU10 | T1 기전(ET-1, MT-2) |
-| 1684 | 2023 | Zhongguo Zhen Jiu | Effect mechanism of acupuncture for anti-asthmatic airway remodeling based on TGF-β1/Smad3 signaling pathway | 37313563 / 10.13703/j.0255-2930.20220412-k0013 | 동물(쥐), LU6+LU10 vs BL13+定喘 | T1 기전(기도 재형성) |
-| 1806 | 2025 | Korean Journal of Acupuncture | Ultrasonographic Study on Forearm Acupuncture Points (LU6 and LI7) and Myotendinous Junction Relationships | — / 10.14406/acu.2025.024 | 해부·영상(초음파) | T1 해부 실체 |
-| 1726 | 2012 | 中国中医急症 | 针刺孔最穴鱼际穴治疗哮喘急性发作临床观察 | — / — | 인체 임상관찰(67례, LU6+LU10, 비RCT) | T1 인체 전환(약) |
-| 1679 | 2009 | J Altern Complement Med | Characteristics of electrical skin resistance at acupuncture points in healthy humans | 19422323 / 10.1089/acm.2008.0331 | 인체(비RCT), 6개 혈위 피부저항 | T1 보조 |
-| 1807 | 2025 | Annals of Medicine | Effect of press needle stimulation on postoperative pulmonary complications in VATS patients: a RCT | 40953233 / 10.1080/07853890.2025.2560684 | 인체 RCT(다혈, LU6 단독 효과 분리 불가) | T1 보조 |
+| 1682 | 2024 | Zhongguo Zhen Jiu | Effect and mechanism of acupuncture on airway smooth muscle relaxation during acute asthma attack in rats | 38467504 / 10.13703/j.0255-2930.20230426-k0004 | Animal (rat), LU6+LU10 vs BL13+Dingchuan (定喘) | T1 mechanism (β2-AR, ET-1) |
+| 1683 | 2023 | Zhongguo Zhen Jiu | Effects of acupuncture on pulmonary function and airway smooth muscle spasm in asthma rats | 37577892 / 10.13703/j.0255-2930.20220618-k0002 | Animal (rat), LU6+LU10 | T1 mechanism (ET-1, MT-2) |
+| 1684 | 2023 | Zhongguo Zhen Jiu | Effect mechanism of acupuncture for anti-asthmatic airway remodeling based on TGF-β1/Smad3 signaling pathway | 37313563 / 10.13703/j.0255-2930.20220412-k0013 | Animal (rat), LU6+LU10 vs BL13+Dingchuan (定喘) | T1 mechanism (airway remodelling) |
+| 1806 | 2025 | Korean Journal of Acupuncture | Ultrasonographic Study on Forearm Acupuncture Points (LU6 and LI7) and Myotendinous Junction Relationships | — / 10.14406/acu.2025.024 | Anatomy/imaging (ultrasound) | T1 anatomical substrate |
+| 1726 | 2012 | 中國中醫急症 | 針刺孔最穴魚際穴治療哮喘急性發作臨床觀察 | — / — | Human clinical observation (67 cases, LU6+LU10, non-RCT) | T1 human translation (weak) |
+| 1679 | 2009 | J Altern Complement Med | Characteristics of electrical skin resistance at acupuncture points in healthy humans | 19422323 / 10.1089/acm.2008.0331 | Human (non-RCT), skin resistance at 6 points | T1 supplementary |
+| 1807 | 2025 | Annals of Medicine | Effect of press needle stimulation on postoperative pulmonary complications in VATS patients: a RCT | 40953233 / 10.1080/07853890.2025.2560684 | Human RCT (multiple points; the effect of LU6 alone cannot be isolated) | T1 supplementary |
 
-**반증·T2 관련 문헌 (기전 편수 불산입)**
+**Counter-evidence and T2-related literature (not counted toward mechanism papers)**
 
-| papers.id | 연도 | 저널 | 제목 | PMID / DOI | 성격 |
+| papers.id | Year | Journal | Title | PMID / DOI | Nature |
 | :---: | :---: | :--- | :--- | :--- | :--- |
-| 1561 | 2011 | 中医文献杂志 | "孔最治痔"讹传及其对当代针灸学的影响 (黄幼民·黄龙祥) | — / — | 문헌 고증, **T2 주치 讹传 반론** |
-| 1563 | 2011 | 针刺研究 | "孔最治痔"的讹传及其对当代针灸学的影响 (黄幼民·黄龙祥) | — / — | 문헌 고증, 반론 |
-| 1723 | 2011 | 针刺研究 | 孔最治痔的讹传及其对当代针灸学的影响 (黄幼民) | — / — | 1563과 같은 논문의 별도 소장본 |
-| 1564 | 2012 | 科学通报 | 从三个著名案例看针灸临床研究的复杂性 (黄龙祥·黄幼民) | — / 10.1360/972011-743 | 방법론 고찰, 강자극·배혈 비특이 효과 해석(B4-05 계열 반증) |
-| 461 | 2021 | Korean Journal of Acupuncture | A Literature Review on the Evidence that Hemorrhoids Were Included in the Efficacy of LU6 | — / 10.14406/acu.2021.024 | 문헌 고찰(T2) |
-| 1742 | 2018 | World J Acupunct-Moxibustion | Acupuncture at Kongzui (LU6) for 76 cases of hemorrhoids | — / — | 증례군(대조군 없음, 취혈 위치 기준 불명) |
-| 1808 | 2021 | J Agromedicine Med Sci | The Effectiveness of Acupuncture Therapy in Patient with Hemorrhoid: A Case Report | — / 10.19184/ams.v7i3.23937 | 증례 보고 |
+| 1561 | 2011 | 中醫文獻雜誌 | "孔最治痔"訛傳及其對當代針灸學的影響 (Huang Youmin 黃幼民 & Huang Longxiang 黃龍祥) | — / — | Textual study, **rebuttal of the T2 indication as a mistransmission (訛傳)** |
+| 1563 | 2011 | 針刺研究 | "孔最治痔"的訛傳及其對當代針灸學的影響 (Huang Youmin & Huang Longxiang) | — / — | Textual study, rebuttal |
+| 1723 | 2011 | 針刺研究 | 孔最治痔的訛傳及其對當代針灸學的影響 (Huang Youmin) | — / — | Separately held copy of the same paper as 1563 |
+| 1564 | 2012 | 科學通報 | 從三個著名案例看針灸臨床研究的複雜性 (Huang Longxiang & Huang Youmin) | — / 10.1360/972011-743 | Methodological discussion; interpretation of strong stimulation and point combinations as non-specific effects (counter-evidence of the B4-05 type) |
+| 461 | 2021 | Korean Journal of Acupuncture | A Literature Review on the Evidence that Hemorrhoids Were Included in the Efficacy of LU6 | — / 10.14406/acu.2021.024 | Literature review (T2) |
+| 1742 | 2018 | World J Acupunct-Moxibustion | Acupuncture at Kongzui (LU6) for 76 cases of hemorrhoids | — / — | Case series (no control group, criteria for point location unclear) |
+| 1808 | 2021 | J Agromedicine Med Sci | The Effectiveness of Acupuncture Therapy in Patient with Hemorrhoid: A Case Report | — / 10.19184/ams.v7i3.23937 | Case report |
 
-> **제외한 구판 인용**: 17(Mori 2002, 다혈 전침 — LU6 특이성 미확인, B-Check ⑥ 참고로만 표기), 795(종설), 1458·1461(《明堂》 문헌학), 1002·1678(같은 처방집 중복, 논문 아님).
+> **Citations from the earlier edition excluded**: 17 (Mori 2002, multi-point electroacupuncture — LU6 specificity not confirmed; noted only as a reference under B-Check ⑥), 795 (review), 1458 and 1461 (philology of 《明堂》), 1002 and 1678 (duplicates of the same prescription compendium, not papers).
 
-### ② B-Check 채점표
+### ② B-Check Scoring Table
 
-**T1 표준 Kongzui (孔最, LU06) (腕上七寸)**
+**T1 standard Kongzui (腕上七寸)**
 
-| 항목 | 내용 | 채점자 A | 채점자 B | 최종 | Layer B 참조 ID | papers.id | 근거 요지 |
+| Item | Content | Rater A | Rater B | Final | Layer B reference IDs | papers.id | Rationale |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① | 자침 심도의 말초신경·혈관 실체 | 2 | 2 | **2** | B1-01, B1-03, B2-02, B2-09, B2-10 (+FMA) | 1806 | 2대 교재 신경·혈관 일치(FMA:292885·39080·22730·22947 exact) + LU6 특이 초음파 실측 |
-| ② | 척수 분절 정합 | 1 | 1 | **1** | B1-02, B1-03, B3-01, B3-20 (+FMA) | — | 피절 C5–C7(FMA: 공통 근육 segmental_supply C5~C7, 단독 구조 포함 시 C8·T1) vs 폐 내장절 T1–T5·미주 — 직접 정합 아님, 유추 |
-| ③ | 구심 섬유형·수용체 | 1 | 1 | **1** | B3-05, B3-06 | 1682 | LU6 특이 구심 섬유 연구 없음, 일반 체계 유추 |
-| ④ | 중추 중계·경로 | 1 | 1 | **1** | B3-04, B3-05 | — | NTS·미주 경로 LU6 특이 근거 없음, 유추 |
-| ⑤ | 원심 경로·표적 효과 | 1 | 1 | **1** | B3-05 | 1682, 1683, 1684 | 쥐 기도평활근 이완 — 咳逆 방향 일치하나 동물·LU10 배합 한정, 《明堂》 원주치 "汗不出" 기전 없음 |
-| ⑥ | 인체 전환 근거 | 1 | 1 | **1** | B4-03, B4-04, B4-05 | 17, 1679, 1726, 1807 | 비RCT·다혈 연구뿐, 혈위 특이성 반증(B4-05) 병기 |
-| **합계** | | 7 | 7 | **7 / 12** | | | **미부합 → 반사 기전은 가설**(동물 한정) |
+| ① | Peripheral nerve/vessel substrate at needling depth | 2 | 2 | **2** | B1-01, B1-03, B2-02, B2-09, B2-10 (+FMA) | 1806 | Nerves and vessels agree between the two textbooks (FMA:292885, 39080, 22730, 22947 exact) + LU6-specific ultrasound measurement |
+| ② | Spinal segmental concordance | 1 | 1 | **1** | B1-02, B1-03, B3-01, B3-20 (+FMA) | — | Dermatomes C5–C7 (FMA: segmental_supply of the shared muscles C5–C7; C8, T1 if single-textbook structures are included) vs lung viscerotome T1–T5 and vagus — not directly concordant; inference |
+| ③ | Afferent fibre type & receptors | 1 | 1 | **1** | B3-05, B3-06 | 1682 | No LU6-specific study of afferent fibres; inference from the general framework |
+| ④ | Central relay & pathway | 1 | 1 | **1** | B3-04, B3-05 | — | No LU6-specific evidence for an NTS/vagal pathway; inference |
+| ⑤ | Efferent pathway & target effect | 1 | 1 | **1** | B3-05 | 1682, 1683, 1684 | Airway smooth muscle relaxation in rats — consistent in direction with 咳逆 (cough with counterflow), but limited to animals and to combination with LU10; no mechanism for the original 《明堂》 indication "汗不出" |
+| ⑥ | Human translation | 1 | 1 | **1** | B4-03, B4-04, B4-05 | 17, 1679, 1726, 1807 | Only non-RCT and multi-point studies; counter-evidence on point specificity (B4-05) noted alongside |
+| **Total** | | 7 | 7 | **7 / 12** | | | **Not concordant → the reflex mechanism is a hypothesis** (animal only) |
 
-**T2 泽田 Kongzui (孔最, LU06) (尺泽下二寸)**
+**T2 Sawada Kongzui (尺澤下二寸)**
 
-| 항목 | 내용 | 채점자 A | 채점자 B | 최종 | Layer B 참조 ID | papers.id | 근거 요지 |
+| Item | Content | Rater A | Rater B | Final | Layer B reference IDs | papers.id | Rationale |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① | 자침 심도의 말초신경·혈관 실체 | 1 | 1 | **1** | B1-01, B1-03 | — | 교재·실측 없음, 규범 해부 유추 |
-| ② | 척수 분절 정합 | 0 | 0 | **0** | B1-03, B3-01 | — | C5–C7 vs 항문직장 S2–S4(T10–L2 교감) — 정합 없음, "肺络于大肠" 경락 논리뿐 |
-| ③ | 구심 섬유형·수용체 | 1 | 1 | **1** | B3-06 | — | 일반 구심 섬유 유추 |
-| ④ | 중추 중계·경로 | 1 | 1 | **1** | B3-07, B3-08 | — | 강자극 비특이 진통(관문조절·DNIC) 유추 |
-| ⑤ | 원심 경로·표적 효과 | 0 | 0 | **0** | B3-05, B4-05 | — | 치핵 혈류·괄약근 원심 경로 근거 없음, 《通考》 비특이 효과 반론 |
-| ⑥ | 인체 전환 근거 | 1 | 1 | **1** | B4-04, B4-05 | 1742, 1808 | 증례·증례군, 대조군 없음, 비특이성 반증(1564) 병존 |
-| **합계** | | 4 | 4 | **4 / 12** | | | **가설** |
+| ① | Peripheral nerve/vessel substrate at needling depth | 1 | 1 | **1** | B1-01, B1-03 | — | No textbook entry or measurement; inference from normative anatomy |
+| ② | Spinal segmental concordance | 0 | 0 | **0** | B1-03, B3-01 | — | C5–C7 vs anorectum S2–S4 (sympathetic T10–L2) — no concordance; only the meridian logic of "肺絡於大腸" (the lung connects with the large intestine) |
+| ③ | Afferent fibre type & receptors | 1 | 1 | **1** | B3-06 | — | Inference from general afferent fibres |
+| ④ | Central relay & pathway | 1 | 1 | **1** | B3-07, B3-08 | — | Inference from non-specific analgesia by strong stimulation (gate control, DNIC) |
+| ⑤ | Efferent pathway & target effect | 0 | 0 | **0** | B3-05, B4-05 | — | No evidence of an efferent pathway to haemorrhoidal blood flow or the sphincter; Tongkao rebuttal citing non-specific effects |
+| ⑥ | Human translation | 1 | 1 | **1** | B4-04, B4-05 | 1742, 1808 | Case report and case series, no control group; counter-evidence of non-specificity (1564) coexists |
+| **Total** | | 4 | 4 | **4 / 12** | | | **Hypothesis** |
 
-### ③ 외부 검색 로그 (sync_log, 2026-10-04·2026-10-23 Rank 6 실행)
+### ③ External Search Log (sync_log; Rank 6 runs of 2026-10-04 and 2026-10-23)
 
-| 일시 | 소스 | HTTP | 수집 | 중복제거 | 신규 | 쿼리 |
+| Timestamp | Source | HTTP | Fetched | Duplicates removed | New | Query |
 |---|---|---|---|---|---|---|
 | 2026-10-04T09:51:32 | pubmed | 200 | 9 | — | — | ("LU6" OR "Kongzui" OR "孔最") AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) |
 | 2026-10-04T09:51:32 | openalex | 200 | 16 | — | — | doi_starts_with:10.13703,title_and_abstract.search:"Kongzui" OR "LU6" \| doi_starts_with:10.13702,… \| has_doi:true,… |
 | 2026-10-04T09:51:32 | crossref | 200 | 0 | — | — | Kongzui acupuncture nerve reflex |
 | 2026-10-04T09:51:32 | all | — | 25 | 25 | 0 | |
-| 2026-10-23T21:44:38 | pubmed | 200 | 9 | — | — | 같은 쿼리 + ("Zhongguo Zhen Jiu"[Journal] OR "Zhen Ci Yan Jiu"[Journal]) |
+| 2026-10-23T21:44:38 | pubmed | 200 | 9 | — | — | Same query + ("Zhongguo Zhen Jiu"[Journal] OR "Zhen Ci Yan Jiu"[Journal]) |
 | 2026-10-23T21:44:38 | openalex | 200 | 16 | — | — | doi_starts_with:10.13703 / 10.13702 / has_doi:true, "Kongzui" OR "LU6" |
 | 2026-10-23T21:44:38 | crossref | 200 | 0 | — | — | Kongzui acupuncture nerve reflex |
-| 2026-10-23T21:44:38 | all | — | 25 | 25 | 0 | merged_into_existing=16, batch_dups=9 — 신규 0, 판정 불변 |
+| 2026-10-23T21:44:38 | all | — | 25 | 25 | 0 | merged_into_existing=16, batch_dups=9 — 0 new, verdict unchanged |
 
-### ④ 반사 기전 가설도 (T1, B-Check 미부합 → 가설)
+### ④ Reflex Mechanism Hypothesis Diagram (T1; B-Check not concordant → hypothesis)
 
 ```
-LU6 자침 (위팔노근 내측연, Layer 1~4)
-  → 구심: 가쪽아래팔피부신경(C5–C6)·노신경 얕은가지 (B3-06 유추)
-  → 척수 C5–C7 / 상척수 자율 중추 (B3-04·B3-05 유추, LU6 특이 근거 없음)
-  → 원심: 기도평활근 이완(β2-AR↑, ET-1↓) — 쥐, LU6+LU10 배합 (papers.id 1682·1683·1684)
-  → 인체: 천식 급성발작 임상관찰(1726, 비RCT) — 혈위 특이성 미분리
+LU6 needling (medial border of brachioradialis, Layer 1–4)
+  → Afferent: lateral cutaneous n. of forearm (C5–C6), superficial branch of radial n. (inferred from B3-06)
+  → Spinal cord C5–C7 / supraspinal autonomic centres (inferred from B3-04, B3-05; no LU6-specific evidence)
+  → Efferent: airway smooth muscle relaxation (β2-AR↑, ET-1↓) — rat, LU6+LU10 combination (papers.id 1682, 1683, 1684)
+  → Human: clinical observation of acute asthma attacks (1726, non-RCT) — point specificity not isolated
 ```
 
-### ⑤ 말초 구심 경로의 FMA 고정 (T1)
+### ⑤ Anchoring the Peripheral Afferent Pathway in FMA (T1)
 
-위 가설도의 첫 구간(자침점 → 척수)은 FMA 관계로 아래와 같이 고정된다. LU6 자침로의 공통 구조는 **노신경(위팔노근·얕은가지)**, **정중신경(노쪽손목굽힘근·원엎침근)**, **근육피부신경(가쪽아래팔피부신경)** 세 계통으로 들어간다. 이 구조 사슬은 가설도의 해부 앞단일 뿐 B-Check 점수를 바꾸지 않는다.
+The first segment of the hypothesis diagram above (needling site → spinal cord) is anchored by FMA relations as follows. The structures shared on the LU6 needling path enter three systems: the **radial nerve (brachioradialis, superficial branch)**, the **median nerve (flexor carpi radialis, pronator teres)** and the **musculocutaneous nerve (lateral cutaneous nerve of forearm)**. This structural chain is only the anatomical front end of the hypothesis diagram and does not change the B-Check score.
 
 ```mermaid
 flowchart TB
-  P(("LU6 공최 T1<br/>위팔노근 내측연")) -.피하.-> LAC["가쪽아래팔피부신경<br/>FMA:39080"]
-  P --> BR["위팔노근 FMA:38485<br/>분절 C6(주)·C5"]
-  P --> FCR["노쪽손목굽힘근 FMA:38459<br/>분절 C6(주)·C7"]
-  P --> PT["원엎침근 FMA:38450<br/>분절 C7(주)·C6"]
-  P --> SBR["노신경 얕은가지<br/>FMA:292885"]
-  P --> RA["노동맥 FMA:22730"]
-  P -. "깊은층(김재효)" .-> FPL["긴엄지굽힘근 FMA:38481<br/>분절 C8(주)·C7"]
-  BR -- nerve_supply --> RN["노신경<br/>FMA:37069"]
+  P(("LU6 Kongzui T1<br/>medial border of brachioradialis")) -.subcutaneous.-> LAC["Lateral cutaneous nerve of forearm<br/>FMA:39080"]
+  P --> BR["Brachioradialis FMA:38485<br/>segments C6 (primary), C5"]
+  P --> FCR["Flexor carpi radialis FMA:38459<br/>segments C6 (primary), C7"]
+  P --> PT["Pronator teres FMA:38450<br/>segments C7 (primary), C6"]
+  P --> SBR["Superficial branch of radial nerve<br/>FMA:292885"]
+  P --> RA["Radial artery FMA:22730"]
+  P -. "deep layer (Kim Jaehyo)" .-> FPL["Flexor pollicis longus FMA:38481<br/>segments C8 (primary), C7"]
+  BR -- nerve_supply --> RN["Radial nerve<br/>FMA:37069"]
   SBR --> RN
-  FCR -- nerve_supply --> MN["정중신경<br/>FMA:14385"]
+  FCR -- nerve_supply --> MN["Median nerve<br/>FMA:14385"]
   PT -- nerve_supply --> MN
-  FPL -- "nerve_supply (앞뼈사이신경 경유)" --> MN
-  LAC --> MC["근육피부신경<br/>FMA:37064"]
-  RN --> SEG["척수 C5~C8<br/>(분절: 근육 segmental_supply)"]
+  FPL -- "nerve_supply (via anterior interosseous nerve)" --> MN
+  LAC --> MC["Musculocutaneous nerve<br/>FMA:37064"]
+  RN --> SEG["Spinal cord C5–C8<br/>(segments: muscle segmental_supply)"]
   MN --> SEG
   MC --> SEG
 ```
 
-*그림 8-1. FMA 5.1.0 관계로 그린 LU6(T1) 말초 구심 경로. 실선은 FMA에 기재된 관계(`nerve_supply`, 줄기 사슬), 점선은 피하·깊은층 경로다.*
+*Figure 8-1. Peripheral afferent pathway of LU6 (T1) drawn from FMA 5.1.0 relations. Solid lines are relations recorded in FMA (`nerve_supply`, trunk chains); dashed lines are subcutaneous and deep-layer routes.*
 
 ---
 
-## ⚖️ 9. 주치증 분리 표 (단독 자침 $P_{single}$ vs 복합 배오 처방)
+## 9. Classical Indications Stratification Table (Single-Point $P_{single}$ vs. Combination Prescriptions)
 
-| 구분 | 주치 | 출처 | Target | 판정 |
+| Type | Indication | Source | Target | Verdict |
 | :--- | :--- | :--- | :---: | :--- |
-| $P_{single}$ (원천) | 头痛, 振寒, 臂厥, 热, **汗不出**("可以出汗") | 《黄帝内经明堂》(《通考》 L2376) | T1 | 고유 주치 |
-| $P_{single}$ | 热病汗不出; 厥头痛 | 《甲乙》 7·9권(《穴位通鉴》) | T1 | 고유 주치 |
-| $P_{single}$ (송대 증보) | 吐血失喑, 肿痛恶血 / 肘臂厥痛, 屈伸难 / 咳逆 | 《圣惠方》 针经·明堂, *Tongren* (《銅人》) | T1 | 후대 증보(내상·국소) |
-| 변형 | 咽肿痛 | 《针灸聚英》 高武 | T1 | "肿痛" 오독(《通考》 文献分析) |
-| $P_{comb}$ | 热病烦心 汗不出 (中冲·劳宫·少冲·关冲·大陵·阳溪·曲泽·孔最) | 《针灸捷径》(《证治通鉴》) | T1 | 배오 — 단독 효과 분리 불가 |
-| $P_{comb}$ | 咯血 (孔最配尺泽, 강자극) / 哮喘 (孔最·鱼际) | 《证治通鉴》 현대 문헌; papers.id 1726·1682–1684 | T1 | 배오·동물 — 咳逆 방향과 일치 |
-| 이식 주치 | **痔疾·痔痛·痔出血** | 1판 讲义, 4·5·6판 《针灸学》 | T2→T1 | **讹传**(《通考》 附: 孔最治痔溯源; papers.id 1561·1563·1723) — T1 주치에서 제외 |
-| T2 경험 | 痔疾 요혈 (尺泽下二寸) | 《针灸真髓》 | T2 | 근대 경험, 대조 연구 없음. 효과는 배혈·장시간 강자극에 따른 비특이 효과일 수 있음(《通考》 L2438, papers.id 1564) |
+| $P_{single}$ (primary) | Headache (頭痛), shivering with cold (振寒), reversal in the arm (臂厥), fever (熱), **absence of sweating (汗不出)** ("可以出汗") | 《黃帝內經明堂》 (Tongkao L2376) | T1 | Intrinsic indication |
+| $P_{single}$ | Febrile disease without sweating (熱病汗不出); reversal headache (厥頭痛) | 《甲乙》 vols. 7 and 9 (*Xuewei Tongjian*) | T1 | Intrinsic indication |
+| $P_{single}$ (Song supplementation) | 吐血失喑, 腫痛惡血 / 肘臂厥痛, 屈伸難 / 咳逆 | 《聖惠方》 針經 and 明堂 sections, 《銅人》 | T1 | Later supplementation (internal damage, local) |
+| Variant | Sore swollen throat (咽腫痛) | 《針灸聚英》, Gao Wu (高武) | T1 | Misreading of "腫痛" (Tongkao, textual analysis) |
+| $P_{comb}$ | Febrile disease with vexation of the heart and absence of sweating (熱病煩心 汗不出) (中衝, 勞宮, 少衝, 關衝, 大陵, 陽溪, 曲澤, 孔最) | 《針灸捷徑》 (Zhengzhi Tongjian) | T1 | Combination — the effect of the single point cannot be isolated |
+| $P_{comb}$ | Haemoptysis (咯血) (孔最 combined with 尺澤, strong stimulation) / asthma (哮喘) (孔最, 魚際) | Modern literature in the Zhengzhi Tongjian; papers.id 1726, 1682–1684 | T1 | Combination/animal — consistent in direction with 咳逆 |
+| Grafted indication | **Haemorrhoids, haemorrhoidal pain, haemorrhoidal bleeding (痔疾·痔痛·痔出血)** | 1st-edition 講義, 4th/5th/6th-edition 《針灸學》 | T2→T1 | **Mistransmission (訛傳)** (Tongkao, 附: 孔最治痔溯源; papers.id 1561, 1563, 1723) — excluded from the T1 indications |
+| T2 experience | Key point for haemorrhoids (痔疾) (尺澤下二寸) | 《針灸真髓》 | T2 | Early-modern experience, no controlled studies. The effect may be a non-specific effect of point combination and prolonged strong stimulation (Tongkao L2438, papers.id 1564) |
 
 ---
 
-## 📊 10. ARI v3.0 프로파일 평가표 및 최종 결론
+## 10. ARI v3.0 Quantitative Profile Evaluation & Final Conclusion
 
-$$\text{ARI-Core} = 0.40\,S_{orig} + 0.35\,S_{clarity} + 0.25\,S_{reflex} \quad (\text{잠정 가중치, 미검증})$$
-$$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$
+$$\text{ARI-Core} = 0.40\,S_{orig} + 0.35\,S_{clarity} + 0.25\,S_{reflex} \quad (\text{provisional weights, unvalidated})$$
+$$\text{SI} = S_{safety} \quad (\text{not summed})$$
 
-### 10-1. T1 표준 Kongzui (孔最, LU06) (腕上七寸)
+### 10-1. T1 Standard Kongzui (腕上七寸)
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| $S_{orig}$ | 81.25 | 81.25 | **81.25** | 하위 4항목 평균(아래 표) | 《通考》 L2300–2467 |
-| $S_{clarity}$ | 75 (조정 전 50) | 75 | **75** | 2대 교재 주 신경·혈관·주 근육 일치 + B1 확인; 1806은 PMID 없음 → 100 미충족 | 교재 xlsx 59행, papers.id 1806 |
-| $S_{reflex}$ | 50 | 50 | **50** | LU6 동물 연구 3편(배합혈), 인체 기전 실험 없음, B-Check 7/12 | papers.id 1682·1683·1684·1726 |
-| $S_{safety}$ → SI | 75 | 75 | **75** | 23mm 직자 시 Layer 4 도달 가능하나 고전 3푼·현대 상한 명시, 사자·깊이 조절로 회피; Contraindicated for Needling (禁鍼) 없음 | 자침깊이 DB 60행 |
+| $S_{orig}$ | 81.25 | 81.25 | **81.25** | Mean of the 4 sub-items (table below) | Tongkao L2300–2467 |
+| $S_{clarity}$ | 75 (50 before adjudication) | 75 | **75** | Main nerves, vessels and main muscles agree between the two textbooks + B1 confirmation; 1806 has no PMID → 100 not met | Textbook xlsx row 59, papers.id 1806 |
+| $S_{reflex}$ | 50 | 50 | **50** | 3 LU6 animal studies (point combinations), no human mechanism experiment, B-Check 7/12 | papers.id 1682, 1683, 1684, 1726 |
+| $S_{safety}$ → SI | 75 | 75 | **75** | Layer 4 can be reached by 23 mm perpendicular insertion, but the classical 3 fen and the modern upper limit are stated, and the risk is avoided by oblique insertion and depth control; no 'Contraindicated for needling (禁針)' record | Needling-depth DB row 60 |
 
-| $S_{orig}$ 하위 항목 | A | B | 평균 | 근거 |
+| $S_{orig}$ sub-item | A | B | Mean | Rationale |
 | :--- | :---: | :---: | :---: | :--- |
-| ① 최초 기술 명확성 | 100 | 75 | 87.5 | 《明堂》 "在腕上七寸" + "刺入三分" (B: 골도 차이로 위치 확정성 감점) |
-| ② 후대 문헌 일치율 | 75 | 75 | 75 | 약 15종 "腕上七寸" 일치, 명대 列缺 혼동·골도 차이로 "文同而实不同" |
-| ③ 이명 혼용 해소 | 75 | 75 | 75 | KJH "-", 孔冣 이체자, 泽田 동명이위혈 연대순 분리 |
-| ④ 《通考》 교감 | 75 | 100 | 87.5 | 列缺 혼동·高武 오독·痔疾 讹传 교정 (A: 골도 차이는 미교정으로 남음) |
-| **평균** | 81.25 | 81.25 | **81.25** | |
+| ① Clarity of earliest description | 100 | 75 | 87.5 | 《明堂》 "在腕上七寸" + "刺入三分" (B: points deducted for the certainty of location because of differing bone-proportional scales) |
+| ② Agreement in later texts | 75 | 75 | 75 | About 15 texts agree on "腕上七寸"; the Ming confusion with 列缺 and differing bone-proportional scales make them "文同而實不同" |
+| ③ Resolution of alias confusion | 75 | 75 | 75 | KJH "-", variant character 孔冣, Sawada's homonymous point separated chronologically |
+| ④ Collation in the *Tongkao* (《通考》) | 75 | 100 | 87.5 | Confusion with 列缺, Gao Wu's misreading and the haemorrhoid (痔疾) mistransmission corrected (A: the difference in bone-proportional scales remains uncorrected) |
+| **Mean** | 81.25 | 81.25 | **81.25** | |
 
-- **게이트**: 해당 없음 (S_orig·S_clarity ≥ 50, 경혈 특이 Layer A 3편, SI > 25).
-- **ARI-Core** = 0.40×81.25 + 0.35×75 + 0.25×50 = **71.2 ± 0 → B (개연)**, 표지 없음.
+- **Gates**: none applicable (S_orig and S_clarity ≥ 50, 3 point-specific Layer A papers, SI > 25).
+- **ARI-Core** = 0.40×81.25 + 0.35×75 + 0.25×50 = **71.2 ± 0 → B (probable)**, no flags.
 - **SI** = **75**.
-- **등가중치 민감도**: (81.25 + 75 + 50) / 3 = **68.8 → C**, 등급 변동 → **가중치 민감**.
+- **Equal-weight sensitivity**: (81.25 + 75 + 50) / 3 = **68.8 → C**, grade changes → **weight-sensitive**.
 
-### 10-2. T2 泽田 Kongzui (孔最, LU06) (尺泽下二寸)
+### 10-2. T2 Sawada Kongzui (尺澤下二寸)
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| $S_{orig}$ | 50 | 50 | **50** | 하위 4항목 평균(아래 표) | 《通考》 L2410–2467 |
-| $S_{clarity}$ | 25 | 25 | **25** | 2대 교재 미수록, 실측 없음 — 추론만 | 교재 xlsx(T2 항목 없음) |
-| $S_{reflex}$ | 25 | 25 | **25** | 위치 특이 Layer A 기전 0편 → 게이트 2 | papers.id 1742·1808(증례), 1561·1563·1564·1723(반론) |
-| $S_{safety}$ → SI | 50 | 50 | **50** | 심도 문헌 없음(결측), 1寸 직자 시 노신경 줄기·깊은가지·노쪽되돌이동맥 직접 접촉 가능 | 자침깊이 DB는 T1 기준 — 적용 불가 |
+| $S_{orig}$ | 50 | 50 | **50** | Mean of the 4 sub-items (table below) | Tongkao L2410–2467 |
+| $S_{clarity}$ | 25 | 25 | **25** | Not in either textbook, no measurement — inference only | Textbook xlsx (no T2 entry) |
+| $S_{reflex}$ | 25 | 25 | **25** | 0 location-specific Layer A mechanism papers → Gate 2 | papers.id 1742, 1808 (case reports), 1561, 1563, 1564, 1723 (rebuttals) |
+| $S_{safety}$ → SI | 50 | 50 | **50** | No literature on depth (missing); perpendicular insertion of 1 cun may directly contact the radial nerve trunk, its deep branch and the radial recurrent artery | The needling-depth DB refers to T1 — not applicable |
 
-| $S_{orig}$ 하위 항목 | A | B | 평균 | 근거 |
+| $S_{orig}$ sub-item | A | B | Mean | Rationale |
 | :--- | :---: | :---: | :---: | :--- |
-| ① 최초 기술 명확성 | 25 | 25 | 25 | 1941 《针灸真髓》 근대 문헌만, 심도 미기재 |
-| ② 후대 문헌 일치율 | 25 | 25 | 25 | 松元 "尺泽下三寸", 张效林 "尺泽下3寸·太渊上3寸", 교재는 주치만 7寸에 이식 |
-| ③ 이명 혼용 해소 | 75 | 75 | 75 | 《通考》가 "泽田先生独创穴"로 분리, 전이 경로 연대순 정리 |
-| ④ 《通考》 교감 | 75 | 75 | 75 | 각주 [1] 인용 오류(서명·골도) 교정, 중문 번역본 기반 |
-| **평균** | 50 | 50 | **50** | |
+| ① Clarity of earliest description | 25 | 25 | 25 | Only the early-modern 《針灸真髓》 (1941); depth not recorded |
+| ② Agreement in later texts | 25 | 25 | 25 | Matsumoto "尺澤下三寸", Zhang Xiaolin "尺澤下3寸·太淵上3寸"; the textbooks transplant only the indication to the 7-cun point |
+| ③ Resolution of alias confusion | 75 | 75 | 75 | The Tongkao separates it as "澤田先生獨創穴" and arranges the transfer route chronologically |
+| ④ Collation in the *Tongkao* (《通考》) | 75 | 75 | 75 | Citation errors in footnote [1] (title, bone-proportional scale) corrected; based on the Chinese translation |
+| **Mean** | 50 | 50 | **50** | |
 
-- **게이트**: 게이트 1(S_clarity 25 < 50 → 최고 C), 게이트 2(경혈 특이 Layer A 0편 → S_reflex ≤ 25, H 표지).
-- **ARI-Core** = 0.40×50 + 0.35×25 + 0.25×25 = **35 ± 0 → D·H (미판정·가설)**.
+- **Gates**: Gate 1 (S_clarity 25 < 50 → at most C), Gate 2 (0 point-specific Layer A papers → S_reflex ≤ 25, H flag).
+- **ARI-Core** = 0.40×50 + 0.35×25 + 0.25×25 = **35 ± 0 → D·H (undetermined, hypothesis)**.
 - **SI** = **50**.
-- **등가중치 민감도**: (50 + 25 + 25) / 3 = **33.3 → D**, 등급 불변.
+- **Equal-weight sensitivity**: (50 + 25 + 25) / 3 = **33.3 → D**, grade unchanged.
 
-### 10-3. 분기 판정
+### 10-3. Branch Decision
 
-| Target | ARI-Core (± 반범위) | 구간 | 등급·표지 | SI |
+| Target | ARI-Core (± half-range) | Interval | Grade & flag | SI |
 | :--- | :---: | :---: | :---: | :---: |
-| T1 표준 (腕上七寸) | 71.2 ± 0 | [71.2, 71.2] | B | 75 |
-| T2 泽田 (尺泽下二寸) | 35 ± 0 | [35, 35] | D·H | 50 |
+| T1 standard (腕上七寸) | 71.2 ± 0 | [71.2, 71.2] | B | 75 |
+| T2 Sawada (尺澤下二寸) | 35 ± 0 | [35, 35] | D·H | 50 |
 
-ΔARI-Core = **36.2 ≥ 10**이고 두 구간이 겹치지 않으므로 **T1이 우위**이다.
+ΔARI-Core = **36.2 ≥ 10** and the two intervals do not overlap, so **T1 is superior**.
 
-### 10-4. 조정 기록
+### 10-4. Adjudication Record
 
-| Target | 항목 | 불일치 | 조정 내용 |
+| Target | Item | Disagreement | Adjudication |
 | :---: | :--- | :--- | :--- |
-| T1 | $S_{clarity}$ | A 50 / B 75 (25점 차, ≥ 15) | 두 교재의 주 신경·혈관 구조는 일치하고 부차 근육만 다르므로 정본 4.2의 75("2대 교재 일치 + 표준 해부학서 확인")가 더 부합 → A를 75로 조정 |
-| T1 | $S_{orig}$ 하위 ①·④ | A 100/75, B 75/100 | 평균값이 같아(81.25) 조정 불요, 하위 항목 평균으로 병기 |
-| T2 | — | 15점 이상 불일치 없음 | 《通考》·papers.id 1561·1563·1564·1723 반론으로 B-Check "가설" 유지, S_reflex 25(게이트 2) |
+| T1 | $S_{clarity}$ | A 50 / B 75 (25-point difference, ≥ 15) | The main nerve and vessel structures agree between the two textbooks and only secondary muscles differ, so level 75 of canon 4.2 ("the two textbooks agree + confirmed by a standard anatomy text") fits better → A adjusted to 75 |
+| T1 | $S_{orig}$ sub-items ① and ④ | A 100/75, B 75/100 | The means are equal (81.25), so no adjudication was needed; reported as the mean of the sub-items |
+| T2 | — | No disagreement of 15 points or more | B-Check "hypothesis" kept on the basis of the rebuttals in the Tongkao and papers.id 1561, 1563, 1564, 1723; S_reflex 25 (Gate 2) |
 
-### 10-5. 최종 결론
+### 10-5. Final Conclusion
 
-- **T1 표준 Kongzui (孔最, LU06)(腕上七寸)** — **개연(B, 가중치 민감)**. 해부학적 실체는 위팔노근 내측연의 피하·근막층(가쪽아래팔피부신경, 노쪽피부정맥)이며, 깊이 23mm 부근에서 노동맥·노신경 얕은가지(Layer 4)에 이른다. 위치는 *Huangdi Mingtang Jing* (《黃帝明堂經》) "在腕上七寸"에 근거하지만 시대별 전완 골도(10·12·12.5寸) 차이로 실제 위치가 최대 약 30mm 흩어진다. 반사 기전(기도평활근 이완)은 쥐 배합혈 연구에 한정되고 B-Check 7/12로 미부합이므로 **가설**로 기술한다. 등가중치에서는 C(68.8)로 내려가므로 B 등급은 잠정 가중치에 의존한다.
-- **T2 泽田 Kongzui (孔最, LU06)(尺泽下二寸)** — **미판정·가설(D·H)**. 근대 일본 경험혈로, 교재가 실은 "孔最治痔"는 이 위치의 주치가 위치 정보 없이 7寸 Kongzui (孔最, LU06)에 옮겨진 讹传이다(《通考》 附: 孔最治痔溯源, papers.id 1561·1563·1723). 분절 정합이 없고 보고된 효과는 배혈·강자극에 의한 비특이 효과일 수 있다(papers.id 1564).
-- **분기**: ΔARI-Core 36.2, 구간 비중첩 → **T1 우위**. Kongzui (孔最, LU06)의 고유 주치는 발한(汗不出)·Headache (頭痛)·해역·토혈 계열이며, 痔疾은 T1 주치에서 제외한다.
+- **T1 standard Kongzui (腕上七寸)** — **Probable (B, weight-sensitive)**. The anatomical substrate is the subcutaneous and fascial layer at the medial border of brachioradialis (lateral cutaneous nerve of forearm, cephalic vein), and at a depth of about 23 mm it reaches the radial artery and the superficial branch of the radial nerve (Layer 4). The location rests on *Huangdi Mingtang Jing* (《黃帝明堂經》) "在腕上七寸", but because forearm bone-proportional scales differed between periods (10, 12, 12.5 cun), the actual location is scattered by up to about 30 mm. The reflex mechanism (airway smooth muscle relaxation) is limited to rat studies with point combinations and is not concordant on the B-Check (7/12), so it is described as a **hypothesis**. With equal weights it falls to C (68.8), so grade B depends on the provisional weights.
+- **T2 Sawada Kongzui (尺澤下二寸)** — **Undetermined, hypothesis (D·H)**. This is an early-modern Japanese empirical point; the "孔最治痔" (Kongzui treats haemorrhoids) recorded in the textbooks is a mistransmission (訛傳) in which the indication of this location was transferred, without its location information, to the 7-cun Kongzui (Tongkao, 附: 孔最治痔溯源, papers.id 1561, 1563, 1723). There is no segmental concordance, and the reported effects may be non-specific effects of point combination and strong stimulation (papers.id 1564).
+- **Branch**: ΔARI-Core 36.2, intervals do not overlap → **T1 superior**. The intrinsic indications of Kongzui belong to the group of diaphoresis (汗不出), headache (頭痛), cough with counterflow (咳逆) and haematemesis (吐血); haemorrhoids (痔疾) are excluded from the T1 indications.
 
 ---
 
-## 부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)
+## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-생성: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LU06 --md` (2026-10-23). 대응 수준 `exact`는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다.
+Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LU06 --md` (2026-10-23). Match level `exact` means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.
 
-| Category | Textbook Term | FMA Substrate (ID & Label) | Match | Source | Innervation & Nerve Trunk Chain | Spinal Segment |
+| Category | Textbook term | FMA substrate | Match | Source | Innervation / parent trunk | Spinal segment |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 위팔노근 (brachioradialis) | FMA:38485 Brachioradialis | exact | 공통교재·김재효 | FMA:65334 Nerve to brachioradialis → Peripheral segment of radial nerve | C6(주), C5(부) |
-| 근육 | 노쪽손목굽힘근 (flexor carpi radialis) | FMA:38459 Flexor carpi radialis | exact | 공통교재·김재효 | FMA:44824 Nerve to FCR → Peripheral segment of median nerve | C6(주), C7(부) |
-| 근육 | 원엎침근 (pronator teres) | FMA:38450 Pronator teres | exact | 공통교재·김재효 | FMA:44823 Nerve to pronator teres → Peripheral segment of median nerve | C7(주), C6(부) |
-| 근육 | 긴손바닥근 (palmaris longus) | FMA:38462 Palmaris longus | exact | 공통교재 | FMA:44825 Nerve to palmaris longus → Peripheral segment of median nerve | C7, C8 |
-| 근육 | 자쪽손목굽힘근 (flexor carpi ulnaris) | FMA:38465 Flexor carpi ulnaris | exact | 공통교재 | FMA:81220 Nerve to FCU → Peripheral segment of ulnar nerve | C8(주), C7·T1(부) |
-| 근육 | 얕은손가락굽힘근 (flexor digitorum superficialis) | FMA:38469 Flexor digitorum superficialis | exact | 김재효 | FMA:44826 Nerve to FDS → Peripheral segment of median nerve | C8(주), T1(부) |
-| 근육 | 긴엄지굽힘근 (flexor pollicis longus; 교재 표기 '깊은엄지굽힘근') | FMA:38481 Flexor pollicis longus | exact | 김재효 | FMA:44830 Nerve to FPL → Anterior interosseous nerve → Peripheral segment of median nerve | C8(주), C7(부) |
-| 신경 | 가쪽아래팔피부신경 | FMA:39080 Lateral cutaneous nerve of forearm | exact | 공통교재·김재효 | FMA:288511 Peripheral segment of musculocutaneous nerve → FMA:37064 Musculocutaneous nerve | — |
-| 신경 | 노신경의 얕은가지 | FMA:292885 Superficial branch of radial nerve | exact | 공통교재·김재효 | FMA:37069 Radial nerve | — |
-| 혈관 | 덧노쪽피부정맥 | FMA:22970 Accessory cephalic vein | exact | 공통교재·김재효 | FMA:13324 Cephalic vein → FMA:4725 Subclavian vein | — |
-| 혈관 | 노쪽피부정맥 | FMA:13324 Cephalic vein | exact | 공통교재·김재효 | FMA:4725 Subclavian vein → FMA:4723 Brachiocephalic vein | — |
-| 혈관 | 노동맥 | FMA:22730 Radial artery | exact | 공통교재·김재효 | FMA:3951 Subclavian artery (FMA 모델링, 4절 주석) | — |
-| 혈관 | 노정맥 | FMA:22947 Radial vein | exact | 공통교재·김재효 | FMA:22934 Brachial vein → FMA:13329 Axillary vein → … | — |
+| Muscle | Brachioradialis | FMA:38485 Brachioradialis | exact | Common Textbook · Kim Jaehyo | FMA:65334 Nerve to brachioradialis → Peripheral segment of radial nerve | C6 (primary), C5 (secondary) |
+| Muscle | Flexor carpi radialis | FMA:38459 Flexor carpi radialis | exact | Common Textbook · Kim Jaehyo | FMA:44824 Nerve to FCR → Peripheral segment of median nerve | C6 (primary), C7 (secondary) |
+| Muscle | Pronator teres | FMA:38450 Pronator teres | exact | Common Textbook · Kim Jaehyo | FMA:44823 Nerve to pronator teres → Peripheral segment of median nerve | C7 (primary), C6 (secondary) |
+| Muscle | Palmaris longus | FMA:38462 Palmaris longus | exact | Common Textbook | FMA:44825 Nerve to palmaris longus → Peripheral segment of median nerve | C7, C8 |
+| Muscle | Flexor carpi ulnaris | FMA:38465 Flexor carpi ulnaris | exact | Common Textbook | FMA:81220 Nerve to FCU → Peripheral segment of ulnar nerve | C8 (primary), C7, T1 (secondary) |
+| Muscle | Flexor digitorum superficialis | FMA:38469 Flexor digitorum superficialis | exact | Kim Jaehyo | FMA:44826 Nerve to FDS → Peripheral segment of median nerve | C8 (primary), T1 (secondary) |
+| Muscle | Flexor pollicis longus (textbook label 'deep thumb flexor') | FMA:38481 Flexor pollicis longus | exact | Kim Jaehyo | FMA:44830 Nerve to FPL → Anterior interosseous nerve → Peripheral segment of median nerve | C8 (primary), C7 (secondary) |
+| Nerve | Lateral cutaneous nerve of forearm | FMA:39080 Lateral cutaneous nerve of forearm | exact | Common Textbook · Kim Jaehyo | FMA:288511 Peripheral segment of musculocutaneous nerve → FMA:37064 Musculocutaneous nerve | — |
+| Nerve | Superficial branch of the radial nerve | FMA:292885 Superficial branch of radial nerve | exact | Common Textbook · Kim Jaehyo | FMA:37069 Radial nerve | — |
+| Vessel | Accessory cephalic vein | FMA:22970 Accessory cephalic vein | exact | Common Textbook · Kim Jaehyo | FMA:13324 Cephalic vein → FMA:4725 Subclavian vein | — |
+| Vessel | Cephalic vein | FMA:13324 Cephalic vein | exact | Common Textbook · Kim Jaehyo | FMA:4725 Subclavian vein → FMA:4723 Brachiocephalic vein | — |
+| Vessel | Radial artery | FMA:22730 Radial artery | exact | Common Textbook · Kim Jaehyo | FMA:3951 Subclavian artery (FMA modelling; see note in Section 4) | — |
+| Vessel | Radial vein | FMA:22947 Radial vein | exact | Common Textbook · Kim Jaehyo | FMA:22934 Brachial vein → FMA:13329 Axillary vein → … | — |
 
-- 분절 합집합(B-Check ② 입력): **C5, C6, C7, C8, T1** (공통 구조만: C5~C7)
-- 두 교재 비교: 공통 FMA 실체 9 · 공통교재 단독 2 · 김재효 단독 2
-- 인용 한계: FMA는 정상 성인 규범 해부 온톨로지로, 혈위 특이 심도·변이 빈도·반사 기능의 근거가 아니다. 골도 차이(10/12/12.5寸)에 따른 T1 위치 변이와 T2 泽田 위치는 FMA 대상이 아니다(정위 쟁점).
-
----
-
-## v2.7 FMA 보강 이력 (2026-10-23)
-
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
-| :--- | :--- | :--- | :--- |
-| 머리말 | — | FMA 5.1.0 해부 온톨로지 줄 추가 | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
-| 4절 층차도·6절 | "깊은엄지굽힘근"(김재효 교재 표기 그대로) | **긴엄지굽힘근**으로 정정, 교재 원표기 병기 | 영문 flexor pollicis longus = FMA:38481; 교재 데이터셋 오기 |
-| 4절 | 문자 층차도만 | 그림 4-1 횡단면 모식도(T1 높이), Layer별 FMA 대조표, FMA 주석 2건(분절 출처, 용어 오기) | `fma_query.py profile LU06`; 그림 스크립트 `.claude/skills/acupoint-anatomy/scripts/fma/figures/LU06_cross_section.py` |
-| 6절 | 교재 비교 4열 | FMA 판별 열, 차이의 성격(공통교재 = 자쪽 자신경 구조 혼입 / 김재효 = 깊은층 확장) 해석 | FMA nerve_supply·segmental_supply |
-| 8절 ② | B-Check ①·② 근거 | T1 FMA ID·분절 포인터 추가(**점수 불변**: T1 7/12, T2 4/12) | FMA segmental_supply |
-| 8절 ③ | 2026-10-04 로그 | 2026-10-23 Rank 6 재실행 행 추가(PubMed 9·OpenAlex 16·Crossref 0, 신규 0) | `_metadata.sync_log` LU6 2026-10-23T21:44:38 |
-| 8절 ⑤ | — | 그림 8-1 FMA 말초 구심 경로(Mermaid) | FMA:38485·38459·38450·292885·39080 줄기 |
-| 부록 A | — | FMA 프로파일 표 | `fma_query.py profile LU06 --md` |
-| ARI | T1 71.2 ± 0 (B) / T2 35 ± 0 (D·H) | **변경 없음** — FMA는 B1 보조 근거로 루브릭 단계를 바꾸지 않음 | 스킬 5-1절 |
-| 구판 표현 점검 | 자동 점검에서 "전수 역색인" 1건 검출 | 아래 v2.7 개정 이력의 '원래 내용' 열에 남긴 **삭제된 구판 문구의 인용**이므로 수정하지 않음(이력 보존). 본문에는 구판 표현 없음 | 본 보고서 v2.7 개정 이력 머리말 행 |
-| 구판 보관 | — | 보강 전 md·html·xlsx를 `_구판_v2.7_20261023/`에 보관 | — |
+- Union of segments (input to B-Check ②): **C5, C6, C7, C8, T1** (shared structures only: C5–C7)
+- Comparison of the two textbooks: 9 shared FMA entities · 2 Common Textbook only · 2 Kim Jaehyo only
+- Limits of citation: FMA is a normative ontology of adult anatomy and is not evidence of point-specific depth, variant frequency or reflex function. The variation in the T1 location due to differing bone-proportional scales (10/12/12.5 cun) and the T2 Sawada location are outside the scope of FMA (questions of point location).
 
 ---
 
-## v2.7 개정 이력 (2026-10-04)
+## v2.7 FMA Supplement History (2026-10-23)
 
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
+| Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| 머리말 | "실측 논문 48편 전수 역색인" | 근거 묶음 수치(랜드마크 32·로컬 20, LU6 특이 4편+임상 1편)로 교체 | pack_LU6.md |
-| 1절 | 《穴位通鉴》 목차 OCR(GV25–28 등), 《证治通鉴》 八关大刺 조각, 《通考》 목차 쪽번호 | 孔最 본문 원문 발췌(정위·심도·주치·교감) | 《通考》(上)_81-160.md L2300–2467; 《穴位通鉴》(上卷)_321-400.md L880–1060; 《证治通鉴》_161-240.md L1738·1782, _241-320.md L704·854·856 |
-| 2절 | 일반 문구 자리표시자 | 원천→재록→증보→명대 변형→泽田→讹传 경로 표 | 《通考》 L2316–2438 |
-| 3절 | 이명 "-"만, "완전 차단" 문구 | 이체자 孔冣, 泽田 동명이위혈, 列缺 혼동 처리 표 | KJH 61행; 《通考》 L2306·2316·2324 |
-| 4절 | 모든 혈위 공통 Layer mm(0~2.5/…/22mm 이상), "관절낭" | Target별 X·Y·Z 추정 좌표, LU6 구조별 층차(교재·《穴位通鉴》 국소해부) | 교재 xlsx 59행; 《穴位通鉴》 局部解剖 |
-| 5절 | 환산 공식만 | 문헌별 푼수·mm 환산표 | 자침깊이 xlsx 시트1 60행 |
-| 6절 | 구조명 없는 상투 문구 | 실제 근육·신경·혈관 비교, 부차 근육 2개 불일치 명시 | 공통교재·김재효 xlsx 각 59행 |
-| 7절 | 일반 규칙 문장 | T1/T2 분기(Δ≈3寸) 수행, T1 우위 판정 | final_LU06.json |
-| 8절 B-Check | ①2·②2·⑤2, 합계 9/12 "확정", papers.id 없음 | T1 최종 2·1·1·1·1·1 = 7/12 미부합, T2 4/12 가설, 참조 ID·papers.id 병기 | final_LU06.json bcheck |
-| 8절 Layer A | 17·795·1458·1461·1002·1678 등을 실증 근거로 나열, PMID 공란 | LU6 특이 1682·1683·1684·1806·1726 중심으로 재구성, 讹传 논문 1561·1563·1564·1723을 반증으로 분리, 부적합 항목 제외 | pack_LU6.md; 마스터DB papers |
-| 8절 | 외부 검색 로그 없음 | sync_log 표 추가 | pack_LU6.md |
-| 9절 | 자리표시자 | P_single / P_comb / 이식 주치(痔疾 讹传) 분리 | 《通考》 【适应症】·附; 《证治通鉴》 |
-| 10절 | 단일 Target, S_orig 85(루브릭 밖 값), S_reflex 75, ARI-Core 79.0 B, "엄격하게 검증됨" | T1 71.2 ± 0 (B, 가중치 민감) / T2 35 ± 0 (D·H), 하위 항목·게이트·조정 기록·분기 판정 | final_LU06.json |
-| 10절 | — | 구판 v2.6 점수 79.0(비교 불가) | 구판 보고서 `_구판_v2.6/` |
-| xlsx | B-Check 시트 "B3-11 (Longhurst)", "B3-16 (Torres-Rosas)", "papers.id #1 / PMID 확인" | 구판 시트 4의 라벨을 등록부 기준(B3-11 = 진통 기전 종설 2008, B3-16 = NPY 교감 경로 실험 2020)으로 정정하고 "papers.id #1" 포인터를 1806으로 교체; 신규 B-Check 시트 추가. 두 참조 모두 v2.7 최종 채점에는 쓰이지 않음 | layer_b_reference_registry.md L64·69 |
+| Header | — | Added FMA 5.1.0 anatomical ontology line | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
+| Section 4 layer diagram, Section 6 | "Deep thumb flexor" (Kim Jaehyo textbook label as given) | Corrected to **flexor pollicis longus**, with the textbook's original label given alongside | English flexor pollicis longus = FMA:38481; slip in the textbook dataset |
+| Section 4 | Text layer diagram only | Figure 4-1 cross-section schematic (T1 level), FMA cross-check table by layer, 2 FMA notes (source of segments, label error) | `fma_query.py profile LU06`; figure script `.claude/skills/acupoint-anatomy/scripts/fma/figures/LU06_cross_section.py` |
+| Section 6 | 4-column textbook comparison | FMA adjudication column; interpretation of the nature of the differences (Common Textbook = admixture of ulnar-side, ulnar-nerve structures / Kim Jaehyo = extension to deeper layers) | FMA nerve_supply, segmental_supply |
+| Section 8 ② | B-Check ①, ② rationale | Added T1 FMA IDs and segment pointers (**scores unchanged**: T1 7/12, T2 4/12) | FMA segmental_supply |
+| Section 8 ③ | 2026-10-04 log | Added rows for the 2026-10-23 Rank 6 re-run (PubMed 9, OpenAlex 16, Crossref 0, 0 new) | `_metadata.sync_log` LU6 2026-10-23T21:44:38 |
+| Section 8 ⑤ | — | Figure 8-1 FMA peripheral afferent pathway (Mermaid) | FMA:38485, 38459, 38450, 292885, 39080 trunks |
+| Appendix A | — | FMA profile table | `fma_query.py profile LU06 --md` |
+| ARI | T1 71.2 ± 0 (B) / T2 35 ± 0 (D·H) | **No change** — FMA is B1-supplementary evidence and does not change rubric levels | Skill section 5-1 |
+| Check of earlier-edition wording | The automated check flagged 1 instance of "full inverted index" | This is a **quotation of deleted earlier-edition wording** kept in the 'Original content' column of the v2.7 revision history below, so it was not changed (history preserved). No earlier-edition wording in the body text | Header row of the v2.7 revision history of this report |
+| Archive | — | Pre-supplement md, html and xlsx kept in `_구판_v2.7_20261023/` | — |
+
+---
+
+## v2.7 Revision History (2026-10-04)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | "full inverted index of 48 measured papers" | Replaced by evidence-pack counts (32 landmark, 20 local; 4 LU6-specific papers + 1 clinical) | pack_LU6.md |
+| Section 1 | OCR of the *Xuewei Tongjian* table of contents (GV25–28 etc.), a fragment on 八關大刺 from the *Zhengzhi Tongjian*, page numbers from the Tongkao table of contents | Original-text excerpts from the 孔最 entries (location, depth, indications, collation) | Tongkao `(上)_81-160.md` L2300–2467; *Xuewei Tongjian* `(上卷)_321-400.md` L880–1060; *Zhengzhi Tongjian* `_161-240.md` L1738, 1782, `_241-320.md` L704, 854, 856 |
+| Section 2 | Generic placeholder text | Table of the path primary → re-recorded → supplemented → Ming variants → Sawada → mistransmission | Tongkao L2316–2438 |
+| Section 3 | Alias "-" only, wording "completely blocked" | Table handling the variant character 孔冣, Sawada's homonymous point and confusion with 列缺 | KJH row 61; Tongkao L2306, 2316, 2324 |
+| Section 4 | Layer mm values common to all points (0–2.5/…/over 22 mm), "joint capsule" | Estimated X, Y, Z coordinates by Target; LU6 layers by structure (textbooks, local anatomy in the *Xuewei Tongjian*) | Textbook xlsx row 59; *Xuewei Tongjian* local anatomy (局部解剖) |
+| Section 5 | Conversion formula only | Table of fen and mm by text | Needling-depth xlsx sheet 1, row 60 |
+| Section 6 | Boilerplate without structure names | Actual comparison of muscles, nerves and vessels; disagreement in 2 secondary muscles stated | Common Textbook and Kim Jaehyo xlsx, row 59 each |
+| Section 7 | Generic rule sentence | T1/T2 split (Δ ≈ 3 cun) carried out, T1 declared superior | final_LU06.json |
+| Section 8 B-Check | ① 2, ② 2, ⑤ 2, total 9/12 "confirmed", no papers.id | T1 final 2·1·1·1·1·1 = 7/12 not concordant, T2 4/12 hypothesis, reference IDs and papers.id given | final_LU06.json bcheck |
+| Section 8 Layer A | 17, 795, 1458, 1461, 1002, 1678 etc. listed as empirical evidence, PMIDs blank | Rebuilt around the LU6-specific 1682, 1683, 1684, 1806, 1726; mistransmission papers 1561, 1563, 1564, 1723 separated as counter-evidence; unsuitable items excluded | pack_LU6.md; master DB papers |
+| Section 8 | No external search log | sync_log table added | pack_LU6.md |
+| Section 9 | Placeholder | Separation of P_single / P_comb / grafted indication (haemorrhoid 痔疾 mistransmission) | Tongkao 【適應症】 and 附; *Zhengzhi Tongjian* |
+| Section 10 | Single Target, S_orig 85 (value outside the rubric), S_reflex 75, ARI-Core 79.0 B, "rigorously verified" | T1 71.2 ± 0 (B, weight-sensitive) / T2 35 ± 0 (D·H); sub-items, gates, adjudication record and branch decision | final_LU06.json |
+| Section 10 | — | Earlier-edition v2.6 score 79.0 (not comparable) | Earlier-edition report `_구판_v2.6/` |
+| xlsx | B-Check sheet "B3-11 (Longhurst)", "B3-16 (Torres-Rosas)", "papers.id #1 / PMID to be checked" | Labels in sheet 4 of the earlier edition corrected to the registry (B3-11 = 2008 review of analgesic mechanisms, B3-16 = 2020 experiment on the NPY sympathetic pathway) and the "papers.id #1" pointer replaced by 1806; new B-Check sheet added. Neither reference is used in the final v2.7 scoring | layer_b_reference_registry.md L64, 69 |
+
+---
+
+## English Edition Revision History (2026-10-24)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `LU06_공최_해부생리_실체판명_보고서.md` |
+| Title and body | "Kongzui (孔最, LU06)(孔最, LU06)" and similar duplicated annotations | Duplicates removed | — |
+| Figure 4-1 | Image path corrupted by term replacement (`LU06_Kongzui (孔最, LU06)_…png`), so the image was missing from the HTML | Restored to the actual file name | Files in the report folder |
+| Classical quotations | Simplified characters (e.g. 针, 泽, 渊, 鉴) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |
+
+## Refinement History (2026-10-24)
+
+| Location | Original wording | Revised wording | Basis |
+| :--- | :--- | :--- | :--- |
+| Header links | Absolute `file:///g:/내 드라이브/도서 번역/…` links (do not open on other PCs) | Links relative to the project root (`도서 번역`) | Skill path rule (no drive-letter absolute paths) |

@@ -1,99 +1,113 @@
-# 📜 [혈위고증 종합권위본] Dazhui (大椎, GV14)(GV14) vs Taodao (陶道, GV13)(GV13) 수혈고증 및 해부학적 실체 판명 보고서
+# 📜 [Authoritative Comprehensive Edition on Acupoint Textual Verification] Dazhui (大椎, GV14) vs Taodao (陶道, GV13): Textual Verification of the Points and Identification of Their Anatomical Substrate
 
-> **Framework**: v2.7 (2026-10-04 정제) · **적용 범위**: Rank 1~4 문헌 고증(필요 시 Rank 5) · **ARI**: 미산정(고증 보고서) · **근거 데이터**: 같은 폴더에 csv/xlsx 없음 — 3대 원전 `chunks_refined`(`针灸腧穴通考(下)_401-480.md` L1537-1760, `中国针灸穴位通鉴(上卷)_161-240.md` L4068-4090)로 대조  
-> **구판**: Version 2.6 (2026-10-03) 원본은 `_구판_v2.6/`에 보관  
-> **분석 프레임워크**: Acupoint Substrate Identification Framework (출토문헌 실증주의 훈고학적 교감)  
-> **마스터 근거 원칙**: [`경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx`](file:///g:/내%20드라이브/도서%20번역/02_Master_Datasets/%EA%B2%BD%ED%98%88%EC%9D%98%20%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81%20%EC%8B%A4%EC%B2%B4%EB%A5%BC%20%ED%8C%90%EB%AA%85%ED%95%98%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EB%A1%9C%EC%A7%81%28logic%29%20%EC%9B%90%EC%B9%99.xlsx)  
-> **근거 원전**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (황룡상 교수 문헌학적 교감)  
-> **통합 이력**: 기존 5개 분산 보고서(지도보고서, 시대별변천, 간/절간 표현, 상함vs하간 훈고, 가설검증)를 50% 이상 중복 통합 원칙에 따라 단일 권위본으로 완결 융합.
-
----
-
-## 🏛️ 1. 핵심 고증 개요 및 문제 제기
-
-Governor Vessel (督脈, GV)(督脈)의 **Dazhui (大椎, GV14)혈(大椎, GV14)**과 **Taodao (陶道, GV13)혈(陶道, GV13)**은 역대 침구 문헌에서 다음과 같은 중대한 학술적 쟁점을 지니고 있습니다:
-1. **명칭의 중복 및 공유**: 《太平聖惠方》, 《針灸聚英》 등 일부 고문헌에서 Taodao (陶道, GV13)혈을 "一名 大椎(일명 Dazhui (大椎, GV14))"로 기재하여 두 혈위 간의 명칭 간섭이 발생함.
-   - *(v2.7 대조 주)* 3대 원전에서 이 기재를 확인하지 못함. 《穴位通鉴》 陶道 조는 "别名 无"로 적고, 《腧穴通考》 陶道 조에도 이명이 없다. 원전에서 확인되는 "一名"은 "百劳一穴，一名大椎"(《窦太师针经》)로, Taodao (陶道, GV13)가 아니라 백로와 Dazhui (大椎, GV14)의 관계다. 따라서 이 쟁점은 **'Dazhui (大椎, GV14)'가 骨名(T1)이자 穴名(그 위 함요처)으로 함께 쓰인 데서 오는 혼선**으로 읽는 것이 원전에 맞는다(《腧穴通考》 "切不可將'大椎'穴與'大椎'骨相混").
-2. **척추 분절의 전이 (C7 vs T1)**: 고대 해부학에서 7경추(C7)를 '崇骨(Songgu (崇骨, EX-HN))' 또는 '項骨(항골)'로 보고 1흉추(T1)를 '大椎'로 보았는가, 아니면 C7 자체를 '大椎'로 정의하였는가에 대한 시대별 인식 변화.
-3. **'上陷(상함)' vs '下間(하간/절간)'의 훈고학적 실체**: "大椎上陷中"과 "大椎節下間"이라는 조문이 지칭하는 실제 척추 극돌기 간극의 해부학적 정위.
+> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: no csv/xlsx in this folder — collated against the three classics in `chunks_refined` (`针灸腧穴通考(下)_401-480.md` L1537-1760, `中国针灸穴位通鉴(上卷)_161-240.md` L4068-4090)  
+> **Previous edition**: the original Version 2.6 (2026-10-03) is kept in `_구판_v2.6/`  
+> **Analytical framework**: Acupoint Substrate Identification Framework (exegetical (訓詁學) collation grounded in the positivism of excavated texts)  
+> **Master principles of evidence**: [`경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx`](../../../02_Master_Datasets/%EA%B2%BD%ED%98%88%EC%9D%98%20%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81%20%EC%8B%A4%EC%B2%B4%EB%A5%BC%20%ED%8C%90%EB%AA%85%ED%95%98%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EB%A1%9C%EC%A7%81%28logic%29%20%EC%9B%90%EC%B9%99.xlsx)  
+> **Source classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (philological collation by Professor Huang Longxiang (黃龍祥))  
+> **Consolidation history**: Five previously scattered reports (supervision report, historical change, the expressions 間/節間, 上陷 vs 下間 exegesis, hypothesis testing) were fully merged into a single authoritative edition under the principle of consolidating documents with ≥ 50% overlap.  
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
 ---
 
-## 📑 2. 핵심 3대 원전 조문 정밀 대조 및 훈고학적 실증
+## 🏛️ 1. Overview of the Core Textual Verification and Statement of the Problem
 
-| 원전 도서 | 원문 수록 조문 | 훈고학적 해석 및 해부학적 실체 |
+The **Dazhui point (大椎, GV14)** and the **Taodao point (陶道, GV13)** of the Governor Vessel (督脈) carry the following major academic issues in the acupuncture literature through the ages:
+1. **Duplication and sharing of names (issue raised in the earlier edition — no basis in the classics)**: The earlier edition held that some ancient texts, such as 《太平聖惠方》 and 《針灸聚英》, record Taodao as "一名大椎" ("also called Dazhui"), producing name interference between the two points; this record is not found in the three classics (see notes below).
+   - *(v2.7 collation note)* This record could not be confirmed in the three classics. The Taodao (陶道) entry of 《穴位通鑑》 gives "別名 無", and the Taodao entry of 《腧穴通考》 also lists no alternative name. The "一名" that is confirmed in the classics is "百勞一穴，一名大椎" (《竇太師針經》), which concerns the relationship between Bailao (百勞) and Dazhui, not Taodao. The issue is therefore more faithfully read as **confusion arising from '大椎' being used both as a bone name (T1) and as a point name (the depression above it)** (《腧穴通考》: "切不可將'大椎'穴與'大椎'骨相混").
+   - *(2026-10-24 refinement note)* A full search of every chapter of the three classics finds no instance of "一名大椎" attached to Taodao (陶道). The passages of the two books quoted in the Taodao entry of 《穴位通鑑》 — 《太平聖惠方》 "在項大椎節下間，俯而取之陷者中" (99:3185) and 《針灸聚英》 "主痎瘧寒熱，灑淅，煩滿汗不出…" (1:120) — give no alternative name either, and the entry's [別名] reads "無" (`중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_05_督脉(2).md` L239, L269, L337, L413). The Taodao entry of 《腧穴通考》 cites the same two books for its indications without recording any alternative name (`침구수혈통고(针灸腧穴通考)/针灸腧穴通考_21_下_督脉穴-1.md` L1935, L1941). The only "一名大椎" in the classics is "百勞一穴，一名大椎" (《竇太師針經》, same file L2017).
+2. **Shift of the vertebral segment (C7 vs T1)**: Historical change in whether ancient anatomy regarded the 7th cervical vertebra (C7) as '崇骨' (Chonggu) or '項骨' (Xianggu) and the 1st thoracic vertebra (T1) as '大椎', or defined C7 itself as '大椎'.
+3. **The exegetical substrate of '上陷' (upper depression) vs '下間' (lower interval / inter-segment)**: The anatomical location of the actual interspinous gaps referred to by the passages "大椎上陷中" and "大椎節下間".
+
+---
+
+## 📑 2. Detailed Collation of the Passages in the Three Core Classics and Exegetical Verification
+
+| Classic | Passage recorded | Exegetical interpretation and anatomical substrate |
 | :--- | :--- | :--- |
-| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)** | "大椎, 在後正中線上, 第7頸椎棘突下凹陷中... 陶道, 在第1胸椎棘突下凹陷中." *(현대 표준 정위의 요약 — 원전 직접 인용 아님. 원전 출처 조문: "陶道在大椎节下间，督脉足太阳之会"《甲乙经》, "别名 无")* | 현대 표준 정위 확립: Dazhui (大椎, GV14)=C7-T1 극간, Taodao (陶道, GV13)=T1-T2 극간. 고대와 현대의 명칭 변천사를 체계적으로 망라. |
-| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** | "大椎: 傷寒熱盛, 瘧疾, 骨蒸, 咳嗽... 陶道: 痎瘧, 脊强, 頭重, 目瞑." *(여러 시대 주치를 모은 요약 — 단일 조문 아님)* | Dazhui (大椎, GV14)는 외감 열병에 자주 쓰인 혈(三陽督脉之會), Taodao (陶道, GV13)는 Governor Vessel (督脈, GV)과 Bladder Meridian of Foot-Taiyang (足太陽膀胱經)의 교회혈로 기재됨. *(v2.7 Rank 3·4 주)* 《腧穴通考》 문헌분석에 따르면 Dazhui (大椎, GV14)의 최초 주치는 《明堂经》 "伤寒热盛，烦呕" 1조뿐이고 "寒热"은 《素问·骨空论》 灸方의 오록이다. Taodao (陶道, GV13)의 "骨蒸·诸虚百损" 주치는 *Taiping Shenghui Fang* (《太平聖惠方》) **Dazhui (大椎, GV14)** 주치가 《窦太师秘传》·《类经图翼》에 잘못 옮겨진 것이므로, "Taodao (陶道, GV13)가 만성 허로열에 특화"라는 해석은 이명 혼입(Rank 3)에 기댄 것이다. 학질 처방(大椎+内关+陶道, 1987)은 배오이므로 단독 효능으로 읽지 않는다. |
-| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)** | "黃龍祥 考: 《素問·氣府論》'大椎上節'者, 頸椎與胸椎之交接處也. 古人指第1胸椎爲大椎, 後世漸以第7頸椎爲大椎, 故陶道與大椎之名往往相代." *(v2.7 대조 주: 이 문장은 `chunks_refined`에서 찾을 수 없다. 작성자의 재구성 요약으로 보이며 직접 인용으로 쓰지 않는다. 실제 대응 조문: 《小品方》 "大椎上节以上属颈崇骨也。大椎与崇骨相接处，其节最高硕也"(《医心方》卷十六 脚注); 문헌분석 "作为骨名，'大椎'…是指第一胸椎；作为穴名，'大椎'在第一胸椎棘突上陷中"; 《素问注证发微》 "今人误取高骨为大椎". 《腧穴通考》(下) 인쇄 1220-1222쪽)* | **황룡상 교수의 고증(원문 기준으로 정정)**: 고대에는 T1을 骨名 '大椎'로 불렀고, 穴名 Dazhui (大椎, GV14)는 처음부터 그 위 함요처(C7-T1)였다. Taodao (陶道, GV13)가 'Dazhui (大椎, GV14)'라는 이명을 가졌다는 기술은 원전에 없다. 명대(《素问注证发微》)에 "項骨의 높은 뼈(C7)를 大椎로 잘못 잡는다"는 비판이 있어 **骨名의 기준이 흔들린 것**은 확인되나, 혈 위치 자체가 옮겨졌다는 근거는 없다. |
+| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)** | "大椎, 在後正中線上, 第7頸椎棘突下凹陷中... 陶道, 在第1胸椎棘突下凹陷中." *(a summary of the modern standard location — not a direct quotation from the classic. Source passage in the classic: "陶道在大椎節下間，督脈足太陽之會" 《甲乙經》, "別名 無")* | Establishes the modern standard location: Dazhui = C7–T1 interspinous space, Taodao = T1–T2 interspinous space. Systematically covers the history of name changes from antiquity to the present. |
+| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** | "大椎: 傷寒熱盛, 瘧疾, 骨蒸, 咳嗽... 陶道: 痎瘧, 脊强, 頭重, 目瞑." *(a summary gathering indications from several eras — not a single passage)* | Dazhui is recorded as a point frequently used for externally contracted febrile diseases (meeting point of the three Yang meridians and the Governor Vessel, 三陽督脈之會), and Taodao as the crossing point (交會穴) of the Governor Vessel and the Bladder Meridian of Foot Taiyang (足太陽膀胱經). *(v2.7 Rank 3·4 note)* According to the textual analysis of 《腧穴通考》, the earliest indication of Dazhui is only the single item "傷寒熱盛，煩嘔" in 《明堂經》, and "寒熱" is a misrecording of the moxibustion prescription in 《素問·骨空論》. Taodao's indications "骨蒸 · 諸虛百損" are the indications of **Dazhui** in 《太平聖惠方》 wrongly transferred into 《竇太師秘傳》 and 《類經圖翼》, so the interpretation that "Taodao is specialised for chronic consumptive fever (虛勞熱)" relies on homonym contamination (Rank 3). The malaria prescription (大椎 + 內關 + 陶道, 1987) is a combination (配伍) and is not read as single-point efficacy. |
+| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)** | "黃龍祥 考: 《素問·氣府論》'大椎上節'者, 頸椎與胸椎之交接處也. 古人指第1胸椎爲大椎, 後世漸以第7頸椎爲大椎, 故陶道與大椎之名往往相代." *(v2.7 collation note: this sentence cannot be found in `chunks_refined`. It appears to be the author's reconstructed summary and is not used as a direct quotation. Actual corresponding passages: 《小品方》 "大椎上節以上屬頸崇骨也。大椎與崇骨相接處，其節最高碩也" (footnote in 《醫心方》 Volume 16); textual analysis "作為骨名，'大椎'…是指第一胸椎；作為穴名，'大椎'在第一胸椎棘突上陷中"; 《素問注證發微》 "今人誤取高骨為大椎". 《腧穴通考》 (Vol. 2), printed pp. 1220–1222)* | **Professor Huang Longxiang's textual verification (corrected against the original text)**: In antiquity T1 was called '大椎' as a bone name, and the point Dazhui was from the outset the depression above it (C7–T1). The classics contain no statement that Taodao had the alternative name 'Dazhui'. A Ming-dynasty criticism (《素問注證發微》) that "people wrongly take the high bone of the nape (C7) as 大椎" confirms that **the reference for the bone name wavered**, but there is no evidence that the point location itself moved. |
 
 ---
 
-## 🔍 3. 2대 핵심 가설 검증 결과
+## 🔍 3. Results of Testing the Two Core Hypotheses
 
-### [가설 1] 뼈 자체(椎骨)와 극간 함요처(穴位)의 명칭 전이 가설 (부분 지지 — 위치 관계는 원전과 부합, '一名 大椎' 전이 부분은 미확인)
-* **내용**: 고대 해부학에서 '大椎'는 본래 가장 크고 돌출된 흉추 1번 척추체(T1 Vertebra)를 의미했음. 따라서 T1 뼈의 위쪽(C7-T1 사이)은 '大椎上(현 Dazhui (大椎, GV14)혈)'이 되고, T1 뼈의 아래쪽(T1-T2 사이)은 '大椎下(현 Taodao (陶道, GV13)혈)'가 됨.
-* **검증**: 《明堂经》 "大椎，在第一椎上陷者中"과 "陶道，在项大椎节下间"은 T1 뼈를 기준으로 상하 간극을 취혈한 기술과 부합한다(3대 원전 중 《腧穴通考》·《穴位通鉴》 2종에서 확인). "大椎上节"은 《素问·气府论》이 아니라 《小品方》(《医心方》 인용)의 표현이다. Taodao (陶道, GV13)혈이 "一名 大椎"로 불렸다는 전제는 원전에서 확인되지 않으므로(《穴位通鉴》 "别名 无"), '축약 전이' 해석은 **작성 시 판단, 정량 미검증**으로 둔다.
+### [Hypothesis 1] Transfer of the name between the bone itself (椎骨) and the interspinous depression (穴位) (partially supported — the positional relationship matches the classics; the '一名大椎' transfer has no basis in the classics)
+* **Content**: In ancient anatomy '大椎' originally meant the 1st thoracic vertebra (T1 vertebra), the largest and most prominent. The space above the T1 bone (between C7 and T1) therefore became '大椎上' (the present Dazhui point), and the space below the T1 bone (between T1 and T2) became '大椎下' (the present Taodao point).
+* **Verification**: 《明堂經》 "大椎，在第一椎上陷者中" and "陶道，在項大椎節下間" agree with a description that locates points in the gaps above and below the T1 bone (confirmed in two of the three classics, 《腧穴通考》 and 《穴位通鑑》). "大椎上節" is an expression from 《小品方》 (quoted in 《醫心方》), not from 《素問·氣府論》. The premise that Taodao was called "一名大椎" is not confirmed in the classics (《穴位通鑑》 "別名 無"), so the 'abbreviation-transfer' interpretation is left as **author's judgement, not quantitatively verified**.
 
-### [가설 2] 단순 필사 전사 착오 가설 (보조적 판정)
-* **내용**: 《千金方》 등 필사본 전승 과정에서 판본 오기로 인해 두 혈위가 뒤바뀌었다는 설.
-* **검증**: 단순한 오기라기보다는 骨名 'Dazhui (大椎, GV14)'의 기준 골격(T1)을 후대에 C7로 잘못 잡는 일이 생기면서(《素问注证发微》 비판) 생긴 혼선으로 해석된다. 다만 "한대 T1 → 당·송·명대 C7"이라는 시대 구분은 원전에서 연대별로 확인되지 않았으므로 해석 수준(작성 시 판단)이다. 《千金方》 판본 오기설은 3대 원전에서 해당 사례를 찾지 못했다.
+### [Hypothesis 2] Simple copying/transcription error (auxiliary verdict)
+* **Content**: The theory that the two points were swapped through scribal errors in editions during the manuscript transmission of 《千金方》 and similar texts.
+* **Verification**: Rather than a simple scribal error, it is interpreted as confusion arising when later generations wrongly took the reference bone (T1) of the bone name 'Dazhui' to be C7 (criticised in 《素問注證發微》). However, the periodisation "Han dynasty T1 → Tang, Song and Ming dynasties C7" has not been confirmed era by era in the classics and remains at the level of interpretation (author's judgement). No instance of the 《千金方》 edition-error theory was found in the three classics.
 
 ---
 
-## 📐 4. 시대별 척추 랜드마크 변천사 (선진 ➔ 현대)
+## 📐 4. Historical Change of the Spinal Landmarks by Era (Pre-Qin ➔ Modern)
 
 ```
-[고대 선진·한대 관점]
-  경추(C1-C7)  ─────────── "頸項骨" (목뼈 영역)
-  흉추 1번(T1) ─────────── "大椎" (등의 첫째 큰 등뼈)
-    ├─ C7-T1 극간 ─────── [大椎穴] (大椎 위 함요처)
-    └─ T1-T2 극간 ─────── [陶道穴] (大椎 아래 절간, 一名 大椎)
+[Ancient Pre-Qin and Han-dynasty view]
+  Cervical vertebrae (C1-C7) ── "頸項骨" (neck-bone region)
+  1st thoracic vertebra (T1) ── "大椎" (first great vertebra of the back)
+    ├─ C7-T1 interspinous ───── [大椎穴] (depression above 大椎)
+    └─ T1-T2 interspinous ───── [陶道穴] (inter-segment below 大椎)
 
-[중세 당·송~근현대 표준]
-  경추 7번(C7) ─────────── "大椎" (가장 융기된 뼈, 隆椎)
-  흉추 1번(T1) ─────────── "第1胸椎" (첫째 등뼈)
-    ├─ C7-T1 극간 ─────── [대추(GV14)] (C7 극돌기 하단 함요처)
-    └─ T1-T2 극간 ─────── [도도(GV13)] (T1 극돌기 하단 함요처)
+[Medieval Tang-Song to modern standard]
+  7th cervical vertebra (C7) ── "大椎" (most prominent bone, 隆椎)
+  1st thoracic vertebra (T1) ── "第1胸椎" (first thoracic vertebra)
+    ├─ C7-T1 interspinous ───── [Dazhui (GV14)] (depression below the C7 spinous process)
+    └─ T1-T2 interspinous ───── [Taodao (GV13)] (depression below the T1 spinous process)
 ```
 
 ---
 
-## 🧬 5. 현대 해부학 및 신경생리학적 실체 비교 — 해부 실체 가설(ARI 미산정)
+## 🧬 5. Comparison of the Modern Anatomical and Neurophysiological Substrate — Anatomical-Substrate Hypothesis (ARI not scored)
 
-> **v2.7 표기**: 이 절은 Rank 6(Layer A·B 대조)과 Rank 7(ARI 채점)을 거치지 않은 **해부 실체 가설**이다. 신경반사 기전 행은 등록부 문헌을 인용하지 않았고, 적용할 수 있는 틀도 일반 체성-자율 반사(B3-04·B3-05, 마취 동물, Dazhui (大椎, GV14)·Taodao (陶道, GV13) 미검증)에 그치므로 B-Check ③~⑤ 기준 '유추(1점)' 수준이다. 인체 전환 근거(B4)는 검토하지 않았다.
+> **v2.7 note**: This section is an **anatomical-substrate hypothesis** that has not passed through Rank 6 (Layer A·B collation) or Rank 7 (ARI scoring). The neural-reflex mechanism row cites no registry literature, and the only applicable framework is the general somato-autonomic reflex (B3-04 · B3-05, anaesthetised animals, not verified for Dazhui or Taodao), so it is at the 'analogy (1 point)' level under B-Check ③–⑤. Evidence for translation to humans (B4) was not reviewed.
 
-| 구분 | Dazhui (大椎, GV14)혈 (GV14, C7-T1 극간) | Taodao (陶道, GV13)혈 (GV13, T1-T2 극간) |
+| Item | Dazhui (GV14, C7–T1 interspinous space) | Taodao (GV13, T1–T2 interspinous space) |
 | :--- | :--- | :--- |
-| **체표 랜드마크** | 목을 숙일 때 가장 크게 융기되고 회전 운동 시 움직이는 C7 극돌기 하단 | 목을 좌우로 돌려도 움직이지 않는 T1 극돌기 하단 함요처 |
-| **관통 층차** | 피부 ➔ 극상인대(Supraspinous lig.) ➔ 극간인대(Interspinous lig.) ➔ 황색인대 전방 경질막외강 | 동일 인대 복합체 층차 (흉추 1번 극하) |
-| **신경 지배** | C8 경신경 후지 내측기, 경추 교감신경절 연계 | T1 흉신경 후지 내측기, 성상신경절(Stellate ganglion) 인접 |
-| **신경반사 기전** | C8-T1 경흉수 접합부 체성 구심신경 ➔ 시상하부 체온조절 중추 자극 ➔ 발한 및 해열 | T1-T2 척수 후각 ➔ 상위 흉수 교감신경 ➔ 척추 기립근 경직 완화 및 기관지 확장 |
+| **Surface landmark** | Below the C7 spinous process, which is most prominent when the neck is flexed and moves during rotation | Depression below the T1 spinous process, which does not move when the neck is turned from side to side |
+| **Layers penetrated** | Skin ➔ supraspinous ligament (Supraspinous lig.) ➔ interspinous ligament (Interspinous lig.) ➔ epidural space anterior to the ligamentum flavum | Same ligament-complex layers (below the spinous process of T1) |
+| **Innervation** | Medial branch of the posterior ramus of the C8 cervical nerve; linked to the cervical sympathetic ganglia | Medial branch of the posterior ramus of the T1 thoracic nerve; adjacent to the stellate ganglion (Stellate ganglion) |
+| **Neural-reflex mechanism** | Somatic afferents at the C8–T1 cervicothoracic junction ➔ stimulation of the hypothalamic thermoregulatory centre ➔ sweating and antipyresis | T1–T2 dorsal horn ➔ upper thoracic sympathetic outflow ➔ relief of erector spinae rigidity and bronchodilation |
 
 ---
 
-## 🎓 6. 대학원 지도 및 최종 결론
+## 🎓 6. Graduate Supervision Notes and Final Conclusion
 
-1. **임상 정위 권고**: 현대 임상에서는 고대의 골격 명칭 혼선을 배제하고, 목을 회전시켜 확인되는 **C7 극돌기 하단을 Dazhui (大椎, GV14)(GV14)**, **T1 극돌기 하단을 Taodao (陶道, GV13)(GV13)**로 정위하는 것이 현행 표준(6·7판 《针灸学》, WHO B1-05)과 일치한다. 회전 촉진법은 일본 《校订引经诀》에 기재되어 있다(《腧穴通考》 인용). "가장 안전하고 타당"하다는 비교 판단은 작성 시 판단이며 정량 미검증이다.
-2. **Taodao (陶道, GV13)의 'Dazhui (大椎, GV14)' 이명 차단**: Taodao (陶道, GV13)혈의 '一名 大椎'는 고대 T1 골격 기준의 잔재이므로, 현대 임상 기록 및 연구에서는 이명 혼용을 엄격히 차단함.
-3. **자침 안전선**: 두 혈위 모두 심도 **15~25mm** 직자/상향사자가 표준이며, 30mm 이상 심자 시 척수강(Dural sac) 침범 위험이 있으므로 극간인대 저항감을 촉지하며 자침해야 함.
-   - *(v2.7 주)* 15~25mm·30mm 수치는 작성 시 판단이며 정량 미검증(B2-07·B2-10 영상 심도 연구 미대조). 원전 기준은 《腧穴通考》 "沿棘突的倾斜角向上斜刺 0.5~1 寸，不宜深刺，以免损伤脊髓"(Dazhui (大椎, GV14)·Taodao (陶道, GV13) 공통), 《明堂经》 Taodao (陶道, GV13) "刺入五分"이다. 동신촌 환산(1푼 = 2.3mm) 시 0.5~1촌 ≈ 11.5~23mm, 5푼 ≈ 11.5mm로, 본문 상한 25mm보다 얕다.
+1. **Recommended clinical location**: In modern practice, setting aside the ancient confusion over skeletal names and locating **Dazhui (GV14) below the C7 spinous process**, identified by rotating the neck, and **Taodao (GV13) below the T1 spinous process**, agrees with the current standard (6th/7th editions of 《針灸學》, WHO B1-05). The rotation palpation method is recorded in the Japanese 《校訂引經訣》 (cited in 《腧穴通考》). The comparative judgement that it is "the safest and most valid" is the author's judgement and not quantitatively verified.
+2. **Resolving the Taodao–Dazhui name confusion**: The record that Taodao was called '一名大椎' is not found in the three classics. The confusion arises because the bone name '大椎' (T1) and the point name Dazhui (the depression above it) share the same characters, so modern clinical records and research should distinguish the bone name from the point name and should not give Taodao the alternative name 'Dazhui'.
+3. **Needling safety line**: For both points, perpendicular or upward-oblique insertion to a depth of **15–25 mm** is standard; insertion deeper than 30 mm risks entering the dural sac (Dural sac), so needling should proceed while palpating the resistance of the interspinous ligament.
+   - *(v2.7 note)* The figures 15–25 mm and 30 mm are the author's judgement and not quantitatively verified (not collated with the imaging depth studies B2-07 · B2-10). The classical standards are 《腧穴通考》 "沿棘突的傾斜角向上斜刺 0.5~1 寸，不宜深刺，以免損傷脊髓" (common to Dazhui and Taodao) and 《明堂經》 for Taodao "刺入五分". Converted with the body-cun (同身寸) standard (1 fen = 2.3 mm), 0.5–1 cun ≈ 11.5–23 mm and 5 fen ≈ 11.5 mm, shallower than the upper limit of 25 mm in the text.
 
-## v2.7 정제 이력 (2026-10-04)
+## v2.7 Refinement History (2026-10-04)
 
-| # | 위치 | 원래 표현 | 바꾼 표현 | 근거 |
+| # | Location | Original wording | Revised wording | Basis |
 | :-: | :--- | :--- | :--- | :--- |
-| 1 | 머리말 | Version 2.6 (2026-10-03 개정) | 프레임워크 v2.7 정제 블록, ARI 미산정 | 지침 1 |
-| 2 | 1절 쟁점 1 | Taodao (陶道, GV13) "一名 大椎" 기재 (《太平聖惠方》·《針灸聚英》) | 원전 미확인 주 추가, 쟁점을 骨名·穴名 혼선으로 재정리 | 《穴位通鉴》 陶道 "别名 无"; 《腧穴通考》 陶道 조 이명 없음, "百劳一穴，一名大椎" |
-| 3 | 2절 표 《穴位通鉴》·《证治通鉴》 행 | 인용부호 안의 문장을 원문처럼 제시 | "요약, 직접 인용 아님" 표기 | `chunks_refined`에서 해당 문장 미검출 |
-| 4 | 2절 표 《证治通鉴》 해석 | Dazhui (大椎, GV14) "최고 요혈", Taodao (陶道, GV13) "만성 허로열에 특화" | "자주 쓰인 혈", Taodao (陶道, GV13) 骨蒸 주치는 Dazhui (大椎, GV14) 주치 혼입(Rank 3), 학질 처방은 배오(Rank 4) | 《腧穴通考》 陶道·大椎 문헌분석 |
-| 5 | 2절 표 《腧穴通考》 행 | "黃龍祥 考: …故陶道與大椎之名往往相代" 인용 + "결정적 고증" | 원전 미검출·재구성 표기, 실제 조문과 문헌분석으로 정정. "혈 위치 이동"이 아닌 "骨名 기준 혼선" | 《腧穴通考》(下) 인쇄 1220-1222쪽 |
-| 6 | 3절 가설 1 | "채택 ⭐", "명백한 물적 증거" | "부분 지지", 3대 원전 중 2종에서 확인, '一名 大椎' 전이는 작성 시 판단 | 《明堂经》 佚文(《腧穴通考》·《穴位通鉴》) |
-| 7 | 3절 가설 1 | "《素問·氣府論》 '大椎上節'" | 출전을 《小品方》(《医心方》 인용)으로 정정 | 《腧穴通考》 "大椎"与"大杼"辨 5 |
-| 8 | 3절 가설 2 | "체계적 패러다임 전이로 판명됨" | "혼선으로 해석됨", 시대 구분은 작성 시 판단 | 원전에 연대별 근거 없음 |
-| 9 | 5절 | 해부·신경반사 기전 표(무표기) | "해부 실체 가설(ARI 미산정)", B3-04·B3-05 유추 수준 명시 | 지침 4, 등록부 B3 적용 범위 |
-| 10 | 6절 결론 1 | "임상 정위 확정 … 가장 안전하고 타당함" | "임상 정위 권고", 현행 표준(B1-05)과 일치, 비교 판단은 작성 시 판단 | 지침 2 |
-| 11 | 6절 결론 3 | 15~25mm, 30mm 안전선(무근거) | 정량 미검증 표기, 원전 심도(0.5~1촌 ≈ 11.5~23mm) 병기 | 《腧穴通考》 操作, 1푼 = 2.3mm |
+| 1 | Header | Version 2.6 (revised 2026-10-03) | Framework v2.7 refinement block, ARI not scored | Guideline 1 |
+| 2 | Section 1, issue 1 | Taodao recorded as "一名大椎" (《太平聖惠方》 · 《針灸聚英》) | Added note that it is not confirmed in the classics; issue reframed as confusion between bone name and point name | 《穴位通鑑》 陶道 "別名 無"; no alternative name in the 《腧穴通考》 陶道 entry, "百勞一穴，一名大椎" |
+| 3 | Section 2 table, rows for 《穴位通鑑》 · 《證治通鑑》 | Sentences in quotation marks presented as if original text | Marked "summary, not a direct quotation" | The sentences were not found in `chunks_refined` |
+| 4 | Section 2 table, interpretation for 《證治通鑑》 | Dazhui "the most important point", Taodao "specialised for chronic consumptive fever" | "a frequently used point"; Taodao's 骨蒸 indication is contamination from Dazhui's indications (Rank 3); the malaria prescription is a combination (Rank 4) | Textual analysis of 陶道 and 大椎 in 《腧穴通考》 |
+| 5 | Section 2 table, row for 《腧穴通考》 | Quotation "黃龍祥 考: …故陶道與大椎之名往往相代" + "decisive textual proof" | Marked as not found in the classic / reconstructed; corrected with the actual passages and textual analysis. "Confusion over the bone-name reference", not "movement of the point location" | 《腧穴通考》 (Vol. 2), printed pp. 1220–1222 |
+| 6 | Section 3, Hypothesis 1 | "Adopted ⭐", "clear material evidence" | "Partially supported", confirmed in 2 of the 3 classics, the '一名大椎' transfer is the author's judgement | 《明堂經》 lost text (佚文) (《腧穴通考》 · 《穴位通鑑》) |
+| 7 | Section 3, Hypothesis 1 | "《素問·氣府論》 '大椎上節'" | Source corrected to 《小品方》 (quoted in 《醫心方》) | 《腧穴通考》 "大椎"與"大杼"辨 5 |
+| 8 | Section 3, Hypothesis 2 | "determined to be a systematic paradigm shift" | "interpreted as confusion"; the periodisation is the author's judgement | No era-by-era evidence in the classics |
+| 9 | Section 5 | Anatomy / neural-reflex mechanism table (unmarked) | "Anatomical-substrate hypothesis (ARI not scored)", stated as at the B3-04 · B3-05 analogy level | Guideline 4, scope of registry B3 |
+| 10 | Section 6, conclusion 1 | "Clinical location confirmed … safest and most valid" | "Recommended clinical location", agrees with the current standard (B1-05); the comparative judgement is the author's judgement | Guideline 2 |
+| 11 | Section 6, conclusion 3 | 15–25 mm, 30 mm safety line (no basis) | Marked not quantitatively verified; classical depth added (0.5–1 cun ≈ 11.5–23 mm) | 《腧穴通考》 操作, 1 fen = 2.3 mm |
 
-- PMID/DOI: 본문에 없음(확인 대상 0건).
-- 남은 한계: 《太平聖惠方》·《針灸聚英》 원서 자체는 3대 원전 밖이라 직접 대조하지 못했다. 원서에서 Taodao (陶道, GV13) "一名 大椎"가 확인되면 2·6번 정정을 다시 검토한다.
+- PMID/DOI: none in the text (0 items to check).
+- Remaining limitation: the original books 《太平聖惠方》 and 《針灸聚英》 themselves lie outside the three classics and could not be collated directly. If Taodao "一名大椎" is confirmed in those originals, corrections 2 and 6 will be reviewed again.
+
+## Refinement History (2026-10-24)
+
+| # | Location | Original wording | Revised wording | Basis |
+| :-: | :--- | :--- | :--- | :--- |
+| 1 | Section 1, issue 1 | Taodao "一名大椎" presented as an issue (v2.7 note only said "not confirmed in the classics") | Marked as "issue raised in the earlier edition — no basis in the classics"; note added with the result of a full search of the three classics | `中国针灸穴位通鉴_05_督脉(2).md` L239, L269, L337, L413; `针灸腧穴通考_21_下_督脉穴-1.md` L1935, L1941, L2017 |
+| 2 | Section 3, Hypothesis 1 | '一名大椎' transfer "not confirmed"; 'abbreviation transfer' reading left as the author's judgement | "No basis in the classics"; the 'abbreviation transfer' reading is not adopted | As above |
+| 3 | Section 4 diagram | 陶道穴 "(inter-segment below 大椎, 一名 大椎)" | "(inter-segment below 大椎)" — removes the contradiction with the Section 1 note and the Section 3 verdict | As above |
+| 4 | Section 6, conclusion 2 | "Taodao's '一名大椎' is a remnant of the ancient T1 skeletal reference" | The alias is not in the classics; the confusion lies in bone name and point name sharing the same characters | 《腧穴通考》 "切不可將'大椎'穴與'大椎'骨相混" |
+| 5 | Header | Absolute `file:///g:/…` link to the master-principles xlsx | Relative link from the project root | Skill path rule |
+
+- The remaining limitation in the v2.7 history (the original books 《太平聖惠方》 and 《針灸聚英》 not collated) still stands. Because the Taodao passages of both books quoted in the three classics carry no alternative name, a new confirmation in the originals is unlikely.

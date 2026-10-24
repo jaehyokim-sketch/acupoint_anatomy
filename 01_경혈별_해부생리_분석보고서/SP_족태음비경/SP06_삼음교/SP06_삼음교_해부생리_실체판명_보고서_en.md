@@ -1,355 +1,370 @@
-# [Acupoint Anatomical & Physiological Monograph] Sanyinjiao (三陰交, SP06)(三陰交, SP06)
+# [Acupoint Anatomical & Physiological Substrate Monograph] Sanyinjiao (三陰交, SP06)
 
-> **Framework**: v2.7 · **공간 변위 분기**: **있음** — T1 *Huangdi Mingtang Jing* (《黃帝明堂經》) 원래의 '三阴交'(안쪽복사 위 8寸) vs T2 현행 Sanyinjiao (三陰交, SP06)(안쪽복사 끝 위 3寸 = 본래 '足太阴'穴), $\Delta \gg 15\text{mm}$
-> **T2 (현행·우위)**: ARI v3.0 | ARI-Core 75.0 ± 2.5 (B) | SI 50 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 75.0 (B, 등급 불변) · 반사 기전 B-Check 10/12 부합(③·⑤ 동물 한정)
-> **T1 (명당 원위)**: ARI v3.0 | ARI-Core 41.3 ± 1.3 (D·H) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 38.5 (D, 등급 불변) · B-Check 2/12
-> **이중 채점**: 독립 채점 2회, 15점 이상 불일치 3건 조정 완료 · **분기 판정**: ΔARI-Core 33.8, ± 구간 비중첩 → T2 우위
+> **Framework**: v2.7 · **Spatial discrepancy split**: **Yes** — T1 the original '三陰交' of *Huangdi Mingtang Jing* (《黃帝明堂經》) (8 cun above the medial malleolus) vs T2 the current Sanyinjiao (3 cun above the tip of the medial malleolus = originally the '足太陰' point), $\Delta \gg 15\text{mm}$
+> **T2 (current, superior)**: ARI v3.0 | ARI-Core 75.0 ± 2.5 (B) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 75.0 (B, grade unchanged) · reflex-mechanism B-Check 10/12 concordant (③ and ⑤ animal only)
+> **T1 (original Mingtang location)**: ARI v3.0 | ARI-Core 41.3 ± 1.3 (D·H) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 38.5 (D, grade unchanged) · B-Check 2/12
+> **Dual scoring**: two independent scorings; 3 disagreements of 15 points or more adjudicated · **Branch decision**: ΔARI-Core 33.8, ± intervals do not overlap → T2 superior
 
 > **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
-> **Layer A Empirical Database**: `02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json` (역색인 SP6 68편 중 **SP6를 실제 자극·관찰한 15편**만 판정에 사용, 8절 ① 표. 2026-10-23 개정 검색 스크립트로 Rank 6 실행)
-> **Layer B Reference Registry**: `01_Framework/layer_b_reference_registry.md` (B-Check 6항목, 부합 기준 ≥ 8/12)
-> **Anatomical Ontology**: FMA 5.1.0 로컬 색인 — 교재 구조를 `FMA:ID`로 고정(B1 보조, 등록부 미등재), 부록 A
-> **Metrological Standard**: Han Dynasty standard: 1 fen (分) = 2.3 mm ($z = \text{푼} \times 2.3\text{mm}$)
-> **⚠ 임신부**: *Tongren* (《銅人》) "故妊娠不可刺", 교재 "孕妇禁针". 자침깊이 DB에는 '0'(Contraindicated for Needling (禁鍼)) 기록이 없다 — 조건부 금기(5절·9절)
+> **Layer A Empirical Database**: `02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json` (of the 68 papers in the SP6 inverted index, **only the 15 that actually stimulated or observed SP6** are used for the verdict, Table 8-①. Rank 6 run with the search script revised on 2026-10-23)
+> **Layer B Reference Registry**: `01_Framework/layer_b_reference_registry.md` (6-item B-Check, concordance threshold ≥ 8/12)
+> **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry); Appendix A
+> **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\text{mm}$)
+> **⚠ Pregnancy**: 《銅人》 "故妊娠不可刺"; textbooks "孕婦禁針". The needling-depth DB has no '0' ('Contraindicated for needling (禁針)') record — a conditional contraindication (Sections 5 and 9)
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
 ---
 
 ## 1. Classical Literature Screening Table (Three Primary Classics Excerpts)
 
-| Classic Book | Original Excerpt (File & Line) | English Summary & TCM Analysis | Remarks |
+| Classic | Original excerpt (file & line) | English summary & analysis | Remarks |
 | :--- | :--- | :--- | :--- |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "三阴交，在内踝上八寸胻骨下陷者中。足太阴、厥阴之会。（*Huangdi Mingtang Jing* (《黃帝明堂經》)）" — `침구수혈통고(针灸腧穴通考)/针灸腧穴通考_09_上_足太阴脾经穴.md` L1125 | 《明堂》의 Sanyinjiao (三陰交, SP06)는 안쪽복사 위 **8寸** 정강뼈 아래 오목, 족태음·궐음의 회 | **T1** 근거 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "内踝上八寸骨下陷中名'三阴交'…隋唐时内踝上三寸处的'足太阴'穴被称作'三阴交'，而原*Huangdi Mingtang Jing* (《黃帝明堂經》)之'三阴交'渐渐隐而不彰，名存而实亡。内踝上三寸之'三阴交'，不仅名实不符…" / "今之'三阴交'已非*Huangdi Mingtang Jing* (《黃帝明堂經》)之'三阴交'。" — 같은 파일 L1119, L1121 | 현행 3寸 Sanyinjiao (三陰交, SP06)는 본래 '足太阴'穴이며 이름만 이어받았다(名实不符) | 名实考 — 7절 분기의 핵심 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 宋以前 部位: 《医心方》 卷二·卷二十八 "内踝上八寸", *Qianjin Yaofang* (《千金要方》) "八寸", 《甲乙》 卷三·《外台》 "三寸", 《圣惠方》 "八寸" / "实际上只有传世之明刊本*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)作'内踝上三寸'…其他*Huangdi Mingtang Jing* (《黃帝明堂經》)传本均作'内踝上八寸'…*Waitai Miyao* (《外臺秘要》)'三阴交'穴排在'漏谷'（在内踝上六寸）穴之后" — 같은 파일 L1135~1149 | 《明堂》 전본 대부분이 8寸, 명간본 《甲乙》만 3寸. 《外台》 배열 순서(漏谷 뒤)도 8寸의 흔적 | Rank 4 교감 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "足太阴穴，在足内踝上三寸是也。（《诸病源候论》卷四十一）" / "足太阴穴，在内踝上一夫，一名三阴交。（*Qianjin Yifang* (《千金翼方》)卷二十八）" / "三交二穴，在内踝上三寸是…名大阴" · "三阴二穴，在内踝上八寸，骨下陷中是"（《医心方》卷八） — 같은 파일 L1157~1169 | 3寸 '足太阴'(=三交)과 8寸 '三阴'(=원래 三阴交)이 수당대에 따로 기록됨 | 이명 분리(3절) |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "部位：在小腿内侧，内踝尖上3寸，胫骨内侧缘后际。" / "针刺操作：刺1~1.5寸。孕妇禁针。" — 같은 파일 L1107, L1115 | 현대 정위·심도·임신부 Contraindicated for Needling (禁鍼) | **T2** 현대 정위 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "可灸三壮，针入三分。故妊娠不可刺。（《铜人腧穴针灸图经》卷下）" / "直刺…治足部病，略向后，深1~1.5寸。感应：可有麻电感向足底放散。"（上海《针灸学》） — 같은 파일 L1359, L1385 | 송대 '임신부 자침 불가'의 첫 조문. 깊은 직자 시 발바닥으로 전기감 = 정강신경 자극 | 5절 SI 근거 |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "三阴交，在内踝上三寸骨下陷者中。（*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)3：53）" / 部位 2: "在内踝上八寸[1]骨下陷中。（《备急千金要方》29：510、*Taiping Shenghui Fang* (《太平聖惠方》)、《医心方》）… [1]'八寸'系'三寸'之误。同书卷21作'三寸'。" — `중국침구혈Epigastric / Stomach pain (胃痛)감(中国针灸穴位通鉴)/中国针灸穴位通鉴_31_足太阴脾经(1).md` L1308, L1336~1338 | 《穴位通鉴》은 8寸을 '三寸의 오기'로 본다 | **《通考》와 상충** — 7절에서 판정 |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | 局部解剖: "在胫骨后方，比目鱼与屈趾长肌之间，有胫后动脉，分布着隐神经及胫神经。（《新针灸学》）" / "针刺通过之组织层：皮肤，皮下组织，趾长屈肌。神经、血管：隐神经之小腿内侧皮支，胫神经肌支；胫后动脉。（《针灸学简编》）" — 같은 파일 L1520~1526 | 가자미근–긴발가락굽힘근 사이, 뒤정강동맥·두렁신경·정강신경 | 4·6절 층차의 문헌 근거 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《明堂经》 三阴交 主治 "主足下热，胫痛不能久立，湿痹不能行。" / 小结 "《明堂经》所载'三阴交'在内踝上八寸，而六朝以后方书所载'三阴交'多位于内踝上三寸，故主治病症大不相同。" — `중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_05_第壹编_第七篇_足太阴脾经_手少阴心经_手太阳小肠经.md` L154, L184 | 腧穴书(8寸)와 方书(3寸)의 주치가 다르다 | 9절 T1/T2 주치 분리 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "徐文伯针刺堕胎：泻足太阴，补手阳明，胎便应针而落。" / 小结 "六朝后医书多因而取三阴交、合谷穴以治难产，有些腧穴书甚至将此二穴列为孕妇禁刺穴。" — `中国针灸证治通鉴_22_第叁编_妇儿科病证.md` L382, L480 | 임신부 Contraindicated for Needling (禁鍼)의 기원 = 徐文伯 인산(引産) 처방 | 5·9절 |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "三陰交，在內踝上八寸胻骨下陷者中。足太陰、厥陰之會。（《黃帝明堂經》）" — `침구수혈통고(针灸腧穴通考)/针灸腧穴通考_09_上_足太阴脾经穴.md` L1125 | The Sanyinjiao of 《明堂》 lies **8 cun** above the medial malleolus in the depression below the tibia; meeting point of the foot-taiyin and jueyin (足太陰、厥陰之會) | Basis for **T1** |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "內踝上八寸骨下陷中名'三陰交'…隋唐時內踝上三寸處的'足太陰'穴被稱作'三陰交'，而原《黃帝明堂經》之'三陰交'漸漸隱而不彰，名存而實亡。內踝上三寸之'三陰交'，不僅名實不符…" / "今之'三陰交'已非《黃帝明堂經》之'三陰交'。" — same file, L1119, L1121 | The current 3-cun Sanyinjiao is originally the '足太陰' point and has merely inherited the name (name and reality do not match, 名實不符) | Name–reality study (名實考) — the core of the Section 7 split |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Pre-Song locations: 《醫心方》 vols. 2 and 28 "內踝上八寸", 《千金要方》 "八寸", 《甲乙》 vol. 3 and 《外臺》 "三寸", 《聖惠方》 "八寸" / "實際上只有傳世之明刊本《針灸甲乙經》作'內踝上三寸'…其他《黃帝明堂經》傳本均作'內踝上八寸'…《外臺秘要》'三陰交'穴排在'漏谷'（在內踝上六寸）穴之後" — same file, L1135–1149 | Most transmitted versions of 《明堂》 give 8 cun; only the Ming printed edition of 《甲乙》 gives 3 cun. The ordering in 《外臺》 (after Lougu (漏谷)) is also a trace of 8 cun | Rank 4 collation |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "足太陰穴，在足內踝上三寸是也。（《諸病源候論》卷四十一）" / "足太陰穴，在內踝上一夫，一名三陰交。（《千金翼方》卷二十八）" / "三交二穴，在內踝上三寸是…名大陰" · "三陰二穴，在內踝上八寸，骨下陷中是"（《醫心方》卷八） — same file, L1157–1169 | The 3-cun '足太陰' (= 三交) and the 8-cun '三陰' (= the original 三陰交) were recorded separately in the Sui–Tang period | Separation of aliases (Section 3) |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "部位：在小腿內側，內踝尖上3寸，脛骨內側緣後際。" / "針刺操作：刺1~1.5寸。孕婦禁針。" — same file, L1107, L1115 | Modern location, depth and the prohibition of needling in pregnancy | Modern location of **T2** |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "可灸三壯，針入三分。故妊娠不可刺。（《銅人腧穴針灸圖經》卷下）" / "直刺…治足部病，略向後，深1~1.5寸。感應：可有麻電感向足底放散。"（上海《針灸學》） — same file, L1359, L1385 | First Song-dynasty statement that 'pregnant women must not be needled'. An electric sensation radiating to the sole on deep perpendicular insertion = stimulation of the tibial nerve | Basis for SI in Section 5 |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "三陰交，在內踝上三寸骨下陷者中。（《針灸甲乙經》3：53）" / Location 2: "在內踝上八寸[1]骨下陷中。（《備急千金要方》29：510、《太平聖惠方》、《醫心方》）… [1]'八寸'系'三寸'之誤。同書卷21作'三寸'。" — `중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_31_足太阴脾经(1).md` L1308, L1336–1338 | The *Xuewei Tongjian* (《穴位通鑑》) regards 8 cun as 'a slip for 3 cun' | **Conflicts with the *Tongkao* (《通考》)** — adjudicated in Section 7 |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | Local anatomy: "在脛骨後方，比目魚與屈趾長肌之間，有脛後動脈，分佈著隱神經及脛神經。（《新針灸學》）" / "針刺通過之組織層：皮膚，皮下組織，趾長屈肌。神經、血管：隱神經之小腿內側皮支，脛神經肌支；脛後動脈。（《針灸學簡編》）" — same file, L1520–1526 | Between soleus and flexor digitorum longus; posterior tibial artery, saphenous nerve and tibial nerve | Textual basis for the layers in Sections 4 and 6 |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Indications of 三陰交 in 《明堂經》: "主足下熱，脛痛不能久立，濕痹不能行。" / Summary (小結): "《明堂經》所載'三陰交'在內踝上八寸，而六朝以後方書所載'三陰交'多位於內踝上三寸，故主治病症大不相同。" — `중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_05_第壹编_第七篇_足太阴脾经_手少阴心经_手太阳小肠经.md` L154, L184 | The indications in the point books (腧穴書, 8 cun) and the prescription books (方書, 3 cun) differ | Separation of T1/T2 indications in Section 9 |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "徐文伯針刺墮胎：瀉足太陰，補手陽明，胎便應針而落。" / Summary (小結): "六朝後醫書多因而取三陰交、合谷穴以治難產，有些腧穴書甚至將此二穴列為孕婦禁刺穴。" — `中国针灸证治通鉴_22_第叁编_妇儿科病证.md` L382, L480 | The origin of the prohibition of needling in pregnancy = Xu Wenbo's (徐文伯) prescription for inducing delivery (引產) | Sections 5 and 9 |
 
 ---
 
-## 2. Primary Source vs. Secondary Quotation Historical Stratification Table
+## 2. Primary Source vs. Secondary Quotation: Historical Stratification Table
 
-| Era / Stratum | Classical Source | Textual Description | Primary / Secondary |
+| Era / stratum | Classical source | Textual description | Primary / secondary |
 | :--- | :--- | :--- | :--- |
-| 한대 | *Huangdi Mingtang Jing* (《黃帝明堂經》) | **三阴交 = 内踝上八寸胻骨下陷者中**, 足太阴·厥阴之会; 刺入三分, 留七呼, 灸三壮; 주 "足下热，胫痛不能久立，湿痹不能行" | 원천(T1: 위치·심도·주치) |
-| 남조 | 《南史·张融传》 徐文伯 | 泻足太阴, 补手阳明 → 堕胎 | 원천(T2 계열 '足太阴'의 부인과 응용) |
-| 수 | 《诸病源候论》 卷四十一 | 足太阴穴 在足内踝上三寸 | 원천(T2: 3寸 '足太阴'穴) |
-| 당 | *Qianjin Yaofang* (《千金要方》)·*Qianjin Yifang* (《千金翼方》) | 足太阴(内踝上三寸·一夫) 灸 — 漏下赤白·泄痢·劳淋·癞疝; 《千金翼》 卷二十六 "在内踝上三寸骨下陷者中"·"产难，月水不禁，横生胎动皆针三阴交" | 3寸 지점을 '三阴交'로 부르는 최초 기술(通考 L1103) — 단, 전세본은 송대 교정을 거침 |
-| 당 | *Waitai Miyao* (《外臺秘要》) | 三阴交 "内踝上三寸"(《甲乙》 전재), 그러나 배열은 漏谷 뒤; 《素问·藏气法时论》 脾病候를 三阴交 아래 편입 | 재인용 + **귀속 오류**(通考 L1243, L1277) |
-| 일본 | 《医心方》 卷二·卷八·卷二十八 | 三阴交 八寸; "三交=三寸(大阴)", "三阴=八寸" 구분 | 재인용(구분 보존) |
-| 송 | 《太平圣惠方·明堂》 | 三阴交 八寸; 漏谷 아래에 三阴交 주치 오입 | 재인용 + 혼입(通考 L1415~1423) |
-| 송 | 《铜人腧穴针灸图经》 | 三阴交 **三寸** 확정, 归足太阴脾经; "女子漏下不止" 추가; 徐文伯 방 "泻足三阴交，补手阳明合谷"; "故妊娠不可刺" | **현행 정위·임신부 Contraindicated for Needling (禁鍼)의 정본화** |
-| 금원명 | 《针经摘英集》·《玉龙经》·*Zhenjiu Dacheng* (《針灸大成》) 등 | Hegu (合谷, LI04)·태충·중극 등과의 산과·부인과 배오 | 배오 재생산 |
-| 현대 | 1957 南京《针灸学》~7版, 국표 | 内踝尖上3寸, 胫骨内侧缘后际; 直刺1~1.5寸; 孕妇禁针 | 표준화(T2) |
+| Han | *Huangdi Mingtang Jing* (《黃帝明堂經》) | **三陰交 = 內踝上八寸胻骨下陷者中**, meeting point of the foot-taiyin and jueyin (足太陰·厥陰之會); 刺入三分, 留七呼, 灸三壯; indications "足下熱，脛痛不能久立，濕痹不能行" | Primary (T1: location, depth, indications) |
+| Southern Dynasties | 《南史·張融傳》, Xu Wenbo (徐文伯) | 瀉足太陰, 補手陽明 → 墮胎 (termination of pregnancy) | Primary (gynaecological application of the T2-lineage '足太陰') |
+| Sui | 《諸病源候論》 vol. 41 | 足太陰穴 在足內踝上三寸 | Primary (T2: the 3-cun '足太陰' point) |
+| Tang | *Qianjin Yaofang* (《千金要方》) · *Qianjin Yifang* (《千金翼方》) | Moxibustion at 足太陰 (內踝上三寸, 一夫) — 漏下赤白, 泄痢, 勞淋, 癩疝; 《千金翼》 vol. 26 "在內踝上三寸骨下陷者中", "產難，月水不禁，橫生胎動皆針三陰交" | First description calling the 3-cun point '三陰交' (Tongkao L1103) — but the transmitted editions went through Song-dynasty editing |
+| Tang | *Waitai Miyao* (《外臺秘要》) | 三陰交 "內踝上三寸" (transcribed from 《甲乙》), but ordered after 漏谷; the spleen-disease signs of 《素問·藏氣法時論》 incorporated under 三陰交 | Secondary quotation + **misattribution** (Tongkao L1243, L1277) |
+| Japan | *Ishinpō* (《醫心方》) vols. 2, 8, 28 | 三陰交 八寸; distinction "三交 = 三寸 (大陰)", "三陰 = 八寸" | Secondary quotation (distinction preserved) |
+| Song | 《太平聖惠方·明堂》 | 三陰交 八寸; 三陰交 indications wrongly inserted under 漏谷 | Secondary quotation + admixture (Tongkao L1415–1423) |
+| Song | *Tongren Shuxue Zhenjiu Tujing* (《銅人腧穴針灸圖經》) | 三陰交 fixed at **三寸** and assigned to the Spleen Meridian of Foot-Taiyin (足太陰脾經); "女子漏下不止" added; Xu Wenbo's prescription as "瀉足三陰交，補手陽明合谷"; "故妊娠不可刺" | **Canonisation of the current location and of the prohibition of needling in pregnancy** |
+| Jin–Yuan–Ming | 《針經摘英集》, 《玉龍經》, *Zhenjiu Dacheng* (《針灸大成》) etc. | Obstetric and gynaecological combinations with Hegu (合谷), Taichong (太衝), Zhongji (中極) etc. | Reproduction of combinations |
+| Modern | 1957 Nanjing 《針灸學》 to the 7th edition; national standard | 內踝尖上3寸, 脛骨內側緣後際; 直刺1~1.5寸; 孕婦禁針 | Standardisation (T2) |
 
 ---
 
 ## 3. Nomenclature & Alias Collation Table (KJH DB Verification)
 
-| Alias (別名) | Classical Source | KJH Database | Textual Adjudication |
+| Alias | Source | KJH DB | Verdict |
 | :--- | :--- | :--- | :--- |
-| 足太阴(太陰) | 《诸病源候论》·《千金》 — 内踝上三寸(通考 L1157~1161) | 등재 | **T2 지점의 본래 이름**. 별명이 아니라 원명 |
-| 三交 | 《医心方》 卷八 "三交二穴，在内踝上三寸…名大阴"(L1167) | 등재 | 수당대 T2 지점의 다른 이름 |
-| 足太阴交 · 厥阴交 | 《新雕千金方》 · 《黄帝虾蟆经》(L1151) | 足太陰交 등재 | **T1**(8寸 원래 三阴交)의 이칭 |
-| 三阴 | 《医心方》 卷八 "三阴二穴，在内踝上八寸"(L1169) · 《三家脚气论》 | 미등재 | T1의 수당대 이름 |
-| 承命 | 1957 南京《针灸学》(일본 교재 인용) / *Qianjin Yaofang* (《千金要方》) "承命 在内踝后上行三寸动脉上"(L1129, L1171) | 등재 | **별개의 혈**(3寸 뒤 맥동처). 별명으로 쓰지 않는다 |
-| 下之三里 · 下三里 | 일본 속칭 — 寺尾隆純《十四经腧穴弁解》(1784) "以三阴交为'下三里'"(L1131); 《穴位通鉴》 별명 2(L1314) | 下之三里 등재 | 중국 혈명이 아님. ST36(上三里)과 혼용 주의 — ST36 보고서 3절과 일치 |
+| 足太陰 (太陰) | 《諸病源候論》, 《千金》 — 內踝上三寸 (Tongkao L1157–1161) | Listed | **The original name of the T2 point**. Not an alias but the original name |
+| 三交 | 《醫心方》 vol. 8 "三交二穴，在內踝上三寸…名大陰" (L1167) | Listed | Another Sui–Tang name for the T2 point |
+| 足太陰交 · 厥陰交 | 《新雕千金方》 · 《黃帝蝦蟆經》 (L1151) | 足太陰交 listed | Alternative names of **T1** (the original 8-cun 三陰交) |
+| 三陰 | 《醫心方》 vol. 8 "三陰二穴，在內踝上八寸" (L1169) · 《三家腳氣論》 | Not listed | Sui–Tang name of T1 |
+| 承命 | 1957 Nanjing 《針灸學》 (citing a Japanese textbook) / 《千金要方》 "承命 在內踝後上行三寸動脈上" (L1129, L1171) | Listed | **A separate point** (pulsation site 3 cun behind and above). Not used as an alias |
+| 下之三里 · 下三里 | Japanese popular names — Terao Ryūjun (寺尾隆純), 《十四經腧穴弁解》 (1784) "以三陰交為'下三里'" (L1131); alias 2 in the *Xuewei Tongjian* (L1314) | 下之三里 listed | Not a Chinese point name. Beware of confusion with ST36 (上三里) — consistent with Section 3 of the ST36 report |
 
-KJH DB(`경혈명_비교_정리_KJH.xlsx` 종합 목록 Excel 행 137: 134, SP06, Sanyinjiao (三陰交, SP06), 三陰交, "承命, 太陰, 下之三里, 足太陰交, 足太陰, 三交")는 T1·T2 계열의 이름과 별개 혈(承命)을 한 줄에 함께 싣고 있다. 위 표처럼 계열을 나누어 읽어야 한다. 또 *Taiping Shenghui Fang* (《太平聖惠方》) 이후 漏谷(SP7)에 三阴交 주치가 섞여 들어갔다(通考 L1415~1423).
+The KJH DB (`경혈명_비교_정리_KJH.xlsx`, master list, Excel row 137: 134, SP06, Samumgyo, 三陰交, "承命, 太陰, 下之三里, 足太陰交, 足太陰, 三交") lists names from the T1 and T2 lineages and a separate point (承命) together on one line. It must be read by lineage, as in the table above. In addition, from *Taiping Shenghui Fang* (《太平聖惠方》) onward, 三陰交 indications became mixed into Lougu (漏谷, SP7) (Tongkao L1415–1423).
 
 ---
 
-## 4. 3D Spatial Coordinates & Layer 1~5 Anatomical Substrate Diagram
+## 4. 3D Spatial Coordinates & Layer 1–5 Anatomical Substrate Diagram
 
-**T2 (현행)**
-- **X (내외측)**: 정강뼈 안쪽면 **뒤모서리 바로 뒤**(胫骨内侧缘后际, 通考 L1107).
-- **Y (상하)**: 안쪽복사 끝 위 3寸(4횡지, 1957 南京《针灸学》 이하; 通考 L1201~1213), 交信 위 1寸(L1179).
-- **Z (깊이)**: 아래 층차. **SP6 성인 사체·초음파 실측값이 Layer A에 없으므로 mm 경계는 적지 않고 구조 순서만 기재**한다.
+**T2 (current)**
+- **X (medial–lateral)**: **just behind the posterior border** of the medial surface of the tibia (脛骨內側緣後際, Tongkao L1107).
+- **Y (superior–inferior)**: 3 cun above the tip of the medial malleolus (4 finger-breadths, from the 1957 Nanjing 《針灸學》 onward; Tongkao L1201–1213), 1 cun above Jiaoxin (交信, KI8) (L1179).
+- **Z (depth)**: layers below. **Layer A contains no adult cadaveric or ultrasound measurement at SP6, so only the order of structures is given, without mm boundaries**.
 
 ```
-[Layer 1 피부·피하]   두렁신경 안쪽종아리피부가지(두 교재) · 큰두렁정맥(두 교재) — 고전 3푼(6.9mm) 도달층(추정)
+[Layer 1 Skin/subcutis]   Medial crural cutaneous branches of saphenous n. (both textbooks) · great saphenous v. (both textbooks)
+                          — layer reached by the classical 3 fen (6.9 mm) (estimated)
         │
-[Layer 2 얕은 근육]   가자미근 안쪽 가장자리(두 교재)
+[Layer 2 Superficial muscle] Medial margin of soleus (both textbooks)
         │
-[Layer 3 깊은 근육]   긴발가락굽힘근(두 교재) · 뒤정강근(김재효) — 현대 직자 1~1.5寸(23~34.5mm) 도달층(추정)
+[Layer 3 Deep muscle]     Flexor digitorum longus (both textbooks) · tibialis posterior (Kim Jaehyo)
+                          — layer reached by modern perpendicular insertion of 1–1.5 cun (23–34.5 mm) (estimated)
         │
-[Layer 4 신경혈관속] 정강신경(두 교재) · 뒤정강동·정맥(두 교재) — 깊은 직자 시 "麻电感向足底放散"(通考 L1385)
+[Layer 4 Neurovascular]   Tibial n. (both textbooks) · posterior tibial a./vv. (both textbooks)
+                          — on deep perpendicular insertion "麻電感向足底放散" (Tongkao L1385)
         │
-[Layer 5 바닥]       정강뼈 뒤면 · 종아리뼈사이막 (심부 장기 없음)
+[Layer 5 Floor]           Posterior surface of tibia · interosseous membrane of leg (no deep organs)
 ```
 
-![Sanyinjiao (三陰交, SP06)(SP6) 높이 하퇴 하1/3 횡단면 해부 실체 모식도](SP06_Sanyinjiao (三陰交, SP06)_횡단면_해부모식도.png)
+![Schematic cross-section of the lower third of the leg at the level of Sanyinjiao (三陰交, SP6)](SP06_삼음교_횡단면_해부모식도.png)
 
-*그림 4-1. Sanyinjiao (三陰交, SP06)(현행 T2) 높이 하퇴 하1/3 횡단면 모식도(오른다리, 위에서 내려다봄, 축척 아님). 직자 경로는 큰두렁정맥·두렁신경을 피해 정강뼈 안쪽면 뒤모서리 뒤로 들어가 긴발가락굽힘근에 이르고, 더 깊으면 정강신경·뒤정강동정맥에 닿을 수 있다. 층 두께·거리는 SP6 실측값이 없어 임의로 배치했다. T1(8寸)은 이 단면보다 5寸 위다.*
+*Figure 4-1. Schematic cross-section of the lower third of the leg at the level of Sanyinjiao (current T2) (right leg, viewed from above, not to scale). The perpendicular needling path avoids the great saphenous vein and saphenous nerve, enters behind the posterior border of the medial surface of the tibia and reaches flexor digitorum longus; deeper, it may reach the tibial nerve and posterior tibial artery and veins. Layer thicknesses and distances are arranged arbitrarily because there are no SP6 measurements. T1 (8 cun) lies 5 cun above this section.*
 
-**T1 (《明堂》 원위, 内踝上八寸胻骨下陷者中)**: 2대 교재·FMA 대응표에 T1 지점 자체의 항목은 없다. 같은 '정강뼈 뒤모서리' 선 위의 인접 혈 교재 기재로 범위를 좁히면, 아래쪽 漏谷(SP7, 6寸)은 가자미근·긴발가락굽힘근·뒤정강근·정강신경·뒤정강동정맥(두 교재 SP07 행, SP06과 같음), 위쪽 地机(SP8, 아래 10寸)는 장딴지근·가자미근·긴발가락굽힘근·뒤정강근(김재효)·오금근(공통교재)이다. 따라서 T1은 **가자미근·긴발가락굽힘근 층(SP7과 같은 구성)**일 것으로 **추론**할 뿐이며, 교재·실측 근거는 없다($S_{clarity}$ 25).
+**T1 (original 《明堂》 location, 內踝上八寸胻骨下陷者中)**: neither the two textbooks nor the FMA mapping table contains an entry for the T1 site itself. Narrowing the range using the textbook entries for adjacent points on the same 'posterior border of the tibia' line: below it, Lougu (漏谷, SP7, 6 cun) has soleus, flexor digitorum longus, tibialis posterior, the tibial nerve and the posterior tibial artery and veins (SP07 rows of both textbooks, the same as SP06); above it, Diji (地機, SP8, 10 cun below) has gastrocnemius, soleus, flexor digitorum longus, tibialis posterior (Kim Jaehyo) and popliteus (Common Textbook). T1 is therefore only **inferred** to lie in the **soleus/flexor digitorum longus layer (the same composition as SP7)**; there is no textbook or measured evidence ($S_{clarity}$ 25).
 
-**FMA 실체 대조(Layer별, T2)** — 구조명은 2대 교재, ID·관계는 FMA 5.1.0
+**FMA substrate cross-check (by layer, T2)** — structure names from the two textbooks; IDs and relations from FMA 5.1.0
 
-| Layer | 구조 | FMA | 대응 | FMA 관계 | 신경 줄기 / 분절 |
+| Layer | Structure | FMA | Match | FMA relation | Nerve trunk / segment |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | 두렁신경 안쪽종아리피부가지 [공통] | FMA:75559 | exact(김재효) / **수동**(공통교재 표기 'medial cutaneous branch of the leg of saphenous nerve' 자동 none) | Set of medial crural cutaneous branches of saphenous nerve — **FMA에 두렁신경(FMA:45262)으로의 상위 연결 없음** | B1: 두렁신경 → 넙다리신경, 피절 L3~L4(B1-03) |
-| 1 | 큰두렁정맥 [공통] | FMA:21376 | exact | drains_into Femoral vein | — |
-| 2 | 가자미근 [공통] | FMA:22542 | exact | contained_in 뒤칸 얕은층 공간(FMA:312103) | 정강신경 가지(FMA:80461·80462). 분절 S1·S2 |
-| 3 | 긴발가락굽힘근 [공통] | FMA:51071 | exact | contained_in 뒤칸 깊은층 공간(FMA:312109) | Nerve to FDL(FMA:80101) ← 정강신경. 분절 **S1·S2(주)**·L5 |
-| 3 | 뒤정강근 [김재효] | FMA:51099 | **수동**(교재 'posterior tibialis' 어순 → 자동 none) | contained_in 뒤칸 깊은층 공간(FMA:312109) | Nerve to tibialis posterior(FMA:80104). 분절 L5·S1 |
-| 4 | 정강신경 [공통] | FMA:19035 | exact | branch_of Sciatic nerve(FMA:19034) | 궁둥신경 → 엉치신경얼기(FMA:5909). 신경 분절 FMA 미기재 → B1: L4~S3 |
-| 4 | 뒤정강동맥 · 뒤정강정맥 [공통] | FMA:43895 · FMA:44332 | exact | 동맥 branch_of External iliac artery(FMA 모델링, ST36 보고서와 같은 특이점) / 정맥 tributary_of Popliteal vein | — |
-| 5 | 정강뼈 · 종아리뼈사이막 | FMA:24476 · FMA:35187 | — | — | — |
+| 1 | Medial crural cutaneous branches of saphenous nerve [both] | FMA:75559 | exact (Kim Jaehyo) / **manual** (Common Textbook term 'medial cutaneous branch of the leg of saphenous nerve' — automatic match none) | Set of medial crural cutaneous branches of saphenous nerve — **no parent link to the saphenous nerve (FMA:45262) in FMA** | B1: saphenous nerve → femoral nerve, dermatomes L3–L4 (B1-03) |
+| 1 | Great saphenous vein [both] | FMA:21376 | exact | drains_into Femoral vein | — |
+| 2 | Soleus [both] | FMA:22542 | exact | contained_in superficial posterior compartment space (FMA:312103) | Branches of the tibial nerve (FMA:80461, 80462). Segments S1, S2 |
+| 3 | Flexor digitorum longus [both] | FMA:51071 | exact | contained_in deep posterior compartment space (FMA:312109) | Nerve to FDL (FMA:80101) ← tibial nerve. Segments **S1, S2 (primary)**, L5 |
+| 3 | Tibialis posterior [Kim Jaehyo] | FMA:51099 | **manual** (textbook word order 'posterior tibialis' → automatic match none) | contained_in deep posterior compartment space (FMA:312109) | Nerve to tibialis posterior (FMA:80104). Segments L5, S1 |
+| 4 | Tibial nerve [both] | FMA:19035 | exact | branch_of Sciatic nerve (FMA:19034) | Sciatic nerve → sacral plexus (FMA:5909). Nerve segments not in FMA → B1: L4–S3 |
+| 4 | Posterior tibial artery · posterior tibial vein [both] | FMA:43895 · FMA:44332 | exact | Artery branch_of External iliac artery (FMA modelling; the same peculiarity as in the ST36 report) / vein tributary_of Popliteal vein | — |
+| 5 | Tibia · interosseous membrane of leg | FMA:24476 · FMA:35187 | — | — | — |
 
-- 공개 초음파 참고 영상은 없다(등록 데이터셋 `marzola_msk`는 앞정강근·안쪽장딴지근·위팔두갈래근만 포함). SP6 높이의 깊이 실측은 PubMed 검색(2026-10-23, `(SP6 OR Sanyinjiao) AND (ultrasound OR cadaver OR CT OR MRI OR anatomical) AND (depth OR needling OR "tibial nerve")`)에서도 성인 연구를 찾지 못했다(소아 층차 기술 1편 PMID 2053869는 DB 미병합·소아라 미사용).
+- There is no public reference ultrasound image (the registered dataset `marzola_msk` contains only tibialis anterior, medial gastrocnemius and biceps brachii). A PubMed search for depth measurements at the SP6 level (2026-10-23, `(SP6 OR Sanyinjiao) AND (ultrasound OR cadaver OR CT OR MRI OR anatomical) AND (depth OR needling OR "tibial nerve")`) also found no adult study (one paediatric layer description, PMID 2053869, was not used because it is not merged into the DB and concerns children).
 
 ---
 
-## 5. Classical Needling Depth Calculation Table (Han Dynasty 1 fen = 2.3 mm)
+## 5. Classical Needling Depth Calculation Table
 
-출처: `침구문헌별 자침깊이 정리_AI 분석용.xlsx` 시트1 Excel 행 136(N0 134, SP06), 보조로 《通考》 【操作】(L1353~1385).
+Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, Excel row 136 (N0 134, SP06), supplemented by Tongkao 【操作】 (L1353–1385).
 
-| 문헌 | 푼(分) | 환산 심도 (×2.3mm) | 도달 Layer(추정) | 비고 |
+| Text | Fen (分) | Depth (× 2.3 mm) | Layer reached (estimated) | Remarks |
 | :--- | :---: | :---: | :--- | :--- |
-| 황제명당경(황룡상 감수) | 3 | 6.9mm | 1 | "刺入三分" — 名实考상 **T1(8寸)의 심도** |
-| 침구갑을경 | 3 | 6.9mm | 1 | |
-| 침구경험방 | 3 | 6.9mm | 1 | |
-| 동의보감(인용: 동인) | 3 | 6.9mm | 1 | Contraindicated for Needling (禁鍼) 아님 |
-| 경락수혈학 공통교재 | 10~15 | 23.0~34.5mm | 3 | |
-| 침구의학 공통교재 | 10~15 | 23.0~34.5mm | 3 | |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 10~15 | 23.0~34.5mm | 3(~4) | "刺1~1.5寸。孕妇禁针" |
-| 1957 南京《针灸学》(원전 보조) | 5~8 | 11.5~18.4mm | 2 | L1373 |
-| 《中国针灸学》(원전 보조) | 5~10 | 11.5~23.0mm | 2~3 | L1383 |
-| 上海《针灸学》(원전 보조) | 직자 10~15(足部病) / 15~20(透悬钟) / 사자 15~25 | 23.0~57.5mm | 3~4 | "麻电感向足底放散" = 정강신경 자극(L1385) |
-| 《窦太师针经》(원전 보조) | 횡자 25 | (수평 57.5mm) | 1~3 | "横针入二寸半，亦透绝骨穴"(L1365) |
+| *Huangdi Mingtang Jing* (《黃帝明堂經》, ed. Huang Longxiang) | 3 | 6.9 mm | 1 | "刺入三分" — by the name–reality study, **the depth of T1 (8 cun)** |
+| *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | 3 | 6.9 mm | 1 | |
+| *Chimgu Gyeongheombang* (《針灸經驗方》) | 3 | 6.9 mm | 1 | |
+| *Dongui Bogam* (《東醫寶鑑》, citing 《銅人》) | 3 | 6.9 mm | 1 | Not contraindicated |
+| Korean common textbook, *Meridian and Acupoint Studies* (經絡經穴學) | 10–15 | 23.0–34.5 mm | 3 | |
+| Korean common textbook, *Acupuncture and Moxibustion Medicine* (針灸醫學) | 10–15 | 23.0–34.5 mm | 3 | |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 10–15 | 23.0–34.5 mm | 3 (–4) | "刺1~1.5寸。孕婦禁針" |
+| 1957 Nanjing 《針灸學》 (supplementary, from the classic) | 5–8 | 11.5–18.4 mm | 2 | L1373 |
+| 《中國針灸學》 (supplementary, from the classic) | 5–10 | 11.5–23.0 mm | 2–3 | L1383 |
+| Shanghai 《針灸學》 (supplementary, from the classic) | Perpendicular 10–15 (foot disorders) / 15–20 (through to Xuanzhong 懸鐘) / oblique 15–25 | 23.0–57.5 mm | 3–4 | "麻電感向足底放散" = stimulation of the tibial nerve (L1385) |
+| 《竇太師針經》 (supplementary, from the classic) | Transverse 25 | (horizontal 57.5 mm) | 1–3 | "橫針入二寸半，亦透絕骨穴" (L1365) |
 
-- Contraindicated for Needling (禁鍼)('0') 기록 없음, 'blank' 없음(DB 해당 열 기준). **"孕妇禁针"은 조건부 금기**이며, 그 기원은 徐文伯의 인산 처방(泻足太阴·补手阳明)이 후대 腧穴书에서 "妊娠不可刺"로 바뀐 것이다(证治通鉴_22 L480; 通考 L1291, L1359). 임신부에게는 자침하지 않는다는 원칙은 그대로 둔다.
-- 안전 범위: 고전 3푼은 피하에 머문다. 현대 1~1.5寸 직자는 긴발가락굽힘근 층에 이르며, 상한 부근과 '略向后' 방향에서는 정강신경·뒤정강동정맥에 닿을 수 있다(上海《针灸学》의 감응 기술). 큰두렁정맥·두렁신경이 정강뼈 뒤모서리 가까운 피하를 지나므로 정맥을 눈으로 확인하고 피한다.
+- No 'Contraindicated for needling' ('0') record and no 'blank' (per the relevant DB column). **"孕婦禁針" is a conditional contraindication**, originating in Xu Wenbo's (徐文伯) prescription for inducing delivery (瀉足太陰·補手陽明), which later point books (腧穴書) turned into "妊娠不可刺" (Zhengzhi Tongjian_22 L480; Tongkao L1291, L1359). The principle of not needling pregnant women is retained.
+- Safety range: the classical 3 fen stays subcutaneous. Modern perpendicular insertion of 1–1.5 cun reaches the flexor digitorum longus layer, and near the upper limit and in the '略向後' (slightly backward) direction it may reach the tibial nerve and posterior tibial artery and veins (the needling-sensation description in Shanghai 《針灸學》). Because the great saphenous vein and saphenous nerve run subcutaneously close to the posterior border of the tibia, the vein should be identified visually and avoided.
 
 ---
 
-## 6. Textbook Comparison Table & FMA Ontology Mapping (Common Textbook vs. Prof. Kim Jaehyo)
+## 6. Textbook Comparison Table (T2)
 
-| 구분 | 경혈학 공통교재 (refine.xlsx 종합 시트 행 135) | 김재효 교재 (종합 시트 행 135) | FMA 판별 | 평가 |
+| Category | Common Textbook of Acupoint Studies (refine.xlsx master sheet row 135) | Kim Jaehyo textbook (master sheet row 135) | FMA adjudication | Assessment |
 | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 가자미근, 긴발가락굽힘근 | 가자미근, 긴발가락굽힘근, **뒤정강근** | FMA:22542·51071 공통 / FMA:51099 김재효 단독 | 김재효가 더 깊은 층까지 기재 |
-| 신경 | 두렁신경의 안쪽종아리피부가지, 깊은층에 정강신경 | 같음 | FMA:75559·19035 (공통교재 표기는 수동 대응) | 일치 |
-| 혈관 | 큰두렁정맥, 뒤정강동·정맥 | 같음 | FMA:21376·43895·44332 | 일치 |
+| Muscles | Soleus, flexor digitorum longus | Soleus, flexor digitorum longus, **tibialis posterior** | FMA:22542, 51071 shared / FMA:51099 Kim Jaehyo only | Kim Jaehyo lists down to a deeper layer |
+| Nerves | Medial crural cutaneous branches of saphenous nerve; tibial nerve in the deep layer | Same | FMA:75559, 19035 (Common Textbook term mapped manually) | Agree |
+| Vessels | Great saphenous vein, posterior tibial artery and veins | Same | FMA:21376, 43895, 44332 | Agree |
 
-**FMA로 본 차이의 의미**: 두 교재는 거의 같다. 유일한 차이인 '뒤정강근'(김재효)은 FMA상 긴발가락굽힘근과 같은 **뒤칸 깊은층 공간(FMA:312109)**에 있고, 긴발가락굽힘근보다 가쪽·깊은 쪽이다. 따라서 이는 상충이 아니라 **기재 깊이의 차이**다. 《穴位通鉴》 국소해부(L1518~1526: 比目鱼与屈趾长肌之间, 胫后动脉, 隐神经·胫神经)는 두 교재와 일치한다. 같은 곳의 《中国针灸学》 "有长总趾伸肌"(L1524)는 뒤칸 혈위에 앞칸 근육(폄근)을 적은 것으로 오기로 본다.
+**What FMA shows about the difference**: the two textbooks are almost identical. The only difference, 'tibialis posterior' (Kim Jaehyo), lies in FMA in the same **deep posterior compartment space (FMA:312109)** as flexor digitorum longus, lateral and deep to it. This is therefore not a conflict but **a difference in the depth recorded**. The local anatomy in the *Xuewei Tongjian* (L1518–1526: 比目魚與屈趾長肌之間, 脛後動脈, 隱神經·脛神經) agrees with both textbooks. The statement of 《中國針灸學》 at the same place, "有長總趾伸肌" (L1524), records an anterior-compartment muscle (an extensor) at a posterior-compartment point and is regarded as an error.
 
-B1-01·B1-03(하퇴 뒤칸 국소해부)과 부합한다. 혈위 특이 영상·사체 실측(PMID)은 없다.
+Consistent with B1-01 and B1-03 (regional anatomy of the posterior compartment of the leg). There is no point-specific imaging or cadaveric measurement (PMID).
 
 ---
 
-## 7. Spatial Discrepancy Dual-Target Analysis (Discrepancy Δ > 15 mm)
+## 7. Spatial Discrepancy Branch Inference Diagram
 
-| Target | 근거 | 위치 | 판단 |
+| Target | Basis | Location | Judgement |
 | :--- | :--- | :--- | :--- |
-| **T1** 《明堂》 三阴交 | *Huangdi Mingtang Jing* (《黃帝明堂經》) "在内踝上八寸胻骨下陷者中"(通考 L1125); 《医心方》·*Qianjin Yaofang* (《千金要方》)·《圣惠方》 八寸(L1137~1147); 足厥阴 "上踝八寸，交出太阴之后"(L1119) | 안쪽복사 위 8寸, 정강뼈 뒤모서리 | 명칭의 원래 혈. 송대 이후 소실 |
-| **T2** 현행 三阴交 (= 원 足太阴) | 《诸病源候论》·《千金》 "足太阴…内踝上三寸"(L1157~1161); 명간본 《甲乙》 3：53; *Tongren* (《銅人》) 이후 통일(L1185) | 안쪽복사 끝 위 3寸, 정강뼈 뒤모서리 | 현대 표준 정위 |
+| **T1** 三陰交 of 《明堂》 | *Huangdi Mingtang Jing* (《黃帝明堂經》) "在內踝上八寸胻骨下陷者中" (Tongkao L1125); 八寸 in 《醫心方》, 《千金要方》, 《聖惠方》 (L1137–1147); foot-jueyin (足厥陰) "上踝八寸，交出太陰之後" (L1119) | 8 cun above the medial malleolus, posterior border of the tibia | The original point of the name. Lost after the Song |
+| **T2** current 三陰交 (= the original 足太陰) | 《諸病源候論》, 《千金》 "足太陰…內踝上三寸" (L1157–1161); Ming printed 《甲乙》 3：53; unified from 《銅人》 onward (L1185) | 3 cun above the tip of the medial malleolus, posterior border of the tibia | Modern standard location |
 
-- **Δ 추정**: 두 지점은 같은 정강뼈 뒤모서리 선 위에서 5寸 떨어진다. 하퇴 골도(안쪽복사 끝~음릉천 13寸)로 성인 1寸을 약 2.5~3cm로 보면 $\Delta \approx 12\sim15\text{cm} \gg 15\text{mm}$ (골도 환산 추정, 실측 아님). → **정본 Rank 5 분기 요건 충족, 두 Target을 따로 채점한다.**
-- **상충 판정(《穴位通鉴》 vs 《通考》)**: 《穴位通鉴》은 8寸을 '三寸의 오기'로 보고 그 근거로 "同书卷21作三寸"을 든다(通鉴 L1338). 그러나 *Qianjin Yaofang* (《千金要方》) 권21의 해당 조문은 "劳淋，灸**足太阴**百壮，在内踝上三寸"(通考 L1339; 证治通鉴_20 L747)으로, '三阴交'가 아니라 '足太阴'을 말한다. 반대로 《通考》는 ① 《明堂》 전본 다수의 8寸, ② 《外台》의 배열 순서(漏谷 뒤), ③ 《圣惠方》의 8寸, ④ 《医心方》의 '三交(3寸)'·'三阴(8寸)' 구분, ⑤ 《产经》 경맥도를 독립 증거로 제시한다(L1149~1173). 《证治通鉴》 소결(L184)도 같은 결론이다. 따라서 **《通考》 판단을 채택**한다. 다만 《通考》 스스로 《千金翼》 전세본의 송대 교정 여부는 "尚不能确定"이라 했으므로(L1103), $S_{orig}$ ④는 100이 아닌 단계로 둔다(10절).
-- **분기 판정**: ΔARI-Core = 75.0 − 41.3 = 33.8 (≥ 10), T2 [72.5, 77.5]와 T1 [40.0, 42.5]는 겹치지 않는다 → **T2 우위**. 이는 "현행 Sanyinjiao (三陰交, SP06) 지점의 해부 실체가 더 잘 판명된다"는 뜻이며, 이름의 원래 주인은 T1이라는 문헌학 결론(名实不符)과 함께 기록한다.
+- **Estimated Δ**: the two sites are 5 cun apart on the same posterior-tibial-border line. Taking 1 cun in an adult as about 2.5–3 cm from the bone-proportional length of the leg (tip of medial malleolus to Yinlingquan (陰陵泉) = 13 cun), $\Delta \approx 12\sim15\text{cm} \gg 15\text{mm}$ (estimate from bone-proportional conversion, not measured). → **The canon's Rank 5 split requirement is met; the two Targets are scored separately.**
+- **Adjudication of the conflict (*Xuewei Tongjian* vs *Tongkao*)**: the *Xuewei Tongjian* regards 8 cun as 'a slip for 3 cun', citing "同書卷21作三寸" (Tongjian L1338). However, the corresponding passage in vol. 21 of 《千金要方》 is "勞淋，灸**足太陰**百壯，在內踝上三寸" (Tongkao L1339; Zhengzhi Tongjian_20 L747), which speaks of '足太陰', not '三陰交'. The *Tongkao*, by contrast, presents independent evidence: ① 8 cun in most transmitted versions of 《明堂》, ② the ordering in 《外臺》 (after 漏谷), ③ 8 cun in 《聖惠方》, ④ the distinction in 《醫心方》 between '三交 (3 cun)' and '三陰 (8 cun)', ⑤ the channel chart of 《產經》 (L1149–1173). The summary (小結) of the *Zhengzhi Tongjian* (L184) reaches the same conclusion. **The judgement of the *Tongkao* is therefore adopted.** However, the *Tongkao* itself says that whether the transmitted edition of 《千金翼》 underwent Song-dynasty editing "尚不能確定" (cannot yet be determined) (L1103), so $S_{orig}$ ④ is set at a level below 100 (Section 10).
+- **Branch decision**: ΔARI-Core = 75.0 − 41.3 = 33.8 (≥ 10), and T2 [72.5, 77.5] and T1 [40.0, 42.5] do not overlap → **T2 superior**. This means that "the anatomical substrate of the current Sanyinjiao site is better established", and it is recorded together with the philological conclusion that the original owner of the name is T1 (name and reality do not match, 名實不符).
 
 ---
 
-## 8. Biomedical Reflex Pathway Diagram & External Search Log
+## 8. Biomedical Reflex Pathway Diagram & External Search Log (T2)
 
-**기전 기술(부합, 동물 근거 중심)**: SP6 단독 자극 연구가 말초–중추–표적 장기 고리의 각 단계를 동물에서 보여 준다. ① 말초: 원발성 월경통 쥐에서 SP6 부위 Piezo1·CGRP·tryptase(비만세포 탈과립)가 증가하고, SP6 단독 전침이 이를 낮추며 자궁 Piezo1/COX-2/PG 경로를 억제했다(papers.id 2321). ② 구심·중추: 과민성장증후군 마우스에서 SP6 단독 전침이 DRG 신경을 활성화하고, 뇌 활성 영역이 ST36과 시상하부 실방핵(PVN)에서 가장 많이 겹쳤다(2280). ③ 인체: 월경전증후군 환자 23명에서 SP6 단독 전기자극이 편도체 기능연결을 바꾸었다(2314, 비대조). 고빈도·저빈도 전침의 아편계 기전(B3-10)은 ST36+SP6 조합으로 검증된 것이어서 SP6 단독 근거로는 보조로만 쓴다(5·8·12·46·54). **B-Check 10/12 부합** — 단 ③·⑤는 동물(쥐·마우스) 한정이며, 인체 전환(⑥)은 1점이다.
+**Mechanism description (concordant, centred on animal evidence)**: studies stimulating SP6 alone show each stage of the peripheral–central–target-organ loop in animals. ① Peripheral: in rats with primary dysmenorrhoea, Piezo1, CGRP and tryptase (mast-cell degranulation) increased at the SP6 site; electroacupuncture at SP6 alone reduced them and suppressed the uterine Piezo1/COX-2/PG pathway (papers.id 2321). ② Afferent/central: in mice with irritable bowel syndrome, electroacupuncture at SP6 alone activated DRG neurons, and the activated brain regions overlapped most with ST36 in the hypothalamic paraventricular nucleus (PVN) (2280). ③ Human: in 23 patients with premenstrual syndrome, electrical stimulation of SP6 alone changed amygdala functional connectivity (2314, uncontrolled). The opioid mechanism of high- and low-frequency electroacupuncture (B3-10) was verified with the ST36+SP6 combination and is used only as supplementary evidence for SP6 alone (5, 8, 12, 46, 54). **B-Check 10/12 concordant** — but ③ and ⑤ are limited to animals (rat, mouse), and human translation (⑥) scores 1 point.
 
-**분절 소견**: FMA 근육 분절은 L5~S2(긴발가락굽힘근 S1·S2 주, 가자미근 S1·S2, 뒤정강근 L5·S1)다. 자궁·방광·직장의 부교감(골반내장신경) 분절 S2~S4와 **S2에서 겹친다**. 반면 월경통 통증 구심(교감 경로 T10~L1)과는 겹치지 않는다(B1-02·B1-03). 그래서 ②는 간접 1점이다.
+**Segmental findings**: the FMA muscle segments are L5–S2 (flexor digitorum longus S1, S2 primary; soleus S1, S2; tibialis posterior L5, S1). They **overlap at S2** with the parasympathetic (pelvic splanchnic nerve) segments S2–S4 of the uterus, bladder and rectum. They do not overlap with the pain afferents of dysmenorrhoea (sympathetic route T10–L1) (B1-02, B1-03). ② therefore scores 1 point (indirect).
 
-**말초 구심 경로의 FMA 고정**:
+**Anchoring the peripheral afferent pathway in FMA**:
 
 ```mermaid
 flowchart TB
-  P(("SP6<br/>자침점(T2)")) -.피하.-> MCB["두렁신경 안쪽종아리피부가지<br/>FMA:75559 · 공통"]
-  P -.피하.-> GSV["큰두렁정맥 FMA:21376"]
-  P --> SOL["가자미근 FMA:22542<br/>분절 S1·S2"]
-  P --> FDL["긴발가락굽힘근 FMA:51071<br/>분절 S1·S2(주)·L5"]
-  P --> TP["뒤정강근 FMA:51099<br/>김재효 · L5·S1"]
-  P -.깊은 직자.-> TN["정강신경 FMA:19035"]
+  P(("SP6<br/>needling site (T2)")) -.subcutaneous.-> MCB["Medial crural cutaneous branches<br/>of saphenous nerve<br/>FMA:75559 · both"]
+  P -.subcutaneous.-> GSV["Great saphenous vein FMA:21376"]
+  P --> SOL["Soleus FMA:22542<br/>segments S1, S2"]
+  P --> FDL["Flexor digitorum longus FMA:51071<br/>segments S1, S2 (primary), L5"]
+  P --> TP["Tibialis posterior FMA:51099<br/>Kim Jaehyo · L5, S1"]
+  P -.deep perpendicular.-> TN["Tibial nerve FMA:19035"]
   FDL -- nerve_supply --> TN
   SOL -- nerve_supply --> TN
   TP -- nerve_supply --> TN
-  TN -- branch_of --> SCI["궁둥신경 FMA:19034"]
-  SCI -- branch_of --> SAC["엉치신경얼기 FMA:5909"]
-  MCB -. "FMA 상위 연결 없음<br/>(B1: 두렁신경 → 넙다리신경)" .-> FEM["넙다리신경 FMA:16486<br/>L2~L4"]
-  SAC -.-> SEG["척수 L5~S2"]
-  SEG -. "S2 겹침(B1)" .-> PEL["골반 내장 부교감 S2~S4<br/>자궁·방광·직장"]
+  TN -- branch_of --> SCI["Sciatic nerve FMA:19034"]
+  SCI -- branch_of --> SAC["Sacral plexus FMA:5909"]
+  MCB -. "no parent link in FMA<br/>(B1: saphenous → femoral nerve)" .-> FEM["Femoral nerve FMA:16486<br/>L2–L4"]
+  SAC -.-> SEG["Spinal cord L5–S2"]
+  SEG -. "S2 overlap (B1)" .-> PEL["Pelvic visceral parasympathetic S2–S4<br/>uterus, bladder, rectum"]
 ```
 
-*그림 8-1. FMA 5.1.0 관계로 그린 SP6(T2) 말초 구심 경로. 실선은 FMA 기재 관계(`nerve_supply`·`branch_of`), 점선은 FMA에 없는 연결이거나 B1 교과서로 보완한 관계다.*
+*Figure 8-1. Peripheral afferent pathway of SP6 (T2) drawn from FMA 5.1.0 relations. Solid lines are relations recorded in FMA (`nerve_supply`, `branch_of`); dashed lines are links absent from FMA or relations supplemented from B1 textbooks.*
 
-### ① Layer A 논문 표 (SP6를 실제 자극·관찰한 연구)
+### ① Layer A Papers (studies that actually stimulated or observed SP6)
 
-| papers.id | 연도 | 저널 | 제목(요약) | PMID / DOI | 설계·SP6 역할 |
+| papers.id | Year | Journal | Title (summary) | PMID / DOI | Design & role of SP6 |
 | :---: | :---: | :--- | :--- | :--- | :--- |
-| 2321 | 2026 | Zhen Ci Yan Jiu | EA at sensitized SP6 in primary dysmenorrhea rats — Piezo1 | 42343676 / 10.13702/j.1000-0607.20251011 | 동물(쥐 60). **SP6 단독** 50 Hz. SP6 부위 Piezo1·CGRP·비만세포, 자궁 COX-2/PG |
-| 2280 | 2026 | Zhen Ci Yan Jiu | EA at single ST36 vs single SP6 vs ST36+SP6 in IBS mice | 42908445 / 10.13702/j.1000-0607.20260558 | 동물(마우스). **SP6 단독군**. DRG 칼슘 반응, 뇌 영역(PVN 겹침) |
-| 1866 | 2026 | J Pharmacopuncture | Acupuncture at ST36, SP6 and combination in MIA osteoarthritis rats | 42812780 / 10.3831/kpi.2026.29.3.286 | 동물(쥐 30). **SP6 단독군**. 통증 역치·IL-1·IL-6·MMP-13 |
-| 2041 | 2026 | Zhen Ci Yan Jiu | EA at CV4+SP6 on A20/NF-κB/NLRP3/GSDMD in dysmenorrhea rats | 41735064 / 10.13702/j.1000-0607.20250062 | 동물(쥐). 2혈 |
-| 2322 | 2025 | Zhongguo Zhen Jiu | EA at CV4+SP6, miRNA-21-5p/A20 macrophage polarization, dysmenorrhea | 41741990 / 10.13703/j.0255-2930.20250101-k0001 | 동물(쥐). 2혈 |
-| 2316 | 2022 | Front Endocrinol | EA at SP6+CV4 in premature ovarian failure mice | 35957829 / 10.3389/fendo.2022.882214 | 동물(마우스). 2혈 |
-| 5 | 2001 | Pain | Genotype and sensitivity to EA analgesia (10 inbred strains) | — / — (로컬 PDF) | 동물(마우스). ST36+SP6 |
-| 8 | 1996 | Mol Brain Res | Fos/Jun and preproenkephalin/preprodynorphin after EA of different frequencies | — / — (로컬 PDF) | 동물(쥐). ST36+SP6 |
-| 12 | 2000 | Neurosci Lett | Endomorphin/μ-opioid receptors mediate 2 Hz but not 100 Hz EA analgesia | — / — (로컬 PDF) | 동물(마우스). ST36+SP6 |
-| 2314 | 2020 | Gynecol Endocrinol | EAS at SP6 modulates amygdala functional connectivity in PMS | 33307896 / 10.1080/09513590.2020.1855633 | **인체**(23명, 전후 비교, 대조군 없음). **SP6 단독** |
-| 46 | 2003 | NeuroReport | Modulation of cold pain in human brain by electric acupoint stimulation (fMRI) | — / 10.1097/01.wnr.0000085243.71403.6a | 인체 fMRI. ST36+SP6 |
-| 54 | 2003 | Brain Res | Brain network activation and analgesia, low vs high frequency EAS (fMRI) | — / 10.1016/s0006-8993(03)02983-4 | 인체 fMRI. ST36+SP6 |
-| 510 | 2024 | YMER | Oxytocin levels with acupuncture at LI4 and SP6 after cesarean section: RCT | — / — (로컬 PDF) | 인체 RCT. 2혈(Hegu (合谷, LI04)+Sanyinjiao (三陰交, SP06)) |
-| 2315 | 2025 | Neuropsychopharmacology | Intradermal acupuncture for major depressive disorder: multicenter RCT | 39648209 / 10.1038/s41386-024-02036-5 | 인체 RCT. 4혈(HT7·PC6·SP6·LR3) |
-| 2327 | 2016 | 대한침구학회지 | Acupuncture and moxibustion at SP6 on foot temperature in healthy adults | — / 10.13045/acupunct.2016036 | 인체, **SP6 단독**(제목 기준 — 초록 미확보로 설계 **확인 불가**) |
+| 2321 | 2026 | Zhen Ci Yan Jiu | EA at sensitized SP6 in primary dysmenorrhea rats — Piezo1 | 42343676 / 10.13702/j.1000-0607.20251011 | Animal (60 rats). **SP6 alone**, 50 Hz. Piezo1, CGRP and mast cells at the SP6 site; uterine COX-2/PG |
+| 2280 | 2026 | Zhen Ci Yan Jiu | EA at single ST36 vs single SP6 vs ST36+SP6 in IBS mice | 42908445 / 10.13702/j.1000-0607.20260558 | Animal (mouse). **SP6-alone group**. DRG calcium responses, brain regions (PVN overlap) |
+| 1866 | 2026 | J Pharmacopuncture | Acupuncture at ST36, SP6 and combination in MIA osteoarthritis rats | 42812780 / 10.3831/kpi.2026.29.3.286 | Animal (30 rats). **SP6-alone group**. Pain threshold, IL-1, IL-6, MMP-13 |
+| 2041 | 2026 | Zhen Ci Yan Jiu | EA at CV4+SP6 on A20/NF-κB/NLRP3/GSDMD in dysmenorrhea rats | 41735064 / 10.13702/j.1000-0607.20250062 | Animal (rat). 2 points |
+| 2322 | 2025 | Zhongguo Zhen Jiu | EA at CV4+SP6, miRNA-21-5p/A20 macrophage polarization, dysmenorrhea | 41741990 / 10.13703/j.0255-2930.20250101-k0001 | Animal (rat). 2 points |
+| 2316 | 2022 | Front Endocrinol | EA at SP6+CV4 in premature ovarian failure mice | 35957829 / 10.3389/fendo.2022.882214 | Animal (mouse). 2 points |
+| 5 | 2001 | Pain | Genotype and sensitivity to EA analgesia (10 inbred strains) | — / — (local PDF) | Animal (mouse). ST36+SP6 |
+| 8 | 1996 | Mol Brain Res | Fos/Jun and preproenkephalin/preprodynorphin after EA of different frequencies | — / — (local PDF) | Animal (rat). ST36+SP6 |
+| 12 | 2000 | Neurosci Lett | Endomorphin/μ-opioid receptors mediate 2 Hz but not 100 Hz EA analgesia | — / — (local PDF) | Animal (mouse). ST36+SP6 |
+| 2314 | 2020 | Gynecol Endocrinol | EAS at SP6 modulates amygdala functional connectivity in PMS | 33307896 / 10.1080/09513590.2020.1855633 | **Human** (23 participants, before–after comparison, no control group). **SP6 alone** |
+| 46 | 2003 | NeuroReport | Modulation of cold pain in human brain by electric acupoint stimulation (fMRI) | — / 10.1097/01.wnr.0000085243.71403.6a | Human fMRI. ST36+SP6 |
+| 54 | 2003 | Brain Res | Brain network activation and analgesia, low vs high frequency EAS (fMRI) | — / 10.1016/s0006-8993(03)02983-4 | Human fMRI. ST36+SP6 |
+| 510 | 2024 | YMER | Oxytocin levels with acupuncture at LI4 and SP6 after cesarean section: RCT | — / — (local PDF) | Human RCT. 2 points (Hegu (合谷) + Sanyinjiao (三陰交)) |
+| 2315 | 2025 | Neuropsychopharmacology | Intradermal acupuncture for major depressive disorder: multicenter RCT | 39648209 / 10.1038/s41386-024-02036-5 | Human RCT. 4 points (HT7, PC6, SP6, LR3) |
+| 2327 | 2016 | Journal of Korean Acupuncture & Moxibustion Medicine Society | Acupuncture and moxibustion at SP6 on foot temperature in healthy adults | — / 10.13045/acupunct.2016036 | Human, **SP6 alone** (based on the title — abstract not obtained, so the design **cannot be confirmed**) |
 
-- **제외**: 혈위 선택·데이터마이닝 연구(1845, 1970, 2032, 2037, 2264, 2307, 381), 다혈위 임상 보고(1853, 1873, 1957, 1965, 2035, 2036, 2257, 2283, 2286, 2303, 2318~2320, 2323, 2326), 기전 대상이 SP6가 아닌 연구(2042, 2043, 2263, 2291, 2317, 2324, 2325), 인도네시아 증례 보고(2048, 2287, 2288), 이론·문헌·교육 자료(15, 27, 208, 341, 369, 424, 529, 550, 742, 766, 795, 989, 998, 1002, 1377, 1614), SP6를 인용만 한 연구(1015), 다혈위 종설(1698 PCOS, 1699 Cochrane 월경통 — 혈위 비특이).
-- **확인 불가**: 1610(이창현 2003, 「치매 관련 뇌 영역에 투사되는 경혈(외관·내관·Sanyinjiao (三陰交, SP06)·Xuanzhong (懸鐘, GB39)) 신경해부 연구」)은 PDF에서 텍스트를 추출할 수 없어 방법·결과를 확인하지 못했다. 원문을 확인하면 ③·④의 SP6 특이 근거가 될 수 있다. 2328(2018, SP6 월경통 지압·침)은 초록이 없어 제외했다.
-- **DB 미병합 참고**: PMID 32011502(SP6 직자 vs 횡자 월경통 RCT **프로토콜**, 2020)는 결과가 없어 판정에 쓰지 않는다.
+- **Excluded**: point-selection and data-mining studies (1845, 1970, 2032, 2037, 2264, 2307, 381), multi-point clinical reports (1853, 1873, 1957, 1965, 2035, 2036, 2257, 2283, 2286, 2303, 2318–2320, 2323, 2326), studies whose mechanistic target is not SP6 (2042, 2043, 2263, 2291, 2317, 2324, 2325), Indonesian case reports (2048, 2287, 2288), theoretical, literature and educational materials (15, 27, 208, 341, 369, 424, 529, 550, 742, 766, 795, 989, 998, 1002, 1377, 1614), a study that only cites SP6 (1015), and multi-point reviews (1698 PCOS, 1699 Cochrane dysmenorrhoea — not point-specific).
+- **Could not be confirmed**: for 1610 (Lee Changhyun 2003, "neuroanatomical study of acupoints (Waiguan, Neiguan, Sanyinjiao, Xuanzhong) projecting to dementia-related brain regions"), text could not be extracted from the PDF, so methods and results could not be checked. If the original is checked, it may become SP6-specific evidence for ③ and ④. 2328 (2018, SP6 acupressure and acupuncture for dysmenorrhoea) was excluded because it has no abstract.
+- **Reference not merged into the DB**: PMID 32011502 (RCT **protocol** of perpendicular vs transverse needling at SP6 for dysmenorrhoea, 2020) has no results and is not used in the verdict.
 
-### ② B-Check 채점표 (T2)
+### ② B-Check Scoring Table (T2)
 
-| 항목 | 내용 | 채점자 A | 채점자 B | 최종 | 참조 ID | papers.id | 근거 요지 |
+| Item | Content | Rater A | Rater B | Final | Reference IDs | papers.id | Rationale |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① | 자침 심도의 말초신경·혈관 실체 | 2 | 2 | **2** | B1-01, B1-03, B2-09 (+FMA) | — | 2대 교재·《穴位通鉴》 국소해부·규범 해부서가 두렁신경 가지·큰두렁정맥·가자미근·긴발가락굽힘근·정강신경·뒤정강동정맥을 일치 기술. 교재 구조 9종 FMA 대응(정확 7·수동 2). 혈위 특이 영상 실측 없음 |
-| ② | 척수 분절 정합 | 2 | 1 | **1** | B1-02, B1-03, B3-05 (+FMA) | — | FMA 근육 분절 L5~S2 vs 골반 내장 부교감 S2~S4: S2에서 겹침(A 2). 월경통 통증 구심 T10~L1과는 불일치, 겹침이 경계 1분절뿐(B 1) → 보수적으로 1 |
-| ③ | 구심 섬유형·수용체 | 2 | 2 | **2** | B3-06 | 2321, 2280 | SP6 부위 Piezo1(기계수용 이온통로)·CGRP 섬유·비만세포(2321), SP6 단독 자극의 DRG 신경 반응(2280). 동물 한정 |
-| ④ | 중추 중계·경로 | 2 | 2 | **2** | B3-10, B3-11 | 2280, 2314, 8, 12 | SP6 단독 자극의 뇌 영역 활성(PVN 등, 2280)과 인체 편도체 기능연결 변화(2314). 아편계 중추 기전(8·12, B3-10)은 ST36+SP6 조합 근거라 보조 |
-| ⑤ | 원심 경로·표적 효과($P_{single}$ 일치) | 2 | 2 | **2** | B3-05 | 2321, 2280, 2041, 2322 | 월경통 모델에서 자궁 PGF2α·COX-2 감소와 통증 행동 개선(2321 단독; 2041·2322 CV4 조합), IBS 대장 염증 개선(2280 단독) — 현행 주치(痛经·泄泻)와 방향 일치. 동물 한정 |
-| ⑥ | 인체 전환 근거 | 1 | 1 | **1** | B4-01, B4-03, B4-04, B4-05 | 2314, 510, 2315, 46, 54 | SP6 단독 인체 연구는 비대조 fMRI 1편(2314)뿐이다(2327은 설계 확인 불가). RCT는 2혈·4혈 조합(510, 2315). 혈위 특이성 반증(B4-04·B4-05) 미해결 |
-| **합계** | | 11 | 10 | **10 / 12** | | | **판정: 부합(≥ 8/12)**, ①·② ≥ 1 충족. 표지: ③·⑤ 동물(쥐·마우스) 한정 |
+| ① | Peripheral nerve/vessel substrate at needling depth | 2 | 2 | **2** | B1-01, B1-03, B2-09 (+FMA) | — | The two textbooks, the local anatomy in the *Xuewei Tongjian* and normative anatomy texts agree on the saphenous nerve branches, great saphenous vein, soleus, flexor digitorum longus, tibial nerve and posterior tibial artery and veins. 9 textbook structures mapped to FMA (7 exact, 2 manual). No point-specific imaging measurement |
+| ② | Spinal segmental concordance | 2 | 1 | **1** | B1-02, B1-03, B3-05 (+FMA) | — | FMA muscle segments L5–S2 vs pelvic visceral parasympathetic S2–S4: overlap at S2 (A 2). Mismatch with the dysmenorrhoea pain afferents T10–L1, and the overlap is only one boundary segment (B 1) → conservatively 1 |
+| ③ | Afferent fibre type & receptors | 2 | 2 | **2** | B3-06 | 2321, 2280 | Piezo1 (mechanosensitive ion channel), CGRP fibres and mast cells at the SP6 site (2321); DRG neuronal responses to stimulation of SP6 alone (2280). Animal only |
+| ④ | Central relay & pathway | 2 | 2 | **2** | B3-10, B3-11 | 2280, 2314, 8, 12 | Brain-region activation by stimulation of SP6 alone (PVN etc., 2280) and changes in human amygdala functional connectivity (2314). The central opioid mechanism (8, 12, B3-10) rests on the ST36+SP6 combination and is supplementary |
+| ⑤ | Efferent pathway & target effect (match with $P_{single}$) | 2 | 2 | **2** | B3-05 | 2321, 2280, 2041, 2322 | In dysmenorrhoea models, reduced uterine PGF2α and COX-2 and improved pain behaviour (2321 alone; 2041, 2322 combined with CV4); improved colonic inflammation in IBS (2280 alone) — same direction as the current indications (痛經, 泄瀉). Animal only |
+| ⑥ | Human translation | 1 | 1 | **1** | B4-01, B4-03, B4-04, B4-05 | 2314, 510, 2315, 46, 54 | The only human study of SP6 alone is one uncontrolled fMRI study (2314) (the design of 2327 cannot be confirmed). The RCTs use 2- and 4-point combinations (510, 2315). Counter-evidence on point specificity (B4-04, B4-05) unresolved |
+| **Total** | | 11 | 10 | **10 / 12** | | | **Verdict: concordant (≥ 8/12)**, ① and ② ≥ 1 satisfied. Flag: ③ and ⑤ animal (rat, mouse) only |
 
-**T1의 B-Check**: Layer A 0편(8寸 지점을 자극한 연구 없음). ① 1(인접 혈 교재·FMA로 유추), ② 1(같은 정강신경·S1~S2 근육 영역으로 유추), ③~⑥ 0 → **2/12 미부합**. 게이트 2 적용.
+**B-Check for T1**: 0 Layer A papers (no study stimulated the 8-cun site). ① 1 (inferred from the textbooks for adjacent points and FMA), ② 1 (inferred from the same tibial nerve and S1–S2 muscle territory), ③–⑥ 0 → **2/12, not concordant**. Gate 2 applies.
 
-### ③ 외부 검색 로그 (sync_log, 2026-10-23 Rank 6 실행 — 경혈 언급 판정을 넣은 개정 스크립트)
+### ③ External Search Log (sync_log; Rank 6 run of 2026-10-23 — revised script including the acupoint-mention check)
 
-| 일시 | 소스 | HTTP | 수집 | 중복제거 | 신규 | 쿼리 |
+| Timestamp | Source | HTTP | Fetched | Duplicates removed | New | Query |
 |---|---|---|---|---|---|---|
-| 2026-10-23T23:57:22 | pubmed | 200 | 16 | — | — | ("SP6"[tiab] OR "Sanyinjiao"[tiab] OR "三阴交"[tiab]) AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) \| … AND ("Zhongguo Zhen Jiu"[Journal] OR "Zhen Ci Yan Jiu"[Journal]) |
+| 2026-10-23T23:57:22 | pubmed | 200 | 16 | — | — | ("SP6"[tiab] OR "Sanyinjiao"[tiab] OR "三陰交"[tiab]) AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) \| … AND ("Zhongguo Zhen Jiu"[Journal] OR "Zhen Ci Yan Jiu"[Journal]) |
 | 2026-10-23T23:57:22 | openalex | 200 | 24 | — | — | doi_starts_with:10.13703 / 10.13702, title_and_abstract.search:"Sanyinjiao" OR "SP6" \| has_doi:true … AND (acupuncture OR electroacupuncture) |
 | 2026-10-23T23:57:22 | crossref | 200 | 4 | — | — | Sanyinjiao acupuncture nerve reflex |
-| 2026-10-23T23:57:22 | all | — | 44 | 29 | 15 | 기존 병합 24, 배치 내 중복 5, 경혈 미언급 제외 0 |
+| 2026-10-23T23:57:22 | all | — | 44 | 29 | 15 | 24 already merged, 5 duplicates within the batch, 0 excluded for not mentioning the acupoint |
 
-- 보완 검색(DB 미병합): PubMed SP6 해부·깊이 영상 검색(4절) — 성인 실측 0편.
+- Supplementary search (not merged into the DB): PubMed search for SP6 anatomy and depth imaging (Section 4) — 0 adult measurement studies.
 
 ---
 
-## 9. Classical Indications Stratification Table (Single-Point P_single vs. Complex Formulae)
+## 9. Classical Indications Stratification Table
 
-**T1 (《明堂》 원위 8寸)**
+**T1 (original 《明堂》 location, 8 cun)**
 
-| 구분 | 주치 | 원문 근거 |
+| Type | Indication | Textual basis |
 | :--- | :--- | :--- |
-| $P_{single}$ | 足下热·胫痛不能久立·湿痹不能行 (국소 하지) | *Huangdi Mingtang Jing* (《黃帝明堂經》)(通考 L1237; 证治通鉴_05 L154). 《通考》: "与今之定位差异较大，故此条文献不宜作为确定现行三阴交主治的依据"(L1239) |
+| $P_{single}$ | Heat in the soles (足下熱), shin pain with inability to stand for long (脛痛不能久立), damp Bi with inability to walk (濕痹不能行) (local, lower limb) | *Huangdi Mingtang Jing* (《黃帝明堂經》) (Tongkao L1237; Zhengzhi Tongjian_05 L154). Tongkao: "與今之定位差異較大，故此條文獻不宜作為確定現行三陰交主治的依據" (L1239) |
 
-**T2 (현행 3寸 = 원 足太阴)**
+**T2 (current 3 cun = the original 足太陰)**
 
-| 구분 | 주치 | 원문 근거 |
+| Type | Indication | Textual basis |
 | :--- | :--- | :--- |
-| $P_{single}$ | 漏下赤白及血·白崩 | "女人漏下赤白及血，灸足太阴五十壮，穴在内踝上三寸"(*Qianjin Yaofang* (《千金要方》) 卷四, 通考 L1285~1287) |
-| $P_{single}$ | 产难·月水不禁·横生胎动 | "产难，月水不禁，横生胎动皆针三阴交"(*Qianjin Yifang* (《千金翼方》) 卷二十六, 通考 L1289) |
-| $P_{single}$ | 泄痢赤白·痔 | *Qianjin Yaofang* (《千金要方》) 卷十五下 "灸足太阴五十壮"; *Qianjin Yifang* (《千金翼方》) 卷二十八 "针痔法：针足太阴穴，在内踝上一夫"(L1327, L1333) |
-| $P_{single}$ | 劳淋 | "劳淋，灸足太阴百壮，在内踝上三寸"(*Qianjin Yaofang* (《千金要方》) 卷二十一, L1339; 证治通鉴_20 L747) |
-| $P_{single}$ | 癞疝·卵偏大 | *Qianjin Yaofang* (《千金要方》) 卷二十四(L1343~1345) |
-| $P_{single}$ | 梦泄精 | "梦泄精，灸三阴交二七壮"(证治通鉴_20 L1261) |
-| $P_{single}$ | 霍乱 手足逆冷·胆虚 | 《肘后方》(证治通鉴_05 L162~164); *Qianjin Yifang* (《千金翼方》) 27(通鉴 L1402) |
-| $P_{comb}$ | 인산(堕胎)·난산 | 徐文伯 "泻足太阴，补手阳明"(《南史》, 证治通鉴_22 L382) → *Tongren* (《銅人》) "泻足三阴交，补手阳明合谷"(通考 L1291); 太冲+合谷+三阴交, 巨阙+合谷+三阴交(《针经摘英集》, L1295~1297); 独阴+合谷+三阴交(*Zhenjiu Dacheng* (《針灸大成》), L1317) |
-| $P_{comb}$ | 산후 혈운·붕중·누하·경폐 | 支沟+三里+三阴交; 三阴交+行间+通里; 三阴交+太冲; 曲池+支沟+三里+三阴交(《针经摘英集》, L1299~1307); 中极+三阴交+合谷(《针灸集成》, L1315) |
-| $P_{comb}$ | 부인 혈기통·경맥 부조 | 合谷 补 + 三阴交 泻(《玉龙经》·《针灸集要》, L1309~1313) |
-| $P_{comb}$ | 비위 허약·제하통·전포 | 三里+三阴交(L1329); 气海+三阴交(L1331, L1347); 关元+三阴交 "针入三分"(L1341) |
-| 후대 귀속(주치 근거 약함) | 脾病 身重·腹胀肠鸣·溏泄食不化 | 王焘가 《素问·藏气法时论》 脾病候를 三阴交 아래 편입 — "欠妥"(通考 L1243, L1277) |
-| 후대 귀속 | 漏谷과의 주치 혼입 | *Taiping Shenghui Fang* (《太平聖惠方》)이 三阴交 주치를 漏谷에 오입(通考 L1415~1423) |
-| 조건부 금기의 기원 | 孕妇禁针 | 徐文伯 인산 방 → "有些腧穴书甚至将此二穴列为孕妇禁刺穴"(证治通鉴_22 L480); *Tongren* (《銅人》) "故妊娠不可刺"(L1359) |
+| $P_{single}$ | Red and white vaginal discharge and bleeding (漏下赤白及血), white flooding (白崩) | "女人漏下赤白及血，灸足太陰五十壯，穴在內踝上三寸" (《千金要方》 vol. 4, Tongkao L1285–1287) |
+| $P_{single}$ | Difficult labour (產難), menstrual incontinence (月水不禁), transverse presentation and restless foetus (橫生胎動) | "產難，月水不禁，橫生胎動皆針三陰交" (《千金翼方》 vol. 26, Tongkao L1289) |
+| $P_{single}$ | Red and white dysentery (泄痢赤白), haemorrhoids (痔) | 《千金要方》 vol. 15B "灸足太陰五十壯"; 《千金翼方》 vol. 28 "針痔法：針足太陰穴，在內踝上一夫" (L1327, L1333) |
+| $P_{single}$ | Taxation strangury (勞淋) | "勞淋，灸足太陰百壯，在內踝上三寸" (《千金要方》 vol. 21, L1339; Zhengzhi Tongjian_20 L747) |
+| $P_{single}$ | Bulging disorder (癩疝), enlarged testicle on one side (卵偏大) | 《千金要方》 vol. 24 (L1343–1345) |
+| $P_{single}$ | Seminal emission with dreams (夢泄精) | "夢泄精，灸三陰交二七壯" (Zhengzhi Tongjian_20 L1261) |
+| $P_{single}$ | Cholera (霍亂) with counterflow cold of the extremities (手足逆冷), gallbladder deficiency (膽虛) | 《肘後方》 (Zhengzhi Tongjian_05 L162–164); 《千金翼方》 27 (Tongjian L1402) |
+| $P_{comb}$ | Induced delivery / termination (墮胎), difficult labour | Xu Wenbo (徐文伯) "瀉足太陰，補手陽明" (《南史》, Zhengzhi Tongjian_22 L382) → 《銅人》 "瀉足三陰交，補手陽明合谷" (Tongkao L1291); 太衝+合谷+三陰交, 巨闕+合谷+三陰交 (《針經摘英集》, L1295–1297); 獨陰+合谷+三陰交 (《針灸大成》, L1317) |
+| $P_{comb}$ | Postpartum blood dizziness (血運), flooding (崩中), spotting (漏下), amenorrhoea (經閉) | 支溝+三里+三陰交; 三陰交+行間+通里; 三陰交+太衝; 曲池+支溝+三里+三陰交 (《針經摘英集》, L1299–1307); 中極+三陰交+合谷 (《針灸集成》, L1315) |
+| $P_{comb}$ | Women's blood–qi pain (血氣痛), irregular menstruation (經脈不調) | 合谷 tonified + 三陰交 drained (《玉龍經》, 《針灸集要》, L1309–1313) |
+| $P_{comb}$ | Spleen–stomach weakness (脾胃虛弱), pain below the umbilicus (臍下痛), shifted bladder (轉胞) | 三里+三陰交 (L1329); 氣海+三陰交 (L1331, L1347); 關元+三陰交 "針入三分" (L1341) |
+| Later attribution (weak basis for indication) | Spleen disease with heavy body (脾病 身重), abdominal distension and borborygmus (腹脹腸鳴), loose stools with undigested food (溏泄食不化) | Wang Tao (王燾) incorporated the spleen-disease signs of 《素問·藏氣法時論》 under 三陰交 — "欠妥" (inappropriate) (Tongkao L1243, L1277) |
+| Later attribution | Admixture of indications with Lougu (漏谷) | 《太平聖惠方》 wrongly inserted 三陰交 indications under 漏谷 (Tongkao L1415–1423) |
+| Origin of the conditional contraindication | Prohibition of needling in pregnancy (孕婦禁針) | Xu Wenbo's prescription for inducing delivery → "有些腧穴書甚至將此二穴列為孕婦禁刺穴" (Zhengzhi Tongjian_22 L480); 《銅人》 "故妊娠不可刺" (L1359) |
 
 ---
 
 ## 10. ARI v3.0 Quantitative Profile Evaluation & Final Conclusion
 
-**T1**: 《明堂》 "内踝上八寸胻骨下陷者中" / **T2**: 현대 "内踝尖上3寸，胫骨内侧缘后际"(= 원 '足太阴').
+**T1**: 《明堂》 "內踝上八寸胻骨下陷者中" / **T2**: modern "內踝尖上3寸，脛骨內側緣後際" (= the original '足太陰').
 
-### 하위 점수
+### Sub-scores
 
-| Target | 지표 | 채점자 A | 채점자 B | 최종(평균) | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Target | Index | Rater A | Rater B | Final (mean) | Rubric-level rationale | Evidence pointers |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- |
-| T2 | $S_{orig}$ (0.40) | 81.25 | 68.75 | 75.0 | 아래 하위 4항목 평균 | 通考 L1097~1385; 通鉴 L1304~1530 |
-| T2 | $S_{clarity}$ (0.35) | 75 | 75 | 75 | 2대 교재 일치(뒤정강근 1항목 깊이 차이, FMA 같은 구획) + B1·《穴位通鉴》 국소해부 확인, 혈위 특이 실측 없음 → 100 미달 | 6절; 두 교재 종합 행 135; FMA:22542·51071·19035 |
-| T2 | $S_{reflex}$ (0.25) | 75 | 75 | 75 | 인체 연구 1편(2314) + 동물 연구 다수 + B-Check 10(⑥ = 1) → 100 요건(인체 RCT ≥ 2 + ⑥ = 2) 미충족 | 8절 ①②; papers.id 2321·2280·2314 |
-| T2 | SI ($S_{safety}$) | 50 | 75 → **50**(조정) | 50 | 현대 표준 직자 1~1.5寸이 긴발가락굽힘근 층에 이르고, 문헌이 정강신경 자극 감응을 기술. 임신부 조건부 금기 | 5절; 자침깊이 DB 행 136; 通考 L1359, L1385 |
-| T1 | $S_{orig}$ (0.40) | 68.75 | 50 → **62.5**(조정) | 65.6 | 아래 하위 4항목 평균 | 通考 L1119~1173 |
-| T1 | $S_{clarity}$ (0.35) | 25 | 50 → **25**(조정) | 25 | T1 지점 자체의 교재·실측 기재 없음. 인접 혈(SP7·SP8) 교재로 추론만 가능 | 4절 T1 |
-| T1 | $S_{reflex}$ (0.25) | 25 | 25 | 25 | Layer A 0편 → 게이트 2, Layer B 참조만 | 8절 ② T1 |
-| T1 | SI ($S_{safety}$) | 75 | 75 | 75 | 《明堂》 3푼(6.9mm) 피하 자침. 하퇴 중간 뒤안쪽에는 심부 장기가 없다. 실측 여유 거리가 없어 100 미달 | 5절; 通考 L1357 |
+| T2 | $S_{orig}$ (0.40) | 81.25 | 68.75 | 75.0 | Mean of the 4 sub-items below | Tongkao L1097–1385; Tongjian L1304–1530 |
+| T2 | $S_{clarity}$ (0.35) | 75 | 75 | 75 | The two textbooks agree (one item, tibialis posterior, differs in depth, same FMA compartment) + confirmed by B1 and the local anatomy in the *Xuewei Tongjian*; no point-specific measurement → below 100 | Section 6; master rows 135 of both textbooks; FMA:22542, 51071, 19035 |
+| T2 | $S_{reflex}$ (0.25) | 75 | 75 | 75 | 1 human study (2314) + many animal studies + B-Check 10 (⑥ = 1) → requirements for 100 (≥ 2 human RCTs + ⑥ = 2) not met | Section 8 ①②; papers.id 2321, 2280, 2314 |
+| T2 | SI ($S_{safety}$) | 50 | 75 → **50** (adjudicated) | 50 | Modern standard perpendicular insertion of 1–1.5 cun reaches the flexor digitorum longus layer, and the literature describes the needling sensation of tibial-nerve stimulation. Conditional contraindication in pregnancy | Section 5; needling-depth DB row 136; Tongkao L1359, L1385 |
+| T1 | $S_{orig}$ (0.40) | 68.75 | 50 → **62.5** (adjudicated) | 65.6 | Mean of the 4 sub-items below | Tongkao L1119–1173 |
+| T1 | $S_{clarity}$ (0.35) | 25 | 50 → **25** (adjudicated) | 25 | No textbook or measured entry for the T1 site itself. Only inference from the textbooks for adjacent points (SP7, SP8) is possible | Section 4, T1 |
+| T1 | $S_{reflex}$ (0.25) | 25 | 25 | 25 | 0 Layer A papers → Gate 2; Layer B references only | Section 8 ②, T1 |
+| T1 | SI ($S_{safety}$) | 75 | 75 | 75 | Subcutaneous needling of 3 fen (6.9 mm) in 《明堂》. There are no deep organs in the posteromedial mid-leg. No measured safety margin, so below 100 | Section 5; Tongkao L1357 |
 
-### $S_{orig}$ 하위 4항목
+### $S_{orig}$ Sub-items
 
-| Target | 하위 항목 | A | B | 근거 |
+| Target | Sub-item | A | B | Rationale |
 | :---: | :--- | :---: | :---: | :--- |
-| T2 | ① 최초 기술 명확성 | 50 | 50 | 3寸 지점의 최초 기술은 수당대 '足太阴穴'(《诸病源候论》·《千金》)이며 선진·한대 기술이 없다. 후대 재인용으로 보완 |
-| T2 | ② 후대 일치율 | 100 | 75 | A: *Tongren* (《銅人》) 이후 거의 모든 문헌이 3寸(通鉴 L1334 목록). B: 송 이전 《明堂》 전본 다수가 8寸이어서 전체로는 60~79% |
-| T2 | ③ 이명 혼용 해소 | 75 | 75 | 足太阴·三交·承命·下三里 혼용. 《通考》가 연대순으로 분리했으나 KJH DB는 한 줄에 섞어 싣는다 |
-| T2 | ④ 《通考》 교감 | 100 | 75 | A: 《甲乙》 개변·《外台》 '一寸'→'一夫'·《外台》 주치 귀속 오류·《圣惠》 漏谷 혼입을 모두 교정. B: 《千金翼》 송대 교정 여부 미확정(L1103) |
-| T2 | 평균 | **81.25** | **68.75** | |
-| T1 | ① 최초 기술 명확성 | 100 | 75 | A: 《明堂》이 위치(8寸)·심도(3푼)를 모두 지정. B: 《明堂》은 복원 문헌이고 명간본 《甲乙》과 상충 |
-| T1 | ② 후대 일치율 | 25 | 25 | 송 이후 8寸을 따른 문헌이 없다(< 40%) |
-| T1 | ③ 이명 혼용 해소 | 75 | 50 → **75** | 三阴·足太阴交·厥阴交로 계보 분리(《医心方》). 조정 기록 참조 |
-| T1 | ④ 《通考》 교감 | 75 | 50 → **75** | 《通考》가 다섯 갈래 독립 증거로 8寸 원위를 복원. 《穴位通鉴》의 반대 근거는 다른 혈(足太阴) 조문. 조정 기록 참조 |
-| T1 | 평균 | **68.75** | **62.5** | (B 초기 50) |
+| T2 | ① Clarity of earliest description | 50 | 50 | The earliest description of the 3-cun site is the Sui–Tang '足太陰穴' (《諸病源候論》, 《千金》); there is no pre-Qin or Han description. Supplemented by later secondary quotations |
+| T2 | ② Agreement in later texts | 100 | 75 | A: from 《銅人》 onward almost all texts give 3 cun (list in Tongjian L1334). B: most pre-Song versions of 《明堂》 give 8 cun, so overall 60–79% |
+| T2 | ③ Resolution of alias confusion | 75 | 75 | 足太陰, 三交, 承命 and 下三里 are conflated. The *Tongkao* separates them chronologically, but the KJH DB lists them mixed on one line |
+| T2 | ④ Collation in the *Tongkao* (《通考》) | 100 | 75 | A: corrects the alteration of 《甲乙》, the change '一寸'→'一夫' in 《外臺》, the misattribution of indications in 《外臺》 and the 漏谷 admixture in 《聖惠》. B: whether 《千金翼》 underwent Song editing is undetermined (L1103) |
+| T2 | Mean | **81.25** | **68.75** | |
+| T1 | ① Clarity of earliest description | 100 | 75 | A: 《明堂》 specifies both location (8 cun) and depth (3 fen). B: 《明堂》 is a reconstructed text and conflicts with the Ming printed 《甲乙》 |
+| T1 | ② Agreement in later texts | 25 | 25 | No text after the Song follows 8 cun (< 40%) |
+| T1 | ③ Resolution of alias confusion | 75 | 50 → **75** | Lineages separated as 三陰, 足太陰交 and 厥陰交 (《醫心方》). See adjudication record |
+| T1 | ④ Collation in the *Tongkao* (《通考》) | 75 | 50 → **75** | The *Tongkao* reconstructs the original 8-cun location from five independent lines of evidence. The counter-evidence of the *Xuewei Tongjian* is a passage about a different point (足太陰). See adjudication record |
+| T1 | Mean | **68.75** | **62.5** | (B initially 50) |
 
-### 게이트·등급·민감도
+### Gates, Grade and Sensitivity
 
-- **T2 게이트**: 게이트 1(S_orig 75, S_clarity 75 ≥ 50) 미적용, 게이트 2(Layer A 15편) 미적용, 게이트 3(SI 50 > 25) 미적용.
-- **T2 ARI-Core**: A = 0.40×81.25 + 0.35×75 + 0.25×75 = **77.5** / B = 0.40×68.75 + 0.35×75 + 0.25×75 = **72.5** → **75.0 ± 2.5** → **등급 B(개연)**, 표지 없음. **SI 50**(별도 병기).
-- **T2 민감도(등가중치)**: A 77.1, B 72.9 → **75.0** → B, 등급 불변.
-- **T1 게이트**: 게이트 1 적용($S_{clarity}$ 25 < 50 → 최고 C), 게이트 2 적용(Layer A 0편 → $S_{reflex}$ ≤ 25, **(H)**), 게이트 3 미적용(SI 75).
-- **T1 ARI-Core**: A = 0.40×68.75 + 0.35×25 + 0.25×25 = **42.5** / B = 0.40×62.5 + 0.35×25 + 0.25×25 = **40.0** → **41.3 ± 1.3** → **등급 D(미판정)·H**. **SI 75**.
-- **T1 민감도(등가중치)**: A 39.6, B 37.5 → **38.5** → D, 등급 불변.
-- **분기 판정**: ΔARI-Core 33.8 ≥ 10, ± 구간 비중첩 → **T2 우위**.
-- **조정 기록**
-  1. T2 SI(A 50·B 75, 25점 차): B는 횡자·각도 회피와 문헌의 심도 제한 명시를 들어 75로 보았다. 그러나 현대 **표준 직자 범위 자체**가 긴발가락굽힘근 층에 이르고, 上海《针灸学》은 정강신경 자극 감응을 **의도된 Deqi sensation (得氣)**로 기술하며, 임신부 금기도 있다. 그래서 루브릭 50단계("직자 시 Layer 4 신경혈관속 직접 접촉, 심도 상한 명시 필수")로 확정했다. 같은 날 SP05의 SI 75(피하 정맥만 회피하면 되는 경우)와 대비된다.
-  2. T1 $S_{orig}$(A 68.75·B 50, 18.75점 차): B의 ③·④ 50은 "《穴位通鉴》과 《通考》의 상충 미해소"가 근거였다. 7절에서 《穴位通鉴》의 반대 근거(千金 권21)가 '足太阴' 조문이라 반증이 되지 않음을 확인하고, ③·④를 75로 조정했다(B 62.5).
-  3. T1 $S_{clarity}$(A 25·B 50): B는 인접 혈 교재로 '조정'이 가능하다고 보았으나, 루브릭 50은 "2대 교재 **불일치**를 추론으로 조정"이고 T1에는 교재 기재 자체가 없으므로 25("추론만 존재")로 확정했다.
-  4. B-Check ②(A 2·B 1)는 보수적으로 1을 택했다. 나머지 하위 점수 차이는 15점 미만이다.
+- **T2 gates**: Gate 1 (S_orig 75, S_clarity 75 ≥ 50) not triggered, Gate 2 (15 Layer A papers) not triggered, Gate 3 (SI 50 > 25) not triggered.
+- **T2 ARI-Core**: A = 0.40×81.25 + 0.35×75 + 0.25×75 = **77.5** / B = 0.40×68.75 + 0.35×75 + 0.25×75 = **72.5** → **75.0 ± 2.5** → **Grade B (probable)**, no flags. **SI 50** (reported separately).
+- **T2 sensitivity (equal weights)**: A 77.1, B 72.9 → **75.0** → B, grade unchanged.
+- **T1 gates**: Gate 1 triggered ($S_{clarity}$ 25 < 50 → at most C), Gate 2 triggered (0 Layer A papers → $S_{reflex}$ ≤ 25, **(H)**), Gate 3 not triggered (SI 75).
+- **T1 ARI-Core**: A = 0.40×68.75 + 0.35×25 + 0.25×25 = **42.5** / B = 0.40×62.5 + 0.35×25 + 0.25×25 = **40.0** → **41.3 ± 1.3** → **Grade D (undetermined)·H**. **SI 75**.
+- **T1 sensitivity (equal weights)**: A 39.6, B 37.5 → **38.5** → D, grade unchanged.
+- **Branch decision**: ΔARI-Core 33.8 ≥ 10, ± intervals do not overlap → **T2 superior**.
+- **Adjudication record**
+  1. T2 SI (A 50, B 75; 25-point difference): B gave 75, citing avoidance by transverse insertion and angling and the depth limits stated in the literature. However, the modern **standard perpendicular range itself** reaches the flexor digitorum longus layer, Shanghai 《針灸學》 describes the needling sensation of tibial-nerve stimulation as **intended De Qi (得氣)**, and there is a contraindication in pregnancy. The score was therefore fixed at rubric level 50 ("direct contact with the Layer 4 neurovascular bundle on perpendicular insertion; an upper depth limit must be stated"). This contrasts with SI 75 for SP05 on the same day (where only a subcutaneous vein needs to be avoided).
+  2. T1 $S_{orig}$ (A 68.75, B 50; 18.75-point difference): B's 50 for ③ and ④ was based on "the conflict between the *Xuewei Tongjian* and the *Tongkao* is unresolved". Section 7 confirmed that the counter-evidence of the *Xuewei Tongjian* (千金 vol. 21) is a '足太陰' passage and does not refute it, so ③ and ④ were adjusted to 75 (B 62.5).
+  3. T1 $S_{clarity}$ (A 25, B 50): B considered that 'adjustment' was possible using the textbooks of adjacent points, but rubric level 50 is "a **disagreement** between the two textbooks adjusted by inference", and for T1 there is no textbook entry at all, so it was fixed at 25 ("inference only").
+  4. For B-Check ② (A 2, B 1), 1 was chosen conservatively. The remaining sub-score differences are under 15 points.
 
-### 최종 결론
+### Final Conclusion
 
-Sanyinjiao (三陰交, SP06)는 **이름과 실체가 갈린 혈**이다. *Huangdi Mingtang Jing* (《黃帝明堂經》)의 '三阴交'(T1)는 안쪽복사 위 8寸, 정강뼈 아래 오목에 있었다. 지금의 Sanyinjiao (三陰交, SP06)(T2)는 수당대 '足太阴'穴(안쪽복사 위 3寸)이 이 이름을 이어받은 것이다(《通考》 名实考, 《证治通鉴》 소결). 해부 실체 판명은 현행 T2가 **개연(B, ARI-Core 75.0 ± 2.5)** 수준이다. 정강뼈 안쪽면 뒤모서리 뒤의 두렁신경 가지·큰두렁정맥(피하), 가자미근·긴발가락굽힘근(·뒤정강근), 깊은 곳의 정강신경·뒤정강동정맥이 2대 교재·《穴位通鉴》 국소해부·FMA로 확인된다. SP6 단독 자극의 말초–중추–자궁 고리는 동물에서 보고되어 **B-Check 10/12로 부합**한다. T1은 원래 이름의 주인이지만 교재·실측·실험 근거가 없어 **D·H**에 머문다.
+Sanyinjiao (三陰交) is **a point whose name and substance have parted ways**. The '三陰交' of *Huangdi Mingtang Jing* (《黃帝明堂經》) (T1) lay 8 cun above the medial malleolus, in the depression below the tibia. The present Sanyinjiao (T2) is the Sui–Tang '足太陰' point (3 cun above the medial malleolus), which inherited this name (Tongkao name–reality study (名實考); summary (小結) of the *Zhengzhi Tongjian*). The anatomical substrate is established for the current T2 at the **probable (B, ARI-Core 75.0 ± 2.5)** level. Behind the posterior border of the medial surface of the tibia, the saphenous nerve branches and great saphenous vein (subcutaneous), soleus and flexor digitorum longus (and tibialis posterior), and deep to them the tibial nerve and posterior tibial artery and veins are confirmed by the two textbooks, the local anatomy in the *Xuewei Tongjian* and FMA. A peripheral–central–uterine loop for stimulation of SP6 alone has been reported in animals and is **concordant on the B-Check at 10/12**. T1 is the original owner of the name but, lacking textbook, measured and experimental evidence, remains at **D·H**.
 
-적용 범위 제한:
-1. ③·⑤의 기전 근거는 쥐·마우스 연구(2321·2280·2041·2322)이며, SP6 단독 인체 근거는 비대조 fMRI 1편(2314)뿐이다.
-2. 분절은 S2에서만 골반 내장 부교감과 겹친다. 월경통 통증 구심(T10~L1)과는 겹치지 않아, 부인과 주치의 분절 설명은 부분적이다.
-3. 아편계 진통 기전의 고전적 근거(Han 연구군, B3-10)는 ST36+SP6 조합 자극이어서 SP6 고유 효과로 쓰지 않는다.
-4. **SI 50**: 현대 표준 직자 범위에서 정강신경·뒤정강동정맥 접촉이 가능하다. 임신부에게는 자침하지 않는다. 다만 이 금기는 徐文伯 인산 처방에서 유래했으며, 자침깊이 DB에는 Contraindicated for Needling (禁鍼)('0')으로 기록되어 있지 않다.
-5. 현행 주치 가운데 '脾病 身重·腹胀肠鸣·溏泄'은 王焘의 귀속 오류에서 비롯된 것이다(通考). 《明堂》 '足下热·胫痛' 조문은 T1의 주치이므로 현행 혈의 근거로 쓰지 않는다.
+Limits on the scope of application:
+1. The mechanistic evidence for ③ and ⑤ comes from rat and mouse studies (2321, 2280, 2041, 2322); the only human evidence for SP6 alone is one uncontrolled fMRI study (2314).
+2. The segments overlap with the pelvic visceral parasympathetic supply only at S2. They do not overlap with the pain afferents of dysmenorrhoea (T10–L1), so the segmental explanation of the gynaecological indications is partial.
+3. The classical evidence for the opioid analgesic mechanism (Han's research group, B3-10) involves combined ST36+SP6 stimulation and is not used as evidence of an effect intrinsic to SP6.
+4. **SI 50**: within the modern standard perpendicular range, contact with the tibial nerve and posterior tibial artery and veins is possible. Pregnant women are not needled. However, this contraindication derives from Xu Wenbo's (徐文伯) prescription for inducing delivery and is not recorded as 'Contraindicated for needling' ('0') in the needling-depth DB.
+5. Among the current indications, 'spleen disease with heavy body, abdominal distension and borborygmus, loose stools (脾病 身重·腹脹腸鳴·溏泄)' derives from Wang Tao's (王燾) misattribution (Tongkao). The 《明堂》 passage on '足下熱·脛痛' gives the indications of T1 and is not used as evidence for the current point.
 
 ---
 
-## 부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)
+## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-생성: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile SP06 --md` (2026-10-23). 수동 보정 2건을 반영했다.
+Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile SP06 --md` (2026-10-23). Two manual corrections applied.
 
-| Category | Textbook Term | FMA Substrate (ID & Label) | Match | Source | Innervation & Nerve Trunk Chain | Spinal Segment |
+| Category | Textbook term | FMA substrate | Match | Source | Innervation / parent trunk | Spinal segment |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 긴발가락굽힘근 (flexor digitorum longus) | FMA:51071 Flexor digitorum longus | exact | 공통교재·김재효 | FMA:80101 Nerve to FDL → Tibial nerve → Sciatic nerve → Sacral nerve plexus | S1·S2(주), L5(부) |
-| 근육 | 가자미근 (soleus) | FMA:22542 Soleus | exact | 공통교재·김재효 | FMA:80461·80462 → Tibial nerve → Sciatic nerve → Sacral nerve plexus | S1, S2 |
-| 근육 | 뒤정강근 (posterior tibialis) | FMA:51099 Tibialis posterior | **수동**(자동 none: 어순) | 김재효 | FMA:80104 Nerve to tibialis posterior | L5, S1 |
-| 신경 | 두렁신경의 안쪽종아리피부가지 | FMA:75559 Set of medial crural cutaneous branches of saphenous nerve | exact(김재효) / **수동**(공통교재 표기) | 공통교재·김재효 | (FMA 상위 연결 없음) | FMA 미기재 |
-| 신경 | 정강신경 | FMA:19035 Tibial nerve | exact | 공통교재·김재효 | FMA:19034 Sciatic nerve → FMA:5909 Sacral nerve plexus | FMA 미기재 |
-| 혈관 | 큰두렁정맥 | FMA:21376 Great saphenous vein | exact | 공통교재·김재효 | → Femoral vein → … → IVC | — |
-| 혈관 | 뒤정강동맥 | FMA:43895 Posterior tibial artery | exact | 공통교재·김재효 | (FMA: → External iliac artery) | — |
-| 혈관 | 뒤정강정맥 | FMA:44332 Posterior tibial vein | exact | 공통교재·김재효 | → Popliteal vein → … | — |
+| Muscle | Flexor digitorum longus | FMA:51071 Flexor digitorum longus | exact | Common Textbook · Kim Jaehyo | FMA:80101 Nerve to FDL → Tibial nerve → Sciatic nerve → Sacral nerve plexus | S1, S2 (primary), L5 (secondary) |
+| Muscle | Soleus | FMA:22542 Soleus | exact | Common Textbook · Kim Jaehyo | FMA:80461, 80462 → Tibial nerve → Sciatic nerve → Sacral nerve plexus | S1, S2 |
+| Muscle | Tibialis posterior (posterior tibialis) | FMA:51099 Tibialis posterior | **manual** (automatic none: word order) | Kim Jaehyo | FMA:80104 Nerve to tibialis posterior | L5, S1 |
+| Nerve | Medial crural cutaneous branches of the saphenous nerve | FMA:75559 Set of medial crural cutaneous branches of saphenous nerve | exact (Kim Jaehyo) / **manual** (Common Textbook term) | Common Textbook · Kim Jaehyo | (no parent link in FMA) | Not in FMA |
+| Nerve | Tibial nerve | FMA:19035 Tibial nerve | exact | Common Textbook · Kim Jaehyo | FMA:19034 Sciatic nerve → FMA:5909 Sacral nerve plexus | Not in FMA |
+| Vessel | Great saphenous vein | FMA:21376 Great saphenous vein | exact | Common Textbook · Kim Jaehyo | → Femoral vein → … → IVC | — |
+| Vessel | Posterior tibial artery | FMA:43895 Posterior tibial artery | exact | Common Textbook · Kim Jaehyo | (FMA: → External iliac artery) | — |
+| Vessel | Posterior tibial vein | FMA:44332 Posterior tibial vein | exact | Common Textbook · Kim Jaehyo | → Popliteal vein → … | — |
 
-- 분절 합집합(근육 segmental_supply): **L5, S1, S2**. 피부신경 분절은 FMA 미기재 → B1-03(두렁신경 L3~L4).
-- 두 교재 비교: 공통 FMA 실체 6(수동 보정 후 7) · 김재효 단독 1(FMA:51099).
-- FMA 모델링 특이점(인용하지 않음): Set of medial crural cutaneous branches(FMA:75559)에 두렁신경 상위 연결 없음; 뒤정강동맥이 바깥엉덩동맥의 가지로 기재(오금동맥을 바깥엉덩동맥의 연속 구간으로 둔 FMA 모델링).
-- 인용 한계: FMA는 정상 성인 규범 해부 온톨로지로, 혈위 특이 심도·변이·반사 기능의 근거가 아니다.
+- Union of segments (muscle segmental_supply): **L5, S1, S2**. Cutaneous-nerve segments are not in FMA → B1-03 (saphenous nerve L3–L4).
+- Comparison of the two textbooks: 6 shared FMA entities (7 after manual correction) · 1 Kim Jaehyo only (FMA:51099).
+- FMA modelling peculiarities (not cited): the Set of medial crural cutaneous branches (FMA:75559) has no parent link to the saphenous nerve; the posterior tibial artery is recorded as a branch of the external iliac artery (FMA models the popliteal artery as a continuation segment of the external iliac artery).
+- Limits of citation: FMA is a normative ontology of adult anatomy and is not evidence of point-specific depth, variation or reflex function.
 
 ---
 
-## 개정 이력
+## Revision History
 
-| 일자 | 위치 | 원래 내용 | 바꾼 내용 | 근거 |
+| Date | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- | :--- |
-| 2026-10-24 | 전체(신규 작성) | 구판 v2.6(2026-09-03, 4요인 가중 합산 ARI 97.50, `_구판_v2.6_20260903/`) | Framework v2.7 Tier 3 신규 작성: 10대 구성 요소, **T1(명당 8寸) vs T2(현행 3寸) 분기**, 이중 채점(T2 75.0 ± 2.5 B / T1 41.3 ± 1.3 D·H), B-Check 10/12 부합 | 정본 Rank 0~7·4·5절; 구판 점수는 비교하지 않음 |
-| 2026-10-24 | 1~3·7·9절 | — | 《通考》 名实考·辨析(L1097~1423), 《穴位通鉴》(L1304~1530), 《证治通鉴》(_05 L148~184, _20 L747·L1261, _22 L382·L480) 행 단위 인용, 《穴位通鉴》–《通考》 상충 판정 | 3대 원전 |
-| 2026-10-24 | 4·6절·부록 A | — | 구조 순서 층차표, 그림 4-1 횡단면 모식도, FMA 대조(수동 보정 2건: FMA:51099, FMA:75559) | FMA 5.1.0; `.claude/skills/acupoint-anatomy/scripts/fma/figures/SP06_cross_section.py` |
-| 2026-10-24 | 8절 | — | 역색인 68편 중 SP6 실제 자극·관찰 15편 선별(PubMed 초록·로컬 PDF 본문 대조), 제외·확인 불가 목록, 그림 8-1, 외부 검색 로그 | 마스터DB.json SP6 역색인·sync_log 2026-10-23T23:57:22 |
+| 2026-10-24 | Whole document (newly written) | Earlier edition v2.6 (2026-09-03, 4-factor weighted-sum ARI 97.50, `_구판_v2.6_20260903/`) | Newly written as a Framework v2.7 Tier 3 report: 10 required components, **T1 (Mingtang 8 cun) vs T2 (current 3 cun) split**, dual scoring (T2 75.0 ± 2.5 B / T1 41.3 ± 1.3 D·H), B-Check 10/12 concordant | Canon Rank 0–7 and sections 4, 5; earlier-edition score not compared |
+| 2026-10-24 | Sections 1–3, 7, 9 | — | Line-level citations from the Tongkao name–reality study and analysis (名實考·辨析) (L1097–1423), the *Xuewei Tongjian* (L1304–1530) and the *Zhengzhi Tongjian* (_05 L148–184, _20 L747, L1261, _22 L382, L480); adjudication of the *Xuewei Tongjian*–*Tongkao* conflict | Three primary classics |
+| 2026-10-24 | Sections 4, 6, Appendix A | — | Layer table by order of structures, Figure 4-1 cross-section schematic, FMA cross-check (2 manual corrections: FMA:51099, FMA:75559) | FMA 5.1.0; `.claude/skills/acupoint-anatomy/scripts/fma/figures/SP06_cross_section.py` |
+| 2026-10-24 | Section 8 | — | 15 papers that actually stimulated or observed SP6 selected from the 68 in the inverted index (checked against PubMed abstracts and local PDF full texts), lists of excluded and unconfirmable items, Figure 8-1, external search log | Master DB .json SP6 inverted index, sync_log 2026-10-23T23:57:22 |
+
+---
+
+## English Edition Revision History (2026-10-24)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `SP06_삼음교_해부생리_실체판명_보고서.md` |
+| Title and body | "Sanyinjiao (三陰交, SP06)(三陰交, SP06)" and similar duplicated annotations | Duplicates removed | — |
+| Figure 4-1 | Image path corrupted by term replacement (`SP06_Sanyinjiao (三陰交, SP06)_…png`), so the image was missing from the HTML | Restored to the actual file name | Files in the report folder |
+| Classical quotations | Simplified characters (e.g. 针, 阴, 胫, 鉴) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |

@@ -1,69 +1,83 @@
-# 📜 Futu (扶突, LI18)의 별칭 Fengfu (風府, GV16) 문헌 출처 및 수혈고증 분석 보고서
+# 📜 Fengfu (風府) as an Alias of Futu (扶突): Literary Sources and Textual Analysis of the Point
 
-> **Framework**: v2.7 (2026-10-04 정제) · **적용 범위**: Rank 1~4 문헌 고증(필요 시 Rank 5) · **ARI**: 미산정(고증 보고서) · **근거 데이터**: 같은 폴더에 csv/xlsx 없음 — 3대 원전 `chunks_refined`(`针灸腧穴通考(上)_1-80.md` L855-879, `(上)_241-320.md` L392-540, `(下)_401-480.md` L2066-2187; `中国针灸穴位通鉴(上卷)_481-560.md` L3816-3928)로 대조
+> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual research (Rank 5 where needed) · **ARI**: not calculated (textual-research report) · **Source data**: no csv/xlsx in the same folder — compared against the three primary classics in `chunks_refined` (`针灸腧穴通考(上)_1-80.md` L855-879, `(上)_241-320.md` L392-540, `(下)_401-480.md` L2066-2187; `中国针灸穴位通鉴(上卷)_481-560.md` L3816-3928)
 >
-> **v2.7 핵심 정정**: 3대 원전에서 Futu (扶突, LI18)의 별칭은 **水穴**(*Huangdi Mingtang Jing* (《黃帝明堂經》), *Waitai Miyao* (《外臺秘要》))과 **水泉**(《古法新解会元针灸学》)뿐이며, 'Fengfu (風府, GV16)'는 Futu (扶突, LI18)의 별칭으로 확인되지 않는다. Fengfu (風府, GV16)와의 관계는 《灵枢·寒热病》 처방에서 Futu (扶突, LI18)과 함께 쓰인 **舌本(Fengfu (風府, GV16)의 별명)** 을 통한 것이다. 제목의 "Futu (扶突, LI18)의 별칭 Fengfu (風府, GV16)"는 이 관계를 가리키는 작업명으로 남겨 둔다.
-
-《중국침구혈位통감》, *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 3대 침구 전문 서적의 腧穴考證(수혈고증) 및 고대 문헌 조문 분석을 바탕으로, **Futu (扶突, LI18)(扶突, LI18)**의 별칭이 **Fengfu (風府, GV16)(風府, GV16)**와 연관되어 나타나는 문헌 출처와 그 의학사적 형성 배경을 정밀 정리한 보고서입니다.
-
----
-
-### 📜 1. 핵심 문헌 출처 및 원문 조문
-
-#### ① 《황제내경·한열병(黄帝内经·灵枢·寒热病)》 (원형 조문)
-> **"暴喑气硬, 取扶突与舌本出血."**
-> *(갑자기 목이 쉬어 말을 못 하고 숨이 차는 폭암(暴喑) 증상에는 **Futu (扶突, LI18)**을 취하고, **설본(舌本)**에서 피를 낸다.)*
-
-#### ② 《황제내경태소(黄帝内经太素)》 권21 <한열잡설(寒热杂说)> (당대 양상선 주석)
-> **"舌本，一名风府，在项人发际一寸督脉上."**
-> *(여기서 **'설본(舌本)'은 일명 'Fengfu (風府, GV16)'**라고도 하며, 목 뒤 머리카락 경계 위 1寸 Governor Vessel (督脈, GV) 상에 위치한다.)*
-
-#### ③ 《외대필요(外台秘要)》 권39 (당대 왕도 輯錄)
-> **"主目赤痛不可视，面赤肿，舌本出血，风眩... 扶突主之."**
-> *(눈이 붉고 아프며 붓고, **설본(舌本/風府)에 출혈**이 나며 풍증으로 어지러운 것을 **Futu (扶突, LI18)**이 주치한다.)*
+> **Key v2.7 correction**: In the three primary classics the only aliases of Futu (扶突) are **水穴** (《黃帝明堂經》, 《外臺秘要》) and **水泉** (《古法新解會元針灸學》); 'Fengfu (風府)' is not confirmed as an alias of Futu. The relation with Fengfu runs through **舌本 (an alternative name of Fengfu)**, used together with Futu in a prescription of 《靈樞·寒熱病》. The title's "Fengfu as an alias of Futu" is retained as a working title referring to this relation.
 >
-> *(v2.7 대조 주)* 이 조문은 *Waitai Miyao* (《外臺秘要》) 卷三十九의 **뇌호(脑户, GV17)** 주치다: "主目赤痛不可视；面赤肿；舌本出血，风眩"(《腧穴通考》(下) 脑户 조, 인쇄 1237쪽). 끝의 "扶突主之"는 《甲乙经》 앞 조문의 끝말로, 王焘가 이 앞 조문의 "舌本出血"을 잘라 뇌호 주치에 붙였다는 것이 황룡상의 판단이다("'舌本出血'乃王焘对*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)原文断句错误，将前一条'扶突主之'病症录于本穴中"). 따라서 위 번역의 "Futu (扶突, LI18)이 주치한다"는 원전 독법과 맞지 않는다.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+
+Based on the textual research on acupoints (腧穴考證) and the analysis of ancient textual passages in the three specialist acupuncture works — *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) and *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) — this report sets out in detail the literary sources in which an alias of **Futu (扶突, LI18)** appears in connection with **Fengfu (風府, GV16)**, and the medical-historical background of how this arose.
 
 ---
 
-### 🔬 2. 문헌적 전이(傳移) 및 별명 공유가 일어난 고증적 원인
+### 📜 1. Key Literary Sources and Original Passages
 
-《침구수혈통고(针灸腧穴通考)》 하권(p. 58, 62~65)의 수혈 고증(腧穴考證)에 따르면, Futu (扶突, LI18)과 Fengfu (風府, GV16)가 이명 및 주치증으로 문헌상 얽히게 된 데에는 **두 가지 주요 의학사적 원인**이 있습니다.
+#### ① *Huangdi Neijing · Lingshu · Hanre Bing* (《黃帝內經·靈樞·寒熱病》) (original passage)
+> **"暴喑氣鞕, 取扶突與舌本出血."**
+> *(For sudden loss of voice (暴喑), in which one suddenly becomes hoarse, cannot speak and is short of breath, take **Futu (扶突)** and let blood at **Sheben (舌本)**.)*
 
-> *(v2.7 쪽수 주)* "p. 58, 62~65"는 `chunks_refined` 파일의 PDF 쪽 번호다. 관련 기술은 하권 风府 조(PDF 62쪽 = 인쇄 1234쪽), 脑户 조(PDF 65쪽 = 인쇄 1237쪽)에 있고, 핵심 논지는 **상권** 총론(인쇄 14-15쪽)과 扶突 조(인쇄 231-232쪽)에 있다. '이명'으로 얽혔다는 표현은 원전에서 확인되지 않으며, 원전이 말하는 것은 **주치 조문의 오귀속**이다.
+#### ② *Huangdi Neijing Taisu* (《黃帝內經太素》), juan 26, "Hanre Zashuo" (〈寒熱雜說〉) (commentary by Yang Shangshan (楊上善), Tang dynasty)
+> **"舌本，一名風府，在項入髮際一寸督脈上."**
+> *(Here **'Sheben (舌本)' is also called 'Fengfu (風府)'**, and lies on the Governor Vessel (督脈), 1 cun above the hairline at the back of the neck.)*
+>
+> *(2026-10-24 refinement note)* The earlier reading "在項**人**髮際" is a misprint found only once, in the 按 of the Futu entry of 《腧穴通考》 (`침구수혈통고(针灸腧穴通考)/针灸腧穴通考_05_上_手阳明大肠经穴-2.md` L1953). The same Yang Shangshan (楊上善) note reads "入髮際" in the 《腧穴通考》 general discussion (`针灸腧穴通考_02_上_序·凡例·总论-2.md` L1804), the Futu textual analysis (`…_05_…md` L1939), the Fengfu entry (`针灸腧穴通考_22_下_督脉穴-2.md` L197) and 《證治通鑑》 (`중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_14_第叁编_内科病症_四中风至八痉证.md` L1071), and the juan is given as "卷二十六".
 
-#### ① 당대(唐代) 《외대필요》 편찬 시의 구절 오독(斷句 錯誤)
-- 본래 《영추·한열병》의 원문은 **"Futu (扶突, LI18)을 침으로 찌르고, 설본(舌本 = 風府)에서 출혈을 시킨다"**는 **두 경혈의 상하 배혈(配穴) 처방**이었습니다.
-- 그러나 당대 《외대필요》를 편찬한 왕도(王焘)가 *Zhen Jiu Jia Yi Jing* (《針灸甲乙經》) 및 《천금방》의 조문을 묶어 집록하는 과정에서 문장의 **구획(斷句)을 잘못 나누는 오류(斷句 錯誤)**를 범했습니다.
-- 이로 인해 **설본(舌本/風府)**의 조문과 **Futu (扶突, LI18)**의 주치 조문이 하나로 합쳐져 필사되면서, 후대 일부 침구 문헌에서 **Futu (扶突, LI18)의 별명이 Fengfu (風府, GV16)(風府/舌本)로 표기되거나 두 혈의 적응증이 문헌상 상호 전이**되었습니다.
-- *(v2.7 대조 주 — 원전 기준 2단계 오류)* 《腧穴通考》에 따르면 오류는 두 단계다. ① ***Huangdi Mingtang Jing* (《黃帝明堂經》) 편자**가 *Lingshu* (《靈樞》)의 "取扶突与舌本出血"(두 혈 처방)을 그대로 Futu (扶突, LI18) 주치에 넣어, 후인이 "舌本出血"을 Futu (扶突, LI18)의 주치 증상으로 읽게 되었다(*Qianjin Yaofang* (《千金要方》)도 증상으로 오인: 《穴位通鉴》 按). ② **王焘**가 《甲乙经》에서 옮겨 적을 때 다시 단구를 잘못 끊어 "舌本出血"을 **뇌호(脑户)** 주치에 붙였고, 1984년 《腧穴学》 교재도 "脑户：主治舌本出血"로 이를 이었다. Futu (扶突, LI18)의 별명이 Fengfu (風府, GV16)로 표기된 문헌은 3대 원전에서 찾지 못했다. 따라서 "별명 공유"는 확인되지 않고, 확인되는 것은 **舌本 출혈이 Futu (扶突, LI18)·뇌호의 주치로 잘못 옮겨진 일**이다.
-
-#### ② 《영추·본수(本输)》 '천오부(天五部)' 경항부(頸部) 인접 수혈군
-- 《영추·본수》 및 《내경》 체계에서 목 부위에 위치한 수혈군인 **'천오부(天五部 / 天五會)'** (천돌, Futu (扶突, LI18), 인영, 천창, 천용, 천주, Fengfu (風府, GV16) 등)는 모두 머리와 목의 풍증(风证) 및 언어 장애(失音/暴喑)를 치료하는 경항부 관문(關門) 수혈들입니다.
-  - *(v2.7 대조 주)* '天五部'라는 명칭은 3대 원전에서 검출되지 않는다. 《灵枢·本输》은 天突·人迎·扶突·天窗·天容·天牖·天柱·风府·天府·天池를 차례로 열거하고, 《灵枢·寒热病》은 그중 人迎·扶突·天牖·天柱·天府를 **'天牖五部'** 로 묶는다(《太素》 "大俞五部"). '天五会'는 인영의 별명이다(《腧穴通考》(上) 인쇄 15쪽). 황룡상은 이들을 三部脉诊의 '天'부 진맥 부위로 보며, "모두 풍증·언어 장애를 치료하는 관문 수혈"이라는 주치 통합은 원전에 없는 해석이다(Rank 4 병증 통합 편향).
-- 목 측면에 위치한 **Futu (扶突, LI18)(扶突 - Large Intestine Meridian of Hand-Yangming (手陽明大腸經))**과 목 뒤 정중선에 위치한 **Fengfu (風府, GV16)(風府 - Governor Vessel (督脈, GV))**는 고대 임상에서 폭암(暴喑/갑작스러운 후두 마비) 치료 시 상호 짝을 이루어 투침/배혈되던 수혈이었기에 문헌 기록상 이명과 주치증의 혼용이 더욱 가속화되었습니다.
-  - *(v2.7 대조 주)* 두 혈의 짝 사용으로 원전에서 확인되는 것은 《灵枢·寒热病》 처방 1건과, 《圣济总录》 卷一九四의 오자(誤刺) 구제법 2건(哑门·风府를 잘못 찔러 벙어리가 되면 "宜针人中、扶突")이다. "상호 짝을 이루어 투침/배혈되던" 관행과 "이명 혼용이 가속화"되었다는 인과는 확인되지 않으므로 작성 시 판단으로 둔다.
+#### ③ *Waitai Miyao* (《外臺秘要》), juan 39 (compiled by Wang Tao (王燾), Tang dynasty)
+> **"主目赤痛不可視，面赤腫，舌本出血，風眩... 扶突主之."**
+> *(Red, painful and swollen eyes, **bleeding at Sheben (舌本 / 風府)**, and wind dizziness (風眩) are treated by **Futu (扶突)**.)*
+>
+> *(v2.7 comparison note)* This passage is the indication of **Naohu (腦戶, GV17)** in juan 39 of the 《外臺秘要》: "主目赤痛不可視；面赤腫；舌本出血，風眩" (《腧穴通考》 (vol. 2), entry on 腦戶, printed p.1237). The final "扶突主之" is the closing phrase of the preceding passage in the 《甲乙經》; Huang Longxiang (黃龍祥) judges that Wang Tao (王燾) cut "舌本出血" from that preceding passage and attached it to the indications of Naohu ("'舌本出血'乃王燾對《針灸甲乙經》原文斷句錯誤，將前一條'扶突主之'病症錄於本穴中"). The rendering "treated by Futu" above therefore does not agree with the reading of the primary sources.
 
 ---
 
-### 💡 요약 정리
+### 🔬 2. Textual Causes of the Transfer (傳移) and Alias Sharing in the Literature
 
-- **별칭/연관 출처**: 《황제내경·영추》, 《황제내경태소》, 《외대필요》 권39.
-- **발생 기전**: *Lingshu* (《靈樞》)의 **"Futu (扶突, LI18) + 설본(舌本/風府)" 배혈 처방**이 *Huangdi Mingtang Jing* (《黃帝明堂經》) 편자의 처리 누락("舌本出血"을 Futu (扶突, LI18) 주치로 귀속)과 당대 《외대필요》 輯錄 과정의 **단구 오류(斷句 錯誤)**("舌本出血"을 뇌호 주치로 귀속)를 거치며 **주치 조문이 다른 혈로 옮겨진** 한의학사적 결과입니다. Futu (扶突, LI18)과 Fengfu (風府, GV16)가 별명을 공유했다는 근거는 3대 원전에서 확인되지 않습니다(Futu (扶突, LI18) 별명: 水穴·水泉).
-- **Rank 4 주**: "舌本出血"은 배오(Futu (扶突, LI18)+舌本) 처방의 시술 지시이지 Futu (扶突, LI18) 단독 주치가 아니다. Futu (扶突, LI18)의 단독 주치로는 《明堂经》 이래 "暴喑气哽"을 쓴다.
+According to the textual research on acupoints (腧穴考證) in volume 2 (pp. 58, 62–65) of the *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》), there are **two main medical-historical causes** for Futu (扶突) and Fengfu (風府) becoming entangled in the literature through alternative names and indications.
 
-## v2.7 정제 이력 (2026-10-04)
+> *(v2.7 page note)* "pp. 58, 62–65" are PDF page numbers of the `chunks_refined` files. The relevant descriptions are in the entries on 風府 (PDF p.62 = printed p.1234) and 腦戶 (PDF p.65 = printed p.1237) in volume 2, while the core argument is in the general section (printed pp.14-15) and the entry on 扶突 (printed pp.231-232) of **volume 1**. The expression that they were entangled through 'alternative names' is not confirmed in the primary sources; what the primary sources describe is the **misattribution of indication passages**.
 
-| # | 위치 | 원래 표현 | 바꾼 표현 | 근거 |
+#### ① Misreading of punctuation (斷句錯誤) in the compilation of the *Waitai Miyao* (Tang dynasty)
+- The original text of 《靈樞·寒熱病》 was a **prescription combining two points (配穴), one upper and one lower**: **"needle Futu (扶突) and let blood at Sheben (舌本 = 風府)"**.
+- However, when Wang Tao (王燾), compiler of the Tang-dynasty 《外臺秘要》, collected and bound together passages from the 《針灸甲乙經》 and the 《千金方》, he committed an **error in dividing the sentences (斷句錯誤)**.
+- As a result, the passage on **Sheben (舌本 / 風府)** and the indication passage of **Futu (扶突)** were merged and copied as one, so that in some later acupuncture texts **the alias of Futu (扶突) was written as Fengfu (風府 / 舌本), or the indications of the two points were transferred between them in the literature**.
+- *(v2.7 comparison note — two-stage error according to the primary sources)* According to the 《腧穴通考》, the error occurred in two stages. ① **The compiler of the 《黃帝明堂經》** put the 《靈樞》 "取扶突與舌本出血" (a two-point prescription) unchanged into Futu's indications, so that later readers read "舌本出血" as a symptom treated by Futu (the 《千金要方》 also mistook it for a symptom: commentary (按) in 《穴位通鑑》). ② **Wang Tao (王燾)**, when copying from the 《甲乙經》, again punctuated wrongly and attached "舌本出血" to the indications of **Naohu (腦戶)**, and the 1984 textbook *Shuxue Xue* (《腧穴學》) carried this forward as "腦戶：主治舌本出血". No text in the three primary classics was found in which the alias of Futu is written as Fengfu. Thus "alias sharing" is not confirmed; what is confirmed is that **bleeding at 舌本 was wrongly transferred to the indications of Futu and Naohu**.
+
+#### ② The adjacent group of neck points, the 'Tian Wu Bu (天五部)', in *Lingshu · Benshu* (《靈樞·本輸》)
+- In the 《靈樞·本輸》 and the *Neijing* (《內經》) system, the group of points located on the neck, **'Tian Wu Bu (天五部 / 天五會)'** (Tiantu (天突), Futu (扶突), Renying (人迎), Tianchuang (天窗), Tianrong (天容), Tianzhu (天柱), Fengfu (風府), etc.), are all gateway (關門) points of the neck that treat wind disorders (風證) of the head and neck and speech disorders (失音 / 暴喑).
+  - *(v2.7 comparison note)* The name '天五部' is not found in the three primary classics. 《靈樞·本輸》 lists 天突·人迎·扶突·天窗·天容·天牖·天柱·風府·天府·天池 in sequence, and 《靈樞·寒熱病》 groups 人迎·扶突·天牖·天柱·天府 among them as the **'天牖五部'** (《太素》 "大俞五部"). '天五會' is an alias of Renying (人迎) (《腧穴通考》 (vol. 1), printed p.15). Huang Longxiang (黃龍祥) regards these as pulse-taking sites of the 'Heaven (天)' level in three-level pulse diagnosis (三部脈診); the integration of indications as "gateway points that all treat wind disorders and speech disorders" is an interpretation not found in the primary sources (Rank 4 bias of disease-pattern integration).
+- **Futu (扶突 — Hand-Yangming Large Intestine Meridian (手陽明大腸經))**, on the lateral neck, and **Fengfu (風府 — Governor Vessel (督脈))**, on the posterior midline of the neck, were points paired with each other for through-needling / combination in ancient clinical treatment of sudden loss of voice (暴喑 / sudden laryngeal paralysis), so the mixed use of their alternative names and indications in the written record was further accelerated.
+  - *(v2.7 comparison note)* The paired use of the two points confirmed in the primary sources consists of one prescription in 《靈樞·寒熱病》 and two remedies for mis-needling (誤刺) in juan 194 of the 《聖濟總錄》 (if one becomes mute after wrongly needling 啞門 or 風府, "宜針人中、扶突"). The practice of being "paired with each other for through-needling / combination" and the causal claim that "the mixed use of alternative names was accelerated" are not confirmed and are therefore left as judgements made at the time of writing.
+
+---
+
+### 💡 Summary
+
+- **Sources of the alias / association**: 《黃帝內經·靈樞》, 《黃帝內經太素》, 《外臺秘要》 juan 39.
+- **Mechanism of origin**: It is a medical-historical result in which the 《靈樞》 **combination prescription "Futu (扶突) + Sheben (舌本 / 風府)"**, through the handling omission of the compiler of the 《黃帝明堂經》 ("舌本出血" attributed to Futu's indications) and the **punctuation error (斷句錯誤)** in the compilation of the Tang-dynasty 《外臺秘要》 ("舌本出血" attributed to Naohu's indications), led to **indication passages being transferred to other points**. No evidence is found in the three primary classics that Futu and Fengfu shared an alias (aliases of Futu: 水穴, 水泉).
+- **Rank 4 note**: "舌本出血" is a procedural instruction in a combination prescription (Futu + 舌本), not a single-point indication of Futu. From the 《明堂經》 onward, the single-point indication of Futu is given as "暴喑氣哽".
+
+## v2.7 Refinement History (2026-10-04)
+
+| # | Location | Original wording | Revised wording | Basis |
 | :-: | :--- | :--- | :--- | :--- |
-| 1 | 머리말 | (버전 표기 없음) | 프레임워크 v2.7 정제 블록, ARI 미산정, 핵심 정정 요지 | 지침 1 |
-| 2 | 머리말·요약 | Futu (扶突, LI18)의 별칭이 Fengfu (風府, GV16) | Futu (扶突, LI18) 별칭은 水穴·水泉뿐, Fengfu (風府, GV16)와의 관계는 舌本(Fengfu (風府, GV16) 별명) 배혈을 통한 것 | 《穴位通鉴》 扶突 [别名], 《腧穴通考》 "扶突，一名水穴" |
-| 3 | 1절 ③ 《외대》 조문 | Futu (扶突, LI18) 주치로 번역 | 이 조문은 뇌호 주치이며, 王焘 단구 오류로 舌本出血이 뇌호에 붙은 것 | 《腧穴通考》(下) 脑户 조 按 |
-| 4 | 2절 도입 | 하권 p.58, 62~65 / "이명 및 주치증" | PDF 쪽과 인쇄 쪽 대응, 상권 근거 추가, 이명은 미확인 | `chunks_refined` PAGE 표지 |
-| 5 | 2절 ① | 王焘 단구 오류 → Futu (扶突, LI18) 별명이 Fengfu (風府, GV16)로 표기 | 2단계 오류(《明堂经》 편자 → 王焘)로 정정, 별명 표기 문헌 미확인 | 《腧穴通考》(上) 총론 인쇄 14쪽, 扶突 조 231-232쪽 |
-| 6 | 2절 ② | '天五部(天五會)' 군, "모두 풍증·언어장애 치료 관문 수혈" | 명칭 미검출, '天牖五部'·'天五会(인영 별명)'로 정정, 주치 통합은 Rank 4 편향 | 《灵枢·本输》·《寒热病》(《腧穴通考》 인용) |
-| 7 | 2절 ② | "상호 짝을 이루어 투침/배혈", "혼용이 가속화" | 확인된 사례 3건(*Lingshu* (《靈樞》) 1, 《圣济总录》 2)만 제시, 인과는 작성 시 판단 | 《腧穴通考》 扶突 문헌분석 |
-| 8 | 요약 | "두 수혈의 별명 및 주치증이 융합·전이" | "주치 조문이 다른 혈로 옮겨진" 결과, 별명 공유 미확인, 배오 주치 분리(Rank 4) | 위 근거 종합 |
+| 1 | Preamble | (no version label) | Framework v2.7 refinement block, ARI not calculated, gist of key correction | Guideline 1 |
+| 2 | Preamble & summary | Fengfu is an alias of Futu | The only aliases of Futu are 水穴 and 水泉; the relation with Fengfu runs through the combination with 舌本 (an alternative name of Fengfu) | 《穴位通鑑》 扶突 [別名], 《腧穴通考》 "扶突，一名水穴" |
+| 3 | Section 1 ③ 《外臺》 passage | Translated as an indication of Futu | This passage is an indication of Naohu; 舌本出血 became attached to Naohu through Wang Tao's (王燾) punctuation error | 《腧穴通考》 (vol. 2), commentary (按) under 腦戶 |
+| 4 | Section 2 introduction | Vol. 2 pp.58, 62–65 / "alternative names and indications" | Correspondence of PDF and printed pages, evidence from vol. 1 added, alternative names not confirmed | `chunks_refined` PAGE markers |
+| 5 | Section 2 ① | Wang Tao's (王燾) punctuation error → alias of Futu written as Fengfu | Corrected to a two-stage error (compiler of 《明堂經》 → Wang Tao); no text writing the alias confirmed | 《腧穴通考》 (vol. 1) general section printed p.14, entry on 扶突 pp.231-232 |
+| 6 | Section 2 ② | '天五部 (天五會)' group, "all gateway points treating wind disorders and speech disorders" | Name not found; corrected to '天牖五部' and '天五會 (alias of Renying)'; integration of indications is a Rank 4 bias | 《靈樞·本輸》, 《寒熱病》 (as quoted in 《腧穴通考》) |
+| 7 | Section 2 ② | "Paired with each other for through-needling / combination", "mixed use was accelerated" | Only the 3 confirmed cases presented (《靈樞》 1, 《聖濟總錄》 2); causality left as judgement at time of writing | Literature analysis of 扶突 in 《腧穴通考》 |
+| 8 | Summary | "The aliases and indications of the two points were fused and transferred" | Result of "indication passages being transferred to other points", alias sharing not confirmed, combination indication separated (Rank 4) | Synthesis of the above |
 
-- PMID/DOI: 본문에 없음(확인 대상 0건). 생의학 기전 인용 없음(Layer B 대상 0건).
-- 남은 한계: *Waitai Miyao* (《外臺秘要》) 원본의 扶突 조 전문은 3대 원전 인용으로만 확인했다. 제목은 작업명이라 바꾸지 않았다.
+- PMID/DOI: none in the text (0 items to check). No biomedical mechanisms cited (0 items for Layer B).
+- Remaining limitations: The full text of the 扶突 entry in the original 《外臺秘要》 was confirmed only through quotations in the three primary classics. The title is a working title and was not changed.
+
+## Refinement History (2026-10-24)
+
+| # | Location | Original wording | Revised wording | Basis |
+| :-: | :--- | :--- | :--- | :--- |
+| 1 | Section 1 ① | "暴喑氣硬" | "暴喑氣鞕" | 《靈樞·寒熱病》 as quoted in 《腧穴通考》 (`针灸腧穴通考_02_上_序·凡例·总论-2.md` L1804) |
+| 2 | Section 1 ② heading | 《太素》 juan 21 | juan 26 | Same place: "《黃帝內經太素·寒熱雜說》卷二十六" |
+| 3 | Section 1 ② quotation | "在項人髮際" | "在項入髮際" | Four citations read "入髮際"; only one (L1953) reads "人" — a misprint in that edition |
+
+The mixed Korean–Chinese book title 《중국침구혈位통감》 in the Korean edition was also corrected to 《中国针灸穴位通鉴》; the English edition already used the correct title.

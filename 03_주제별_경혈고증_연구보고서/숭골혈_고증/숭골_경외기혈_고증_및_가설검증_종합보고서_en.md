@@ -1,66 +1,73 @@
-# 📜 [혈위고증 종합권위본] Songgu (崇骨, EX-HN) Extraordinary Points (經外奇穴) 고증 및 가설검증 종합보고서
+# 📜 [Authoritative Comprehensive Textual Research Report] Chonggu (崇骨): Textual Research and Hypothesis Testing of an Extra Point (經外奇穴)
 
-> **Framework**: v2.7 (2026-10-04 정제) · **적용 범위**: Rank 1~4 문헌 고증(필요 시 Rank 5) · **ARI**: 미산정(고증 보고서) · **근거 데이터**: `Songgu (崇骨, EX-HN)_Extraordinary Points (經外奇穴)_고증_및_가설검증_피어리뷰_분석.csv`, `Songgu (崇骨, EX-HN)_Extraordinary Points (經外奇穴)_고증_및_가설검증_피어리뷰_분석.xlsx` (3대 원전 대조: `针灸腧穴通考(下)_401-480.md` L1620-1666)  
-> **구판**: Version 2.6 (2026-10-03, "Rank 0~7 완전 적용" 표기) 원본은 `_구판_v2.6/`에 보관. 실제로는 Rank 6·7(Layer A·B 대조, ARI 채점)을 수행한 기록이 없어 적용 범위를 Rank 1~4로 정정함  
-> **마스터 근거 원칙**: [`경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx`](file:///g:/내%20드라이브/도서%20번역/02_Master_Datasets/%EA%B2%BD%ED%98%88%EC%9D%98%20%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81%20%EC%8B%A4%EC%B2%B4%EB%A5%BC%20%ED%8C%90%EB%AA%85%ED%95%98%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EB%A1%9C%EC%A7%81%28logic%29%20%EC%9B%90%EC%B9%99.xlsx)  
-> **근거 원전**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)  
-> **통합 이력**: 2개 분산 문서(피어리뷰 보고서 및 C7/T1 시대변천 보고서)를 50% 이상 중복 통합 원칙에 따라 단일 권위본으로 완결 융합.
-
----
-
-## 🏛️ 1. 고증 배경 및 Songgu (崇骨, EX-HN)의 정의
-
-* **Songgu (崇骨, EX-HN)(崇骨, EX-HN)**: 역대 의서에서 주로 Extraordinary Points (經外奇穴)(經外奇穴)로 수록된 혈위로, "在後正中線上, 第6頸椎棘突下凹陷中" (C6 극돌기 하단) 또는 "第7頸椎棘突上凹陷中" (C7 극돌기 상단)으로 정의됨.
-  - *(v2.7 대조 주)* 이 두 정위 문구는 3대 원전에서 검출되지 않는다(출처 미기재 현대 기혈 정위). 3대 원전에서 崇骨은 《腧穴通考》에만 나오며, 穴名으로서의 최초 기재는 조선 허임 《针灸经验方》(1644) "崇骨一穴，在大椎上，第一小椎是也"이고, 황룡상은 이를 **"相当于第七颈椎棘突尖"(C7 극돌기 끝)** 으로 본다. 같은 폴더 xlsx(`Songgu (崇骨, EX-HN)_Dazhui (大椎, GV14)_백로_수혈고증_대조` 시트)도 "제7경추 극돌기 정상부"로 적는다. 따라서 'C6-C7 극간' 정위는 원전 정위와 다르다.
-* **고대 골격 명칭으로서의 Songgu (崇骨, EX-HN)**: 
-  * "崇"은 높고 솟아오른 뼈를 의미함. 고대 의가들은 목 뒤에서 가장 높이 솟은 뼈인 **제7경추(C7) 극돌기 자체**를 '崇骨'이라 칭하기도 하였음.
-  * 따라서 "崇骨下"는 C7 극돌기 아래(C7-T1 극간 = Dazhui (大椎, GV14)혈)가 되고, "崇骨上"은 C7 극돌기 위(C6-C7 극간 = 기혈 Songgu (崇骨, EX-HN)혈)가 되는 상대적 정위 체계가 형성됨.
+> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual research (Rank 5 where needed) · **ARI**: not calculated (textual-research report) · **Source data**: `숭골_경외기혈_고증_및_가설검증_피어리뷰_분석.csv`, `숭골_경외기혈_고증_및_가설검증_피어리뷰_분석.xlsx` (comparison with the three primary classics: `针灸腧穴通考(下)_401-480.md` L1620-1666)  
+> **Previous edition**: The Version 2.6 original (2026-10-03, labelled "Rank 0–7 fully applied") is kept in `_구판_v2.6/`. As there is in fact no record of Rank 6·7 (comparison with Layers A·B, ARI scoring) having been performed, the scope has been corrected to Rank 1–4  
+> **Master evidence principles**: [`경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx`](../../../02_Master_Datasets/%EA%B2%BD%ED%98%88%EC%9D%98%20%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81%20%EC%8B%A4%EC%B2%B4%EB%A5%BC%20%ED%8C%90%EB%AA%85%ED%95%98%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EB%A1%9C%EC%A7%81%28logic%29%20%EC%9B%90%EC%B9%99.xlsx)  
+> **Source classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)  
+> **Consolidation history**: Two separate documents (a peer-review report and a report on the historical change of C7/T1) were fully merged into a single authoritative edition under the principle of consolidating documents with ≥ 50% overlap.  
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
 ---
 
-## 📑 2. 원전문헌 비교 대조 및 피어리뷰 가설 검증
+## 🏛️ 1. Background of the Textual Research and Definition of Chonggu (崇骨)
 
-| 검증 항목 | 원전 기재 내용 | 학술 피어리뷰 평가 |
+* **Chonggu (崇骨, EX-HN)**: A point recorded in historical medical texts mainly as an extra point (經外奇穴), defined as "在後正中線上, 第6頸椎棘突下凹陷中" (below the C6 spinous process) or "第7頸椎棘突上凹陷中" (above the C7 spinous process).
+  - *(v2.7 comparison note)* Neither of these two locating phrases is found in the three primary classics (they are modern extra-point locations with no source given). In the three primary classics 崇骨 appears only in the 《腧穴通考》; its first record as a point name is in Heo Im's (許任) 《針灸經驗方》 (1644) of Joseon, "崇骨一穴，在大椎上，第一小椎是也", which Huang Longxiang (黃龍祥) takes to be **"相當於第七頸椎棘突尖" (tip of the C7 spinous process)**. The xlsx in the same folder (sheet `숭골_대추_백로_수혈고증_대조`) likewise gives "apex of the spinous process of the 7th cervical vertebra". The 'C6-C7 interspinous' location therefore differs from the location in the primary sources.
+* **Chonggu (崇骨) as an ancient skeletal name**: 
+  * "崇" means a high, protruding bone. Ancient physicians sometimes called the **spinous process of the 7th cervical vertebra (C7) itself**, the most prominent bone at the back of the neck, '崇骨'.
+  * Hence a relative locating system arose in which "崇骨下" is below the C7 spinous process (C7-T1 interspinous = Dazhui (大椎, GV14)) and "崇骨上" is above the C7 spinous process (C6-C7 interspinous = the extra point Chonggu).
+
+---
+
+## 📑 2. Comparison of Primary Source Texts and Peer-Review Hypothesis Testing
+
+| Item verified | Content recorded in the source | Academic peer-review assessment |
 | :--- | :--- | :--- |
-| ***Qianjin Yaofang* (《千金要方》)** | "崇骨... 主頸項强急, 不能回顧." *(3대 원전 미검출 — 원출처 확인 필요)* | Songgu (崇骨, EX-HN)혈 자침 시 Nuchal rigidity / Neck stiffness (項强)증 개선을 기대할 수 있다는 해석(작성 시 판단, 정량 미검증). 《腧穴通考》는 허임의 崇骨穴에 "无主治病症及相关刺灸法"이라 하여, 崇骨 고유 주치가 원전에서 확인되지 않음을 밝힌다. |
-| **《針灸大成》** | "崇骨在第七椎上, 灸三壯." *(3대 원전 미검출 — 원출처 확인 필요)* | 7경추 상방으로 기재되었다면 Dazhui (大椎, GV14)혈(C7 극하)의 윗마디로 구분된다. 다만 원전에서 확인되는 허임의 정위는 C7 극돌기 끝이며, C6-C7 극간이라는 해석은 작성 시 판단이다. |
-| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)** | "黃龍祥 考: 崇骨之名, 實起於後世對頸椎骨之俗稱. 與大椎相表裏." *(이 문장은 `chunks_refined`에서 검출되지 않음. 실제 조문: 《小品方》 "大椎上节以上属颈崇骨也。大椎与崇骨相接处，其节最高硕也"; 문헌분석 "颈椎只辨出三椎，称项骨，又曰'柱骨'、'天柱骨'或'崇骨'…最高大者为与大椎骨相邻的崇骨——即第七颈椎…无主治病症及相关刺灸法…可见并非出自许任的临床实践")* | 원전 기준으로 崇骨은 본래 **骨名(C7, 또는 項骨 일반)** 이고, 穴名 崇骨은 허임이 이 骨名을 바탕으로 둔 것이며 임상 실천에서 나온 혈이 아니라는 것이 황룡상의 판단이다. "경신경총 상부 분지를 조절하는 독립 혈위"는 원전 근거가 없는 해부 실체 가설이다. |
+| **《千金要方》** | "崇骨... 主頸項強急, 不能回顧." *(not found in the three primary classics — original source needs to be checked)* | Interpretation that needling Chonggu may be expected to improve neck stiffness (judgement at time of writing, not quantitatively verified). The 《腧穴通考》 states of Heo Im's 崇骨穴 "無主治病症及相關刺灸法", making clear that no indication specific to 崇骨 is confirmed in the primary sources. |
+| **《針灸大成》** | "崇骨在第七椎上, 灸三壯." *(not found in the three primary classics — original source needs to be checked)* | If it is recorded as above the 7th cervical vertebra, it is distinguished as the segment above Dazhui (大椎) (below C7 spinous process). However, the location confirmed in the primary sources for Heo Im is the tip of the C7 spinous process, and the interpretation as C6-C7 interspinous is a judgement made at the time of writing. |
+| **《針灸腧穴通考》** | "黃龍祥 考: 崇骨之名, 實起於後世對頸椎骨之俗稱. 與大椎相表裏." *(This sentence is not found in `chunks_refined`. Actual passages: 《小品方》 "大椎上節以上屬頸崇骨也。大椎與崇骨相接處，其節最高碩也"; literature analysis "頸椎只辨出三椎，稱項骨，又曰'柱骨'、'天柱骨'或'崇骨'…最高大者為與大椎骨相鄰的崇骨——即第七頸椎…無主治病症及相關刺灸法…可見並非出自許任的臨床實踐")* | According to the primary sources, 崇骨 was originally a **bone name (C7, or the cervical vertebrae (項骨) in general)**; Huang Longxiang (黃龍祥) judges that the point name 崇骨 was established by Heo Im on the basis of this bone name and did not arise from clinical practice. "An independent point that modulates the upper branches of the cervical plexus" is an anatomical substrate hypothesis with no basis in the primary sources. |
 
 ---
 
-## 🧬 3. 해부학적 실체 및 신경생리 기전 — 해부 실체 가설(ARI 미산정)
+## 🧬 3. Anatomical Substrate and Neurophysiological Mechanism — Anatomical Substrate Hypothesis (ARI not calculated)
 
-> **v2.7 표기**: Rank 6·7을 거치지 않은 가설이다. 층차는 C6-C7 극간 정위를 전제로 하므로 원전 정위(C7 극돌기 끝)를 쓰면 바뀐다. 발통점(MTrP) 이완 주장은 근막 발통점 체계(B2-06) 범위의 유추이며, 발통점–경혈 대응 자체가 논쟁 중이다(B2-03 대 반증 B2-04). 인체 전환 근거(B4)는 검토하지 않았다.
+> **v2.7 label**: This is a hypothesis that has not undergone Rank 6·7. The layers presuppose the C6-C7 interspinous location and would change if the primary-source location (tip of the C7 spinous process) were used. The claim of releasing trigger points (MTrP) is an analogy within the scope of the myofascial trigger-point framework (B2-06), and the trigger point–acupoint correspondence itself is under debate (B2-03 vs. the refutation B2-04). Evidence for human translation (B4) was not examined.
 
-1. **해부 구조물**:
-   * 피부 ➔ 목덜미인대(Ligamentum nuchae) ➔ C6-C7 극간인대 ➔ 척추주위 심층근육(반극근, 회선근).
-2. **지배 신경**:
-   * C6-C7 경신경 후지의 내측지(Medial branch of posterior ramus).
-3. **신경반사 작용**:
-   * 경판상근 및 두반극근 MTrP(통증유발점)를 이완시켜 경추성 Headache (頭痛), 경견완 증후군 및 후두 신경통을 완화할 수 있다는 가설("즉각 이완" 효과는 정량 미검증).
-4. **자침 안전 기준**:
-   * 침자 깊이: **10~15mm** 직자/약간 상향사자. 20mm 이상 깊이 자침 시 황색인대 통과 및 척수막 접촉 위험 차단. *(작성 시 판단, 정량 미검증 — 원전에는 崇骨 刺灸法 기재가 없음)*
+1. **Anatomical structures**:
+   * Skin ➔ ligamentum nuchae ➔ C6-C7 interspinous ligament ➔ deep paraspinal muscles (semispinalis, rotatores).
+2. **Innervation**:
+   * Medial branches of the posterior rami of the C6-C7 cervical spinal nerves (medial branch of posterior ramus).
+3. **Neural reflex action**:
+   * Hypothesis that releasing MTrPs (trigger points) in splenius cervicis and semispinalis capitis may relieve cervicogenic headache, cervico-omo-brachial syndrome and occipital neuralgia (the "immediate release" effect has not been quantitatively verified).
+4. **Needling safety criteria**:
+   * Needling depth: **10–15 mm**, perpendicular or slightly upward oblique. Needling deeper than 20 mm is precluded to avoid passing the ligamentum flavum and contacting the spinal meninges. *(Judgement at time of writing, not quantitatively verified — the primary sources contain no needling/moxibustion method (刺灸法) for 崇骨)*
 
 ---
 
-## 📊 4. 최종 학술 결론
+## 📊 4. Final Academic Conclusion
 
-> Songgu (崇骨, EX-HN)은 본래 **骨名**(C7 또는 項骨)이었고, 穴名으로는 조선 허임 《针灸经验方》(1644)에 처음 기재되었으며 그 위치는 **C7 극돌기 끝**(Dazhui (大椎, GV14) GV14의 바로 위)이다(《腧穴通考》). 원전에는 Songgu (崇骨, EX-HN) 고유의 주치와 자법이 없고, 같은 폴더 데이터 파일도 "독자적 주치 구축 미약"으로 판정한다. 따라서 "C6-C7 극간의 공인 Extraordinary Points (經外奇穴)로서 상부 경신경총을 선택적으로 조절하는 독립 수혈"이라는 결론은 **확정이 아니라 해부 실체 가설(ARI 미산정)** 이며, 정위(C7 극돌기 끝 대 C6-C7 극간)부터 원전과 다시 맞춰야 한다.
+> Chonggu (崇骨) was originally a **bone name** (C7 or the cervical vertebrae (項骨)); as a point name it was first recorded in Heo Im's (許任) 《針灸經驗方》 (1644) of Joseon, and its location is **the tip of the C7 spinous process** (directly above Dazhui (大椎, GV14)) (《腧穴通考》). The primary sources give no indication or needling method specific to Chonggu, and the data file in the same folder also judges it as "weak in establishing independent indications". Therefore the conclusion that it is "a recognised extra point in the C6-C7 interspace and an independent point selectively modulating the upper cervical plexus" is **not confirmed but an anatomical substrate hypothesis (ARI not calculated)**, and must be realigned with the primary sources starting from its location (tip of the C7 spinous process vs. C6-C7 interspace).
 
-## v2.7 정제 이력 (2026-10-04)
+## v2.7 Refinement History (2026-10-04)
 
-| # | 위치 | 원래 표현 | 바꾼 표현 | 근거 |
+| # | Location | Original wording | Revised wording | Basis |
 | :-: | :--- | :--- | :--- | :--- |
-| 1 | 머리말 | Version 2.6, "Rank 0~7 완전 적용" | 프레임워크 v2.7 정제 블록, 적용 범위 Rank 1~4, ARI 미산정 | 지침 1. Rank 6·7 수행 기록 없음 |
-| 2 | 1절 정의 | C6 극하 / C7 극상 정위(무출처) | 원전 미검출 표기, 원전 정위는 C7 극돌기 끝(허임 1644) | 《腧穴通考》 大椎 문헌분석, 같은 폴더 xlsx |
-| 3 | 2절 *Qianjin Yaofang* (《千金要方》) 행 | "탁월한 효능 발휘 확인" | 원전 미검출 표기, "기대할 수 있다는 해석(정량 미검증)", 원전은 Songgu (崇骨, EX-HN) 주치 없음 | 《腧穴通考》 "无主治病症及相关刺灸法" |
-| 4 | 2절 《針灸大成》 행 | "C6-C7 극간으로 명정 … 명확히 분별" | 원전 미검출 표기, C6-C7 해석은 작성 시 판단 | 위와 같음 |
-| 5 | 2절 《腧穴通考》 행 | "黃龍祥 考: 崇骨之名…與大椎相表裏" + "독립 혈위임" | 원전 미검출·재구성 표기, 실제 조문 병기, "독립 혈위"는 해부 실체 가설 | 《腧穴通考》(下) L1646·L1660·L1666 |
-| 6 | 3절 | 해부·신경반사 기술(무표기) | "해부 실체 가설(ARI 미산정)", B2-06 유추, B2-03·B2-04 논쟁 병기 | 지침 4, Layer B 등록부 |
-| 7 | 3절 신경반사 | "즉각 이완시켜 … 완화" | "완화할 수 있다는 가설(정량 미검증)" | 지침 2 |
-| 8 | 3절 자침 | 10~15mm, 20mm(무근거) | 작성 시 판단 표기, 원전 刺灸法 없음 | 《腧穴通考》 |
-| 9 | 4절 결론 | "공인된 Extraordinary Points (經外奇穴) … 독립 수혈로 확정 판명됨" | 骨名 기원·허임 1644·C7 극돌기 끝으로 재서술, "확정"을 "해부 실체 가설"로 | 위 근거 종합, 데이터 파일 판정 |
+| 1 | Preamble | Version 2.6, "Rank 0–7 fully applied" | Framework v2.7 refinement block, scope Rank 1–4, ARI not calculated | Guideline 1. No record of Rank 6·7 having been performed |
+| 2 | Section 1 definition | Location below C6 spinous process / above C7 spinous process (no source) | Labelled as not found in the primary sources; primary-source location is the tip of the C7 spinous process (Heo Im 1644) | Literature analysis under 大椎 in the 《腧穴通考》, xlsx in the same folder |
+| 3 | Section 2 row 《千金要方》 | "Confirmed to exert outstanding efficacy" | Labelled as not found in the primary sources; "interpretation that it may be expected (not quantitatively verified)"; no Chonggu indication in the primary sources | 《腧穴通考》 "無主治病症及相關刺灸法" |
+| 4 | Section 2 row 《針灸大成》 | "Clearly located in the C6-C7 interspace … clearly distinguished" | Labelled as not found in the primary sources; the C6-C7 interpretation is a judgement at time of writing | As above |
+| 5 | Section 2 row 《腧穴通考》 | "黃龍祥 考: 崇骨之名…與大椎相表裏" + "is an independent point" | Labelled as not found in the primary sources / reconstructed; actual passages added; "independent point" is an anatomical substrate hypothesis | 《腧穴通考》 (vol. 2) L1646, L1660, L1666 |
+| 6 | Section 3 | Anatomical and neural-reflex description (unlabelled) | "Anatomical substrate hypothesis (ARI not calculated)", analogy with B2-06, B2-03 vs. B2-04 debate added | Guideline 4, Layer B registry |
+| 7 | Section 3 neural reflex | "Immediately releases … relieves" | "Hypothesis that it may relieve (not quantitatively verified)" | Guideline 2 |
+| 8 | Section 3 needling | 10–15 mm, 20 mm (no basis) | Labelled as judgement at time of writing; no 刺灸法 in the primary sources | 《腧穴通考》 |
+| 9 | Section 4 conclusion | "Confirmed and identified as a recognised extra point … an independent point" | Restated in terms of bone-name origin, Heo Im 1644 and tip of the C7 spinous process; "confirmed" changed to "anatomical substrate hypothesis" | Synthesis of the above, verdict of the data file |
 
-- PMID/DOI: 본문에 없음(확인 대상 0건). 생의학 문헌 인용 없음 — Layer B는 가설 표기에 등록부 ID(B2-03·B2-04·B2-06)를 참조로만 추가.
-- 데이터 파일: csv·xlsx의 "100% 입증"(가설 1)과 "주치증과 100% 융합"(Songgu (崇骨, EX-HN) 행)은 정량 근거가 없어 각각 "지지 — 骨名·穴名 인접 혼용 기술 확인, 정량 미검증"과 "독자적 주치 없음 — 원전 고유 주치 미기재"로 고쳤다(원본은 `_구판_v2.6/`에 보관).
-- 남은 한계: *Qianjin Yaofang* (《千金要方》)·《針灸大成》의 崇骨 조문은 3대 원전 밖이어서 직접 대조하지 못했다. 원서에서 확인되면 3·4번 정정을 다시 검토한다.
+- PMID/DOI: none in the text (0 items to check). No biomedical literature cited — for Layer B, registry IDs (B2-03, B2-04, B2-06) were added only as references for the hypothesis labels.
+- Data files: "100% proven" (Hypothesis 1) and "100% fused with indications" (Chonggu row) in the csv and xlsx had no quantitative basis and were changed respectively to "supported — description of adjacent mixed use of bone name and point name confirmed, not quantitatively verified" and "no independent indications — no point-specific indication recorded in the primary sources" (originals kept in `_구판_v2.6/`).
+- Remaining limitations: The 崇骨 passages of the 《千金要方》 and 《針灸大成》 lie outside the three primary classics and could not be compared directly. If they are confirmed in the original books, corrections 3 and 4 will be reviewed again.
+
+## Refinement History (2026-10-24)
+
+| Location | Original wording | Revised wording | Basis |
+| :--- | :--- | :--- | :--- |
+| Header links | Absolute `file:///g:/내 드라이브/도서 번역/…` links (do not open on other PCs) | Links relative to the project root (`도서 번역`) | Skill path rule (no drive-letter absolute paths) |

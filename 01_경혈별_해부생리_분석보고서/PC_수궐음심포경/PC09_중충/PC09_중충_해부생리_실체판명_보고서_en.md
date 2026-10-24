@@ -1,244 +1,246 @@
-# Zhongchong (中衝, PC09)(中衝, PC9) 해부생리학적 실체 판명 보고서
+# [Acupoint Anatomical & Physiological Substrate Monograph] Zhongchong (中衝, PC9)
 
-> **Framework**: v2.7 (2026-10-04 개정) · **ARI**: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 100 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 65.6 (C, 등급 불변) · **이중 채점**: Independent dual-adjudication completed
-
----
-
-> **근거 원칙 문서**: `01_Framework/acupoint_anatomical_logic_framework.md`(v2.7), `01_Framework/layer_b_reference_registry.md`
-> **근거 데이터셋**: `02_Master_Datasets/침구문헌별 자침깊이 정리_AI 분석용.xlsx`(시트1 282행), `경혈명_비교_정리_KJH.xlsx`(경혈 종합 목록 283행), `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx`(경혈별_해부구조_통합 281행), `김재효 수업_경혈_해부구조_데이터셋.xlsx`(경혈별_해부구조_종합 281행)
-> **3대 원전**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)(上卷)_401-480.md L2922~3175 · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)(下)_81-160.md L1628~1745 · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)_81-160.md L178~, _161-240.md 외
-> **Anatomical Ontology**: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 `FMA:ID`로 고정하고 신경 줄기·척수 분절을 대조(B1 보조, 등록부 미등재). 대응표 `02_Master_Datasets/FMA/acupoint_fma_mapping.json`, 상세는 부록 A
-
-### 결론 요약
-
-Zhongchong (中衝, PC09)은 **중지 말절 첨단 중앙의 지문 피부·피하(Layer 1)** 에 위치한다. 해부 실체로는 **정중신경에서 나온 고유바닥쪽손가락신경(감각신경)의 말단 분지와 고유바닥쪽손가락동맥의 말단 동맥망**이 가장 개연성이 높다. 다만 이 판단은 두 교재와 표준 해부학서(B1-01·B1-03)가 서로 일치한다는 수준의 근거이며, PC9 자체를 사체나 초음파로 실측한 연구는 없다. 정혈 사혈의 각성·구급 효과를 설명하는 반사 기전은 B-Check 6/12(미부합)이므로 **가설**로만 기술한다. 종합 판정은 **ARI-Core 67.5 ± 1.2, 등급 C(가능·가설)** 이다. 자침 안전지수는 **SI 100**이다(모든 문헌이 1푼=2.3mm이고 Contraindicated for Needling (禁鍼) 문헌 없음).
+> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 100 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65.6 (C, grade unchanged) · **Dual scoring**: completed by two independent raters
 
 ---
 
-## 1. Classical Literature Screening Table (Three Primary Classics Excerpts)
+> **Governing principle documents**: `01_Framework/acupoint_anatomical_logic_framework.md` (v2.7), `01_Framework/layer_b_reference_registry.md`
+> **Source datasets**: `02_Master_Datasets/침구문헌별 자침깊이 정리_AI 분석용.xlsx` (sheet 1, row 282), `경혈명_비교_정리_KJH.xlsx` (`경혈 종합 목록`, row 283), `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx` (`경혈별_해부구조_통합`, row 281), `김재효 수업_경혈_해부구조_데이터셋.xlsx` (`경혈별_해부구조_종합`, row 281)
+> **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) `(上卷)_401-480.md` L2922–3175 · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) `(下)_81-160.md` L1628–1745 · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) `_81-160.md` L178 ff., `_161-240.md` and others
+> **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their nerve trunks and spinal segments are cross-checked (B1 supplementary, not yet in the registry). Mapping table: `02_Master_Datasets/FMA/acupoint_fma_mapping.json`; details in Appendix A.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
-| 문헌 | 원문 (출처 파일·행) | 국역 | 비고 |
+### Summary of Conclusions
+
+Zhongchong (中衝, PC9) lies in **the fingerprint skin and subcutis at the centre of the tip of the distal phalanx of the middle finger (Layer 1)**. The most probable anatomical substrate is **the terminal branches of the proper palmar digital nerve (sensory) arising from the median nerve and the terminal arterial network of the proper palmar digital arteries**. This judgement, however, rests only on agreement between the two textbooks and standard anatomy texts (B1-01 · B1-03); no study has measured PC9 itself in cadavers or by ultrasound. The reflex mechanism explaining the arousal and emergency effects of bloodletting at the Jing-Well point (井穴) scores 6/12 on the B-Check (not concordant) and is therefore described only as a **hypothesis**. The overall verdict is **ARI-Core 67.5 ± 1.2, grade C (possible/hypothesis)**. The needling safety index is **SI 100** (every text gives 1 fen = 2.3 mm, and no text records a contraindication to needling).
+
+---
+
+## 1. Classical Literature Screening Table (Three Primary Classics Excerpts and Chinese–English Collation)
+
+| Classic | Original text (source file & line) | English translation | Remarks |
 | :--- | :--- | :--- | :--- |
-| 《灵枢·本输》 | "心出于中冲，中冲，手中指之端也，为井木……手少阴也。" (通考(下)_81-160 L1642; 通鉴(上卷)_401-480 L2924·L2946) | 심의 맥기는 Zhongchong (中衝, PC09)에서 나온다. Zhongchong (中衝, PC09)은 가운뎃손가락 끝이며 정목혈이다 …… 수소음이다. | 위치만 있고 심도 없음. 귀속이 '心/手少阴'임(3절 참조) |
-| *Huangdi Mingtang Jing* (《黃帝明堂經》)(《甲乙经》 3:50) | "心主出中冲，中冲者，木也。在手中指之端，去爪甲如韭叶陷者中，手心主脉之所出也，为井。" (通考 L1643) / "刺入一分，留三呼，灸一壮。" (通考 L1727; 通鉴 L3084) | 가운뎃손가락 끝, 손톱에서 부추잎 너비만큼 떨어진 오목한 곳이다. 1푼 찌르고 세 번 숨쉴 동안 머문다. 뜸 1장. | 심도의 최초 기술. 귀속을 '心主(심포)'로 바꿈 |
-| *Huangdi Mingtang Jing* (《黃帝明堂經》) 주치 | "主热病烦心，心闷而汗不出，掌中热，心痛，身热如火，浸淫烦满，舌本痛。" (通考 L1683; 通鉴 L3028) | 열병으로 가슴이 답답하고 땀이 나지 않음, 손바닥 열감, 심통, 몸이 불같이 뜨거움, 혀뿌리 통증 | 단독 조문 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 【提要索隐】 | "部位：在手指，中指末端最高点。……针刺操作：浅刺 0.1 寸，或点刺出血。" (通考 L1632~1634) | 중지 끝의 가장 높은 점. 0.1촌 얕게 찌르거나 점자출혈 | 현대 표준 |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 【名实考】 | "本穴最后定于中指尖桡侧，一方面受劳宫穴定位的影响（劳宫，掌中中指本节之内间也。劳宫在内间，则中冲亦当在中指内侧也)，另一方面经脉循行的影响也是一个重要因素。《灵枢·邪客》曰：'心主之脉，出于中指之端，内屈循中指内廉，以上留于掌中'，既曰'中指内廉'，则知是中指内侧爪甲角。" (通考 L1638) | 이 혈이 결국 중지 끝 요측으로 정해진 데에는 노궁 정위('내간')의 영향과 경맥 순행(《영추·사객》 '中指内廉')의 영향이 있었다. '중지 내렴'이라 했으니 중지 안쪽 손톱각임을 알 수 있다. | 요측 손톱각 변이가 생긴 경위. **《通考》에는 신경·혈관 실체에 관한 기술이 없다** |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) 부위 | 2. "在手中指之端，去爪甲如韭叶陷者中。"(《甲乙经》 외 약 30종) / 4. "中指内端是中冲。"(《徐氏针灸大全》) / 5. "在手中指内廉之端，去爪甲如韭叶。"(《徐氏针灸大全》·杨敬斋) (通鉴 L2948~2956) | 2. 중지 끝, 손톱에서 부추잎만큼 떨어진 오목한 곳 / 4·5. 중지 안쪽 끝 | 간요결어: "历代文献记载位置有二说 …… 近世多依据《灵枢经》*Zhen Jiu Jia Yi Jing* (《針灸甲乙經》)定位" (通鉴 L3124) |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) 局部解剖 | "在中指末节之尖端，有指掌侧固有动脉形成的动脉网，分布着来自正中神经的指掌侧总神经。"(《新针灸学》) / "针刺通过之组织层：皮肤，皮下组织。神经、血管：指掌侧固有神经、指掌侧固有动脉。"(《针灸学简编》) (通鉴 L3108~3114) | 말절 첨단에 고유바닥쪽손가락동맥이 이룬 동맥망이 있고 정중신경 가지가 분포한다. 자침 통과 조직: 피부·피하조직 | 근대 해부 기술. 실측 아님 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 腧穴主治: "《明堂经》主热病烦心……舌本痛。*Suwen* (《素問》)主耳聋。《圣惠方》小儿夜啼。《素问保命集》哕呕无度。" (证治通鉴_81-160 L178~197) | 명당경 주치 외에 이롱·소아 야제·구토 | 처방 발췌는 9절 |
-| WHO 2008 | "On the middle finger, at the centre of the tip of the middle finger." | 중지 끝 중앙 | 구판 보고서 인용. 3대 원전 밖 자료 |
+| 《靈樞·本輸》 | "心出於中衝，中衝，手中指之端也，為井木……手少陰也。" (Tongkao `(下)_81-160` L1642; Tongjian `(上卷)_401-480` L2924 · L2946) | The qi of the Heart (心) emerges at Zhongchong. Zhongchong is the tip of the middle finger and is the Jing-Well Wood point (井木穴) …… it belongs to the hand Shaoyin (手少陰). | Location only, no depth. Assigned to '心/手少陰' (see Section 3) |
+| *Huangdi Mingtang Jing* (《黃帝明堂經》) (《甲乙經》 3:50) | "心主出中衝，中衝者，木也。在手中指之端，去爪甲如韭葉陷者中，手心主脈之所出也，為井。" (Tongkao L1643) / "刺入一分，留三呼，灸一壯。" (Tongkao L1727; Tongjian L3084) | At the tip of the middle finger, in the depression a chive-leaf's breadth (韭葉) from the nail. Insert 1 fen and retain for three breaths. Moxibustion 1 cone. | Earliest statement of depth. Reassigns the point to '心主 (Pericardium (心包))' |
+| *Huangdi Mingtang Jing* (《黃帝明堂經》), indications | "主熱病煩心，心悶而汗不出，掌中熱，心痛，身熱如火，浸淫煩滿，舌本痛。" (Tongkao L1683; Tongjian L3028) | Febrile disease with vexation of the heart (熱病煩心) and oppression without sweating, heat in the palms (掌中熱), heart pain (心痛), body burning like fire (身熱如火), pain at the root of the tongue (舌本痛) | Single-point article |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 【提要索隱】 | "部位：在手指，中指末端最高點。……針刺操作：淺刺 0.1 寸，或點刺出血。" (Tongkao L1632–1634) | The highest point of the tip of the middle finger. Shallow insertion of 0.1 cun or pricking to bleed | Modern standard |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) 【名實考】 | "本穴最後定於中指尖橈側，一方面受勞宮穴定位的影響（勞宮，掌中中指本節之內間也。勞宮在內間，則中衝亦當在中指內側也)，另一方面經脈循行的影響也是一個重要因素。《靈樞·邪客》曰：'心主之脈，出於中指之端，內屈循中指內廉，以上留於掌中'，既曰'中指內廉'，則知是中指內側爪甲角。" (Tongkao L1638) | The point eventually came to be located on the radial side of the middle fingertip under the influence of the location of Laogong (勞宮) ('內間') and of the meridian course (《靈樞·邪客》 '中指內廉'). Since the text says 'medial border of the middle finger (中指內廉)', it must refer to the medial nail corner of the middle finger. | How the radial nail-corner variant arose. **The *Tongkao* contains no description of nerve or vascular substrates** |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), location | 2. "在手中指之端，去爪甲如韭葉陷者中。" (《甲乙經》 and about 30 other texts) / 4. "中指內端是中衝。" (《徐氏針灸大全》) / 5. "在手中指內廉之端，去爪甲如韭葉。" (《徐氏針灸大全》 · Yang Jingzhai (楊敬齋)) (Tongjian L2948–2956) | 2. Tip of the middle finger, in the depression a chive-leaf's breadth from the nail / 4 · 5. Medial tip of the middle finger | Concise summary (簡要結語): "歷代文獻記載位置有二說 …… 近世多依據《靈樞經》《針灸甲乙經》定位" (Tongjian L3124) |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), local anatomy | "在中指末節之尖端，有指掌側固有動脈形成的動脈網，分佈著來自正中神經的指掌側總神經。" (《新針灸學》) / "針刺通過之組織層：皮膚，皮下組織。神經、血管：指掌側固有神經、指掌側固有動脈。" (《針灸學簡編》) (Tongjian L3108–3114) | At the tip of the distal phalanx there is an arterial network formed by the proper palmar digital arteries, and branches of the median nerve are distributed there. Tissues traversed by the needle: skin and subcutaneous tissue | Modern anatomical description. Not a measurement |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 腧穴主治: "《明堂經》主熱病煩心……舌本痛。《素問》主耳聾。《聖惠方》小兒夜啼。《素問保命集》噦嘔無度。" (Zhengzhi Tongjian `_81-160` L178–197) | Besides the *Mingtang Jing* indications: deafness (耳聾), night crying in infants (小兒夜啼), vomiting (噦嘔) | Prescription excerpts in Section 9 |
+| WHO 2008 | "On the middle finger, at the centre of the tip of the middle finger." | Centre of the tip of the middle finger | Cited in the earlier report. Source outside the three primary classics |
 
-> v2.6 구판의 《通考》 인용문 "在中指尖端... 實爲固有指神經與固有指動靜脈, 點刺出血"은 《通考》 PC9 조문(L1628~1745)에 **없는 가공 인용**이어서 삭제했다. *Donguibogam* (《東醫寶鑑》) 인용문도 원문 쪽수가 없어 확인할 수 없으므로 삭제했다. *Donguibogam* (《東醫寶鑑》)은 자침깊이 DB 값(1푼, 인용 문헌 표기 '영추')만 5절에 남겼다.
+> The *Tongkao* quotation in the v2.6 earlier edition, "在中指尖端... 實爲固有指神經與固有指動靜脈, 點刺出血", **is a fabricated quotation not found** in the *Tongkao* article on PC9 (L1628–1745) and has been deleted. The *Dongui Bogam* (《東醫寶鑑》) quotation was also deleted because it gives no page of the original and could not be verified. For the *Dongui Bogam*, only the needling-depth DB value (1 fen, cited source given as '靈樞') is kept, in Section 5.
 
 ---
 
-## 2. Primary Source vs. Secondary Quotation Historical Stratification Table
+## 2. Primary Source vs. Secondary Quotation Table
 
-| 구분 | 문헌 | 내용 | 판정 |
+| Category | Classical source | Content | Adjudication |
 | :--- | :--- | :--- | :--- |
-| 원천(위치) | 《灵枢·本输》 | 手中指之端, 井木, 心(手少阴) 귀속 | 최초 기술. 심도 없음 |
-| 원천(위치 세부·심도·주치) | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 去爪甲如韭叶陷者中, 刺入一分 留三呼, 灸一壮, 心主 귀속 | 심도·주치의 최초 기술 |
-| 재인용(동일 문구) | 《千金》《外台》*Tongren* (《銅人》)《圣济总录》《资生经》《十四经发挥》*Zhenjiu Dacheng* (《針灸大成》)《类经图翼》*Yizong Jinjian* (《醫宗金鑑》) 등 약 30종 (通鉴 L2948) | 《明堂经》 위치 문구를 그대로 옮김 | 후대 일치. 독립 근거는 아님 |
-| 이문(異文) | 《太平圣惠方·明堂》 "中指甲后一分中" (通考 L1658) | 손톱 뒤 1푼 | 손톱 쪽으로 해석 |
-| 이문 | *Tongren* (《銅人》) 穴腧都数 "去爪甲角如韭叶" (通考 L1659) | '角' 추가 | 손톱각 쪽으로 기우는 첫 단서 |
-| 이문(변이 정위) | 《窦太师针经》 "在手中指端内侧" (通考 L1660), 《徐氏针灸大全》 "中指内廉之端" (通鉴 L2956), 《高等针灸学讲义》 "中指之内侧" | 요측(내렴) 손톱각 | 《通考》 名实考가 노궁 정위와 《灵枢·邪客》의 영향으로 설명 |
-| 현대 | 2판 《针灸学讲义》 "在手中指尖端之中央取穴", 4·5·7판 《针灸学》 "中指尖端的中央" (通考 L1664~1666), WHO 2008 | 첨단 중앙 | 원천(*Lingshu* (《靈樞》)·《明堂经》)으로 돌아감 |
+| Primary (location) | 《靈樞·本輸》 | 手中指之端, 井木, assigned to 心 (手少陰) | Earliest description. No depth |
+| Primary (location detail, depth, indications) | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 去爪甲如韭葉陷者中, 刺入一分 留三呼, 灸一壯, assigned to 心主 | Earliest description of depth and indications |
+| Secondary (same wording) | 《千金》《外臺》《銅人》《聖濟總錄》《資生經》《十四經發揮》《針灸大成》《類經圖翼》《醫宗金鑑》 and others, about 30 texts (Tongjian L2948) | Copy the *Mingtang Jing* location wording verbatim | Later agreement. Not independent evidence |
+| Variant text (異文) | 《太平聖惠方·明堂》 "中指甲後一分中" (Tongkao L1658) | 1 fen behind the nail | Interpreted as toward the nail |
+| Variant text | 《銅人》 穴腧都數 "去爪甲角如韭葉" (Tongkao L1659) | '角' (corner) added | First hint of a shift toward the nail corner |
+| Variant text (variant location) | 《竇太師針經》 "在手中指端內側" (Tongkao L1660), 《徐氏針灸大全》 "中指內廉之端" (Tongjian L2956), 《高等針灸學講義》 "中指之內側" | Radial (內廉) nail corner | The *Tongkao* 名實考 explains it by the influence of the location of Laogong (勞宮) and 《靈樞·邪客》 |
+| Modern | 2nd edition 《針灸學講義》 "在手中指尖端之中央取穴", 4th, 5th and 7th edition 《針灸學》 "中指尖端的中央" (Tongkao L1664–1666), WHO 2008 | Centre of the tip | Returns to the primary sources (《靈樞》 · 《明堂經》) |
 
 ---
 
-## 3. Nomenclature & Alias Collation Table (KJH DB Verification)
+## 3. Alias Verification Table
 
-| 자료 | 값 | 판정 |
+| Source | Value | Adjudication |
 | :--- | :--- | :--- |
-| `경혈명_비교_정리_KJH.xlsx` 경혈 종합 목록 283행 | PC09 Zhongchong (中衝, PC09) 中衝, 이명 **'-'** | 이명 없음 |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) (上卷) L2926·L3122 | "二.别名无。" / "[别名]无。" | 이명 없음 |
-| 김재효 데이터셋 경혈_기본정보_마스터 281행 | 이명 칸 공란 | 이명 없음 |
-| 구판 보고서 1절 | '手中指端'을 KJH 교차 검증 이명이라고 기재 | **오류**. '手中指之端'은 *Lingshu* (《靈樞》)의 위치 서술이지 이명이 아니고 KJH DB에도 없음 → 삭제 |
+| `경혈명_비교_정리_KJH.xlsx` `경혈 종합 목록` row 283 | PC09 Jungchung 中衝, alias **'-'** | No alias |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) (上卷) L2926 · L3122 | "二.別名無。" / "[別名]無。" | No alias |
+| Kim Jaehyo dataset `경혈_기본정보_마스터` row 281 | Alias cell blank | No alias |
+| Earlier report, Section 1 | Recorded '手中指端' as a KJH-cross-verified alias | **Error**. '手中指之端' is a location statement of the *Lingshu* (《靈樞》), not an alias, and is not in the KJH DB → deleted |
 
-**귀속 혼용(심/심포)**: 《灵枢·本输》은 Zhongchong (中衝, PC09)을 '心出于中冲 …… 手少阴也'로 적어 심(수소음)의 정혈로 둔다(通考 L1642). 심포(수궐음) 귀속은 *Huangdi Mingtang Jing* (《黃帝明堂經》)의 '心主出中冲 …… 手心主脉之所出也'부터 나타난다(通考 L1643). 《灵枢·本输》 단계에서는 심포경이 독립된 오수혈 계열을 갖지 않아, 오늘날 심포경 혈들이 심경 이름 아래 배열되었다. 연대순으로 정렬하면 이 혼용은 해소된다. 소충(HT9)·관충(TE1) 등 다른 손가락 정혈과 이름이 섞인 사례는 원전에서 확인되지 않았다.
+**Mixed attribution (Heart/Pericardium)**: 《靈樞·本輸》 records Zhongchong as '心出於中衝 …… 手少陰也', treating it as the Jing-Well point of the Heart (心, hand Shaoyin (手少陰)) (Tongkao L1642). Attribution to the Pericardium (心包, hand Jueyin (手厥陰)) first appears in the *Huangdi Mingtang Jing* (《黃帝明堂經》): '心主出中衝 …… 手心主脈之所出也' (Tongkao L1643). At the stage of 《靈樞·本輸》 the Pericardium Meridian (手厥陰心包經) did not have its own series of Five Transport points (五輸穴), so the points now on the Pericardium Meridian were listed under the name of the Heart Meridian. Ordering the sources chronologically resolves this mixing. No case of confusion with the names of other finger Jing-Well points such as Shaochong (少衝, HT9) or Guanchong (關衝, TE1) was found in the classics.
 
 ---
 
-## 4. 3D Spatial Coordinates & Layer 1~5 Anatomical Substrate Diagram
+## 4. 3D Spatial Coordinates & Layer 1–5 Structure Diagram
 
-**좌표계**: X = 중지 장축 중심선 기준 내외측(요측 −, 척측 +), Y = 지첨 최고점 기준 근위 방향(+), Z = 체표 기준 깊이(mm).
+**Coordinate system**: X = medial–lateral relative to the centre line of the long axis of the middle finger (radial −, ulnar +), Y = proximal direction (+) from the highest point of the fingertip, Z = depth from the skin surface (mm).
 
-| 위치 | X | Y | Z | 근거 |
+| Position | X | Y | Z | Basis |
 | :--- | :--- | :--- | :--- | :--- |
-| Target(고전·WHO 공통): 첨단 중앙 | 0 | 0 (손톱 유리연에서 약 1푼 떨어진 지첨) | 0~2.3 mm | *Lingshu* (《靈樞》)·《明堂经》, 4~7판 교재, 《针灸学简编》 "去指甲游离缘约一分处" |
-| 변이 정위(窦太师 이후): 요측 손톱뿌리각 상방 0.1촌 | 약 −5~−7 mm | 약 +10~+13 mm | 0~2.3 mm | 通考 【定位】 "另一种取穴：中指末节桡侧指甲根角侧上方 0.1 寸" (L1654) |
+| Target (classical and WHO): centre of the tip | 0 | 0 (fingertip about 1 fen from the free edge of the nail) | 0–2.3 mm | 《靈樞》 · 《明堂經》, 4th–7th edition textbooks, 《針灸學簡編》 "去指甲遊離緣約一分處" |
+| Variant location (from Dou Taishi (竇太師) onward): 0.1 cun above the radial nail-root corner | about −5 to −7 mm | about +10 to +13 mm | 0–2.3 mm | Tongkao 【定位】 "另一種取穴：中指末節橈側指甲根角側上方 0.1 寸" (L1654) |
 
-**변이 정위 주석**: 첨단 중앙과 요측 손톱뿌리각 변이 사이 거리를 일반적인 말절 크기로 추정하면 약 10~15 mm이다(경혈 특이 실측 아님). 정본 Rank 5의 분기 기준(Δ > 15 mm)에 미치지 않으므로 **Target을 나누지 않고 단일 Target으로 채점**했다. 두 위치 모두 같은 고유바닥쪽손가락신경·동맥의 말단 분포역 안에 있다.
+**Note on the variant location**: estimated from typical distal-phalanx dimensions, the distance between the centre of the tip and the radial nail-root-corner variant is about 10–15 mm (not a point-specific measurement). This falls short of the branching threshold of canonical Rank 5 (Δ > 15 mm), so **the Target was not split and was scored as a single Target**. Both positions lie within the terminal distribution of the same proper palmar digital nerves and arteries.
 
-**층차 구조 (Target, 지첨 중앙 직자)**
+**Layer structure (Target, perpendicular insertion at the centre of the fingertip)**
 
 ```
- Z (mm)  층차 (정본 Layer 1~5)        구조물                                        1푼(2.3mm) 도달
+ Z (mm)  Layer (canonical Layer 1–5)   Structures                                     Reached at 1 fen (2.3mm)
  0 ─────┬──────────────────────────────────────────────────────────────────────────────────────
-        │ Layer 1 피부·피하            지문 피부(두꺼운 무모 피부), 기계·통각 수용기,          ● 도달
-        │                              고유바닥쪽손가락신경(정중신경, 감각) 말단 분지,
-        │                              고유바닥쪽손가락동맥 말단 동맥망·바닥쪽손가락정맥
- 2.3 ...│............................  (점자출혈은 이 층의 미세혈관망에 국한)
-        │                              지첨 섬유지방 패드(격막으로 구획)
-        │ Layer 2 표층근육·근막        해당 없음(지첨에는 근육 없음)
-        │ Layer 3 심층근육·건막        해당 없음. 깊은손가락굽힘근 힘줄은 말절골 기저부
-        │                              바닥쪽에 부착하여 첨단에서 근위로 떨어져 있음
-        │ Layer 4 신경혈관속           고유바닥쪽손가락신경·동맥 본간은 손가락 양 측면을
-        │                              주행. 첨단 중앙에서는 이미 말단 분지망
-        ▼ Layer 5 골막                 말절골 조면(tuft) 골막 — 1푼 심도로는 닿지 않음
+        │ Layer 1 Skin/subcutis        Fingerprint skin (thick glabrous skin), mechano-/nociceptors,  ● reached
+        │                              terminal branches of proper palmar digital n. (median n., sensory),
+        │                              terminal arterial network of proper palmar digital aa., palmar digital vv.
+ 2.3 ...│............................  (pricking to bleed is confined to this layer's microvascular network)
+        │                              Fingertip fibro-fatty pad (compartmentalised by septa)
+        │ Layer 2 Superficial muscle   Not applicable (no muscle at the fingertip)
+        │ Layer 3 Deep muscle/tendon   Not applicable. The flexor digitorum profundus tendon inserts on the
+        │                              palmar base of the distal phalanx, proximal to and away from the tip
+        │ Layer 4 Neurovascular        Main trunks of proper palmar digital nn./aa. run along both sides
+        │                              of the finger; at the centre of the tip they are already terminal networks
+        ▼ Layer 5 Periosteum           Periosteum of the distal phalangeal tuft — not reached at a depth of 1 fen
 ```
 
-- 구판의 층 두께 수치(0.8/1.8/2.3 mm, μ 1.8, σ 0.4)는 측정 근거가 없어 삭제했다. 지첨 연부조직 두께를 PC9에서 실측한 연구는 Layer A에 없다(papers.id 1944는 오수혈 초음파 심도 연구이지만 PC9 포함 여부는 확인하지 못함).
-- 신경 분절: 중지 피부는 주로 C7 피절에 속한다(B1-03).
+- The earlier edition's layer-thickness figures (0.8/1.8/2.3 mm, μ 1.8, σ 0.4) had no measurement basis and have been deleted. Layer A contains no study measuring fingertip soft-tissue thickness at PC9 (papers.id 1944 is an ultrasound depth study of Five Transport points, but whether it includes PC9 could not be confirmed).
+- Spinal segment: the skin of the middle finger belongs mainly to the C7 dermatome (B1-03).
 
-![Zhongchong (中衝, PC09)(PC09) 가운데손가락 끝마디 세로 단면 해부 실체 모식도](PC09_Zhongchong (中衝, PC09)_횡단면_해부모식도.png)
+![Longitudinal-section schematic of the anatomical substrate of the distal phalanx of the middle finger at Zhongchong (中衝, PC9)](PC09_중충_횡단면_해부모식도.png)
 
-*그림 4-1. Zhongchong (中衝, PC09) 높이 가운데손가락 끝마디 정중 시상(세로) 단면 모식도(노쪽에서 봄, 먼쪽=오른쪽, 축척 아님). 첨단 중앙 1푼(2.3mm) 직자·점자는 Layer 1 안에서 끝나고 끝마디뼈 거친면 골막에 닿지 않는다. 고유바닥쪽손가락신경·동맥의 본간은 이 정중면 밖(손가락 양옆)을 지나며 첨단에서는 말단망이다. 층 두께·거리는 PC09 실측값이 없어 임의 배치.*
+*Figure 4-1. Schematic median sagittal (longitudinal) section of the distal phalanx of the middle finger at the level of Zhongchong (中衝, PC9) (viewed from the radial side, distal = right, not to scale). Perpendicular insertion or pricking of 1 fen (2.3 mm) at the centre of the tip ends within Layer 1 and does not reach the periosteum of the tuft of the distal phalanx. The main trunks of the proper palmar digital nerves and arteries run outside this median plane (along both sides of the finger) and form terminal networks at the tip. Layer thicknesses and distances are arbitrary because no PC09 measurements exist.*
 
-**FMA 실체 대조 (Layer별)** — 구조명은 2대 교재, ID·관계는 FMA 5.1.0(`fma_query.py profile PC09`)
+**FMA substrate cross-check by layer** — structure names from the two textbooks; IDs and relations from FMA 5.1.0 (`fma_query.py profile PC09`)
 
-| Layer | 구조 | FMA | FMA 관계 | 신경 줄기 / 혈관 사슬 (FMA) | 척수 분절 (FMA) |
+| Layer | Structure | FMA | FMA relation | Nerve trunk / vascular chain (FMA) | Spinal segment (FMA) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 피부·피하 | 고유바닥쪽손가락신경 *[공통]* | FMA:75484 | is_a Set of nerves | (집합 실체 — 개별 줄기 미기재) | FMA 미기재 |
-| 1 피부·피하 | 정중신경의 고유바닥쪽손가락가지 *(김재효)* | FMA:44853 | is_a Branch of median nerve | 정중신경(FMA:14385) | FMA 미기재 |
-| 1 피부·피하 | 등쪽손가락신경 *(공통교재)* | FMA:75490 | Set of dorsal digital branches of **radial** nerve | 노신경 계통 — **가운데손가락 끝마디에는 부적합**(아래 주석 1) | FMA 미기재 |
-| 1 피부·피하 | 고유바닥쪽손가락동맥 *[공통]* · 바닥쪽손가락정맥 *[공통]* | FMA:70804 · 70895 | Set of arteries / Set of systemic veins | — | — |
-| 1 손톱바닥 | 등쪽손가락동맥 *[공통]* · 등쪽손가락정맥 *(김재효)* | FMA:321492 · 70917 | 동맥 is_a Branch of radial artery | 노동맥(FMA:22730) → 빗장밑동맥 | — |
-| 3 (경로 밖) | 깊은손가락굽힘근 힘줄 *(공통교재)* | FMA:38478 | has_insertion 끝마디뼈 기저부(검지~새끼) | 앞뼈사이신경 근육가지(FMA:44831) · 자신경 가지(FMA:65351) | **C8(주)·T1** |
-| 5 골막 | 가운데손가락 끝마디뼈 · 손톱 | FMA:23947 · 54335 | — | — | — |
+| 1 Skin/subcutis | Proper palmar digital nerves *[both textbooks]* | FMA:75484 | is_a Set of nerves | (set entity — individual trunks not recorded) | Not recorded in FMA |
+| 1 Skin/subcutis | Proper palmar digital branch of median nerve *(Kim Jaehyo)* | FMA:44853 | is_a Branch of median nerve | Median nerve (FMA:14385) | Not recorded in FMA |
+| 1 Skin/subcutis | Dorsal digital nerve *(Common Textbook)* | FMA:75490 | Set of dorsal digital branches of **radial** nerve | Radial nerve system — **inappropriate for the distal phalanx of the middle finger** (note 1 below) | Not recorded in FMA |
+| 1 Skin/subcutis | Proper palmar digital arteries *[both textbooks]* · palmar digital veins *[both textbooks]* | FMA:70804 · 70895 | Set of arteries / Set of systemic veins | — | — |
+| 1 Nail bed | Dorsal digital artery *[both textbooks]* · dorsal digital veins *(Kim Jaehyo)* | FMA:321492 · 70917 | artery is_a Branch of radial artery | Radial artery (FMA:22730) → subclavian artery | — |
+| 3 (off the path) | Flexor digitorum profundus tendon *(Common Textbook)* | FMA:38478 | has_insertion base of distal phalanx (index to little finger) | Muscular branch of anterior interosseous nerve (FMA:44831) · branch of ulnar nerve (FMA:65351) | **C8 (primary) · T1** |
+| 5 Periosteum | Distal phalanx of middle finger · nail | FMA:23947 · 54335 | — | — | — |
 
-- **FMA 주석 1 — 등쪽손가락신경 대응 오류 가능성**: 대응표는 공통교재의 "dorsal digital nerve"를 FMA 동의어 "Dorsal digital nerves"가 붙은 **노신경의 등쪽손가락가지 집합**(FMA:75490)에 정확 대응시켰다. 그러나 6절에서 정리했듯 가운데손가락 끝마디 등쪽(손톱바닥)은 정중신경 고유바닥쪽손가락신경의 등쪽가지가 지배한다(B1-03). 따라서 FMA:75490은 **용어 일치이지 위치 일치가 아니며** 이 보고서는 이 대응을 근거로 쓰지 않는다.
-- **FMA 주석 2 — 깊은손가락굽힘근 구획**: FMA는 깊은손가락굽힘근을 `contained_in Space of anterior compartment of arm`(위팔 앞칸)으로 기록한다. 이 근육은 아래팔 앞칸에 있으므로 FMA 모델링 오류로 보고 인용하지 않는다. 분절 C8·T1은 근육 전체 값이며 가운데손가락 힘살(정중신경 앞뼈사이신경 지배)에 한정한 값이 아니다.
-- **FMA 주석 3 — 집합 실체**: 손가락 신경·혈관 다수가 "Set of …"(손 전체 집합) 실체로만 대응된다. 가운데손가락 개별 실체(예: 가운데손가락 노쪽 고유바닥쪽손가락신경)로 좁히지 못하므로, FMA는 구조의 종류만 고정하고 손가락 위치는 교재·B1로 기술한다.
+- **FMA note 1 — possible mismatch for the dorsal digital nerve**: the mapping table matched the Common Textbook's "dorsal digital nerve" exactly to the **set of dorsal digital branches of the radial nerve** (FMA:75490), which carries the FMA synonym "Dorsal digital nerves". As set out in Section 6, however, the dorsum (nail bed) of the distal phalanx of the middle finger is supplied by the dorsal branch of the proper palmar digital nerve of the median nerve (B1-03). FMA:75490 is therefore **a terminological match, not a positional match**, and this report does not use it as evidence.
+- **FMA note 2 — compartment of flexor digitorum profundus**: FMA records flexor digitorum profundus as `contained_in Space of anterior compartment of arm` (anterior compartment of the arm). The muscle lies in the anterior compartment of the forearm, so this is regarded as an FMA modelling error and is not cited. The segments C8 · T1 are values for the whole muscle, not restricted to the middle-finger belly (supplied by the anterior interosseous branch of the median nerve).
+- **FMA note 3 — set entities**: many digital nerves and vessels map only to "Set of …" entities (sets for the whole hand). They cannot be narrowed to individual middle-finger entities (e.g. the radial proper palmar digital nerve of the middle finger), so FMA pins only the kind of structure, and the finger position is described from the textbooks and B1.
 
 ---
 
-## 5. Classical Needling Depth Calculation Table (Han Dynasty 1 fen = 2.3 mm)
+## 5. Needling Depth Calculation Table
 
-출처: `침구문헌별 자침깊이 정리_AI 분석용.xlsx` 시트1 282행(PC09). 1푼 = 2.3 mm.
+Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 282 (PC09). 1 fen = 2.3 mm.
 
-| 문헌 | DB 값(푼) | 환산 깊이 | 도달 층 | 비고 |
+| Text | DB value (fen) | Converted depth | Layer reached | Remarks |
 | :--- | :---: | :---: | :--- | :--- |
-| 황제명당경(황룡상 감수편찬) | 1 | 2.3 mm | Layer 1 | 원문 "刺入一分，留三呼" |
-| 침구갑을경 | 1 | 2.3 mm | Layer 1 | 갑을경 배열순서 25 |
-| 침구경험방 | 1 | 2.3 mm | Layer 1 | |
-| 동의보감 | 1 | 2.3 mm | Layer 1 | 인용 문헌 표기 '영추' |
-| 경락수혈학 공통교재 | 1 ~ 1 | 2.3 mm | Layer 1 | 선호 자침법 칸 공란 |
-| 침구의학 공통교재 | 1 ~ 1 | 2.3 mm | Layer 1 | |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 1 ~ 1 | 2.3 mm | Layer 1 | 《通考》 "浅刺 0.1 寸，或点刺出血" |
+| *Huangdi Mingtang Jing* (《黃帝明堂經》, ed. Huang Longxiang) | 1 | 2.3 mm | Layer 1 | Original text "刺入一分，留三呼" |
+| *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | 1 | 2.3 mm | Layer 1 | *Jiayi Jing* ordering number 25 |
+| *Chimgu Gyeongheombang* (《鍼灸經驗方》) | 1 | 2.3 mm | Layer 1 | |
+| *Dongui Bogam* (《東醫寶鑑》) | 1 | 2.3 mm | Layer 1 | Cited source given as '靈樞' |
+| Korean common textbook, *Meridian and Acupoint Studies* (經絡經穴學) | 1 – 1 | 2.3 mm | Layer 1 | Preferred-technique cell blank |
+| Korean common textbook, *Acupuncture and Moxibustion Medicine* (鍼灸醫學) | 1 – 1 | 2.3 mm | Layer 1 | |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 1 – 1 | 2.3 mm | Layer 1 | *Tongkao* "淺刺 0.1 寸，或點刺出血" |
 
-- **'0'(Contraindicated for Needling (禁鍼)) 문헌: 없음. 'blank'(미기술): 없음.**
-- 참고: 《玉龙经》 "无病不用，用则令人闷"(通鉴 L3090)은 사용을 제한하는 문구이지 Contraindicated for Needling (禁鍼)이 아니다. 《循经考穴编》·《针灸指南》의 "禁灸"는 뜸 금지다. 《新编针灸学》 "针二分至三分"(4.6~6.9 mm)은 현대 단일 문헌의 확장값이며 DB에는 없다.
-- 안전 판정: 표준 심도 전체가 Layer 1에 머물고, 주요 신경간·동맥·장기와는 10 mm 이상 떨어져 있다. 점자출혈은 말단 미세혈관망에서 일어난다. 지첨은 통증이 매우 강한 부위이므로 미주신경성 실신 같은 자극 반응에는 주의한다(일반 임상 주의이며 문헌상 금기는 아님).
+- **'0' (Contraindicated for needling (禁鍼)) entries: none. 'blank' (not described) entries: none.**
+- Note: 《玉龍經》 "無病不用，用則令人悶" (Tongjian L3090) restricts use but is not a contraindication to needling. "禁灸" in 《循經考穴編》 and 《針灸指南》 prohibits moxibustion. 《新編針灸學》 "針二分至三分" (4.6–6.9 mm) is an extended value from a single modern text and is not in the DB.
+- Safety verdict: the entire standard depth stays within Layer 1 and is more than 10 mm from any major nerve trunk, artery or organ. Pricking to bleed takes place in the terminal microvascular network. The fingertip is extremely painful, so attention should be paid to stimulus reactions such as vasovagal syncope (a general clinical precaution, not a contraindication in the literature).
 
 ---
 
-## 6. Textbook Comparison Table & FMA Ontology Mapping (Common Textbook vs. Prof. Kim Jaehyo)
+## 6. Anatomical Structure Textbook Comparison Table (Common Textbook of Acupoint Studies vs. Kim Jaehyo Textbook)
 
-출처: 공통교재 `경혈별_해부구조_통합` 281행, 김재효 `경혈별_해부구조_종합` 281행 및 `해부구조_개별항목_상세` 2465~2469행.
+Source: Common Textbook `경혈별_해부구조_통합` row 281; Kim Jaehyo `경혈별_해부구조_종합` row 281 and `해부구조_개별항목_상세` rows 2465–2469.
 
-| 항목 | 경혈학 공통교재 | 김재효 교재 | FMA 판별 | 공통점·차이점 |
+| Item | Common Textbook of Acupoint Studies | Kim Jaehyo textbook | FMA adjudication | Similarities & differences |
 | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 깊은손가락굽힘근 (flexor digitorum profundus) | **(공란)** | 공통교재 단독 FMA:38478 (has_insertion 끝마디뼈 기저부) | 공통교재에만 있음. FDP 힘줄은 말Juegu (絶骨) 기저부 바닥쪽에 부착하므로 지첨 1푼 심도의 자침 경로에 있지 않다. 지첨 해부에는 김재효 교재의 공란이 더 맞다 |
-| 신경 | 고유바닥쪽손가락신경, 등쪽손가락신경 | 정중신경의 고유바닥쪽손가락가지, 고유바닥쪽손가락신경 | 공통 FMA:75484 / 공통교재 단독 FMA:75490(노신경 집합 — 4절 주석 1) / 김재효 단독 FMA:44853(→ 정중신경) | 고유바닥쪽손가락신경이 공통. 모두 **감각신경**이다. 중지 말절 등쪽(손톱바닥)은 정중신경 고유바닥쪽손가락신경의 등쪽가지가 지배한다(B1-03). 따라서 공통교재의 '등쪽손가락신경'은 이 등쪽가지로 읽는 것이 맞다 |
-| 혈관 | 고유바닥쪽손가락동맥, 바닥쪽손가락정맥, 등쪽손가락동맥 | 등쪽손가락동·정맥, 고유바닥쪽손가락동맥, 바닥쪽손가락정맥 | 공통 FMA:70804·70895·321492 / 김재효 단독 FMA:70917(등쪽손가락정맥 집합) | 사실상 일치. 지첨에서는 양측 고유바닥쪽손가락동맥이 문합하여 말단 동맥망을 이룬다 |
+| Muscle | Flexor digitorum profundus | **(blank)** | Common Textbook only FMA:38478 (has_insertion base of distal phalanx) | Only in the Common Textbook. The FDP tendon inserts on the palmar base of the distal phalanx and is not on the needle path at a fingertip depth of 1 fen. For fingertip anatomy the Kim Jaehyo blank is more accurate |
+| Nerves | Proper palmar digital nerves, dorsal digital nerve | Proper palmar digital branch of median nerve, proper palmar digital nerves | Shared FMA:75484 / Common Textbook only FMA:75490 (radial nerve set — Section 4, note 1) / Kim Jaehyo only FMA:44853 (→ median nerve) | Proper palmar digital nerves shared. All are **sensory nerves**. The dorsum (nail bed) of the distal phalanx of the middle finger is supplied by the dorsal branch of the median proper palmar digital nerve (B1-03), so the Common Textbook's 'dorsal digital nerve' should be read as this dorsal branch |
+| Vessels | Proper palmar digital arteries, palmar digital veins, dorsal digital artery | Dorsal digital arteries and veins, proper palmar digital arteries, palmar digital veins | Shared FMA:70804 · 70895 · 321492 / Kim Jaehyo only FMA:70917 (set of dorsal digital veins) | Practically in agreement. At the fingertip the proper palmar digital arteries of both sides anastomose to form a terminal arterial network |
 
-**FMA로 본 교재 차이의 의미**: FMA 프로파일의 두 교재 비교는 공통 4 · 공통교재 단독 2 · 김재효 단독 2다. 공통교재 단독 2종 중 깊은손가락굽힘근은 자침 경로 밖(기저부 부착)이고, 등쪽손가락신경은 FMA가 **노신경 집합**으로 받아들여 위치상 맞지 않는다. 김재효 단독 2종(정중신경 고유바닥쪽손가락가지, 등쪽손가락정맥)은 FMA상 정중신경 줄기와 정맥 집합으로 지첨 해부와 맞는다. 따라서 FMA 대조는 위 판정("지첨 해부에는 김재효 교재가 더 맞다", "등쪽손가락신경은 정중신경 등쪽가지로 읽는다")을 뒷받침한다. $S_{clarity}$ 단계는 바꾸지 않는다.
+**What FMA shows about the textbook differences**: the FMA profile comparison of the two textbooks gives 4 shared · 2 Common Textbook only · 2 Kim Jaehyo only. Of the 2 Common-Textbook-only items, flexor digitorum profundus is off the needle path (inserts at the base), and the dorsal digital nerve is taken by FMA as a **radial nerve set**, which does not fit positionally. The 2 Kim-Jaehyo-only items (proper palmar digital branch of the median nerve, dorsal digital veins) are, in FMA, the median nerve trunk and a venous set, consistent with fingertip anatomy. The FMA cross-check therefore supports the verdicts above ("for fingertip anatomy the Kim Jaehyo textbook is more accurate"; "read the dorsal digital nerve as the dorsal branch of the median nerve"). The $S_{clarity}$ level is unchanged.
 
-> 구판 표의 김재효 근육 칸 '건막 및 조갑근 부착부'는 데이터셋에 없는 항목이어서 삭제했다. 구판의 "심부 운동신경 분지로 이어지는 층차" 서술도 틀렸다. 지첨의 고유바닥쪽손가락신경은 운동 성분이 없는 감각신경이다.
+> The earlier edition's entry in the Kim Jaehyo muscle cell, 'aponeurosis and nail-muscle attachment', is not in the dataset and has been deleted. The earlier edition's statement of "a layer sequence leading to deep motor nerve branches" was also wrong: the proper palmar digital nerve at the fingertip is a sensory nerve with no motor component.
 
 ```
- [손등쪽]  손톱 ─ 손톱바닥: 고유바닥쪽손가락신경 등쪽가지(공통교재 '등쪽손가락신경'), 등쪽손가락동맥(양 교재)
+ [Dorsal]  nail ─ nail bed: dorsal branch of proper palmar digital n. (Common Textbook 'dorsal digital n.'), dorsal digital a. (both textbooks)
     │
-    ● 변이 정위 (요측 손톱뿌리각 상방 0.1촌)
+    ● Variant location (0.1 cun above the radial nail-root corner)
     │
- ── ● Target (첨단 중앙): 고유바닥쪽손가락신경 말단(양 교재), 고유바닥쪽손가락동맥 말단망(양 교재)
+ ── ● Target (centre of the tip): proper palmar digital n. terminals (both textbooks), proper palmar digital a. terminal network (both textbooks)
     │
- [바닥쪽]  말절골 기저부 ← FDP 힘줄 부착(공통교재만, 자침 경로 밖)
+ [Palmar]  base of distal phalanx ← FDP tendon insertion (Common Textbook only, off the needle path)
 ```
 
 ---
 
-## 7. Spatial Discrepancy Dual-Target Analysis (Discrepancy Δ > 15 mm)
+## 7. Spatial Displacement Branching Inference Diagram
 
-미적용 — 사유: 첨단 중앙과 요측 손톱뿌리각 변이(《窦太师针经》·《徐氏针灸大全》 이후, 《通考》 名实考)의 거리가 약 10~15 mm로 분기 기준(Δ > 15 mm)에 못 미친다. 단일 Target으로 채점했고 변이는 4절에 주석으로 기술했다(10절 조정 기록 참조).
+Not applied — reason: the distance between the centre of the tip and the radial nail-root-corner variant (from 《竇太師針經》 · 《徐氏針灸大全》 onward; *Tongkao* 名實考) is about 10–15 mm, short of the branching threshold (Δ > 15 mm). Scored as a single Target; the variant is described in a note in Section 4 (see the adjudication record in Section 10).
 
 ---
 
 ## 8. Biomedical Reflex Pathway Diagram & External Search Log
 
-### ① Layer A 논문 (근거 묶음 `pack_PC9.md`)
+### ① Layer A Papers (evidence pack `pack_PC9.md`)
 
-| papers.id | 연도 | 저널 | 제목 | PMID / DOI | 설계 | PC9 관련성 |
+| papers.id | Year | Journal | Title | PMID / DOI | Design | Relevance to PC9 |
 | :---: | :---: | :--- | :--- | :--- | :--- | :--- |
-| 1929 | 2016 | Zhen Ci Yan Jiu | Distribution of Substance P-positive Nerve Fibers in Local Skin Tissues of Five Shu-points of the Pericardium Meridian | 29071923 | 동물 | **PC9 포함(심포경 오수혈)** |
-| 1934 | 2012 | J Altern Complement Med | Differential autonomic response to acupuncture at wood and metal of five-shu acupoints | 22916690 / 10.1089/acm.2010.0751 | 인체(비RCT) | **PC9 추정**(심포경 木혈) |
-| 1933 | 1989 | Am J Chin Med | Needling sensation receptor of an acupoint supplied by the median nerve | 2633617 / 10.1142/s0192415x89000231 | 인체(비RCT) | 정중신경 지배 혈위. PC9 특이 아님 |
-| 1930 | 2019 | Zhongguo Zhen Jiu | Effect of bloodletting acupuncture at twelve jing-well points of hand on microcirculatory disturbance in mice | 31621260 / 10.13703/j.0255-2930.2019.10.012 | 동물 | 수 12정혈 복합 |
-| 1936 | 2007 | Zhen Ci Yan Jiu | Effect of electroacupuncture on free radical content and HSP70 expression in the brain tissue in rats with cerebral ischemia | 17650653 | 동물 | 정혈 복합 |
-| 1938 | 2021 | Zhen Ci Yan Jiu | Effect of blood-letting puncture of "Well-points" on hippocampal mitophagy-related protein expression in rats | 33931995 / 10.13702/j.1000-0607.200599 | 동물 | 정혈 복합 |
-| 1931 | 2017 | Zhongguo Zhen Jiu | Clinical study on post-stroke urinary retention treated with acupuncture at the twelve jing-well points | 29354970 / 10.13703/j.0255-2930.2017.10.004 | 인체(비RCT) | 12정혈 복합 |
-| 1935 | 2026 | Zhongguo Zhen Jiu | Multidimensional effect of acupuncture bloodletting technique at hand twelve jing-well points | 41987435 / 10.13703/j.0255-2930.20250924-k0003 | 인체(비RCT) | 12정혈 복합 |
-| 1943 | 2015 | J Pharmacopuncture | The Effects of Sa-am Acupuncture Simpo-jeongkyeok Treatment on the Blood Pressure, Pulse Rate, and Body Temperature | 26120486 / 10.3831/kpi.2015.18.013 | 미분류 | 사암 심포정격 복합 |
-| 1944 | 2013 | Complement Ther Med | A validation study on the insertion depth ranges of the five phase points by using musculoskeletal ultrasound | 24280473 / 10.1016/j.ctim.2013.08.003 | 해부·영상 | PC9 포함 여부 미확인 |
+| 1929 | 2016 | Zhen Ci Yan Jiu | Distribution of Substance P-positive Nerve Fibers in Local Skin Tissues of Five Shu-points of the Pericardium Meridian | 29071923 | Animal | **Includes PC9 (Five Transport points of the Pericardium Meridian)** |
+| 1934 | 2012 | J Altern Complement Med | Differential autonomic response to acupuncture at wood and metal of five-shu acupoints | 22916690 / 10.1089/acm.2010.0751 | Human (non-RCT) | **Presumably PC9** (Wood point (木穴) of the Pericardium Meridian) |
+| 1933 | 1989 | Am J Chin Med | Needling sensation receptor of an acupoint supplied by the median nerve | 2633617 / 10.1142/s0192415x89000231 | Human (non-RCT) | Point supplied by the median nerve. Not PC9-specific |
+| 1930 | 2019 | Zhongguo Zhen Jiu | Effect of bloodletting acupuncture at twelve jing-well points of hand on microcirculatory disturbance in mice | 31621260 / 10.13703/j.0255-2930.2019.10.012 | Animal | Twelve hand Jing-Well points combined |
+| 1936 | 2007 | Zhen Ci Yan Jiu | Effect of electroacupuncture on free radical content and HSP70 expression in the brain tissue in rats with cerebral ischemia | 17650653 | Animal | Jing-Well points combined |
+| 1938 | 2021 | Zhen Ci Yan Jiu | Effect of blood-letting puncture of "Well-points" on hippocampal mitophagy-related protein expression in rats | 33931995 / 10.13702/j.1000-0607.200599 | Animal | Jing-Well points combined |
+| 1931 | 2017 | Zhongguo Zhen Jiu | Clinical study on post-stroke urinary retention treated with acupuncture at the twelve jing-well points | 29354970 / 10.13703/j.0255-2930.2017.10.004 | Human (non-RCT) | Twelve Jing-Well points combined |
+| 1935 | 2026 | Zhongguo Zhen Jiu | Multidimensional effect of acupuncture bloodletting technique at hand twelve jing-well points | 41987435 / 10.13703/j.0255-2930.20250924-k0003 | Human (non-RCT) | Twelve Jing-Well points combined |
+| 1943 | 2015 | J Pharmacopuncture | The Effects of Sa-am Acupuncture Simpo-jeongkyeok Treatment on the Blood Pressure, Pulse Rate, and Body Temperature | 26120486 / 10.3831/kpi.2015.18.013 | Unclassified | Sa-am (舍岩) Pericardium tonification pattern (心包正格) combination |
+| 1944 | 2013 | Complement Ther Med | A validation study on the insertion depth ranges of the five phase points by using musculoskeletal ultrasound | 24280473 / 10.1016/j.ctim.2013.08.003 | Anatomy/imaging | Inclusion of PC9 not confirmed |
 
-- 제외: 1937(데이터마이닝, 기전 편수에 넣지 않음), 1883·1932·1939·1940·1941·1942·1945(PC9 기전과 무관하거나 설계 미분류).
-- **PC9 자체 연구는 1929(동물)와 1934(인체 비RCT, PC9 추정) 2편뿐이다.** 정혈 사혈 연구는 모두 여러 정혈을 한꺼번에 자극했으므로 PC9 단독 효과로 볼 수 없다.
+- Excluded: 1937 (data mining; not counted among mechanism papers); 1883 · 1932 · 1939 · 1940 · 1941 · 1942 · 1945 (unrelated to a PC9 mechanism or design unclassified).
+- **There are only two studies of PC9 itself: 1929 (animal) and 1934 (human non-RCT, presumed PC9).** All studies of Jing-Well bloodletting stimulated several Jing-Well points at once, so they cannot be taken as PC9-only effects.
 
-### 반사 기전도 (가설 — B-Check 미부합)
+### Reflex Pathway Diagram (hypothesis — B-Check not concordant)
 
 ```
-[지첨 점자·직자 1푼]
-   │  Layer 1: 지문 피부 기계·통각 수용기, SP 양성 섬유(1929, 동물)
+[Fingertip pricking / perpendicular insertion, 1 fen]
+   │  Layer 1: mechano-/nociceptors of fingerprint skin, SP-positive fibres (1929, animal)
    ▼
-고유바닥쪽손가락신경(정중신경, 감각) → C7(C6~C8) 후근 → 척수 후각          [B1-03, B3-06]
+Proper palmar digital n. (median n., sensory) → C7 (C6–C8) dorsal root → spinal dorsal horn   [B1-03, B3-06]
    │
-   ├─(가설) 분절 경로: C7 ↔ 심장 내장절 T1~T4 — 분절 직접 대응 없음, 유추  [B3-03]
-   ├─(가설) 상척수성 체성-자율 반사: 강한 침해 자극 → 교감 활성·승압      [B3-04, B3-05]
-   └─(가설) 광범위 침해 억제(DNIC)와 비특이적 각성                          [B3-08]
+   ├─(hypothesis) segmental route: C7 ↔ cardiac visceral segments T1–T4 — no direct segmental match, by analogy  [B3-03]
+   ├─(hypothesis) supraspinal somato-autonomic reflex: strong noxious stimulus → sympathetic activation, pressor  [B3-04, B3-05]
+   └─(hypothesis) diffuse noxious inhibitory control (DNIC) and non-specific arousal                             [B3-08]
    ▼
-표적 효과: 혼미·궐역 구급(각성), 열병 — 방향은 고전 주치와 맞으나 근거는 동물·복합 정혈 연구
-   (1930·1936·1938 동물, 1931·1935 인체 비RCT, 1934 자율신경 지표)
+Target effect: emergency treatment of stupor and reversal (厥逆) (arousal), febrile disease — direction matches
+   the classical indications, but the evidence is from animal and combined Jing-Well studies
+   (1930 · 1936 · 1938 animal, 1931 · 1935 human non-RCT, 1934 autonomic indices)
 ```
 
-**말초 구심 경로의 FMA 고정**: 위 가설 회로의 첫 구간(지첨 → 정중신경)은 FMA 관계로 아래와 같이 고정된다. 실선은 FMA 기재 관계, "is_a"는 클래스명에서 이은 줄기, 점선은 FMA 밖(B1·B3 유추)이다. 판정(미부합 6/12)은 바뀌지 않는다.
+**Pinning the peripheral afferent pathway with FMA**: the first segment of the hypothesised circuit above (fingertip → median nerve) is pinned by FMA relations as shown below. Solid lines are relations recorded in FMA, "is_a" marks trunks linked through class names, and dashed lines lie outside FMA (B1 and B3 analogy). The verdict (not concordant, 6/12) is unchanged.
 
 ```mermaid
 flowchart TB
-  P(("PC09<br/>지첨 중앙")) --> PPD["고유바닥쪽손가락신경 말단<br/>FMA:75484 (Set) · 공통"]
-  P --> PPDM["정중신경 고유바닥쪽손가락가지<br/>FMA:44853 · 김재효"]
-  P -.손톱바닥.-> DB["등쪽가지 (B1-03)<br/>※ FMA:75490(노신경 집합)은 부적합"]
-  PPDM -- "is_a: branch" --> MED["정중신경<br/>FMA:14385"]
-  PPD -. "FMA: 집합 실체, 줄기 미기재" .-> MED
+  P(("PC09<br/>centre of fingertip")) --> PPD["Proper palmar digital nerve terminals<br/>FMA:75484 (Set) · both textbooks"]
+  P --> PPDM["Proper palmar digital branch<br/>of median nerve<br/>FMA:44853 · Kim Jaehyo"]
+  P -.nail bed.-> DB["Dorsal branch (B1-03)<br/>※ FMA:75490 (radial nerve set) inappropriate"]
+  PPDM -- "is_a: branch" --> MED["Median nerve<br/>FMA:14385"]
+  PPD -. "FMA: set entity, trunk not recorded" .-> MED
   DB -.-> MED
-  MED -. "B1-03: 피절 C7 (C6~C8)" .-> SC["척수 C6~C8 후근"]
-  SC -. "B3-04·05 유추: 상척수성 체성-자율 반사" .-> BS["뇌간·각성(가설)"]
+  MED -. "B1-03: dermatome C7 (C6–C8)" .-> SC["Spinal cord C6–C8 dorsal roots"]
+  SC -. "B3-04·05 analogy: supraspinal somato-autonomic reflex" .-> BS["Brainstem · arousal (hypothesis)"]
 ```
 
-*그림 8-1. FMA 5.1.0 관계로 그린 PC09 말초 경로. FMA가 정중신경까지는 고정하지만 신경 분절은 기재하지 않으므로 C7 피절과 그 뒤 경로는 B1·B3 유추다. 깊은손가락굽힘근(C8·T1)은 자침 경로 밖이라 구심 경로에서 뺐다.*
+*Figure 8-1. Peripheral pathway of PC09 drawn from FMA 5.1.0 relations. FMA pins the pathway up to the median nerve but does not record nerve segments, so the C7 dermatome and the subsequent pathway are B1/B3 analogies. Flexor digitorum profundus (C8 · T1) lies off the needle path and was excluded from the afferent pathway.*
 
-> **비특이성 주의(B4-04·B4-05)**: 정혈 사혈의 각성 효과는 통증 수용기가 밀집한 손끝에 가한 강한 침해 자극이 일으키는 **비특이적 반응**일 가능성이 크다. 진침과 가침의 차이가 작다는 메타분석(B4-04)과 혈위 특이성 논쟁(B4-05)을 함께 고려하면, 같은 효과가 다른 손가락 끝 자극으로도 나타날 수 있다. PC9만의 특이 효과는 입증되지 않았다.
+> **Caution on non-specificity (B4-04 · B4-05)**: the arousal effect of Jing-Well bloodletting is likely to be a **non-specific response** to a strong noxious stimulus applied to the fingertip, where nociceptors are dense. Taking together the meta-analysis showing small differences between verum and sham needling (B4-04) and the debate on point specificity (B4-05), the same effect may arise from stimulation of other fingertips. No PC9-specific effect has been demonstrated.
 >
-> 구판의 'RAS(뇌간망상체) 각성 반사'는 Layer A·B 근거가 없는 서술이어서 위 가설 경로로 바꿨다. 망상체 경로를 직접 확인한 PC9 연구는 없다.
+> The earlier edition's 'RAS (brainstem reticular formation) arousal reflex' had no Layer A or B basis and was replaced by the hypothesised pathway above. No PC9 study has directly confirmed a reticular-formation pathway.
 
-### ② B-Check 채점표
+### ② B-Check Scoring Table
 
-| 항목 | 채점자 A | 채점자 B | 최종 | Layer B 참조 ID | papers.id | 근거 요지 |
+| Item | Rater A | Rater B | Final | Layer B reference IDs | papers.id | Rationale |
 | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① 자침 심도의 말초신경·혈관 실체 | 2 | 1 | **1** | B1-01, B1-03, B2-09 (+FMA) | 1929 | 두 교재와 B1이 고유바닥쪽손가락신경·동맥에서 일치(FMA:75484·70804·44853 → 정중신경 FMA:14385). FMA가 손가락 신경·혈관을 집합 실체로만 대응하고, PC9 심도별 실측(B2 경혈 특이)이 없어 1점 |
-| ② 척수 분절 정합 | 1 | 1 | **1** | B1-03, B3-03 (+FMA) | — | 중지 C7 피절과 심장 T1~T4 내장절은 직접 대응하지 않음. FMA에는 지첨 신경의 분절이 없고, 유일한 FMA 분절(깊은손가락굽힘근 C8·T1)은 자침 경로 밖이라 쓰지 않음. 상척수 경로로만 유추 |
-| ③ 구심 섬유형·수용체 | 1 | 1 | **1** | B2-02, B3-06 | 1929, 1933 | 지첨 Aδ/C 통각 섬유 밀도, SP 양성 섬유(동물), 정중신경 혈위 Deqi sensation (得氣) 수용기(PC9 특이 아님). 유추 |
-| ④ 중추 중계·경로 | 1 | 1 | **1** | B3-04, B3-05, B3-08 | 1936, 1938 | 상척수성 체성-자율 반사·DNIC로 유추. 망상체 경로의 직접 근거 없음 |
-| ⑤ 원심 경로·효과 방향 | 1 | 1 | **1** | B3-05 | 1930, 1936, 1938 | 각성·미세순환 개선 방향은 中风·昏厥 구급 주치와 맞음. 동물·복합 정혈 |
-| ⑥ 인체 전환 근거 | 1 | 1 | **1** | B4-04, B4-05 | 1931, 1934, 1935, 1943 | 인체 비RCT·복합 처치뿐. PC9 단독 효과와 혈위 특이성 미입증 |
-| **합계** | 7 | 6 | **6 / 12** | | | |
+| ① Peripheral nerve/vessel substrate at needling depth | 2 | 1 | **1** | B1-01, B1-03, B2-09 (+FMA) | 1929 | The two textbooks and B1 agree on the proper palmar digital nerves and arteries (FMA:75484 · 70804 · 44853 → median nerve FMA:14385). FMA maps digital nerves and vessels only to set entities, and there is no depth-specific measurement at PC9 (B2 point-specific), so 1 point |
+| ② Spinal segmental concordance | 1 | 1 | **1** | B1-03, B3-03 (+FMA) | — | The C7 dermatome of the middle finger and the cardiac visceral segments T1–T4 do not correspond directly. FMA has no segment for the fingertip nerves, and the only FMA segment (flexor digitorum profundus C8 · T1) is off the needle path and not used. Inferred only via a supraspinal pathway |
+| ③ Afferent fibre type & receptors | 1 | 1 | **1** | B2-02, B3-06 | 1929, 1933 | Density of Aδ/C nociceptive fibres at the fingertip, SP-positive fibres (animal), De Qi (得氣) receptors at a median-nerve point (not PC9-specific). By analogy |
+| ④ Central relay & pathway | 1 | 1 | **1** | B3-04, B3-05, B3-08 | 1936, 1938 | Inferred from the supraspinal somato-autonomic reflex and DNIC. No direct evidence of a reticular-formation pathway |
+| ⑤ Efferent pathway & direction of effect | 1 | 1 | **1** | B3-05 | 1930, 1936, 1938 | Arousal and improved microcirculation point in the same direction as the emergency indications for stroke (中風) and syncope (昏厥). Animal and combined Jing-Well studies |
+| ⑥ Human translation | 1 | 1 | **1** | B4-04, B4-05 | 1931, 1934, 1935, 1943 | Only human non-RCT and combined treatments. PC9-only effect and point specificity not demonstrated |
+| **Total** | 7 | 6 | **6 / 12** | | | |
 
-**판정**: 미부합(< 8/12). 항목 ①·②는 각각 1 이상으로 조건을 충족한다. ⑥ = 1이므로 '(동물 한정)' 표지는 붙지 않는다. 상충(0점) 항목은 없다. 미부합이므로 반사 기전은 **가설**로만 기술한다.
+**Verdict**: not concordant (< 8/12). Items ① and ② each score at least 1 and meet the condition. Because ⑥ = 1, no '(animal only)' flag is attached. There is no conflicting (0-point) item. Since the verdict is not concordant, the reflex mechanism is described only as a **hypothesis**.
 
-### ③ 외부 검색 로그 (sync_log, 2026-10-04·2026-10-23 Rank 6 실행)
+### ③ External Search Log (sync_log; Rank 6 runs of 2026-10-04 and 2026-10-23)
 
-| 일시 | 소스 | HTTP | 수집 | 중복제거 | 신규 | 쿼리 |
+| Timestamp | Source | HTTP | Fetched | Duplicates removed | New | Query |
 |---|---|---|---|---|---|---|
 | 2026-10-04T09:52:00 | pubmed | 200 | 12 | — | — | ("PC9" OR "Zhongchong" OR "中衝") AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) \| ("PC9" OR "Zhongchong" OR " |
 | 2026-10-04T09:52:00 | openalex | 200 | 14 | — | — | doi_starts_with:10.13703,title_and_abstract.search:"Zhongchong" OR "PC9" \| doi_starts_with:10.13702,title_and_abstract.search:"Zhongchong" OR "PC9" \| has_doi:tr |
@@ -247,143 +249,152 @@ flowchart TB
 | 2026-10-23T21:44:52 | pubmed | 200 | 12 | — | — | ("PC9" OR "Zhongchong" OR "中冲") AND (acupuncture OR electroacupuncture) AND (nerve OR reflex OR autonomic OR mechanism OR anatomy) |
 | 2026-10-23T21:44:52 | openalex | 200 | 14 | — | — | doi_starts_with:10.13703 / 10.13702 · title_and_abstract.search:"Zhongchong" OR "PC9" … |
 | 2026-10-23T21:44:52 | crossref | 200 | 0 | — | — | Zhongchong acupuncture nerve reflex |
-| 2026-10-23T21:44:52 | all | — | 26 | 26 | 0 | 기존 병합 18 · 배치 내 중복 8 — **신규 없음**, 판정 불변 |
+| 2026-10-23T21:44:52 | all | — | 26 | 26 | 0 | 18 already merged · 8 duplicates within the batch — **no new papers**, verdict unchanged |
 
 ---
 
-## 9. Classical Indications Stratification Table (Single-Point P_single vs. Complex Formulae)
+## 9. Indication Separation Table (Single-point Needling vs. Combinations)
 
-구판의 단독 유효 확률 수치(0.95/0.92/0.91, 'Level A')는 산출 근거와 출처가 없어 삭제했다. 아래 표는 원전에 단독 조문이 있는지만 구분한 것이다.
+The earlier edition's single-point efficacy probabilities (0.95/0.92/0.91, 'Level A') had no derivation or source and have been deleted. The table below distinguishes only whether a single-point article exists in the classics.
 
-| 주치 | 단독 자침·뜸 조문 | 복합 배오 조문 | 판정 |
+| Indication | Single-point needling/moxibustion article | Combination article | Adjudication |
 | :--- | :--- | :--- | :--- |
-| 열병 번심·한불출·장중열·심통·설본통 | 《明堂经》 "……中冲主之" (通鉴 L3028; 通考 L1683) | 《千金》 "中冲、劳宫、大陵、间使、关冲、少冲、阳溪……主热病烦心" (通鉴 L3030); "热病烦心，汗不出：中冲、劳宫……" (证治通鉴_161-240 L1782) | 단독 원천 있음(최초 주치) |
-| 졸심통 | 《肘后备急方》 "卒心痛方：灸手中央长指端三壮" (通考 L1712) | "心气疾痛：心俞、内关……中冲……" (证治通鉴_161-240 L3828) | 단독 조문 있음(뜸) |
-| 소아 야제 | *Taiping Shenghui Fang* (《太平聖惠方》) "小儿夜啼……灸中指甲后一分中冲穴一壮" (通考 L1719; 证治通鉴_321-400 L4175) | — | 단독 |
-| 중풍 혼미·불성인사 | 《窦太师针经》 "治中风不省人事，补" (通考 L1687) | "先针中冲泻之，次针人中" (《盘石金直刺秘传》, 通考 L1708); "中冲、大敦、百会" (《医学纲目》, 通考 L1709); 《乾坤生意》 十井穴 三棱针 동시 사혈 (通鉴 L3054); "中风不省人事：人中、中冲、合谷" (证治通鉴_161-240 L216) | 금원 이후 주치. 실제 처방은 대부분 배오이거나 십정혈 동시 사혈 |
-| 궐증·폭궐 | 현대: "取穴：中冲，指压" (中国针灸 1989;9(6):53, 证治通鉴_161-240 L1192) | 《全生指迷方》 隐白·涌泉·中冲·神门 순차 자침 (通考 L1716); "尸厥暴死：百会、人中、哑门……中冲" (证治通鉴_161-240 L1106) | 고전은 배오, 현대 단독 보고 1건 |
-| 중서 | — | "中暑忽然不省人事：百会、人中……中冲、少冲……" (证治通鉴_161-240 L1864); 少商·商阳·中冲 등 사혈 (L1890) | 배오만 있음 |
-| 이롱·이명 | 《灵枢·厥病》 "耳鸣，取手中指爪甲上" (通考 L1702) | 《素问·缪刺论》 商阳 다음 중지 자침 (通考 L1703) | 단독 조문 있음(혈명 없이 부위로 기재) |
-| 후비·후폐 | — | "喉闭：少泽、中冲、委中" (证治通鉴_401-480 L1943) | 배오만 있음 |
-| 목적종통 | 현대: "中冲。点刺放血" (中国针灸 1989;9(2):47, 证治通鉴_401-480 L578) | — | 현대 단독 보고 |
+| Febrile disease with vexation of the heart (熱病煩心) · absence of sweating (汗不出) · heat in the palms (掌中熱) · heart pain (心痛) · pain at the root of the tongue (舌本痛) | 《明堂經》 "……中衝主之" (Tongjian L3028; Tongkao L1683) | 《千金》 "中衝、勞宮、大陵、間使、關衝、少衝、陽谿……主熱病煩心" (Tongjian L3030); "熱病煩心，汗不出：中衝、勞宮……" (Zhengzhi Tongjian `_161-240` L1782) | Single-point primary source exists (earliest indication) |
+| Sudden heart pain (卒心痛) | 《肘後備急方》 "卒心痛方：灸手中央長指端三壯" (Tongkao L1712) | "心氣疾痛：心俞、內關……中衝……" (Zhengzhi Tongjian `_161-240` L3828) | Single-point article exists (moxibustion) |
+| Night crying in infants (小兒夜啼) | 《太平聖惠方》 "小兒夜啼……灸中指甲後一分中衝穴一壯" (Tongkao L1719; Zhengzhi Tongjian `_321-400` L4175) | — | Single point |
+| Stroke (中風) with stupor and loss of consciousness (不省人事) | 《竇太師針經》 "治中風不省人事，補" (Tongkao L1687) | "先針中衝瀉之，次針人中" (《盤石金直刺秘傳》, Tongkao L1708); "中衝、大敦、百會" (《醫學綱目》, Tongkao L1709); 《乾坤生意》 simultaneous bloodletting at the ten Jing-Well points (十井穴) with the three-edged needle (三棱針) (Tongjian L3054); "中風不省人事：人中、中衝、合谷" (Zhengzhi Tongjian `_161-240` L216) | Indication from the Jin–Yuan onward. Actual prescriptions are mostly combinations or simultaneous bloodletting at the ten Jing-Well points |
+| Reversal syndrome (厥證) · sudden reversal (暴厥) | Modern: "取穴：中衝，指壓" (*Zhongguo Zhenjiu* (《中國針灸》) 1989;9(6):53, Zhengzhi Tongjian `_161-240` L1192) | 《全生指迷方》 sequential needling of 隱白 · 湧泉 · 中衝 · 神門 (Tongkao L1716); "尸厥暴死：百會、人中、啞門……中衝" (Zhengzhi Tongjian `_161-240` L1106) | Classical sources give combinations; one modern single-point report |
+| Summerheat stroke (中暑) | — | "中暑忽然不省人事：百會、人中……中衝、少衝……" (Zhengzhi Tongjian `_161-240` L1864); bloodletting at 少商 · 商陽 · 中衝, etc. (L1890) | Combinations only |
+| Deafness (耳聾) · tinnitus (耳鳴) | 《靈樞·厥病》 "耳鳴，取手中指爪甲上" (Tongkao L1702) | 《素問·繆刺論》 needling the middle finger after 商陽 (Tongkao L1703) | Single-point article exists (recorded by location, without the point name) |
+| Throat Bi (喉痹) · throat closure (喉閉) | — | "喉閉：少澤、中衝、委中" (Zhengzhi Tongjian `_401-480` L1943) | Combinations only |
+| Red, swollen, painful eyes (目赤腫痛) | Modern: "中衝。點刺放血" (*Zhongguo Zhenjiu* (《中國針灸》) 1989;9(2):47, Zhengzhi Tongjian `_401-480` L578) | — | Modern single-point report |
 
-> 구판에서 '高熱(감염성 고열)'처럼 현대 병명을 덧씌운 부분은 삭제했다. 원전 표현은 '身热如火'·'热病'이다.
+> The earlier edition's overlay of modern disease names, such as '高熱 (infectious high fever)', has been deleted. The classical expressions are '身熱如火' and '熱病'.
 
 ---
 
-## 10. ARI v3.0 Quantitative Profile Evaluation & Final Conclusion
+## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-### 10.1 하위 점수 (Target: 첨단 중앙, 단일 Target)
+### 10.1 Sub-scores (Target: centre of the tip, single Target)
 
-| 지표 | 채점자 A | 채점자 B | 평균 | 루브릭 단계 근거 요지 | 근거 포인터 |
+| Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| S_orig | 68.75 | 75.0 | **71.875** | 위치는 *Lingshu* (《靈樞》)에서 명확하고 심도는 《明堂经》에서 나옴. 후대 일치율은 높으나 요측 손톱각 이문이 있음. 이명 없음, 심/심포 귀속은 연대순으로 해소. 구판이 名实考를 반영하지 않고 가공 인용을 넣어 ④ 50 | 通考(下)_81-160 L1638~1666, 通鉴(上卷)_401-480 L2924~2966, KJH 283행 |
-| S_clarity | 75 | 75 | **75.0** | 두 교재의 신경·혈관이 일치하고 B1-01·B1-03·FMA 표준 실체로 확인됨(FMA상 공통교재 단독 2종은 경로 밖·위치 부적합, 6절). PC9 특이 실측 없음 → 100 미달 | 공통교재 281행, 김재효 281행, B1-01, B1-03; FMA:75484·44853 |
-| S_reflex | 50 | 50 | **50.0** | PC9 자체 연구는 동물 1편(1929)과 인체 비RCT 1편(1934, 추정). 나머지는 복합 정혈 연구. B-Check 6 | papers.id 1929, 1934; B-Check 표 |
-| S_safety → SI | 100 | 100 | **100** | 모든 문헌 1푼=2.3mm로 Layer 1. Contraindicated for Needling (禁鍼)·미기술 없음 | 자침깊이 xlsx 시트1 282행 |
+| S_orig | 68.75 | 75.0 | **71.875** | Location is explicit in the *Lingshu* (《靈樞》) and depth comes from the *Mingtang Jing* (《明堂經》). Agreement in later texts is high but there is the radial nail-corner variant. No aliases; the Heart/Pericardium attribution is resolved chronologically. The earlier edition did not reflect the 名實考 and inserted a fabricated quotation, so ④ = 50 | Tongkao `(下)_81-160` L1638–1666, Tongjian `(上卷)_401-480` L2924–2966, KJH row 283 |
+| S_clarity | 75 | 75 | **75.0** | The nerves and vessels of the two textbooks agree and are confirmed as standard entities by B1-01, B1-03 and FMA (in FMA the 2 Common-Textbook-only items are off the path or positionally inappropriate, Section 6). No PC9-specific measurement → below 100 | Common Textbook row 281, Kim Jaehyo row 281, B1-01, B1-03; FMA:75484 · 44853 |
+| S_reflex | 50 | 50 | **50.0** | Studies of PC9 itself: one animal (1929) and one human non-RCT (1934, presumed). The rest are combined Jing-Well studies. B-Check 6 | papers.id 1929, 1934; B-Check table |
+| S_safety → SI | 100 | 100 | **100** | Every text gives 1 fen = 2.3 mm, within Layer 1. No contraindication and no undescribed entry | Needling-depth xlsx sheet 1, row 282 |
 
-### 10.2 S_orig 하위 4항목
+### 10.2 S_orig Sub-items
 
-| 하위 항목 | A | B | 평균 | 요지 |
+| Sub-item | A | B | Mean | Summary |
 | :--- | :---: | :---: | :---: | :--- |
-| ① 최초 기술 명확성 | 75 | 75 | 75 | 《灵枢·本输》 위치 명확, 심도 없음 |
-| ② 후대 문헌 일치율 | 75 | 100 | 87.5 | 약 30종이 《明堂经》 문구를 따름. 窦太师·徐氏 계통 이문 때문에 A는 60~79%, B는 ≥ 80%로 판정 |
-| ③ 이명 혼용 해소 | 75 | 75 | 75 | 실제 이명은 없음. 구판이 만든 가짜 이명과 *Lingshu* (《靈樞》) 심/심포 귀속 미해소로 감점 |
-| ④ 《通考》 교감에 의한 전사 오류 교정 | 50 | 50 | 50 | 名实考가 정위 변천을 고증했으나 구판은 이를 가공 인용으로 대체했고, '留三呼'를 '留二呼'로 잘못 옮김 |
-| 평균 | 68.75 | 75.0 | 71.875 | |
+| ① Clarity of earliest description | 75 | 75 | 75 | 《靈樞·本輸》 location explicit, no depth |
+| ② Agreement in later texts | 75 | 100 | 87.5 | About 30 texts follow the *Mingtang Jing* wording. Because of the variants of the Dou Taishi (竇太師) and Xu (徐氏) lines, A judged 60–79% and B ≥ 80% |
+| ③ Resolution of alias confusion | 75 | 75 | 75 | No real alias. Points deducted for the fake alias created by the earlier edition and the unresolved Heart/Pericardium attribution of the *Lingshu* |
+| ④ Correction of transcription errors by *Tongkao* (《通考》) collation | 50 | 50 | 50 | The 名實考 documented the changes in location, but the earlier edition replaced this with a fabricated quotation and miscopied '留三呼' as '留二呼' |
+| Mean | 68.75 | 75.0 | 71.875 | |
 
-### 10.3 게이트 적용 내역
+### 10.3 Gates Applied
 
-| 게이트 | 조건 | 결과 |
+| Gate | Condition | Result |
 | :--- | :--- | :--- |
-| 게이트 1 | S_orig < 50 또는 S_clarity < 50 | 미적용(71.9, 75) |
-| 게이트 2 | Layer A 0편 | 미적용(PC9 관련 1929·1934) |
-| 게이트 3 | SI ≤ 25 | 미적용(SI 100) |
+| Gate 1 | S_orig < 50 or S_clarity < 50 | Not triggered (71.9, 75) |
+| Gate 2 | 0 Layer A papers | Not triggered (PC9-related 1929 · 1934) |
+| Gate 3 | SI ≤ 25 | Not triggered (SI 100) |
 
-### 10.4 ARI-Core·등급·SI·민감도
+### 10.4 ARI-Core, Grade, SI and Sensitivity
 
-| 항목 | 값 |
+| Item | Value |
 | :--- | :--- |
 | ARI-Core (A) | 0.40×68.75 + 0.35×75 + 0.25×50 = 66.25 |
 | ARI-Core (B) | 0.40×75 + 0.35×75 + 0.25×50 = 68.75 |
-| **ARI-Core (평균 ± 반범위)** | **67.5 ± 1.2** |
-| 등급·표지 | **C (가능·가설)**, H·⚠ 없음 |
+| **ARI-Core (mean ± half-range)** | **67.5 ± 1.2** |
+| Grade & flags | **C (possible/hypothesis)**, no H or ⚠ |
 | SI | **100** |
-| 등가중치 민감도 | (71.875 + 75 + 50) / 3 = 65.6 → C, 등급 불변 |
-| 가중치 | 0.40/0.35/0.25 잠정값(미검증) |
-| 분기 판정 | 단일 Target이므로 해당 없음 |
+| Equal-weight sensitivity | (71.875 + 75 + 50) / 3 = 65.6 → C, grade unchanged |
+| Weights | 0.40/0.35/0.25 provisional (unvalidated) |
+| Branch decision | Not applicable (single Target) |
 
-### 10.5 조정 기록
+### 10.5 Adjudication Record
 
-- 15점 이상 불일치 항목: **없음**(최대 차이는 S_orig 6.25).
-- 조정 내용: 채점자 A만 요측 손톱뿌리각 변이(窦太师 이후)를 T2로 분리했다. 그러나 첨단 중앙과의 거리가 약 10~15 mm로 정본 Rank 5 분기 기준(Δ > 15 mm)에 못 미치므로 단일 Target으로 조정했다. 변이는 4절 정위 주석으로 기술했다(참고: A의 T2 점수는 S_orig 50 / S_clarity 50 / S_reflex 50 / SI 100). 채점자 간 conflicts 기록은 직접 상충이 아니다.
-- B-Check 항목 ①은 A가 2점, B가 1점을 주었다. PC9 심도별 실측이 없다는 B의 근거를 따라 최종 1점으로 했다.
+- Items differing by 15 points or more: **none** (largest difference S_orig 6.25).
+- Adjudication: only Rater A split the radial nail-root-corner variant (from Dou Taishi (竇太師) onward) off as T2. However, its distance from the centre of the tip is about 10–15 mm, short of the canonical Rank 5 branching threshold (Δ > 15 mm), so it was adjusted to a single Target. The variant is described in the location note of Section 4 (for reference, A's T2 scores: S_orig 50 / S_clarity 50 / S_reflex 50 / SI 100). The inter-rater conflicts record is not a direct conflict.
+- B-Check item ①: A gave 2 points and B gave 1. Following B's rationale that there is no depth-specific measurement at PC9, the final score is 1.
 
-### 10.6 최종 결론
+### 10.6 Final Conclusion
 
-Zhongchong (中衝, PC09)의 해부 실체는 **중지 첨단 지문 피부·피하(Layer 1)의 고유바닥쪽손가락신경(정중신경, 감각) 말단과 고유바닥쪽손가락동맥 말단 동맥망**으로 보는 것이 개연성 있는 **가설(등급 C, 가능·가설)** 이다. 위치는 《灵枢·本输》·《明堂经》부터 WHO까지 첨단 중앙으로 이어진다. 요측 손톱각 변이는 노궁 정위와 《灵枢·邪客》 '中指内廉'의 영향으로 생긴 후대 이설이다(《通考》 名实考). 자침은 1푼(2.3 mm) 또는 점자출혈로 매우 안전하다(SI 100). 다만 정혈 사혈의 구급·각성 효과는 PC9 단독 근거가 없고 비특이적 침해 자극 반응일 가능성이 크므로, 반사 기전은 가설 단계에 머문다. 판정을 높이려면 PC9 지첨 연부조직의 초음파 실측과, PC9 단독 자극을 다른 손가락 끝(대조) 자극과 비교한 인체 연구가 필요하다.
+The anatomical substrate of Zhongchong (中衝, PC9) is best regarded, as a probable **hypothesis (grade C, possible/hypothesis)**, as **the terminals of the proper palmar digital nerve (median nerve, sensory) and the terminal arterial network of the proper palmar digital arteries in the fingerprint skin and subcutis of the tip of the middle finger (Layer 1)**. The location has remained the centre of the tip from 《靈樞·本輸》 and the *Mingtang Jing* (《明堂經》) through to the WHO standard. The radial nail-corner variant is a later alternative view arising from the influence of the location of Laogong (勞宮) and of '中指內廉' in 《靈樞·邪客》 (*Tongkao* 名實考). Needling to 1 fen (2.3 mm) or pricking to bleed is very safe (SI 100). However, there is no PC9-only evidence for the emergency and arousal effects of Jing-Well bloodletting, which are likely to be a non-specific response to noxious stimulation, so the reflex mechanism remains at the hypothesis stage. Raising the verdict would require ultrasound measurement of the fingertip soft tissue at PC9 and human studies comparing PC9-only stimulation with stimulation of other fingertips (controls).
 
 ---
 
-## 부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)
+## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-생성: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile PC09 --md` (2026-10-23).
+Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile PC09 --md` (2026-10-23).
 
-| 구분 | 교재 용어 | FMA 실체 | 대응 | 출처 | 신경 지배 / 상위 줄기 | 분절 |
+| Category | Textbook term | FMA substrate | Match | Source | Innervation / parent trunk | Segment |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 근육 | 깊은손가락굽힘근 (flexor digitorum profundus) | FMA:38478 Flexor digitorum profundus | exact | 공통교재 | FMA:44831 Nerve to flexor digitorum profundus · FMA:65351 Branch of ulnar nerve to FDP | C8(주)·T1(부) |
-| 신경 | 정중신경의 고유바닥쪽손가락가지 | FMA:44853 Proper palmar digital branch of median nerve | exact | 김재효 | FMA:14385 Median nerve | — |
-| 신경 | 등쪽손가락신경 (dorsal digital nerve) | FMA:75490 Set of dorsal digital branches of radial nerve | exact(용어) | 공통교재 | 노신경 계통 — 위치 부적합(4절 주석 1) | — |
-| 신경 | 고유바닥쪽손가락신경 (proper palmar digital nerve) | FMA:75484 Set of proper palmar digital nerves | exact | 공통교재·김재효 | 집합 실체 | — |
-| 혈관 | 등쪽손가락동맥 | FMA:321492 Dorsal digital artery | exact | 공통교재·김재효 | FMA:22730 Radial artery → FMA:3951 Subclavian artery | — |
-| 혈관 | 등쪽손가락정맥 | FMA:70917 Set of dorsal digital veins | exact | 김재효 | 집합 실체 | — |
-| 혈관 | 바닥쪽손가락정맥 (palmar digital vein) | FMA:70895 Set of palmar digital veins | exact | 공통교재·김재효 | 집합 실체 | — |
-| 혈관 | 고유바닥쪽손가락동맥 (proper palmar digital artery) | FMA:70804 Set of proper palmar digital arteries | exact | 공통교재·김재효 | 집합 실체 | — |
+| Muscle | Flexor digitorum profundus | FMA:38478 Flexor digitorum profundus | exact | Common Textbook | FMA:44831 Nerve to flexor digitorum profundus · FMA:65351 Branch of ulnar nerve to FDP | C8 (primary) · T1 (secondary) |
+| Nerve | Proper palmar digital branch of median nerve | FMA:44853 Proper palmar digital branch of median nerve | exact | Kim Jaehyo | FMA:14385 Median nerve | — |
+| Nerve | Dorsal digital nerve | FMA:75490 Set of dorsal digital branches of radial nerve | exact (term) | Common Textbook | Radial nerve system — positionally inappropriate (Section 4, note 1) | — |
+| Nerve | Proper palmar digital nerve | FMA:75484 Set of proper palmar digital nerves | exact | Common Textbook · Kim Jaehyo | Set entity | — |
+| Vessel | Dorsal digital artery | FMA:321492 Dorsal digital artery | exact | Common Textbook · Kim Jaehyo | FMA:22730 Radial artery → FMA:3951 Subclavian artery | — |
+| Vessel | Dorsal digital vein | FMA:70917 Set of dorsal digital veins | exact | Kim Jaehyo | Set entity | — |
+| Vessel | Palmar digital vein | FMA:70895 Set of palmar digital veins | exact | Common Textbook · Kim Jaehyo | Set entity | — |
+| Vessel | Proper palmar digital artery | FMA:70804 Set of proper palmar digital arteries | exact | Common Textbook · Kim Jaehyo | Set entity | — |
 
-- 분절 합집합: C8·T1 — **깊은손가락굽힘근 값이며 자침 경로 밖**이므로 B-Check ② 입력으로 쓰지 않는다(지첨 신경의 분절은 FMA 미기재, B1-03 C7 피절로 기술).
-- 두 교재 비교: 공통 4 · 공통교재 단독 2(FMA:38478·75490) · 김재효 단독 2(FMA:44853·70917).
-- 인용 한계: FMA는 규범 해부 온톨로지로 혈위 특이 심도·반사 기능의 근거가 아니다. 등쪽손가락신경 대응(용어 일치·위치 불일치), 깊은손가락굽힘근 구획 오류, 집합 실체 한계는 4절 주석대로 처리했다.
-
----
-
-## v2.7 FMA 보강 이력 (2026-10-23)
-
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
-| :--- | :--- | :--- | :--- |
-| 머리말 | — | FMA 5.1.0 해부 온톨로지 줄 추가 | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
-| 4절 | 문자 층차도만 | 그림 4-1 세로 단면 해부 모식도(PNG), Layer별 FMA 대조표, FMA 주석 3건(등쪽손가락신경 노신경 집합 대응 부적합, 깊은손가락굽힘근 위팔 구획 오류, 집합 실체 한계) | `.claude/skills/acupoint-anatomy/scripts/fma/figures/PC09_cross_section.py`; `fma_query.py profile PC09`; 대응표 PC09 행 |
-| 6절 | 교재 비교 4열 | FMA 판별 열, 교재 차이 해석(공통교재 단독 2종 = 경로 밖·위치 부적합) | 4절 주석 |
-| 8절 | 가설 기전도 | 그림 8-1 FMA 말초 경로(Mermaid) 추가 — 판정(미부합 6/12) 불변 | FMA:44853 → 14385 |
-| 8절 ② | B-Check ①·② 근거 | FMA ID·분절 처리 포인터 추가(점수 불변: ①=1, ②=1) | 4절·부록 A |
-| 8절 ③ | 2026-10-04 로그 | 2026-10-23 Rank 6 재실행 행 추가(신규 0편) | `_metadata.sync_log` 2026-10-23T21:44:52 |
-| 10.1절 | $S_{clarity}$ 근거 | FMA 확인 병기(점수 불변 75) | 6절·부록 A |
-| 부록 A 신설 | — | FMA 프로파일 표 | `fma_query.py profile PC09 --md` |
-| ARI | ARI-Core 67.5 ± 1.2 (C), SI 100 | **변경 없음** | 스킬 5-1절 |
-| 정본 정합 점검 | — | v2.7 대비 구판 표현·비루브릭 점수·'확정' 판정 문구 없음 확인 | 정본 Rank 7·4.2 |
-| 구판 보관 | — | 보강 전 md·html·xlsx를 `_구판_v2.7_20261023/`에 보관 | — |
+- Union of segments: C8 · T1 — **values for flexor digitorum profundus, which is off the needle path**, so they are not used as input to B-Check ② (FMA does not record segments for the fingertip nerves; described as the C7 dermatome from B1-03).
+- Comparison of the two textbooks: 4 shared · 2 Common Textbook only (FMA:38478 · 75490) · 2 Kim Jaehyo only (FMA:44853 · 70917).
+- Limits of citation: FMA is a normative anatomical ontology and is not evidence of point-specific depth or reflex function. The dorsal digital nerve mapping (terminological match, positional mismatch), the compartment error for flexor digitorum profundus and the limits of set entities were handled as described in the notes to Section 4.
 
 ---
 
-## v2.7 개정 이력 (2026-10-04)
+## v2.7 FMA Supplement History (2026-10-23)
 
-| 위치 | 원래 내용 | 바꾼 내용 | 근거 |
+| Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| 제목·머리말 | "(Version 2.6)", "22대 Master ASIA Algorithm" | v2.7 인용 블록, ARI v3.0 표기 | 정본 Rank 7, final_PC09.json |
-| 1절 이명 | 이명 '手中指端'(KJH 교차 검증), 혼용 "여과 검증" | 이명 없음('-'), 가짜 이명 삭제 | KJH 경혈 종합 목록 283행; 通鉴(上卷)_401-480 L2926·L3122 "别名无" |
-| 2절 *Lingshu* (《靈樞》) 인용 | "中衝，在手中指之端也" | "中冲，手中指之端也"('在' 삭제), "……手少阴也" 귀속 문제 추가 | 通考(下)_81-160 L1642; 通鉴 L2924 |
-| 2절 《甲乙经》 인용 | "刺入一分, 留二呼" | "刺入一分，留三呼，灸一壮" | 通考 L1727; 通鉴(上卷)_401-480 L3084 |
-| 2절·8절 《通考》 인용 | "在中指尖端... 實爲固有指神經與固有指動靜脈, 點刺出血", 고증과 완전 일치 주장 | 가공 인용 삭제, 실제 【名实考】·【提要索隐】 원문 수록 | 通考(下)_81-160 L1628~1745(해당 구절 없음) |
-| 2절 *Donguibogam* (《東醫寶鑑》) 인용 | 출처 없는 인용문 | 삭제, 자침깊이 DB 값만 수록 | 자침깊이 xlsx 시트1 282행 |
-| 3절 단독 유효 확률 | 0.95/0.92/0.91 (Level A), '高熱(감염성 고열)' | 삭제, 단독/배오 조문 구분 표로 대체 | 근거 없음; 通考 L1683~1719, 证治通鉴 각 행 |
-| 4절 층위 | Layer 1~3, 경계 0.8/1.8/2.3 mm, LaTeX 깨짐 | 정본 Layer 1~5 체계로 다시 씀, 근거 없는 경계 수치 삭제 | 정본 Rank 5 |
-| 4절 정위 분기 | 두 정위 ARI 96.5/94.0 | 단일 Target, 변이는 Δ ≈ 10~15 mm 주석 | final_PC09.json override_note |
-| 5절 심도 통계 | μ=1.8 mm, σ=0.4 mm, z_min 1.0 mm | 삭제, 문헌별 계산표(7개 문헌 모두 1푼) | 자침깊이 xlsx 시트1 282행 |
-| 6절 신경 해석 | "심부 운동신경 분지로 이어지는 층차" | 고유바닥쪽손가락신경은 감각신경으로 정정 | B1-01, B1-03 |
-| 6절 김재효 근육 | "건막 및 조갑근 부착부" | (공란) — 데이터셋에 없는 항목 삭제 | 김재효 경혈별_해부구조_종합 281행(근육 칸 비어 있음) |
-| 6절 공통교재 근육 | 깊은손가락굽힘근 "건막" | 원자료 표기(깊은손가락굽힘근)로 정정, 자침 경로 밖임을 주석 | 공통교재 경혈별_해부구조_통합 281행 |
-| 6절 RAS 기전 | "뇌간망상체 활성화 반사"(근거 없음) | 가설 경로(B3-04·B3-05·B3-08)로 대체, B4-04·B4-05 비특이성 주의 추가 | 등록부; papers.id 1929·1934 외 |
-| 8절 | 《通考》 교차 검증·종합 ARI | Layer A 표, B-Check 표, 외부 검색 로그 신설 | pack_PC9.md; final_PC09.json bcheck |
-| 9절 감사 | "PC9_Zhongchong_Anatomical_Analysis.xlsx"와 수치 정합 주장 | 삭제(파일명 불일치, 정합성 감사는 신뢰도 근거가 아님) | 정본 Rank 7 |
-| 2·9·10절 | 원천/재인용 표, 주치 분리 표, ARI v3.0 평가표 없음 | 신설 | 정본 5절 |
-| 구판 ARI | **구판 v2.6 점수 96.5 / 변이 정위 94.0 (비교 불가)** | ARI-Core 67.5 ± 1.2 (C), SI 100 | 정본 4절 |
-| xlsx | 구판 ARI 시트 | `구판_ARI_정량평가표`로 이름 변경, `ARI_v3.0`·`B-Check`·`LayerA_papers`·`외부검색로그`·`개정이력` 시트 추가. 다른 기존 시트(문헌고증_DB 등)는 구판 내용 그대로이며 위 오류(가공 인용, '留二呼', 단독 유효 확률)를 포함하므로 이 md가 우선함 | 작성자 지침 |
+| Header | — | Added FMA 5.1.0 anatomical ontology line | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
+| Section 4 | Text layer diagram only | Figure 4-1 longitudinal-section anatomical schematic (PNG), FMA cross-check table by layer, 3 FMA notes (radial-nerve-set mapping of the dorsal digital nerve inappropriate, arm-compartment error for flexor digitorum profundus, limits of set entities) | `.claude/skills/acupoint-anatomy/scripts/fma/figures/PC09_cross_section.py`; `fma_query.py profile PC09`; PC09 row of the mapping table |
+| Section 6 | 4-column textbook comparison | FMA adjudication column; interpretation of textbook differences (2 Common-Textbook-only items = off the path or positionally inappropriate) | Section 4 notes |
+| Section 8 | Hypothesised mechanism diagram | Added Figure 8-1 FMA peripheral pathway (Mermaid) — verdict (not concordant, 6/12) unchanged | FMA:44853 → 14385 |
+| Section 8 ② | B-Check ①, ② rationale | Added FMA IDs and segment-handling pointers (scores unchanged: ① = 1, ② = 1) | Section 4, Appendix A |
+| Section 8 ③ | 2026-10-04 log | Added rows for the 2026-10-23 Rank 6 re-run (0 new papers) | `_metadata.sync_log` 2026-10-23T21:44:52 |
+| Section 10.1 | $S_{clarity}$ rationale | Noted FMA confirmation (score unchanged at 75) | Section 6, Appendix A |
+| Appendix A (new) | — | FMA profile table | `fma_query.py profile PC09 --md` |
+| ARI | ARI-Core 67.5 ± 1.2 (C), SI 100 | **No change** | Skill section 5-1 |
+| Canonical consistency check | — | Confirmed absence of earlier-edition wording relative to v2.7, non-rubric scores and 'established' verdict wording | Canonical Rank 7, 4.2 |
+| Archive | — | Pre-supplement md, html and xlsx kept in `_구판_v2.7_20261023/` | — |
+
+---
+
+## v2.7 Revision History (2026-10-04)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Title & header | "(Version 2.6)", "22 Master ASIA Algorithm" | v2.7 citation block, ARI v3.0 notation | Canonical Rank 7, final_PC09.json |
+| Section 1 aliases | Alias '手中指端' (KJH cross-verification), confusion "filter-verified" | No alias ('-'); fake alias deleted | KJH `경혈 종합 목록` row 283; Tongjian `(上卷)_401-480` L2926 · L3122 "別名無" |
+| Section 2, 《靈樞》 quotation | "中衝，在手中指之端也" | "中衝，手中指之端也" ('在' deleted); the "……手少陰也" attribution issue added | Tongkao `(下)_81-160` L1642; Tongjian L2924 |
+| Section 2, 《甲乙經》 quotation | "刺入一分, 留二呼" | "刺入一分，留三呼，灸一壯" | Tongkao L1727; Tongjian `(上卷)_401-480` L3084 |
+| Sections 2 and 8, *Tongkao* quotation | "在中指尖端... 實爲固有指神經與固有指動靜脈, 點刺出血", claim of complete agreement with the collation | Fabricated quotation deleted; actual 【名實考】 and 【提要索隱】 text included | Tongkao `(下)_81-160` L1628–1745 (no such passage) |
+| Section 2, *Dongui Bogam* quotation | Quotation without source | Deleted; only the needling-depth DB value included | Needling-depth xlsx sheet 1, row 282 |
+| Section 3, single-point efficacy probabilities | 0.95/0.92/0.91 (Level A), '高熱 (infectious high fever)' | Deleted; replaced by a table separating single-point and combination articles | No basis; Tongkao L1683–1719, Zhengzhi Tongjian rows as cited |
+| Section 4, layers | Layers 1–3, boundaries 0.8/1.8/2.3 mm, broken LaTeX | Rewritten in the canonical Layer 1–5 system; boundary figures without basis deleted | Canonical Rank 5 |
+| Section 4, location branching | ARI 96.5/94.0 for two locations | Single Target; variant noted with Δ ≈ 10–15 mm | final_PC09.json override_note |
+| Section 5, depth statistics | μ = 1.8 mm, σ = 0.4 mm, z_min 1.0 mm | Deleted; depth table by text (all 7 texts 1 fen) | Needling-depth xlsx sheet 1, row 282 |
+| Section 6, nerve interpretation | "A layer sequence leading to deep motor nerve branches" | Corrected: the proper palmar digital nerve is a sensory nerve | B1-01, B1-03 |
+| Section 6, Kim Jaehyo muscle | "Aponeurosis and nail-muscle attachment" | (blank) — item not in the dataset deleted | Kim Jaehyo `경혈별_해부구조_종합` row 281 (muscle cell empty) |
+| Section 6, Common Textbook muscle | Flexor digitorum profundus "aponeurosis" | Corrected to the source entry (flexor digitorum profundus); noted as off the needle path | Common Textbook `경혈별_해부구조_통합` row 281 |
+| Section 6, RAS mechanism | "Brainstem reticular formation activation reflex" (no basis) | Replaced by hypothesised pathways (B3-04 · B3-05 · B3-08); B4-04 · B4-05 caution on non-specificity added | Registry; papers.id 1929 · 1934 and others |
+| Section 8 | *Tongkao* cross-validation, overall ARI | New Layer A table, B-Check table and external search log | pack_PC9.md; final_PC09.json bcheck |
+| Section 9, audit | Claim of numerical consistency with "PC9_Zhongchong_Anatomical_Analysis.xlsx" | Deleted (file name mismatch; a consistency audit is no ground for reliability) | Canonical Rank 7 |
+| Sections 2, 9, 10 | No primary/secondary table, indication separation table or ARI v3.0 evaluation table | Newly created | Canonical Section 5 |
+| Earlier ARI | **Earlier v2.6 score 96.5 / variant location 94.0 (not comparable)** | ARI-Core 67.5 ± 1.2 (C), SI 100 | Canonical Section 4 |
+| xlsx | Earlier ARI sheet | Renamed `구판_ARI_정량평가표`; added sheets `ARI_v3.0`, `B-Check`, `LayerA_papers`, `외부검색로그`, `개정이력`. The other existing sheets (`문헌고증_DB` etc.) keep the earlier-edition content and contain the errors above (fabricated quotation, '留二呼', single-point efficacy probabilities), so this md takes precedence | Author instructions |
+
+---
+
+## English Edition Revision History (2026-10-24)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `PC09_중충_해부생리_실체판명_보고서.md` |
+| Classical quotations | Simplified characters (e.g. 中冲, 灵枢, 针灸) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |
