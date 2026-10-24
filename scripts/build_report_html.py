@@ -33,7 +33,7 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
         pass
 
 TEMPLATE = """<!doctype html>
-<html lang="ko">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -186,8 +186,9 @@ def build(md_path: Path, archive: bool = True, images: bool = True) -> Path:
         dst = adir / f"{out.stem}_{datetime.now():%Y%m%d}.html"
         if not dst.exists():
             shutil.copy2(out, dst)
+    lang = "en" if (md_path.stem.endswith("_en") or "_en_" in md_path.stem) else "ko"
     out.write_text(TEMPLATE.format(title=html.escape(title), body=body, stamp=datetime.now().strftime("%Y-%m-%d %H:%M"),
-                                   src=html.escape(md_path.name)), encoding="utf-8", newline="\n")
+                                   src=html.escape(md_path.name), lang=lang), encoding="utf-8", newline="\n")
     return out
 
 
