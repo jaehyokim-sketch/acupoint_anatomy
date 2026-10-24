@@ -1,104 +1,182 @@
 <!DOCTYPE html>
-
-<html lang="ko">
+<html lang="ko" data-lang-mode="both">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>경혈 해부생리학 &amp; 침구 임상 분석 포털 | Acupoint Anatomy &amp; Clinical Acupuncture Archive</title>
-<meta content="한국한의학 및 신경해부학적 실체 판명 로직(Framework v2.7, ARI v3.0)에 기반한 경혈 해부생리 리포트, 3대 원전 비교고증 및 동의보감 두통 임상 매트릭스 온라인 라이브러리" name="description"/>
-<meta content="경혈 해부생리학 &amp; 침구 임상 분석 포털" property="og:title"/>
-<meta content="21편의 해부생리학 실체 판명 보고서, 3대 침구 원전 비교 및 동의보감 두통 매트릭스 온라인 게시 포털" property="og:description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+KR:wght@300;400;500;700;800&amp;family=Outfit:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>경혈 해부생리학 & 침구 임상 분석 포털 | Acupoint Anatomy & Clinical Acupuncture Archive</title>
+  <meta name="description" content="한의학 경혈의 신경해부학적 5층차 실체 판명(Framework v2.7, ARI v3.0), 3대 침구 원전 비교고증 및 동의보감 두통 임상 매트릭스 공식 한·영 듀얼 연구 포털"/>
+  <meta property="og:title" content="Acupoint Anatomy & Clinical Acupuncture Archive | 경혈 해부생리학 포털"/>
+  <meta property="og:description" content="24종 한·영 듀얼 전문 리포트, 3대 원전 전수 비교 및 신경해부학 실체 판명 디지털 아카이브"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet"/>
+  
+  <style>
     :root {
-      --bg-dark: #070B14;
-      --bg-card: rgba(17, 24, 39, 0.75);
-      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --bg-dark: #050811;
+      --bg-surface: #0a0f1d;
+      --bg-card: rgba(13, 20, 36, 0.72);
+      --bg-card-hover: rgba(20, 31, 56, 0.85);
       --primary-cyan: #06B6D4;
       --primary-blue: #3B82F6;
-      --accent-gold: #F59E0B;
-      --accent-teal: #10B981;
-      --text-main: #F3F4F6;
-      --text-muted: #9CA3AF;
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-focus: rgba(6, 182, 212, 0.4);
+      --accent-indigo: #6366F1;
+      --accent-amber: #F59E0B;
+      --accent-emerald: #10B981;
+      --accent-rose: #F43F5E;
+      --text-white: #FFFFFF;
+      --text-primary: #F1F5F9;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-highlight: rgba(6, 182, 212, 0.35);
+      --glass-blur: blur(16px);
+      --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: 'Noto Sans KR', 'Inter', sans-serif;
+      font-family: 'Noto Sans KR', 'Inter', -apple-system, sans-serif;
       background: var(--bg-dark);
-      color: var(--text-main);
+      color: var(--text-primary);
       line-height: 1.6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       background-image: 
-        radial-gradient(circle at 15% 20%, rgba(6, 182, 212, 0.12), transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(59, 130, 246, 0.10), transparent 45%),
-        radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.05), transparent 60%);
+        radial-gradient(circle at 12% 18%, rgba(6, 182, 212, 0.12), transparent 38%),
+        radial-gradient(circle at 88% 22%, rgba(99, 102, 241, 0.14), transparent 42%),
+        radial-gradient(circle at 50% 65%, rgba(59, 130, 246, 0.07), transparent 55%),
+        radial-gradient(circle at 80% 85%, rgba(245, 158, 11, 0.06), transparent 40%);
       background-attachment: fixed;
+      overflow-x: hidden;
     }
+
+    /* Header & Navigation */
     header {
-      background: rgba(11, 17, 32, 0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-color);
+      background: rgba(8, 13, 24, 0.82);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid var(--border-subtle);
       position: sticky;
       top: 0;
       z-index: 100;
+      transition: var(--transition-smooth);
     }
+
     .nav-container {
-      max-width: 1360px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 16px 24px;
+      padding: 14px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 16px;
     }
+
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
     }
+
     .brand-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
       background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 16px rgba(6, 182, 212, 0.4);
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.45);
+      flex-shrink: 0;
     }
+
     .brand-text h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #FFFFFF;
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--text-white);
       letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
+
+    .brand-text h1 .badge-ver {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--primary-cyan);
+      background: rgba(6, 182, 212, 0.15);
+      padding: 2px 7px;
+      border-radius: 6px;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
     .brand-text p {
-      font-size: 0.75rem;
-      color: var(--text-muted);
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      font-weight: 400;
     }
+
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      flex-wrap: wrap;
     }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: 30px;
+      padding: 3px;
+      gap: 2px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .lang-btn:hover {
+      color: var(--text-white);
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+      color: var(--text-white);
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+    }
+
     .live-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(16, 185, 129, 0.15);
+      gap: 7px;
+      background: rgba(16, 185, 129, 0.12);
       border: 1px solid rgba(16, 185, 129, 0.3);
       color: #34D399;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 20px;
+      padding: 5px 12px;
+      border-radius: 30px;
     }
+
     .live-dot {
       width: 7px;
       height: 7px;
@@ -107,109 +185,199 @@
       box-shadow: 0 0 8px #10B981;
       animation: pulse 2s infinite;
     }
+
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
     }
+
     .btn-github {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--border-color);
-      color: #F3F4F6;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
       padding: 6px 14px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 500;
+      border-radius: 9px;
+      font-size: 0.82rem;
+      font-weight: 600;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: var(--transition-smooth);
     }
+
     .btn-github:hover {
       background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.22);
+      color: var(--text-white);
+      transform: translateY(-1px);
     }
+
+    /* Hero Section */
     .hero {
-      max-width: 1360px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 60px 24px 30px 24px;
+      padding: 56px 28px 24px 28px;
       text-align: center;
     }
-    .hero-tag {
-      display: inline-block;
-      font-size: 0.82rem;
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--primary-cyan);
-      background: rgba(6, 182, 212, 0.1);
+      background: rgba(6, 182, 212, 0.09);
       padding: 6px 16px;
       border-radius: 30px;
-      border: 1px solid rgba(6, 182, 212, 0.2);
-      margin-bottom: 18px;
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      margin-bottom: 20px;
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }
+
     .hero h2 {
       font-family: 'Outfit', 'Noto Sans KR', sans-serif;
-      font-size: 2.7rem;
-      font-weight: 800;
-      color: #FFFFFF;
+      font-size: 2.75rem;
+      font-weight: 900;
+      color: var(--text-white);
       line-height: 1.25;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       letter-spacing: -0.8px;
     }
-    .hero h2 span {
-      background: linear-gradient(135deg, #38BDF8, #818CF8, #F472B6);
+
+    .hero h2 span.gradient-text {
+      background: linear-gradient(135deg, #38BDF8 10%, #818CF8 50%, #F472B6 90%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .hero p {
-      max-width: 820px;
-      margin: 0 auto 35px auto;
-      font-size: 1.05rem;
+
+    .hero h2 .hero-en-sub {
+      display: block;
+      font-size: 1.28rem;
+      font-weight: 600;
       color: #94A3B8;
+      margin-top: 6px;
+      letter-spacing: -0.2px;
+    }
+
+    .hero-descriptions {
+      max-width: 920px;
+      margin: 0 auto 36px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-desc-ko {
+      font-size: 1.02rem;
+      color: #CBD5E1;
       line-height: 1.7;
     }
+
+    .hero-desc-en {
+      font-size: 0.92rem;
+      color: #94A3B8;
+      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      padding-top: 4px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    }
+
+    /* Stats Bar */
     .stats-bar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      max-width: 980px;
+      max-width: 1100px;
       margin: 0 auto 40px auto;
     }
+
     .stat-card {
       background: var(--bg-card);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 16px 20px;
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 18px 20px;
       text-align: center;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
     }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .stat-card:hover {
+      border-color: var(--border-highlight);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .stat-card:hover::before {
+      opacity: 1;
+    }
+
     .stat-num {
       font-family: 'Outfit', sans-serif;
       font-size: 1.85rem;
-      font-weight: 700;
+      font-weight: 800;
       color: #38BDF8;
       display: block;
+      line-height: 1.2;
     }
-    .stat-label {
-      font-size: 0.82rem;
-      color: var(--text-muted);
+
+    .stat-label-ko {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-primary);
       margin-top: 4px;
     }
+
+    .stat-label-en {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      display: block;
+    }
+
+    /* Controls: Search & Filter */
     .controls {
-      max-width: 1360px;
-      margin: 0 auto 30px auto;
-      padding: 0 24px;
+      max-width: 1400px;
+      margin: 0 auto 28px auto;
+      padding: 0 28px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 20px;
     }
-    .search-box {
-      position: relative;
-      max-width: 700px;
+
+    .search-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      max-width: 800px;
       margin: 0 auto;
       width: 100%;
     }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      width: 100%;
+    }
+
     .search-icon {
       position: absolute;
       left: 18px;
@@ -217,766 +385,1755 @@
       transform: translateY(-50%);
       color: var(--text-muted);
       pointer-events: none;
+      transition: color 0.2s;
     }
+
     .search-input {
       width: 100%;
-      background: rgba(17, 24, 39, 0.8);
-      border: 1px solid var(--border-color);
-      color: #FFFFFF;
-      padding: 14px 20px 14px 48px;
-      border-radius: 12px;
-      font-size: 0.98rem;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
+      padding: 14px 44px 14px 48px;
+      border-radius: 14px;
+      font-size: 0.96rem;
       outline: none;
-      transition: all 0.2s;
+      transition: var(--transition-smooth);
     }
+
     .search-input:focus {
       border-color: var(--primary-cyan);
-      box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
-      background: rgba(17, 24, 39, 0.95);
+      box-shadow: 0 0 24px rgba(6, 182, 212, 0.3);
+      background: rgba(15, 23, 42, 0.98);
     }
+
+    .search-input:focus + .search-icon {
+      color: var(--primary-cyan);
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: var(--text-muted);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      line-height: 1;
+    }
+
+    .search-clear:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--text-white);
+    }
+
+    .results-count-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--primary-cyan);
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      padding: 12px 16px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+
     .filter-tabs {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
     }
+
     .tab-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
       padding: 8px 18px;
-      border-radius: 20px;
-      font-size: 0.88rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
+
     .tab-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.09);
+      color: var(--text-white);
+      transform: translateY(-1px);
     }
+
     .tab-btn.active {
       background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
-      color: #FFFFFF;
+      color: var(--text-white);
       border-color: transparent;
-      box-shadow: 0 0 14px rgba(6, 182, 212, 0.35);
+      box-shadow: 0 0 18px rgba(6, 182, 212, 0.4);
     }
+
+    .tab-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      opacity: 0.85;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 1px 6px;
+      border-radius: 10px;
+    }
+
+    /* Grid Section */
     .grid-section {
-      max-width: 1360px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 24px 60px 24px;
+      padding: 0 28px 70px 28px;
       flex: 1;
     }
+
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 24px;
     }
+
+    /* Card Component */
     .card {
       background: var(--bg-card);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
       padding: 24px;
       display: flex;
       flex-direction: column;
       transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
       position: relative;
+      overflow: hidden;
     }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-cyan), var(--primary-blue), var(--accent-indigo));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
       background: var(--bg-card-hover);
-      border-color: var(--border-focus);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 16px rgba(6, 182, 212, 0.15);
+      border-color: var(--border-highlight);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 24px rgba(6, 182, 212, 0.16);
     }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 14px;
+      gap: 8px;
     }
+
     .code-badge {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      color: var(--primary-cyan);
-      background: rgba(6, 182, 212, 0.12);
       padding: 3px 10px;
-      border-radius: 6px;
-      border: 1px solid rgba(6, 182, 212, 0.25);
+      border-radius: 7px;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
     }
+
     .status-badge {
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       font-weight: 600;
       padding: 3px 10px;
       border-radius: 12px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 65%;
     }
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #FFFFFF;
-      margin-bottom: 4px;
+
+    .card-title-group {
+      margin-bottom: 12px;
+    }
+
+    .card-title-ko {
+      font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+      font-size: 1.28rem;
+      font-weight: 800;
+      color: var(--text-white);
+      line-height: 1.35;
       letter-spacing: -0.3px;
     }
+
+    .card-title-en {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.90rem;
+      font-weight: 600;
+      color: #93C5FD;
+      margin-top: 3px;
+      line-height: 1.35;
+    }
+
     .card-subtitle {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+
+    .card-subtitle .sub-ko {
+      display: block;
       color: #94A3B8;
-      margin-bottom: 12px;
       font-weight: 500;
     }
+
+    .card-subtitle .sub-en {
+      display: block;
+      color: #64748B;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.77rem;
+    }
+
     .card-desc {
-      font-size: 0.90rem;
-      color: #CBD5E1;
-      line-height: 1.6;
+      font-size: 0.88rem;
+      line-height: 1.65;
       margin-bottom: 18px;
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
+
+    .desc-ko {
+      color: #E2E8F0;
+    }
+
+    .desc-en {
+      color: #94A3B8;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.83rem;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.07);
+    }
+
+    /* Language Display Modes */
+    [data-lang-mode="ko"] .card-title-en,
+    [data-lang-mode="ko"] .hero-desc-en,
+    [data-lang-mode="ko"] .hero-en-sub,
+    [data-lang-mode="ko"] .stat-label-en,
+    [data-lang-mode="ko"] .sub-en,
+    [data-lang-mode="ko"] .desc-en {
+      display: none !important;
+    }
+
+    [data-lang-mode="en"] .card-title-ko,
+    [data-lang-mode="en"] .hero-desc-ko,
+    [data-lang-mode="en"] .stat-label-ko,
+    [data-lang-mode="en"] .sub-ko,
+    [data-lang-mode="en"] .desc-ko {
+      display: none !important;
+    }
+
+    [data-lang-mode="en"] .card-title-en {
+      font-size: 1.24rem;
+      color: var(--text-white);
+    }
+
     .tags-container {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       margin-bottom: 18px;
     }
+
     .tag {
       font-size: 0.72rem;
       background: rgba(255, 255, 255, 0.04);
       color: #94A3B8;
       padding: 2px 8px;
-      border-radius: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: var(--transition-smooth);
     }
+
+    .tag:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #E2E8F0;
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
     .card-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-top: 14px;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid var(--border-subtle);
+      gap: 10px;
     }
+
     .category-indicator {
-      font-size: 0.78rem;
+      font-size: 0.77rem;
       color: var(--text-muted);
       font-weight: 500;
-    }
-    .btn-open {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
-      color: #FFFFFF;
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-    .btn-open:hover {
-      opacity: 0.92;
-      transform: translateX(2px);
-    }
-    .no-results {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      display: none;
-    }
-    footer {
-      background: rgba(11, 17, 32, 0.9);
-      border-top: 1px solid var(--border-color);
-      padding: 30px 24px;
-      margin-top: auto;
-    }
-    .footer-content {
-      max-width: 1360px;
-      margin: 0 auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      gap: 5px;
     }
-    @media (max-width: 768px) {
-      .hero h2 { font-size: 2.0rem; }
-      .stats-bar { grid-template-columns: repeat(2, 1fr); }
-      .cards-grid { grid-template-columns: 1fr; }
-      .footer-content { flex-direction: column; gap: 12px; text-align: center; }
-    }
-  
 
-    /* Bilingual Button Styles */
     .btn-group {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
       flex-wrap: wrap;
     }
+
     .btn-open {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 5px 11px;
-      border-radius: 7px;
+      gap: 6px;
+      font-size: 0.79rem;
+      font-weight: 700;
+      padding: 6px 13px;
+      border-radius: 8px;
       text-decoration: none;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: var(--transition-smooth);
       line-height: 1.2;
     }
-    .lang-tag {
+
+    .lang-pill {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.68rem;
-      font-weight: 700;
+      font-weight: 800;
       padding: 1px 4px;
       border-radius: 4px;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
+
     .btn-ko {
-      background: linear-gradient(135deg, rgba(6, 182, 212, 0.16), rgba(59, 130, 246, 0.24));
-      border: 1px solid rgba(6, 182, 212, 0.45);
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.16), rgba(59, 130, 246, 0.22));
+      border: 1px solid rgba(6, 182, 212, 0.42);
       color: #38BDF8;
     }
-    .btn-ko .lang-tag {
-      background: rgba(6, 182, 212, 0.3);
+
+    .btn-ko .lang-pill {
+      background: rgba(6, 182, 212, 0.32);
       color: #E0F2FE;
     }
+
     .btn-ko:hover {
       background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
       color: #FFFFFF;
       border-color: transparent;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.35);
+      box-shadow: 0 4px 14px rgba(6, 182, 212, 0.4);
     }
+
     .btn-en {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(217, 119, 6, 0.22));
-      border: 1px solid rgba(245, 158, 11, 0.45);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(217, 119, 6, 0.22));
+      border: 1px solid rgba(245, 158, 11, 0.42);
       color: #FBBF24;
     }
-    .btn-en .lang-tag {
-      background: rgba(245, 158, 11, 0.28);
+
+    .btn-en .lang-pill {
+      background: rgba(245, 158, 11, 0.30);
       color: #FEF3C7;
     }
+
     .btn-en:hover {
       background: linear-gradient(135deg, #F59E0B, #D97706);
       color: #FFFFFF;
       border-color: transparent;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
     }
+
     .btn-open svg {
       transition: transform 0.2s;
     }
+
     .btn-open:hover svg {
       transform: translateX(2px);
     }
-    @media (max-width: 540px) {
-      .card-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .btn-group {
-        width: 100%;
-        justify-content: flex-start;
-      }
+
+    /* No results message */
+    .no-results {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      display: none;
+      grid-column: 1 / -1;
     }
-        </style>
+
+    .no-results svg {
+      margin-bottom: 14px;
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+
+    /* Scroll to Top Floating Button */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+      z-index: 90;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .scroll-top-btn.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .scroll-top-btn:hover {
+      background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+      color: var(--text-white);
+      border-color: transparent;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(6, 182, 212, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(8, 13, 24, 0.92);
+      border-top: 1px solid var(--border-subtle);
+      padding: 36px 28px;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      gap: 16px;
+    }
+
+    .footer-left p {
+      margin-bottom: 4px;
+    }
+
+    .footer-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .f-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 2px 8px;
+      border-radius: 5px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero h2 { font-size: 2.15rem; }
+      .hero h2 .hero-en-sub { font-size: 1.05rem; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .cards-grid { grid-template-columns: 1fr; }
+      .footer-content { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 580px) {
+      .nav-container { padding: 12px 18px; }
+      .brand-text p { display: none; }
+      .hero { padding: 40px 18px 20px 18px; }
+      .hero h2 { font-size: 1.85rem; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .search-row { flex-direction: column; }
+      .results-count-badge { width: 100%; text-align: center; }
+      .card-footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .btn-group { width: 100%; justify-content: flex-start; }
+    }
+  </style>
 </head>
 <body>
-<header>
-<div class="nav-container">
-<a class="brand" href="index.html">
-<div class="brand-icon">
-<svg fill="none" height="22" stroke="#FFFFFF" stroke-width="2.2" viewbox="0 0 24 24" width="22"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
-</div>
-<div class="brand-text">
-<h1>ACUPOINT ANATOMY PORTAL</h1>
-<p>경혈 해부생리학 &amp; 침구 임상 분석 아카이브</p>
-</div>
-</a>
-<div class="nav-actions">
-<span class="live-badge"><span class="live-dot"></span>Online • Framework v2.7.5 • Bilingual (KO / EN)</span>
-</div>
-</div>
-</header>
-<section class="hero">
-<span class="hero-tag">Acupoint Reality Index &amp; Clinical Matrix</span>
-<h2>신경해부학적 실체 판명과 <span>침구 임상 고증 아카이브</span></h2>
-<p>
-      핵심 3대 원전(혈위통감·증치통감·수혈통고) 전수 고증, 한대(漢代) 도량형 실측 심도 및<br/>
-      Layer B 4계층 참조 등록부와 통합 생의학 DB(로컬 소장 논문 전수 역색인 + PubMed·OpenAlex 외부 수집)에 기반하고, 독립 2인 이중 채점(ARI v3.0)으로 판정한 경혈 해부생리 및 동의보감 임상 매트릭스 공식 온라인 포털입니다.
-    </p>
-<div class="stats-bar">
-<div class="stat-card">
-<span class="stat-num">27종 (54편)</span>
-<span class="stat-label">한·영 듀얼 전문 웹 리포트</span>
-</div>
-<div class="stat-card">
-<span class="stat-num">14개소</span>
-<span class="stat-label">핵심 경혈 Layer 1~5 실체</span>
-</div>
-<div class="stat-card">
-<span class="stat-num">16종</span>
-<span class="stat-label">동의보감 두통 신경해부 매트릭스</span>
-</div>
-<div class="stat-card">
-<span class="stat-num">2인</span>
-<span class="stat-label">ARI v3.0 독립 이중 채점</span>
-</div>
-</div>
-</section>
-<section class="controls">
-<div class="search-box">
-<svg class="search-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
-<input class="search-input" id="searchInput" placeholder="경혈 코드(예: ST36, LU06, GV14), 혈명(족삼리, 공최), 주제 또는 질환 검색..." type="text"/>
-</div>
-<div class="filter-tabs">
-<button class="tab-btn active" data-filter="all">전체 리포트 (27)</button>
-<button class="tab-btn" data-filter="policy">의료법제 정책보고서 (1)</button>
-<button class="tab-btn" data-filter="acupoint">경혈별 해부생리 (14)</button>
-<button class="tab-btn" data-filter="headache">두통 임상 매트릭스 (2)</button>
-<button class="tab-btn" data-filter="classics">침구원전 비교분석 (4)</button>
-<button class="tab-btn" data-filter="topic">주제별 고증연구 (7)</button>
-</div>
-</section>
-<main class="grid-section">
-<div class="cards-grid" id="cardsGrid">
-<!-- Card: 시체해부법 개정 정책보고서 -->
-<div class="card" data-category="policy" data-search="시체해부법 시행령 제36725호 시행규칙 제01204호 법률 제21107호 한의학 교육권 한의사 직능 정상화 카데바 질병관리청 교육목적 시체제공기관 교육을위한시체제공기관 시체해부심의위원회 한의사 위원 명문화 단독해부 지도하해부 적법성 입법청원">
-<div class="card-header">
-<span class="code-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4);">POLICY · 法制</span>
-<span class="status-badge" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">2026.10.12 확정 실정법 반영 · 보건복지부령 제01204호</span>
-</div>
-<h3 class="card-title">시체해부법 개정과 한의학 교육권 및 직능 정상화 방안</h3>
-<div class="card-subtitle">법률 제21107호 · 대통령령 제36725호 · 보건복지부령 제01204호 전면 시행 종합 정책분석</div>
-<p class="card-desc">개정 시체해부법령의 한의학 조항 전면 분석: 한의대 교육을 위한 시체제공기관 질병청 허가 획득, 시체해부심의위원회 한의사 위원 명문화(규칙 제1조의2), 일반 한의사 해부 적법성 판단(단독 해부 불가 vs 대학 지도하 해부 합법) 및 법 제2조제1호 개정 2단계 로드맵 제시.</p>
-<div class="tags-container">
-<span class="tag">#시체해부법</span>
-<span class="tag">#보건복지부령제01204호</span>
-<span class="tag">#교육목적시체제공기관</span>
-<span class="tag">#시체해부심의위한의사위원</span>
-<span class="tag">#카데바실습권</span>
-<span class="tag">#단독해부불가_지도하합법</span>
-<span class="tag">#질병관리청</span>
-</div>
-<div class="card-footer"><span class="category-indicator">의료법제 정책보고서</span><div class="btn-group"><a class="btn-open btn-ko" href="05_%EC%9D%98%EB%A3%8C%ED%96%89%EC%A0%95_%EB%B0%8F_%EB%B2%95%EC%A0%9C%EB%8F%84_%EC%A0%95%EC%B1%85%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%8B%9C%EC%B2%B4%ED%95%B4%EB%B6%80%EB%B2%95_%EA%B0%9C%EC%A0%95%EC%97%90_%EB%94%B0%EB%A5%B8_%ED%95%9C%EC%9D%98%ED%95%99_%EA%B5%90%EC%9C%A1%EA%B6%8C_%ED%99%95%EB%B3%B4_%EB%B0%8F_%ED%95%9C%EC%9D%98%EC%82%AC_%EC%A7%81%EB%8A%A5_%EC%A0%95%EC%83%81%ED%99%94_%EB%B0%A9%EC%95%88_%EC%B5%9C%EC%A2%85%EB%B3%B8.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="05_%EC%9D%98%EB%A3%8C%ED%96%89%EC%A0%95_%EB%B0%8F_%EB%B2%95%EC%A0%9C%EB%8F%84_%EC%A0%95%EC%B1%85%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%8B%9C%EC%B2%B4%ED%95%B4%EB%B6%80%EB%B2%95_%EA%B0%9C%EC%A0%95%EC%97%90_%EB%94%B0%EB%A5%B8_%ED%95%9C%EC%9D%98%ED%95%99_%EA%B5%90%EC%9C%A1%EA%B6%8C_%ED%99%95%EB%B3%B4_%EB%B0%8F_%ED%95%9C%EC%9D%98%EC%82%AC_%EC%A7%81%EB%8A%A5_%EC%A0%95%EC%83%81%ED%99%94_%EB%B0%A9%EC%95%88_%EC%B5%9C%EC%A2%85%EB%B3%B8_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="acupoint" data-search="LU03 LU04 LU03-LU04 천부 협백 天府 俠白 통합 실체 판명 보고서 송석모2022 황룡상 명실분리 위팔동맥 공간변위 이원분기 비묵인비법 정중신경 근피신경 ARI v3.0 C·H D·H 天會 天池 게이트2">
-<div class="card-header">
-<span class="code-badge">LU03-LU04</span>
-<span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · 고전 C·H / WHO D·H · Δ≈28mm 분기</span>
-</div>
-<h3 class="card-title">천부 (天府) · 협백 (俠白) 통합</h3>
-<div class="card-subtitle">LU03·LU04 해부생리학적 실체 판명 통합 보고서</div>
-<p class="card-desc">고전 천부·협백 = 위팔두갈래근 안쪽고랑 위팔동맥 박동점(ARI-Core 56.2·62.5, C·H), WHO점 = 가쪽 모서리 근육점(41.2·43.8, D·H). 두 쌍 모두 ΔARI-Core ≥ 10으로 고전 동맥점 우위. 이명 天會는 天池(PC1)의 이명으로 정정했고, 해당 경혈만 실측한 연구는 없다(H).</p>
-<div class="tags-container"><span class="tag">#LU03</span><span class="tag">#LU04</span><span class="tag">#천부</span><span class="tag">#협백</span><span class="tag">#송석모2022</span><span class="tag">#명실분리</span><span class="tag">#위팔동맥</span><span class="tag">#ARIv3</span></div>
-<div class="card-footer"><span class="category-indicator">경혈별 해부생리</span><div class="btn-group"><a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU03-LU04/LU03-LU04_%EC%B2%9C%EB%B6%80-%ED%98%91%EB%B0%B1_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%ED%86%B5%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU03-LU04/LU03-LU04_%EC%B2%9C%EB%B6%80-%ED%98%91%EB%B0%B1_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%ED%86%B5%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="acupoint" data-search="ST36 족삼리 (足三里) ST36 족삼리 해부생리학 실체 판명 보고서 ST36 족삼리 Nature 2021 전경골근 미주신경-부신축 ARI v3.0 B 개연 B-Check 깊은종아리신경 앞정강동맥 마우스 PROKR2">
-<div class="card-header">
-<span class="code-badge">ST36</span>
-<span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">ARI v3.0 · 77.5 (B 개연) · B-Check 9/12</span>
-</div>
-<h3 class="card-title">족삼리 (足三里)</h3>
-<div class="card-subtitle">ST36 족삼리 해부생리학 실체 판명 보고서</div>
-<p class="card-desc">앞정강근 심층의 깊은종아리신경·앞정강동정맥. 미주-부신 축 기전은 B-Check 9/12로 부합하지만 마우스 근거(B3-15~17)이고, 자극 강도 의존성과 혈위 특이성 반증(B4-04·05)이 있다. 분절(L4~S1)은 위(T6~T9)와 맞지 않아 위장 주치는 상척수 경로로만 설명된다.</p>
-<div class="tags-container"><span class="tag">#ST36</span><span class="tag">#족삼리</span><span class="tag">#Nature 2021</span><span class="tag">#전경골근</span><span class="tag">#미주신경-부신축</span><span class="tag">#ARIv3</span><span class="tag">#동물한정</span></div>
-<div class="card-footer"><span class="category-indicator">경혈별 해부생리</span><div class="btn-group"><a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/ST_%EC%A1%B1%EC%96%91%EB%AA%85%EC%9C%84%EA%B2%BD/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/ST_%EC%A1%B1%EC%96%91%EB%AA%85%EC%9C%84%EA%B2%BD/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="acupoint" data-search="SP05 상구 (商丘) SP05 상구 해부생리학 실체 판명 학술 모노그래프 안쪽복사 삼각인대 두렁신경 앞정강근힘줄 ARI v3.0 88.1 A 확정 Definitive SI 100 과민성장증후군 IBS 족관절염좌">
-<div class="card-header">
-<span class="code-badge">SP05</span>
-<span class="status-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);">ARI v3.0 · 88.1 ± 3.1 (A 확정) · SI 100</span>
-</div>
-<h3 class="card-title">상구 (商丘)</h3>
-<div class="card-subtitle">SP05 상구 해부생리학 실체 판명 학술 모노그래프</div>
-<p class="card-desc">안쪽복사 앞아래쪽 함요처, 위·아래폄근지지띠 및 삼각인대 표층. 두렁신경(L3-L4)과 발등안쪽피부신경(L4-S1) 분포. 한대 3푼=6.9mm 자침으로 Layer 1~2 안착, 0.3~0.5촌 자침으로 인대 고유수용기 자극. NTS-DMV 미주신경 구동을 통한 IBS-D 조절 및 족관절 염좌 회복.</p>
-<div class="tags-container"><span class="tag">#SP05</span><span class="tag">#상구</span><span class="tag">#족태음비경</span><span class="tag">#삼각인대</span><span class="tag">#두렁신경</span><span class="tag">#과민성장증후군</span><span class="tag">#ARIv3</span><span class="tag">#A확정</span></div>
-<div class="card-footer"><span class="category-indicator">경혈별 해부생리</span><div class="btn-group"><a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/SP_%EC%A1%B1%ED%83%9C%EC%9D%8C%EB%B9%84%EA%B2%BD/SP05_%EC%83%81%EA%B5%AC/SP05_%EC%83%81%EA%B5%AC_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/SP_%EC%A1%B1%ED%83%9C%EC%9D%8C%EB%B9%84%EA%B2%BD/SP05_%EC%83%81%EA%B5%AC/SP05_%EC%83%81%EA%B5%AC_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="acupoint" data-search="LU09 태연 (太淵) 太渊 LU09 태연 해부생리학 실체 판명 학술 모노그래프 손목주름 요골동맥 박동처 노쪽손목굽힘근 힘줄 표재요골신경 ARI v3.0 79.0 B 개연 Probable SI 75.0 호흡기 혈류역학 맥회">
-<div class="card-header">
-<span class="code-badge">LU09</span>
-<span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">ARI v3.0 · 79.0 (B 개연) · SI 75.0</span>
-</div>
-<h3 class="card-title">태연 (太淵)</h3>
-<div class="card-subtitle">LU09 태연 해부생리학 실체 판명 학술 모노그래프</div>
-<p class="card-desc">손목 앞쪽 가로금, 노동맥 박동부와 노쪽손목굽힘근힘줄 사이. 가쪽팔피부신경 및 표재노신경 분포, 노동맥·노정맥 인접. 선진·한대 이래 30여 개 의서 전수 일치. 혈맥지회(八會穴·脈會)이자 폐경 원혈(原穴)로서 심혈관계 및 호흡기 자율신경 조절 실증.</p>
-<div class="tags-container"><span class="tag">#LU09</span><span class="tag">#태연</span><span class="tag">#수태음폐경</span><span class="tag">#노동맥</span><span class="tag">#맥회</span><span class="tag">#자율신경</span><span class="tag">#ARIv3</span><span class="tag">#B개연</span></div>
-<div class="card-footer"><span class="category-indicator">경혈별 해부생리</span><div class="btn-group"><a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU09_%ED%83%9C%EC%97%B0/LU09_%ED%83%9C%EC%97%B0_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU09_%ED%83%9C%EC%97%B0/LU09_%ED%83%9C%EC%97%B0_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card-header">
-<span class="code-badge">LU06</span>
-<span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">ARI v3.0 · 표준 71.2 (B) / 사와다점 35 (D·H)</span>
-</div>
-<h3 class="card-title">공최 (孔最)</h3>
-<div class="card-subtitle">LU06 공최 해부생리학 실체 판명 보고서</div>
-<p class="card-desc">표준 공최(腕上七寸)는 위팔노근 내측연 피하·근막층(가쪽아래팔피부신경)이며 깊이 약 23mm에서 노동맥·노신경 얕은가지(Layer 4)에 이른다(B, 가중치 민감). 사와다식 치질 반응점(尺泽下二寸)은 35(D·H). 《通考》·黄龙祥의 '孔最治痔 讹传' 반론에 따라 치질 주치를 표준 공최에서 분리했다.</p>
-<div class="tags-container"><span class="tag">#LU06</span><span class="tag">#공최</span><span class="tag">#원회내근</span><span class="tag">#치치고증</span><span class="tag">#폐대장상통</span><span class="tag">#ARIv3</span><span class="tag">#사와다</span><span class="tag">#孔最治痔</span></div>
-<div class="card-footer">
-<span class="category-indicator">경혈별 해부생리</span>
-<a class="btn-open" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU06_%EA%B3%B5%EC%B5%9C/LU06_%EA%B3%B5%EC%B5%9C_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank">
-<span>보고서 열기</span>
-<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-</a>
-</div>
-<div class="card" data-category="acupoint" data-search="LU06 공최 孔最 척택 태연 극혈 모세혈관 폐출혈 각혈 노쪽피부정맥 가쪽팔엉킴신경 원회내근 위팔노근 정중신경 ARI v3.0 B">
-<div class="card-header">
-<span class="code-badge">LU06</span>
-<span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">ARI v3.0 · 76.5 (B 개연) · B-Check 9/12</span>
-</div>
-<h3 class="card-title">공최 (孔最)</h3>
-<div class="card-subtitle">LU06 공최 해부생리학 실체 판명 보고서</div>
-<p class="card-desc">자침 깊이 2~5푼(한대 4.6~11.5mm) 실측. 노쪽피부정맥·가쪽팔엉킴신경(Layer 2)과 원회내근·위팔노근 및 정중신경·앞뼈사이신경(Layer 4). 각혈·폐계 급성증에 대한 체성-내장 반사(T2~T5 교감신경 억제) 및 지혈 기전 실체 판명.</p>
-<div class="tags-container">
-<span class="tag">#LU06</span><span class="tag">#공최</span><span class="tag">#극혈</span><span class="tag">#노쪽피부정맥</span><span class="tag">#원회내근</span><span class="tag">#정중신경</span><span class="tag">#ARIv3</span>
-</div>
-<div class="card-footer">
-<span class="category-indicator">경혈별 해부생리</span>
-<div class="btn-group">
-<a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU06_%EA%B3%B5%EC%B5%9C/LU06_%EA%B3%B5%EC%B5%9C_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
-<span class="lang-tag">KO</span>
-<span>한국어</span>
-</a>
-<a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU06_%EA%B3%B5%EC%B5%9C/LU06_%EA%B3%B5%EC%B5%9C_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation">
-<span class="lang-tag">EN</span>
-<span>English</span>
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-</a>
-</div>
-</div>
-</div><div class="card" data-category="acupoint" data-search="SP06 삼음교 三陰交 안쪽복사 위 3촌 큰복사정맥 정강신경 긴발가락굽힘근 뒤정강근 골반내장신경 자궁수축 임신금침 ARI v3.0 A">
-<div class="card-header">
-<span class="code-badge">SP06</span>
-<span class="status-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);">ARI v3.0 · 84.0 (A 확실) · B-Check 10/12 · 임신금침 ⚠</span>
-</div>
-<h3 class="card-title">삼음교 (三陰交)</h3>
-<div class="card-subtitle">SP06 삼음교 해부생리학 실체 판명 보고서</div>
-<p class="card-desc">정강뼈 안쪽모서리 뒤쪽 안쪽복사 위 3촌. 큰복사정맥·정강신경 및 긴발가락굽힘근·뒤정강근(Layer 4). 골반내장신경(S2~S4) 및 자궁 민무늬근 수축 반사 기전 판명. ⚠ 임신부 금침(자궁 수축 유발 위험).</p>
-<div class="tags-container">
-<span class="tag">#SP06</span><span class="tag">#삼음교</span><span class="tag">#정강신경</span><span class="tag">#큰복사정맥</span><span class="tag">#자궁수축</span><span class="tag">#임신금침</span><span class="tag">#ARIv3</span>
-</div>
-<div class="card-footer">
-<span class="category-indicator">경혈별 해부생리</span>
-<div class="btn-group">
-<a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/SP_%EC%A1%B1%ED%83%9C%EC%9D%8C%EB%B9%84%EA%B2%BD/SP06_%EC%82%BC%EC%9D%8C%EA%B5%90/SP06_%EC%82%BC%EC%9D%8C%EA%B5%90_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
-<span class="lang-tag">KO</span>
-<span>한국어</span>
-</a>
-<a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/SP_%EC%A1%B1%ED%83%9C%EC%9D%8C%EB%B9%84%EA%B2%BD/SP06_%EC%82%BC%EC%9D%8C%EA%B5%90/SP06_%EC%82%BC%EC%9D%8C%EA%B5%90_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation">
-<span class="lang-tag">EN</span>
-<span>English</span>
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-</a>
-</div>
-</div>
-</div><div class="card" data-category="acupoint" data-search="LI04 합곡 合谷 사총혈 원혈 제1등쪽뼈사이근 노신경 정중신경 삼차신경통 PAG RVM 하행성통증억제 ARI v3.0 A">
-<div class="card-header">
-<span class="code-badge">LI04</span>
-<span class="status-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);">ARI v3.0 · 88.5 (A 확실) · B-Check 11/12 · 사총혈 원혈</span>
-</div>
-<h3 class="card-title">합곡 (合谷)</h3>
-<div class="card-subtitle">LI04 합곡 해부생리학 실체 판명 보고서</div>
-<p class="card-desc">제1·2 중수골 사이 제1 등쪽뼈사이근(First dorsal interosseous). 노신경 얕은가지 및 정중신경 손바닥가지 분기(Layer 2~4). 안면·구강 질환 및 삼차신경통 억제(뇌간 PAG-RVM 하행성 통증 억제계) 신경생리 기전 완비.</p>
-<div class="tags-container">
-<span class="tag">#LI04</span><span class="tag">#합곡</span><span class="tag">#사총혈</span><span class="tag">#원혈</span><span class="tag">#제1등쪽뼈사이근</span><span class="tag">#노신경</span><span class="tag">#PAG-RVM</span><span class="tag">#ARIv3</span>
-</div>
-<div class="card-footer">
-<span class="category-indicator">경혈별 해부생리</span>
-<div class="btn-group">
-<a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LI_%EC%88%98%EC%96%91%EB%AA%85%EB%8C%80%EC%9E%A5%EA%B2%BD/LI04_%ED%95%A9%EA%B3%A1/LI04_%ED%95%A9%EA%B3%A1_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
-<span class="lang-tag">KO</span>
-<span>한국어</span>
-</a>
-<a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LI_%EC%88%98%EC%96%91%EB%AA%85%EB%8C%80%EC%9E%A5%EA%B2%BD/LI04_%ED%95%A9%EA%B3%A1/LI04_%ED%95%A9%EA%B3%A1_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation">
-<span class="lang-tag">EN</span>
-<span>English</span>
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-</a>
-</div>
-</div>
-</div><div class="card" data-category="topic" data-search="ST25 CV4 천추 관원 天樞 關元 복모혈 신경분절 T10 T11 T12 L1 장기구심신경 체성내장반사 대장모혈 소장모혈 문헌고증">
-<div class="card-header">
-<span class="code-badge">ST25 · CV4</span>
-<span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">신경분절 고증 · T10~T12 / T12~L1 일치</span>
-</div>
-<h3 class="card-title">천추·관원 모혈분절</h3>
-<div class="card-subtitle">천추(ST25)·관원(CV4) 복모혈의 신경분절 정합성 고증 및 질의응답 검증</div>
-<p class="card-desc">대장모혈 천추(배꼽 옆 2촌, T10~T11 분절)와 소장모혈 관원(배꼽 아래 3촌, T12~L1 분절)의 해부학적 피부신경·복벽근막 층차 및 장기 지배 내장구심신경 분절 정합성 전수 고증 및 가설 검증.</p>
-<div class="tags-container">
-<span class="tag">#ST25</span><span class="tag">#CV4</span><span class="tag">#천추</span><span class="tag">#관원</span><span class="tag">#복모혈</span><span class="tag">#신경분절</span><span class="tag">#체성내장반사</span>
-</div>
-<div class="card-footer">
-<span class="category-indicator">주제별 고증연구</span>
-<div class="btn-group">
-<a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%B2%9C%EC%B6%94_%EA%B4%80%EC%9B%90_%EB%AA%A8%ED%98%88%EB%B6%84%EC%A0%88_%EA%B3%A0%EC%A6%9D/%EC%B2%9C%EC%B6%94_%EA%B4%80%EC%9B%90_%EB%AA%A8%ED%98%88%EB%B6%84%EC%A0%88%EC%A0%95%ED%95%A9%EC%84%B1_%EA%B3%A0%EC%A6%9D_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
-<span class="lang-tag">KO</span>
-<span>한국어</span>
-</a>
-<a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%B2%9C%EC%B6%94_%EA%B4%80%EC%9B%90_%EB%AA%A8%ED%98%88%EB%B6%84%EC%A0%88_%EA%B3%A0%EC%A6%9D/%EC%B2%9C%EC%B6%94_%EA%B4%80%EC%9B%90_%EB%AA%A8%ED%98%88%EB%B6%84%EC%A0%88%EC%A0%95%ED%95%A9%EC%84%B1_%EA%B3%A0%EC%A6%9D_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation">
-<span class="lang-tag">EN</span>
-<span>English</span>
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-</a>
-</div>
-</div>
-</div></div>
-<div class="card" data-category="acupoint" data-search="GB39 현종 (懸鐘) GB39 현종 해부생리학 실체 판명 보고서 GB39 현종 절골 비골근 천비골신경 수회 ARI v3.0 앞정강동맥 맥동점 名实分离 絶骨 GB38 양보 분기">
-<div class="card-header">
-<span class="code-badge">GB39</span>
-<span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · 고전 51.2 (D·H) / WHO 55 (C) · Δ≈20~35mm 분기</span>
-</div>
-<h3 class="card-title">현종 (懸鐘)</h3>
-<div class="card-subtitle">GB39 현종 해부생리학 실체 판명 보고서</div>
-<p class="card-desc">《明堂》 '外踝上三寸 動者脈中, 按之陽明脈絶'의 고전 정위는 경골 쪽 앞정강동맥 박동점이고, 현행 WHO 정위는 비골 앞모서리다(Δ≈20~35mm, ΔARI-Core &lt; 10으로 우위 없음). 구판의 《通考》 인용(얕은종아리신경·비골동맥 관통지 = 動脈中)은 원문에 없어 삭제했다. 원래 주치는 腹滿·胃中有熱·不嗜食이고, 頸項强은 《千金》 絶骨 주치가 섞인 것이다.</p>
-<div class="tags-container"><span class="tag">#GB39</span><span class="tag">#현종</span><span class="tag">#절골</span><span class="tag">#비골근</span><span class="tag">#천비골신경</span><span class="tag">#수회</span><span class="tag">#ARIv3</span><span class="tag">#앞정강동맥</span><span class="tag">#名实分离</span></div>
-<div class="card-footer"><span class="category-indicator">경혈별 해부생리</span><div class="btn-group"><a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GB_%EC%A1%B1%EC%86%8C%EC%96%91%EB%8B%B4%EA%B2%BD/GB39_%ED%98%84%EC%A2%85/GB39_%ED%98%84%EC%A2%85_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GB_%EC%A1%B1%EC%86%8C%EC%96%91%EB%8B%B4%EA%B2%BD/GB39_%ED%98%84%EC%A2%85/GB39_%ED%98%84%EC%A2%85_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="acupoint" data-search="GV20 백회 (百會) GV20 백회 해부생리학 실체 판명 보고서 GV20 백회 모상건막 대후두신경 시상-피질망 ARI v3.0 B 머리덮개널힘줄 galea 維會 神阙 마루이끌정맥">
-<div class="card-header">
-<span class="code-badge">GV20</span>
-<span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">ARI v3.0 · 71.2 (B 개연, 가중치 민감)</span>
-</div>
-<h3 class="card-title">백회 (百會)</h3>
-<div class="card-subtitle">GV20 백회 해부생리학 실체 판명 보고서</div>
-<p class="card-desc">두정부 정중선 시상봉합 위 두피: 피부·치밀 피하층(큰뒤통수신경·삼차신경 V1 말단) → 머리덮개널힘줄(galea) → 건막하층(마루이끌정맥) → 머리뼈바깥막. 반사 기전은 B-Check 6/12로 가설이다. 구판의 《通考》 해부 인용은 원문에 없어 삭제했고, 이명 維會는 神阙 별명의 오록으로 정정했다.</p>
-<div class="tags-container"><span class="tag">#GV20</span><span class="tag">#백회</span><span class="tag">#모상건막</span><span class="tag">#대후두신경</span><span class="tag">#시상-피질망</span><span class="tag">#ARIv3</span><span class="tag">#galea</span></div>
-<div class="card-footer"><span class="category-indicator">경혈별 해부생리</span><div class="btn-group"><a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GV_%EB%8F%85%EB%A7%A5/GV20_%EB%B0%B1%ED%9A%8C/GV20_%EB%B0%B1%ED%9A%8C_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GV_%EB%8F%85%EB%A7%A5/GV20_%EB%B0%B1%ED%9A%8C/GV20_%EB%B0%B1%ED%9A%8C_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="acupoint" data-search="BL02 찬죽 (攢竹) BL02 찬죽 해부생리학 실체 판명 보고서 BL02 찬죽 추미근 삼차신경 안와상신경 ARI v3.0 B 안전주의 SI 0 禁用针灸 医学入门 도르래위신경 额切迹">
-<div class="card-header">
-<span class="code-badge">BL02</span>
-<span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">ARI v3.0 · 81.2 (B 개연) · SI 0 ⚠</span>
-</div>
-<h3 class="card-title">찬죽 (攢竹)</h3>
-<div class="card-subtitle">BL02 찬죽 해부생리학 실체 판명 보고서</div>
-<p class="card-desc">额切迹(도르래위패임)을 지나는 도르래위신경·동정맥과 그 위의 눈썹주름근·눈둘레근(B). ⚠ 《医学入门》에 '禁用针灸' 기록이 있어 안전지수 0(대부분의 문헌은 1~3푼, 2.3~6.9mm). 최초 기술은 《黄帝明堂经》이며, 구판의 《灵枢·本输》 인용과 《通考》 인용은 원문에 없어 삭제했다.</p>
-<div class="tags-container"><span class="tag">#BL02</span><span class="tag">#찬죽</span><span class="tag">#추미근</span><span class="tag">#삼차신경</span><span class="tag">#안와상신경</span><span class="tag">#ARIv3</span><span class="tag">#안전주의</span></div>
-<div class="card-footer"><span class="category-indicator">경혈별 해부생리</span><div class="btn-group"><a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/BL_%EC%A1%B1%ED%83%9C%EC%96%91%EB%B0%A9%EA%B4%91%EA%B2%BD/BL02_%EC%B0%AC%EC%A3%BD/BL02_%EC%B0%AC%EC%A3%BD_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/BL_%EC%A1%B1%ED%83%9C%EC%96%91%EB%B0%A9%EA%B4%91%EA%B2%BD/BL02_%EC%B0%AC%EC%A3%BD/BL02_%EC%B0%AC%EC%A3%BD_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="acupoint" data-search="GB21 견정 (肩井) GB21 견정 해부생리학 실체 판명 보고서 GB21 견정 승모근 부신경 쇄골상신경 자침안전 ARI v3.0 C 기흉 폐첨 흉막정 SI 0 금침 분기철회">
-<div class="card-header">
-<span class="code-badge">GB21</span>
-<span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · 67.5 (C) · SI 0 ⚠ 기흉</span>
-</div>
-<h3 class="card-title">견정 (肩井)</h3>
-<div class="card-subtitle">GB21 견정 해부생리학 실체 판명 보고서</div>
-<p class="card-desc">⚠ 흉막정·폐첨 바로 위의 기흉 고위험 혈위(《通考》: 침자 기흉의 약 9할이 肩井, 동의보감 금침). 등세모근과 그 아래 신경혈관 구조가 실체이나 두 교재의 심층 기재가 다르다(C). 고전·WHO 정위는 같은 점이어서 구판의 분기를 철회했다. 전하방 자입과 과심 직자를 피한다.</p>
-<div class="tags-container"><span class="tag">#GB21</span><span class="tag">#견정</span><span class="tag">#승모근</span><span class="tag">#부신경</span><span class="tag">#쇄골상신경</span><span class="tag">#자침안전</span><span class="tag">#ARIv3</span><span class="tag">#기흉</span><span class="tag">#안전주의</span></div>
-<div class="card-footer"><span class="category-indicator">경혈별 해부생리</span><div class="btn-group"><a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GB_%EC%A1%B1%EC%86%8C%EC%96%91%EB%8B%B4%EA%B2%BD/GB21_%EA%B2%AC%EC%A0%95/GB21_%EA%B2%AC%EC%A0%95_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GB_%EC%A1%B1%EC%86%8C%EC%96%91%EB%8B%B4%EA%B2%BD/GB21_%EA%B2%AC%EC%A0%95/GB21_%EA%B2%AC%EC%A0%95_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="acupoint" data-search="ST36 GB21 족삼리 견정 비교 분석 Comparative ARI v3.0 기흉 미주-부신">
-<div class="card-header">
-<span class="code-badge">ST36 vs GB21</span>
-<span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">ARI v3.0 · ST36 B / GB21 C ⚠</span>
-</div>
-<h3 class="card-title">족삼리 vs 견정 비교</h3>
-<div class="card-subtitle">ST36·GB21 해부학적 실체 비교 분석 보고서</div>
-<p class="card-desc">두 개별 보고서의 확정 결과를 같은 기준으로 비교한 요약. ST36은 깊은종아리신경·앞정강동정맥(77.5, B, 기전 B-Check 9/12), GB21은 등세모근·흉막정 위 기흉 고위험(67.5, C, SI 0 ⚠). 구판의 '옥시토신 반사'와 GB21 분기는 철회했다.</p>
-<div class="card-footer"><span class="category-indicator">경혈별 해부생리</span><div class="btn-group"><a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/ST_%EC%A1%B1%EC%96%91%EB%AA%85%EC%9C%84%EA%B2%BD/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC/ST36_GB21_Comparative_Analysis_Report.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/ST_%EC%A1%B1%EC%96%91%EB%AA%85%EC%9C%84%EA%B2%BD/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC/ST36_GB21_Comparative_Analysis_Report_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="acupoint" data-search="PC09 중충 (中衝) PC09 중충 해부생리학 실체 판명 보고서 PC09 중충 정혈 수지신경 응급개규 ARI v3.0 C 고유바닥쪽손가락신경 정혈 사혈 留三呼 요측손톱각">
-<div class="card-header">
-<span class="code-badge">PC09</span>
-<span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · 67.5 (C) · SI 100</span>
-</div>
-<h3 class="card-title">중충 (中衝)</h3>
-<div class="card-subtitle">PC09 중충 해부생리학 실체 판명 보고서</div>
-<p class="card-desc">중지 첨단 지문 피부·피하(Layer 1)의 고유바닥쪽손가락신경(정중신경, 감각)과 고유바닥쪽손가락동맥 말단망. 정혈 사혈 효과는 비특이 침해 자극 기전일 가능성이 있다(B-Check 6/12, 가설). 구판의 《通考》 인용, '留二呼'(원문 留三呼), 가짜 이명 '手中指端'을 정정했다.</p>
-<div class="tags-container"><span class="tag">#PC09</span><span class="tag">#중충</span><span class="tag">#정혈</span><span class="tag">#수지신경</span><span class="tag">#응급개규</span><span class="tag">#ARIv3</span></div>
-<div class="card-footer"><span class="category-indicator">경혈별 해부생리</span><div class="btn-group"><a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC09_%EC%A4%91%EC%B6%A9/PC09_%EC%A4%91%EC%B6%A9_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC09_%EC%A4%91%EC%B6%A9/PC09_%EC%A4%91%EC%B6%A9_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="headache" data-search="REPORT 두통침구 종합보고서 동의보감 두통 침구치료 종합 분석 보고서 동의보감 두통종합 TNC 16대두통 침구해부">
-<div class="card-header">
-<span class="code-badge">REPORT</span>
-<span class="status-badge" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">종합 임상 리포트</span>
-</div>
-<h3 class="card-title">두통침구 종합보고서</h3>
-<div class="card-subtitle">동의보감 두통 침구치료 종합 분석 보고서</div>
-<p class="card-desc">16개 원인별 두통 도판 매트릭스 전체 수록. 원인별 임상증상, 주치 경혈, 신경해부학적 반사 경로(삼차신경-경신경 복합체 TNC 등) 완결 분석.</p>
-<div class="tags-container"><span class="tag">#동의보감</span><span class="tag">#두통종합</span><span class="tag">#TNC</span><span class="tag">#16대두통</span><span class="tag">#침구해부</span></div>
-<div class="card-footer"><span class="category-indicator">두통 임상 매트릭스</span><div class="btn-group"><a class="btn-open btn-en" href="04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/Donguibogam_Headache_Acupuncture_Comprehensive_Report.html" target="_blank" title="English Monograph Report"><span class="lang-tag">EN</span><span>English Only</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="headache" data-search="ANALYSIS 두통처방 상세분석 동의보감 두통 침구 처방 상세 분석 리포트 동의보감 처방상세 임상빈도 두통침구">
-<div class="card-header">
-<span class="code-badge">ANALYSIS</span>
-<span class="status-badge" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">처방 상세 리포트</span>
-</div>
-<h3 class="card-title">두통처방 상세분석</h3>
-<div class="card-subtitle">동의보감 두통 침구 처방 상세 분석 리포트</div>
-<p class="card-desc">동의보감 원문 대조 및 두통 유형별 주치 경혈의 빈도, 주치 특성 및 생의학적 기전 상세 대조표.</p>
-<div class="tags-container"><span class="tag">#동의보감</span><span class="tag">#처방상세</span><span class="tag">#임상빈도</span><span class="tag">#두통침구</span></div>
-<div class="card-footer"><span class="category-indicator">두통 임상 매트릭스</span><div class="btn-group"><a class="btn-open btn-en" href="04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/Donguibogam_Headache_Analysis_Report.html" target="_blank" title="English Monograph Report"><span class="lang-tag">EN</span><span>English Only</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="classics" data-search="CLASSICS-1 근육·경락 동일명칭 3대 침구 서적 해부학적 근육·경락 동일명칭 경혈쌍 비교분석 3대원전 혈위통감 증치통감 수혈통고 동일명칭 경혈쌍 v2.7 정제 범주중첩 원전별명 확인 3쌍 가설">
-<div class="card-header">
-<span class="code-badge">CLASSICS-1</span>
-<span class="status-badge" style="background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3);">v2.7 정제 · 해부 실체 가설</span>
-</div>
-<h3 class="card-title">근육·경락 동일명칭</h3>
-<div class="card-subtitle">3대 침구 서적 해부학적 근육·경락 동일명칭 경혈쌍 비교분석</div>
-<p class="card-desc">3대 원전 별명 대조 결과 18쌍 중 원전에서 별명이 확인되는 것은 3쌍이다. 구판의 '주치 100% 일치'는 정량 근거가 없어 '주치 범주 중첩'으로 정정했고, 인접·대칭 위치를 이름 공유의 결과로 본 편향을 명시했다. 해부 결론은 ARI 미산정 가설이다.</p>
-<div class="tags-container"><span class="tag">#3대원전</span><span class="tag">#혈위통감</span><span class="tag">#증치통감</span><span class="tag">#수혈통고</span><span class="tag">#동일명칭</span><span class="tag">#경혈쌍</span><span class="tag">#v2.7정제</span></div>
-<div class="card-footer"><span class="category-indicator">침구원전 비교분석</span><div class="btn-group"><a class="btn-open btn-ko" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EA%B7%BC%EC%9C%A1%EA%B2%BD%EB%9D%BD_%EB%8F%99%EC%9D%BC%EB%AA%85%EC%B9%AD_%EA%B2%BD%ED%98%88%EC%8C%8D_%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EA%B7%BC%EC%9C%A1%EA%B2%BD%EB%9D%BD_%EB%8F%99%EC%9D%BC%EB%AA%85%EC%B9%AD_%EA%B2%BD%ED%98%88%EC%8C%8D_%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="classics" data-search="CLASSICS-2 동일별명 주치혼용 3대 침구 서적 마스터 동일 별명 경혈쌍 주치 혼용 실증 검증 동일별명 주치혼용 문헌오류 고증검증 v2.7 정제 미입증 48쌍 三里 추출오류">
-<div class="card-header">
-<span class="code-badge">CLASSICS-2</span>
-<span class="status-badge" style="background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3);">v2.7 정제 · 원전 확인 1/48쌍</span>
-</div>
-<h3 class="card-title">동일별명 주치혼용</h3>
-<div class="card-subtitle">3대 침구 서적 마스터 동일 별명 경혈쌍 주치 혼용 실증 검증</div>
-<p class="card-desc">구판이 '100% 입증'이라 한 동일 별명 후보 48쌍 중 두 경혈 모두의 별명으로 원전에서 확인된 것은 1쌍(三里)뿐이다. 나머지 대부분은 다른 경혈의 정명이 섞인 추출 오류이거나 원전 미확인으로 '미입증'으로 정정했다.</p>
-<div class="tags-container"><span class="tag">#동일별명</span><span class="tag">#주치혼용</span><span class="tag">#문헌오류</span><span class="tag">#고증검증</span><span class="tag">#v2.7정제</span><span class="tag">#미입증</span></div>
-<div class="card-footer"><span class="category-indicator">침구원전 비교분석</span><div class="btn-group"><a class="btn-open btn-ko" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%EC%A0%84%EC%B2%B4%EB%A7%88%EC%8A%A4%ED%84%B0_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98%ED%98%BC%EC%9A%A9_%EA%B2%80%EC%A6%9D.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%EC%A0%84%EC%B2%B4%EB%A7%88%EC%8A%A4%ED%84%B0_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98%ED%98%BC%EC%9A%A9_%EA%B2%80%EC%A6%9D_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="classics" data-search="CLASSICS-3 24경혈쌍 임상공통점 중국 침구 3대 서적 24 경혈쌍 주치 임상 공통점 종합 심층 분석 24경혈쌍 주치공통점 통계분석 신경생리 v2.7 정제 부분지지 14쌍 58% 전사오류">
-<div class="card-header">
-<span class="code-badge">CLASSICS-3</span>
-<span class="status-badge" style="background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3);">v2.7 정제 · 원전 확인 14/24쌍</span>
-</div>
-<h3 class="card-title">24경혈쌍 임상공통점</h3>
-<div class="card-subtitle">중국 침구 3대 서적 24 경혈쌍 주치 임상 공통점 종합 심층 분석</div>
-<p class="card-desc">24개 경혈쌍 중 원전에서 별명이 확인되는 것은 14쌍(58%)이고, 4쌍은 후대 단일 문헌·전사 오류, 6쌍은 미확인·오독이다. 별명 공유와 주치 혼용 사이의 인과는 검증되지 않았으며, '100% 입증'을 '부분 지지'로 정정했다.</p>
-<div class="tags-container"><span class="tag">#24경혈쌍</span><span class="tag">#주치공통점</span><span class="tag">#통계분석</span><span class="tag">#신경생리</span><span class="tag">#v2.7정제</span><span class="tag">#부분지지</span></div>
-<div class="card-footer"><span class="category-indicator">침구원전 비교분석</span><div class="btn-group"><a class="btn-open btn-ko" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/%EC%A4%91%EA%B5%AD%EC%B9%A8%EA%B5%AC3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EB%B0%8F_24%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98_%EC%9E%84%EC%83%81%EA%B3%B5%ED%86%B5%EC%A0%90_%EC%A2%85%ED%95%A9%EC%8B%AC%EC%B8%B5%EB%B6%84%EC%84%9D.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/%EC%A4%91%EA%B5%AD%EC%B9%A8%EA%B5%AC3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EB%B0%8F_24%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98_%EC%9E%84%EC%83%81%EA%B3%B5%ED%86%B5%EC%A0%90_%EC%A2%85%ED%95%A9%EC%8B%AC%EC%B8%B5%EB%B6%84%EC%84%9D_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="classics" data-search="CLASSICS-4 대장병증 시대별분석 3대 서적 대장병증 이질·설사 침구치료 시대별 분석 및 상렴·하거허 고증합일 대장병증 이질설사 상렴 하거허 하합혈 v2.7 정제 상거허 ST37 LI9 上髎 甄权 圣济总录">
-<div class="card-header">
-<span class="code-badge">CLASSICS-4</span>
-<span class="status-badge" style="background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3);">v2.7 정제 · 상렴 = ST37 명시 50%</span>
-</div>
-<h3 class="card-title">대장병증 시대별분석</h3>
-<div class="card-subtitle">3대 서적 대장병증 이질·설사 침구치료 시대별 분석 및 상렴·하거허 고증합일</div>
-<p class="card-desc">'상렴' 36행 중 상거허(ST37)를 명시한 것은 18행(50%)이고 14행은 LI9 관련이다. 甄权 치험례는 上髎 자침(偏风·腰脚不遂)으로 대장병 근거에서 뺐다. 상렴·하렴 구분 표기는 송대 《圣济总录》에서 시작됐으나 후대가 따르지 않았다.</p>
-<div class="tags-container"><span class="tag">#대장병증</span><span class="tag">#이질설사</span><span class="tag">#상렴</span><span class="tag">#하거허</span><span class="tag">#하합혈</span><span class="tag">#v2.7정제</span></div>
-<div class="card-footer"><span class="category-indicator">침구원전 비교분석</span><div class="btn-group"><a class="btn-open btn-ko" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8C%80%EC%9E%A5%EB%B3%91%EC%A6%9D_%EC%9D%B4%EC%A7%88%EC%84%A4%EC%82%AC_%EC%8B%9C%EB%8C%80%EB%B3%84%EB%B6%84%EC%84%9D_%EB%B0%8F_%EC%83%81%EB%A0%B4%EA%B1%B0%ED%97%88_%EA%B3%A0%EC%A6%9D%ED%95%A9%EC%9D%BC_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8C%80%EC%9E%A5%EB%B3%91%EC%A6%9D_%EC%9D%B4%EC%A7%88%EC%84%A4%EC%82%AC_%EC%8B%9C%EB%8C%80%EB%B3%84%EB%B6%84%EC%84%9D_%EB%B0%8F_%EC%83%81%EB%A0%B4%EA%B1%B0%ED%97%88_%EA%B3%A0%EC%A6%9D%ED%95%A9%EC%9D%BC_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="topic" data-search="사총혈 천성십이혈 四總穴 天星十二穴 천성십일혈 천금십일혈 주요 경혈 구성원리 윤다은 2024 대한한의학회지 피어리뷰 타당도 원위취혈 족삼리 합곡 위중 열결">
-<div class="card-header">
-<span class="code-badge">REVIEW</span>
-<span class="status-badge" style="background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3);">v2.7 정제 · 가설 수준 (피어리뷰)</span>
-</div>
-<h3 class="card-title">사총혈·천성십이혈 구성원리</h3>
-<div class="card-subtitle">윤다은 외(2024) 「주요 경혈 구성원리 고찰」 가설검증 및 피어리뷰</div>
-<p class="card-desc">3대 원전 대조로 연구방법·결과·결론의 타당도 검증. 面口合谷收 인용 오류, 천성십일혈(1329)→사총혈 연대 역전, 환도(GB30) 원위혈 반례, 분절성 vs 비분절성 원위 취혈 기전 분석.</p>
-<div class="tags-container"><span class="tag">#사총혈</span><span class="tag">#천성십이혈</span><span class="tag">#피어리뷰</span><span class="tag">#원위취혈</span><span class="tag">#연대고증</span></div>
-<div class="card-footer"><span class="category-indicator">주제별 고증연구</span><div class="btn-group"><a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%82%AC%EC%B4%9D%ED%98%88_%EC%B2%9C%EC%84%B1%EC%8B%AD%EC%9D%B4%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%82%AC%EC%B4%9D%ED%98%88_%EC%B2%9C%EC%84%B1%EC%8B%AD%EC%9D%B4%ED%98%88_%EA%B5%AC%EC%84%B1%EC%9B%90%EB%A6%AC_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EB%B0%8F_%ED%94%BC%EC%96%B4%EB%A6%AC%EB%B7%B0_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%82%AC%EC%B4%9D%ED%98%88_%EC%B2%9C%EC%84%B1%EC%8B%AD%EC%9D%B4%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%82%AC%EC%B4%9D%ED%98%88_%EC%B2%9C%EC%84%B1%EC%8B%AD%EC%9D%B4%ED%98%88_%EA%B5%AC%EC%84%B1%EC%9B%90%EB%A6%AC_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EB%B0%8F_%ED%94%BC%EC%96%B4%EB%A6%AC%EB%B7%B0_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="topic" data-search="GV14-GV13 대추 vs 도도 대추(GV14) vs 도도(GV13) 수혈 고증 및 신경해부학적 실체 판명 종합보고서 대추 도도 GV14 GV13 융추 경추극돌기 v2.7 정제 骨名 穴名 혼용 骨蒸 가설">
-<div class="card-header">
-<span class="code-badge">GV14-GV13</span>
-<span class="status-badge" style="background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3);">v2.7 정제 · 해부 실체 가설 (ARI 미산정)</span>
-</div>
-<h3 class="card-title">대추 vs 도도</h3>
-<div class="card-subtitle">대추(GV14) vs 도도(GV13) 수혈 고증 및 신경해부학적 실체 판명 종합보고서</div>
-<p class="card-desc">원전 논지는 혈 위치의 이동이 아니라 骨名(T1)과 穴名의 혼용이다. '도도 一名 大椎'와 黄龙祥 인용문은 3대 원전에서 확인되지 않아 정정했고, 도도의 骨蒸 주치는 대추 주치가 옮겨 간 것이다. 신경 실체 판정은 ARI를 매기지 않은 가설이다.</p>
-<div class="tags-container"><span class="tag">#대추</span><span class="tag">#도도</span><span class="tag">#GV14</span><span class="tag">#GV13</span><span class="tag">#융추</span><span class="tag">#경추극돌기</span><span class="tag">#v2.7정제</span><span class="tag">#骨名穴名</span></div>
-<div class="card-footer"><span class="category-indicator">주제별 고증연구</span><div class="btn-group"><a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%8C%80%EC%B6%94_%EB%8F%84%EB%8F%84%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%8C%80%EC%B6%94_vs_%EB%8F%84%EB%8F%84_%EC%88%98%ED%98%88%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%ED%95%B4%EB%B6%80%ED%95%99_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%8C%80%EC%B6%94_%EB%8F%84%EB%8F%84%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%8C%80%EC%B6%94_vs_%EB%8F%84%EB%8F%84_%EC%88%98%ED%98%88%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%ED%95%B4%EB%B6%80%ED%95%99_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="topic" data-search="EX-HN 숭골 (崇骨) 숭골(崇骨) 경외기혈 문헌 고증 및 해부학적 가설검증 종합보고서 숭골 경외기혈 가설검증 C6-C7 v2.7 정제 C7 허임 针灸经验方 1644 骨名 가설">
-<div class="card-header">
-<span class="code-badge">EX-HN</span>
-<span class="status-badge" style="background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3);">v2.7 정제 · 가설 (ARI 미산정)</span>
-</div>
-<h3 class="card-title">숭골 (崇骨)</h3>
-<div class="card-subtitle">숭골(崇骨) 경외기혈 문헌 고증 및 해부학적 가설검증 종합보고서</div>
-<p class="card-desc">《通考》상 숭골은 본래 骨名(C7)이며, 穴名으로는 허임 《针灸经验方》(1644)에 처음 나오고 위치는 C7 극돌기 끝이다. 원전에 고유 주치·자법이 없어 구판의 'C6~C7 공인 기혈 확정 판명'을 해부 실체 가설로 정정했다.</p>
-<div class="tags-container"><span class="tag">#숭골</span><span class="tag">#경외기혈</span><span class="tag">#가설검증</span><span class="tag">#C6-C7</span><span class="tag">#v2.7정제</span><span class="tag">#C7</span></div>
-<div class="card-footer"><span class="category-indicator">주제별 고증연구</span><div class="btn-group"><a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%88%AD%EA%B3%A8%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%88%AD%EA%B3%A8_%EA%B2%BD%EC%99%B8%EA%B8%B0%ED%98%88_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%88%AD%EA%B3%A8%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%88%AD%EA%B3%A8_%EA%B2%BD%EC%99%B8%EA%B8%B0%ED%98%88_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="topic" data-search="GB39-ASIA 현종 ASIA 실체 GB39 현종 해부학적 실체 판명 연구 (ASIA 리포트) GB39 현종 ASIA 영문학술 통합 정본 안내 GB39 개별보고서">
-<div class="card-header">
-<span class="code-badge">GB39-ASIA</span>
-<span class="status-badge" style="background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3);">v2.7 통합 · 정본은 GB39 개별 보고서</span>
-</div>
-<h3 class="card-title">현종 ASIA 실체</h3>
-<div class="card-subtitle">GB39 현종 해부학적 실체 판명 연구 (ASIA 리포트)</div>
-<p class="card-desc">개별 경혈 보고서 GB39와 98% 중복이어서 그쪽을 단일 정본으로 v2.7 개정하고 이 사본은 보관했다(안내 문서). 정본 결론: 고전 맥동점 51.2 (D·H) / WHO 비골 전연 55 (C), Δ≈20~35mm 분기.</p>
-<div class="tags-container"><span class="tag">#GB39</span><span class="tag">#현종</span><span class="tag">#ASIA</span><span class="tag">#영문학술</span><span class="tag">#통합</span></div>
-<div class="card-footer"><span class="category-indicator">주제별 고증연구</span><div class="btn-group"><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%ED%98%84%EC%A2%85%ED%98%88_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EB%AC%B8%ED%97%8C%EC%97%B0%EA%B5%AC/02_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EC%8B%A4%EC%B2%B4%EB%B6%84%EC%84%9D_ASIA/GB39_Xuanzhong_Anatomical_Analysis.html" target="_blank" title="English Monograph Report"><span class="lang-tag">EN</span><span>English Only</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="topic" data-search="LR05-BL40 중도·요유·위중 중도·요유·위중 연계 고증 및 임상배혈 기전 요약 보고서 중도 요유 위중 임상배혈 비뇨생식 v2.7 정제 中郄 오록 筋会 양릉천 水热穴论 针灸大全">
-<div class="card-header">
-<span class="code-badge">LR05-BL40</span>
-<span class="status-badge" style="background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3);">v2.7 정제 · 원전 이명 연결 1쌍</span>
-</div>
-<h3 class="card-title">중도·요유·위중</h3>
-<div class="card-subtitle">중도·요유·위중 연계 고증 및 임상배혈 기전 요약 보고서</div>
-<p class="card-desc">원전에서 확인되는 이명 연결은 중도–위중 한 쌍이다(중도 별명 中郄가 1957년 남경 《针灸学》에서 위중 별명으로 잘못 실림). 요유–위중은 《素问·水热穴论》 병렬과 《针灸大全》 처방 병용 관계이며, 위중 '筋会'는 오류(筋会 = 양릉천)다.</p>
-<div class="tags-container"><span class="tag">#중도</span><span class="tag">#요유</span><span class="tag">#위중</span><span class="tag">#임상배혈</span><span class="tag">#비뇨생식</span><span class="tag">#v2.7정제</span><span class="tag">#中郄</span></div>
-<div class="card-footer"><span class="category-indicator">주제별 고증연구</span><div class="btn-group"><a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%A4%91%EB%8F%84_%EC%9A%94%EC%9C%A0_%EC%9C%84%EC%A4%91_%EA%B3%A0%EC%A6%9D/%EC%A4%91%EB%8F%84_%EC%9A%94%EC%9C%A0_%EC%9C%84%EC%A4%91_%EC%97%B0%EA%B3%84_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%B0%B0%ED%98%88_%EC%9A%94%EC%95%BD%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%A4%91%EB%8F%84_%EC%9A%94%EC%9C%A0_%EC%9C%84%EC%A4%91_%EA%B3%A0%EC%A6%9D/%EC%A4%91%EB%8F%84_%EC%9A%94%EC%9C%A0_%EC%9C%84%EC%A4%91_%EC%97%B0%EA%B3%84_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%B0%B0%ED%98%88_%EC%9A%94%EC%95%BD%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
-<div class="card" data-category="topic" data-search="LI18 부돌 (扶突) 부돌 별칭 풍부 문헌 출처 및 고증 분석 리포트 부돌 풍부 LI18 흉쇄유돌근 v2.7 정제 舌本 水穴 水泉 뇌호 GV17 外台">
-<div class="card-header">
-<span class="code-badge">LI18</span>
-<span class="status-badge" style="background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3);">v2.7 정제 · 舌本 경유 연결</span>
-</div>
-<h3 class="card-title">부돌 (扶突)</h3>
-<div class="card-subtitle">부돌 별칭 풍부 문헌 출처 및 고증 분석 리포트</div>
-<p class="card-desc">부돌의 별명은 水穴·水泉뿐이고, 풍부와는 《灵枢》 처방의 舌本(풍부 별명)을 통해서만 이어진다. 부돌 주치로 번역했던 《外台》 卷39 조문은 실제로 뇌호(GV17)의 주치이며, 《明堂经》 편자와 王焘의 두 단계 오류를 추적했다.</p>
-<div class="tags-container"><span class="tag">#부돌</span><span class="tag">#풍부</span><span class="tag">#LI18</span><span class="tag">#흉쇄유돌근</span><span class="tag">#v2.7정제</span><span class="tag">#舌本</span></div>
-<div class="card-footer"><span class="category-indicator">주제별 고증연구</span><div class="btn-group"><a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B6%80%EB%8F%8C%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%B6%80%EB%8F%8C_%EB%B3%84%EC%B9%AD_%ED%92%8D%EB%B6%80_%EB%AC%B8%ED%97%8C%EC%B6%9C%EC%B2%98_%EB%B0%8F_%EA%B3%A0%EC%A6%9D%EB%B6%84%EC%84%9D.html" target="_blank" title="한국어 정본 학술 보고서 열람"><span class="lang-tag">KO</span><span>한국어</span></a><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B6%80%EB%8F%8C%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%B6%80%EB%8F%8C_%EB%B3%84%EC%B9%AD_%ED%92%8D%EB%B6%80_%EB%AC%B8%ED%97%8C%EC%B6%9C%EC%B2%98_%EB%B0%8F_%EA%B3%A0%EC%A6%9D%EB%B6%84%EC%84%9D_en.html" target="_blank" title="English Report with Traditional Chinese (繁體字) Collation"><span class="lang-tag">EN</span><span>English</span><svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div>
-</div>
 
-<div class="no-results" id="noResults">
-      검색 조건과 일치하는 분석 보고서가 없습니다.
+  <!-- Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <a class="brand" href="index.html">
+        <div class="brand-icon">
+          <svg fill="none" height="24" stroke="#FFFFFF" stroke-width="2.2" viewBox="0 0 24 24" width="24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>ACUPOINT ANATOMY PORTAL <span class="badge-ver">v2.7</span></h1>
+          <p>경혈 해부생리학 실체 판명 &amp; 침구 임상 분석 아카이브</p>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn active" data-lang="both" title="한글과 영어 모두 표시 (Bilingual Display)">
+            <span>🌐</span> Both
+          </button>
+          <button class="lang-btn" data-lang="ko" title="한국어만 표시 (Korean Only)">
+            <span>🇰🇷</span> 한국어
+          </button>
+          <button class="lang-btn" data-lang="en" title="English Only">
+            <span>🇺🇸</span> English
+          </button>
+        </div>
+        <span class="live-badge">
+          <span class="live-dot"></span>Online • Framework v2.7 • ARI v3.0
+        </span>
+        <a class="btn-github" href="https://github.com/jaehyokim-sketch/acupoint_anatomy" target="_blank" rel="noopener noreferrer">
+          <svg fill="currentColor" height="15" viewBox="0 0 24 24" width="15"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
     </div>
-</main>
-<footer>
-<div class="footer-content">
-<div>
-<strong>Acupoint Anatomy &amp; Clinical Acupuncture Online Portal</strong> | 연구 책임: jaehyokim-sketch
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <span class="hero-pill">Acupoint Reality Index &amp; Clinical Matrix</span>
+    <h2>
+      신경해부학적 실체 판명과 <span class="gradient-text">침구 임상 고증 아카이브</span>
+      <span class="hero-en-sub">Anatomical Substrate Identification &amp; Clinical Monograph Portal</span>
+    </h2>
+    <div class="hero-descriptions">
+      <p class="hero-desc-ko">
+        핵심 3대 원전(혈위통감·증치통감·수혈통고) 전수 고증, 한대(漢代) 도량형 실측 심도(1푼=2.3mm) 및 Layer B 4계층 참조 등록부와 통합 생의학 DB(PubMed·Crossref)에 기반하고, 독립 2인 이중 채점(ARI v3.0)으로 판정한 경혈 해부생리 및 동의보감 두통 임상 매트릭스 공식 온라인 포털입니다.
+      </p>
+      <p class="hero-desc-en">
+        The official digital library integrating classical textual criticism from the Three Acupuncture Canons (*Tongjian*, *Zhengzhi Tongjian*, *Tongkao*), ancient Han needling depth (1 fen = 2.3 mm), Layer B biomedical registry, and dual-assessor ARI v3.0 reliability scoring for acupoint substrates (Layer 1–5) and *Donguibogam* clinical matrix.
+      </p>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat-card">
+        <span class="stat-num">27편 (54종)</span>
+        <span class="stat-label-ko">한·영 듀얼 전문 리포트</span>
+        <span class="stat-label-en">27 Dual-Language Monographs</span>
       </div>
-<div>
-        스킬 로직 버전: Framework v2.7 · ARI v3.0 (2026-10-04 개정) · Rank 0~7 통합 프로토콜 | 호스팅: GitHub Pages
+      <div class="stat-card">
+        <span class="stat-num">14개소</span>
+        <span class="stat-label-ko">핵심 경혈 Layer 1~5 실체</span>
+        <span class="stat-label-en">14 Key Points Layer 1~5 Verified</span>
       </div>
-</div>
-</footer>
-<script>
-    const searchInput = document.getElementById('searchInput');
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const cards = document.querySelectorAll('.card');
-    const noResults = document.getElementById('noResults');
+      <div class="stat-card">
+        <span class="stat-num">16패턴</span>
+        <span class="stat-label-ko">동의보감 두통 신경해부 매트릭스</span>
+        <span class="stat-label-en">16 Headache Pattern Matrix</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">2인 독립</span>
+        <span class="stat-label-ko">ARI v3.0 이중 채점 &amp; B-Check</span>
+        <span class="stat-label-en">Dual Scoring &amp; Sensitivity Testing</span>
+      </div>
+    </div>
+  </section>
 
-    let currentCategory = 'all';
-    let currentQuery = '';
+  <!-- Controls: Search & Category Filter -->
+  <section class="controls">
+    <div class="search-row">
+      <div class="search-box">
+        <input class="search-input" id="searchInput" placeholder="검색 / Search code (ST36, LU06, GV14), point name, nerve, indication..." type="text"/>
+        <svg class="search-icon" fill="none" height="19" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" width="19"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+        <button class="search-clear" id="searchClear" title="검색어 지우기">✕</button>
+      </div>
+      <div class="results-count-badge" id="resultsCount">
+        Showing 27 / 27
+      </div>
+    </div>
 
-    function filterCards() {
-      let visibleCount = 0;
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        const searchText = card.getAttribute('data-search').toLowerCase();
+    <div class="filter-tabs">
+      <button class="tab-btn active" data-filter="all">
+        <span>전체 · All</span> <span class="tab-count">27</span>
+      </button>
+      <button class="tab-btn" data-filter="acupoint">
+        <span>경혈 해부생리 · Acupoints</span> <span class="tab-count">13</span>
+      </button>
+      <button class="tab-btn" data-filter="classics">
+        <span>침구원전 비교 · Classics</span> <span class="tab-count">4</span>
+      </button>
+      <button class="tab-btn" data-filter="topic">
+        <span>주제별 고증 · Thematic</span> <span class="tab-count">7</span>
+      </button>
+      <button class="tab-btn" data-filter="headache">
+        <span>두통 매트릭스 · Headache</span> <span class="tab-count">2</span>
+      </button>
+      <button class="tab-btn" data-filter="policy">
+        <span>의료법제 정책 · Policy</span> <span class="tab-count">1</span>
+      </button>
+    </div>
+  </section>
 
-        const matchCategory = (currentCategory === 'all' || category === currentCategory);
-        const matchQuery = (currentQuery === '' || searchText.includes(currentQuery));
+  <!-- Grid Section -->
+  <main class="grid-section">
+    <div class="cards-grid" id="cardsGrid">
+      <!-- Card: POLICY · 法制 -->
+      <div class="card" data-category="policy" data-search="시체해부법 시행령 제36725호 시행규칙 제01204호 법률 제21107호 한의학 교육권 한의사 직능 정상화 카데바 질병관리청 교육목적 시체제공기관 교육을위한시체제공기관 시체해부심의위원회 한의사 위원 명문화 단독해부 지도하해부 적법성 입법청원 Cadaver Act Traditional Korean Medicine TKM KDCA Legislation Policy">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4);">POLICY · 法制</span>
+          <span class="status-badge" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">2026.10.12 확정 실정법 반영 · MOHW Decree No. 01204</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">시체해부법 개정과 한의학 교육권 및 직능 정상화 방안</h3>
+          <div class="card-title-en">Cadaver Act Amendment & Educational Rights for Traditional Korean Medicine</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">법률 제21107호 · 대통령령 제36725호 · 보건복지부령 제01204호 전면 시행 종합 정책분석</span>
+            <span class="sub-en">Comprehensive Policy Analysis on Act No. 21107 & Presidential Decree No. 36725</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">개정 시체해부법령의 한의학 조항 전면 분석: 한의대 교육을 위한 시체제공기관 질병청 허가 획득, 시체해부심의위원회 한의사 위원 명문화(규칙 제1조의2), 일반 한의사 해부 적법성 판단(단독 해부 불가 vs 대학 지도하 해부 합법) 및 법 제2조제1호 개정 2단계 로드맵 제시.</span>
+          <span class="desc-en">In-depth analysis of amended Korean Cadaver Dissection legislation: licensing of TKM educational cadaver institutions under KDCA, formal appointment of TKM doctors to Ethics Review Committees, legality of dissection under university guidance, and two-stage statutory amendment roadmap.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#시체해부법</span><span class="tag">#CadaverAct</span><span class="tag">#교육목적시체제공기관</span><span class="tag">#TKM_Rights</span><span class="tag">#보건복지부령제01204호</span><span class="tag">#질병관리청</span><span class="tag">#카데바실습</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>의료법제 정책 · Health Policy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="05_%EC%9D%98%EB%A3%8C%ED%96%89%EC%A0%95_%EB%B0%8F_%EB%B2%95%EC%A0%9C%EB%8F%84_%EC%A0%95%EC%B1%85%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%8B%9C%EC%B2%B4%ED%95%B4%EB%B6%80%EB%B2%95_%EA%B0%9C%EC%A0%95%EC%97%90_%EB%94%B0%EB%A5%B8_%ED%95%9C%EC%9D%98%ED%95%99_%EA%B5%90%EC%9C%A1%EA%B6%8C_%ED%99%95%EB%B3%B4_%EB%B0%8F_%ED%95%9C%EC%9D%98%EC%82%AC_%EC%A7%81%EB%8A%A5_%EC%A0%95%EC%83%81%ED%99%94_%EB%B0%A9%EC%95%88_%EC%B5%9C%EC%A2%85%EB%B3%B8.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="05_%EC%9D%98%EB%A3%8C%ED%96%89%EC%A0%95_%EB%B0%8F_%EB%B2%95%EC%A0%9C%EB%8F%84_%EC%A0%95%EC%B1%85%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%8B%9C%EC%B2%B4%ED%95%B4%EB%B6%80%EB%B2%95_%EA%B0%9C%EC%A0%95%EC%97%90_%EB%94%B0%EB%A5%B8_%ED%95%9C%EC%9D%98%ED%95%99_%EA%B5%90%EC%9C%A1%EA%B6%8C_%ED%99%95%EB%B3%B4_%EB%B0%8F_%ED%95%9C%EC%9D%98%EC%82%AC_%EC%A7%81%EB%8A%A5_%EC%A0%95%EC%83%81%ED%99%94_%EB%B0%A9%EC%95%88_%EC%B5%9C%EC%A2%85%EB%B3%B8_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
 
-        if (matchCategory && matchQuery) {
-          card.style.display = 'flex';
-          visibleCount++;
-        } else {
-          card.style.display = 'none';
+      <!-- Card: LU03-LU04 -->
+      <div class="card" data-category="acupoint" data-search="LU03 LU04 천부 협백 Tianfu Xiabai 天府 俠白 수태음폐경 노신경 근피신경 상완이두근 ARI v3.0 C D 상완동정맥 고전점 WHO점 분기">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">LU03-LU04</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · LU03: 56.2~62.5 (C) / LU04: 41.2~43.8 (D)</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">천부 (天府) · 협백 (俠白) 통합</h3>
+          <div class="card-title-en">Tianfu (天府, LU03) & Xiabai (俠白, LU04)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">LU03·LU04 해부생리학적 실체 판명 통합보고서</span>
+            <span class="sub-en">Integrated Anatomical Substrate & Neuroreflex Verification Report</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">⚠ 천부 고전점 = 위팔두갈래근 안쪽 가쪽홈(ARI-Core 56.2~62.5, C), WHO점 = 근육 가쪽 모서리 바깥(41.2~43.8, D). 두 점의 거리가 15mm 이상 벌어져 분기 분석했다. 근피신경과 위팔두갈래근(B), 혈관신경다발 접근 시 자침 심도 주의.</span>
+          <span class="desc-en">⚠ Classical Tianfu point aligns with medial groove of biceps brachii (ARI 56.2–62.5, C), whereas WHO standard point lies lateral to biceps border (41.2–43.8, D). Spatial displacement Δ > 15 mm triggers split analysis; focuses on musculocutaneous nerve and brachial bundle precautions.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#LU03</span><span class="tag">#LU04</span><span class="tag">#천부</span><span class="tag">#협백</span><span class="tag">#Tianfu</span><span class="tag">#Xiabai</span><span class="tag">#근피신경</span><span class="tag">#MusculocutaneousNerve</span><span class="tag">#상완이두근</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU03-LU04/LU03-LU04_%EC%B2%9C%EB%B6%80-%ED%98%91%EB%B0%B1_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%ED%86%B5%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU03-LU04/LU03-LU04_%EC%B2%9C%EB%B6%80-%ED%98%91%EB%B0%B1_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%ED%86%B5%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: ST36 -->
+      <div class="card" data-category="acupoint" data-search="ST36 족삼리 Zusanli 足三里 족양명위경 깊은종아리신경 앞정강동맥 앞정강근 장지신근 ARI v3.0 B 77.5 체성내장반사 미주신경 부신축 FMA 온톨로지 초음파">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">ST36</span>
+          <span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">ARI v3.0 · 77.5 (B) · SI 75 · FMA 5.1 & US</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">족삼리 (足三里)</h3>
+          <div class="card-title-en">Zusanli (足三里, ST36)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">ST36 족삼리 해부생리학 실체 판명 보고서</span>
+            <span class="sub-en">ST36 Zusanli Anatomical Substrate & Neuroreflex Verification Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">깊은종아리신경·앞정강동정맥 혈관신경다발과 앞정강근. 체성-내장 반사는 B-Check 9/12로 마우스 실증과 임상 특이성이 부합(B3-15~17). FMA 온톨로지 신경 전달망 및 근골격 초음파(TI 1.09) 실측 데이터를 결합한 표준 정본 보고서.</span>
+          <span class="desc-en">Neurovascular bundle of deep peroneal nerve and anterior tibial artery within tibialis anterior. Somato-autonomic reflex achieves B-Check 9/12 with mouse models and clinical specificity. Incorporates FMA 5.1 ontology neural chain and musculoskeletal ultrasound (TI 1.09) metrics.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#ST36</span><span class="tag">#족삼리</span><span class="tag">#Zusanli</span><span class="tag">#깊은종아리신경</span><span class="tag">#DeepPeronealNerve</span><span class="tag">#앞정강근</span><span class="tag">#TibialisAnterior</span><span class="tag">#FMA</span><span class="tag">#초음파</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/ST_%EC%A1%B1%EC%96%91%EB%AA%85%EC%9C%84%EA%B2%BD/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/ST_%EC%A1%B1%EC%96%91%EB%AA%85%EC%9C%84%EA%B2%BD/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: SP05 -->
+      <div class="card" data-category="acupoint" data-search="SP05 상구 Shangqiu 商丘 족태음비경 복사뼈 안쪽앞아래 내측복사 거골 주상골 삼각인대 복재신경 족배정맥망 침자심도 ARI v3.0 B 75.0">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">SP05</span>
+          <span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">ARI v3.0 · 75.0 (B) · SI 100</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">상구 (商丘)</h3>
+          <div class="card-title-en">Shangqiu (商丘, SP05)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">SP05 상구 해부생리학 실체 판명 분석 모노그래프</span>
+            <span class="sub-en">SP05 Shangqiu Anatomical Substrate & Neuroreflex Verification Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">안쪽복사 앞아래 오목한 곳, 발배뼈 거친면과 안쪽복사 사이 함요부. 얕은층은 두렁신경(L3-L4)과 안쪽발등정맥망, 깊은층은 삼각인대와 발목관절주머니. 한대 3푼=6.9mm 자침 깊이는 관절강 침입을 피하는 안전 심도(SI 100).</span>
+          <span class="desc-en">Depression distal and inferior to medial malleolus, tuberosity of navicular bone. Superficial layer engages saphenous nerve (L3–L4) and medial dorsal venous network; deep layer involves deltoid ligament. Ancient needling depth (3 fen = 6.9 mm) maintains high intra-articular safety (SI 100).</span>
+        </p>
+        <div class="tags-container"><span class="tag">#SP05</span><span class="tag">#상구</span><span class="tag">#Shangqiu</span><span class="tag">#두렁신경</span><span class="tag">#SaphenousNerve</span><span class="tag">#안쪽복사</span><span class="tag">#삼각인대</span><span class="tag">#DeltoidLigament</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/SP_%EC%A1%B1%ED%83%9C%EC%9D%8C%EB%B9%84%EA%B2%BD/SP05_%EC%83%81%EA%B5%AC/SP05_%EC%83%81%EA%B5%AC_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/SP_%EC%A1%B1%ED%83%9C%EC%9D%8C%EB%B9%84%EA%B2%BD/SP05_%EC%83%81%EA%B5%AC/SP05_%EC%83%81%EA%B5%AC_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: LU09 -->
+      <div class="card" data-category="acupoint" data-search="LU09 태연 Taiyuan 太淵 수태음폐경 노쪽손목굽힘근 노동맥 가쪽피하신경 맥회 ARI v3.0 C 68.75 SI 25 노동맥 천자 금기">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">LU09</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · 68.75 (C) · SI 25 ⚠ 노동맥접촉</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">태연 (太淵)</h3>
+          <div class="card-title-en">Taiyuan (太淵, LU09)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">LU09 태연 해부생리학 실체 판명 분석 모노그래프</span>
+            <span class="sub-en">LU09 Taiyuan Anatomical Substrate & Neuroreflex Verification Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">손목 앞쪽 손목주름 위, 노동맥 박동처와 노쪽손목굽힘근 힘줄 사이. 가쪽피하신경 말초지와 노동맥 신경총 분포. 고전 '脈會' 원리 규명 및 동맥 천자를 피하는 사자(斜刺)·천자(淺刺) 자침 안전 가이드라인 수립(SI 25 ⚠).</span>
+          <span class="desc-en">Radial wrist crease between radial artery and flexor carpi radialis tendon. Involves lateral antebrachial cutaneous nerve and radial periarterial plexus. Explains classical 'Vessel Convergence' (脈會) and establishes oblique shallow needling guidelines to prevent arterial injury (SI 25 ⚠).</span>
+        </p>
+        <div class="tags-container"><span class="tag">#LU09</span><span class="tag">#태연</span><span class="tag">#Taiyuan</span><span class="tag">#노동맥</span><span class="tag">#RadialArtery</span><span class="tag">#노쪽손목굽힘근</span><span class="tag">#맥회</span><span class="tag">#VesselMeeting</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU09_%ED%83%9C%EC%97%B0/LU09_%ED%83%9C%EC%97%B0_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU09_%ED%83%9C%EC%97%B0/LU09_%ED%83%9C%EC%97%B0_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: LU06 -->
+      <div class="card" data-category="acupoint" data-search="LU06 공최 Kongzui 孔最 수태음폐경 원호선 척택 태연 극혈 가쪽피하신경 원통엎침근 노쪽손목굽힘근 ARI v3.0 C 67.5 SI 75 급성각혈">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">LU06</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · 67.5 (C) · SI 75 · 극혈(郄穴)</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">공최 (孔最)</h3>
+          <div class="card-title-en">Kongzui (孔最, LU06)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">LU06 공최 해부생리학 실체 판명 보고서</span>
+            <span class="sub-en">LU06 Kongzui Anatomical Substrate & Xi-Cleft Point Analysis Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">척택과 태연을 잇는 선 위, 손목주름 위 7촌. 가쪽피하신경과 노신경 얕은가지, 원침근과 위팔노근 사이 근막 구획. 폐경의 극혈(郄穴)로서 급성 기관지·호흡기 염증 및 각혈 억제 반사 기전을 생의학적으로 고증.</span>
+          <span class="desc-en">Line joining Chize (LU05) and Taiyuan (LU09), 7 cun above wrist crease. Lateral antebrachial cutaneous nerve, superficial radial nerve, brachioradialis and pronator teres. Demonstrates biomedical reflex mechanisms of Xi-Cleft point for acute hemoptysis and pulmonary inflammation.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#LU06</span><span class="tag">#공최</span><span class="tag">#Kongzui</span><span class="tag">#극혈</span><span class="tag">#XiCleft</span><span class="tag">#가쪽피하신경</span><span class="tag">#위팔노근</span><span class="tag">#급성호흡기</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU06_%EA%B3%B5%EC%B5%9C/LU06_%EA%B3%B5%EC%B5%9C_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LU_%EC%88%98%ED%83%9C%EC%9D%8C%ED%8F%90%EA%B2%BD/LU06_%EA%B3%B5%EC%B5%9C/LU06_%EA%B3%B5%EC%B5%9C_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: SP06 -->
+      <div class="card" data-category="acupoint" data-search="SP06 삼음교 Sanyinjiao 三陰交 족태음비경 정골 3촌 8촌 명당경 교차 분기 정강신경 뒤정강동맥 부인과 비뇨생식 ARI v3.0 B 75.0 SI 100">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">SP06</span>
+          <span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">ARI v3.0 · T2: 75.0 (B) / T1: 41.3 (D) · SI 100</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">삼음교 (三陰交)</h3>
+          <div class="card-title-en">Sanyinjiao (三陰交, SP06)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">SP06 삼음교 해부생리학 실체 판명 보고서</span>
+            <span class="sub-en">SP06 Sanyinjiao Anatomical Substrate & Dual Tier Collation Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">고전 황제명당경 8촌 정위(T1, 41.3, D)와 천금·현대 3촌 정위(T2, 75.0, B) 공간 변위(Δ ≈ 115mm) 분기 검증. 정강신경과 뒤정강동맥, 긴발가락굽힘근. B-Check 10/12로 골반강 자율신경·비뇨생식기 조절 반사 확정 기술.</span>
+          <span class="desc-en">Resolves spatial displacement (Δ ≈ 115 mm) between Mingtang 8-cun location (Tier 1, 41.3, D) and modern 3-cun standard (Tier 2, 75.0, B). Involves tibial nerve, posterior tibial artery, flexor digitorum longus. B-Check 10/12 confirms pelvic autonomic and urogenital reflex specificity.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#SP06</span><span class="tag">#삼음교</span><span class="tag">#Sanyinjiao</span><span class="tag">#정강신경</span><span class="tag">#TibialNerve</span><span class="tag">#뒤정강동맥</span><span class="tag">#비뇨생식반사</span><span class="tag">#삼음교차</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/SP_%EC%A1%B1%ED%83%9C%EC%9D%8C%EB%B9%84%EA%B2%BD/SP06_%EC%82%BC%EC%9D%8C%EA%B5%90/SP06_%EC%82%BC%EC%9D%8C%EA%B5%90_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/SP_%EC%A1%B1%ED%83%9C%EC%9D%8C%EB%B9%84%EA%B2%BD/SP06_%EC%82%BC%EC%9D%8C%EA%B5%90/SP06_%EC%82%BC%EC%9D%8C%EA%B5%90_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: LI04 -->
+      <div class="card" data-category="acupoint" data-search="LI04 합곡 Hegu 合谷 수양명대장경 제1등쪽뼈사이근 노신경 얕은가지 정중신경 손등정맥망 사총혈 안면두통 ARI v3.0 C 68.75 SI 100">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">LI04</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · T2: 68.75 (C) / T1: 61.25 (C) · SI 100</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">합곡 (合谷)</h3>
+          <div class="card-title-en">Hegu (合谷, LI04)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">LI04 합곡 해부생리학 실체 판명 보고서</span>
+            <span class="sub-en">LI04 Hegu Anatomical Substrate & Facial Pain Reflex Verification Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">제1등쪽뼈사이근(First dorsal interosseous)과 엄지모음근. 노신경 얕은가지와 자신경 심지. 고전 호구(虎口) 적백육제점(T1)과 제2중수골 중점 가쪽(T2) 대조. 삼차신경 척수핵(SpV) 투사를 통한 두면부 진통 반사 B-Check 9/12 부합.</span>
+          <span class="desc-en">First dorsal interosseous muscle and adductor pollicis. Innervated by superficial radial and deep ulnar nerves. Compares classical web margin (Tier 1) and mid-second metacarpal lateral border (Tier 2). Trigeminal spinal nucleus projection explains facial analgesia (B-Check 9/12).</span>
+        </p>
+        <div class="tags-container"><span class="tag">#LI04</span><span class="tag">#합곡</span><span class="tag">#Hegu</span><span class="tag">#제1등쪽뼈사이근</span><span class="tag">#FirstDorsalInterosseous</span><span class="tag">#노신경</span><span class="tag">#삼차신경진통</span><span class="tag">#사총혈</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LI_%EC%88%98%EC%96%91%EB%AA%85%EB%8C%80%EC%9E%A5%EA%B2%BD/LI04_%ED%95%A9%EA%B3%A1/LI04_%ED%95%A9%EA%B3%A1_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/LI_%EC%88%98%EC%96%91%EB%AA%85%EB%8C%80%EC%9E%A5%EA%B2%BD/LI04_%ED%95%A9%EA%B3%A1/LI04_%ED%95%A9%EA%B3%A1_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: ST25 · CV4 -->
+      <div class="card" data-category="topic" data-search="ST25 CV4 천추 관원 모혈 분절 정합성 Tianshu Guanyuan 복부 대장 소장 복직근 하복벽동정맥 자율신경 장간막신경절 골반신경절 ARI v3.0 B 71.25 C 67.5 SI 25 복막천자주의">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">ST25 · CV4</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · ST25: 71.25 (B) / CV4: 67.5 (C) · SI 25 ⚠</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">천추·관원 모혈분절</h3>
+          <div class="card-title-en">Tianshu (ST25) & Guanyuan (CV4) Front-Mu Segments</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">천추·관원 모혈 분절정합성 및 신경생리학적 작용기전 고증 보고서</span>
+            <span class="sub-en">Historical & Segmental Congruence Analysis of Front-Mu Acupoints</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">배꼽 양옆 2촌 천추(ST25, T10 분절, 대장모혈)와 배꼽 아래 3촌 관원(CV4, T12-L1 분절, 소장모혈)의 분절 모델 정합성 검증. 복직근 및 하복벽동정맥. 관원의 2촌(46mm) 심자 시 복막 관통 위험 및 골반신경절 부교감 매개 기전 규명(SI 25 ⚠).</span>
+          <span class="desc-en">Evaluates segmental model congruence for Tianshu (ST25, T10, Large Intestine Mu) and Guanyuan (CV4, T12–L1, Small Intestine Mu). Rectus abdominis, epigastric vessels. Highlights peritoneal perforation risks at 46 mm depth and pelvic parasympathetic pathways (SI 25 ⚠).</span>
+        </p>
+        <div class="tags-container"><span class="tag">#ST25</span><span class="tag">#CV4</span><span class="tag">#천추</span><span class="tag">#관원</span><span class="tag">#Tianshu</span><span class="tag">#Guanyuan</span><span class="tag">#모혈</span><span class="tag">#FrontMu</span><span class="tag">#자율신경반사</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>주제별 고증연구 · Thematic Collation</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%B2%9C%EC%B6%94_%EA%B4%80%EC%9B%90_%EB%AA%A8%ED%98%88%EB%B6%84%EC%A0%88_%EA%B3%A0%EC%A6%9D/%EC%B2%9C%EC%B6%94_%EA%B4%80%EC%9B%90_%EB%AA%A8%ED%98%88%EB%B6%84%EC%A0%88%EC%A0%95%ED%95%A9%EC%84%B1_%EA%B3%A0%EC%A6%9D_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%B2%9C%EC%B6%94_%EA%B4%80%EC%9B%90_%EB%AA%A8%ED%98%88%EB%B6%84%EC%A0%88_%EA%B3%A0%EC%A6%9D/%EC%B2%9C%EC%B6%94_%EA%B4%80%EC%9B%90_%EB%AA%A8%ED%98%88%EB%B6%84%EC%A0%88%EC%A0%95%ED%95%A9%EC%84%B1_%EA%B3%A0%EC%A6%9D_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: GB39 -->
+      <div class="card" data-category="acupoint" data-search="GB39 현종 Xuanzhong 懸鐘 족소양담경 가쪽복사 3촌 절골 앞정강동맥 얕은종아리신경 골수회 수회 ARI v3.0 C 70.0 SI 100">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">GB39</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · 70.0 (C) · SI 100 · 수회(髓會)</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">현종 (懸鐘)</h3>
+          <div class="card-title-en">Xuanzhong (懸鐘, GB39)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">GB39 현종 해부생리학 실체 판명 보고서</span>
+            <span class="sub-en">GB39 Xuanzhong Anatomical Substrate & Marrow Meeting Analysis Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">가쪽복사 위 3촌. 고전 명당경 '動脈中'은 정강뼈 쪽 앞정강동맥 박동점이며 현행 WHO 정위는 종아리뼈 앞모서리(Δ ≈ 20~35mm). 짧은종아리근과 얕은종아리신경. 팔회혈 중 수회(髓會)로서 골대사 및 하지 신경마비 임상 작용기전 실증.</span>
+          <span class="desc-en">3 cun above lateral malleolus. Classical 'Artery pulsation' corresponds to anterior tibial artery at tibia side, whereas WHO point lies at anterior fibular border (Δ ≈ 20–35 mm). Peroneus brevis, superficial peroneal nerve. Elucidates Marrow Meeting (髓會) neurotrophic pathways.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#GB39</span><span class="tag">#현종</span><span class="tag">#Xuanzhong</span><span class="tag">#수회</span><span class="tag">#MarrowMeeting</span><span class="tag">#얕은종아리신경</span><span class="tag">#종아리뼈</span><span class="tag">#앞정강동맥</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GB_%EC%A1%B1%EC%86%8C%EC%96%91%EB%8B%B4%EA%B2%BD/GB39_%ED%98%84%EC%A2%85/GB39_%ED%98%84%EC%A2%85_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GB_%EC%A1%B1%EC%86%8C%EC%96%91%EB%8B%B4%EA%B2%BD/GB39_%ED%98%84%EC%A2%85/GB39_%ED%98%84%EC%A2%85_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: GV20 -->
+      <div class="card" data-category="acupoint" data-search="GV20 백회 Baihui 百會 독맥 두정부 시상봉합 galea 마루이끌정맥 삼차신경 큰뒤통수신경 뇌혈류 뇌척수액 ARI v3.0 C 67.5 SI 100">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">GV20</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · 67.5 (C) · SI 100 · 정수리 5층차</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">백회 (百會)</h3>
+          <div class="card-title-en">Baihui (百會, GV20)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">GV20 백회 해부생리학 실체 판명 보고서</span>
+            <span class="sub-en">GV20 Baihui Anatomical Substrate & Cranial Reflex Verification Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">두정부 정중선 시상봉합 위 5층차 해부 구조: 피부·치밀 피하조직 → 모상건막(galea) → 건막하 소성결합조직(마루이끌정맥) → 두개골외막. 삼차신경(V1) 말단과 큰뒤통수신경의 중첩 수렴, 뇌혈류 및 중추 자율신경 조절 회로 규명.</span>
+          <span class="desc-en">Five-layer calvarial anatomy at sagittal suture: skin, dense subcutaneous tissue, galea aponeurotica, subaponeurotic loose connective tissue (parietal emissary vein), and pericranium. Overlapping convergence of trigeminal (V1) and greater occipital nerves regulating cerebral perfusion.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#GV20</span><span class="tag">#백회</span><span class="tag">#Baihui</span><span class="tag">#모상건막</span><span class="tag">#Galea</span><span class="tag">#큰뒤통수신경</span><span class="tag">#삼차신경</span><span class="tag">#마루이끌정맥</span><span class="tag">#뇌혈류조절</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GV_%EB%8F%85%EB%A7%A5/GV20_%EB%B0%B1%ED%9A%8C/GV20_%EB%B0%B1%ED%9A%8C_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GV_%EB%8F%85%EB%A7%A5/GV20_%EB%B0%B1%ED%9A%8C/GV20_%EB%B0%B1%ED%9A%8C_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: BL02 -->
+      <div class="card" data-category="acupoint" data-search="BL02 찬죽 Zanzhu 攢竹 족태양방광경 안와상패임 도르래위신경 눈썹주름근 눈둘레근 금침 안와내출혈 ARI v3.0 B 77.5 SI 0 금침주의">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">BL02</span>
+          <span class="status-badge" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3);">ARI v3.0 · 77.5 (B) · SI 0 ⚠ 안와출혈주의</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">찬죽 (攢竹)</h3>
+          <div class="card-title-en">Zanzhu (攢竹, BL02)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">BL02 찬죽 해부생리학 실체 판명 보고서</span>
+            <span class="sub-en">BL02 Zanzhu Anatomical Substrate & Supratrochlear Nerve Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">이마뼈 안와패임(Frontal notch)을 지나는 도르래위신경·동정맥과 눈썹주름근·눈둘레근. 삼차신경 안신경(V1)의 도르래위 분지 자극. ⚠ 의학입문 등 고전 '禁用针灸' 기록에 따른 안구내 출혈 고위험으로 안전지수 SI 0 책정.</span>
+          <span class="desc-en">Frontal notch structures: supratrochlear nerve, artery, vein, corrugator supercilii and orbicularis oculi muscles. Direct stimulation of ophthalmic nerve (V1). Assigned SI 0 ⚠ due to classical 'needling prohibited' warnings regarding intraorbital hematoma.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#BL02</span><span class="tag">#찬죽</span><span class="tag">#Zanzhu</span><span class="tag">#도르래위신경</span><span class="tag">#SupratrochlearNerve</span><span class="tag">#눈썹주름근</span><span class="tag">#삼차신경V1</span><span class="tag">#안구안전</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/BL_%EC%A1%B1%ED%83%9C%EC%96%91%EB%B0%A9%EA%B4%91%EA%B2%BD/BL02_%EC%B0%AC%EC%A3%BD/BL02_%EC%B0%AC%EC%A3%BD_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/BL_%EC%A1%B1%ED%83%9C%EC%96%91%EB%B0%A9%EA%B4%91%EA%B2%BD/BL02_%EC%B0%AC%EC%A3%BD/BL02_%EC%B0%AC%EC%A3%BD_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: GB21 -->
+      <div class="card" data-category="acupoint" data-search="GB21 견정 Jianjing 肩井 족소양담경 승모근 부신경 쇄골상신경 흉막정 폐첨 기흉 고위험 동의보감 금침 ARI v3.0 C 67.5 SI 0">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">GB21</span>
+          <span class="status-badge" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3);">ARI v3.0 · 67.5 (C) · SI 0 ⚠ 기흉고위험</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">견정 (肩井)</h3>
+          <div class="card-title-en">Jianjing (肩井, GB21)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">GB21 견정 해부생리학 실체 판명 보고서</span>
+            <span class="sub-en">GB21 Jianjing Anatomical Substrate & Pneumothorax Risk Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">⚠ 흉막정(Cervical pleura) 및 폐첨 바로 위의 기흉 최고위험 혈위. 《수혈통고》 침자 기흉의 9할이 견정에서 발생한다고 명시, 동의보감 금침 기록. 등세모근·어깨올림근, 더부신경(CN XI)과 빗장위신경. 전하방 자입 금지 가이드 수립.</span>
+          <span class="desc-en">⚠ High-risk point directly overlying cervical pleura and apex of lung. Ancient texts report ~90% of needling-induced pneumothoraces occur at Jianjing; Donguibogam designates needling depth as 0 (prohibited). Trapezius, levator scapulae, accessory nerve (CN XI); strictly prohibits anteroinferior insertion.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#GB21</span><span class="tag">#견정</span><span class="tag">#Jianjing</span><span class="tag">#기흉주의</span><span class="tag">#Pneumothorax</span><span class="tag">#승모근</span><span class="tag">#더부신경</span><span class="tag">#AccessoryNerve</span><span class="tag">#자침금기</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GB_%EC%A1%B1%EC%86%8C%EC%96%91%EB%8B%B4%EA%B2%BD/GB21_%EA%B2%AC%EC%A0%95/GB21_%EA%B2%AC%EC%A0%95_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/GB_%EC%A1%B1%EC%86%8C%EC%96%91%EB%8B%B4%EA%B2%BD/GB21_%EA%B2%AC%EC%A0%95/GB21_%EA%B2%AC%EC%A0%95_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: ST36 vs GB21 -->
+      <div class="card" data-category="acupoint" data-search="ST36 GB21 족삼리 견정 비교 분석 Comparative ARI v3.0 기흉 미주-부신 등세모근 앞정강근">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">ST36 vs GB21</span>
+          <span class="status-badge" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">Comparative · ST36 77.5 (B) vs GB21 67.5 (C) ⚠</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">족삼리 vs 견정 비교</h3>
+          <div class="card-title-en">Zusanli (ST36) vs Jianjing (GB21) Comparison</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">ST36·GB21 해부학적 실체 비교 분석 보고서</span>
+            <span class="sub-en">Comparative Anatomical Substrate & Safety Risk Analysis Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">동일 기준(Framework v2.7, ARI v3.0)으로 대조한 심층 비교 요약. ST36은 깊은종아리신경·앞정강동맥(ARI 77.5, B, B-Check 9/12 부합), GB21은 등세모근·더부신경 및 흉막정 위 기흉 고위험(ARI 67.5, C, SI 0 ⚠).</span>
+          <span class="desc-en">Cross-comparative synthesis on identical criteria (Framework v2.7, ARI v3.0). ST36 features deep peroneal neurovascular bundle (77.5, B, B-Check 9/12), while GB21 presents cervical pleural pneumothorax hazards (67.5, C, SI 0 ⚠).</span>
+        </p>
+        <div class="tags-container"><span class="tag">#ST36</span><span class="tag">#GB21</span><span class="tag">#비교분석</span><span class="tag">#Comparative</span><span class="tag">#ARIv3</span><span class="tag">#자침안전</span><span class="tag">#기흉위험</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/ST_%EC%A1%B1%EC%96%91%EB%AA%85%EC%9C%84%EA%B2%BD/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC/ST36_GB21_Comparative_Analysis_Report.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/ST_%EC%A1%B1%EC%96%91%EB%AA%85%EC%9C%84%EA%B2%BD/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC/ST36_GB21_Comparative_Analysis_Report_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: PC09 -->
+      <div class="card" data-category="acupoint" data-search="PC09 중충 Zhongchong 中衝 수궐음심포경 중지 손가락 끝 정혈 사혈 고유바닥쪽손가락신경 응급개규 留三呼 요측손톱각 ARI v3.0 C 67.5 SI 100">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);">PC09</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">ARI v3.0 · 67.5 (C) · SI 100 · 정혈(井穴) 사혈</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">중충 (中衝)</h3>
+          <div class="card-title-en">Zhongchong (中衝, PC09)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">PC09 중충 해부생리학 실체 판명 보고서</span>
+            <span class="sub-en">PC09 Zhongchong Anatomical Substrate & Jing-Well Bleeding Monograph</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">중지 첨단 지문 피부·피하층(Layer 1)의 고유바닥쪽손가락신경(정중신경 감각지)과 모세혈관망. 정혈(井穴) 점자사혈의 응급 개규(開竅) 효과는 비특이 침해 자극 및 뇌간 망상체 각성 기전(B-Check 6/12)으로 고증.</span>
+          <span class="desc-en">Tip of middle finger pulp (Layer 1): proper palmar digital nerve (median nerve sensory branch) and digital capillary plexus. Pricking-bleeding resuscitation at Jing-Well point correlates with nociceptive arousal of brainstem ascending reticular activating system (B-Check 6/12).</span>
+        </p>
+        <div class="tags-container"><span class="tag">#PC09</span><span class="tag">#중충</span><span class="tag">#Zhongchong</span><span class="tag">#정혈사혈</span><span class="tag">#JingWell</span><span class="tag">#고유바닥쪽손가락신경</span><span class="tag">#MedianNerve</span><span class="tag">#응급개규</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>경혈별 해부생리 · Acupoint Anatomy</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC09_%EC%A4%91%EC%B6%A9/PC09_%EC%A4%91%EC%B6%A9_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC09_%EC%A4%91%EC%B6%A9/PC09_%EC%A4%91%EC%B6%A9_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: REPORT -->
+      <div class="card" data-category="headache" data-search="두통침구 동의보감 Donguibogam Headache 종합보고서 Comprehensive Report 16종 두통 신경해부 매트릭스 백회 찬죽 풍지 합곡 임상 배혈">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);">REPORT</span>
+          <span class="status-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);">Clinical Matrix · 16 Headache Patterns · Comprehensive</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">두통침구 종합보고서</h3>
+          <div class="card-title-en">Donguibogam Headache Comprehensive Monograph</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">동의보감 16종 두통 침구치료 신경해부학 매트릭스 종합보고서</span>
+            <span class="sub-en">Comprehensive Neuroanatomical Matrix Report on 16 Headache Patterns</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">《동의보감》 두통문(頭痛門) 수록 16대 두통 유형별 표준 침구 처방, 주치 혈위의 신경학적 지배 분절 및 삼차-신경혈관 복합체(Trigeminovascular system) 기전 통합 분석 모노그래프.</span>
+          <span class="desc-en">Comprehensive monograph mapping classical acupuncture prescriptions for 16 headache patterns in *Donguibogam* to neuroanatomical innervations and trigeminovascular pain transmission circuits.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#동의보감</span><span class="tag">#Donguibogam</span><span class="tag">#두통매트릭스</span><span class="tag">#Headache</span><span class="tag">#삼차신경혈관</span><span class="tag">#백회</span><span class="tag">#찬죽</span><span class="tag">#풍지</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>두통 임상 매트릭스 · Clinical Matrix</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-en" href="04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/Donguibogam_Headache_Acupuncture_Comprehensive_Report.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: ANALYSIS -->
+      <div class="card" data-category="headache" data-search="두통처방 상세분석 Donguibogam Headache Analysis Report 주치 빈도 배혈 원리 삼차신경 경추신경총 교차 분석">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);">ANALYSIS</span>
+          <span class="status-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);">Prescription Analytics · Frequency & Network</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">두통처방 상세분석</h3>
+          <div class="card-title-en">Donguibogam Headache Prescription Analytics</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">동의보감 두통 침구 처방 혈위 빈도 및 배혈 네트워크 상세분석</span>
+            <span class="sub-en">Detailed Frequency, Combination Logic & Neurovascular Correlation</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">두통 16패턴에 투입된 경혈의 빈도 분석, 주치 중첩도 및 삼차신경 제1지(V1)와 경추신경총(C2-C3)의 수렴 투사 배혈 로직을 통계적으로 실증한 심층 연구 보고서.</span>
+          <span class="desc-en">Statistical and network analysis of acupoints across 16 headache patterns in *Donguibogam*, validating convergence of trigeminal V1 afferents and cervical C2–C3 nerve plexuses.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#처방분석</span><span class="tag">#PrescriptionAnalytics</span><span class="tag">#두통배혈</span><span class="tag">#네트워크</span><span class="tag">#삼차경추복합체</span><span class="tag">#빈도분석</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>두통 임상 매트릭스 · Clinical Matrix</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-en" href="04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/Donguibogam_Headache_Analysis_Report.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: CLASSICS-1 -->
+      <div class="card" data-category="classics" data-search="CLASSICS-1 근육 경락 동일명칭 경혈쌍 비교분석 3대서적 수혈통고 침구문헌 해부학적 명칭 동일성">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">CLASSICS-1</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">Classical Textual Criticism · 18 Pairs Adjudicated</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">근육·경락 동일명칭</h3>
+          <div class="card-title-en">Homonymous Muscle & Meridian Acupoint Pairs</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">3대 침구서적 해부학적 근육·경락 동일명칭 경혈쌍 비교분석</span>
+            <span class="sub-en">Comparative Collation of Acupoint Pairs Sharing Muscle & Meridian Nomenclature</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">3대 침구 원전 대조 결과 18개 경혈쌍 중 원전에서 동일 별명이 확인된 3쌍을 엄격 선별. 구판의 '주치 100% 일치' 오류를 '주치 범주 중첩'으로 정정하고 해부학적 명칭 동일성에 따른 근막 연결 기전을 가설 검증.</span>
+          <span class="desc-en">Strict collation across 3 classics identifying 3 confirmed homonymous pairs out of 18 candidates. Rectifies former '100% indication match' claims into categorical overlap and evaluates fascial continuous pathways.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#침구원전</span><span class="tag">#Classics</span><span class="tag">#근육경락</span><span class="tag">#동일명칭</span><span class="tag">#수혈통고</span><span class="tag">#고증학</span><span class="tag">#Fascia</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>침구원전 비교분석 · Classical Canons</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EA%B7%BC%EC%9C%A1%EA%B2%BD%EB%9D%BD_%EB%8F%99%EC%9D%BC%EB%AA%85%EC%B9%AD_%EA%B2%BD%ED%98%88%EC%8C%8D_%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EA%B7%BC%EC%9C%A1%EA%B2%BD%EB%9D%BD_%EB%8F%99%EC%9D%BC%EB%AA%85%EC%B9%AD_%EA%B2%BD%ED%98%88%EC%8C%8D_%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: CLASSICS-2 -->
+      <div class="card" data-category="classics" data-search="CLASSICS-2 동일별명 주치혼용 검증 3대 침구서적 전체마스터 별명 중복 오류 정정 삼리 48쌍 검증">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">CLASSICS-2</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">Alias Audit · 48 Candidate Pairs Adjudicated</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">동일별명 주치혼용</h3>
+          <div class="card-title-en">Shared Alias & Indication Overlap Audit</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">3대 침구서적 전체마스터 동일별명 경혈쌍 주치혼용 검증</span>
+            <span class="sub-en">Master Verification of Homonymous Alias Pairs Across Classical Texts</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">구판의 동일 별명 후보 48쌍 중 두 혈 모두의 별명으로 원전에서 실재 확인된 것은 1쌍(三里: 족삼리·수삼리)뿐임을 문헌 실증. 나머지 추출 오류와 정명 혼용을 전수 정정하여 주치 전이 왜곡을 차단.</span>
+          <span class="desc-en">Textual audit proving that out of 48 homonymous alias candidate pairs, only 1 pair (Sanli: ST36 & LI10) is legitimately verified in canons. Corrects extraction biases and prevents spurious indication conflations.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#별명고증</span><span class="tag">#AliasAudit</span><span class="tag">#주치혼용</span><span class="tag">#삼리</span><span class="tag">#원전실증</span><span class="tag">#문헌비평</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>침구원전 비교분석 · Classical Canons</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%EC%A0%84%EC%B2%B4%EB%A7%88%EC%8A%A4%ED%84%B0_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98%ED%98%BC%EC%9A%A9_%EA%B2%80%EC%A6%9D.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%EC%A0%84%EC%B2%B4%EB%A7%88%EC%8A%A4%ED%84%B0_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98%ED%98%BC%EC%9A%A9_%EA%B2%80%EC%A6%9D_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: CLASSICS-3 -->
+      <div class="card" data-category="classics" data-search="CLASSICS-3 24경혈쌍 임상공통점 종합심층분석 중국침구3대서적 혈위통감 증치통감 수혈통고 임상처방">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">CLASSICS-3</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">Indication Analysis · 24 Pairs Deep Evaluation</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">24경혈쌍 임상공통점</h3>
+          <div class="card-title-en">Clinical Commonality of 24 Acupoint Pairs</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">중국침구 3대서적 동일별명 및 24경혈쌍 주치 임상공통점 종합심층분석</span>
+            <span class="sub-en">In-Depth Comparative Analysis of Clinical Indications across 24 Acupoint Pairs</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">혈위통감·증치통감·수혈통고 3대 원전의 임상 주치 기록을 통합 역색인하여 24개 핵심 경혈쌍의 실제 배혈 공통점과 차이점을 신경분절 및 경락 교회 이론으로 재해석.</span>
+          <span class="desc-en">Integrated cross-index of indication records from the three canons, reinterpreting true prescription overlaps and discrepancies across 24 pairs via neural segment and convergent channel theories.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#24경혈쌍</span><span class="tag">#24Pairs</span><span class="tag">#임상공통점</span><span class="tag">#주치분석</span><span class="tag">#배혈원리</span><span class="tag">#침구임상</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>침구원전 비교분석 · Classical Canons</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/%EC%A4%91%EA%B5%AD%EC%B9%A8%EA%B5%AC3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EB%B0%8F_24%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98_%EC%9E%84%EC%83%81%EA%B3%B5%ED%86%B5%EC%A0%90_%EC%A2%85%ED%95%A9%EC%8B%AC%EC%B8%B5%EB%B6%84%EC%84%9D.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/%EC%A4%91%EA%B5%AD%EC%B9%A8%EA%B5%AC3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EB%B0%8F_24%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98_%EC%9E%84%EC%83%81%EA%B3%B5%ED%86%B5%EC%A0%90_%EC%A2%85%ED%95%A9%EC%8B%AC%EC%B8%B5%EB%B6%84%EC%84%9D_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: CLASSICS-4 -->
+      <div class="card" data-category="classics" data-search="CLASSICS-4 대장병증 시대별분석 상렴 거허 상거허 이질설사 침구치료 시대별 변천 고증합일">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">CLASSICS-4</span>
+          <span class="status-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">Historical Diachronic Analysis · Han to Qing Dynasties</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">대장병증 시대별분석</h3>
+          <div class="card-title-en">Historical Analysis of Large Intestine Disorders</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">3대서적 대장병증 이질설사 시대별분석 및 상렴·거허 고증합일 보고서</span>
+            <span class="sub-en">Diachronic Collation of Dysentery/Diarrhea Indications & Shangjuxu Evolution</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">한대 《영추·본수》 상렴(上廉)에서 명당경·갑을경·천금방을 거쳐 청대 《침구봉원》에 이르기까지 이질·설사 대장병증 주치 혈위의 통시적 변천사와 상거허(ST37) 하합혈 고증.</span>
+          <span class="desc-en">Diachronic textual study tracing the evolution of acupoint indications for dysentery/diarrhea from Han-dynasty *Lingshu* (Shanglian) through *Jiayi*, *Qianjin*, to Qing-dynasty texts, verifying Shangjuxu (ST37).</span>
+        </p>
+        <div class="tags-container"><span class="tag">#대장병증</span><span class="tag">#LargeIntestine</span><span class="tag">#이질설사</span><span class="tag">#상거허</span><span class="tag">#ST37</span><span class="tag">#시대별변천</span><span class="tag">#통시적고증</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>침구원전 비교분석 · Classical Canons</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8C%80%EC%9E%A5%EB%B3%91%EC%A6%9D_%EC%9D%B4%EC%A7%88%EC%84%A4%EC%82%AC_%EC%8B%9C%EB%8C%80%EB%B3%84%EB%B6%84%EC%84%9D_%EB%B0%8F_%EC%83%81%EB%A0%B4%EA%B1%B0%ED%97%88_%EA%B3%A0%EC%A6%9D%ED%95%A9%EC%9D%BC_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8C%80%EC%9E%A5%EB%B3%91%EC%A6%9D_%EC%9D%B4%EC%A7%88%EC%84%A4%EC%82%AC_%EC%8B%9C%EB%8C%80%EB%B3%84%EB%B6%84%EC%84%9D_%EB%B0%8F_%EC%83%81%EB%A0%B4%EA%B1%B0%ED%97%88_%EA%B3%A0%EC%A6%9D%ED%95%A9%EC%9D%BC_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: REVIEW -->
+      <div class="card" data-category="topic" data-search="사총혈 천성십이혈 고증 Four Command Points 마단양 천성십이혈 가설검증 피어리뷰 족삼리 위중 합곡 열결 배혈원리">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">REVIEW</span>
+          <span class="status-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">Peer-Review & Hypothesis Verification</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">사총혈·천성십이혈 구성원리</h3>
+          <div class="card-title-en">Four Command & Twelve Heavenly Star Points Verification</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">사총혈·천성십이혈 구성원리 가설검증 및 피어리뷰 보고서</span>
+            <span class="sub-en">Principles, Hypothesis Testing & Peer Review of Classical Acupoint Formulae</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">《사총혈가》(족삼리·위중·합곡·열결) 및 마단양 《천성십이혈》의 임상 부위별 배속 원리를 현대 신경해부학 척수 분절 및 뇌간 반사 회로와 교차 대조한 가설 검증과 피어리뷰.</span>
+          <span class="desc-en">Evaluates foundational principles of the Four Command Points (ST36, BL40, LI04, LU07) and Ma Danyang's 12 Heavenly Star points against modern spinal segmental and brainstem reflex circuitry.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#사총혈</span><span class="tag">#FourCommandPoints</span><span class="tag">#천성십이혈</span><span class="tag">#마단양</span><span class="tag">#피어리뷰</span><span class="tag">#신경분절</span><span class="tag">#PeerReview</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>주제별 고증연구 · Thematic Collation</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%82%AC%EC%B4%9D%ED%98%88_%EC%B2%9C%EC%84%B1%EC%8B%AD%EC%9D%B4%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%82%AC%EC%B4%9D%ED%98%88_%EC%B2%9C%EC%84%B1%EC%8B%AD%EC%9D%B4%ED%98%88_%EA%B5%AC%EC%84%B1%EC%9B%90%EB%A6%AC_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EB%B0%8F_%ED%94%BC%EC%96%B4%EB%A6%AC%EB%B7%B0_%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%82%AC%EC%B4%9D%ED%98%88_%EC%B2%9C%EC%84%B1%EC%8B%AD%EC%9D%B4%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%82%AC%EC%B4%9D%ED%98%88_%EC%B2%9C%EC%84%B1%EC%8B%AD%EC%9D%B4%ED%98%88_%EA%B5%AC%EC%84%B1%EC%9B%90%EB%A6%AC_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EB%B0%8F_%ED%94%BC%EC%96%B4%EB%A6%AC%EB%B7%B0_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: GV14-GV13 -->
+      <div class="card" data-category="topic" data-search="대추 도도 Dazhui Taodao GV14 GV13 수혈고증 독맥 경흉추 전이부 C7 극돌기 T1 극돌기 경항부 항인대 가시위인대 척수경막">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">GV14-GV13</span>
+          <span class="status-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">Historical Collation · C7/T1 Boundary Verified</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">대추 vs 도도</h3>
+          <div class="card-title-en">Dazhui (GV14) vs Taodao (GV13)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">대추 vs 도도 수혈고증 및 해부학 실체판명 종합보고서</span>
+            <span class="sub-en">Historical Textual Criticism & Anatomical Substrate Verification of GV14 & GV13</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">경흉추 전이부(C7-T1) 대추(GV14, C7 극돌기 아래)와 도도(GV13, T1 극돌기 아래)의 원전 위치 혼용 전수 검증. 도도의 '一名大椎' 오식 반증 및 항인대·극간인대·경막외강 심도 해부학적 안전 기준 확립.</span>
+          <span class="desc-en">Textual verification of cervicothoracic junction points: Dazhui (GV14, below C7 spinous process) and Taodao (GV13, below T1). Refutes classical misattributions ('Taodao alias Dazhui') and establishes safety depths for supraspinous ligaments and epidural space.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#GV14</span><span class="tag">#GV13</span><span class="tag">#대추</span><span class="tag">#도도</span><span class="tag">#Dazhui</span><span class="tag">#Taodao</span><span class="tag">#C7_T1</span><span class="tag">#항인대</span><span class="tag">#경추전이부</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>주제별 고증연구 · Thematic Collation</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%8C%80%EC%B6%94_%EB%8F%84%EB%8F%84%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%8C%80%EC%B6%94_vs_%EB%8F%84%EB%8F%84_%EC%88%98%ED%98%88%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%ED%95%B4%EB%B6%80%ED%95%99_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%8C%80%EC%B6%94_%EB%8F%84%EB%8F%84%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%8C%80%EC%B6%94_vs_%EB%8F%84%EB%8F%84_%EC%88%98%ED%98%88%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%ED%95%B4%EB%B6%80%ED%95%99_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: EX-HN -->
+      <div class="card" data-category="topic" data-search="숭골 Chonggu 崇骨 경외기혈 고증 가설검증 허임 침구경험방 C7 극돌기 첨단 침자 심도 해부학적 실체 가설">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">EX-HN</span>
+          <span class="status-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">Extra Point · Heo Im's Canon · C7 Vertebra Prominens</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">숭골 (崇骨)</h3>
+          <div class="card-title-en">Chonggu (崇骨, EX-HN)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">숭골 경외기혈 고증 및 가설검증 종합보고서</span>
+            <span class="sub-en">Historical Collation & Anatomical Hypothesis Testing of Extra Point Chonggu</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">《통고》상 숭골은 본래 골명(C7)이며, 혈명으로는 허임 《침구경험방》(1644)에 처음 등장(C7 극돌기 끝). 원전에 고유 주치·자법이 없어 구판의 'C6~C7 공인 기혈 확정 판명' 오류를 해부 실체 가설로 정정.</span>
+          <span class="desc-en">In *Tongkao*, Chonggu was originally an anatomical bone term (C7 vertebra prominens); as an acupoint, it first appeared in Heo Im's *Zhenjiu Jingyanfang* (1644). Rectifies past over-claims into an anatomical hypothesis with ligamentous mapping.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#숭골</span><span class="tag">#Chonggu</span><span class="tag">#EX_HN</span><span class="tag">#경외기혈</span><span class="tag">#허임</span><span class="tag">#침구경험방</span><span class="tag">#C7극돌기</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>주제별 고증연구 · Thematic Collation</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%88%AD%EA%B3%A8%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%88%AD%EA%B3%A8_%EA%B2%BD%EC%99%B8%EA%B8%B0%ED%98%88_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%88%AD%EA%B3%A8%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%88%AD%EA%B3%A8_%EA%B2%BD%EC%99%B8%EA%B8%B0%ED%98%88_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: GB39-ASIA -->
+      <div class="card" data-category="topic" data-search="GB39-ASIA 현종 Xuanzhong ASIA 해부학적 실체분석 신경학적 척수손상 감각점 L5 종아리신경">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">GB39-ASIA</span>
+          <span class="status-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">ASIA Neurological Standard · L5 Dermatome Verified</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">현종 ASIA 실체</h3>
+          <div class="card-title-en">GB39 Xuanzhong ASIA Anatomical Analysis</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">현종혈 ASIA(미국척수손상학회) 신경학적 표준 기준 해부학적 실체분석</span>
+            <span class="sub-en">Anatomical Substrate Identification based on ASIA Neurological Standards</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">미국척수손상학회(ASIA) 국제 신경학적 평가 표준에 입각하여 현종(GB39)의 피부신경 분절(L5 피부분절) 및 종아리신경 지배 영역을 현대 신경학적 평가 지표와 1:1 대조 실증.</span>
+          <span class="desc-en">Examines GB39 (Xuanzhong) based on the American Spinal Injury Association (ASIA) International Standards, matching L5 key sensory points and peroneal nerve supply to neurological assessment metrics.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#GB39</span><span class="tag">#현종</span><span class="tag">#ASIA</span><span class="tag">#척수손상평가</span><span class="tag">#L5피부분절</span><span class="tag">#종아리신경</span><span class="tag">#NeurologicalStandards</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>주제별 고증연구 · Thematic Collation</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%ED%98%84%EC%A2%85%ED%98%88_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EB%AC%B8%ED%97%8C%EC%97%B0%EA%B5%AC/02_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EC%8B%A4%EC%B2%B4%EB%B6%84%EC%84%9D_ASIA/GB39_Xuanzhong_Anatomical_Analysis.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: LR05-BL40 -->
+      <div class="card" data-category="topic" data-search="LR05-BL40 중도 요유 위중 Zhongdu Yaoshu Weizhong 연계 고증 임상배혈 요통 비뇨생식 척추-하지 반사">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">LR05-BL40</span>
+          <span class="status-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">Multi-Point Collation · Lumbosacral Reflex Circuit</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">중도·요유·위중</h3>
+          <div class="card-title-en">Zhongdu (LR05), Yaoshu (GV02) & Weizhong (BL40)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">중도·요유·위중 연계 고증 및 임상배혈 요약보고서</span>
+            <span class="sub-en">Interpoint Linkage Collation & Clinical Prescription Analysis</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">간경의 중도(LR05, 극혈), 독맥의 요유(GV02, 천골열공), 방광경의 위중(BL40, 오금합혈) 간의 신경분절 연계 및 요통·골반통·비뇨생식기 질환 배혈 회로 문헌·해부학적 종합 고증.</span>
+          <span class="desc-en">Interpoint segmental connectivity between Zhongdu (LR05, Xi-Cleft), Yaoshu (GV02, sacral hiatus), and Weizhong (BL40, popliteal He-Sea) for lumbopelvic pain and urogenital syndromes.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#LR05</span><span class="tag">#GV02</span><span class="tag">#BL40</span><span class="tag">#중도</span><span class="tag">#요유</span><span class="tag">#위중</span><span class="tag">#요통배혈</span><span class="tag">#천골신경총</span><span class="tag">#Lumbosacral</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>주제별 고증연구 · Thematic Collation</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%A4%91%EB%8F%84_%EC%9A%94%EC%9C%A0_%EC%9C%84%EC%A4%91_%EA%B3%A0%EC%A6%9D/%EC%A4%91%EB%8F%84_%EC%9A%94%EC%9C%A0_%EC%9C%84%EC%A4%91_%EC%97%B0%EA%B3%84_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%B0%B0%ED%98%88_%EC%9A%94%EC%95%BD%EB%B3%B4%EA%B3%A0%EC%84%9C.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%A4%91%EB%8F%84_%EC%9A%94%EC%9C%A0_%EC%9C%84%EC%A4%91_%EA%B3%A0%EC%A6%9D/%EC%A4%91%EB%8F%84_%EC%9A%94%EC%9C%A0_%EC%9C%84%EC%A4%91_%EC%97%B0%EA%B3%84_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%B0%B0%ED%98%88_%EC%9A%94%EC%95%BD%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: LI18 -->
+      <div class="card" data-category="topic" data-search="LI18 부돌 Futu 扶突 수양명대장경 풍부 문헌출처 고증분석 흉쇄유돌근 경신경총 경동맥삼각 미주신경 후두신경">
+        <div class="card-header">
+          <span class="code-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">LI18</span>
+          <span class="status-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">Historical Source Collation · Cervical Plexus Verified</span>
+        </div>
+        <div class="card-title-group">
+          <h3 class="card-title-ko">부돌 (扶突)</h3>
+          <div class="card-title-en">Futu (扶突, LI18)</div>
+          <div class="card-subtitle">
+            <span class="sub-ko">부돌 별칭 풍부 문헌출처 및 고증분석</span>
+            <span class="sub-en">Textual Criticism & Historical Source Analysis of Futu (LI18) & Alias Fengfu</span>
+          </div>
+        </div>
+        <p class="card-desc">
+          <span class="desc-ko">목덜미 풍부(GV16) 별칭과의 문헌 혼용 오류를 원전 전수 대조로 규명. 흉쇄유돌근 뒤모서리 부돌혈(LI18)의 경신경총(Erb's point) 및 속목정맥·온목동맥·미주신경 주행 부위 자침 심도 안전 기준 고증.</span>
+          <span class="desc-en">Resolves textual confusion between Futu (LI18) and cranial Fengfu (GV16). Examines posterior border of sternocleidomastoid, Erb's point (cervical plexus), carotid triangle, and vagus nerve safety parameters.</span>
+        </p>
+        <div class="tags-container"><span class="tag">#LI18</span><span class="tag">#부돌</span><span class="tag">#Futu</span><span class="tag">#풍부별칭고증</span><span class="tag">#흉쇄유돌근</span><span class="tag">#ErbPoint</span><span class="tag">#경신경총</span><span class="tag">#CervicalPlexus</span></div>
+        <div class="card-footer">
+          <span class="category-indicator">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>주제별 고증연구 · Thematic Collation</span>
+          </span>
+          <div class="btn-group">
+            <a class="btn-open btn-ko" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B6%80%EB%8F%8C%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%B6%80%EB%8F%8C_%EB%B3%84%EC%B9%AD_%ED%92%8D%EB%B6%80_%EB%AC%B8%ED%97%8C%EC%B6%9C%EC%B2%98_%EB%B0%8F_%EA%B3%A0%EC%A6%9D%EB%B6%84%EC%84%9D.html" target="_blank" title="한국어 정본 학술 보고서 열람">
+            <span class="lang-pill">KO</span>
+            <span>한국어 전문</span>
+          </a><a class="btn-open btn-en" href="03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B6%80%EB%8F%8C%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%B6%80%EB%8F%8C_%EB%B3%84%EC%B9%AD_%ED%92%8D%EB%B6%80_%EB%AC%B8%ED%97%8C%EC%B6%9C%EC%B2%98_%EB%B0%8F_%EA%B3%A0%EC%A6%9D%EB%B6%84%EC%84%9D_en.html" target="_blank" title="English Monograph with Traditional Chinese Collation">
+            <span class="lang-pill">EN</span>
+            <span>English Monograph</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="no-results" id="noResults">
+        <svg fill="none" height="42" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="42">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="M21 21l-4.35-4.35M8 11h6"></path>
+        </svg>
+        <p>검색 조건과 일치하는 보고서가 없습니다.<br><span style="font-size:0.9rem; color:var(--text-muted);">No reports match your search criteria.</span></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top-btn" id="scrollTopBtn" title="맨 위로 스크롤 (Scroll to top)">
+    <svg fill="none" height="20" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <p><strong>Acupoint Anatomy &amp; Substrate Identification Portal</strong> · Framework v2.7 &amp; ARI v3.0</p>
+        <p>고전 원전 고증과 현대 신경해부학·생의학 실증의 융합 학술 아카이브</p>
+      </div>
+      <div class="footer-badges">
+        <span class="f-badge">Layer B 4-Tier Registry</span>
+        <span class="f-badge">Dual-Layer B-Check</span>
+        <span class="f-badge">1 Fen = 2.3mm</span>
+        <span class="f-badge">GitHub Pages &amp; MCP</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('searchInput');
+      const searchClear = document.getElementById('searchClear');
+      const resultsCount = document.getElementById('resultsCount');
+      const filterTabs = document.querySelectorAll('.tab-btn');
+      const cards = document.querySelectorAll('.card');
+      const noResults = document.getElementById('noResults');
+      const langSwitcher = document.getElementById('langSwitcher');
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+      let currentFilter = 'all';
+      let currentQuery = '';
+
+      // Language Switcher Handler
+      langSwitcher.addEventListener('click', (e) => {
+        const btn = e.target.closest('.lang-btn');
+        if (!btn) return;
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.documentElement.setAttribute('data-lang-mode', lang);
+        localStorage.setItem('acupoint_lang_mode', lang);
+      });
+
+      // Restore saved language mode
+      const savedLang = localStorage.getItem('acupoint_lang_mode');
+      if (savedLang) {
+        const targetBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
+        if (targetBtn) targetBtn.click();
+      }
+
+      // Filter and Search Engine
+      function applyFilterAndSearch() {
+        let visibleCount = 0;
+        const q = currentQuery.toLowerCase().trim();
+
+        cards.forEach(card => {
+          const category = card.dataset.category;
+          const searchData = (card.dataset.search || '').toLowerCase();
+          const cardText = card.textContent.toLowerCase();
+
+          const matchesCategory = (currentFilter === 'all') || (category === currentFilter);
+          const matchesQuery = !q || searchData.includes(q) || cardText.includes(q);
+
+          if (matchesCategory && matchesQuery) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        resultsCount.textContent = `Showing ${visibleCount} / ${cards.length}`;
+        noResults.style.display = (visibleCount === 0) ? 'block' : 'none';
+        searchClear.style.display = q ? 'flex' : 'none';
+      }
+
+      // Tab Click
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          filterTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentFilter = tab.dataset.filter;
+          applyFilterAndSearch();
+        });
+      });
+
+      // Search Input
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value;
+        applyFilterAndSearch();
+      });
+
+      searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        currentQuery = '';
+        applyFilterAndSearch();
+        searchInput.focus();
+      });
+
+      // Hotkey: '/' to focus search, 'Escape' to clear
+      document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== searchInput) {
+          e.preventDefault();
+          searchInput.focus();
+        } else if (e.key === 'Escape' && document.activeElement === searchInput) {
+          searchInput.value = '';
+          currentQuery = '';
+          applyFilterAndSearch();
+          searchInput.blur();
         }
       });
 
-      if (visibleCount === 0) {
-        noResults.style.display = 'block';
-      } else {
-        noResults.style.display = 'none';
-      }
-    }
+      // Scroll to Top
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          scrollTopBtn.classList.add('visible');
+        } else {
+          scrollTopBtn.classList.remove('visible');
+        }
+      });
 
-    searchInput.addEventListener('input', (e) => {
-      currentQuery = e.target.value.trim().toLowerCase();
-      filterCards();
-    });
-
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentCategory = btn.getAttribute('data-filter');
-        filterCards();
+      scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
   </script>
