@@ -9,11 +9,12 @@ Usage:
 
 Supported Tools:
   1. get_acupoint_anatomy_profile : 3D coordinates, 1 fen = 2.3mm depth, Layer 1~5 structures, textbook comparison, discrepancy branch
-  2. search_biomedical_reflex_db : Layer A biomedical reflex database, neural pathways, spinal segments, receptors, evidence
-  3. get_layer_b_registry        : Layer B 4-tier reference registry (B1~B4) and B-Check 6-item compliance criteria
-  4. calculate_ari_v3_score      : ARI v3.0 profile calculation (ARI-Core, Grade A~D, Gate 1~3, SI, Sensitivity)
-  5. search_classic_records      : Historical origin, ancient depth, and single-point indications (P_single)
-  6. get_framework_protocol      : Framework v2.7 Rank 0~7 workflow, Tier 1~3 rules, 10 essential report components
+  2. get_fma_anatomy_profile      : FMA v5.1.0 ontology profile, nerve supply chain, spinal segment union, textbook comparison
+  3. search_biomedical_reflex_db : Layer A biomedical reflex database, neural pathways, spinal segments, receptors, evidence
+  4. get_layer_b_registry        : Layer B 4-tier reference registry (B1~B4) and B-Check 6-item compliance criteria
+  5. calculate_ari_v3_score      : ARI v3.0 profile calculation (ARI-Core, Grade A~D, Gate 1~3, SI, Sensitivity)
+  6. search_classic_records      : Historical origin, ancient depth, and single-point indications (P_single)
+  7. get_framework_protocol      : Framework v2.7 Rank 0~7 workflow, Tier 1~3 rules, 10 essential report components
 """
 
 import sys
@@ -56,6 +57,7 @@ CORPUS_PATHS = {
     "layer_b_json": "data/layer_b_reference_registry.json",
     "master_csv": "data/361_Acupoints_Refined_Master_DB_v2.csv",
     "biomed_json": "data/경혈_생의학_신경반사_마스터DB.json",
+    "fma_json": "data/acupoint_fma_mapping.json",
     "skill": "skill/SKILL.md",
 }
 
@@ -159,6 +161,23 @@ def get_cached_layer_b_registry():
             sys.stderr.write(f"Layer B JSON Parse error: {e}\n")
 
     _REMOTE_CACHE["_PARSED_LAYER_B_JSON"] = data
+    return data
+
+
+def get_cached_fma_mapping():
+    """Parse cached FMA mapping master JSON."""
+    if "_PARSED_FMA_JSON" in _REMOTE_CACHE:
+        return _REMOTE_CACHE["_PARSED_FMA_JSON"]
+
+    text = fetch_github_file(CORPUS_PATHS["fma_json"])
+    data = {}
+    if text:
+        try:
+            data = json.loads(text)
+        except Exception as e:
+            sys.stderr.write(f"FMA JSON Parse error: {e}\n")
+
+    _REMOTE_CACHE["_PARSED_FMA_JSON"] = data
     return data
 
 
@@ -307,6 +326,25 @@ MCP_TOOLS = [
                 }
             }
         }
+    },
+    {
+        "name": "get_fma_anatomy_profile",
+        "description": "FMA(Foundational Model of Anatomy v5.1.0) 온톨로지 기반 361개 표준 경혈의 해부학적 실체(근육·신경·혈관 FMA:ID 및 영문 라벨), 2대 교재(공통교재 vs 김재효) 매핑 대조 및 척수 분절/대응 수준 프로파일을 반환합니다.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "acupoint": {
+                    "type": "string",
+                    "description": "경혈 코드(예: ST36, LU5, LI4, GV20, CV12) 또는 경혈명(예: 족삼리, 척택, 합곡)"
+                },
+                "format": {
+                    "type": "string",
+                    "enum": ["markdown", "json"],
+                    "description": "출력 포맷 (기본값: markdown)"
+                }
+            },
+            "required": ["acupoint"]
+        }
     }
 ]
 
@@ -366,7 +404,10 @@ def handle_get_acupoint_anatomy_profile(arguments):
         "- **김재효 교수 교재**: 국소 3D 층차 주행 단면, 심부 혈관신경속 실체 정밀 명시",
         "- **공간 변위 분기 (Δ)**: 고전 원전점 vs 현대 WHO점 간 변위 $\\Delta \\le 15\\text{mm}$ (단일 표적 표준 부합)",
         "",
-        "## 4. Layer A 실측 생의학 연구 현황",
+        "## 4. FMA(Foundational Model of Anatomy) 온톨로지 연동",
+        f"- **FMA 온톨로지 상세**: `get_fma_anatomy_profile(acupoint='{code}')` 도구로 FMA:ID, 신경 지배 줄기 사슬, 척수 분절 합집합(B-Check ②) 정밀 조회 가능",
+        "",
+        "## 5. Layer A 실측 생의학 연구 현황",
         f"- **보유 실측 논문**: 총 {papers_count}편 등재 (로컬 전수 역색인 + PubMed/OpenAlex 동기화)",
         f"- **척수 지배 분절**: {spinal}",
         f"- **주요 신경반사 회로**: {reflex}",
@@ -374,6 +415,81 @@ def handle_get_acupoint_anatomy_profile(arguments):
         "> 💡 **학술 인용 가이드**: 본 프로파일은 Framework v2.7 및 통합 마스터 DB에 준거하여 산출되었습니다."
     ]
     return "\n".join(report)
+
+
+def handle_get_fma_anatomy_profile(arguments):
+    target = (arguments.get("acupoint") or arguments.get("code") or arguments.get("name_kr") or arguments.get("name") or "").strip()
+    pdata = resolve_acupoint_key(target)
+    code = pdata["code"] if pdata else target.upper()
+    name_kr = pdata["name_kr"] if pdata else ""
+    out_format = (arguments.get("format") or "markdown").strip().lower()
+
+    m = re.match(r"([A-Za-z]+)\s*0*(\d+)", code)
+    if m:
+        fma_code = f"{m.group(1).upper()}{int(m.group(2)):02d}"
+    else:
+        fma_code = code
+
+    fma_json = get_cached_fma_mapping()
+    rows = fma_json.get("rows", [])
+    matched_rows = [r for r in rows if r.get("code", "").upper() == fma_code.upper()]
+
+    if not matched_rows:
+        matched_rows = [r for r in rows if re.sub(r"0+(\d+)", r"\1", r.get("code", "").upper()) == re.sub(r"0+(\d+)", r"\1", code.upper())]
+
+    if not matched_rows:
+        return f"경혈 '{target}' ({code})에 대한 FMA 매핑 데이터를 찾을 수 없습니다. (GitHub 저장소 data/acupoint_fma_mapping.json 확인)"
+
+    if out_format == "json":
+        return json.dumps({"code": fma_code, "name_kr": name_kr or matched_rows[0].get("name_kr", ""), "rows": matched_rows}, ensure_ascii=False, indent=2)
+
+    cat_order = {"근육": 0, "신경": 1, "혈관": 2}
+    sorted_rows = sorted(matched_rows, key=lambda r: (cat_order.get(r.get("category"), 9), r.get("fma_label") or "~"))
+
+    lines = [
+        f"# 🏛️ [FMA 5.1.0] {fma_code} {name_kr or matched_rows[0].get('name_kr', '')} 해부학적 실체 온톨로지 프로파일",
+        f"- **분석 원천**: GitHub 스트리밍 (FMA v5.1.0 기준 2대 교재 통합 대조표)",
+        f"- **대응 실체 수**: 총 {len(sorted_rows)}개 행 매핑",
+        "",
+        "## 1. FMA 구조물 매핑 상세",
+        "| 구분 | 교재 한글명 | 교재 영문명 | FMA 실체 (ID & Label) | 대응 수준 | 출처 |",
+        "| :--- | :--- | :--- | :--- | :--- | :--- |"
+    ]
+
+    by_src = {}
+    fma_ids_by_src = {}
+    for r in sorted_rows:
+        fid = r.get("fma_id")
+        flabel = r.get("fma_label") or "—"
+        cat = r.get("category") or "기타"
+        tkr = r.get("term_kr") or "-"
+        ten = r.get("term_en") or "-"
+        match = r.get("match") or "none"
+        src = r.get("source") or "미상"
+        by_src.setdefault(src, 0)
+        by_src[src] += 1
+        if fid:
+            fma_ids_by_src.setdefault(src, set()).add(fid)
+            fma_cell = f"FMA:{fid} {flabel}"
+        else:
+            fma_cell = "—"
+
+        lines.append(f"| {cat} | {tkr} | {ten} | {fma_cell} | {match} | {src} |")
+
+    lines.append("")
+    lines.append("## 2. 2대 교재 FMA 매핑 통계 (Framework 10대 구성요소 ⑥)")
+    all_fids = set()
+    for s_ids in fma_ids_by_src.values():
+        all_fids.update(s_ids)
+    common_ids = set.intersection(*fma_ids_by_src.values()) if len(fma_ids_by_src) >= 2 else set()
+
+    for src, cnt in by_src.items():
+        lines.append(f"- **{src}**: 총 {cnt}개 용어 (FMA ID {len(fma_ids_by_src.get(src, set()))}개)")
+    lines.append(f"- **2대 교재 공통 FMA 실체**: {len(common_ids)}개")
+    lines.append("")
+    lines.append("> 💡 **대응 수준 범례**: `exact`=완전 일치, `parent`=상위 구조 대응(가지 미등재), `fuzzy`=근사 매핑, `none`=미대응")
+
+    return "\n".join(lines)
 
 
 def handle_search_biomedical_reflex_db(arguments):
@@ -703,6 +819,8 @@ def handle_tool_call(tool_name, arguments):
         return handle_search_classic_records(arguments)
     elif tool_name == "get_framework_protocol":
         return handle_get_framework_protocol(arguments)
+    elif tool_name == "get_fma_anatomy_profile":
+        return handle_get_fma_anatomy_profile(arguments)
     else:
         raise ValueError(f"Unknown tool: {tool_name}")
 
