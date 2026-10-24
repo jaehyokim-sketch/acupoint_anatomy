@@ -93,7 +93,7 @@ Needling-depth DB, sheet 1, Excel row 326 (N0 324, GB21).
 | *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | 5 | 11.5 | Integer = fen |
 | *Chimgu Gyeongheombang* (《鍼灸經驗方》) | 5 | 11.5 | Integer = fen |
 | ***Dongui Bogam* (《東醫寶鑑》)** | **0** | — | **Contraindicated for needling (禁鍼)**, cited source 'Tongren' (銅人) → SI 0 condition |
-| Korean common textbook, *Meridian and Acupoint Studies* (經絡經穴學) | 5–8 | 11.5–18.4 | Perpendicular |
+| Korean common textbook, *Meridian and Acupoint Studies* (經絡腧穴學) | 5–8 | 11.5–18.4 | Perpendicular |
 | Korean common textbook, *Acupuncture and Moxibustion Medicine* (鍼灸醫學) | 5–8 | 11.5–18.4 | Perpendicular |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 5–8 | 11.5–18.4 | Perpendicular; anterior-inferior and excessively deep insertion forbidden |
 | (Reference, 《通考》 【操作】) 《聖惠方》 4 fen · 《醫學入門》 6 fen · 《千金》 difficult labour 1 cun · 《竇太師針經》 2.5 cun | 4 / 6 / 10 / 25 | 9.2 / 13.8 / 23.0 / 57.5 | Texts outside the DB. The 《通考》 comments on 2.5 cun: "若為直刺，恐太深" |
@@ -341,3 +341,9 @@ Earlier v2.6 scores: classical location 96.0 / WHO location 94.0 — not compara
 | Title | Korean-style title | Title in the common English-edition format "[Acupoint Anatomical & Physiological Substrate Monograph] Jianjing (肩井, GB21)" | ST36 English edition |
 | Figure 4-1 | Image path checked | Kept as the actual file name `GB21_견정_횡단면_해부모식도.png` | File in the report folder |
 | Classical quotations | Simplified characters (e.g. 针, 肩胛冈, 气胸, 灵枢) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |
+
+## Refinement History (2026-10-24)
+
+| Location | Original wording | Revised wording | Basis |
+| :--- | :--- | :--- | :--- |
+| Textbook title | *Meridian and Acupoint Studies* (經絡經穴學) | (經絡腧穴學) | The Korean edition names the textbook *Gyeongnak Suhyeolhak* (經絡腧穴學; suhyeol = 腧穴); 經絡經穴學 was a mistranslation carried over from the earlier ST36 English edition |

@@ -15,7 +15,7 @@
 2. **The contradiction arises from the premise.** The classical Front-Mu attributions were not built on a segmental principle. In the literature, neither point was the representative point for treating disease of the Fu organ to which it is assigned. The *Lingshu* (《靈樞》) treats large-intestine disease with Shangjuxu (上巨虛, ST37), and the *Mingtang Jing* (《明堂經》) treats small-intestine distension (小腸脹) with Zhongliao (中髎, BL33), not Guanyuan.
 3. **The segmental model alone cannot fully explain even Tianshu's action.** In a 2025 mouse study, the improvement of colitis by electroacupuncture at Tianshu did not pass through the T10-segment sympathetic ganglia (SMG, IMG) but through the sacral (S2–4) parasympathetic pathway (pelvic ganglion) (papers.id 2023). In another study, a spinal segmental sympathetic pathway was recruited depending on stimulus intensity (B3-16). Tianshu's effects are a mixture of segmental reflexes and non-segmental pathways.
 4. **The lecturer's conclusion is sound, but one of its supporting arguments must be replaced.** The conclusion that Guanyuan treats the disease category "Small Intestine disease (小腸病)", especially lower abdominal pain and Shan disorders (疝症), is also supported by anatomical analysis: Guanyuan's segments match the pelvic organs, and loops of small intestine do enter inguinal hernial sacs. By contrast, the explanation "Small Intestine disease = the bladder's function of voiding urine" is not confirmed in the early literary strata. Guanyuan's indication for urinary disorders is better explained as a local lower-abdominal indication matching the bladder in segments T11–L2.
-5. **ARI v3.0** (dual scoring, Section 10): Tianshu scores **ARI-Core 71 (B, weight-sensitive)** and Guanyuan **ARI-Core 68 (C)**; both are **SI 25 ⚠ safety caution**. For both points the bottleneck for substrate identification is the lack of human evidence for the reflex mechanism (B-Check 7/12, mechanism "hypothesis"). For Guanyuan, the discrepancy between textbooks in describing the deep structures is a further deduction. On the safety side, the key point is that the *Mingtang Jing*'s (《明堂經》) Guanyuan depth "刺入二寸" (about 46 mm) may pass through the peritoneum.
+5. **ARI v3.0** (dual scoring, Section 10): Tianshu scores **ARI-Core 71.25 ± 0 (B, weight-sensitive)** and Guanyuan **ARI-Core 67.5 ± 0 (C)**; both are **SI 25 ⚠ safety caution**. For both points the bottleneck for substrate identification is the lack of human evidence for the reflex mechanism (B-Check 7/12, mechanism "hypothesis"). For Guanyuan, the discrepancy between textbooks in describing the deep structures is a further deduction. On the safety side, the key point is that the *Mingtang Jing*'s (《明堂經》) Guanyuan depth "刺入二寸" (about 46 mm) may pass through the peritoneum.
 6. **Correction of an earlier answer**: In a Tier 1 answer the same day to a question on Tianshu and children, it was stated that "no record linking Tianshu to children was found". However, the 【提要索隱】 section of the refined *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) contains "灸治小兒慢性消化道症狀". Its source is the 1957 Nanjing *Zhenjiu Xue* (《針灸學》) "小兒慢性疾患灸之大有效", i.e. the modern-textbook stratum (Section 9). The conclusion (a practice of the modern stratum) stands, but "no record" was wrong and is hereby corrected.
 
 ---
@@ -241,8 +241,8 @@ graph LR
 | CV4 Guanyuan (關元) | 0.40×93.75 + 0.35×50 + 0.25×50 = **67.5** | **C (possible / hypothesis)** | Gates 1·2 not applied, Gate 3 applied | **25 ⚠** | 64.6 → C (grade unchanged) | 7/12, mechanism "hypothesis" |
 
 **Standard notation**
-- `ARI v3.0 | ST25 ARI-Core 71 ± 0 (adjusted; before adjustment 69–71) (B) | SI 25 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 69 (C, weight-sensitive)`
-- `ARI v3.0 | CV4 ARI-Core 68 ± 0 (adjusted; before adjustment 68–74) (C) | SI 25 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65 (C, grade unchanged)`
+- `ARI v3.0 | ST25 ARI-Core 71.25 ± 0 (adjusted; before adjustment 68.75–71.25) (B) | SI 25 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 68.75 (C, weight-sensitive)`
+- `ARI v3.0 | CV4 ARI-Core 67.5 ± 0 (adjusted; before adjustment 67.5–73.75) (C) | SI 25 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 64.6 (C, grade unchanged)`
 
 **Sensitive items**: For CV4, taking S_clarity as 75 gives 76.25 (B); taking B-Check ⑥ as 2 points (accepting the RCT as explicit evidence) makes S_reflex 75 and gives 73.75 (B). For ST25, taking S_clarity as 50 lowers the score to 62.5 (C).
 
@@ -282,3 +282,10 @@ graph LR
 - B1 (normative anatomy) evidence in the anatomical descriptions was written from general anatomical knowledge; edition, chapter and page in Moore and Gray's were not cross-checked (registry rule ⑤ not satisfied). Segmental ranges may differ by about one segment between textbooks.
 - Neither ST25 nor CV4 has a point-specific imaging measurement paper. The mm estimates in Section 5 are inferred from the CV12 measurement (papers.id 1444).
 - Correction of the earlier Tier 1 answer (Tianshu and children): see Section 0 item 6, Section 1 and Section 9.
+
+## Refinement History (2026-10-24)
+
+| Location | Original wording | Revised wording | Basis |
+| :--- | :--- | :--- | :--- |
+| Section 0, item 5 summary | ARI-Core 71 / 68 (rounded to integers) | 71.25 ± 0 / 67.5 ± 0 | Matches the Section 10-2 formulas and the xlsx `ARI` sheet (71.25, 67.5); unrounded values as in the other reports |
+| Section 10-2 standard notation | ST25 "71 ± 0 (before adjustment 69–71)", sensitivity 69 / CV4 "68 ± 0 (before adjustment 68–74)", sensitivity 65 | ST25 "71.25 ± 0 (before adjustment 68.75–71.25)", sensitivity 68.75 / CV4 "67.5 ± 0 (before adjustment 67.5–73.75)", sensitivity 64.6 | Recalculated from raters 1 and 2 in Section 10-1: ST25 0.40×75+0.35×75+0.25×50 = 68.75, 0.40×81.25+… = 71.25; CV4 0.40×93.75+0.35×50+0.25×50 = 67.5, 0.40×87.5+0.35×75+0.25×50 = 73.75. Grades and conclusions unchanged |
