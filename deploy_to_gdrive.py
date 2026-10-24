@@ -6,6 +6,9 @@ Usage:
 """
 import os, sys, shutil, argparse
 
+# Support utf-8 console output on Windows
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 LOCAL_REPO = r"C:\workspace\acupoint_anatomy"
 GDRIVE_DEST = r"G:\내 드라이브\도서 번역\acupoint_anatomy"
 
