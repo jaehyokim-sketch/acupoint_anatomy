@@ -951,9 +951,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <!-- Stats Bar -->
     <div class="stats-bar">
       <div class="stat-card">
-        <span class="stat-num">29편 (58종)</span>
+        <span class="stat-num">28편 (56종)</span>
         <span class="stat-label-ko">한·영 듀얼 전문 리포트</span>
-        <span class="stat-label-en">29 Dual-Language Monographs</span>
+        <span class="stat-label-en">28 Dual-Language Monographs</span>
       </div>
       <div class="stat-card">
         <span class="stat-num">14개소</span>
@@ -961,7 +961,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <span class="stat-label-en">14 Key Points Layer 1~5 Verified</span>
       </div>
       <div class="stat-card">
-        <span class="stat-num">16+38군</span>
+        <span class="stat-num">15+38군</span>
         <span class="stat-label-ko">임상 증상·시동병 해부 매트릭스</span>
         <span class="stat-label-en">Clinical Symptom &amp; Shidong Matrix</span>
       </div>
@@ -982,13 +982,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <button class="search-clear" id="searchClear" title="검색어 지우기">✕</button>
       </div>
       <div class="results-count-badge" id="resultsCount">
-        Showing 29 / 29
+        Showing 28 / 28
       </div>
     </div>
 
     <div class="filter-tabs">
       <button class="tab-btn active" data-filter="all">
-        <span>전체 · All</span> <span class="tab-count">29</span>
+        <span>전체 · All</span> <span class="tab-count">28</span>
       </button>
       <button class="tab-btn" data-filter="acupoint">
         <span>경혈 해부생리 · Acupoints</span> <span class="tab-count">13</span>
@@ -1000,7 +1000,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <span>주제별 고증 · Thematic</span> <span class="tab-count">7</span>
       </button>
       <button class="tab-btn" data-filter="matrix">
-        <span>임상 매트릭스 · Matrix</span> <span class="tab-count">4</span>
+        <span>임상 매트릭스 · Matrix</span> <span class="tab-count">3</span>
       </button>
       <button class="tab-btn" data-filter="policy">
         <span>의료법제 정책 · Policy</span> <span class="tab-count">1</span>

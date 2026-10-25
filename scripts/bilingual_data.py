@@ -305,45 +305,25 @@ BILINGUAL_CARDS = [
     "btn_ko": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC09_%EC%A4%91%EC%B6%A9/PC09_%EC%A4%91%EC%B6%A9_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
     "btn_en": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC09_%EC%A4%91%EC%B6%A9/PC09_%EC%A4%91%EC%B6%A9_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
   },
-  # 16. Headache Comprehensive
+  # 16. Donguibogam Headache Clinical Matrix
   {
     "category": "matrix",
-    "search": "두통침구 동의보감 Donguibogam Headache 종합보고서 Comprehensive Report 16종 두통 신경해부 매트릭스 백회 찬죽 풍지 합곡 임상 배혈",
-    "code_badge": "REPORT",
+    "search": "동의보감 두통 침구해부 Donguibogam Headache 종합보고서 매트릭스 15절 9처방 20혈 백회 찬죽 풍지 합곡 전정 인당 태양 곡빈 풍문 FMA 5.1 UPGMA 삼차경수복합체 TCC",
+    "code_badge": "MATRIX · HEADACHE",
     "code_style": "background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);",
-    "status_badge": "Clinical Matrix · 16 Headache Patterns · Comprehensive",
-    "status_style": "background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);",
-    "title_ko": "두통침구 종합보고서",
-    "title_en": "Donguibogam Headache Comprehensive Monograph",
-    "subtitle_ko": "동의보감 16종 두통 침구치료 신경해부학 매트릭스 종합보고서",
-    "subtitle_en": "Comprehensive Neuroanatomical Matrix Report on 16 Headache Patterns",
-    "desc_ko": "《동의보감》 두통문(頭痛門) 수록 16대 두통 유형별 표준 침구 처방, 주치 혈위의 신경학적 지배 분절 및 삼차-신경혈관 복합체(Trigeminovascular system) 기전 통합 분석 모노그래프.",
-    "desc_en": "Comprehensive monograph mapping classical acupuncture prescriptions for 16 headache patterns in *Donguibogam* to neuroanatomical innervations and trigeminovascular pain transmission circuits.",
-    "tags": ["#동의보감", "#Donguibogam", "#두통매트릭스", "#Headache", "#삼차신경혈관", "#백회", "#찬죽", "#풍지"],
+    "status_badge": "Category 4 · UPGMA r=0.967 · FMA 5.1 & TCC Convergence",
+    "status_style": "background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);",
+    "title_ko": "동의보감 두통 침구해부",
+    "title_en": "Donguibogam Headache Acupuncture-Anatomy Matrix",
+    "subtitle_ko": "『동의보감』 두통 원문 15절·침구 9처방 20혈 재구성, FMA 5.1 층위 및 삼차-경수 수렴 종합보고서",
+    "subtitle_en": "Textual Reconstruction of 15 Patterns, 9 Prescriptions, 20 Points, FMA Strata & TCC Convergence Monograph",
+    "desc_ko": "원문(頭 1.7~1.25, 1.33 鍼灸法)에 근거해 15유형·9처방·20혈로 전면 재구성. 《통고》 단독 주치 층(1층 14·2층 4·3층 2), FMA 5.1 기반 UPGMA 해부 유사도(코페네틱 0.967, ARI 1.000) 및 삼차-경수 복합체(TCC) 수렴 분석, 7종 고해상도 도식 및 11시트 매트릭스 완비.",
+    "desc_en": "Rigorous textual reconstruction of Donguibogam Headache chapter (15 patterns, 9 prescriptions, 20 points). Evaluates Tongkao indication tiers (Tier 1: 14, Tier 2: 4, Tier 3: 2), FMA 5.1 UPGMA clustering (cophenetic r=0.967, ARI 1.000), trigeminocervical complex (TCC) convergence, 7 figures, and 11-sheet matrix.",
+    "tags": ["#동의보감", "#Donguibogam", "#두통매트릭스", "#Headache", "#삼차경수복합체", "#TCC", "#FMA5_1", "#UPGMA", "#20혈처방"],
     "cat_label_ko": "임상 매트릭스",
     "cat_label_en": "Clinical Matrix",
-    "btn_ko": "",
-    "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/Donguibogam_Headache_Acupuncture_Comprehensive_Report.html"
-  },
-  # 17. Headache Analysis
-  {
-    "category": "matrix",
-    "search": "두통처방 상세분석 Donguibogam Headache Analysis Report 주치 빈도 배혈 원리 삼차신경 경추신경총 교차 분석",
-    "code_badge": "ANALYSIS",
-    "code_style": "background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);",
-    "status_badge": "Prescription Analytics · Frequency & Network",
-    "status_style": "background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);",
-    "title_ko": "두통처방 상세분석",
-    "title_en": "Donguibogam Headache Prescription Analytics",
-    "subtitle_ko": "동의보감 두통 침구 처방 혈위 빈도 및 배혈 네트워크 상세분석",
-    "subtitle_en": "Detailed Frequency, Combination Logic & Neurovascular Correlation",
-    "desc_ko": "두통 16패턴에 투입된 경혈의 빈도 분석, 주치 중첩도 및 삼차신경 제1지(V1)와 경추신경총(C2-C3)의 수렴 투사 배혈 로직을 통계적으로 실증한 심층 연구 보고서.",
-    "desc_en": "Statistical and network analysis of acupoints across 16 headache patterns in *Donguibogam*, validating convergence of trigeminal V1 afferents and cervical C2–C3 nerve plexuses.",
-    "tags": ["#처방분석", "#PrescriptionAnalytics", "#두통배혈", "#네트워크", "#삼차경추복합체", "#빈도분석"],
-    "cat_label_ko": "임상 매트릭스",
-    "cat_label_en": "Clinical Matrix",
-    "btn_ko": "",
-    "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/Donguibogam_Headache_Analysis_Report.html"
+    "btn_ko": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
   },
   # 18. Hand-Taiyin Shidong Matrix
   {
