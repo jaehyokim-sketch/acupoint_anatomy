@@ -1,15 +1,15 @@
 # [Acupoint Anatomical & Physiological Substrate Monograph] Tianfu (天府, LU3) and Xiabai (俠白, LU4): Integrated Report
 
-> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: given per Target below · **Dual scoring**: completed by two independent raters, adjudicated
-> - cLU3: `ARI v3.0 | ARI-Core 56.2 ± 2.5 (C·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 52.1 (D, grade changes → weight-sensitive)`
-> - cLU4: `ARI v3.0 | ARI-Core 62.5 ± 1.2 (C·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 57.3 (C, grade unchanged)`
-> - pLU3: `ARI v3.0 | ARI-Core 41.2 ± 0 (D·H) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 39.6 (D, grade unchanged)`
-> - pLU4: `ARI v3.0 | ARI-Core 43.8 ± 2.5 (D·H) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 41.7 (D, grade unchanged)`
+> **Framework**: v2.7.7 (2026-10-25 update: four primary classics, Tri-Target, split threshold Δ > 10 mm) · **ARI**: given per Target below (cLU = Target 1≡2, classical text position ≡ palpation-based locus of '動脈中'; pLU = Target 3, WHO standard location) · **Dual scoring**: completed by two independent raters, adjudicated
+> - cLU3 (Target 1≡2): `ARI v3.0 | ARI-Core 56.2 ± 2.5 (C·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 52.1 (D, grade changes → weight-sensitive)`
+> - cLU4 (Target 1≡2): `ARI v3.0 | ARI-Core 62.5 ± 1.2 (C·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 57.3 (C, grade unchanged)`
+> - pLU3 (Target 3): `ARI v3.0 | ARI-Core 41.2 ± 0 (D·H) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 39.6 (D, grade unchanged)`
+> - pLU4 (Target 3): `ARI v3.0 | ARI-Core 43.8 ± 2.5 (D·H) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 41.7 (D, grade unchanged)`
 
 > **Date of integration**: 2026-10-03 (v2.7 revision 2026-10-04, FMA supplement 2026-10-23; see the revision histories at the end)
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 > **Reports integrated**: the LU03 Tianfu (天府) report, the LU04 Xiabai (俠白) report and the earlier LU3–LU4 comparative-analysis report. The originals and the pre-revision edition are kept internally.
-> **Principle of integration**: because content overlap among the three reports exceeded 50%, they were merged into a single authoritative edition built around the comparative-analysis report. During integration the text was re-checked against the Three Primary Classics, the master datasets and the original papers, and contradictions and factual errors among the earlier reports were corrected (§11, correction audit table).
+> **Principle of integration**: because content overlap among the three reports exceeded 50%, they were merged into a single authoritative edition built around the comparative-analysis report. During integration the text was re-checked against the Three Primary Classics (re-collated against the four primary classics on 2026-10-25, with the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) added), the master datasets and the original papers, and contradictions and factual errors among the earlier reports were corrected (§11, correction audit table).
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions. In evidence pointers, "Xuewei Tongjian" = 《中國針灸穴位通鑑》, "Zhengzhi Tongjian" = 《中國針灸證治通鑑》 and "Tongkao" = 《針灸腧穴通考》, followed by the PDF page range and line number.
 
 ---
@@ -17,14 +17,14 @@
 ## 0. Executive Summary
 
 1. **The classical Tianfu (天府) and Xiabai (俠白) are most plausibly the pulsation points of the brachial artery on the medial side of the arm (ARI-Core C·H, possible/hypothetical level).** *Zhenjiu Jiayi Jing* (《針灸甲乙經》) and *Huangdi Neijing Mingtang* (《黃帝內經明堂》) describe Tianfu (天府) as "腋下三寸，臂臑內廉動脈中" and Xiabai (俠白) as "在天府下，去肘五寸動脈中". Song Seok-mo (2022) and Huang Longxiang (黃龍祥, *Zhenjiu Shuxue Tongkao* 《針灸腧穴通考》) both identify this "動脈" (artery) as the **brachial artery**, which runs in the medial bicipital groove. However, there are no point-specific measurements (cadaveric or ultrasound) and no point-specific Layer A studies, so the verdict is **possible/hypothetical (C·H)**, not "substrate established".
-2. **The modern WHO location is on the lateral border of biceps brachii, a different place from the classical location.** The spatial discrepancy between the two sites is estimated anatomically at about 25–35 mm (model value ≈ 29 mm), which exceeds the Δ > 15 mm criterion, so **the analysis is split into Target 1 (classical arterial points, cLU3/cLU4) and Target 2 (WHO points, pLU3/pLU4)**. The earlier Tianfu report's verdict of "Δ ≈ 3 mm, single target" is withdrawn.
+2. **The modern WHO location is on the lateral border of biceps brachii, a different place from the classical location.** The spatial discrepancy between the two sites is estimated anatomically at about 25–35 mm (model value ≈ 29 mm), which exceeds the Δ > 10 mm criterion, so **the analysis is split into Target 1≡2 (classical text position ≡ palpation-based locus of '動脈中', cLU3/cLU4) and Target 3 (WHO standard location, pLU3/pLU4)** (Tri-Target: the classical text position and the palpation-based locus are the same arterial point and are merged, §4.1). The earlier Tianfu report's verdict of "Δ ≈ 3 mm, single target" is withdrawn.
 3. **The two researchers agree on the diagnosis but differ on the remedy.**
    - Song Seok-mo: the WHO location is an error, so **Tianfu (天府) and Xiabai (俠白) should be returned to their position over the brachial artery.**
    - Huang Longxiang (黃龍祥): already at the stage of 《靈樞·經脈》 the course of the Hand-Taiyin (手太陰) channel had shifted to the radial side of the arm, and the modern location reflects that change belatedly. The problem lies not in the location but in the **"separation of name and substance" (名實分離): the location has changed, yet the indications, layer anatomy and needling methods were inherited unchanged from the classical arterial point.** "今之天府已非古之天府"
-4. **Verdict of this report (dual-target coexistence model)**:
-   - The classical indications (鼻衄·喘咳 / 心痛·煩滿) are assigned to **Target 1 (cLU3, cLU4)**.
-   - The main indication of Target 2 (pLU3, pLU4) is **local pain of the upper arm**; transferring the classical indications to it unchanged is cautioned against.
-   - Branch decision (§10.5): ΔARI-Core is 15.0 for cLU3 vs pLU3 and 18.7 for cLU4 vs pLU4, both ≥ 10 with non-overlapping ± intervals, so **for both pairs Target 1 (the classical arterial point) is declared superior in substrate-identification reliability**. The SI, however, is higher for Target 2 (75 vs 50).
+4. **Verdict of this report (Target 1≡2 · Target 3 coexistence model)**:
+   - The classical indications (鼻衄·喘咳 / 心痛·煩滿) are assigned to **Target 1≡2 (cLU3, cLU4)**.
+   - The main indication of Target 3 (pLU3, pLU4) is **local pain of the upper arm**; transferring the classical indications to it unchanged is cautioned against.
+   - Branch decision (§10.5): ΔARI-Core is 15.0 for cLU3 vs pLU3 and 18.7 for cLU4 vs pLU4, both ≥ 10 with non-overlapping ± intervals, so **for both pairs Target 1≡2 (the classical arterial point) is declared superior in substrate-identification reliability** (with only two independent Targets, this is also a single superiority under the Tri-Target rule). The SI, however, is higher for Target 3 (75 vs 50).
 5. **Level of biomedical evidence**: after the 2026-10-04 sync the master DB contains human studies in which the WHO Tianfu (天府) and Xiabai (俠白) were needled together with other points (papers.id 1819, 1822, 1832, 1833; uncontrolled before–after comparisons) and a randomised comparative study of periarthritis of the shoulder that includes LU4 (1836). All of them, however, use prescriptions of 7–11 combined points, so **point-specific Layer A = 0 papers**, and Gate 2 (S_reflex ≤ 25, H) applies. B-Check scores are cLU3 5/12, cLU4 7/12 and pLU3 and pLU4 6/12, all below 8/12, so the reflex mechanisms below are **hypotheses**.
 6. **ARI v3.0 (dual scoring, adjudicated)**:
 
@@ -36,16 +36,18 @@
    | pLU4 | 43.8 ± 2.5 | D·H | 75 | 41.7 (D, unchanged) |
 
    Scores of the earlier v2.6 edition are not comparable with v3.0 (see revision history).
+7. **Collation with the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) (2026-10-25)**: Huang Longxiang explains "腋內動脈，手太陰也，名曰天府" of 《靈樞·本輸》 and 《寒熱病》 as a diagnostic pulsating site and the 'marker' (標) of the Hand-Taiyin (the silk-manuscript "出腋內廉" and "出臂內陰" are also annotated as the 天府 marker pulse), and records the "動脈" of the 《明堂》 entries for 天府 and 俠白 together with Yang Shangshan's commentary "手太陰脈動此穴也". Yang's commentary on the three-part nine-indicator method (三部九候) lists the Hand-Taiyin pulsating sites of the middle-part heaven (中部之天) as "中府、天府、俠白、尺澤". This directly supports the verdict that the classical Tianfu and Xiabai are arterial points on the medial arm (cLU), but the book does not discuss how the location moved laterally. On re-check, $S_{orig}$ ④ is **unchanged for all Targets** (§1, end of §2, §10).
 
 ---
 
-## 1. Classical Literature Screening Table (Rank 1·2: Direct Collation of the Three Primary Classics)
+## 1. Classical Literature Screening Table (Rank 1·2: Direct Collation of the Four Primary Classics)
 
 | Classic | Location searched | Tianfu (天府, LU3) | Xiabai (俠白, LU4) |
 | :--- | :--- | :--- | :--- |
 | ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)** | 《中國針灸穴位通鑑》(上卷) PDF pp. 321–400 | **Source**: "腋內動脈，手太陰也，名曰天府" (《靈樞·本輸》, vessel name), "天府二穴" (Wang Bing's (王冰) commentary on 《素問·氣穴論》 15:108, point name) (L144, L146). **Location**: "在腋下三寸，臂內廉動脈中，手太陰脈氣所發" (《甲乙》 3:50). **Aliases**: 無 (none). **Needling**: "禁不可灸，灸之令人逆氣。刺入四分，留三呼" (《甲乙》, L282). **Concluding note on location**: "歷代文獻記載基本一致" (L332). However, the needling summary in the concluding note (L388) gives the 《甲乙》 as "刺入四分、留五呼", differing from the entry itself (L282 "留三呼") (an internal variant within the Tongjian) | **Location**: "在天府下去肘五寸動脈中" (《甲乙》 3:50). **Aliases**: 無 (none). **Channel attribution**: "手太陰之別". **Needling**: "刺入四分，留三呼，灸七壯" (《甲乙》, L482), "刺入三分" (《銅人》). **Concluding note on location**: "歷代文獻記載基本一致" (L510) |
-| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** | 《中國針灸證治通鑑》 PDF pp. 401–480 | **Epistaxis (鼻衄)**: "暴癉內逆，肝肺相搏，血溢鼻口，取天府"; 《外臺》 "灸兩膊上大脈…以鼻嗅臂", with the editorial note (按語) "此方所取穴即天府穴"; 《百證賦》 "天府合谷，鼻中衄血宜追". **Goitre (癭)**: "癭惡氣，灸天府五十壯", etc. | **Skin (皮膚)**: 《古今醫統》 "治赤白汗斑，灸夾白穴即愈" (editorial note "夾白即肺經俠白穴"); modern vitiligo (白癜風) "俠白(點刺出血再行拔火罐)" |
+| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** | 《中國針灸證治通鑑》 PDF pp. 401–480 (section-based refined edition [證治24] L10·L46·L218, [證治26] L368·L436·L490; checked against the Korean translation of the same sections) | **Epistaxis (鼻衄)**: "暴癉內逆，肝肺相搏，血溢鼻口，取天府" — "when sudden heat (暴癉) counterflows inward and the liver and lung clash so that blood overflows from the nose and mouth, take Tianfu" ([證治24 trans.] L12); 《外臺》 "灸兩膊上大脈…以鼻嗅臂", with the editorial note (按語) "此方所取穴即天府穴" — "to locate the arm vessel, bring the nose to the arm as if smelling it and mark where the nose tip touches; that is the point" ([證治24 trans.] L72); 《百證賦》 "天府合谷，鼻中衄血宜追" — "bleeding inside the nose should be treated with Tianfu and Hegu" ([證治24 trans.] L372). **Goitre (癭)**: "癭惡氣，灸天府五十壯" — "for goitre with malign qi, 50 cones of moxibustion at Tianfu" ([證治26 trans.] L717), etc. | **Skin (皮膚)**: "治赤白汗斑，灸夾白穴即愈" (editorial note "夾白即肺經俠白穴") — "for red and white sweat macules (赤白汗斑), moxibustion at Jiabai (夾白) cures at once, and needling to let blood also cures" ([證治26 trans.] L565·L567); modern vitiligo (白癜風) "俠白(點刺出血再行拔火罐)" — "Xiabai (prick to let blood, then apply a cup)" ([證治26 trans.] L643). The source of the 赤白汗斑 entry is 《古今醫統大全·經驗秘方》 vol. 93 ([證治26] L366) |
 | ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)** | 《針灸腧穴通考》(上) PDF pp. 81–160 (L1653–2025) | **Study of name and substance (名實考)**: "今之天府已非古之天府". Ancient "臂臑內廉動脈中", modern "肱二頭肌橈側緣". Because the brachial artery descends along the medial bicipital groove, "此處已相當於今之手少陰經穴分布區域". The first to use the anatomical term for the lateral border were Japanese acupuncture books. Chinese textbooks kept "臑內廉動脈中" through the 1957 Nanjing (南京) 《針灸學》 and the 1st–2nd editions of the 《講義》 (*Lecture Notes*), and changed it to "肱二頭肌外緣" from the 4th edition | **Study of name and substance (名實考)**: "本穴定位，古今不同". On the statement "重按有動脈應手" in the 1st edition of the 《講義》: "按如今之定位，無論如何重按，也不會觸及動脈搏動". "俠白部位在動脈中，故該穴仍可能由手太陰標脈'天府脈'演變而來". The indication "心痛" = the chest bi heart pain (胸痹心痛) group |
+| ***Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)** | 第壹編 第一篇 and 第三篇, 第貳編 第六篇, 第叄編 第一篇 (Hand-Taiyin), etc. | **Vessel name / marker pulse**: "腋內動脈，手太陰也，名曰天府" (《靈樞·本輸》), "腋下動脈，臂太陰也，名曰天府" (《寒熱病》) [經絡通鑑 01篇] L351·L355; commentary "這些脈是診脈部位，也曾是經脈'標'的部位……'天府'……在《衛氣》篇中仍為相應經脈之標" L357, "'臑內陰'處有動脈，《內經》名曰'天府'，作為手太陰之'標'脈" L393·L401. **Silk-manuscript annotation**: 《足臂》 "出腋內廉" = "手太陰之標脈——腋內動脈'天府'脈", 《陰陽》 "出臂內陰" = "手太陰標脈'天府'動脈" [經絡通鑑 05篇] L1124·L1140. **《明堂》 entry**: "天府：在腋下三寸臂臑內廉動脈，手太陰脈氣所發。楊上善注曰：臑在肩下肘上動之脈，手太陰脈所動也" [經絡通鑑 01篇] L419. **Scribal error**: "天府" in a figure of 《醫心方》 vol. 22 should read "天泉" [經絡通鑑 26篇] L295 | **《明堂》 entry**: "俠白：在天府下去肘五寸動脈。楊上善注曰：動脈，手太陰脈動此穴也" [經絡通鑑 01篇] L423. **Pulsating sites**: Yang Shangshan's commentary on 三部九候 "中部之天，手太陰脈，動在中府、天府、俠白、尺澤四處，以候肺氣" [經絡通鑑 15篇] L299; synthesis of Lü Guang's and Yang Shangshan's commentaries "手太陰動於太淵，又動於尺澤、俠白、天府" [經絡通鑑 17篇] L122. **No direct mention** of the issues at stake (how the location moved laterally, the alias 白雄) |
 
 - **Variant note**: the location wording for Tianfu (天府) is "臂內廉" in the Xuewei Tongjian (《穴位通鑑》, quoting 《甲乙》 3:50, L172) and "臂臑內廉" in the Tongkao (《通考》) and the collated *Mingtang* (《明堂》). The meaning (medial border of the upper arm) is the same, so this does not affect the location verdict.
 
@@ -59,8 +61,8 @@
 
 | Period | Text | Description | Classification | Assessment |
 | :--- | :--- | :--- | :---: | :--- |
-| Pre-Qin | 《足臂十一脈灸經》 / 《陰陽十一脈灸經》 | Arm-Taiyin vessel (臂太陰脈) "以奏臑內" / Arm-Juyin vessel (臂鉅陰脈) "出臂內陰" | Primary | Course on the medial side of the upper arm; terminates at the Heart (心) |
-| Pre-Qin & Han | 《靈樞·本輸》 · 《寒熱病》 | "腋內動脈，手太陰也，名曰天府" / "腋下動脈，臂太陰也，名曰天府…暴癉內逆，肝肺相搏，血溢鼻口，取天府" | Primary | **天府 was originally a vessel name (標脈, marker pulse)**, and the diagnostic pulse-taking site (脈候) was converted into an indication (Huang Longxiang 黃龍祥) |
+| Pre-Qin | 《足臂十一脈灸經》 / 《陰陽十一脈灸經》 | Arm-Taiyin vessel (臂太陰脈) "以奏臑內" / Arm-Juyin vessel (臂鉅陰脈) "出臂內陰" | Primary | Course on the medial side of the upper arm; terminates at the Heart (心). The *Jingluo Tongjian* annotates "出腋內廉" and "出臂內陰" as the 天府 marker pulse ([經絡通鑑 05篇] L1124·L1140) |
+| Pre-Qin & Han | 《靈樞·本輸》 · 《寒熱病》 | "腋內動脈，手太陰也，名曰天府" / "腋下動脈，臂太陰也，名曰天府…暴癉內逆，肝肺相搏，血溢鼻口，取天府" | Primary | **天府 was originally a vessel name (標脈, marker pulse)**, and the diagnostic pulse-taking site (脈候) was converted into an indication (Huang Longxiang 黃龍祥; [經絡通鑑 01篇] L351·L357) |
 | Pre-Qin & Han | Wang Bing's (王冰) commentary on 《素問·氣穴論》 | "天府二穴" | Primary (point name) | The Xuewei Tongjian (《穴位通鑑》) cites this entry together as the source of the point name. No description of location or depth |
 | Pre-Qin & Han | 《靈樞·經脈》 | "下循臑內，行少陰心主之前" | Primary | Interpretations diverge. Song Seok-mo reads "內" as medial; Huang Longxiang (黃龍祥) sees it as a stage shifted radially relative to the silk manuscripts (帛書) |
 | Jin (晉) | *Zhenjiu Jiayi Jing* (《針灸甲乙經》) (= *Huangdi Mingtang Jing* 《黃帝明堂經》 lineage) | 天府 "腋下三寸，臂臑內廉動脈中…禁不可灸，刺入四分" / 俠白 "在天府下，去肘五寸動脈中，手太陰之別，刺入四分，灸五壯 (or 七壯)" | **Primary (source of location)** | Contains all three elements that fix a location (direction, distance, and the narrowing qualifier "動脈中") |
@@ -69,6 +71,12 @@
 | Ming | Zhengtong replica of the Song bronze figure (正統仿宋銅人) | Marks 天府, 俠白 and 尺澤 on the **radial side of the flexor surface of the arm** | Secondary (illustration) | Text (動脈中) and illustration (radial side) diverge. The bronze-figure charts of 史素, 丘濬 and the Imperial Medical Academy (太醫院) mark the ulnar side |
 | Ming | *Zhenjiu Dacheng* (《針灸大成》) | "腋下三寸，肘腕上五寸動脈中，用鼻尖點墨，到處是穴" | Secondary | Arterial description retained |
 | Modern | Chinese unified textbooks (統編教材), 4th edition onward / WHO 2008 (B1-05) | "肱二頭肌外緣/橈側緣", "lateral border of the biceps brachii" | Modern revision | Arterial description dropped; only the location is fixed on the radial side |
+
+**Collation by the *Tongkao* (《通考》) and the *Jingluo Tongjian* (《經絡通鑑》) (Rank 4: discrimination of transcription errors and meridian-theory over-extension)**
+- **Location wording**: the 《明堂》 entries recorded in the *Jingluo Tongjian* are 天府 "在腋下三寸臂臑內廉動脈" and 俠白 "在天府下去肘五寸動脈" ([經絡通鑑 01篇] L419·L423). "臂臑內廉" agrees with the *Tongkao* and the collated 《明堂》, and the "臂內廉" of the *Xuewei Tongjian* (quoting 《甲乙》) is taken as a variant with "臑" dropped (no difference in meaning; §1 variant note). The "動脈(中)" marker is consistent for both points and is not a scribal error.
+- **From vessel name to point name**: the *Jingluo Tongjian* regards 天府 as a diagnostic pulsating site (a candidate 'heaven' site of the three-part pulse diagnosis) and the 'marker' of the Hand-Taiyin, and explains that in the 《明堂》 period only points below the elbow and knee were assigned to meridians, the rest being recorded as "脈氣所發" ([經絡通鑑 01篇] L357, 17篇 L415). 天府 "手太陰脈氣所發" belongs to this system. This points in the same direction as the *Tongkao*'s reading that the epistaxis and lung indications of the classical Tianfu derive from pulse diagnosis, and supports the 'conflict → fixed as hypothesis' judgement for H3 (§8.2).
+- **《靈樞·經脈》 "行少陰心主之前"**: the commentary of 《醫學綱目》 recorded in the *Jingluo Tongjian* says "臑內廉凡有三脈，太陰居前，少陰居後，厥陰居中" ([經絡通鑑 17篇] L241), and Huang Longxiang's running explanation (串解) of the 《經脈》 also reads "下循臑內，行手少陰、手心主脈之前" ([經絡通鑑 05篇] L1166), i.e. an anterior course within the medial border of the arm. The editorial note of the Hand-Taiyin section (L343) deals only with divergences in course direction and organ attribution and does not mention a radial shift of the upper-arm course. The interpretive divergence in §7 (Song Seok-mo vs the *Tongkao*) is left as it is.
+- **Confusion case**: "天府" in the Hand-Jueyin figure of 《醫心方》 vol. 22 is a scribal error for "天泉" (PC2) ([經絡通鑑 26篇] L295). It is added to §3 as a case of name confusion between Tianfu and an adjacent point on the medial arm.
 
 ---
 
@@ -86,36 +94,51 @@
 - Action: the alias '天會' of Tianfu (天府) has been deleted from the report. The original datasets (KJH and the two textbook xlsx files) were not modified in this revision and need to be checked by the dataset maintainer.
 
 Confusion with neighbouring points:
-- 《竇太師針經》's description of Tianfu (天府) as "肘腕上五寸" is a conflation with the location of Xiabai (俠白) (《通考》).
-- In Japan from the Edo (江戶) period onward, the theory of a 1-chi (尺) bone-proportional length for the upper arm produced the variant "天府下二寸" (Bao Tianbai 包天白 1933, Zhao Erkang 趙爾康 1947, 《中華針灸學》 "天府下二寸").
+- 《竇太師針經》's description of Tianfu (天府) as "肘腕上五寸" is a conflation with the location of Xiabai (俠白) (《通考》). As a later alternative view it is not set as a Target under the Rank 5 Target exclusion rule.
+- In Japan from the Edo (江戶) period onward, the theory of a 1-chi (尺) bone-proportional length for the upper arm produced the variant "天府下二寸" (Bao Tianbai 包天白 1933, Zhao Erkang 趙爾康 1947, 《中華針灸學》 "天府下二寸"). As a scale-conversion variant it is not set as a Target under the Rank 5 Target exclusion rule and is recorded only as a location note.
 - It must be distinguished from the extra point **Xiaxiabai (下俠白)** (2 cun below Xiabai (俠白), radial side of biceps brachii).
+- In the Hand-Jueyin figure of 《醫心方》 vol. 22 the site of Tianquan (天泉, PC2) is wrongly labelled "天府" ([經絡通鑑 26篇] L295). This is a case in which 天府, 天泉 and 天池 on the medial arm are easily mixed up because their '天' names and location wording overlap.
 
 ---
 
 ## 4. 3D Spatial Coordinates & Layer 1–5 Layer Structure (Rank 5)
 
-### 4.1 Coordinate System and Dual-Target Split
+### 4.1 Coordinate System and Tri-Target Split
 
 The origin of the coordinates is the anterior midline of the upper arm at the relevant level.
 - X: medial −, lateral +
 - Y: distal direction from the anterior axillary fold (mm)
 - Z: depth from the skin surface
 
-| Indicator | Target 1: classical arterial point (cLU3 / cLU4) | Target 2: WHO location (pLU3 / pLU4) |
+| Indicator | Target 1≡2: classical text position ≡ palpation-based anatomical locus ('動脈中', cLU3 / cLU4) | Target 3: WHO standard location (pLU3 / pLU4) |
 | :--- | :--- | :--- |
 | Surface location | Medial surface of the arm, in the medial groove at the **medial border** of biceps brachii, over the pulsation of the brachial artery. cLU3 = 3 cun below the anterior axillary fold; cLU4 = 1 cun below that (5 cun above the elbow) | Anterolateral surface of the arm, **lateral border** of biceps brachii. pLU3 = 3 cun below the anterior axillary fold; pLU4 = 4 cun |
 | Locating landmark | "動脈應手" (pulsation felt under the finger). The pulse is palpated in the medial groove with the palm facing forward | Lateral border of the long head of biceps brachii; course of the cephalic vein |
+| Insertion reference (realisation of the palpation phrase) | **Over the pulsation of the brachial artery (FMA:22689) in the medial bicipital groove (FMA:74569)**. Bounding structures: lateral = medial border of biceps brachii (FMA:37670); medial/deep = coracobrachialis (FMA:37664, LU3 level) or brachialis (FMA:37667, LU4 level) and the medial intermuscular septum (FMA:37886). X ≈ −13 to −15 mm (model coordinates below), Y = 3 cun (LU3) / 4 cun (LU4) below the anterior axillary fold. Clear gap features ("臂臑內廉" = 緣 type + "動脈中") | No classical palpation phrase (muscle-border landmark only) → not applicable |
 | Model coordinates (values of the earlier comparative report retained) | cLU3 (X −14.5, Y 69, Z 18.2) / cLU4 (X −13.2, Y 92, Z 17.5) | pLU3 (X +13.8, Y 69, Z 12.0) / pLU4 (X +14.5, Y 92, Z 11.5) |
 | Spatial discrepancy Δ | **cLU3–pLU3: √(28.3² + 6.2²) ≈ 29.0 mm**, **cLU4–pLU4: √(27.7² + 6.0²) ≈ 28.3 mm** | Reference point |
-| Branch decision | **Δ > 15 mm → dual split** (based on model values) | — |
+| Branch decision | **Δ > 10 mm → split (Target 1≡2 vs Target 3)** (based on model values) | — |
 
 > The coordinates are not measurements but **model estimates** based on the width of the adult biceps brachii (about 25–40 mm). Y was converted with 1 cun ≈ 23 mm (based on 9 cun from the anterior axillary fold to the cubital crease). The Y values of the earlier comparative report (220/195 mm) did not state a reference point and have been changed to the anterior axillary fold reference. Z is a model value denoting the **central depth of each Target's target structure** (cLU = centre of the neurovascular bundle, pLU = centre of the lateral belly of biceps brachii), and differs from the depth at which the arterial pulse is first palpable (about 5–10 mm in lean individuals). It must be confirmed by measurement (ultrasound).
+
+**Tri-Target pairwise displacement (all estimated, not measured)**
+
+| Pair | Tianfu (LU3) Δ | Xiabai (LU4) Δ | Basis | Verdict (10 mm threshold) |
+| :--- | :---: | :---: | :--- | :--- |
+| Target 1–Target 2 | ≈ 0–5 mm | ≈ 0–5 mm | The earliest descriptions "腋下三寸，臂臑內廉動脈中" and "在天府下，去肘五寸動脈中" fix the location by the palpation phrase "動脈中", so Target 1 is the arterial point of Target 2 itself. "臂臑內廉" (medial border of the arm) and the line of arterial pulsation in the medial groove coincide | Merged (Target 1≡2) |
+| Target 1–Target 3 | ≈ 29.0 mm (model) | ≈ 28.3 mm (model) | √(ΔX² + ΔZ²) from the model coordinates above; based on a biceps brachii width of 25–40 mm | Split |
+| Target 2–Target 3 | ≈ 29.0 mm (model) | ≈ 28.3 mm (model) | The model cLU coordinates lie on the arterial point (= Target 2), so as above | Split |
+
+- The Song simplified locating method "以鼻取之" (where the nose tip touches the raised arm) is a locating manoeuvre, not a palpation phrase, so it is not used as evidence for Target 2.
+- Re-checked at the 10 mm threshold, the verdict is the same as at 15 mm (Δ ≈ 28–29 mm).
+
+> **Mapping from earlier labels**: former Target 1 (classical arterial point, cLU3 and cLU4) → Target 1≡2. Former Target 2 (WHO location, pLU3 and pLU4) → Target 3. The positions are unchanged, so the dual scoring is carried over. The earlier labels T1 and T2 inside Figure 4-1 are read with the same mapping.
 
 ### 4.2 Layers 1–5 (Structure-Based Definition of Framework Rank 5)
 
 The Framework defines Layers by **structure type**, not by mm ranges (L1 skin/subcutis / L2 superficial muscle and fascia / L3 deep muscle and nerve plane / L4 neurovascular bundle / L5 periosteum and deep organs). At the medial arterial point the neurovascular bundle (L4) lies just beneath the deep fascia and can be shallower than the deep muscle (L3), so the layer numbers should be read as a structural classification, not a depth order.
 
-| Layer (structure) | Target 1: cLU3 / cLU4 (medial arterial point) | Target 2: pLU3 / pLU4 (lateral border) |
+| Layer (structure) | Target 1≡2: cLU3 / cLU4 (medial arterial point) | Target 3: pLU3 / pLU4 (lateral border) |
 | :--- | :--- | :--- |
 | **L1** Skin/subcutis | Territory of the medial cutaneous nerve of arm (T1) and intercostobrachial nerve (T2). Subcutaneous fat. The basilic vein pierces the deep fascia at about mid-arm (near the level of cLU4) | Superior lateral cutaneous nerve of arm (axillary nerve, C5; level of pLU3), inferior lateral cutaneous nerve of arm (radial nerve, C5-6; level of pLU4). **Cephalic vein**, lateral bicipital groove |
 | **L2** Superficial muscle/fascia | Deep fascia (brachial fascia), medial border of biceps brachii | Lateral belly and fascia of the long head of biceps brachii; motor point |
@@ -127,26 +150,26 @@ The Framework defines Layers by **structure type**, not by mm ranges (L1 skin/su
 
 ![Schematic transverse section of the upper and middle thirds of the arm at the level of Tianfu (LU3) and Xiabai (LU4)](LU03-LU04_천부-협백_횡단면_해부모식도.png)
 
-*Figure 4-1. Schematic transverse section of the upper/middle third of the arm at the level of Tianfu (天府) and Xiabai (俠白) (right arm, viewed from above, not to scale). The purple arrow T1 (cLU3/4) runs from the medial surface to the brachial artery–median nerve bundle in the medial bicipital groove; the black arrow T2 (pLU3/4) is the path entering the muscle layer at the lateral border of biceps brachii. LU3 and LU4 are 1 cun apart and their sectional composition is almost identical, so they are drawn in a single figure; structures that vary with level (coracobrachialis, deltoid and the insertion of pectoralis major) are dashed. Layer thicknesses and Δ are model estimates.*
+*Figure 4-1. Schematic transverse section of the upper/middle third of the arm at the level of Tianfu (天府) and Xiabai (俠白) (right arm, viewed from above, not to scale). The purple arrow T1 (cLU3/4, now Target 1≡2) runs from the medial surface to the brachial artery–median nerve bundle in the medial bicipital groove; the black arrow T2 (pLU3/4, now Target 3) is the path entering the muscle layer at the lateral border of biceps brachii. LU3 and LU4 are 1 cun apart and their sectional composition is almost identical, so they are drawn in a single figure; structures that vary with level (coracobrachialis, deltoid and the insertion of pectoralis major) are dashed. Layer thicknesses and Δ are model estimates.*
 
 ### 4.3 FMA Substrate Collation (by Target and Layer) — structure names from the two textbooks and normative anatomy; IDs and relations from FMA 5.1.0
 
 | Target·Layer | Structure | FMA | FMA relation | Trunk / segment (FMA) | Textbook |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| T1 L1 | Medial cutaneous nerve of arm | FMA:65246 | continuous_proximally_with Medial cord of brachial plexus (FMA:45236) | Medial cord (T1, B1-03) | Not in textbooks |
-| T1 L1 | Intercostobrachial nerve | FMA:11307 (Lateral cutaneous branch of second intercostal nerve) | branch_of Intercostal nerve → Thoracic nerve | **Second intercostal nerve (T2)** | Not in textbooks |
-| T1 L1 | Basilic vein | FMA:22908 | — | — | Not in textbooks |
-| T1 L3 | Coracobrachialis (level of cLU3) | FMA:37664 | contained_in anterior compartment space | Branch of musculocutaneous nerve to coracobrachialis · C5, C6 | Not in textbooks |
-| T1 L4 | Brachial artery · brachial vein | FMA:22689 · FMA:22934 | Artery is_a Segment of subclavian artery (FMA modelling, see note below) / vein → Axillary vein | — | Common Textbook |
-| T1 L4 | Median nerve | FMA:14385 | continuous_proximally_with Lateral cord of brachial plexus (FMA:45235) | No FMA segment (B1: C6–T1) | Common Textbook |
-| T1 L4 | Ulnar nerve | FMA:37319 | — | No FMA segment (B1: C8–T1) | Not in textbooks |
-| T1 L4 | Medial intermuscular septum | FMA:37886 | — | — | — |
-| T2 L1 | Cephalic vein | FMA:13324 | → Subclavian vein | — | **Both textbooks** |
-| T2 L1 | Superior lateral cutaneous nerve of arm (level of LU3) | FMA:65303 (manual mapping) | Axillary nerve system | B1: C5 | Kim Jaehyo |
-| T2 L1 | Inferior lateral cutaneous nerve of arm (level of LU4) | FMA:44949 | → Peripheral segment of radial nerve | B1: C5–C6 | Common Textbook |
-| T2 L2 | Biceps brachii (long head) | FMA:37670 (long head FMA:37683) | contained_in Space of anterior compartment of arm (FMA:85160) | Branch of musculocutaneous nerve · **C5, C6** | Common Textbook (whole muscle) · Kim Jaehyo (long head) |
-| T2 L3 | Brachialis | FMA:37667 | — | — | Not in textbooks |
-| T2 L4 | Musculocutaneous nerve | FMA:37064 | continuous_proximally_with Lateral cord of brachial plexus (FMA:45235) | No FMA segment (B1: C5–C7) | Kim Jaehyo |
+| T1≡2 L1 | Medial cutaneous nerve of arm | FMA:65246 | continuous_proximally_with Medial cord of brachial plexus (FMA:45236) | Medial cord (T1, B1-03) | Not in textbooks |
+| T1≡2 L1 | Intercostobrachial nerve | FMA:11307 (Lateral cutaneous branch of second intercostal nerve) | branch_of Intercostal nerve → Thoracic nerve | **Second intercostal nerve (T2)** | Not in textbooks |
+| T1≡2 L1 | Basilic vein | FMA:22908 | — | — | Not in textbooks |
+| T1≡2 L3 | Coracobrachialis (level of cLU3) | FMA:37664 | contained_in anterior compartment space | Branch of musculocutaneous nerve to coracobrachialis · C5, C6 | Not in textbooks |
+| T1≡2 L4 | Brachial artery · brachial vein | FMA:22689 · FMA:22934 | Artery is_a Segment of subclavian artery (FMA modelling, see note below) / vein → Axillary vein | — | Common Textbook |
+| T1≡2 L4 | Median nerve | FMA:14385 | continuous_proximally_with Lateral cord of brachial plexus (FMA:45235) | No FMA segment (B1: C6–T1) | Common Textbook |
+| T1≡2 L4 | Ulnar nerve | FMA:37319 | — | No FMA segment (B1: C8–T1) | Not in textbooks |
+| T1≡2 L4 | Medial intermuscular septum | FMA:37886 | — | — | — |
+| T3 L1 | Cephalic vein | FMA:13324 | → Subclavian vein | — | **Both textbooks** |
+| T3 L1 | Superior lateral cutaneous nerve of arm (level of LU3) | FMA:65303 (manual mapping) | Axillary nerve system | B1: C5 | Kim Jaehyo |
+| T3 L1 | Inferior lateral cutaneous nerve of arm (level of LU4) | FMA:44949 | → Peripheral segment of radial nerve | B1: C5–C6 | Common Textbook |
+| T3 L2 | Biceps brachii (long head) | FMA:37670 (long head FMA:37683) | contained_in Space of anterior compartment of arm (FMA:85160) | Branch of musculocutaneous nerve · **C5, C6** | Common Textbook (whole muscle) · Kim Jaehyo (long head) |
+| T3 L3 | Brachialis | FMA:37667 | — | — | Not in textbooks |
+| T3 L4 | Musculocutaneous nerve | FMA:37064 | continuous_proximally_with Lateral cord of brachial plexus (FMA:45235) | No FMA segment (B1: C5–C7) | Kim Jaehyo |
 | (level of LU3) | Deltoid · insertion of pectoralis major | FMA:32521 · FMA:9627 | Deltoid ← branch of axillary nerve · C5 (primary), C6 | — | Kim Jaehyo |
 | L5 | Humerus | FMA:13303 | — | — | — |
 
@@ -196,7 +219,7 @@ Sources: Common Textbook Anatomical Structure Dataset `해부구조_개별항목
 
 **FMA adjudication** (Appendix A): LU03 has 1 shared FMA entity (cephalic vein FMA:13324) · 6 Common Textbook only · 5 Kim Jaehyo only; LU04 has 1 shared · 6 Common Textbook only · 3 Kim Jaehyo only. For biceps brachii the Common Textbook records the whole muscle (FMA:37670) and Kim Jaehyo the long head (FMA:37683, a part of the whole); only the IDs differ and it is the same muscle, so the structures actually shared are two: **biceps brachii + cephalic vein**.
 
-- **Meaning of the difference seen through FMA**: the Common Textbook's median nerve (FMA:14385) and brachial artery/vein (FMA:22689, 22934) form the neurovascular bundle of the medial bicipital groove (FMA:74569 Medial bicipital groove), i.e. **T1-side structures**. Kim Jaehyo's musculocutaneous nerve (FMA:37064), superior lateral cutaneous nerve of arm (FMA:65303) and posterior cutaneous nerve of forearm (FMA:39145) are **T2-side structures** between biceps brachii and brachialis and in the lateral skin. In FMA both the musculocutaneous and median nerves continue from the lateral cord of the brachial plexus (FMA:45235), but their positions in the arm differ, so the verdict above — "mixed type (Common Textbook) vs consistently lateral type (Kim Jaehyo)" — is confirmed at the ID level. This adjudication does not change the $S_{clarity}$ level.
+- **Meaning of the difference seen through FMA**: the Common Textbook's median nerve (FMA:14385) and brachial artery/vein (FMA:22689, 22934) form the neurovascular bundle of the medial bicipital groove (FMA:74569 Medial bicipital groove), i.e. **Target 1≡2-side structures**. Kim Jaehyo's musculocutaneous nerve (FMA:37064), superior lateral cutaneous nerve of arm (FMA:65303) and posterior cutaneous nerve of forearm (FMA:39145) are **Target 3-side structures** between biceps brachii and brachialis and in the lateral skin. In FMA both the musculocutaneous and median nerves continue from the lateral cord of the brachial plexus (FMA:45235), but their positions in the arm differ, so the verdict above — "mixed type (Common Textbook) vs consistently lateral type (Kim Jaehyo)" — is confirmed at the ID level. This adjudication does not change the $S_{clarity}$ level.
 
 **Diagram**
 
@@ -214,15 +237,24 @@ Sources: Common Textbook Anatomical Structure Dataset `해부구조_개별항목
 
 ---
 
-## 7. Spatial Displacement Bifurcation Reasoning (Dual-Target Bifurcation)
+## 7. Spatial Displacement Bifurcation Reasoning (Tri-Target Bifurcation)
+
+| Target | Definition | Position for Tianfu and Xiabai | Relation |
+| :--- | :--- | :--- | :--- |
+| **Target 1** (classical text position) | 《甲乙》 and 《明堂》 "腋下三寸，臂臑內廉動脈中" / "在天府下，去肘五寸動脈中" | Medial border of the arm, 3 cun and 4 cun below the anterior axillary fold | ≈ 0–5 mm from Target 2 → **Target 1≡2** (cLU) |
+| **Target 2** (palpation-based anatomical locus) | "動脈中" → pulsation point of the brachial artery in the medial bicipital groove = insertion reference (§4.1) | Same | Merged with the above |
+| **Target 3** (WHO standard location) | WHO 2008 "lateral border of the biceps brachii" | Lateral border of biceps brachii | ≈ 28–29 mm (model) from Target 1≡2 → **split** (pLU) |
+
+→ Split into two independent Targets, **Target 1≡2 vs Target 3** (10 mm threshold). The pairwise Δ table is in §4.1.
+
 
 | Issue | Song Seok-mo (2022) | Huang Longxiang (黃龍祥), *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Verdict of this report |
 | :--- | :--- | :--- | :--- |
 | Substrate of the classical Tianfu (天府) and Xiabai (俠白) | Pulsation point of the brachial artery (medial) | Pulsation point of the brachial artery (medial); corresponds to today's Hand-Shaoyin Meridian (手少陰經) region | **The two sources agree. Probable (not confirmed by measurement)** |
-| 《靈樞·經脈》 "下循臑內" | Medial side of the arm = course of the brachial artery | A stage shifted radially relative to the silk manuscripts (帛書) ("已較…移向上臂橈側"). The point location followed this belatedly | **Interpretations diverge.** Huang Longxiang's (黃龍祥) view that "行少陰心主之前" implies a radial shift cannot be excluded |
+| 《靈樞·經脈》 "下循臑內" | Medial side of the arm = course of the brachial artery | A stage shifted radially relative to the silk manuscripts (帛書) ("已較…移向上臂橈側"). The point location followed this belatedly | **Interpretations diverge.** Huang Longxiang's (黃龍祥) view that "行少陰心主之前" implies a radial shift cannot be excluded. However, the commentary of 《醫學綱目》 recorded in the *Jingluo Tongjian* reads "臑內廉凡有三脈，太陰居前", an anterior course within the medial border, and the Hand-Taiyin section of the *Jingluo Tongjian* does not mention a radial shift ([經絡通鑑 17篇] L241·L343) |
 | How the location moved laterally | From the mid-20th century; a **conjecture** that it was misread because the arterial description was dropped and the simplified locating method (where the nose tip touches the raised arm) was ambiguous | The Ming Zhengtong bronze figure (明正統銅人) already marks the radial side of the flexor surface. The first to use the anatomical term "lateral border" were Japanese acupuncture books. Chinese textbooks from the 4th edition | **Multiple pathways.** The earlier comparative report's single-cause theory of "misreading of the nose-to-arm posture in the 1950s" has been **revised, because neither source asserts it** |
-| Remedy | **Treat the WHO location as an error and restore the medial arterial point** | **Accept the modern location and revise the indications, needling methods and layer anatomy to fit the new location** (天府 mainly for local arm and upper-arm problems, with lung symptoms secondary) | **Dual-target coexistence**: classical indications assigned to cLU, local indications to pLU. Whether to revise the standard is left to the academic community |
-| ΔARI-Core verdict (§10.5) | — | — | cLU3 > pLU3 (Δ 15.0, non-overlapping), cLU4 > pLU4 (Δ 18.7, non-overlapping) → **Target 1 declared superior** |
+| Remedy | **Treat the WHO location as an error and restore the medial arterial point** | **Accept the modern location and revise the indications, needling methods and layer anatomy to fit the new location** (天府 mainly for local arm and upper-arm problems, with lung symptoms secondary) | **Target 1≡2 · Target 3 coexistence**: classical indications assigned to cLU (Target 1≡2), local indications to pLU (Target 3). Whether to revise the standard is left to the academic community |
+| ΔARI-Core verdict (§10.5) | — | — | cLU3 > pLU3 (Δ 15.0, non-overlapping), cLU4 > pLU4 (Δ 18.7, non-overlapping) → **Target 1≡2 declared superior** |
 
 ---
 
@@ -246,7 +278,7 @@ Sources: Common Textbook Anatomical Structure Dataset `해부구조_개별항목
 
 - **Excluded from citation (superseded)**: papers.id **1676** (PMID 8937575, "Sympathetic control of nasal mucosal vasculature…", Am J Rhinol 1996) was marked **superseded as an unverifiable citation** in the master DB (2026-10-04), because the PMID actually points to a different paper (Chen YT, Nelson WJ. *Anal Biochem* 1996) and the recorded DOI does not exist. papers.id **1677** (a manual entry for the Travell & Simons chapter on biceps brachii) is likewise superseded for the same reason; that book is cited only as Layer B registry entry **B2-06**.
 - **Other automatically detected papers** (1810, 1820, 1821, 1823–1826, 1828 [an HT1 study], 1830, 1831, 1834, 1835) were excluded because on checking their titles they are unrelated to LU3 and LU4 or study other points. The locally held studies of textual history (373, 938, 1458, 1461, 1485, 1489, 1506, 1511, 1512, 1514, 1519, 554) are materials for classical collation, not mechanistic evidence.
-- **DB note**: the DOIs recorded in the DB for 1819 and 1822 (10.3727/…, 10.1152/jappl.…) appear to belong to other papers, so these are cited by PMID only (to be checked). The master DB's LU3 innervation and reflex-circuit entries (musculocutaneous nerve C5-C7, stellate ganglion → Kiesselbach's plexus) do not fit this report's dual-split conclusion, and the LU4 entry is empty. The DB needs correcting.
+- **DB note**: the DOIs recorded in the DB for 1819 and 1822 (10.3727/…, 10.1152/jappl.…) appear to belong to other papers, so these are cited by PMID only (to be checked). The master DB's LU3 innervation and reflex-circuit entries (musculocutaneous nerve C5-C7, stellate ganglion → Kiesselbach's plexus) do not fit this report's Tri-Target split conclusion (Target 1≡2 vs Target 3), and the LU4 entry is empty. The DB needs correcting.
 - **Verdict**: multi-point human studies exist, but point-specific Layer A = 0 papers → Gate 2 applies (S_reflex ≤ 25, H). B-Check is below 8/12 for all four Targets, so the mechanisms below are **hypotheses**.
 
 ### 8.2 Layer B Neural Circuit Mapping (registry reference IDs)
@@ -258,15 +290,15 @@ Sources: Common Textbook Anatomical Structure Dataset `해부구조_개별항목
 | **H3. cLU3 – epistaxis (鼻衄)** | Sympathetic preganglionic fibres to the head and nasal mucosa run from T1–T3 → superior cervical ganglion → vasoconstriction of the nasal mucosa (B1-01, B3-05). The skin and periarterial structures of cLU3 overlap segments T1–T2 | **Partially consistent, hypothesis level.** No registry reference supports the direction of the efferent effect (⑤) (⑤ = 0). Huang Longxiang (黃龍祥) holds that Tianfu's (天府) epistaxis and lung indications derive from its use in **diagnosing (pulse-taking, 脈候)** the "天府脈". In other words, they may be signs of disease at a diagnostic site rather than evidence of a stimulation effect (conflict → fixed as hypothesis) |
 | **H4. pLU3/pLU4 – local upper-arm pain** | Myofascial trigger points of biceps brachii and the motor point of the musculocutaneous nerve (B2-06; trigger point–acupoint correspondence debate B2-03, B2-04), muscle afferents and connective-tissue planes (B2-02, B3-06), gate control and segmental analgesia (B3-07, B3-11) | **Consistent as a local effect.** However, the Layer A studies (1819, 1822, 1832, 1833, 1836) report outcomes of multi-point prescriptions for muscle strength and pain, so they cannot be attributed to pLU alone → hypothesis |
 
-**Pinning the peripheral afferent pathway with FMA**: the first segment of H1–H4 (needling site → spinal cord) is pinned by FMA relations as shown below. T1 (cLU) starts from the medial cord and intercostal nerve (T1–T2) and the median nerve of the lateral cord, while T2 (pLU) starts from the musculocutaneous nerve (C5–C6) of the lateral cord, so **they enter different spinal segments** — this is the anatomical front end of H1 (cLU4 segmental concordance) and H2 (pLU4 segmental mismatch). This structural chain does not change the B-Check scores.
+**Pinning the peripheral afferent pathway with FMA**: the first segment of H1–H4 (needling site → spinal cord) is pinned by FMA relations as shown below. Target 1≡2 (cLU) starts from the medial cord and intercostal nerve (T1–T2) and the median nerve of the lateral cord, while Target 3 (pLU) starts from the musculocutaneous nerve (C5–C6) of the lateral cord, so **they enter different spinal segments** — this is the anatomical front end of H1 (cLU4 segmental concordance) and H2 (pLU4 segmental mismatch). This structural chain does not change the B-Check scores.
 
 ```mermaid
 flowchart TB
-  C(("T1 cLU3/4<br/>medial bicipital groove")) --> BA["Brachial artery FMA:22689<br/>(Common Textbook)"]
+  C(("Target 1≡2 cLU3/4<br/>medial bicipital groove")) --> BA["Brachial artery FMA:22689<br/>(Common Textbook)"]
   C --> MN["Median nerve FMA:14385<br/>(Common Textbook)"]
   C -.subcutaneous.-> MCA["Medial cutaneous nerve of arm<br/>FMA:65246"]
   C -.subcutaneous.-> ICB["Intercostobrachial nerve<br/>FMA:11307"]
-  P(("T2 pLU3/4<br/>lateral border of biceps brachii")) --> BB["Biceps brachii FMA:37670<br/>segments C5, C6"]
+  P(("Target 3 pLU3/4<br/>lateral border of biceps brachii")) --> BB["Biceps brachii FMA:37670<br/>segments C5, C6"]
   P --> MC["Musculocutaneous nerve FMA:37064<br/>(Kim Jaehyo)"]
   P -.subcutaneous.-> CV["Cephalic vein FMA:13324<br/>(both textbooks)"]
   BB -- nerve_supply --> MC
@@ -387,10 +419,11 @@ Items: ① peripheral nerve/vessel substrate at needling depth ② spinal segmen
 ## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
 - Formula: **ARI v3.0** — ARI-Core = S_orig × 0.40 + S_clarity × 0.35 + S_reflex × 0.25 (**provisional weights, not validated**). SI = S_safety (not summed).
-- Sub-scores use the 5-level rubric 0/25/50/75/100 (Framework section 4.2). S_orig is the mean of 4 sub-items.
+- Sub-scores use the 5-level rubric 0/25/50/75/100 (Framework section 4.2). S_orig is the mean of 4 sub-items. From 2026-10-25, ④ is "collation by the *Tongkao* and the *Jingluo Tongjian*". On re-check against the *Jingluo Tongjian*, the ④ level did not change for any of the four Targets: for cLU3 and cLU4 evidence confirming the arterial location was added, but rater B's ④ of 75 on cLU3 (level "minor variant corrected") is only supported at the same level by the *Jingluo Tongjian*'s confirmation of the wording "臂臑內廉"; the remaining variants (e.g. the internal 留三呼/留五呼 variant in the *Xuewei Tongjian*) are not corrected, so there is no basis for raising it to 100, and the lateral relocation behind pLU3 and pLU4 is not mentioned in it.
+- Target mapping: cLU3 and cLU4 = Target 1≡2, pLU3 and pLU4 = Target 3 (§4.1).
 - Scored by two independent raters (A, B); items differing by 15 points or more were adjudicated (§10.6). ARI-Core = mean of the two scores, ± = half-range.
 
-### 10.1 cLU3 — Classical Tianfu (天府) (《甲乙》·《明堂》 '腋下三寸, 臂臑內廉動脈中')
+### 10.1 cLU3 (Target 1≡2) — Classical Tianfu (天府) (《甲乙》·《明堂》 '腋下三寸, 臂臑內廉動脈中')
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
@@ -404,14 +437,14 @@ Items: ① peripheral nerve/vessel substrate at needling depth ② spinal segmen
 | ① Clarity of earliest description | 100 | 100 | 100 |
 | ② Agreement in later texts | 75 | 75 | 75 |
 | ③ Resolution of alias confusion | 75 | 50 | 62.5 |
-| ④ Correction of transcription errors by collation in the 《通考》 | 100 | 75 | 87.5 |
+| ④ Correction of transcription errors by collation in the 《通考》 and the 《經絡通鑑》 | 100 | 75 | 87.5 |
 
 - Gates: **Gate 2** (0 point-specific Layer A papers → S_reflex ≤ 25, H). Gates 1 and 3 not applicable.
 - **ARI-Core 56.2 ± 2.5 → C·H (possible/hypothetical)**, SI 50.
 - Equal-weight sensitivity: 52.1 → D. **Grade changes → "weight-sensitive"**.
 - Note: Rater B's 50 for ③ reflects the unidentified 天會 alias contamination. This revision corrected 天會 to an alias of PC1 (§3), but the score retains the adjudicated result.
 
-### 10.2 cLU4 — Classical Xiabai (俠白) (《甲乙》·《明堂》 '在天府下, 去肘五寸動脈中')
+### 10.2 cLU4 (Target 1≡2) — Classical Xiabai (俠白) (《甲乙》·《明堂》 '在天府下, 去肘五寸動脈中')
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
@@ -425,13 +458,13 @@ Items: ① peripheral nerve/vessel substrate at needling depth ② spinal segmen
 | ① Clarity of earliest description | 100 | 100 | 100 |
 | ② Agreement in later texts | 75 | 100 | 87.5 |
 | ③ Resolution of alias confusion | 100 | 100 | 100 |
-| ④ Correction of transcription errors by collation in the 《通考》 | 100 | 100 | 100 |
+| ④ Correction of transcription errors by collation in the 《通考》 and the 《經絡通鑑》 | 100 | 100 | 100 |
 
 - Gates: **Gate 2** applied (H).
 - **ARI-Core 62.5 ± 1.2 → C·H (possible/hypothetical)**, SI 50.
 - Equal-weight sensitivity: 57.3 → C, grade unchanged.
 
-### 10.3 pLU3 — WHO Tianfu (天府) (3 cun below the anterior axillary fold, lateral border of biceps brachii)
+### 10.3 pLU3 (Target 3) — WHO Tianfu (天府) (3 cun below the anterior axillary fold, lateral border of biceps brachii)
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
@@ -445,13 +478,13 @@ Items: ① peripheral nerve/vessel substrate at needling depth ② spinal segmen
 | ① Clarity of earliest description | 25 | 25 | 25 |
 | ② Agreement in later texts | 25 | 25 | 25 |
 | ③ Resolution of alias confusion | 75 | 50 | 62.5 |
-| ④ Correction of transcription errors by collation in the 《通考》 | 50 | 75 | 62.5 |
+| ④ Correction of transcription errors by collation in the 《通考》 and the 《經絡通鑑》 | 50 | 75 | 62.5 |
 
 - Gates: **Gate 1** (S_orig 43.75 < 50 → C at most), **Gate 2** (H).
 - **ARI-Core 41.2 ± 0 → D·H (undetermined)**, SI 75.
 - Equal-weight sensitivity: 39.6 → D, grade unchanged.
 
-### 10.4 pLU4 — WHO Xiabai (俠白) (4 cun below the anterior axillary fold, lateral border of biceps brachii)
+### 10.4 pLU4 (Target 3) — WHO Xiabai (俠白) (4 cun below the anterior axillary fold, lateral border of biceps brachii)
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
@@ -465,21 +498,22 @@ Items: ① peripheral nerve/vessel substrate at needling depth ② spinal segmen
 | ① Clarity of earliest description | 25 | 25 | 25 |
 | ② Agreement in later texts | 25 | 25 | 25 |
 | ③ Resolution of alias confusion | 75 | 100 | 87.5 |
-| ④ Correction of transcription errors by collation in the 《通考》 | 50 | 75 | 62.5 |
+| ④ Correction of transcription errors by collation in the 《通考》 and the 《經絡通鑑》 | 50 | 75 | 62.5 |
 
 - Gates: **Gate 2** (H). Mean S_orig is 50.0, so Gate 1 does not apply.
 - **ARI-Core 43.8 ± 2.5 → D·H (undetermined)**, SI 75.
 - Equal-weight sensitivity: 41.7 → D, grade unchanged.
 
-### 10.5 Branch Decision (ΔARI-Core ≥ 10 and non-overlapping ± intervals)
+### 10.5 Branch Decision (Tri-Target rule: ΔARI-Core ≥ 10 and non-overlapping ± intervals)
 
-| Comparison | Target 1 (interval) | Target 2 (interval) | ΔARI-Core | Interval overlap | Verdict |
+| Comparison | Target 1≡2 (interval) | Target 3 (interval) | ΔARI-Core | Interval overlap | Verdict |
 | :--- | :--- | :--- | :---: | :---: | :--- |
 | cLU3 vs pLU3 | 56.2 ± 2.5 (53.7–58.7) | 41.2 ± 0 (41.2) | **15.0** | None | **cLU3 declared superior** |
 | cLU4 vs pLU4 | 62.5 ± 1.2 (61.3–63.7) | 43.8 ± 2.5 (41.3–46.3) | **18.7** | None | **cLU4 declared superior** |
 
-- The superiority is in **substrate-identification reliability (ARI-Core)**. Needling safety (SI) is, conversely, higher for Target 2 (75 vs 50). Both Targets are C or lower with an H flag, so this is not "substrate established".
+- The superiority is in **substrate-identification reliability (ARI-Core)**. Needling safety (SI) is, conversely, higher for Target 3 (75 vs 50). Both Targets are C or lower with an H flag, so this is not "substrate established".
 - cLU3 is a weight-sensitive Target that drops to D under equal weights (52.1 vs pLU3 39.6; Δ 12.5 even under equal weights).
+- Tri-Target verdict rule: for each point there are only two independent Targets, Target 1≡2 and Target 3, so the top Target (Target 1≡2) has single superiority if it exceeds the other by ΔARI ≥ 10 with non-overlapping intervals. Both points meet this. After changing the split threshold to 10 mm, the Target composition (Δ ≈ 28–29 mm) and the verdict are the same.
 
 ### 10.6 Adjudication Record (discrepancies of 15 points or more)
 
@@ -494,7 +528,7 @@ Items: ① peripheral nerve/vessel substrate at needling depth ② spinal segmen
 
 1. **Anatomical substrate of the classical Tianfu (天府) and Xiabai (俠白) (cLU3 C·H, cLU4 C·H — possible/hypothetical)**: on both classical and anatomical grounds it is most plausibly the **pulsation site of the brachial artery and its neurovascular bundle** in the medial bicipital groove (L4: median nerve, periarterial sympathetic plexus). It was originally **a Hand-Taiyin marker pulse (手太陰標脈, a diagnostic pulsation site) converted into an acupoint**. Because there are no point-specific measurements and no point-specific Layer A, it is not established. The reflex mechanisms (H1, H3) are **hypotheses**.
 2. **Anatomical substrate of the modern WHO Tianfu (天府) and Xiabai (俠白) (pLU3 D·H, pLU4 D·H — undetermined)**: a **muscular/fascial point** at the lateral border of the long head of biceps brachii (cephalic vein, musculocutaneous-nerve territory, C5–6), at **a different place** from the classical points. Classical textual support is weak, so the substrate-identification grade is undetermined, and the local-effect mechanism (H4) is also a hypothesis.
-3. **Branch decision**: for both pairs ΔARI-Core ≥ 10 with non-overlapping ± intervals → **Target 1 (classical arterial point) superior**.
+3. **Branch decision**: for both pairs ΔARI-Core ≥ 10 with non-overlapping ± intervals → **Target 1≡2 (classical text position ≡ arterial point) superior**. The *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) describes 天府 and 俠白 as pulsating sites (marker pulses) of the Hand-Taiyin, adding textual support to this verdict.
 4. **Clinical application**:
    - When using epistaxis and dyspnoea/cough (鼻衄·喘咳, Tianfu 天府) or heart pain and vexation/fullness (心痛·煩滿, Xiabai 俠白) on classical grounds, locate cLU by palpation, but since SI is 50 (direct contact with L4 possible), observe the safety rules in §5 and the upper depth limit (≤ 4 fen).
    - For local upper-arm pain, use pLU (SI 75).
@@ -608,5 +642,36 @@ Generated by: FMA 5.1.0 acupoint profile query (LU03, LU04; 2026-10-23). Mapping
 | Whole document | Automatically generated "English" edition: Korean body text with only some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition |
 | Classical quotations | Simplified characters (e.g. 针, 灵枢, 动脉, 侠白) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |
 
-*Evidence files*: refined editions of the three classics, Master Datasets Registry (KJH, needling depth, Common Textbook, Kim Jaehyo, biomedical master DB, 361 CSV), Layer B Reference Registry, original PDF of Song Seok-mo (2022).
+*Evidence files*: refined editions of the four classics (the *Zhongguo Zhenjiu Jingluo Tongjian* added on 2026-10-25), Master Datasets Registry (KJH, needling depth, Common Textbook, Kim Jaehyo, biomedical master DB, 361 CSV), Layer B Reference Registry, original PDF of Song Seok-mo (2022).
 *Data book*: Tianfu-Xiabai Integrated Anatomical Analysis Databook / *Web report*: `LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.html`
+
+---
+
+## 2026-10-25 Framework 2.7.7 Revision History
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header quote block | Framework v2.7; per-Target notation cLU3, cLU4, pLU3, pLU4 | v2.7.7 (four primary classics, Tri-Target, Δ > 10 mm); mapping cLU = Target 1≡2, pLU = Target 3 added. Integration-principle sentence states the re-collation against the four classics | Framework 2.7.7 |
+| §0 Summary | "Target 1 (classical arterial points) and Target 2 (WHO points)", Δ > 15 mm, "dual-target coexistence model" | "Target 1≡2 (classical text position ≡ palpation-based locus of '動脈中') and Target 3 (WHO standard location)", Δ > 10 mm, "Target 1≡2 · Target 3 coexistence model"; item 7 (gist of the *Jingluo Tongjian* collation) added | Framework 2.7.7 Ranks 5 and 7 |
+| §1 | Three primary classics; *Zhengzhi Tongjian* originals only | Four primary classics; *Jingluo Tongjian* row added (vessel name / marker pulse of 天府, silk-manuscript annotation, "動脈" in the 《明堂》 entries for 天府 and 俠白 with Yang's commentary, Hand-Taiyin pulsating sites in 三部九候, 天府/天泉 scribal error in 《醫心方》; no mention of the lateral relocation or the alias 白雄). *Zhengzhi Tongjian* row given section-based line numbers and Korean-translation wording | [經絡通鑑 01篇] L351·L355·L357·L393·L401·L419·L423, 05篇 L1124·L1140, 15篇 L299, 17篇 L122, 26篇 L295; [證治24 trans.] L12·L72·L372, [證治26 trans.] L565·L567·L643·L717 |
+| §2 | Primary/secondary table based on three classics | *Jingluo Tongjian* pointers added; Rank 4 collation paragraph by the *Tongkao* and the *Jingluo Tongjian*: variant in the location wording, vessel name → point name and the "脈氣所發" system, reading of 《靈樞·經脈》 "行少陰心主之前", 天府/天泉 confusion | [經絡通鑑 01篇] L357·L419·L423, 05篇 L1166, 17篇 L241·L343·L415, 26篇 L295 |
+| §3 | Three items on confusion with adjacent points | One item added: 天府/天泉 scribal error in 《醫心方》 | [經絡通鑑 26篇] L295 |
+| §4.1 | "Coordinate System and Dual-Target Split", Target 1/Target 2 columns, "Δ > 15 mm → dual split" | "Coordinate System and Tri-Target Split", Target 1≡2/Target 3 columns, insertion-reference row (over the brachial artery FMA:22689 in the medial bicipital groove FMA:74569; bounded by biceps brachii FMA:37670, coracobrachialis FMA:37664, brachialis FMA:37667 and the medial intermuscular septum FMA:37886), pairwise Δ table (T1–T2 ≈ 0–5 mm merged; T1–T3 and T2–T3 ≈ 29.0/28.3 mm split; all estimated), mapping from earlier labels | Framework 2.7.7 Rank 5; split threshold Δ > 10 mm (revised 2026-10-25) |
+| §4.2, §4.3, Figure 4-1 | Target 1/Target 2, T1/T2 L1–L4 | Target 1≡2/Target 3, T1≡2/T3 L1–L4. The earlier labels T1 and T2 inside the PNG are left as they are and mapped in the caption | Label mapping |
+| §6 | "T1-side structures", "T2-side structures" | "Target 1≡2-side structures", "Target 3-side structures" | Label mapping |
+| §7 | "Dual-Target Bifurcation", "dual-target coexistence", "Target 1 declared superior" | "Tri-Target Bifurcation", Target 1/2/3 definition table (Target 1≡2 vs Target 3), "Target 1≡2 · Target 3 coexistence", "Target 1≡2 declared superior", *Jingluo Tongjian* evidence added to the "行少陰心主之前" row | Framework 2.7.7 Rank 5 |
+| §8.1, §8.2 | "dual-split conclusion", "T1 (cLU) / T2 (pLU)", Mermaid "T1 cLU3/4" and "T2 pLU3/4" | "Tri-Target split conclusion", "Target 1≡2 (cLU) / Target 3 (pLU)", Mermaid node labels changed (B-Check scores unchanged: cLU3 5/12, cLU4 7/12, pLU3 and pLU4 6/12) | Label mapping |
+| §10 | ④ "collation in the 《通考》", headings 10.1–10.4, 10.5 Target 1/Target 2 | ④ "collation in the 《通考》 and the 《經絡通鑑》" re-checked (**levels unchanged for all four Targets**: cLU3 87.5, cLU4 100, pLU3 62.5, pLU4 62.5), Target 1≡2/Target 3 added to headings, Tri-Target verdict-rule sentence added to 10.5 (re-checked at 10 mm, same result) | Framework 2.7.7 Rank 7 $S_{orig}$ ④ |
+| ARI | cLU3 56.2 ± 2.5 (C·H) / cLU4 62.5 ± 1.2 (C·H) / pLU3 41.2 ± 0 (D·H) / pLU4 43.8 ± 2.5 (D·H) | **No change** — ④ levels unchanged and the four Target positions unchanged, so the dual scoring is carried over. No new independent Target → no single-scoring (preliminary) target | §10 |
+| Final conclusion 3 | "Target 1 (classical arterial point) superior" | "Target 1≡2 (classical text position ≡ arterial point) superior" + one sentence on the *Jingluo Tongjian* evidence | §1, §2 |
+| Evidence-files footnote | Refined editions of the three classics | Refined editions of the four classics | — |
+
+---
+
+## 2026-10-25 Target exclusion rule record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| §3 confusion with adjacent points | 《竇太師針經》 "肘腕上五寸" and the Japanese 1-chi upper-arm variant "天府下二寸" described only as confusion cases | Sentence added to each: as a later alternative view / scale-conversion variant it is not set as a Target under the Rank 5 Target exclusion rule | Framework Rank 5 Target exclusion rule (2026-10-25) |
+| Target composition | Target 1≡2 (cLU) vs Target 3 (pLU) | **No change** — both Targets correspond to the classical text, a palpation phrase or the WHO standard and are not subject to exclusion | Same |
+| ARI | cLU3 56.2 ± 2.5 / cLU4 62.5 ± 1.2 / pLU3 41.2 ± 0 / pLU4 43.8 ± 2.5 | **No change** | — |

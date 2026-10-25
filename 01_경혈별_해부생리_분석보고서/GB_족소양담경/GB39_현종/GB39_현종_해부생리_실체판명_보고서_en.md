@@ -1,28 +1,34 @@
 # [Acupoint Anatomical & Physiological Substrate Monograph] Xuanzhong (懸鍾, GB39) — alias Juegu (絕骨)
 
-> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: T1 `ARI v3.0 | ARI-Core 51.2 ± 0 (D·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 47.9 (D, grade unchanged)`
-> T2 `ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 54.2 (D, grade changes → weight-sensitive)` · **Dual scoring**: two independent raters, adjudicated
+> **Framework**: v2.7.7 (revised 2026-10-25 — four primary classics and Tri-Target applied; v2.7 scoring of 2026-10-04 retained) · **ARI**: Target 1≡2 `ARI v3.0 | ARI-Core 51.2 ± 0 (D·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 47.9 (D, grade unchanged)`
+> Target 3 `ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 54.2 (D, grade changes → weight-sensitive)` · **Dual scoring**: two independent raters, adjudicated
 
-> **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (Huang Longxiang, 黃龍祥)
+> **Four Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (Huang Longxiang, 黃龍祥) · *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)
 > **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 — GB39 evidence pack: of 29 landmark papers and 18 locally mapped papers, **5 mechanistic/clinical studies that actually include GB39** (papers.id 1610 · 1612 · 1615 · 1902 · 1903, all multi-point or animal) + 1 textual study on location (1624)
 > **Layer B Reference Registry**: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 > **Needling-depth DB**: Classical Needling Depth Database sheet 1, row 344 (N0 = 342)
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 > **Metrological Standard**: Han-dynasty (漢代) standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$), 1 cun = 10 fen = 23 mm (for depth conversion; surface positions use bone-proportional cun)
-> **Analysis Targets**: **T1** classical source location (*Huangdi Mingtang Jing* (《黃帝明堂經》) "在足外踝上三寸動者(脈)中, 足三陽絡, 按之陽明脈絕乃取之" = the anterior tibial artery pulse point on the tibial side) / **T2** WHO and current-textbook location (外踝尖上 3寸, 腓骨前緣)
+> **Analysis Targets (Tri-Target)**: **Target 1** (classical text position: *Huangdi Mingtang Jing* (《黃帝明堂經》) "在足外踝上三寸動者(脈)中, 足三陽絡, 按之陽明脈絕乃取之") ≡ **Target 2** (palpation-based anatomical locus: 動者脈中 · 按之陽明脈絕 = the anterior tibial artery pulse point on the tibial side) → **Target 1≡2** (abbreviated T1≡2 in the text) / **Target 3** (WHO standard location and current textbooks: 外踝尖上 3寸, 腓骨前緣; abbreviated T3)
+> **Mapping of earlier labels**: old T1 (classical pulse point) → **Target 1≡2** / old T2 (WHO anterior border of fibula) → **Target 3**. Neither position has changed, so the scores of Raters A and B are carried over unchanged.
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
-> **Summary**: The earlier edition took the classical "動脈中" to be the perforating branch of the fibular artery and analysed a single point with Δ 3–7 mm. However, the *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) and papers.id 1624 hold that the vessel is the **anterior tibial artery** and that the original position is **on the tibial side**. The Δ estimated independently by each of the two raters is about 20–35 mm (> 15 mm), so the analysis branches into T1 and T2. ΔARI-Core = 3.8 (< 10), so **neither Target is declared superior and both are reported side by side**. For both Targets the B-Check is not concordant, so the reflex mechanism is a **hypothesis**.
+> **Summary**: The earlier edition took the classical "動脈中" to be the perforating branch of the fibular artery and analysed a single point with Δ 3–7 mm. However, the *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) and papers.id 1624 hold that the vessel is the **anterior tibial artery** and that the original position is **on the tibial side**. Re-checked as a Tri-Target, the classical text position (Target 1) has its transverse position fixed only by the pulse (動者脈中), so it is the same point as the palpation-based anatomical locus (Target 2) (Target 1≡2). The Δ between Target 1≡2 and the WHO standard location (Target 3) was estimated independently by each of the two raters at about 20–35 mm (estimated, > 10 mm), so the analysis branches into **Target 1≡2 vs Target 3**. ΔARI-Core = 3.8 (< 10), so **neither Target is declared superior and both are reported side by side**. For both Targets the B-Check is not concordant, so the reflex mechanism is a **hypothesis**. The *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) independently records the interpretation "陽明脈 = dorsalis pedis artery, the descending branch of the anterior tibial artery — firm pressure over 懸鍾 abolishes the 衝陽 pulse" (Part 01), supporting the substrate interpretation of Target 1≡2, but it does not change any score level.
 
 ---
 
-## 🏛️ 1. Classical Literature Screening Table (Excerpts from the Three Primary Classics with Chinese–Korean Collation)
+## 🏛️ 1. Classical Literature Screening Table (Excerpts from the Four Primary Classics with Chinese–Korean Collation)
 
 | Text (source file & line) | Original excerpt (location & depth) | Indications | Collation & remarks |
 | :--- | :--- | :--- | :--- |
 | ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)**, entry 懸鍾 (《針灸腧穴通考》(下) PDF pp. 321–400 L529–658, printed pp.1106–1109) and the entry 陽輔 "'陽輔'、'懸鍾'與'絕骨'穴辨" (same file, L414–437) | "懸鍾，在足外踝上三寸動者中，足三陽絡，按之陽明脈絕乃取之。" (《黃帝明堂經》, L421) / "懸鍾，一名絕骨，在外踝上三寸動者中，足三陽絡。" (《千金要方》 卷二十九, L426 · 558) / modern 【定位】 "外踝尖上 3 寸，腓骨前緣" (L569) | "主腹滿，胃中有熱不嗜食，小兒腹滿不能食飲。" (《黃帝明堂經》, L542) | ① "《黃帝明堂經》所謂'陽明脈'……也即足背動脈，由於它是脛前動脈的下行支……人體測量學調查的結果表明：在外踝上三寸，靠近足陽明經脈行處，用力按壓，則衝陽脈搏動消失……後人及今人……將懸鍾穴定於足少陽經脈線上……此處不僅不能觸及動脈搏動，通過按壓也不能使足背處的衝陽脈搏動消失" (L548–552). ② "既是'按之陽明脈絕'處，則定位宜略偏向脛側……因而出現了名實分離的現象" (L431). ③ "'絕骨'穴不見於《黃帝明堂經》" (L431), "'絕骨'歸入奇穴類" (L437). ④ Meridian attribution (歸經), note (按): "將這樣一個位於陽明脈上而又主治陽明胃病的腧穴歸入足少陽經，難以成立" (L615). ⑤ "《黃帝明堂經》的'懸鍾'已經名存實亡了" (L658). **The 《通考》 contains no description of the superficial fibular nerve (淺腓骨神經) or the perforating branch of the fibular artery (腓骨動脈).** |
 | ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)**, entry 懸鍾 (《中國針灸穴位通鑑》(下卷) PDF pp. 161–240 L52–346) | Source (出處) "懸鍾，在足外踝上三寸動者脈中，足三陽經，按之陽明脈絕乃取之。" (《針灸甲乙經》 3:55, L54 — the OCR reading "經" is read as "絡" following the 《通考》 and L136 "足三陽絡") / 24 location (部位) entries (L80–132), e.g. "在足外踝上三寸動脈中。" (《銅人》 5:20 · 《聚英》 · 《大成》, L90), "足外踝上三寸動脈中，尋摸尖骨者是。足三陽之大絡，按之陽明脈絕乃取之。" (《針灸大成》 7:209, L110) / "刺入六分，留七呼，灸五壯。" (《甲乙》 etc., L236) | "腹滿，胃中有熱，不嗜食，懸鍾主之。" (《甲乙》 9:124), "小兒腹滿，不能食飲，懸鍾主之。" (《甲乙》 12:154) (L154–156) | Explanation of the name (釋義): "穴在足外踝上三寸動者脈中，即脛前動脈處" (《經穴釋義匯解》, L74). Regional anatomy: "在腓骨前緣……有脛前動脈的分支，分佈著腓淺神經" (《新針灸學》), "腓淺神經；腓深神經；脛前動脈" (《針灸學簡編》) (L276–288). Concluding remarks: the alias 絕骨 "首出《備急千金要方》卷29" (L342), "髓會不宜作別名" (L292) |
-| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** (refined edition, 7 chunks; 懸鍾 and 絕骨 occur 196 times on 165 lines) | (Prescription collection — almost no location descriptions) | "乃若胃熱治懸鍾" (PDF pp. 161–240 L4132), "腹滿不食：中脘針，絕骨、下三里" (PDF pp. 241–320 L2972) | Context of occurrences (±80 characters, overlap allowed, reference values): lower-limb wei (痿), bi (痹), foot (足), shin (脛), knee (膝) 113; leg qi (腳氣) 20; stroke (中風) 16; malaria (瘧) 11; nape/neck (項 · 頸) 9; stomach/abdominal fullness (胃 · 腹滿) 7; stiff neck (落枕) 2. Mostly **combination** prescriptions with 足三里 and others. PDF pp. 1–80 L1236, note (按): "'絕骨'穴不見於《明堂經》，後世醫家或以之為懸鍾穴，或以之為陽輔穴" |
+| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** (Chinese original, 20 parts; 懸鍾 and 絕骨 occur 196 times on 165 lines) — Foot-Shaoyang Gallbladder Meridian section (Part 09), 二十)懸鍾, L426–458 (Korean translation L568–608) | (Prescription collection — almost no location descriptions) | 《明堂經》 "主腹滿，胃中有熱，不嗜食。小兒腹滿，不能食飲" (Part 09, L432); 《針灸聚英·雜病十一穴歌》 "乃若胃熱治懸鍾" (Part 17, L406; Korean translation L655–657: "for stomach heat, treat Xuanzhong (懸鐘)"); "腹滿不食：中脘針，絕骨、下三里" (Part 19, L442; Korean translation L717–719: "abdominal fullness and inability to eat: needle Zhongwan, and Juegu (絕骨) and Xia Sanli (下三里)") | Summary of Part 09 (following the Korean translation): "In the Sui–Tang period Yangfu (陽輔) was also called Juegu (絕骨) and was often confused with Xuanzhong (懸鐘), and so their indications were also confused; care is needed to distinguish them." Context of occurrences (±80 characters, overlap allowed, reference values): lower-limb wei (痿), bi (痹), foot (足), shin (脛), knee (膝) 113; leg qi (腳氣) 20; stroke (中風) 16; malaria (瘧) 11; nape/neck (項 · 頸) 9; stomach/abdominal fullness (胃 · 腹滿) 7; stiff neck (落枕) 2. Mostly **combination** prescriptions with 足三里 and others. Note (按) in the section on Selected Ancient Acupuncture Prescriptions (Part 03), L262 (Korean translation L404): "the 'Juegu' point does not appear in the *Mingtang Jing* (《明堂經》); later physicians took it either as Xuanzhong (懸鐘) or as Yangfu (陽輔)." (Translation check: the Korean translation of Part 03, L402, omits 'Guangming and Juegu' from "取光明及絕骨" — the original is followed) |
+| ***Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)** section on the Formation of the "Jingmai" Concept (Part 01), L2007–2017 | "懸鍾穴：足三陽絡，按之陽明脈絕乃取之（《明堂經》）" | — | Commentary: "這裡所謂'陽明脈'即王冰所說的'足跗上動脈'，也即足背動脈，由於它是脛前動脈的下行支，故於位於脛前動脈之上方的'懸鍾'、'足三里'穴處用力按壓，則於足背當'衝陽脈'處摸不到足背動脈的搏動". It is an example in the section showing that the ancients regarded the channels as arteries ('古人對經脈、絡脈實質的認識'). **It confirms the Target 1≡2 (anterior tibial artery pulse point) interpretation along the same line as the 《通考》.** |
+| ***Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)** Part 01, L1035 (note on the *Mingtang Jing* malaria prescription) | "取光明及絕骨、跗上臨泣立已" | — | Note: "'絕骨'穴不見於《明堂經》，後世醫家或以之為懸鍾穴，或以之為陽輔穴。敦煌卷子醫方（編號：P.3596）謂：'足外踝上四指名絕骨穴，掐時與蹻脈相應處'，似與'懸鍾'穴相近。《醫心方》等書引《三家腳氣論》云：'絕骨在外踝正上尋小骨頭絕陷中是'；'陽輔在絕骨前半寸少下是'，則'絕骨'又與'陽輔'相近 … 古代醫書中此二穴多有混淆，應注意鑒別". The same note appears in Part 03 of the 《證治通鑑》, but the Dunhuang manuscript number differs (經絡通鑑 P.3596 vs 證治通鑑 S.3347) — a variant between the two books, unresolved. |
+| ***Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)** section on the Evolution of Channel Theory (Part 04), L1016; section on Other Vessels (Part 36), L193–209 | Wang Bing's (王冰) commentary on 《刺腰痛》: "絕骨之前，足少陽脈所行；絕骨之後，陽維脈所過" / "一經云少陽絕骨之前，傳寫誤也" | — | Note (Part 04, L1018): Wang Bing's course of the Yang Linking Vessel was inferred from the position of the point Fenrou (分肉), and the course of the linking vessels in modern acupuncture books was "宋以後醫家根據腧穴文獻中維脈交會穴部位推測而來" — a criticism of **over-extension of meridian theory, inferring vessel courses backwards from point positions**. Note (Part 36, L209): "陽輔穴在絕骨之前，非其後也 … 後世注家不察王注，不考《明堂》，視'陽輔'、'分肉'為同一穴". |
+| ***Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)** Part 05 L760, Foot-Shaoyang section (Part 28) L1092, Other Vessels (Part 36) L265 · 271 | Foot-Shaoyang vessel "直上抵絕骨之端"; "下外輔骨之前，下抵絕骨"; 《刺腰痛》 Tongyin vessel (同陰之脈) "在外踝上絕骨之端" (Yang's commentary "當是足少陽絡脈也") | — | In the channel and collateral descriptions '絕骨' is a **bony landmark** where the fibula ceases to be palpable. The later relocation of Xuanzhong onto this bony landmark and the Foot-Shaoyang line (the Target 3 lineage) relies on these channel descriptions (same context as 《通考》 L548–552 "將懸鍾穴定於足少陽經脈線上"). |
+| ***Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)** Yin/Yang Motility Vessels (Part 34) L414, Yin/Yang Linking Vessels (Part 35) L365, Vessel Lengths and Bone Measures (Part 11) L845 | 《脈經》 "直取陽蹻，在外踝上三寸直絕骨是"; 《脈經》 Yang Linking "在外踝絕骨下二寸"; 《難經》 "髓會絕骨" | — | Needling sites of other traditions at the same level (外踝上三寸) and the Eight Meeting Points (八會) theory. Not descriptions of the location or indications of Xuanzhong itself. Apart from listing 懸鍾 among the Foot-Shaoyang points (Part 28, L331 · 343 · 351), the 《經絡通鑑》 **does not separately collate the location wording of Xuanzhong.** |
 
 ---
 
@@ -30,13 +36,15 @@
 
 | Stratum | Text | Location | Depth | Indications | Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Primary (Han) | *Huangdi Mingtang Jing* (《黃帝明堂經》) (via 《甲乙》 3:55) | 在足外踝上三寸**動者(脈)中**, 足三陽絡, **按之陽明脈絕乃取之** | 刺入六分, 留七呼, 灸五壯 | 腹滿, 胃中有熱, 不嗜食; 小兒腹滿不能食飲 | **Primary = T1** (location defined by the pulse; no bony landmark) |
+| Primary (Han) | *Huangdi Mingtang Jing* (《黃帝明堂經》) (via 《甲乙》 3:55) | 在足外踝上三寸**動者(脈)中**, 足三陽絡, **按之陽明脈絕乃取之** | 刺入六分, 留七呼, 灸五壯 | 腹滿, 胃中有熱, 不嗜食; 小兒腹滿不能食飲 | **Primary = T1≡2** (location defined by the pulse; no bony landmark) |
 | Separate tradition (Jin) | 《脈經》 10:88 | "在外踝上三寸，直絕骨是也" (needling site for 陽蹻/陽維) | 刺入五分 | — | Description from a different tradition at the same height |
+| Sui–Tang separate tradition (manuscript) | Dunhuang medical manuscript (《經絡通鑑》 Part 01, L1035: P.3596 / 《證治通鑑》 Part 03: S.3347) | "足外踝上四指名絕骨穴，掐時與蹻脈相應處" | — | — | 絕骨 fixed by nail-pressure palpation (掐). Close to Xuanzhong (note in the 《經絡通鑑》) |
 | Sui–Tang secondary | 《千金要方》 卷29 | "懸鍾，一名絕骨，在外踝上三寸動者中" | — | — | **First to link 絕骨 as an alias of Xuanzhong (懸鍾)** |
 | Sui–Tang separate tradition | 《千金要方》 卷7 · 8 · 18, 《外臺》 19, 《醫心方》 8 | 絕骨: "外踝上一夫，亦云四寸" (卷7), "外踝上三寸宛宛中" (卷18), "外踝上骨絕頭陷中" (《外臺》) | — | 卷18 絕骨, 22 disorders (逆氣, 虛勞, 喉痹, **頸項強**, 腸痔…); 卷30 懸鍾 五淋 · 濕痹流腫 | Shift towards a bony location begins. The 卷30 indications are the 《明堂》 indications of **陽輔** (《通考》 note) |
+| Tang commentary | Wang Bing's (王冰) commentary on 《素問·刺腰痛》 (《經絡通鑑》 Part 04, L1016; Part 36, L193) | "絕骨之前，足少陽脈所行；絕骨之後，陽維脈所過"; another recension's "絕骨之前" judged a "傳寫誤" | — | — | 絕骨 = bony landmark. Vessel course inferred from point position (note in the 《經絡通鑑》) |
 | Song secondary | 《太平聖惠方》, 《銅人》 5:20 | "在外踝上三寸宛宛中" / "在足外踝上三寸動脈中" | 針六分, 灸三~五壯 | 腹滿 · 不嗜食 + 腿胯連膝脛痹麻 (陽輔 indications mixed in) | Wording of the original location kept; indications mixed |
 | Ming modification | 《針灸聚英》, 《針灸大成》 7:209, 《循經考穴編》, 《類經圖翼》 | "足外踝上三寸動脈中, 尋摸尖骨者是 … 按之陽明脈絕乃取之", "絕骨尖間筋骨縫中是懸鍾", "當骨尖前動脈中" | 《指微》 斜入二寸許, 竇氏 二寸半, 橫透三陰交 | 《千金》 絕骨 indications (頸項強 etc.) reproduced via 《資生經》 | Bony landmarks ("尖骨 · 筋骨縫") added alongside |
-| Modern | Unified textbooks, 2nd, 4th and 5th editions "腓骨後緣" → 6th and 7th editions and WHO "腓骨前緣" | 外踝尖上 3寸, 腓骨前緣 | 直刺 0.5~0.8寸 | 項強, 胸脇脹痛, 下肢痿痹; 7th edition 痴呆 · 中風 (髓海) | **T2**. Original indications (stomach disorders) dropped |
+| Modern | Unified textbooks, 2nd, 4th and 5th editions "腓骨後緣" → 6th and 7th editions and WHO "腓骨前緣" | 外踝尖上 3寸, 腓骨前緣 | 直刺 0.5~0.8寸 | 項強, 胸脇脹痛, 下肢痿痹; 7th edition 痴呆 · 中風 (髓海) | **T3**. Original indications (stomach disorders) dropped |
 
 ---
 
@@ -51,22 +59,25 @@
 
 > The earlier edition's statements "絕骨 is the same point as GB39 in all texts since the *Jiayi Jing* (甲乙經), with no risk of conflation" and "絕骨 = an ancient name for the fibula" do not match the source data and have been deleted.
 
+**Collation with the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) (differentiation of scribal errors, added 2026-10-25)**: the 《經絡通鑑》 reaches the same conclusions as the 《通考》. ① 絕骨 does not appear in the *Mingtang Jing* (《明堂經》) and was later used for two points, 懸鍾 and 陽輔: "古代醫書中此二穴多有混淆" (Part 01, L1035). ② Wang Bing (王冰) judged "少陽絕骨之前" in another recension of the 《素問》 to be a "傳寫誤", and the 《經絡通鑑》 criticises later commentators for taking 陽輔 and 分肉 as one point without examining Wang's commentary and the 《明堂》 (Part 36, L193 · 209). ③ '絕骨之端' in the channel descriptions is a bony landmark, and descriptions that infer vessel courses backwards from point positions are criticised as over-extension of meridian theory (Part 04, L1018). This collation supports the chronological separation of 絕骨 under Rank 3, but does not resolve the double listing of 絕骨 under GB38 and GB39 in the current standards (KJH and the two textbooks). The difference in manuscript number (P.3596 vs S.3347) is recorded as a variant between the two books.
+
 ---
 
 ## 📐 4. 3D Spatial Coordinates & Layer 1–5 Structural Diagram
 
 ### 4-1. Coordinates by Target (Estimated — No Point-Specific Imaging Measurement)
 
-| Axis | T1 classical pulse point | T2 WHO anterior border of fibula |
+| Axis | Target 1≡2 classical pulse point (classical text = palpation-based locus) | Target 3 WHO anterior border of fibula |
 | :--- | :--- | :--- |
 | Y (proximal–distal) | 3 cun above the (tip of the) lateral malleolus (外踝(尖)) (bone-proportional, depends on body build) | 3 cun above the tip of the lateral malleolus (外踝尖) |
 | X (medial–lateral) | Between the anterior border of the tibia and the anterior border of the fibula, on the course of the anterior tibial artery, shifted towards the tibia (《通考》 L431 "宜略偏向脛側"; papers.id 1624 "脛骨前嵴與腓骨前緣之間") | Anterior border of the fibula |
 | Z (depth) | Depth at which the anterior tibial artery and veins and the deep fibular nerve lie in front of the interosseous membrane (roughly 10–20 mm depending on body build in normative anatomy; raters' estimate) | Standard perpendicular insertion 5–8 fen = 11.5–18.4 mm |
 | Palpation landmark | Palpable pulse (in thin subjects), or the point where firm pressure abolishes the 衝陽 (dorsalis pedis) pulse | Bony landmark (anterior border of the fibula) |
+| Insertion reference point (X · Y) | The classical palpation term is '動者脈中' (pulse); there is no gap term such as 分肉, 兩筋間 or 緣 → **formally no insertion reference point marked**. Anatomically, the pulse line at the level of 外踝上3寸 runs between the tibialis anterior tendon and the extensor hallucis longus (FMA:22533), where the anterior tibial artery (FMA:43894) and deep fibular nerve (FMA:44771) pass (inference from normative anatomy, B1-01) | **Insertion reference point = anterior border of the fibula (緣)**, 外踝尖上3寸. Bounding structures: the intermuscular boundary (anterior border of the fibula) between the extensor digitorum longus of the anterior compartment (FMA:22534; space FMA:85203) and the fibularis brevis of the lateral compartment (FMA:22540; space FMA:85206). '前緣' is modern textbook wording, not a classical palpation term |
 
 ### 4-2. Layer Structure (Based on Normative Anatomy B1-01 · B1-03 · B1-06 and the Two Textbooks; Depths Estimated)
 
-| Layer | T1 classical pulse point | T2 WHO anterior border of fibula |
+| Layer | Target 1≡2 classical pulse point | Target 3 WHO anterior border of fibula |
 | :---: | :--- | :--- |
 | 1 Skin & subcutis | Cutaneous branches of the superficial fibular nerve (at this level it has already pierced the fascia and runs subcutaneously), cutaneous veins | **Superficial fibular nerve** (subcutaneous course), lateral sural cutaneous nerve (Kim Jaehyo) |
 | 2 Superficial muscle & fascia | Crural fascia, proximal part of the extensor retinaculum | Crural fascia, tendons of fibularis brevis and fibularis longus, extensor digitorum longus |
@@ -76,12 +87,12 @@
 
 ```
    (medial) anterior border of tibia                 anterior border of fibula (lateral)
-        │TA tendon  EHL tendon  EDL                    │  fibularis brevis/longus
-        │          │          ●T1            │            ●T2
-Skin────┼──────────┼──────────┼──────────────┼────────────┼──── L1 (superficial fibular n.: subcutaneous on T2 side)
+        │TA tendon  EHL tendon  EDL                       │  fibularis brevis/longus
+        │          │          ●T1≡2          │            ●T3
+Skin────┼──────────┼──────────┼──────────────┼────────────┼──── L1 (superficial fibular n.: subcutaneous on T3 side)
 Fascia──┼──────────┼──────────┼──────────────┼────────────┼──── L2
         │          │          ▼ ~10–20 mm    │            ▼ 11.5–18.4 mm (5–8 fen)
-        │ [L4 anterior tibial a./vv. + deep fibular n. — in front of interosseous membrane]  ◀── reachable by deep insertion at T2
+        │ [L4 anterior tibial a./vv. + deep fibular n. — in front of interosseous membrane]  ◀── reachable by deep insertion at T3
  Interosseous membrane ════════════════════════════════════════ L5 (tibial and fibular periosteum)
                               ●─────── Δ ≈ 20–35 mm ───────●
                           (X 20–30 mm · 3D 20–35 mm, independent estimates by 2 raters)
@@ -89,7 +100,7 @@ Fascia──┼──────────┼──────────�
 
 ![Schematic cross-section of the lower third of the leg at the level of Xuanzhong (懸鍾, GB39)](GB39_현종_횡단면_해부모식도.png)
 
-*Figure 4-1. Schematic cross-section of the lower third of the leg at the level of Xuanzhong (懸鍾) (外踝上3寸) (right leg, viewed from above, not to scale). The purple arrow T1 is the path by which perpendicular insertion of 6 fen at the anterior tibial artery pulse point on the tibial side reaches the Layer 4 neurovascular bundle; the black arrow T2 is the path of perpendicular insertion of 5–8 fen at the anterior border of the fibula. Layer thicknesses, distances and Δ are not measured values (raters' estimates).*
+*Figure 4-1. Schematic cross-section of the lower third of the leg at the level of Xuanzhong (懸鍾) (外踝上3寸) (right leg, viewed from above, not to scale). The purple arrow T1≡2 is the path by which perpendicular insertion of 6 fen at the anterior tibial artery pulse point on the tibial side reaches the Layer 4 neurovascular bundle; the black arrow T3 is the path of perpendicular insertion of 5–8 fen at the anterior border of the fibula. Layer thicknesses, distances and Δ are not measured values (raters' estimates).*
 
 ### 4-3. FMA Substrate Cross-check by Layer — Structure Names from the Two Textbooks; IDs and Relations from FMA 5.1.0
 
@@ -117,7 +128,7 @@ Fascia──┼──────────┼──────────�
 
 ## 📏 5. Needling Depth Calculation Table (Han-Dynasty 2.3 mm Conversion and Layer Reached)
 
-| Text | Value | Conversion | Layer reached at T1 | Layer reached at T2 | Source |
+| Text | Value | Conversion | Layer reached at T1≡2 | Layer reached at T3 | Source |
 | :--- | :---: | :---: | :--- | :--- | :--- |
 | *Huangdi Mingtang Jing* (《黃帝明堂經》, compiled and edited by Huang Longxiang) | 6 fen | 13.8 mm | L4 (neurovascular bundle directly beneath the pulse point) | L2–3 | Needling-depth DB row 344 |
 | *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | 6 fen | 13.8 mm | L4 | L2–3 | Same row |
@@ -135,8 +146,8 @@ Fascia──┼──────────┼──────────�
 
 - The needling-depth DB contains **no contraindication ('0')**. The value 34 in the column "Jiayi Jing point classification and order" is a sequence number, not a depth (the earlier edition had entered it in the depth table; deleted).
 - The earlier edition's μ = 6.2 fen and σ = 1.0 fen had no derivation and have been deleted.
-- **T1 safety caution**: by definition the needle is inserted directly over an arterial pulse point, so perpendicular insertion of 6 fen reaches Layer 4. The pulse should be located and the artery avoided, or the depth limited to about 10 mm (Rater A's recommendation; no measurement).
-- **T2 safety caution**: 5–6 fen stays within Layers 2–3, but at 8 fen (18.4 mm) or more, in thin subjects, and with the deep insertions of the 《指微》 and 竇氏, the needle may reach the anterior tibial artery and deep fibular nerve (Layer 4). Without imaging measurements a 10 mm margin has not been confirmed.
+- **T1≡2 safety caution**: by definition the needle is inserted directly over an arterial pulse point, so perpendicular insertion of 6 fen reaches Layer 4. The pulse should be located and the artery avoided, or the depth limited to about 10 mm (Rater A's recommendation; no measurement).
+- **T3 safety caution**: 5–6 fen stays within Layers 2–3, but at 8 fen (18.4 mm) or more, in thin subjects, and with the deep insertions of the 《指微》 and 竇氏, the needle may reach the anterior tibial artery and deep fibular nerve (Layer 4). Without imaging measurements a 10 mm margin has not been confirmed.
 
 ---
 
@@ -148,7 +159,7 @@ Fascia──┼──────────┼──────────�
 | Nerves | Superficial fibular nerve, deep fibular nerve | Lateral sural cutaneous nerve, deep fibular nerve, superficial fibular nerve | Superficial and deep fibular nerves | Kim Jaehyo adds a cutaneous nerve (lateral sural cutaneous nerve) |
 | Vessels | Anterior tibial artery and veins | Anterior tibial artery and veins, **perforating branch of the fibular artery**, **fibular artery and veins** | Anterior tibial artery and veins | Kim Jaehyo adds the branch piercing the interosseous membrane and the fibular artery and veins of the posterior compartment |
 
-- Both textbooks list the **anterior tibial artery and veins** first among the vessels. This is the same structure as the one the 《通考》, the 《經穴釋義匯解》 and papers.id 1624 identify as the substrate of the classical "動者中". However, both textbooks' location wording is the anterior border of the fibula (T2), so **the coordinates differ from T1**.
+- Both textbooks list the **anterior tibial artery and veins** first among the vessels. This is the same structure as the one the 《通考》, the 《經穴釋義匯解》 and papers.id 1624 identify as the substrate of the classical "動者中". However, both textbooks' location wording is the anterior border of the fibula (T3), so **the coordinates differ from T1≡2**.
 - The earlier edition's "mutually complementary consistency" and "perfect layer-by-layer collation of innervation" concealed the actual difference (whether posterior-compartment structures are included) and have been deleted. Because this discrepancy has to be reconciled by inference, both Targets are at the $S_{clarity}$ 50 level.
 **FMA adjudication** (Appendix A): 7 FMA entities common to both textbooks · 1 only in the Common Textbook (fibularis longus FMA:22539) · 6 only in Kim Jaehyo (fibularis tertius 22538, flexor hallucis longus 22593, lateral sural cutaneous nerve 44697, fibular artery 43921 and vein 44558, perforating branch of the fibular artery 44033). The English spelling variants "fibularis/peroneus" resolve to the same FMA IDs and are not real differences.
 
@@ -157,20 +168,42 @@ Fascia──┼──────────┼──────────�
 
 ---
 
-## 🔀 7. Spatial Discrepancy Branch Inference Diagram
+## 🔀 7. Spatial Discrepancy Branch Inference Diagram (Tri-Target: Target 1≡2 vs Target 3)
+
+**Mapping of earlier labels**: old T1 (classical pulse point, 外踝上三寸 動者脈中) → **Target 1≡2** / old T2 (WHO anterior border of fibula) → **Target 3**. The abbreviations "T1≡2" and "T3" in the body of this report follow this mapping.
+
+### 7-1. Tri-Target Coordinates
+
+| Target | Definition | Classical basis | X · Y position (surface) | Insertion reference point |
+| :--- | :--- | :--- | :--- | :--- |
+| **Target 1** (classical text position) | Position designated by the earliest description | 《黃帝明堂經》 "在足外踝上三寸動者(脈)中, 足三陽絡, 按之陽明脈絕乃取之" (《通考》 L421; 《穴位通鑑》 L54) | Y: 3 cun above the lateral malleolus. X: the wording designates the point only by the pulse, without a bony landmark → same point as Target 2 | — |
+| **Target 2** (palpation-based anatomical locus) | Anatomical space indicated by the palpation terms '動者脈中' and '按之陽明脈絕' | 《通考》 L548–552; 《經絡通鑑》 Part 01, L2017 ("位於脛前動脈之上方的'懸鍾'…用力按壓，則於足背當'衝陽脈'處摸不到足背動脈的搏動"); 《經穴釋義匯解》 (《穴位通鑑》 L74); papers.id 1624 | Pulse line of the anterior tibial artery (FMA:43894) on the tibial side, between the anterior border of the tibia and the anterior border of the fibula | No gap term → formally not marked (anatomically between the tibialis anterior tendon and the extensor hallucis longus FMA:22533; Section 4-1) |
+| **Target 3** (WHO standard location) | Modern standard location | WHO 2008; 6th and 7th textbook editions "外踝尖上3寸，腓骨前緣" (《通考》 L569) | Anterior border of the fibula | **Anterior border of the fibula (緣)** — intermuscular boundary between the extensor digitorum longus (FMA:22534) and the fibularis brevis (FMA:22540) |
+
+- The later palpation descriptions "尋摸尖骨者是" (《針灸大成》), "絕骨尖間筋骨縫中" (《循經考穴編》), "掐時與蹻脈相應處" (Dunhuang manuscript) and "尋小骨頭絕陷中" (《三家腳氣論》) are not the palpation terms of the primary source (《明堂》) but bony palpation of the 絕骨 lineage (subject to conflation under Rank 3), so they are not used for Target 2. The sites they indicate lie on the fibular side and belong to the Target 3 lineage (estimated).
+
+### 7-2. Pairwise Discrepancies (Δ, all estimated)
+
+| Pair | Δ (estimated) | Basis of the estimate | Decision (branch if Δ > 10 mm) |
+| :--- | :---: | :--- | :--- |
+| Target 1 – Target 2 | ≤ 10 mm (estimated; effectively 0) | The transverse position in the wording of Target 1 is fixed only by the pulse (動者脈中), so it is by definition the same point as Target 2. Y is 外踝上3寸 for both | **Merged → Target 1≡2** |
+| Target 1 – Target 3 | About 20–35 mm (estimated) | Independent estimates by the two raters: X axis about 20–30 mm (Rater B, median about 25 mm), 3D about 20–35 mm (Rater A, including the depth difference). No point-specific imaging measurement | **Branch** |
+| Target 2 – Target 3 | About 20–35 mm (estimated) | Same basis as Target 1 – Target 3 (Target 1≡2) | **Branch** |
+
+### 7-3. Branch Diagram
 
 ```
-   anterior border of tibia                                                     anterior border of fibula
-             │                                                                              │
-             │   [T1 classical pulse point]                    [T2 current WHO]             │
-             │   外踝上三寸 動者(脈)中                          外踝尖上3寸                  │
-             │   按之陽明脈絕 → 衝陽 pulse abolished            腓骨前緣                     │
-             │   Substrate: anterior tibial a. + deep          Substrate: superficial       │
-             │              fibular n. (L4)                    fibular n. (L1)              │
-             │   Indications: 腹滿·胃中有熱·不嗜食 (《明堂》)     + extensors/fibulares (L2–3) │
-             │   Basis: 《通考》 L431·552, 《經穴釋義匯解》,     Indications: 項強·下肢痿痹    │
-             │          papers.id 1624                         (《千金》 絕骨 tradition)     │
-             │   ●────────────────────── Δ ≈ 20–35 mm (> 15 mm) ───────────────────────●    │
+       anterior border of tibia                                                                    anterior border of fibula
+             │                                                                                                                  │
+             │   [Target 1≡2 classical pulse point]                     [Target 3 current WHO]                                  │
+             │   Target 1 classical text: 外踝上三寸 動者(脈)中         外踝尖上3寸, 腓骨前緣                                   │
+             │   Target 2 palpation: 按之陽明脈絕 → 衝陽 pulse lost     Insertion ref.: anterior border of fibula (緣)          │
+             │   Substrate: anterior tibial a. + deep fibular n. (L4)   Substrate: superficial fibular n. (L1)                  │
+             │   Indications: 腹滿·胃中有熱·不嗜食 (《明堂》)             + extensors · fibularis (L2–3)                        │
+             │   Basis: 《通考》 L431·552, 《經絡通鑑》 Part 01,        Indications: 項強·下肢痿痹                              │
+             │          《經穴釋義匯解》, papers.id 1624                  (《千金》 絕骨 lineage)                               │
+             │   Target 1–2 Δ ≤ 10 mm (estimated) → merged                                                                      │
+             │   ●──────────── Δ ≈ 20–35 mm (> 10 mm, estimated) → branch ─────────────●                                        │
 ```
 
 | Item | Content |
@@ -178,11 +211,11 @@ Fascia──┼──────────┼──────────�
 | Y-axis difference | None (both 3 cun above the lateral malleolus (外踝)). The 《千金》 卷7 "一夫, 亦云四寸" tradition is separate |
 | X-axis difference | Course of the anterior tibial artery (tibial side) ↔ anterior border of the fibula: about 20–30 mm (Rater B, median about 25 mm) |
 | 3D difference | About 20–35 mm (Rater A, including X-axis and depth difference) |
-| Verdict | $\Delta_{discrepancy} > 15\text{mm}$ → **independent T1 and T2 branches** (canonical Rank 5) |
+| Verdict | $\Delta_{discrepancy} > 10\text{mm}$ → **independent branches, Target 1≡2 vs Target 3** (canonical Rank 5 Tri-Target; the Δ also exceeded the 15 mm criterion in force at the 2026-10-04 scoring, so the branch status is unchanged) |
 | Earlier-edition Δ | 0.3–0.7 cm — an underestimate resting on the unsupported identification "動脈中 = perforating branch of the fibular artery"; discarded |
-| Dissent | papers.id 1624 supports the T1 position (between 脛骨前嵴 and 腓骨前緣) but, stating "在外踝上３寸處，用手摸到跳動的動脈是很難的……也不容易", questions the **reproducibility** of the pulse and of the abolition of the 衝陽 pulse. No bibliographic reference is given for the 《通考》's "人體測量學調查". This dissent concerns location, not a conflict about mechanism |
+| Dissent | papers.id 1624 supports the T1≡2 position (between 脛骨前嵴 and 腓骨前緣) but, stating "在外踝上３寸處，用手摸到跳動的動脈是很難的……也不容易", questions the **reproducibility** of the pulse and of the abolition of the 衝陽 pulse. No bibliographic reference is given for the 《通考》's "人體測量學調查". This dissent concerns location, not a conflict about mechanism |
 
-**Branch decision**: ΔARI-Core = 55.0 − 51.2 = **3.8 (< 10)**. The two intervals [51.2, 51.2] and [55, 55] do not overlap, but the Δ criterion is not met → **no superior Target. T1 and T2 are reported side by side.**
+**Branch decision (Rank 7 Tri-Target rule)**: there are two independent Targets, Target 1≡2 and Target 3. ΔARI-Core = 55.0 − 51.2 = **3.8 (< 10)**. The two intervals [51.2, 51.2] and [55, 55] do not overlap, but the condition ΔARI-Core ≥ 10 is not met → **no superior Target. Target 1≡2 and Target 3 are reported side by side.**
 
 ---
 
@@ -192,33 +225,33 @@ Fascia──┼──────────┼──────────�
 
 | papers.id | Year | Journal | Title | PMID / DOI | Design | Use |
 | :---: | :---: | :--- | :--- | :--- | :--- | :--- |
-| 1624 | 2021 | 針刺研究 46(1):73–75 | 關於懸鍾穴定位的探討 / Location of acupoint Xuanzhong (GB39) — Liu Jianan (劉佳男) et al. | PMID 33559430 / DOI 10.13702/j.1000-0607.200282 (full-text PDF) | Textual study (location) | Basis for the T1 location: "懸鍾穴定位應該準確描述為：'足外踝上３寸，脛骨前嵴與腓骨前緣之間'", "動者脈中" = 脛前動脈 (citing Li Ding, 李鼎). Notes the difficulty of palpating the pulse |
-| 1610 | 2003 | Journal of Korean Acupuncture & Moxibustion Society | A neuroanatomical study of acupoints (SJ5, PC6, SP6 and GB39) projecting to brain regions related to dementia [in Korean] | — | Animal neural tracing | T2 B-Check ④ |
-| 1612 | 2006 | Journal of the Korean Oriental Medicine Society | Effects of Yanglingquan (陽陵泉)–Xuanzhong (懸鍾) electroacupuncture on cerebral blood flow in patients with cerebral infarction and in healthy subjects [in Korean] | — | Human non-RCT (point combination) | T2 B-Check ④⑥ |
-| 1615 | 2013 | Journal of Korean Acupuncture & Moxibustion Medicine Society | Effects of electroacupuncture and laser acupuncture at 懸鍾 (GB39) and 陽陵泉 (GB34) on neuropathic pain in rats (白鼠) [in Korean] | DOI 10.13045/acupunct.2013012 | Animal (point combination) | T2 B-Check ③⑤ |
-| 1903 | 2019 | Zhen Ci Yan Jiu | Electroacupuncture at "Zusanli"(ST36) and "Xuanzhong"(GB39) improves inflammatory reactions… | 31532135 / 10.13702/j.1000-0607.180555 | Animal (point combination) | T2 B-Check ⑤ |
-| 1902 | 2024 | Zhongguo Zhen Jiu | Electroacupuncture for the prevention of chemotherapy-induced peripheral neuropathy: a randomized controlled trial | 39658376 / 10.13703/j.0255-2930.20240222-k0001 | Human RCT (multiple points) | T2 B-Check ⑥ (effect of GB39 alone cannot be separated) |
-| 1904 | 2002 | Am J Physiol Regul Integr Comp Physiol | Effect of electroacupuncture on pressor reflex during gastric distension | 12388466 / 10.1152/ajpregu.00192.2002 | Animal | T1 B-Check ③–⑤ **analogy** (other points, animal) |
+| 1624 | 2021 | 針刺研究 46(1):73–75 | 關於懸鍾穴定位的探討 / Location of acupoint Xuanzhong (GB39) — Liu Jianan (劉佳男) et al. | PMID 33559430 / DOI 10.13702/j.1000-0607.200282 (full-text PDF) | Textual study (location) | Basis for the T1≡2 location: "懸鍾穴定位應該準確描述為：'足外踝上３寸，脛骨前嵴與腓骨前緣之間'", "動者脈中" = 脛前動脈 (citing Li Ding, 李鼎). Notes the difficulty of palpating the pulse |
+| 1610 | 2003 | Journal of Korean Acupuncture & Moxibustion Society | A neuroanatomical study of acupoints (SJ5, PC6, SP6 and GB39) projecting to brain regions related to dementia [in Korean] | — | Animal neural tracing | T3 B-Check ④ |
+| 1612 | 2006 | Journal of the Korean Oriental Medicine Society | Effects of Yanglingquan (陽陵泉)–Xuanzhong (懸鍾) electroacupuncture on cerebral blood flow in patients with cerebral infarction and in healthy subjects [in Korean] | — | Human non-RCT (point combination) | T3 B-Check ④⑥ |
+| 1615 | 2013 | Journal of Korean Acupuncture & Moxibustion Medicine Society | Effects of electroacupuncture and laser acupuncture at 懸鍾 (GB39) and 陽陵泉 (GB34) on neuropathic pain in rats (白鼠) [in Korean] | DOI 10.13045/acupunct.2013012 | Animal (point combination) | T3 B-Check ③⑤ |
+| 1903 | 2019 | Zhen Ci Yan Jiu | Electroacupuncture at "Zusanli"(ST36) and "Xuanzhong"(GB39) improves inflammatory reactions… | 31532135 / 10.13702/j.1000-0607.180555 | Animal (point combination) | T3 B-Check ⑤ |
+| 1902 | 2024 | Zhongguo Zhen Jiu | Electroacupuncture for the prevention of chemotherapy-induced peripheral neuropathy: a randomized controlled trial | 39658376 / 10.13703/j.0255-2930.20240222-k0001 | Human RCT (multiple points) | T3 B-Check ⑥ (effect of GB39 alone cannot be separated) |
+| 1904 | 2002 | Am J Physiol Regul Integr Comp Physiol | Effect of electroacupuncture on pressor reflex during gastric distension | 12388466 / 10.1152/ajpregu.00192.2002 | Animal | T1≡2 B-Check ③–⑤ **analogy** (other points, animal) |
 | 1620 | 2017 | 針灸臨床雜誌 | 髓會絕骨的文獻研究及臨床應用概論 | — | Textual study | Reference for the 髓會 theory (not counted in scoring) |
 
 - **Not counted**: 1842 · 1905 · 1845 · 1922 (reviews, data mining), 1910 · 1915 · 1924 · 1925 · 1911 (GB39 inclusion or single-point status unconfirmed from the title), 1913 (ultrasound-guided myofascial trigger-point clinical study — not an anatomical measurement at GB39), and other locally mapped papers (not relevant).
-- **Point-specific Layer A for T1 = 0 papers** (all the studies above needle the current fibular-side location) → Gate 2. **For T2 = 4 papers** (1610 · 1612 · 1615 · 1903; adjudicated result `layerA_point_specific`).
+- **Point-specific Layer A for T1≡2 = 0 papers** (all the studies above needle the current fibular-side location) → Gate 2. **For T3 = 4 papers** (1610 · 1612 · 1615 · 1903; adjudicated result `layerA_point_specific`).
 
 ### ② B-Check Scoring Tables
 
-**T1 classical pulse point**
+**T1≡2 classical pulse point**
 
 | Item | Content | Rater A | Rater B | Final | Layer B reference IDs | papers.id | Rationale |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
-| ① | Peripheral nerve/vessel substrate at needling depth | 1 | 1 | **1** | B1-01, B1-03, B1-06, B2-09 (+FMA) | 1624 | The anterior tibial artery and veins + deep fibular nerve are confirmed by normative anatomy, the two textbooks and FMA (FMA:43894 · 44331 · 44771 exact), but there is no measurement at the T1 position, and 1624 notes the difficulty of palpating the pulse |
+| ① | Peripheral nerve/vessel substrate at needling depth | 1 | 1 | **1** | B1-01, B1-03, B1-06, B2-09 (+FMA) | 1624 | The anterior tibial artery and veins + deep fibular nerve are confirmed by normative anatomy, the two textbooks and FMA (FMA:43894 · 44331 · 44771 exact), but there is no measurement at the T1≡2 position, and 1624 notes the difficulty of palpating the pulse |
 | ② | Spinal segmental concordance | 1 | 1 | **1** | B1-03, B3-05 (+FMA) | — | Deep fibular nerve L4–L5 (S1) (FMA: segmental_supply of the anterior-compartment muscles, L5 primary, S1) vs the stomach (T6–T9 visceral segments, vagal) of the original indications: segments do not match; only a supraspinal analogy is possible |
-| ③ | Afferent fibre type & receptors | 1 | 1 | **1** | B3-05, B3-06, B3-12 | 1904 | Group III/IV afferents from deep muscle and perivascular tissue are a general mechanism in anaesthetised animals; not verified at T1 |
+| ③ | Afferent fibre type & receptors | 1 | 1 | **1** | B3-05, B3-06, B3-12 | 1904 | Group III/IV afferents from deep muscle and perivascular tissue are a general mechanism in anaesthetised animals; not verified at T1≡2 |
 | ④ | Central relay & pathway | 1 | 1 | **1** | B3-05, B3-12 | 1904 | The hindlimb somatic stimulation → medulla (rVLM/NTS, vagal) pathway rests on animal evidence from other points |
-| ⑤ | Efferent pathway & direction of effect vs $P_{single}$ | 1 | 1 | **1** | B3-05 | 1904 | The original indications (腹滿 · 胃中有熱 · 不嗜食) and vagal regulation of gastric motility by lower-limb stimulation agree conceptually in direction, but there is no direct evidence for T1 |
-| ⑥ | Human translation | 0 | 0 | **0** | B4-05 | — | No human study needling at the T1 location |
+| ⑤ | Efferent pathway & direction of effect vs $P_{single}$ | 1 | 1 | **1** | B3-05 | 1904 | The original indications (腹滿 · 胃中有熱 · 不嗜食) and vagal regulation of gastric motility by lower-limb stimulation agree conceptually in direction, but there is no direct evidence for T1≡2 |
+| ⑥ | Human translation | 0 | 0 | **0** | B4-05 | — | No human study needling at the T1≡2 location |
 | **Total** | | 5 | 5 | **5/12** | | | **Not concordant → hypothesis (H)**. ③–⑤ animal/analogy, ⑥ = 0 → (animal only) |
 
-**T2 WHO anterior border of fibula**
+**T3 WHO anterior border of fibula**
 
 | Item | Content | Rater A | Rater B | Final | Layer B reference IDs | papers.id | Rationale |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
@@ -248,7 +281,7 @@ Fascia──┼──────────┼──────────�
 ### ④ Reflex Mechanism Hypothesis Diagram (B-Check not concordant for both Targets → hypothesis)
 
 ```
-T1 (hypothesis, animal/analogy)                          T2 (hypothesis, animal/combined-point evidence)
+T1≡2 (hypothesis, animal/analogy)                          T3 (hypothesis, animal/combined-point evidence)
 Afferents around anterior tibial a. · deep fibular n.     Superficial fibular n. (subcutis) · extensor/fibularis
 (L4–L5)                                                   afferents (L4–S1)
    │ segmental mismatch (stomach T6–T9)                      │ segmental: local lower-limb analgesia
@@ -266,13 +299,13 @@ Regulation of gastric motility/function                   下肢痿痹 · 足脛
 
 ### ⑤ FMA Anchoring of the Peripheral Afferent Pathway (Front End Common to Both Targets)
 
-The first segment of the hypothesis diagram above (needling point → spinal cord) is anchored by FMA relations as follows. Both T1 and T2 converge on the same trunk, **common fibular nerve → sciatic nerve → sacral plexus**; the difference is that T1 starts on the side of the deep fibular nerve and anterior tibial artery (Layer 4) and T2 on the side of the superficial fibular nerve and lateral compartment (Layers 1–3). The posterior-compartment structure listed only by Kim Jaehyo (flexor hallucis longus) belongs to the tibial nerve system. This structural chain is only the anatomical front end of the hypothesis diagram and does not change the B-Check score.
+The first segment of the hypothesis diagram above (needling point → spinal cord) is anchored by FMA relations as follows. Both T1≡2 and T3 converge on the same trunk, **common fibular nerve → sciatic nerve → sacral plexus**; the difference is that T1≡2 starts on the side of the deep fibular nerve and anterior tibial artery (Layer 4) and T3 on the side of the superficial fibular nerve and lateral compartment (Layers 1–3). The posterior-compartment structure listed only by Kim Jaehyo (flexor hallucis longus) belongs to the tibial nerve system. This structural chain is only the anatomical front end of the hypothesis diagram and does not change the B-Check score.
 
 ```mermaid
 flowchart TB
-  T1(("T1 classical pulse point<br/>tibial side")) --> ATA["Anterior tibial artery FMA:43894"]
+  T1(("T1≡2 classical pulse point<br/>tibial side")) --> ATA["Anterior tibial artery FMA:43894"]
   T1 --> DFN["Deep fibular nerve<br/>FMA:44771"]
-  T2(("T2 anterior border of fibula")) --> SFN["Superficial fibular nerve<br/>FMA:44699 (subcutaneous)"]
+  T2(("T3 anterior border of fibula")) --> SFN["Superficial fibular nerve<br/>FMA:44699 (subcutaneous)"]
   T2 --> FB["Fibularis brevis FMA:22540<br/>segments L5·S1"]
   T2 --> EDL["Extensor digitorum longus FMA:22534<br/>segments L5 (primary)·S1"]
   T2 -. "deep insertion" .-> DFN
@@ -287,7 +320,7 @@ flowchart TB
   SAC --> SEG["Spinal cord L4–S2<br/>(segments: muscle segmental_supply)"]
 ```
 
-*Figure 8-1. Peripheral afferent pathway of GB39 drawn from FMA 5.1.0 relations. Solid lines are relations recorded in FMA (`nerve_supply` · `branch_of`); "is_a" marks trunks linked from class names; the dashed line is the path reachable by deep insertion at T2.*
+*Figure 8-1. Peripheral afferent pathway of GB39 drawn from FMA 5.1.0 relations. Solid lines are relations recorded in FMA (`nerve_supply` · `branch_of`); "is_a" marks trunks linked from class names; the dashed line is the path reachable by deep insertion at T3.*
 
 ---
 
@@ -295,13 +328,13 @@ flowchart TB
 
 | Indication | Earliest source | Type | Verdict | Basis |
 | :--- | :--- | :--- | :--- | :--- |
-| **Abdominal fullness (腹滿), heat in the stomach (胃中有熱), no desire to eat (不嗜食)** | *Huangdi Mingtang Jing* (《黃帝明堂經》) (《甲乙》 9:124) | **$P_{single}$ (original indication)** | Indication proper to Xuanzhong (懸鍾). Consistent with T1 (anterior tibial artery, on the foot-yangming vessel) | 《通考》 L542 · 647 · 658; 《通鑑》 L154 |
+| **Abdominal fullness (腹滿), heat in the stomach (胃中有熱), no desire to eat (不嗜食)** | *Huangdi Mingtang Jing* (《黃帝明堂經》) (《甲乙》 9:124) | **$P_{single}$ (original indication)** | Indication proper to Xuanzhong (懸鍾). Consistent with T1≡2 (anterior tibial artery, on the foot-yangming vessel) | 《通考》 L542 · 647 · 658; 《通鑑》 L154 |
 | **Abdominal fullness and inability to eat or drink in children (小兒腹滿不能食飲)** | *Huangdi Mingtang Jing* (《黃帝明堂經》) (《甲乙》 12:154) | **$P_{single}$ (original indication)** | Same | 《通鑑》 L156 |
 | 五淋; 濕痹流腫, 髀筋急瘈, 脛痛 | 《千金要方》 卷30 "懸鍾主…" | Mixed in | Misrecorded 《明堂》 indications of **陽輔** | 《通考》 L627–630, note |
 | 腿胯連膝脛痹麻; 膝脛連腰痛, 筋攣急, 足不收履 | 《太平聖惠方·明堂》 | Mixed in | Indications of 陽輔 and 臨泣 mixed in | 《通考》 L563–566 · 632–638, note |
 | 頸項強, 喉痹, 鼻衄, 腸痔, 逆氣, 虛勞, etc. | 《千金要方》 卷18 "絕骨", 22 disorders (外踝上三寸宛宛中, moxibustion) | Mixed in (via the alias) | **絕骨** indications reproduced in the Xuanzhong entries of the 《聚英》 and 《大成》 via the 《資生經》 | 《通考》 L645–647, note |
 | Stiff neck (落枕) | Modern 《針灸學簡編》 ("配大椎、後溪治落枕"), clinical report (針灸臨床雜誌 1999) | Combination · modern | No classical basis. Not regarded as single-point evidence | 《通鑑》 L230 · 342; 《通考》 L686 |
-| Wei-bi of the lower limb (下肢痿痹), spasm and pain of the foot and shin (足脛攣痛), leg qi (腳氣) | 《千金》 · 《外臺》 moxibustion for 腳氣 (三里 + 絕骨), modern textbooks | Mainly combination | Local indication consistent with T2 anatomy, but the classical source is a 絕骨 combination prescription | 《通鑑》 L158–176; context frequency in the 《證治通鑑》 |
+| Wei-bi of the lower limb (下肢痿痹), spasm and pain of the foot and shin (足脛攣痛), leg qi (腳氣) | 《千金》 · 《外臺》 moxibustion for 腳氣 (三里 + 絕骨), modern textbooks | Mainly combination | Local indication consistent with T3 anatomy, but the classical source is a 絕骨 combination prescription | 《通鑑》 L158–176; context frequency in the 《證治通鑑》 |
 | Stroke (中風), hemiplegia (半身不遂) | 《太平聖惠方》 (三里 + 絕骨 moxibustion), 7th-edition textbook "髓海不足" | $P_{comb}$ / theory | Derived from combination prescriptions and the 髓會 theory | 《通考》 L670–672, clinical application (臨床應用) (4)–(6) |
 | Marrow disorders (髓病), dementia (痴呆) (sea of marrow, 髓海) | 《難經》 Difficulty 45 (45難), 7th-edition textbook | Theory | Extension of speculative theory → filtered out | 《通鑑》 L146–148 |
 
@@ -314,13 +347,13 @@ flowchart TB
 $$\text{ARI-Core} = 0.40\,S_{orig} + 0.35\,S_{clarity} + 0.25\,S_{reflex} \quad (\text{provisional weights, unvalidated})$$
 $$\text{SI} = S_{safety} \quad (\text{not added in})$$
 
-### 10-1. T1 Classical Pulse Point (外踝上三寸 動者脈中, 按之陽明脈絕)
+### 10-1. Target 1≡2 Classical Pulse Point (classical text position = palpation-based locus: 外踝上三寸 動者脈中, 按之陽明脈絕)
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
 | $S_{orig}$ | 68.75 | 68.75 | **68.75** | Mean of the 4 sub-items (table below) | 《通考》 L414–437 · 529–658; 《通鑑》 L54–132 |
-| $S_{clarity}$ | 50 (75 before adjudication) | 50 | **50** | The anterior tibial artery + deep fibular nerve agree with B1 and the textbooks' vessel lists, but the textbooks' location is the T2 coordinate and there is no measurement at T1 → "discrepancy between textbook and location reconciled by inference" | B1-01 · B1-03 · B1-06; textbook xlsx row 343; papers.id 1624 |
-| $S_{reflex}$ | 25 | 25 | **25** | 0 Layer A papers needling at the T1 location → Gate 2 | B-Check 5/12; 1904 is analogical evidence |
+| $S_{clarity}$ | 50 (75 before adjudication) | 50 | **50** | The anterior tibial artery + deep fibular nerve agree with B1 and the textbooks' vessel lists, but the textbooks' location is the T3 coordinate and there is no measurement at T1≡2 → "discrepancy between textbook and location reconciled by inference" | B1-01 · B1-03 · B1-06; textbook xlsx row 343; papers.id 1624 |
+| $S_{reflex}$ | 25 | 25 | **25** | 0 Layer A papers needling at the T1≡2 location → Gate 2 | B-Check 5/12; 1904 is analogical evidence |
 | $S_{safety}$ → SI | 50 | 50 | **50** | Perpendicular insertion of 6–8 fen at the pulse point directly reaches the Layer 4 neurovascular bundle → a depth limit and arterial avoidance must be stated. No contraindication, no deep organs | Needling-depth DB row 344 |
 
 | $S_{orig}$ sub-item | A | B | Mean | Rationale |
@@ -328,7 +361,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$
 | ① Clarity of earliest description | 75 | 75 | 75 | The 《明堂》 is clear on height, depth and the palpation procedure; the transverse position (tibial side) is inferred from "按之陽明脈絕" |
 | ② Agreement in later texts | 50 | 50 | 50 | About 12–13 of 24 entries (about 50–55 %) keep "動(者)脈中 · 按之陽明脈絕"; the rest move to 宛宛中 · 尖骨 · 筋骨縫 · 腓骨前/後緣 |
 | ③ Resolution of alias confusion | 75 | 75 | 75 | The 《通考》 sorts out chronologically the conflation of 絕骨 between GB38 and GB39 |
-| ④ Collation in the 《通考》 | 75 | 75 | 75 | Collation of the mixed-in 陽輔 indications, the reordering by Song officials (宋臣) and textual variants; restoration of the original location proposed. No bibliographic reference for the "人體測量學調查" |
+| ④ Collation in the 《通考》 and 《經絡通鑑》 | 75 | 75 | 75 | Collation of the mixed-in 陽輔 indications, the reordering by Song officials (宋臣) and textual variants; restoration of the original location proposed. No bibliographic reference for the "人體測量學調查". Re-checked against the 《經絡通鑑》 on 2026-10-25: Part 01, L2017 records the anterior tibial artery interpretation along the same line, and Part 01, L1035 and Part 36, L209 deal with the 絕骨/陽輔 confusion and Wang Bing's "傳寫誤" judgement, but no new measurement reference is given, so there are no grounds for level 100 ("completely corrected") → **score unchanged** |
 | **Mean** | 68.75 | 68.75 | **68.75** | |
 
 - **Gates**: Gate 2 (0 point-specific Layer A papers → $S_{reflex}$ ≤ 25, H flag). Gates 1 and 3 not applicable.
@@ -336,7 +369,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$
 - **SI** = **50**.
 - **Equal-weight sensitivity**: (68.75 + 50 + 25) / 3 = **47.9 → D**, grade unchanged.
 
-### 10-2. T2 WHO Anterior Border of Fibula (外踝尖上 3寸, 腓骨前緣)
+### 10-2. Target 3 WHO Anterior Border of Fibula (外踝尖上 3寸, 腓骨前緣)
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
@@ -350,7 +383,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$
 | ① Clarity of earliest description | 75 | 75 | 75 | The 《明堂》 is clear on height and depth; the bony landmark 'anterior border of the fibula' is not in the original source |
 | ② Agreement in later texts | 50 | 50 | 50 | The transverse position splits into 宛宛中 · 筋骨縫 · 腓骨後緣 (2nd, 4th, 5th editions) · 腓骨前緣 (6th, 7th editions) |
 | ③ Resolution of alias confusion | 50 | 50 | 50 | KJH and the two textbooks list 絕骨 under both GB38 and GB39 — partly unresolved in the current standard |
-| ④ Collation in the 《通考》 | 75 | 75 | 75 | Collation exists in the 《通考》 (mixed-in indications, reordering) |
+| ④ Collation in the 《通考》 and 《經絡通鑑》 | 75 | 75 | 75 | Collation exists in the 《通考》 (mixed-in indications, reordering). Re-checked against the 《經絡通鑑》 on 2026-10-25: no new collation of variants correcting or supporting the fibular-side location → **score unchanged** |
 | **Mean** | 62.5 | 62.5 | **62.5** | |
 
 - **Gates**: not applicable ($S_{orig}$ and $S_{clarity}$ ≥ 50, 4 point-specific Layer A papers, SI > 25).
@@ -358,28 +391,29 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$
 - **SI** = **75**.
 - **Equal-weight sensitivity**: (62.5 + 50 + 50) / 3 = **54.2 → D**, grade changes → **weight-sensitive**.
 
-### 10-3. Branch Decision
+### 10-3. Branch Decision (Tri-Target)
 
 | Target | ARI-Core (± half-range) | Interval | Grade · flag | SI |
 | :--- | :---: | :---: | :---: | :---: |
-| T1 classical pulse point | 51.2 ± 0 | [51.2, 51.2] | D·H | 50 |
-| T2 WHO anterior border of fibula | 55.0 ± 0 | [55, 55] | C (weight-sensitive) | 75 |
+| Target 1≡2 classical pulse point (old T1) | 51.2 ± 0 | [51.2, 51.2] | D·H | 50 |
+| Target 3 WHO anterior border of fibula (old T2) | 55.0 ± 0 | [55, 55] | C (weight-sensitive) | 75 |
 
-ΔARI-Core = **3.8 < 10** → under the canonical rule **no superior Target is declared.** The two Targets are reported side by side. (T2's grade C also drops to D under equal weights, so the substantive difference between the two Targets is small.)
+Target 1 and Target 2 are merged with Δ ≤ 10 mm (estimated), leaving two independent Targets. ΔARI-Core = **3.8 < 10** → under the Rank 7 Tri-Target rule **no superior Target is declared.** Target 1≡2 and Target 3 are reported side by side. (Target 3's grade C also drops to D under equal weights, so the substantive difference between the two Targets is small.) No Target has newly become independent, so there is no single-scored (preliminary) item.
 
 ### 10-4. Adjudication Record
 
 | Target | Item | Disagreement | Adjudication |
 | :---: | :--- | :--- | :--- |
-| T1 | $S_{clarity}$ | A 75 / B 50 (25-point difference, ≥ 15) | The two textbooks' listing of the anterior tibial artery and veins describes the deep structures at the WHO position and is not a measurement or textbook agreement for the classical pulse point itself, so level 50 of canonical 4.2 ("discrepancy between textbook and location reconciled by inference") applies → A adjusted to 50 |
-| T1 | Basis for branching | — | Independent estimates by the two raters, Δ ≈ 20–35 mm (median about 25 mm) > 15 mm → T1/T2 branch. The "difficulty of palpating the pulse" in papers.id 1624 concerns location, not a conflict about mechanism |
-| T2 | — | No disagreement of 15 points or more | The earlier edition's "L4-S1 → C3-C5 somato-somatic relaxation reflex" was an unsupported statement and has been deleted (not reflected in the B-Check). The 頸項強 indication is the 《千金》 "絕骨" indication mixed in (Rank 3) |
+| T1≡2 | $S_{clarity}$ | A 75 / B 50 (25-point difference, ≥ 15) | The two textbooks' listing of the anterior tibial artery and veins describes the deep structures at the WHO position and is not a measurement or textbook agreement for the classical pulse point itself, so level 50 of canonical 4.2 ("discrepancy between textbook and location reconciled by inference") applies → A adjusted to 50 |
+| T1≡2 | Basis for branching | — | Independent estimates by the two raters, Δ ≈ 20–35 mm (median about 25 mm) > 15 mm (criterion at the time of scoring; also above the 10 mm criterion of 2026-10-25) → old T1/T2 branch (now Target 1≡2 vs Target 3). The "difficulty of palpating the pulse" in papers.id 1624 concerns location, not a conflict about mechanism |
+| T3 | — | No disagreement of 15 points or more | The earlier edition's "L4-S1 → C3-C5 somato-somatic relaxation reflex" was an unsupported statement and has been deleted (not reflected in the B-Check). The 頸項強 indication is the 《千金》 "絕骨" indication mixed in (Rank 3) |
 
 ### 10-5. Final Conclusion
 
-- **T1 classical pulse point** — **undetermined / hypothesis (D·H)**. Xuanzhong (懸鍾) in the *Huangdi Mingtang Jing* (《黃帝明堂經》) is a point defined not by a bony landmark but by a pulse: the pulsating site 3 cun above the lateral malleolus (外踝) where firm pressure abolishes the pulse on the dorsum of the foot (衝陽). This vessel is the **anterior tibial artery** (《通考》 L548–552, 《經穴釋義匯解》, papers.id 1624), and the position lies between the anterior border of the tibia and the anterior border of the fibula, on the tibial side. The candidate substrate is the **anterior tibial artery and veins + deep fibular nerve (Layer 4)**, and the original indications are **abdominal fullness (腹滿), heat in the stomach (胃中有熱) and no desire to eat (不嗜食)** (stomach disorders). However, there is no Layer A study needling at this position (Gate 2), and 1624 reports that palpation of the pulse and abolition of the 衝陽 pulse are hard to reproduce, so the reproducibility of the palpation landmark is unverified. The reflex mechanism (lower-limb somatic afferents → medulla and vagus → gastric function) is a **hypothesis (animal only)** inferred from animal evidence at other points. Because the needle is inserted directly over the pulse point, the artery must be avoided and the depth limited (SI 50).
-- **T2 WHO anterior border of fibula** — **possible / hypothesis (C, weight-sensitive)**. The substrate is the subcutaneous **superficial fibular nerve** and extensor digitorum longus and fibularis brevis (Layers 1–3); deep insertion may reach the anterior tibial artery and deep fibular nerve of the anterior compartment (Layer 4). This position results from the accumulation, from the 《千金》 onwards, of bony locations of the 絕骨 tradition, and the 《通考》 holds that, since neither the pulse nor abolition of the 衝陽 pulse can be reproduced here, it has undergone "名實分離" from the original Xuanzhong. The modern indications (項強 · 下肢痿痹) come from the 《千金》 indications of 絕骨 and 陽輔. All studies including GB39 are at the combined-point or animal level, and with B-Check 6/12 (not concordant) the reflex mechanism is a **hypothesis**.
-- **Branch**: ΔARI-Core 3.8 < 10 → no superiority. The two Targets are reported side by side. The earlier edition's conclusion of a "confirmed substrate" and its claim of "complete agreement" with the 《通考》 rested on fabricated quotations and are withdrawn.
+- **T1≡2 classical pulse point** — **undetermined / hypothesis (D·H)**. Xuanzhong (懸鍾) in the *Huangdi Mingtang Jing* (《黃帝明堂經》) is a point defined not by a bony landmark but by a pulse: the pulsating site 3 cun above the lateral malleolus (外踝) where firm pressure abolishes the pulse on the dorsum of the foot (衝陽). This vessel is the **anterior tibial artery** (《通考》 L548–552, 《經穴釋義匯解》, papers.id 1624), and the position lies between the anterior border of the tibia and the anterior border of the fibula, on the tibial side. The candidate substrate is the **anterior tibial artery and veins + deep fibular nerve (Layer 4)**, and the original indications are **abdominal fullness (腹滿), heat in the stomach (胃中有熱) and no desire to eat (不嗜食)** (stomach disorders). However, there is no Layer A study needling at this position (Gate 2), and 1624 reports that palpation of the pulse and abolition of the 衝陽 pulse are hard to reproduce, so the reproducibility of the palpation landmark is unverified. The reflex mechanism (lower-limb somatic afferents → medulla and vagus → gastric function) is a **hypothesis (animal only)** inferred from animal evidence at other points. Because the needle is inserted directly over the pulse point, the artery must be avoided and the depth limited (SI 50).
+- **T3 WHO anterior border of fibula** — **possible / hypothesis (C, weight-sensitive)**. The substrate is the subcutaneous **superficial fibular nerve** and extensor digitorum longus and fibularis brevis (Layers 1–3); deep insertion may reach the anterior tibial artery and deep fibular nerve of the anterior compartment (Layer 4). This position results from the accumulation, from the 《千金》 onwards, of bony locations of the 絕骨 tradition, and the 《通考》 holds that, since neither the pulse nor abolition of the 衝陽 pulse can be reproduced here, it has undergone "名實分離" from the original Xuanzhong. The modern indications (項強 · 下肢痿痹) come from the 《千金》 indications of 絕骨 and 陽輔. All studies including GB39 are at the combined-point or animal level, and with B-Check 6/12 (not concordant) the reflex mechanism is a **hypothesis**.
+- **Branch (Tri-Target)**: the classical text position and the palpation-based locus are the same point (Target 1≡2), which lies about 20–35 mm (estimated, > 10 mm) from the WHO standard location (Target 3), so the two branch. ΔARI-Core 3.8 < 10 → no superiority. The two Targets are reported side by side. The earlier edition's conclusion of a "confirmed substrate" and its claim of "complete agreement" with the 《通考》 rested on fabricated quotations and are withdrawn.
+- **Collation with the four primary classics**: the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) records the interpretation of the "陽明脈" of 懸鍾 as the dorsalis pedis artery branching from the anterior tibial artery (Part 01) and the criticism of the 絕骨/陽輔 confusion (Parts 01 and 36), supporting the Target 1≡2 interpretation and the Rank 3 separation. It does not separately collate the location wording of Xuanzhong, and the ARI scores do not change.
 
 ---
 
@@ -406,7 +440,7 @@ Generated by: FMA 5.1.0 acupoint profile query (GB39; 2026-10-23). The match lev
 
 - Segment union (input to B-Check ②): **L4, L5, S1, S2** (S2 comes only from flexor hallucis longus, a posterior-compartment muscle listed only by Kim Jaehyo)
 - Comparison of the two textbooks: 7 common FMA entities · 1 Common Textbook only · 6 Kim Jaehyo only
-- Limits of citation: FMA is an ontology of normative adult anatomy and is not evidence for point-specific depth, frequency of variation or reflex function. The origin of the anterior-compartment muscular branches (recorded from the medial terminal branch), the recorded direct drainage of the fibular vein into the femoral vein, and the absence of nerve segments were supplemented from B1 as noted in 4-3. The T1 pulse point on the tibial side is itself not an FMA object (a question of location).
+- Limits of citation: FMA is an ontology of normative adult anatomy and is not evidence for point-specific depth, frequency of variation or reflex function. The origin of the anterior-compartment muscular branches (recorded from the medial terminal branch), the recorded direct drainage of the fibular vein into the femoral vein, and the absence of nerve segments were supplemented from B1 as noted in 4-3. The T1≡2 pulse point on the tibial side is itself not an FMA object (a question of location).
 
 ---
 
@@ -444,7 +478,7 @@ Generated by: FMA 5.1.0 acupoint profile query (GB39; 2026-10-23). The match lev
 | Mechanism in Sections 6.1 and 9 | "L4-S1 → ascent to segments C3-C5 → reflex relaxation of neck muscles", "periosteal stimulation = basis of 髓會" | Deleted. Replaced by a hypothesis diagram based on the B-Check evidence | No basis in the registry or Layer A (final T2 override_note) |
 | Rank 5 textbook table | "Mutually complementary consistency", "perfect collation" | Actual differences analysed (flexor hallucis longus, fibular artery and veins, fibularis tertius vs fibularis longus) | Common Textbook and Kim Jaehyo xlsx, row 343 each |
 | Section 8 | No Layer A, B-Check or search log | papers.id table (including quotation of the location conclusion of 1624), B-Check for T1 and T2 (5/12 · 6/12), sync_log table added | evidence pack; B-Check scoring record; 1624 full-text PDF |
-| Section 8, bibliographic data for papers.id 1624 | (Not cited) | 針刺研究 2021;46(1), DOI 10.13702/j.1000-0607.200282. The journal name recorded in the master DB (World Journal of Acupuncture-Moxibustion) differs from the full-text PDF (DB correction needed) | `03_주제별_경혈고증_연구보고서/현종혈_고증_및_문헌연구/04_참고논문_PDF/2021-침자연구-Location of acupoint Xuanzhong_GB39.pdf` |
+| Section 8, bibliographic data for papers.id 1624 | (Not cited) | 針刺研究 2021;46(1), DOI 10.13702/j.1000-0607.200282. The journal name recorded in the master DB (World Journal of Acupuncture-Moxibustion) differs from the full-text PDF (DB correction needed) | Reference-paper PDF of the Xuanzhong source-criticism study (internal) |
 | Section 8 audit table | Consistency audit of report ↔ Excel, "all items agree" | Deleted (comparing outputs of the same process is not grounds for reliability; canonical Rank 7) | Canonical Rank 7 cross-validation clause |
 | Section 10 | v2.6 five-factor ARI | T1 51.2 ± 0 (D·H) / T2 55 ± 0 (C, weight-sensitive); sub-items, gates, branch and adjudication record | dual-scoring record |
 | Section 10 | — | Earlier v2.6 score 93.6 (not comparable) | Earlier report in the internal archive |
@@ -469,4 +503,22 @@ Generated by: FMA 5.1.0 acupoint profile query (GB39; 2026-10-23). The match lev
 | :--- | :--- | :--- | :--- |
 | Header links | Local absolute-path links (do not open on other PCs) | Project-relative links | Skill path rule (no drive-letter absolute paths) |
 | Textbook title | *Meridian and Acupoint Studies* (經絡經穴學) | (經絡腧穴學) | The Korean edition names the textbook *Gyeongnak Suhyeolhak* (經絡腧穴學; suhyeol = 腧穴); 經絡經穴學 was a mistranslation carried over from the earlier ST36 English edition |
-| Section 8, papers.id 1624 | Journal "針刺研究 46(1) (journal as recorded in the DB: World Journal of Acupuncture-Moxibustion)", "No PMID" | "針刺研究 46(1):73–75", PMID 33559430. In the master DB, `journal` of `papers` 1624 corrected to Zhen Ci Yan Jiu (針刺研究) (backup `backup/*20261024_refine1624*`); export-xlsx and validate OK | PubMed PMID 33559430 metadata (Zhen Ci Yan Jiu 2021;46(1):73-5, DOI 10.13702/j.1000-0607.200282) and the full-text PDF |
+| Section 8, papers.id 1624 | Journal "針刺研究 46(1) (journal as recorded in the DB: World Journal of Acupuncture-Moxibustion)", "No PMID" | "針刺研究 46(1):73–75", PMID 33559430. In the master DB, `journal` of `papers` 1624 corrected to Zhen Ci Yan Jiu (針刺研究) (backup kept (internal)); export-xlsx and validate OK | PubMed PMID 33559430 metadata (Zhen Ci Yan Jiu 2021;46(1):73-5, DOI 10.13702/j.1000-0607.200282) and the full-text PDF |
+
+## Framework 2.7.7 Revision History (2026-10-25)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | Framework v2.7; "Three Primary Classics"; analysis Targets T1 (classical) and T2 (WHO) | v2.7.7 stated; "Four Primary Classics" (*Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) added); Tri-Target definitions and mapping of earlier labels (old T1 → Target 1≡2, old T2 → Target 3) | Framework 2.7.7 Ranks 1–2 and 5 |
+| Summary | Dual-Target, Δ > 15 mm | Tri-Target (Target 1≡2 vs Target 3, Δ about 20–35 mm estimated > 10 mm); one sentence on the 《經絡通鑑》 collation | Rank 5 Tri-Target (branch criterion Δ > 10 mm) |
+| Section 1 | "Three Primary Classics"; 《證治通鑑》 row pointers "refined edition, 7 chunks", "PDF … L4132 · L2972 · L1236" | "Four Primary Classics"; 《證治通鑑》 row updated to part/line pointers (Part 09 L426–458, Part 17 L406, Part 19 L442, Part 03 L262) with Korean-translation lines and renderings; Part 09 summary added; omission of 'Guangming and Juegu' in the Korean translation of Part 03 recorded. Occurrence count (196 / 165 lines) re-confirmed in the 20 original parts. The old "PDF pp. 1–80 L1236 note" confirmed to be the same text as the note in Part 03 of the 《證治通鑑》 | 《證治通鑑》 rule: Chinese original as reference text, description from the Korean translation |
+| Section 1 (new) | No 《經絡通鑑》 | Five rows from the 《中國針灸經絡通鑑》: Part 01 L2007–2017 (陽明脈 = dorsalis pedis, descending branch of the anterior tibial artery), Part 01 L1035 (note on the 絕骨 confusion, Dunhuang P.3596), Part 04 L1016 and Part 36 L193–209 (Wang Bing's "傳寫誤", criticism of the 陽輔/分肉 confusion and of over-extension of meridian theory), Parts 05 · 28 · 36 (絕骨之端 as a bony landmark), Parts 34 · 35 · 11 (《脈經》 · 《難經》) | 《中國針灸經絡通鑑》, relevant parts |
+| Section 2 | No strata for the Dunhuang manuscript or Wang Bing's commentary | Sui–Tang manuscript row (manuscript-number variant P.3596/S.3347 noted) and Tang Wang Bing commentary row added | 《經絡通鑑》 Parts 01 · 04 · 36; 《證治通鑑》 Part 03 |
+| Section 3 | No collation with the 《經絡通鑑》 | Paragraph on differentiation of scribal errors added (絕骨 confusion, Wang Bing's "傳寫誤", criticism of over-extension of meridian theory). Rank 3 separation supported; double listing in the current standards unresolved | Rank 4 differentiation of scribal errors |
+| Section 4-1 | Column titles T1 · T2; no insertion reference point | Target 1≡2 · Target 3; insertion-reference row added (Target 1≡2: no gap term → formally not marked, anatomically between tibialis anterior tendon and EHL; Target 3: anterior border of the fibula (緣), boundary between EDL FMA:22534 and fibularis brevis FMA:22540) | Rank 5 insertion-reference rule |
+| Diagrams in Sections 4 and 7 | ●T1 · ●T2, "Δ ≈ 20–35 mm (> 15 mm)" | ●T1≡2 · ●T3; Section 7 diagram redrawn with Tri-Target labels (vertical-line columns checked by display width); one pre-existing misaligned line in the Section 4-2 diagram realigned | Rule for text diagrams |
+| Section 7 | Dual-Target table, criterion Δ > 15 mm | Mapping of earlier labels, 7-1 Tri-Target coordinate table, 7-2 pairwise Δ table (Target 1–2 ≤ 10 mm merged; Target 1–3 and 2–3 about 20–35 mm branch), reasons for not using later palpation terms (尖骨 · 筋骨縫 etc.) as Target 2, criterion Δ > 10 mm (branch status unchanged) | Ranks 5 and 7 Tri-Target |
+| Sections 5, 6, 8, 9, Appendix A | Abbreviations T1 · T2 | Abbreviations T1≡2 · T3 (including the node labels of Figure 8-1; node IDs kept) | Consistent labelling |
+| Section 10 | Titles of 10-1 · 10-2 · 10-3 with T1 · T2; ④ "Collation in the 《通考》" | Target 1≡2 · Target 3; Tri-Target decision paragraph in 10-3; ④ "Collation in the 《通考》 and 《經絡通鑑》" re-checked — no new grounds such as a measurement reference, **score unchanged** (both Targets A 75 / B 75); Tri-Target and four-classics items added to the conclusion | Rubric 4.2 item ④, Rank 7 decision rule |
+| Non-disclosure | Internal folder path and backup path in revision-history rows | Replaced by descriptive names "(internal)" | Rank 7 HTML non-disclosure rule |
+| Scores | Target 1≡2 (old T1) ARI-Core 51.2 ± 0 (D·H), SI 50 / Target 3 (old T2) 55.0 ± 0 (C, weight-sensitive), SI 75 | **No change**. No single-scored (preliminary) Target | — |

@@ -1,23 +1,24 @@
 # [Acupoint Anatomical & Physiological Substrate Monograph] Taiyuan (太淵, LU09)
 
-> **Framework**: v2.7 · **ARI**: ARI v3.0 | ARI-Core 68.75 ± 0 (C) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 66.7 (C, grade unchanged) · **Dual scoring**: two independent rounds (raters A and B); 3 discrepancies of 15 points or more reconciled
+> **Framework**: v2.7.7 (2026-10-25 update: four primary classics, Tri-Target) · **ARI**: ARI v3.0 | ARI-Core 68.75 ± 0 (C) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 66.7 (C, grade unchanged) · **Dual scoring**: two independent rounds (raters A and B); 3 discrepancies of 15 points or more reconciled
 
-> **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
+> **Four Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》; the Chinese original is the reference text, descriptions follow the Korean translation of the same section) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) · *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)
 > **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 (of the 41 papers in the LU9 inverted index, only the **15 papers with confirmed LU9 stimulation** are used for the verdict — Section 8 ①)
 > **Layer B Reference Registry**: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 > **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry). Details in Appendix A
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
-**Source abbreviations** (refined editions of the three classics)
+**Source abbreviations** (refined editions of the four classics)
 - [通考] 《針灸腧穴通考》 上 手太陰肺經穴 — 太淵 L2193–2455
 - [通鑑] 《中國針灸穴位通鑑》 手太陰肺經(2) — 太淵 L773–1121
-- [證治04] 《中國針灸證治通鑑》 第壹編 第七篇 手太陰肺經 手陽明大腸經 足陽明胃經 — 太淵 L44–66
-- [證治17] 《中國針灸證治通鑑》 第叄編 內科病症 二十二臟腑病證至二十四胸脅滿痛
+- [證治04] 《中國針灸證治通鑑》 第壹編 第七篇 手太陰肺經 手陽明大腸經 足陽明胃經 — 太淵 L44–66 (Korean translation of the same section, Taiyuan entry L55–85)
+- [證治17] 《中國針灸證治通鑑》 第叄編 內科病症 二十二臟腑病證至二十四胸脅滿痛 (checked against the Korean translation)
+- [經絡通鑑 NN篇] 《中國針灸經絡通鑑》 — 01篇 第壹編 第一篇 ("經脈"概念的形成), 02篇 第壹編 第二篇 (經絡學說的演變 一~七), 05篇 第壹編 第三篇 (經絡專篇研究), 07篇 第壹編 第五篇 (不同來源的經絡學說), 11篇 第貳編 第三篇 (脈度、骨度與要穴), 17篇 第叄編 第一篇 (手太陰經脈、經別、絡脈和經筋), 37篇 第伍編 附篇一 (脈名索引)
 
 ---
 
-## 1. Classical Literature Screening Table (Three Primary Classics Excerpts)
+## 1. Classical Literature Screening Table (Four Primary Classics Excerpts)
 
 | Classic | Original excerpt (source & line) | English summary | Remarks |
 | :--- | :--- | :--- | :--- |
@@ -31,8 +32,15 @@
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "陽中之少陰肺也，其原出于太淵。"(《靈樞·九針十二原》) — [通鑑] L777 | Yuan-Source point (原穴) of the Lung | Source |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "在掌後陷者中。"(《甲乙經》 etc.) / "在手中掌後橫紋頭陷者中。"(《太平聖惠方》 etc.) / "在掌後內側橫紋頭動脈。"(《神應經》 etc.) — [通鑑] L813·817·819 | 'End of the transverse crease' (橫紋頭) added in the Song, 'artery' marker added in the Ming | "所述位置相同" [通鑑] L1053 |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "針三分至五分，不灸、勿刺傷橈動脈。"(《新編針灸學》) / local anatomy "在橈側屈腕肌腱的外側，外展拇長肌腱的內側，旋前方肌的下緣……有橈動脈" — [通鑑] L1029·1039 | Between the flexor carpi radialis tendon and the abductor pollicis longus tendon; radial artery | Anatomical cross-check in Sections 4 and 6 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《明堂經》 "主病溫身熱，五日以上汗不出，刺太淵……咳逆，煩悶不得臥……唾血……口僻，刺太淵、引而下之。狂言。妬乳。" — [證治04] L50–54 | Febrile disease, cough with counterflow (咳逆), spitting of blood (唾血), deviation of the mouth (口僻), breast abscess (妬乳) | Basis for $P_{single}$ (Section 9) |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《靈樞》 "主肺心痛。熱病。" / 《千金翼方》 "肺脹氣搶脅下熱痛。肺熱咳嗽。" — [證治04] L60–68 | Lung-heart pain (肺心痛), febrile disease, lung distension (肺脹) | Mostly combinations (Section 9) |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《明堂經》 "主病溫身熱，五日以上汗不出，刺太淵……咳逆，煩悶不得臥……唾血……口僻，刺太淵、引而下之。狂言。妬乳。" — [證治04] L50–54 | (Korean translation) "Treats warm disease (溫病) with body heat and no sweating for five days or more: needle Taiyuan, retain the needle for a while and withdraw; before five days have passed it must not be needled … cough with counterflow (咳逆), vexation preventing lying down … spitting of blood (唾血) … for deviation of the mouth (口僻) needle Taiyuan and draw downward. Manic speech. Breast abscess (妬乳)." — [證治04 trans.] L63 | Basis for $P_{single}$ (Section 9) |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《靈樞》 "主肺心痛。熱病。" / 《千金翼方》 "肺脹氣搶脅下熱痛。肺熱咳嗽。" — [證治04] L60–68 | (Korean translation) "Treats lung-heart pain (肺心痛). Febrile disease (熱病)." / "Lung distension (肺脹), qi surging up with burning pain below the ribs. Lung-heat cough (肺熱咳嗽)." — [證治04 trans.] L71–85 | Mostly combinations (Section 9) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | "肺出於少商……注於太淵，太淵魚後一寸陷者中也，為輸；行於經渠，經渠寸口中也" (《靈樞·本輸》) — [經絡通鑑 11篇] L423 | Records the 《本輸》 location wording identically to the *Tongkao* (no textual variant) | Basis for Target 1 (Section 7) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | Huang Longxiang's commentary: "'手太陰'實際上相當於太淵、經渠（還包括早期魚際）穴之間的整個手太陰脈動處（脈口）" — [經絡通鑑 01篇] L733 (《脈經》 "手太陰：在魚際間 (即太淵穴也)" L711) | The early 'Hand-Taiyin' meridian point (經脈穴) was the whole pulsating region (cun-kou pulse site, 脈口) between Taiyuan and Jingqu (early on including Yuji), a concept different from today's 'point' | Agrees with the *Tongkao* "本是一穴". Rank 4 collation (end of Section 2) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | "例如《素問·刺禁論》所言'臂太陰脈'即指手太陰脈口，相當於'經渠'、'太淵'穴處" — [經絡通鑑 02篇] L653, footnote | The '臂太陰脈' of the haemorrhage warning in 《刺禁論》 is the cun-kou at Taiyuan and Jingqu | Supports treating it as a contraindication shared by 太淵 and 經渠 (Sections 5 and 10) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | Annotation to 《陰陽十一脈》 "出內陰兩骨之間": "出於手太陰脈口'寸口'脈"; "《明堂經》載手太陰脈口處穴太淵穴主治：'臂厥，缺盆中引痛，心痛'" — [經絡通鑑 05篇] L1138·L1144 | Taiyuan's indications of arm reversal (臂厥) and heart pain (心痛) preserve the 'is-moved' disorders (是動病) of the silk-manuscript 臂巨陰脈 | Meridian-theory origin of the heart-pain indication (Section 9) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | Commentary in 《醫學綱目》: "［入寸口，］掌後陷中動脈，太淵穴也。寸口中動脈，經渠穴也" — [經絡通鑑 17篇] L241 / 《千金要方》 vol. 29 "注於大泉為輸" L365 / Yang Shangshan's commentary in 《太素》 "至本節後太泉穴處" L310 | In a Ming commentary 'depression' (陷中) and 'artery' (動脈) are joined / taboo spellings 大泉 and 太泉 confirmed | Sections 2 and 3 |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | Index of vessel names "太淵脈" — [經絡通鑑 37篇] L385; pulse site in 《氣交變大論》 "太淵脈——肺" — [經絡通鑑 07篇] L102 | '太淵' is both a point name and the name of a pulse-taking site | Supports the 'vessel' distinction in Section 3 |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | (toothache indication and contamination from '龍淵'; debate over the 'artery' marker in the 1990/2006 national standards) | **No direct mention of these issues** — only the course of the meridian and the cun-kou description are confirmed | Basis for ④ unchanged (Section 10) |
 
 ---
 
@@ -50,28 +58,39 @@
 | Yuan & Ming | 《竇太師針經》 · 《針方六集》 | 孕婦不可針 / 不宜用針; toothache (牙痛) indication | Independent descriptions (some suspected contamination from '龍淵') — [通考] L2333·2361·2437 |
 | Contemporary | Textbooks, 4th–7th editions · national standards 1990/2006 | Perpendicular 0.2–1 寸, 避開橈動脈; '動脈' deleted from the 2006 national standard | Modern location — [通考] L2209·2441–2453 |
 
+**Collation by the *Tongkao* (《通考》) and the *Jingluo Tongjian* (《經絡通鑑》) (Rank 4: discrimination of transcription errors and meridian-theory over-extension)**
+- **From pulse site to point**: the *Jingluo Tongjian* reads the 'Hand-Taiyin' (手太陰) of 《脈經》 (在魚際間, original note "即太淵穴也") as the whole pulsating region between Taiyuan and Jingqu (early on including Yuji) ([經絡通鑑 01篇] L711·L733). This is the same conclusion as the *Tongkao*'s "經渠與太淵……本是一穴" ([通考] L2203). The 'artery' (動脈) marker added in the Jin–Yuan and Ming ([通考] L2285–2289) is therefore discriminated not as a scribal error in the location wording but as the result of the overlapping concepts of pulse site (vessel) and point. The Ming commentary in 《醫學綱目》 "掌後陷中動脈，太淵穴也。寸口中動脈，經渠穴也" ([經絡通鑑 17篇] L241) is an example of both markers joined in one sentence.
+- **Textual variants**: 《本輸》 "太淵魚後一寸陷者中也" has identical wording in the *Jingluo Tongjian* ([經絡通鑑 11篇] L423) and the *Tongkao* ([通考] L2225). There is no scribal variant.
+- **Meridian-theory over-extension**: the *Jingluo Tongjian* annotates that Taiyuan's indications in 《明堂》, "臂厥，缺盆中引痛，心痛", preserve the 'is-moved' disorders (是動病) of the silk-manuscript 《陰陽十一脈》 臂巨陰脈, i.e. disorders diagnosed from abnormal pulsation at the cun-kou ([經絡通鑑 05篇] L1144). Taiyuan's heart-pain indication may therefore derive from a pulse-diagnostic syndrome rather than from observed stimulation effects; this is used to interpret B-Check ⑤ in Section 8 (weak cardiac effect) and the verdicts in Section 9.
+- **Unresolved**: contamination of the toothache indication from '龍淵' ([通考] L2361·2399) is not mentioned in the *Jingluo Tongjian* and remains uncollated.
+
 ---
 
 ## 3. Alias Verification Table (cross-checked against the KJH DB)
 
 | Alias | Source | KJH DB | Verdict |
 | :--- | :--- | :--- | :--- |
-| 大泉 · 太泉 | Yang Shangshan's commentary (楊注) in 《黃帝內經明堂》, 《千金》 — taboo on the name of Tang Gaozu, Li Yuan (唐高祖 李淵) | Listed | Same point. Renamed because of the naming taboo — [通考] L2205·2221·2237 |
+| 大泉 · 太泉 | Yang Shangshan's commentary (楊注) in 《黃帝內經明堂》, 《千金》 — taboo on the name of Tang Gaozu, Li Yuan (唐高祖 李淵) | Listed | Same point. Renamed because of the naming taboo — [通考] L2205·2221·2237; 《千金要方》 "注於大泉為輸" and Yang Shangshan's commentary in 《太素》 "太泉穴" — [經絡通鑑 17篇] L365·L310 |
 | 鬼心 | 《千金要方》 vol. 14 "第四針掌後橫紋，名鬼心，入肉半寸。即太淵穴也。" | Listed | Same point — [通考] L2235, [通鑑] L804 |
 | 大渕 | 《醫心方》 ('渕' = '淵') | Listed | Variant character (異體字) — [通考] L2221 |
 | 天泉 (scribal error) | 大泉 misread as 天泉 | — | **Risk of confusion**: distinct from Tianquan (天泉, PC2) of the Pericardium Meridian (心包經) — [通考] L2205·2221 |
 | (wrongly assigned to 魚際) | 1957 Nanjing 《針灸學》 → Korean textbooks | — | 太泉 and 鬼心 wrongly listed as aliases of Yuji (魚際, LU10) — [通考] L2473 |
-| 太淵 as 'vessel' | 《素問·氣交變大論》 "太淵絕者，死不治" | — | Distinguishes the whole cun-kou vessel (pulse-taking site) from the point 太淵 — [通考] L2221·2287 |
+| 太淵 as 'vessel' | 《素問·氣交變大論》 "太淵絕者，死不治" | — | Distinguishes the whole cun-kou vessel (pulse-taking site) from the point 太淵 — [通考] L2221·2287; vessel name '太淵脈' (pulse-taking site for the Lung) — [經絡通鑑 37篇] L385, [經絡通鑑 07篇] L102 |
 
 The KJH DB (Acupoint Nomenclature & Alias Comparative Database, sheet `경혈 종합 목록` (comprehensive acupoint list), row 64: 61, LU09, `태연` (Taeyeon), 太淵, "太泉, 鬼心, 大泉, 大渕") agrees with the alias columns of the two textbook datasets ("太泉, 鬼心").
 
 ---
 
-## 4. 3D Spatial Coordinates & Layer 1–5 Stratification Diagram
+## 4. 3D Spatial Coordinates, Insertion Reference & Layer 1–5 Stratification Diagram
 
 - **X (radial–ulnar)**: radial end of the distal wrist crease, between the radial styloid process and the scaphoid, **in the depression on the ulnar side of the abductor pollicis longus tendon** ([通考] L2207). Between the flexor carpi radialis tendon and the abductor pollicis longus tendon ([通鑑] L1039).
 - **Y (proximal–distal)**: distal wrist crease ("掌後橫紋頭", 《太平聖惠方》). The reading of "仰掌三紋之後" in 《針灸秘法全書》 confirms that it is the distal crease ([通考] L2299).
 - **Z (depth)**: layers below. **Layer A contains no cadaveric or ultrasound measurement at LU09, so no millimetre boundaries are given** (the 2.5/6.5/16.5/22 mm boundaries of the earlier edition were generic template values and have been removed).
+- **Insertion reference (Target 2, anatomical realisation of the palpation phrase "陷者中")**: the "depression" (陷者中) of the classics is a gap between two tendons (兩筋間 type) with clear features.
+  - X: centre of the gap between the radial edge of the flexor carpi radialis tendon (FMA:38582; muscle FMA:38459) and the ulnar edge of the abductor pollicis longus tendon (FMA:38515). The radial artery (FMA:22730) and radial vein (FMA:22947) run within this gap.
+  - Y: level of the distal wrist crease (between the radial styloid process and the scaphoid).
+  - Bounding structures: ulnar = flexor carpi radialis tendon; radial = abductor pollicis longus tendon; floor = distal end of radius and scaphoid.
+  - The substrate of the "動脈" phrase added in the Ming (radial-artery pulsation at the level of the crease) lies within the same gap, or, in the variant where the radial artery deviates to the radial side of the abductor pollicis longus tendon ([通考] L2211), radial to it by the width of the tendon. Giving priority to the earliest phrase "陷者中" (Rank 3), the gap above is set as the insertion reference. Displacements from each Target are given in Section 7.
 
 ```
 [Layer 1 Skin/subcutis]  Lateral cutaneous n. of forearm · superficial branch of radial n. · cephalic v. (shared by both textbooks),
@@ -146,15 +165,29 @@ Source: Classical Needling Depth Database, sheet 1, row 63 (N0 = 61), supplement
 
 ---
 
-## 7. Spatial Displacement Divergence Inference
+## 7. Spatial Displacement Divergence Inference (Tri-Target)
 
-| Lineage | Evidence | Location |
-| :--- | :--- | :--- |
-| ① Classical | 《靈樞·本輸》 "魚後一寸陷者中"; 《甲乙》 "掌後陷者中" | Depression behind the wrist (longitudinal reference vague) |
-| ② Song to present | 《聖惠方》 "掌後橫紋頭陷者中" → national standard 2006 "橈骨莖突與舟狀骨之間，拇長展肌腱尺側凹陷中" | Radial end of the distal wrist crease |
-| ③ Revision proposal keeping the 'artery' marker | Japanese standard of the acupuncture community (同人) "遠端腕橫紋上五分" (a proposal to retain the arterial pulsation) | About 5 fen proximal to the crease — [通考] L2223·2299 |
+| Target | Definition | Evidence | X·Y position |
+| :--- | :--- | :--- | :--- |
+| **Target 1** (classical text position) | Position specified by the wording of the earliest description | 《靈樞·本輸》 "太淵魚後一寸陷者中也" ([通考] L2225; [經絡通鑑 11篇] L423); 《甲乙》 "掌後陷者中" ([通鑑] L813) | Depression behind the wrist. The longitudinal reference is vague ("早期文獻只言'掌後'，不很明確", [通考] L2299) |
+| **Target 2** (palpation-based anatomical locus) | Anatomical space indicated by "陷者中" = insertion reference | Gap between the flexor carpi radialis tendon and the abductor pollicis longus tendon ([通鑑] L1039; Section 4) | Level of the distal wrist crease, between the two tendons |
+| **Target 3** (WHO standard location) | WHO Western Pacific Region standard (2008) and Chinese national standard 2006 | "橈骨莖突與舟狀骨之間，拇長展肌腱尺側凹陷中" ([通考] L2207) | Radial end of the distal wrist crease, depression ulnar to the abductor pollicis longus tendon |
 
-The *Tongjian* (《通鑑》) regards ① and ② as "所述位置相同" ([通鑑] L1053), while the *Tongkao* (《通考》) presents ③ only as an alternative if the 'artery' marker is to be kept. The 5-fen difference between ③ and ② is estimated at about 1 cm by the proportional body cun (not measured), so **$\Delta_{discrepancy} \le 15\text{mm}$ → no split needed; single Target (T1 = modern national-standard location)**.
+**Pairwise displacement (all estimated, not measured)**
+
+| Pair | Δ (estimated) | Basis | Verdict (10 mm threshold) |
+| :--- | :---: | :--- | :--- |
+| Target 1–Target 2 | ≈ 0–5 mm | The earliest description fixes the location by "陷者中", so Target 1 points to the depression of Target 2. Read as 1 cun from Yuji (魚際; middle of the first metacarpal) named just before in the same passage, "魚後一寸" falls near the crease | Merged |
+| Target 2–Target 3 | ≈ 0 mm | The national and WHO standards describe the same depression between the two tendons | Merged |
+| Target 1–Target 3 | ≈ 0–5 mm | *Xuewei Tongjian* "所述位置相同" ([通鑑] L1053) | Merged |
+
+→ **Target 1≡2≡3, no split (single Target)**. The three positions and displacements are kept in the table above.
+
+**Reference variants not entered into the Tri-Target (Rank 5 Target exclusion rule applied)**
+- **Literal-reading variant (reading "魚後一寸" as 1 cun proximal to the proximal edge of the thenar eminence)**: this gives the level of Jingqu (經渠, LU8), about 20–23 mm proximal to the crease (1 cun ≈ 20–23 mm assumed; estimate). At that level, however, there is no inter-tendinous depression corresponding to "陷者中", and the same 《本輸》 passage describes that site separately as Jingqu, "寸口中" ([經絡通鑑 11篇] L423). The *Jingluo Tongjian* regards the early 'Hand-Taiyin' as the whole pulsating region between Taiyuan and Jingqu ([經絡通鑑 01篇] L733). This variant is a later interpretive alternative view rather than the position fixed by the earliest description (陷者中), so under the Rank 5 Target exclusion rule it is not set as a Target and is recorded only as a trace of the cun-kou range.
+- **③ Revision proposal keeping the 'artery' marker**: the Japanese standard of the acupuncture community (同人) "遠端腕橫紋上五分" (a proposal to retain the arterial pulsation; [通考] L2223·2299). Five fen (0.5 proportional body cun, 同身寸) is estimated at about 10–11.5 mm (1 cun ≈ 20–23 mm assumed; not measured), i.e. **a borderline value at the 10 mm threshold**. It is a modern location proposal from the Japanese acupuncture community and corresponds to none of the classical text, a palpation phrase or the WHO standard, so under the Rank 5 Target exclusion rule it is not set as a Target and is neither branched nor scored even if a measured Δ exceeds 10 mm. It is recorded only as a reference alternative view.
+
+> **Mapping from earlier labels**: former single Target "T1 (modern national-standard location)" → Target 1≡2≡3. Former lineage ① (classical) → Target 1; former lineage ② (Song to present) → Target 3; former lineage ③ ('artery' revision proposal) → reference variant outside the Tri-Target. The earlier verdict "Δ ≤ 15 mm → no split" was re-checked against the 10 mm threshold. All three Tri-Target pairs remain within 10 mm with the same verdict. Reference variant ③ has a borderline Δ at 10 mm but is not eligible as a Target under the Rank 5 Target exclusion rule.
 
 ---
 
@@ -238,9 +271,9 @@ Of the 41 papers in the inverted index, only those whose abstract confirms LU9 (
 
 | Category | Indication | Textual basis |
 | :--- | :--- | :--- |
-| $P_{single}$ (single point) | Febrile disease without sweating (熱病無汗) | "病溫身熱，五日以上汗不出，刺太淵，留針一時取之，未滿五日禁不可刺" (《明堂經》, [證治04] L50–54) |
-| $P_{single}$ | Cough with counterflow (咳逆), dyspnoea (喘), spitting of blood (唾血) (lung system, 肺系) | 《明堂經》 "咳逆，煩悶不得臥，胸中滿，喘不得息……唾血" ([證治04] L54); "肺咳，刺手太泉" (《千金翼方》, [通考] L2371) |
-| $P_{single}$ | Deviation of the mouth (口僻) | "口僻，刺太淵、引而下之" (《明堂經》, [證治04] L54) |
+| $P_{single}$ (single point) | Warm disease (溫病) with body heat and no sweating for five days or more (無汗) | "病溫身熱，五日以上汗不出，刺太淵，留針一時取之，未滿五日禁不可刺" (《明堂經》, [證治04] L50–54) — "treats warm disease with body heat and no sweating for five days or more: needle Taiyuan, retain the needle for a while and withdraw; before five days have passed it must not be needled" ([證治04 trans.] L63) |
+| $P_{single}$ | Cough with counterflow (咳逆), dyspnoea (喘), spitting of blood (唾血) (lung system, 肺系) | 《明堂經》 "咳逆，煩悶不得臥，胸中滿，喘不得息……唾血" ([證治04] L54) — "cough with counterflow, vexation preventing lying down, fullness in the chest, breathlessness … spitting of blood" ([證治04 trans.] L63); "肺咳，刺手太泉" (《千金翼方》, [通考] L2371) |
+| $P_{single}$ | Deviation of the mouth (口僻) | "口僻，刺太淵、引而下之" (《明堂經》, [證治04] L54) — "for deviation of the mouth, needle Taiyuan and draw downward" ([證治04 trans.] L63) |
 | $P_{single}$ | Breast abscess (妬乳), mammary abscess (乳癰) | 《明堂經》 "妬乳"; 《靈光賦》 · 《席弘賦》 mammary abscess ([通考] L2325·2345) |
 | $P_{single}$ | Arm reversal (臂厥), pain on the medial side of the arm (local) | "臂厥，肩膺胸痛……臂內廉痛" (《明堂經》) |
 | $P_{single}$ (modern) | Pulseless disease, premature cardiac contractions | 5th, 6th, 7th eds. 《針灸學》 "無脈症"; "心臟早搏：針刺左太淵穴" (中國針灸 1999, [通考] L2355·2393) |
@@ -248,15 +281,15 @@ Of the 41 papers in the inverted index, only those whose abstract confirms LU9 (
 | $P_{comb}$ (combination) | Lung-heart pain (肺心痛) | "肺心痛也，取之魚際與太淵" (《靈樞·厥病》, [通考] L2389) |
 | $P_{comb}$ | Inducing and stopping sweating in febrile disease | 魚際 · 太淵 · 大都 · 太白 (《靈樞·熱病》, [通考] L2407) |
 | $P_{comb}$ | Headache | "頭痛先刺列缺，後瀉太淵" (《針灸集書》); 《席弘賦》 ([通考] L2417·2421) |
-| $P_{comb}$ | Cough, common cold | "傷寒咳嗽……風門、肺俞、列缺、太淵" ([證治17] L1063); 《玉龍歌》 風門 + 太淵 ([通考] L2381) |
-| $P_{comb}$ | Asthma, wheezing (哮喘) | 璇璣 · 華蓋 · 俞府 · 膻中 · 肩井 · 太淵 · 足三里 ([證治17] L1181); 太淵 + 定喘 (北京中醫 1988, [通考] L2385) |
-| $P_{comb}$ | Lung abscess (肺癰) | Moxibustion at 腎俞 · 合谷 · 太淵 ([證治17] L204) |
+| $P_{comb}$ | Cough, common cold | "傷寒咳嗽……風門、肺俞、列缺、太淵" ([證治17] L1063) — "cough from cold damage with clear nasal discharge: Fengmen, Feishu, Lieque, Taiyuan" ([證治17 trans.] L1736); 《玉龍歌》 風門 + 太淵 ([通考] L2381) |
+| $P_{comb}$ | Asthma, wheezing (哮喘) | 璇璣 · 華蓋 · 俞府 · 膻中 · 肩井 · 太淵 · 足三里 ([證治17] L1181) — "wheezing: Xuanji, Huagai, Shufu, Danzhong, Jianjing, Jianzhong, Taiyuan, Zusanli" ([證治17 trans.] L1948); 太淵 + 定喘 (北京中醫 1988, [通考] L2385) |
+| $P_{comb}$ | Lung abscess (肺癰) | Moxibustion at 腎俞 · 合谷 · 太淵 ([證治17] L204) — "lung abscess with vomiting of pus: Shenshu, Hegu, Taiyuan" ([證治17 trans.] L329) |
 
 ---
 
 ## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-**Target T1 (single)**: classical "掌後陷者中" = modern national standard 2006 "橈骨莖突與舟狀骨之間，拇長展肌腱尺側凹陷中".
+**Target 1≡2≡3 (single, no split)**: classical "掌後陷者中" (Target 1) = insertion reference in the gap between the flexor carpi radialis tendon and the abductor pollicis longus tendon (Target 2) = modern national standard 2006 / WHO "橈骨莖突與舟狀骨之間，拇長展肌腱尺側凹陷中" (Target 3). Pairwise Δ ≤ 10 mm (estimated, Section 7). The position is the same as the former single Target T1, so the dual scoring is carried over unchanged.
 
 ### Sub-scores
 
@@ -274,7 +307,7 @@ Of the 41 papers in the inverted index, only those whose abstract confirms LU9 (
 | ① Clarity of the earliest description | 100 | 75 | **75** (reconciled) | A: both the location in 《本輸》 and the depth in 《明堂》 date from the Han. B: the *Tongkao* (《通考》) judges that "早期文獻只言'掌後'，不很明確" ([通考] L2299). 25-point difference → reconciled: the longitudinal reference of the location is vague, so 75 |
 | ② Agreement of later texts | 75 | 75 | **75** | The location is "所述位置相同" ([通鑑] L1053), but the 'artery' marker was added in the Ming, the national standard was revised from 1990 to 2006, and depth ranges from 1 fen to 1 寸 |
 | ③ Resolution of alias confusion | 75 | 75 | **75** | 大泉 · 太泉 (naming taboo), 鬼心 and 大渕 sorted out; the misreading 天泉, the wrong assignment to 魚際 and the confusion with 太淵 as 'vessel' resolved in chronological order |
-| ④ Collation by the *Tongkao* (《通考》) | 75 | 75 | **75** | Corrected the anatomical untenability of the 'artery' marker, the national-standard revision and the erroneous 魚際 alias. Contamination of the toothache indication from '龍淵' unresolved |
+| ④ Collation by the *Tongkao* (《通考》) and the *Jingluo Tongjian* (《經絡通鑑》) | 75 | 75 | **75** | Corrected the anatomical untenability of the 'artery' marker, the national-standard revision and the erroneous 魚際 alias. Contamination of the toothache indication from '龍淵' unresolved. **Re-checked 2026-10-25**: the *Jingluo Tongjian*'s reading of the cun-kou range ([經絡通鑑 01篇] L733) and of '臂太陰脈' as the cun-kou ([經絡通鑑 02篇] L653) reinforce the discrimination of the 'artery' marker and the haemorrhage contraindication, but do not address the '龍淵' contamination, so the level "minor variant corrected" (75) does not move → **unchanged** |
 
 ### Gates, Grade & Sensitivity
 
@@ -282,7 +315,7 @@ Of the 41 papers in the inverted index, only those whose abstract confirms LU9 (
 - **ARI-Core** = 0.40×75 + 0.35×75 + 0.25×50 = **68.75 ± 0** → **grade C (possible / hypothesis)**, no flag.
 - **SI** = 50 (reported separately).
 - **Equal-weight sensitivity**: (75+75+50)/3 = 66.7 → C, grade unchanged.
-- **Split verdict**: not applicable (single Target).
+- **Split verdict (Tri-Target)**: the three Targets merge pairwise within 10 mm into a single Target (Target 1≡2≡3), so no superiority verdict applies. Reference variant ③ (the 'artery' revision proposal, ≈ 10–11.5 mm estimated) is not a Target regardless of Δ under the Rank 5 Target exclusion rule and is recorded only as a reference alternative view in Section 7.
 - **Reconciliation record**: all 3 discrepancies of 15 points or more ($S_{orig}$ ①, $S_{clarity}$, SI) were reconciled on the grounds given in the tables above. After reconciliation the sub-scores agree, so the half-range is 0. B-Check ⑤ split A 2 / B 1, final 1.
 - **Earlier-edition score**: the template draft's 'ARI-Core 79.0 (B)' was computed from default values (85/75/75/75) without evidence pointers and is not compared with the v3.0 scoring (the internal archive).
 
@@ -290,7 +323,7 @@ Of the 41 papers in the inverted index, only those whose abstract confirms LU9 (
 
 ### Final Conclusion
 
-The anatomical substrate of Taiyuan (太淵, LU09) is at the **possible (C)** level. Its location has been consistently "掌後陷者中" since the Han, and in modern times it has been fixed in the depression between the radial styloid process and the scaphoid, on the ulnar side of the abductor pollicis longus tendon. At this level the two textbooks agree on the flexor carpi radialis tendon, the radial artery, the superficial branch of the radial nerve and the lateral cutaneous nerve of the forearm, and all of these structures are confirmed as standard FMA entities. The muscle lists, however, diverge because each textbook covers a different level.
+The anatomical substrate of Taiyuan (太淵, LU09) is at the **possible (C)** level. Its location has been consistently "掌後陷者中" since the Han, and in modern times it has been fixed in the depression between the radial styloid process and the scaphoid, on the ulnar side of the abductor pollicis longus tendon. The classical text position (Target 1), the gap between the two tendons indicated by "陷者中" (Target 2, insertion reference) and the WHO location (Target 3) merge into a single Target, pairwise within 10 mm (estimated). The *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) regards the early 'Hand-Taiyin' as the whole cun-kou between Taiyuan and Jingqu, supporting the *Tongkao*'s discrimination that the debate over the 'artery' marker arose from the overlap of the concepts of vessel and point. At this level the two textbooks agree on the flexor carpi radialis tendon, the radial artery, the superficial branch of the radial nerve and the lateral cutaneous nerve of the forearm, and all of these structures are confirmed as standard FMA entities. The muscle lists, however, diverge because each textbook covers a different level.
 
 Factors that lowered the grade:
 1. **Reflex mechanism not concordant (B-Check 7/12)**: improvement of lung function has been shown only in rat experiments (LU9 alone). The cardiac effect is weaker than that of Heart Meridian points or absent, so the correspondence with the classical '心痛' indication is weak.
@@ -364,3 +397,34 @@ Generated by FMA 5.1.0 acupoint profile query (LU09; 2026-10-23).
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
 | Textbook title | *Meridian and Acupoint Studies* (經絡經穴學) | (經絡腧穴學) | The Korean edition names the textbook *Gyeongnak Suhyeolhak* (經絡腧穴學; suhyeol = 腧穴); 經絡經穴學 was a mistranslation carried over from the earlier ST36 English edition |
+
+---
+
+## 2026-10-25 Framework 2.7.7 Revision History
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | Framework v2.7, "Three Primary Classics" | v2.7.7; "Four Primary Classics" (*Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) added; *Zhengzhi Tongjian* uses the Chinese original as reference text and the Korean translation for description) | Framework 2.7.7 Ranks 1 & 2 |
+| Source abbreviations | 4 abbreviations of the three classics | Four classics; [經絡通鑑 NN篇] abbreviation and line range of the Korean translation of the *Zhengzhi Tongjian* added | Framework 2.7.7 |
+| Section 1 | Excerpts from the three classics | 6 *Jingluo Tongjian* rows added (wording of 《本輸》 confirmed, cun-kou range, '臂太陰脈' in 《刺禁論》, 是動病 origin of heart pain, 《醫學綱目》 commentary and 大泉 spelling, vessel name '太淵脈'); issues not mentioned (toothache, 'artery' marker of the national standard) stated. English summaries of the *Zhengzhi Tongjian* rows now follow the Korean translation | [經絡通鑑 01篇] L711·L733, 02篇 L653, 05篇 L1138·L1144, 07篇 L102, 11篇 L423, 17篇 L241·L310·L365, 37篇 L385; [證治04 trans.] L63·L71–85 |
+| End of Section 2 | — | Rank 4 collation paragraph by the *Tongkao* and the *Jingluo Tongjian*: shift from pulse site to point, no textual variant, meridian-theory origin of the heart-pain indication, '龍淵' unresolved | Same lines |
+| Section 3 | Evidence for 大泉 · 太泉 and 太淵 as 'vessel' from the *Tongkao* only | *Jingluo Tongjian* pointers added | [經絡通鑑 17篇] L310·L365, 37篇 L385, 07篇 L102 |
+| Section 4 | X·Y·Z coordinates only | Insertion reference (Target 2): gap between the flexor carpi radialis tendon (FMA:38582) and the abductor pollicis longus tendon (FMA:38515), traversed by the radial artery (FMA:22730), at the level of the distal wrist crease | Framework 2.7.7 Rank 5 (insertion reference for 分肉 · 兩筋間 · 緣) |
+| Section 7 | Table of three lineages, "Δ ≤ 15 mm → single Target T1" | Tri-Target table (Target 1 classical text position / Target 2 palpation-based anatomical locus / Target 3 WHO standard location), pairwise Δ table (all estimated), **10 mm threshold**: single Target 1≡2≡3; literal-reading variant and ③ 'artery' revision proposal (≈ 10–11.5 mm, borderline) recorded as reference variants outside the Tri-Target; mapping from earlier labels | Framework 2.7.7 Ranks 5 and 7; split threshold Δ > 10 mm (revised 2026-10-25) |
+| Section 9 | *Zhengzhi Tongjian* quotations in the original only; "febrile disease without sweating" | Korean-translation wording added; indication renamed "warm disease (溫病) with body heat and no sweating for five days or more" to follow the translation | [證治04 trans.] L63; [證治17 trans.] L329·L1736·L1948 |
+| Section 10 | "Target T1 (single)", ④ "collation by the *Tongkao*", split verdict "not applicable (single Target)" | "Target 1≡2≡3 (single)", ④ "collation by the *Tongkao* and the *Jingluo Tongjian*" with re-check recorded (**75 unchanged**), Tri-Target split-verdict sentence | Framework 2.7.7 Rank 7 $S_{orig}$ ④ |
+| ARI | ARI-Core 68.75 ± 0 (C), SI 50 | **No change** — ④ level unchanged, Target position unchanged, so the dual scoring is carried over | Section 10 |
+| Final conclusion | — | One paragraph on the Tri-Target merger and the *Jingluo Tongjian*'s cun-kou reading | Section 7 |
+| Unresolved | — | Δ of reference variant ③ is borderline at 10 mm and requires ultrasound measurement | Section 7 |
+
+---
+
+## 2026-10-25 Target exclusion rule record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Section 7 reference variants | Literal-reading variant "treated as a trace of the cun-kou range … not set as a Target"; ③ 'artery' revision proposal "if adopted or if measured Δ > 10 mm, score separately as single scoring (preliminary)" | Both variants now cite the Rank 5 Target exclusion rule (later interpretive alternative view / modern proposal from a professional body) as the reason for exclusion; ③ is neither branched nor scored regardless of measured Δ | Framework Rank 5 Target exclusion rule (2026-10-25) |
+| Section 7 mapping note | "only reference variant ③ has become borderline" | States that ③ is borderline but not eligible as a Target | Same |
+| Section 10 split verdict | ③ "borderline and recorded in Section 7" | ③ is not a Target regardless of Δ and is recorded only as a reference alternative view | Same |
+| 'Unresolved' row of the 2026-10-25 Framework 2.7.7 record | Δ of ③ requires measurement | No effect on the verdict (excluded from Targets); measurement is for reference only | Same |
+| ARI | 68.75 ± 0 (C), SI 50 | **No change** | — |

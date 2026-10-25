@@ -1,6 +1,6 @@
 # [Acupoint Anatomical & Physiological Substrate Monograph] Cuanzhu (攢竹, BL2)
 
-> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: ARI v3.0 | ARI-Core 81.2 ± 1.2 (B) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 80.2 (B, grade unchanged) · **Dual scoring**: two independent raters, adjudication completed
+> **Framework**: v2.7.7 (revised 2026-10-25 — four primary classics and Tri-Target applied; v2.7 scoring of 2026-10-04 retained) · **Spatial discrepancy branching**: Tri-Target re-check gives **Target 1≡2≡3, a single Target** (all pairwise Δ ≤ 10 mm, estimated; Section 7) · **ARI**: ARI v3.0 | ARI-Core 81.2 ± 1.2 (B) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 80.2 (B, grade unchanged) · **Dual scoring**: two independent raters, adjudication completed
 
 ---
 
@@ -9,19 +9,19 @@
 > 1. Classical Needling Depth Database, sheet 1, row 181 (BL02)
 > 2. Acupoint Nomenclature & Alias Comparative Database, 'Comprehensive acupoint list' sheet, row 182; 'Primary name–alias match list (Case A)' sheet, row 4
 > 3. Common Textbook Anatomical Structure Dataset entry 179 (BL02, *Acupoint Studies* vol. 1, p. 628) · Kim Jaehyo Anatomical Structure Dataset entry 179 (BL02)
-> **Three Primary Classics** (refined editions): *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (上) PDF pp. 561–640 (lines 2310–2590) · *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) (上卷) PDF pp. 881–960 (lines 2480–2712) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), prescription entries in each chapter
+> **Four Primary Classics** (refined editions): *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (上) PDF pp. 561–640 (lines 2310–2590) · *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) (上卷) PDF pp. 881–960 (lines 2480–2712) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), prescription entries in each chapter (Chinese original as reference text, collated with the Korean translation) · *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》), Foot-Taiyang (Part 24) and Hand-Shaoyang (Part 27) sections, etc.
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ### Summary
-- **⚠ Safety caution (SI 0)**: Under the rubric the SI is 0 because the three primary classics record the statement "禁用針灸" (no needling, no moxibustion; 禁針·禁灸) from vol. 1 of *Yixue Rumen* (《醫學入門》). This is **a single record in one later, Ming-dynasty text**; most texts from the *Huangdi Mingtang Jing* (《黃帝明堂經》) and *Jiayi Jing* (《甲乙經》) onward, and the needling-depth DB, describe an insertion of **1–3 fen (2.3–6.9 mm)**. The needling-depth DB contains no '0' (contraindicated for needling) entry. The real risk lies in **direction** rather than depth. A perpendicular needle reaches the bony surface of the frontal bone at the frontal notch (額切跡) at a shallow depth, but a needle angled inferoposteriorly (toward the orbit) and inserted deeply can enter the orbit and may cause bleeding (haematoma) from the supratrochlear vessels. Most classical and modern texts recommend **transverse (horizontal) insertion along the skin (沿皮)**.
+- **⚠ Safety caution (SI 0)**: Under the rubric the SI is 0 because the classics (《通考》 and 《穴位通鑑》) record the statement "禁用針灸" (no needling, no moxibustion; 禁針·禁灸) from vol. 1 of *Yixue Rumen* (《醫學入門》). This is **a single record in one later, Ming-dynasty text**; most texts from the *Huangdi Mingtang Jing* (《黃帝明堂經》) and *Jiayi Jing* (《甲乙經》) onward, and the needling-depth DB, describe an insertion of **1–3 fen (2.3–6.9 mm)**. The needling-depth DB contains no '0' (contraindicated for needling) entry. The real risk lies in **direction** rather than depth. A perpendicular needle reaches the bony surface of the frontal bone at the frontal notch (額切跡) at a shallow depth, but a needle angled inferoposteriorly (toward the orbit) and inserted deeply can enter the orbit and may cause bleeding (haematoma) from the supratrochlear vessels. Most classical and modern texts recommend **transverse (horizontal) insertion along the skin (沿皮)**.
 - **Substrate verdict — probable (B)**: The two textbooks, the 【相關解剖學基礎】 (relevant anatomical basis) section of the *Tongkao* (《通考》) and the normative anatomy references (B1-01, B1-03) agree in interpreting the anatomical substrate of BL2 as the **supratrochlear nerve and artery/vein** passing through the frontal notch (額切跡, 滑車上切跡) and the overlying **corrugator supercilii and orbicularis oculi**. However, there is no cadaveric, ultrasound or MRI study that measures BL2 alone, and all Layer A papers dealing with reflex mechanisms use **multi-point prescriptions** that include BL2. The verdict is therefore "probable", not "confirmed".
 
 ---
 
-## 1. Classical Literature Screening Table (Excerpts from the Three Primary Classics & Chinese–English Comparison)
+## 1. Classical Literature Screening Table (Excerpts from the Four Primary Classics & Chinese–English Comparison)
 
-| # | Text (era) | Original text (as recorded in the three primary classics) | English rendering | Location in the classics |
+| # | Text (era) | Original text (as recorded in the four primary classics) | English rendering | Location in the classics |
 | :---: | :--- | :--- | :--- | :--- |
 | 1 | *Huangdi Mingtang Jing* (《黃帝明堂經》) (Han-dynasty lineage, preserved in vol. 3 of the *Jiayi Jing* (《甲乙經》)) | 攢竹，一名員柱，一名始光，一名夜光，一名明光，在眉頭陷者中，足太陽脈氣所發。 | Cuanzhu (攢竹) is also called Yuanzhu (員柱), Shiguang (始光), Yeguang (夜光) and Mingguang (明光); it lies in the depression at the head of the eyebrow, where the Qi (氣) of the Foot Taiyang Vessel (足太陽脈) emerges. | *Tongkao* (《通考》) 名實考 3 (《針灸腧穴通考》(上) PDF pp. 561–640 line 2342) |
 | 2 | *Huangdi Mingtang Jing* (《黃帝明堂經》), lost text (vol. 3 of the *Jiayi Jing* (《甲乙經》)) | 刺入三分，留六呼，灸三壯。 | Insert 3 fen, retain for 6 breaths, moxibustion with 3 cones. | *Tongkao* (《通考》) 【操作】 1(1) (line 2564); *Xuewei Tongjian* (《穴位通鑑》) 七.1 「《針灸甲乙經》3:42」 |
@@ -37,10 +37,17 @@
 | 12 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (Huang Longxiang (黃龍祥), modern collation) | 部位：在面部，眉頭凹陷中，額切跡處。…針刺操作：直刺 0.1~0.3 寸。 | Location: in the depression at the head of the eyebrow, at the frontal notch (額切跡). Perpendicular insertion 0.1–0.3 cun. | 【提要索隱】 (lines 2316–2328) |
 | 13 | *Tongkao* (《通考》) 【相關解剖學基礎】 | 內側者為額切跡或滑車上切跡，有滑車上動脈、靜脈和滑車上神經通過。 | The medial one is the frontal notch (額切跡, supratrochlear notch), through which the supratrochlear artery, vein and nerve pass. | 【定位】 (line 2390 onward) |
 | 14 | *Tongkao* (《通考》), textual analysis of location (定位·文獻分析) | 本穴定位，古代文獻無分歧，均定位於"眉頭陷者中"。 | Ancient texts do not differ on the location. | 【定位】 文獻分析 |
-| 15 | *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 呃逆…取穴：攢竹。指壓。 / 腰痛…取穴：攢竹。 / 眉目疼痛不能當，攢竹沿皮刺不妨。 | Cuanzhu (攢竹) alone for hiccup (呃逆) and low back pain (腰痛) / transverse insertion along the skin at Cuanzhu (攢竹) for pain of the eyebrow and eye (眉目疼痛). | 《中國針灸證治通鑑》 PDF pp. 241–320 line 2254; PDF pp. 321–400 line 14; PDF pp. 401–480 line 184 |
+| 15 | *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 呃逆 … 取穴：攢竹。指壓。（浙江中醫雜誌，1980 …） / 腰痛, appended modern literature … 取穴：攢竹。（中國針灸，1982，2（3）：47） / 《針灸玉龍經·玉龍歌》 眉目疼痛不能當，攢竹沿皮刺不妨。 | (Following the Korean translation) "Point selection: Cuanzhu (攢竹). Finger pressure." / "Point selection: Cuanzhu (攢竹)." / "When pain of the eyebrow and eye is unbearable, needling Cuanzhu along the skin does no harm." That is, hiccup (呃逆) and low back pain (腰痛) are single-point Cuanzhu prescriptions from modern literature, and transverse insertion along the skin (沿皮刺) at Cuanzhu is used for pain of the eyebrow and eye (眉目疼痛). | 《中國針灸證治通鑑》 section on consumptive disease to wasting-thirst (Part 18), 呃逆 L1168 (Korean translation L1857); section on cholera to seminal emission (Part 20), 四十.腰痛 L661 (Korean translation L1120); eye and ear disorders section (Part 23) L186 (Korean translation L291–293) |
+| 15a | *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), Foot-Taiyang Bladder Meridian (I) section, 二)攢竹 | 《明堂經》 主風頭痛，鼻鼽衄，眉頭痛，善嚏泣出，目如欲脫 … 目䀮䀮不明，惡風寒。 / 《靈樞》 主噫，嚏。 | (Following the Korean translation) "Treats wind headache (風頭痛), nasal congestion and nosebleed, pain at the head of the eyebrow, frequent sneezing with tears, eyes feeling as if about to fall out … blurred vision, and aversion to wind and cold." / "Treats belching (噫) and sneezing (嚏)." | 《中國針灸證治通鑑》 Part 06, L30–58 (Korean translation L36–58) |
+| 15b | *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) — 《素問·氣府論》 and Yang Shangshan's (楊上善) commentary in the 《太素·氣府》 | 足太陽脈氣所發者七十八穴：兩眉頭各一 … / Yang's commentary "［兩眉頭各一］攢竹二穴也" / Wang Bing's (王冰) commentary "［兩眉頭各一。］謂攢竹穴也" | Among the sites where Foot-Taiyang qi emerges, both Yang Shangshan and Wang Bing gloss "one at the head of each eyebrow" as Cuanzhu (攢竹) — the same position as the 《明堂》 "眉頭陷者中，足太陽脈氣所發" | 《中國針灸經絡通鑑》 Foot-Taiyang section (Part 24) L333 · 337 · 341 |
+| 15c | *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) — 《靈樞·口問》 and 《太素·十二邪》 | 嚏者，補足太陽，眉本。 / 嚏，補足太陽，眉本。 | For sneezing, tonify the root of the eyebrow (眉本) on the Foot-Taiyang. This is the source entry for the 《證治通鑑》's attribution of the 《靈樞》 indications "噫, 嚏" to Cuanzhu. 眉本 is used as a region name (Section 3) | Part 24, L2115 · 2119 |
+| 15d | *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) — Hand-Shaoyang qi emergence (《素問·氣府論》 vs 《太素·氣府》) | 《素問》 "眉後各一" (Wang Bing: "謂絲竹空二穴也") / 《太素》 Yang's commentary "［眉本各一，］絲竹空，左右二穴" | The same entry reads '眉後' in the 《素問》 but '眉本' in the 《太素》, and Yang Shangshan glosses it as Sizhukong (絲竹空, TE23) → **risk of conflation through the same name '眉本'** (Section 3). The 《經絡通鑑》 only prints the two recensions side by side, with no note deciding which is correct | Hand-Shaoyang section (Part 27) L287 · 291 · 300 |
+| 15e | *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) — commentaries on the Foot-Taiyang course | 《十四經發揮》 "足太陽起目內眥睛明穴，上額，循攢竹 …"; Zhang Jiebin (張介賓) "由攢竹上額 …"; 《經絡匯編》 "上額循攢竹" | The 《靈樞·經脈》 original "起於目內眥，上額交巔" names no points; later commentaries inserted 攢竹 into the course. This does not change the location of Cuanzhu | Part 24, L128 · 178 · 189 · 218 · 228 |
+| 15f | *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) — 《醫學綱目·目疾門》 | 戴人女僮 … 急暴盲不見物 … 乃刺其鼻中攢竹穴，與煩前五穴，大出血，目立明。 | A bloodletting case: sudden blindness relieved at once after needling (inside the nose and) Cuanzhu and the five '煩前' points to draw much blood. '煩前' is given as printed in this edition; it was not collated with other editions | Part 24, L2424 |
 | 16 | WHO standard location (2008, B1-05) | In the depression at the medial end of the eyebrow. | In the depression at the medial end of the eyebrow. | B1-05 |
 
-- **Deleted citation (cannot be verified in the classics)**: the earlier edition's 《靈樞·本輸》 "攢竹在顏下…眉頭陷者中" does not appear in any of the three primary classics (full Grep of the refined classics: "在顏下/在颜下" 0 hits). Since the *Tongkao* (《通考》) heading reads "出《黃帝明堂經》" and the *Xuewei Tongjian* (《穴位通鑑》) source is "《針灸甲乙經》3:42", the earliest description is the *Huangdi Mingtang Jing* (《黃帝明堂經》) (vol. 3 of the *Jiayi Jing* (《甲乙經》)).
+- **Result of collation with the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) (2026-10-25)**: the 《經絡通鑑》 contains no separate collation of the location wording of Cuanzhu (no direct location description of the point — only the course of its meridian, commentaries on qi-emergence sites and the 眉本 entries were found). As regards location, 15b agrees with the 《明堂》 "眉頭陷者中".
+- **Deleted citation (cannot be verified in the classics)**: the earlier edition's 《靈樞·本輸》 "攢竹在顏下…眉頭陷者中" does not appear in any of the four primary classics (full Grep of the refined classics: 0 hits for "在顏下/在颜下" in the three earlier classics; in the full search of the 《經絡通鑑》 on 2026-10-25, "在顏下" occurs only in the Hand-Yangming 標 entry of the 《靈樞·衛氣》, "標在顏下合鉗上" (Part 12, L91), unrelated to Cuanzhu). Since the *Tongkao* (《通考》) heading reads "出《黃帝明堂經》" and the *Xuewei Tongjian* (《穴位通鑑》) source is "《針灸甲乙經》3:42", the earliest description is the *Huangdi Mingtang Jing* (《黃帝明堂經》) (vol. 3 of the *Jiayi Jing* (《甲乙經》)).
 - **Deleted citation (fabricated quotation)**: the earlier edition's *Tongkao* (《通考》) quotation "眉頭凹陷處, 實爲滑車上神經與滑車上動脈處, 刺深宜斜刺/橫刺 (0.3~0.5寸)" does not exist in the *Tongkao* (《通考》) text. What the *Tongkao* (《通考》) actually says is in rows 12 and 13 above ("直刺 0.1~0.3 寸", "額切跡處", "有滑車上動脈、靜脈和滑車上神經通過"). The *Tongkao* (《通考》) does not present oblique or transverse insertion as its own recommendation; transverse insertion is described by the texts it collects, such as Dou (竇氏), Nanjing 《針灸學》 and the 7th-edition textbook.
 
 ---
@@ -78,16 +85,19 @@ BL02 aliases in the KJH DB (Acupoint Nomenclature & Alias Comparative Database, 
 | 元柱 | 《古今醫統大全》 | × | *Tongkao* (《通考》): **homophonic substitution** for "員柱" |
 | 小竹 | Nanjing 《針灸學》 | × | *Tongkao* (《通考》): **alias of Meichong (眉衝, BL3)** → excluded from the aliases of Cuanzhu (攢竹) |
 | 眉柱 · 矢光 · 眉中 | 《雲岐子》 · 《楊敬齋》 · Nanjing 《針灸學》 | × | Later variant spellings. No independent information |
-| ~~烏列 · 大空~~ | **No basis** | × | Absent from the KJH DB and all three primary classics → **deleted** (error in the earlier edition) |
+| ~~烏列 · 大空~~ | **No basis** | × | Absent from the KJH DB and all four primary classics (0 hits in the 《經絡通鑑》 search of 2026-10-25) → **deleted** (error in the earlier edition) |
 
 **Record of confusion blocking**: information retrieved under '光明' must be read as three separate strands: ① 光明 as an alias of BL2 (from 《銅人》 onward); ② Guangming (光明, GB37) (Connecting point (絡穴) of the Foot Shaoyang (足少陽), lower leg); ③ the 光明 of Dunhuang and 《銀海精微》 (middle of the eyebrow, the position of Yuyao (魚腰)). No content from ② or ③ has been mixed into the location, anatomy or indications in this report. Since the confusion is resolved by chronological ordering, S_orig ③ = 75.
+
+**Blocking confusion over 眉本 (collation with the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》), added 2026-10-25)**: '眉本' ① designates the site of Cuanzhu (head of the eyebrow) in Wang Bing's (王冰) commentary on the 《素問·氣穴論》 and in the 《靈樞·口問》 "補足太陽，眉本", but ② in the Hand-Shaoyang qi-emergence entry of the 《太素·氣府》 the 《素問》's "眉後" reads "眉本", and Yang Shangshan (楊上善) glosses it as **Sizhukong (絲竹空, TE23)** (《經絡通鑑》 Part 27, L287 · 291). Because the same characters designate different points depending on the recension, information on '眉本' in the Hand-Shaoyang context of the 《太素》 is not applied to Cuanzhu. This distinction is resolved by context (Foot-Taiyang vs Hand-Shaoyang), so S_orig ③ = 75 is kept. Which of 本/後 is the original character is not decided by the 《經絡通鑑》 either (unresolved variant).
 
 ---
 
 ## 4. 3D Spatial Coordinates & Layer 1–5 Anatomical Substrate Diagram
 
 ### 4.1 Location Discrepancy Check (Δ_discrepancy)
-- The classical "眉頭陷者中" and the WHO 2008 "medial end of the eyebrow" point to the same palpable landmark, the **frontal notch (額切跡, 滑車上切跡)**. The classical–modern deviation is under 15 mm, so there is **no Target split** (single Target T1).
+- The classical "眉頭陷者中" and the WHO 2008 "medial end of the eyebrow" point to the same palpable landmark, the **frontal notch (額切跡, 滑車上切跡)**. Re-checked as a Tri-Target, the pairwise deviations between the classical text position (Target 1), the palpation-based anatomical locus (Target 2, '陷者中' = frontal notch) and the WHO standard location (Target 3) are all within 10 mm (estimated), so there is **no Target split** (Target 1≡2≡3, a single Target; Section 7). The earlier label "single Target T1" corresponds to Target 1≡2≡3.
+- **Insertion reference point**: the classical palpation terms are '陷者中' (hollow) and 竇氏's '眉頭內尖陷中'; there is no term for a gap between muscles or tendons such as 分肉, 兩筋間 or 緣 → **formally no insertion reference point marked (gap unclear)**. The substrate indicated by palpation is the bony hollow of the frontal bone, the **frontal notch (額切跡; FMA:57409, synonym Frontal notch)**, covered by the corrugator supercilii (FMA:46794) and orbicularis oculi (FMA:46779) and traversed by the supratrochlear nerve (FMA:52642), artery (FMA:50025) and vein (FMA:50898) (Section 4.5).
 - Terminology caution: this depression is the **frontal notch (額切跡)**, distinct from the more lateral **supraorbital notch/foramen (眶上切跡/孔)** (*Tongkao* (《通考》) textual analysis). The earlier edition's garbled terms "hwachasangjeolno / anhwasangjeolno" are errors and are corrected to **frontal notch (額切跡; supratrochlear notch)**.
 
 ### 4.2 Coordinate System
@@ -171,7 +181,7 @@ Source: Classical Needling Depth Database, sheet 1, row 181 (BL02). Rules: integ
 | Korean common textbook, *Acupuncture and Moxibustion Medicine* (鍼灸醫學) (min–max) | 2–3 | 4.6–6.9 | Layer 2–5 | |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (min–max) | 1–3 | 2.3–6.9 | Layer 1–5 | *Tongkao* (《通考》) "直刺 0.1~0.3 寸" |
 | Preferred-needling-method columns (*Meridian and Acupoint Studies*, *Tongkao*) | blank | — | — | Not described (missing) |
-| *(outside the DB)* *Yixue Rumen* (《醫學入門》) vol. 1 | *contraindication described* | — | — | "禁用針灸". Not entered as '0' in the DB. Recorded only in the three primary classics |
+| *(outside the DB)* *Yixue Rumen* (《醫學入門》) vol. 1 | *contraindication described* | — | — | "禁用針灸". Not entered as '0' in the DB. Recorded only in the classics (《通考》 and 《穴位通鑑》; 0 hits in the 《經絡通鑑》) |
 
 - **Range**: all DB values 2.3–6.9 mm. There is no '0' in the DB. The earlier edition's mean μ = 9.2 mm and standard deviation σ = 1.8 mm had no source and did not match the DB, so they were **deleted**.
 - **Angle-correction example** ($z_{vertical} = L \times \sin\theta$): inserting the primary-source 3 fen (L = 6.9 mm) along the skin as Dou (竇氏) describes (θ ≈ 15°) gives $z = 6.9 \times \sin 15^\circ \approx 1.8\text{mm}$, remaining in Layer 1–2. This is a worked example of the angle effect, not a BL2 measurement. The earlier edition's $11.5 \times \sin 20^\circ$ calculation used an unsupported 5-fen input and was deleted.
@@ -193,9 +203,27 @@ Source: Classical Needling Depth Database, sheet 1, row 181 (BL02). Rules: integ
 
 ---
 
-## 7. Spatial Displacement Branching Diagram
+## 7. Spatial Displacement Branching Diagram — Tri-Target Re-check: No Branching (Target 1≡2≡3)
 
-**Not applicable.** The classical ("眉頭陷者中") and WHO 2008 locations point to the same frontal notch (額切跡), with a deviation under 15 mm. Single Target 1 analysis; the ΔARI-Core verdict is not applied either.
+### 7-1. Tri-Target Coordinates
+
+| Target | Definition | Classical basis | X · Y position (surface) | Insertion reference point |
+| :--- | :--- | :--- | :--- | :--- |
+| **Target 1** (classical text position) | Position designated by the earliest description | 《黃帝明堂經》 (《甲乙》 vol. 3) "在眉頭陷者中"; 《素問·氣府論》 "兩眉頭各一" (Yang's and Wang's commentaries = 攢竹; 《經絡通鑑》 Part 24) | Hollow at the head of the eyebrow (眉頭) | — |
+| **Target 2** (palpation-based anatomical locus) | Anatomical space indicated by the palpation term '陷者中' | 《通考》 location "眉頭凹陷中，額切跡處" and 【相關解剖學基礎】; 竇氏 "兩眉頭內尖陷中" | Frontal notch of the frontal bone (FMA:57409) — medial supraorbital margin, exit of the supratrochlear neurovascular bundle | No gap term → formally not marked (the bony hollow, the frontal notch, is the palpated substrate) |
+| **Target 3** (WHO standard location) | Modern standard location | WHO 2008 (B1-05) "In the depression at the medial end of the eyebrow" | Depression at the medial end of the eyebrow | — |
+
+### 7-2. Pairwise Discrepancies (Δ, all estimated)
+
+| Pair | Δ (estimated) | Basis of the estimate | Decision (branch if Δ > 10 mm) |
+| :--- | :---: | :--- | :--- |
+| Target 1 – Target 2 | ≤ 10 mm (estimated) | The wording of Target 1 is itself the palpation term '陷者中', and the 《通考》 identifies that hollow as the frontal notch. 《通考》: "古代文獻無分歧" | Merged |
+| Target 1 – Target 3 | ≤ 10 mm (estimated) | The WHO wording "depression at the medial end of the eyebrow" is effectively a literal translation of "眉頭陷者中" | Merged |
+| Target 2 – Target 3 | ≤ 10 mm (estimated) | Both take the same bony hollow at the medial end of the eyebrow as the palpation reference. The position of the head of the eyebrow varies between individuals, but because the palpation reference is bone (the frontal notch) the deviation is judged small. No BL2 measurement | Merged |
+
+All three pairs have Δ ≤ 10 mm (estimated), so the point is described as **Target 1≡2≡3, a single Target**, and the Rank 7 Tri-Target ΔARI-Core decision does not apply. No pair changed status because of the 2026-10-25 change of criterion (15 mm → 10 mm).
+
+- **Mapping of earlier labels**: v2.7 "single Target T1 (classical = WHO)" → **Target 1≡2≡3**. The position has not changed, so the scores of Raters A and B are carried over unchanged. There is no single-scored (preliminary) Target.
 
 ---
 
@@ -308,13 +336,13 @@ $P_{single}$ is **not calculated quantitatively**. The earlier edition's 0.90–
 
 ## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-**Target T1 (single)**: *Huangdi Mingtang Jing* (《黃帝明堂經》) and *Jiayi Jing* (《甲乙經》) "在眉頭陷者中" = WHO 2008 "depression at the medial end of the eyebrow, directly above the inner canthus" (frontal notch (額切跡) / 滑車上切跡)
+**Target 1≡2≡3 (single; earlier label T1)**: *Huangdi Mingtang Jing* (《黃帝明堂經》) and *Jiayi Jing* (《甲乙經》) "在眉頭陷者中" (classical text position) = palpation-based anatomical locus, the frontal notch = WHO 2008 "depression at the medial end of the eyebrow, directly above the inner canthus" (frontal notch (額切跡) / 滑車上切跡)
 
 ### 10.1 Sub-scores
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| S_orig | 93.75 | 87.5 | **90.6** | The primary source specifies both location and depth; no ancient disagreement on location; the 光明 confusion is resolved chronologically; *Tongkao* (《通考》) collation reflected | 《針灸腧穴通考》(上) PDF pp. 561–640 名實考 · 定位 · 操作; 《中國針灸穴位通鑑》(上卷) PDF pp. 881–960 二.別名 · 七; KJH Case A |
+| S_orig | 93.75 | 87.5 | **90.6** | The primary source specifies both location and depth; no ancient disagreement on location; the 光明 confusion is resolved chronologically; *Tongkao* (《通考》) collation reflected | 《針灸腧穴通考》(上) PDF pp. 561–640 名實考 · 定位 · 操作; 《中國針灸穴位通鑑》(上卷) PDF pp. 881–960 二.別名 · 七; KJH Case A; 《中國針灸經絡通鑑》 Parts 24 and 27 (re-checked 2026-10-25) |
 | S_clarity | 75 | 75 | **75** | The two textbooks agree + standard entities confirmed by normative anatomy and FMA (the nerve difference is a trunk/branch-level difference in FMA). No BL2-specific cadaveric or imaging measurement → below 100 | Common Textbook dataset and Kim Jaehyo entry 179; *Tongkao* (《通考》) 相關解剖學基礎; B1-01, B1-05, B2-09; FMA:52642 · 52638 |
 | S_reflex | 75 | 75 | **75** | Human studies + many animal studies + B-Check 8. All multi-point, so 100 not possible | papers.id 1979, 1981, 1994, 1997, 1998, 1999, 2000, 2001, 2003 |
 | S_safety → SI | 0 | 0 (75 before adjudication) | **0** | A text prohibiting needling exists (*Yixue Rumen* (《醫學入門》) "禁用針灸") → rubric 0 | *Tongkao* (《通考》) 【操作】 9; *Xuewei Tongjian* (《穴位通鑑》) 七.16; needling-depth DB row 181 (no '0') |
@@ -326,7 +354,7 @@ $P_{single}$ is **not calculated quantitatively**. The earlier edition's 0.90–
 | ① Clarity of earliest description | 100 | 100 | 100 | *Huangdi Mingtang Jing* (《黃帝明堂經》) (vol. 3 of 《甲乙》) "在眉頭陷者中" + "刺入三分" |
 | ② Agreement in later texts | 100 | 100 | 100 | *Tongkao* (《通考》) "古代文獻無分歧"; *Xuewei Tongjian* (《穴位通鑑》) "歷代文獻記載一致" |
 | ③ Resolution of alias confusion | 75 | 75 | 75 | 光明 ↔ same name as GB37 and the Dunhuang 光明 → resolved by chronological ordering |
-| ④ Correction of transcription errors by *Tongkao* (《通考》) collation | 100 | 75 | 87.5 | Corrections: graphic error 員在, interpolation "脈動應手", misattribution of Chengqi (承泣) indications in 《聚英》, confusion of 眶上切跡 / 額切跡 |
+| ④ Correction of transcription errors by collation in the *Tongkao* (《通考》) and *Jingluo Tongjian* (《經絡通鑑》) | 100 | 75 | 87.5 | Corrections: graphic error 員在, interpolation "脈動應手", misattribution of Chengqi (承泣) indications in 《聚英》, confusion of 眶上切跡 / 額切跡. Re-checked against the 《經絡通鑑》 on 2026-10-25: no collation of the location wording of Cuanzhu; the variant found (《太素》 '眉本' vs 《素問》 '眉後') remains undecided → no grounds to move the rubric level, **score unchanged** |
 | **S_orig** | **93.75** | **87.5** | **90.6** | |
 
 ### 10.3 Gates Applied
@@ -345,7 +373,7 @@ $P_{single}$ is **not calculated quantitatively**. The earlier edition's 0.90–
 | Grade & flags | **B (Probable)** — no H flag |
 | SI | **0 ⚠** (safety caution) |
 | Equal-weight sensitivity (1/3 each) | 80.2 → B, **grade unchanged** |
-| Branch decision | Not applicable (single Target) |
+| Branch decision | Not applicable (Tri-Target re-check: Target 1≡2≡3, a single Target; pairwise Δ ≤ 10 mm, estimated) |
 
 **Standard notation**: `ARI v3.0 | ARI-Core 81.2 ± 1.2 (B) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 80.2 (B, grade unchanged)`
 
@@ -361,7 +389,8 @@ $P_{single}$ is **not calculated quantitatively**. The earlier edition's 0.90–
 2. **Substrate verdict — probable (B, ARI-Core 81.2 ± 1.2)**: the most probable anatomical substrate of BL2 is the **supratrochlear nerve (V1), artery and vein emerging from the frontal notch (額切跡; supratrochlear notch)** and the overlying **corrugator supercilii and orbicularis oculi**. The classical location, the two textbooks, the anatomical description in the *Tongkao* (《通考》) and the normative anatomy references agree on this. However, there is no cadaveric or imaging study measuring BL2 alone, so the verdict is not raised to "confirmed".
 3. **Reflex mechanism**: concordant at B-Check 8/12. The pathway trigeminal V1 afferent → spinal trigeminal nucleus and superior salivatory nucleus → lacrimal gland and ocular surface is **inferred to BL2 from multi-point studies that include BL2 (mostly animal, 3 human)**. There is no BL2-alone mechanism study.
 4. **Classical indications**: eye disorders (目不明 · 目赤腫痛 · 瞼瞤動) and pain of the supraorbital ridge (眉棱骨痛) have single-point records. The lacrimation (流淚) group is either derived from combinations or results from the mistaken inclusion of Chengqi (承泣) indications.
-5. **Formula version**: ARI v3.0, provisional weights (unvalidated). Not compared with the earlier v2.6 score. Numerical comparison between outputs of the same work (report ↔ databook) is only a consistency audit, not evidence of reliability. Reliability is judged only by dual scoring.
+5. **Collation with the four primary classics and Tri-Target (2026-10-25)**: the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) does not separately collate the location wording of Cuanzhu; it only reconfirms the position through the 《素問·氣府論》 "兩眉頭各一" (Yang's and Wang's commentaries = 攢竹). The newly identified variant '眉本' (Sizhukong (絲竹空) in the Hand-Shaoyang context of the 《太素》) is blocked by separating the contexts. The classical text position, the palpation-based locus (frontal notch) and the WHO location form Target 1≡2≡3, and the ARI scores do not change.
+6. **Formula version**: ARI v3.0, provisional weights (unvalidated). Not compared with the earlier v2.6 score. Numerical comparison between outputs of the same work (report ↔ databook) is only a consistency audit, not evidence of reliability. Reliability is judged only by dual scoring.
 
 ---
 
@@ -445,3 +474,19 @@ Generated by FMA 5.1.0 acupoint profile query (BL02; 2026-10-23). Match level `e
 | Title, body | Duplicated annotations such as "Zanzhu (攅竹, BL02)(BL02)" and the misspelt pinyin 'Zanzhu' / variant character '攅' | Duplicates removed; standard form Cuanzhu (攢竹) used | — |
 | Figure 4-1 | Image path corrupted by term replacement (`BL02_Zanzhu (攅竹, BL02)_…png`), so the image was missing from the HTML | Restored to the actual file name | File in the report folder |
 | Classical quotations | Simplified characters (e.g. 攒竹, 针, 额切迹) | Converted to Traditional characters; file names, line pointers and search-query strings unchanged | Routing rule on Traditional Chinese collation |
+
+---
+
+## Framework 2.7.7 Revision History (2026-10-25)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | Framework v2.7; "Three Primary Classics" | v2.7.7 stated, with the branching result (Target 1≡2≡3); "Four Primary Classics" (*Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) added; 《證治通鑑》 Chinese original as reference text, collated with the Korean translation). ARI notation unchanged | Framework 2.7.7 |
+| Summary | "the three primary classics record … 《醫學入門》" | "the classics (《通考》 and 《穴位通鑑》) record … 《醫學入門》" | Four-classics terminology |
+| Section 1 title and table | "Three Primary Classics"; row 15 《證治通鑑》 pointers "PDF … line 2254 · 14 · 184", summary only | "Four Primary Classics"; row 15 updated to part/line pointers (Part 18 L1168, Part 20 L661, Part 23 L186) with Korean-translation lines and renderings; row 15a 《證治通鑑》 Part 06 二)攢竹 (《明堂經》 and 《靈樞》 indications) added; rows 15b–15f from the 《經絡通鑑》 added (Part 24 L333 · 337 · 341 '兩眉頭各一 = 攢竹', L2115 · 2119 '眉本', Part 27 L287 · 291 · 300 '眉後/眉本' variant, Part 24 commentaries on the meridian course, L2424 bloodletting case); "no direct location description of the point" stated | 《證治通鑑》 rule (original as reference, description from the Korean translation); 《中國針灸經絡通鑑》 Parts 24 and 27 |
+| Section 3 | Only the 光明 confusion blocked | Paragraph on blocking the 眉本 confusion added (眉本 in the Hand-Shaoyang context of the 《太素》 = 絲竹空; resolved by context separation; 本/後 variant unresolved). ③ = 75 kept | Ranks 3 and 4 |
+| Section 4.1 | "Deviation under 15 mm, single Target T1" | Tri-Target pairwise Δ ≤ 10 mm (estimated) → Target 1≡2≡3, mapping of earlier label; insertion reference point "gap unclear — formally not marked", with the palpated substrate (frontal notch, FMA:57409) and the covering muscles and traversing neurovascular structures (FMA:46794 · 46779 · 52642 · 50025 · 50898) | Rank 5 Tri-Target (branch criterion Δ > 10 mm) and insertion-reference rule |
+| Section 7 | "Not applicable", deviation under 15 mm | Tri-Target coordinate table and pairwise Δ table (all three pairs ≤ 10 mm, estimated) → Target 1≡2≡3; no pair changed status with the 15 mm → 10 mm change; mapping of earlier labels | Ranks 5 and 7 |
+| Section 10 | "Target T1 (single)"; ④ "*Tongkao* collation" | "Target 1≡2≡3 (single; earlier label T1)"; ④ "collation in the *Tongkao* and *Jingluo Tongjian*" re-checked — no collation of the location wording, no grounds to move the level, **score unchanged** (A 100 / B 75); 10.4 branch-decision wording; conclusion item 5 added | Rubric 4.2 item ④ |
+| Ancillary wording in Sections 1, 3 and 5 | "does not appear in any of the three primary classics" (《靈樞·本輸》 quotation; 烏列 · 大空), "recorded only in the three primary classics" (《醫學入門》) | Updated to the four primary classics, with the results of the 《經絡通鑑》 search (在顏下 only in the Hand-Yangming 標 entry of the 《靈樞·衛氣》; 0 hits for 烏列 · 大空 · 禁用針灸) | Full search of the 《中國針灸經絡通鑑》 |
+| Scores | ARI v3.0 \| ARI-Core 81.2 ± 1.2 (B) \| SI 0 ⚠ \| sensitivity 80.2 (B) | **No change**. No single-scored (preliminary) Target | — |

@@ -1,8 +1,8 @@
 # [Acupoint Anatomical & Physiological Substrate Monograph] Shangqiu (商丘, SP05)
 
-> **Framework**: v2.7 · **ARI**: ARI v3.0 | ARI-Core 75.0 ± 1.3 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 71.9 (B, grade unchanged) · **Dual scoring**: two independent scorings, 1 SI item adjudicated · **Reflex mechanism**: B-Check 7/12, not concordant → **hypothesis**
+> **Framework**: v2.7.7 (four primary classics, Tri-Target) · **ARI**: ARI v3.0 | ARI-Core 75.0 ± 1.3 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 71.9 (B, grade unchanged) · **Dual scoring**: two independent scorings, 1 SI item adjudicated · **Reflex mechanism**: B-Check 7/12, not concordant → **hypothesis**
 
-> **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
+> **Four Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) (Chinese original as reference text; analysis written from the Korean translation of the same chapter) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) · *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)
 > **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 (of the 33 papers in the SP5 inverted index, only **the 6 papers that actually stimulated or observed SP05** are used for the verdict; Section 8, Table ①)
 > **Layer B Reference Registry**: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 > **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry); Appendix A
@@ -11,7 +11,7 @@
 
 ---
 
-## 1. Classical Literature Screening Table (Three Primary Classics Excerpts)
+## 1. Classical Literature Screening Table (Four Primary Classics Excerpts)
 
 | Classic | Original excerpt (file & line) | English summary | Remarks |
 | :--- | :--- | :--- | :--- |
@@ -22,8 +22,12 @@
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "脾……行於商丘，商丘內踝之下陷者之中也，為經。(《靈樞經·本輸》1：8)" / alias "無。" — 《中國針灸穴位通鑑》 足太陰脾經(1) L1040, L1044 | River point (經穴), Metal (金), of the five transport points (五輸穴) | Source |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "針入三分，留三呼，瀉五吸，疾出之，忌灸。(《千金翼方》26：321)" / "（刺可入同身寸之四分…）(王冰注)" — same file, L1212–1216 | 《千金翼》 contraindicates moxibustion — a textual variant against 《明堂》 '灸三壯' | Sections 5 and 10 |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "在內踝前下方與舟狀骨結節之間，小腿十字韌帶的下側，有來自脛前動脈的內踝前動脈，分佈著小腿內側皮神經（隱神經）和來自腓淺神經的足背內側皮神經。(《新針灸學》：207、《針灸學》)" / "在內踝之前下部，前脛骨筋腱之內側。(《中國針灸學》：86)" — same file, L1242, L1082 | Below the cruciate ligament (inferior extensor retinaculum), medial to the tendon of tibialis anterior; anterior medial malleolar artery, saphenous nerve, medial dorsal cutaneous nerve | Textual basis for the layers in Sections 4 and 6 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Indications of Shangqiu (商丘) in the 《明堂經》: "主寒熱善嘔。厥頭痛，面腫起。脾虛令人病寒不樂，好太息。腹滿響響然，不便，心下有寒痛。陰股內痛，氣癰，狐疝走上下…痔，骨蝕。…絕子。小兒咳而泄…" — 《中國針灸證治通鑑》 第壹編 第七篇 足太陰脾經 手少陰心經 手太陽小腸經 L118–126 | List of single-point indications | Basis for $P_{single}$ |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "商丘，在內踝前陷中，主偏風，痹腳不得履地，刺風，頭風，熱風，陰痹，針入三分，留三呼，瀉五吸，疾出之，忌灸。" — 《中國針灸證治通鑑》 第叄編 內科病症 四中風至八痙證 L194 / "身寒痹：曲池、列缺、環跳、風市、委中、商丘、中封、臨泣(《神應經·痹厥部》)" — 《中國針灸證治通鑑》 …量化概念 L172 | Single-point entry in 《千金翼》 / 8-point combination in 《神應經》 | Separation of $P_{single}$ / $P_{comb}$ |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Indications of Shangqiu (商丘) in the 《明堂經》: "主寒熱善嘔。厥頭痛，面腫起。脾虛令人病寒不樂，好太息。腹滿響響然，不便，心下有寒痛。陰股內痛，氣癰，狐疝走上下…痔，骨蝕。…絕子。小兒咳而泄…" — 《中國針灸證治通鑑》 第壹編 第七篇 足太陰脾經 手少陰心經 手太陽小腸經 L118–126 (Korean translation L157–165) | Following the Korean translation: \"chills and fever with frequent retching … reversal headache (厥頭痛), swelling of the face. Spleen deficiency makes one ill with cold and joylessness, with frequent sighing. Abdominal fullness with gurgling, irregular stools, cold pain below the heart. Pain of the medial thigh, qi abscess (氣癰), fox-like hernia moving up and down … haemorrhoids, bone erosion (骨蝕) … children who cough with diarrhoea\" — list of single-point indications | Basis for $P_{single}$ |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "商丘，在內踝前陷中，主偏風，痹腳不得履地，刺風，頭風，熱風，陰痹，針入三分，留三呼，瀉五吸，疾出之，忌灸。" — 《中國針灸證治通鑑》 第叄編 內科病症 四中風至八痙證 L194 (Korean translation L354) / "身寒痹：曲池、列缺、環跳、風市、委中、商丘、中封、臨泣(《神應經·痹厥部》)" — 《中國針灸證治通鑑》 …量化概念 L172 (Korean translation L215) | Following the Korean translation: "Shangqiu (商丘) lies in the depression in front of the medial malleolus and treats hemilateral wind and Bi (痺) with inability to step on the ground, piercing wind, head wind, heat wind and Yin Bi (陰痺) … moxibustion is avoided" — single-point entry in 《千金翼》 / "cold Bi of the body: Quchi, Lieque, Huantiao, Fengshi, Weizhong, Shangqiu, Zhongfeng, Linqi" — 8-point combination in 《神應經》 | Separation of $P_{single}$ / $P_{comb}$ |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | "脾足太陰之脈，起於大指之端，循指內側白肉際，過核骨後，上內踝前廉" (《靈樞·經脈》) — 《中國針灸經絡通鑑》 第叄編 第四篇 足太陰經脈 (Jingluo Tongjian ch. 21) L162 / "［上內踝前廉，］商丘居此內踝之前" (commentary in 《銅人》, L188) / "歷太白、公孫、商丘，上內踝前廉之三陰交" (《十四經發揮》, L199) / "［上內踝前廉，］內踝下前陷中，商丘穴也" (《醫學綱目》, L230) / "《明堂》足內踝下微前" (Yang Shangshan's (楊上善) commentary on 《太素·本輸》, L306) | The Foot Taiyin (足太陰) channel passes behind the 核骨 and ascends along the anterior border of the medial malleolus. Commentators place Shangqiu (商丘) on that course ('in front of the malleolus', 'depression below and in front of the malleolus'); Yang Shangshan glosses 《本輸》 '內踝之下' with 《明堂》 '下微前' | **No new information on the point's own location — only the course of its parent channel is described**. Consistent with the anteroinferior location (Sections 4 and 7) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | "足太陰之筋，起於大指之端內側，上結於內踝" → "上結於內踝骨下之商丘" (Ma Shi's (馬蒔) commentary, L845) / "結於內踝下，商丘之次" (Zhang Jiebin's (張介賓) commentary, L851) / "並足太陰商丘之次，走內踝之下" (Zhang Jiebin on the Foot Shaoyin sinew (足少陰之筋), Jingluo Tongjian ch. 25 L980) | Commentators state that the Foot Taiyin sinew (足太陰之筋) binds below the medial malleolus at the site of Shangqiu (商丘) | The sinew-binding site lies in the same region as the ligament and tendon attachments (deltoid ligament, tibialis anterior tendon). Linked to the Tongkao explanation (L1055) of medial-thigh pain and fox-like hernia in Section 9 |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | "經脈十二者，伏行分肉之間…其常見者，足太陰過於外[1]踝之上，無所隱故也" + collation note "[1] 外：疑為'內'字之誤" (L69, L77); 【按】 "明抄本《甲乙經》作'內踝'，《太素》同，與經脈循行部位相符，義長" (L98) / Yang Shangshan "惟此足太陰經，上於內踝薄肉之處，脈得見者也" (L182) / Zhang Jiebin "足太陰刺其橫脈出血，謂足內踝前斜過大脈，則太陰之經，蓋即商丘也" (Jingluo Tongjian ch. 20 L1402) | '外踝' (lateral malleolus) in 《靈樞·經脈》 is a scribal error for '內踝' (medial malleolus), corrected from the Ming manuscript of 《甲乙》 and the 《太素》. The vessel of the Foot Taiyin visible over the thin flesh of the medial malleolus — the 'large vessel' crossing obliquely in front of the malleolus — is identified with Shangqiu (商丘) | **Rank 4 scribal-error collation (外 → 內)**. The visible vessel reads as the subcutaneous great saphenous vein (FMA:21376) (inference; Section 4, Layer 1) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | "筆者曾將《內經》中所有這類針灸方主治症與《明堂經》相關腧穴主治症進行了系統的比較…其對應關係為：足太陰——商丘、太白" (Jingluo Tongjian ch. 1 L783–785) / "上述十二個'經脈穴'部位，除'足太陰'穴六朝以後變化較大外…" (L731) / 【按】 "《靈樞》'太陰'，《甲乙》、《太素》作'太陽'，而《明堂》則取足陽明'豐隆'，足太陰之'公孫'、'商丘'穴，與《靈樞》相合" (Jingluo Tongjian ch. 20 L1986) / Wang Bing (王冰) "商丘主之。商丘在足內踝下微前陷者中" (Jingluo Tongjian ch. 21 L1247) | In Han times the '足太陰' of *Neijing* (《內經》) acupuncture prescriptions was read not as a channel but as a point name ('channel point' (經脈穴), a pulse-site point), and 《明堂》 assigned those indications to Shangqiu (商丘) and Taibai (太白) | Collates the Tongkao (L1055) attribution '足太陰 → 商丘' as **a 'channel point' reading, not an over-extension of meridian theory** (Sections 2 and 9). The location of the '足太陰' point did, however, change considerably after the Six Dynasties (see SP06) |
 
 ---
 
@@ -32,12 +36,13 @@
 | Stratum | Text | Description | Primary / secondary |
 | :--- | :--- | :--- | :--- |
 | Pre-Qin & Han | 《靈樞·本輸》 | 內踝之下陷者之中, River point, Metal (經金) | Primary (location) |
-| Han | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 內踝下微前陷者中; 刺入三分, 留七呼, 灸三壯; list of indications | Primary (location refinement, depth, indications). Some indications were incorporated by reading the '足太陰' of 《素問·刺瘧》, 《靈樞·厥病》 and 《靈樞·雜病》 as Shangqiu (商丘) (Tongkao L1055) — **attribution of meridian-level descriptions to a point** |
+| Han | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 內踝下微前陷者中; 刺入三分, 留七呼, 灸三壯; list of indications | Primary (location refinement, depth, indications). Some indications were incorporated by reading the '足太陰' of 《素問·刺瘧》, 《靈樞·厥病》 and 《靈樞·雜病》 as Shangqiu (商丘) (Tongkao L1055) — **attribution of meridian-level descriptions to a point**. The *Jingluo Tongjian* (《經絡通鑑》) shows that Han readers took the '足太陰' of *Neijing* (《內經》) prescriptions as a point name ('channel point' (經脈穴), a pulse-site point) rather than a channel (Jingluo Tongjian ch. 1 L783–785: "足太陰——商丘、太白") — not an over-extension of meridian theory |
 | Wei–Jin | *Zhenjiu Jiayi Jing* (《針灸甲乙經》) vol. 3 / vol. 10 | Vol. 3 follows 《明堂》; vol. 10 "在內踝前宛宛中" | Secondary + location variant (anterior) |
 | Tang | *Qianjin Yifang* (《千金翼方》) vol. 26 | "在內踝前陷中"; 針入三分, 留三呼, 瀉五吸; **忌灸**; 偏風 · 痹 · 腳不得履地 | Independent description (moxibustion contraindication, lower-limb indications) |
-| Tang | Wang Bing's (王冰) commentary on the *Suwen* (《素問》) | 刺四分, 留七呼, 灸三壯; spleen malaria (脾瘧) "刺足太陰(商丘主之)" | Reinterpretation (assignment of a point to a *Neijing* (《內經》) passage) |
+| Tang | Wang Bing's (王冰) commentary on the *Suwen* (《素問》) | 刺四分, 留七呼, 灸三壯; spleen malaria (脾瘧) "刺足太陰(商丘主之)" | Reinterpretation (assignment of a point to a *Neijing* (《內經》) passage). Yang Shangshan (楊上善) reads the same passage as "大都、公孫、商丘等穴" (Jingluo Tongjian ch. 21 L1233; Wang Bing's commentary at L1247) |
 | Song | *Tongren Shuxue Zhenjiu Tujing* (《銅人腧穴針灸圖經》) | 腹脹 · 腸鳴不便 · 脾虛不樂 · 痔 · 骨疽蝕 · 絕子 · 魘夢 | Re-quotation and arrangement of 《明堂》 |
 | Yuan–Ming | *Dou Taishi Zhenjing* (《竇太師針經》) | 針五分, 灸七壯; 足紅腫 · 腳無力 · 脾家受濕兩腳生瘡 | Independent description (expansion of local lower-limb indications) |
+| Yuan–Ming | Channel commentaries in 《十四經發揮》 · 《醫學綱目》 | On the channel segment "上內踝前廉": "歷太白、公孫、商丘，上內踝前廉之三陰交" / "內踝下前陷中，商丘穴也" | Reinterpretation (points placed on the channel-course text; Jingluo Tongjian ch. 21 L199, L230) — location information identical to 《明堂》 |
 | Ming | *Zhenjiu Juying* (《針灸聚英》) (Gao Wu (高武)) | 舌本強痛, 怠惰嗜臥, 小兒慢風 | **Theoretical attribution**: syndromes of the Foot Taiyin (足太陰) meridian assigned to Shangqiu (商丘) according to mother–child reinforcing and reducing (母子補瀉) (Tongkao L1037) |
 | Ming | 《神應經》 · *Zhenjiu Dacheng* (《針灸大成》) · 《類經圖翼》 | 前有中封, 後有照海, 其穴居中 | Auxiliary locating reference |
 | Modern | 1957 Nanjing 《針灸學》 to 7th edition; national standards 1990/2006 | Midpoint of the line joining 舟骨結節 (→ 粗隆) and 內踝尖; 直刺 0.5~0.8寸; 黃疸 | Standardisation. Source of 'jaundice (黃疸)' unknown (Tongkao L1055; papers.id 1540/2215 question the verse (歌賦) citation) |
@@ -52,7 +57,7 @@
 | 商邱 | Qing and Republican texts — taboo avoidance (避諱) of Confucius's personal name (丘) (Tongkao L959) | Listed | Taboo-avoidance spelling. Same point |
 | (no alias) | *Xuewei Tongjian* (《穴位通鑑》) "別名 無" (L1044) | — | The two above are spelling variants, not aliases |
 
-This agrees with the KJH DB (Acupoint Nomenclature & Alias Comparative Database, comprehensive list row 136: 133, SP05, Sanggu (Korean reading), 商丘, "商坵, 商邱"). No record of confusion with Shangyang (商陽, LI1) or Shangqu (商曲, KI17), which contain '商', or with Qiuxu (丘墟, GB40), which contains '丘', was found in the three primary classics.
+This agrees with the KJH DB (Acupoint Nomenclature & Alias Comparative Database, comprehensive list row 136: 133, SP05, Sanggu (Korean reading), 商丘, "商坵, 商邱"). No record of confusion with Shangyang (商陽, LI1) or Shangqu (商曲, KI17), which contain '商', or with Qiuxu (丘墟, GB40), which contains '丘', was found in the four primary classics. The *Jingluo Tongjian* (《經絡通鑑》) writes only '商丘'; the spellings 商坵 and 商邱 do not occur (full-text search, including the Foot Taiyin chapter).
 
 ---
 
@@ -61,6 +66,8 @@ This agrees with the KJH DB (Acupoint Nomenclature & Alias Comparative Database,
 - **X (anterior–posterior)**: on the vertical line through the anterior border of the medial malleolus (Tongkao L971), **medial** to the tendon of tibialis anterior (《中國針灸學》, Tongjian L1082). Zhongfeng (中封, LR4) lies in front and Zhaohai (照海, KI6) behind.
 - **Y (superior–inferior)**: at the level of the horizontal line through the inferior border of the medial malleolus (Tongkao L971) = midpoint of the line joining the tuberosity of the navicular and the tip of the medial malleolus (national standard 2006).
 - **Z (depth)**: layers below. **Layer A contains no cadaveric or ultrasound measurement at SP05, so only the order of structures is given, without mm boundaries.**
+- **Insertion reference point (Target 2, X–Y)**: the depression indicated by the palpation phrases '陷者之中' (《本輸》), '宛宛中' (《甲乙》 vol. 10) and '陷中' (《千金翼》) is **the tendon–bone gap between the medial edge (緣) of the tibialis anterior tendon (FMA:47050) and the anteroinferior margin of the medial malleolus**. X = just medial to the medial edge of the tibialis anterior tendon (on the Tongkao's '內踝前緣直線'); Y = level of the horizontal line through the inferior border of the medial malleolus. Bounding structures: tibialis anterior tendon (FMA:47050) anteriorly and laterally; medial malleolus (tibia) posteriorly and superiorly; tuberosity of the navicular inferiorly; anterior fibres of the deltoid ligament (FMA:44055) and joint capsule at the floor; great saphenous vein (FMA:21376) and saphenous nerve (FMA:45262) in the subcutis medially. It is not a 分肉 or 兩筋間 gap between two muscles, but its borders (a tendon edge and a bony margin) are distinct, so it is marked as the reference point (position estimated, not measured).
+- **Jingluo Tongjian collation (Layer 1)**: the '外' in 《靈樞·經脈》 "足太陰過於外踝之上，無所隱故也" is a scribal error for '內' (Jingluo Tongjian ch. 21 L77, L98), and Yang Shangshan (楊上善) says that only the Foot Taiyin "上於內踝薄肉之處，脈得見" (L182). Zhang Jiebin (張介賓) identifies the "足內踝前斜過大脈" with Shangqiu (商丘) (Jingluo Tongjian ch. 20 L1402). The visible vessel crossing obliquely in front of the medial malleolus corresponds to the subcutaneous great saphenous vein (inference) — the same structure that the Section 5 safety note says should be identified by sight and avoided.
 
 ```
 [Layer 1 Skin/subcutis]         Branches of saphenous n. (both textbooks) · great saphenous v. (both textbooks) · medial dorsal cutaneous n. (Common Textbook)
@@ -98,7 +105,7 @@ This agrees with the KJH DB (Acupoint Nomenclature & Alias Comparative Database,
 
 ## 5. Needling Depth Calculation Table
 
-Source: Classical Needling Depth Database, sheet 1, Excel row 135 (N0 133, SP05), supplemented by the three primary classics.
+Source: Classical Needling Depth Database, sheet 1, Excel row 135 (N0 133, SP05), supplemented by the four primary classics (the *Jingluo Tongjian* (《經絡通鑑》) adds no new depth for Shangqiu (商丘) — Ma Shi's (馬蒔) commentary on 《本輸》 "針三分，灸三壯" (Jingluo Tongjian ch. 11 L492) follows 《明堂》).
 
 | Text | Fen (分) | Depth (× 2.3 mm) | Layer reached (estimated) | Remarks |
 | :--- | :---: | :---: | :--- | :--- |
@@ -133,7 +140,9 @@ Consistent with B1-01 and B1-03 (regional anatomy of the anteromedial ankle). Th
 
 ---
 
-## 7. Spatial Displacement Branching Diagram
+## 7. Spatial Displacement Branching Diagram (Tri-Target)
+
+**Lineages behind Target 1** (classical location statements)
 
 | Tradition | Basis | Position |
 | :--- | :--- | :--- |
@@ -142,7 +151,28 @@ Consistent with B1-01 and B1-03 (regional anatomy of the anteromedial ankle). Th
 | ③ Anterior | 《甲乙》 vol. 10 "在內踝前宛宛中", 《千金翼》 "在內踝前陷中" (Tongkao L977–979) | Anterior to the medial malleolus |
 | ④ Modern | Midpoint of the line joining 舟骨粗隆 and 內踝尖 (national standard 2006, Tongkao L947) | Anteroinferior to the medial malleolus |
 
-All four descriptions point to the same anteroinferior depression of the medial malleolus using different reference lines, and the *Tongkao* (《通考》) also judges "古今文獻一致" (L1005). The differences lie within the size of the medial malleolus (about 1 cm), under 15 mm (estimate, not measured). Therefore **$\Delta_{discrepancy} \le 15\text{mm}$; no Target split needed — single Target (T1)**.
+All four descriptions point to the same anteroinferior depression of the medial malleolus using different reference lines, and the *Tongkao* (《通考》) also judges "古今文獻一致" (L1005). Commentators in the *Jingluo Tongjian* (《經絡通鑑》) likewise gloss 《本輸》 '內踝之下' as 《明堂》 '下微前' (Yang Shangshan (楊上善), Jingluo Tongjian ch. 21 L306; Wang Bing (王冰) L1247) and, in the channel-course commentaries, place Shangqiu (商丘) "內踝之前" (L188) and "內踝下前陷中" (L230).
+
+**Tri-Target coordinates** (X anterior–posterior · Y superior–inferior · Z depth; all positions estimated, no point-specific measurement)
+
+| Target | Definition | X (anterior–posterior) | Y (superior–inferior) | Z (insertion depth) |
+| :--- | :--- | :--- | :--- | :--- |
+| Target 1 (classical text position) | Earliest description, 《靈樞·本輸》 "內踝之下陷者之中" — with the Han 《明堂》 "下微前" and the commentaries of Yang Shangshan and Wang Bing | Near the line of the anterior border of the medial malleolus | Just below the inferior border of the medial malleolus | 3 fen (6.9 mm), Layers 1–2 |
+| Target 2 (palpation-based anatomical locus) | Depression of '陷者之中' · '宛宛中' · '陷中' = gap between the medial edge of the tibialis anterior tendon (FMA:47050) and the anteroinferior margin of the medial malleolus (**insertion reference point**, Section 4) | Just medial to the medial edge of the tibialis anterior tendon | Horizontal line through the inferior border of the medial malleolus | Down to the connective tissue of the depression (Layer 3) |
+| Target 3 (WHO standard location) | Depression at the midpoint of the line joining 舟骨粗隆 and 內踝尖 (national standard 2006 = wording of the WHO standard location) | Line of the anterior border of the medial malleolus | Horizontal line through the inferior border of the medial malleolus | Perpendicular 5–8 fen (11.5–18.4 mm) |
+
+**Pairwise displacement** (branching threshold $\Delta_{discrepancy} > 10\text{mm}$)
+
+| Pair | Δ (estimated) | Basis | Verdict |
+| :--- | :---: | :--- | :--- |
+| Target 1–2 | about 0–10 mm | 《明堂》, Yang Shangshan and Wang Bing read '內踝之下' as the same depression, '下微前'. The difference is the shift from the inferior border of the medial malleolus forward to the tendon edge (within the size of the malleolus) | Merged |
+| Target 1–3 | about 0–10 mm | As above. Tongkao "古今文獻一致" (L1005) | Merged (close to the threshold; see note) |
+| Target 2–3 | about 0–5 mm | The midpoint of the line is itself the depression medial to the tibialis anterior tendon | Merged |
+
+- **Verdict**: the three Targets lie within 10 mm of each other (estimated), so **Target 1≡2≡3, a single Target — $\Delta_{discrepancy} \le 10\text{mm}$; no branching**.
+- **Threshold caution**: if 《本輸》 '內踝之下' were read literally as vertically below the tip of the medial malleolus, the site would move toward the depression of Zhaohai (照海, KI6) and Target 1–3 could exceed 10 mm (estimated). That reading, however, contradicts the Han 《明堂》 '下微前', the commentaries of Yang Shangshan and Wang Bing, and the channel commentaries in the *Jingluo Tongjian* (L188, L230), and it would make Shangqiu (商丘) overlap Zhaohai (照海), so it is not adopted. Because this is an estimated boundary value without measurement, it will be re-judged when point-specific imaging measurements become available.
+
+> **Mapping of earlier labels**: former "single Target (T1)" → **Target 1≡2≡3**. The earlier verdict at the 15 mm threshold (no branching) is unchanged at the 10 mm threshold.
 
 ---
 
@@ -236,13 +266,13 @@ flowchart TB
 
 ## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-**Target T1 (single)**: classical "足內踝下微前陷者中" = modern midpoint of the line joining 舟骨粗隆 and 內踝尖 (medial to the tibialis anterior tendon).
+**Target 1≡2≡3 (single)**: classical "足內踝下微前陷者中" (Target 1) = gap between the medial edge of the tibialis anterior tendon and the anteroinferior margin of the medial malleolus (Target 2, insertion reference point) = modern midpoint of the line joining 舟骨粗隆 and 內踝尖 (Target 3). It is the same position as the former T1 (single), so the dual scoring is carried over unchanged.
 
 ### Sub-scores
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| $S_{orig}$ (0.40) | 93.75 | 87.5 | 90.63 | Mean of the 4 sub-items below | Tongkao 上 足太陰脾經穴 L939–1095 |
+| $S_{orig}$ (0.40) | 93.75 | 87.5 | 90.63 | Mean of the 4 sub-items below | Tongkao 上 足太陰脾經穴 L939–1095; Jingluo Tongjian ch. 21 L69–98, L162–306, L1233–1247 |
 | $S_{clarity}$ (0.35) | 75 | 75 | 75 | 4 structures shared by the two textbooks agree + differences in scope (adjudicated by FMA) + B1 confirmation; no point-specific measurement → below 100 | Section 6; refine and Kim Jaehyo comprehensive row 134; FMA:45262 · 21376 · 22532 |
 | $S_{reflex}$ (0.25) | 50 | 50 | 50 | 6 Layer A papers (4 animal, 1 human RCT, 1 observational), but B-Check 7 (< 8) does not meet the requirement for 75 → "B-Check 6–7" level | Section 8 ①②; papers.id 2211 · 2212 · 2214 |
 | SI ($S_{safety}$) | 75 | 50 → **75** (adjudicated) | 75 | No contraindication to needling. The 8-fen upper limit approaches the joint capsule, but classical and textbook 3–5 fen and the transverse method are stated, and the great saphenous vein can be avoided visually | Section 5; needling-depth DB row 135 |
@@ -254,7 +284,7 @@ flowchart TB
 | ① Clarity of earliest description | 100 | 75 | A: location in 《本輸》 + '微前' and '刺入三分' in 《明堂》 (Han) specify both location and depth. B: 《本輸》 itself gives no depth and 《明堂》 is a reconstructed text, so one level lower |
 | ② Agreement in later texts | 100 | 100 | 14 later texts inheriting the wording of 《明堂》 (Tongkao L975); Tongkao "古今文獻一致" (L1005) |
 | ③ Resolution of alias confusion | 100 | 100 | 商坵 and 商邱 are a variant character and a taboo-avoidance spelling; no confusion with other points |
-| ④ Collation in the *Tongkao* (《通考》) | 75 | 75 | The Tongkao points out the unknown source of 黃疸 and the theoretical attribution of 舌本強痛 (L1037, L1055). The Tongkao does not adjudicate the variant 《千金翼》 '忌灸' vs. 《明堂》 '灸三壯' |
+| ④ Collation in the *Tongkao* (《通考》) and *Jingluo Tongjian* (《經絡通鑑》) | 75 | 75 | The Tongkao points out the unknown source of 黃疸 and the theoretical attribution of 舌本強痛 (L1037, L1055). The Tongkao does not adjudicate the variant 《千金翼》 '忌灸' vs. 《明堂》 '灸三壯'. **2.7.7 re-check**: the *Jingluo Tongjian* corrects the scribal error '外踝 → 內踝' in 《靈樞·經脈》 (ch. 21 L77, L98) and explains the 《明堂》 attribution '足太陰 → 商丘' as a channel-point reading (ch. 1 L783–785), but does not address the remaining variants (忌灸, 黃疸) → the level "minor textual variants corrected" (75) is kept; **score unchanged** |
 | Mean | **93.75** | **87.5** | |
 
 ### Gates, Grade and Sensitivity
@@ -263,12 +293,14 @@ flowchart TB
 - **ARI-Core**: A = 0.40×93.75 + 0.35×75 + 0.25×50 = **76.25** / B = 0.40×87.5 + 0.35×75 + 0.25×50 = **73.75** → mean **75.0 ± 1.3** → **Grade B (probable)**, no flags.
 - **SI** = 75 (reported separately).
 - **Equal-weight sensitivity**: A 72.9, B 70.8 → mean **71.9** → B, grade unchanged.
-- **Branch decision**: not applicable (single Target).
+- **Branch decision (Tri-Target)**: all pairwise Δ among the three Targets are within 10 mm (estimated), so Target 1≡2≡3 is a single Target — no independent branch; the ΔARI-Core rule does not apply.
 - **Adjudication record**: the SI differed by 25 points (A 75, B 50; ≥ 15), so it was adjudicated. B had taken it as "direct contact with the Layer 4 neurovascular bundle on perpendicular insertion" (level 50), but the vessel beside Shangqiu (商丘) is the subcutaneous great saphenous vein, which can be avoided by sight and palpation; the joint capsule is not a neurovascular bundle; and the literature states a depth of 3–5 fen and the transverse method. The score was therefore fixed at level 75 ("avoidable by oblique or transverse insertion; angle and depth limits stated in the literature"). The only other sub-score difference is one item, $S_{orig}$ ① (25 points, 6.25 points after averaging), which is not subject to adjudication.
 
 ### Final Conclusion
 
 The anatomical substrate of Shangqiu (商丘, SP05) is established at the **probable (B)** level. Its location, the anteroinferior depression of the medial malleolus, has been consistent past and present since 《靈樞·本輸》; beneath it, the saphenous nerve and great saphenous vein (subcutaneous), the depression medial to the tibialis anterior tendon, and deeper the deltoid ligament and joint capsule are confirmed by the two textbooks, the local anatomy of the *Xuewei Tongjian* (《穴位通鑑》) and FMA standard entities. However, the reflex pathway that would explain the spleen–stomach syndromes at the core of the classical indications has not been verified at Shangqiu (商丘) (B-Check 7/12, **hypothesis**).
+
+Collation with the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) added three points: ① the Foot Taiyin (足太陰) channel passes along the anterior border of the medial malleolus, and commentators place Shangqiu (商丘) on that course; ② '外踝' in 《靈樞·經脈》 is a scribal error for '內踝', and the 'visible vessel' in front of the medial malleolus reads as the subcutaneous great saphenous vein; ③ the 《明堂》 attribution of '足太陰' indications to Shangqiu (商丘) is a channel-point reading, not an over-extension of meridian theory. This collation does not change any rubric level. The classical text position (Target 1), the palpation-based anatomical locus (Target 2) and the WHO standard location (Target 3) form a single depression within 10 mm of each other (estimated; Target 1≡2≡3).
 
 Limits on the scope of application:
 1. The animal studies (2211, 2212, 2218, 2219) showed only changes in outcome indicators; they are not pathway verification and include multi-point designs.
@@ -329,3 +361,18 @@ Generated by FMA 5.1.0 acupoint profile query (SP05; 2026-10-23). Two manual cor
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
 | Sections 1 and 4 | 《穴位通鑑》 local-anatomy quotations "L1076, L1242"; X coordinate "Tongjian L1076" | "L1242, L1082" in quotation order; "Tongjian L1082" (L1076 is the locating passage '內踝微前'). The Section 6 range "L1240–1246" (局部解剖 items 1–4) is correct | 《中國針灸穴位通鑑》 足太陰脾經(1) L1082, L1242 |
+
+---
+
+## Framework 2.7.7 Revision History (2026-10-25)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header, Section 5 | Framework v2.7; three primary classics; Section 5 "supplemented by the three primary classics" | v2.7.7; four primary classics (*Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) added; *Zhengzhi Tongjian* (《證治通鑑》): Chinese original as reference text, description from the Korean translation) | Canonical framework 2.7.7, Section 1, Ranks 1 & 2 |
+| Section 1 | "Three Primary Classics Excerpts"; Korean/English summary of the *Zhengzhi Tongjian* such as "list of single-point indications" | "Four Primary Classics Excerpts". Four *Jingluo Tongjian* rows added (channel-course commentaries, sinew-binding site, scribal error '外踝 → 內踝' and the visible vessel, channel-point attribution). *Zhengzhi Tongjian* descriptions replaced with the wording of the Korean translation of the same chapter, with translation line numbers. No discrepancy between original and translation | Jingluo Tongjian ch. 1 L731, L783–785; ch. 20 L1402, L1986; ch. 21 L69–98, L162–306, L845–851, L1233–1247; ch. 25 L980; Korean translations of the *Zhengzhi Tongjian* chapters (第壹編 第七篇; 第叄編 四中風至八痙證; 量化概念) |
+| Section 2 | 《明堂》 '足太陰' attribution = "attribution of meridian-level descriptions to a point" | *Jingluo Tongjian* channel-point reading added; Yang Shangshan's spleen-malaria commentary; row for the channel commentaries of 《十四經發揮》 and 《醫學綱目》 | Jingluo Tongjian ch. 1 L783–785; ch. 21 L199, L230, L1233 |
+| Section 3 | "not found in the three primary classics" | "not found in the four primary classics"; the *Jingluo Tongjian* writes only '商丘' | Full-text search of the *Jingluo Tongjian* |
+| Section 4 | No insertion reference point | Target 2 insertion reference point (gap between the medial edge of the tibialis anterior tendon and the anteroinferior margin of the medial malleolus) with bounding structures and FMA:IDs; Layer 1 correspondence of the *Jingluo Tongjian* 'visible vessel' | Canonical Rank 5: anatomical realisation of palpation phrases; 分肉 / 兩筋間 / 緣 insertion reference point |
+| Section 7 | Four-lineage table + "$\Delta \le 15\text{mm}$, single Target (T1)" | Tri-Target coordinate table and pairwise Δ table (estimated); with the branching threshold Δ > 10 mm, single Target 1≡2≡3; threshold caution; mapping of earlier labels (former T1 → Target 1≡2≡3). No pair changed status under the 10 mm threshold | Canonical Rank 5 Tri-Target; revised branching threshold Δ > 10 mm (2026-10-25) |
+| Section 10 | "Target T1 (single)", "④ Collation in the *Tongkao*", "Branch decision: not applicable (single Target)" | "Target 1≡2≡3 (single)" with dual scoring carried over; "④ Collation in the *Tongkao* and *Jingluo Tongjian*" re-checked (75 kept); Tri-Target branch-decision wording; *Jingluo Tongjian* findings added to the conclusion | Canonical Rank 7 $S_{orig}$ ④, Tri-Target decision rule |
+| Scores | ARI-Core 75.0 ± 1.3 (B), SI 75, sensitivity 71.9 (B) | **Unchanged** — the ④ re-check did not change any rubric level | Rubric in Section 4.2 |

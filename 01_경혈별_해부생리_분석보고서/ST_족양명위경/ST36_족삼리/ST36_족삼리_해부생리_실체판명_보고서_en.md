@@ -1,8 +1,9 @@
 # [Acupoint Anatomical & Physiological Substrate Monograph] Zusanli (足三里, ST36)
 
-> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 77.1 (B, grade unchanged) · **Dual scoring**: completed by two independent raters
+> **Framework**: v2.7.7 (four primary classics, Tri-Target) · **ARI (Target 1≡3, classical text position ≡ WHO standard location)**: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 77.1 (B, grade unchanged) · **Dual scoring**: completed by two independent raters
+> **Target 2 (palpation-based anatomical locus: the intermuscular septum '兩筋(肉分)間' of Wang Bing (王冰) and the 《聖濟總錄》)**: ARI v3.0 | ARI-Core 56.25 ± 1.25 (C·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 53.1 (D, weight-sensitive) · **Dual scoring**: two independent raters (2026-10-25; Rater B scored independently from a copy with the Target 2 scores removed) · **Branch decision (confirmed)**: Target 1≡3 superior on its own (ΔARI-Core 21.25 ≥ 10, ± intervals do not overlap)
 
-> **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
+> **Four Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) (Chinese original as reference text; analysis written from the Korean translation of the same chapter) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) · *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)
 > **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 (ST36 evidence pack: 38 landmark papers, 109 locally mapped papers, 39 external papers — only the 15 papers in Table 8-① are used for the mechanism verdict)
 > **Layer B Reference Registry**: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
@@ -11,7 +12,7 @@
 
 ---
 
-## 1. Classical Literature Screening Table (Three Primary Classics Excerpts)
+## 1. Classical Literature Screening Table (Four Primary Classics Excerpts)
 
 | Classic | Original excerpt (file & line) | English summary & analysis | Remarks |
 | :--- | :--- | :--- | :--- |
@@ -20,8 +21,12 @@
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "本穴的縱向定位，古代文獻明確作'膝下三寸'……至於本穴的橫向定位，《靈樞》《明堂經》均未明確說明。" — same file, L3244–3248 | Longitudinal position is explicit; the transverse position is not stated in Han-dynasty sources | Three competing transverse traditions (Section 7) |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "足三里二穴，土也，在膝下三寸外廉兩筋間，當舉足取之。"(《聖濟總錄》) / aliases "三里" · "下陵" · "一名鬼邪" · "下陵、鬼邪、下三里" — 《中國針灸穴位通鑑》(上卷) PDF pp. 801–880 L3410–3428 | Gives 《聖濟總錄》 as the source of the point name and collects four alias lines | The name '足三里' dates from the Song dynasty |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "刺入一寸五分，留七呼，灸三壯。"(《針灸甲乙經》) / "三里刺入四分，令人氣上。"(《千金翼方》) / "針入八分，留十呼"(《太平聖惠方》) — same file, L3676–3692 | Needling depth varies between texts | Entered in the depth table (Section 5) |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Indications of 足三里 in 《明堂經》: "腹中寒，脹滿，善噫，惡聞食臭，胃氣不足，腸鳴腹痛，泄利，食不化，心下脹" — 《中國針灸證治通鑑》 PDF pp. 1–80 L2162–2166 | Single-point indications centred on gastrointestinal signs | Basis for $P_{single}$ (Section 9) |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "喉痹，胸中暴逆，先取衝脈，後取三里、雲門，皆瀉之。" — 《中國針灸證治通鑑》 PDF pp. 1–80 L1242 | Combination with 衝脈 (氣衝) and 雲門 | Basis for $P_{comb}$ (Section 9). The earlier edition wrongly placed this passage in the point-location column |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Indications of 足三里 in 《明堂經》: "腹中寒，脹滿，善噫，惡聞食臭，胃氣不足，腸鳴腹痛，泄利，食不化，心下脹" — 《中國針灸證治通鑑》 PDF pp. 1–80 L2162–2166 (current chapter: 第壹編 第七篇 足陽明胃經 L926; Korean translation L1213) | Following the Korean translation: "cold and distension in the abdomen, frequent belching, aversion to the smell of food, insufficient stomach qi, borborygmus and abdominal pain, diarrhoea, food not digested …" — single-point indications centred on gastrointestinal signs | Basis for $P_{single}$ (Section 9) |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "喉痹，胸中暴逆，先取衝脈，後取三里、雲門，皆瀉之。" — 《中國針灸證治通鑑》 PDF pp. 1–80 L1242 (current chapter: 古代針灸方選解 L268, 按 L270; Korean translation L412–416) | Following the Korean translation: "for throat Bi with sudden upsurge of qi in the chest, first take 衝脈, then take 三里 and 雲門, all with draining" / 按: "'衝脈' here should be read as a point name … it is probably 氣衝; and '三里' here is probably 足三里" — combination with 衝脈 (氣衝) and 雲門 | Basis for $P_{comb}$ (Section 9). The earlier edition wrongly placed this passage in the point-location column |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | 《靈樞·經脈》 foot-yangming "下膝臏中，下循脛外廉，下足跗" + commentary in 《醫學綱目》 "謂脛骨之外廉也。其外廉下膝三寸，三里穴也" — 《中國針灸經絡通鑑》 第叄編 第三篇 足陽明經脈(一~二) (Jingluo Tongjian ch. 19) L253 / 《靈樞·本輸》 "入於下陵，下陵，膝下三寸，胻骨外三里也，為合" (L445) / Yang Shangshan's (楊上善) commentary on 《太素·本輸》 "人膝如陵，陵下三寸，一寸為一里也……以在胻骨外側，故名為廉。足陽明脈行此虛中" (L449) | The foot-yangming channel descends along the lateral margin of the tibia (脛外廉), and commentators identify its '膝下三寸' point as 三里; '廉' means the lateral side of the tibia | **No new information on the point's own location — only the course of its parent channel and the interpretation of the name**. Basis for the X of Target 1 (lateral margin of the tibia) (Section 7) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | 《靈樞·邪氣藏府病形》 "胃合於三里，大腸合入於巨虛上廉，小腸合入於巨虛下廉…" (Jingluo Tongjian ch. 3 L934, L1203) / "這就為《靈樞·邪氣臟腑病形》的六腑下合穴之說留下了理論空間" (L932) / "《內經》中關於腑病針灸治療實例與以上治療原則完全符合，說明這一治則具有較充分的臨床實踐基礎" (L1205) / "胃病者，腹䐜脹，胃脘當心而痛……食飲不下，取之三里也" (L1211) | The status of 三里 as the lower sea point of the stomach (胃 下合穴) is established in 《邪氣藏府病形》. The *Jingluo Tongjian* explains it as a framework opened by the theory linking channels and fu-organs, while judging it consistent with the *Neijing* (《內經》) case entries on fu-organ disease | Textual stratum of the gastrointestinal indications in Section 9. The lower-sea-point theory itself is a meridian-theory framework and is not used as evidence for a reflex mechanism (Rank 4) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | 《靈樞·根結》 "足陽明根於厲兌，溜於衝陽，注於下陵，入於人迎、豐隆也" (Jingluo Tongjian ch. 13 L167) + 【按】 "又將足陽明'下陵'改作'解溪'，是因其注於經穴而改，'下陵'原指足三里" (ch. 13 L186) | Ma Shi's (馬蒔) change of '下陵' in 《根結》 to '解溪' is an alteration based on a misreading of the text's conventions; '下陵' originally meant Zusanli (足三里) | **Rank 4 correction of a commentator's alteration**. Strengthens the 下陵 verdict in Section 3 |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | Wang Bing's (王冰) commentary on 《素問·刺熱》 "熱病始足脛者，刺足陽明而汗出止" → "三里主之" (Jingluo Tongjian ch. 20 L240–247) / 《刺瘧》 stomach malaria "刺足陽明太陰橫脈出血" → "厲兌、解溪、三里主之" (ch. 20 L1384) / 《骨空論》 "治陽明中俞髎" → Wang Bing "是則正取三里穴也" (L2438), Yang Shangshan "是謂巨虛上廉也" (L2434), 【按】 "'陽明中俞髎'，當理解為接近病部的足陽明經俞穴，不僅限於三里" (L2452) / Han correspondence of channel points "足陽明——衝陽" (ch. 1 L789) | Wang Bing assigned channel-level '足陽明' passages of the *Neijing* to 三里, but the Han 《明堂》 correspondence of channel points is '足陽明 = 衝陽', and Yang Shangshan read other points. The *Jingluo Tongjian* does not accept the restriction to 三里 | **Rank 4 identification of point attribution of channel-level passages** — indications attributed to 三里 by Wang Bing are not used as intrinsic indications of the point (not included in Section 9) |
 
 ---
 
@@ -33,11 +38,12 @@
 | Han | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 膝下三寸, 胻外廉, 合土; 刺入一寸, 留七呼, 灸三壯; list of indications | Primary (depth, indications) |
 | Wei–Jin | *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | 在膝下三寸外廉; 刺入一寸五分 (Tongjian L3676) | Quotes 《明堂》; variant depth |
 | Tang | *Qianjin Yaofang* (《千金要方》) · *Qianjin Yifang* (《千金翼方》) | Location by the one-fu (一夫, four-finger breadth) method; "一名鬼邪"; 刺入四分; "灸頭不灸三里" | Partly independent (moxibustion point location) |
-| Tang | Wang Bing's (王冰) commentary on the *Suwen* (《素問》) | 犢鼻下三寸, 胻外兩筋肉分間; firm pressure stops the pulse of the 跗上動脈 (dorsal pedal artery) | Reinterpretation (lateral shift; 犢鼻 substituted as the reference) |
+| Tang | Wang Bing's (王冰) commentary on the *Suwen* (《素問》) | 犢鼻下三寸, 胻外兩筋肉分間; firm pressure stops the pulse of the 跗上動脈 (dorsal pedal artery) | Reinterpretation (lateral shift; 犢鼻 substituted as the reference) — **source of the Target 2 palpation phrase**. He also assigned channel-level '足陽明' passages of the *Neijing* (刺熱, 刺瘧, 骨空論) to 三里 (Jingluo Tongjian ch. 20 L247, L1384, L2438) — the Han channel-point correspondence is '足陽明 = 衝陽' (ch. 1 L789), and the *Jingluo Tongjian* collates the 骨空論 attribution as "不僅限於三里" (L2452) |
 | Tang | *Waitai Miyao* (《外臺秘要》) | "若不灸三里" — the two characters '灸頭' dropped | Transcription error (collated by the Tongkao) |
 | Song | *Taiping Shenghui Fang* (《太平聖惠方》) | Name '足三里' first used; 胻骨外 · 大筋內 · 筋骨之間 (medial shift); 針入八分 | Name separated; variant transverse position |
 | Song | *Tongren* (《銅人》) · *Zhenjiu Zisheng Jing* (《針灸資生經》) | 胻骨外大筋內 / criticism that "犢鼻下三寸 ≠ 膝下三寸" | Secondary; collation debate |
 | Ming–Qing | *Zhenjiu Dacheng* (《針灸大成》) · 《類經圖翼》 · *Yizong Jinjian* (《醫宗金鑑》) | 骨外廉大筋內宛宛中; the "小兒忌灸" (no moxibustion in children) claim | Secondary; corruption (Tongkao L3148–3168) |
+| Ming | Ma Shi (馬蒔), 《靈樞注證發微·根結》 | '下陵' in 《根結》 "注於下陵" altered to '解溪' | Commentator's alteration — *Jingluo Tongjian*: "'下陵'原指足三里" (ch. 13 L186) |
 | Modern | Textbooks; Chinese national standard GB/T 12346-2006 | 犢鼻下3寸, on the line joining 犢鼻 and 解溪, within 脛骨前肌; 直刺1–2寸 | Modern location |
 
 ---
@@ -47,7 +53,7 @@
 | Alias (別名) | Classical source | KJH database | Textual adjudication |
 | :--- | :--- | :--- | :--- |
 | 三里 | 《素問·針解》 and texts before the Song (Tongjian L3414) | — | Same name as the hand-yangming '三里' (手三里); split off as '足三里' in *Taiping Shenghui Fang* (《太平聖惠方》). Resolved chronologically |
-| 下陵 | 《靈樞·本輸》 (Tongjian L3420) | — | Tongkao "名實考": not an alias but an abbreviation of the full name '下陵三里' (Tongkao L3112). Not treated as an alias |
+| 下陵 | 《靈樞·本輸》 (Tongjian L3420) | — | Tongkao "名實考": not an alias but an abbreviation of the full name '下陵三里' (Tongkao L3112). Not treated as an alias. The *Jingluo Tongjian* likewise identifies the 下陵 of 《根結》 "注於下陵" as Zusanli and corrects Ma Shi's (馬蒔) change to '解溪' (ch. 13 L186) |
 | 鬼邪 | *Qianjin Yaofang* (《千金要方》) vol. 14, "邪病大喚罵走遠，三里主之，一名鬼邪" | Listed | Whether it belongs to 手三里: the Tongkao assigns it to 足三里 on the basis of the indications |
 | 下三里 | 1957 Nanjing 《針灸學》 (citing a Japanese textbook) | Listed | In Japan '下三里' is also used for 三陰交 (SP6) (Tongkao L3144–3146) → risk of confusion |
 
@@ -57,9 +63,10 @@ The KJH DB (Acupoint Nomenclature & Alias Comparative Database, row 122: No. 119
 
 ## 4. 3D Spatial Coordinates & Layer 1–5 Anatomical Substrate Diagram
 
-- **X (medial–lateral)**: one finger-breadth (middle finger) lateral to the anterior crest of the tibia (脛骨前嵴). The range of classical transverse variants is given in Section 7.
+- **X (medial–lateral)**: one finger-breadth (middle finger) lateral to the anterior crest of the tibia (脛骨前嵴) — Target 1≡3. The range of classical transverse variants is given in Section 7.
 - **Y (proximal–distal)**: 3 cun below 犢鼻 (ST35) (bone-proportional 16 cun from 犢鼻 to 解溪; depends on body build). The Han-dynasty '膝下三寸' is measured from the apex of the patella and lies at almost the same height as the modern 犢鼻 reference (Tongkao L3114–3116).
 - **Z (depth)**: layers below. **Layer A contains no cadaveric or ultrasound measurement at ST36, so only the order of structures is given, without millimetre boundaries** (the 2.5/6.5/16.5/22 mm boundaries of the earlier edition were generic template values and have been removed).
+- **Insertion reference point (Target 2, X–Y)**: the place indicated by Wang Bing's (王冰) '胻外兩筋肉分間', '胻外廉兩筋間' of 《銅人》 卷下 and the 《聖濟總錄》, and '胻骨外廉兩筋間' of 《素問亡篇·刺法論》 (a Song-era apocryphal 遺篇 — not Han evidence) is **the intermuscular septum between tibialis anterior (FMA:22532) and extensor digitorum longus (FMA:22534) (分肉 · 兩筋間)**. X = lateral edge of tibialis anterior (about 2.5–3.5 cm lateral to the anterior tibial crest, estimated); Y = 3 cun below the knee (犢鼻). Following the septum deeper leads to the deep fibular nerve (FMA:44771) and anterior tibial artery and veins (FMA:43894, 44331) on the interosseous membrane (FMA:35187). Wang Bing's "極重按之，則足跗上動脈止" reads as a palpation finding that, at the depth of this gap, the anterior tibial artery is compressed and the dorsalis pedis pulse stops (inference). 《素問·針解》 "舉膝分易見" also appears to refer to this division (分) (Tongkao, textual analysis).
 
 ```
 [Layer 1 Skin/subcutis]    Lateral sural cutaneous n. / superficial fibular n. (Common Textbook)
@@ -116,7 +123,7 @@ The KJH DB (Acupoint Nomenclature & Alias Comparative Database, row 122: No. 119
 
 ## 5. Classical Needling Depth Calculation Table (Han Dynasty 1 fen = 2.3 mm)
 
-Source: Classical Needling Depth Database, sheet 1, row 121 (N0 = 119), supplemented by the three primary classics.
+Source: Classical Needling Depth Database, sheet 1, row 121 (N0 = 119), supplemented by the four primary classics.
 
 | Text | Fen (分) | Depth (× 2.3 mm) | Layer reached (estimated) | Remarks |
 | :--- | :---: | :---: | :--- | :--- |
@@ -130,6 +137,7 @@ Source: Classical Needling Depth Database, sheet 1, row 121 (N0 = 119), suppleme
 | *Qianjin Yifang* (《千金翼方》) (supplementary) | 4 | 9.2 mm | 1–2 | "刺入四分，令人氣上" |
 | *Taiping Shenghui Fang* (《太平聖惠方》) (supplementary) | 8 | 18.4 mm | 2–3 | |
 | 《竇太師針經》 (supplementary) | 25 | 57.5 mm | 4–5 | "針入二寸半" — maximum |
+| Ma Shi (馬蒔), 《靈樞注證發微·本輸》 (supplementary: *Jingluo Tongjian* ch. 11 L580) | 5 | 11.5 mm | 2 | "三里穴也，為合土，針五分，留五呼" |
 
 - No 'Contraindicated for needling (禁鍼)' ('0') entry and no 'blank' entry (per the relevant DB columns).
 - Safety range: about 23 mm stays within the belly of tibialis anterior. Perpendicular insertion of 46 mm or more may reach the deep fibular nerve and anterior tibial vessels, so these are avoided by angling, as in the Shanghai 《針灸學》 instruction "直刺，稍偏向脛骨方向" (Tongkao L3506).
@@ -152,15 +160,41 @@ Consistent with B1-01 and B1-03 (anatomy of the anterior compartment of the leg)
 
 ---
 
-## 7. Spatial Discrepancy Dual-Target Analysis (Discrepancy Δ > 15 mm)
+## 7. Spatial Discrepancy Branch Inference Diagram (Tri-Target, Δ > 10 mm)
+
+**Transverse traditions**
 
 | Tradition | Source | Transverse position |
 | :--- | :--- | :--- |
-| ① Lateral shift | Wang Bing's commentary, "胻外兩筋肉分間" (Tongkao L3198) | Between tibialis anterior and extensor digitorum longus |
+| ⓞ Classical text | 《靈樞·本輸》 "膝下三寸，胻外三里" · 《明堂》 "膝下三寸，胻外廉" — transverse position not specified (Tongkao, textual analysis). Commentators in the *Jingluo Tongjian*: "謂脛骨之外廉也" (ch. 19 L253), "以在胻骨外側，故名為廉" (L449) | Toward the lateral margin of the tibia |
+| ① Lateral shift | Wang Bing's commentary, "胻外兩筋肉分間" (Tongkao L3198); 《銅人》 卷下 · 《聖濟總錄》 "胻外廉兩筋間"; 《素問·針解》 "舉膝分易見" | Between tibialis anterior and extensor digitorum longus |
 | ② Medial shift | *Taiping Shenghui Fang* (《太平聖惠方》), "胻骨外，大筋內，筋骨之間" (Tongkao L3190) | Between the tibia and tibialis anterior |
 | ③ Modern | Line joining 犢鼻 and 解溪, 脛骨前肌中 (Tongkao L3248) | Belly of tibialis anterior |
 
-The longitudinal position ('膝下三寸') is the same in classical and modern sources, and the transverse variants fall within roughly the width of tibialis anterior, judged to be under 15 mm (estimate, not measured). Therefore **$\Delta_{discrepancy} \le 15\,\text{mm}$; no target split — single Target (T1)**.
+The longitudinal position ('膝下三寸') is the same in classical and modern sources (Tongkao: 膝下三寸 = 3 cun below the apex of the patella ≈ 犢鼻下3寸, an equivalent substitution). The differences arise only in the transverse direction.
+
+**Tri-Target coordinates** (X medial–lateral · Y proximal–distal · Z depth; all positions estimated, no width measurement at the ST36 level)
+
+| Target | Definition | X (medial–lateral, from the anterior tibial crest) | Y | Z (insertion depth) |
+| :--- | :--- | :--- | :--- | :--- |
+| Target 1 (classical text position) | 《靈樞·本輸》 · 《明堂》 "膝下三寸，胻外(廉)" — commentators read '脛骨之外廉' | Toward the lateral margin of the tibia, about 0.5–1.5 cm lateral (transverse position not specified in the text) | 3 cun below the knee | 1 cun (23 mm), Layers 2–3 |
+| Target 2 (palpation-based anatomical locus) | Wang Bing · 《銅人》 卷下 · 《聖濟》 "兩筋(肉分)間" = intermuscular septum between tibialis anterior and extensor digitorum longus — **insertion reference point** (Section 4) | Lateral edge of tibialis anterior, about 2.5–3.5 cm lateral | 3 cun below the knee | Down the septum → deep fibular nerve and anterior tibial vessels (Layer 4) |
+| Target 3 (WHO standard location) | 犢鼻下3寸, on the line joining 犢鼻 and 解溪, one finger-breadth (middle finger) lateral to the anterior tibial crest, within tibialis anterior | One finger-breadth lateral, about 1.5–2 cm | 3 cun below 犢鼻 | Perpendicular 1–2 cun (23–46 mm), Layers 2–4 |
+
+**Pairwise displacement** (branching threshold $\Delta_{discrepancy} > 10\,\text{mm}$)
+
+| Pair | Δ (estimated) | Basis | Verdict |
+| :--- | :---: | :--- | :--- |
+| Target 1–3 | about 0–10 mm | Same Y. For X, both '脛骨之外廉' and 'one finger-breadth lateral to the anterior crest' lie over the medial half of tibialis anterior. Modern textbooks keep the location wording "在膝下三寸，胻外廉" and make the locating method specific as "距脛骨前嵴一橫指" (2nd and 6th edition textbooks cited in the Tongkao) | Merged |
+| Target 2–3 | about 10–15 mm (range 5–20 mm) | X difference = septum (about 2.5–3.5 cm) minus one finger-breadth (about 1.5–2 cm) ≈ half the surface width of the tibialis anterior belly. Estimate assumes a surface width of tibialis anterior in the adult upper third of the leg of about 2.5–3.5 cm and a middle-finger breadth of about 1.5–2 cm | **Branch** (close to the threshold) |
+| Target 1–2 | about 10–25 mm | Sum of the two estimates above | **Branch** |
+
+- **Verdict**: **Target 1≡3 vs Target 2**. The earlier edition (15 mm threshold) judged the transverse differences to be 'under 15 mm' and kept a single Target. Under the revised threshold (Δ > 10 mm), Target 2–3 (about 10–15 mm) exceeds the branching requirement, so **Target 2 becomes a new independent Target**. Because the lower bound of the estimated range sits at the threshold, the verdict will be re-judged when the width of tibialis anterior is measured (ultrasound) at the ST36 level.
+- **Handling of the medial tradition**: 《太平聖惠方》 "胻骨外，大筋內，筋骨之間" (緣 between the tibia and tibialis anterior) is also a palpation phrase, but it has no Han-dynasty basis and the *Tongkao* rejects it as "過於偏內側", so it is recorded but not set up as a separate Target. For Target 2, the lateral '兩筋(肉分)間', supported by the Han 《素問·針解》 "舉膝分易見", was adopted.
+- **Branch decision (Tri-Target, confirmed)**: two independent Targets. Target 1≡3 ARI-Core 77.5 ± 0 (B) [77.5, 77.5] vs Target 2 56.25 ± 1.25 (C·H) [55.0, 57.5] → ΔARI-Core 21.25 ≥ 10 and the ± intervals do not overlap → **Target 1≡3 confirmed as superior on its own** (Section 10, dual scoring of 2026-10-25).
+- **Uncertainty of the Δ estimate (raised by Rater B)**: some texts place Target 2 about 1 cun from the tibial edge — '胻骨之外約一寸', '自骨邊橫量一寸' (quoted in Heo Im's (許任) 《鍼灸經驗方》 「訛穴」, papers.id 1203) and '脛骨外約一寸筋間' ([Tongkao 08] L279) — which is closer to the WHO one finger-breadth (1.5–2 cm) than to this report's Target 2 X estimate (2.5–3.5 cm). One 1950s source ([Xuewei Tongjian 19] L2222) equates the '脛骨之外緣' point with the tibialis anterior–EDL interval. With no width measurement of tibialis anterior at ST36 level, the Target 2–3 branch (Δ > 10 mm) is **estimate-dependent**, and a measurement could merge Target 2 into Target 3.
+
+> **Mapping of earlier labels**: former "single Target (T1)" → **Target 1≡3** (position unchanged, dual scoring carried over). The position recorded in the earlier edition only as transverse tradition ① (Wang Bing's lateral shift) → **Target 2** (newly branched under the 10 mm threshold; dual scoring completed 2026-10-25).
 
 ---
 
@@ -226,6 +260,18 @@ flowchart TB
 | ⑥ | Human translation | 1 | 1 | **1** | B4-01, B4-03, B4-04, B4-05 | 35, 237, 1843 | Human ST36 fMRI, muscle blood flow and a multi-point TEAS RCT exist, but the vagal–adrenal reflex arc has not been confirmed in humans. Counter-evidence on point specificity (B4-04, B4-05) unresolved |
 | **Total** | | 10 | 9 | **9 / 12** | | | **Verdict: concordant (≥ 8/12)** · flag: ③–⑤ animal (mouse/rat) only |
 
+The table above scores Target 1≡3 (the WHO location). **B-Check for Target 2 (dual scoring, 2026-10-25)**: there are 0 Layer A studies that stimulated the Target 2 position (human studies 237, 35, 1843 and 1341 used the tibialis anterior belly / WHO site; mouse studies 317 and 295 inserted into tibialis anterior; rat studies 154, 964 and 1402 used the **medial** tibia–tibialis anterior gap (the 《聖惠》 medial tradition); 993 is non-specific, 'between tibia and fibula'). → Gate 2 applies.
+
+| Item | A | B | Final | Basis for adjudication |
+| :--- | :---: | :---: | :---: | :--- |
+| ① Peripheral substrate | 1 | 2 | **2** | Both textbooks list the boundary structures (tibialis anterior, EDL, deep fibular nerve, anterior tibial vessels) at the same level, all FMA exact, and 1950s sources state the interval explicitly as '脛骨前肌和伸趾長肌之間，有脛前動脈，分布著腓深神經' ([Xuewei Tongjian 19] L2600 · L2222) → position-specific description exists (B adopted) |
+| ② Segmental match | 1 | 1 | **1** | L4–S1 vs stomach T6–T9 do not match; linked only through the supraspinal vagal route |
+| ③ Afferent fibres / receptors | 1 | 1 | **1** | Mouse PROKR2 fibres innervate the interosseous membrane (the floor of the septum) (papers.id 317, B3-17), but needles were inserted into tibialis anterior — analogy across positions |
+| ④ Central relay | 0 | 1 | **1** | Under the Layer B registry rule, evidence outside the validated point range is capped at 'analogy, 1 point' → 1 rather than 0 (B adopted) |
+| ⑤ Efferent effect | 0 | 1 | **1** | Same reason (B3-05 · B3-15 · B3-16; papers.id 34 · 1851 · 1861) |
+| ⑥ Human translation | 0 | 1 | **1** | All human studies used the WHO / belly position — indirect analogy, 1 point (B4-01 · B4-03–05) |
+| **Total** | 3 | 7 | **7/12** | **Not concordant (< 8)** → mechanism remains a hypothesis. Gate 2 fixes $S_{reflex}$ at 25 regardless of the B-Check |
+
 ### ③ External Search Log (sync_log; Rank 6 run of 2026-10-04)
 
 | Timestamp | Source | HTTP | Fetched | Duplicates removed | New | Query |
@@ -261,13 +307,13 @@ flowchart TB
 
 ## 10. ARI v3.0 Quantitative Profile Evaluation & Final Conclusion
 
-**Target T1 (single)**: classical "膝下三寸，胻外廉" = modern 犢鼻下3寸, one finger-breadth lateral to the anterior tibial crest (within tibialis anterior).
+**Target 1≡3** (former single T1; dual scoring carried over): classical "膝下三寸，胻外廉" = modern 犢鼻下3寸, one finger-breadth lateral to the anterior tibial crest (within tibialis anterior). **Target 2** (newly branched under the 10 mm threshold; dual scoring): '兩筋(肉分)間' of Wang Bing (王冰) and the 《聖濟》 = intermuscular septum between tibialis anterior and extensor digitorum longus.
 
-### Sub-scores
+### Sub-scores (Target 1≡3)
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| $S_{orig}$ (0.40) | 81.25 | 81.25 | 81.25 | Mean of the 4 sub-items below | Tongkao (上) PDF pp. 321–400 L3096–3248, L3478–3506 |
+| $S_{orig}$ (0.40) | 81.25 | 81.25 | 81.25 | Mean of the 4 sub-items below | Tongkao (上) PDF pp. 321–400 L3096–3248, L3478–3506; Jingluo Tongjian ch. 19 L253, L445–449; ch. 13 L186 |
 | $S_{clarity}$ (0.35) | 75 | 75 | 75 | The two textbooks agree (one cutaneous-nerve item differs, resolved by FMA as a difference of trunk) + standard entities confirmed by B1 and FMA; no point-specific measurement → below 100 | Section 6, B1-01, B1-03, FMA:22532, 44771 |
 | $S_{reflex}$ (0.25) | 75 | 75 | 75 | Many ST36 animal studies + human non-RCT and multi-point RCT; B-Check 9 (⑥ = 1) → below 100 | Section 8 ①②, papers.id 317, 294, 295, 237, 1843 |
 | SI ($S_{safety}$) | 75 | 75 | 75 | No 'Contraindicated for needling (禁鍼)' record. 23 mm reaches Layer 2–3; perpendicular insertion at the 46 mm upper limit may reach Layer 4 but can be avoided by angling; upper depth limit stated in the literature | Section 5, needling-depth DB row 121 |
@@ -279,16 +325,42 @@ flowchart TB
 | ① Clarity of earliest description | 75 | 75 | 75 | *Lingshu* (《靈樞》), *Suwen* (《素問》) and 《明堂》 give location and depth, but not the transverse position |
 | ② Agreement in later texts | 75 | 75 | 75 | '膝下三寸' agrees; three transverse traditions and depths ranging from 4 to 25 fen |
 | ③ Resolution of alias confusion | 75 | 75 | 75 | Confusion of 三里 (手三里), 鬼邪 and 下三里 (三陰交), resolved chronologically |
-| ④ Collation in the *Tongkao* (《通考》) | 100 | 100 | 100 | The loss of '灸頭' in 《外臺》 corrected from 《千金翼》; changes in the 犢鼻-based location explained |
+| ④ Collation in the *Tongkao* (《通考》) and *Jingluo Tongjian* (《經絡通鑑》) | 100 | 100 | 100 | The loss of '灸頭' in 《外臺》 corrected from 《千金翼》; changes in the 犢鼻-based location explained. **2.7.7 re-check**: the *Jingluo Tongjian* corrects Ma Shi's alteration '下陵 → 解溪' (ch. 13 L186) and collates Wang Bing's attribution of channel-level passages (ch. 20 L2452). No uncorrected transcription error remains → 100 kept, **score unchanged** |
+
+### Sub-scores (Target 2 — dual scoring, 2026-10-25)
+
+Rater A scored Target 2 during the Framework 2.7.7 revision (2026-10-25). Rater B scored it independently, using only a copy of the report with the Target 2 scores, verdict and B-Check removed, plus the primary data (the four classics, the two textbooks, the needling-depth DB and the integrated DB).
+
+| Indicator | Rater A | Rater B | Final | Rubric basis | Evidence pointers |
+| :--- | :---: | :---: | :---: | :--- | :--- |
+| $S_{orig}$ (0.40) | 62.5 | 56.25 | **59.4 ± 3.1** | Mean of the four sub-items below. Difference 6.25 < 15 → no adjudication; mean ± half-range | Tongkao 08 L69 · L85 · L97 · L215 · L307; Xuewei Tongjian 19 L2146–2226 · L2614; Jingluo Tongjian 19 L253 |
+| $S_{clarity}$ (0.35) | 75 | 75 | **75** | Both textbooks list the boundary structures at the same level (common textbook rows 650–655, Kim Jae-hyo rows 954–959) + B1 confirms the septum + 1950s sources state the interval. X coordinate estimated, no position-specific measurement → below 100 | Section 6; FMA:22532 · 22534 · 44771 · 43894 · 44331; Xuewei Tongjian L2600 · L2222 |
+| $S_{reflex}$ (0.25) | 25 | 25 | **25** | 0 Layer A studies at the Target 2 position → Gate 2. Final B-Check 7/12 (Section 8 ②) | Section 8 ② |
+| SI ($S_{safety}$) | 50 | 50 | **50** | Perpendicular insertion along the septum reaches the Layer 4 neurovascular bundle with no muscle belly in between, and tilting toward the tibia leaves Target 2, so angling does not avoid it. Wang Bing's "極重按之，則足跗上動脈止" shows the proximity. The classical 5 fen (11.5 mm; 《銅人》 卷下, 《刺法論》 遺篇) gives a depth ceiling. No contraindication | Sections 4–5; Tongkao L769 · L773; papers.id 1341 |
+
+| Sub-item (Target 2) | A | B | Mean | Basis |
+| :--- | :---: | :---: | :---: | :--- |
+| ① Clarity of the first description | 50 | 50 | 50 | Han texts give only '膝下三寸，胻外(廉)'; '兩筋肉分間' is first stated by Wang Bing (王冰) in the Tang (commentaries on 刺熱論, 骨空論 and 針解, [Xuewei Tongjian 19] L2158 · L2160; Tongkao L215). 《素問·針解》 "舉膝分易見" is ambiguous and the Tongkao hedges it as "似乎也支持" (L307) — an ambiguous first description completed by later commentary |
+| ② Later concordance | 50 | 50 | 50 | Of 36 location entries in the *Xuewei Tongjian*, 14 state '兩筋(間) / 分肉間 / TA–EDL' explicitly and 3 partially = 39–47% (B's count) → the 40–59% band. Neither the Tongkao ("過於偏外側", L307) nor the Xuewei Tongjian conclusion ("略偏外", L2614) adopts it |
+| ③ Alias resolution | 75 | 75 | 75 | Point-level aliases (三里/手三里, 下陵, 鬼邪, 下三里) resolved chronologically (Section 3); no confusion specific to Target 2 |
+| ④ Collation with the *Tongkao* and *Jingluo Tongjian* | 75 | 50 | 62.5 | A: '兩筋肉分間', '兩筋間' and '胻骨外廉兩筋間' are minor wording variants → 75. B: five Target 2-specific textual problems remain unresolved by either compendium — the garbled 《甲乙》 note "(素問云…兩筋間分間)" (L2150), the self-contradiction of 《銅人》 卷上 '大筋內' vs 卷下 '兩筋間' (L2166 · L2168), the Xuewei Tongjian attributing the phrase to 《銅人》 (L2614) against its own Wang Bing entry, the merging of '大筋內' with '兩筋肉分間' in 《聚英》 and 《大成》 (L2188), and the Jingluo Tongjian treating '動脈止' only as a vessel-verification test (01 L383) → 50. The 25-point gap is within a sub-item; the canonical 15-point criterion applies to sub-scores, and the two $S_{orig}$ values differ by only 6.25, so no adjudication is needed (canonical Rank 7) |
+| Mean | **62.5** | **56.25** | **59.4** | |
 
 ### Gates, Grade and Sensitivity
 
-- **Gates**: Gate 1 ($S_{orig}$ and $S_{clarity}$ ≥ 50) not triggered; Gate 2 (15 Layer A papers) not triggered; Gate 3 (SI 75) not triggered.
-- **ARI-Core** = 0.40 × 81.25 + 0.35 × 75 + 0.25 × 75 = **77.5 ± 0** → **Grade B (probable)**, no flags.
-- **SI** = 75 (reported separately).
-- **Equal-weight sensitivity**: (81.25 + 75 + 75) / 3 = 77.1 → B, grade unchanged.
-- **Branch decision**: not applicable (single Target).
+- **Target 1≡3 gates**: Gate 1 ($S_{orig}$ and $S_{clarity}$ ≥ 50) not triggered; Gate 2 (15 Layer A papers) not triggered; Gate 3 (SI 75) not triggered.
+- **Target 1≡3 ARI-Core** = 0.40 × 81.25 + 0.35 × 75 + 0.25 × 75 = **77.5 ± 0** → **Grade B (probable)**, no flags.
+- **Target 1≡3 SI** = 75 (reported separately).
+- **Target 1≡3 equal-weight sensitivity**: (81.25 + 75 + 75) / 3 = 77.1 → B, grade unchanged.
+- **Target 2 gates**: Gate 1 not triggered ($S_{orig}$ A 62.5 · B 56.25, $S_{clarity}$ 75 — all ≥ 50); Gate 2 triggered (0 position-specific Layer A papers → $S_{reflex}$ 25, **(H)**); Gate 3 not triggered (SI 50).
+- **Target 2 ARI-Core**: A = 0.40 × 62.5 + 0.35 × 75 + 0.25 × 25 = 57.5, B = 0.40 × 56.25 + 0.35 × 75 + 0.25 × 25 = 55.0 → **56.25 ± 1.25** → **Grade C (possible / hypothetical)·H**. The lower bound 55.0 lies on the C/D boundary (one step down in any of B's $S_{orig}$ sub-items gives D). Without Gate 2, B's value would be 61.25 (C) — reference only.
+- **Target 2 SI** = 50 (reported separately).
+- **Target 2 equal-weight sensitivity**: A (62.5 + 75 + 25) / 3 = 54.2, B (56.25 + 75 + 25) / 3 = 52.1 → mean 53.1 → D → grade changes, flagged **weight-sensitive**.
+- **Target 2 notation**: `ARI v3.0 | ARI-Core 56.25 ± 1.25 (C·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 53.1 (D, weight-sensitive)`
+- **Branch decision (Tri-Target decision rule, confirmed)**: two independent Targets (Target 1≡3, Target 2). Target 1≡3 77.5 ± 0 [77.5, 77.5] vs Target 2 56.25 ± 1.25 [55.0, 57.5] → ΔARI-Core **21.25 ≥ 10**, ± intervals **do not overlap** → **Target 1≡3 confirmed as superior on its own** (dual scoring, 2026-10-25). The Target 2–3 branch itself depends on the Δ estimate (Section 7).
 - **Adjudication record**: no item differed by 15 points or more (no needs_adjudication). Only B-Check ⑤ split (A 2, B 1; final 1). The counter-evidence on point specificity (B4-04, B4-05), intensity dependence (B3-16) and the dual effect on gastric motility (papers.id 34) are treated as limits on the scope of application rather than direct conflicts, so the B-Check verdict stays 'concordant' and these limits are stated in the conclusion.
+- **Target 2 adjudication record (2026-10-25)**: no sub-score ($S_{orig}$, $S_{clarity}$, $S_{reflex}$, SI) differed by 15 points or more (largest: $S_{orig}$ 6.25) → mean ± half-range. $S_{orig}$ sub-item ④ differs by 25 points (A 75, B 50), but the canonical criterion applies at the sub-score level (15 points), so it is kept at the mean of 62.5. On the B-Check, ① (A 1, B 2) and ④–⑥ (A 0, B 1) split; B's values were adopted on the grounds given in the Section 8 ② table, final 7/12 (not concordant).
+- **Evidence additions and follow-up raised by Rater B**: ① papers.id 1341 (Choi 2026, BMC Complement Med Ther, PMID 41469657) reports, by ultrasound at the WHO site, a mean skin-to-anterior-tibial-artery depth of 24 mm and a target depth of 22 mm — inconsistent with Section 5's statement that "about 23 mm stays within the tibialis anterior belly", and a basis for re-examining Target 1≡3's $S_{clarity}$ (measurement evidence) and SI (scores are not changed in this revision; dual re-scoring at the next revision). ② papers.id 1203 (Lee Yeon-hee 2008, Korean Journal of Acupuncture & Meridian Science) analyses how Heo Im's (許任) 《鍼灸經驗方》 「訛穴」 names taking only '胻外廉陷中' as an error and prescribes '兩筋間陷中' with the dorsal-artery test — Joseon-era support for Target 2 (to be added to Section 1). The paper it cites, Lou Xinfa 2006 (《中國針灸》 26(7):483–486), is not in Layer A and should be retrieved. ③ 《素問亡篇·刺法論》 in Section 4 is the Song-era apocryphal 遺篇 and is not used as Han evidence. ④ Target 2 is rejected not only by the Tongkao (L307) but also by the Xuewei Tongjian conclusion (L2614).
 
 ### Final Conclusion
 
@@ -300,6 +372,8 @@ Limits on the scope of application:
 3. Counter-evidence on point specificity, showing small differences between verum and sham needling (B4-04, B4-05), remains unresolved.
 4. The effect on gastric motility is a dual effect, facilitatory or inhibitory depending on conditions (papers.id 34).
 5. The stomach (T6–T9) and ST36 (L4–S1) do not share segments, so the gastrointestinal indications are explained by a supraspinal vagal pathway **hypothesis**, not by a segmental reflex.
+
+Collation with the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) added: ① the commentators' reading that the foot-yangming channel descends along '脛外廉' and that '廉' means the lateral side of the tibia (basis for the X of Target 1); ② '下陵' originally meant Zusanli, and Ma Shi's (馬蒔) change to '解溪' is an error; ③ Wang Bing's (王冰) attribution of channel-level '足陽明' passages of the *Neijing* to 三里 differs from the Han channel-point correspondence ('足陽明 = 衝陽'); ④ the status of the stomach's lower sea point (胃 下合穴) derives from the theoretical framework of 《邪氣藏府病形》. This collation does not change any rubric level for Target 1≡3. In Tri-Target terms, the classical text position merges with the WHO standard location (**Target 1≡3**), while the intermuscular septum '兩筋(肉分)間' of Wang Bing and the 《聖濟》 (**Target 2**) newly branches under the revised 10 mm threshold (Δ about 10–15 mm, estimated). Target 2 has a **dual-scored ARI-Core of 56.25 ± 1.25 (C·H, weight-sensitive)**, and Target 1≡3 (77.5 ± 0, B) is **confirmed as superior on its own** (ΔARI-Core 21.25, non-overlapping ± intervals; 2026-10-25). Target 2's weaknesses are the absence of reflex studies at that position (Gate 2) and the ambiguity of the Han description; its strength is that the boundary structures are clear from the textbooks and FMA. The Target 2–3 branch depends on an estimate, because the width of tibialis anterior has not been measured.
 
 ---
 
@@ -385,3 +459,31 @@ Generated by FMA 5.1.0 acupoint profile query (ST36; 2026-10-23). Match level `e
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
 | Textbook title | *Meridian and Acupoint Studies* (經絡經穴學) | (經絡腧穴學) | The Korean edition names the textbook *Gyeongnak Suhyeolhak* (經絡腧穴學; suhyeol = 腧穴); 經絡經穴學 was a mistranslation carried over from the earlier ST36 English edition |
+
+---
+
+## Framework 2.7.7 Revision History (2026-10-25)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | Framework v2.7, single ARI notation, three primary classics | v2.7.7, Target 1≡3 ARI notation (unchanged) + Target 2 notation line (single scoring, preliminary), four primary classics (*Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) added; *Zhengzhi Tongjian*: Chinese original as reference text, description from the Korean translation) | Canonical framework 2.7.7, Section 1, Ranks 1 & 2, Rank 7 |
+| Section 1 | "Three Primary Classics Excerpts", summaries of the *Zhengzhi Tongjian*, earlier PDF line pointers only | "Four Primary Classics Excerpts". *Zhengzhi Tongjian* descriptions replaced with the wording of the Korean translation of the same chapter, with the current chapter and translation line numbers (earlier pointers kept). 4 *Jingluo Tongjian* rows added (channel course '脛外廉' and the name, lower sea point, correction of the 下陵 alteration, Wang Bing's attribution of channel-level passages). No discrepancy between original and translation | Jingluo Tongjian ch. 1 L789; ch. 3 L932–1211; ch. 13 L167, L186; ch. 19 L253, L445, L449; ch. 20 L240–247, L1384, L2434–2452; Korean translations of the *Zhengzhi Tongjian* chapters (第壹編 第七篇 足陽明胃經; 古代針灸方選解) |
+| Section 2 | Wang Bing row | Marked as the source of the Target 2 palpation phrase; Wang Bing's attribution of channel-level passages and the *Jingluo Tongjian* collation added; row for Ma Shi's 下陵 alteration added | Jingluo Tongjian ch. 1 L789; ch. 13 L186; ch. 20 L247, L1384, L2438, L2452 |
+| Section 3 | 下陵 verdict | *Jingluo Tongjian* verdict 下陵 = Zusanli and correction of Ma Shi's alteration added | Jingluo Tongjian ch. 13 L186 |
+| Section 4 | No insertion reference point | X labelled as Target 1≡3; Target 2 insertion reference point added (intermuscular septum between tibialis anterior and extensor digitorum longus, bounding and deep structures with FMA:IDs, Wang Bing's arterial palpation finding) | Canonical Rank 5: anatomical realisation of palpation phrases, 分肉 / 兩筋間 insertion reference point |
+| Section 5 | "supplemented by the three primary classics" | "supplemented by the four primary classics"; row for Ma Shi's 5 fen in his 《本輸》 commentary added | Jingluo Tongjian ch. 11 L580 |
+| Section 7 | "Dual-Target Analysis (Δ > 15 mm)", three transverse traditions + "$\Delta \le 15\,\text{mm}$, single Target (T1)" | "Tri-Target, Δ > 10 mm"; classical-text tradition row added; Tri-Target coordinate table and pairwise Δ table (Target 1–3 0–10 mm merged; Target 2–3 about 10–15 mm and Target 1–2 about 10–25 mm branched); handling of the medial tradition; preliminary branch decision; mapping of earlier labels (former T1 → Target 1≡3, former tradition ① → Target 2). **Under the 10 mm threshold the Target 2–3 pair changed from merged to branched** | Canonical Rank 5 Tri-Target; revised branching threshold Δ > 10 mm (2026-10-25) |
+| Section 8 ② | No Target distinction | Table marked as the Target 1≡3 scoring; Target 2 B-Check 3/12 (single scoring, preliminary) added | Canon 6-5, Rank 7 |
+| Section 10 | "Target T1 (single)", "④ Collation in the *Tongkao*", "Branch decision: not applicable (single Target)" | Definitions of Target 1≡3 (dual scoring carried over) and Target 2; ④ collation in the *Tongkao* and *Jingluo Tongjian* re-checked (100 kept); Target 2 sub-scores, gates, sensitivity and notation (single scoring, preliminary); preliminary Tri-Target verdict; conclusion supplemented | Canonical Rank 7 $S_{orig}$ ④, dual scoring, Tri-Target decision rule |
+| Scores | ARI-Core 77.5 ± 0 (B), SI 75, sensitivity 77.1 (B) | Target 1≡3: **unchanged**. Target 2 (new): ARI-Core 57.5 (C·H), SI 50, sensitivity 54.2 (D, weight-sensitive) — single scoring (preliminary), dual scoring required | Rubric in Section 4.2 |
+
+## 2026-10-25 Target 2 dual-scoring record
+
+| Location | Before | After | Basis |
+| :--- | :--- | :--- | :--- |
+| Header · Section 7 · Section 10 branch decision | Target 2 single-scored (preliminary) 57.5; "Target 1≡3 superior (preliminary, confirmation pending)" | Dual scoring 56.25 ± 1.25 (C·H); ΔARI-Core 21.25 ≥ 10 with non-overlapping ± intervals → **Target 1≡3 confirmed as superior on its own** | Canonical Rank 7 Tri-Target decision rule |
+| Section 10 Target 2 sub-scores | Rater A only: $S_{orig}$ 62.5 (50/50/75/75), $S_{clarity}$ 75, $S_{reflex}$ 25, SI 50 | Rater B added: $S_{orig}$ 56.25 (50/50/75/50), $S_{clarity}$ 75, $S_{reflex}$ 25, SI 50. Final $S_{orig}$ 59.4 ± 3.1, sensitivity 53.1 (D, weight-sensitive) | Independent scoring by Rater B (from a copy with the scores removed) |
+| Section 8 ② Target 2 B-Check | Rater A only, 3/12 | A 3 · B 7 → final 7/12 (B adopted for ① and ④–⑥), not concordant | Layer B registry 'analogy, 1 point' rule |
+| Section 7 | — | Caution on the uncertainty of the Δ estimate (some texts '胻骨之外約一寸') added | papers.id 1203; Tongkao L279; Xuewei Tongjian L2222 |
+| Section 4 | 《素問亡篇·刺法論》 cited | Marked as a Song-era apocryphal 遺篇 | Raised by Rater B |
+| Section 10 follow-up | — | Re-examination of Target 1≡3 with papers.id 1341 (24 mm ultrasound at the WHO site); addition of papers.id 1203 and Lou Xinfa 2006 | Raised by Rater B |

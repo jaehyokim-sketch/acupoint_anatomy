@@ -1,6 +1,6 @@
 # [Acupoint Anatomical & Physiological Substrate Monograph] Jianjing (肩井, GB21)
 
-> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65.6 (C, grade unchanged) · **Dual scoring**: two independent raters, adjudicated
+> **Framework**: v2.7.7 (revised 2026-10-25 — four primary classics and Tri-Target applied; v2.7 scoring of 2026-10-04 retained) · **Spatial discrepancy branching**: Tri-Target re-check gives **Target 1≡2≡3, a single Target** (all pairwise Δ ≤ 10 mm, estimated; Section 7) · **ARI**: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65.6 (C, grade unchanged) · **Dual scoring**: two independent raters, adjudicated
 
 > **⚠ Safety warning (SI 0)**: Directly beneath Jianjing (肩井) lie the pleural cupula (胸膜頂) and the apex of the lung (肺尖). The *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) states "不可向前下方刺入或直刺過深，以免損傷胸膜頂和肺尖引起氣胸" and records that about 90 % of needling-induced pneumothoraces occur at 肩井. In the needling-depth DB the *Dongui Bogam* (《東醫寶鑑》) value is `0` (contraindicated for needling, 禁鍼; cited source 'Tongren' (銅人)), and texts from 《類經圖翼》 onwards record "孕婦禁針" (needling forbidden in pregnancy). This report does not give a single fixed safe needling depth (see Sections 5 and 10).
 
@@ -9,7 +9,7 @@
 
 ---
 
-## 1. Classical Literature Screening Table (Collation of the Three Primary Classics)
+## 1. Classical Literature Screening Table (Collation of the Four Primary Classics)
 
 | Classic | Source file | Original excerpt | English summary |
 | :--- | :--- | :--- | :--- |
@@ -20,7 +20,12 @@
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Same file, 《千金要方》"肩井"穴辨誤 (correction of the 'Jianjing' entry in the *Qianjin Yaofang*) | "宋校本《千金要方》此條'在'字係'及'之誤，將二穴混作一穴" | In vol. 24 of the *Qianjin Yaofang* (《千金要方》), "灸肩井，在肩解臂接處", '在' is a scribal error for '及'. 肩井 and 肩解臂接處 are two separate sites. |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | 《中國針灸穴位通鑑》 refined edition line 86166 ff., 肩井 (GB21) | "一.出處 '肩井，在肩上陷者中，缺盆上，大骨前。'（《針灸甲乙經》3：44）" | Gives the source as the *Jiayi Jing* (《甲乙經》) 3:44. Not recorded in 《靈樞·根結》. |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | Same file, 四.部位 (location) 1–23 | 《聖惠方》 "大骨前一寸半，以三指按之"; 《新編針灸學》 "僧帽肌游離緣的正中點，即肩峰與第七頸椎的正中點" | From the Song dynasty onwards '大骨前一寸半' and the three-finger locating method were mainstream; in modern times the location was standardised as the midpoint between C7 and the acromion. |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《中國針灸證治通鑑》 refined edition lines 3726–3730 | "《明堂經》主肩背痹痛，臂不舉，寒熱淒索氣上，不得眠臥 … 《千金要方》難產 … 小結《千金要方》《千金翼方》均針肩井穴以治難產，並謂'瀉之，須臾即生'，值得研究" | The original indication is local shoulder and upper-back pain; difficult labour (難產) was added in the *Qianjin* (《千金》) texts and is assessed as "worth investigating". |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《中國針灸證治通鑑》 Foot-Shaoyang Gallbladder Meridian section (Part 09), 十一)肩井, L222–250 (Korean translation L288–332) | "《明堂經》主肩背痹痛，臂不舉，寒熱淒索氣上，不得眠臥 … 《千金要方》難產 … 小結《千金要方》、《千金翼方》均針肩井穴以治難產，並謂'瀉之，須更即生'，值得研究" | (Following the Korean translation) The *Mingtang Jing* (《明堂經》) treats "painful Bi of the shoulder and back, inability to raise the arm, chills and fever with shivering, and qi rising so that one cannot sleep or lie down". Summary: the *Qianjin Yaofang* (《千金要方》) and the *Qianjin Yifang* (《千金翼方》) both needle Jianjing (肩井) for difficult labour (難產), saying "drain it and the birth follows in a moment", which is "worth investigating". The original indication is therefore local shoulder and upper-back pain, and difficult labour was added in the *Qianjin* (《千金》) texts. (The original reads '須更'; the Korean translation keeps '須更' but renders it in the sense of '須臾'.) |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Same book, Stroke section (Part 14), 《衛生寶鑑》 L368 (Korean translation L668); Bi-syndrome and leg-qi section (Part 16), 《補輯肘後方》 L348 (Korean translation L505) | "肩井二穴，在肩上陷解中，缺盆上大骨前一寸半，以三指按取之，當其中指下陷中者是" / "穴在兩肩小近頭凹處，指捏之，安令正得中穴耳" | (Following the Korean translation) "The two Jianjing points lie in the hollow cleft on top of the shoulder, above Quepen (缺盆) and 1.5 cun in front of the large bone; press with three fingers, and the hollow under the middle finger is the point" / "The point lies in the hollow of each shoulder slightly towards the head; pinch it with the fingers so as to take the exact centre of the point". These are the **palpation descriptions** of Jianjing (陷中 · 凹處) (basis of Target 2 in Section 7). |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | 《中國針灸經絡通鑑》 section on Vessel Lengths, Bone Measures and Key Points (Part 11), 《甲乙經·肩凡二十八穴》 vol. 3, L984 | "肩井，在肩上陷者中，缺盆上大骨前，手少陽、陽維之會，刺入五分，灸三壯" | The *Jiayi Jing* (《甲乙經》) entry is identical to the source wording in the 《穴位通鑑》. There is no textual variant (異文) in the location or depth wording. |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | Same book, section on Monographic Studies of the Channels (Part 05), commentary on '出肩外廉' of the Hand-Taiyang vessel in the 《足臂十一脈灸經》, L576; Index of Vessel Names (Part 37), '肩脈', L123 | "出肩脈處，約當肩井穴處。《靈樞·邪氣臟腑病形》診小腸、膀胱病之脈位有'肩上'一處，候該處絡脈之堅實、陷下以診病。《太平聖惠方》卷九十九載甄權針書謂'此肩井脈，足陽明之會，乃連入五臟'" | The site of Jianjing is where the 'shoulder vessel' (肩脈) of the excavated vessel texts emerges, and in the *Lingshu* (《靈樞》) the 'top of the shoulder' (肩上) was a diagnostic site where the firmness or sinking of the collateral was palpated. This describes a vessel-diagnosis site, not the location of the Jianjing point itself. Zhen Quan's (甄權) "meeting point of Foot-Yangming (足陽明之會)" is a different intersection record from the *Jiayi Jing*'s "meeting point of Hand-Shaoyang and the Yang Linking Vessel (手少陽、陽維之會)". |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | Same book, Hand-Taiyang section (Part 23), 《素問·氣府論》 L262 and Yang Shangshan's (楊上善) commentary in the 《太素·氣府》 L266 | "手太陽脈氣所發者 … 柱骨上陷者各一" / Yang's commentary "［柱骨出陷者各一，］肩井二穴，八也" | Yang Shangshan glosses the '柱骨上陷者' among the points where Hand-Taiyang qi emerges as 肩井. The locating word '陷者' (hollow) is the same palpation term as in the 《明堂》. |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | Same book, Hand-Yangming section (Part 18) L330 · 353, Hand-Shaoyang section (Part 27) L339, Foot-Shaoyang section (Part 28) L345 · 355, Yang Linking Vessel section (Part 35) L167 · 226 | 《千金要方》 · 《千金翼方》 "將'肩窌、秉風、肩井、天窌'四穴 … 歸入本經 (手陽明)"; Foot-Shaoyang note "《甲乙經》、《千金要方》、《千金翼方》等書中，除下肢十四個腧穴明確為足少陽經的腧穴外，其餘穴位並未明確歸經"; 肩井 listed among the 43 points of the Foot-Shaoyang Gallbladder Meridian in 《銅人》 vol. 1; 《針灸大成》 Yang Linking Vessel "又與手足少陽、足陽明會於肩井"; 肩井 among the 28 Yang Linking intersection points of the 《甲乙》 | Changes in meridian attribution (歸經): Hand-Yangming in the *Qianjin* (《千金》), Hand-Shaoyang/Yang Linking intersection in the 《素問》 commentaries and the *Jiayi Jing* line, Foot-Shaoyang from the 《銅人》 onwards. **These are differences in attribution and intersection records, not transcription errors in the location wording.** The 《經絡通鑑》 does not discuss the '在 → 及' scribal error of *Qianjin Yaofang* vol. 24 (Section 3). |
 
 Modern standard location: the midpoint of the line joining the spinous process of the 7th cervical vertebra and the most lateral point of the acromion (《通考》 提要 "第7頸椎棘突與肩峰最外側點連線的中點"; WHO 2008, registry B1-05). The earlier edition's wording "GV14–acromion" has been corrected to this wording.
 
@@ -28,12 +33,15 @@ Modern standard location: the midpoint of the line joining the spinous process o
 
 | Stratum | Text | Description | Classification |
 | :--- | :--- | :--- | :--- |
+| Pre-Qin–Han (excavated) | Hand-Taiyang vessel "出肩外廉" in the 《足臂十一脈灸經》 (commentary in the 《經絡通鑑》) ; 《靈樞·邪氣臟腑病形》 '肩上' | "出肩脈處，約當肩井穴處" ; firmness and sinking (堅實 · 陷下) of the collateral at '肩上' palpated for diagnosis | Reference (description of a vessel-diagnosis site, not of the point) |
 | Han | *Huangdi Mingtang Jing* (《黃帝明堂經》) (via the 《通考》) | "在肩上陷解中，缺盆上大骨前 … 刺入五分，灸三壯" / indications "肩背痹痛，臂不舉，寒熱淒索" | **Primary** |
 | Wei–Jin | *Zhenjiu Jiayi Jing* (《針灸甲乙經》) 3:44 (《通鑑》) | "在肩上陷者中，缺盆上，大骨前" ; "手少陽、陽維之會" | Continuation of the primary source (variant: 陷解中 → 陷者中) |
 | Han–Tang (commentary) | Wang Bing's (王冰) commentary on 《素問·氣穴論》 | "肩解二穴（謂肩井也）" | Alias assigned by commentary |
+| Sui–Tang (commentary) | Yang Shangshan's (楊上善) commentary in the 《太素·氣府》 (《經絡通鑑》 Part 23) | Hand-Taiyang qi emergence "柱骨出陷者各一" → "肩井二穴" | Identification by commentary. The locating word '陷者' is the same palpation term as in the 《明堂》 |
 | Tang | *Qianjin Yaofang* (《千金要方》) vol. 2 · *Qianjin Yifang* (《千金翼方》) vol. 26 | "難產，針兩肩井入一寸，瀉之，須臾即分娩" | Later added indication (new) |
 | Tang | *Qianjin Yaofang* (《千金要方》) vol. 24 | "灸肩井，在肩解臂接處" → 《通考》: '在' is a scribal error for '及' | Transcription error (corrected) |
 | Song | 《太平聖惠方·針經》 (Zhen Quan, 甄權) | "大骨前一寸半，以三指按之" ; "針入四分 … 針不得深，深即令人悶 … 令人短壽" | Supplementary location + the earliest record of pneumothorax and needle syncope |
+| Song | *Tongren Shuxue Zhenjiu Tujing* (《銅人腧穴針灸圖經》) vol. 1 (《經絡通鑑》 Part 28) | 肩井 listed among the 43 points of the Foot-Shaoyang Gallbladder Meridian (足少陽膽經) | Meridian attribution fixed (earlier: Hand-Yangming in the 《千金》; Hand-Shaoyang/Yang Linking intersection in the 《甲乙》 line) |
 | Song | *Shengji Zonglu* (《聖濟總錄》) vol. 193 | "坐以手指從膊骨罅向項筋上捼之，中指下即是也" | Locating method (basis of the modern midpoint location) |
 | Ming | 《類經圖翼》 vol. 8 | "孕婦禁針" | Contraindication derived from the difficult-labour indication |
 | Joseon | *Dongui Bogam* (《東醫寶鑑》) (needling-depth DB) | Value `0` (contraindicated for needling), cited source 'Tongren' (銅人) | Transmission of the needling contraindication. The original passage could not be confirmed in a source file during this revision |
@@ -51,21 +59,25 @@ Modern standard location: the midpoint of the line joining the spinous process o
 
 Separation of conflated information: the *Qianjin Yaofang* (《千金要方》) vol. 24 entry "灸肩井，在肩解臂接處" merges two sites, 肩井 and 肩解臂接處, into one because of the scribal error '在 → 及' (《通考》 辨誤). The location given in this entry is not used for locating Jianjing. The earlier edition's claim to have "completely filtered out" confusion with Jianzhen (肩貞) and Jianliao (肩髎) was unsupported and has been deleted.
 
+Collation with the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) (differentiation of scribal errors, added 2026-10-25): the 《經絡通鑑》 reproduces the location wording of Jianjing ("在肩上陷者中，缺盆上大骨前") exactly as in the 《甲乙》 and notes no variant (Part 11, L984). The differences it reveals concern **meridian attribution and intersection records**: the two *Qianjin* (《千金》) books assign the point to Hand-Yangming (Part 18, L353); the 《甲乙》 records "手少陽、陽維之會" (Part 11, L984; Part 35, L226); Zhen Quan's (甄權) *Zhenjing* (《針經》) and the 《針灸大成》 add "meeting point of Foot-Yangming (足陽明之會)" (Part 05, L576; Part 35, L167); and from vol. 1 of the 《銅人》 onwards it belongs to Foot-Shaoyang (Part 28, L345). The Foot-Shaoyang note states that in the 《甲乙》, the 《千金》 and similar texts no point other than the 14 points of the lower limb was clearly assigned to the meridian (Part 28, L355). These differences are a matter of attribution within meridian theory and do not change the anatomical location of Jianjing. Interpretations that derive indications from meridian attribution (over-extension of meridian theory) are not used in the indication verdicts of Section 9. Yang Shangshan's (楊上善) gloss '柱骨上陷者 = 肩井' in the 《太素》 is an identification of location, not an alias, and is therefore not entered in the alias table of Section 3.
+
 ## 4. 3D Spatial Coordinates & Layer 1–5 Structural Diagram (Linked to the FMA v5.1.0 Ontology)
 
 - **X (medial–lateral)**: the **midpoint** of the imaginary line joining the posterior midline (spinous process of C7) and the most lateral point of the acromion.
 - **Y (cranial–caudal)**: above the spine of the scapula, directly above the supraclavicular fossa (缺盆) (《明堂》 "缺盆上大骨前").
 - **Z (depth)**: follows the layer order of the FMA-recognised anatomical structures below. Millimetre boundaries between layers are not fixed values; they vary with body build (BMI), posture and the respiratory cycle (Section 5-1; papers.id 1431).
+- **Tri-Target coordinates (Section 7)**: Target 1 (classical text position, 《明堂》 "肩上陷解中，缺盆上大骨前") · Target 2 (palpation-based anatomical locus, 《聖惠》 · 《衛生寶鑑》 "以三指按取之，當其中指下陷中" — the surface hollow over the upper border of the trapezius) · Target 3 (WHO standard location, midpoint between the C7 spinous process and the most lateral point of the acromion) lie within Δ ≤ 10 mm of each other (estimated) and are merged → **Target 1≡2≡3, a single Target**.
+- **Insertion reference point**: the classical palpation terms are only '陷中' and '凹處' (hollow); no gap between muscles or tendons such as 分肉, 兩筋間 or 緣 is specified → **gap unclear; no insertion reference point marked**. The interpretation in Section 6-1 of a boundary zone between the levator scapulae (`FMA:32519`) and the supraspinatus (`FMA:9629`) is an inference from the FMA and the textbooks, not a gap indicated by a classical palpation term.
 
 ![Schematic sagittal section of the suprascapular region at the level of Jianjing (肩井, GB21)](GB21_견정_횡단면_해부모식도.png)
 
 *Figure 4-1. Schematic sagittal (anteroposterior) section of the suprascapular region at the level of Jianjing (肩井) (right shoulder, viewed from lateral, not to scale). The solid black line is perpendicular insertion of 5–8 fen; the dashed red line is the forbidden direction (anterior-inferior → pleural cupula and lung apex, 《通考》). [Common Textbook] and [Kim Jaehyo] mark structures listed by only one textbook. Layer thicknesses and distances are arbitrary.*
 
 ```
-                【Jianjing (GB21) single-Target coordinates · FMA layer schematic (not to scale)】
+        【Jianjing (GB21) single-Target (Target 1≡2≡3) coordinates · FMA layer schematic (not to scale)】
 
    [X] C7 spinous process ●──────────── ◎ GB21 ────────────● most lateral point of acromion
-                                   (classical '肩上陷解中, 缺盆上, 大骨前' = modern midpoint, 《通考》)
+                                   (T1 classical '肩上陷解中, 缺盆上, 大骨前' ≡ T2 palpation '中指下陷中' ≡ T3 modern midpoint)
    [Z]
    Layer 1  Skin & subcutaneous tissue : Supraclavicular nerve (FMA:65414, both textbooks)
    Layer 2  Superficial muscle : Trapezius (FMA:9626, both textbooks) ─ Spinal accessory nerve (FMA:6720, Kim Jaehyo)
@@ -163,16 +175,39 @@ The 12 anatomical structures recorded for Jianjing (肩井, GB21) in the Korean 
    - Of these, however, the main afferent segments directly stimulated during needling converge strongly on **`C3, C4, C5`**, shared by the trapezius (C3, C4), levator scapulae (C3, C4, C5), supraclavicular nerve (C3, C4) and dorsal scapular nerve (C5).
    - These segments (C3–C5) lie in the same segmental range as the indications of local shoulder/upper-back pain (肩背痛) and neck stiffness (頸項強). Segmental agreement is only concordance at the anatomical level, not empirical demonstration of a reflex mechanism (Section 8 B-Check ② = 1).
 
-## 7. Spatial Discrepancy Branch Inference — Not Applicable (Branch Withdrawn)
+## 7. Spatial Discrepancy Branch Inference — Tri-Target Re-check: No Branching (Target 1≡2≡3)
 
-The earlier edition split the point into a "classical depression point" (Target 1) and a "WHO highest point" (Target 2) with Δ > 15 mm. This split does not hold, for the following reasons.
+### 7-1. Tri-Target Coordinates
+
+| Target | Definition | Classical basis | X · Y position (surface) | Insertion reference point |
+| :--- | :--- | :--- | :--- | :--- |
+| **Target 1** (classical text position) | Position designated by the earliest description | 《黃帝明堂經》 "在肩上陷解中，缺盆上大骨前" (《通考》); 《甲乙》 "在肩上陷者中" (《經絡通鑑》 Part 11, L984) | Top of the shoulder, above Quepen (缺盆, supraclavicular fossa) and in front of the 大骨 (spine of the scapula). '大骨前' alone does not fix a single point (《通考》 名實考) | — |
+| **Target 2** (palpation-based anatomical locus) | Actual anatomical space indicated by the palpation terms | 《聖惠》 "大骨前一寸半，以三指按之"; 《衛生寶鑑》 "以三指按取之，當其中指下陷中者是" (《證治通鑑》 Part 14); 《聖濟總錄》 "從膊骨罅向項筋上捼之，中指下即是"; 《補輯肘後方》 "兩肩小近頭凹處，指捏之" (《證治通鑑》 Part 16) | The surface hollow (陷中) felt under the middle finger when pressing with three fingers over the upper border of the trapezius (`FMA:9626`) | **Gap unclear — not marked** (only 陷中 · 凹處; no 分肉, 兩筋間 or 緣) |
+| **Target 3** (WHO standard location) | Modern standard location | WHO 2008 (B1-05); 《通考》 提要 "第7頸椎棘突與肩峰最外側點連線的中點" | Midpoint of the line joining the C7 spinous process and the most lateral point of the acromion | — |
+
+### 7-2. Pairwise Discrepancies (Δ, all estimated)
+
+| Pair | Δ (estimated) | Basis of the estimate | Decision (branch if Δ > 10 mm) |
+| :--- | :---: | :--- | :--- |
+| Target 1 – Target 2 | ≤ 10 mm (estimated) | The wording of Target 1 itself contains the palpation term '陷解中/陷者中', and Target 2 fixes the same hollow at one point with the '一寸半' and three-finger method of the 《聖惠》 | Merged |
+| Target 1 – Target 3 | ≤ 10 mm (estimated) | 《通考》 名實考: measuring the 《明堂》 wording with the 《聖惠》 '一寸半' and the 《聖濟總錄》 locating method ("實際折量") gives "相當於肩髃與第七頸椎連線的中點" | Merged |
+| Target 2 – Target 3 | ≤ 10 mm (estimated) | The same measured interpretation in the 《通考》 (three-finger method and palpation from the 膊骨罅 = midpoint). The 《肘後方》 '小近頭' (slightly towards the head) suggests a medial shift but gives no magnitude | Merged (a value near the boundary cannot be excluded; no measurement) |
+
+All three pairs have Δ ≤ 10 mm (estimated), so the point is described as **Target 1≡2≡3, a single Target** (Rank 5: when all three positions lie within 10 mm, there is no branching, but the coordinates and discrepancies are kept in the table). The Δ values above are estimates derived from the classical wording and the interpretation in the 《通考》; no study has measured the three positions at GB21.
+
+### 7-3. Reasons for Withdrawing the Earlier Branch (v2.7, retained)
+
+The earlier edition (v2.6) split the point into a "classical depression point" (old Target 1) and a "WHO highest point" (old Target 2) with Δ > 15 mm. This split does not hold, for the following reasons.
 
 1. The 《通考》 quotation used as the basis for the split, "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危", does not exist in the original text of the 《通考》 (《針灸腧穴通考》(下) PDF pp. 241–320 lines 1228–1390); it is a **fabricated quotation**.
 2. On the contrary, the 名實考 of the 《通考》 interprets the 《明堂》 '肩上陷解中, 缺盆上大骨前', measured with the '一寸半' of the 《聖惠方》 and the locating method of the 《聖濟總錄》, as "肩髃與第七頸椎連線的中點". The classical description and the modern location are the same point.
-3. The deviation in the earlier diagram itself was ±1 cm (≤ 15 mm), which does not meet the canonical Rank 5 branching requirement (Δ > 15 mm).
-4. Both raters judged Δ ≤ 15 mm (adjudication record 10-6).
+3. The earlier diagram placed the two points at 'posterior −1 cm' and 'anterior +1 cm' from a reference point. They are about 20 mm apart, so under the 2026-10-25 criterion (Δ > 10 mm) they would appear to meet the branching requirement. However, the 'classical depression point' rests on the fabricated quotation above and on the rhomboid error (Section 4) and does not match the classical palpation description (Target 2 in Section 7-1), so it is not used as a Tri-Target candidate.
+4. Both raters judged the difference between the classical and WHO locations to be small (adjudication record 10-6; Δ ≤ 15 mm under the criterion of the time; A: ±1 cm in the earlier diagram, B: the 《通考》 midpoint interpretation).
 
-The analysis therefore uses a **single Target (classical = modern standard location)**. For reference, the scores given separately to the 'classical location' (Rater A: S_orig 62.5 / S_clarity 50 / S_reflex 50 / S_safety 0; Rater B: 68.75 / 50 / 50 / 0) were not adopted as final values.
+### 7-4. Mapping of Earlier Labels and Decision
+
+- **Label mapping**: earlier (v2.6) T1 "classical depression point" → **discarded** (based on a fabricated quotation) / earlier (v2.6) T2 "WHO highest point" → **Target 3** / v2.7 "single Target (classical = WHO)" → **Target 1≡2≡3**. The position of Target 3 is the same as the position scored in v2.7, so the scores of Raters A and B are carried over unchanged.
+- **Decision**: as there is only one independent Target, there is nothing to decide by the Rank 7 Tri-Target ΔARI-Core rule. For reference, the scores given separately to the 'classical location' (Rater A: S_orig 62.5 / S_clarity 50 / S_reflex 50 / S_safety 0; Rater B: 68.75 / 50 / 50 / 0) were not adopted as final values.
 
 ## 8. Biomedical Reflex Mechanism Diagram & External Search Log
 
@@ -235,11 +270,11 @@ The earlier edition's $P_{single}$ values 0.88 / 0.92 / 0.75 and Levels A/B had 
 
 ## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-### 10-1. Sub-scores (Single Target: classical = WHO standard location)
+### 10-1. Sub-scores (Single Target: Target 1≡2≡3 — classical text = palpation-based locus = WHO standard location)
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| $S_{orig}$ | 68.75 | 75.0 | **71.875** | Earliest description ambiguous and supplemented later; later texts converge on the midpoint; alias confusion resolved; scribal error in the 《千金》 corrected | 《針灸腧穴通考》(下) PDF pp. 241–320 名實考 · 定位 · 辨誤; 《通鑑》 line 86166 |
+| $S_{orig}$ | 68.75 | 75.0 | **71.875** | Earliest description ambiguous and supplemented later; later texts converge on the midpoint; alias confusion resolved; scribal error in the 《千金》 corrected | 《針灸腧穴通考》(下) PDF pp. 241–320 名實考 · 定位 · 辨誤; 《通鑑》 line 86166; 《經絡通鑑》 Parts 11, 05, 18, 28, 35 (re-checked 2026-10-25) |
 | $S_{clarity}$ | 75 | 75 | **75.0** | GB21-specific measurements exist (1876, 1431, 1432, 1896), but the deep structures differ between the two textbooks → below 100 | Common Textbook row 325 (p.384), Kim Jaehyo row 325; papers.id 1876, 1431, 1432, 1896 |
 | $S_{reflex}$ | 50 | 50 | **50.0** | One human physiological study of GB21 itself (1874), no animal studies, B-Check 7/12 (< 8) → 75 not possible | papers.id 1874; 8-3 B-Check |
 | $S_{safety}$ → SI | 0 | 0 | **0** | Needling-depth DB *Dongui Bogam* `0` (contraindicated for needling) + directly above the lung apex | Needling-depth DB row 326; 《通考》 【操作】 · 名實考 |
@@ -251,7 +286,7 @@ The earlier edition's $P_{single}$ values 0.88 / 0.92 / 0.75 and Levels A/B had 
 | ① Clarity of earliest description | 50 | 50 | 50 | The 《明堂》 gives a depth (5 fen), but '大骨前' does not fix a single point, so it was supplemented by the 《聖惠》 and 《聖濟》 |
 | ② Agreement in later texts | 75 | 75 | 75 | 14 texts continue the 《明堂》 wording, 3 continue the '一寸半' of the 《聖惠》, and textbook editions 1–7 converge on the midpoint. Variants '略向前' and '前直乳中', and dispersion of depth (4 fen to 2.5 cun, plus contraindication) |
 | ③ Resolution of alias confusion | 75 | 75 | 75 | 膊井/髆井, 井 and 肩解 agree with the KJH DB (膊井, 膽肩井); confusion in the 《千金》 resolved |
-| ④ Collation in the 《通考》 | 75 | 100 | 87.5 | Correction '在 → 及' in the *Qianjin Yaofang* (《千金要方》). A deducted points because the bone-proportional measure of '一寸半' remains undetermined |
+| ④ Collation in the 《通考》 and 《經絡通鑑》 | 75 | 100 | 87.5 | Correction '在 → 及' in the *Qianjin Yaofang* (《千金要方》). A deducted points because the bone-proportional measure of '一寸半' remains undetermined. Re-checked against the 《經絡通鑑》 on 2026-10-25: no variant in the location wording (Part 11, L984); the only differences are attribution and intersection records (Parts 18, 28, 35) → no grounds to move the rubric level, **score unchanged** |
 
 ### 10-3. Gate Application
 
@@ -277,7 +312,7 @@ $$\text{ARI-Core} = 0.40\,S_{orig} + 0.35\,S_{clarity} + 0.25\,S_{reflex}$$
 
 ### 10-5. Branch Decision
 
-As there is a single Target, there is nothing to decide by ΔARI-Core (Section 7: branch withdrawn).
+The Tri-Target re-check found all pairwise Δ between Targets 1, 2 and 3 to be within 10 mm (estimated), giving **Target 1≡2≡3, a single Target**. As there is only one independent Target, there is nothing to decide by the Rank 7 Tri-Target ΔARI-Core rule (Section 7).
 
 ### 10-6. Adjudication Record
 
@@ -286,9 +321,10 @@ As there is a single Target, there is nothing to decide by ΔARI-Core (Section 7
 
 ### 10-7. Final Conclusion
 
-1. **⚠ Safety warning takes priority**: Jianjing (肩井) is a point at high risk of pneumothorax, lying directly above the pleural cupula and lung apex (《通考》: about 90 % of needling-induced pneumothoraces). Because of a text contraindicating needling (*Dongui Bogam* `0`, citing 'Tongren' (銅人)) and "孕婦禁針" (《類經圖翼》), the SI is 0. Since the classical and modern locations are the same point, the earlier edition's statement that "the classical location carries no lung-apex risk" is **withdrawn as incorrect**. Perpendicular insertion at the 8-fen upper limit (18.4 mm) may reach the pleura depending on body build, posture and respiration (1431, 1432), and calculating the vertical component of 45° oblique insertion alone cannot guarantee safety. Anterior-inferior insertion and excessively deep perpendicular insertion are to be avoided (《通考》).
+1. **⚠ Safety warning takes priority**: Jianjing (肩井) is a point at high risk of pneumothorax, lying directly above the pleural cupula and lung apex (《通考》: about 90 % of needling-induced pneumothoraces). Because of a text contraindicating needling (*Dongui Bogam* `0`, citing 'Tongren' (銅人)) and "孕婦禁針" (《類經圖翼》), the SI is 0. Since the classical text position, the palpation-based locus and the modern location are the same point (Target 1≡2≡3), the earlier edition's statement that "the classical location carries no lung-apex risk" is **withdrawn as incorrect**. Perpendicular insertion at the 8-fen upper limit (18.4 mm) may reach the pleura depending on body build, posture and respiration (1431, 1432), and calculating the vertical component of 45° oblique insertion alone cannot guarantee safety. Anterior-inferior insertion and excessively deep perpendicular insertion are to be avoided (《通考》).
 2. **Substrate**: the upper border of the trapezius and, beneath it, the supraclavicular nerve, dorsal scapular nerve and transverse cervical vessels are supported jointly by both textbooks and by GB21-specific measurements. The deep structures (supraspinatus and suprascapular nerve vs levator scapulae, splenius cervicis and accessory nerve) differ between the textbooks. With ARI-Core 67.5 ± 1.2 the point is **Grade C "Possible / hypothesis"** and is not regarded as a "confirmed substrate".
 3. **Mechanism**: B-Check 7/12, not concordant. The somatic afferent–spinal analgesic pathway for local shoulder/upper-back pain is described only as a **hypothesis**. There is no evidence for a reflex mechanism for difficult labour (難產) or mastitis (乳癰).
+4. **Collation with the four primary classics and Tri-Target (2026-10-25)**: the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) transmits the location wording of Jianjing exactly as in the 《甲乙》; the differences between texts are limited to meridian attribution (Hand-Yangming, Hand-Shaoyang, Foot-Shaoyang) and intersection records (Yang Linking Vessel, Foot-Yangming). The classical text position, the palpation-based locus (three-finger method, '中指下陷中') and the WHO location lie within pairwise Δ ≤ 10 mm (estimated), i.e. Target 1≡2≡3, and the ARI scores do not change.
 
 ---
 
@@ -347,3 +383,20 @@ Earlier v2.6 scores: classical location 96.0 / WHO location 94.0 — not compara
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
 | Textbook title | *Meridian and Acupoint Studies* (經絡經穴學) | (經絡腧穴學) | The Korean edition names the textbook *Gyeongnak Suhyeolhak* (經絡腧穴學; suhyeol = 腧穴); 經絡經穴學 was a mistranslation carried over from the earlier ST36 English edition |
+
+---
+
+## Framework 2.7.7 Revision History (2026-10-25)
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | Framework v2.7 (2026-10-04) | v2.7.7 (2026-10-25, four primary classics and Tri-Target) stated, with the branching result (Target 1≡2≡3). ARI notation unchanged | Framework 2.7.7 |
+| Section 1 title and table | "Collation of the Three Primary Classics"; no 《經絡通鑑》 | "Collation of the Four Primary Classics"; five rows from the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) added (Part 11 L984 *Jiayi Jing* entry; Part 05 L576 '肩脈' and '肩上' collateral-diagnosis site; Part 23 L262 · 266 Yang's gloss '柱骨上陷者 = 肩井'; Parts 18, 27, 28, 35 attribution and intersections; Part 37 L123 '肩脈' index) | 《中國針灸經絡通鑑》, relevant parts |
+| Section 1 《證治通鑑》 row | Pointer "refined edition lines 3726–3730", original given as '須臾', summary "worth investigating" | Pointer to the Foot-Shaoyang Gallbladder Meridian section (Part 09) L222–250 and Korean translation L288–332; original '須更' quoted as written; summary follows the Korean translation | 《證治通鑑》 rule: Chinese original as reference text, description from the Korean translation |
+| Section 1 《證治通鑑》 row (new) | Palpation descriptions not included | 《衛生寶鑑》 "以三指按取之，當其中指下陷中者是" (Part 14 L368) and 《補輯肘後方》 "兩肩小近頭凹處，指捏之" (Part 16 L348), original + Korean-translation rendering | Basis of Target 2 |
+| Section 2 | No strata for the excavated vessel texts, Yang's commentary or the 《銅人》 attribution | Pre-Qin–Han (excavated) '肩脈' reference row, Sui–Tang Yang's commentary row and Song 《銅人》 vol. 1 attribution row added | 《經絡通鑑》 Parts 05, 23, 28 |
+| Section 3 | No collation with the 《經絡通鑑》 | Paragraph on differentiation of scribal errors added: no variant in the location wording; differences are attribution and intersection records (meridian-theory attribution, not used for indication verdicts) | Rank 4 differentiation of scribal errors |
+| Section 4 | Only single-Target coordinates | Tri-Target coordinate summary; insertion reference point "gap unclear — not marked" (only 陷中 · 凹處); diagram title and labels changed to Target 1≡2≡3 | Rank 5 insertion-reference rule |
+| Section 7 | "Not Applicable (Branch Withdrawn)", Dual-Target (classical vs WHO), criterion Δ > 15 mm | Tri-Target coordinate table and pairwise Δ table (T1–T2, T1–T3, T2–T3 all ≤ 10 mm, estimated) → Target 1≡2≡3; mapping of earlier labels (old T1 discarded, old T2 → Target 3). States that the two points of the earlier diagram (about 20 mm apart) would exceed the 10 mm criterion but are excluded as candidates because they rest on a fabricated quotation | Rank 5 Tri-Target (branch criterion Δ > 10 mm) |
+| Sections 10-1, 10-2, 10-5, 10-7 | Single Target (classical = WHO); ④ "Collation in the 《通考》" | Target 1≡2≡3 notation; ④ "Collation in the 《通考》 and 《經絡通鑑》" re-checked — no grounds to change level, **score unchanged** (A 75 / B 100); conclusion item 4 added | Rubric 4.2 item ④ |
+| Scores | ARI v3.0 \| ARI-Core 67.5 ± 1.2 (C) \| SI 0 ⚠ \| sensitivity 65.6 (C) | **No change** | — |

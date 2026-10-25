@@ -1,8 +1,8 @@
 # [Acupoint Anatomical & Physiological Substrate Monograph] Baihui (百會, GV20)
 
-> **Framework**: v2.7 (revised 2026-10-04) · **ARI**: ARI v3.0 | ARI-Core 71.2 ± 2.5 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 68.8 (C, grade changes → weight-sensitive) · **Dual scoring**: completed by two independent raters
+> **Framework**: v2.7 (revised 2026-10-04; 2.7.7 applied) · **Tri-Target**: Target 1≡3 scored as a single Target; Target 2 (palpated depression '旋毛中，陷可容指') cannot be set — anatomical space and Δ not specifiable (Section 7) · **ARI**: ARI v3.0 | ARI-Core 71.2 ± 2.5 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 68.8 (C, grade changes → weight-sensitive) · **Dual scoring**: completed by two independent raters
 
-> **Source materials**: three primary classics (refined editions) · alias DB Acupoint Nomenclature & Alias Comparative Database · needling-depth DB Classical Needling Depth Database · textbook datasets Common Textbook Anatomical Structure Dataset, Kim Jaehyo Anatomical Structure Dataset · Layer A Integrated Biomedical Master DB v3.0 · Layer B Layer B Reference Registry
+> **Source materials**: four primary classics (refined editions: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》), *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)) · alias DB Acupoint Nomenclature & Alias Comparative Database · needling-depth DB Classical Needling Depth Database · textbook datasets Common Textbook Anatomical Structure Dataset, Kim Jaehyo Anatomical Structure Dataset · Layer A Integrated Biomedical Master DB v3.0 · Layer B Layer B Reference Registry
 > **First written**: 2026-07-31 (v2.6) · **Revised**: 2026-10-04 (v2.7; the earlier edition is kept in the internal archive) · **FMA supplement**: 2026-10-23 (the pre-supplement edition is kept in the internal archive)
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their nerve trunks, spinal segments and venous drainage chains are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
@@ -13,6 +13,7 @@
 
 - **Verdict: probable (grade B); the substrate is not established.** ARI-Core is 71.2 ± 2.5, and the interval (68.8–73.8) straddles the B/C boundary (70). Recomputed with equal weights it is 68.8 (C), so the report carries a **weight-sensitive** flag.
 - **Anatomical substrate (probable)**: the scalp over the sagittal suture on the parietal midline. Skin and dense subcutaneous connective tissue (terminals of the greater occipital nerve and of the trigeminal nerve V1; anastomosis of the occipital artery with the parietal branch of the superficial temporal artery) → epicranial aponeurosis (galea) → subaponeurotic loose connective tissue (traversed by the parietal emissary vein) → pericranium. The two textbooks agree on the core structures, but there is no Layer A paper with direct cadaveric or imaging measurement at the GV20 site.
+- **Location (Tri-Target)**: the classical text position (Target 1, *Huangdi Mingtang Jing* (《黃帝明堂經》) '前頂後一寸五分' = 5 cun above the anterior hairline) and the WHO standard location (Target 3, 5 cun) share the same bone-proportional definition and merge (Target 1≡3). The depression at the vertex indicated by the palpation phrase '旋毛中，陷可容指' (Target 2) cannot be set, because neither its anatomical space nor its coordinates can be specified (papers.id 1961 reports that the whorl and the vertex depression differ from the bone-proportional position, but the abstract gives no figures).
 - **Reflex mechanism: hypothesis.** B-Check 6/12, i.e. **not concordant**. Layer A consists mainly of animal electroacupuncture studies (mostly combined with other points); human studies are non-RCT and small.
 - **Safety (SI 75)**: the needling-depth DB has no 'Contraindicated for needling (禁鍼)' ('0') record. The classical depth of 2–3 fen (分) (4.6–6.9 mm) is about the full thickness of the scalp (about 5–7 mm), so perpendicular insertion may touch the pericranium (periosteum). The skull, however, shields the superior sagittal sinus and the brain. The classics also allow perpendicular insertion, '刺入三分' (*Huangdi Mingtang Jing* (《黃帝明堂經》)), so "perpendicular insertion absolutely forbidden" is inconsistent with the classics. Caution is nonetheless required when an infant's fontanelle (囟門) has not closed and in hydrocephalus (Shanghai 《針灸學》, as cited in the *Tongkao* (《通考》)).
 
@@ -25,7 +26,7 @@
 | Point code | GV20 (Governor Vessel (督脈)) | — |
 | Name | Baihui 百會 / 百会, Bǎihuì | — |
 | Earliest source | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 《針灸腧穴通考》(下) PDF pp. 401–480 L2387 "出《黃帝明堂經》" |
-| Meridian qi convergence (脈氣所發) | **督脈、足太陽之會** (crossing point of the Governor Vessel (督脈) and the foot Taiyang (足太陽)) (《黃帝明堂經》). The "crossing point of the hand and foot Shaoyang (手足少陽) and the foot Jueyin (足厥陰)" is a statement of later texts such as *Zhenjiu Juying* (《針灸聚英》) | 《針灸腧穴通考》(下) PDF pp. 401–480 【類屬】; `《穴位通鑑》(上卷) PDF pp. 241–320` 五.歸經與穴性, item 2 |
+| Meridian qi convergence (脈氣所發) | **督脈、足太陽之會** (crossing point of the Governor Vessel (督脈) and the foot Taiyang (足太陽)) (《黃帝明堂經》). The "crossing point of the hand and foot Shaoyang (手足少陽) and the foot Jueyin (足厥陰)" is a statement of later texts such as *Zhenjiu Juying* (《針灸聚英》). *Jingluo Tongjian*: the identification of '巔' in the foot Taiyang '上額交巔' and the foot Jueyin '與督脈會于巔' (《靈樞·經脈》) with Baihui is made only by commentaries from the Song onward (the 《銅人》 commentary, Ming–Qing commentators); the original text names no point | 《針灸腧穴通考》(下) PDF pp. 401–480 【類屬】; `《穴位通鑑》(上卷) PDF pp. 241–320` 五.歸經與穴性, item 2; [Jingluo Tongjian 24] L86·122·178·228, [Jingluo Tongjian 29] L65·113·152 |
 | Classical location | "在前頂後一寸五分，頂中央旋毛中，陷可容指" | 《針灸腧穴通考》(下) PDF pp. 401–480 L2433 |
 | Modern standard location | On the head, 5 cun directly above the midpoint of the anterior hairline (or the midpoint of the line joining the apices of the two auricles) | B1-05; Tongkao 【定位】 location and point-finding |
 | Classical needling | 刺入三分 (《黃帝明堂經》) / 針入二分 (*Tongren* (《銅人》)) / Dou's (竇氏) '沿皮向前·向後一寸' | 《針灸腧穴通考》(下) PDF pp. 401–480 L2592–2600 |
@@ -33,7 +34,7 @@
 
 ---
 
-## 1. Classical Literature Screening Table (Collation of the Three Primary Classics)
+## 1. Classical Literature Screening Table (Collation of the Four Primary Classics)
 
 | Classic | File & line | Original text | English collation |
 |:---|:---|:---|:---|
@@ -46,10 +47,16 @@
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2476–2479 | "主痎瘧。癲疾。耳鳴。痙。頂上痛，風頭重，目如脫，不可左右顧。熱病汗出而善嘔。小兒驚癇。（《黃帝明堂經》）… 百會、玉枕主卒起僵仆 … **按**：此乃《黃帝明堂經》'囟會'穴主治，孫思邈誤錄於此。" | Original indications in the *Mingtang Jing*. The 《千金》 indication 'sudden collapse on rising (卒起僵仆)' is a mistaken transfer of an indication of Xinhui (囟會) |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2501 | "不能因為本穴有治療'脫肛'作用，就類推出：凡是臟器下垂的病症皆可治療。因此 7 版教材中'胃下垂、腎下垂'二症暫不收錄。" | The effect on prolapse of the rectum (脫肛) must not be extrapolated to all visceral ptosis; gastroptosis (胃下垂) and nephroptosis (腎下垂) of the 7th edition are removed |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2592–2612 | "【操作】斜刺或平刺。1. 刺入三分，灸五壯。（《黃帝明堂經》）… 4. 針入二分，得氣即瀉 …（《銅人》）… 8. 可向前後或左右橫刺 0.5~1.5 寸 … 注意：針刺時如小兒囟門未合，以及腦積水思考[sic]，均宜謹慎。（上海《針灸學》）" | Oblique or transverse insertion. *Mingtang Jing* 3 fen, *Tongren* 2 fen. Shanghai 《針灸學》: caution with an unclosed infant fontanelle and in patients with hydrocephalus (the source's '思考' is read as a misprint for '患者', patients; the quotation is left as printed) |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《中國針灸證治通鑑》 PDF pp. 321–400 L1543 | "小兒脫肛瀉血，每廁臟腑撮痛不可忍者，灸百會一穴三壯，在頭中心陷者是也，炷如小麥大。"（《太平聖惠方·明堂》卷一百） | For prolapse of the rectum with bloody stools (脫肛瀉血) in children, 3 moxa cones at Baihui alone |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | same, L1559 | "治脫肛刺督脈百會一穴，在頂中央旋毛中可容豆，針入二分，可灸七壯，至七七壯，即止。"（《針經摘英集》） | For prolapse of the rectum, needle Baihui alone to 2 fen |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《中國針灸證治通鑑》 PDF pp. 161–240 L3126 | "治風頭痛方……又方：灸百會三、二七即瘥。" | Moxibustion at Baihui for wind headache (風頭痛) |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | same, L1106 | "尸厥暴死不省人事：百會、人中、啞門、臑會、合谷、中衝。" | Corpse-like reversal (尸厥) — multi-point prescription (derived from combination) |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《中國針灸證治通鑑》 PDF pp. 321–400 L1543 | "小兒脫肛瀉血，每廁臟腑撮痛不可忍者，灸百會一穴三壯，在頭中心陷者是也，炷如小麥大。"（《太平聖惠方·明堂》卷一百） | (per the Korean translation) When a child has rectal prolapse with bloody discharge (脫肛瀉血) and, at every stool, cramping pain of the viscera too severe to bear, burn 3 cones at Baihui alone; the site is the depression at the centre of the head — [Zhengzhi Tongjian 21, Korean] L1320 |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | same, L1559 | "治脫肛刺督脈百會一穴，在頂中央旋毛中可容豆，針入二分，可灸七壯，至七七壯，即止。"（《針經摘英集》） | (per the Korean translation) To treat rectal prolapse, needle Baihui of the Governor Vessel alone; it lies at the centre of the vertex in the hair whorl, where a bean would fit; insert 2 fen, and burn from 7 up to 7×7 cones — [Zhengzhi Tongjian 21, Korean] L1348 |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《中國針灸證治通鑑》 PDF pp. 161–240 L3126 | "治風頭痛方……又方：灸百會三、二七即瘥。" | (per the Korean translation) Prescription for wind headache (風頭痛) …… another prescription: burn three or twice-seven cones at Baihui and it heals — [Zhengzhi Tongjian 16, Korean] L931 |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | same, L1106 | "尸厥暴死不省人事：百會、人中、啞門、臑會、合谷、中衝。" | (per the Korean translation) Corpse-like reversal (尸厥) with sudden death-like collapse and loss of consciousness: Baihui, Renzhong (人中), Yamen (啞門), Naohui (臑會), Hegu (合谷), Zhongchong (中衝) — [Zhengzhi Tongjian 15, Korean] L188. Multi-point prescription (derived from combination) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | [Jingluo Tongjian 11] L878 | "百會，一名三陽五會，在前頂後一寸五分，頂中央旋毛中陷可容指，督脈、足太陽之會。刺入三分，灸三壯。" (cited among key points (要穴)) | Location, alias, crossing and depth agree with the *Xuewei Tongjian* and *Tongkao* citations |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | [Jingluo Tongjian 24] L86·122 | 《靈樞·經脈》 "膀胱足太陽之脈，起于目內眥，上額，交巔" / 《銅人》 commentary "巔，頂也。頂中央有旋毛可容豆，乃三陽五會也。" | The foot Taiyang crosses at the vertex (巔). The 《銅人》 commentary glosses the site as the depression in the hair whorl 'where a bean fits' = 三陽五會. Variant reading of 《明堂》 '可容指' (fits a finger) vs '可容豆' (fits a bean) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | [Jingluo Tongjian 29] L65·113·152 | 《靈樞·經脈》 foot Jueyin "……與督脈會于巔" / commentary "與督脈相會于巔頂之百會也" | Ming–Qing commentators identify with Baihui the vertex where, per the original, the foot Jueyin meets the Governor Vessel — the meridian basis of the later 'foot Jueyin crossing' (the point name appears only in commentaries) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | [Jingluo Tongjian 30] L218·415·689 | 《素問·骨空論》 Governor Vessel "上額交巔上，入絡腦" / 【按】 five accounts of the Governor Vessel course / 【按】 "《脈經》又載'大人癲，小兒癇'證，治取頂上（百會穴），《明堂》主治同……督脈當以主脊、腦病為主" | Collates the differing accounts of the Governor Vessel course; confirms that the 癲 · 癇 indication in 《脈經》 '頂上' and 《明堂》 is the same |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | [Jingluo Tongjian 12] L260·266·270 | 《靈樞·海論》 "腦為髓之海，其輸上在于其蓋，下在風府" / commentaries "其氣上輸腦蓋百會之穴" · "其輸穴在于其蓋，即督脈經之百會" | The original says only '其蓋' (the skull cap); Baihui is the commentators' identification |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | [Jingluo Tongjian 07] L300–306 | 《肘後方》 尸厥 "針百會，當鼻中入髮際五寸許，針入三分，補之……" / 【按】 "以十二經脈、十五絡脈循行皆不可解" | Source of the separate locating method '鼻中入髮際五寸'. Criticism that this corpse-like-reversal prescription cannot be explained by the courses of the meridians and collaterals (caution against meridian-theoretical over-extension) |
 
 > The *Tongkao* 'anatomical description' quotation in Sections 2.4 and 7.1 of the earlier edition ("帽狀腱膜 … 上矢狀竇 … convergence of 枕大神經 and 眶上神經") **was a fabricated quotation not found in the original text and has been deleted**. The *Tongkao* entry on GV20 (L2387–2612) contains no description of anatomical structures.
 
@@ -69,7 +76,7 @@
 | Later | Ming | *Zhenjiu Juying* (《針灸聚英》) · *Zhenjiu Dacheng* (《針灸大成》) | "一名巔上" (location term), "直兩耳尖", "手足三陽督脈之會", "百病皆治" | Secondary + over-extension | Tongkao 【定位】, item 9; Xuewei Tongjian L1542 |
 | Modern | 1957– | Nanjing 《針灸學》 · 4th–7th edition textbooks | Aliases of Japanese-textbook origin (嶺上 · 三陽 · 五會, etc.), 平刺 0.5–0.8 寸, 陰挺 · 不寐 · 胃下垂 | Modern interpretation | Tongkao L2408, L2498, 【操作】, item 7 |
 
-> The *Zhenjiu Dacheng* (《針灸大成》) "橫刺 0.5~1.0寸" (earlier edition, 2.2.1) cannot be confirmed in the three primary classics. The *Zhenjiu Dacheng* is attested only as inheriting the location wording (Tongkao 【定位】, item 1) and the aliases "三陽 · 五會" (Xuewei Tongjian L1654), so that row has been deleted.
+> The *Zhenjiu Dacheng* (《針灸大成》) "橫刺 0.5~1.0寸" (earlier edition, 2.2.1) cannot be confirmed in the four primary classics (including the 2026-10-25 *Jingluo Tongjian* re-check). The *Zhenjiu Dacheng* is attested only as inheriting the location wording (Tongkao 【定位】, item 1) and the aliases "三陽 · 五會" (Xuewei Tongjian L1654), so that row has been deleted.
 
 ---
 
@@ -87,13 +94,13 @@ GV20 aliases in the KJH DB (Acupoint Nomenclature & Alias Comparative Database, 
 | 涅丸宮 | 《中華針灸學》 (modern; Xuewei Tongjian L1396) | Alias from modern literature; "不可從" (Xuewei Tongjian L1426) | Excluded from anatomical analysis |
 | **維會** | Jia manuscript (甲抄本) of 《竇太師針經》 | **Mistaken entry** — originally an alias of **Qizhong (臍中, Shenque (神闕), CV8)** (Tongkao L2404–2414, Wu Kun's (吳崐) commentary) | **High.** The KJH DB also lists it as an alias of CV08 Shenque (row 11). The 尸厥 case of "越人針維會" in 《標幽賦》 must not be attributed to Baihui |
 | **鬼門** | Not confirmed as a GV20 alias in the classics. "囟上主之。一名鬼門" in *Qianjin Yaofang* (《千金要方》) vol. 14 refers to **Xinhui (囟會, GV22)** | **Suspected intrusion of another point's (GV22) alias** | **High.** The KJH DB also lists 鬼門 as an alias of GV22 Xinhui (row 49). Do not mix GV22 indications ('邪病鬼癲') into GV20 |
-| **天山** | Not found in a search of the three primary classics | **Source unverified** | On hold. To be kept separate (not used) |
+| **天山** | Not found in a search of the four primary classics (0 hits in the *Jingluo Tongjian* re-check) | **Source unverified** | On hold. To be kept separate (not used) |
 
 ---
 
 ## 4. 3D Spatial Coordinates & Layer 1–5 Structure Diagram
 
-### 4.1 Coordinates
+### 4.1 Coordinates (X and Z shared by the Tri-Target positions; Y in Section 7)
 
 | Axis | Value | Basis |
 |:---:|:---|:---|
@@ -102,6 +109,8 @@ GV20 aliases in the KJH DB (Acupoint Nomenclature & Alias Comparative Database, 
 | Z (depth) | Skin surface → pericranium about 5–7 mm (full thickness of the parietal scalp; approximate, not measured) | B1-01, B1-03 (normative anatomy); no GV20-specific measurement |
 
 > The earlier edition's absolute distance of "about 135 mm from the nasion" had no basis and has been deleted.
+>
+> **Insertion reference point**: the palpation phrases '陷可容指' (《明堂》), '可容豆' (《銅人》 commentary, 《針經摘英集》) and '頭中心陷者' (《聖惠》) point to a depression at the vertex, but it is not a 分肉 · 兩筋間 · 緣 type muscle or tendon gap, and the bony structure forming the depression is not specified in the four classics or Layer A → **gap unclear; no insertion reference point is marked** (Target 2 in Section 7).
 
 ### 4.2 Layers 1–5 (aligned with the canonical Layer definitions; depths are approximate cumulative values from the skin surface)
 
@@ -193,16 +202,26 @@ Raw values from the needling-depth DB (Classical Needling Depth Database, sheet 
 
 ---
 
-## 7. Spatial Displacement Branching Inference
+## 7. Spatial Displacement Branching Inference (Tri-Target)
 
-| Category | Location | Basis |
-|:---|:---|:---|
-| Classical location | Depression at the hair whorl (旋毛) — surface landmark takes precedence; with two whorls, the one closer to the midline | Tongkao L2462 |
-| Modern WHO location | 5 cun directly above the midpoint of the anterior hairline / midpoint of the line joining the auricular apices | B1-05 |
-| Δ_discrepancy | **Not measured.** The earlier edition's "0.5–1.0 cm" has no basis | — |
+| Target | Location | X | Y | Basis |
+|:---|:---|:---:|:---|:---|
+| **Target 1** Classical text position | *Huangdi Mingtang Jing* (《黃帝明堂經》) "在前頂後一寸五分" (bone-proportional component) — Qianding (前頂, 3.5 cun above the anterior hairline) + 1.5 cun | 0 | 5 cun directly above the midpoint of the anterior hairline | Tongkao L2433; [Jingluo Tongjian 11] L878 |
+| **Target 2** Palpation-based anatomical locus | "頂中央旋毛中，陷可容指" (《明堂》), "可容豆" (《銅人》 commentary, 《針經摘英集》), "在頭中心陷者" (《聖惠》) — the depression at the vertex palpated under the hair whorl. The *Tongkao* gives surface landmarks precedence (L2462) | 0 | **Not specifiable** — palpated individually; no figure for its distance from the 5-cun bone-proportional point | Tongkao L2462; [Jingluo Tongjian 24] L122; [Zhengzhi Tongjian 21, Korean] L1320·1348; papers.id 1961 |
+| **Target 3** WHO standard location | 5 cun directly above the midpoint of the anterior hairline / midpoint of the line joining the auricular apices | 0 | 5 cun directly above the midpoint of the anterior hairline | B1-05 |
 
-- papers.id **1961** (PMID 42343518, *Zhongguo Zhen Jiu* (《中國針灸》) 2026, a study of GV20 location based on surface morphology) reports that the projected position of the hair whorl and the distance from the midpoint of the auricular-apex line to the anterior hairline differ from the theoretical bone-proportional position (abstract snippet). It therefore cannot be assumed that the whorl position and the bone-proportional position coincide.
-- Verdict: following adjudication, scored as a **single Target (T1)**. Both positions lie in the same scalp layers on the parietal midline, so the layer composition does not change. However, whether Δ exceeds 15 mm has not been verified, so the branching decision must be revisited once the figures in 1961 have been checked (unresolved issue).
+**Pairwise displacement table**
+
+| Pair | Δ | Basis | Verdict (threshold Δ > 10 mm) |
+|:---|:---:|:---|:---|
+| Target 1 – Target 3 | **0 mm (identical by definition)** | Both specify 5 cun above the anterior hairline (same bone-proportional definition; not an estimate). However, 1961 reports that the WHO alternative landmark, the midpoint of the auricular-apex line, does not coincide with the 5-cun point (figures not published) | ≤ 10 mm → **merged (Target 1≡3)** |
+| Target 1 – Target 2 | **Not estimated** | papers.id 1961 (abstract): the projected distance of the hair whorl on the anterior–posterior hairline line is larger than the theoretical bone-proportional distance → whorl ≠ 5-cun point. No distance figure in the abstract | Cannot be decided |
+| Target 2 – Target 3 | **Not estimated** | 1961 (abstract): the parietal fossa–whorl distance and the auricular-apex-midpoint–whorl distance are not zero, the former being smaller. No figures | Cannot be decided |
+
+- **Target 2 cannot be set (reason)**: a palpation phrase exists, but (1) the anatomical substrate of the depression (its bony structure) is not specified in the four classics, the textbooks or Layer A, and (2) there is no figure on which to estimate its distance from the bone-proportional position (only the abstract of 1961 was checked). Following canonical Rank 5, **Target 1 is compared with Target 3**; the two merge with Δ 0 and do not branch.
+- Verdict: scored as a **single Target (Target 1≡3)**. The whorl/depression and the bone-proportional position lie in the same scalp layers on the parietal midline, so the layer composition does not change. However, if the full text of 1961 shows that Δ to Target 2 exceeds 10 mm, Target 2 must be split off and scored separately (unresolved issue; lowering the split threshold from 15 mm to 10 mm makes a split more likely).
+
+> **Mapping from the earlier labels**: former single Target (T1, 'classical location ≈ WHO 5 cun') → **Target 1≡3** (position unchanged → earlier dual scores carried over). The 'Target 2 (WHO bone-proportional position)' named as a separate scoring candidate in the earlier Section 10.5 is Target 3 in the new scheme and merges with Target 1. The remaining branching candidate is the new Target 2 (palpated depression at '旋毛中，陷可容指').
 
 ---
 
@@ -327,9 +346,11 @@ flowchart TB
 | Sudden collapse on rising (卒起僵仆) | *Qianjin Yaofang* (《千金要方》) vol. 30 → indication of 囟會 mistakenly transferred (Tongkao L2479) | **Deleted from GV20 indications** |
 | 維會 尸厥 case records (《標幽賦》 · 《通玄指要賦》) | Mistaken entry of an alias of 臍中 (神闕) (Tongkao L2414) | **Deleted from GV20 evidence** |
 | Gastroptosis (胃下垂) · nephroptosis (腎下垂) | 7th edition 《針灸學》 | The Tongkao says "暫不收錄" (L2501). Excluded |
-| (earlier edition) "通百脈", "督脈統諸陽", "nature of a fire point (火穴)" | Not found in a chunk search of the three primary classics | Source unverified — deleted |
+| (earlier edition) "通百脈", "督脈統諸陽", "nature of a fire point (火穴)" | Not found in a search of the four primary classics (0 hits in the 2026-10-25 *Jingluo Tongjian* re-check) | Source unverified — deleted |
 
 ### 9.2 Single-point (P_single) vs. Combination
+
+The English descriptions of *Zhengzhi Tongjian* (《證治通鑑》) entries follow the Korean translation of the same sections (Korean translations of sections 15, 16 and 21), and quotations are from the Chinese original (reference text). As with the meridian-theoretical extensions in 9.1 ("百脈之所會", "百病皆治"), the *Jingluo Tongjian* holds that the 《肘後》 corpse-like-reversal prescription cannot be explained by meridian courses ([Jingluo Tongjian 07] L306).
 
 | Indication | Single-point record in the classics | Combination record | Adjudication |
 |:---|:---|:---|:---|
@@ -347,7 +368,7 @@ flowchart TB
 
 ## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-**Target T1**: classical location (*Huangdi Mingtang Jing* (《黃帝明堂經》) "在前頂後一寸五分，頂中央旋毛中，陷可容指") ≈ WHO 5 cun directly above the midpoint of the anterior hairline. Single Target (no branching; Δ not measured, see Section 7).
+**Target 1≡3** (formerly T1): classical text position (*Huangdi Mingtang Jing* (《黃帝明堂經》) "在前頂後一寸五分") = WHO 5 cun directly above the midpoint of the anterior hairline (Δ 0, same bone-proportional definition). Single Target (no branching). Target 2 (palpated depression at '旋毛中，陷可容指') cannot be set (Section 7).
 
 ### 10.1 Sub-scores
 
@@ -365,7 +386,7 @@ flowchart TB
 | ① Clarity of earliest description | 100 | 100 | The *Huangdi Mingtang Jing* (《黃帝明堂經》) specifies both location and depth ("刺入三分") |
 | ② Agreement in later texts | 100 | 100 | In the *Tongkao* (《通考》) 【定位】, item 1, 14 texts inherit the same wording. 肘後 · 外臺 · 千金 · 聚英 · 金鑑 also give the same site → ≥ 80% |
 | ③ Resolution of alias confusion | 50 | 75 | The classics resolve 維會 (mistaken entry for 神闕), 巔上 (location term), 嶺上 (scribal error) and 泥丸宮 (Daoist term). The earlier report classified 維會 as a confirmed alias, misattributed the sources of 天滿 and 巔上, and omitted KJH's 天山, 涅丸宮 and 鬼門 (corrected in Section 3 in this revision) |
-| ④ Collation of transcription errors in the *Tongkao* (《通考》) | 50 | 75 | The *Tongkao* corrects 《千金》 '卒起僵仆' (mistaken transfer from 囟會), the duplicate entry of 維會, and the 7th-edition 胃下垂 · 腎下垂. The earlier edition's *Tongkao* quotations were fabricated (deleted and corrected in this revision) |
+| ④ Correction of transcription errors by collation with the *Tongkao* (《通考》) and *Jingluo Tongjian* (《經絡通鑑》) | 50 | 75 | The *Tongkao* corrects 《千金》 '卒起僵仆' (mistaken transfer from 囟會), the duplicate entry of 維會, and the 7th-edition 胃下垂 · 腎下垂. The earlier edition's *Tongkao* quotations were fabricated (deleted and corrected in this revision). *Jingluo Tongjian* re-check (2026-10-25): the variant '可容指'/'可容豆' ([Jingluo Tongjian 24] L122), the later crossing extension in which commentators identify the foot Jueyin '會于巔' with Baihui ([Jingluo Tongjian 29] L113), and 《肘後》 '入髮際五寸' ([Jingluo Tongjian 07] L304) confirmed — none is new evidence for correcting a transcription error, so the levels of A and B are **unchanged** |
 | Mean | 75.0 | 87.5 | |
 
 ### 10.3 Gates Applied
@@ -390,7 +411,7 @@ flowchart TB
 
 ### 10.5 Branch Decision
 
-There is one Target, so the ΔARI-Core decision does not apply. If the location issue raised by 1961 confirms Δ > 15 mm, Target 2 (the WHO bone-proportional position) must be scored separately.
+There is one independent Target (Target 1≡3), so the Tri-Target ΔARI-Core decision does not apply. Target 2 (palpated depression at '旋毛中，陷可容指') cannot be set at present; if the figures in the full text of 1961 confirm Δ > 10 mm between Target 2 and Target 1≡3, Target 2 must be split off and scored with the 4.2 rubric (with a 'preliminary' flag if single-scored). No score changed in the 2026-10-25 Framework 2.7.7 re-check.
 
 ### 10.6 Adjudication Record
 
@@ -405,7 +426,7 @@ There is one Target, so the ΔARI-Core decision does not apply. If the location 
 ### 10.7 Final Conclusion
 
 1. The anatomical substrate of GV20 is at the **probable (B)** level. In the scalp over the sagittal suture on the parietal midline, the core consists of the skin and dense subcutaneous layer (greater occipital nerve C2 + trigeminal V1/V3 terminals; anastomosis of the occipital artery with the parietal branch of the superficial temporal artery) and the epicranial aponeurosis (galea), beneath which lie the subaponeurotic loose connective tissue (parietal emissary vein) and the pericranium. There is no point-specific measurement, so it is not "established".
-2. The classical location is the surface landmark of the **depression at the hair whorl (旋毛中，陷可容指)**, and the *Tongkao* (《通考》) advises giving surface landmarks precedence over bone-proportional measurement. papers.id 1961 suggests a difference between the whorl and the 5-cun bone-proportional position, but numerical verification remains outstanding.
+2. The classical text gives both a bone-proportional expression (前頂後一寸五分 = 5 cun, Target 1) and a palpation expression (旋毛中，陷可容指, Target 2). Target 1 coincides with the WHO location (Target 3) and merges with it (Target 1≡3), and the *Tongkao* (《通考》) advises giving the surface landmark (Target 2) precedence over bone-proportional measurement. papers.id 1961 suggests a difference between the whorl/vertex depression and the 5-cun bone-proportional position, but without figures Target 2 is left as 'cannot be set'; if Δ > 10 mm is confirmed, it must be split off.
 3. The reflex mechanism is a **hypothesis** (B-Check 6/12, not concordant). Animal electroacupuncture studies point in the same direction as the stroke, cognitive and mental-state indications, but many combine other points, and evidence of human translation is at the non-RCT level.
 4. Safety: SI 75. The classical depth (2–3 fen, 4.6–6.9 mm) permits perpendicular insertion, and the skull shields the deep structures. Transverse insertion and 沿皮刺 are options that avoid contact with the periosteum. Caution is required with an unclosed infant fontanelle and with hydrocephalus.
 5. The original classical indications are headache (頭痛) · vertex pain (頂上痛), epilepsy/madness (癲疾) · infantile convulsions (小兒驚癇), and malaria (痎瘧) · tinnitus (耳鳴) · convulsive spasm (痙); prolapse of the rectum (脫肛) also has single-point treatment records. Insomnia (不寐), uterine prolapse (陰挺) and gastroptosis (胃下垂) are indications added by modern textbooks.
@@ -515,3 +536,20 @@ Generated by FMA 5.1.0 acupoint profile query (GV20; 2026-10-23).
 | :--- | :--- | :--- | :--- |
 | Section 1, 《針灸腧穴通考》 needling row | "以及腦積水思考" (no misprint marker) | Quotation kept + `[sic]`; the interpretation column reads '思考' as a misprint for '患者' | 《針灸腧穴通考》 下 督脈穴-2 L1035 — the printed edition itself reads "思考", so the quotation is not altered. From context (listed alongside an unclosed infant fontanelle) the intended word is '患者' |
 | Textbook title | *Meridian and Acupoint Studies* (經絡經穴學) | (經絡腧穴學) | The Korean edition names the textbook *Gyeongnak Suhyeolhak* (經絡腧穴學; suhyeol = 腧穴); 經絡經穴學 was a mistranslation carried over from the earlier ST36 English edition |
+
+---
+
+## 2026-10-25 Framework 2.7.7 Revision History
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header and Section 0 | Three primary classics; single Target (T1) | Four primary classics (*Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) added); Tri-Target summary (Target 1≡3 single-scored, Target 2 cannot be set) | Canon Section 1, Rank 5 (2.7.7) |
+| Basic information, qi convergence | Only the later crossing statements | *Jingluo Tongjian*: the identification of '巔' in the foot Taiyang '交巔' and foot Jueyin '會于巔' with Baihui is made at the commentary stage | [Jingluo Tongjian 24] L86·122·178·228; [Jingluo Tongjian 29] L65·113·152 |
+| Section 1 | Three-classics table | Title changed to four classics. Six *Jingluo Tongjian* rows added (key-point citation L878, foot Taiyang 交巔 and the 《銅人》 commentary '可容豆', foot Jueyin 會于巔, Governor Vessel course and 【按】 癲癇 = 頂上, sea of marrow '其蓋', 《肘後》 '入髮際五寸' and the criticism that it cannot be explained by meridian courses) | [Jingluo Tongjian 11] L878; 24 L86·122; 29 L65·113·152; 30 L218·415·689; 12 L260·266·270; 07 L300–306 |
+| Section 1, *Zhengzhi Tongjian* | English collation in the report's own wording | Described from the Korean translation of the same sections (Chinese original kept as reference text). No discrepancy between original and translation | [Zhengzhi Tongjian 21, Korean] L1320·1348; 16 L931; 15 L188 |
+| Sections 2, 3 and 9.1 | "Not found in the three primary classics" (橫刺, 天山, 通百脈 etc.) | Four-classics re-check (0 hits in the *Jingluo Tongjian*) applied; [Jingluo Tongjian 07] L304 pointer added to the 《肘後》 row | Full search of the *Jingluo Tongjian* |
+| Section 4.1 | — | Insertion reference point: the palpated depression is not a 分肉 · 兩筋間 · 緣 type gap and its bony structure is unspecified → gap unclear, not marked | Canon Rank 5, insertion reference point |
+| Section 7 | Classical vs WHO, Δ not measured, "whether Δ exceeds 15 mm" unverified | Tri-Target table and pairwise table: T1–T3 0 mm (identical by definition, merged), T1–T2 and T2–T3 not estimated → Target 2 cannot be set (reason), single Target 1≡3. 10 mm threshold applied. Mapping: former T1 → Target 1≡3; former 'Target 2 (WHO bone-proportional)' candidate → Target 3 | Canon Rank 5 Tri-Target (Δ > 10 mm); papers.id 1961 abstract (checked in PubMed; no figures) |
+| Section 10 | Target T1; ④ 'collation of transcription errors in the *Tongkao*'; 10.5 'Δ > 15 mm' | Target 1≡3; ④ re-checked as 'collation with the *Tongkao* and *Jingluo Tongjian*' — A 50 and B 75 unchanged; 10.5 restated under Tri-Target and the 10 mm threshold | Canon Rank 7 |
+| ARI | ARI-Core 71.2 ± 2.5 (B, weight-sensitive), SI 75 | **Scores unchanged** | Position unchanged → earlier dual scores carried over |
+| Unverifiable | — | Figures in the full text of papers.id 1961 for the whorl/vertex-depression distance from the bone-proportional position (Δ for Target 2) | — |

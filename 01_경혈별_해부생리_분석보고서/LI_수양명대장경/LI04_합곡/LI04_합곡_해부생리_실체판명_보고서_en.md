@@ -1,41 +1,47 @@
 # [Acupoint Anatomical & Physiological Substrate Monograph] Hegu (合谷, LI04)
 
-> **Framework**: v2.7 · **ARI**: two Targets reported side by side (neither prevails, ΔARI-Core 7.5 < 10)
-> - **T1 Classical** (depression just distal to the junction of the bases of the 1st and 2nd metacarpals (第1·2掌骨底), '動脈應手'): `ARI v3.0 | ARI-Core 61.25 ± 1.25 (C) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 59.4 (C, grade unchanged)`
-> - **T2 Modern national standard** (midpoint of the radial side of the 2nd metacarpal (第2掌骨)): `ARI v3.0 | ARI-Core 68.75 ± 1.25 (C) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 69.8 (C, grade unchanged)`
+> **Framework**: v2.7 (2.7.7 revision applied) · **ARI**: Tri-Target split `Target 1≡2 vs Target 3` — two independent Targets reported side by side (neither prevails, ΔARI-Core 7.5 < 10)
+> - **Target 1≡2 Classical text position · palpation-based anatomical locus** (formerly T1; depression just distal to the junction of the bases of the 1st and 2nd metacarpals (第1·2掌骨底), '動脈應手'): `ARI v3.0 | ARI-Core 61.25 ± 1.25 (C) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 59.4 (C, grade unchanged)`
+> - **Target 3 WHO standard location / modern national standard** (formerly T2; midpoint of the radial side of the 2nd metacarpal (第2掌骨)): `ARI v3.0 | ARI-Core 68.75 ± 1.25 (C) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 69.8 (C, grade unchanged)`
 > - **Dual scoring**: two independent rounds (raters A and B); 3 discrepancies of 15 points or more reconciled · **⚠ Many texts contraindicate needling in pregnancy** (flag kept separate from the SI, Section 5)
 
-> **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
+> **Four Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) · *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》)
 > **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 (of the 118 papers in the LI4 inverted index, only the **19 papers in which LI4 stimulation or observation was confirmed from the full text or abstract** are used for the verdict — Section 8 ①)
 > **Layer B Reference Registry**: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 > **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry). Details in Appendix A
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
-**Source abbreviations** (refined editions of the three classics)
+**Source abbreviations** (refined editions of the four classics)
 - [通考] 《針灸腧穴通考》 上 手陽明大腸經穴-1 — 合谷 L657–1005
 - [通鑑] 《中國針灸穴位通鑑》 手陽明大腸經(1) — 合谷 L962–1400
-- [證治04] 《中國針灸證治通鑑》 第壹編 第七篇 手太陰肺經 手陽明大腸經 足陽明胃經 — 合谷 L312–342
+- [證治04] 《中國針灸證治通鑑》 第壹編 第七篇 手太陰肺經 手陽明大腸經 足陽明胃經 — 合谷 L312–342 (Chinese original, reference text) / [證治04 Korean] Korean translation of the same section — Hapgok L415–460 (basis for analysis and description)
+- [經絡01] 《中國針灸經絡通鑑》 第壹編 第一篇 "經脈"概念的形成與經絡學說的建立 — pulse site (脈口) and "meridian point" (經脈穴) of 手陽明 L235–295·452·573·733·1121
+- [經絡18] 《中國針灸經絡通鑑》 第叁編 第二篇 手陽明經脈、經別、絡脈和經筋 — meridian course and commentaries L90–217, 《靈樞·本輸》 L273
 
 ---
 
-## 1. Classical Literature Screening Table (Three Primary Classics Excerpts)
+## 1. Classical Literature Screening Table (Four Primary Classics Excerpts)
 
 | Classic | Original excerpt (source & line) | English summary | Remarks |
 | :--- | :--- | :--- | :--- |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "大腸上合手陽明……過于合谷，合谷，在大指岐骨之間，為原。"(《靈樞·本輸》) — [通考] L681 | Between the diverging bones of the thumb and index finger; Yuan-Source point (原穴) | Earliest statement of the location (range type) |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "過于合谷，一名虎口。在手大指岐骨間，手陽明脈之所過也，為原。"(《黃帝明堂經》) / "刺入三分，留六呼，灸三壯。"(《黃帝明堂經》) — [通考] L683·975 | Alias Hukou (虎口); needle insertion 3 fen | Earliest statement of depth (Han) |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "宋以前文獻所載之古穴名'手陽明'，亦多指此穴……因為本穴（古代定位）及陽溪穴處皆可觸及脈動，古代並可用作診脈處" / "現代針灸教材本穴定於第2掌骨橈側的中點處，位置較古代文獻描述偏遠端和尺側" — [通考] L677 | The ancient Hegu was a palpable pulse site (the pulse-taking site of 手陽明); the modern location has moved distally and ulnarward from it | **Basis for the split** (Section 7) |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "本穴位置應靠近第1、2掌骨底交叉的骨縫中。此處也正是橈動脈的手背觸診點……從1964年2版《針灸學講義》此穴的定位開始向遠端橈側偏移……此處已不能觸及動脈搏動" — [通考] L775 | Classical location = junction of the bases of the 1st and 2nd metacarpals (dorsal palpation point of the radial artery); moved distally from 1964 | T1 location |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "在手大指次指兩岐骨間動脈"(《竇太師針經》) / "兩指岐骨，兩指合縫懸五分，動脈應手"(《醫經會元》) / "手大指、次指間後一寸五分陷者中"(《太平聖惠方·明堂》) — [通考] L743·747·757 | Arterial pulsation; 1.5 cun proximal, between the forked bones | T1 markers |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "本穴位置應靠近第1、2掌骨底交叉的骨縫中。此處也正是橈動脈的手背觸診點……從1964年2版《針灸學講義》此穴的定位開始向遠端橈側偏移……此處已不能觸及動脈搏動" — [通考] L775 | Classical location = junction of the bases of the 1st and 2nd metacarpals (dorsal palpation point of the radial artery); moved distally from 1964 | Target 1≡2 location |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "在手大指次指兩岐骨間動脈"(《竇太師針經》) / "兩指岐骨，兩指合縫懸五分，動脈應手"(《醫經會元》) / "手大指、次指間後一寸五分陷者中"(《太平聖惠方·明堂》) — [通考] L743·747·757 | Arterial pulsation; 1.5 cun proximal, between the forked bones | Target 2 (palpation-based locus) markers |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 1959 Shanghai First Medical College (上海第一醫學院): "第二掌骨橈側緣近側1/3與遠側2/3交界處。進針方向：針尖偏向第二掌骨方向，與掌背側面成80度角……其療效勝於舊法" — [通考] L701 | Point at the junction of the proximal third; needle at 80° toward the 2nd metacarpal | Intermediate locating method |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "今附若婦人妊娠不可刺之，損胎氣。"(《銅人》) / "孕娠禁針此穴。一云：可瀉不可補，補即下胎。"(《針方六集》) / "直刺0.5~1寸，針刺時手呈半握拳狀。孕婦不宜針。"(7th ed. 《針灸學》) — [通考] L979·987·1001 | Needling contraindicated in pregnancy (reinforcing causes miscarriage) | Section 5, safety |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "治手指拘攣……透向勞宮或後溪，進針2~3寸" (Shanghai 《針灸學》) — [通考] L1005 | Through-needling (透刺) toward the palm, 2–3 cun | Deep-layer risk (Section 5) |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "在大指歧骨之間"(《靈樞》) / "在手大指次指歧骨間陷中"(《銅人》 etc.) / "在手大指次指歧骨縫中，動脈應手"(《玉龍經》) / "在第一、第二掌骨接合部之上端"(《中國針灸學》) / "在第一與第二掌骨之間正中點"(《新編針灸學》) — [通鑑] L1000·1012·1022·1060·1058 | Song–Ming texts give '岐骨間陷中' and 'artery'; in the modern period 'upper end of the junction' and 'midpoint' coexist | Lineages organised in Section 7 |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "針一寸至一寸五分……勿傷及指背靜脈。全身反應很大，防止發生休克……孕婦絕對禁針。"(《新編針灸學》) — [通鑑] L1310 | Avoid injuring the dorsal hand veins; strong systemic reaction (needle syncope, 暈針); absolutely contraindicated in pregnancy | Basis for SI |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | Local anatomy "在第一掌骨和第二掌骨之骨間，第二掌骨之橈側，第一背側骨間肌中，有來自橈動脈的指背動脈，分佈著橈神經淺枝" / "皮膚，皮下組織，第一骨間背側肌……橈神經淺支，正中神經肌支，掌背動脈" — [通鑑] L1322·1326 | First dorsal interosseous, superficial branch of radial nerve, dorsal metacarpal artery | Cross-checked in Sections 4 and 6 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《明堂經》 "主鼻鼽衄，熱病汗不出，瞶目，目痛瞑，頭痛，齲齒痛。痎瘧。寒熱。痱，痿，臂腕不用，唇吻不收。狂易。喑不能言，口噤不開，聾，耳中不通。喉痹。面腫。" — [證治04] L318 | Nasal congestion and epistaxis (鼻鼽衄), febrile disease without sweating, eye disorders, headache, toothache, lockjaw (口噤), throat obstruction (喉痹), facial swelling (面腫) | Basis for $P_{single}$ (Section 9) |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《千金翼方》 "產後脈絕，胎上搶心。喉痹，心煩。煩熱頭痛。" / 《聖濟總錄》 "風，失音不語。" — [證治04] L334·342 | Postpartum disorders, loss of voice | Section 9 |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《明堂經》 "主鼻鼽衄，熱病汗不出，瞶目，目痛瞑，頭痛，齲齒痛。痎瘧。寒熱。痱，痿，臂腕不用，唇吻不收。狂易。喑不能言，口噤不開，聾，耳中不通。喉痹。面腫。" — [證治04] L318 | (per the Korean translation) Runny nose and nosebleed (鼻鼽衄), febrile disease without sweating, dim vision and eyes too painful to open, headache, toothache from caries, malaria (痎瘧), chills and fever, paralysis and atrophy (痱·痿) with loss of use of arm and wrist, lips that will not close, mania (狂易), hoarseness with inability to speak and clenched jaw (口噤), deafness with blocked ears, throat obstruction (喉痹), facial swelling (面腫) — [證治04 Korean] L423 | Basis for $P_{single}$ (Section 9). The original quoted in the Korean-translation section writes '瞶目' as '䁾目' (the Chinese original, as reference text, is followed) |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《千金翼方》 "產後脈絕，胎上搶心。喉痹，心煩。煩熱頭痛。" / 《聖濟總錄》 "風，失音不語。" — [證治04] L334·342 | (per the Korean translation) Postpartum loss of pulse, fetus rushing up against the heart, throat obstruction, vexation of the heart (心煩), vexing heat with headache / wind (風) with loss of voice and inability to speak — [證治04 Korean] L445·457 | Section 9 |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | 《靈樞·經脈》 "大腸手陽明之脈，起于大指次指之端，循指上廉，出合谷兩骨之間，上入兩筋之中" / Yang Shangshan (楊上善) commentary "掌骨及大指本節，表兩骨之間也" / commentary "合谷，在大指次指後岐骨間" / "合谷者，本經穴也，俗名虎口" — [經絡18] L90·110·217·162 | The Hand-Yangming meridian emerges between the two bones at Hegu and ascends to Yangxi (陽溪, between the two tendons). The Hegu site is described only as a range, 'between the forked bones (岐骨)' | Meridian course; no new information on point location |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | Wang Bing's (王冰) commentary "手陽明脈：在手大指次指歧骨間，合谷之分，動應于手也（與賈公彥注同）" / Table 1-1, pulse site of 手陽明 "合谷至陽溪處" / "'手陽明'相當于合谷、陽溪穴之間的脈動處" — [經絡01] L235·452·733 | The Hand-Yangming pulse site (脈口) is the pulsation between Hegu and Yangxi; the ancient meridian point '手陽明' derived from this pulse site | **Basis for Target 2 (palpation-based anatomical locus)**: '動應於手' is the radial artery pulsation (Sections 4 and 7) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | "這裏的'陽明之脈'是指手足腕踝部陽明脈診脈部位——陽明脈口，而不是我們今天所理解的……整條手足陽明經脈" / "對于這類針方中的'手陽明'，以往人們都想當然地理解為……整個手陽明經脈，以至于……皆不能正確詮釋" — [經絡01] L253·287 | In ancient needling prescriptions '手陽明' means the wrist pulse site (Hegu to Yangxi), not the whole meridian; later readings as the whole meridian are mistaken. The 'root–branch' (本–標) link was inferred because the wrist pulse site and the facial Daying (大迎) pulse diagnosed and treated the same disorders (toothache, facial swelling) — not obtained by dissection (L287) | Rank 4: criticism of over-extension of meridian theory. The origin of the toothache and facial-swelling indications is pulse-site diagnosis (Section 9) |
+| *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) | 《千金翼方》 "'手陽明'穴在'大指奇後'（相當于'合谷'穴）" / Table 1-1②, 《聖惠方》 手陽明 "虎口曲紋頭" — [經絡01] L1121·573 | The ancient point name '手陽明' = Hegu | Supports the alias verdict in Section 3 |
 
 ---
 
@@ -43,15 +49,16 @@
 
 | Era / stratum | Classical source | Textual description | Primary / secondary |
 | :--- | :--- | :--- | :--- |
-| Pre-Qin & Han | 《靈樞·本輸》 · 《根結》 | 大指岐骨之間, 為原; 手陽明 "溜于合谷" | Primary (location, point category) — [通考] L681·787 |
+| Pre-Qin & Han | 《靈樞·本輸》 · 《根結》 | 大指岐骨之間, 為原; 手陽明 "溜于合谷" | Primary (location, point category) — [通考] L681·787, [經絡18] L273 |
+| Pre-Qin & Han | 《靈樞·經脈》 | "出合谷兩骨之間，上入兩筋之中" | Meridian course (not a point location) — [經絡18] L90 |
 | Han | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 一名虎口, 手大指岐骨間; 刺入三分 留六呼 灸三壯; list of indications | Primary (alias, depth, indications) — [通考] L683·975·793 |
-| Han | Wang Bing's (王冰) commentary on 《素問·三部九候論》 | "中部地，手陽明也……在手大指次指岐骨間，合谷之分，動應于手也" | Hegu as a pulse-taking site (脈口) — [通考] L775 |
+| Han | Wang Bing's (王冰) commentary on 《素問·三部九候論》 | "中部地，手陽明也……在手大指次指岐骨間，合谷之分，動應于手也" | Hegu as a pulse-taking site (脈口). The *Jingluo Tongjian* holds that Wang Bing's and Jia Gongyan's (賈公彥) commentaries derive from the same medical classic — [通考] L775, [經絡01] L235·253 |
 | Wei–Jin & Tang | 《甲乙經》 · 《千金》 · 《外臺》 | "在手大指次指間"; "虎口兩骨間陷中"; moxibustion at 虎口 for 緊唇 | Quotes 《明堂》; record of 虎口 — [通考] L721·735·691 |
 | Song | *Taiping Shenghui Fang* (《太平聖惠方》) · 《銅人》 | "手陽明二穴，在手大指虎口曲紋頭"; "妊娠不可刺之，損胎氣" | The ancient point name '手陽明' coexists; **first explicit contraindication in pregnancy** — [通考] L737·979 |
 | Yuan & Ming | 《竇太師針經》 · 《玉龍經》 | "兩岐骨間動脈", "動脈應手"; 孕婦 切不可針灸 | Emphasis on the arterial marker — [通考] L743–747·985 |
 | Joseon | Heo Im (許任), *Chimgu Gyeongheombang* (《鍼灸經驗方》, 1644) | "俗……妄從食指偏取陷中，不察岐骨間陷中" | Criticism of the distal mislocation current at the time — [通考] L697 |
-| Modern (pre-1964) | Cheng Dan'an (承淡安), 《中國針灸學》 (1955) · 1957 Nanjing 《針灸學》 · 1st-edition lecture notes | 第一、第二掌骨接合部之上端 / 岐骨前凹陷 | Continues the classical location (T1) — [通鑑] L1060·1062 |
-| Contemporary | 2nd-edition lecture notes (1964) to 7th edition · national standards 1990/2006 | 第2掌骨橈側的中點 | **Location shifted (T2)**; national standard 2006 deleted '第1、2掌骨間' — [通考] L667·767·773 |
+| Modern (pre-1964) | Cheng Dan'an (承淡安), 《中國針灸學》 (1955) · 1957 Nanjing 《針灸學》 · 1st-edition lecture notes | 第一、第二掌骨接合部之上端 / 岐骨前凹陷 | Continues the classical location (Target 1≡2) — [通鑑] L1060·1062 |
+| Contemporary | 2nd-edition lecture notes (1964) to 7th edition · national standards 1990/2006 | 第2掌骨橈側的中點 | **Location shifted (Target 3)**; national standard 2006 deleted '第1、2掌骨間' — [通考] L667·767·773 |
 
 ---
 
@@ -59,28 +66,33 @@
 
 | Alias | Source | KJH DB | Verdict |
 | :--- | :--- | :--- | :--- |
-| 虎口 | 《黃帝明堂經》 "一名虎口"; 《千金》 "緊唇，灸虎口" | Listed | Same point. Later texts wrongly transferred this record to the extra point '虎口' — [通考] L683·693 |
+| 虎口 | 《黃帝明堂經》 "一名虎口"; 《千金》 "緊唇，灸虎口" | Listed | Same point. Later texts wrongly transferred this record to the extra point '虎口' — [通考] L683·693. Commentaries collected in the *Jingluo Tongjian* also give "俗名虎口" — [經絡18] L162·203 |
 | 合骨 | 《瓊瑤神書》 · 《經絡匯編》 | Listed | '谷' and '骨' used interchangeably (phonetic loan, 假借) — [通考] L677, [通鑑] L974 |
 | 含口 | 1957 Nanjing 《針灸學》 | Listed | Followed by few texts — [通鑑] L976·1014 |
-| 手陽明 (ancient point name) | 《太平聖惠方》 vol. 55 | — | Before the Song, '手陽明' mostly meant Hegu (the pulse site). To be distinguished from the meridian name — [通考] L677 |
-| 上合谷 (鼻痛點) | 《針灸經外奇穴圖譜(續集)》 | — | Same site as the ancient Hegu (T1), mistaken for a separate point — [通考] L705·709 |
-| 虎邊 | Same book | — | Site of the modern Hegu (T2); only the needling method differs — [通考] L707·709 |
+| 手陽明 (ancient point name) | 《太平聖惠方》 vol. 55 | — | Before the Song, '手陽明' mostly meant Hegu (the pulse site). To be distinguished from the meridian name — [通考] L677. The *Jingluo Tongjian* likewise identifies the meridian point '手陽明' with the pulsation between Hegu and Yangxi, and 《千金翼方》 '大指奇後' with Hegu — [經絡01] L733·1121 |
+| 上合谷 (鼻痛點) | 《針灸經外奇穴圖譜(續集)》 | — | Same site as the ancient Hegu (Target 1≡2), mistaken for a separate point — [通考] L705·709 |
+| 虎邊 | Same book | — | Site of the modern Hegu (Target 3); only the needling method differs — [通考] L707·709 |
 | 中魁 · 河口 | Alias column of the KJH DB | Listed | **Risk of confusion**: 中魁 shares its name with an extra point on the middle finger. The classical source of 河口 could not be found in this cross-check (unverifiable) |
 
 KJH DB (Acupoint Nomenclature & Alias Comparative Database, sheet `경혈 종합 목록` (comprehensive acupoint list), row 70: 67, LI04, `합곡` (Hapgok), 合谷, "合骨, 含口, 虎口, 中魁, 河口").
 
 ---
 
-## 4. 3D Spatial Coordinates & Layer 1–5 Stratification Diagram
+## 4. 3D Spatial Coordinates (including the Insertion Reference Point) & Layer 1–5 Stratification Diagram
 
-The two Targets are described separately (split in Section 7).
+The three Tri-Target positions are placed in the same coordinate system (X = mediolateral between the 1st and 2nd metacarpals seen from the dorsum, Y = long axis from wrist to fingers, Z = depth from the skin surface). Pairwise displacements and the split are decided in Section 7.
 
-- **T1 Classical**: X — between the 1st and 2nd metacarpals, on the side of the 2nd metacarpal. Y — the depression just distal to the junction where the bases of the two metacarpals meet, at the radial artery pulsation ("動脈應手", [通考] L775). Z — 3 fen (6.9 mm, 《明堂》).
-- **T2 Modern**: X — radial border of the 2nd metacarpal. Y — midpoint of the 2nd metacarpal (national standard 2006). Z — textbook 5–10 fen (11.5–23 mm).
-- **No millimetre boundaries are given**: the LI4 cadaveric study (papers.id 2292) reported the areal distribution of structures but did not measure depth, and no ultrasound depth study was found.
+| Target | Definition | X | Y | Z | Basis |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Target 1** Classical text position | Earliest description 《靈樞·本輸》 "在大指岐骨之間" (《明堂》 "手大指岐骨間") | Between the 1st and 2nd metacarpals | Between the 'forked bones (岐骨)' where the two metacarpals diverge — range type, centred just distal to the junction of the metacarpal bases | 3 fen (6.9 mm, 《明堂》) | [通考] L681·683, [經絡18] L273 |
+| **Target 2** Palpation-based anatomical locus (★ insertion reference point) | Palpation phrases "動應于手" (Wang Bing's commentary), "陷中" (《銅人》), "歧骨縫中，動脈應手" (《玉龍經》) → where the radial artery passes from the dorsum into the palm | Centre of the bony gap (骨隙) between the bases of the 1st and 2nd metacarpals, on the 2nd-metacarpal side | Depression just distal to the junction of the two metacarpal bases (dorsal palpation point of the radial artery) | 3 fen (6.9 mm) — same layer as the artery | [通考] L775, [經絡01] L235·733, B1-01, papers.id 2054 |
+| **Target 3** WHO standard location | WHO 2008 · national standard 2006 "第2掌骨橈側的中點" | Radial border of the 2nd metacarpal | Midpoint of the 2nd metacarpal | Textbook 5–10 fen (11.5–23 mm) | [通考] L667·773 |
+
+- **Bounding structures of the insertion reference point (Target 2)**: ulnar side = base of the 2nd metacarpal; radial side = base of the 1st metacarpal; the gap between them is the cleft between the two heads of the first dorsal interosseous (FMA:37424), through which the radial artery (FMA:22730) passes into the palm (B1-01). Proximally and radially, the extensor pollicis longus tendon separates this segment from the anatomical snuffbox (papers.id 2054; this tendon's FMA ID is not in this report's FMA tables). This is not a 分肉 or 兩筋間 type gap but a **bony gap plus an inter-head muscular cleft**, and the reference point is where the radial artery pulsation is felt. Because the pulse itself is the insertion point, the condition in Section 5 — push the pulse aside — applies.
+- **No millimetre boundaries are given**: the LI4 cadaveric study (papers.id 2292) reported the areal distribution of structures but did not measure depth, and no ultrasound depth study was found. The X and Y values above are anatomical landmarks; no measured millimetre coordinates exist.
 
 ```
-T2 (modern, midpoint of radial side of 2nd metacarpal)
+Target 3 (WHO/modern, midpoint of radial side of 2nd metacarpal)
 [Layer 1 Skin/subcutis]   Dorsal venous network of hand · dorsal metacarpal a./v. (shared),
                           dorsal branches of superficial radial n. (textbook 'dorsal digital nerve')
         │
@@ -92,17 +104,17 @@ T2 (modern, midpoint of radial side of 2nd metacarpal)
         │
 [Layer 5]                 Palmar subcutis and skin (no deep organs)
 
-T1 (classical, just distal to the junction of the bases of the 1st and 2nd metacarpals)
+Target 1≡2 (classical/palpation, just distal to the junction of the bases of the 1st and 2nd metacarpals)
 [Layer 1]   Dorsal venous network of hand, superficial branch of radial n.
 [Layer 2]   Proximal part of first dorsal interosseous — ★ the radial artery passes between its two heads into the palm (B1-01, papers.id 2054)
 [Layer 3-4] Oblique head of adductor pollicis · origin of the deep palmar arch
 ```
 
-![Anatomical substrate schematic of Hegu (合谷, LI04) — two Targets](LI04_합곡_횡단면_해부모식도.png)
+![Anatomical substrate schematic of Hegu (合谷, LI04) — Target 1≡2 vs Target 3](LI04_합곡_횡단면_해부모식도.png)
 
-*Figure 4-1. (A) Positions of T1 (classical) and T2 (modern) and the 1959 Shanghai (上海) point, seen on the dorsum of the right hand. (B) Transverse section of the hand at the level of T2 (viewed from the fingertips proximally, not to scale). A perpendicular needle passes through the first dorsal interosseous to reach adductor pollicis; the deep branch of the ulnar nerve and the deep palmar arch lie further palmar. Layer thicknesses and distances are arbitrary because no measured values exist.*
+*Figure 4-1. (A) Positions of T1 (classical) and T2 (modern) and the 1959 Shanghai (上海) point, seen on the dorsum of the right hand (in the figure, T1 = Target 1≡2 and T2 = Target 3). (B) Transverse section of the hand at the level of Target 3 (viewed from the fingertips proximally, not to scale). A perpendicular needle passes through the first dorsal interosseous to reach adductor pollicis; the deep branch of the ulnar nerve and the deep palmar arch lie further palmar. Layer thicknesses and distances are arbitrary because no measured values exist.*
 
-**FMA substrate cross-check by layer (T2)** — structure names from the two textbooks; IDs and relations from FMA 5.1.0
+**FMA substrate cross-check by layer (Target 3)** — structure names from the two textbooks; IDs and relations from FMA 5.1.0
 
 | Layer | Structure | FMA | FMA compartment / relation | Innervation / trunk (FMA) | Spinal segment (FMA) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -125,7 +137,7 @@ T1 (classical, just distal to the junction of the bases of the 1st and 2nd metac
 
 Source: Classical Needling Depth Database, sheet 1, row 69 (N0 = 67), supplemented by [通考] 【操作】 and [通鑑] section 7 (七).
 
-| Text | Fen (分) | Depth (× 2.3 mm) | Layer reached (T2, estimated) | Remarks |
+| Text | Fen (分) | Depth (× 2.3 mm) | Layer reached (Target 3, estimated) | Remarks |
 | :--- | :---: | :---: | :--- | :--- |
 | *Huangdi Mingtang Jing* (《黃帝明堂經》, ed. Huang Longxiang) | 3 | 6.9 mm | 1–2 | "刺入三分，留六呼" ([通考] L975) |
 | *Zhenjiu Jiayi Jing* (《針灸甲乙經》) | 3 | 6.9 mm | 1–2 | |
@@ -141,8 +153,8 @@ Source: Classical Needling Depth Database, sheet 1, row 69 (N0 = 67), supplement
 | (Reference) Shanghai 《針灸學》, through-needling (透刺) | 20–30 | 46–69 mm (oblique length) | 3–5 | Toward 勞宮 or 後溪 ([通考] L1005) |
 
 - The needling-depth DB contains no 'Contraindicated for needling (禁鍼)' (`'0'`) and no 'not described' (`'blank'`) entry. However, the **contraindication in pregnancy** appears consistently from 《銅人》 (Song) through 《針灸大成》 to modern Chinese and Korean textbooks ([通考] L979–1003, [通鑑] L1264–1314). It is a functional contraindication — 'reinforcing causes miscarriage' (補即墮胎) — rather than anatomical injury, so a **⚠ pregnancy-contraindication flag** is attached separately from the SI rubric levels (which are based on depth and structures).
-- **T2 safety**: the standard 5–10 fen stays within the first dorsal interosseous (Layer 2) to adductor pollicis (Layer 3). Branches of the deep ulnar nerve run inside the first dorsal interosseous (papers.id 2292), so perpendicular insertion may contact the nerve. **The texts specify angle and posture restrictions**, such as the 1959 Shanghai "針尖偏向第二掌骨方向……成80度角" ([通考] L701) and the 7th edition's "手呈半握拳狀". Through-needling of 2–3 cun reaches the deep palmar layer (Layer 4: deep palmar arch, deep branch of ulnar nerve).
-- **T1 safety**: the classical point is the radial artery pulsation itself ("動脈應手"). At this level the radial artery passes between the two heads of the first dorsal interosseous into the palm (B1-01). Even at 3 fen (6.9 mm) the needle is in the same layer as the artery, so the pulse must be pushed aside.
+- **Target 3 safety**: the standard 5–10 fen stays within the first dorsal interosseous (Layer 2) to adductor pollicis (Layer 3). Branches of the deep ulnar nerve run inside the first dorsal interosseous (papers.id 2292), so perpendicular insertion may contact the nerve. **The texts specify angle and posture restrictions**, such as the 1959 Shanghai "針尖偏向第二掌骨方向……成80度角" ([通考] L701) and the 7th edition's "手呈半握拳狀". Through-needling of 2–3 cun reaches the deep palmar layer (Layer 4: deep palmar arch, deep branch of ulnar nerve).
+- **Target 1≡2 safety**: the classical point (insertion reference point) is the radial artery pulsation itself ("動脈應手"). At this level the radial artery passes between the two heads of the first dorsal interosseous into the palm (B1-01). Even at 3 fen (6.9 mm) the needle is in the same layer as the artery, so the pulse must be pushed aside.
 - Needle syncope (暈針): 《新編針灸學》 states "全身反應很大，防止發生休克……最好臥位" ([通鑑] L1310). Watch for vasovagal reactions.
 
 ---
@@ -157,41 +169,52 @@ Source: Classical Needling Depth Database, sheet 1, row 69 (N0 = 67), supplement
 
 **Verdict**: the two textbooks agree on the superficial layer (dorsal venous network of hand, dorsal branches of the superficial radial nerve), the first dorsal interosseous and the radialis indicis artery, and all of these are confirmed as standard FMA entities. The differences lie in the deep layer.
 1. **Deep branch of ulnar nerve**: listed only in the Kim Jaehyo textbook. A cadaveric study (papers.id 2292, 25 hands) confirmed that this nerve lies within the belly of the first dorsal interosseous, supporting Kim Jaehyo's entry.
-2. **Head of adductor pollicis**: the Korean (transverse head) and English (oblique head) of the Kim Jaehyo textbook differ. At the level of the midpoint of the 2nd metacarpal (T2), the transverse head occupies the metacarpal-base side (arising from the shaft of the 3rd metacarpal) and the oblique head lies further proximally (toward the carpal bones) (B1-01), so one may interpret the transverse head as closer to T2 and the oblique head as closer to T1 (not measured).
+2. **Head of adductor pollicis**: the Korean (transverse head) and English (oblique head) of the Kim Jaehyo textbook differ. At the level of the midpoint of the 2nd metacarpal (Target 3), the transverse head occupies the metacarpal-base side (arising from the shaft of the 3rd metacarpal) and the oblique head lies further proximally (toward the carpal bones) (B1-01), so one may interpret the transverse head as closer to Target 3 and the oblique head as closer to Target 1≡2 (not measured).
 
-Neither difference is a conflict; both are **differences in the scope and level of description**. This is the basis for the T2 $S_{clarity}$ of 75 (reconciled). Neither textbook describes T1 (the classical location).
+Neither difference is a conflict; both are **differences in the scope and level of description**. This is the basis for the Target 3 $S_{clarity}$ of 75 (reconciled). Neither textbook describes Target 1≡2 (the classical/palpation location).
 
 ---
 
-## 7. Spatial Displacement Divergence Inference
+## 7. Spatial Displacement Divergence Inference (Tri-Target)
 
-| Lineage | Evidence | Location |
-| :--- | :--- | :--- |
-| ① Classical (T1) | 《靈樞》 "大指岐骨之間"; Song–Ming "岐骨間陷中", 竇太師 "動脈應手", 《聖惠》 "後一寸五分"; Cheng Dan'an (承淡安, 1955) · 1957 Nanjing · 1st-edition lecture notes | Depression just distal to the junction of the bases of the 1st and 2nd metacarpals (dorsal palpation point of the radial artery) — [通考] L775 |
-| ② Intermediate | 1959 Shanghai First Medical College (上海第一醫學院) | Proximal third of the radial border of the 2nd metacarpal — [通考] L701 |
-| ③ Modern (T2) | 2nd-edition lecture notes (1964) to 7th edition, national standards 1990/2006 | Midpoint of the radial side of the 2nd metacarpal — [通考] L667·773 |
+| Lineage | Evidence | Location | Tri-Target |
+| :--- | :--- | :--- | :--- |
+| ① Classical text | 《靈樞》 "大指岐骨之間"; 《明堂》 "手大指岐骨間" | Between the diverging metacarpals (range type) | **Target 1** |
+| ①' Classical palpation phrases | Wang Bing's commentary "動應于手"; Song–Ming "岐骨間陷中", 竇太師 "動脈應手", 《玉龍經》 "歧骨縫中，動脈應手", 《聖惠》 "後一寸五分"; Cheng Dan'an (承淡安, 1955) · 1957 Nanjing · 1st-edition lecture notes | Depression just distal to the junction of the bases of the 1st and 2nd metacarpals (dorsal palpation point of the radial artery) — [通考] L775, [經絡01] L235·733 | **Target 2** (insertion reference point, Section 4) |
+| ② Intermediate | 1959 Shanghai First Medical College (上海第一醫學院) | Proximal third of the radial border of the 2nd metacarpal — [通考] L701 | (not a Target; reference only) |
+| ③ Modern | 2nd-edition lecture notes (1964) to 7th edition, national standards 1990/2006, WHO 2008 | Midpoint of the radial side of the 2nd metacarpal — [通考] L667·773 | **Target 3** |
 
-The *Tongkao* (《通考》) points out that ③ lies "偏遠端和尺側" relative to ① and that "此處已不能觸及動脈搏動", and judges the pre-1964 location to fit the classics better ([通考] L677·775). Heo Im's (許任) *Chimgu Gyeongheombang* (《鍼灸經驗方》) also criticised point location shifted distally ([通考] L697).
+The *Tongkao* (《通考》) points out that ③ lies "偏遠端和尺側" relative to ① and that "此處已不能觸及動脈搏動", and judges the pre-1964 location to fit the classics better ([通考] L677·775). Heo Im's (許任) *Chimgu Gyeongheombang* (《鍼灸經驗方》) also criticised point location shifted distally ([通考] L697). The *Jingluo Tongjian* (《經絡通鑑》) regards the ancient '手陽明' pulse site (meridian point) as "合谷、陽溪穴之間的脈動處" ([經絡01] L733) and classifies Wang Bing's "動應于手" as a pulse-taking site ([經絡01] L235·253). The palpation phrases therefore point to a real anatomical structure, the radial artery pulsation.
 
-**Δ estimate**: ① lies near the junction of the metacarpal bases and ③ at the midpoint of the 2nd metacarpal, so the distance between them is close to half the length of the 2nd metacarpal, **estimated at about 20–30 mm** (assuming an adult 2nd metacarpal length of about 6–7 cm, a general anatomical value from B1-01; **not measured**). ② lies in between (about 1 cm proximal to ③, estimated).
-→ **$\Delta_{discrepancy} > 15\text{mm}$ (estimated) → Target split: T1 (classical) vs T2 (modern)**. Each is dual-scored in Section 10.
+**Pairwise displacement table (all estimated, not measured)**
+
+| Pair | Δ (estimated) | Basis of estimate | Verdict (threshold Δ > 10 mm) |
+| :--- | :---: | :--- | :--- |
+| Target 1 – Target 2 | **within about 5 mm** | 《靈樞》 '岐骨之間' denotes where the two metacarpals diverge, and the *Tongkao* identifies that classical site as "第1、2掌骨底交叉的骨縫中…橈動脈的手背觸診點" ([通考] L775), i.e. the same place. The only difference is the width of the range-type description | ≤ 10 mm → **merged (Target 1≡2)** |
+| Target 1 – Target 3 | **about 20–30 mm** | ① lies near the junction of the metacarpal bases and ③ at the midpoint of the 2nd metacarpal, so the distance is close to half the length of the 2nd metacarpal (adult about 6–7 cm, a general anatomical value assumed from B1-01) | > 10 mm → **split** |
+| Target 2 – Target 3 | **about 20–30 mm** | Same basis. *Tongkao*: "此處已不能觸及動脈搏動" ([通考] L775) — the radial pulse cannot be felt at Target 3 | > 10 mm → **split** |
+
+② (1959 Shanghai) lies about 1 cm proximal to ③ (estimated) and does not meet the Tri-Target definitions (earliest text, palpation phrase, WHO), so it is kept for reference only.
+→ **Tri-Target verdict: `Target 1≡2 vs Target 3`** (two independent Targets). Each is dual-scored in Section 10.
+
+> **Mapping from the earlier labels**: former T1 (classical) → **Target 1≡2**; former T2 (modern national standard) → **Target 3**. Neither position has changed, so the existing dual scores (raters A and B) are carried over unchanged. Target 2 is not a new independent Target, because former T1 was already defined as the '動脈應手' palpation point.
 
 ---
 
 ## 8. Biomedical Reflex Mechanism Diagram & External Search Log
 
-**Mechanism summary (T2)**: Hegu is one of the points most used in research on acupuncture mechanisms. The confirmed evidence runs along three lines.
+**Mechanism summary (Target 3)**: Hegu is one of the points most used in research on acupuncture mechanisms. The confirmed evidence runs along three lines.
 1. **Human central responses**: LI4 stimulation alone decreased fMRI signals in limbic and subcortical structures (papers.id 48, B4-01), activated the hypothalamus (PET, 19) and changed default mode network connectivity (1674, B4-02).
 2. **Autonomic**: in humans, a transient increase in muscle sympathetic nerve activity (LI4 + LI11, 60), an increase in both sympathetic and parasympathetic activity (LI4 alone, 25), and parasympathetic predominance with reduced heart rate (LI4 + LU6, 17). In anaesthetised rats, sympathetic excitation and inhibition of gastric vagal activity (24). **The direction differs between studies** → the autonomic effect is restricted to a hypothesis.
 3. **Facial connection**: in mice, tracer injected at LI4 travels to the C6 and C7 dorsal root ganglia, the spinal dorsal horn → thalamic VP and trigeminal ganglion → Sp5C → VP pathways converge in the thalamus, and LI4 electroacupuncture improved trigeminal neuralgia behaviour (2297). In humans, one study observed a hand–face connection via the palmomental reflex (2295). This supports, at the level of thalamic convergence, the **hypothesis** of a neural pathway for the classical saying "面口合谷收" (face and mouth are governed by Hegu) (animal).
 
-B-Check 9/12 meets the concordance threshold (≥ 8/12) (T2). The conflicting autonomic directions are, however, kept as 'hypothesis' and the facial pathway as 'animal only'.
+B-Check 9/12 meets the concordance threshold (≥ 8/12) (Target 3). The conflicting autonomic directions are, however, kept as 'hypothesis' and the facial pathway as 'animal only'.
 
-**FMA pinning of the peripheral afferent pathway (T2)**
+**FMA pinning of the peripheral afferent pathway (Target 3)**
 
 ```mermaid
 flowchart TB
-  P(("LI04 T2<br/>needling site")) -.subcutaneous.-> SRN["Superficial branch of radial nerve<br/>FMA:292885"]
+  P(("LI04 Target 3<br/>needling site")) -.subcutaneous.-> SRN["Superficial branch of radial nerve<br/>FMA:292885"]
   P -.subcutaneous.-> DVN["Dorsal venous network of hand FMA:67977"]
   P --> FDI["First dorsal interosseous FMA:37424<br/>segments T1 (primary), C8"]
   P --> ADP["Adductor pollicis FMA:37380<br/>segments C8, T1"]
@@ -207,11 +230,11 @@ flowchart TB
   VP -. "hypothesis: 面口 indications" .-> FACE["Face & mouth (trigeminal territory)"]
 ```
 
-*Figure 8-1. Peripheral afferent pathway of LI04 (T2) drawn from FMA 5.1.0 relations. Solid lines are relations recorded in FMA; dashed lines are links absent from FMA, taken from animal experiments (papers.id 2297) or interpretation.*
+*Figure 8-1. Peripheral afferent pathway of LI04 (Target 3) drawn from FMA 5.1.0 relations. Solid lines are relations recorded in FMA; dashed lines are links absent from FMA, taken from animal experiments (papers.id 2297) or interpretation.*
 
 ### ① Layer A Papers (confirmed LI4 stimulation or observation)
 
-Of the 118 papers in the inverted index, only **papers in which use of LI4 (合谷/Hegu/Hoku/Li 4) was confirmed from the full text or abstract** are listed. All studies that specified the location used the modern location (T2, first dorsal interosseous space).
+Of the 118 papers in the inverted index, only **papers in which use of LI4 (合谷/Hegu/Hoku/Li 4) was confirmed from the full text or abstract** are listed. All studies that specified the location used the modern WHO location (Target 3, first dorsal interosseous space).
 
 | papers.id | Year | Journal | Content | PMID / DOI | Design |
 | :---: | :---: | :--- | :--- | :--- | :--- |
@@ -233,14 +256,14 @@ Of the 118 papers in the inverted index, only **papers in which use of LI4 (合�
 | 1013 | 2009 | Korean Journal of Meridian & Acupoint | Carrageenan arthritis rats: high-frequency warm needling at LI4 → oedema, weight bearing, spinal NO and nNOS ↓ | — / — | Animal (rat) |
 | 972 | 2007 | Journal of the Korean Society of Meridian & Acupoint | TNBS colitis rats: anti-inflammatory effect of Gujin pharmacopuncture at Hegu | — / — | Animal (rat), pharmacopuncture |
 | 978 | 2007 | Journal of the Korean Society of Meridian & Acupoint | TNBS colitis rats: Artemisiae Argyi Folium (艾葉) pharmacopuncture at Hegu | — / — | Animal (rat), pharmacopuncture |
-| 2054 | 2022 | Front Cardiovasc Med | Review of ultrasound access to the distal radial artery: the distal radial artery is divided by the extensor pollicis longus tendon into the anatomical snuffbox segment and the 'Hegu point' segment | — / 10.3389/fcvm.2022.1019053 | Review (anatomical basis for T1) |
+| 2054 | 2022 | Front Cardiovasc Med | Review of ultrasound access to the distal radial artery: the distal radial artery is divided by the extensor pollicis longus tendon into the anatomical snuffbox segment and the 'Hegu point' segment | — / 10.3389/fcvm.2022.1019053 | Review (anatomical basis for Target 1≡2) |
 
 - Excluded: 1341 (ultrasound depth study of GB21 and ST36 — not LI4), 46 and 54 (mention LI4 only as a control or use other points), Korean skin-temperature studies 713, 957 and 1025 (LI4 according to the title, but results not extracted from the original → unverifiable). Literature and prescription analyses (341, 373, 382, 1845, 2300, 2307 etc.) and case reports (1899, 2265, 2286, 2287) were not used for the mechanism verdict.
 - All cited records have status = active. No duplicate, missing or superseded records.
 
 ### ② B-Check Scoring Table
 
-**T2 (modern location)**
+**Target 3 (WHO location, formerly T2)**
 
 | Item | Content | Rater A | Rater B | Final | Reference ID | papers.id | Rationale |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
@@ -252,7 +275,7 @@ Of the 118 papers in the inverted index, only **papers in which use of LI4 (合�
 | ⑥ | Evidence of human translation | 2 | 1 | **2** (reconciled) | B4-01, B4-02, B4-04, B4-05 | 48, 19, 1674, 25, 2294 | Four or more human physiological studies of LI4 **alone** (fMRI, PET, HRV, blood flow). B gave 1, citing counter-evidence on point specificity (B4-04, 05). Reconciled: study 19 showed a hypothalamic difference against a nearby non-acupoint control, so 2 |
 | **Total** | | 10 | 8 | **9 / 12** | | | **Verdict: concordant (≥ 8/12, ① and ② ≥ 1)** · Flags: autonomic effect is a **hypothesis** (conflicting directions); facial pathway is **animal only** |
 
-**T1 (classical location)**: ① 1 (not in textbooks; B1 and 2054 confirm only the position of the radial artery) ② 1 ③ 1 ④ 1 (no study specifying T1 as the location — LI4 studies applied by analogy) ⑤ 1 ⑥ 1 → **6/12, not concordant** (A and B agree). No reflex mechanism is described for T1.
+**Target 1≡2 (classical text and palpation location, formerly T1)**: ① 1 (not in textbooks; B1 and 2054 confirm only the position of the radial artery) ② 1 ③ 1 ④ 1 (no study specifying Target 1≡2 as the location — LI4 studies applied by analogy) ⑤ 1 ⑥ 1 → **6/12, not concordant** (A and B agree). No reflex mechanism is described for Target 1≡2.
 
 ### ③ External Search Log (sync_log, Rank 6 run on 2026-10-23 — revised script with acupoint-mention check)
 
@@ -269,15 +292,17 @@ Of the 118 papers in the inverted index, only **papers in which use of LI4 (合�
 
 ## 9. Indication Separation Table
 
+The English descriptions of the *Zhengzhi Tongjian* (《證治通鑑》) indications follow the Korean translation of the same section ([證治04 Korean] L415–460), while the textual-basis column quotes the Chinese original (reference text). The *Jingluo Tongjian* holds that the '手陽明' indications in ancient prescriptions (toothache, deafness) must be read as stimulation of the wrist pulse site, not extended to the whole meridian ([經絡01] L253·287); this is applied to the interpretation of the origin of the toothache and facial-swelling single-point indications.
+
 | Category | Indication | Textual basis |
 | :--- | :--- | :--- |
-| $P_{single}$ (single point) | Febrile disease without sweating (熱病無汗), chills and fever (寒熱), malaria (瘧) | 《明堂經》 "熱病汗不出……痎瘧。寒熱" ([證治04] L318) |
-| $P_{single}$ | Epistaxis (鼻衄), eye disorders, headache, toothache | 《明堂經》 "鼻鼽衄……瞶目，目痛瞑，頭痛，齲齒痛" ([證治04] L318); "眼痛則合谷以推之" (《通玄指要賦》, [通考] L859) |
-| $P_{single}$ | Lockjaw (口噤), inability to close the lips (唇吻不收), loss of voice (失音) | 《明堂經》 "唇吻不收……喑不能言，口噤不開" ([證治04] L318); "風，失音不語" (《聖濟總錄》, [證治04] L342) |
-| $P_{single}$ | Deafness (耳聾), throat obstruction (喉痹), facial swelling (面腫) | 《明堂經》 "聾，耳中不通。喉痹。面腫" ([證治04] L318); "聾而痛者，取手陽明" (《靈樞·雜病》, [通考] L837) |
-| $P_{single}$ | Paralysis and atrophy (痱痿), loss of use of arm and wrist | 《明堂經》 "痱，痿，臂腕不用" ([證治04] L318) |
+| $P_{single}$ (single point) | Febrile disease without sweating (熱病汗不出), chills and fever (寒熱), malaria (痎瘧) | 《明堂經》 "熱病汗不出……痎瘧。寒熱" ([證治04] L318) |
+| $P_{single}$ | Runny nose and nosebleed (鼻鼽衄), dim vision and eyes too painful to open (瞶目，目痛瞑), headache, toothache from caries (齲齒痛) | 《明堂經》 "鼻鼽衄……瞶目，目痛瞑，頭痛，齲齒痛" ([證治04] L318); "眼痛則合谷以推之" (《通玄指要賦》, [通考] L859) |
+| $P_{single}$ | Lips that will not close (唇吻不收), hoarseness with inability to speak and clenched jaw (喑不能言，口噤不開), loss of voice from wind (風，失音不語) | 《明堂經》 "唇吻不收……喑不能言，口噤不開" ([證治04] L318); "風，失音不語" (《聖濟總錄》, [證治04] L342) |
+| $P_{single}$ | Deafness with blocked ears (聾，耳中不通), throat obstruction (喉痹), facial swelling (面腫) | 《明堂經》 "聾，耳中不通。喉痹。面腫" ([證治04] L318); "聾而痛者，取手陽明" (《靈樞·雜病》, [通考] L837) |
+| $P_{single}$ | Paralysis and atrophy (痱·痿) with loss of use of arm and wrist (臂腕不用) | 《明堂經》 "痱，痿，臂腕不用" ([證治04] L318) |
 | $P_{single}$ | Mania (狂易) | 《明堂經》 "狂易" ([證治04] L318) |
-| $P_{single}$ | Postpartum absence of pulse (產後脈絕), fetus rushing up against the heart (胎上搶心) | 《千金翼方》 "產後脈絕……針合谷入三分，急補之" ([通考] L899, [證治04] L334) |
+| $P_{single}$ | Loss of pulse after childbirth (產後脈絕), fetus rushing up against the heart (胎上搶心) | 《千金翼方》 "產後脈絕……針合谷入三分，急補之" ([通考] L899, [證治04] L334) |
 | $P_{single}$ (modern) | Acupuncture anaesthesia for surface surgery (tooth extraction, thyroid) | [通考] L671 |
 | $P_{comb}$ (combination) | Abortion, prolonged labour (滯產) | Xu Wenbo (徐文伯) "瀉足三陰交，補手陽明合谷，應針而落" (《銅人》, [通考] L903); for difficult labour (難產), reinforce 合谷 and reduce 三陰交 ([通考] L923) — **basis for the contraindication in pregnancy** |
 | $P_{comb}$ | Inducing and stopping sweating | "傷寒無汗，補合谷，瀉復溜即汗；汗多，補復溜，瀉合谷即止" (《循經考穴編》, [通考] L805·947) |
@@ -290,18 +315,18 @@ Of the 118 papers in the inverted index, only **papers in which use of LI4 (合�
 
 ## 10. ARI v3.0 Profile Evaluation & Final Conclusion
 
-**Split**: T1 = classical "大指岐骨之間……動脈應手" (just distal to the junction of the bases of the 1st and 2nd metacarpals), T2 = modern national standard 2006 "第2掌骨橈側的中點". Δ about 20–30 mm (estimated).
+**Split (Tri-Target)**: Target 1≡2 = classical text "大指岐骨之間" + palpation phrase "動脈應手" (just distal to the junction of the bases of the 1st and 2nd metacarpals; formerly T1); Target 3 = WHO 2008 · national standard 2006 "第2掌骨橈側的中點" (formerly T2). Δ (Target 1≡2 – Target 3) about 20–30 mm (estimated) > 10 mm. Neither position has changed, so the earlier dual scores are carried over.
 
-### Sub-scores — T1 (classical)
+### Sub-scores — Target 1≡2 (classical text position · palpation-based anatomical locus, formerly T1)
 
 | Index | Rater A | Rater B | Final | Rubric-level rationale | Evidence pointer |
 | :--- | :---: | :---: | :---: | :--- | :--- |
 | $S_{orig}$ (0.40) | 81.25 | 75 | **78.1 ± 3.1** | Mean of the 4 sub-items below (A 100 and B 75 for ②; mean difference 6.25 < 15 → no reconciliation needed) | [通考] L657–1005 |
-| $S_{clarity}$ (0.35) | 50 | 25 | **50** (reconciled) | A: B1-01 and papers.id 2054 confirm the positions of the radial artery and first dorsal interosseous, but the textbooks do not describe the site (50). B: neither textbook nor measurement, inference only (25). Reconciled: a standard anatomy text (B1) and an imaging review (2054) confirm the key T1 marker (radial artery), so it is not inference only → 50 | Sections 4 and 6, 2054 |
-| $S_{reflex}$ (0.25) | 50 | 50 | **50** | No Layer A study specifies the T1 location. Applying LI4 studies in general by analogy gives B-Check 6 → level "animal studies only / B-Check 6–7" | Section 8, T1 |
+| $S_{clarity}$ (0.35) | 50 | 25 | **50** (reconciled) | A: B1-01 and papers.id 2054 confirm the positions of the radial artery and first dorsal interosseous, but the textbooks do not describe the site (50). B: neither textbook nor measurement, inference only (25). Reconciled: a standard anatomy text (B1) and an imaging review (2054) confirm the key Target 1≡2 marker (radial artery), so it is not inference only → 50 | Sections 4 and 6, 2054 |
+| $S_{reflex}$ (0.25) | 50 | 50 | **50** | No Layer A study specifies the Target 1≡2 location. Applying LI4 studies in general by analogy gives B-Check 6 → level "animal studies only / B-Check 6–7" | Section 8, Target 1≡2 |
 | SI ($S_{safety}$) | 50 | 50 | **50** | The point is the radial artery pulsation — direct contact possible; an explicit depth limit (3 fen) is required | Section 5, B1-01 |
 
-### Sub-scores — T2 (modern)
+### Sub-scores — Target 3 (WHO standard location, formerly T2)
 
 | Index | Rater A | Rater B | Final | Rubric-level rationale | Evidence pointer |
 | :--- | :---: | :---: | :---: | :--- | :--- |
@@ -312,39 +337,39 @@ Of the 118 papers in the inverted index, only **papers in which use of LI4 (合�
 
 ### $S_{orig}$ Sub-items
 
-| Sub-item | T1 A | T1 B | T2 A | T2 B | Rationale |
+| Sub-item | Target 1≡2 A | Target 1≡2 B | Target 3 A | Target 3 B | Rationale |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| ① Clarity of the earliest description | 75 | 75 | 50 | 50 | 《靈樞》 "大指岐骨之間" and the 3 fen of 《明堂》 are Han-dynasty descriptions but of the range type. The T2 location is not directly specified by any Han description (located from 1964 onward) |
-| ② Agreement of later texts | 100 | 75 | 50 | 25 | Most texts from the Song to the Qing and the modern period (1955–1964) give '岐骨間 陷中/動脈' (T1). T2 is confined to textbooks and national standards from the 2nd-edition lecture notes onward. The A–B difference reflects differing weight given to variants such as '一寸五分' and '正中點' |
+| ① Clarity of the earliest description | 75 | 75 | 50 | 50 | 《靈樞》 "大指岐骨之間" and the 3 fen of 《明堂》 are Han-dynasty descriptions but of the range type. The Target 3 location is not directly specified by any Han description (located from 1964 onward) |
+| ② Agreement of later texts | 100 | 75 | 50 | 25 | Most texts from the Song to the Qing and the modern period (1955–1964) give '岐骨間 陷中/動脈' (Target 1≡2). Target 3 is confined to textbooks and national standards from the 2nd-edition lecture notes onward. The A–B difference reflects differing weight given to variants such as '一寸五分' and '正中點' |
 | ③ Resolution of alias confusion | 75 | 75 | 75 | 75 | 虎口 (misclassified as an extra point), 合骨, 含口, 手陽明 (ancient point name), 上合谷 and 虎邊 sorted out. Unresolved name overlap remains for 中魁 and 河口 (KJH) |
-| ④ Collation by the *Tongkao* (《通考》) | 75 | 75 | 75 | 75 | Corrected the 虎口 misclassification, judged 上合谷 = the ancient Hegu, criticised the 2006 national standard's deletion of '第1、2掌骨間' |
+| ④ Collation by the *Tongkao* (《通考》) and *Jingluo Tongjian* (《經絡通鑑》) | 75 | 75 | 75 | 75 | *Tongkao*: corrected the 虎口 misclassification, judged 上合谷 = the ancient Hegu, criticised the 2006 national standard's deletion of '第1、2掌骨間'. *Jingluo Tongjian* re-check (2026-10-25): 手陽明 pulse site = pulsation between Hegu and Yangxi, ancient point name '手陽明' = Hegu ([經絡01] L733·1121), criticism of reading '手陽明' in ancient prescriptions as the whole meridian ([經絡01] L253·287). This reinforces the collation of aliases and location but corrects no new transcription error, so the rubric level (75, 'minor variants corrected') is **unchanged** |
 | **Mean** | **81.25** | **75** | **62.5** | **56.25** | |
 
 ### Gates, Grade & Sensitivity
 
-- **Gates**: for both T1 and T2, Gate 1 ($S_{orig}$ and $S_{clarity}$ ≥ 50) not triggered, Gate 2 (19 Layer A papers with confirmed LI4) not triggered, Gate 3 (SI 50 and 75 > 25) not triggered. The contraindication in pregnancy is flagged ⚠ separately from the SI.
-- **T1 ARI-Core**: A = 0.40×81.25 + 0.35×50 + 0.25×50 = 62.5, B = 0.40×75 + 0.35×50 + 0.25×50 = 60.0 → **61.25 ± 1.25 → C (possible / hypothesis)**. Sensitivity (equal weights): A 60.4, B 58.3 → 59.4 (C, grade unchanged).
-- **T2 ARI-Core**: A = 0.40×62.5 + 0.35×75 + 0.25×75 = 70.0, B = 0.40×56.25 + 0.35×75 + 0.25×75 = 67.5 → **68.75 ± 1.25 → C (possible / hypothesis)**. The upper bound of 70.0 touches the B boundary. Sensitivity (equal weights): A 70.8, B 68.75 → 69.8 (C; grade unchanged on the mean — A alone would be B, so recorded as "near the boundary").
-- **Split verdict**: ΔARI-Core = 68.75 − 61.25 = **7.5 < 10** → no prevailing Target can be declared; **both Targets are reported side by side**. T1 scores higher on classical concordance ($S_{orig}$), T2 on anatomical substrate and reflex evidence ($S_{clarity}$, $S_{reflex}$).
-- **Reconciliation record**: 3 discrepancies of 15 points or more — T1 $S_{clarity}$ (50 vs 25), T2 $S_{clarity}$ (100 vs 75), T2 SI (75 vs 50). Reconciled on the grounds given in the tables above. The $S_{orig}$ mean difference (6.25) was below 15 points and is reported as mean ± half-range. B-Check T2 ⑤ (A 2, B 1) final 1; ⑥ (A 2, B 1) reconciled to 2.
+- **Gates**: for both Target 1≡2 and Target 3, Gate 1 ($S_{orig}$ and $S_{clarity}$ ≥ 50) not triggered, Gate 2 (19 Layer A papers with confirmed LI4) not triggered, Gate 3 (SI 50 and 75 > 25) not triggered. The contraindication in pregnancy is flagged ⚠ separately from the SI.
+- **Target 1≡2 ARI-Core**: A = 0.40×81.25 + 0.35×50 + 0.25×50 = 62.5, B = 0.40×75 + 0.35×50 + 0.25×50 = 60.0 → **61.25 ± 1.25 → C (possible / hypothesis)**. Sensitivity (equal weights): A 60.4, B 58.3 → 59.4 (C, grade unchanged).
+- **Target 3 ARI-Core**: A = 0.40×62.5 + 0.35×75 + 0.25×75 = 70.0, B = 0.40×56.25 + 0.35×75 + 0.25×75 = 67.5 → **68.75 ± 1.25 → C (possible / hypothesis)**. The upper bound of 70.0 touches the B boundary. Sensitivity (equal weights): A 70.8, B 68.75 → 69.8 (C; grade unchanged on the mean — A alone would be B, so recorded as "near the boundary").
+- **Split verdict (Tri-Target rule)**: there are two independent Targets, Target 1≡2 and Target 3. ΔARI-Core = 68.75 − 61.25 = **7.5 < 10** → the ± intervals (60.0–62.5 vs 67.5–70.0) do not overlap, but the Δ condition is not met, so neither Target can be judged inferior → no single prevailing Target; **both Targets are reported side by side**. Target 1≡2 scores higher on classical concordance ($S_{orig}$), Target 3 on anatomical substrate and reflex evidence ($S_{clarity}$, $S_{reflex}$).
+- **Reconciliation record**: 3 discrepancies of 15 points or more — Target 1≡2 $S_{clarity}$ (50 vs 25), Target 3 $S_{clarity}$ (100 vs 75), Target 3 SI (75 vs 50). Reconciled on the grounds given in the tables above. The $S_{orig}$ mean difference (6.25) was below 15 points and is reported as mean ± half-range. B-Check Target 3 ⑤ (A 2, B 1) final 1; ⑥ (A 2, B 1) reconciled to 2. No score changed in the 2026-10-25 Framework 2.7.7 re-check.
 - **Earlier-edition score**: the 'ARI Score 95.15' in the internal archive (v2.3, four-factor weighted sum) is not compared.
 
 **Standard notation**
-- T1: `ARI v3.0 | ARI-Core 61.25 ± 1.25 (C) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 59.4 (C, grade unchanged)`
-- T2: `ARI v3.0 | ARI-Core 68.75 ± 1.25 (C) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 69.8 (C, grade unchanged)` · ⚠ texts contraindicating needling in pregnancy
+- Target 1≡2: `ARI v3.0 | ARI-Core 61.25 ± 1.25 (C) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 59.4 (C, grade unchanged)`
+- Target 3: `ARI v3.0 | ARI-Core 68.75 ± 1.25 (C) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 69.8 (C, grade unchanged)` · ⚠ texts contraindicating needling in pregnancy
 
 ### Final Conclusion
 
-Hegu (合谷, LI04) exists at **two sites**. The classical point (T1) was a pulse-taking site just distal to the junction where the bases of the 1st and 2nd metacarpals meet, where the radial artery pulsation can be felt. The modern point (T2) was moved, from the 1964 textbook onward, to the midpoint of the radial side of the 2nd metacarpal. The two sites are about 2–3 cm apart (estimated), and neither can be judged superior to the other (ΔARI-Core 7.5).
+In the Tri-Target verdict, Hegu (合谷, LI04) exists at **two sites** (`Target 1≡2 vs Target 3`). The classical text position (Target 1, '岐骨之間') and the position the palpation phrase points to (Target 2, '動脈應手') merge into one place — just distal to the junction where the bases of the 1st and 2nd metacarpals meet, the pulse-taking site where the radial artery pulsation can be felt. The modern WHO location (Target 3) was moved, from the 1964 textbook onward, to the midpoint of the radial side of the 2nd metacarpal. The two sites are about 2–3 cm apart (estimated), and neither can be judged superior to the other (ΔARI-Core 7.5).
 
-- **The anatomical substrate of T2** is the first dorsal interosseous with the overlying superficial branch of the radial nerve and dorsal venous network of hand, and adductor pollicis in the deep layer. The two textbooks agree on the superficial layer, all structures are confirmed as standard FMA entities, and a human cadaveric study (2292) confirmed their arrangement. What keeps the grade at C is **classical concordance**: the modern site is not where most texts from the Han to the modern period point.
-- **The reflex mechanism of T2** is concordant with B-Check 9/12. Several imaging studies agree that LI4 stimulation alone elicits limbic and hypothalamic responses in humans. The direction of the autonomic effect, however, differs between studies and remains a **hypothesis**. The hand–face pathway (thalamic VP convergence) explaining '面口合谷收' has been shown **only in mice**.
-- **T1** has the strongest classical support, but the textbooks do not describe it and no mechanism study has specified this location.
+- **The anatomical substrate of Target 3** is the first dorsal interosseous with the overlying superficial branch of the radial nerve and dorsal venous network of hand, and adductor pollicis in the deep layer. The two textbooks agree on the superficial layer, all structures are confirmed as standard FMA entities, and a human cadaveric study (2292) confirmed their arrangement. What keeps the grade at C is **classical concordance**: the modern site is not where most texts from the Han to the modern period point.
+- **The reflex mechanism of Target 3** is concordant with B-Check 9/12. Several imaging studies agree that LI4 stimulation alone elicits limbic and hypothalamic responses in humans. The direction of the autonomic effect, however, differs between studies and remains a **hypothesis**. The hand–face pathway (thalamic VP convergence) explaining '面口合谷收' has been shown **only in mice**.
+- **Target 1≡2** has the strongest classical support (the *Jingluo Tongjian* also confirms this pulsation as the ancient '手陽明' pulse site), and its insertion reference point (the bony gap where the radial artery enters between the two heads of the first dorsal interosseous) is anatomically specified. However, the textbooks do not describe it and no mechanism study has specified this location.
 
 **Safety**:
 1. **⚠ Contraindicated in pregnancy**: recorded consistently since 《銅人》. The record of miscarriage with the reinforcing method (補法) comes from combination with Sanyinjiao (三陰交, SP6) (Section 9). In a modern RCT (510), LI4 + SP6 electroacupuncture also raised oxytocin.
-2. **T1**: this is the radial artery pulsation, so push the pulse aside and needle shallowly (3 fen).
-3. **T2**: angle the needle toward the 2nd metacarpal (about 80°) with the hand in a half-clenched fist. Through-needling toward 勞宮 or 後溪 approaches the deep palmar arch and the deep branch of the ulnar nerve in the deep palmar layer.
+2. **Target 1≡2**: this is the radial artery pulsation, so push the pulse aside and needle shallowly (3 fen).
+3. **Target 3**: angle the needle toward the 2nd metacarpal (about 80°) with the hand in a half-clenched fist. Through-needling toward 勞宮 or 後溪 approaches the deep palmar arch and the deep branch of the ulnar nerve in the deep palmar layer.
 4. **Needle syncope (暈針)**: systemic reactions (needle syncope) are reported with strong stimulation, so the first treatment is safer in the supine position (《新編針灸學》).
 
 ---
@@ -403,3 +428,20 @@ Generated by FMA 5.1.0 acupoint profile query (LI04; 2026-10-24), supplemented w
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
 | Textbook title | *Meridian and Acupoint Studies* (經絡經穴學) | (經絡腧穴學) | The Korean edition names the textbook *Gyeongnak Suhyeolhak* (經絡腧穴學; suhyeol = 腧穴); 經絡經穴學 was a mistranslation carried over from the earlier ST36 English edition |
+
+---
+
+## 2026-10-25 Framework 2.7.7 Revision History
+
+| Location | Original content | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header and source abbreviations | Three primary classics; two Targets (T1, T2) | Four primary classics (*Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) added); abbreviations [經絡01], [經絡18], [證治04 Korean]; Tri-Target notation `Target 1≡2 vs Target 3` | Canon Section 1, Rank 1 & 2, Rank 5 (2.7.7) |
+| Section 1 | Three-classics table | Title changed to four classics. Four *Jingluo Tongjian* rows added: 《靈樞·經脈》 course and commentaries (no direct location information on Hegu), Wang Bing's '動應于手' and the 手陽明 pulse site = pulsation between Hegu and Yangxi, criticism of reading ancient '手陽明' prescriptions as the whole meridian, ancient point name '手陽明' = Hegu | [經絡18] L90·110·162·217·273; [經絡01] L235·253·287·452·573·733·1121 |
+| Sections 1 and 9, *Zhengzhi Tongjian* | Summaries in the report's own wording | Descriptions aligned with the Korean translation of the same section; the Chinese original kept as reference text. Discrepancy recorded: the original quoted in the Korean-translation section writes '瞶目' as '䁾目' | Canon Rank 1 & 2 rule on original and translation of the *Zhengzhi Tongjian*; [證治04 Korean] L423·445·457 |
+| Sections 2 and 3 | — | Row for the 《靈樞·經脈》 course added; *Jingluo Tongjian* pointers added to Wang Bing's commentary, 虎口 and 手陽明 (ancient point name) | Basis as for Section 1 |
+| Section 4 | Two positions, T1 and T2 | Tri-Target coordinate table (Target 1 classical text position / Target 2 palpation-based anatomical locus / Target 3 WHO standard location); Target 2 insertion reference point (bony gap between the bases of the 1st and 2nd metacarpals, where the radial artery FMA:22730 passes between the two heads of the first dorsal interosseous FMA:37424) and bounding structures | Canon Rank 5, insertion reference point and 3D coordinate system |
+| Section 7 | Dual-Target (T1 vs T2), Δ about 20–30 mm (estimated) | Tri-Target pairwise table: T1–T2 within about 5 mm (estimated, merged), T1–T3 and T2–T3 about 20–30 mm (estimated, split) → `Target 1≡2 vs Target 3`. Mapping: former T1 → Target 1≡2, former T2 → Target 3 | Canon Rank 5 Tri-Target (split threshold Δ > 10 mm) |
+| Sections 5, 6 and 8 | T1 and T2 labels | Target 1≡2 and Target 3 labels (content and scores unchanged) | — |
+| Section 10 | Sub-scores T1 and T2; $S_{orig}$ ④ 'collation by the *Tongkao*' | Target 1≡2 and Target 3 labels; ④ re-checked as 'collation by the *Tongkao* and *Jingluo Tongjian*' — level unchanged (75). Split verdict restated under the Tri-Target rule (ΔARI 7.5 < 10 → reported side by side) | Canon Rank 7 $S_{orig}$ ④ and Tri-Target verdict rule |
+| ARI | Per-Target ARI-Core 61.25 ± 1.25 (C) / 68.75 ± 1.25 (C), SI 50 / 75 | **Scores unchanged** (positions unchanged → earlier dual scores carried over) | Canon Rank 7 |
+| Unverifiable | — | All pairwise Δ values are estimates (no measurements). The Target 1–2 merger relies on the *Tongkao*'s identification of the two as the same site | — |
