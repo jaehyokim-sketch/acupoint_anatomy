@@ -81,8 +81,18 @@ pre.mermaid {{ background: var(--card); text-align: center; }}
 figure.diagram {{ margin: 1.5em 0; text-align: center; overflow-x: auto; }}
 figure.diagram img {{ max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }}
 figure.diagram-text img {{ image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }}
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img {{ max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }}
+article img:hover {{ box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }}
+p:has(> img) {{ text-align: center; margin: 1.5em 0; }}
 .meta {{ color: var(--muted); font-size: .85rem; margin-top: 24px; }}
 .katex-display {{ overflow-x: auto; overflow-y: hidden; }}
+/* 라이트박스 확대 모달 */
+.lightbox-modal {{ display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }}
+.lightbox-modal.active {{ display: flex; }}
+.lightbox-modal img {{ max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }}
+.lightbox-close {{ position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }}
+.lightbox-close:hover {{ color: var(--accent); }}
 </style>
 </head>
 <body>
@@ -92,6 +102,10 @@ figure.diagram-text img {{ image-rendering: -webkit-optimize-contrast; image-ren
 <p class="meta">생성: {stamp} · 원본: {src} · build_report_html.py (Framework v2.7)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{{delimiters:[{{left:'$$',right:'$$',display:true}},{{left:'$',right:'$',display:false}}],throwOnError:false}});"></script>
@@ -99,6 +113,35 @@ figure.diagram-text img {{ image-rendering: -webkit-optimize-contrast; image-ren
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({{ startOnLoad: true, theme: dark ? "dark" : "default" }});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {{
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {{
+    document.querySelectorAll('article img').forEach(img => {{
+      img.addEventListener('click', () => {{
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      }});
+    }});
+    modal.addEventListener('click', (e) => {{
+      if (e.target !== modalImg) {{
+        modal.classList.remove('active');
+      }}
+    }});
+    if (closeBtn) {{
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }}
+    document.addEventListener('keydown', (e) => {{
+      if (e.key === 'Escape' && modal.classList.contains('active')) {{
+        modal.classList.remove('active');
+      }}
+    }});
+  }}
+}});
 </script>
 </body>
 </html>
