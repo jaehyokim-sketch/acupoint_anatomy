@@ -188,7 +188,7 @@ GitHub에는 파일 3개만 추적되고, 데이터·그림 등 **503개 파일(
 ```powershell
 robocopy 'G:\내 드라이브\논문작업\비평형열역학' 'C:\workspace\amari-gl-dmn' /E /XC /XN /XO /XD .git /R:2 /W:2 /NP /NFL /NDL
 ```
-> **원 PC 할 일**: 2026-10-25 기준 원 PC의 `amari-gl-dmn`에 `README.md`, `index.html` 등 **미커밋 수정 3건**이 남아 있습니다. 다른 PC와 내용이 갈라지지 않도록 원 PC에서 먼저 커밋·푸시하십시오.
+> **참고**: 원 PC에 남아 있던 v2 수정(`README.md`, `index.html`)은 2026-10-25 커밋·푸시 완료(`1514c99`). Drive 폴더에는 GitHub Pages에 게시 중인 `joint-fossa-acupoint-mechanics.html`이 빠져 있으므로, 클론 후 위 명령을 실행해도 이 파일은 GitHub 버전이 유지됩니다.
 
 #### 5-3) 한의 의료서비스 통계 미추적 자료 (`km-healthcare-stats`)
 `.gitignore`로 제외된 자료(`step_*.txt`, `scratch_*.txt`, `.agents\` 등)가 필요할 때만 복사합니다. 세션 아카이브(`04_CLI_대화세션_아카이브`)는 Drive 보존 전용이므로 복사하지 않습니다:
