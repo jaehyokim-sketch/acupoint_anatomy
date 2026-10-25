@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -57,10 +67,10 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <h1 id="comparative-anatomical-substrate-analysis-zusanli-st36-vs-jianjing-gb21">Comparative Anatomical Substrate Analysis: Zusanli (足三里, ST36) vs Jianjing (肩井, GB21)</h1>
 <blockquote>
 <p><strong>Framework</strong>: v2.7 (revised 2026-10-04) · <strong>Nature of report</strong>: a summary report comparing the finalised results of two individual reports (no independent scoring)
-<strong>ST36</strong>: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 77.1 (B, grade unchanged) — <a href="ST36_족삼리_해부생리_실체판명_보고서_en.md">ST36 report</a>
-<strong>GB21</strong>: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65.6 (C, grade unchanged) — <a href="../../GB_족소양담경/GB21_견정/GB21_견정_해부생리_실체판명_보고서_en.md">GB21 report</a>
-<strong>Canonical source</strong>: <code>01_Framework/acupoint_anatomical_logic_framework.md</code> (Framework v2.7) · Evidence principles: Principles for Acupoint Anatomical Substrate Identification
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<strong>ST36</strong>: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 77.1 (B, grade unchanged) — <a href="ST36_족삼리_해부생리_실체판명_보고서_en.html">ST36 report</a>
+<strong>GB21</strong>: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65.6 (C, grade unchanged) — <a href="../../GB_족소양담경/GB21_견정/GB21_견정_해부생리_실체판명_보고서_en.html">GB21 report</a>
+<strong>Canonical source</strong>: Acupoint Substrate Identification Logic Framework (canonical) (Framework v2.7) · Evidence principles: Principles for Acupoint Anatomical Substrate Identification
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 </blockquote>
 <hr>
 <h2 id="1-overview-and-purpose-of-the-comparison">1. Overview and Purpose of the Comparison</h2>
@@ -261,7 +271,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 2 matrix</td>
 <td style="text-align: left;">11 rows</td>
 <td style="text-align: left;">4 rows added: FMA reference entities, nerve trunks, spinal segments, ultrasound measurements</td>
-<td style="text-align: left;"><code>fma_query.py profile ST36/GB21</code>, <code>fma_neo4j.py query shared_structure</code> (0 results), PubMed PMID 42500462 · 29507586</td>
+<td style="text-align: left;">FMA profile query, Neo4j shared-structure query (0 results), PubMed PMID 42500462 · 29507586</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 3</td>
@@ -292,13 +302,17 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Whole document</td>
 <td style="text-align: left;">No English edition</td>
 <td style="text-align: left;">Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts and classical quotations; links point to the English editions of the two individual reports</td>
-<td style="text-align: left;">Korean edition <code>ST36_GB21_Comparative_Analysis_Report.md</code></td>
+<td style="text-align: left;">Korean edition</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:07 · 원본: ST36_GB21_Comparative_Analysis_Report_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -306,6 +320,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

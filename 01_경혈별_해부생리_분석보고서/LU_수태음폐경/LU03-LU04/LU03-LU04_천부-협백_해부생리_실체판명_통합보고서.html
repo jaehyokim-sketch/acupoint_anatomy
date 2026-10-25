@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -63,10 +73,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 - pLU4: <code>ARI v3.0 | ARI-Core 43.8 ± 2.5 (D·H) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 41.7 (D, 등급 불변)</code></p>
 <p><strong>통합 일자</strong>: 2026-10-03 (v2.7 개정 2026-10-04, FMA 보강 2026-10-23, 맨 끝 개정 이력 참조)
 <strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 지배신경·척수 분절·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리, 상세는 부록 A
-<strong>통합 대상 (원본은 <code>_원본_보관/</code>, 개정 전 판은 <code>_구판_v2.6/</code>에 보존)</strong>:
-- <code>LU03_천부/LU03_천부_해부생리_실체판명_보고서.md·.html·데이터북</code>
-- <code>LU04_협백/LU04_협백_해부생리_실체판명_보고서.md·.html·데이터북</code>
-- <code>_원본_보관/LU_비교분석_구판/LU3_LU4_Comparative_Analysis_Report.md·.html</code>
+<strong>통합 대상</strong>: LU03 천부 보고서, LU04 협백 보고서, LU3·LU4 비교분석 보고서(구판). 원본과 개정 전 판은 내부에 보존한다.
 <strong>통합 원칙</strong>: 세 보고서의 내용 중복도가 50%를 넘으므로 비교분석 보고서를 중심으로 단일 권위본으로 합침(Merge). 통합 과정에서 3대 원전·마스터 데이터셋·논문 원문과 다시 대조하여, 기존 보고서 사이의 모순과 사실 오류를 바로잡음(§11 정정 감사표).</p>
 </blockquote>
 <hr>
@@ -140,19 +147,19 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>《中国针灸穴位通鉴》</strong></td>
-<td style="text-align: left;"><code>中国针灸穴位通鉴/chunks_refined/中国针灸穴位通鉴(上卷)_321-400.md</code></td>
+<td style="text-align: left;">《中国针灸穴位通鉴》(上卷) PDF 321–400쪽</td>
 <td style="text-align: left;"><strong>출처</strong>: "腋内动脉，手太阴也，名曰天府"(《灵枢·本输》, 맥명), "天府二穴"(《素问·气穴论》 王冰注 15:108, 혈명) (L144·L146). <strong>부위</strong>: "在腋下三寸，臂內廉動脈中，手太陰脈氣所發"(《甲乙》3:50). <strong>별명</strong>: 无. <strong>자법</strong>: "禁不可灸，灸之令人逆氣。刺入四分，留三呼"(《甲乙》, L282). <strong>부위 결어</strong>: "历代文献记载基本一致"(L332). 단 결어의 针法 요약(L388)은 《甲乙》을 "刺入四分、留五呼"로 적어 조문(L282 "留三呼")과 다르다(통감 내부 이문)</td>
 <td style="text-align: left;"><strong>부위</strong>: "在天府下去肘五寸動脈中"(《甲乙》3:50). <strong>별명</strong>: 无. <strong>귀경</strong>: "手太陰之別". <strong>자법</strong>: "刺入四分，留三呼，灸七壯"(《甲乙》, L482), "刺入三分"(《铜人》). <strong>부위 결어</strong>: "历代文献记载基本一致"(L510)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>《中国针灸证治通鉴》</strong></td>
-<td style="text-align: left;"><code>中国针灸证治通鉴/chunks_refined/中国针灸证治通鉴_401-480.md</code></td>
+<td style="text-align: left;">《中国针灸证治通鉴》 PDF 401–480쪽</td>
 <td style="text-align: left;"><strong>鼻衄</strong>: "暴瘅內逆，肝肺相搏，血溢鼻口，取天府"; 《外台》 "灸兩膊上大脈…以鼻嗅臂" 安語 "此方所取穴即天府穴"; 《百证赋》 "天府合谷，鼻中衄血宜追". <strong>瘿</strong>: "瘿恶气，灸天府五十壮" 등</td>
 <td style="text-align: left;"><strong>皮膚</strong>: 《古今医统》 "治赤白汗斑，灸夾白穴即愈"(安語 "夾白即肺經侠白穴"); 현대 白癜风 "侠白(點刺出血再行拔火罐)"</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>《针灸腧穴通考》</strong></td>
-<td style="text-align: left;"><code>针灸腧穴通考/chunks_refined/针灸腧穴通考(上)_81-160.md</code> (L1653~2025)</td>
+<td style="text-align: left;">《针灸腧穴通考》(上) PDF 81–160쪽 (L1653~2025)</td>
 <td style="text-align: left;"><strong>명실고</strong>: "今之天府已非古之天府". 고대 "臂臑內廉動脈中", 현대 "肱二頭肌橈側緣". 위팔동맥은 위팔두갈래근 안쪽고랑을 따라 내려가므로 "此處已相當於今之手少陰經穴分布區域". 가쪽 모서리 해부학 용어를 처음 쓴 것은 일본 침구서다. 中国 교재는 1957년 南京 《针灸学》·1~2판 《讲义》까지 "臑內廉動脈中"을 유지하다가 4판부터 "肱二頭肌外緣"으로 바꿨다</td>
 <td style="text-align: left;"><strong>명실고</strong>: "本穴定位，古今不同". 1판 《讲义》의 "重按有動脈應手"에 대해 "按如今之定位，無論如何重按，也不會觸及動脈搏動". "侠白部位在動脈中，故該穴仍可能由手太陰標脈'天府脈'演變而來". 주치 "心痛" = 胸痹心痛 계열</td>
 </tr>
@@ -161,7 +168,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <ul>
 <li><strong>이문 메모</strong>: 천부 부위 문구는 《穴位通鉴》이 "臂內廉"(《甲乙》 3:50 인용, L172), 《通考》·《明堂》 집교가 "臂臑內廉"으로 적는다. 의미(위팔 안쪽 모서리)는 같아 정위 판정에 영향이 없다.</li>
 </ul>
-<p><strong>보조 원천 (논문 원문 대조)</strong>: 송석모, 〈수태음폐경 노선에 대한 고찰: 천부ㆍ협백을 중심으로〉, <em>Korean Journal of Acupuncture</em> 39(4):172-183, 2022. https://doi.org/10.14406/acu.2022.024 (papers.id 440; 로컬 PDF: <code>학습자료/실험 및 연구 논문/2022_Korean Journal of Acupuncture_송석모_…pdf</code>)
+<p><strong>보조 원천 (논문 원문 대조)</strong>: 송석모, 〈수태음폐경 노선에 대한 고찰: 천부ㆍ협백을 중심으로〉, <em>Korean Journal of Acupuncture</em> 39(4):172-183, 2022. https://doi.org/10.14406/acu.2022.024 (papers.id 440)
 - 《穴位通鉴》 수록 36종 문헌 가운데 18종이 천부를 위팔뼈 안쪽에, 28종이 동맥 위에 기재함
 - 張壽頤 "臑內前廉動脈中", 惲鐵樵 "臑內廉動脈中": 20세기 초까지 안쪽 동맥으로 기재</p>
 <hr>
@@ -685,7 +692,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <hr>
 <h2 id="8-rank-6">8. 생의학적 반사 기전도 및 외부 검색 로그 (Rank 6)</h2>
-<h3 id="81-layer-a-___dbjson-2026-10-04">8.1 Layer A 논문 (통합 생의학 마스터 DB v3.0, 2026-10-04 동기화 후)</h3>
+<h3 id="81-layer-a-db-v30-2026-10-04">8.1 Layer A 논문 (통합 생의학 마스터 DB v3.0, 2026-10-04 동기화 후)</h3>
 <p><strong>경혈 특이 연구(cLU·pLU 단독 자극의 기전·임상): 0편.</strong> 아래는 LU3·LU4가 처방에 포함된 연구와 문헌 연구이다.</p>
 <div class="table-wrap"><table>
 <thead>
@@ -2021,7 +2028,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <hr>
 <h2 id="a-fma-fma-510">부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)</h2>
-<p>생성: <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LU03 --md</code> / <code>profile LU04 --md</code> (2026-10-23). 대응 수준 <code>exact</code>는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다. LU04는 LU03에서 어깨세모근·큰가슴근(김재효, 천부 높이)을 뺀 구성과 같다.</p>
+<p>생성: FMA 5.1.0 경혈 프로파일 조회(LU03·LU04, 2026-10-23). 대응 수준 <code>exact</code>는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다. LU04는 LU03에서 어깨세모근·큰가슴근(김재효, 천부 높이)을 뺀 구성과 같다.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -2190,7 +2197,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">4절</td>
 <td style="text-align: left;">좌표·Layer 표</td>
 <td style="text-align: left;">그림 4-1 횡단면 모식도(T1·T2 병기), 4.3 Target·Layer별 FMA 대조표, FMA 주석 3건(위팔동맥 분류, 김재효 용어 2건 수동·중복 판정, 분절 기재 범위)</td>
-<td style="text-align: left;"><code>fma_query.py profile LU03/LU04</code>, <code>entity</code>, <code>path</code>; 그림 스크립트 <code>.claude/skills/acupoint-anatomy/scripts/fma/figures/LU03-LU04_cross_section.py</code></td>
+<td style="text-align: left;">FMA 프로파일 조회; 그림 생성 스크립트(내부)</td>
 </tr>
 <tr>
 <td style="text-align: left;">6절</td>
@@ -2220,7 +2227,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">부록 A</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA 프로파일 표(LU03·LU04 통합)</td>
-<td style="text-align: left;"><code>fma_query.py profile</code></td>
+<td style="text-align: left;">FMA 프로파일 조회</td>
 </tr>
 <tr>
 <td style="text-align: left;">ARI</td>
@@ -2231,7 +2238,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">구판 보관</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">보강 전 md·html·xlsx를 <code>_구판_v2.7_20261023/</code>에 보관(<code>_원본_보관/</code>은 손대지 않음)</td>
+<td style="text-align: left;">보강 전 md·html·xlsx를 구판 보관본(내부)에 보관(원본 보관본은 손대지 않음)</td>
 <td style="text-align: left;">—</td>
 </tr>
 </tbody>
@@ -2252,7 +2259,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">머리 인용 블록</td>
 <td style="text-align: left;">"Version 2.6 (Rank 0~7, Tier 3)"</td>
 <td style="text-align: left;">v2.7 표기 + Target별 ARI v3.0 notation 4줄 + 이중 채점 조정 완료</td>
-<td style="text-align: left;"><code>final_LU0304.json</code> notation</td>
+<td style="text-align: left;">ARI 표기 기록</td>
 </tr>
 <tr>
 <td style="text-align: left;">§0-1, 결론 1</td>
@@ -2264,19 +2271,19 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">§0-5, §8.1</td>
 <td style="text-align: left;">"실측 생리·임상 논문 0편(LU3 13편, LU4 1편 모두 문헌사)", 구 기준 Refinement 미통과</td>
 <td style="text-align: left;">2026-10-04 동기화 후 다혈위 인체 연구 1819·1822·1832·1833, LU4 견관절 무작위 연구 1836 존재 명시. 경혈 특이 0편 → 게이트 2 유지. B-Check 점수로 판정</td>
-<td style="text-align: left;">마스터DB papers 1819·1822·1832·1833·1836; pack_LU3.md·pack_LU4.md</td>
+<td style="text-align: left;">마스터DB papers 1819·1822·1832·1833·1836; 근거 묶음·근거 묶음</td>
 </tr>
 <tr>
 <td style="text-align: left;">§0-6, §10</td>
 <td style="text-align: left;">v2.6 4요인 ARI(0.35/0.30/0.20/0.15)와 임의 중간값 점수표, 검산</td>
 <td style="text-align: left;">ARI v3.0 프로파일(ARI-Core ± 반범위·등급·표지·SI·민감도·게이트·S_orig 하위 4항목·조정 기록)</td>
-<td style="text-align: left;"><code>final_LU0304.json</code>, 프레임워크 Rank 7·4절</td>
+<td style="text-align: left;">이중 채점 기록, 프레임워크 Rank 7·4절</td>
 </tr>
 <tr>
 <td style="text-align: left;">구판 점수</td>
 <td style="text-align: left;">cLU3 82.75 / cLU4 81.10 / pLU3 66.05 / pLU4 66.05</td>
 <td style="text-align: left;"><strong>구판 v2.6 점수 cLU3 82.75·cLU4 81.10·pLU3 66.05·pLU4 66.05 (비교 불가)</strong></td>
-<td style="text-align: left;"><code>_구판_v2.6/</code> 사본</td>
+<td style="text-align: left;">구판 보관본(내부) 사본</td>
 </tr>
 <tr>
 <td style="text-align: left;">§1</td>
@@ -2324,7 +2331,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">§8.2</td>
 <td style="text-align: left;">연구자명 계열 모델 표현(체성-자율신경 반사), "Head zone", Travell &amp; Simons 서명 인용</td>
 <td style="text-align: left;">등록부 ID로 교체(B3-04·B3-05, B3-01·B3-03, B2-06 등). 범위 밖 적용은 "유추"로 표기</td>
-<td style="text-align: left;"><code>layer_b_reference_registry.md</code></td>
+<td style="text-align: left;">Layer B 참조 등록부</td>
 </tr>
 <tr>
 <td style="text-align: left;">§0-5, §8.1, §10</td>
@@ -2354,21 +2361,25 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">미변경</td>
 <td style="text-align: left;">원전 인용문</td>
 <td style="text-align: left;">채점자 B가 원문 대조로 정확함을 확인 → 유지</td>
-<td style="text-align: left;">score_LU0304_B.json</td>
+<td style="text-align: left;">채점자 B 기록</td>
 </tr>
 <tr>
 <td style="text-align: left;">미해결</td>
 <td style="text-align: left;">마스터 DB LU3 신경지배·반사회로(근피신경, 성상신경절→키셀바흐), LU4 항목 공란; 1819·1822 DB DOI 불일치 의심</td>
 <td style="text-align: left;">보고서에 메모만 남김(DB 미수정)</td>
-<td style="text-align: left;">pack_LU3.md·pack_LU4.md</td>
+<td style="text-align: left;">근거 묶음·근거 묶음</td>
 </tr>
 </tbody>
 </table></div>
-<p><em>근거 파일</em>: <code>01_도서_번역_및_원전/{中国针灸穴位通鉴, 中国针灸证治通鉴, 针灸腧穴通考}/chunks_refined/</code>, 마스터 데이터셋 레지스트리 (KJH, 자침깊이, 공통교재, 김재효, 생의학 마스터DB, 361 CSV), <code>01_Framework/layer_b_reference_registry.md</code>, 송석모(2022) 원문 PDF.
+<p><em>근거 파일</em>: 3대 원전 정제본, 마스터 데이터셋 레지스트리 (KJH, 자침깊이, 공통교재, 김재효, 생의학 마스터DB, 361 CSV), Layer B 참조 등록부, 송석모(2022) 원문 PDF.
 <em>데이터북</em>: 천부-협백 해부생리 통합 분석 데이터북 / <em>웹리포트</em>: <code>LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.html</code></p>
-<p class="meta">생성: 2026-10-23 21:55 · 원본: LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:50 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -2376,6 +2387,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

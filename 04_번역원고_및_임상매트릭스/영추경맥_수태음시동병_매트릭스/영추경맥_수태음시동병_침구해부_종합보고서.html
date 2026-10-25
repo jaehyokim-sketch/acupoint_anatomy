@@ -68,9 +68,9 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <blockquote>
 <p><strong>프레임워크</strong>: v2.7 · <strong>분류</strong>: Category 4 증상별 침구해부 임상 매트릭스 · <strong>적용 범위</strong>: Rank 0~6(FMA 연동), Rank 7 ARI는 <strong>미산정</strong>(38혈 주제 매트릭스 — 개별 혈 ARI는 Category 1 보고서에서 산정)
 <strong>3대 원전</strong>: 《针灸腧穴通考》 25편 361혈 【适应症】 전수 파싱(주 자료) · 《中国针灸穴位通鉴》·《中国针灸证治通鉴》 대조(시동병 원문·是動 처방)
-<strong>해부 근거</strong>: FMA 5.1.0 로컬 색인(<code>fma_query.py profile</code>, 2대 교재 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리) + B1 규범 해부(B1-01·B1-02·B1-03) 분절 보완 · 3D 형상: BodyParts3D 4.0(B1 보조)
-<strong>Layer A</strong>: 통합 생의학 마스터 DB v3.0(2026-10-24 상태, <code>acupoint_inverted_index</code>) + PubMed 메타데이터 대조. 이번 분석에서는 <code>sync_master_db.py</code>를 실행하지 않았다(38혈 일괄 동기화는 별도 작업).
-<strong>데이터시트</strong>: 영추경맥 수태음시동병 침구해부 임상 매트릭스 분석 데이터북 (10시트) · 재현 스크립트: <code>scripts/</code> 폴더</p>
+<strong>해부 근거</strong>: FMA 5.1.0 로컬 색인(FMA 프로파일 조회, 2대 교재 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리) + B1 규범 해부(B1-01·B1-02·B1-03) 분절 보완 · 3D 형상: BodyParts3D 4.0(B1 보조)
+<strong>Layer A</strong>: 통합 생의학 마스터 DB v3.0(2026-10-24 상태, <code>acupoint_inverted_index</code>) + PubMed 메타데이터 대조. 이번 분석에서는 통합 DB 동기화(외부 검색)를 실행하지 않았다(38혈 일괄 동기화는 별도 작업).
+<strong>데이터시트</strong>: 영추경맥 수태음시동병 침구해부 임상 매트릭스 분석 데이터북 (10시트) · 재현 스크립트: 내부 보관</p>
 </blockquote>
 <hr>
 <h2 id="0">0. 요약</h2>
@@ -106,7 +106,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <td style="text-align: left;">원형</td>
 <td style="text-align: left;">《阴阳十一脉灸经》</td>
 <td style="text-align: left;">臂巨阴脉……是动则病：<strong>心滂滂如痛，缺盆痛，甚则交两手而战</strong>，此为臂厥</td>
-<td style="text-align: left;"><code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_03_上_手太阴肺经穴.md</code> L19</td>
+<td style="text-align: left;">《针灸腧穴通考》 上 手太阴肺经穴 L19</td>
 </tr>
 <tr>
 <td style="text-align: left;">개작</td>
@@ -124,7 +124,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <td style="text-align: left;">처방</td>
 <td style="text-align: left;">《黄帝明堂经》(《甲乙》 권8·9)</td>
 <td style="text-align: left;">胸中膨膨然，甚则交两手而瞀，暴瘅内逆，<strong>刺经渠及天府</strong>，此谓之大输</td>
-<td style="text-align: left;"><code>针灸腧穴通考_02_上_序·凡例·总论-2.md</code> L1027; <code>中国针灸证治通鉴_03_…_古代针灸方选解.md</code> L264; <code>中国针灸穴位通鉴_07_手太阴肺经(1).md</code> L716</td>
+<td style="text-align: left;">《针灸腧穴通考》 上 序·凡例·总论-2 L1027; 《中国针灸证治通鉴》 … 古代针灸方选解 L264; 《中国针灸穴位通鉴》 手太阴肺经(1) L716</td>
 </tr>
 </tbody>
 </table></div>
@@ -557,7 +557,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <tr>
 <td style="text-align: left;">浮白 GB10</td>
 <td style="text-align: left;"><strong>제외(오록)</strong></td>
-<td style="text-align: left;">《外台》 卷39 단계부터 浮白 아래에 天容의 부위·주치가 잘못 들어갔다. 《铜人》은 天容 주치만 옮겼다(《通考》 浮白 按, <code>针灸腧穴通考_18_下_足少阳胆经穴-1.md</code> L1811)</td>
+<td style="text-align: left;">《外台》 卷39 단계부터 浮白 아래에 天容의 부위·주치가 잘못 들어갔다. 《铜人》은 天容 주치만 옮겼다(《通考》 浮白 按, 《针灸腧穴通考》 下 足少阳胆经穴-1 L1811)</td>
 </tr>
 <tr>
 <td style="text-align: left;">陽輔 GB38</td>
@@ -598,7 +598,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </table></div>
 <h2 id="5-rank-5-fma-5-1">5. 해부 유사도 방법 (Rank 5 · FMA 5-1절)</h2>
 <ul>
-<li><strong>입력</strong>: 38혈마다 <code>fma_query.py profile &lt;코드&gt; --json</code>을 실행해 2대 교재(공통교재·김재효) 해부구조의 FMA 대응을 얻었다. 대응 수준은 <code>exact</code>·<code>exact+…</code>·<code>exact(set)</code>·<code>parent(branch_of)</code>만 쓰고, <code>fuzzy</code>·<code>set(검토)</code>·<code>none</code>은 뺐다.</li>
+<li><strong>입력</strong>: 38혈마다 FMA 프로파일 조회를 실행해 2대 교재(공통교재·김재효) 해부구조의 FMA 대응을 얻었다. 대응 수준은 <code>exact</code>·<code>exact+…</code>·<code>exact(set)</code>·<code>parent(branch_of)</code>만 쓰고, <code>fuzzy</code>·<code>set(검토)</code>·<code>none</code>은 뺐다.</li>
 <li><strong>특징 4종</strong>과 가중 Jaccard 유사도(잠정 가중치):</li>
 <li><strong>N 신경 영역(0.35)</strong>: 신경 구조 + 근육 지배신경 + 가지→줄기 사슬. "Thoracic nerve" 같은 일반 클래스 라벨은 뺐다.</li>
 <li><strong>G 척수 분절(0.30)</strong>: FMA <code>segmental_supply</code>와 서수 라벨(예: "Fourth intercostal nerve" → T4). FMA에 분절이 없는 신경 55종은 <strong>B1 규범 분절</strong>로 보완했다(B1-01 Gray's 42e·B1-03 Moore 8e — 예: 안쪽가슴근신경 C8–T1, 노신경 C5–T1).</li>
@@ -1426,7 +1426,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </ul>
 <p>정리하면 太淵에 일부 심근 보호 효과가 있으나 심경혈보다 약하다. 이는 "수태음 시동병 = 심통"을 <strong>폐경혈 효과로 뒷받침하는 근거가 약함</strong>을 뜻한다(B-Check ⑤ 상충 → 가설).
 - <strong>호흡</strong>: 太淵 단독 전침이 급성 폐손상 쥐의 폐기능을 개선했다(papers.id 2240, PMID 35880273, 동물). 孔最 천식 연구 12편 가운데 3편은 쥐 실험이다(papers.id 1682~1684). 사람 연구는 太淵·孔最·膻中·肺俞 배오의 흉강경 수술 후 폐합병증 RCT 1편이다(papers.id 1807, PMID 40953233 — 배오이므로 단독 효능으로 읽지 않음).
-- <strong>외부 검색</strong>: 이번 보고서는 38혈 일괄 <code>sync_master_db.py</code>를 실행하지 않았다(<strong>외부 검색 미완</strong>). 위 PMID는 PubMed 메타데이터로 서지·자극 혈위만 확인했다.</p>
+- <strong>외부 검색</strong>: 이번 보고서는 38혈 일괄 통합 DB 동기화(외부 검색)를 실행하지 않았다(<strong>외부 검색 미완</strong>). 위 PMID는 PubMed 메타데이터로 서지·자극 혈위만 확인했다.</p>
 <h2 id="9-3d-bodyparts3d-40-b1">9. 3D 해부 이미지 — 층위별 공유 구조 (BodyParts3D 4.0, B1 보조)</h2>
 <p>각 군집에서 구성혈 절반 이상(최소 2혈)이 공유하는 FMA 구조 가운데 메쉬가 있는 것을 최대 7개까지, 뼈대를 반투명 배경으로 그렸다. BodyParts3D는 단일 표준 모델이다. 개인차와 경혈 위치는 반영하지 않으므로 <strong>규범 형상 참고</strong>로만 쓴다. A1c 손가락 군집은 공유 메쉬가 1개뿐이어서 그리지 않았다.</p>
 <p><img alt="A1 상지 공유 구조 3D" src="Fig4_A1_상지_3D_ko.png"></p>
@@ -1458,11 +1458,11 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>영추경맥_수태음시동병_침구해부_종합보고서.md</code>·<code>.html</code></td>
-<td style="text-align: left;">이 보고서(한국어)</td>
+<td style="text-align: left;">종합보고서(한국어)</td>
+<td style="text-align: left;">이 보고서</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>영추경맥_수태음시동병_침구해부_종합보고서_en.md</code>·<code>.html</code></td>
+<td style="text-align: left;">종합보고서(영어)</td>
 <td style="text-align: left;">영어판(번체자 병기)</td>
 </tr>
 <tr>
@@ -1470,21 +1470,21 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <td style="text-align: left;">1 시동병 층차 · 2 후보·주치 층 · 3 근거조문(290행) · 4 FMA 해부 특징 · 5 유사도 행렬 · 6 층위 · 7 太淵 기준 순위 · 8 분절 정합 · 9 Layer A · 10 방법·감사</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>Fig1</code>~<code>Fig4_*_ko.png</code> / <code>_en.png</code></td>
+<td style="text-align: left;">그림 Fig1~Fig4</td>
 <td style="text-align: left;">그림 8종 × 2개 언어</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>scripts/</code></td>
-<td style="text-align: left;"><code>extract_indications.py</code>(Rank 1~4) → <code>anatomy_similarity.py</code>(FMA 유사도·층위) → <code>make_figures.py</code>·<code>render3d.py</code>(그림) → <code>build_matrix.py</code>(xlsx)</td>
+<td style="text-align: left;">분석 스크립트(내부)</td>
+<td style="text-align: left;">단독 주치 파싱(Rank 1~4) → FMA 유사도·층위 → 그림·3D 렌더링 → 데이터북 작성</td>
 </tr>
 </tbody>
 </table></div>
 <ul>
-<li>Rank 0: <code>sync_skill_settings.py --check</code> 결과는 드리프트 없음이었다(<code>.claude/CLAUDE.md</code> 변경 표시만 있음). 정본 v2.7을 적용했다.</li>
-<li>재현: <code>python scripts/extract_indications.py</code> → (각 혈 <code>fma_query.py profile --json</code> 결과를 <code>fma/</code>에 저장) → <code>anatomy_similarity.py</code> → <code>make_figures.py &lt;폴더&gt; ko|en</code> → <code>render3d.py &lt;폴더&gt; ko|en</code> → <code>build_matrix.py &lt;xlsx&gt;</code>.</li>
+<li>Rank 0: 스킬 설정 동기화 점검 결과는 드리프트 없음이었다(프로젝트 설정 문서 변경 표시만 있음). 정본 v2.7을 적용했다.</li>
+<li>재현: 내부 분석 스크립트를 단독 주치 파싱 → 경혈별 FMA 프로파일 조회 → 유사도·층위 → 그림·3D 렌더링 → 데이터북 작성 순으로 실행한다.</li>
 <li>작성: Claude Code, 2026-10-24.</li>
 </ul>
-<p class="meta">생성: 2026-10-25 11:06 · 원본: 영추경맥_수태음시동병_침구해부_종합보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

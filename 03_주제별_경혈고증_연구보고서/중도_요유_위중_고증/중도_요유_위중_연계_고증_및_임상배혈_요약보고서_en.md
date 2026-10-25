@@ -1,7 +1,7 @@
 # 📜 Textual Verification and Clinical Point Combination of Zhongdu (中都) and Yaoshu (腰俞) as Linked Through the Alternative Name 'Weizhong (委中)': A Summary Report
 
-> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: no csv/xlsx in this folder — collated against the three classics in `chunks_refined` (`针灸腧穴通考(上)_721-800.md` L1-12, `(下)_161-240.md` L2487, `(下)_401-480.md` L595-603 · L1009-1010; `中国针灸穴位通鉴(上卷)_1041-1120.md` L3144, `(上卷)_161-240.md` L2188, `(下卷)_161-240.md` L784)
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: no separate dataset — collated against the refined editions of the three classics (《針灸腧穴通考》(上) PDF pp. 721–800 L1-12, (下) PDF pp. 161–240 L2487, (下) PDF pp. 401–480 L595-603 · L1009-1010; 《中國針灸穴位通鑑》(上卷) PDF pp. 1041–1120 L3144, (上卷) PDF pp. 161–240 L2188, (下卷) PDF pp. 161–240 L784)
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 >
 > **v2.7 key correction**: The only 'alternative-name' link confirmed in the classics is **the single pair Zhongdu–Weizhong**. Zhongdu's alias **中郄** (originally the standard name of Zhongdu) was wrongly entered as an alias of Weizhong in the 1957 Nanjing 《針灸學》 (copied from a Japanese textbook), and Korean textbooks followed it (《腧穴通考》, 委中 entry, editor's note (按); 《穴位通鑑》, 委中 [別名] note: "'中郄'原為中都穴正名，作為本穴別名不妥"). There is no alternative-name relationship between Yaoshu and Weizhong; only the relationships of being listed together in the same passage or used together in the same prescription are confirmed.
 
@@ -78,14 +78,14 @@ Major clinical acupuncture books such as the Ming-dynasty *Zhenjiu Dacheng* (《
 | :-: | :--- | :--- | :--- | :--- |
 | 1 | Header | (no version stated) | Framework v2.7 refinement block, ARI not scored, gist of the key correction | Guideline 1 |
 | 2 | Summary of the core links | ① paired structure ② 肝主筋 combination ③ triangular prescription of 王冰 · 徐鳳 | Corrected to the 3 items confirmed in the classics (simultaneous listing, misattribution of 中郄, 3 prescriptions in 《針灸大全》); triangular prescription not found | 《腧穴通考》 · 《穴位通鑑》 |
-| 3 | Section 1 ① | (no source stated) | Noted that the original text and 王冰's commentary are confirmed in all 3 classics | Collation with `chunks_refined` |
+| 3 | Section 1 ① | (no source stated) | Noted that the original text and 王冰's commentary are confirmed in all 3 classics | Collation with the refined classics |
 | 4 | Section 1 ② | "formed a pair as upper-lower, front-back symmetrical points" | Simultaneous listing in a four-point group; the pair interpretation is a Rank 4 disease-pattern integration bias; actual usage in 《針經摘英集》 added | 《腧穴通考》, 腰俞 entry |
 | 5 | Section 1 ② | The name of Weizhong "closely connected" with the Yaoshu passage | Nothing related to Weizhong in Yaoshu's alias list; scope of the link limited | 《穴位通鑑》 腰俞 [別名] |
 | 6 | Section 2 ① | Zhongdu "key point for acute pain relief" | Note on the standard name 中郄 added; marked as author's judgement | 《腧穴通考》 general discussion |
 | 7 | Section 2 ② | Weizhong "筋之會", "foremost point" | 筋會 is Yanglingquan; no basis found | 《難經·四十五難》 (cited in 《穴位通鑑》) |
 | 8 | Section 2 ② | Zhongdu + Weizhong combination established; alternative-name link in "ancient manuscripts" | Combination not found; the alternative-name route is the 1957 Nanjing 《針灸學》 → Korean textbooks | 《腧穴通考》 (Vol. 1), 委中 entry, editor's note |
 | 9 | Section 3 introduction | "operated the three points as standard formula prescriptions" | Only rows 1 and 2 confirmed in 《針灸大全》 Volume 4; row 3 not found; no prescription with all three points | 《腧穴通考》 腰俞, clinical application (臨床應用) |
-| 10 | Section 3 table, row 3 | Zhongdu + Weizhong + Zusanli prescription | "Not found in the three classics", mechanism "author's judgement" | 0 hits in a `chunks_refined` search |
+| 10 | Section 3 table, row 3 | Zhongdu + Weizhong + Zusanli prescription | "Not found in the three classics", mechanism "author's judgement" | 0 hits in a the refined classics search |
 | 11 | Summary 1–3 | "representative pair (配穴)", "mutually fused operation", "triangular line … core point group" | Simultaneous listing / joint use in prescriptions, alternative-name misattribution, triangular line is the author's judgement | Synthesis of the above evidence |
 
 - PMID/DOI: none in the text (0 items to check). No citation of biomedical mechanisms (0 Layer B items).

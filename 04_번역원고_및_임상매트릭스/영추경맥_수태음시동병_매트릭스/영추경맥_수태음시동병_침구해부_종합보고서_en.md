@@ -2,10 +2,10 @@
 
 > **Framework**: v2.7 · **Classification**: Category 4 symptom-based acupuncture-anatomy clinical matrix · **Scope**: Ranks 0–6 (FMA-linked); Rank 7 ARI **not scored** (a 38-point thematic matrix — ARI for individual points is scored in the Category 1 reports)
 > **Three Primary Classics**: full parse of the 【適應症】 (indications) entries of the 361 points in the 25 parts of *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (primary source) · collated against *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) and *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) (shidong original text and 是動 prescriptions)
-> **Anatomical basis**: local index of FMA 5.1.0 (`fma_query.py profile`; two-textbook mapping table FMA Acupoint Anatomical Ontology Mapping Registry) + segmental supplementation from B1 normative anatomy (B1-01, B1-02, B1-03) · 3D shapes: BodyParts3D 4.0 (B1 supplementary)
-> **Layer A**: Integrated Biomedical Master DB v3.0 (state as of 2026-10-24, `acupoint_inverted_index`) + collation with PubMed metadata. `sync_master_db.py` was not run for this analysis (batch synchronisation of the 38 points is a separate task).
-> **Datasheet**: Lingshu Jingmai Lung Channel Shidong Clinical Acupuncture Anatomy Matrix Analysis Databook (10 sheets) · Reproduction scripts: `scripts/` folder
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Anatomical basis**: local index of FMA 5.1.0 (FMA profile query; two-textbook mapping table FMA Acupoint Anatomical Ontology Mapping Registry) + segmental supplementation from B1 normative anatomy (B1-01, B1-02, B1-03) · 3D shapes: BodyParts3D 4.0 (B1 supplementary)
+> **Layer A**: Integrated Biomedical Master DB v3.0 (state as of 2026-10-24, `acupoint_inverted_index`) + collation with PubMed metadata. the integrated DB sync (external search) was not run for this analysis (batch synchronisation of the 38 points is a separate task).
+> **Datasheet**: Lingshu Jingmai Lung Channel Shidong Clinical Acupuncture Anatomy Matrix Analysis Databook (10 sheets) · Reproduction scripts: kept internally
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ---
 
@@ -33,10 +33,10 @@
 
 | Stratum | Text | Original text | Evidence location |
 | :-- | :-- | :-- | :-- |
-| Prototype | 《陰陽十一脈灸經》 | 臂巨陰脈……是動則病：**心滂滂如痛，缺盆痛，甚則交兩手而戰**，此為臂厥 | `침구수혈통고(针灸腧穴通考)/针灸腧穴通考_03_上_手太阴肺经穴.md` L19 |
+| Prototype | 《陰陽十一脈灸經》 | 臂巨陰脈……是動則病：**心滂滂如痛，缺盆痛，甚則交兩手而戰**，此為臂厥 | 《針灸腧穴通考》 上 手太陰肺經穴 L19 |
 | Revision | 《靈樞·經脈》 | 是動則病**肺脹滿膨膨而喘咳，缺盆中痛，甚則交兩手而瞀**，此為臂厥 | Same file L31, Table 2-1 (L39); the acupuncture chapter of *Dongui Bogam* (《東醫寶鑑》) quotes the same sentence |
 | Point indications | 《黃帝明堂經》 | 經渠：心痛欲嘔，胸中彭彭然，甚則交兩手務。咳上氣喘。 / 太淵：心痛脹滿彭彭，臂厥。胸痛，缺盆中相引痛。喘不得息。 / 尺澤：心膨膨痛。 | Same file, Table 2-1 (L39) |
-| Prescription | 《黃帝明堂經》 (《甲乙》 vols. 8–9) | 胸中膨膨然，甚則交兩手而瞀，暴癉內逆，**刺經渠及天府**，此謂之大輸 | `针灸腧穴通考_02_上_序·凡例·总论-2.md` L1027; `中国针灸证治通鉴_03_…_古代针灸方选解.md` L264; `中国针灸穴位通鉴_07_手太阴肺经(1).md` L716 |
+| Prescription | 《黃帝明堂經》 (《甲乙》 vols. 8–9) | 胸中膨膨然，甚則交兩手而瞀，暴癉內逆，**刺經渠及天府**，此謂之大輸 | 《針灸腧穴通考》 上 序·凡例·總論-2 L1027; 《中國針灸證治通鑑》 … 古代針灸方選解 L264; 《中國針灸穴位通鑑》 手太陰肺經(1) L716 |
 
 - **Huang Longxiang's (黃龍祥) verdict** (*Tongkao* L19–L39): the shidong disorder is a pulse-diagnosis disease pattern of the pulse opening (脈口) at the wrist. The Hand-Taiyin shidong disorder describes "**冠心病心絞痛症狀**" (symptoms of coronary angina). 心滂滂如痛 is read as cardiac pain and palpitation, 缺盆痛 as cardiac pain radiating to the suprasternal notch and throat ("心痛引喉"), and 交兩手而戰 as clasping both hands to the chest amid chills and fear. When the 《靈樞》 replaced 心 with 肺, a single connected symptom cluster split into what look like three independent symptoms. By contrast, the Han-era 《明堂經》 indications of the Hand-Taiyin points do not yet contain the phrase "肺脹滿膨膨". The same author's paper 「心經、肺經'是動'病新解」 (papers.id 1506, 中國中醫基礎醫學雜誌 2005;11(11):814) argues the same point.
 - **Commentary (按語) on Tianfu (天府)** (`…_03_…md` L981): "胸中膨膨然，甚則交兩手而瞀係手太陰經'是動'病，**可見於心絞痛發作**".
@@ -120,7 +120,7 @@ Symptom-group codes: A 肺脹滿·膨膨, B 喘咳, C 缺盆中痛, D 交兩手�
 
 | Point | Verdict | Grounds |
 | :-- | :-- | :-- |
-| Fubai (浮白, GB10) | **Excluded (transcription error)** | From the *Waitai Miyao* (《外臺祕要》) vol. 39 onward, the location and indications of Tianrong (天容) were mistakenly entered under 浮白. The 《銅人》 copied only the 天容 indications (*Tongkao* commentary on 浮白, `针灸腧穴通考_18_下_足少阳胆经穴-1.md` L1811) |
+| Fubai (浮白, GB10) | **Excluded (transcription error)** | From the *Waitai Miyao* (《外臺祕要》) vol. 39 onward, the location and indications of Tianrong (天容) were mistakenly entered under 浮白. The 《銅人》 copied only the 天容 indications (*Tongkao* commentary on 浮白, 《針灸腧穴通考》 下 足少陽膽經穴-1 L1811) |
 | Yangfu (陽輔, GB38) | **Excluded (circular evidence)** | 缺盆中痛 was transferred to 陽輔 from the Foot-Shaoyang (足少陽) meridian disease pattern by Gao Wu (高武) in the *Zhenjiu Juying* (《針灸聚英》) on the "mother–child reinforcing and reducing" (母子補瀉) principle (commentary L2779), and textbooks from 1957 onward inherited it. The Han-era single-point indication is B (喘) only |
 | Jingqu (經渠, LU8) | Tier II (combination) | The Han-era single-point indication is "咳，上氣，喘…心痛欲嘔" (B, E). The core shidong clause (胸中彭彭·交兩手務) belongs to the **經渠 + 天府 prescription clause** "先取天府，此謂之大輸" (L2099). The *Waitai* (《外臺》) entry, flagged by the commentary as "輯錄有誤" (mis-transcribed), was excluded from the later stratum (L2107) |
 | Tianfu (天府, LU3) | **Added** (Tier II, combination) | A constituent point of the shidong "大輸" prescription (pulse opening (脈口) 經渠 + 標脈 天府). The Han-era indication of 天府 itself is B only (L979) |
@@ -131,7 +131,7 @@ Symptom-group codes: A 肺脹滿·膨膨, B 喘咳, C 缺盆中痛, D 交兩手�
 
 ## 5. Anatomical Similarity Method (Rank 5 · FMA Section 5-1)
 
-- **Input**: for each of the 38 points, `fma_query.py profile <code> --json` was run to obtain FMA mappings of the anatomical structures in the two textbooks (the common textbook and Kim Jaehyo's textbook). Only the mapping levels `exact`, `exact+…`, `exact(set)` and `parent(branch_of)` were used; `fuzzy`, `set(검토)` and `none` were omitted.
+- **Input**: for each of the 38 points, FMA profile query was run to obtain FMA mappings of the anatomical structures in the two textbooks (the common textbook and Kim Jaehyo's textbook). Only the mapping levels `exact`, `exact+…`, `exact(set)` and `parent(branch_of)` were used; `fuzzy`, `set(검토)` and `none` were omitted.
 - **Four feature types** and weighted Jaccard similarity (provisional weights):
   - **N nerve territory (0.35)**: nerve structures + nerves supplying muscles + branch→trunk chains. Generic class labels such as "Thoracic nerve" were omitted.
   - **G spinal segment (0.30)**: FMA `segmental_supply` and ordinal labels (e.g. "Fourth intercostal nerve" → T4). For the 55 nerves without segments in FMA, **B1 normative segments** were supplied (B1-01 Gray's 42e, B1-03 Moore 8e — e.g. medial pectoral nerve C8–T1, radial nerve C5–T1).
@@ -278,7 +278,7 @@ Points with no linked cardiac or respiratory paper (25): BL17, CV15, CV18, GB41,
 
   In sum, Taiyuan (太淵) has some cardioprotective effect, but weaker than the heart-meridian points. This means **the evidence for supporting "Hand-Taiyin shidong disorder = cardiac pain" with effects of Lung-meridian points is weak** (B-Check ⑤ conflict → hypothesis).
 - **Respiratory**: Taiyuan (太淵) electroacupuncture alone improved lung function in rats with acute lung injury (papers.id 2240, PMID 35880273, animal). Of the 12 Kongzui (孔最) asthma studies, 3 are rat experiments (papers.id 1682–1684). The human evidence is one RCT of the combination 太淵·孔最·膻中·肺俞 for postoperative pulmonary complications after thoracoscopic surgery (papers.id 1807, PMID 40953233 — a combination, so not read as single-point efficacy).
-- **External search**: this report did not run the 38-point batch `sync_master_db.py` (**external search incomplete**). For the PMIDs above, only the bibliographic data and stimulated points were checked against PubMed metadata.
+- **External search**: this report did not run the 38-point batch the integrated DB sync (external search) (**external search incomplete**). For the PMIDs above, only the bibliographic data and stimulated points were checked against PubMed metadata.
 
 ## 9. 3D Anatomical Images — Shared Structures by Stratum (BodyParts3D 4.0, B1 Supplementary)
 
@@ -318,12 +318,12 @@ For each cluster, up to seven FMA structures with meshes that are shared by at l
 
 | File | Contents |
 | :-- | :-- |
-| `영추경맥_수태음시동병_침구해부_종합보고서.md`·`.html` | This report (Korean) |
-| `영추경맥_수태음시동병_침구해부_종합보고서_en.md`·`.html` | English edition (with Traditional Chinese characters) |
+| Comprehensive report (Korean) | Korean edition |
+| Comprehensive report (English) | This report (with Traditional Chinese characters) |
 | Lingshu Jingmai Lung Channel Shidong Clinical Anatomy Matrix Databook | 1 shidong textual strata · 2 candidates and indication tiers · 3 evidence entries (290 rows) · 4 FMA anatomical features · 5 similarity matrix · 6 strata · 7 ranking relative to 太淵 · 8 segmental concordance · 9 Layer A · 10 methods and audit |
-| `Fig1`~`Fig4_*_ko.png` / `_en.png` | 8 figures × 2 languages |
-| `scripts/` | `extract_indications.py` (Ranks 1–4) → `anatomy_similarity.py` (FMA similarity, strata) → `make_figures.py`·`render3d.py` (figures) → `build_matrix.py` (xlsx) |
+| Figures Fig1–Fig4 | 8 figures × 2 languages |
+| Analysis scripts (internal) | Single-point indication parsing (Ranks 1–4) → FMA similarity, strata → figures and 3D rendering → databook |
 
-- Rank 0: `sync_skill_settings.py --check` reported no drift (only a change flag on `.claude/CLAUDE.md`). The canonical v2.7 was applied.
-- Reproduction: `python scripts/extract_indications.py` → (save each point's `fma_query.py profile --json` output to `fma/`) → `anatomy_similarity.py` → `make_figures.py <folder> ko|en` → `render3d.py <folder> ko|en` → `build_matrix.py <xlsx>`.
+- Rank 0: the skill-settings sync check reported no drift (only a change flag on the project settings document). The canonical v2.7 was applied.
+- Reproduction: run the internal analysis scripts in the order single-point indication parsing → FMA profile query per point → similarity and strata → figures and 3D rendering → databook.
 - Author: Claude Code, 2026-10-24.

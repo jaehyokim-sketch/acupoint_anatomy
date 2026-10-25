@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -74,7 +84,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;">《针灸腧穴通考》</td>
-<td style="text-align: left;"><code>针灸腧穴通考/chunks_refined/针灸腧穴通考(下)_241-320.md</code> (二十一) 肩井</td>
+<td style="text-align: left;">《针灸腧穴通考》(下) PDF 241–320쪽 (二十一) 肩井</td>
 <td style="text-align: left;">"肩井　Jiānjǐng（GB21）　出《黄帝明堂经》" / 名实考: "《黄帝明堂经》作'在肩上陷解中，缺盆上大骨前'"</td>
 <td style="text-align: left;">최초 출전은 《黄帝明堂经》.</td>
 </tr>
@@ -104,7 +114,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">《中国针灸穴位通鉴》</td>
-<td style="text-align: left;"><code>中国针灸穴位通鉴_parsed_refined.md</code> 86166행 이하 肩井(GB21)</td>
+<td style="text-align: left;">《中国针灸穴位通鉴》 정제본 86166행 이하 肩井(GB21)</td>
 <td style="text-align: left;">"一.出处 '肩井，在肩上陷者中，缺盆上，大骨前。'（《针灸甲乙经》3：44）"</td>
 <td style="text-align: left;">출처를 《甲乙经》 3:44로 명시. 《灵枢·根结》 기재 없음.</td>
 </tr>
@@ -116,7 +126,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">《中国针灸证治通鉴》</td>
-<td style="text-align: left;"><code>中国针灸证治通鉴_parsed_refined.md</code> 3726~3730행</td>
+<td style="text-align: left;">《中国针灸证治通鉴》 정제본 3726~3730행</td>
 <td style="text-align: left;">"《明堂经》主肩背痹痛，臂不举，寒热凄索气上，不得眠卧 … 《千金要方》难产 … 小结《千金要方》《千金翼方》均针肩井穴以治难产，并谓'泻之，须臾即生'，值得研究"</td>
 <td style="text-align: left;">고유 주치는 국소 견배통이고, 난산은 《千金》에서 추가되었으며 "연구가 필요하다"고 평가.</td>
 </tr>
@@ -360,7 +370,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 1. 1431의 집단 평균(약 38 mm)은 교재·《通考》 직자 상한 8푼(18.4 mm)보다 깊다. 그러나 저자들은 "집단 내 차이가 집단 간 차이보다 커서 성별·BMI 기준으로 깊이를 정하는 것은 위험하다"고 결론지었다. 따라서 평균값을 안전 경계로 쓰지 않는다(5절 1번 유지).
 2. 1896의 TI 1.54는 GB21의 유효·위험 깊이 사이에 여유가 있음을 보이지만, 39명 탐색 연구이므로 SI 단계를 바꾸는 근거로 쓰지 않는다.
 3. SI 0은 금침 문헌(동의보감 <code>0</code>)과 《通考》의 기흉 기록에 근거하며, 초음파 수치로 바뀌지 않는다. 시술 원칙은 《通考》대로 <strong>전하방 자입과 과심 직자를 피하는 것</strong>이고, 직자 자체를 금하는 원전·교재 근거는 없다.
-4. 2026-10-23 다른 도구가 이 절에 넣었던 수치(흉막 20.5 ± 3.2 mm, 최소 15.2 mm, 층별 두께 3.5·7.8·8.5 mm, 첫째 갈비뼈 19.5 mm, 안전 마진 0.2~2.0 mm)와 '초음파 B-mode 구조도' 그림은 인용 논문 원문에 없는 값이라 삭제했다(10절 뒤 개정 이력, <code>_구판_antigravity_20261023/</code> 보관).</p>
+4. 2026-10-23 다른 도구가 이 절에 넣었던 수치(흉막 20.5 ± 3.2 mm, 최소 15.2 mm, 층별 두께 3.5·7.8·8.5 mm, 첫째 갈비뼈 19.5 mm, 안전 마진 0.2~2.0 mm)와 '초음파 B-mode 구조도' 그림은 인용 논문 원문에 없는 값이라 삭제했다(10절 뒤 개정 이력, 구판 보관본(내부) 보관).</p>
 <h2 id="6-vs">6. 해부학 구조 교재 비교표 (공통교재 vs 김재효 교재)</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -549,7 +559,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <h2 id="7">7. 공간 변위 분기 추론도 — 해당 없음 (분기 철회)</h2>
 <p>구판은 "고전 오목점"(Target 1)과 "WHO 최고점"(Target 2)을 Δ &gt; 15mm로 나누었다. 이 분기는 다음 이유로 성립하지 않는다.</p>
 <ol>
-<li>분기 근거로 쓴 《通考》 인용문 "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危"는 《通考》 원문(<code>针灸腧穴通考(下)_241-320.md</code> 1228~1390행)에 없는 <strong>가공 인용</strong>이다.</li>
+<li>분기 근거로 쓴 《通考》 인용문 "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危"는 《通考》 원문(《针灸腧穴通考》(下) PDF 241–320쪽 1228~1390행)에 없는 <strong>가공 인용</strong>이다.</li>
 <li>《通考》 名实考는 오히려 《明堂》의 '肩上陷解中, 缺盆上大骨前'을 《圣惠方》 '一寸半'과 《圣济总录》 취혈법으로 실측하면 "肩髃与第七颈椎连线的中点"이 된다고 해석한다. 고전 기술과 현대 정위는 같은 점이다.</li>
 <li>구판 도식 자체의 편차도 ±1cm(≤ 15mm)여서 정본 Rank 5 분기 요건(Δ &gt; 15mm)을 채우지 않는다.</li>
 <li>두 채점자 모두 Δ ≤ 15mm로 판단했다(10-6 조정 기록).</li>
@@ -887,7 +897,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">75.0</td>
 <td style="text-align: center;"><strong>71.875</strong></td>
 <td style="text-align: left;">최초 기술이 모호해 후대에 보완, 후대 문헌은 중점으로 수렴, 이명 혼용 해소, 《千金》 오자 교정</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_241-320.md</code> 名实考·定位·辨误; 《通鉴》 86166행</td>
+<td style="text-align: left;">《针灸腧穴通考》(下) PDF 241–320쪽 名实考·定位·辨误; 《通鉴》 86166행</td>
 </tr>
 <tr>
 <td style="text-align: left;">$S_{clarity}$</td>
@@ -1060,25 +1070,25 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">구 2절-1</td>
 <td style="text-align: left;">최초 기술 《靈樞·根結》 "肩上陷者中, 缺盆上, 大骨前"</td>
 <td style="text-align: left;">《黄帝明堂经》 "在肩上陷解中，缺盆上大骨前"(《通考》), 《甲乙经》 3:44 "在肩上陷者中"(《通鉴》)</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_241-320.md</code> 1228·1249행; <code>中国针灸穴位通鉴_parsed_refined.md</code> 86168행</td>
+<td style="text-align: left;">《针灸腧穴通考》(下) PDF 241–320쪽 1228·1249행; 《中国针灸穴位通鉴》 정제본 86168행</td>
 </tr>
 <tr>
 <td style="text-align: left;">구 2절-2</td>
 <td style="text-align: left;">《甲乙》 "… 刺入五分, 留七呼"</td>
 <td style="text-align: left;">《明堂》 "刺入五分，灸三壮"</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_241-320.md</code> 1378행</td>
+<td style="text-align: left;">《针灸腧穴通考》(下) PDF 241–320쪽 1378행</td>
 </tr>
 <tr>
 <td style="text-align: left;">구 2절-3</td>
 <td style="text-align: left;">《동의보감》 "肩上陷者中; 妊婦禁針", "금침(金鍼)"</td>
 <td style="text-align: left;">'金鍼' → 禁鍼. 동의보감 원문 구절은 미확인으로 표시하고 DB 값 <code>0</code>(동인 인용)으로 대체. 孕妇禁针 출처는 《类经图翼》 卷8</td>
-<td style="text-align: left;">자침깊이 DB 326행; <code>针灸腧穴通考(下)_241-320.md</code> 1384행</td>
+<td style="text-align: left;">자침깊이 DB 326행; 《针灸腧穴通考》(下) PDF 241–320쪽 1384행</td>
 </tr>
 <tr>
 <td style="text-align: left;">구 2절-4, 구 8절</td>
 <td style="text-align: left;">《通考》 "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危"와 "완전 일치" 주장</td>
 <td style="text-align: left;">가공 인용 삭제. 실제 구절("本穴下正当肺尖 … 气胸几乎九成发生于针刺肩井穴", "不可向前下方刺入或直刺过深") 수록</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_241-320.md</code> 1255·1376행</td>
+<td style="text-align: left;">《针灸腧穴通考》(下) PDF 241–320쪽 1255·1376행</td>
 </tr>
 <tr>
 <td style="text-align: left;">구 2절-5</td>
@@ -1096,7 +1106,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">3절(신규)</td>
 <td style="text-align: left;">《千金要方》 '在→及' 교정 누락</td>
 <td style="text-align: left;">辨误 내용 수록</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_241-320.md</code> 1262~1268행</td>
+<td style="text-align: left;">《针灸腧穴通考》(下) PDF 241–320쪽 1262~1268행</td>
 </tr>
 <tr>
 <td style="text-align: left;">구 3절</td>
@@ -1150,7 +1160,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">8절·10절(신규)</td>
 <td style="text-align: left;">Layer A·B-Check·검색 로그·ARI v3.0 표 없음</td>
 <td style="text-align: left;">추가</td>
-<td style="text-align: left;">final_GB21.json; pack_GB21.md</td>
+<td style="text-align: left;">이중 채점 기록; 근거 묶음</td>
 </tr>
 </tbody>
 </table></div>
@@ -1170,13 +1180,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">4절 그림</td>
 <td style="text-align: left;"><code>GB21_견정_국소해부_단면도.png</code></td>
 <td style="text-align: left;"><code>GB21_견정_횡단면_해부모식도.png</code>(시상 단면 모식도, 교재 단독 구조 표지·금지 방향 표시)</td>
-<td style="text-align: left;"><code>.claude/skills/acupoint-anatomy/scripts/fma/figures/GB21_cross_section.py</code></td>
+<td style="text-align: left;">그림 생성 스크립트(내부)</td>
 </tr>
 <tr>
 <td style="text-align: left;">4절 도식</td>
 <td style="text-align: left;">제1늑골 FMA:7566, 흉막정 FMA:7334, 폐첨 FMA:7335; "평균 20.5±3.2mm, 최소 15.2mm — papers.id 1432"</td>
 <td style="text-align: left;">FMA:7597(First rib), FMA:27534(Pleural cupula), FMA:7319(Anatomical apex of lung); 고정 경계값 문구 삭제</td>
-<td style="text-align: left;"><code>fma_query.py entity</code> — 7566=Superior thoracic aperture, 7334=Upper lobe of lung, 7335=Lower lobe of lung</td>
+<td style="text-align: left;">FMA 실체 조회 — 7566=Superior thoracic aperture, 7334=Upper lobe of lung, 7335=Lower lobe of lung</td>
 </tr>
 <tr>
 <td style="text-align: left;">5-1절</td>
@@ -1188,7 +1198,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">6-1절</td>
 <td style="text-align: left;">FMA 지식그래프 그림, 더부신경 "C1~C5(뇌신경 XI)"를 FMA 결과로 표기, "상호 보완적으로 반영", "완벽하게 정합함을 실증"</td>
 <td style="text-align: left;">그림 제외(파생 그래프, 미검증), 더부신경 분절은 FMA 미기재·B1로 표기, 추론임을 명시, "해부 수준 정합"으로 정정</td>
-<td style="text-align: left;"><code>fma_query.py profile GB21</code>; v2.7 6절 원칙(교재 불일치 보존)</td>
+<td style="text-align: left;">FMA 프로파일 조회; v2.7 6절 원칙(교재 불일치 보존)</td>
 </tr>
 <tr>
 <td style="text-align: left;">8-3절 ②</td>
@@ -1211,14 +1221,18 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">보관</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">21:37 판 md·html·xlsx와 그림 3장·생성 스크립트를 <code>_구판_antigravity_20261023/</code>에 원본 그대로 보관</td>
+<td style="text-align: left;">21:37 판 md·html·xlsx와 그림 3장·생성 스크립트를 구판 보관본(내부)에 원본 그대로 보관</td>
 <td style="text-align: left;">—</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-23 21:56 · 원본: GB21_견정_해부생리_실체판명_보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:50 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1226,6 +1240,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

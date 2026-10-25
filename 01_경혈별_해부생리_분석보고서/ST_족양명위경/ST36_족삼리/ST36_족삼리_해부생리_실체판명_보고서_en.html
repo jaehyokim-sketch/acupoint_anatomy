@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -59,10 +69,10 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>Framework</strong>: v2.7 (revised 2026-10-04) · <strong>ARI</strong>: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 77.1 (B, grade unchanged) · <strong>Dual scoring</strong>: completed by two independent raters</p>
 <p><strong>Three Primary Classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)
 <strong>Layer A Empirical Database</strong>: Integrated Biomedical Master DB v3.0 (ST36 evidence pack: 38 landmark papers, 109 locally mapped papers, 39 external papers — only the 15 papers in Table 8-① are used for the mechanism verdict)
-<strong>Layer B Reference Registry</strong>: <code>01_Framework/layer_b_reference_registry.md</code> (6-item B-Check, concordance threshold ≥ 8/12)
+<strong>Layer B Reference Registry</strong>: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 <strong>Metrological Standard</strong>: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
 <strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 </blockquote>
 <hr>
 <h2 id="1-classical-literature-screening-table-three-primary-classics-excerpts">1. Classical Literature Screening Table (Three Primary Classics Excerpts)</h2>
@@ -78,7 +88,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;"><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)</td>
-<td style="text-align: left;">"入于下陵，下陵者，膝下三寸，胻外三里也，為合。"(《黃帝內經太素·本輸》) / "所謂三里者，下膝三寸也。所謂跗之者，舉膝分易見也。"(《素問·針解》) / "取之三里者，低跗。"(《靈樞·邪氣藏府病形》) — <code>针灸腧穴通考(上)_321-400.md</code> L3124–3130</td>
+<td style="text-align: left;">"入于下陵，下陵者，膝下三寸，胻外三里也，為合。"(《黃帝內經太素·本輸》) / "所謂三里者，下膝三寸也。所謂跗之者，舉膝分易見也。"(《素問·針解》) / "取之三里者，低跗。"(《靈樞·邪氣藏府病形》) — 《針灸腧穴通考》(上) PDF pp. 321–400 L3124–3130</td>
 <td style="text-align: left;">Three cun below the knee, on the lateral side of the shin; located with the foot dorsiflexed (低跗)</td>
 <td style="text-align: left;">One of the rare points for which the <em>Neijing</em> (《內經》) gives the name, its meaning, the location and the locating method (L3096)</td>
 </tr>
@@ -96,7 +106,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》)</td>
-<td style="text-align: left;">"足三里二穴，土也，在膝下三寸外廉兩筋間，當舉足取之。"(《聖濟總錄》) / aliases "三里" · "下陵" · "一名鬼邪" · "下陵、鬼邪、下三里" — <code>中国针灸穴位通鉴(上卷)_801-880.md</code> L3410–3428</td>
+<td style="text-align: left;">"足三里二穴，土也，在膝下三寸外廉兩筋間，當舉足取之。"(《聖濟總錄》) / aliases "三里" · "下陵" · "一名鬼邪" · "下陵、鬼邪、下三里" — 《中國針灸穴位通鑑》(上卷) PDF pp. 801–880 L3410–3428</td>
 <td style="text-align: left;">Gives 《聖濟總錄》 as the source of the point name and collects four alias lines</td>
 <td style="text-align: left;">The name '足三里' dates from the Song dynasty</td>
 </tr>
@@ -108,13 +118,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</td>
-<td style="text-align: left;">Indications of 足三里 in 《明堂經》: "腹中寒，脹滿，善噫，惡聞食臭，胃氣不足，腸鳴腹痛，泄利，食不化，心下脹" — <code>中国针灸证治通鉴_1-80.md</code> L2162–2166</td>
+<td style="text-align: left;">Indications of 足三里 in 《明堂經》: "腹中寒，脹滿，善噫，惡聞食臭，胃氣不足，腸鳴腹痛，泄利，食不化，心下脹" — 《中國針灸證治通鑑》 PDF pp. 1–80 L2162–2166</td>
 <td style="text-align: left;">Single-point indications centred on gastrointestinal signs</td>
 <td style="text-align: left;">Basis for $P_{single}$ (Section 9)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</td>
-<td style="text-align: left;">"喉痹，胸中暴逆，先取衝脈，後取三里、雲門，皆瀉之。" — <code>中国针灸证治通鉴_1-80.md</code> L1242</td>
+<td style="text-align: left;">"喉痹，胸中暴逆，先取衝脈，後取三里、雲門，皆瀉之。" — 《中國針灸證治通鑑》 PDF pp. 1–80 L1242</td>
 <td style="text-align: left;">Combination with 衝脈 (氣衝) and 雲門</td>
 <td style="text-align: left;">Basis for $P_{comb}$ (Section 9). The earlier edition wrongly placed this passage in the point-location column</td>
 </tr>
@@ -232,7 +242,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p>The KJH DB (Acupoint Nomenclature & Alias Comparative Database, row 122: No. 119, ST36, 족삼리 (Joksamni), 足三里, "下三里, 鬼邪") agrees with the alias columns of both textbook datasets.</p>
+<p>The KJH DB (Acupoint Nomenclature &amp; Alias Comparative Database, row 122: No. 119, ST36, 족삼리 (Joksamni), 足三里, "下三里, 鬼邪") agrees with the alias columns of both textbook datasets.</p>
 <hr>
 <h2 id="4-3d-spatial-coordinates-layer-15-anatomical-substrate-diagram">4. 3D Spatial Coordinates &amp; Layer 1–5 Anatomical Substrate Diagram</h2>
 <ul>
@@ -366,7 +376,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <ul>
 <li><strong>What the image shows</strong>: it confirms the arrangement in Figure 4-1, with Layer 2–3 (belly of tibialis anterior) lying just lateral to the lateral surface of the tibia (the hyperechoic curve on the left with its acoustic shadow). In some images the central aponeurosis appears as a bright line within the muscle.</li>
 <li><strong>What it does not show / limits</strong>: the scanning level is not recorded in the dataset, so it is not assumed to match the level of ST36 (犢鼻下3寸). The subjects are patients and controls examined for neuromuscular diagnosis, not needling-study participants. The image is therefore <strong>a general reference for the ultrasound appearance of tibialis anterior</strong>; it is neither point-specific measurement (B2) nor Layer A evidence and is not used for layer depth boundaries or the SI (skill section 5-2).</li>
-<li><strong>Reproduction</strong>: <code>python .claude/skills/acupoint-anatomy/scripts/us/us_fetch.py get marzola_msk</code> → <code>extract marzola_msk "DeepLearningUS/TA/"</code> → <code>python .claude/skills/acupoint-anatomy/scripts/us/figures/ST36_ultrasound_TA.py &lt;output.png&gt; --json &lt;stats.json&gt;</code> (raw statistics: <code>ST36_앞정강근_초음파_통계.json</code>).</li>
+<li><strong>Reproduction</strong>: the figure and statistics can be reproduced by processing the tibialis anterior images of the public dataset (Mendeley 3jykz7wz8d, CC BY 4.0) with the internal analysis scripts (raw statistics are in the supplementary databook).</li>
 <li>The direct depth measurement at the ST36 level is papers.id 1896 (TI 1.09) in Section 5.</li>
 </ul>
 <hr>
@@ -918,7 +928,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">$P_{comb}$</td>
 <td style="text-align: left;">Modern prescriptions (e.g. hemiplegia (半身不遂) after stroke)</td>
-<td style="text-align: left;">Numerous multi-point prescriptions (<code>中国针灸证治通鉴_161-240.md</code> L212–298)</td>
+<td style="text-align: left;">Numerous multi-point prescriptions (《中國針灸證治通鑑》 PDF pp. 161–240 L212–298)</td>
 </tr>
 </tbody>
 </table></div>
@@ -944,7 +954,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">81.25</td>
 <td style="text-align: center;">81.25</td>
 <td style="text-align: left;">Mean of the 4 sub-items below</td>
-<td style="text-align: left;">Tongkao <code>(上)_321-400.md</code> L3096–3248, L3478–3506</td>
+<td style="text-align: left;">Tongkao (上) PDF pp. 321–400 L3096–3248, L3478–3506</td>
 </tr>
 <tr>
 <td style="text-align: left;">$S_{clarity}$ (0.35)</td>
@@ -1033,7 +1043,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 5. The stomach (T6–T9) and ST36 (L4–S1) do not share segments, so the gastrointestinal indications are explained by a supraspinal vagal pathway <strong>hypothesis</strong>, not by a segmental reflex.</p>
 <hr>
 <h2 id="appendix-a-fma-anatomical-substrate-profile-fma-510">Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)</h2>
-<p>Generated by <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile ST36 --md</code> (2026-10-23). Match level <code>exact</code> means the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.</p>
+<p>Generated by FMA 5.1.0 acupoint profile query (ST36; 2026-10-23). Match level <code>exact</code> means the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1124,7 +1134,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <ul>
 <li>Union of segments (input to B-Check ②): <strong>L4, L5, S1</strong></li>
 <li>Comparison of the two textbooks: 6 shared FMA entities · 1 Common Textbook only (FMA:44699) · 1 Kim Jaehyo only (FMA:75559)</li>
-<li>Neo4j cross-check (<code>fma_neo4j.py query shared_structure --param a=ST36 --param b=GB34</code>): ST36 and Yanglingquan (陽陵泉, GB34) directly share the deep fibular nerve, the superficial fibular nerve and extensor digitorum longus, and have the common fibular nerve as a common trunk. Useful when comparing points in the same nerve territory (some trunk links are derived from FMA is_a class names).</li>
+<li>Neo4j cross-check (Neo4j shared-structure query: ST36, GB34): ST36 and Yanglingquan (陽陵泉, GB34) directly share the deep fibular nerve, the superficial fibular nerve and extensor digitorum longus, and have the common fibular nerve as a common trunk. Useful when comparing points in the same nerve territory (some trunk links are derived from FMA is_a class names).</li>
 <li>Limits of citation: FMA is a normative ontology of adult anatomy and is not evidence of point-specific depth, variant frequency or reflex function. The origin of the anterior muscular branches (recorded on the medial terminal branch), the missing saphenous–femoral link and the absence of nerve segments were supplemented from B1 as noted in Section 4.</li>
 </ul>
 <hr>
@@ -1179,7 +1189,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Appendix A</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA profile table; Neo4j ST36–GB34 shared structures</td>
-<td style="text-align: left;"><code>fma_query.py profile ST36 --md</code>, <code>fma_neo4j.py</code></td>
+<td style="text-align: left;">FMA profile query, Neo4j graph query</td>
 </tr>
 <tr>
 <td style="text-align: left;">ARI</td>
@@ -1190,14 +1200,14 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">Archive</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">Pre-supplement md, html and xlsx kept in <code>_구판_v2.7_20261023/</code></td>
+<td style="text-align: left;">Pre-supplement md, html and xlsx kept in the internal archive</td>
 <td style="text-align: left;">—</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 4, Figure 4-2</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">Reference transverse ultrasound of tibialis anterior from public data (Marzola 2021, CC BY 4.0, 3,092 healthy-group images), statistics table and stated limits</td>
-<td style="text-align: left;"><code>scripts/us/figures/ST36_ultrasound_TA.py</code>, Mendeley 3jykz7wz8d</td>
+<td style="text-align: left;">ultrasound figure script (internal), Mendeley 3jykz7wz8d</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 5</td>
@@ -1214,7 +1224,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">Restoration</td>
 <td style="text-align: left;">At 21:17 another tool overwrote the report with a template regeneration (B-Check ② = 2, "confirmed", single-scored ARI 81.2, loss of Tongkao row citations — reintroducing errors already fixed in v2.7)</td>
-<td style="text-align: left;">Restored the v2.7 + FMA supplemented version; the regenerated version kept unchanged (with 2 figures) in <code>_구판_antigravity_20261023/</code></td>
+<td style="text-align: left;">Restored the v2.7 + FMA supplemented version; the regenerated version kept unchanged (with 2 figures) in the internal archive</td>
 <td style="text-align: left;">User decision, 2026-10-23</td>
 </tr>
 </tbody>
@@ -1235,13 +1245,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Header</td>
 <td style="text-align: left;">Framework wording, "full inverted index of 148 measured papers"</td>
 <td style="text-align: left;">v2.7 citation block, ARI notation / replaced by evidence-pack counts (38, 109, 39)</td>
-<td style="text-align: left;">final_ST36.json notation, pack_ST36.md</td>
+<td style="text-align: left;">ARI notation record, evidence pack</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 1</td>
 <td style="text-align: left;">Fragments of the Tongjian table of contents, a Zhengzhi Tongjian 衝脈 collation paragraph, fragments of the Tongkao table of contents</td>
 <td style="text-align: left;">Original text of 《靈樞·本輸》, 《素問·針解》 and 《明堂》 with source line numbers</td>
-<td style="text-align: left;">Tongkao <code>(上)_321-400.md</code> L3096–3248; Tongjian <code>(上卷)_801-880.md</code> L3410–3692; Zhengzhi Tongjian <code>_1-80.md</code> L1242, L2162</td>
+<td style="text-align: left;">Tongkao (上) PDF pp. 321–400 L3096–3248; Tongjian (上卷) PDF pp. 801–880 L3410–3692; Zhengzhi Tongjian PDF pp. 1–80 L1242, L2162</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 2</td>
@@ -1283,7 +1293,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 8 ①</td>
 <td style="text-align: left;">papers.id 5, 12, 19, 27, 38, 46, 54, 59 (PMIDs blank)</td>
 <td style="text-align: left;">15 ST36 studies with PMID/DOI</td>
-<td style="text-align: left;">pack_ST36.md, master DB .json</td>
+<td style="text-align: left;">evidence pack, Integrated Biomedical Master DB</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 8 ②</td>
@@ -1319,7 +1329,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 10</td>
 <td style="text-align: left;">Single scoring: $S_{orig}$ 85, ARI-Core 79.0, sensitivity 78.3, "rigorously verified"</td>
 <td style="text-align: left;">Dual scoring: $S_{orig}$ 81.25, ARI-Core 77.5 ± 0, sensitivity 77.1, conclusion with scope limits</td>
-<td style="text-align: left;">final_ST36.json</td>
+<td style="text-align: left;">dual-scoring record</td>
 </tr>
 <tr>
 <td style="text-align: left;">Unresolved</td>
@@ -1331,7 +1341,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Unresolved</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">DOI of papers.id 1841 suspected not to match the journal. DB not modified</td>
-<td style="text-align: left;">Master DB .json</td>
+<td style="text-align: left;">Integrated Biomedical Master DB</td>
 </tr>
 <tr>
 <td style="text-align: left;">Excluded from citation</td>
@@ -1343,7 +1353,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Earlier-edition score</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">v2.6 score 79.0 (not comparable)</td>
-<td style="text-align: left;">Report in <code>_구판_v2.6/</code></td>
+<td style="text-align: left;">Report in the internal archive</td>
 </tr>
 </tbody>
 </table></div>
@@ -1363,7 +1373,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Whole document</td>
 <td style="text-align: left;">Automatically generated "English" edition: Korean body text with only headings and some terms replaced</td>
 <td style="text-align: left;">Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations</td>
-<td style="text-align: left;">Korean edition <code>ST36_족삼리_해부생리_실체판명_보고서.md</code></td>
+<td style="text-align: left;">Korean edition</td>
 </tr>
 <tr>
 <td style="text-align: left;">Title, Sections 4 and 10</td>
@@ -1404,9 +1414,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:26 · 원본: ST36_족삼리_해부생리_실체판명_보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1414,6 +1428,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -59,15 +69,15 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>프레임워크</strong>: v2.7 · <strong>ARI</strong>: ARI v3.0 | ARI-Core 68.75 ± 0 (C) | SI 50 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 66.7 (C, 등급 불변) · <strong>이중 채점</strong>: 독립 2회(채점 A·B), 15점 이상 불일치 3건 조정 완료</p>
 <p><strong>핵심 3대 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》
 <strong>Layer A 실증 DB</strong>: 통합 생의학 마스터 DB v3.0 (LU9 역색인 41편 중 <strong>LU9 자극을 확인한 15편</strong>만 판정에 사용 — 8절 ①)
-<strong>Layer B 참조 등록부</strong>: <code>01_Framework/layer_b_reference_registry.md</code> (B-Check 6항목, 부합 기준 ≥ 8/12)
+<strong>Layer B 참조 등록부</strong>: 4계층 참조 등록부(B1~B4) (B-Check 6항목, 부합 기준 ≥ 8/12)
 <strong>해부 온톨로지</strong>: FMA 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정(B1 보조, 등록부 미등재). 상세는 부록 A
 <strong>도량형 환산</strong>: 한대 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$)</p>
 </blockquote>
-<p><strong>원전 파일 약칭</strong> (모두 <code>01_도서_번역_및_원전/</code> 아래)
-- [通考] <code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_03_上_手太阴肺经穴.md</code> — 太渊 L2193~2455
-- [通鉴] <code>중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_08_手太阴肺经(2).md</code> — 太渊 L773~1121
-- [证治04] <code>중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_04_第壹编_第七篇_手太阴肺经_手阳明大肠经_足阳明胃经.md</code> — 太渊 L44~66
-- [证治17] <code>중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_17_第叁编_内科病症_二十二脏腑病证至二十四胸胁满痛.md</code></p>
+<p><strong>원전 약칭</strong> (3대 원전 정제본)
+- [通考] 《针灸腧穴通考》 上 手太阴肺经穴 — 太渊 L2193~2455
+- [通鉴] 《中国针灸穴位通鉴》 手太阴肺经(2) — 太渊 L773~1121
+- [证治04] 《中国针灸证治通鉴》 第壹编 第七篇 手太阴肺经 手阳明大肠经 足阳明胃经 — 太渊 L44~66
+- [证治17] 《中国针灸证治通鉴》 第叁编 内科病症 二十二脏腑病证至二十四胸胁满痛</p>
 <hr>
 <h2 id="1-3">1. 문헌 스크리닝 표 (3대 원전 원문 발췌)</h2>
 <div class="table-wrap"><table>
@@ -1027,7 +1037,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <li><strong>등가중치 민감도</strong>: (75+75+50)/3 = 66.7 → C, 등급 불변.</li>
 <li><strong>분기 판정</strong>: 단일 Target이므로 해당 없음.</li>
 <li><strong>조정 기록</strong>: 15점 이상 불일치 3건($S_{orig}$①, $S_{clarity}$, SI) 모두 위 표의 근거로 조정했다. 조정 후 하위 점수가 일치하여 반범위는 0이다. B-Check ⑤는 A 2·B 1로 갈려 최종 1이다.</li>
-<li><strong>구판 점수</strong>: 템플릿 초안의 'ARI-Core 79.0 (B)'는 근거 포인터 없이 기본값(85/75/75/75)으로 산출된 값이라 v3.0 채점과 비교하지 않는다(<code>_구판_template_20261023/</code>).</li>
+<li><strong>구판 점수</strong>: 템플릿 초안의 'ARI-Core 79.0 (B)'는 근거 포인터 없이 기본값(85/75/75/75)으로 산출된 값이라 v3.0 채점과 비교하지 않는다(구판 보관본(내부)).</li>
 </ul>
 <p><strong>표준 표기</strong>: <code>ARI v3.0 | ARI-Core 68.75 ± 0 (C) | SI 50 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 66.7 (C, 등급 불변)</code></p>
 <h3 id="_3">최종 결론</h3>
@@ -1039,7 +1049,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>안전(SI 50)</strong>: 표준 심도(2~5푼, 4.6~11.5mm) 전체가 노동맥과 같은 층에 있다. 자침 전 박동을 촉지해 밀어 비키고 직자하며, 출혈 시 압박한다. 《素问·刺禁论》 "刺臂太阴脉，出血多立死"와 《针方六集》 "不宜用针"은 이 동맥 위험을 기록한 것이다. 노동맥이 손목 주름 높이에서 긴엄지벌림근 힘줄 노쪽으로 비켜 가는 변이가 많아([通考] L2211), 국표 정위점에서는 박동이 잘 만져지지 않을 수 있다. 박동이 없다고 동맥이 없다고 판단하지 않는다.</p>
 <hr>
 <h2 id="a-fma-fma-510">부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)</h2>
-<p>생성: <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LU09 --md</code> (2026-10-23).</p>
+<p>생성: FMA 5.1.0 경혈 프로파일 조회(LU09, 2026-10-23).</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1220,7 +1230,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">머리말</td>
 <td style="text-align: left;">"실측 논문 9편 전수 역색인"</td>
 <td style="text-align: left;">역색인 41편 중 LU9 자극 확인 15편, FMA 줄 추가, ARI 표기</td>
-<td style="text-align: left;">마스터DB.json LU9; PubMed 초록 대조</td>
+<td style="text-align: left;">통합 생의학 마스터 DB LU9; PubMed 초록 대조</td>
 </tr>
 <tr>
 <td style="text-align: left;">1절</td>
@@ -1280,7 +1290,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">부록 A</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA 프로파일 표</td>
-<td style="text-align: left;"><code>fma_query.py profile LU09 --md</code></td>
+<td style="text-align: left;">FMA 프로파일 조회</td>
 </tr>
 <tr>
 <td style="text-align: left;">확인 불가</td>
@@ -1291,14 +1301,18 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">구판 보관</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">템플릿 초안 md·html·xlsx를 <code>_구판_template_20261023/</code>에 보관</td>
+<td style="text-align: left;">템플릿 초안 md·html·xlsx를 구판 보관본(내부)에 보관</td>
 <td style="text-align: left;">—</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-23 21:52 · 원본: LU09_태연_해부생리_실체판명_보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1306,6 +1320,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

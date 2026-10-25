@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -58,8 +68,8 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <blockquote>
 <p><strong>Framework</strong>: v2.7 (revised 2026-10-04) · <strong>ARI</strong>: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65.6 (C, grade unchanged) · <strong>Dual scoring</strong>: two independent raters, adjudicated</p>
 <p><strong>⚠ Safety warning (SI 0)</strong>: Directly beneath Jianjing (肩井) lie the pleural cupula (胸膜頂) and the apex of the lung (肺尖). The <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) states "不可向前下方刺入或直刺過深，以免損傷胸膜頂和肺尖引起氣胸" and records that about 90 % of needling-induced pneumothoraces occur at 肩井. In the needling-depth DB the <em>Dongui Bogam</em> (《東醫寶鑑》) value is <code>0</code> (contraindicated for needling, 禁鍼; cited source 'Tongren' (銅人)), and texts from 《類經圖翼》 onwards record "孕婦禁針" (needling forbidden in pregnancy). This report does not give a single fixed safe needling depth (see Sections 5 and 10).</p>
-<p><strong>Source datasets</strong>: Classical Needling Depth Database (sheet 1, Excel row 326, N0 324) · Acupoint Nomenclature & Alias Comparative Database (comprehensive acupoint list, row 327) · Common Textbook Anatomical Structure Dataset (sheet <code>경혈별_해부구조_종합</code>, row 325; <em>Acupoint Studies</em> vol. 2, p.384) · Kim Jaehyo Anatomical Structure Dataset (sheet <code>경혈별_해부구조_종합</code>, row 325) · master DB Integrated Biomedical Master DB v3.0
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<p><strong>Source datasets</strong>: Classical Needling Depth Database (sheet 1, Excel row 326, N0 324) · Acupoint Nomenclature &amp; Alias Comparative Database (comprehensive acupoint list, row 327) · Common Textbook Anatomical Structure Dataset (sheet <code>경혈별_해부구조_종합</code>, row 325; <em>Acupoint Studies</em> vol. 2, p.384) · Kim Jaehyo Anatomical Structure Dataset (sheet <code>경혈별_해부구조_종합</code>, row 325) · master DB Integrated Biomedical Master DB v3.0
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 </blockquote>
 <hr>
 <h2 id="1-classical-literature-screening-table-collation-of-the-three-primary-classics">1. Classical Literature Screening Table (Collation of the Three Primary Classics)</h2>
@@ -75,7 +85,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;"><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)</td>
-<td style="text-align: left;"><code>针灸腧穴通考/chunks_refined/针灸腧穴通考(下)_241-320.md</code> (二十一) 肩井</td>
+<td style="text-align: left;">《針灸腧穴通考》(下) PDF pp. 241–320 (二十一) 肩井</td>
 <td style="text-align: left;">"肩井　Jiānjǐng（GB21）　出《黃帝明堂經》" / 名實考: "《黃帝明堂經》作'在肩上陷解中，缺盆上大骨前'"</td>
 <td style="text-align: left;">The earliest source is the <em>Huangdi Mingtang Jing</em> (《黃帝明堂經》).</td>
 </tr>
@@ -105,7 +115,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》)</td>
-<td style="text-align: left;"><code>中国针灸穴位通鉴_parsed_refined.md</code> line 86166 ff., 肩井 (GB21)</td>
+<td style="text-align: left;">《中國針灸穴位通鑑》 refined edition line 86166 ff., 肩井 (GB21)</td>
 <td style="text-align: left;">"一.出處 '肩井，在肩上陷者中，缺盆上，大骨前。'（《針灸甲乙經》3：44）"</td>
 <td style="text-align: left;">Gives the source as the <em>Jiayi Jing</em> (《甲乙經》) 3:44. Not recorded in 《靈樞·根結》.</td>
 </tr>
@@ -117,7 +127,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</td>
-<td style="text-align: left;"><code>中国针灸证治通鉴_parsed_refined.md</code> lines 3726–3730</td>
+<td style="text-align: left;">《中國針灸證治通鑑》 refined edition lines 3726–3730</td>
 <td style="text-align: left;">"《明堂經》主肩背痹痛，臂不舉，寒熱淒索氣上，不得眠臥 … 《千金要方》難產 … 小結《千金要方》《千金翼方》均針肩井穴以治難產，並謂'瀉之，須臾即生'，值得研究"</td>
 <td style="text-align: left;">The original indication is local shoulder and upper-back pain; difficult labour (難產) was added in the <em>Qianjin</em> (《千金》) texts and is assessed as "worth investigating".</td>
 </tr>
@@ -361,7 +371,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 1. The group mean of 1431 (about 38 mm) is deeper than the 8-fen (18.4 mm) upper limit for perpendicular insertion in the textbooks and the 《通考》. However, the authors concluded that "within-group differences are larger than between-group differences, so setting depth by sex or BMI is dangerous". The mean is therefore not used as a safety boundary (point 1 of Section 5 stands).
 2. The TI of 1.54 in 1896 indicates a margin between the effective and hazardous depths at GB21, but as an exploratory study of 39 participants it is not used as grounds for changing the SI level.
 3. SI 0 rests on the text contraindicating needling (<em>Dongui Bogam</em> <code>0</code>) and on the pneumothorax record in the 《通考》, and is not altered by the ultrasound values. The procedural principle, following the 《通考》, is <strong>to avoid anterior-inferior insertion and excessively deep perpendicular insertion</strong>; there is no classical or textbook basis for forbidding perpendicular insertion as such.
-4. The values that another tool inserted into this section on 2026-10-23 (pleura 20.5 ± 3.2 mm, minimum 15.2 mm, layer thicknesses 3.5 · 7.8 · 8.5 mm, first rib 19.5 mm, safety margin 0.2–2.0 mm) and the 'ultrasound B-mode structural diagram' figure have been deleted because these values do not appear in the original texts of the cited papers (revision history after Section 10; archived in <code>_구판_antigravity_20261023/</code>).</p>
+4. The values that another tool inserted into this section on 2026-10-23 (pleura 20.5 ± 3.2 mm, minimum 15.2 mm, layer thicknesses 3.5 · 7.8 · 8.5 mm, first rib 19.5 mm, safety margin 0.2–2.0 mm) and the 'ultrasound B-mode structural diagram' figure have been deleted because these values do not appear in the original texts of the cited papers (revision history after Section 10; archived in the internal archive).</p>
 <h2 id="6-anatomical-structure-textbook-comparison-table-common-textbook-vs-kim-jaehyo-textbook">6. Anatomical Structure Textbook Comparison Table (Common Textbook vs. Kim Jaehyo Textbook)</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -550,7 +560,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <h2 id="7-spatial-discrepancy-branch-inference-not-applicable-branch-withdrawn">7. Spatial Discrepancy Branch Inference — Not Applicable (Branch Withdrawn)</h2>
 <p>The earlier edition split the point into a "classical depression point" (Target 1) and a "WHO highest point" (Target 2) with Δ &gt; 15 mm. This split does not hold, for the following reasons.</p>
 <ol>
-<li>The 《通考》 quotation used as the basis for the split, "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危", does not exist in the original text of the 《通考》 (<code>针灸腧穴通考(下)_241-320.md</code> lines 1228–1390); it is a <strong>fabricated quotation</strong>.</li>
+<li>The 《通考》 quotation used as the basis for the split, "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危", does not exist in the original text of the 《通考》 (《針灸腧穴通考》(下) PDF pp. 241–320 lines 1228–1390); it is a <strong>fabricated quotation</strong>.</li>
 <li>On the contrary, the 名實考 of the 《通考》 interprets the 《明堂》 '肩上陷解中, 缺盆上大骨前', measured with the '一寸半' of the 《聖惠方》 and the locating method of the 《聖濟總錄》, as "肩髃與第七頸椎連線的中點". The classical description and the modern location are the same point.</li>
 <li>The deviation in the earlier diagram itself was ±1 cm (≤ 15 mm), which does not meet the canonical Rank 5 branching requirement (Δ &gt; 15 mm).</li>
 <li>Both raters judged Δ ≤ 15 mm (adjudication record 10-6).</li>
@@ -888,7 +898,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">75.0</td>
 <td style="text-align: center;"><strong>71.875</strong></td>
 <td style="text-align: left;">Earliest description ambiguous and supplemented later; later texts converge on the midpoint; alias confusion resolved; scribal error in the 《千金》 corrected</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_241-320.md</code> 名實考 · 定位 · 辨誤; 《通鑑》 line 86166</td>
+<td style="text-align: left;">《針灸腧穴通考》(下) PDF pp. 241–320 名實考 · 定位 · 辨誤; 《通鑑》 line 86166</td>
 </tr>
 <tr>
 <td style="text-align: left;">$S_{clarity}$</td>
@@ -1061,25 +1071,25 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Old Section 2-1</td>
 <td style="text-align: left;">Earliest description 《靈樞·根結》 "肩上陷者中, 缺盆上, 大骨前"</td>
 <td style="text-align: left;">《黃帝明堂經》 "在肩上陷解中，缺盆上大骨前" (《通考》), 《甲乙經》 3:44 "在肩上陷者中" (《通鑑》)</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_241-320.md</code> lines 1228, 1249; <code>中国针灸穴位通鉴_parsed_refined.md</code> line 86168</td>
+<td style="text-align: left;">《針灸腧穴通考》(下) PDF pp. 241–320 lines 1228, 1249; 《中國針灸穴位通鑑》 refined edition line 86168</td>
 </tr>
 <tr>
 <td style="text-align: left;">Old Section 2-2</td>
 <td style="text-align: left;">《甲乙》 "… 刺入五分, 留七呼"</td>
 <td style="text-align: left;">《明堂》 "刺入五分，灸三壯"</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_241-320.md</code> line 1378</td>
+<td style="text-align: left;">《針灸腧穴通考》(下) PDF pp. 241–320 line 1378</td>
 </tr>
 <tr>
 <td style="text-align: left;">Old Section 2-3</td>
 <td style="text-align: left;"><em>Dongui Bogam</em> (《東醫寶鑑》) "肩上陷者中; 妊婦禁針", "金鍼" (golden needle, written for 禁鍼)</td>
 <td style="text-align: left;">'金鍼' → 禁鍼. The original <em>Dongui Bogam</em> passage marked as unconfirmed and replaced by the DB value <code>0</code> (citing Tongren, 銅人). Source of 孕婦禁針 given as 《類經圖翼》 vol. 8</td>
-<td style="text-align: left;">Needling-depth DB row 326; <code>针灸腧穴通考(下)_241-320.md</code> line 1384</td>
+<td style="text-align: left;">Needling-depth DB row 326; 《針灸腧穴通考》(下) PDF pp. 241–320 line 1384</td>
 </tr>
 <tr>
 <td style="text-align: left;">Old Section 2-4, old Section 8</td>
 <td style="text-align: left;">《通考》 "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危" and claim of "complete agreement"</td>
 <td style="text-align: left;">Fabricated quotation deleted. Actual passages ("本穴下正當肺尖 … 氣胸幾乎九成發生於針刺肩井穴", "不可向前下方刺入或直刺過深") included</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_241-320.md</code> lines 1255, 1376</td>
+<td style="text-align: left;">《針灸腧穴通考》(下) PDF pp. 241–320 lines 1255, 1376</td>
 </tr>
 <tr>
 <td style="text-align: left;">Old Section 2-5</td>
@@ -1097,7 +1107,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 3 (new)</td>
 <td style="text-align: left;">Correction '在 → 及' in the <em>Qianjin Yaofang</em> (《千金要方》) missing</td>
 <td style="text-align: left;">Content of the 辨誤 included</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_241-320.md</code> lines 1262–1268</td>
+<td style="text-align: left;">《針灸腧穴通考》(下) PDF pp. 241–320 lines 1262–1268</td>
 </tr>
 <tr>
 <td style="text-align: left;">Old Section 3</td>
@@ -1151,7 +1161,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Sections 8 and 10 (new)</td>
 <td style="text-align: left;">No Layer A, B-Check, search log or ARI v3.0 tables</td>
 <td style="text-align: left;">Added</td>
-<td style="text-align: left;">final_GB21.json; pack_GB21.md</td>
+<td style="text-align: left;">dual-scoring record; evidence pack</td>
 </tr>
 </tbody>
 </table></div>
@@ -1171,13 +1181,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 4 figure</td>
 <td style="text-align: left;"><code>GB21_견정_국소해부_단면도.png</code></td>
 <td style="text-align: left;"><code>GB21_견정_횡단면_해부모식도.png</code> (schematic sagittal section, with labels for single-textbook structures and the forbidden direction)</td>
-<td style="text-align: left;"><code>.claude/skills/acupoint-anatomy/scripts/fma/figures/GB21_cross_section.py</code></td>
+<td style="text-align: left;">figure-generation script (internal)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 4 diagram</td>
 <td style="text-align: left;">First rib FMA:7566, pleural cupula FMA:7334, lung apex FMA:7335; "mean 20.5 ± 3.2 mm, minimum 15.2 mm — papers.id 1432"</td>
 <td style="text-align: left;">FMA:7597 (First rib), FMA:27534 (Pleural cupula), FMA:7319 (Anatomical apex of lung); wording of a fixed boundary value deleted</td>
-<td style="text-align: left;"><code>fma_query.py entity</code> — 7566 = Superior thoracic aperture, 7334 = Upper lobe of lung, 7335 = Lower lobe of lung</td>
+<td style="text-align: left;">FMA entity query — 7566 = Superior thoracic aperture, 7334 = Upper lobe of lung, 7335 = Lower lobe of lung</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 5-1</td>
@@ -1189,7 +1199,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 6-1</td>
 <td style="text-align: left;">FMA knowledge-graph figure; accessory nerve "C1–C5 (cranial nerve XI)" presented as an FMA result; "reflected in a mutually complementary way"; "empirically demonstrated perfect consistency"</td>
 <td style="text-align: left;">Figure excluded (derived graph, unverified); accessory-nerve segments marked as not recorded in FMA / B1; inference stated explicitly; corrected to "concordance at the anatomical level"</td>
-<td style="text-align: left;"><code>fma_query.py profile GB21</code>; v2.7 Section 6 principle (textbook discrepancies retained)</td>
+<td style="text-align: left;">FMA profile query; v2.7 Section 6 principle (textbook discrepancies retained)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 8-3 ②</td>
@@ -1212,7 +1222,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">Archive</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">The 21:37 versions of the md, html and xlsx, the 3 figures and the generation script archived unchanged in <code>_구판_antigravity_20261023/</code></td>
+<td style="text-align: left;">The 21:37 versions of the md, html and xlsx, the 3 figures and the generation script archived unchanged in the internal archive</td>
 <td style="text-align: left;">—</td>
 </tr>
 </tbody>
@@ -1233,7 +1243,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Whole document</td>
 <td style="text-align: left;">Automatically generated "English" edition: Korean body text with only headings and some terms replaced</td>
 <td style="text-align: left;">Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations</td>
-<td style="text-align: left;">Korean edition <code>GB21_견정_해부생리_실체판명_보고서.md</code></td>
+<td style="text-align: left;">Korean edition</td>
 </tr>
 <tr>
 <td style="text-align: left;">Title</td>
@@ -1274,9 +1284,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:25 · 원본: GB21_견정_해부생리_실체판명_보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:50 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1284,6 +1298,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

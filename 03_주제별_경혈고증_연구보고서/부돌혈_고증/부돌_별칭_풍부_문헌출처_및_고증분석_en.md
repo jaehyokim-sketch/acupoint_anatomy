@@ -1,10 +1,10 @@
 # 📜 Fengfu (風府) as an Alias of Futu (扶突): Literary Sources and Textual Analysis of the Point
 
-> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual research (Rank 5 where needed) · **ARI**: not calculated (textual-research report) · **Source data**: no csv/xlsx in the same folder — compared against the three primary classics in `chunks_refined` (`针灸腧穴通考(上)_1-80.md` L855-879, `(上)_241-320.md` L392-540, `(下)_401-480.md` L2066-2187; `中国针灸穴位通鉴(上卷)_481-560.md` L3816-3928)
+> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual research (Rank 5 where needed) · **ARI**: not calculated (textual-research report) · **Source data**: no separate dataset — compared against the refined editions of the three primary classics (《針灸腧穴通考》(上) PDF pp. 1–80 L855-879, (上) PDF pp. 241–320 L392-540, (下) PDF pp. 401–480 L2066-2187; 《中國針灸穴位通鑑》(上卷) PDF pp. 481–560 L3816-3928)
 >
 > **Key v2.7 correction**: In the three primary classics the only aliases of Futu (扶突) are **水穴** (《黃帝明堂經》, 《外臺秘要》) and **水泉** (《古法新解會元針灸學》); 'Fengfu (風府)' is not confirmed as an alias of Futu. The relation with Fengfu runs through **舌本 (an alternative name of Fengfu)**, used together with Futu in a prescription of 《靈樞·寒熱病》. The title's "Fengfu as an alias of Futu" is retained as a working title referring to this relation.
 >
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 Based on the textual research on acupoints (腧穴考證) and the analysis of ancient textual passages in the three specialist acupuncture works — *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) and *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) — this report sets out in detail the literary sources in which an alias of **Futu (扶突, LI18)** appears in connection with **Fengfu (風府, GV16)**, and the medical-historical background of how this arose.
 
@@ -20,7 +20,7 @@ Based on the textual research on acupoints (腧穴考證) and the analysis of an
 > **"舌本，一名風府，在項入髮際一寸督脈上."**
 > *(Here **'Sheben (舌本)' is also called 'Fengfu (風府)'**, and lies on the Governor Vessel (督脈), 1 cun above the hairline at the back of the neck.)*
 >
-> *(2026-10-24 refinement note)* The earlier reading "在項**人**髮際" is a misprint found only once, in the 按 of the Futu entry of 《腧穴通考》 (`침구수혈통고(针灸腧穴通考)/针灸腧穴通考_05_上_手阳明大肠经穴-2.md` L1953). The same Yang Shangshan (楊上善) note reads "入髮際" in the 《腧穴通考》 general discussion (`针灸腧穴通考_02_上_序·凡例·总论-2.md` L1804), the Futu textual analysis (`…_05_…md` L1939), the Fengfu entry (`针灸腧穴通考_22_下_督脉穴-2.md` L197) and 《證治通鑑》 (`중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_14_第叁编_内科病症_四中风至八痉证.md` L1071), and the juan is given as "卷二十六".
+> *(2026-10-24 refinement note)* The earlier reading "在項**人**髮際" is a misprint found only once, in the 按 of the Futu entry of 《腧穴通考》 (《針灸腧穴通考》 上 手陽明大腸經穴-2 L1953). The same Yang Shangshan (楊上善) note reads "入髮際" in the 《腧穴通考》 general discussion (《針灸腧穴通考》 上 序·凡例·總論-2 L1804), the Futu textual analysis (`…_05_…md` L1939), the Fengfu entry (《針灸腧穴通考》 下 督脈穴-2 L197) and 《證治通鑑》 (《中國針灸證治通鑑》 第叄編 內科病症 四中風至八痙證 L1071), and the juan is given as "卷二十六".
 
 #### ③ *Waitai Miyao* (《外臺秘要》), juan 39 (compiled by Wang Tao (王燾), Tang dynasty)
 > **"主目赤痛不可視，面赤腫，舌本出血，風眩... 扶突主之."**
@@ -34,7 +34,7 @@ Based on the textual research on acupoints (腧穴考證) and the analysis of an
 
 According to the textual research on acupoints (腧穴考證) in volume 2 (pp. 58, 62–65) of the *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》), there are **two main medical-historical causes** for Futu (扶突) and Fengfu (風府) becoming entangled in the literature through alternative names and indications.
 
-> *(v2.7 page note)* "pp. 58, 62–65" are PDF page numbers of the `chunks_refined` files. The relevant descriptions are in the entries on 風府 (PDF p.62 = printed p.1234) and 腦戶 (PDF p.65 = printed p.1237) in volume 2, while the core argument is in the general section (printed pp.14-15) and the entry on 扶突 (printed pp.231-232) of **volume 1**. The expression that they were entangled through 'alternative names' is not confirmed in the primary sources; what the primary sources describe is the **misattribution of indication passages**.
+> *(v2.7 page note)* "pp. 58, 62–65" are PDF page numbers of the refined-edition files. The relevant descriptions are in the entries on 風府 (PDF p.62 = printed p.1234) and 腦戶 (PDF p.65 = printed p.1237) in volume 2, while the core argument is in the general section (printed pp.14-15) and the entry on 扶突 (printed pp.231-232) of **volume 1**. The expression that they were entangled through 'alternative names' is not confirmed in the primary sources; what the primary sources describe is the **misattribution of indication passages**.
 
 #### ① Misreading of punctuation (斷句錯誤) in the compilation of the *Waitai Miyao* (Tang dynasty)
 - The original text of 《靈樞·寒熱病》 was a **prescription combining two points (配穴), one upper and one lower**: **"needle Futu (扶突) and let blood at Sheben (舌本 = 風府)"**.
@@ -63,7 +63,7 @@ According to the textual research on acupoints (腧穴考證) in volume 2 (pp. 5
 | 1 | Preamble | (no version label) | Framework v2.7 refinement block, ARI not calculated, gist of key correction | Guideline 1 |
 | 2 | Preamble & summary | Fengfu is an alias of Futu | The only aliases of Futu are 水穴 and 水泉; the relation with Fengfu runs through the combination with 舌本 (an alternative name of Fengfu) | 《穴位通鑑》 扶突 [別名], 《腧穴通考》 "扶突，一名水穴" |
 | 3 | Section 1 ③ 《外臺》 passage | Translated as an indication of Futu | This passage is an indication of Naohu; 舌本出血 became attached to Naohu through Wang Tao's (王燾) punctuation error | 《腧穴通考》 (vol. 2), commentary (按) under 腦戶 |
-| 4 | Section 2 introduction | Vol. 2 pp.58, 62–65 / "alternative names and indications" | Correspondence of PDF and printed pages, evidence from vol. 1 added, alternative names not confirmed | `chunks_refined` PAGE markers |
+| 4 | Section 2 introduction | Vol. 2 pp.58, 62–65 / "alternative names and indications" | Correspondence of PDF and printed pages, evidence from vol. 1 added, alternative names not confirmed | the refined classics PAGE markers |
 | 5 | Section 2 ① | Wang Tao's (王燾) punctuation error → alias of Futu written as Fengfu | Corrected to a two-stage error (compiler of 《明堂經》 → Wang Tao); no text writing the alias confirmed | 《腧穴通考》 (vol. 1) general section printed p.14, entry on 扶突 pp.231-232 |
 | 6 | Section 2 ② | '天五部 (天五會)' group, "all gateway points treating wind disorders and speech disorders" | Name not found; corrected to '天牖五部' and '天五會 (alias of Renying)'; integration of indications is a Rank 4 bias | 《靈樞·本輸》, 《寒熱病》 (as quoted in 《腧穴通考》) |
 | 7 | Section 2 ② | "Paired with each other for through-needling / combination", "mixed use was accelerated" | Only the 3 confirmed cases presented (《靈樞》 1, 《聖濟總錄》 2); causality left as judgement at time of writing | Literature analysis of 扶突 in 《腧穴通考》 |
@@ -76,7 +76,7 @@ According to the textual research on acupoints (腧穴考證) in volume 2 (pp. 5
 
 | # | Location | Original wording | Revised wording | Basis |
 | :-: | :--- | :--- | :--- | :--- |
-| 1 | Section 1 ① | "暴喑氣硬" | "暴喑氣鞕" | 《靈樞·寒熱病》 as quoted in 《腧穴通考》 (`针灸腧穴通考_02_上_序·凡例·总论-2.md` L1804) |
+| 1 | Section 1 ① | "暴喑氣硬" | "暴喑氣鞕" | 《靈樞·寒熱病》 as quoted in 《腧穴通考》 (《針灸腧穴通考》 上 序·凡例·總論-2 L1804) |
 | 2 | Section 1 ② heading | 《太素》 juan 21 | juan 26 | Same place: "《黃帝內經太素·寒熱雜說》卷二十六" |
 | 3 | Section 1 ② quotation | "在項人髮際" | "在項入髮際" | Four citations read "入髮際"; only one (L1953) reads "人" — a misprint in that edition |
 

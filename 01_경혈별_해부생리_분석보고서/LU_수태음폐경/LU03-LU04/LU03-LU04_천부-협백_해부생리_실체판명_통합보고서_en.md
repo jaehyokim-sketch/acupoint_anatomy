@@ -8,12 +8,9 @@
 
 > **Date of integration**: 2026-10-03 (v2.7 revision 2026-10-04, FMA supplement 2026-10-23; see the revision histories at the end)
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
-> **Reports integrated (originals kept in `_원본_보관/`, pre-revision edition kept in `_구판_v2.6/`)**:
-> - `LU03_천부/LU03_천부_해부생리_실체판명_보고서.md · .html · databook`
-> - `LU04_협백/LU04_협백_해부생리_실체판명_보고서.md · .html · databook`
-> - `_원본_보관/LU_비교분석_구판/LU3_LU4_Comparative_Analysis_Report.md·.html`
+> **Reports integrated**: the LU03 Tianfu (天府) report, the LU04 Xiabai (俠白) report and the earlier LU3–LU4 comparative-analysis report. The originals and the pre-revision edition are kept internally.
 > **Principle of integration**: because content overlap among the three reports exceeded 50%, they were merged into a single authoritative edition built around the comparative-analysis report. During integration the text was re-checked against the Three Primary Classics, the master datasets and the original papers, and contradictions and factual errors among the earlier reports were corrected (§11, correction audit table).
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk. In evidence pointers, "Xuewei Tongjian" = 《中國針灸穴位通鑑》, "Zhengzhi Tongjian" = 《中國針灸證治通鑑》 and "Tongkao" = 《針灸腧穴通考》, followed by the chunk-file range and line number.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions. In evidence pointers, "Xuewei Tongjian" = 《中國針灸穴位通鑑》, "Zhengzhi Tongjian" = 《中國針灸證治通鑑》 and "Tongkao" = 《針灸腧穴通考》, followed by the PDF page range and line number.
 
 ---
 
@@ -46,13 +43,13 @@
 
 | Classic | Location searched | Tianfu (天府, LU3) | Xiabai (俠白, LU4) |
 | :--- | :--- | :--- | :--- |
-| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)** | `中国针灸穴位通鉴/chunks_refined/中国针灸穴位通鉴(上卷)_321-400.md` | **Source**: "腋內動脈，手太陰也，名曰天府" (《靈樞·本輸》, vessel name), "天府二穴" (Wang Bing's (王冰) commentary on 《素問·氣穴論》 15:108, point name) (L144, L146). **Location**: "在腋下三寸，臂內廉動脈中，手太陰脈氣所發" (《甲乙》 3:50). **Aliases**: 無 (none). **Needling**: "禁不可灸，灸之令人逆氣。刺入四分，留三呼" (《甲乙》, L282). **Concluding note on location**: "歷代文獻記載基本一致" (L332). However, the needling summary in the concluding note (L388) gives the 《甲乙》 as "刺入四分、留五呼", differing from the entry itself (L282 "留三呼") (an internal variant within the Tongjian) | **Location**: "在天府下去肘五寸動脈中" (《甲乙》 3:50). **Aliases**: 無 (none). **Channel attribution**: "手太陰之別". **Needling**: "刺入四分，留三呼，灸七壯" (《甲乙》, L482), "刺入三分" (《銅人》). **Concluding note on location**: "歷代文獻記載基本一致" (L510) |
-| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** | `中国针灸证治通鉴/chunks_refined/中国针灸证治通鉴_401-480.md` | **Epistaxis (鼻衄)**: "暴癉內逆，肝肺相搏，血溢鼻口，取天府"; 《外臺》 "灸兩膊上大脈…以鼻嗅臂", with the editorial note (按語) "此方所取穴即天府穴"; 《百證賦》 "天府合谷，鼻中衄血宜追". **Goitre (癭)**: "癭惡氣，灸天府五十壯", etc. | **Skin (皮膚)**: 《古今醫統》 "治赤白汗斑，灸夾白穴即愈" (editorial note "夾白即肺經俠白穴"); modern vitiligo (白癜風) "俠白(點刺出血再行拔火罐)" |
-| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)** | `针灸腧穴通考/chunks_refined/针灸腧穴通考(上)_81-160.md` (L1653–2025) | **Study of name and substance (名實考)**: "今之天府已非古之天府". Ancient "臂臑內廉動脈中", modern "肱二頭肌橈側緣". Because the brachial artery descends along the medial bicipital groove, "此處已相當於今之手少陰經穴分布區域". The first to use the anatomical term for the lateral border were Japanese acupuncture books. Chinese textbooks kept "臑內廉動脈中" through the 1957 Nanjing (南京) 《針灸學》 and the 1st–2nd editions of the 《講義》 (*Lecture Notes*), and changed it to "肱二頭肌外緣" from the 4th edition | **Study of name and substance (名實考)**: "本穴定位，古今不同". On the statement "重按有動脈應手" in the 1st edition of the 《講義》: "按如今之定位，無論如何重按，也不會觸及動脈搏動". "俠白部位在動脈中，故該穴仍可能由手太陰標脈'天府脈'演變而來". The indication "心痛" = the chest bi heart pain (胸痹心痛) group |
+| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)** | 《中國針灸穴位通鑑》(上卷) PDF pp. 321–400 | **Source**: "腋內動脈，手太陰也，名曰天府" (《靈樞·本輸》, vessel name), "天府二穴" (Wang Bing's (王冰) commentary on 《素問·氣穴論》 15:108, point name) (L144, L146). **Location**: "在腋下三寸，臂內廉動脈中，手太陰脈氣所發" (《甲乙》 3:50). **Aliases**: 無 (none). **Needling**: "禁不可灸，灸之令人逆氣。刺入四分，留三呼" (《甲乙》, L282). **Concluding note on location**: "歷代文獻記載基本一致" (L332). However, the needling summary in the concluding note (L388) gives the 《甲乙》 as "刺入四分、留五呼", differing from the entry itself (L282 "留三呼") (an internal variant within the Tongjian) | **Location**: "在天府下去肘五寸動脈中" (《甲乙》 3:50). **Aliases**: 無 (none). **Channel attribution**: "手太陰之別". **Needling**: "刺入四分，留三呼，灸七壯" (《甲乙》, L482), "刺入三分" (《銅人》). **Concluding note on location**: "歷代文獻記載基本一致" (L510) |
+| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** | 《中國針灸證治通鑑》 PDF pp. 401–480 | **Epistaxis (鼻衄)**: "暴癉內逆，肝肺相搏，血溢鼻口，取天府"; 《外臺》 "灸兩膊上大脈…以鼻嗅臂", with the editorial note (按語) "此方所取穴即天府穴"; 《百證賦》 "天府合谷，鼻中衄血宜追". **Goitre (癭)**: "癭惡氣，灸天府五十壯", etc. | **Skin (皮膚)**: 《古今醫統》 "治赤白汗斑，灸夾白穴即愈" (editorial note "夾白即肺經俠白穴"); modern vitiligo (白癜風) "俠白(點刺出血再行拔火罐)" |
+| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)** | 《針灸腧穴通考》(上) PDF pp. 81–160 (L1653–2025) | **Study of name and substance (名實考)**: "今之天府已非古之天府". Ancient "臂臑內廉動脈中", modern "肱二頭肌橈側緣". Because the brachial artery descends along the medial bicipital groove, "此處已相當於今之手少陰經穴分布區域". The first to use the anatomical term for the lateral border were Japanese acupuncture books. Chinese textbooks kept "臑內廉動脈中" through the 1957 Nanjing (南京) 《針灸學》 and the 1st–2nd editions of the 《講義》 (*Lecture Notes*), and changed it to "肱二頭肌外緣" from the 4th edition | **Study of name and substance (名實考)**: "本穴定位，古今不同". On the statement "重按有動脈應手" in the 1st edition of the 《講義》: "按如今之定位，無論如何重按，也不會觸及動脈搏動". "俠白部位在動脈中，故該穴仍可能由手太陰標脈'天府脈'演變而來". The indication "心痛" = the chest bi heart pain (胸痹心痛) group |
 
 - **Variant note**: the location wording for Tianfu (天府) is "臂內廉" in the Xuewei Tongjian (《穴位通鑑》, quoting 《甲乙》 3:50, L172) and "臂臑內廉" in the Tongkao (《通考》) and the collated *Mingtang* (《明堂》). The meaning (medial border of the upper arm) is the same, so this does not affect the location verdict.
 
-**Supplementary source (checked against the original paper)**: Song Seok-mo, "A Study on the Course of the Lung Meridian of Hand-Taiyin (手太陰肺經): Focusing on Tianfu (天府) and Xiabai (俠白)", *Korean Journal of Acupuncture* 39(4):172-183, 2022. https://doi.org/10.14406/acu.2022.024 (papers.id 440; local PDF: `학습자료/실험 및 연구 논문/2022_Korean Journal of Acupuncture_송석모_…pdf`)
+**Supplementary source (checked against the original paper)**: Song Seok-mo, "A Study on the Course of the Lung Meridian of Hand-Taiyin (手太陰肺經): Focusing on Tianfu (天府) and Xiabai (俠白)", *Korean Journal of Acupuncture* 39(4):172-183, 2022. https://doi.org/10.14406/acu.2022.024 (papers.id 440)
 - Of the 36 texts collected in the Xuewei Tongjian (《穴位通鑑》), 18 place Tianfu (天府) on the medial side of the humerus and 28 place it over the artery
 - Zhang Shouyi (張壽頤) "臑內前廉動脈中", Yun Tieqiao (惲鐵樵) "臑內廉動脈中": recorded as the medial artery up to the early 20th century
 
@@ -537,7 +534,7 @@ Items: ① peripheral nerve/vessel substrate at needling depth ② spinal segmen
 
 ## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LU03 --md` / `profile LU04 --md` (2026-10-23). Mapping level `exact` means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation. LU04 has the same composition as LU03 minus deltoid and pectoralis major (Kim Jaehyo, at the level of Tianfu 天府).
+Generated by: FMA 5.1.0 acupoint profile query (LU03, LU04; 2026-10-23). Mapping level `exact` means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation. LU04 has the same composition as LU03 minus deltoid and pectoralis major (Kim Jaehyo, at the level of Tianfu 天府).
 
 | Category | Textbook term | FMA entity | Mapping | Source (LU03 / LU04) | Innervation / parent trunk | Spinal segments |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -567,14 +564,14 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
 | Header block | — | Line on the FMA 5.1.0 anatomical ontology added; FMA supplement date added to the date-of-integration line | FMA Acupoint Anatomical Ontology Mapping Registry |
-| Section 4 | Coordinate and Layer tables | Figure 4-1 cross-sectional schematic (T1 and T2 shown together), 4.3 FMA collation table by Target and Layer, 3 FMA notes (classification of the brachial artery, manual/duplicate judgement on 2 Kim Jaehyo terms, scope of segment records) | `fma_query.py profile LU03/LU04`, `entity`, `path`; figure script `.claude/skills/acupoint-anatomy/scripts/fma/figures/LU03-LU04_cross_section.py` |
+| Section 4 | Coordinate and Layer tables | Figure 4-1 cross-sectional schematic (T1 and T2 shown together), 4.3 FMA collation table by Target and Layer, 3 FMA notes (classification of the brachial artery, manual/duplicate judgement on 2 Kim Jaehyo terms, scope of segment records) | FMA profile query; figure-generation script (internal) |
 | Section 6 | Textbook comparison and verdict | FMA adjudication paragraph (1 shared; whole biceps brachii / long head the same muscle); the mixed vs consistent verdict confirmed by FMA position and cord | FMA:14385, 22689, 37064, 45235, 74569 |
 | 8.2 | H1–H4 table | Figure 8-1 FMA peripheral afferent pathway (Mermaid) | FMA continuous_proximally_with, branch_of |
 | 8.3 | B-Check ① and ② rationale | FMA ID and segment pointers added for all four Targets (**scores unchanged**: cLU3 5/12, cLU4 7/12, pLU3 6/12, pLU4 6/12) | FMA:65246, 11307, etc. |
 | 8.4 | 2026-10-04 log | Rows for the 2026-10-23 Rank 6 re-run added (LU3 13·11·0, LU4 5·9·0, 0 new) | `_metadata.sync_log` LU3 21:44:08, LU4 21:44:22 |
-| Appendix A | — | FMA profile table (LU03 and LU04 combined) | `fma_query.py profile` |
+| Appendix A | — | FMA profile table (LU03 and LU04 combined) | FMA profile query |
 | ARI | cLU3 56.2 ± 2.5 / cLU4 62.5 ± 1.2 / pLU3 41.2 ± 0 / pLU4 43.8 ± 2.5 | **No change** — FMA is B1 supplementary evidence and does not change rubric levels | Skill section 5-1 |
-| Earlier-edition archive | — | Pre-supplement md, html and xlsx archived in `_구판_v2.7_20261023/` (`_원본_보관/` untouched) | — |
+| Earlier-edition archive | — | Pre-supplement md, html and xlsx archived in the internal archive (archived originals untouched) | — |
 
 ---
 
@@ -582,11 +579,11 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Header block | "Version 2.6 (Rank 0~7, Tier 3)" | v2.7 notation + 4 lines of ARI v3.0 notation per Target + dual scoring adjudicated | `final_LU0304.json` notation |
+| Header block | "Version 2.6 (Rank 0~7, Tier 3)" | v2.7 notation + 4 lines of ARI v3.0 notation per Target + dual scoring adjudicated | ARI notation record |
 | §0-1, Conclusion 1 | Classical substrate presented as "established" | Softened to "probable/possible/hypothetical" in line with grade C·H; absence of measurement stated | final cLU3/cLU4 grade C·H |
-| §0-5, §8.1 | "0 measured physiological or clinical papers (LU3 13 papers, LU4 1 paper, all textual history)"; failed the old Refinement criterion | After the 2026-10-04 sync, existence of multi-point human studies 1819, 1822, 1832, 1833 and the LU4 randomised shoulder study 1836 stated. 0 point-specific papers → Gate 2 retained. Verdict by B-Check score | Master DB papers 1819, 1822, 1832, 1833, 1836; pack_LU3.md, pack_LU4.md |
-| §0-6, §10 | v2.6 four-factor ARI (0.35/0.30/0.20/0.15) with arbitrary intermediate-value score tables and checks | ARI v3.0 profile (ARI-Core ± half-range, grade, flag, SI, sensitivity, gates, 4 S_orig sub-items, adjudication record) | `final_LU0304.json`, Framework Rank 7 and section 4 |
-| Earlier-edition scores | cLU3 82.75 / cLU4 81.10 / pLU3 66.05 / pLU4 66.05 | **Earlier v2.6 scores cLU3 82.75 · cLU4 81.10 · pLU3 66.05 · pLU4 66.05 (not comparable)** | Copy in `_구판_v2.6/` |
+| §0-5, §8.1 | "0 measured physiological or clinical papers (LU3 13 papers, LU4 1 paper, all textual history)"; failed the old Refinement criterion | After the 2026-10-04 sync, existence of multi-point human studies 1819, 1822, 1832, 1833 and the LU4 randomised shoulder study 1836 stated. 0 point-specific papers → Gate 2 retained. Verdict by B-Check score | Master DB papers 1819, 1822, 1832, 1833, 1836; evidence pack, evidence pack |
+| §0-6, §10 | v2.6 four-factor ARI (0.35/0.30/0.20/0.15) with arbitrary intermediate-value score tables and checks | ARI v3.0 profile (ARI-Core ± half-range, grade, flag, SI, sensitivity, gates, 4 S_orig sub-items, adjudication record) | dual-scoring record, Framework Rank 7 and section 4 |
+| Earlier-edition scores | cLU3 82.75 / cLU4 81.10 / pLU3 66.05 / pLU4 66.05 | **Earlier v2.6 scores cLU3 82.75 · cLU4 81.10 · pLU3 66.05 · pLU4 66.05 (not comparable)** | Copy in the internal archive |
 | §1 | Only the vessel name from 《靈樞·本輸》 given as the source of Tianfu (天府) | Added Wang Bing's (王冰) commentary on 《素問·氣穴論》 "天府二穴" (point name), the variant between '留五呼' in the Tongjian concluding note and '留三呼' in the entry, and a note on the '臂內廉'/'臂臑內廉' variant | Xuewei Tongjian (上卷)_321-400 L144, L146, L172, L282, L388 |
 | §3 | Alias '天會' = "source unconfirmed, on hold" | 天會 is an alias of Tianchi (天池, PC1) in 《甲乙》 3:46 → removed from Tianfu's (天府) aliases. Misattribution in the dataset explained by collation with the KJH backup (LU03 '–') | Xuewei Tongjian (上卷)_401-480 L822, L994; Tongkao (下)_81-160 L549, L557, L567; KJH rows 57, 274, KJH_backup rows 57, 274; textbook xlsx `경혈_기본정보_마스터` rows 55, 272 |
 | §4.2 | mm ranges of the "Framework v2.6 standard intervals" (L1 0–3 mm … L3 8–16 mm), with the neurovascular bundle placed in L3 | Replaced by the structure-based definition of Framework Rank 5: brachial artery, median nerve and musculocutaneous nerve = **L4 neurovascular bundle**. Explanation of the relation between model Z and the depth at which the pulse is palpable added | Framework Rank 5 "Layer 1–5 layer safety assessment" |
@@ -594,13 +591,13 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 | §6 verdict | — | "The two textbooks agree only on the muscle and the cephalic vein, and disagree on nerves and vessels" stated | Textbook xlsx rows 273–284 / 399–412 |
 | §10 pLU rationale | "Muscle landmark clear, the two textbooks consistent" | Corrected to "inferential adjustment for the disagreement of the two textbooks on nerves and vessels", in line with §6 | §6, final rationale S_clarity |
 | §8.1 | "Citation of PMID 8937575 deleted" | Stated that master DB papers.id 1676 was marked superseded as an unverifiable citation (the PMID is an Anal Biochem paper; the DOI does not exist). papers.id 1677 (manual entry for Travell & Simons) is also superseded; the book is cited as B2-06 | Master DB papers 1676, 1677 `status`, `superseded_reason` |
-| §8.2 | Model expressions named after researchers (somato-autonomic reflex), "Head zone", citation of the Travell & Simons title | Replaced with registry IDs (B3-04, B3-05, B3-01, B3-03, B2-06, etc.). Out-of-scope application marked "inference" | `layer_b_reference_registry.md` |
+| §8.2 | Model expressions named after researchers (somato-autonomic reflex), "Head zone", citation of the Travell & Simons title | Replaced with registry IDs (B3-04, B3-05, B3-01, B3-03, B2-06, etc.). Out-of-scope application marked "inference" | Layer B Reference Registry |
 | §0-5, §8.1, §10 | Wording of the earlier percentage-based Refinement criterion | Replaced by the B-Check 6-item score (≥ 8/12 criterion) | Framework 6-5 |
 | §8.3 and §8.4 added | No B-Check scoring tables or external search log | B-Check tables for the 4 Targets (A/B/final, reference IDs, papers.id) and LU3 and LU4 sync_log tables added | final bcheck; pack sync_log |
 | §10.5 added | No ΔARI decision | cLU3 vs pLU3 Δ 15.0, cLU4 vs pLU4 Δ 18.7, non-overlapping → Target 1 superior | final ari_core, half_range |
 | §11 #14, #15 | Earlier percentage-agreement wording quoted | Described without percentage strings | Principle of removing earlier-edition wording |
-| Unchanged | Classical quotations | Rater B confirmed their accuracy by collation with the original texts → retained | score_LU0304_B.json |
-| Unresolved | Master DB LU3 innervation and reflex circuit (musculocutaneous nerve, stellate ganglion → Kiesselbach's plexus), LU4 entry blank; suspected DB DOI mismatch for 1819 and 1822 | Only a note left in the report (DB not modified) | pack_LU3.md, pack_LU4.md |
+| Unchanged | Classical quotations | Rater B confirmed their accuracy by collation with the original texts → retained | rater B record |
+| Unresolved | Master DB LU3 innervation and reflex circuit (musculocutaneous nerve, stellate ganglion → Kiesselbach's plexus), LU4 entry blank; suspected DB DOI mismatch for 1819 and 1822 | Only a note left in the report (DB not modified) | evidence pack, evidence pack |
 
 ---
 
@@ -608,8 +605,8 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Whole document | Automatically generated "English" edition: Korean body text with only some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.md` |
+| Whole document | Automatically generated "English" edition: Korean body text with only some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition |
 | Classical quotations | Simplified characters (e.g. 针, 灵枢, 动脉, 侠白) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |
 
-*Evidence files*: `01_도서_번역_및_원전/{中国针灸穴位通鉴, 中国针灸证治通鉴, 针灸腧穴通考}/chunks_refined/`, Master Datasets Registry (KJH, needling depth, Common Textbook, Kim Jaehyo, biomedical master DB, 361 CSV), `01_Framework/layer_b_reference_registry.md`, original PDF of Song Seok-mo (2022).
+*Evidence files*: refined editions of the three classics, Master Datasets Registry (KJH, needling depth, Common Textbook, Kim Jaehyo, biomedical master DB, 361 CSV), Layer B Reference Registry, original PDF of Song Seok-mo (2022).
 *Data book*: Tianfu-Xiabai Integrated Anatomical Analysis Databook / *Web report*: `LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.html`

@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -56,7 +66,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <article>
 <h1 id="_1">📜 중도(中都)와 요유(腰俞)가 '위중(委中)' 이명으로 연관된 문헌 고증 및 임상 배혈 요약 보고서</h1>
 <blockquote>
-<p><strong>프레임워크</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: 같은 폴더에 csv/xlsx 없음 — 3대 원전 <code>chunks_refined</code>(<code>针灸腧穴通考(上)_721-800.md</code> L1-12, <code>(下)_161-240.md</code> L2487, <code>(下)_401-480.md</code> L595-603·L1009-1010; <code>中国针灸穴位通鉴(上卷)_1041-1120.md</code> L3144, <code>(上卷)_161-240.md</code> L2188, <code>(下卷)_161-240.md</code> L784)로 대조</p>
+<p><strong>프레임워크</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: 별도 데이터셋 없음 — 3대 원전 정제본(《针灸腧穴通考》(上) PDF 721–800쪽 L1-12, (下) PDF 161–240쪽 L2487, (下) PDF 401–480쪽 L595-603·L1009-1010; 《中国针灸穴位通鉴》(上卷) PDF 1041–1120쪽 L3144, (上卷) PDF 161–240쪽 L2188, (下卷) PDF 161–240쪽 L784)로 대조</p>
 <p><strong>v2.7 핵심 정정</strong>: 원전에서 확인되는 '이명' 연결은 <strong>중도–위중 한 쌍뿐</strong>이다. 중도의 별명 <strong>中郄</strong>(원래 중도의 정명)이 1957년 남경 《针灸学》에서 위중의 별명으로 잘못 실렸고(일본 교재 전재), 한국 교재가 이를 이었다(《腧穴通考》 委中 조 按; 《穴位通鉴》 委中 [别名] 按 "'中郄'原为中都穴正名，作为本穴别名不妥"). 요유와 위중 사이에는 이명 관계가 없고, 같은 조문에 함께 열거되거나 같은 처방에 함께 쓰인 관계만 확인된다.</p>
 </blockquote>
 <p>《중국침구혈위통감(中国针灸穴位通鉴)》, 《중국침구증치통감(中国针灸证治通鉴)》, 《침구수혈통고(针灸腧穴通考)》 3대 침구 전문 서적의 腧穴考證(수혈고증) 및 고대 문헌 조문(《素问》·《灵枢》·《针灸大成》)을 바탕으로, <strong>족궐음간경의 중도(中都, LR06)</strong>와 <strong>독맥의 요유(腰俞, GV02)</strong>가 <strong>방광경의 위중(委中, BL40)</strong>이라는 경혈명 및 이명으로 상호 연관되는 문헌학적 이유와 임상 배혈 메커니즘을 종합 정리한 보고서입니다.</p>
@@ -169,7 +179,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">1절 ①</td>
 <td style="text-align: left;">(출처 표기 없음)</td>
 <td style="text-align: left;">3대 원전 3종에서 원문·王冰 注 확인 표기</td>
-<td style="text-align: left;"><code>chunks_refined</code> 대조</td>
+<td style="text-align: left;">원전 정제본 대조</td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
@@ -218,7 +228,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">3절 표 3행</td>
 <td style="text-align: left;">중도+위중+족삼리 처방</td>
 <td style="text-align: left;">"3대 원전 미검출", 기전 "작성 시 판단"</td>
-<td style="text-align: left;"><code>chunks_refined</code> 검색 0건</td>
+<td style="text-align: left;">원전 정제본 검색 0건</td>
 </tr>
 <tr>
 <td style="text-align: center;">11</td>
@@ -233,9 +243,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <li>PMID/DOI: 본문에 없음(확인 대상 0건). 생의학 기전 인용 없음(Layer B 대상 0건).</li>
 <li>남은 한계: 제목의 "요유가 '위중' 이명으로 연관"은 원전으로 지지되지 않지만 작업명이라 그대로 두고 머리말에서 정정했다. 《针灸大成》 원서의 처방 위치(권·쪽)는 직접 확인하지 못했다.</li>
 </ul>
-<p class="meta">생성: 2026-10-04 10:21 · 원본: 중도_요유_위중_연계_고증_및_임상배혈_요약보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -243,6 +257,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

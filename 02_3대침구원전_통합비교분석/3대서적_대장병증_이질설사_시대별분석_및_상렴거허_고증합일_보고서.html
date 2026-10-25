@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -127,10 +137,9 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <hr>
 <h2 id="_1">📁 파일 저장 안내 (같은 폴더)</h2>
 <ul>
-<li>📝 <strong>마크다운 보고서</strong>: <a href="3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.md">3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.md</a></li>
 <li>📊 <strong>융합 비교 엑셀</strong>: 3대서적 대장병증 이질설사 시대별분석 데이터셋</li>
-<li>📄 <strong>융합 비교 CSV</strong>: <a href="3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.csv">3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.csv</a></li>
-<li>📄 <strong>원 스니펫 데이터</strong>: <a href="3대서적_대장병증_이질_설사_침구치료_시대별_경혈분석.csv">3대서적_대장병증_이질_설사_침구치료_시대별_경혈분석.csv</a></li>
+<li>📄 <strong>융합 비교 CSV</strong>: 3대서적 대장병증 이질설사 시대별분석 및 상렴거허 고증합일 보고서 데이터셋</li>
+<li>📄 <strong>원 스니펫 데이터</strong>: 3대서적 대장병증 이질 설사 침구치료 시대별 경혈분석 데이터셋</li>
 </ul>
 <hr>
 <h2 id="v27-2026-10-04">v2.7 정제 이력 (2026-10-04)</h2>
@@ -154,7 +163,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">통합 결론</td>
 <td style="text-align: left;">"정량 통계와 문헌 고증의 교차 검증으로 <strong>완전 입증</strong>"</td>
 <td style="text-align: left;">"상렴 36행 중 ST37 명시 18행(50%), LI9 관련 14행, 판별 불가 4행 — 부분 지지"</td>
-<td style="text-align: left;"><code>…시대별_경혈분석.csv</code> 스니펫 재판독(巨虚上廉/上巨虚 vs 手阳明/曲池下 문자열)</td>
+<td style="text-align: left;">…시대별 경혈분석 데이터셋 스니펫 재판독(巨虚上廉/上巨虚 vs 手阳明/曲池下 문자열)</td>
 </tr>
 <tr>
 <td style="text-align: left;">통합 결론</td>
@@ -218,7 +227,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">파일 안내</td>
-<td style="text-align: left;"><code>file:///D:/도서 번역/…</code> 절대 링크</td>
+<td style="text-align: left;">로컬 절대 경로 링크</td>
 <td style="text-align: left;">같은 폴더 상대 링크</td>
 <td style="text-align: left;">실제 저장 위치</td>
 </tr>
@@ -230,9 +239,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-04 10:21 · 원본: 3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -240,6 +253,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

@@ -2,10 +2,10 @@
 
 > **Framework**: v2.7 (Tier 3, Rank 0–7 executed) · **ARI**: v3.0 dual scoring · **Date**: 2026-10-12
 > **Subject of analysis**: a lecture question ("Tianshu (天樞) lies at the level of the umbilicus, T10, and Guanyuan (關元) at the level of T11–12 — if the Front-Mu points (募穴) are neural-segment reaction points, isn't this a contradiction?") and the lecturer's answer ("Guanyuan does not treat the anatomical small intestine; it treats the disease pattern called 'Small Intestine (小腸)'")
-> **Source classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (refined edition `chunks_refined`)
+> **Source classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (refined edition)
 > **Source data**: Tianshu & Guanyuan Mu-Point Segmental Concordance Database (this folder) · Integrated Biomedical DB v3.0 (Integrated Biomedical Master DB v3.0, synchronised at Rank 6 on 2026-10-12)
 > **Related analysis**: The literary-historical side of the same question was covered in the Huang Longxiang (黃龍祥) skill review (conversation of 2026-10-12); this report covers the anatomical, neural-segment and reflex-mechanism side.
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ---
 
@@ -31,7 +31,7 @@
 | Records of needling prohibition | 《千金》 "魂魄之舍，不可針", "勿針", "忌針" | 《聖惠方》 "若懷胎必不針"; modern textbooks "孕婦慎用。針前讓患者排尿" | 《通考》 |
 | Paediatric use | 1957 Nanjing 《針灸學》 "小兒慢性疾患灸之大有效"; 1986 《中國針灸》 simple dyspepsia in children with 天樞·中脘 | 2001 needling of Guanyuan for paediatric nervous urinary frequency; 1995 external application on Guanyuan for neonatal anuria | 《通考》 examples of clinical application |
 
-> Search paths: *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) `chunks_refined/针灸腧穴通考(上)_321-400.md` L1050–1310 (Tianshu), `(下)_481-560.md` L1396–1586 (Guanyuan). *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) `_1-80.md` L2006 (Tianshu), `_81-160.md` L1684 (Guanyuan). *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) quotation of Guanyuan indications `(上卷)_1-80.md` L1526.
+> Search paths: *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (上) PDF pp. 321–400 L1050–1310 (Tianshu), (下) PDF pp. 481–560 L1396–1586 (Guanyuan). *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) PDF pp. 1–80 L2006 (Tianshu), PDF pp. 81–160 L1684 (Guanyuan). *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) quotation of Guanyuan indications (上卷) PDF pp. 1–80 L1526.
 
 ## 2. Primary Source vs. Secondary Quotation Table
 
@@ -277,8 +277,8 @@ graph LR
 
 ## Appendix A. Audit Record
 
-- Rank 0: `sync_skill_settings.py --check` → no drift (only a change to `.claude/CLAUDE.md` was shown). Canonical v2.7 applied.
-- Rank 6: `sync_master_db.py --dry-run` checked, then applied. Both ST25 and CV4 returned HTTP 200 from PubMed, OpenAlex and Crossref; `validate` OK. The abstracts of the three key papers (papers.id 2009, 2023, 2031) were checked against the originals via NCBI E-utilities.
+- Rank 0: the skill-settings sync check → no drift (only a change flag on the project settings document). Canonical v2.7 applied.
+- Rank 6: Integrated DB sync (external search) checked by dry run, then applied. Both ST25 and CV4 returned HTTP 200 from PubMed, OpenAlex and Crossref; `validate` OK. The abstracts of the three key papers (papers.id 2009, 2023, 2031) were checked against the originals via NCBI E-utilities.
 - B1 (normative anatomy) evidence in the anatomical descriptions was written from general anatomical knowledge; edition, chapter and page in Moore and Gray's were not cross-checked (registry rule ⑤ not satisfied). Segmental ranges may differ by about one segment between textbooks.
 - Neither ST25 nor CV4 has a point-specific imaging measurement paper. The mm estimates in Section 5 are inferred from the CV12 measurement (papers.id 1444).
 - Correction of the earlier Tier 1 answer (Tianshu and children): see Section 0 item 6, Section 1 and Section 9.

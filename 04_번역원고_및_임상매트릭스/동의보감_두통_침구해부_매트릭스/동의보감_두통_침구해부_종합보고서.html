@@ -66,16 +66,16 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <article>
 <h1 id="-">[경혈해부] 『동의보감』 두통 침구해부 종합보고서 — 원문 재구성·단독 주치 층·해부 유사도 층위·삼차-경수 수렴</h1>
 <blockquote>
-<p><strong>프레임워크</strong>: v2.7 · <strong>분류</strong>: Category 4 증상별 침구해부 임상 매트릭스 · <strong>판</strong>: 전면 재분석판(2026-10-25). 구판 산출물 29건은 <code>_구판_20261024/</code>에 보관했고 12절에 감사 결과를 적었다.
+<p><strong>프레임워크</strong>: v2.7 · <strong>분류</strong>: Category 4 증상별 침구해부 임상 매트릭스 · <strong>판</strong>: 전면 재분석판(2026-10-25). 구판 산출물 29건은 구판 보관본(내부)에 보관했고 12절에 감사 결과를 적었다.
 <strong>적용 범위</strong>: Rank 0~6. Rank 7 ARI는 <strong>미산정</strong>이다(20혈 처방 매트릭스이므로 개별 혈 ARI는 Category 1 보고서에서 산정).
-<strong>1차 원문</strong>: 『동의보감』 外形篇 卷之一 頭(<code>01_도서_번역_및_원전/동의보감/동의보감_030_外形篇一_頭.md</code>) 1.7~1.25절과 1.33절 【鍼灸法】(L557·L563)
+<strong>1차 원문</strong>: 『동의보감』 外形篇 卷之一 頭 1.7~1.25절과 1.33절 【鍼灸法】(L557·L563)
 <strong>3대 원전</strong>:
 - 《中国针灸证治通鉴》 「十九、头痛」(<code>中国针灸证治通鉴_16_…md</code> L580~954): 처방 출전 추적
 - 《针灸腧穴通考》 【适应症】: 경혈별 단독 주치 층 판정
 - 《中国针灸穴位通鉴》: 대조</p>
-<p><strong>해부 근거</strong>: FMA 5.1.0(<code>fma_query.py profile</code>), 2대 교재 대응표, B1 규범 해부(B1-01·B1-02·B1-03) · 3D: BodyParts3D 4.0(B1 보조)
-<strong>Layer A</strong>: 통합 DB(2026-10-25 상태) 연결 논문, PubMed 메타데이터 대조. <code>sync_master_db.py</code>는 실행하지 않았다(<strong>외부 검색 미완</strong>).
-<strong>데이터시트</strong>: 동의보감 두통 침구해부 임상 매트릭스 분석 데이터북 (11시트) · 재현 스크립트: <code>scripts/</code></p>
+<p><strong>해부 근거</strong>: FMA 5.1.0(FMA 프로파일 조회), 2대 교재 대응표, B1 규범 해부(B1-01·B1-02·B1-03) · 3D: BodyParts3D 4.0(B1 보조)
+<strong>Layer A</strong>: 통합 DB(2026-10-25 상태) 연결 논문, PubMed 메타데이터 대조. 통합 DB 동기화(외부 검색)는 실행하지 않았다(<strong>외부 검색 미완</strong>).
+<strong>데이터시트</strong>: 동의보감 두통 침구해부 임상 매트릭스 분석 데이터북 (11시트) · 재현 스크립트: 내부 보관</p>
 </blockquote>
 <hr>
 <h2 id="0">0. 요약</h2>
@@ -517,7 +517,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </ul>
 <h2 id="4-rank-5-fma-5-1">4. 해부 유사도 방법 (Rank 5 · FMA 5-1절)</h2>
 <ul>
-<li><strong>입력</strong>: 20혈마다 <code>fma_query.py profile --json</code>을 실행했다.</li>
+<li><strong>입력</strong>: 20혈마다 FMA 프로파일 조회를 실행했다.</li>
 <li>印堂(GV29)은 2대 교재 데이터셋에 없어 B1 수작업 대응을 썼다(B1-01·B1-03): 눈살근 FMA:46769, 눈썹주름근 46794, 도르래위신경 52642, 도르래아래신경 52693, 도르래위동맥 50025·정맥 50898, 코등동맥 50000.</li>
 <li>太陽은 瞳子髎(GB1) 프로파일로 대신했다(2절).</li>
 <li><strong>특징과 가중치</strong>(잠정):</li>
@@ -1030,23 +1030,23 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>동의보감_두통_침구해부_종합보고서.md</code>·<code>.html</code> / <code>_en.md</code>·<code>_en.html</code></td>
-<td style="text-align: left;">이 보고서(한국어·영어)</td>
+<td style="text-align: left;">종합보고서(한국어·영어)</td>
+<td style="text-align: left;">이 보고서</td>
 </tr>
 <tr>
 <td style="text-align: left;">동의보감 두통 침구해부 임상 매트릭스 데이터북</td>
 <td style="text-align: left;">1 두통 유형 · 2 鍼灸法 처방 · 3 단독 주치 층 · 4 근거 조문 · 5 FMA 해부 특징 · 6 유사도 행렬 · 7 층위 · 8 Layer A · 9 구판 감사(인용) · 10 구판 감사(유형·경혈) · 11 방법</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>Fig1</code>~<code>Fig5_*_ko.png</code> / <code>_en.png</code></td>
+<td style="text-align: left;">그림 Fig1~Fig5</td>
 <td style="text-align: left;">그림 7종 × 2개 언어</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>scripts/</code></td>
-<td style="text-align: left;"><code>headache_indications.py</code>(Rank 1~4) → <code>hd_similarity.py</code>(유사도·층위·TCC) → <code>hd_figures.py</code>·<code>hd_render3d.py</code>(그림) → <code>hd_matrix.py</code>(xlsx) · <code>audit_old.py</code>(구판 감사). 단독 주치 파싱은 <code>../영추경맥_수태음시동병_매트릭스/scripts/extract_indications.py</code>의 결과(<code>indications.json</code>)를 쓴다</td>
+<td style="text-align: left;">분석 스크립트(내부)</td>
+<td style="text-align: left;">단독 주치 파싱(Rank 1~4) → 유사도·층위·TCC → 그림·3D 렌더링 → 데이터북 작성 · 구판 감사. 단독 주치 파싱은 영추경맥 수태음시동병 매트릭스의 파싱 결과를 쓴다</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>_구판_20261024/</code></td>
+<td style="text-align: left;">구판 보관본(내부)</td>
 <td style="text-align: left;">구판 산출물 29건(HTML 대시보드·9×36 격자 그림·xlsx 2종·zip) — 수정 없이 보관</td>
 </tr>
 </tbody>
@@ -1224,10 +1224,10 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </table></div>
 <h2 id="13">13. 작성 기록</h2>
 <ul>
-<li>Rank 0: <code>sync_skill_settings.py --check</code> 결과는 드리프트 없음이었다(2026-10-24 점검과 같음). 정본 v2.7을 적용했다.</li>
+<li>Rank 0: 스킬 설정 동기화 점검 결과는 드리프트 없음이었다(2026-10-24 점검과 같음). 정본 v2.7을 적용했다.</li>
 <li>작성: Claude Code, 2026-10-25.</li>
 </ul>
-<p class="meta">생성: 2026-10-25 11:06 · 원본: 동의보감_두통_침구해부_종합보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

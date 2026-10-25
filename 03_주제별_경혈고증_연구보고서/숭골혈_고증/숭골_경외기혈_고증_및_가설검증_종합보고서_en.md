@@ -1,11 +1,11 @@
 # 📜 [Authoritative Comprehensive Textual Research Report] Chonggu (崇骨): Textual Research and Hypothesis Testing of an Extra Point (經外奇穴)
 
-> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual research (Rank 5 where needed) · **ARI**: not calculated (textual-research report) · **Source data**: `숭골_경외기혈_고증_및_가설검증_피어리뷰_분석.csv`, Songgu Extra-Point Analysis Dataset (comparison with the three primary classics: `针灸腧穴通考(下)_401-480.md` L1620-1666)  
-> **Previous edition**: The Version 2.6 original (2026-10-03, labelled "Rank 0–7 fully applied") is kept in `_구판_v2.6/`. As there is in fact no record of Rank 6·7 (comparison with Layers A·B, ARI scoring) having been performed, the scope has been corrected to Rank 1–4  
+> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual research (Rank 5 where needed) · **ARI**: not calculated (textual-research report) · **Source data**: the unpublished supplementary CSV dataset, Songgu Extra-Point Analysis Dataset (comparison with the three primary classics: 《針灸腧穴通考》(下) PDF pp. 401–480 L1620-1666)  
+> **Previous edition**: The Version 2.6 original (2026-10-03, labelled "Rank 0–7 fully applied") is kept in the internal archive. As there is in fact no record of Rank 6·7 (comparison with Layers A·B, ARI scoring) having been performed, the scope has been corrected to Rank 1–4  
 > **Master evidence principles**: Principles for Acupoint Anatomical Substrate Identification  
 > **Source classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)  
 > **Consolidation history**: Two separate documents (a peer-review report and a report on the historical change of C7/T1) were fully merged into a single authoritative edition under the principle of consolidating documents with ≥ 50% overlap.  
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ---
 
@@ -25,7 +25,7 @@
 | :--- | :--- | :--- |
 | **《千金要方》** | "崇骨... 主頸項強急, 不能回顧." *(not found in the three primary classics — original source needs to be checked)* | Interpretation that needling Chonggu may be expected to improve neck stiffness (judgement at time of writing, not quantitatively verified). The 《腧穴通考》 states of Heo Im's 崇骨穴 "無主治病症及相關刺灸法", making clear that no indication specific to 崇骨 is confirmed in the primary sources. |
 | **《針灸大成》** | "崇骨在第七椎上, 灸三壯." *(not found in the three primary classics — original source needs to be checked)* | If it is recorded as above the 7th cervical vertebra, it is distinguished as the segment above Dazhui (大椎) (below C7 spinous process). However, the location confirmed in the primary sources for Heo Im is the tip of the C7 spinous process, and the interpretation as C6-C7 interspinous is a judgement made at the time of writing. |
-| **《針灸腧穴通考》** | "黃龍祥 考: 崇骨之名, 實起於後世對頸椎骨之俗稱. 與大椎相表裏." *(This sentence is not found in `chunks_refined`. Actual passages: 《小品方》 "大椎上節以上屬頸崇骨也。大椎與崇骨相接處，其節最高碩也"; literature analysis "頸椎只辨出三椎，稱項骨，又曰'柱骨'、'天柱骨'或'崇骨'…最高大者為與大椎骨相鄰的崇骨——即第七頸椎…無主治病症及相關刺灸法…可見並非出自許任的臨床實踐")* | According to the primary sources, 崇骨 was originally a **bone name (C7, or the cervical vertebrae (項骨) in general)**; Huang Longxiang (黃龍祥) judges that the point name 崇骨 was established by Heo Im on the basis of this bone name and did not arise from clinical practice. "An independent point that modulates the upper branches of the cervical plexus" is an anatomical substrate hypothesis with no basis in the primary sources. |
+| **《針灸腧穴通考》** | "黃龍祥 考: 崇骨之名, 實起於後世對頸椎骨之俗稱. 與大椎相表裏." *(This sentence is not found in the refined classics. Actual passages: 《小品方》 "大椎上節以上屬頸崇骨也。大椎與崇骨相接處，其節最高碩也"; literature analysis "頸椎只辨出三椎，稱項骨，又曰'柱骨'、'天柱骨'或'崇骨'…最高大者為與大椎骨相鄰的崇骨——即第七頸椎…無主治病症及相關刺灸法…可見並非出自許任的臨床實踐")* | According to the primary sources, 崇骨 was originally a **bone name (C7, or the cervical vertebrae (項骨) in general)**; Huang Longxiang (黃龍祥) judges that the point name 崇骨 was established by Heo Im on the basis of this bone name and did not arise from clinical practice. "An independent point that modulates the upper branches of the cervical plexus" is an anatomical substrate hypothesis with no basis in the primary sources. |
 
 ---
 
@@ -63,11 +63,11 @@
 | 9 | Section 4 conclusion | "Confirmed and identified as a recognised extra point … an independent point" | Restated in terms of bone-name origin, Heo Im 1644 and tip of the C7 spinous process; "confirmed" changed to "anatomical substrate hypothesis" | Synthesis of the above, verdict of the data file |
 
 - PMID/DOI: none in the text (0 items to check). No biomedical literature cited — for Layer B, registry IDs (B2-03, B2-04, B2-06) were added only as references for the hypothesis labels.
-- Data files: "100% proven" (Hypothesis 1) and "100% fused with indications" (Chonggu row) in the csv and xlsx had no quantitative basis and were changed respectively to "supported — description of adjacent mixed use of bone name and point name confirmed, not quantitatively verified" and "no independent indications — no point-specific indication recorded in the primary sources" (originals kept in `_구판_v2.6/`).
+- Data files: "100% proven" (Hypothesis 1) and "100% fused with indications" (Chonggu row) in the csv and xlsx had no quantitative basis and were changed respectively to "supported — description of adjacent mixed use of bone name and point name confirmed, not quantitatively verified" and "no independent indications — no point-specific indication recorded in the primary sources" (originals kept in the internal archive).
 - Remaining limitations: The 崇骨 passages of the 《千金要方》 and 《針灸大成》 lie outside the three primary classics and could not be compared directly. If they are confirmed in the original books, corrections 3 and 4 will be reviewed again.
 
 ## Refinement History (2026-10-24)
 
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
-| Header links | Absolute `file:///g:/내 드라이브/도서 번역/…` links (do not open on other PCs) | Links relative to the project root (`도서 번역`) | Skill path rule (no drive-letter absolute paths) |
+| Header links | Local absolute-path links (do not open on other PCs) | Project-relative links | Skill path rule (no drive-letter absolute paths) |

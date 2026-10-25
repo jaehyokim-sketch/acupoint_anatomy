@@ -4,7 +4,7 @@
 
 > **Paper under review**: Yoon Da-eun, Moon Hee-young, Ryu Yeon-hee, Chae Younbyoung. "Principle of major acupoints composition: focus on Four Command and Star Twelve points" [in Korean]. *Journal of Korean Medicine* 45(3):226-233, 2024. https://doi.org/10.13048/jkm.24052 (Review Article)
 >   *(v2.7 check: doi.org and Crossref give the title "Principle of major acupoints composition: focus on Four Command and Star Twelve points", authors Yoon, Moon, Ryu, Chae, and 45(3), all matching. The Crossref metadata registers the pages as 235-242, but the printed page of the local PDF reads "J Korean Med. 2024;45(3):226-233", so 226-233 is retained. The p.227–230 references in the text also follow the printed pages)*
-> **Local original**: `G:/내 드라이브/학습자료/실험 및 연구 논문/2024_대한한의학회지_윤다은_주요 경혈 구성원리 고찰 - 사총혈과 천성십이혈을 중심으로.pdf`
+> **Original paper**: Yoon Da-eun (2024), "A study on the composition principles of major acupoints: focusing on the Four Command Points and the Twelve Heavenly Star Points", *Journal of Korean Medicine*
 > **Verification framework**: The Acupoint Anatomical Substrate Identification Logic Framework v2.6 was applied, and the report was refined with the v2.7 rules of 2026-10-04 (citation of Layer B registry IDs, labelling of evidence strength)
 >
 > - Rank 1–3: direct comparison with the three primary classics, distinction of primary source vs. secondary quotation, alignment of literary strata
@@ -12,7 +12,7 @@
 > - Rank 5–6: anatomical and neural-segment verification, comparison with Layers A and B
 >
 > **Date**: 2026-10-03
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ---
 
@@ -47,14 +47,14 @@
 
 | # | Statement in the paper | Comparison with the three classics / bibliography | Verdict |
 | :-: | :--- | :--- | :---: |
-| 1 | 《四總穴歌》 "肚腹三里留, 腰背委中求, 頭項列缺尋, **面目**合谷收" (footnote 2); "face and eyes (面目)" in the text | 《徐氏針灸大全》 3:11 (quoted in 《穴位通鑑》), the general section of 《針灸腧穴通考》, and 《證治通鑑》 all read "**面口**合谷收" (`针灸腧穴通考(上)_1-80.md` L2116; `中国针灸穴位通鉴(上卷)_801-880.md` L3618) | **Quotation error** |
+| 1 | 《四總穴歌》 "肚腹三里留, 腰背委中求, 頭項列缺尋, **面目**合谷收" (footnote 2); "face and eyes (面目)" in the text | 《徐氏針灸大全》 3:11 (quoted in 《穴位通鑑》), the general section of 《針灸腧穴通考》, and 《證治通鑑》 all read "**面口**合谷收" (《針灸腧穴通考》(上) PDF pp. 1–80 L2116; 《中國針灸穴位通鑑》(上卷) PDF pp. 801–880 L3618) | **Quotation error** |
 | 2 | The Four Command Points appear from Ming 《乾坤生意》 onward, then in 《四總穴歌》 of Xu Feng's (徐鳳) 《針灸大全》 | 《乾坤生意》 Ming, Zhu Quan (朱權); 《針灸大全》 Ming, Xu Feng (徐鳳) 1439 (bibliography of 《證治通鑑》) | Valid |
 | 3 | The Eleven Heavenly Star Points come from Yuan Wang Guorui's (王國瑞) 《扁鵲神應針灸玉龍經》 and exclude Taichong (太衝) | 《扁鵲神應針灸玉龍經》 Yuan, Wang Guorui (王國瑞) 1329 (bibliography of 《穴位通鑑》). 《證治通鑑》 L158 "已上穴諸見前天星十一穴內" | Valid |
 | 4 | The Twelve Heavenly Star Points are "Ma Danyang's (馬丹陽) 《天星十二穴治雜病歌》 in the Ming-dynasty *Zhenjiu Dacheng* (《針灸大成》)" → followed by "《馬丹陽天星十二穴並治雜病歌》 in Xu Feng's *Zhenjiu Daquan* (《針灸大全》)" | 《針灸大全》 1439 is the first appearance and 《針灸大成》 1601 is a reprint. 《穴位通鑑》 also quotes 《秘傳常山楊敬齋針灸全書》, 《針灸大成》 and others | **Confused order of presentation** (the first source should be made clear) |
 | 5 | The Qianjin Eleven Points actually comprise 10 points (no Chengshan (承山) or Tongli (通里); Houxi (後谿) included) | Original text of footnote 6, "三里內庭…委中崑崙…後谿幷列缺…還跳與陽陵" = 10 points. 《通考》 and 《穴位通鑑》 confirm "曲池與合谷, 頭面病可徹" and "委中、崑崙治腰背痛相連" | Valid |
 | 6 | Composition of Table 1 (13 points × 4 verses) | Agrees on comparison with the original texts of footnotes 4–6 | Valid |
 | 7 | "**Daling (大陵, PC6)** of the Pericardium Meridian of Hand-Jueyin (手厥陰心包經)" | Daling is **PC7**. PC6 is Neiguan (內關) | **Point-code error** |
-| 8 | The distal point-selection principle is drawn from the *Yixue Rumen* (《醫學入門》) (Ming 1575) | The primary origin is earlier. 《靈樞·終始》 "從腰以上者, 手太陰陽明皆主之; 從腰以下者, 足太陰陽明皆主之", and 《小品方》 (citing 《曹氏灸經》) "頭病皆灸手臂穴; 心腹病皆灸脛足穴". Commentary (按語) in 《證治通鑑》: "《四總穴歌》…即是對上述兩條取穴原則的具體闡述" (`中国针灸证治通鉴_81-160.md` L2626-2632) | **Primary source omitted** |
+| 8 | The distal point-selection principle is drawn from the *Yixue Rumen* (《醫學入門》) (Ming 1575) | The primary origin is earlier. 《靈樞·終始》 "從腰以上者, 手太陰陽明皆主之; 從腰以下者, 足太陰陽明皆主之", and 《小品方》 (citing 《曹氏灸經》) "頭病皆灸手臂穴; 心腹病皆灸脛足穴". Commentary (按語) in 《證治通鑑》: "《四總穴歌》…即是對上述兩條取穴原則的具體闡述" (《中國針灸證治通鑑》 PDF pp. 81–160 L2626-2632) | **Primary source omitted** |
 | 9 | Only the Four Command and Heavenly Star families are reviewed as verses on region-specific representative points | 《通考》 cites, as examples of the same "summary of sites of action", 《通玄指要賦》 ("心胸病求掌後之大陵; 肩背患責肘前之三里…頭項痛擬後溪"), 《肘後歌》 and others alongside 《四總穴歌》 | **Possible selection bias** |
 | 10 | "Sanli (三里)" in the Four Command Points = Zusanli (足三里) | 《穴位通鑑》 (entry for Shousanli (手三里)) records a dissenting view: "'肚腹三里留', 皆不專指'足三里'也" | Dissenting view not mentioned (a minority view, but a footnote is recommended) |
 
@@ -191,7 +191,7 @@ The paper groups "distal point selection" as a single principle. From the neural
 ---
 
 *Evidence files*
-- Source-text chunks: `01_도서_번역_및_원전/中国针灸证治通鉴/chunks_refined/中国针灸证治通鉴_81-160.md` (L2626-2632), `_161-240.md` (L158), `_481-543.md` (bibliography) / `中国针灸穴位通鉴/chunks_refined/(上卷)_321-400.md`, `_481-560.md`, `_801-880.md`, `_1041-1120.md` / `针灸腧穴通考/chunks_refined/(上)_1-80.md` (L2100-2125)
+- Source-text chunks: 《中國針灸證治通鑑》 PDF pp. 81–160 (L2626-2632), PDF pp. 161–240 (L158), PDF pp. 481–543 (bibliography) / 《中國針灸穴位通鑑》(上卷) PDF pp. 321–400, PDF pp. 481–560, PDF pp. 801–880, PDF pp. 1041–1120 / 《針灸腧穴通考》(上) PDF pp. 1–80 (L2100-2125)
 - Master datasets: Kim Jaehyo Anatomical Structure Dataset, Common Textbook Anatomical Structure Dataset, Integrated Biomedical Master DB v3.0
 - Databook: Four Command & Twelve Star Points Textual Database / Web report: `사총혈_천성십이혈_구성원리_가설검증_및_피어리뷰_보고서.html`
 
@@ -201,7 +201,7 @@ The paper groups "distal point selection" as a single principle. From the neural
 | :-: | :--- | :--- | :--- | :--- |
 | 1 | Preamble | Verification framework v2.6 | Framework v2.7 refinement block, ARI not calculated, source-data xlsx stated | Guideline 1 |
 | 2 | Preamble, paper under review | doi (unverified) | Results of doi.org and Crossref checks; discrepancy between Crossref pages (235-242) and printed pages (226-233) recorded | doi.org CSL, Crossref API, printed pages of local PDF |
-| 3 | Preamble, local original | `학습자료/…` (path relative to the project, which does not actually exist) | `G:/내 드라이브/학습자료/…` absolute path | File existence confirmed |
+| 3 | Preamble, local original | Path relative to the project (did not actually exist) | Local absolute path | File existence confirmed (replaced with a bibliographic citation in the public edition, 2026-10-25) |
 | 4 | Section 5 title & introduction | Layer A·B verification (unlabelled), "general anatomical knowledge (Layer B)" | "Anatomical substrate hypothesis (ARI not calculated)"; segmental criteria cited as B1-01, B1-03, textbooks as B2-09 | Guideline 4, registry B1, B2 |
 | 5 | Section 5 table, LI4 | "DNIC" | B3-08 cited; not used as evidence of point specificity because it is non-specific analgesia | Limitations of registry B3-08 |
 | 6 | Below the Section 5 table | Inverted-index counts (no date) | Basis date of 2026-10-03 stated, v3.0 resynchronised values added | Master DB `acupoint_inverted_index` |

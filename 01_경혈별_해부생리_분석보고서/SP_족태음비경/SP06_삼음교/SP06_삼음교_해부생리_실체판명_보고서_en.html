@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -62,11 +72,11 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <strong>Dual scoring</strong>: two independent scorings; 3 disagreements of 15 points or more adjudicated · <strong>Branch decision</strong>: ΔARI-Core 33.8, ± intervals do not overlap → T2 superior</p>
 <p><strong>Three Primary Classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)
 <strong>Layer A Empirical Database</strong>: Integrated Biomedical Master DB v3.0 (of the 68 papers in the SP6 inverted index, <strong>only the 15 that actually stimulated or observed SP6</strong> are used for the verdict, Table 8-①. Rank 6 run with the search script revised on 2026-10-23)
-<strong>Layer B Reference Registry</strong>: <code>01_Framework/layer_b_reference_registry.md</code> (6-item B-Check, concordance threshold ≥ 8/12)
+<strong>Layer B Reference Registry</strong>: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 <strong>Anatomical Ontology</strong>: local index of FMA 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s (B1 supplementary, not yet in the registry); Appendix A
 <strong>Metrological Standard</strong>: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\text{mm}$)
 <strong>⚠ Pregnancy</strong>: 《銅人》 "故妊娠不可刺"; textbooks "孕婦禁針". The needling-depth DB has no '0' ('Contraindicated for needling (禁針)') record — a conditional contraindication (Sections 5 and 9)
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 </blockquote>
 <hr>
 <h2 id="1-classical-literature-screening-table-three-primary-classics-excerpts">1. Classical Literature Screening Table (Three Primary Classics Excerpts)</h2>
@@ -82,7 +92,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;"><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)</td>
-<td style="text-align: left;">"三陰交，在內踝上八寸胻骨下陷者中。足太陰、厥陰之會。（《黃帝明堂經》）" — <code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_09_上_足太阴脾经穴.md</code> L1125</td>
+<td style="text-align: left;">"三陰交，在內踝上八寸胻骨下陷者中。足太陰、厥陰之會。（《黃帝明堂經》）" — 《針灸腧穴通考》 上 足太陰脾經穴 L1125</td>
 <td style="text-align: left;">The Sanyinjiao of 《明堂》 lies <strong>8 cun</strong> above the medial malleolus in the depression below the tibia; meeting point of the foot-taiyin and jueyin (足太陰、厥陰之會)</td>
 <td style="text-align: left;">Basis for <strong>T1</strong></td>
 </tr>
@@ -118,7 +128,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》)</td>
-<td style="text-align: left;">"三陰交，在內踝上三寸骨下陷者中。（《針灸甲乙經》3：53）" / Location 2: "在內踝上八寸[1]骨下陷中。（《備急千金要方》29：510、《太平聖惠方》、《醫心方》）… [1]'八寸'系'三寸'之誤。同書卷21作'三寸'。" — <code>중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_31_足太阴脾经(1).md</code> L1308, L1336–1338</td>
+<td style="text-align: left;">"三陰交，在內踝上三寸骨下陷者中。（《針灸甲乙經》3：53）" / Location 2: "在內踝上八寸[1]骨下陷中。（《備急千金要方》29：510、《太平聖惠方》、《醫心方》）… [1]'八寸'系'三寸'之誤。同書卷21作'三寸'。" — 《中國針灸穴位通鑑》 足太陰脾經(1) L1308, L1336–1338</td>
 <td style="text-align: left;">The <em>Xuewei Tongjian</em> (《穴位通鑑》) regards 8 cun as 'a slip for 3 cun'</td>
 <td style="text-align: left;"><strong>Conflicts with the <em>Tongkao</em> (《通考》)</strong> — adjudicated in Section 7</td>
 </tr>
@@ -130,13 +140,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</td>
-<td style="text-align: left;">Indications of 三陰交 in 《明堂經》: "主足下熱，脛痛不能久立，濕痹不能行。" / Summary (小結): "《明堂經》所載'三陰交'在內踝上八寸，而六朝以後方書所載'三陰交'多位於內踝上三寸，故主治病症大不相同。" — <code>중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_05_第壹编_第七篇_足太阴脾经_手少阴心经_手太阳小肠经.md</code> L154, L184</td>
+<td style="text-align: left;">Indications of 三陰交 in 《明堂經》: "主足下熱，脛痛不能久立，濕痹不能行。" / Summary (小結): "《明堂經》所載'三陰交'在內踝上八寸，而六朝以後方書所載'三陰交'多位於內踝上三寸，故主治病症大不相同。" — 《中國針灸證治通鑑》 第壹編 第七篇 足太陰脾經 手少陰心經 手太陽小腸經 L154, L184</td>
 <td style="text-align: left;">The indications in the point books (腧穴書, 8 cun) and the prescription books (方書, 3 cun) differ</td>
 <td style="text-align: left;">Separation of T1/T2 indications in Section 9</td>
 </tr>
 <tr>
 <td style="text-align: left;"><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</td>
-<td style="text-align: left;">"徐文伯針刺墮胎：瀉足太陰，補手陽明，胎便應針而落。" / Summary (小結): "六朝後醫書多因而取三陰交、合谷穴以治難產，有些腧穴書甚至將此二穴列為孕婦禁刺穴。" — <code>中国针灸证治通鉴_22_第叁编_妇儿科病证.md</code> L382, L480</td>
+<td style="text-align: left;">"徐文伯針刺墮胎：瀉足太陰，補手陽明，胎便應針而落。" / Summary (小結): "六朝後醫書多因而取三陰交、合谷穴以治難產，有些腧穴書甚至將此二穴列為孕婦禁刺穴。" — 《中國針灸證治通鑑》 第叄編 婦兒科病證 L382, L480</td>
 <td style="text-align: left;">The origin of the prohibition of needling in pregnancy = Xu Wenbo's (徐文伯) prescription for inducing delivery (引產)</td>
 <td style="text-align: left;">Sections 5 and 9</td>
 </tr>
@@ -266,7 +276,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p>The KJH DB (Acupoint Nomenclature & Alias Comparative Database, master list, Excel row 137: 134, SP06, Samumgyo, 三陰交, "承命, 太陰, 下之三里, 足太陰交, 足太陰, 三交") lists names from the T1 and T2 lineages and a separate point (承命) together on one line. It must be read by lineage, as in the table above. In addition, from <em>Taiping Shenghui Fang</em> (《太平聖惠方》) onward, 三陰交 indications became mixed into Lougu (漏谷, SP7) (Tongkao L1415–1423).</p>
+<p>The KJH DB (Acupoint Nomenclature &amp; Alias Comparative Database, master list, Excel row 137: 134, SP06, Samumgyo, 三陰交, "承命, 太陰, 下之三里, 足太陰交, 足太陰, 三交") lists names from the T1 and T2 lineages and a separate point (承命) together on one line. It must be read by lineage, as in the table above. In addition, from <em>Taiping Shenghui Fang</em> (《太平聖惠方》) onward, 三陰交 indications became mixed into Lougu (漏谷, SP7) (Tongkao L1415–1423).</p>
 <hr>
 <h2 id="4-3d-spatial-coordinates-layer-15-anatomical-substrate-diagram">4. 3D Spatial Coordinates &amp; Layer 1–5 Anatomical Substrate Diagram</h2>
 <p><strong>T2 (current)</strong>
@@ -1116,7 +1126,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 5. Among the current indications, 'spleen disease with heavy body, abdominal distension and borborygmus, loose stools (脾病 身重·腹脹腸鳴·溏泄)' derives from Wang Tao's (王燾) misattribution (Tongkao). The 《明堂》 passage on '足下熱·脛痛' gives the indications of T1 and is not used as evidence for the current point.</p>
 <hr>
 <h2 id="appendix-a-fma-anatomical-substrate-profile-fma-510">Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)</h2>
-<p>Generated by: <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile SP06 --md</code> (2026-10-23). Two manual corrections applied.</p>
+<p>Generated by: FMA 5.1.0 acupoint profile query (SP06; 2026-10-23). Two manual corrections applied.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1226,7 +1236,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">2026-10-24</td>
 <td style="text-align: left;">Whole document (newly written)</td>
-<td style="text-align: left;">Earlier edition v2.6 (2026-09-03, 4-factor weighted-sum ARI 97.50, <code>_구판_v2.6_20260903/</code>)</td>
+<td style="text-align: left;">Earlier edition v2.6 (2026-09-03, 4-factor weighted-sum ARI 97.50, the internal archive)</td>
 <td style="text-align: left;">Newly written as a Framework v2.7 Tier 3 report: 10 required components, <strong>T1 (Mingtang 8 cun) vs T2 (current 3 cun) split</strong>, dual scoring (T2 75.0 ± 2.5 B / T1 41.3 ± 1.3 D·H), B-Check 10/12 concordant</td>
 <td style="text-align: left;">Canon Rank 0–7 and sections 4, 5; earlier-edition score not compared</td>
 </tr>
@@ -1242,14 +1252,14 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Sections 4, 6, Appendix A</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">Layer table by order of structures, Figure 4-1 cross-section schematic, FMA cross-check (2 manual corrections: FMA:51099, FMA:75559)</td>
-<td style="text-align: left;">FMA 5.1.0; <code>.claude/skills/acupoint-anatomy/scripts/fma/figures/SP06_cross_section.py</code></td>
+<td style="text-align: left;">FMA 5.1.0; figure-generation script (internal)</td>
 </tr>
 <tr>
 <td style="text-align: left;">2026-10-24</td>
 <td style="text-align: left;">Section 8</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">15 papers that actually stimulated or observed SP6 selected from the 68 in the inverted index (checked against PubMed abstracts and local PDF full texts), lists of excluded and unconfirmable items, Figure 8-1, external search log</td>
-<td style="text-align: left;">Master DB .json SP6 inverted index, sync_log 2026-10-23T23:57:22</td>
+<td style="text-align: left;">Integrated Biomedical Master DB SP6 inverted index, sync_log 2026-10-23T23:57:22</td>
 </tr>
 </tbody>
 </table></div>
@@ -1269,7 +1279,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Whole document</td>
 <td style="text-align: left;">Automatically generated "English" edition: Korean body text with only headings and some terms replaced</td>
 <td style="text-align: left;">Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations</td>
-<td style="text-align: left;">Korean edition <code>SP06_삼음교_해부생리_실체판명_보고서.md</code></td>
+<td style="text-align: left;">Korean edition</td>
 </tr>
 <tr>
 <td style="text-align: left;">Title and body</td>
@@ -1310,9 +1320,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:25 · 원본: SP06_삼음교_해부생리_실체판명_보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1320,6 +1334,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -59,13 +69,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>Framework</strong>: v2.7 (revised 2026-10-04) · <strong>ARI</strong>: T1 <code>ARI v3.0 | ARI-Core 51.2 ± 0 (D·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 47.9 (D, grade unchanged)</code>
 T2 <code>ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 54.2 (D, grade changes → weight-sensitive)</code> · <strong>Dual scoring</strong>: two independent raters, adjudicated</p>
 <p><strong>Three Primary Classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) (Huang Longxiang, 黃龍祥)
-<strong>Layer A Empirical Database</strong>: <a href="../../../../%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json">Integrated Biomedical Master DB v3.0</a> — GB39 evidence pack: of 29 landmark papers and 18 locally mapped papers, <strong>5 mechanistic/clinical studies that actually include GB39</strong> (papers.id 1610 · 1612 · 1615 · 1902 · 1903, all multi-point or animal) + 1 textual study on location (1624)
-<strong>Layer B Reference Registry</strong>: <a href="../../../../01_Framework/layer_b_reference_registry.md"><code>layer_b_reference_registry.md</code></a> (6-item B-Check, concordance threshold ≥ 8/12)
+<strong>Layer A Empirical Database</strong>: Integrated Biomedical Master DB v3.0 — GB39 evidence pack: of 29 landmark papers and 18 locally mapped papers, <strong>5 mechanistic/clinical studies that actually include GB39</strong> (papers.id 1610 · 1612 · 1615 · 1902 · 1903, all multi-point or animal) + 1 textual study on location (1624)
+<strong>Layer B Reference Registry</strong>: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 <strong>Needling-depth DB</strong>: Classical Needling Depth Database sheet 1, row 344 (N0 = 342)
 <strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 <strong>Metrological Standard</strong>: Han-dynasty (漢代) standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$), 1 cun = 10 fen = 23 mm (for depth conversion; surface positions use bone-proportional cun)
 <strong>Analysis Targets</strong>: <strong>T1</strong> classical source location (<em>Huangdi Mingtang Jing</em> (《黃帝明堂經》) "在足外踝上三寸動者(脈)中, 足三陽絡, 按之陽明脈絕乃取之" = the anterior tibial artery pulse point on the tibial side) / <strong>T2</strong> WHO and current-textbook location (外踝尖上 3寸, 腓骨前緣)
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 <p><strong>Summary</strong>: The earlier edition took the classical "動脈中" to be the perforating branch of the fibular artery and analysed a single point with Δ 3–7 mm. However, the <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) and papers.id 1624 hold that the vessel is the <strong>anterior tibial artery</strong> and that the original position is <strong>on the tibial side</strong>. The Δ estimated independently by each of the two raters is about 20–35 mm (&gt; 15 mm), so the analysis branches into T1 and T2. ΔARI-Core = 3.8 (&lt; 10), so <strong>neither Target is declared superior and both are reported side by side</strong>. For both Targets the B-Check is not concordant, so the reflex mechanism is a <strong>hypothesis</strong>.</p>
 </blockquote>
 <hr>
@@ -81,22 +91,22 @@ T2 <code>ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | provisional weights 0.40/0.35
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)</strong>, entry 懸鍾 (<code>针灸腧穴通考(下)_321-400.md</code> L529–658, printed pp.1106–1109) and the entry 陽輔 "'陽輔'、'懸鍾'與'絕骨'穴辨" (same file, L414–437)</td>
+<td style="text-align: left;"><strong><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)</strong>, entry 懸鍾 (《針灸腧穴通考》(下) PDF pp. 321–400 L529–658, printed pp.1106–1109) and the entry 陽輔 "'陽輔'、'懸鍾'與'絕骨'穴辨" (same file, L414–437)</td>
 <td style="text-align: left;">"懸鍾，在足外踝上三寸動者中，足三陽絡，按之陽明脈絕乃取之。" (《黃帝明堂經》, L421) / "懸鍾，一名絕骨，在外踝上三寸動者中，足三陽絡。" (《千金要方》 卷二十九, L426 · 558) / modern 【定位】 "外踝尖上 3 寸，腓骨前緣" (L569)</td>
 <td style="text-align: left;">"主腹滿，胃中有熱不嗜食，小兒腹滿不能食飲。" (《黃帝明堂經》, L542)</td>
 <td style="text-align: left;">① "《黃帝明堂經》所謂'陽明脈'……也即足背動脈，由於它是脛前動脈的下行支……人體測量學調查的結果表明：在外踝上三寸，靠近足陽明經脈行處，用力按壓，則衝陽脈搏動消失……後人及今人……將懸鍾穴定於足少陽經脈線上……此處不僅不能觸及動脈搏動，通過按壓也不能使足背處的衝陽脈搏動消失" (L548–552). ② "既是'按之陽明脈絕'處，則定位宜略偏向脛側……因而出現了名實分離的現象" (L431). ③ "'絕骨'穴不見於《黃帝明堂經》" (L431), "'絕骨'歸入奇穴類" (L437). ④ Meridian attribution (歸經), note (按): "將這樣一個位於陽明脈上而又主治陽明胃病的腧穴歸入足少陽經，難以成立" (L615). ⑤ "《黃帝明堂經》的'懸鍾'已經名存實亡了" (L658). <strong>The 《通考》 contains no description of the superficial fibular nerve (淺腓骨神經) or the perforating branch of the fibular artery (腓骨動脈).</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》)</strong>, entry 懸鍾 (<code>中国针灸穴位通鉴(下卷)_161-240.md</code> L52–346)</td>
+<td style="text-align: left;"><strong><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》)</strong>, entry 懸鍾 (《中國針灸穴位通鑑》(下卷) PDF pp. 161–240 L52–346)</td>
 <td style="text-align: left;">Source (出處) "懸鍾，在足外踝上三寸動者脈中，足三陽經，按之陽明脈絕乃取之。" (《針灸甲乙經》 3:55, L54 — the OCR reading "經" is read as "絡" following the 《通考》 and L136 "足三陽絡") / 24 location (部位) entries (L80–132), e.g. "在足外踝上三寸動脈中。" (《銅人》 5:20 · 《聚英》 · 《大成》, L90), "足外踝上三寸動脈中，尋摸尖骨者是。足三陽之大絡，按之陽明脈絕乃取之。" (《針灸大成》 7:209, L110) / "刺入六分，留七呼，灸五壯。" (《甲乙》 etc., L236)</td>
 <td style="text-align: left;">"腹滿，胃中有熱，不嗜食，懸鍾主之。" (《甲乙》 9:124), "小兒腹滿，不能食飲，懸鍾主之。" (《甲乙》 12:154) (L154–156)</td>
 <td style="text-align: left;">Explanation of the name (釋義): "穴在足外踝上三寸動者脈中，即脛前動脈處" (《經穴釋義匯解》, L74). Regional anatomy: "在腓骨前緣……有脛前動脈的分支，分佈著腓淺神經" (《新針灸學》), "腓淺神經；腓深神經；脛前動脈" (《針灸學簡編》) (L276–288). Concluding remarks: the alias 絕骨 "首出《備急千金要方》卷29" (L342), "髓會不宜作別名" (L292)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</strong> (<code>中国针灸证治通鉴_*.md</code>, 7 chunks; 懸鍾 and 絕骨 occur 196 times on 165 lines)</td>
+<td style="text-align: left;"><strong><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</strong> (refined edition, 7 chunks; 懸鍾 and 絕骨 occur 196 times on 165 lines)</td>
 <td style="text-align: left;">(Prescription collection — almost no location descriptions)</td>
-<td style="text-align: left;">"乃若胃熱治懸鍾" (<code>_161-240.md</code> L4132), "腹滿不食：中脘針，絕骨、下三里" (<code>_241-320.md</code> L2972)</td>
-<td style="text-align: left;">Context of occurrences (±80 characters, overlap allowed, reference values): lower-limb wei (痿), bi (痹), foot (足), shin (脛), knee (膝) 113; leg qi (腳氣) 20; stroke (中風) 16; malaria (瘧) 11; nape/neck (項 · 頸) 9; stomach/abdominal fullness (胃 · 腹滿) 7; stiff neck (落枕) 2. Mostly <strong>combination</strong> prescriptions with 足三里 and others. <code>_1-80.md</code> L1236, note (按): "'絕骨'穴不見於《明堂經》，後世醫家或以之為懸鍾穴，或以之為陽輔穴"</td>
+<td style="text-align: left;">"乃若胃熱治懸鍾" (PDF pp. 161–240 L4132), "腹滿不食：中脘針，絕骨、下三里" (PDF pp. 241–320 L2972)</td>
+<td style="text-align: left;">Context of occurrences (±80 characters, overlap allowed, reference values): lower-limb wei (痿), bi (痹), foot (足), shin (脛), knee (膝) 113; leg qi (腳氣) 20; stroke (中風) 16; malaria (瘧) 11; nape/neck (項 · 頸) 9; stomach/abdominal fullness (胃 · 腹滿) 7; stiff neck (落枕) 2. Mostly <strong>combination</strong> prescriptions with 足三里 and others. PDF pp. 1–80 L1236, note (按): "'絕骨'穴不見於《明堂經》，後世醫家或以之為懸鍾穴，或以之為陽輔穴"</td>
 </tr>
 </tbody>
 </table></div>
@@ -178,7 +188,7 @@ T2 <code>ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | provisional weights 0.40/0.35
 <thead>
 <tr>
 <th style="text-align: left;">Alias</th>
-<th style="text-align: left;">KJH DB (Acupoint Nomenclature & Alias Comparative Database, comprehensive acupoint list)</th>
+<th style="text-align: left;">KJH DB (Acupoint Nomenclature &amp; Alias Comparative Database, comprehensive acupoint list)</th>
 <th style="text-align: left;">Alias columns of the two textbooks</th>
 <th style="text-align: left;">Classical basis</th>
 <th style="text-align: left;">Risk of conflation</th>
@@ -1357,7 +1367,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 </ul>
 <hr>
 <h2 id="appendix-a-fma-anatomical-substrate-profile-fma-510">Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)</h2>
-<p>Generated by: <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile GB39 --md</code> (2026-10-23). The match level <code>exact</code> means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.</p>
+<p>Generated by: FMA 5.1.0 acupoint profile query (GB39; 2026-10-23). The match level <code>exact</code> means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1526,7 +1536,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <td style="text-align: left;">Section 4</td>
 <td style="text-align: left;">Text layer diagram only</td>
 <td style="text-align: left;">Figure 4-1 cross-sectional schematic (T1 and T2 shown together), 4-3 FMA cross-check table by layer, 3 notes on the limits of FMA modelling</td>
-<td style="text-align: left;"><code>fma_query.py profile GB39</code>; figure script <code>.claude/skills/acupoint-anatomy/scripts/fma/figures/GB39_cross_section.py</code></td>
+<td style="text-align: left;">FMA profile query; figure-generation script (internal)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 6</td>
@@ -1556,7 +1566,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <td style="text-align: left;">Appendix A</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA profile table</td>
-<td style="text-align: left;"><code>fma_query.py profile GB39 --md</code></td>
+<td style="text-align: left;">FMA profile query</td>
 </tr>
 <tr>
 <td style="text-align: left;">ARI</td>
@@ -1567,7 +1577,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <tr>
 <td style="text-align: left;">Archive of earlier edition</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">md, html and xlsx before the supplement archived in <code>_구판_v2.7_20261023/</code></td>
+<td style="text-align: left;">md, html and xlsx before the supplement archived in the internal archive</td>
 <td style="text-align: left;">—</td>
 </tr>
 </tbody>
@@ -1594,13 +1604,13 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <td style="text-align: left;">《通考》 quotations in Sections 2.4, 7.1 and 9</td>
 <td style="text-align: left;">"懸鍾(絕骨)穴位於外踝上三寸, 腓骨前緣… 淺腓骨神經(L4-S1)… 腓骨動脈 perforating branch… '動脈' is the pulse of the perforating branch of the fibular artery" (Tongkao collation column), "complete agreement on 5 items"</td>
 <td style="text-align: left;"><strong>Deleted as fabricated quotations.</strong> Replaced by the actual text of the 《通考》 (pulse-based location, anterior tibial artery, tibial side, 名實分離, 名存實亡, implausible meridian attribution). The 《通考》 contains no description of the 淺腓骨神經 or the perforating branch of the 腓骨動脈</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_321-400.md</code> L431 · 437 · 542 · 548–552 · 615 · 658</td>
+<td style="text-align: left;">《針灸腧穴通考》(下) PDF pp. 321–400 L431 · 437 · 542 · 548–552 · 615 · 658</td>
 </tr>
 <tr>
 <td style="text-align: left;">Original text in Sections 1, 2.2.1 and 5.1</td>
 <td style="text-align: left;">《甲乙》 "在足外踝上三寸動脈中", 《明堂》 "在足外踝上三寸"</td>
 <td style="text-align: left;">Full text "在足外踝上三寸動者脈中, 足三陽絡, 按之陽明脈絕乃取之" restored</td>
-<td style="text-align: left;"><code>中国针灸穴位通鉴(下卷)_161-240.md</code> L54; 《通考》 L421</td>
+<td style="text-align: left;">《中國針灸穴位通鑑》(下卷) PDF pp. 161–240 L54; 《通考》 L421</td>
 </tr>
 <tr>
 <td style="text-align: left;">銅人 · 千金 · 大成 in Section 2.2.1</td>
@@ -1630,7 +1640,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <td style="text-align: left;">Δ in Section 4.2</td>
 <td style="text-align: left;">0.3–0.7 cm, "below the separation criterion, single analysis"</td>
 <td style="text-align: left;">Δ ≈ 20–35 mm (independent estimates by 2 raters) → T1/T2 branch; Section 7 newly created</td>
-<td style="text-align: left;">final_GB39M.json override_note; papers.id 1624</td>
+<td style="text-align: left;">adjudication record; papers.id 1624</td>
 </tr>
 <tr>
 <td style="text-align: left;">Substrate of "動脈中" in Sections 5.1 and 6.2</td>
@@ -1648,7 +1658,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <td style="text-align: left;">Safety in Section 5.2</td>
 <td style="text-align: left;">"No risk of injury to the main trunk of the fibular artery"; Layer 4 risk structures omitted</td>
 <td style="text-align: left;">Possibility of contact with Layer 4 (anterior tibial artery, deep fibular nerve) stated for T1 and T2 separately, together with records of deep insertion (《指微》 46 mm, 竇氏 57.5 mm)</td>
-<td style="text-align: left;">final_GB39M.json S_safety rationale</td>
+<td style="text-align: left;">S_safety scoring rationale</td>
 </tr>
 <tr>
 <td style="text-align: left;">Mechanism in Sections 6.1 and 9</td>
@@ -1666,7 +1676,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <td style="text-align: left;">Section 8</td>
 <td style="text-align: left;">No Layer A, B-Check or search log</td>
 <td style="text-align: left;">papers.id table (including quotation of the location conclusion of 1624), B-Check for T1 and T2 (5/12 · 6/12), sync_log table added</td>
-<td style="text-align: left;">pack_GB39.md; final_GB39M.json bcheck; 1624 full-text PDF</td>
+<td style="text-align: left;">evidence pack; B-Check scoring record; 1624 full-text PDF</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 8, bibliographic data for papers.id 1624</td>
@@ -1684,13 +1694,13 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <td style="text-align: left;">Section 10</td>
 <td style="text-align: left;">v2.6 five-factor ARI</td>
 <td style="text-align: left;">T1 51.2 ± 0 (D·H) / T2 55 ± 0 (C, weight-sensitive); sub-items, gates, branch and adjudication record</td>
-<td style="text-align: left;">final_GB39M.json</td>
+<td style="text-align: left;">dual-scoring record</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 10</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">Earlier v2.6 score 93.6 (not comparable)</td>
-<td style="text-align: left;">Earlier report in <code>_구판_v2.6/</code></td>
+<td style="text-align: left;">Earlier report in the internal archive</td>
 </tr>
 <tr>
 <td style="text-align: left;">Items not confirmed</td>
@@ -1716,7 +1726,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <td style="text-align: left;">Whole document</td>
 <td style="text-align: left;">Automatically generated "English" edition: Korean body text with only headings and some terms replaced</td>
 <td style="text-align: left;">Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations</td>
-<td style="text-align: left;">Korean edition <code>GB39_현종_해부생리_실체판명_보고서.md</code></td>
+<td style="text-align: left;">Korean edition</td>
 </tr>
 <tr>
 <td style="text-align: left;">Title</td>
@@ -1763,8 +1773,8 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <tbody>
 <tr>
 <td style="text-align: left;">Header links</td>
-<td style="text-align: left;">Absolute <code>file:///g:/내 드라이브/도서 번역/…</code> links (do not open on other PCs)</td>
-<td style="text-align: left;">Links relative to the project root (<code>도서 번역</code>)</td>
+<td style="text-align: left;">Local absolute-path links (do not open on other PCs)</td>
+<td style="text-align: left;">Project-relative links</td>
 <td style="text-align: left;">Skill path rule (no drive-letter absolute paths)</td>
 </tr>
 <tr>
@@ -1781,9 +1791,13 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:25 · 원본: GB39_현종_해부생리_실체판명_보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:50 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1791,6 +1805,35 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

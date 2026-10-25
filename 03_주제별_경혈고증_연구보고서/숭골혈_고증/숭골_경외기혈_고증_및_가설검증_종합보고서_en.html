@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -56,12 +66,12 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <article>
 <h1 id="authoritative-comprehensive-textual-research-report-chonggu-textual-research-and-hypothesis-testing-of-an-extra-point">📜 [Authoritative Comprehensive Textual Research Report] Chonggu (崇骨): Textual Research and Hypothesis Testing of an Extra Point (經外奇穴)</h1>
 <blockquote>
-<p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual research (Rank 5 where needed) · <strong>ARI</strong>: not calculated (textual-research report) · <strong>Source data</strong>: <code>숭골_경외기혈_고증_및_가설검증_피어리뷰_분석.csv</code>, Songgu Extra-Point Analysis Dataset (comparison with the three primary classics: <code>针灸腧穴通考(下)_401-480.md</code> L1620-1666)<br>
-<strong>Previous edition</strong>: The Version 2.6 original (2026-10-03, labelled "Rank 0–7 fully applied") is kept in <code>_구판_v2.6/</code>. As there is in fact no record of Rank 6·7 (comparison with Layers A·B, ARI scoring) having been performed, the scope has been corrected to Rank 1–4<br>
+<p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual research (Rank 5 where needed) · <strong>ARI</strong>: not calculated (textual-research report) · <strong>Source data</strong>: the unpublished supplementary CSV dataset, Songgu Extra-Point Analysis Dataset (comparison with the three primary classics: 《針灸腧穴通考》(下) PDF pp. 401–480 L1620-1666)<br>
+<strong>Previous edition</strong>: The Version 2.6 original (2026-10-03, labelled "Rank 0–7 fully applied") is kept in the internal archive. As there is in fact no record of Rank 6·7 (comparison with Layers A·B, ARI scoring) having been performed, the scope has been corrected to Rank 1–4<br>
 <strong>Master evidence principles</strong>: Principles for Acupoint Anatomical Substrate Identification<br>
 <strong>Source classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)<br>
 <strong>Consolidation history</strong>: Two separate documents (a peer-review report and a report on the historical change of C7/T1) were fully merged into a single authoritative edition under the principle of consolidating documents with ≥ 50% overlap.<br>
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 </blockquote>
 <hr>
 <h2 id="1-background-of-the-textual-research-and-definition-of-chonggu">🏛️ 1. Background of the Textual Research and Definition of Chonggu (崇骨)</h2>
@@ -95,7 +105,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><strong>《針灸腧穴通考》</strong></td>
-<td style="text-align: left;">"黃龍祥 考: 崇骨之名, 實起於後世對頸椎骨之俗稱. 與大椎相表裏." <em>(This sentence is not found in <code>chunks_refined</code>. Actual passages: 《小品方》 "大椎上節以上屬頸崇骨也。大椎與崇骨相接處，其節最高碩也"; literature analysis "頸椎只辨出三椎，稱項骨，又曰'柱骨'、'天柱骨'或'崇骨'…最高大者為與大椎骨相鄰的崇骨——即第七頸椎…無主治病症及相關刺灸法…可見並非出自許任的臨床實踐")</em></td>
+<td style="text-align: left;">"黃龍祥 考: 崇骨之名, 實起於後世對頸椎骨之俗稱. 與大椎相表裏." <em>(This sentence is not found in the refined classics. Actual passages: 《小品方》 "大椎上節以上屬頸崇骨也。大椎與崇骨相接處，其節最高碩也"; literature analysis "頸椎只辨出三椎，稱項骨，又曰'柱骨'、'天柱骨'或'崇骨'…最高大者為與大椎骨相鄰的崇骨——即第七頸椎…無主治病症及相關刺灸法…可見並非出自許任的臨床實踐")</em></td>
 <td style="text-align: left;">According to the primary sources, 崇骨 was originally a <strong>bone name (C7, or the cervical vertebrae (項骨) in general)</strong>; Huang Longxiang (黃龍祥) judges that the point name 崇骨 was established by Heo Im on the basis of this bone name and did not arise from clinical practice. "An independent point that modulates the upper branches of the cervical plexus" is an anatomical substrate hypothesis with no basis in the primary sources.</td>
 </tr>
 </tbody>
@@ -199,7 +209,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <ul>
 <li>PMID/DOI: none in the text (0 items to check). No biomedical literature cited — for Layer B, registry IDs (B2-03, B2-04, B2-06) were added only as references for the hypothesis labels.</li>
-<li>Data files: "100% proven" (Hypothesis 1) and "100% fused with indications" (Chonggu row) in the csv and xlsx had no quantitative basis and were changed respectively to "supported — description of adjacent mixed use of bone name and point name confirmed, not quantitatively verified" and "no independent indications — no point-specific indication recorded in the primary sources" (originals kept in <code>_구판_v2.6/</code>).</li>
+<li>Data files: "100% proven" (Hypothesis 1) and "100% fused with indications" (Chonggu row) in the csv and xlsx had no quantitative basis and were changed respectively to "supported — description of adjacent mixed use of bone name and point name confirmed, not quantitatively verified" and "no independent indications — no point-specific indication recorded in the primary sources" (originals kept in the internal archive).</li>
 <li>Remaining limitations: The 崇骨 passages of the 《千金要方》 and 《針灸大成》 lie outside the three primary classics and could not be compared directly. If they are confirmed in the original books, corrections 3 and 4 will be reviewed again.</li>
 </ul>
 <h2 id="refinement-history-2026-10-24">Refinement History (2026-10-24)</h2>
@@ -215,15 +225,19 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;">Header links</td>
-<td style="text-align: left;">Absolute <code>file:///g:/내 드라이브/도서 번역/…</code> links (do not open on other PCs)</td>
-<td style="text-align: left;">Links relative to the project root (<code>도서 번역</code>)</td>
+<td style="text-align: left;">Local absolute-path links (do not open on other PCs)</td>
+<td style="text-align: left;">Project-relative links</td>
 <td style="text-align: left;">Skill path rule (no drive-letter absolute paths)</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:20 · 원본: 숭골_경외기혈_고증_및_가설검증_종합보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -231,6 +245,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

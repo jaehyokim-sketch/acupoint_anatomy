@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -59,10 +69,10 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>Framework</strong>: v2.7 · <strong>ARI</strong>: ARI v3.0 | ARI-Core 75.0 ± 1.3 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 71.9 (B, grade unchanged) · <strong>Dual scoring</strong>: two independent scorings, 1 SI item adjudicated · <strong>Reflex mechanism</strong>: B-Check 7/12, not concordant → <strong>hypothesis</strong></p>
 <p><strong>Three Primary Classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)
 <strong>Layer A Empirical Database</strong>: Integrated Biomedical Master DB v3.0 (of the 33 papers in the SP5 inverted index, only <strong>the 6 papers that actually stimulated or observed SP05</strong> are used for the verdict; Section 8, Table ①)
-<strong>Layer B Reference Registry</strong>: <code>01_Framework/layer_b_reference_registry.md</code> (6-item B-Check, concordance threshold ≥ 8/12)
+<strong>Layer B Reference Registry</strong>: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 <strong>Anatomical Ontology</strong>: local index of FMA 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s (B1 supplementary, not yet in the registry); Appendix A
 <strong>Metrological Standard</strong>: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\text{mm}$)
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 </blockquote>
 <hr>
 <h2 id="1-classical-literature-screening-table-three-primary-classics-excerpts">1. Classical Literature Screening Table (Three Primary Classics Excerpts)</h2>
@@ -78,7 +88,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;"><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)</td>
-<td style="text-align: left;">"部位：在足內側，內踝前下方，舟骨粗隆與內踝尖連線中點凹陷中。" / "取穴：於內踝前緣直線與內踝下緣橫線的交點處取穴，前為中封，後為照海。" — <code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_09_上_足太阴脾经穴.md</code> L969–971</td>
+<td style="text-align: left;">"部位：在足內側，內踝前下方，舟骨粗隆與內踝尖連線中點凹陷中。" / "取穴：於內踝前緣直線與內踝下緣橫線的交點處取穴，前為中封，後為照海。" — 《針灸腧穴通考》 上 足太陰脾經穴 L969–971</td>
 <td style="text-align: left;">Anteroinferior to the medial malleolus, in the depression at the midpoint of the line joining the tuberosity of the navicular and the tip of the medial malleolus. Zhongfeng (中封) lies in front, Zhaohai (照海) behind</td>
 <td style="text-align: left;">Modern location</td>
 </tr>
@@ -102,7 +112,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》)</td>
-<td style="text-align: left;">"脾……行於商丘，商丘內踝之下陷者之中也，為經。(《靈樞經·本輸》1：8)" / alias "無。" — <code>중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_31_足太阴脾经(1).md</code> L1040, L1044</td>
+<td style="text-align: left;">"脾……行於商丘，商丘內踝之下陷者之中也，為經。(《靈樞經·本輸》1：8)" / alias "無。" — 《中國針灸穴位通鑑》 足太陰脾經(1) L1040, L1044</td>
 <td style="text-align: left;">River point (經穴), Metal (金), of the five transport points (五輸穴)</td>
 <td style="text-align: left;">Source</td>
 </tr>
@@ -120,13 +130,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</td>
-<td style="text-align: left;">Indications of Shangqiu (商丘) in the 《明堂經》: "主寒熱善嘔。厥頭痛，面腫起。脾虛令人病寒不樂，好太息。腹滿響響然，不便，心下有寒痛。陰股內痛，氣癰，狐疝走上下…痔，骨蝕。…絕子。小兒咳而泄…" — <code>중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_05_第壹编_第七篇_足太阴脾经_手少阴心经_手太阳小肠经.md</code> L118–126</td>
+<td style="text-align: left;">Indications of Shangqiu (商丘) in the 《明堂經》: "主寒熱善嘔。厥頭痛，面腫起。脾虛令人病寒不樂，好太息。腹滿響響然，不便，心下有寒痛。陰股內痛，氣癰，狐疝走上下…痔，骨蝕。…絕子。小兒咳而泄…" — 《中國針灸證治通鑑》 第壹編 第七篇 足太陰脾經 手少陰心經 手太陽小腸經 L118–126</td>
 <td style="text-align: left;">List of single-point indications</td>
 <td style="text-align: left;">Basis for $P_{single}$</td>
 </tr>
 <tr>
 <td style="text-align: left;"><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</td>
-<td style="text-align: left;">"商丘，在內踝前陷中，主偏風，痹腳不得履地，刺風，頭風，熱風，陰痹，針入三分，留三呼，瀉五吸，疾出之，忌灸。" — <code>中国针灸证治通鉴_14_第叁编_内科病症_四中风至八痉证.md</code> L194 / "身寒痹：曲池、列缺、環跳、風市、委中、商丘、中封、臨泣(《神應經·痹厥部》)" — <code>中国针灸证治通鉴_02_…量化概念.md</code> L172</td>
+<td style="text-align: left;">"商丘，在內踝前陷中，主偏風，痹腳不得履地，刺風，頭風，熱風，陰痹，針入三分，留三呼，瀉五吸，疾出之，忌灸。" — 《中國針灸證治通鑑》 第叄編 內科病症 四中風至八痙證 L194 / "身寒痹：曲池、列缺、環跳、風市、委中、商丘、中封、臨泣(《神應經·痹厥部》)" — 《中國針灸證治通鑑》 …量化概念 L172</td>
 <td style="text-align: left;">Single-point entry in 《千金翼》 / 8-point combination in 《神應經》</td>
 <td style="text-align: left;">Separation of $P_{single}$ / $P_{comb}$</td>
 </tr>
@@ -238,7 +248,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p>This agrees with the KJH DB (Acupoint Nomenclature & Alias Comparative Database, comprehensive list row 136: 133, SP05, Sanggu (Korean reading), 商丘, "商坵, 商邱"). No record of confusion with Shangyang (商陽, LI1) or Shangqu (商曲, KI17), which contain '商', or with Qiuxu (丘墟, GB40), which contains '丘', was found in the three primary classics.</p>
+<p>This agrees with the KJH DB (Acupoint Nomenclature &amp; Alias Comparative Database, comprehensive list row 136: 133, SP05, Sanggu (Korean reading), 商丘, "商坵, 商邱"). No record of confusion with Shangyang (商陽, LI1) or Shangqu (商曲, KI17), which contain '商', or with Qiuxu (丘墟, GB40), which contains '丘', was found in the three primary classics.</p>
 <hr>
 <h2 id="4-3d-spatial-coordinates-layer-15-anatomical-substrate-diagram">4. 3D Spatial Coordinates &amp; Layer 1–5 Anatomical Substrate Diagram</h2>
 <ul>
@@ -846,7 +856,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">87.5</td>
 <td style="text-align: center;">90.63</td>
 <td style="text-align: left;">Mean of the 4 sub-items below</td>
-<td style="text-align: left;">Tongkao <code>_09_上_足太阴脾经穴.md</code> L939–1095</td>
+<td style="text-align: left;">Tongkao 上 足太陰脾經穴 L939–1095</td>
 </tr>
 <tr>
 <td style="text-align: left;">$S_{clarity}$ (0.35)</td>
@@ -936,7 +946,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 5. The variant between 《千金翼方》 '忌灸' and 《明堂》 '灸三壯' is unresolved (it is not a contraindication to needling).</p>
 <hr>
 <h2 id="appendix-a-fma-anatomical-substrate-profile-fma-510">Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)</h2>
-<p>Generated by <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile SP05 --md</code> (2026-10-23). Two manual corrections (below) are reflected.</p>
+<p>Generated by FMA 5.1.0 acupoint profile query (SP05; 2026-10-23). Two manual corrections (below) are reflected.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1054,7 +1064,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">2026-10-23</td>
 <td style="text-align: left;">Whole document</td>
-<td style="text-align: left;">ari_analyzer.py template draft (21:00): unprocessed blocks of classical text, generic Layer mm boundaries (2.5/6.5/16.5/22 mm), generic textbook-comparison sentence, single-scored ARI-Core 81.2 and S_reflex 100, B-Check 9/12 "confirmed", "full inverted index of 33 measured papers"</td>
+<td style="text-align: left;">automatic draft generator template draft (21:00): unprocessed blocks of classical text, generic Layer mm boundaries (2.5/6.5/16.5/22 mm), generic textbook-comparison sentence, single-scored ARI-Core 81.2 and S_reflex 100, B-Check 9/12 "confirmed", "full inverted index of 33 measured papers"</td>
 <td style="text-align: left;">Tier 3 rewrite (all 10 components), dual-scored ARI-Core 75.0 ± 1.3 (B), B-Check 7/12 not concordant (hypothesis)</td>
 <td style="text-align: left;">Canonical Rank 0–7, sections 4 and 5</td>
 </tr>
@@ -1070,7 +1080,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Sections 4, 6, Appendix A</td>
 <td style="text-align: left;">Generic layers, 2 'none' entries in the FMA table</td>
 <td style="text-align: left;">Layer table by order of structures, Figure 4-1 transverse-section schematic, manual match FMA:43905, tendon correction FMA:47050, exclusion of the Kim Jaehyo duplicate row</td>
-<td style="text-align: left;">FMA 5.1.0; <code>.claude/skills/acupoint-anatomy/scripts/fma/figures/SP05_cross_section.py</code></td>
+<td style="text-align: left;">FMA 5.1.0; figure-generation script (internal)</td>
 </tr>
 <tr>
 <td style="text-align: left;">2026-10-23</td>
@@ -1084,7 +1094,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 8</td>
 <td style="text-align: left;">Cited 10 papers including papers.id 57 · 793 · 846 · 848 · 958 · 1421 (PMIDs blank), B-Check 9</td>
 <td style="text-align: left;">6 papers that actually stimulated or observed SP05 + 1 literature paper, list of excluded false hits, B-Check 7 (② = 1; ③④⑤⑥ = 1), external search log table, Figure 8-1</td>
-<td style="text-align: left;">Master DB .json SP5 inverted index and sync_log 21:42:19; abstracts checked against PubMed efetch</td>
+<td style="text-align: left;">Integrated Biomedical Master DB SP5 inverted index and sync_log 21:42:19; abstracts checked against PubMed efetch</td>
 </tr>
 <tr>
 <td style="text-align: left;">2026-10-23</td>
@@ -1097,7 +1107,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">2026-10-23</td>
 <td style="text-align: left;">Archive of earlier edition</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">Template md, html and xlsx kept in <code>_구판_template_20261023/</code></td>
+<td style="text-align: left;">Template md, html and xlsx kept in the internal archive</td>
 <td style="text-align: left;">—</td>
 </tr>
 </tbody>
@@ -1118,7 +1128,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Whole document</td>
 <td style="text-align: left;">Automatically generated "English" edition: Korean body text with only some terms replaced</td>
 <td style="text-align: left;">Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations</td>
-<td style="text-align: left;">Korean edition <code>SP05_상구_해부생리_실체판명_보고서.md</code></td>
+<td style="text-align: left;">Korean edition</td>
 </tr>
 <tr>
 <td style="text-align: left;">Title, body</td>
@@ -1155,13 +1165,17 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Sections 1 and 4</td>
 <td style="text-align: left;">《穴位通鑑》 local-anatomy quotations "L1076, L1242"; X coordinate "Tongjian L1076"</td>
 <td style="text-align: left;">"L1242, L1082" in quotation order; "Tongjian L1082" (L1076 is the locating passage '內踝微前'). The Section 6 range "L1240–1246" (局部解剖 items 1–4) is correct</td>
-<td style="text-align: left;"><code>中国针灸穴位通鉴_31_足太阴脾经(1).md</code> L1082, L1242</td>
+<td style="text-align: left;">《中國針灸穴位通鑑》 足太陰脾經(1) L1082, L1242</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:20 · 원본: SP05_상구_해부생리_실체판명_보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1169,6 +1183,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

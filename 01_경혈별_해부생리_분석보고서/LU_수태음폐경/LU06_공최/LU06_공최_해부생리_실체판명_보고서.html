@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -59,8 +69,8 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>프레임워크</strong>: v2.7 (2026-10-04 개정) · <strong>ARI</strong>: T1 <code>ARI v3.0 | ARI-Core 71.2 ± 0 (B) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 68.8 (C, 등급 변동 → 가중치 민감)</code>
 T2 <code>ARI v3.0 | ARI-Core 35 ± 0 (D·H) | SI 50 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 33.3 (D, 등급 불변)</code> · <strong>이중 채점</strong>: 독립 채점자 2인, 조정 완료</p>
 <p><strong>핵심 3대 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》(黄龙祥)
-<strong>Layer A 실증 DB</strong>: <a href="../../../../%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json">통합 생의학 마스터 DB v3.0</a> — LU6 근거 묶음: 랜드마크 32편(외부 28편 포함)·로컬 매핑 20편 중 <strong>LU6 특이 기전·영상 연구 4편</strong>(papers.id 1682·1683·1684·1806) + 인체 임상관찰 1편(1726)
-<strong>Layer B 참조 등록부</strong>: <a href="../../../../01_Framework/layer_b_reference_registry.md"><code>layer_b_reference_registry.md</code></a> (B-Check 6항목, 부합 기준 ≥ 8/12)
+<strong>Layer A 실증 DB</strong>: 통합 생의학 마스터 DB v3.0 — LU6 근거 묶음: 랜드마크 32편(외부 28편 포함)·로컬 매핑 20편 중 <strong>LU6 특이 기전·영상 연구 4편</strong>(papers.id 1682·1683·1684·1806) + 인체 임상관찰 1편(1726)
+<strong>Layer B 참조 등록부</strong>: 4계층 참조 등록부(B1~B4) (B-Check 6항목, 부합 기준 ≥ 8/12)
 <strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 지배신경·척수 분절·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리, 상세는 부록 A
 <strong>도량형 환산</strong>: 한대(漢代) 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$), 1촌 = 10푼 = 23mm
 <strong>분석 Target</strong>: <strong>T1</strong> WHO·교재 표준 공최(腕上七寸, 尺泽–太渊 연선) / <strong>T2</strong> 사와다(泽田)식 공최 치질 반응점(尺泽下二寸, 《针灸真髓》 1941)</p>
@@ -78,19 +88,19 @@ T2 <code>ARI v3.0 | ARI-Core 35 ± 0 (D·H) | SI 50 | 잠정 가중치 0.40/0.35
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>《针灸腧穴通考》</strong> 孔最 조 (<code>针灸腧穴通考(上)_81-160.md</code> L2300–2467, 인쇄 p.123–126)</td>
+<td style="text-align: left;"><strong>《针灸腧穴通考》</strong> 孔最 조 (《针灸腧穴通考》(上) PDF 81–160쪽 L2300–2467, 인쇄 p.123–126)</td>
 <td style="text-align: left;">"孔冣……手太阴郄，在腕上七寸。"(《黄帝内经明堂》杨上善注, L2320) / "刺入三分，灸五壮。"(《黄帝明堂经》, 【操作】) / 泽田氏: "尺泽穴下二寸。"(《针灸真髓》, L2324)</td>
 <td style="text-align: left;">"可以出汗。头痛，振寒，臂厥，热，汗不出。"(《黄帝内经明堂》) / "吐血失喑，肿痛恶血。"(《太平圣惠方·针经》) / "治热病汗不出……咳逆，臂厥痛。"(《铜人》)</td>
 <td style="text-align: left;">① 명대 《针灸集书》 "上骨以近骨边"·《针灸大成》 "侧取"는 列缺 취혈과 혼동 → "仍以《黄帝明堂经》、《铜人腧穴针灸图经》为准". ② 전완 골도 10·12·12.5寸 차이로 "文同而实不同". ③ 高武가 "肿痛"을 "咽肿痛"으로 오독. ④ <strong>附: 孔最治痔溯源</strong> — 교재의 "痔疾" 주치는 泽田 동명이위혈의 讹传</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>《中国针灸穴位通鉴》</strong> 孔最 조 (<code>中国针灸穴位通鉴(上卷)_321-400.md</code> L880–1060)</td>
+<td style="text-align: left;"><strong>《中国针灸穴位通鉴》</strong> 孔最 조 (《中国针灸穴位通鉴》(上卷) PDF 321–400쪽 L880–1060)</td>
 <td style="text-align: left;">출처 "孔最，手太阳之。"(《针灸甲乙经》3:49 — OCR 그대로, "太阴之郄"의 오식·결자로 봄; 《通考》 "手太阴郄") / 부위 "去腕七寸。"(《甲乙》·《千金》·《外台》·《圣惠》·《铜人》 등) / "刺入三分，留三呼，灸五壮。"(《甲乙》)</td>
 <td style="text-align: left;">"热病汗不出，上□及孔最主之。"(OCR 결자) "厥头痛，孔最主之。"(《甲乙》 7·9권) / "头痛，振寒，臂厥，热，汗不出。"(《明堂类成》)</td>
 <td style="text-align: left;">별명 "无". 근대 문헌 위치 분산: 《针灸集成》 "尺泽下三寸半", 《中华针灸学》 "尺泽下三寸", 《新针灸学》 "离尺泽穴五寸". 국소해부: "上层是肱桡肌之内缘，下层为屈拇长肌之外缘，深部有桡动脉和神经通过"(《新针灸学》)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>《中国针灸证治通鉴》</strong> (<code>中国针灸证治通鉴_161-240.md</code> L1738·1782; <code>_241-320.md</code> L704·854·856·1626–1638)</td>
+<td style="text-align: left;"><strong>《中国针灸证治通鉴》</strong> (《中国针灸证治通鉴》 PDF 161–240쪽 L1738·1782; PDF 241–320쪽 L704·854·856·1626–1638)</td>
 <td style="text-align: left;">(정위 기술 없음 — 처방집)</td>
 <td style="text-align: left;">"伤寒热病身无汗，细详孔最患无妨。"(《针灸玉龙经·玉龙歌》) / "热病烦心，汗不出：中冲、劳宫……孔最三壮至五壮，即汗。"(《针灸捷径》) / 咯血 "孔最配尺泽。强刺激为主。"(辽宁中医杂志 1980) / 哮喘 "孔最、鱼际。"(中医杂志 1989)</td>
 <td style="text-align: left;">고전 배오는 모두 <strong>발한(汗不出)</strong> 계열, 현대 배오는 <strong>咯血·哮喘</strong> 계열. 치질 처방은 이 3대 원전 중 《通考》 부록(讹传 고증)에서만 다룸</td>
@@ -1299,7 +1309,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 </ul>
 <hr>
 <h2 id="a-fma-fma-510">부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)</h2>
-<p>생성: <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LU06 --md</code> (2026-10-23). 대응 수준 <code>exact</code>는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다.</p>
+<p>생성: FMA 5.1.0 경혈 프로파일 조회(LU06, 2026-10-23). 대응 수준 <code>exact</code>는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1465,7 +1475,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">4절</td>
 <td style="text-align: left;">문자 층차도만</td>
 <td style="text-align: left;">그림 4-1 횡단면 모식도(T1 높이), Layer별 FMA 대조표, FMA 주석 2건(분절 출처, 용어 오기)</td>
-<td style="text-align: left;"><code>fma_query.py profile LU06</code>; 그림 스크립트 <code>.claude/skills/acupoint-anatomy/scripts/fma/figures/LU06_cross_section.py</code></td>
+<td style="text-align: left;">FMA 프로파일 조회; 그림 생성 스크립트(내부)</td>
 </tr>
 <tr>
 <td style="text-align: left;">6절</td>
@@ -1495,7 +1505,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">부록 A</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA 프로파일 표</td>
-<td style="text-align: left;"><code>fma_query.py profile LU06 --md</code></td>
+<td style="text-align: left;">FMA 프로파일 조회</td>
 </tr>
 <tr>
 <td style="text-align: left;">ARI</td>
@@ -1512,7 +1522,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <tr>
 <td style="text-align: left;">구판 보관</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">보강 전 md·html·xlsx를 <code>_구판_v2.7_20261023/</code>에 보관</td>
+<td style="text-align: left;">보강 전 md·html·xlsx를 구판 보관본(내부)에 보관</td>
 <td style="text-align: left;">—</td>
 </tr>
 </tbody>
@@ -1533,13 +1543,13 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">머리말</td>
 <td style="text-align: left;">"실측 논문 48편 전수 역색인"</td>
 <td style="text-align: left;">근거 묶음 수치(랜드마크 32·로컬 20, LU6 특이 4편+임상 1편)로 교체</td>
-<td style="text-align: left;">pack_LU6.md</td>
+<td style="text-align: left;">근거 묶음</td>
 </tr>
 <tr>
 <td style="text-align: left;">1절</td>
 <td style="text-align: left;">《穴位通鉴》 목차 OCR(GV25–28 등), 《证治通鉴》 八关大刺 조각, 《通考》 목차 쪽번호</td>
 <td style="text-align: left;">孔最 본문 원문 발췌(정위·심도·주치·교감)</td>
-<td style="text-align: left;">《通考》(上)_81-160.md L2300–2467; 《穴位通鉴》(上卷)_321-400.md L880–1060; 《证治通鉴》_161-240.md L1738·1782, _241-320.md L704·854·856</td>
+<td style="text-align: left;">《通考》(上) PDF 81–160쪽 L2300–2467; 《穴位通鉴》(上卷) PDF 321–400쪽 L880–1060; 《证治通鉴》 PDF 161–240쪽 L1738·1782,  PDF 241–320쪽 L704·854·856</td>
 </tr>
 <tr>
 <td style="text-align: left;">2절</td>
@@ -1575,25 +1585,25 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">7절</td>
 <td style="text-align: left;">일반 규칙 문장</td>
 <td style="text-align: left;">T1/T2 분기(Δ≈3寸) 수행, T1 우위 판정</td>
-<td style="text-align: left;">final_LU06.json</td>
+<td style="text-align: left;">이중 채점 기록</td>
 </tr>
 <tr>
 <td style="text-align: left;">8절 B-Check</td>
 <td style="text-align: left;">①2·②2·⑤2, 합계 9/12 "확정", papers.id 없음</td>
 <td style="text-align: left;">T1 최종 2·1·1·1·1·1 = 7/12 미부합, T2 4/12 가설, 참조 ID·papers.id 병기</td>
-<td style="text-align: left;">final_LU06.json bcheck</td>
+<td style="text-align: left;">B-Check 채점 기록</td>
 </tr>
 <tr>
 <td style="text-align: left;">8절 Layer A</td>
 <td style="text-align: left;">17·795·1458·1461·1002·1678 등을 실증 근거로 나열, PMID 공란</td>
 <td style="text-align: left;">LU6 특이 1682·1683·1684·1806·1726 중심으로 재구성, 讹传 논문 1561·1563·1564·1723을 반증으로 분리, 부적합 항목 제외</td>
-<td style="text-align: left;">pack_LU6.md; 마스터DB papers</td>
+<td style="text-align: left;">근거 묶음; 마스터DB papers</td>
 </tr>
 <tr>
 <td style="text-align: left;">8절</td>
 <td style="text-align: left;">외부 검색 로그 없음</td>
 <td style="text-align: left;">sync_log 표 추가</td>
-<td style="text-align: left;">pack_LU6.md</td>
+<td style="text-align: left;">근거 묶음</td>
 </tr>
 <tr>
 <td style="text-align: left;">9절</td>
@@ -1605,19 +1615,19 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">10절</td>
 <td style="text-align: left;">단일 Target, S_orig 85(루브릭 밖 값), S_reflex 75, ARI-Core 79.0 B, "엄격하게 검증됨"</td>
 <td style="text-align: left;">T1 71.2 ± 0 (B, 가중치 민감) / T2 35 ± 0 (D·H), 하위 항목·게이트·조정 기록·분기 판정</td>
-<td style="text-align: left;">final_LU06.json</td>
+<td style="text-align: left;">이중 채점 기록</td>
 </tr>
 <tr>
 <td style="text-align: left;">10절</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">구판 v2.6 점수 79.0(비교 불가)</td>
-<td style="text-align: left;">구판 보고서 <code>_구판_v2.6/</code></td>
+<td style="text-align: left;">구판 보고서 구판 보관본(내부)</td>
 </tr>
 <tr>
 <td style="text-align: left;">xlsx</td>
 <td style="text-align: left;">B-Check 시트 "B3-11 (Longhurst)", "B3-16 (Torres-Rosas)", "papers.id #1 / PMID 확인"</td>
 <td style="text-align: left;">구판 시트 4의 라벨을 등록부 기준(B3-11 = 진통 기전 종설 2008, B3-16 = NPY 교감 경로 실험 2020)으로 정정하고 "papers.id #1" 포인터를 1806으로 교체; 신규 B-Check 시트 추가. 두 참조 모두 v2.7 최종 채점에는 쓰이지 않음</td>
-<td style="text-align: left;">layer_b_reference_registry.md L64·69</td>
+<td style="text-align: left;">Layer B 참조 등록부 L64·69</td>
 </tr>
 </tbody>
 </table></div>
@@ -1634,15 +1644,19 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <tbody>
 <tr>
 <td style="text-align: left;">머리말 링크</td>
-<td style="text-align: left;"><code>file:///g:/내 드라이브/도서 번역/…</code> 절대 링크(다른 PC에서 열리지 않음)</td>
-<td style="text-align: left;">프로젝트 루트(<code>도서 번역</code>) 기준 상대 링크</td>
+<td style="text-align: left;">로컬 절대 경로 링크(다른 PC에서 열리지 않음)</td>
+<td style="text-align: left;">프로젝트 기준 상대 링크</td>
 <td style="text-align: left;">스킬 경로 표기 규칙(드라이브 문자 절대경로 금지)</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:20 · 원본: LU06_공최_해부생리_실체판명_보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1650,6 +1664,35 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

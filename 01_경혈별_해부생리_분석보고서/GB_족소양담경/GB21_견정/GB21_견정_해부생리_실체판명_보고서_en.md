@@ -5,7 +5,7 @@
 > **⚠ Safety warning (SI 0)**: Directly beneath Jianjing (肩井) lie the pleural cupula (胸膜頂) and the apex of the lung (肺尖). The *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) states "不可向前下方刺入或直刺過深，以免損傷胸膜頂和肺尖引起氣胸" and records that about 90 % of needling-induced pneumothoraces occur at 肩井. In the needling-depth DB the *Dongui Bogam* (《東醫寶鑑》) value is `0` (contraindicated for needling, 禁鍼; cited source 'Tongren' (銅人)), and texts from 《類經圖翼》 onwards record "孕婦禁針" (needling forbidden in pregnancy). This report does not give a single fixed safe needling depth (see Sections 5 and 10).
 
 > **Source datasets**: Classical Needling Depth Database (sheet 1, Excel row 326, N0 324) · Acupoint Nomenclature & Alias Comparative Database (comprehensive acupoint list, row 327) · Common Textbook Anatomical Structure Dataset (sheet `경혈별_해부구조_종합`, row 325; *Acupoint Studies* vol. 2, p.384) · Kim Jaehyo Anatomical Structure Dataset (sheet `경혈별_해부구조_종합`, row 325) · master DB Integrated Biomedical Master DB v3.0
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ---
 
@@ -13,14 +13,14 @@
 
 | Classic | Source file | Original excerpt | English summary |
 | :--- | :--- | :--- | :--- |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | `针灸腧穴通考/chunks_refined/针灸腧穴通考(下)_241-320.md` (二十一) 肩井 | "肩井　Jiānjǐng（GB21）　出《黃帝明堂經》" / 名實考: "《黃帝明堂經》作'在肩上陷解中，缺盆上大骨前'" | The earliest source is the *Huangdi Mingtang Jing* (《黃帝明堂經》). |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 《針灸腧穴通考》(下) PDF pp. 241–320 (二十一) 肩井 | "肩井　Jiānjǐng（GB21）　出《黃帝明堂經》" / 名實考: "《黃帝明堂經》作'在肩上陷解中，缺盆上大骨前'" | The earliest source is the *Huangdi Mingtang Jing* (《黃帝明堂經》). |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Same file, 名實考 (examination of name and substance) | "肩胛岡有較大的寬度，不是一個確定的點 … 直到《聖濟總錄》才給出了具體的說明。根據這個取穴法，實際折量得知穴約在肩部的中央處，相當於肩髃與第七頸椎連線的中點處" | '大骨' (the spine of the scapula) is broad and does not define a single point. Supplemented by '一寸半' in the *Shenghui Fang* (《聖惠方》) and measured with the locating method of the *Shengji Zonglu* (《聖濟總錄》), the point falls at the midpoint of the line joining Jianyu (肩髃) and the 7th cervical vertebra. In other words, the classical description and the modern location designate the same spot. |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Same file, 名實考 | "今天我們知道真正的原因是本穴下正當肺尖，刺太深易刺穿胸膜，引起氣胸。據現代臨床報道，針刺引起的氣胸幾乎九成發生於針刺肩井穴" | Zhen Quan's (甄權) "深即令人悶 … 令人短壽" in the *Zhenjing* (《針經》) is a record of pneumothorax and needle syncope (暈針). |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Same file, 【操作】 (manipulation) | "直刺 0.5~0.8 寸。不可向前下方刺入或直刺過深，以免損傷胸膜頂和肺尖引起氣胸" | Perpendicular insertion of 5–8 fen; insertion in the anterior-inferior direction and excessively deep perpendicular insertion are forbidden. |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Same file, 《千金要方》"肩井"穴辨誤 (correction of the 'Jianjing' entry in the *Qianjin Yaofang*) | "宋校本《千金要方》此條'在'字係'及'之誤，將二穴混作一穴" | In vol. 24 of the *Qianjin Yaofang* (《千金要方》), "灸肩井，在肩解臂接處", '在' is a scribal error for '及'. 肩井 and 肩解臂接處 are two separate sites. |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | `中国针灸穴位通鉴_parsed_refined.md` line 86166 ff., 肩井 (GB21) | "一.出處 '肩井，在肩上陷者中，缺盆上，大骨前。'（《針灸甲乙經》3：44）" | Gives the source as the *Jiayi Jing* (《甲乙經》) 3:44. Not recorded in 《靈樞·根結》. |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | 《中國針灸穴位通鑑》 refined edition line 86166 ff., 肩井 (GB21) | "一.出處 '肩井，在肩上陷者中，缺盆上，大骨前。'（《針灸甲乙經》3：44）" | Gives the source as the *Jiayi Jing* (《甲乙經》) 3:44. Not recorded in 《靈樞·根結》. |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | Same file, 四.部位 (location) 1–23 | 《聖惠方》 "大骨前一寸半，以三指按之"; 《新編針灸學》 "僧帽肌游離緣的正中點，即肩峰與第七頸椎的正中點" | From the Song dynasty onwards '大骨前一寸半' and the three-finger locating method were mainstream; in modern times the location was standardised as the midpoint between C7 and the acromion. |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | `中国针灸证治通鉴_parsed_refined.md` lines 3726–3730 | "《明堂經》主肩背痹痛，臂不舉，寒熱淒索氣上，不得眠臥 … 《千金要方》難產 … 小結《千金要方》《千金翼方》均針肩井穴以治難產，並謂'瀉之，須臾即生'，值得研究" | The original indication is local shoulder and upper-back pain; difficult labour (難產) was added in the *Qianjin* (《千金》) texts and is assessed as "worth investigating". |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《中國針灸證治通鑑》 refined edition lines 3726–3730 | "《明堂經》主肩背痹痛，臂不舉，寒熱淒索氣上，不得眠臥 … 《千金要方》難產 … 小結《千金要方》《千金翼方》均針肩井穴以治難產，並謂'瀉之，須臾即生'，值得研究" | The original indication is local shoulder and upper-back pain; difficult labour (難產) was added in the *Qianjin* (《千金》) texts and is assessed as "worth investigating". |
 
 Modern standard location: the midpoint of the line joining the spinous process of the 7th cervical vertebra and the most lateral point of the acromion (《通考》 提要 "第7頸椎棘突與肩峰最外側點連線的中點"; WHO 2008, registry B1-05). The earlier edition's wording "GV14–acromion" has been corrected to this wording.
 
@@ -121,7 +121,7 @@ Interpretation:
 1. The group mean of 1431 (about 38 mm) is deeper than the 8-fen (18.4 mm) upper limit for perpendicular insertion in the textbooks and the 《通考》. However, the authors concluded that "within-group differences are larger than between-group differences, so setting depth by sex or BMI is dangerous". The mean is therefore not used as a safety boundary (point 1 of Section 5 stands).
 2. The TI of 1.54 in 1896 indicates a margin between the effective and hazardous depths at GB21, but as an exploratory study of 39 participants it is not used as grounds for changing the SI level.
 3. SI 0 rests on the text contraindicating needling (*Dongui Bogam* `0`) and on the pneumothorax record in the 《通考》, and is not altered by the ultrasound values. The procedural principle, following the 《通考》, is **to avoid anterior-inferior insertion and excessively deep perpendicular insertion**; there is no classical or textbook basis for forbidding perpendicular insertion as such.
-4. The values that another tool inserted into this section on 2026-10-23 (pleura 20.5 ± 3.2 mm, minimum 15.2 mm, layer thicknesses 3.5 · 7.8 · 8.5 mm, first rib 19.5 mm, safety margin 0.2–2.0 mm) and the 'ultrasound B-mode structural diagram' figure have been deleted because these values do not appear in the original texts of the cited papers (revision history after Section 10; archived in `_구판_antigravity_20261023/`).
+4. The values that another tool inserted into this section on 2026-10-23 (pleura 20.5 ± 3.2 mm, minimum 15.2 mm, layer thicknesses 3.5 · 7.8 · 8.5 mm, first rib 19.5 mm, safety margin 0.2–2.0 mm) and the 'ultrasound B-mode structural diagram' figure have been deleted because these values do not appear in the original texts of the cited papers (revision history after Section 10; archived in the internal archive).
 
 ## 6. Anatomical Structure Textbook Comparison Table (Common Textbook vs. Kim Jaehyo Textbook)
 
@@ -167,7 +167,7 @@ The 12 anatomical structures recorded for Jianjing (肩井, GB21) in the Korean 
 
 The earlier edition split the point into a "classical depression point" (Target 1) and a "WHO highest point" (Target 2) with Δ > 15 mm. This split does not hold, for the following reasons.
 
-1. The 《通考》 quotation used as the basis for the split, "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危", does not exist in the original text of the 《通考》 (`针灸腧穴通考(下)_241-320.md` lines 1228–1390); it is a **fabricated quotation**.
+1. The 《通考》 quotation used as the basis for the split, "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危", does not exist in the original text of the 《通考》 (《針灸腧穴通考》(下) PDF pp. 241–320 lines 1228–1390); it is a **fabricated quotation**.
 2. On the contrary, the 名實考 of the 《通考》 interprets the 《明堂》 '肩上陷解中, 缺盆上大骨前', measured with the '一寸半' of the 《聖惠方》 and the locating method of the 《聖濟總錄》, as "肩髃與第七頸椎連線的中點". The classical description and the modern location are the same point.
 3. The deviation in the earlier diagram itself was ±1 cm (≤ 15 mm), which does not meet the canonical Rank 5 branching requirement (Δ > 15 mm).
 4. Both raters judged Δ ≤ 15 mm (adjudication record 10-6).
@@ -239,7 +239,7 @@ The earlier edition's $P_{single}$ values 0.88 / 0.92 / 0.75 and Levels A/B had 
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| $S_{orig}$ | 68.75 | 75.0 | **71.875** | Earliest description ambiguous and supplemented later; later texts converge on the midpoint; alias confusion resolved; scribal error in the 《千金》 corrected | `针灸腧穴通考(下)_241-320.md` 名實考 · 定位 · 辨誤; 《通鑑》 line 86166 |
+| $S_{orig}$ | 68.75 | 75.0 | **71.875** | Earliest description ambiguous and supplemented later; later texts converge on the midpoint; alias confusion resolved; scribal error in the 《千金》 corrected | 《針灸腧穴通考》(下) PDF pp. 241–320 名實考 · 定位 · 辨誤; 《通鑑》 line 86166 |
 | $S_{clarity}$ | 75 | 75 | **75.0** | GB21-specific measurements exist (1876, 1431, 1432, 1896), but the deep structures differ between the two textbooks → below 100 | Common Textbook row 325 (p.384), Kim Jaehyo row 325; papers.id 1876, 1431, 1432, 1896 |
 | $S_{reflex}$ | 50 | 50 | **50.0** | One human physiological study of GB21 itself (1874), no animal studies, B-Check 7/12 (< 8) → 75 not possible | papers.id 1874; 8-3 B-Check |
 | $S_{safety}$ → SI | 0 | 0 | **0** | Needling-depth DB *Dongui Bogam* `0` (contraindicated for needling) + directly above the lung apex | Needling-depth DB row 326; 《通考》 【操作】 · 名實考 |
@@ -299,13 +299,13 @@ Earlier v2.6 scores: classical location 96.0 / WHO location 94.0 — not compara
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
 | Header | "Version 2.6", "22-Major Master ASIA Algorithm" | v2.7 citation block, ARI v3.0 notation | Framework Rank 7 |
-| Old Section 2-1 | Earliest description 《靈樞·根結》 "肩上陷者中, 缺盆上, 大骨前" | 《黃帝明堂經》 "在肩上陷解中，缺盆上大骨前" (《通考》), 《甲乙經》 3:44 "在肩上陷者中" (《通鑑》) | `针灸腧穴通考(下)_241-320.md` lines 1228, 1249; `中国针灸穴位通鉴_parsed_refined.md` line 86168 |
-| Old Section 2-2 | 《甲乙》 "… 刺入五分, 留七呼" | 《明堂》 "刺入五分，灸三壯" | `针灸腧穴通考(下)_241-320.md` line 1378 |
-| Old Section 2-3 | *Dongui Bogam* (《東醫寶鑑》) "肩上陷者中; 妊婦禁針", "金鍼" (golden needle, written for 禁鍼) | '金鍼' → 禁鍼. The original *Dongui Bogam* passage marked as unconfirmed and replaced by the DB value `0` (citing Tongren, 銅人). Source of 孕婦禁針 given as 《類經圖翼》 vol. 8 | Needling-depth DB row 326; `针灸腧穴通考(下)_241-320.md` line 1384 |
-| Old Section 2-4, old Section 8 | 《通考》 "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危" and claim of "complete agreement" | Fabricated quotation deleted. Actual passages ("本穴下正當肺尖 … 氣胸幾乎九成發生於針刺肩井穴", "不可向前下方刺入或直刺過深") included | `针灸腧穴通考(下)_241-320.md` lines 1255, 1376 |
+| Old Section 2-1 | Earliest description 《靈樞·根結》 "肩上陷者中, 缺盆上, 大骨前" | 《黃帝明堂經》 "在肩上陷解中，缺盆上大骨前" (《通考》), 《甲乙經》 3:44 "在肩上陷者中" (《通鑑》) | 《針灸腧穴通考》(下) PDF pp. 241–320 lines 1228, 1249; 《中國針灸穴位通鑑》 refined edition line 86168 |
+| Old Section 2-2 | 《甲乙》 "… 刺入五分, 留七呼" | 《明堂》 "刺入五分，灸三壯" | 《針灸腧穴通考》(下) PDF pp. 241–320 line 1378 |
+| Old Section 2-3 | *Dongui Bogam* (《東醫寶鑑》) "肩上陷者中; 妊婦禁針", "金鍼" (golden needle, written for 禁鍼) | '金鍼' → 禁鍼. The original *Dongui Bogam* passage marked as unconfirmed and replaced by the DB value `0` (citing Tongren, 銅人). Source of 孕婦禁針 given as 《類經圖翼》 vol. 8 | Needling-depth DB row 326; 《針灸腧穴通考》(下) PDF pp. 241–320 line 1384 |
+| Old Section 2-4, old Section 8 | 《通考》 "古人取肩上陷者中, 今人取最高點, 刺太深有傷肺氣(氣胸)之危" and claim of "complete agreement" | Fabricated quotation deleted. Actual passages ("本穴下正當肺尖 … 氣胸幾乎九成發生於針刺肩井穴", "不可向前下方刺入或直刺過深") included | 《針灸腧穴通考》(下) PDF pp. 241–320 lines 1255, 1376 |
 | Old Section 2-5 | WHO "Midpoint of the line connecting GV14 and the acromion" | Midpoint of the line joining the spinous process of C7 and the most lateral point of the acromion | 《通考》 提要 · 定位 (lines 1236, 1270); B1-05 |
 | Old Section 1 | Alias "少陽"; claim to have "completely filtered out" confusion with 肩貞 and 肩髎 | 少陽 deleted; table of 膊井 · 膽肩井 (KJH) + 肩解 · 井 (classics); confusion claim deleted | KJH row 327; 《通鑑》 二.別名 |
-| Section 3 (new) | Correction '在 → 及' in the *Qianjin Yaofang* (《千金要方》) missing | Content of the 辨誤 included | `针灸腧穴通考(下)_241-320.md` lines 1262–1268 |
+| Section 3 (new) | Correction '在 → 及' in the *Qianjin Yaofang* (《千金要方》) missing | Content of the 辨誤 included | 《針灸腧穴通考》(下) PDF pp. 241–320 lines 1262–1268 |
 | Old Section 3 | $P_{single}$ 0.92/0.88/0.75, Level A/B | Deleted. Replaced by a single-point/combination classification table (no probabilities calculated) | No basis; 《證治通鑑》 lines 3726–3730 |
 | Old Section 4 | T1 "trapezius/rhomboid depression point", "no lung-apex risk, ARI 96.0" / T2 "highest point, ARI 94.0" | Branch withdrawn, single Target. Rhomboid deleted. "No lung-apex risk" withdrawn | 《通考》 名實考 line 1249; final_GB21 override_note |
 | Old Section 5 | "8 fen 18.4 mm, 45° oblique 13.0 mm, kept below the 15 mm lung-apex boundary, lung-apex safety ensured" | The 15 mm boundary has no source, 8-fen perpendicular insertion exceeds that boundary, the vertical-component calculation is not a safety criterion, *Dongui Bogam* contraindication reflected → SI 0 | Needling-depth DB row 326; papers.id 1431, 1432, 1876 |
@@ -314,7 +314,7 @@ Earlier v2.6 scores: classical location 96.0 / WHO location 94.0 — not compara
 | Old Section 9 | Audit wording "GB21 Jianjing Anatomical Analysis Databook … numerical consistency" | Deleted (non-existent file name; a consistency audit is not grounds for reliability) | Framework Rank 7 'cross-validation' |
 | Textbook comparison table | "Mutually complementary consistency", "perfect collation" | Common and differing items described separately | Both textbooks, row 325 |
 | Formulas | LaTeX broken by `\t` and `\r` control characters | Valid LaTeX | — |
-| Sections 8 and 10 (new) | No Layer A, B-Check, search log or ARI v3.0 tables | Added | final_GB21.json; pack_GB21.md |
+| Sections 8 and 10 (new) | No Layer A, B-Check, search log or ARI v3.0 tables | Added | dual-scoring record; evidence pack |
 
 ---
 
@@ -322,14 +322,14 @@ Earlier v2.6 scores: classical location 96.0 / WHO location 94.0 — not compara
 
 | Location | Original content (added by another tool, 2026-10-23 21:37) | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Section 4 figure | `GB21_견정_국소해부_단면도.png` | `GB21_견정_횡단면_해부모식도.png` (schematic sagittal section, with labels for single-textbook structures and the forbidden direction) | `.claude/skills/acupoint-anatomy/scripts/fma/figures/GB21_cross_section.py` |
-| Section 4 diagram | First rib FMA:7566, pleural cupula FMA:7334, lung apex FMA:7335; "mean 20.5 ± 3.2 mm, minimum 15.2 mm — papers.id 1432" | FMA:7597 (First rib), FMA:27534 (Pleural cupula), FMA:7319 (Anatomical apex of lung); wording of a fixed boundary value deleted | `fma_query.py entity` — 7566 = Superior thoracic aperture, 7334 = Upper lobe of lung, 7335 = Lower lobe of lung |
+| Section 4 figure | `GB21_견정_국소해부_단면도.png` | `GB21_견정_횡단면_해부모식도.png` (schematic sagittal section, with labels for single-textbook structures and the forbidden direction) | figure-generation script (internal) |
+| Section 4 diagram | First rib FMA:7566, pleural cupula FMA:7334, lung apex FMA:7335; "mean 20.5 ± 3.2 mm, minimum 15.2 mm — papers.id 1432" | FMA:7597 (First rib), FMA:27534 (Pleural cupula), FMA:7319 (Anatomical apex of lung); wording of a fixed boundary value deleted | FMA entity query — 7566 = Superior thoracic aperture, 7334 = Upper lobe of lung, 7335 = Lower lobe of lung |
 | Section 5-1 | Layer thicknesses (3.5 · 7.8 · 8.5 mm), first rib 19.5 mm, pleura 20.5 ± 3.2 mm (15.2–26.8), inspiratory rise 3.1–4.8 mm, safety margin 0.2–2.0 mm, "perpendicular insertion contraindicated in principle", "perfectly consistent", synthetic 'ultrasound B-mode structural diagram' figure | Only values confirmed in the originals included: 1431 SND 38.08 ± 6.42 mm (sitting) etc., 1896 TI 1.54; 1432 not checked in the original, so no values cited. Claim that perpendicular insertion is forbidden deleted (no classical or textbook basis) | PubMed PMID 29507586 · PMC5817322 main text, Tables 2 and 3; PMID 42500462 abstract. The values above appear in neither paper |
-| Section 6-1 | FMA knowledge-graph figure; accessory nerve "C1–C5 (cranial nerve XI)" presented as an FMA result; "reflected in a mutually complementary way"; "empirically demonstrated perfect consistency" | Figure excluded (derived graph, unverified); accessory-nerve segments marked as not recorded in FMA / B1; inference stated explicitly; corrected to "concordance at the anatomical level" | `fma_query.py profile GB21`; v2.7 Section 6 principle (textbook discrepancies retained) |
+| Section 6-1 | FMA knowledge-graph figure; accessory nerve "C1–C5 (cranial nerve XI)" presented as an FMA result; "reflected in a mutually complementary way"; "empirically demonstrated perfect consistency" | Figure excluded (derived graph, unverified); accessory-nerve segments marked as not recorded in FMA / B1; inference stated explicitly; corrected to "concordance at the anatomical level" | FMA profile query; v2.7 Section 6 principle (textbook discrepancies retained) |
 | Section 8-3 ② | "Perfectly consistent with shoulder and neck pain" | "Same segmental range (concordance at the anatomical level)" — score 1 unchanged | B-Check criteria |
 | Section 8-4 | Only the 2026-10-04 run | 4 rows added for the 2026-10-23 Rank 6 re-run (6 new papers, verdict unchanged) | `_metadata.sync_log` |
 | Scores | ARI, B-Check, SI | **No change** | — |
-| Archive | — | The 21:37 versions of the md, html and xlsx, the 3 figures and the generation script archived unchanged in `_구판_antigravity_20261023/` | — |
+| Archive | — | The 21:37 versions of the md, html and xlsx, the 3 figures and the generation script archived unchanged in the internal archive | — |
 
 ---
 
@@ -337,7 +337,7 @@ Earlier v2.6 scores: classical location 96.0 / WHO location 94.0 — not compara
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `GB21_견정_해부생리_실체판명_보고서.md` |
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition |
 | Title | Korean-style title | Title in the common English-edition format "[Acupoint Anatomical & Physiological Substrate Monograph] Jianjing (肩井, GB21)" | ST36 English edition |
 | Figure 4-1 | Image path checked | Kept as the actual file name `GB21_견정_횡단면_해부모식도.png` | File in the report folder |
 | Classical quotations | Simplified characters (e.g. 针, 肩胛冈, 气胸, 灵枢) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |

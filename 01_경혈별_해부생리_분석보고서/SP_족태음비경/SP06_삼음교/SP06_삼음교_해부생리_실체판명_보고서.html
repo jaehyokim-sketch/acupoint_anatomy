@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -62,7 +72,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <strong>이중 채점</strong>: 독립 채점 2회, 15점 이상 불일치 3건 조정 완료 · <strong>분기 판정</strong>: ΔARI-Core 33.8, ± 구간 비중첩 → T2 우위</p>
 <p><strong>핵심 3대 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》
 <strong>Layer A 실증 DB</strong>: 통합 생의학 마스터 DB v3.0 (역색인 SP6 68편 중 <strong>SP6를 실제 자극·관찰한 15편</strong>만 판정에 사용, 8절 ① 표. 2026-10-23 개정 검색 스크립트로 Rank 6 실행)
-<strong>Layer B 참조 등록부</strong>: <code>01_Framework/layer_b_reference_registry.md</code> (B-Check 6항목, 부합 기준 ≥ 8/12)
+<strong>Layer B 참조 등록부</strong>: 4계층 참조 등록부(B1~B4) (B-Check 6항목, 부합 기준 ≥ 8/12)
 <strong>해부 온톨로지</strong>: FMA 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정(B1 보조, 등록부 미등재), 부록 A
 <strong>도량형 환산</strong>: 한대 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$)
 <strong>⚠ 임신부</strong>: 《铜人》 "故妊娠不可刺", 교재 "孕妇禁针". 자침깊이 DB에는 '0'(금침) 기록이 없다 — 조건부 금기(5절·9절)</p>
@@ -81,7 +91,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;">《针灸腧穴通考》</td>
-<td style="text-align: left;">"三阴交，在内踝上八寸胻骨下陷者中。足太阴、厥阴之会。（《黄帝明堂经》）" — <code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_09_上_足太阴脾经穴.md</code> L1125</td>
+<td style="text-align: left;">"三阴交，在内踝上八寸胻骨下陷者中。足太阴、厥阴之会。（《黄帝明堂经》）" — 《针灸腧穴通考》 上 足太阴脾经穴 L1125</td>
 <td style="text-align: left;">《明堂》의 삼음교는 안쪽복사 위 <strong>8寸</strong> 정강뼈 아래 오목, 족태음·궐음의 회</td>
 <td style="text-align: left;"><strong>T1</strong> 근거</td>
 </tr>
@@ -117,7 +127,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">《中国针灸穴位通鉴》</td>
-<td style="text-align: left;">"三阴交，在内踝上三寸骨下陷者中。（《针灸甲乙经》3：53）" / 部位 2: "在内踝上八寸[1]骨下陷中。（《备急千金要方》29：510、《太平圣惠方》、《医心方》）… [1]'八寸'系'三寸'之误。同书卷21作'三寸'。" — <code>중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_31_足太阴脾经(1).md</code> L1308, L1336~1338</td>
+<td style="text-align: left;">"三阴交，在内踝上三寸骨下陷者中。（《针灸甲乙经》3：53）" / 部位 2: "在内踝上八寸[1]骨下陷中。（《备急千金要方》29：510、《太平圣惠方》、《医心方》）… [1]'八寸'系'三寸'之误。同书卷21作'三寸'。" — 《中国针灸穴位通鉴》 足太阴脾经(1) L1308, L1336~1338</td>
 <td style="text-align: left;">《穴位通鉴》은 8寸을 '三寸의 오기'로 본다</td>
 <td style="text-align: left;"><strong>《通考》와 상충</strong> — 7절에서 판정</td>
 </tr>
@@ -129,13 +139,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">《中国针灸证治通鉴》</td>
-<td style="text-align: left;">《明堂经》 三阴交 主治 "主足下热，胫痛不能久立，湿痹不能行。" / 小结 "《明堂经》所载'三阴交'在内踝上八寸，而六朝以后方书所载'三阴交'多位于内踝上三寸，故主治病症大不相同。" — <code>중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_05_第壹编_第七篇_足太阴脾经_手少阴心经_手太阳小肠经.md</code> L154, L184</td>
+<td style="text-align: left;">《明堂经》 三阴交 主治 "主足下热，胫痛不能久立，湿痹不能行。" / 小结 "《明堂经》所载'三阴交'在内踝上八寸，而六朝以后方书所载'三阴交'多位于内踝上三寸，故主治病症大不相同。" — 《中国针灸证治通鉴》 第壹编 第七篇 足太阴脾经 手少阴心经 手太阳小肠经 L154, L184</td>
 <td style="text-align: left;">腧穴书(8寸)와 方书(3寸)의 주치가 다르다</td>
 <td style="text-align: left;">9절 T1/T2 주치 분리</td>
 </tr>
 <tr>
 <td style="text-align: left;">《中国针灸证治通鉴》</td>
-<td style="text-align: left;">"徐文伯针刺堕胎：泻足太阴，补手阳明，胎便应针而落。" / 小结 "六朝后医书多因而取三阴交、合谷穴以治难产，有些腧穴书甚至将此二穴列为孕妇禁刺穴。" — <code>中国针灸证治通鉴_22_第叁编_妇儿科病证.md</code> L382, L480</td>
+<td style="text-align: left;">"徐文伯针刺堕胎：泻足太阴，补手阳明，胎便应针而落。" / 小结 "六朝后医书多因而取三阴交、合谷穴以治难产，有些腧穴书甚至将此二穴列为孕妇禁刺穴。" — 《中国针灸证治通鉴》 第叁编 妇儿科病证 L382, L480</td>
 <td style="text-align: left;">임신부 금침의 기원 = 徐文伯 인산(引産) 처방</td>
 <td style="text-align: left;">5·9절</td>
 </tr>
@@ -1115,7 +1125,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 5. 현행 주치 가운데 '脾病 身重·腹胀肠鸣·溏泄'은 王焘의 귀속 오류에서 비롯된 것이다(通考). 《明堂》 '足下热·胫痛' 조문은 T1의 주치이므로 현행 혈의 근거로 쓰지 않는다.</p>
 <hr>
 <h2 id="a-fma-fma-510">부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)</h2>
-<p>생성: <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile SP06 --md</code> (2026-10-23). 수동 보정 2건을 반영했다.</p>
+<p>생성: FMA 5.1.0 경혈 프로파일 조회(SP06, 2026-10-23). 수동 보정 2건을 반영했다.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1225,7 +1235,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">2026-10-24</td>
 <td style="text-align: left;">전체(신규 작성)</td>
-<td style="text-align: left;">구판 v2.6(2026-09-03, 4요인 가중 합산 ARI 97.50, <code>_구판_v2.6_20260903/</code>)</td>
+<td style="text-align: left;">구판 v2.6(2026-09-03, 4요인 가중 합산 ARI 97.50, 구판 보관본(내부))</td>
 <td style="text-align: left;">Framework v2.7 Tier 3 신규 작성: 10대 구성 요소, <strong>T1(명당 8寸) vs T2(현행 3寸) 분기</strong>, 이중 채점(T2 75.0 ± 2.5 B / T1 41.3 ± 1.3 D·H), B-Check 10/12 부합</td>
 <td style="text-align: left;">정본 Rank 0~7·4·5절; 구판 점수는 비교하지 않음</td>
 </tr>
@@ -1241,20 +1251,24 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">4·6절·부록 A</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">구조 순서 층차표, 그림 4-1 횡단면 모식도, FMA 대조(수동 보정 2건: FMA:51099, FMA:75559)</td>
-<td style="text-align: left;">FMA 5.1.0; <code>.claude/skills/acupoint-anatomy/scripts/fma/figures/SP06_cross_section.py</code></td>
+<td style="text-align: left;">FMA 5.1.0; 그림 생성 스크립트(내부)</td>
 </tr>
 <tr>
 <td style="text-align: left;">2026-10-24</td>
 <td style="text-align: left;">8절</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">역색인 68편 중 SP6 실제 자극·관찰 15편 선별(PubMed 초록·로컬 PDF 본문 대조), 제외·확인 불가 목록, 그림 8-1, 외부 검색 로그</td>
-<td style="text-align: left;">마스터DB.json SP6 역색인·sync_log 2026-10-23T23:57:22</td>
+<td style="text-align: left;">통합 생의학 마스터 DB SP6 역색인·sync_log 2026-10-23T23:57:22</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 00:11 · 원본: SP06_삼음교_해부생리_실체판명_보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1262,6 +1276,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

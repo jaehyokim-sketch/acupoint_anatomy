@@ -4,14 +4,14 @@
 
 ---
 
-> **Governing principle documents**: `01_Framework/acupoint_anatomical_logic_framework.md` (v2.7) · `01_Framework/layer_b_reference_registry.md` (Layer B Reference Registry v1.0)
+> **Governing principle documents**: Acupoint Substrate Identification Logic Framework (canonical) (v2.7) · Layer B Reference Registry v1.0
 > **Source datasets** (Master Datasets Registry):
 > 1. Classical Needling Depth Database, sheet 1, row 181 (BL02)
 > 2. Acupoint Nomenclature & Alias Comparative Database, 'Comprehensive acupoint list' sheet, row 182; 'Primary name–alias match list (Case A)' sheet, row 4
 > 3. Common Textbook Anatomical Structure Dataset entry 179 (BL02, *Acupoint Studies* vol. 1, p. 628) · Kim Jaehyo Anatomical Structure Dataset entry 179 (BL02)
-> **Three Primary Classics** (`01_도서_번역_및_원전/<원전>/chunks_refined/`): *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) `针灸腧穴通考(上)_561-640.md` (lines 2310–2590) · *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) `中国针灸穴位通鉴(上卷)_881-960.md` (lines 2480–2712) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), prescription entries in each chapter
+> **Three Primary Classics** (refined editions): *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (上) PDF pp. 561–640 (lines 2310–2590) · *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) (上卷) PDF pp. 881–960 (lines 2480–2712) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), prescription entries in each chapter
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ### Summary
 - **⚠ Safety caution (SI 0)**: Under the rubric the SI is 0 because the three primary classics record the statement "禁用針灸" (no needling, no moxibustion; 禁針·禁灸) from vol. 1 of *Yixue Rumen* (《醫學入門》). This is **a single record in one later, Ming-dynasty text**; most texts from the *Huangdi Mingtang Jing* (《黃帝明堂經》) and *Jiayi Jing* (《甲乙經》) onward, and the needling-depth DB, describe an insertion of **1–3 fen (2.3–6.9 mm)**. The needling-depth DB contains no '0' (contraindicated for needling) entry. The real risk lies in **direction** rather than depth. A perpendicular needle reaches the bony surface of the frontal bone at the frontal notch (額切跡) at a shallow depth, but a needle angled inferoposteriorly (toward the orbit) and inserted deeply can enter the orbit and may cause bleeding (haematoma) from the supratrochlear vessels. Most classical and modern texts recommend **transverse (horizontal) insertion along the skin (沿皮)**.
@@ -23,7 +23,7 @@
 
 | # | Text (era) | Original text (as recorded in the three primary classics) | English rendering | Location in the classics |
 | :---: | :--- | :--- | :--- | :--- |
-| 1 | *Huangdi Mingtang Jing* (《黃帝明堂經》) (Han-dynasty lineage, preserved in vol. 3 of the *Jiayi Jing* (《甲乙經》)) | 攢竹，一名員柱，一名始光，一名夜光，一名明光，在眉頭陷者中，足太陽脈氣所發。 | Cuanzhu (攢竹) is also called Yuanzhu (員柱), Shiguang (始光), Yeguang (夜光) and Mingguang (明光); it lies in the depression at the head of the eyebrow, where the Qi (氣) of the Foot Taiyang Vessel (足太陽脈) emerges. | *Tongkao* (《通考》) 名實考 3 (`针灸腧穴通考(上)_561-640.md` line 2342) |
+| 1 | *Huangdi Mingtang Jing* (《黃帝明堂經》) (Han-dynasty lineage, preserved in vol. 3 of the *Jiayi Jing* (《甲乙經》)) | 攢竹，一名員柱，一名始光，一名夜光，一名明光，在眉頭陷者中，足太陽脈氣所發。 | Cuanzhu (攢竹) is also called Yuanzhu (員柱), Shiguang (始光), Yeguang (夜光) and Mingguang (明光); it lies in the depression at the head of the eyebrow, where the Qi (氣) of the Foot Taiyang Vessel (足太陽脈) emerges. | *Tongkao* (《通考》) 名實考 3 (《針灸腧穴通考》(上) PDF pp. 561–640 line 2342) |
 | 2 | *Huangdi Mingtang Jing* (《黃帝明堂經》), lost text (vol. 3 of the *Jiayi Jing* (《甲乙經》)) | 刺入三分，留六呼，灸三壯。 | Insert 3 fen, retain for 6 breaths, moxibustion with 3 cones. | *Tongkao* (《通考》) 【操作】 1(1) (line 2564); *Xuewei Tongjian* (《穴位通鑑》) 七.1 「《針灸甲乙經》3:42」 |
 | 3 | Wang Bing's (王冰) commentary on 《素問·氣穴論》 (Tang) | 眉本二穴，王冰注曰：攢竹穴也。在眉頭陷者中，足太陽脈氣所發。 | Wang Bing glosses 'the two Meiben (眉本) points' as Cuanzhu (攢竹). | *Tongkao* (《通考》) 名實考 1 (line 2338) |
 | 4 | Wang Bing's (王冰) commentary on 《素問·骨空論》 | 在眉頭陷者中，脈動應手。 | In the depression at the head of the eyebrow, where the pulse is felt under the finger. | *Tongkao* (《通考》) 【定位】 2 + note (按) "'脈動應手'四字…當係錯入" |
@@ -37,10 +37,10 @@
 | 12 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (Huang Longxiang (黃龍祥), modern collation) | 部位：在面部，眉頭凹陷中，額切跡處。…針刺操作：直刺 0.1~0.3 寸。 | Location: in the depression at the head of the eyebrow, at the frontal notch (額切跡). Perpendicular insertion 0.1–0.3 cun. | 【提要索隱】 (lines 2316–2328) |
 | 13 | *Tongkao* (《通考》) 【相關解剖學基礎】 | 內側者為額切跡或滑車上切跡，有滑車上動脈、靜脈和滑車上神經通過。 | The medial one is the frontal notch (額切跡, supratrochlear notch), through which the supratrochlear artery, vein and nerve pass. | 【定位】 (line 2390 onward) |
 | 14 | *Tongkao* (《通考》), textual analysis of location (定位·文獻分析) | 本穴定位，古代文獻無分歧，均定位於"眉頭陷者中"。 | Ancient texts do not differ on the location. | 【定位】 文獻分析 |
-| 15 | *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 呃逆…取穴：攢竹。指壓。 / 腰痛…取穴：攢竹。 / 眉目疼痛不能當，攢竹沿皮刺不妨。 | Cuanzhu (攢竹) alone for hiccup (呃逆) and low back pain (腰痛) / transverse insertion along the skin at Cuanzhu (攢竹) for pain of the eyebrow and eye (眉目疼痛). | `中国针灸证治通鉴_241-320.md` line 2254; `_321-400.md` line 14; `_401-480.md` line 184 |
+| 15 | *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 呃逆…取穴：攢竹。指壓。 / 腰痛…取穴：攢竹。 / 眉目疼痛不能當，攢竹沿皮刺不妨。 | Cuanzhu (攢竹) alone for hiccup (呃逆) and low back pain (腰痛) / transverse insertion along the skin at Cuanzhu (攢竹) for pain of the eyebrow and eye (眉目疼痛). | 《中國針灸證治通鑑》 PDF pp. 241–320 line 2254; PDF pp. 321–400 line 14; PDF pp. 401–480 line 184 |
 | 16 | WHO standard location (2008, B1-05) | In the depression at the medial end of the eyebrow. | In the depression at the medial end of the eyebrow. | B1-05 |
 
-- **Deleted citation (cannot be verified in the classics)**: the earlier edition's 《靈樞·本輸》 "攢竹在顏下…眉頭陷者中" does not appear in any of the three primary classics (full Grep of `chunks_refined`: "在顏下/在颜下" 0 hits). Since the *Tongkao* (《通考》) heading reads "出《黃帝明堂經》" and the *Xuewei Tongjian* (《穴位通鑑》) source is "《針灸甲乙經》3:42", the earliest description is the *Huangdi Mingtang Jing* (《黃帝明堂經》) (vol. 3 of the *Jiayi Jing* (《甲乙經》)).
+- **Deleted citation (cannot be verified in the classics)**: the earlier edition's 《靈樞·本輸》 "攢竹在顏下…眉頭陷者中" does not appear in any of the three primary classics (full Grep of the refined classics: "在顏下/在颜下" 0 hits). Since the *Tongkao* (《通考》) heading reads "出《黃帝明堂經》" and the *Xuewei Tongjian* (《穴位通鑑》) source is "《針灸甲乙經》3:42", the earliest description is the *Huangdi Mingtang Jing* (《黃帝明堂經》) (vol. 3 of the *Jiayi Jing* (《甲乙經》)).
 - **Deleted citation (fabricated quotation)**: the earlier edition's *Tongkao* (《通考》) quotation "眉頭凹陷處, 實爲滑車上神經與滑車上動脈處, 刺深宜斜刺/橫刺 (0.3~0.5寸)" does not exist in the *Tongkao* (《通考》) text. What the *Tongkao* (《通考》) actually says is in rows 12 and 13 above ("直刺 0.1~0.3 寸", "額切跡處", "有滑車上動脈、靜脈和滑車上神經通過"). The *Tongkao* (《通考》) does not present oblique or transverse insertion as its own recommendation; transverse insertion is described by the texts it collects, such as Dou (竇氏), Nanjing 《針灸學》 and the 7th-edition textbook.
 
 ---
@@ -135,7 +135,7 @@ BL02 aliases in the KJH DB (Acupoint Nomenclature & Alias Comparative Database, 
 
 ### 4.5 FMA Substrate Cross-check (by Layer)
 
-Structure names from the two textbooks; IDs and relations from FMA 5.1.0 (`fma_query.py profile BL02`).
+Structure names from the two textbooks; IDs and relations from FMA 5.1.0 (FMA profile query).
 
 | Layer | Structure | FMA | FMA relation | Innervation / trunk (FMA) | Spinal segment |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -241,7 +241,7 @@ flowchart TB
 - **Segmental correspondence (②)**: for the head and face, the judgement is made by the **trigeminal V1 territory** instead of spinal segments. The stimulation site (supratrochlear nerve) and the target (sensation of the cornea, conjunctiva and lacrimal gland) lie within the same V1 distribution.
 - **Limit of point specificity (important)**: the Layer A papers below are **all multi-point prescriptions that include BL2**. There are **0** studies that stimulated BL2 alone and measured an ophthalmic effect or mechanism. The only paper in the pack using BL2 alone is papers.id 2008, a case series of acute lumbar sprain (2003) unrelated to the ophthalmic indications and mechanisms, and it was not used for scoring. Steps ③, ④ and ⑤ of the circuit above are therefore not a BL2-specific mechanism but "**an inference to BL2 from the mechanism of combined periocular stimulation**" (the counter-evidence aspect of point specificity, B4-05).
 
-### 8.2 Layer A Papers (pack_BL2.md)
+### 8.2 Layer A Papers (evidence pack)
 
 | papers.id | Year | Journal | Title | PMID / DOI | Design (relevance to BL2) |
 | :---: | :---: | :--- | :--- | :--- | :--- |
@@ -314,7 +314,7 @@ $P_{single}$ is **not calculated quantitatively**. The earlier edition's 0.90–
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| S_orig | 93.75 | 87.5 | **90.6** | The primary source specifies both location and depth; no ancient disagreement on location; the 光明 confusion is resolved chronologically; *Tongkao* (《通考》) collation reflected | `针灸腧穴通考(上)_561-640.md` 名實考 · 定位 · 操作; `中国针灸穴位通鉴(上卷)_881-960.md` 二.別名 · 七; KJH Case A |
+| S_orig | 93.75 | 87.5 | **90.6** | The primary source specifies both location and depth; no ancient disagreement on location; the 光明 confusion is resolved chronologically; *Tongkao* (《通考》) collation reflected | 《針灸腧穴通考》(上) PDF pp. 561–640 名實考 · 定位 · 操作; 《中國針灸穴位通鑑》(上卷) PDF pp. 881–960 二.別名 · 七; KJH Case A |
 | S_clarity | 75 | 75 | **75** | The two textbooks agree + standard entities confirmed by normative anatomy and FMA (the nerve difference is a trunk/branch-level difference in FMA). No BL2-specific cadaveric or imaging measurement → below 100 | Common Textbook dataset and Kim Jaehyo entry 179; *Tongkao* (《通考》) 相關解剖學基礎; B1-01, B1-05, B2-09; FMA:52642 · 52638 |
 | S_reflex | 75 | 75 | **75** | Human studies + many animal studies + B-Check 8. All multi-point, so 100 not possible | papers.id 1979, 1981, 1994, 1997, 1998, 1999, 2000, 2001, 2003 |
 | S_safety → SI | 0 | 0 (75 before adjudication) | **0** | A text prohibiting needling exists (*Yixue Rumen* (《醫學入門》) "禁用針灸") → rubric 0 | *Tongkao* (《通考》) 【操作】 9; *Xuewei Tongjian* (《穴位通鑑》) 七.16; needling-depth DB row 181 (no '0') |
@@ -352,7 +352,7 @@ $P_{single}$ is **not calculated quantitatively**. The earlier edition's 0.90–
 ### 10.5 Adjudication Record
 
 - Items differing by 15 points or more after adjudication: none (`needs_adjudication` empty).
-- **S_safety adjudication (A 0 / B 75 → 0)**: both raters confirmed the *Yixue Rumen* (《醫學入門》) vol. 1 "禁用針灸" recorded in the *Xuewei Tongjian* (《穴位通鑑》) and in `针灸腧穴通考(上)_561-640.md` 【操作】 9. Level 0 of canonical section 4.2 ("a text prohibiting needling exists") was applied literally and B was adjusted to 0 → ⚠ safety caution. The text also notes that most texts in the needling-depth DB give 1–3 fen (2.3–6.9 mm) and that the prohibition is a single record in a later text. On the DB criterion alone, the SI would be 75 (avoidable by oblique or transverse insertion; angle and depth limits stated in the literature).
+- **S_safety adjudication (A 0 / B 75 → 0)**: both raters confirmed the *Yixue Rumen* (《醫學入門》) vol. 1 "禁用針灸" recorded in the *Xuewei Tongjian* (《穴位通鑑》) and in 《針灸腧穴通考》(上) PDF pp. 561–640 【操作】 9. Level 0 of canonical section 4.2 ("a text prohibiting needling exists") was applied literally and B was adjusted to 0 → ⚠ safety caution. The text also notes that most texts in the needling-depth DB give 1–3 fen (2.3–6.9 mm) and that the prohibition is a single record in a later text. On the DB criterion alone, the SI would be 75 (avoidable by oblique or transverse insertion; angle and depth limits stated in the literature).
 - The conflict over moxibustion (灸法) (《甲乙》 灸三壯 vs. 《千金翼》 忌灸 and Dou (竇氏) 禁灸) and the direction of effect in item ⑤ (classical 流淚 vs. promotion of secretion in dry eye) are not direct conflicts, so the B-Check 'hypothesis' restriction was not applied.
 
 ### 10.6 Final Conclusion
@@ -367,7 +367,7 @@ $P_{single}$ is **not calculated quantitatively**. The earlier edition's 0.90–
 
 ## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile BL02 --md` (2026-10-23). Match level `exact` means the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation (the Kim Jaehyo textbook's typo "supraorbial" also matched exactly after normalisation).
+Generated by FMA 5.1.0 acupoint profile query (BL02; 2026-10-23). Match level `exact` means the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation (the Kim Jaehyo textbook's typo "supraorbial" also matched exactly after normalisation).
 
 | Category | Textbook term | FMA substrate | Match | Source | Innervation / parent trunk |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -396,17 +396,17 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
 | Header | — | Added FMA 5.1.0 anatomical ontology line | FMA Acupoint Anatomical Ontology Mapping Registry |
-| Section 4.4 | Text sagittal-section diagram only | Added Figure 4-1, sagittal-section anatomical schematic (PNG) | `.claude/skills/acupoint-anatomy/scripts/fma/figures/BL02_cross_section.py` |
-| Section 4.5 (new) | — | FMA cross-check table by layer; 3 FMA notes (segments not applicable, angular vein communication not recorded, innervation of frontalis not recorded) | `fma_query.py profile BL02`, `entity 50893`, `ancestors 53379` |
+| Section 4.4 | Text sagittal-section diagram only | Added Figure 4-1, sagittal-section anatomical schematic (PNG) | figure-generation script (internal) |
+| Section 4.5 (new) | — | FMA cross-check table by layer; 3 FMA notes (segments not applicable, angular vein communication not recorded, innervation of frontalis not recorded) | FMA profile query, `entity 50893`, `ancestors 53379` |
 | Section 6 | 4-column textbook comparison | FMA adjudication column; interpretation of the nerve difference as a difference in recorded level (trunk/branch) | FMA is_a / branch_of chains |
 | Section 8.1 | Text reflex pathway diagram | Added Figure 8-1, FMA peripheral pathway (Mermaid) | FMA:52642→52638→52621→50866; 53379→53291→50868 |
 | Section 8.3 | B-Check ①, ② rationale | Added FMA IDs and trunk pointers (scores unchanged: ① = 2, ② = 2) | Section 4.5 |
 | Section 8.4 | 2026-10-04 log | Added rows for the 2026-10-23 Rank 6 re-run (3 new papers: papers.id 2246 · 2247 · 2248, all multi-point → verdict unchanged) | `_metadata.sync_log` 2026-10-23T21:43:19 |
 | Section 10.1 | $S_{clarity}$ rationale | Noted FMA confirmation of standard entities (score unchanged at 75) | Section 6, Appendix A |
-| Appendix A (new) | — | FMA profile table | `fma_query.py profile BL02 --md` |
+| Appendix A (new) | — | FMA profile table | FMA profile query |
 | ARI | ARI-Core 81.2 ± 1.2 (B), SI 0 ⚠ | **No change** — FMA is B1-supplementary evidence and does not change rubric levels | Skill section 5-1 |
 | Canonical consistency check | — | Confirmed against v2.7 that there is no earlier-edition wording, no non-rubric score and no 'confirmed' verdict wording (S_orig means 93.75/87.5 are allowed as means of the 4 rubric sub-items) | Canonical Rank 7 · 4.2 |
-| Archive of earlier edition | — | Pre-supplement md, html and xlsx kept in `_구판_v2.7_20261023/` | — |
+| Archive of earlier edition | — | Pre-supplement md, html and xlsx kept in the internal archive | — |
 
 ---
 
@@ -414,9 +414,9 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Header | "Version 2.6", "22nd-generation Master ASIA Algorithm" | v2.7 framework and ARI v3.0 notation block | `01_Framework/acupoint_anatomical_logic_framework.md` |
-| Former 2.1-1 | 《靈樞·本輸》 "攢竹在顏下…眉頭陷者中" cited as the primary description | Deleted. Earliest description = *Huangdi Mingtang Jing* (《黃帝明堂經》) (vol. 3 of 《甲乙》) | `针灸腧穴通考(上)_561-640.md` lines 2310, 2342; `中国针灸穴位通鉴(上卷)_881-960.md` line 2482; full Grep of chunks_refined, 0 hits |
-| Former 2.1-4, 8.1 | *Tongkao* (《通考》) "實爲滑車上神經與滑車上動脈處, 刺深宜斜刺/橫刺(0.3~0.5寸)" | Fabricated quotation deleted. Replaced by the actual text "直刺 0.1~0.3 寸", "額切跡處" and the 相關解剖學基礎 wording | `针灸腧穴通考(上)_561-640.md` lines 2316–2328, 【定位】, 【操作】 |
+| Header | "Version 2.6", "22nd-generation Master ASIA Algorithm" | v2.7 framework and ARI v3.0 notation block | Acupoint Substrate Identification Logic Framework (canonical) |
+| Former 2.1-1 | 《靈樞·本輸》 "攢竹在顏下…眉頭陷者中" cited as the primary description | Deleted. Earliest description = *Huangdi Mingtang Jing* (《黃帝明堂經》) (vol. 3 of 《甲乙》) | 《針灸腧穴通考》(上) PDF pp. 561–640 lines 2310, 2342; 《中國針灸穴位通鑑》(上卷) PDF pp. 881–960 line 2482; full Grep of the refined classics, 0 hits |
+| Former 2.1-4, 8.1 | *Tongkao* (《通考》) "實爲滑車上神經與滑車上動脈處, 刺深宜斜刺/橫刺(0.3~0.5寸)" | Fabricated quotation deleted. Replaced by the actual text "直刺 0.1~0.3 寸", "額切跡處" and the 相關解剖學基礎 wording | 《針灸腧穴通考》(上) PDF pp. 561–640 lines 2316–2328, 【定位】, 【操作】 |
 | Former 2.1-3, Section 5 | *Dongui Bogam* (《東醫寶鑑》) (citing 《銅人》) insertion 3 fen | 1 fen (2.3 mm) | Needling-depth xlsx sheet 1 row 181, 'Dongui Bogam' = 1, cited source = 《銅人》 |
 | Former Section 5 | Modern textbooks 3–5 fen (6.9–11.5 mm), μ = 9.2 mm, σ = 1.8 mm | Common textbooks 2–3 fen (4.6–6.9 mm). μ and σ deleted; DB range 2.3–6.9 mm | Needling-depth xlsx row 181 |
 | Former Section 5 | *Chimgu Gyeongheombang* (《鍼灸經驗方》) missing | Added *Chimgu Gyeongheombang* (《鍼灸經驗方》) 1 fen | Needling-depth xlsx row 181 |
@@ -427,12 +427,12 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 | Former Section 5 | $11.5 \times \sin 20^\circ = 3.9$ mm, "risk to the eyeball completely eliminated" | Unsupported input deleted; replaced by the example 6.9 mm × sin 15° (stated as not a measurement) | Needling-depth xlsx row 181 |
 | Former Sections 3, 6 | P_single 0.90–0.94, 'Level A' | Deleted. Replaced by the qualitative single/combination table in Section 9 | No basis for calculation; indication entries in 《證治通鑑》 and 《通考》 |
 | Former Section 6 | "Upper brainstem ganglion", "autonomic receptors of the supratrochlear artery and vein" | Corrected to the superior salivatory nucleus → pterygopalatine ganglion pathway; receptor claim deleted. Layer B IDs and papers.id attached | B1-02, B3-05; papers.id 1981 · 1997 · 1998 · 1999 |
-| New Section 8 | No Layer A, B-Check or search log | Added Layer A table, B-Check table (8/12 concordant) and sync_log table. Multi-point limitation stated | pack_BL2.md; final_BL02.json bcheck |
-| Former Section 8.2 | Five-factor ARI evaluation table (including S_tongkao) | Replaced by the ARI v3.0 profile (Section 10) | final_BL02.json |
+| New Section 8 | No Layer A, B-Check or search log | Added Layer A table, B-Check table (8/12 concordant) and sync_log table. Multi-point limitation stated | evidence pack; B-Check scoring record |
+| Former Section 8.2 | Five-factor ARI evaluation table (including S_tongkao) | Replaced by the ARI v3.0 profile (Section 10) | dual-scoring record |
 | Former Section 9 | md ↔ xlsx numerical agreement described as evidence of reliability | Deleted. Stated that this is only a consistency audit, not evidence of reliability | Framework Rank 7 cross-verification clause |
 | New Sections 2, 3, 5, 9 | No primary/secondary table, alias table, needling depth table or indication separation table | Compiled from the source data | *Tongkao* (《通考》), *Xuewei Tongjian* (《穴位通鑑》) and *Zhengzhi Tongjian* (《證治通鑑》) chunks; KJH and needling-depth xlsx |
 | Former Sections 4, 5, 6 | Damaged LaTeX escapes (`\text`, `\rightarrow` broken by tab and newline characters) | Formulae rewritten | — |
-| Earlier-edition score | Earlier v2.6 score 96.5 (five factors, not comparable) | ARI v3.0: ARI-Core 81.2 ± 1.2 (B), SI 0 ⚠ | final_BL02.json |
+| Earlier-edition score | Earlier v2.6 score 96.5 (five factors, not comparable) | ARI v3.0: ARI-Core 81.2 ± 1.2 (B), SI 0 ⚠ | dual-scoring record |
 | Unverified | The original text of *Dongui Bogam* (《東醫寶鑑》) itself | No chunk of the *Dongui Bogam* (《東醫寶鑑》) original is available in the three primary classics or local materials, so only the needling-depth DB value (1 fen, citing 《銅人》) is reflected | Needling-depth xlsx row 181 |
 
 ---
@@ -441,7 +441,7 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Whole document | Automatically generated "English" edition: Korean body text with only some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `BL02_찬죽_해부생리_실체판명_보고서.md` |
+| Whole document | Automatically generated "English" edition: Korean body text with only some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition |
 | Title, body | Duplicated annotations such as "Zanzhu (攅竹, BL02)(BL02)" and the misspelt pinyin 'Zanzhu' / variant character '攅' | Duplicates removed; standard form Cuanzhu (攢竹) used | — |
 | Figure 4-1 | Image path corrupted by term replacement (`BL02_Zanzhu (攅竹, BL02)_…png`), so the image was missing from the HTML | Restored to the actual file name | File in the report folder |
 | Classical quotations | Simplified characters (e.g. 攒竹, 针, 额切迹) | Converted to Traditional characters; file names, line pointers and search-query strings unchanged | Routing rule on Traditional Chinese collation |

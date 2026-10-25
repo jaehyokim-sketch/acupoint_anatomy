@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -56,8 +66,8 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <article>
 <h1 id="_1">📜 [혈위고증 종합권위본] 숭골(崇骨) 경외기혈 고증 및 가설검증 종합보고서</h1>
 <blockquote>
-<p><strong>프레임워크</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: <code>숭골_경외기혈_고증_및_가설검증_피어리뷰_분석.csv</code>, 숭골 경외기혈 고증 및 가설검증 분석 데이터셋 (3대 원전 대조: <code>针灸腧穴通考(下)_401-480.md</code> L1620-1666)<br>
-<strong>구판</strong>: Version 2.6 (2026-10-03, "Rank 0~7 완전 적용" 표기) 원본은 <code>_구판_v2.6/</code>에 보관. 실제로는 Rank 6·7(Layer A·B 대조, ARI 채점)을 수행한 기록이 없어 적용 범위를 Rank 1~4로 정정함<br>
+<p><strong>프레임워크</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: 숭골 경외기혈 고증 및 가설검증 피어리뷰 분석 데이터셋, 숭골 경외기혈 고증 및 가설검증 분석 데이터셋 (3대 원전 대조: 《针灸腧穴通考》(下) PDF 401–480쪽 L1620-1666)<br>
+<strong>구판</strong>: Version 2.6 (2026-10-03, "Rank 0~7 완전 적용" 표기) 원본은 구판 보관본(내부)에 보관. 실제로는 Rank 6·7(Layer A·B 대조, ARI 채점)을 수행한 기록이 없어 적용 범위를 Rank 1~4로 정정함<br>
 <strong>마스터 근거 원칙</strong>: 경혈 해부학적 실체 판명 로직 원칙<br>
 <strong>근거 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》<br>
 <strong>통합 이력</strong>: 2개 분산 문서(피어리뷰 보고서 및 C7/T1 시대변천 보고서)를 50% 이상 중복 통합 원칙에 따라 단일 권위본으로 완결 융합.</p>
@@ -94,7 +104,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><strong>《针灸腧穴通考》</strong></td>
-<td style="text-align: left;">"黃龍祥 考: 崇骨之名, 實起於後世對頸椎骨之俗稱. 與大椎相表裏." <em>(이 문장은 <code>chunks_refined</code>에서 검출되지 않음. 실제 조문: 《小品方》 "大椎上节以上属颈崇骨也。大椎与崇骨相接处，其节最高硕也"; 문헌분석 "颈椎只辨出三椎，称项骨，又曰'柱骨'、'天柱骨'或'崇骨'…最高大者为与大椎骨相邻的崇骨——即第七颈椎…无主治病症及相关刺灸法…可见并非出自许任的临床实践")</em></td>
+<td style="text-align: left;">"黃龍祥 考: 崇骨之名, 實起於後世對頸椎骨之俗稱. 與大椎相表裏." <em>(이 문장은 원전 정제본에서 검출되지 않음. 실제 조문: 《小品方》 "大椎上节以上属颈崇骨也。大椎与崇骨相接处，其节最高硕也"; 문헌분석 "颈椎只辨出三椎，称项骨，又曰'柱骨'、'天柱骨'或'崇骨'…最高大者为与大椎骨相邻的崇骨——即第七颈椎…无主治病症及相关刺灸法…可见并非出自许任的临床实践")</em></td>
 <td style="text-align: left;">원전 기준으로 崇骨은 본래 <strong>骨名(C7, 또는 項骨 일반)</strong> 이고, 穴名 崇骨은 허임이 이 骨名을 바탕으로 둔 것이며 임상 실천에서 나온 혈이 아니라는 것이 황룡상의 판단이다. "경신경총 상부 분지를 조절하는 독립 혈위"는 원전 근거가 없는 해부 실체 가설이다.</td>
 </tr>
 </tbody>
@@ -198,7 +208,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <ul>
 <li>PMID/DOI: 본문에 없음(확인 대상 0건). 생의학 문헌 인용 없음 — Layer B는 가설 표기에 등록부 ID(B2-03·B2-04·B2-06)를 참조로만 추가.</li>
-<li>데이터 파일: csv·xlsx의 "100% 입증"(가설 1)과 "주치증과 100% 융합"(숭골 행)은 정량 근거가 없어 각각 "지지 — 骨名·穴名 인접 혼용 기술 확인, 정량 미검증"과 "독자적 주치 없음 — 원전 고유 주치 미기재"로 고쳤다(원본은 <code>_구판_v2.6/</code>에 보관).</li>
+<li>데이터 파일: csv·xlsx의 "100% 입증"(가설 1)과 "주치증과 100% 융합"(숭골 행)은 정량 근거가 없어 각각 "지지 — 骨名·穴名 인접 혼용 기술 확인, 정량 미검증"과 "독자적 주치 없음 — 원전 고유 주치 미기재"로 고쳤다(원본은 구판 보관본(내부)에 보관).</li>
 <li>남은 한계: 《千金要方》·《針灸大成》의 崇骨 조문은 3대 원전 밖이어서 직접 대조하지 못했다. 원서에서 확인되면 3·4번 정정을 다시 검토한다.</li>
 </ul>
 <h2 id="2026-10-24">2026-10-24 정제 이력</h2>
@@ -214,15 +224,19 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;">머리말 링크</td>
-<td style="text-align: left;"><code>file:///g:/내 드라이브/도서 번역/…</code> 절대 링크(다른 PC에서 열리지 않음)</td>
-<td style="text-align: left;">프로젝트 루트(<code>도서 번역</code>) 기준 상대 링크</td>
+<td style="text-align: left;">로컬 절대 경로 링크(다른 PC에서 열리지 않음)</td>
+<td style="text-align: left;">프로젝트 기준 상대 링크</td>
 <td style="text-align: left;">스킬 경로 표기 규칙(드라이브 문자 절대경로 금지)</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:20 · 원본: 숭골_경외기혈_고증_및_가설검증_종합보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -230,6 +244,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

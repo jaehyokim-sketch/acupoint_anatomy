@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -56,7 +66,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <article>
 <h1 id="3">🏛️ 3대 침구 전문 서적 전수 데이터베이스 기반 동일 별명(別名) 공유 경혈 전체 마스터 주치 혼용 실증 검증 보고서</h1>
 <blockquote>
-<p><strong>프레임워크</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: 3대 침구서적 동일별명 경혈쌍 주치혼용 검증 데이터셋(48쌍, 주치 대조 열 없음) · 원전 대조: 《中国针灸穴位通鉴》 '别名'조·「针灸穴名别名索引」(파싱 899항), 《针灸腧穴通考》 「提要索隐·穴名」 · <strong>기초 분석 데이터셋</strong>: <a href="../../%E4%B8%AD%E5%9B%BD%E9%92%88%E7%81%B8%E7%A9%B4%E4%BD%8D%E9%80%9A%E9%89%B4%20%EB%B6%84%EC%84%9D%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B"><code>中国针灸穴位通鉴 분석데이터셋/</code></a> (<code>중국침구혈위통감_동일별명_공유경혈_목록.csv</code> 등 12종)</p>
+<p><strong>프레임워크</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: 3대 침구서적 동일별명 경혈쌍 주치혼용 검증 데이터셋(48쌍, 주치 대조 열 없음) · 원전 대조: 《中国针灸穴位通鉴》 '别名'조·「针灸穴名别名索引」(파싱 899항), 《针灸腧穴通考》 「提要索隐·穴名」 · <strong>기초 분석 데이터셋</strong>: 《中国针灸穴位通鉴》 파생 분석데이터셋 (중국침구혈위통감 동일별명 공유경혈 목록 데이터셋 등 12종)</p>
 <p>⚠️ <strong>v2.7 검증 요약</strong>: 48쌍의 "공유 별명"을 3대 원전 별명 기재와 대조한 결과 <strong>두 경혈 모두의 별명으로 확인된 쌍은 1쌍(2%: #15 手三里–足三里 '三里')</strong>, 유사명·한쪽만 확인 3쌍(#27·#29·#30), <strong>미확인 44쌍(92%)</strong>입니다. 미확인 쌍의 "공유 별명"(云门·气穴·风府·风池·上星·通天·承灵·脑空·曲差·委中 등)은 대부분 다른 경혈의 정명으로, 원전 본문에서 인접해 나온 경혈명이 별명으로 잘못 추출된 것으로 추정됩니다. 또 이 48쌍 목록에는 본문이 "포함"한다고 한 구글 시트 24쌍(석문–명문, 찬죽–광명 등)이 들어 있지 않으며, 표의 '작용 메커니즘 분류'(예: 气穴 쌍을 "거허하합혈 호환형"으로 분류)도 본문 정의와 맞지 않습니다. 이 보고서의 "100% 입증"은 성립하지 않으며, 48행의 결론 문구는 모두 같은 문장이 자동 반복된 것입니다.</p>
 </blockquote>
 <p>《中国针灸穴位通鉴》, 《中国针灸证治通鉴》, 《针灸腧穴通考》 3대 침구 전문 서적 전수 데이터베이스(45개 PDF, 4,200여 페이지)를 전수 스캔 및 훈고학적 고증 분석하여, <strong>48개 동일 별명 공유 경혈쌍 후보</strong>를 추출하고(구글 시트 24쌍은 실제 목록에 미포함), <strong>"별칭 또는 명칭이 동일한 경혈로 인해 시대적으로 침구치료에서 혼용되거나 배혈로 통합되었다"</strong>는 핵심 가설을 검토한 마스터 보고서입니다(v2.7 판정: 후보 48쌍 중 원전 별명 공유 확인 1쌍, 가설 미입증).</p>
@@ -557,9 +567,8 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <hr>
 <h2 id="_3">📁 생성 완료된 마스터 분석 파일 목록 (같은 폴더)</h2>
 <ul>
-<li>📝 <strong>마스터 마크다운 보고서</strong>: <a href="3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.md">3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.md</a></li>
 <li>📊 <strong>마스터 엑셀 파일</strong>: 3대 침구서적 동일별명 경혈쌍 주치혼용 검증 마스터 데이터셋</li>
-<li>📄 <strong>마스터 CSV 파일</strong>: <a href="3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.csv">3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.csv</a></li>
+<li>📄 <strong>마스터 CSV 파일</strong>: 3대침구서적 전체마스터 동일별명 경혈쌍 주치혼용 검증 데이터셋</li>
 </ul>
 <hr>
 <h2 id="v27-2026-10-04">v2.7 정제 이력 (2026-10-04)</h2>
@@ -635,7 +644,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">파일 안내</td>
-<td style="text-align: left;"><code>file:///D:/…</code> 절대 링크</td>
+<td style="text-align: left;">로컬 절대 경로 링크</td>
 <td style="text-align: left;">같은 폴더 상대 링크</td>
 <td style="text-align: left;">실제 저장 위치</td>
 </tr>
@@ -660,15 +669,19 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;">머리말 링크</td>
-<td style="text-align: left;"><code>file:///g:/내 드라이브/도서 번역/…</code> 절대 링크(다른 PC에서 열리지 않음)</td>
-<td style="text-align: left;">프로젝트 루트(<code>도서 번역</code>) 기준 상대 링크</td>
+<td style="text-align: left;">로컬 절대 경로 링크(다른 PC에서 열리지 않음)</td>
+<td style="text-align: left;">프로젝트 기준 상대 링크</td>
 <td style="text-align: left;">스킬 경로 표기 규칙(드라이브 문자 절대경로 금지)</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:20 · 원본: 3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -676,6 +689,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

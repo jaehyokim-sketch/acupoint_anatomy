@@ -259,7 +259,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 4. <strong>Epistemological Verdict</strong>:</p>
 <blockquote>
 <p><em>"That Tiaokou penetrating Chengshan relieves shoulder pain and can be reproduced is undeniable. However, this is not an acupoint-specific therapeutic action for frozen shoulder. It is precisely like </em><em>clapping hands to turn on an acoustic-sensor lamp without understanding acoustic physics (拍手亮燈)</em><em>: because making any loud noise—such as stamping feet or shouting—will also turn on the light, intense nociceptive stimulation of the deep peroneal nerve in the leg triggers generalized Diffuse Noxious Inhibitory Controls (DNIC). Mistaking this non-specific pain gating for a specific meridian cure is pure clinical blindness."</em>
-   - <em>(Refinement note, 2026-10-25)</em> The quotation above is a paraphrase. The original Tongkao (《通考》) text (<code>针灸腧穴通考_08_上_足阳明胃经穴-3.md</code> L1149~1153) makes two points. One is "刺法是强刺激，加上活动患病处…活动是至关重要的，比穴位本身更重要。之所以取下肢穴…是因为不影响肩关节的活动"; the other is the conclusion "就像'拍手亮灯'的经验…如果我们不知道'声控灯'的秘密…都是盲目的". In short, <strong>active movement of the affected part matters more than the acupoint itself</strong>. "DNIC / generalized pain inhibition" is this report's interpretation (at the level of B3-08 analogy), not the Tongkao's wording. The lineage account (李志明 1965, 盛燮荪 1965, 胡学曾 1966, 王文绵 1959, '舶来品') agrees with Tongkao (《通考》) L1135~1141 (citing 彭增福, 中国针灸 2009;29(2):118).</p>
+   - <em>(Refinement note, 2026-10-25)</em> The quotation above is a paraphrase. The original Tongkao (《通考》) text (《針灸腧穴通考》 上 足陽明胃經穴-3 L1149~1153) makes two points. One is "刺法是强刺激，加上活动患病处…活动是至关重要的，比穴位本身更重要。之所以取下肢穴…是因为不影响肩关节的活动"; the other is the conclusion "就像'拍手亮灯'的经验…如果我们不知道'声控灯'的秘密…都是盲目的". In short, <strong>active movement of the affected part matters more than the acupoint itself</strong>. "DNIC / generalized pain inhibition" is this report's interpretation (at the level of B3-08 analogy), not the Tongkao's wording. The lineage account (李志明 1965, 盛燮荪 1965, 胡学曾 1966, 王文绵 1959, '舶来品') agrees with Tongkao (《通考》) L1135~1141 (citing 彭增福, 中国针灸 2009;29(2):118).</p>
 </blockquote>
 <h3 id="36-guiding-principle-pathological-site-based-acupoint-selection">3.6 Guiding Principle: Pathological Site-Based Acupoint Selection</h3>
 <ul>
@@ -435,7 +435,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tr>
 </tbody>
 </table></div>
-<p><em>(Refinement note — FMA collation, 2026-10-25)</em> All 25 FMA IDs in the table match their FMA 5.1.0 labels, and the corresponding structures do appear in the per-acupoint FMA mapping tables of the two standard textbooks (<code>fma_query.py profile</code>). The following corrections apply otherwise.
+<p><em>(Refinement note — FMA collation, 2026-10-25)</em> All 25 FMA IDs in the table match their FMA 5.1.0 labels, and the corresponding structures do appear in the per-acupoint FMA mapping tables of the two standard textbooks (FMA profile query). The following corrections apply otherwise.
 - <strong>Structures absent from the textbooks</strong>: The <em>subacromial bursa, joint capsule, coracoid bursa, and infraspinous fossa periosteum of the scapula</em> in the Layer 4–5 column do not appear among the anatomical structures of any acupoint in either standard textbook. They should be read as <strong>inferences</strong> from normative anatomy (B1-01, B1-03).
 - <strong>Yunmen (雲門, LU02)</strong>: Its textbook structures <strong>do not include the subscapularis</strong> (they include the pectoralis major, subclavius, lateral pectoral nerve, axillary artery and vein, etc.). The subscapularis instead appears among the textbook structures of Jianyu (肩髃, LI15). Hence the claim "Yunmen = subscapularis stimulation point" in Sections 3.4 and 5 rests not on the textbooks but on a correspondence with modern treatment sites (Fu's Subcutaneous Needling P1, coracoid injection point).
 - <strong>Segments</strong> (FMA and B1 supplementation, Section 11, Figure B):
@@ -891,7 +891,7 @@ $$\text{Safety Index (SI)} = S_{safety} \quad (\text{Independently Tracked})$$</
 <h2 id="11-fma-510-anatomical-analysis-and-anatomical-images-added-in-2026-10-25-refinement-ranks-5-6">11. FMA 5.1.0 Anatomical Analysis and Anatomical Images (Added in 2026-10-25 Refinement, Ranks 5 &amp; 6)</h2>
 <h3 id="111-methods">11.1 Methods</h3>
 <ul>
-<li><strong>Input</strong>: For each of the 15 acupoints, <code>fma_query.py profile &lt;code&gt; --json</code> was run to obtain the FMA mappings of the anatomical structures listed in the two standard textbooks. Only exact-type and parent (branch_of) mapping levels were used. Jianqian (肩前, EX-UE) is absent from the textbooks, so a manual B1 mapping was used.</li>
+<li><strong>Input</strong>: For each of the 15 acupoints, FMA profile query was run to obtain the FMA mappings of the anatomical structures listed in the two standard textbooks. Only exact-type and parent (branch_of) mapping levels were used. Jianqian (肩前, EX-UE) is absent from the textbooks, so a manual B1 mapping was used.</li>
 <li><strong>Similarity</strong>: Computed as weighted Jaccard (provisional weights).</li>
 <li>Nerve territory 0.35: structural nerves + innervating nerves + trunk chain</li>
 <li>Spinal segment 0.30: FMA segments, ordinal labels, B1 supplementation</li>
@@ -901,7 +901,7 @@ $$\text{Safety Index (SI)} = S_{safety} \quad (\text{Independently Tracked})$$</
 <li><strong>Clustering</strong>: Hierarchical clustering by UPGMA, distance = 1 − similarity. Cophenetic correlation was <strong>0.931</strong>, and the clusters were identical under equal weights (ARI <strong>1.0</strong>).</li>
 <li><strong>Glenohumeral joint innervation</strong>: By Hilton's law, the glenohumeral joint is innervated by the suprascapular, axillary, and lateral pectoral nerves (C5–C6) (B1-01, B1-03). This served as the criterion for B-Check ② segmental congruence.</li>
 <li><strong>Functional anatomy</strong>: For each of five movement directions, the agonists (A) and restraining muscles (R) were defined by B1-03 normative kinesiology and then matched against each acupoint's FMA muscles.</li>
-<li><strong>3D measurement</strong> (B1 auxiliary): Computed on BodyParts3D 4.0 meshes (shared functions in <code>mesh3d.py</code>). Structure volumes and minimum inter-structure distances were measured.</li>
+<li><strong>3D measurement</strong> (B1 auxiliary): Computed on BodyParts3D 4.0 meshes (shared functions in the 3D mesh measurement tool). Structure volumes and minimum inter-structure distances were measured.</li>
 <li>The deltoid and trapezius have no whole-muscle mesh, so partial meshes were substituted (clavicular, acromial, and spinal parts / descending, transverse, and ascending parts).</li>
 <li><strong>The lung meshes (right lung FMA:7309, upper lobe 7333) contain only the bronchial tree, with no parenchymal or pleural surface.</strong> Distances to the lung therefore cannot be measured; distances to the first and second ribs, which encircle the cervical pleura (pleural cupula), were used as a proxy.</li>
 </ul>
@@ -1347,7 +1347,7 @@ $$\text{Safety Index (SI)} = S_{safety} \quad (\text{Independently Tracked})$$</
 <tr>
 <td style="text-align: left;">2026-10-25</td>
 <td style="text-align: left;">Added FMA analysis and figures (Figures A–D, 3D E1–E3); audited citations, kinesiology, Layer A, and ARI; inserted refinement notes; added 6 refinement sheets to the xlsx</td>
-<td style="text-align: left;">Claude Code (<code>scripts/fs_analysis.py</code>·<code>fs_figures.py</code>)</td>
+<td style="text-align: left;">Claude Code (internal analysis and figure scripts)</td>
 </tr>
 <tr>
 <td style="text-align: left;">2026-10-25</td>
@@ -1361,7 +1361,7 @@ $$\text{Safety Index (SI)} = S_{safety} \quad (\text{Independently Tracked})$$</
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-25 11:06 · 원본: 오십견_누견풍_침구해부_종합보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

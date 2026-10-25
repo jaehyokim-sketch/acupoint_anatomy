@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -59,7 +69,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>프레임워크</strong>: v2.7 (2026-10-04 개정) · <strong>ARI</strong>: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 77.1 (B, 등급 불변) · <strong>이중 채점</strong>: 독립 채점자 2인, 조정 완료</p>
 <p><strong>핵심 3대 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》
 <strong>Layer A 실증 DB</strong>: 통합 생의학 마스터 DB v3.0 (ST36 근거 묶음: 랜드마크 38편, 로컬 매핑 109편, 외부 39편 — 기전 판정에는 아래 8절 ① 표의 15편만 사용)
-<strong>Layer B 참조 등록부</strong>: <code>01_Framework/layer_b_reference_registry.md</code> (B-Check 6항목, 부합 기준 ≥ 8/12)
+<strong>Layer B 참조 등록부</strong>: 4계층 참조 등록부(B1~B4) (B-Check 6항목, 부합 기준 ≥ 8/12)
 <strong>도량형 환산</strong>: 한대 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$)
 <strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 지배신경·척수 분절·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리, 상세는 부록 A</p>
 </blockquote>
@@ -77,7 +87,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;">《针灸腧穴通考》</td>
-<td style="text-align: left;">"入于下陵，下陵者，膝下三寸，胻外三里也，为合。"(《黄帝内经太素·本输》) / "所谓三里者，下膝三寸也。所谓跗之者，举膝分易见也。"(《素问·针解》) / "取之三里者，低跗。"(《灵枢·邪气藏府病形》) — <code>针灸腧穴通考(上)_321-400.md</code> L3124~3130</td>
+<td style="text-align: left;">"入于下陵，下陵者，膝下三寸，胻外三里也，为合。"(《黄帝内经太素·本输》) / "所谓三里者，下膝三寸也。所谓跗之者，举膝分易见也。"(《素问·针解》) / "取之三里者，低跗。"(《灵枢·邪气藏府病形》) — 《针灸腧穴通考》(上) PDF 321–400쪽 L3124~3130</td>
 <td style="text-align: left;">무릎 아래 3촌, 정강이 바깥. 발등을 젖혀(低跗) 취혈</td>
 <td style="text-align: left;">《内经》에 혈명·명칭 해석·부위·취혈법이 모두 갖춰진 드문 혈위(L3096)</td>
 </tr>
@@ -95,7 +105,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">《中国针灸穴位通鉴》</td>
-<td style="text-align: left;">"足三里二穴，土也，在膝下三寸外廉两筋间，当举足取之。"(《圣济总录》) / 별명 "三里"·"下陵"·"一名鬼邪"·"下陵、鬼邪、下三里" — <code>中国针灸穴位通鉴(上卷)_801-880.md</code> L3410~3428</td>
+<td style="text-align: left;">"足三里二穴，土也，在膝下三寸外廉两筋间，当举足取之。"(《圣济总录》) / 별명 "三里"·"下陵"·"一名鬼邪"·"下陵、鬼邪、下三里" — 《中国针灸穴位通鉴》(上卷) PDF 801–880쪽 L3410~3428</td>
 <td style="text-align: left;">혈명 출처를 《圣济总录》로 표기, 별명 4계열 집록</td>
 <td style="text-align: left;">'足三里' 명칭은 송대</td>
 </tr>
@@ -107,13 +117,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">《中国针灸证治通鉴》</td>
-<td style="text-align: left;">《明堂经》 足三里 주치 "腹中寒，胀满，善噫，恶闻食臭，胃气不足，肠鸣腹痛，泄利，食不化，心下胀" — <code>中国针灸证治通鉴_1-80.md</code> L2162~2166</td>
+<td style="text-align: left;">《明堂经》 足三里 주치 "腹中寒，胀满，善噫，恶闻食臭，胃气不足，肠鸣腹痛，泄利，食不化，心下胀" — 《中国针灸证治通鉴》 PDF 1–80쪽 L2162~2166</td>
 <td style="text-align: left;">위장 증후 중심 단독 주치</td>
 <td style="text-align: left;">$P_{single}$ 근거(9절)</td>
 </tr>
 <tr>
 <td style="text-align: left;">《中国针灸证治通鉴》</td>
-<td style="text-align: left;">"喉痹，胸中暴逆，先取冲脉，后取三里、云门，皆泻之。" — <code>中国针灸证治通鉴_1-80.md</code> L1242</td>
+<td style="text-align: left;">"喉痹，胸中暴逆，先取冲脉，后取三里、云门，皆泻之。" — 《中国针灸证治通鉴》 PDF 1–80쪽 L1242</td>
 <td style="text-align: left;">冲脉(气冲)·云门과의 배오</td>
 <td style="text-align: left;">$P_{comb}$ 근거(9절). 구판은 이 구절을 취혈 기술 칸에 잘못 넣음</td>
 </tr>
@@ -365,7 +375,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <ul>
 <li><strong>보이는 것</strong>: 그림 4-1 모식도의 Layer 2~3(앞정강근 근복)이 실제 영상에서 정강뼈 가쪽면(왼쪽 고에코 곡선과 그 뒤 음향 음영) 바로 바깥에 놓인다는 배치를 확인할 수 있다. 일부 영상에서는 근육 가운데 건막(central aponeurosis)이 밝은 선으로 보인다.</li>
 <li><strong>보이지 않는 것·한계</strong>: 촬영 높이는 데이터셋에 기록되어 있지 않아 ST36(犊鼻下3寸) 높이와 같다고 보지 않는다. 피험자는 신경근 질환 진단 목적의 환자·대조군이며 자침 연구 대상이 아니다. 따라서 이 영상은 <strong>"앞정강근의 일반 초음파 형태 참고"</strong>이며, 경혈 특이 실측(B2)이나 Layer A 근거가 아니고 Layer mm 경계·SI 판단에 쓰지 않는다(스킬 5-2절).</li>
-<li><strong>재현</strong>: <code>python .claude/skills/acupoint-anatomy/scripts/us/us_fetch.py get marzola_msk</code> → <code>extract marzola_msk "DeepLearningUS/TA/"</code> → <code>python .claude/skills/acupoint-anatomy/scripts/us/figures/ST36_ultrasound_TA.py &lt;출력.png&gt; --json &lt;통계.json&gt;</code> (통계 원본: <code>ST36_앞정강근_초음파_통계.json</code>).</li>
+<li><strong>재현</strong>: 공개 데이터셋(Mendeley 3jykz7wz8d, CC BY 4.0)의 앞정강근 영상을 내부 분석 스크립트로 처리하면 그림과 통계를 재현할 수 있다(통계 원본은 부속 데이터북에 수록).</li>
 <li>ST36 높이에서 깊이를 직접 잰 근거는 5절의 papers.id 1896(TI 1.09)이다.</li>
 </ul>
 <hr>
@@ -917,7 +927,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">$P_{comb}$</td>
 <td style="text-align: left;">현대 처방(중풍 반신불수 등)</td>
-<td style="text-align: left;">다혈위 처방 다수(<code>中国针灸证治通鉴_161-240.md</code> L212~298)</td>
+<td style="text-align: left;">다혈위 처방 다수(《中国针灸证治通鉴》 PDF 161–240쪽 L212~298)</td>
 </tr>
 </tbody>
 </table></div>
@@ -943,7 +953,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">81.25</td>
 <td style="text-align: center;">81.25</td>
 <td style="text-align: left;">아래 하위 4항목 평균</td>
-<td style="text-align: left;">通考 <code>(上)_321-400.md</code> L3096~3248, L3478~3506</td>
+<td style="text-align: left;">通考 (上) PDF 321–400쪽 L3096~3248, L3478~3506</td>
 </tr>
 <tr>
 <td style="text-align: left;">$S_{clarity}$ (0.35)</td>
@@ -1032,7 +1042,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 5. 위(T6~T9)와 ST36(L4~S1)은 분절이 맞지 않아, 위장 주치는 분절 반사가 아닌 상척수 미주 경로 <strong>가설</strong>로 설명된다.</p>
 <hr>
 <h2 id="a-fma-fma-510">부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)</h2>
-<p>생성: <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile ST36 --md</code> (2026-10-23). 대응 수준 <code>exact</code>는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다.</p>
+<p>생성: FMA 5.1.0 경혈 프로파일 조회(ST36, 2026-10-23). 대응 수준 <code>exact</code>는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1123,7 +1133,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <ul>
 <li>분절 합집합(B-Check ② 입력): <strong>L4, L5, S1</strong></li>
 <li>두 교재 비교: 공통 FMA 실체 6 · 공통교재 단독 1(FMA:44699) · 김재효 단독 1(FMA:75559)</li>
-<li>Neo4j 교차 확인(<code>fma_neo4j.py query shared_structure --param a=ST36 --param b=GB34</code>): ST36과 양릉천(GB34)은 깊은종아리신경·얕은종아리신경·긴발가락폄근을 직접 공유하고, 온종아리신경을 공통 줄기로 갖는다. 같은 신경 분포 영역의 혈위 비교 시 참고한다(줄기 일부는 FMA is_a 클래스명에서 이은 파생 관계).</li>
+<li>Neo4j 교차 확인(Neo4j 공유 구조 조회: ST36·GB34): ST36과 양릉천(GB34)은 깊은종아리신경·얕은종아리신경·긴발가락폄근을 직접 공유하고, 온종아리신경을 공통 줄기로 갖는다. 같은 신경 분포 영역의 혈위 비교 시 참고한다(줄기 일부는 FMA is_a 클래스명에서 이은 파생 관계).</li>
 <li>인용 한계: FMA는 정상 성인 규범 해부 온톨로지로, 혈위 특이 심도·변이 빈도·반사 기능의 근거가 아니다. 앞 근육가지의 기원(안쪽종말가지 기록), 두렁신경-넙다리신경 연결 누락, 신경 분절 미기재는 4절 주석대로 B1로 보완했다.</li>
 </ul>
 <hr>
@@ -1178,7 +1188,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">부록 A</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA 프로파일 표, Neo4j ST36–GB34 공유 구조</td>
-<td style="text-align: left;"><code>fma_query.py profile ST36 --md</code>, <code>fma_neo4j.py</code></td>
+<td style="text-align: left;">FMA 프로파일 조회, Neo4j 그래프 조회</td>
 </tr>
 <tr>
 <td style="text-align: left;">ARI</td>
@@ -1189,14 +1199,14 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">구판 보관</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">보강 전 md·html·xlsx를 <code>_구판_v2.7_20261023/</code>에 보관</td>
+<td style="text-align: left;">보강 전 md·html·xlsx를 구판 보관본(내부)에 보관</td>
 <td style="text-align: left;">—</td>
 </tr>
 <tr>
 <td style="text-align: left;">4절 그림 4-2</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">앞정강근 횡단 초음파 공개 데이터 참고 영상(Marzola 2021, CC BY 4.0, 건강군 3,092장) 및 통계 표, 한계 명시</td>
-<td style="text-align: left;"><code>scripts/us/figures/ST36_ultrasound_TA.py</code>, Mendeley 3jykz7wz8d</td>
+<td style="text-align: left;">초음파 그림 생성 스크립트(내부), Mendeley 3jykz7wz8d</td>
 </tr>
 <tr>
 <td style="text-align: left;">5절</td>
@@ -1213,7 +1223,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">복원</td>
 <td style="text-align: left;">21:17 다른 도구가 템플릿 재생성본으로 덮어씀(B-Check ②=2·"확정"·단일 채점 ARI 81.2·通考 행 인용 소실 — v2.7에서 이미 고친 오류 재도입)</td>
-<td style="text-align: left;">v2.7+FMA 보강본을 복원하고 재생성본은 <code>_구판_antigravity_20261023/</code>(그림 2장 포함)에 그대로 보관</td>
+<td style="text-align: left;">v2.7+FMA 보강본을 복원하고 재생성본은 구판 보관본(내부)(그림 2장 포함)에 그대로 보관</td>
 <td style="text-align: left;">사용자 결정 2026-10-23</td>
 </tr>
 </tbody>
@@ -1234,13 +1244,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">머리말</td>
 <td style="text-align: left;">프레임워크 문구, "실측 논문 148편 전수 역색인"</td>
 <td style="text-align: left;">v2.7 인용 블록, ARI 표기 / 근거 묶음 수치(38·109·39)로 교체</td>
-<td style="text-align: left;">final_ST36.json notation, pack_ST36.md</td>
+<td style="text-align: left;">ARI 표기 기록, 근거 묶음</td>
 </tr>
 <tr>
 <td style="text-align: left;">1절</td>
 <td style="text-align: left;">通鉴 목차 조각, 证治通鉴 冲脉 고증 문단, 通考 목차 조각</td>
 <td style="text-align: left;">《灵枢·本输》·《素问·针解》·《明堂》 원문과 출처 행</td>
-<td style="text-align: left;">通考 <code>(上)_321-400.md</code> L3096~3248; 通鉴 <code>(上卷)_801-880.md</code> L3410~3692; 证治通鉴 <code>_1-80.md</code> L1242, L2162</td>
+<td style="text-align: left;">通考 (上) PDF 321–400쪽 L3096~3248; 通鉴 (上卷) PDF 801–880쪽 L3410~3692; 证治通鉴 PDF 1–80쪽 L1242, L2162</td>
 </tr>
 <tr>
 <td style="text-align: left;">2절</td>
@@ -1282,7 +1292,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">8절 ①</td>
 <td style="text-align: left;">papers.id 5·12·19·27·38·46·54·59(PMID 공란)</td>
 <td style="text-align: left;">ST36 연구 15편, PMID/DOI 기재</td>
-<td style="text-align: left;">pack_ST36.md, 마스터DB.json</td>
+<td style="text-align: left;">근거 묶음, 통합 생의학 마스터 DB</td>
 </tr>
 <tr>
 <td style="text-align: left;">8절 ②</td>
@@ -1318,7 +1328,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">10절</td>
 <td style="text-align: left;">단일 채점 S_orig 85, ARI-Core 79.0, 민감도 78.3, "엄격하게 검증됨"</td>
 <td style="text-align: left;">이중 채점 S_orig 81.25, ARI-Core 77.5 ± 0, 민감도 77.1, 범위 제한 결론</td>
-<td style="text-align: left;">final_ST36.json</td>
+<td style="text-align: left;">이중 채점 기록</td>
 </tr>
 <tr>
 <td style="text-align: left;">확인 불가</td>
@@ -1330,7 +1340,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">확인 불가</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">papers.id 1841 DOI가 저널과 불일치 의심. DB 수정은 하지 않음</td>
-<td style="text-align: left;">마스터DB.json</td>
+<td style="text-align: left;">통합 생의학 마스터 DB</td>
 </tr>
 <tr>
 <td style="text-align: left;">인용 제외</td>
@@ -1342,13 +1352,17 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">구판 점수</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">구판 v2.6 점수 79.0(비교 불가)</td>
-<td style="text-align: left;"><code>_구판_v2.6/</code> 보고서</td>
+<td style="text-align: left;">구판 보관본(내부) 보고서</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-23 22:01 · 원본: ST36_족삼리_해부생리_실체판명_보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1356,6 +1370,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

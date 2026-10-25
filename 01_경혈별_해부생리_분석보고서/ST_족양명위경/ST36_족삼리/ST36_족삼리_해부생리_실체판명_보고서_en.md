@@ -4,10 +4,10 @@
 
 > **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
 > **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 (ST36 evidence pack: 38 landmark papers, 109 locally mapped papers, 39 external papers — only the 15 papers in Table 8-① are used for the mechanism verdict)
-> **Layer B Reference Registry**: `01_Framework/layer_b_reference_registry.md` (6-item B-Check, concordance threshold ≥ 8/12)
+> **Layer B Reference Registry**: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ---
 
@@ -15,13 +15,13 @@
 
 | Classic | Original excerpt (file & line) | English summary & analysis | Remarks |
 | :--- | :--- | :--- | :--- |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "入于下陵，下陵者，膝下三寸，胻外三里也，為合。"(《黃帝內經太素·本輸》) / "所謂三里者，下膝三寸也。所謂跗之者，舉膝分易見也。"(《素問·針解》) / "取之三里者，低跗。"(《靈樞·邪氣藏府病形》) — `针灸腧穴通考(上)_321-400.md` L3124–3130 | Three cun below the knee, on the lateral side of the shin; located with the foot dorsiflexed (低跗) | One of the rare points for which the *Neijing* (《內經》) gives the name, its meaning, the location and the locating method (L3096) |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "入于下陵，下陵者，膝下三寸，胻外三里也，為合。"(《黃帝內經太素·本輸》) / "所謂三里者，下膝三寸也。所謂跗之者，舉膝分易見也。"(《素問·針解》) / "取之三里者，低跗。"(《靈樞·邪氣藏府病形》) — 《針灸腧穴通考》(上) PDF pp. 321–400 L3124–3130 | Three cun below the knee, on the lateral side of the shin; located with the foot dorsiflexed (低跗) | One of the rare points for which the *Neijing* (《內經》) gives the name, its meaning, the location and the locating method (L3096) |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "入于三里，三里者，土也。在膝下三寸，胻外廉，足陽明脈氣所入也，為合。"(《黃帝明堂經》) / "刺入一寸，留七呼，灸三壯。"(《黃帝明堂經》) — same file, L3136, L3478 | Lateral border of the shin; He-Sea (Earth) point (合土穴); needle insertion 1 cun | Earliest statement of needling depth |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "本穴的縱向定位，古代文獻明確作'膝下三寸'……至於本穴的橫向定位，《靈樞》《明堂經》均未明確說明。" — same file, L3244–3248 | Longitudinal position is explicit; the transverse position is not stated in Han-dynasty sources | Three competing transverse traditions (Section 7) |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "足三里二穴，土也，在膝下三寸外廉兩筋間，當舉足取之。"(《聖濟總錄》) / aliases "三里" · "下陵" · "一名鬼邪" · "下陵、鬼邪、下三里" — `中国针灸穴位通鉴(上卷)_801-880.md` L3410–3428 | Gives 《聖濟總錄》 as the source of the point name and collects four alias lines | The name '足三里' dates from the Song dynasty |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "足三里二穴，土也，在膝下三寸外廉兩筋間，當舉足取之。"(《聖濟總錄》) / aliases "三里" · "下陵" · "一名鬼邪" · "下陵、鬼邪、下三里" — 《中國針灸穴位通鑑》(上卷) PDF pp. 801–880 L3410–3428 | Gives 《聖濟總錄》 as the source of the point name and collects four alias lines | The name '足三里' dates from the Song dynasty |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "刺入一寸五分，留七呼，灸三壯。"(《針灸甲乙經》) / "三里刺入四分，令人氣上。"(《千金翼方》) / "針入八分，留十呼"(《太平聖惠方》) — same file, L3676–3692 | Needling depth varies between texts | Entered in the depth table (Section 5) |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Indications of 足三里 in 《明堂經》: "腹中寒，脹滿，善噫，惡聞食臭，胃氣不足，腸鳴腹痛，泄利，食不化，心下脹" — `中国针灸证治通鉴_1-80.md` L2162–2166 | Single-point indications centred on gastrointestinal signs | Basis for $P_{single}$ (Section 9) |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "喉痹，胸中暴逆，先取衝脈，後取三里、雲門，皆瀉之。" — `中国针灸证治通鉴_1-80.md` L1242 | Combination with 衝脈 (氣衝) and 雲門 | Basis for $P_{comb}$ (Section 9). The earlier edition wrongly placed this passage in the point-location column |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Indications of 足三里 in 《明堂經》: "腹中寒，脹滿，善噫，惡聞食臭，胃氣不足，腸鳴腹痛，泄利，食不化，心下脹" — 《中國針灸證治通鑑》 PDF pp. 1–80 L2162–2166 | Single-point indications centred on gastrointestinal signs | Basis for $P_{single}$ (Section 9) |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "喉痹，胸中暴逆，先取衝脈，後取三里、雲門，皆瀉之。" — 《中國針灸證治通鑑》 PDF pp. 1–80 L1242 | Combination with 衝脈 (氣衝) and 雲門 | Basis for $P_{comb}$ (Section 9). The earlier edition wrongly placed this passage in the point-location column |
 
 ---
 
@@ -109,7 +109,7 @@ The KJH DB (Acupoint Nomenclature & Alias Comparative Database, row 122: No. 119
 
 - **What the image shows**: it confirms the arrangement in Figure 4-1, with Layer 2–3 (belly of tibialis anterior) lying just lateral to the lateral surface of the tibia (the hyperechoic curve on the left with its acoustic shadow). In some images the central aponeurosis appears as a bright line within the muscle.
 - **What it does not show / limits**: the scanning level is not recorded in the dataset, so it is not assumed to match the level of ST36 (犢鼻下3寸). The subjects are patients and controls examined for neuromuscular diagnosis, not needling-study participants. The image is therefore **a general reference for the ultrasound appearance of tibialis anterior**; it is neither point-specific measurement (B2) nor Layer A evidence and is not used for layer depth boundaries or the SI (skill section 5-2).
-- **Reproduction**: `python .claude/skills/acupoint-anatomy/scripts/us/us_fetch.py get marzola_msk` → `extract marzola_msk "DeepLearningUS/TA/"` → `python .claude/skills/acupoint-anatomy/scripts/us/figures/ST36_ultrasound_TA.py <output.png> --json <stats.json>` (raw statistics: `ST36_앞정강근_초음파_통계.json`).
+- **Reproduction**: the figure and statistics can be reproduced by processing the tibialis anterior images of the public dataset (Mendeley 3jykz7wz8d, CC BY 4.0) with the internal analysis scripts (raw statistics are in the supplementary databook).
 - The direct depth measurement at the ST36 level is papers.id 1896 (TI 1.09) in Section 5.
 
 ---
@@ -255,7 +255,7 @@ flowchart TB
 | $P_{comb}$ | Pathogenic qi in the large intestine (大腸邪氣) | 肓之原 + 巨虛上廉 + 三里 (《靈樞·四時氣》) |
 | $P_{comb}$ | Spleen–stomach deficiency (脾胃虛弱) | 三里 + 三陰交 (《針經摘英集》) |
 | $P_{comb}$ | Stroke (中風) prevention | Moxibustion at 7 points: 百會 · 耳前髮際 · 肩井 · 風市 · 三里 · 絕骨 · 曲池 (*Taiping Shenghui Fang* (《太平聖惠方》)) |
-| $P_{comb}$ | Modern prescriptions (e.g. hemiplegia (半身不遂) after stroke) | Numerous multi-point prescriptions (`中国针灸证治通鉴_161-240.md` L212–298) |
+| $P_{comb}$ | Modern prescriptions (e.g. hemiplegia (半身不遂) after stroke) | Numerous multi-point prescriptions (《中國針灸證治通鑑》 PDF pp. 161–240 L212–298) |
 
 ---
 
@@ -267,7 +267,7 @@ flowchart TB
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| $S_{orig}$ (0.40) | 81.25 | 81.25 | 81.25 | Mean of the 4 sub-items below | Tongkao `(上)_321-400.md` L3096–3248, L3478–3506 |
+| $S_{orig}$ (0.40) | 81.25 | 81.25 | 81.25 | Mean of the 4 sub-items below | Tongkao (上) PDF pp. 321–400 L3096–3248, L3478–3506 |
 | $S_{clarity}$ (0.35) | 75 | 75 | 75 | The two textbooks agree (one cutaneous-nerve item differs, resolved by FMA as a difference of trunk) + standard entities confirmed by B1 and FMA; no point-specific measurement → below 100 | Section 6, B1-01, B1-03, FMA:22532, 44771 |
 | $S_{reflex}$ (0.25) | 75 | 75 | 75 | Many ST36 animal studies + human non-RCT and multi-point RCT; B-Check 9 (⑥ = 1) → below 100 | Section 8 ①②, papers.id 317, 294, 295, 237, 1843 |
 | SI ($S_{safety}$) | 75 | 75 | 75 | No 'Contraindicated for needling (禁鍼)' record. 23 mm reaches Layer 2–3; perpendicular insertion at the 46 mm upper limit may reach Layer 4 but can be avoided by angling; upper depth limit stated in the literature | Section 5, needling-depth DB row 121 |
@@ -305,7 +305,7 @@ Limits on the scope of application:
 
 ## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile ST36 --md` (2026-10-23). Match level `exact` means the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.
+Generated by FMA 5.1.0 acupoint profile query (ST36; 2026-10-23). Match level `exact` means the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.
 
 | Category | Textbook term | FMA substrate (ID & label) | Match | Source | Innervation & nerve trunk chain | Spinal segment |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -320,7 +320,7 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 - Union of segments (input to B-Check ②): **L4, L5, S1**
 - Comparison of the two textbooks: 6 shared FMA entities · 1 Common Textbook only (FMA:44699) · 1 Kim Jaehyo only (FMA:75559)
-- Neo4j cross-check (`fma_neo4j.py query shared_structure --param a=ST36 --param b=GB34`): ST36 and Yanglingquan (陽陵泉, GB34) directly share the deep fibular nerve, the superficial fibular nerve and extensor digitorum longus, and have the common fibular nerve as a common trunk. Useful when comparing points in the same nerve territory (some trunk links are derived from FMA is_a class names).
+- Neo4j cross-check (Neo4j shared-structure query: ST36, GB34): ST36 and Yanglingquan (陽陵泉, GB34) directly share the deep fibular nerve, the superficial fibular nerve and extensor digitorum longus, and have the common fibular nerve as a common trunk. Useful when comparing points in the same nerve territory (some trunk links are derived from FMA is_a class names).
 - Limits of citation: FMA is a normative ontology of adult anatomy and is not evidence of point-specific depth, variant frequency or reflex function. The origin of the anterior muscular branches (recorded on the medial terminal branch), the missing saphenous–femoral link and the absence of nerve segments were supplemented from B1 as noted in Section 4.
 
 ---
@@ -335,13 +335,13 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 | Section 8 | Mechanism summary | Figure 8-1 FMA peripheral afferent pathway (Mermaid) | FMA:44771 → 19039 → 19034 → 5909 |
 | Section 8 ② | B-Check ①, ② rationale | Added FMA IDs and segmental_supply pointers (scores unchanged: ① = 2, ② = 1) | FMA segmental_supply |
 | Section 10 | $S_{clarity}$ rationale | Noted FMA confirmation of standard entities (score unchanged at 75); one clause added to the conclusion | Section 6, Appendix A |
-| Appendix A | — | FMA profile table; Neo4j ST36–GB34 shared structures | `fma_query.py profile ST36 --md`, `fma_neo4j.py` |
+| Appendix A | — | FMA profile table; Neo4j ST36–GB34 shared structures | FMA profile query, Neo4j graph query |
 | ARI | ARI-Core 77.5 ± 0 (B), SI 75 | **No change** — FMA and ultrasound are B1-supplementary/reference evidence and do not change rubric levels | Skill sections 5-1, 5-2 |
-| Archive | — | Pre-supplement md, html and xlsx kept in `_구판_v2.7_20261023/` | — |
-| Section 4, Figure 4-2 | — | Reference transverse ultrasound of tibialis anterior from public data (Marzola 2021, CC BY 4.0, 3,092 healthy-group images), statistics table and stated limits | `scripts/us/figures/ST36_ultrasound_TA.py`, Mendeley 3jykz7wz8d |
+| Archive | — | Pre-supplement md, html and xlsx kept in the internal archive | — |
+| Section 4, Figure 4-2 | — | Reference transverse ultrasound of tibialis anterior from public data (Marzola 2021, CC BY 4.0, 3,092 healthy-group images), statistics table and stated limits | ultrasound figure script (internal), Mendeley 3jykz7wz8d |
 | Section 5 | Safety-range text | Added ultrasound measurement papers.id 1896, TI 1.09 (GB21 1.54); SI 75 kept | PubMed PMID 42500462 |
 | Section 8 ③ | 2026-10-04 run | 4 rows for the 2026-10-23 Rank 6 re-run (18 new papers, verdict unchanged) | `_metadata.sync_log` |
-| Restoration | At 21:17 another tool overwrote the report with a template regeneration (B-Check ② = 2, "confirmed", single-scored ARI 81.2, loss of Tongkao row citations — reintroducing errors already fixed in v2.7) | Restored the v2.7 + FMA supplemented version; the regenerated version kept unchanged (with 2 figures) in `_구판_antigravity_20261023/` | User decision, 2026-10-23 |
+| Restoration | At 21:17 another tool overwrote the report with a template regeneration (B-Check ② = 2, "confirmed", single-scored ARI 81.2, loss of Tongkao row citations — reintroducing errors already fixed in v2.7) | Restored the v2.7 + FMA supplemented version; the regenerated version kept unchanged (with 2 figures) in the internal archive | User decision, 2026-10-23 |
 
 ---
 
@@ -349,25 +349,25 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Header | Framework wording, "full inverted index of 148 measured papers" | v2.7 citation block, ARI notation / replaced by evidence-pack counts (38, 109, 39) | final_ST36.json notation, pack_ST36.md |
-| Section 1 | Fragments of the Tongjian table of contents, a Zhengzhi Tongjian 衝脈 collation paragraph, fragments of the Tongkao table of contents | Original text of 《靈樞·本輸》, 《素問·針解》 and 《明堂》 with source line numbers | Tongkao `(上)_321-400.md` L3096–3248; Tongjian `(上卷)_801-880.md` L3410–3692; Zhengzhi Tongjian `_1-80.md` L1242, L2162 |
+| Header | Framework wording, "full inverted index of 148 measured papers" | v2.7 citation block, ARI notation / replaced by evidence-pack counts (38, 109, 39) | ARI notation record, evidence pack |
+| Section 1 | Fragments of the Tongjian table of contents, a Zhengzhi Tongjian 衝脈 collation paragraph, fragments of the Tongkao table of contents | Original text of 《靈樞·本輸》, 《素問·針解》 and 《明堂》 with source line numbers | Tongkao (上) PDF pp. 321–400 L3096–3248; Tongjian (上卷) PDF pp. 801–880 L3410–3692; Zhengzhi Tongjian PDF pp. 1–80 L1242, L2162 |
 | Section 2 | Title-only template | Primary/secondary table by era | Same classics |
 | Section 3 | "Verified classical aliases: -" | Table of 三里, 下陵, 鬼邪, 下三里 | KJH xlsx row 122; Tongkao L3096–3146; Tongjian L3412–3428 |
 | Section 4 | Generic layer boundaries 2.5/6.5/16.5/22 mm, 'Layer 5 joint capsule' | ST36 order of structures (tibialis anterior → deep fibular nerve and anterior tibial vessels → interosseous membrane), X and Y description; mm boundaries omitted for lack of measurement | Textbook datasets; Tongkao L3114–3116 |
 | Section 5 | Formula only | Fen → mm table by text | Needling-depth xlsx row 121; Tongjian L3676–3692 |
 | Section 6 | Generic sentence "the two textbooks agree" | Actual structure names; cutaneous-nerve difference stated | Common Textbook Common Textbook dataset detail rows 650–655; Kim Jaehyo xlsx detail rows 954–959 |
 | Section 7 | Rule description only | Table of three transverse traditions; Δ ≤ 15 mm, no split | Tongkao L3190–3248 |
-| Section 8 ① | papers.id 5, 12, 19, 27, 38, 46, 54, 59 (PMIDs blank) | 15 ST36 studies with PMID/DOI | pack_ST36.md, master DB .json |
+| Section 8 ① | papers.id 5, 12, 19, 27, 38, 46, 54, 59 (PMIDs blank) | 15 ST36 studies with PMID/DOI | evidence pack, Integrated Biomedical Master DB |
 | Section 8 ② | ② = 2 (B3-01 Head zone) | ② = 1 (L4–S1 vs T6–T9 segmental mismatch, supraspinal pathway) | final bcheck n = 2 |
 | Section 8 ② | ③ = 1, ④ = 1 (B3-11), ⑤ = 2 | ③ = 2, ④ = 2 (B3-12, 15, 16, 17), ⑤ = 1 | final bcheck n = 3–5 |
 | Section 8 ② | "Concordance verdict: confirmed" | "Concordant", animal-only flag | Framework section 5, item 8 |
 | Section 8 ③ | None | External search log table | pack sync_log |
 | Section 9 | Definition only | Actual $P_{single}$ / $P_{comb}$ separation | Tongkao L3310–3460; Zhengzhi Tongjian L1242, L2166 |
-| Section 10 | Single scoring: $S_{orig}$ 85, ARI-Core 79.0, sensitivity 78.3, "rigorously verified" | Dual scoring: $S_{orig}$ 81.25, ARI-Core 77.5 ± 0, sensitivity 77.1, conclusion with scope limits | final_ST36.json |
+| Section 10 | Single scoring: $S_{orig}$ 85, ARI-Core 79.0, sensitivity 78.3, "rigorously verified" | Dual scoring: $S_{orig}$ 81.25, ARI-Core 77.5 ± 0, sensitivity 77.1, conclusion with scope limits | dual-scoring record |
 | Unresolved | — | *Jiayi Jing* depth: DB 10 fen vs "一寸五分" (15 fen) as quoted in the Tongjian. The original *Jiayi Jing* was not checked, so the DB value is kept and the variant noted | Needling-depth xlsx row 121; Tongjian L3676 |
-| Unresolved | — | DOI of papers.id 1841 suspected not to match the journal. DB not modified | Master DB .json |
+| Unresolved | — | DOI of papers.id 1841 suspected not to match the journal. DB not modified | Integrated Biomedical Master DB |
 | Excluded from citation | Landmark paper papers.id 1700 in the pack | Not cited because it could not be bibliographically verified (superseded); the somato-autonomic reflex framework is cited as B3-04, B3-05 | Adjudicator notice, 2026-10-04 |
-| Earlier-edition score | — | v2.6 score 79.0 (not comparable) | Report in `_구판_v2.6/` |
+| Earlier-edition score | — | v2.6 score 79.0 (not comparable) | Report in the internal archive |
 
 ---
 
@@ -375,7 +375,7 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `ST36_족삼리_해부생리_실체판명_보고서.md` |
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition |
 | Title, Sections 4 and 10 | "Zusanli (足三里, ST36)(足三里, ST36)" and similar duplicated annotations | Duplicates removed | — |
 | Figures 4-1, 4-2 | Image paths corrupted by term replacement (`ST36_Zusanli (足三里, ST36)_…png`), so images were missing from the HTML | Restored to the actual file names | Files in the report folder |
 | Classical quotations | Simplified characters (e.g. 针, 胫, 犊鼻, 灵枢) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |

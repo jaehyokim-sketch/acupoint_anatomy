@@ -1,17 +1,17 @@
 # [Acupoint Anatomy] Headache in Donguibogam (《東醫寶鑑》) — Comprehensive Acupuncture-Anatomy Report: Reconstruction of the Original Text, Single-Point Indication Tiers, Anatomical Similarity Strata and Trigeminocervical Convergence
 
-> **Framework**: v2.7 · **Classification**: Category 4 symptom-based acupuncture-anatomy clinical matrix · **Edition**: full re-analysis (2026-10-25). The 29 outputs of the old edition are archived in `_구판_20261024/`, and the audit results are given in Section 12.
+> **Framework**: v2.7 · **Classification**: Category 4 symptom-based acupuncture-anatomy clinical matrix · **Edition**: full re-analysis (2026-10-25). The 29 outputs of the old edition are archived in the internal archive, and the audit results are given in Section 12.
 > **Scope**: Ranks 0–6. Rank 7 ARI is **not scored** (a 20-point prescription matrix — ARI for individual points is scored in the Category 1 reports).
-> **Primary text**: Donguibogam (《東醫寶鑑》), Chapter on External Form (外形篇), vol. 1, Head (頭) (`01_도서_번역_및_원전/동의보감/동의보감_030_外形篇一_頭.md`), Sections 1.7–1.25 and Section 1.33 【鍼灸法】 (acupuncture and moxibustion methods) (L557, L563)
+> **Primary text**: Donguibogam (《東醫寶鑑》), Chapter on External Form (外形篇), vol. 1, Head (頭), Sections 1.7–1.25 and Section 1.33 【鍼灸法】 (acupuncture and moxibustion methods) (L557, L563)
 > **Three Primary Classics**:
 > - *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), 「十九、頭痛」 (`中国针灸证治通鉴_16_…md` L580–954): tracing the sources of the prescriptions
 > - *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》), 【適應症】 (indications): adjudication of the single-point indication tier of each point
 > - *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》): collation
 >
-> **Anatomical basis**: FMA 5.1.0 (`fma_query.py profile`), two-textbook mapping table, B1 normative anatomy (B1-01, B1-02, B1-03) · 3D: BodyParts3D 4.0 (B1 supplementary)
-> **Layer A**: papers linked in the integrated DB (state as of 2026-10-25), collated with PubMed metadata. `sync_master_db.py` was not run (**external search incomplete**).
-> **Datasheet**: Donguibogam Headache Clinical Acupuncture Anatomy Matrix Analysis Databook (11 sheets) · Reproduction scripts: `scripts/`
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). Quotations from Donguibogam are reproduced as they stand in the source. The *Tongkao* (《通考》) and *Zhengzhi Tongjian* (《證治通鑑》) files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk; the form "胆中" is kept as written because its relation to 膻中 is at issue (Section 2). The old-edition quotations audited in Section 12 are reproduced unaltered as evidence.
+> **Anatomical basis**: FMA 5.1.0 (FMA profile query), two-textbook mapping table, B1 normative anatomy (B1-01, B1-02, B1-03) · 3D: BodyParts3D 4.0 (B1 supplementary)
+> **Layer A**: papers linked in the integrated DB (state as of 2026-10-25), collated with PubMed metadata. the integrated DB sync (external search) was not run (**external search incomplete**).
+> **Datasheet**: Donguibogam Headache Clinical Acupuncture Anatomy Matrix Analysis Databook (11 sheets) · Reproduction scripts: kept internally
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). Quotations from Donguibogam are reproduced as they stand in the source. The *Tongkao* (《通考》) and *Zhengzhi Tongjian* (《證治通鑑》) refined editions are in simplified script, so line numbers refer to those editions; the form "胆中" is kept as written because its relation to 膻中 is at issue (Section 2). The old-edition quotations audited in Section 12 are reproduced unaltered as evidence.
 
 ---
 
@@ -116,7 +116,7 @@ Symptom groups: H1 頭痛·頭風·腦痛·頂上痛 (headache, head-wind, brain
 
 ## 4. Anatomical Similarity Method (Rank 5 · FMA Section 5-1)
 
-- **Input**: `fma_query.py profile --json` was run for each of the 20 points.
+- **Input**: FMA profile query was run for each of the 20 points.
   - Yintang (印堂, GV29) is absent from the two-textbook dataset, so a manual B1 mapping was used (B1-01, B1-03): procerus FMA:46769, corrugator supercilii 46794, supratrochlear nerve 52642, infratrochlear nerve 52693, supratrochlear artery 50025 and vein 50898, dorsal nasal artery 50000.
   - Taiyang (太陽) is represented by the profile of Tongziliao (瞳子髎, GB1) (Section 2).
 - **Features and weights** (provisional):
@@ -266,11 +266,11 @@ Only FMA structures that have meshes and are shared by two or more points within
 
 | File | Contents |
 | :-- | :-- |
-| `동의보감_두통_침구해부_종합보고서.md`·`.html` / `_en.md`·`_en.html` | This report (Korean and English) |
+| Comprehensive report (Korean and English) | This report |
 | Donguibogam Headache Clinical Anatomy Matrix Databook | 1 headache types · 2 鍼灸法 prescriptions · 3 single-point indication tiers · 4 evidence entries · 5 FMA anatomical features · 6 similarity matrix · 7 strata · 8 Layer A · 9 old-edition audit (quotations) · 10 old-edition audit (types and points) · 11 methods |
-| `Fig1`~`Fig5_*_ko.png` / `_en.png` | 7 figures × 2 languages |
-| `scripts/` | `headache_indications.py` (Ranks 1–4) → `hd_similarity.py` (similarity, strata, TCC) → `hd_figures.py`·`hd_render3d.py` (figures) → `hd_matrix.py` (xlsx) · `audit_old.py` (old-edition audit). Single-point indication parsing uses the output (`indications.json`) of `../영추경맥_수태음시동병_매트릭스/scripts/extract_indications.py` |
-| `_구판_20261024/` | The 29 old-edition outputs (HTML dashboard, 9×36 grid figure, 2 xlsx files, zip) — archived without modification |
+| Figures Fig1–Fig5 | 7 figures × 2 languages |
+| Analysis scripts (internal) | Single-point indication parsing (Ranks 1–4) → similarity, strata, TCC → figures and 3D rendering → databook · old-edition audit. Single-point indication parsing reuses the parsing output of the Lingshu Jingmai Hand-Taiyin matrix |
+| the internal archive | The 29 old-edition outputs (HTML dashboard, 9×36 grid figure, 2 xlsx files, zip) — archived without modification |
 
 ## 12. Audit of the Old Edition (before 2026-10-24)
 
@@ -321,5 +321,5 @@ The 22 partial or not-found quotations cannot be used as direct quotations and w
 
 ## 13. Record of Preparation
 
-- Rank 0: `sync_skill_settings.py --check` reported no drift (the same as the 2026-10-24 check). The canonical v2.7 was applied.
+- Rank 0: the skill-settings sync check reported no drift (the same as the 2026-10-24 check). The canonical v2.7 was applied.
 - Author: Claude Code, 2026-10-25.

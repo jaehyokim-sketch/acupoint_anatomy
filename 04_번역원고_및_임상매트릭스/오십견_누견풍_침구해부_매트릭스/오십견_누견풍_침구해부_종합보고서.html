@@ -255,7 +255,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 4. <strong>결론과 비유</strong>:</p>
 <blockquote>
 <p><em>"조구 투 승산이 오십견에 효과가 있고 재현될 수 있는 것은 사실이다. 그러나 이는 오십견에 대한 특이적 혈위 주치가 아니다. 마치 </em><em>소리 감지등(拍手亮燈)의 원리를 모른 채 손뼉을 치면 불이 켜진다고 해서 손뼉 치기만을 맹신하는 것</em><em>과 같다. 큰 소리를 내면 발을 굴러도 불이 켜지듯, 하지의 강자극이 유발하는 전신성 통증 게이트 억제 효과일 뿐인데 이를 오십견 특효혈로 여기는 것은 맹목적이다."</em>
-   - <em>(정제 주)</em> 위 인용은 의역이다. 《通考》 원문(<code>针灸腧穴通考_08_上_足阳明胃经穴-3.md</code> L1149~1153)의 요지는 두 가지다. 하나는 "刺法是强刺激，加上活动患病处…活动是至关重要的，比穴位本身更重要。之所以取下肢穴…是因为不影响肩关节的活动"이고, 다른 하나는 결론 "就像'拍手亮灯'的经验…如果我们不知道'声控灯'的秘密…都是盲目的"이다. 곧 <strong>환부 능동 운동이 혈위보다 중요</strong>하다는 것이다. 'DNIC/전신성 통증 억제'는 이 보고서의 해석(B3-08 유추 수준)이며 《通考》의 표현이 아니다. 계보 서술(李志明 1965, 盛燮荪 1965, 胡学曾 1966, 王文绵 1959, '舶来品')은 《通考》 L1135~1141(彭增福, 中国针灸 2009;29(2):118 인용)과 일치한다.</p>
+   - <em>(정제 주)</em> 위 인용은 의역이다. 《通考》 원문(《针灸腧穴通考》 上 足阳明胃经穴-3 L1149~1153)의 요지는 두 가지다. 하나는 "刺法是强刺激，加上活动患病处…活动是至关重要的，比穴位本身更重要。之所以取下肢穴…是因为不影响肩关节的活动"이고, 다른 하나는 결론 "就像'拍手亮灯'的经验…如果我们不知道'声控灯'的秘密…都是盲目的"이다. 곧 <strong>환부 능동 운동이 혈위보다 중요</strong>하다는 것이다. 'DNIC/전신성 통증 억제'는 이 보고서의 해석(B3-08 유추 수준)이며 《通考》의 표현이 아니다. 계보 서술(李志明 1965, 盛燮荪 1965, 胡学曾 1966, 王文绵 1959, '舶来品')은 《通考》 L1135~1141(彭增福, 中国针灸 2009;29(2):118 인용)과 일치한다.</p>
 </blockquote>
 <h3 id="36">3.6 편찬 원칙: 병변 부위 중심의 선혈학</h3>
 <ul>
@@ -431,7 +431,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tr>
 </tbody>
 </table></div>
-<p><em>(정제 주 — FMA 대조, 2026-10-25)</em> 표의 FMA ID 25개는 FMA 5.1.0 라벨과 모두 일치한다. 해당 구조도 2대 교재의 경혈별 FMA 대응표(<code>fma_query.py profile</code>)에 실제로 있다. 그 밖에 다음을 바로잡는다.
+<p><em>(정제 주 — FMA 대조, 2026-10-25)</em> 표의 FMA ID 25개는 FMA 5.1.0 라벨과 모두 일치한다. 해당 구조도 2대 교재의 경혈별 FMA 대응표(FMA 프로파일 조회)에 실제로 있다. 그 밖에 다음을 바로잡는다.
 - <strong>교재에 없는 구조</strong>: Layer 4~5 열의 <em>견봉하 활액낭·관절낭·부리돌기 활액낭·견갑골 극하와 골막</em>은 2대 교재 어느 혈의 해부구조에도 없다. 규범 해부(B1-01·B1-03)에 따른 <strong>추론</strong>으로 읽어야 한다.
 - <strong>雲門(LU02)</strong>: 교재 구조에 <strong>어깨밑근이 없다</strong>(큰가슴근·빗장밑근·가쪽가슴근신경·겨드랑동정맥 등). 어깨밑근은 오히려 肩髃(LI15)의 교재 구조에 있다. 따라서 3.4절·5절의 "雲門 = 견갑하근 자극점"은 교재 근거가 아니라 현대 시술점(부침 P1·부리돌기 주사점)과의 대응 주장이다.
 - <strong>분절</strong>(FMA·B1 보완, 11절 그림 B):
@@ -889,7 +889,7 @@ $$\text{Safety Index (SI)} = S_{safety} \quad (\text{독립 표기})$$</p>
 <h2 id="11-fma-510-2026-10-25-rank-56">11. FMA 5.1.0 해부 분석과 해부학 이미지 (2026-10-25 정제 추가, Rank 5·6)</h2>
 <h3 id="111">11.1 방법</h3>
 <ul>
-<li><strong>입력</strong>: 15혈마다 <code>fma_query.py profile &lt;코드&gt; --json</code>을 실행해 2대 교재 해부구조의 FMA 대응을 얻었다. 대응 수준은 exact 계열·parent(branch_of)만 쓴다. 肩前(EX-UE)은 교재에 없어 B1 수작업 대응을 썼다.</li>
+<li><strong>입력</strong>: 15혈마다 FMA 프로파일 조회를 실행해 2대 교재 해부구조의 FMA 대응을 얻었다. 대응 수준은 exact 계열·parent(branch_of)만 쓴다. 肩前(EX-UE)은 교재에 없어 B1 수작업 대응을 썼다.</li>
 <li><strong>유사도</strong>: 가중 Jaccard로 계산했다(잠정 가중치).</li>
 <li>신경 영역 0.35: 구조 신경 + 지배신경 + 줄기 사슬</li>
 <li>척수 분절 0.30: FMA 분절, 서수 라벨, B1 보완</li>
@@ -899,7 +899,7 @@ $$\text{Safety Index (SI)} = S_{safety} \quad (\text{독립 표기})$$</p>
 <li><strong>군집</strong>: UPGMA, 거리 = 1 − 유사도로 계층 군집했다. 코페네틱 상관은 <strong>0.931</strong>이고, 등가중치에서도 군집이 일치했다(ARI <strong>1.0</strong>).</li>
 <li><strong>어깨관절 신경지배</strong>: Hilton 법칙상 어깨관절은 어깨위·겨드랑·가쪽가슴근신경(C5–C6)이 지배한다(B1-01·B1-03). 이를 B-Check ② 분절 정합의 기준으로 삼았다.</li>
 <li><strong>기능 해부</strong>: 다섯 운동 방향마다 주동근(A)과 제한 근육(R)을 B1-03 규범 운동학으로 정의했다. 그다음 각 혈의 FMA 근육과 맞대어 보았다.</li>
-<li><strong>3D 측정</strong>(B1 보조): BodyParts3D 4.0 메쉬로 계산했다(<code>mesh3d.py</code> 공용 함수). 구조의 부피와 구조 간 최소 거리를 쟀다.</li>
+<li><strong>3D 측정</strong>(B1 보조): BodyParts3D 4.0 메쉬로 계산했다(3D 메쉬 측정 도구). 구조의 부피와 구조 간 최소 거리를 쟀다.</li>
 <li>어깨세모근·등세모근은 전체 메쉬가 없어 부분 메쉬(빗장·봉우리·가시 부분 / 내림·가로·오름 부분)로 대신했다.</li>
 <li><strong>폐 메쉬(오른폐 FMA:7309·위엽 7333)는 기관지 나무만 있고 실질·흉막 표면이 없다.</strong> 그래서 폐까지의 거리는 잴 수 없고, 흉막 꼭대기를 둘러싸는 첫째·둘째갈비뼈까지의 거리를 대리 지표로 썼다.</li>
 </ul>
@@ -1345,7 +1345,7 @@ $$\text{Safety Index (SI)} = S_{safety} \quad (\text{독립 표기})$$</p>
 <tr>
 <td style="text-align: left;">2026-10-25</td>
 <td style="text-align: left;">FMA 분석·이미지 추가(그림 A~D, 3D E1~E3), 인용·운동학·Layer A·ARI 감사, 정제 주 삽입, xlsx 정제 시트 6개 추가</td>
-<td style="text-align: left;">Claude Code (<code>scripts/fs_analysis.py</code>·<code>fs_figures.py</code>)</td>
+<td style="text-align: left;">Claude Code (내부 분석·그림 스크립트)</td>
 </tr>
 <tr>
 <td style="text-align: left;">2026-10-25</td>
@@ -1359,7 +1359,7 @@ $$\text{Safety Index (SI)} = S_{safety} \quad (\text{독립 표기})$$</p>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-25 11:06 · 원본: 오십견_누견풍_침구해부_종합보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

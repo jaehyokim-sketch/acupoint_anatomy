@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -56,7 +66,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <article>
 <h1 id="_1">📜 부돌(扶突)의 별칭 풍부(風府) 문헌 출처 및 수혈고증 분석 보고서</h1>
 <blockquote>
-<p><strong>프레임워크</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: 같은 폴더에 csv/xlsx 없음 — 3대 원전 <code>chunks_refined</code>(<code>针灸腧穴通考(上)_1-80.md</code> L855-879, <code>(上)_241-320.md</code> L392-540, <code>(下)_401-480.md</code> L2066-2187; <code>中国针灸穴位通鉴(上卷)_481-560.md</code> L3816-3928)로 대조</p>
+<p><strong>프레임워크</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: 별도 데이터셋 없음 — 3대 원전 정제본(《针灸腧穴通考》(上) PDF 1–80쪽 L855-879, (上) PDF 241–320쪽 L392-540, (下) PDF 401–480쪽 L2066-2187; 《中国针灸穴位通鉴》(上卷) PDF 481–560쪽 L3816-3928)로 대조</p>
 <p><strong>v2.7 핵심 정정</strong>: 3대 원전에서 부돌의 별칭은 <strong>水穴</strong>(《黄帝明堂经》, 《外台秘要》)과 <strong>水泉</strong>(《古法新解会元针灸学》)뿐이며, '풍부'는 부돌의 별칭으로 확인되지 않는다. 풍부와의 관계는 《灵枢·寒热病》 처방에서 부돌과 함께 쓰인 <strong>舌本(풍부의 별명)</strong> 을 통한 것이다. 제목의 "부돌의 별칭 풍부"는 이 관계를 가리키는 작업명으로 남겨 둔다.</p>
 </blockquote>
 <p>《中国针灸穴位通鉴》, 《中国针灸证治通鉴》, 《针灸腧穴通考》 3대 침구 전문 서적의 腧穴考證(수혈고증) 및 고대 문헌 조문 분석을 바탕으로, <strong>부돌(扶突, LI18)</strong>의 별칭이 <strong>풍부(風府, GV16)</strong>와 연관되어 나타나는 문헌 출처와 그 의학사적 형성 배경을 정밀 정리한 보고서입니다.</p>
@@ -71,7 +81,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <blockquote>
 <p><strong>"舌本，一名风府，在项入发际一寸督脉上."</strong>
 <em>(여기서 </em><em>'설본(舌本)'은 일명 '풍부(風府)'</em><em>라고도 하며, 목 뒤 머리카락 경계로 들어가 1寸, 독맥 위에 위치한다.)</em></p>
-<p><em>(2026-10-24 정제 주)</em> 구판의 "在项<strong>人</strong>发际"는 《腧穴通考》 扶突 조 按(<code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_05_上_手阳明大肠经穴-2.md</code> L1953) 한 곳의 판본 오식이다. 같은 杨上善 주는 《腧穴通考》 총론(<code>针灸腧穴通考_02_上_序·凡例·总论-2.md</code> L1804)·扶突 문헌분석(<code>…_05_…md</code> L1939)·风府 조(<code>针灸腧穴通考_22_下_督脉穴-2.md</code> L197)와 《证治通鉴》(<code>중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_14_第叁编_内科病症_四中风至八痉证.md</code> L1071)에서 모두 "入发际"이고, 권차는 "卷二十六"이다.</p>
+<p><em>(2026-10-24 정제 주)</em> 구판의 "在项<strong>人</strong>发际"는 《腧穴通考》 扶突 조 按(《针灸腧穴通考》 上 手阳明大肠经穴-2 L1953) 한 곳의 판본 오식이다. 같은 杨上善 주는 《腧穴通考》 총론(《针灸腧穴通考》 上 序·凡例·总论-2 L1804)·扶突 문헌분석(<code>…_05_…md</code> L1939)·风府 조(《针灸腧穴通考》 下 督脉穴-2 L197)와 《证治通鉴》(《中国针灸证治通鉴》 第叁编 内科病症 四中风至八痉证 L1071)에서 모두 "入发际"이고, 권차는 "卷二十六"이다.</p>
 </blockquote>
 <h4 id="3-39">③ 《외대필요(外台秘要)》 권39 (당대 왕도 輯錄)</h4>
 <blockquote>
@@ -83,7 +93,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <h3 id="2">🔬 2. 문헌적 전이(傳移) 및 별명 공유가 일어난 고증적 원인</h3>
 <p>《침구수혈통고(针灸腧穴通考)》 하권(p. 58, 62~65)의 수혈 고증(腧穴考證)에 따르면, 부돌(扶突)과 풍부(風府)가 이명 및 주치증으로 문헌상 얽히게 된 데에는 <strong>두 가지 주요 의학사적 원인</strong>이 있습니다.</p>
 <blockquote>
-<p><em>(v2.7 쪽수 주)</em> "p. 58, 62~65"는 <code>chunks_refined</code> 파일의 PDF 쪽 번호다. 관련 기술은 하권 风府 조(PDF 62쪽 = 인쇄 1234쪽), 脑户 조(PDF 65쪽 = 인쇄 1237쪽)에 있고, 핵심 논지는 <strong>상권</strong> 총론(인쇄 14-15쪽)과 扶突 조(인쇄 231-232쪽)에 있다. '이명'으로 얽혔다는 표현은 원전에서 확인되지 않으며, 원전이 말하는 것은 <strong>주치 조문의 오귀속</strong>이다.</p>
+<p><em>(v2.7 쪽수 주)</em> "p. 58, 62~65"는 원전 정제본 파일의 PDF 쪽 번호다. 관련 기술은 하권 风府 조(PDF 62쪽 = 인쇄 1234쪽), 脑户 조(PDF 65쪽 = 인쇄 1237쪽)에 있고, 핵심 논지는 <strong>상권</strong> 총론(인쇄 14-15쪽)과 扶突 조(인쇄 231-232쪽)에 있다. '이명'으로 얽혔다는 표현은 원전에서 확인되지 않으며, 원전이 말하는 것은 <strong>주치 조문의 오귀속</strong>이다.</p>
 </blockquote>
 <h4 id="1_2">① 당대(唐代) 《외대필요》 편찬 시의 구절 오독(斷句 錯誤)</h4>
 <ul>
@@ -144,7 +154,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">2절 도입</td>
 <td style="text-align: left;">하권 p.58, 62~65 / "이명 및 주치증"</td>
 <td style="text-align: left;">PDF 쪽과 인쇄 쪽 대응, 상권 근거 추가, 이명은 미확인</td>
-<td style="text-align: left;"><code>chunks_refined</code> PAGE 표지</td>
+<td style="text-align: left;">원전 정제본 PAGE 표지</td>
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
@@ -204,7 +214,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">1절 ①</td>
 <td style="text-align: left;">"暴喑气硬"</td>
 <td style="text-align: left;">"暴喑气鞕"</td>
-<td style="text-align: left;">《腧穴通考》 인용 《灵枢·寒热病》(<code>针灸腧穴通考_02_上_序·凡例·总论-2.md</code> L1804)</td>
+<td style="text-align: left;">《腧穴通考》 인용 《灵枢·寒热病》(《针灸腧穴通考》 上 序·凡例·总论-2 L1804)</td>
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
@@ -222,9 +232,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:20 · 원본: 부돌_별칭_풍부_문헌출처_및_고증분석.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -232,6 +246,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

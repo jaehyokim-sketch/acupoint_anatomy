@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -56,8 +66,8 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <article>
 <h1 id="textual-verification-and-clinical-point-combination-of-zhongdu-and-yaoshu-as-linked-through-the-alternative-name-weizhong-a-summary-report">📜 Textual Verification and Clinical Point Combination of Zhongdu (中都) and Yaoshu (腰俞) as Linked Through the Alternative Name 'Weizhong (委中)': A Summary Report</h1>
 <blockquote>
-<p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual verification (Rank 5 where needed) · <strong>ARI</strong>: not scored (textual-verification report) · <strong>Source data</strong>: no csv/xlsx in this folder — collated against the three classics in <code>chunks_refined</code> (<code>针灸腧穴通考(上)_721-800.md</code> L1-12, <code>(下)_161-240.md</code> L2487, <code>(下)_401-480.md</code> L595-603 · L1009-1010; <code>中国针灸穴位通鉴(上卷)_1041-1120.md</code> L3144, <code>(上卷)_161-240.md</code> L2188, <code>(下卷)_161-240.md</code> L784)
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual verification (Rank 5 where needed) · <strong>ARI</strong>: not scored (textual-verification report) · <strong>Source data</strong>: no separate dataset — collated against the refined editions of the three classics (《針灸腧穴通考》(上) PDF pp. 721–800 L1-12, (下) PDF pp. 161–240 L2487, (下) PDF pp. 401–480 L595-603 · L1009-1010; 《中國針灸穴位通鑑》(上卷) PDF pp. 1041–1120 L3144, (上卷) PDF pp. 161–240 L2188, (下卷) PDF pp. 161–240 L784)
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 <p><strong>v2.7 key correction</strong>: The only 'alternative-name' link confirmed in the classics is <strong>the single pair Zhongdu–Weizhong</strong>. Zhongdu's alias <strong>中郄</strong> (originally the standard name of Zhongdu) was wrongly entered as an alias of Weizhong in the 1957 Nanjing 《針灸學》 (copied from a Japanese textbook), and Korean textbooks followed it (《腧穴通考》, 委中 entry, editor's note (按); 《穴位通鑑》, 委中 [別名] note: "'中郄'原為中都穴正名，作為本穴別名不妥"). There is no alternative-name relationship between Yaoshu and Weizhong; only the relationships of being listed together in the same passage or used together in the same prescription are confirmed.</p>
 </blockquote>
 <p>Based on the acupoint textual verification (腧穴考證) of the three specialist acupuncture classics <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》), <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) and <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》), and on passages in ancient texts (《素問》 · 《靈樞》 · 《針灸大成》), this report summarises the philological reasons and the clinical point-combination mechanisms by which <strong>Zhongdu (中都, LR06) of the Liver Meridian of Foot Jueyin (足厥陰肝經)</strong> and <strong>Yaoshu (腰俞, GV02) of the Governor Vessel (督脈)</strong> are linked to each other through the point name and alternative name of <strong>Weizhong (委中, BL40) of the Bladder Meridian (膀胱經)</strong>.</p>
@@ -170,7 +180,7 @@ The reasons the three points <strong>Zhongdu (中都)</strong>, <strong>Yaoshu (
 <td style="text-align: left;">Section 1 ①</td>
 <td style="text-align: left;">(no source stated)</td>
 <td style="text-align: left;">Noted that the original text and 王冰's commentary are confirmed in all 3 classics</td>
-<td style="text-align: left;">Collation with <code>chunks_refined</code></td>
+<td style="text-align: left;">Collation with the refined classics</td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
@@ -219,7 +229,7 @@ The reasons the three points <strong>Zhongdu (中都)</strong>, <strong>Yaoshu (
 <td style="text-align: left;">Section 3 table, row 3</td>
 <td style="text-align: left;">Zhongdu + Weizhong + Zusanli prescription</td>
 <td style="text-align: left;">"Not found in the three classics", mechanism "author's judgement"</td>
-<td style="text-align: left;">0 hits in a <code>chunks_refined</code> search</td>
+<td style="text-align: left;">0 hits in a the refined classics search</td>
 </tr>
 <tr>
 <td style="text-align: center;">11</td>
@@ -234,9 +244,13 @@ The reasons the three points <strong>Zhongdu (中都)</strong>, <strong>Yaoshu (
 <li>PMID/DOI: none in the text (0 items to check). No citation of biomedical mechanisms (0 Layer B items).</li>
 <li>Remaining limitation: the title's "Yaoshu linked through the alternative name 'Weizhong'" is not supported by the classics, but as it is the working title it was left unchanged and corrected in the header. The location (volume, page) of the prescriptions in the original 《針灸大成》 was not checked directly.</li>
 </ul>
-<p class="meta">생성: 2026-10-24 13:10 · 원본: 중도_요유_위중_연계_고증_및_임상배혈_요약보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -244,6 +258,35 @@ The reasons the three points <strong>Zhongdu (中都)</strong>, <strong>Yaoshu (
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

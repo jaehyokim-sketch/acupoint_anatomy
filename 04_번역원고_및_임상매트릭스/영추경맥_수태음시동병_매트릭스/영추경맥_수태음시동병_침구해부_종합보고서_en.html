@@ -68,10 +68,10 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <blockquote>
 <p><strong>Framework</strong>: v2.7 · <strong>Classification</strong>: Category 4 symptom-based acupuncture-anatomy clinical matrix · <strong>Scope</strong>: Ranks 0–6 (FMA-linked); Rank 7 ARI <strong>not scored</strong> (a 38-point thematic matrix — ARI for individual points is scored in the Category 1 reports)
 <strong>Three Primary Classics</strong>: full parse of the 【適應症】 (indications) entries of the 361 points in the 25 parts of <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) (primary source) · collated against <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) and <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) (shidong original text and 是動 prescriptions)
-<strong>Anatomical basis</strong>: local index of FMA 5.1.0 (<code>fma_query.py profile</code>; two-textbook mapping table FMA Acupoint Anatomical Ontology Mapping Registry) + segmental supplementation from B1 normative anatomy (B1-01, B1-02, B1-03) · 3D shapes: BodyParts3D 4.0 (B1 supplementary)
-<strong>Layer A</strong>: Integrated Biomedical Master DB v3.0 (state as of 2026-10-24, <code>acupoint_inverted_index</code>) + collation with PubMed metadata. <code>sync_master_db.py</code> was not run for this analysis (batch synchronisation of the 38 points is a separate task).
-<strong>Datasheet</strong>: Lingshu Jingmai Lung Channel Shidong Clinical Acupuncture Anatomy Matrix Analysis Databook (10 sheets) · Reproduction scripts: <code>scripts/</code> folder
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<strong>Anatomical basis</strong>: local index of FMA 5.1.0 (FMA profile query; two-textbook mapping table FMA Acupoint Anatomical Ontology Mapping Registry) + segmental supplementation from B1 normative anatomy (B1-01, B1-02, B1-03) · 3D shapes: BodyParts3D 4.0 (B1 supplementary)
+<strong>Layer A</strong>: Integrated Biomedical Master DB v3.0 (state as of 2026-10-24, <code>acupoint_inverted_index</code>) + collation with PubMed metadata. the integrated DB sync (external search) was not run for this analysis (batch synchronisation of the 38 points is a separate task).
+<strong>Datasheet</strong>: Lingshu Jingmai Lung Channel Shidong Clinical Acupuncture Anatomy Matrix Analysis Databook (10 sheets) · Reproduction scripts: kept internally
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 </blockquote>
 <hr>
 <h2 id="0-summary">0. Summary</h2>
@@ -107,7 +107,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <td style="text-align: left;">Prototype</td>
 <td style="text-align: left;">《陰陽十一脈灸經》</td>
 <td style="text-align: left;">臂巨陰脈……是動則病：<strong>心滂滂如痛，缺盆痛，甚則交兩手而戰</strong>，此為臂厥</td>
-<td style="text-align: left;"><code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_03_上_手太阴肺经穴.md</code> L19</td>
+<td style="text-align: left;">《針灸腧穴通考》 上 手太陰肺經穴 L19</td>
 </tr>
 <tr>
 <td style="text-align: left;">Revision</td>
@@ -125,7 +125,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <td style="text-align: left;">Prescription</td>
 <td style="text-align: left;">《黃帝明堂經》 (《甲乙》 vols. 8–9)</td>
 <td style="text-align: left;">胸中膨膨然，甚則交兩手而瞀，暴癉內逆，<strong>刺經渠及天府</strong>，此謂之大輸</td>
-<td style="text-align: left;"><code>针灸腧穴通考_02_上_序·凡例·总论-2.md</code> L1027; <code>中国针灸证治通鉴_03_…_古代针灸方选解.md</code> L264; <code>中国针灸穴位通鉴_07_手太阴肺经(1).md</code> L716</td>
+<td style="text-align: left;">《針灸腧穴通考》 上 序·凡例·總論-2 L1027; 《中國針灸證治通鑑》 … 古代針灸方選解 L264; 《中國針灸穴位通鑑》 手太陰肺經(1) L716</td>
 </tr>
 </tbody>
 </table></div>
@@ -558,7 +558,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <tr>
 <td style="text-align: left;">Fubai (浮白, GB10)</td>
 <td style="text-align: left;"><strong>Excluded (transcription error)</strong></td>
-<td style="text-align: left;">From the <em>Waitai Miyao</em> (《外臺祕要》) vol. 39 onward, the location and indications of Tianrong (天容) were mistakenly entered under 浮白. The 《銅人》 copied only the 天容 indications (<em>Tongkao</em> commentary on 浮白, <code>针灸腧穴通考_18_下_足少阳胆经穴-1.md</code> L1811)</td>
+<td style="text-align: left;">From the <em>Waitai Miyao</em> (《外臺祕要》) vol. 39 onward, the location and indications of Tianrong (天容) were mistakenly entered under 浮白. The 《銅人》 copied only the 天容 indications (<em>Tongkao</em> commentary on 浮白, 《針灸腧穴通考》 下 足少陽膽經穴-1 L1811)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Yangfu (陽輔, GB38)</td>
@@ -599,7 +599,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </table></div>
 <h2 id="5-anatomical-similarity-method-rank-5-fma-section-5-1">5. Anatomical Similarity Method (Rank 5 · FMA Section 5-1)</h2>
 <ul>
-<li><strong>Input</strong>: for each of the 38 points, <code>fma_query.py profile &lt;code&gt; --json</code> was run to obtain FMA mappings of the anatomical structures in the two textbooks (the common textbook and Kim Jaehyo's textbook). Only the mapping levels <code>exact</code>, <code>exact+…</code>, <code>exact(set)</code> and <code>parent(branch_of)</code> were used; <code>fuzzy</code>, <code>set(검토)</code> and <code>none</code> were omitted.</li>
+<li><strong>Input</strong>: for each of the 38 points, FMA profile query was run to obtain FMA mappings of the anatomical structures in the two textbooks (the common textbook and Kim Jaehyo's textbook). Only the mapping levels <code>exact</code>, <code>exact+…</code>, <code>exact(set)</code> and <code>parent(branch_of)</code> were used; <code>fuzzy</code>, <code>set(검토)</code> and <code>none</code> were omitted.</li>
 <li><strong>Four feature types</strong> and weighted Jaccard similarity (provisional weights):</li>
 <li><strong>N nerve territory (0.35)</strong>: nerve structures + nerves supplying muscles + branch→trunk chains. Generic class labels such as "Thoracic nerve" were omitted.</li>
 <li><strong>G spinal segment (0.30)</strong>: FMA <code>segmental_supply</code> and ordinal labels (e.g. "Fourth intercostal nerve" → T4). For the 55 nerves without segments in FMA, <strong>B1 normative segments</strong> were supplied (B1-01 Gray's 42e, B1-03 Moore 8e — e.g. medial pectoral nerve C8–T1, radial nerve C5–T1).</li>
@@ -1427,7 +1427,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </ul>
 <p>In sum, Taiyuan (太淵) has some cardioprotective effect, but weaker than the heart-meridian points. This means <strong>the evidence for supporting "Hand-Taiyin shidong disorder = cardiac pain" with effects of Lung-meridian points is weak</strong> (B-Check ⑤ conflict → hypothesis).
 - <strong>Respiratory</strong>: Taiyuan (太淵) electroacupuncture alone improved lung function in rats with acute lung injury (papers.id 2240, PMID 35880273, animal). Of the 12 Kongzui (孔最) asthma studies, 3 are rat experiments (papers.id 1682–1684). The human evidence is one RCT of the combination 太淵·孔最·膻中·肺俞 for postoperative pulmonary complications after thoracoscopic surgery (papers.id 1807, PMID 40953233 — a combination, so not read as single-point efficacy).
-- <strong>External search</strong>: this report did not run the 38-point batch <code>sync_master_db.py</code> (<strong>external search incomplete</strong>). For the PMIDs above, only the bibliographic data and stimulated points were checked against PubMed metadata.</p>
+- <strong>External search</strong>: this report did not run the 38-point batch the integrated DB sync (external search) (<strong>external search incomplete</strong>). For the PMIDs above, only the bibliographic data and stimulated points were checked against PubMed metadata.</p>
 <h2 id="9-3d-anatomical-images-shared-structures-by-stratum-bodyparts3d-40-b1-supplementary">9. 3D Anatomical Images — Shared Structures by Stratum (BodyParts3D 4.0, B1 Supplementary)</h2>
 <p>For each cluster, up to seven FMA structures with meshes that are shared by at least half of the member points (minimum 2 points) were drawn, with the skeleton as a translucent background. BodyParts3D is a single standard model; it does not reflect individual variation or acupoint locations and is used only as a <strong>normative shape reference</strong>. The A1c digits cluster had only one shared mesh and was not drawn.</p>
 <p><img alt="3D shared structures of the A1 upper limb" src="Fig4_A1_상지_3D_en.png"></p>
@@ -1459,33 +1459,33 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>영추경맥_수태음시동병_침구해부_종합보고서.md</code>·<code>.html</code></td>
-<td style="text-align: left;">This report (Korean)</td>
+<td style="text-align: left;">Comprehensive report (Korean)</td>
+<td style="text-align: left;">Korean edition</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>영추경맥_수태음시동병_침구해부_종합보고서_en.md</code>·<code>.html</code></td>
-<td style="text-align: left;">English edition (with Traditional Chinese characters)</td>
+<td style="text-align: left;">Comprehensive report (English)</td>
+<td style="text-align: left;">This report (with Traditional Chinese characters)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Lingshu Jingmai Lung Channel Shidong Clinical Anatomy Matrix Databook</td>
 <td style="text-align: left;">1 shidong textual strata · 2 candidates and indication tiers · 3 evidence entries (290 rows) · 4 FMA anatomical features · 5 similarity matrix · 6 strata · 7 ranking relative to 太淵 · 8 segmental concordance · 9 Layer A · 10 methods and audit</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>Fig1</code>~<code>Fig4_*_ko.png</code> / <code>_en.png</code></td>
+<td style="text-align: left;">Figures Fig1–Fig4</td>
 <td style="text-align: left;">8 figures × 2 languages</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>scripts/</code></td>
-<td style="text-align: left;"><code>extract_indications.py</code> (Ranks 1–4) → <code>anatomy_similarity.py</code> (FMA similarity, strata) → <code>make_figures.py</code>·<code>render3d.py</code> (figures) → <code>build_matrix.py</code> (xlsx)</td>
+<td style="text-align: left;">Analysis scripts (internal)</td>
+<td style="text-align: left;">Single-point indication parsing (Ranks 1–4) → FMA similarity, strata → figures and 3D rendering → databook</td>
 </tr>
 </tbody>
 </table></div>
 <ul>
-<li>Rank 0: <code>sync_skill_settings.py --check</code> reported no drift (only a change flag on <code>.claude/CLAUDE.md</code>). The canonical v2.7 was applied.</li>
-<li>Reproduction: <code>python scripts/extract_indications.py</code> → (save each point's <code>fma_query.py profile --json</code> output to <code>fma/</code>) → <code>anatomy_similarity.py</code> → <code>make_figures.py &lt;folder&gt; ko|en</code> → <code>render3d.py &lt;folder&gt; ko|en</code> → <code>build_matrix.py &lt;xlsx&gt;</code>.</li>
+<li>Rank 0: the skill-settings sync check reported no drift (only a change flag on the project settings document). The canonical v2.7 was applied.</li>
+<li>Reproduction: run the internal analysis scripts in the order single-point indication parsing → FMA profile query per point → similarity and strata → figures and 3D rendering → databook.</li>
 <li>Author: Claude Code, 2026-10-24.</li>
 </ul>
-<p class="meta">생성: 2026-10-25 11:06 · 원본: 영추경맥_수태음시동병_침구해부_종합보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

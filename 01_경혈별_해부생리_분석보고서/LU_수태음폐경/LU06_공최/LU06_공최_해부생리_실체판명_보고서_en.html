@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -59,12 +69,12 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>Framework</strong>: v2.7 (revised 2026-10-04) · <strong>ARI</strong>: T1 <code>ARI v3.0 | ARI-Core 71.2 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 68.8 (C, grade changes → weight-sensitive)</code>
 T2 <code>ARI v3.0 | ARI-Core 35 ± 0 (D·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 33.3 (D, grade unchanged)</code> · <strong>Dual scoring</strong>: completed by two independent raters</p>
 <p><strong>Three Primary Classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》, Huang Longxiang 黃龍祥)
-<strong>Layer A Empirical Database</strong>: <a href="../../../../%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json">Integrated Biomedical Master DB v3.0</a> — LU6 evidence pack: of 32 landmark papers (including 28 external) and 20 locally mapped papers, <strong>4 LU6-specific mechanism/imaging studies</strong> (papers.id 1682, 1683, 1684, 1806) + 1 human clinical observation (1726)
-<strong>Layer B Reference Registry</strong>: <a href="../../../../01_Framework/layer_b_reference_registry.md"><code>layer_b_reference_registry.md</code></a> (6-item B-Check, concordance threshold ≥ 8/12)
+<strong>Layer A Empirical Database</strong>: Integrated Biomedical Master DB v3.0 — LU6 evidence pack: of 32 landmark papers (including 28 external) and 20 locally mapped papers, <strong>4 LU6-specific mechanism/imaging studies</strong> (papers.id 1682, 1683, 1684, 1806) + 1 human clinical observation (1726)
+<strong>Layer B Reference Registry</strong>: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 <strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 <strong>Metrological Standard</strong>: Han-dynasty (漢代) standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$), 1 cun (寸) = 10 fen = 23 mm
 <strong>Analysis Targets</strong>: <strong>T1</strong> WHO/textbook standard Kongzui (腕上七寸, on the line joining Chize (尺澤, LU05) and Taiyuan (太淵, LU09)) / <strong>T2</strong> Sawada-style (澤田) Kongzui haemorrhoid reaction point (尺澤下二寸, 《針灸真髓》 1941)
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 </blockquote>
 <hr>
 <h2 id="1-classical-literature-screening-table-three-primary-classics-excerpts-chinesekorean-collation">1. Classical Literature Screening Table (Three Primary Classics Excerpts &amp; Chinese–Korean Collation)</h2>
@@ -79,19 +89,19 @@ T2 <code>ARI v3.0 | ARI-Core 35 ± 0 (D·H) | SI 50 | provisional weights 0.40/0
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)</strong>, entry 孔最 (<code>针灸腧穴通考(上)_81-160.md</code> L2300–2467, printed pp. 123–126)</td>
+<td style="text-align: left;"><strong><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)</strong>, entry 孔最 (《針灸腧穴通考》(上) PDF pp. 81–160 L2300–2467, printed pp. 123–126)</td>
 <td style="text-align: left;">"孔冣……手太陰郄，在腕上七寸。"(《黃帝內經明堂》, Yang Shangshan's (楊上善) commentary, L2320) / "刺入三分，灸五壯。"(《黃帝明堂經》, 【操作】) / Sawada (澤田氏): "尺澤穴下二寸。"(《針灸真髓》, L2324)</td>
 <td style="text-align: left;">"可以出汗。頭痛，振寒，臂厥，熱，汗不出。"(《黃帝內經明堂》) / "吐血失喑，腫痛惡血。"(《太平聖惠方·針經》) / "治熱病汗不出……咳逆，臂厥痛。"(《銅人》)</td>
 <td style="text-align: left;">① The Ming-dynasty 《針灸集書》 "上骨以近骨邊" and 《針灸大成》 "側取" confuse the point with the location of Lieque (列缺, LU07) → "仍以《黃帝明堂經》、《銅人腧穴針灸圖經》為準". ② Forearm bone-proportional lengths of 10, 12 and 12.5 cun mean the texts are "identical in wording but different in fact" (文同而實不同). ③ Gao Wu (高武) misread "腫痛" as "咽腫痛". ④ <strong>Appendix: tracing 'Kongzui treats haemorrhoids' (附: 孔最治痔溯源)</strong> — the textbook indication "haemorrhoids (痔疾)" is a mistransmission (訛傳) from Sawada's homonymous point at a different location</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》)</strong>, entry 孔最 (<code>中国针灸穴位通鉴(上卷)_321-400.md</code> L880–1060)</td>
+<td style="text-align: left;"><strong><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》)</strong>, entry 孔最 (《中國針灸穴位通鑑》(上卷) PDF pp. 321–400 L880–1060)</td>
 <td style="text-align: left;">Source: "孔最，手太陽之。"(《針灸甲乙經》 3:49 — as given by the OCR; taken to be a misprint/lacuna for "太陰之郄"; the Tongkao has "手太陰郄") / Location: "去腕七寸。"(《甲乙》, 《千金》, 《外臺》, 《聖惠》, 《銅人》 etc.) / "刺入三分，留三呼，灸五壯。"(《甲乙》)</td>
 <td style="text-align: left;">"熱病汗不出，上□及孔最主之。"(OCR lacuna) "厥頭痛，孔最主之。"(《甲乙》 vols. 7 and 9) / "頭痛，振寒，臂厥，熱，汗不出。"(《明堂類成》)</td>
 <td style="text-align: left;">Alias: "無" (none). Locations scattered in early-modern texts: 《針灸集成》 "尺澤下三寸半", 《中華針灸學》 "尺澤下三寸", 《新針灸學》 "離尺澤穴五寸". Local anatomy: "上層是肱橈肌之內緣，下層為屈拇長肌之外緣，深部有橈動脈和神經通過"(《新針灸學》)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</strong> (<code>中国针灸证治通鉴_161-240.md</code> L1738, 1782; <code>_241-320.md</code> L704, 854, 856, 1626–1638)</td>
+<td style="text-align: left;"><strong><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</strong> (《中國針灸證治通鑑》 PDF pp. 161–240 L1738, 1782; PDF pp. 241–320 L704, 854, 856, 1626–1638)</td>
 <td style="text-align: left;">(no location given — a prescription compendium)</td>
 <td style="text-align: left;">"傷寒熱病身無汗，細詳孔最患無妨。"(《針灸玉龍經·玉龍歌》) / "熱病煩心，汗不出：中衝、勞宮……孔最三壯至五壯，即汗。"(《針灸捷徑》) / haemoptysis (咯血) "孔最配尺澤。強刺激為主。"(遼寧中醫雜誌 1980) / asthma (哮喘) "孔最、魚際。"(中醫雜誌 1989)</td>
 <td style="text-align: left;">Classical combinations all belong to the <strong>diaphoresis (汗不出)</strong> group; modern combinations to the <strong>haemoptysis (咯血) and asthma (哮喘)</strong> group. Among the three classics, haemorrhoid prescriptions are dealt with only in the Tongkao appendix (collation of the mistransmission)</td>
@@ -196,7 +206,7 @@ T2 <code>ARI v3.0 | ARI-Core 35 ± 0 (D·H) | SI 50 | provisional weights 0.40/0
 <tr>
 <td style="text-align: left;">Standard code &amp; point name</td>
 <td style="text-align: left;">LU06 Gongchoe / Kongzui (孔最) (Lung Meridian of Hand-Taiyin, 手太陰肺經)</td>
-<td style="text-align: left;">KJH Acupoint Nomenclature & Alias Comparative Database, row 61</td>
+<td style="text-align: left;">KJH Acupoint Nomenclature &amp; Alias Comparative Database, row 61</td>
 <td style="text-align: left;">—</td>
 </tr>
 <tr>
@@ -1300,7 +1310,7 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 </ul>
 <hr>
 <h2 id="appendix-a-fma-anatomical-substrate-profile-fma-510">Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)</h2>
-<p>Generated by: <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LU06 --md</code> (2026-10-23). Match level <code>exact</code> means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.</p>
+<p>Generated by: FMA 5.1.0 acupoint profile query (LU06; 2026-10-23). Match level <code>exact</code> means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1466,7 +1476,7 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 <td style="text-align: left;">Section 4</td>
 <td style="text-align: left;">Text layer diagram only</td>
 <td style="text-align: left;">Figure 4-1 cross-section schematic (T1 level), FMA cross-check table by layer, 2 FMA notes (source of segments, label error)</td>
-<td style="text-align: left;"><code>fma_query.py profile LU06</code>; figure script <code>.claude/skills/acupoint-anatomy/scripts/fma/figures/LU06_cross_section.py</code></td>
+<td style="text-align: left;">FMA profile query; figure-generation script (internal)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 6</td>
@@ -1496,7 +1506,7 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 <td style="text-align: left;">Appendix A</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA profile table</td>
-<td style="text-align: left;"><code>fma_query.py profile LU06 --md</code></td>
+<td style="text-align: left;">FMA profile query</td>
 </tr>
 <tr>
 <td style="text-align: left;">ARI</td>
@@ -1513,7 +1523,7 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 <tr>
 <td style="text-align: left;">Archive</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">Pre-supplement md, html and xlsx kept in <code>_구판_v2.7_20261023/</code></td>
+<td style="text-align: left;">Pre-supplement md, html and xlsx kept in the internal archive</td>
 <td style="text-align: left;">—</td>
 </tr>
 </tbody>
@@ -1534,13 +1544,13 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 <td style="text-align: left;">Header</td>
 <td style="text-align: left;">"full inverted index of 48 measured papers"</td>
 <td style="text-align: left;">Replaced by evidence-pack counts (32 landmark, 20 local; 4 LU6-specific papers + 1 clinical)</td>
-<td style="text-align: left;">pack_LU6.md</td>
+<td style="text-align: left;">evidence pack</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 1</td>
 <td style="text-align: left;">OCR of the <em>Xuewei Tongjian</em> table of contents (GV25–28 etc.), a fragment on 八關大刺 from the <em>Zhengzhi Tongjian</em>, page numbers from the Tongkao table of contents</td>
 <td style="text-align: left;">Original-text excerpts from the 孔最 entries (location, depth, indications, collation)</td>
-<td style="text-align: left;">Tongkao <code>(上)_81-160.md</code> L2300–2467; <em>Xuewei Tongjian</em> <code>(上卷)_321-400.md</code> L880–1060; <em>Zhengzhi Tongjian</em> <code>_161-240.md</code> L1738, 1782, <code>_241-320.md</code> L704, 854, 856</td>
+<td style="text-align: left;">Tongkao (上) PDF pp. 81–160 L2300–2467; <em>Xuewei Tongjian</em> (上卷) PDF pp. 321–400 L880–1060; <em>Zhengzhi Tongjian</em> PDF pp. 161–240 L1738, 1782, PDF pp. 241–320 L704, 854, 856</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 2</td>
@@ -1576,25 +1586,25 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 <td style="text-align: left;">Section 7</td>
 <td style="text-align: left;">Generic rule sentence</td>
 <td style="text-align: left;">T1/T2 split (Δ ≈ 3 cun) carried out, T1 declared superior</td>
-<td style="text-align: left;">final_LU06.json</td>
+<td style="text-align: left;">dual-scoring record</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 8 B-Check</td>
 <td style="text-align: left;">① 2, ② 2, ⑤ 2, total 9/12 "confirmed", no papers.id</td>
 <td style="text-align: left;">T1 final 2·1·1·1·1·1 = 7/12 not concordant, T2 4/12 hypothesis, reference IDs and papers.id given</td>
-<td style="text-align: left;">final_LU06.json bcheck</td>
+<td style="text-align: left;">B-Check scoring record</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 8 Layer A</td>
 <td style="text-align: left;">17, 795, 1458, 1461, 1002, 1678 etc. listed as empirical evidence, PMIDs blank</td>
 <td style="text-align: left;">Rebuilt around the LU6-specific 1682, 1683, 1684, 1806, 1726; mistransmission papers 1561, 1563, 1564, 1723 separated as counter-evidence; unsuitable items excluded</td>
-<td style="text-align: left;">pack_LU6.md; master DB papers</td>
+<td style="text-align: left;">evidence pack; master DB papers</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 8</td>
 <td style="text-align: left;">No external search log</td>
 <td style="text-align: left;">sync_log table added</td>
-<td style="text-align: left;">pack_LU6.md</td>
+<td style="text-align: left;">evidence pack</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 9</td>
@@ -1606,19 +1616,19 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 <td style="text-align: left;">Section 10</td>
 <td style="text-align: left;">Single Target, S_orig 85 (value outside the rubric), S_reflex 75, ARI-Core 79.0 B, "rigorously verified"</td>
 <td style="text-align: left;">T1 71.2 ± 0 (B, weight-sensitive) / T2 35 ± 0 (D·H); sub-items, gates, adjudication record and branch decision</td>
-<td style="text-align: left;">final_LU06.json</td>
+<td style="text-align: left;">dual-scoring record</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 10</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">Earlier-edition v2.6 score 79.0 (not comparable)</td>
-<td style="text-align: left;">Earlier-edition report <code>_구판_v2.6/</code></td>
+<td style="text-align: left;">Earlier-edition report the internal archive</td>
 </tr>
 <tr>
 <td style="text-align: left;">xlsx</td>
 <td style="text-align: left;">B-Check sheet "B3-11 (Longhurst)", "B3-16 (Torres-Rosas)", "papers.id #1 / PMID to be checked"</td>
 <td style="text-align: left;">Labels in sheet 4 of the earlier edition corrected to the registry (B3-11 = 2008 review of analgesic mechanisms, B3-16 = 2020 experiment on the NPY sympathetic pathway) and the "papers.id #1" pointer replaced by 1806; new B-Check sheet added. Neither reference is used in the final v2.7 scoring</td>
-<td style="text-align: left;">layer_b_reference_registry.md L64, 69</td>
+<td style="text-align: left;">Layer B Reference Registry L64, 69</td>
 </tr>
 </tbody>
 </table></div>
@@ -1638,7 +1648,7 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 <td style="text-align: left;">Whole document</td>
 <td style="text-align: left;">Automatically generated "English" edition: Korean body text with only headings and some terms replaced</td>
 <td style="text-align: left;">Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations</td>
-<td style="text-align: left;">Korean edition <code>LU06_공최_해부생리_실체판명_보고서.md</code></td>
+<td style="text-align: left;">Korean edition</td>
 </tr>
 <tr>
 <td style="text-align: left;">Title and body</td>
@@ -1673,8 +1683,8 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 <tbody>
 <tr>
 <td style="text-align: left;">Header links</td>
-<td style="text-align: left;">Absolute <code>file:///g:/내 드라이브/도서 번역/…</code> links (do not open on other PCs)</td>
-<td style="text-align: left;">Links relative to the project root (<code>도서 번역</code>)</td>
+<td style="text-align: left;">Local absolute-path links (do not open on other PCs)</td>
+<td style="text-align: left;">Project-relative links</td>
 <td style="text-align: left;">Skill path rule (no drive-letter absolute paths)</td>
 </tr>
 <tr>
@@ -1685,9 +1695,13 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:25 · 원본: LU06_공최_해부생리_실체판명_보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1695,6 +1709,35 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

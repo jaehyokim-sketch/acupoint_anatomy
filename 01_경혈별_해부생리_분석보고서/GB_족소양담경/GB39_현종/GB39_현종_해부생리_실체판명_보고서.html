@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -59,8 +69,8 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>프레임워크</strong>: v2.7 (2026-10-04 개정) · <strong>ARI</strong>: T1 <code>ARI v3.0 | ARI-Core 51.2 ± 0 (D·H) | SI 50 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 47.9 (D, 등급 불변)</code>
 T2 <code>ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 54.2 (D, 등급 변동 → 가중치 민감)</code> · <strong>이중 채점</strong>: 독립 채점자 2인, 조정 완료</p>
 <p><strong>핵심 3대 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》(黄龙祥)
-<strong>Layer A 실증 DB</strong>: <a href="../../../../%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json">통합 생의학 마스터 DB v3.0</a> — GB39 근거 묶음: 랜드마크 29편·로컬 매핑 18편 중 <strong>GB39가 실제 포함된 기전·임상 연구 5편</strong>(papers.id 1610·1612·1615·1902·1903, 모두 복합 혈위 또는 동물) + 정위 문헌 연구 1편(1624)
-<strong>Layer B 참조 등록부</strong>: <a href="../../../../01_Framework/layer_b_reference_registry.md"><code>layer_b_reference_registry.md</code></a> (B-Check 6항목, 부합 기준 ≥ 8/12)
+<strong>Layer A 실증 DB</strong>: 통합 생의학 마스터 DB v3.0 — GB39 근거 묶음: 랜드마크 29편·로컬 매핑 18편 중 <strong>GB39가 실제 포함된 기전·임상 연구 5편</strong>(papers.id 1610·1612·1615·1902·1903, 모두 복합 혈위 또는 동물) + 정위 문헌 연구 1편(1624)
+<strong>Layer B 참조 등록부</strong>: 4계층 참조 등록부(B1~B4) (B-Check 6항목, 부합 기준 ≥ 8/12)
 <strong>자침깊이 DB</strong>: 역대 침구문헌 자침심도 데이터베이스 시트1 344행(N0=342)
 <strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 지배신경·척수 분절·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리, 상세는 부록 A
 <strong>도량형 환산</strong>: 한대(漢代) 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$), 1촌 = 10푼 = 23mm(심도 환산용. 체표 위치는 골도 비례 촌)
@@ -80,22 +90,22 @@ T2 <code>ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | 잠정 가중치 0.40/0.35/0.
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>《针灸腧穴通考》</strong> 悬钟 조 (<code>针灸腧穴通考(下)_321-400.md</code> L529–658, 인쇄 p.1106–1109) 및 阳辅 조 "'阳辅'、'悬钟'与'绝骨'穴辨" (같은 파일 L414–437)</td>
+<td style="text-align: left;"><strong>《针灸腧穴通考》</strong> 悬钟 조 (《针灸腧穴通考》(下) PDF 321–400쪽 L529–658, 인쇄 p.1106–1109) 및 阳辅 조 "'阳辅'、'悬钟'与'绝骨'穴辨" (같은 파일 L414–437)</td>
 <td style="text-align: left;">"悬钟，在足外踝上三寸动者中，足三阳络，按之阳明脉绝乃取之。"(《黄帝明堂经》, L421) / "悬钟，一名绝骨，在外踝上三寸动者中，足三阳络。"(《千金要方》卷二十九, L426·558) / 현대 【定位】 "外踝尖上 3 寸，腓骨前缘"(L569)</td>
 <td style="text-align: left;">"主腹满，胃中有热不嗜食，小儿腹满不能食饮。"(《黄帝明堂经》, L542)</td>
 <td style="text-align: left;">① "《黄帝明堂经》所谓'阳明脉'……也即足背动脉，由于它是胫前动脉的下行支……人体测量学调查的结果表明：在外踝上三寸，靠近足阳明经脉行处，用力按压，则冲阳脉搏动消失……后人及今人……将悬钟穴定于足少阳经脉线上……此处不仅不能触及动脉搏动，通过按压也不能使足背处的冲阳脉搏动消失"(L548–552). ② "既是'按之阳明脉绝'处，则定位宜略偏向胫侧……因而出现了名实分离的现象"(L431). ③ "'绝骨'穴不见于《黄帝明堂经》"(L431), "'绝骨'归入奇穴类"(L437). ④ 归经 按: "将这样一个位于阳明脉上而又主治阳明胃病的腧穴归入足少阳经，难以成立"(L615). ⑤ "《黄帝明堂经》的'悬钟'已经名存实亡了"(L658). <strong>《通考》에는 淺腓骨神經·腓骨動脈 관통가지에 관한 기술이 없다.</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>《中国针灸穴位通鉴》</strong> 悬钟 조 (<code>中国针灸穴位通鉴(下卷)_161-240.md</code> L52–346)</td>
+<td style="text-align: left;"><strong>《中国针灸穴位通鉴》</strong> 悬钟 조 (《中国针灸穴位通鉴》(下卷) PDF 161–240쪽 L52–346)</td>
 <td style="text-align: left;">出处 "悬钟，在足外踝上三寸动者脉中，足三阳经，按之阳明脉绝乃取之。"(《针灸甲乙经》3:55, L54 — OCR "经"은 《通考》·L136 "足三阳络"에 따라 "络"으로 읽음) / 部位 24항(L80–132), 예: "在足外踝上三寸动脉中。"(《铜人》5:20·《聚英》·《大成》, L90), "足外踝上三寸动脉中，寻摸尖骨者是。足三阳之大络，按之阳明脉绝乃取之。"(《针灸大成》7:209, L110) / "刺入六分，留七呼，灸五壮。"(《甲乙》 등, L236)</td>
 <td style="text-align: left;">"腹满，胃中有热，不嗜食，悬钟主之。"(《甲乙》9:124), "小儿腹满，不能食饮，悬钟主之。"(《甲乙》12:154) (L154–156)</td>
 <td style="text-align: left;">释义: "穴在足外踝上三寸动者脉中，即胫前动脉处"(《经穴释义汇解》, L74). 局部解剖: "在腓骨前缘……有胫前动脉的分支，分布着腓浅神经"(《新针灸学》), "腓浅神经；腓深神经；胫前动脉"(《针灸学简编》) (L276–288). 简要结语: 별명 绝骨 "首出《备急千金要方》卷29"(L342), "髓会不宜作别名"(L292)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>《中国针灸证治通鉴》</strong> (<code>中国针灸证治通鉴_*.md</code> 7개 청크, 悬钟·绝骨 출현 196회/165행)</td>
+<td style="text-align: left;"><strong>《中国针灸证治通鉴》</strong> (정제본 7개 청크, 悬钟·绝骨 출현 196회/165행)</td>
 <td style="text-align: left;">(처방집 — 정위 기술 거의 없음)</td>
-<td style="text-align: left;">"乃若胃热治悬钟"(<code>_161-240.md</code> L4132), "腹满不食：中脘针，绝骨、下三里"(<code>_241-320.md</code> L2972)</td>
-<td style="text-align: left;">출현 문맥(±80자, 중복 허용 참고치): 하지 痿·痹·足·胫·膝 113, 脚气 20, 中风 16, 疟 11, 项·颈 9, 胃·腹满 7, 落枕 2. 대부분 足三里 등과의 <strong>배오</strong> 처방. <code>_1-80.md</code> L1236 按: "'绝骨'穴不见于《明堂经》，后世医家或以之为悬钟穴，或以之为阳辅穴"</td>
+<td style="text-align: left;">"乃若胃热治悬钟"(PDF 161–240쪽 L4132), "腹满不食：中脘针，绝骨、下三里"(PDF 241–320쪽 L2972)</td>
+<td style="text-align: left;">출현 문맥(±80자, 중복 허용 참고치): 하지 痿·痹·足·胫·膝 113, 脚气 20, 中风 16, 疟 11, 项·颈 9, 胃·腹满 7, 落枕 2. 대부분 足三里 등과의 <strong>배오</strong> 처방. PDF 1–80쪽 L1236 按: "'绝骨'穴不见于《明堂经》，后世医家或以之为悬钟穴，或以之为阳辅穴"</td>
 </tr>
 </tbody>
 </table></div>
@@ -1356,7 +1366,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 </ul>
 <hr>
 <h2 id="a-fma-fma-510">부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)</h2>
-<p>생성: <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile GB39 --md</code> (2026-10-23). 대응 수준 <code>exact</code>는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다.</p>
+<p>생성: FMA 5.1.0 경혈 프로파일 조회(GB39, 2026-10-23). 대응 수준 <code>exact</code>는 교재 영문 용어가 FMA 라벨·동의어·라틴명과 정규화 후 정확히 일치한 것이다.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1525,7 +1535,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">4절</td>
 <td style="text-align: left;">문자 층차도만</td>
 <td style="text-align: left;">그림 4-1 횡단면 모식도(T1·T2 병기), 4-3 Layer별 FMA 대조표, FMA 모델링 한계 주석 3건</td>
-<td style="text-align: left;"><code>fma_query.py profile GB39</code>; 그림 스크립트 <code>.claude/skills/acupoint-anatomy/scripts/fma/figures/GB39_cross_section.py</code></td>
+<td style="text-align: left;">FMA 프로파일 조회; 그림 생성 스크립트(내부)</td>
 </tr>
 <tr>
 <td style="text-align: left;">6절</td>
@@ -1555,7 +1565,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">부록 A</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA 프로파일 표</td>
-<td style="text-align: left;"><code>fma_query.py profile GB39 --md</code></td>
+<td style="text-align: left;">FMA 프로파일 조회</td>
 </tr>
 <tr>
 <td style="text-align: left;">ARI</td>
@@ -1566,7 +1576,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <tr>
 <td style="text-align: left;">구판 보관</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">보강 전 md·html·xlsx를 <code>_구판_v2.7_20261023/</code>에 보관</td>
+<td style="text-align: left;">보강 전 md·html·xlsx를 구판 보관본(내부)에 보관</td>
 <td style="text-align: left;">—</td>
 </tr>
 </tbody>
@@ -1593,13 +1603,13 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">2.4·7.1·9절 《通考》 인용</td>
 <td style="text-align: left;">"懸鍾(絶骨)穴位於外踝上三寸, 腓骨前緣… 淺腓骨神經(L4-S1)… 腓骨動脈 관통지… '動脈'은 腓骨動脈 관통지의 박동"(통고 고증란), "5개 항목 완전 일치"</td>
 <td style="text-align: left;"><strong>가공 인용으로 삭제.</strong> 실제 《通考》 원문(맥 기준 정위, 앞정강동맥, 경골 쪽, 名实分离, 名存实亡, 归经 불합리)으로 교체. 《通考》에 淺腓骨神經·腓骨動脈 관통가지 기술 없음</td>
-<td style="text-align: left;"><code>针灸腧穴通考(下)_321-400.md</code> L431·437·542·548–552·615·658</td>
+<td style="text-align: left;">《针灸腧穴通考》(下) PDF 321–400쪽 L431·437·542·548–552·615·658</td>
 </tr>
 <tr>
 <td style="text-align: left;">1·2.2.1·5.1절 원문</td>
 <td style="text-align: left;">《甲乙》 "在足外踝上三寸動脈中", 《明堂》 "在足外踝上三寸"</td>
 <td style="text-align: left;">"在足外踝上三寸動者脈中, 足三陽絡, 按之陽明脈絶乃取之" 전문 복원</td>
-<td style="text-align: left;"><code>中国针灸穴位通鉴(下卷)_161-240.md</code> L54; 《通考》 L421</td>
+<td style="text-align: left;">《中国针灸穴位通鉴》(下卷) PDF 161–240쪽 L54; 《通考》 L421</td>
 </tr>
 <tr>
 <td style="text-align: left;">2.2.1절 銅人·千金·大成</td>
@@ -1629,7 +1639,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">4.2절 Δ</td>
 <td style="text-align: left;">0.3~0.7cm, "분리 기준 미달, 단일 분석"</td>
 <td style="text-align: left;">Δ ≈ 20~35mm(채점자 2인 독립 추정) → T1·T2 분기, 7절 신설</td>
-<td style="text-align: left;">final_GB39M.json override_note; papers.id 1624</td>
+<td style="text-align: left;">채점 조정 기록; papers.id 1624</td>
 </tr>
 <tr>
 <td style="text-align: left;">5.1·6.2절 "動脈中" 실체</td>
@@ -1647,7 +1657,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">5.2절 안전</td>
 <td style="text-align: left;">"비골동맥 본간 손상 위험 없음", Layer 4 위험 구조 누락</td>
 <td style="text-align: left;">T1·T2별 Layer 4(앞정강동맥·깊은종아리신경) 접촉 가능성과 심자 기록(《指微》 46mm, 窦氏 57.5mm) 명시</td>
-<td style="text-align: left;">final_GB39M.json S_safety 근거</td>
+<td style="text-align: left;">S_safety 채점 근거</td>
 </tr>
 <tr>
 <td style="text-align: left;">6.1·9절 기전</td>
@@ -1665,7 +1675,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">8절</td>
 <td style="text-align: left;">Layer A·B-Check·검색 로그 없음</td>
 <td style="text-align: left;">papers.id 표(1624 정위 결론 인용 포함), T1·T2 B-Check(5/12·6/12), sync_log 표 추가</td>
-<td style="text-align: left;">pack_GB39.md; final_GB39M.json bcheck; 1624 본문 PDF</td>
+<td style="text-align: left;">근거 묶음; B-Check 채점 기록; 1624 본문 PDF</td>
 </tr>
 <tr>
 <td style="text-align: left;">8절 papers.id 1624 서지</td>
@@ -1683,13 +1693,13 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">10절</td>
 <td style="text-align: left;">v2.6 5요인 ARI</td>
 <td style="text-align: left;">T1 51.2 ± 0 (D·H) / T2 55 ± 0 (C, 가중치 민감), 하위 항목·게이트·분기·조정 기록</td>
-<td style="text-align: left;">final_GB39M.json</td>
+<td style="text-align: left;">이중 채점 기록</td>
 </tr>
 <tr>
 <td style="text-align: left;">10절</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">구판 v2.6 점수 93.6(비교 불가)</td>
-<td style="text-align: left;">구판 보고서 <code>_구판_v2.6/</code></td>
+<td style="text-align: left;">구판 보고서 구판 보관본(내부)</td>
 </tr>
 <tr>
 <td style="text-align: left;">확인 못 한 항목</td>
@@ -1712,8 +1722,8 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <tbody>
 <tr>
 <td style="text-align: left;">머리말 링크</td>
-<td style="text-align: left;"><code>file:///g:/내 드라이브/도서 번역/…</code> 절대 링크(다른 PC에서 열리지 않음)</td>
-<td style="text-align: left;">프로젝트 루트(<code>도서 번역</code>) 기준 상대 링크</td>
+<td style="text-align: left;">로컬 절대 경로 링크(다른 PC에서 열리지 않음)</td>
+<td style="text-align: left;">프로젝트 기준 상대 링크</td>
 <td style="text-align: left;">스킬 경로 표기 규칙(드라이브 문자 절대경로 금지)</td>
 </tr>
 <tr>
@@ -1724,9 +1734,13 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:25 · 원본: GB39_현종_해부생리_실체판명_보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:50 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1734,6 +1748,35 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

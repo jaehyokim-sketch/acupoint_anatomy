@@ -7,11 +7,11 @@
 
 > **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
 > **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 (of the 68 papers in the SP6 inverted index, **only the 15 that actually stimulated or observed SP6** are used for the verdict, Table 8-①. Rank 6 run with the search script revised on 2026-10-23)
-> **Layer B Reference Registry**: `01_Framework/layer_b_reference_registry.md` (6-item B-Check, concordance threshold ≥ 8/12)
+> **Layer B Reference Registry**: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 > **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry); Appendix A
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\text{mm}$)
 > **⚠ Pregnancy**: 《銅人》 "故妊娠不可刺"; textbooks "孕婦禁針". The needling-depth DB has no '0' ('Contraindicated for needling (禁針)') record — a conditional contraindication (Sections 5 and 9)
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ---
 
@@ -19,16 +19,16 @@
 
 | Classic | Original excerpt (file & line) | English summary & analysis | Remarks |
 | :--- | :--- | :--- | :--- |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "三陰交，在內踝上八寸胻骨下陷者中。足太陰、厥陰之會。（《黃帝明堂經》）" — `침구수혈통고(针灸腧穴通考)/针灸腧穴通考_09_上_足太阴脾经穴.md` L1125 | The Sanyinjiao of 《明堂》 lies **8 cun** above the medial malleolus in the depression below the tibia; meeting point of the foot-taiyin and jueyin (足太陰、厥陰之會) | Basis for **T1** |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "三陰交，在內踝上八寸胻骨下陷者中。足太陰、厥陰之會。（《黃帝明堂經》）" — 《針灸腧穴通考》 上 足太陰脾經穴 L1125 | The Sanyinjiao of 《明堂》 lies **8 cun** above the medial malleolus in the depression below the tibia; meeting point of the foot-taiyin and jueyin (足太陰、厥陰之會) | Basis for **T1** |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "內踝上八寸骨下陷中名'三陰交'…隋唐時內踝上三寸處的'足太陰'穴被稱作'三陰交'，而原《黃帝明堂經》之'三陰交'漸漸隱而不彰，名存而實亡。內踝上三寸之'三陰交'，不僅名實不符…" / "今之'三陰交'已非《黃帝明堂經》之'三陰交'。" — same file, L1119, L1121 | The current 3-cun Sanyinjiao is originally the '足太陰' point and has merely inherited the name (name and reality do not match, 名實不符) | Name–reality study (名實考) — the core of the Section 7 split |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | Pre-Song locations: 《醫心方》 vols. 2 and 28 "內踝上八寸", 《千金要方》 "八寸", 《甲乙》 vol. 3 and 《外臺》 "三寸", 《聖惠方》 "八寸" / "實際上只有傳世之明刊本《針灸甲乙經》作'內踝上三寸'…其他《黃帝明堂經》傳本均作'內踝上八寸'…《外臺秘要》'三陰交'穴排在'漏谷'（在內踝上六寸）穴之後" — same file, L1135–1149 | Most transmitted versions of 《明堂》 give 8 cun; only the Ming printed edition of 《甲乙》 gives 3 cun. The ordering in 《外臺》 (after Lougu (漏谷)) is also a trace of 8 cun | Rank 4 collation |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "足太陰穴，在足內踝上三寸是也。（《諸病源候論》卷四十一）" / "足太陰穴，在內踝上一夫，一名三陰交。（《千金翼方》卷二十八）" / "三交二穴，在內踝上三寸是…名大陰" · "三陰二穴，在內踝上八寸，骨下陷中是"（《醫心方》卷八） — same file, L1157–1169 | The 3-cun '足太陰' (= 三交) and the 8-cun '三陰' (= the original 三陰交) were recorded separately in the Sui–Tang period | Separation of aliases (Section 3) |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "部位：在小腿內側，內踝尖上3寸，脛骨內側緣後際。" / "針刺操作：刺1~1.5寸。孕婦禁針。" — same file, L1107, L1115 | Modern location, depth and the prohibition of needling in pregnancy | Modern location of **T2** |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "可灸三壯，針入三分。故妊娠不可刺。（《銅人腧穴針灸圖經》卷下）" / "直刺…治足部病，略向後，深1~1.5寸。感應：可有麻電感向足底放散。"（上海《針灸學》） — same file, L1359, L1385 | First Song-dynasty statement that 'pregnant women must not be needled'. An electric sensation radiating to the sole on deep perpendicular insertion = stimulation of the tibial nerve | Basis for SI in Section 5 |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "三陰交，在內踝上三寸骨下陷者中。（《針灸甲乙經》3：53）" / Location 2: "在內踝上八寸[1]骨下陷中。（《備急千金要方》29：510、《太平聖惠方》、《醫心方》）… [1]'八寸'系'三寸'之誤。同書卷21作'三寸'。" — `중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_31_足太阴脾经(1).md` L1308, L1336–1338 | The *Xuewei Tongjian* (《穴位通鑑》) regards 8 cun as 'a slip for 3 cun' | **Conflicts with the *Tongkao* (《通考》)** — adjudicated in Section 7 |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "三陰交，在內踝上三寸骨下陷者中。（《針灸甲乙經》3：53）" / Location 2: "在內踝上八寸[1]骨下陷中。（《備急千金要方》29：510、《太平聖惠方》、《醫心方》）… [1]'八寸'系'三寸'之誤。同書卷21作'三寸'。" — 《中國針灸穴位通鑑》 足太陰脾經(1) L1308, L1336–1338 | The *Xuewei Tongjian* (《穴位通鑑》) regards 8 cun as 'a slip for 3 cun' | **Conflicts with the *Tongkao* (《通考》)** — adjudicated in Section 7 |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | Local anatomy: "在脛骨後方，比目魚與屈趾長肌之間，有脛後動脈，分佈著隱神經及脛神經。（《新針灸學》）" / "針刺通過之組織層：皮膚，皮下組織，趾長屈肌。神經、血管：隱神經之小腿內側皮支，脛神經肌支；脛後動脈。（《針灸學簡編》）" — same file, L1520–1526 | Between soleus and flexor digitorum longus; posterior tibial artery, saphenous nerve and tibial nerve | Textual basis for the layers in Sections 4 and 6 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Indications of 三陰交 in 《明堂經》: "主足下熱，脛痛不能久立，濕痹不能行。" / Summary (小結): "《明堂經》所載'三陰交'在內踝上八寸，而六朝以後方書所載'三陰交'多位於內踝上三寸，故主治病症大不相同。" — `중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_05_第壹编_第七篇_足太阴脾经_手少阴心经_手太阳小肠经.md` L154, L184 | The indications in the point books (腧穴書, 8 cun) and the prescription books (方書, 3 cun) differ | Separation of T1/T2 indications in Section 9 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "徐文伯針刺墮胎：瀉足太陰，補手陽明，胎便應針而落。" / Summary (小結): "六朝後醫書多因而取三陰交、合谷穴以治難產，有些腧穴書甚至將此二穴列為孕婦禁刺穴。" — `中国针灸证治通鉴_22_第叁编_妇儿科病证.md` L382, L480 | The origin of the prohibition of needling in pregnancy = Xu Wenbo's (徐文伯) prescription for inducing delivery (引產) | Sections 5 and 9 |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Indications of 三陰交 in 《明堂經》: "主足下熱，脛痛不能久立，濕痹不能行。" / Summary (小結): "《明堂經》所載'三陰交'在內踝上八寸，而六朝以後方書所載'三陰交'多位於內踝上三寸，故主治病症大不相同。" — 《中國針灸證治通鑑》 第壹編 第七篇 足太陰脾經 手少陰心經 手太陽小腸經 L154, L184 | The indications in the point books (腧穴書, 8 cun) and the prescription books (方書, 3 cun) differ | Separation of T1/T2 indications in Section 9 |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "徐文伯針刺墮胎：瀉足太陰，補手陽明，胎便應針而落。" / Summary (小結): "六朝後醫書多因而取三陰交、合谷穴以治難產，有些腧穴書甚至將此二穴列為孕婦禁刺穴。" — 《中國針灸證治通鑑》 第叄編 婦兒科病證 L382, L480 | The origin of the prohibition of needling in pregnancy = Xu Wenbo's (徐文伯) prescription for inducing delivery (引產) | Sections 5 and 9 |
 
 ---
 
@@ -329,7 +329,7 @@ Limits on the scope of application:
 
 ## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile SP06 --md` (2026-10-23). Two manual corrections applied.
+Generated by: FMA 5.1.0 acupoint profile query (SP06; 2026-10-23). Two manual corrections applied.
 
 | Category | Textbook term | FMA substrate | Match | Source | Innervation / parent trunk | Spinal segment |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -353,10 +353,10 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 
 | Date | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- | :--- |
-| 2026-10-24 | Whole document (newly written) | Earlier edition v2.6 (2026-09-03, 4-factor weighted-sum ARI 97.50, `_구판_v2.6_20260903/`) | Newly written as a Framework v2.7 Tier 3 report: 10 required components, **T1 (Mingtang 8 cun) vs T2 (current 3 cun) split**, dual scoring (T2 75.0 ± 2.5 B / T1 41.3 ± 1.3 D·H), B-Check 10/12 concordant | Canon Rank 0–7 and sections 4, 5; earlier-edition score not compared |
+| 2026-10-24 | Whole document (newly written) | Earlier edition v2.6 (2026-09-03, 4-factor weighted-sum ARI 97.50, the internal archive) | Newly written as a Framework v2.7 Tier 3 report: 10 required components, **T1 (Mingtang 8 cun) vs T2 (current 3 cun) split**, dual scoring (T2 75.0 ± 2.5 B / T1 41.3 ± 1.3 D·H), B-Check 10/12 concordant | Canon Rank 0–7 and sections 4, 5; earlier-edition score not compared |
 | 2026-10-24 | Sections 1–3, 7, 9 | — | Line-level citations from the Tongkao name–reality study and analysis (名實考·辨析) (L1097–1423), the *Xuewei Tongjian* (L1304–1530) and the *Zhengzhi Tongjian* (_05 L148–184, _20 L747, L1261, _22 L382, L480); adjudication of the *Xuewei Tongjian*–*Tongkao* conflict | Three primary classics |
-| 2026-10-24 | Sections 4, 6, Appendix A | — | Layer table by order of structures, Figure 4-1 cross-section schematic, FMA cross-check (2 manual corrections: FMA:51099, FMA:75559) | FMA 5.1.0; `.claude/skills/acupoint-anatomy/scripts/fma/figures/SP06_cross_section.py` |
-| 2026-10-24 | Section 8 | — | 15 papers that actually stimulated or observed SP6 selected from the 68 in the inverted index (checked against PubMed abstracts and local PDF full texts), lists of excluded and unconfirmable items, Figure 8-1, external search log | Master DB .json SP6 inverted index, sync_log 2026-10-23T23:57:22 |
+| 2026-10-24 | Sections 4, 6, Appendix A | — | Layer table by order of structures, Figure 4-1 cross-section schematic, FMA cross-check (2 manual corrections: FMA:51099, FMA:75559) | FMA 5.1.0; figure-generation script (internal) |
+| 2026-10-24 | Section 8 | — | 15 papers that actually stimulated or observed SP6 selected from the 68 in the inverted index (checked against PubMed abstracts and local PDF full texts), lists of excluded and unconfirmable items, Figure 8-1, external search log | Integrated Biomedical Master DB SP6 inverted index, sync_log 2026-10-23T23:57:22 |
 
 ---
 
@@ -364,7 +364,7 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `SP06_삼음교_해부생리_실체판명_보고서.md` |
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition |
 | Title and body | "Sanyinjiao (三陰交, SP06)(三陰交, SP06)" and similar duplicated annotations | Duplicates removed | — |
 | Figure 4-1 | Image path corrupted by term replacement (`SP06_Sanyinjiao (三陰交, SP06)_…png`), so the image was missing from the HTML | Restored to the actual file name | Files in the report folder |
 | Classical quotations | Simplified characters (e.g. 针, 阴, 胫, 鉴) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |

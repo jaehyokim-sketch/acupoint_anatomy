@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -63,12 +73,9 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 - pLU4: <code>ARI v3.0 | ARI-Core 43.8 ± 2.5 (D·H) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 41.7 (D, grade unchanged)</code></p>
 <p><strong>Date of integration</strong>: 2026-10-03 (v2.7 revision 2026-10-04, FMA supplement 2026-10-23; see the revision histories at the end)
 <strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
-<strong>Reports integrated (originals kept in <code>_원본_보관/</code>, pre-revision edition kept in <code>_구판_v2.6/</code>)</strong>:
-- <code>LU03_천부/LU03_천부_해부생리_실체판명_보고서.md · .html · databook</code>
-- <code>LU04_협백/LU04_협백_해부생리_실체판명_보고서.md · .html · databook</code>
-- <code>_원본_보관/LU_비교분석_구판/LU3_LU4_Comparative_Analysis_Report.md·.html</code>
+<strong>Reports integrated</strong>: the LU03 Tianfu (天府) report, the LU04 Xiabai (俠白) report and the earlier LU3–LU4 comparative-analysis report. The originals and the pre-revision edition are kept internally.
 <strong>Principle of integration</strong>: because content overlap among the three reports exceeded 50%, they were merged into a single authoritative edition built around the comparative-analysis report. During integration the text was re-checked against the Three Primary Classics, the master datasets and the original papers, and contradictions and factual errors among the earlier reports were corrected (§11, correction audit table).
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk. In evidence pointers, "Xuewei Tongjian" = 《中國針灸穴位通鑑》, "Zhengzhi Tongjian" = 《中國針灸證治通鑑》 and "Tongkao" = 《針灸腧穴通考》, followed by the chunk-file range and line number.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions. In evidence pointers, "Xuewei Tongjian" = 《中國針灸穴位通鑑》, "Zhengzhi Tongjian" = 《中國針灸證治通鑑》 and "Tongkao" = 《針灸腧穴通考》, followed by the PDF page range and line number.</p>
 </blockquote>
 <hr>
 <h2 id="0-executive-summary">0. Executive Summary</h2>
@@ -141,19 +148,19 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;"><strong><em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》)</strong></td>
-<td style="text-align: left;"><code>中国针灸穴位通鉴/chunks_refined/中国针灸穴位通鉴(上卷)_321-400.md</code></td>
+<td style="text-align: left;">《中國針灸穴位通鑑》(上卷) PDF pp. 321–400</td>
 <td style="text-align: left;"><strong>Source</strong>: "腋內動脈，手太陰也，名曰天府" (《靈樞·本輸》, vessel name), "天府二穴" (Wang Bing's (王冰) commentary on 《素問·氣穴論》 15:108, point name) (L144, L146). <strong>Location</strong>: "在腋下三寸，臂內廉動脈中，手太陰脈氣所發" (《甲乙》 3:50). <strong>Aliases</strong>: 無 (none). <strong>Needling</strong>: "禁不可灸，灸之令人逆氣。刺入四分，留三呼" (《甲乙》, L282). <strong>Concluding note on location</strong>: "歷代文獻記載基本一致" (L332). However, the needling summary in the concluding note (L388) gives the 《甲乙》 as "刺入四分、留五呼", differing from the entry itself (L282 "留三呼") (an internal variant within the Tongjian)</td>
 <td style="text-align: left;"><strong>Location</strong>: "在天府下去肘五寸動脈中" (《甲乙》 3:50). <strong>Aliases</strong>: 無 (none). <strong>Channel attribution</strong>: "手太陰之別". <strong>Needling</strong>: "刺入四分，留三呼，灸七壯" (《甲乙》, L482), "刺入三分" (《銅人》). <strong>Concluding note on location</strong>: "歷代文獻記載基本一致" (L510)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》)</strong></td>
-<td style="text-align: left;"><code>中国针灸证治通鉴/chunks_refined/中国针灸证治通鉴_401-480.md</code></td>
+<td style="text-align: left;">《中國針灸證治通鑑》 PDF pp. 401–480</td>
 <td style="text-align: left;"><strong>Epistaxis (鼻衄)</strong>: "暴癉內逆，肝肺相搏，血溢鼻口，取天府"; 《外臺》 "灸兩膊上大脈…以鼻嗅臂", with the editorial note (按語) "此方所取穴即天府穴"; 《百證賦》 "天府合谷，鼻中衄血宜追". <strong>Goitre (癭)</strong>: "癭惡氣，灸天府五十壯", etc.</td>
 <td style="text-align: left;"><strong>Skin (皮膚)</strong>: 《古今醫統》 "治赤白汗斑，灸夾白穴即愈" (editorial note "夾白即肺經俠白穴"); modern vitiligo (白癜風) "俠白(點刺出血再行拔火罐)"</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)</strong></td>
-<td style="text-align: left;"><code>针灸腧穴通考/chunks_refined/针灸腧穴通考(上)_81-160.md</code> (L1653–2025)</td>
+<td style="text-align: left;">《針灸腧穴通考》(上) PDF pp. 81–160 (L1653–2025)</td>
 <td style="text-align: left;"><strong>Study of name and substance (名實考)</strong>: "今之天府已非古之天府". Ancient "臂臑內廉動脈中", modern "肱二頭肌橈側緣". Because the brachial artery descends along the medial bicipital groove, "此處已相當於今之手少陰經穴分布區域". The first to use the anatomical term for the lateral border were Japanese acupuncture books. Chinese textbooks kept "臑內廉動脈中" through the 1957 Nanjing (南京) 《針灸學》 and the 1st–2nd editions of the 《講義》 (<em>Lecture Notes</em>), and changed it to "肱二頭肌外緣" from the 4th edition</td>
 <td style="text-align: left;"><strong>Study of name and substance (名實考)</strong>: "本穴定位，古今不同". On the statement "重按有動脈應手" in the 1st edition of the 《講義》: "按如今之定位，無論如何重按，也不會觸及動脈搏動". "俠白部位在動脈中，故該穴仍可能由手太陰標脈'天府脈'演變而來". The indication "心痛" = the chest bi heart pain (胸痹心痛) group</td>
 </tr>
@@ -162,7 +169,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <ul>
 <li><strong>Variant note</strong>: the location wording for Tianfu (天府) is "臂內廉" in the Xuewei Tongjian (《穴位通鑑》, quoting 《甲乙》 3:50, L172) and "臂臑內廉" in the Tongkao (《通考》) and the collated <em>Mingtang</em> (《明堂》). The meaning (medial border of the upper arm) is the same, so this does not affect the location verdict.</li>
 </ul>
-<p><strong>Supplementary source (checked against the original paper)</strong>: Song Seok-mo, "A Study on the Course of the Lung Meridian of Hand-Taiyin (手太陰肺經): Focusing on Tianfu (天府) and Xiabai (俠白)", <em>Korean Journal of Acupuncture</em> 39(4):172-183, 2022. https://doi.org/10.14406/acu.2022.024 (papers.id 440; local PDF: <code>학습자료/실험 및 연구 논문/2022_Korean Journal of Acupuncture_송석모_…pdf</code>)
+<p><strong>Supplementary source (checked against the original paper)</strong>: Song Seok-mo, "A Study on the Course of the Lung Meridian of Hand-Taiyin (手太陰肺經): Focusing on Tianfu (天府) and Xiabai (俠白)", <em>Korean Journal of Acupuncture</em> 39(4):172-183, 2022. https://doi.org/10.14406/acu.2022.024 (papers.id 440)
 - Of the 36 texts collected in the Xuewei Tongjian (《穴位通鑑》), 18 place Tianfu (天府) on the medial side of the humerus and 28 place it over the artery
 - Zhang Shouyi (張壽頤) "臑內前廉動脈中", Yun Tieqiao (惲鐵樵) "臑內廉動脈中": recorded as the medial artery up to the early 20th century</p>
 <hr>
@@ -257,7 +264,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <th style="text-align: center;">Code</th>
 <th style="text-align: center;">Standard name</th>
-<th style="text-align: center;">KJH DB (Acupoint Nomenclature & Alias Comparative Database)</th>
+<th style="text-align: center;">KJH DB (Acupoint Nomenclature &amp; Alias Comparative Database)</th>
 <th style="text-align: center;">Xuewei Tongjian (《穴位通鑑》)</th>
 <th style="text-align: left;">Verdict</th>
 </tr>
@@ -281,7 +288,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <p><strong>How 天會 came to be misattributed (dataset collation)</strong>
 - The current KJH file (row 57 LU03, row 274 PC01) and the Common Textbook and Kim Jaehyo datasets (<code>경혈_기본정보_마스터</code> row 55 LU03, row 272 PC01) all record the same '天會' for both LU03 and PC01.
-- Acupoint Nomenclature & Alias Comparative Backup Dataset, first extracted from the lecture slides, gives the LU03 alias as '–' (<code>01_수태음폐경_각론</code> slide 31) and the PC01 alias as '天會' (<code>03_수궐음심포경</code> slide 33). The '天會' for LU03 is therefore <strong>presumed to be a PC01 value copied in error during dataset compilation</strong>, not something on the original slide.
+- Acupoint Nomenclature &amp; Alias Comparative Backup Dataset, first extracted from the lecture slides, gives the LU03 alias as '–' (<code>01_수태음폐경_각론</code> slide 31) and the PC01 alias as '天會' (<code>03_수궐음심포경</code> slide 33). The '天會' for LU03 is therefore <strong>presumed to be a PC01 value copied in error during dataset compilation</strong>, not something on the original slide.
 - Background to the contamination (presumed): Tianchi (天池) and Tianfu (天府) are both described as "腋下三寸" and appear together in the list of '天'-character points in 《靈樞·本輸》 (Tongkao (下)_81-160 L557). Their names and location wording overlap, making them easy to confuse.
 - Action: the alias '天會' of Tianfu (天府) has been deleted from the report. The original datasets (KJH and the two textbook xlsx files) were not modified in this revision and need to be checked by the dataset maintainer.</p>
 <p>Confusion with neighbouring points:
@@ -686,7 +693,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <hr>
 <h2 id="8-biomedical-reflex-pathway-diagram-external-search-log-rank-6">8. Biomedical Reflex Pathway Diagram &amp; External Search Log (Rank 6)</h2>
-<h3 id="81-layer-a-papers-___dbjson-after-the-2026-10-04-sync">8.1 Layer A Papers (Integrated Biomedical Master DB v3.0, after the 2026-10-04 sync)</h3>
+<h3 id="81-layer-a-papers-integrated-biomedical-master-db-v30-after-the-2026-10-04-sync">8.1 Layer A Papers (Integrated Biomedical Master DB v3.0, after the 2026-10-04 sync)</h3>
 <p><strong>Point-specific studies (mechanistic or clinical studies of cLU or pLU stimulation alone): 0 papers.</strong> Below are studies whose prescriptions include LU3 or LU4, and literature studies.</p>
 <div class="table-wrap"><table>
 <thead>
@@ -2022,7 +2029,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <hr>
 <h2 id="appendix-a-fma-anatomical-substrate-profile-fma-510">Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)</h2>
-<p>Generated by: <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LU03 --md</code> / <code>profile LU04 --md</code> (2026-10-23). Mapping level <code>exact</code> means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation. LU04 has the same composition as LU03 minus deltoid and pectoralis major (Kim Jaehyo, at the level of Tianfu 天府).</p>
+<p>Generated by: FMA 5.1.0 acupoint profile query (LU03, LU04; 2026-10-23). Mapping level <code>exact</code> means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation. LU04 has the same composition as LU03 minus deltoid and pectoralis major (Kim Jaehyo, at the level of Tianfu 天府).</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -2191,7 +2198,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 4</td>
 <td style="text-align: left;">Coordinate and Layer tables</td>
 <td style="text-align: left;">Figure 4-1 cross-sectional schematic (T1 and T2 shown together), 4.3 FMA collation table by Target and Layer, 3 FMA notes (classification of the brachial artery, manual/duplicate judgement on 2 Kim Jaehyo terms, scope of segment records)</td>
-<td style="text-align: left;"><code>fma_query.py profile LU03/LU04</code>, <code>entity</code>, <code>path</code>; figure script <code>.claude/skills/acupoint-anatomy/scripts/fma/figures/LU03-LU04_cross_section.py</code></td>
+<td style="text-align: left;">FMA profile query; figure-generation script (internal)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 6</td>
@@ -2221,7 +2228,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Appendix A</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA profile table (LU03 and LU04 combined)</td>
-<td style="text-align: left;"><code>fma_query.py profile</code></td>
+<td style="text-align: left;">FMA profile query</td>
 </tr>
 <tr>
 <td style="text-align: left;">ARI</td>
@@ -2232,7 +2239,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">Earlier-edition archive</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">Pre-supplement md, html and xlsx archived in <code>_구판_v2.7_20261023/</code> (<code>_원본_보관/</code> untouched)</td>
+<td style="text-align: left;">Pre-supplement md, html and xlsx archived in the internal archive (archived originals untouched)</td>
 <td style="text-align: left;">—</td>
 </tr>
 </tbody>
@@ -2253,7 +2260,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Header block</td>
 <td style="text-align: left;">"Version 2.6 (Rank 0~7, Tier 3)"</td>
 <td style="text-align: left;">v2.7 notation + 4 lines of ARI v3.0 notation per Target + dual scoring adjudicated</td>
-<td style="text-align: left;"><code>final_LU0304.json</code> notation</td>
+<td style="text-align: left;">ARI notation record</td>
 </tr>
 <tr>
 <td style="text-align: left;">§0-1, Conclusion 1</td>
@@ -2265,19 +2272,19 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">§0-5, §8.1</td>
 <td style="text-align: left;">"0 measured physiological or clinical papers (LU3 13 papers, LU4 1 paper, all textual history)"; failed the old Refinement criterion</td>
 <td style="text-align: left;">After the 2026-10-04 sync, existence of multi-point human studies 1819, 1822, 1832, 1833 and the LU4 randomised shoulder study 1836 stated. 0 point-specific papers → Gate 2 retained. Verdict by B-Check score</td>
-<td style="text-align: left;">Master DB papers 1819, 1822, 1832, 1833, 1836; pack_LU3.md, pack_LU4.md</td>
+<td style="text-align: left;">Master DB papers 1819, 1822, 1832, 1833, 1836; evidence pack, evidence pack</td>
 </tr>
 <tr>
 <td style="text-align: left;">§0-6, §10</td>
 <td style="text-align: left;">v2.6 four-factor ARI (0.35/0.30/0.20/0.15) with arbitrary intermediate-value score tables and checks</td>
 <td style="text-align: left;">ARI v3.0 profile (ARI-Core ± half-range, grade, flag, SI, sensitivity, gates, 4 S_orig sub-items, adjudication record)</td>
-<td style="text-align: left;"><code>final_LU0304.json</code>, Framework Rank 7 and section 4</td>
+<td style="text-align: left;">dual-scoring record, Framework Rank 7 and section 4</td>
 </tr>
 <tr>
 <td style="text-align: left;">Earlier-edition scores</td>
 <td style="text-align: left;">cLU3 82.75 / cLU4 81.10 / pLU3 66.05 / pLU4 66.05</td>
 <td style="text-align: left;"><strong>Earlier v2.6 scores cLU3 82.75 · cLU4 81.10 · pLU3 66.05 · pLU4 66.05 (not comparable)</strong></td>
-<td style="text-align: left;">Copy in <code>_구판_v2.6/</code></td>
+<td style="text-align: left;">Copy in the internal archive</td>
 </tr>
 <tr>
 <td style="text-align: left;">§1</td>
@@ -2325,7 +2332,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">§8.2</td>
 <td style="text-align: left;">Model expressions named after researchers (somato-autonomic reflex), "Head zone", citation of the Travell &amp; Simons title</td>
 <td style="text-align: left;">Replaced with registry IDs (B3-04, B3-05, B3-01, B3-03, B2-06, etc.). Out-of-scope application marked "inference"</td>
-<td style="text-align: left;"><code>layer_b_reference_registry.md</code></td>
+<td style="text-align: left;">Layer B Reference Registry</td>
 </tr>
 <tr>
 <td style="text-align: left;">§0-5, §8.1, §10</td>
@@ -2355,13 +2362,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Unchanged</td>
 <td style="text-align: left;">Classical quotations</td>
 <td style="text-align: left;">Rater B confirmed their accuracy by collation with the original texts → retained</td>
-<td style="text-align: left;">score_LU0304_B.json</td>
+<td style="text-align: left;">rater B record</td>
 </tr>
 <tr>
 <td style="text-align: left;">Unresolved</td>
 <td style="text-align: left;">Master DB LU3 innervation and reflex circuit (musculocutaneous nerve, stellate ganglion → Kiesselbach's plexus), LU4 entry blank; suspected DB DOI mismatch for 1819 and 1822</td>
 <td style="text-align: left;">Only a note left in the report (DB not modified)</td>
-<td style="text-align: left;">pack_LU3.md, pack_LU4.md</td>
+<td style="text-align: left;">evidence pack, evidence pack</td>
 </tr>
 </tbody>
 </table></div>
@@ -2381,7 +2388,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Whole document</td>
 <td style="text-align: left;">Automatically generated "English" edition: Korean body text with only some terms replaced</td>
 <td style="text-align: left;">Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations</td>
-<td style="text-align: left;">Korean edition <code>LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.md</code></td>
+<td style="text-align: left;">Korean edition</td>
 </tr>
 <tr>
 <td style="text-align: left;">Classical quotations</td>
@@ -2391,11 +2398,15 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p><em>Evidence files</em>: <code>01_도서_번역_및_원전/{中国针灸穴位通鉴, 中国针灸证治通鉴, 针灸腧穴通考}/chunks_refined/</code>, Master Datasets Registry (KJH, needling depth, Common Textbook, Kim Jaehyo, biomedical master DB, 361 CSV), <code>01_Framework/layer_b_reference_registry.md</code>, original PDF of Song Seok-mo (2022).
+<p><em>Evidence files</em>: refined editions of the three classics, Master Datasets Registry (KJH, needling depth, Common Textbook, Kim Jaehyo, biomedical master DB, 361 CSV), Layer B Reference Registry, original PDF of Song Seok-mo (2022).
 <em>Data book</em>: Tianfu-Xiabai Integrated Anatomical Analysis Databook / <em>Web report</em>: <code>LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.html</code></p>
-<p class="meta">생성: 2026-10-24 13:07 · 원본: LU03-LU04_천부-협백_해부생리_실체판명_통합보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -2403,6 +2414,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

@@ -99,7 +99,7 @@ p:has(> img) {{ text-align: center; margin: 1.5em 0; }}
 <main>
 <article>
 {body}
-<p class="meta">생성: {stamp} · 원본: {src} · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: {stamp} · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

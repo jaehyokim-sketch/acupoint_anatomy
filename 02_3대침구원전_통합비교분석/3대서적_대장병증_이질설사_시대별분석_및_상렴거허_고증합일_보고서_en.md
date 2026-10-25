@@ -1,7 +1,7 @@
 # 🏛️ Large-Intestine Disorders and Dysentery/Diarrhoea Across the Eras in the Three Classics, and the Textual Proof That 'Shanglian' Meant 'Shangjuxu': An Integrated Comparative Report
 
 > **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: Large Intestine Disease Chronological Acupoint Analysis Dataset (538 keyword-hit snippet rows), Large Intestine Disease Textual Analysis Dataset
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files and data are simplified-script editions, so file names and search keywords in `code` are given exactly as they appear on disk and in the data.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions and data are in simplified script, so search keywords in `code` are given exactly as they appear in them.
 
 This integrated report compares and fuses two studies built on the database (45 PDFs, some 4,200 pages) of the three specialist acupuncture classics *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) and *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》): **① a quantitative, era-by-era analysis of the acupoints used in acupuncture-moxibustion treatment of large-intestine disorders and dysentery/diarrhoea (Report A)**, and **② an evidence-based textual verification that 'Shanglian' (上廉) and 'Xialian' (下廉) in the ancient literature were abbreviations of 'Shangjuxu' (上巨虛) and 'Xiajuxu' (下巨虛) (Report B)**.
 
@@ -46,10 +46,9 @@ This integrated report compares and fuses two studies built on the database (45 
 
 ## 📁 File Storage Guide (same folder)
 
-- 📝 **Markdown report**: [3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.md](3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.md)
 - 📊 **Integrated comparison Excel**: Large Intestine Disease Textual Analysis Dataset
-- 📄 **Integrated comparison CSV**: [3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.csv](3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.csv)
-- 📄 **Original snippet data**: [3대서적_대장병증_이질_설사_침구치료_시대별_경혈분석.csv](3대서적_대장병증_이질_설사_침구치료_시대별_경혈분석.csv)
+- 📄 **Integrated comparison CSV**: the unpublished supplementary CSV dataset
+- 📄 **Original snippet data**: the unpublished supplementary CSV dataset
 
 ---
 
@@ -58,7 +57,7 @@ This integrated report compares and fuses two studies built on the database (45 
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
 | Below the title | (no header) | v2.7 header block + reading caution | LIT_BRIEF item 1 |
-| Integrated conclusion | "**fully proven** by cross-validation of quantitative statistics and textual verification" | "of the 36 Shanglian rows, 18 explicitly ST37 (50%), 14 related to LI9, 4 indeterminate — partial support" | Re-reading of snippets in `…시대별_경혈분석.csv` (strings `巨虚上廉`/`上巨虚` vs `手阳明`/`曲池下`) |
+| Integrated conclusion | "**fully proven** by cross-validation of quantitative statistics and textual verification" | "of the 36 Shanglian rows, 18 explicitly ST37 (50%), 14 related to LI9, 4 indeterminate — partial support" | Re-reading of snippets in the unpublished supplementary CSV dataset (strings `巨虚上廉`/`上巨虚` vs `手阳明`/`曲池下`) |
 | Integrated conclusion | "'Shanglian' was **overwhelmingly** high as the 2nd most frequent point (36 times)" | "2nd among snippets (36 rows)" | 36 rows = 21 unique pages; 86% of keywords are `大肠` |
 | Comparison table, row 1 | "**[100% agreement of quantitative and textual evidence]** … proves it was chosen as the first-line point" | "Partial agreement (18/36, 50%)", "whether it was the first-line point is not quantitatively verified" | Same |
 | Comparison table, row 1 | "the 36 records of 'Shanglian' and 'Xialian' … were abbreviations" | "some … are abbreviations"; of the 25 Xialian rows, 5 explicitly ST39 | Same |
@@ -69,5 +68,5 @@ This integrated report compares and fuses two studies built on the database (45 
 | Comparison table, row 4 | "established as a standard clinical guideline for colitis/dysentery" | "author's judgement (no guideline literature cited)"; WHO location cited as B1-05 | Layer B registry B1-05 |
 | Key discovery 1 | "the two characters '巨虛' were dropped during copying" | "an abbreviation in the original notation (甲乙經 9:17 ff.); no basis found for asserting a copying error"; overlap with the regional term '上廉' stated explicitly | 《中國針灸穴位通鑑》 Shangjuxu alias entry, 《靈樞·經脈》 |
 | Limitations section | (none) | No era-label rule, over-hitting of the `大肠` keyword, anatomical substrate out of scope | Ranks 3 and 4 |
-| File guide | Absolute link `file:///D:/도서 번역/…` | Relative link within the same folder | Actual storage location |
+| File guide | Local absolute-path link | Relative link within the same folder | Actual storage location |
 | PMID/DOI | None in the text | — | 0 items to check |

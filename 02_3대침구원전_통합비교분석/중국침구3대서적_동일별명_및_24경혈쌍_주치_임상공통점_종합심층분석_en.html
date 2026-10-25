@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -56,9 +66,9 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <article>
 <h1 id="comprehensive-in-depth-analysis-of-shared-indications-and-clinical-commonalities-in-acupoints-sharing-the-same-alias-and-the-24-google-sheet-acupoint-pairs-based-on-the-three-chinese-acupuncture-classics">🏛️ Comprehensive In-Depth Analysis of Shared Indications and Clinical Commonalities in Acupoints Sharing the Same Alias (別名) and the 24 Google-Sheet Acupoint Pairs, Based on the Three Chinese Acupuncture Classics</h1>
 <blockquote>
-<p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual verification (Rank 5 where needed) · <strong>ARI</strong>: not scored (textual-verification report) · <strong>Source data</strong>: 24 Point Pairs Comprehensive Indication In-Depth Analysis Dataset (24 pairs, no column comparing indications quantitatively) · Collation against the classics: the 'alias (別名)' entries and the 「針灸穴名別名索引」 (899 parsed items) of <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》), and 「提要索隱·穴名」 of <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) · <strong>Base analysis dataset</strong>: <a href="../../%E4%B8%AD%E5%9B%BD%E9%92%88%E7%81%B8%E7%A9%B4%E4%BD%8D%E9%80%9A%E9%89%B4%20%EB%B6%84%EC%84%9D%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B"><code>中国针灸穴位通鉴 분석데이터셋/</code></a> (12 files including 24 Point Pairs Indication In-Depth Analysis Dataset and <code>중국침구혈위통감_경혈명_별명_전체마스터.csv</code>)
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so file names and strings in <code>code</code> are given exactly as they appear on disk and in the data.</p>
-<p>⚠️ <strong>v2.7 verification summary</strong>: Collating the shared alternative names of the 24 pairs against the alias records of the three classics gives <strong>✓ confirmed 14 pairs (58%)</strong>, △ single later text or transcription error 4 pairs (#3, #14, #17, #19), and <strong>✗ not confirmed / misreading / wrong target 6 pairs (#7, #9, #11, #18, #23, #24)</strong>. Even for pairs where alias sharing is confirmed, the causal claim that it is <strong>the cause of indication mixing or integration through point combination</strong> has not been verified with data (no figures comparing indications). The underlying source data for the "complete analysis of a database of 2,503 acupoints" (<code>중국침구혈위통감_경혈명_별명_전체마스터.csv</code>, etc.) are formally kept in <code>中国针灸穴位通鉴 분석데이터셋/</code>.</p>
+<p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual verification (Rank 5 where needed) · <strong>ARI</strong>: not scored (textual-verification report) · <strong>Source data</strong>: 24 Point Pairs Comprehensive Indication In-Depth Analysis Dataset (24 pairs, no column comparing indications quantitatively) · Collation against the classics: the 'alias (別名)' entries and the 「針灸穴名別名索引」 (899 parsed items) of <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》), and 「提要索隱·穴名」 of <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) · <strong>Base analysis dataset</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) derived analysis datasets (12 files including 24 Point Pairs Indication In-Depth Analysis Dataset and the unpublished supplementary CSV dataset)
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script, so strings in <code>code</code> are given exactly as they appear in those editions and in the data.</p>
+<p>⚠️ <strong>v2.7 verification summary</strong>: Collating the shared alternative names of the 24 pairs against the alias records of the three classics gives <strong>✓ confirmed 14 pairs (58%)</strong>, △ single later text or transcription error 4 pairs (#3, #14, #17, #19), and <strong>✗ not confirmed / misreading / wrong target 6 pairs (#7, #9, #11, #18, #23, #24)</strong>. Even for pairs where alias sharing is confirmed, the causal claim that it is <strong>the cause of indication mixing or integration through point combination</strong> has not been verified with data (no figures comparing indications). The underlying source data for the "complete analysis of a database of 2,503 acupoints" (the unpublished supplementary CSV dataset, etc.) are formally kept in the <em>Xuewei Tongjian</em> (《中國針灸穴位通鑑》) derived analysis datasets.</p>
 </blockquote>
 <p>This final Markdown report, based on the complete database (45 PDFs, some 4,200 pages) of the three specialist acupuncture classics <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》), <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) and <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》), synthesises and systematises the earlier <strong>"in-depth analysis of acupoints sharing the same alias"</strong> and <strong>"in-depth analysis of the 24 Google-Sheet acupoint pairs"</strong>.</p>
 <hr>
@@ -369,9 +379,8 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <hr>
 <h2 id="list-of-generated-comprehensive-files-same-folder">📁 List of Generated Comprehensive Files (same folder)</h2>
 <ul>
-<li>📝 <strong>Comprehensive Markdown report</strong>: <a href="중국침구3대서적_동일별명_및_24경혈쌍_주치_임상공통점_종합심층분석.md">중국침구3대서적_동일별명_및_24경혈쌍_주치_임상공통점_종합심층분석.md</a></li>
 <li>📊 <strong>Integrated analysis Excel file</strong>: 24 Point Pairs Comprehensive Indication In-Depth Analysis Dataset</li>
-<li>📄 <strong>Integrated analysis CSV file</strong>: <a href="중국침구3대서적_동일별명_및_24경혈쌍_주치_임상공통점_종합심층분석.csv">중국침구3대서적_동일별명_및_24경혈쌍_주치_임상공통점_종합심층분석.csv</a></li>
+<li>📄 <strong>Integrated analysis CSV file</strong>: the unpublished supplementary CSV dataset</li>
 </ul>
 <hr>
 <h2 id="v27-refinement-history-2026-10-04">v2.7 Refinement History (2026-10-04)</h2>
@@ -441,7 +450,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">File guide</td>
-<td style="text-align: left;">Absolute link <code>file:///D:/…</code></td>
+<td style="text-align: left;">Local absolute-path link</td>
 <td style="text-align: left;">Relative link within the same folder</td>
 <td style="text-align: left;">Actual storage location</td>
 </tr>
@@ -466,15 +475,19 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;">Header links</td>
-<td style="text-align: left;">Absolute <code>file:///g:/내 드라이브/도서 번역/…</code> links (do not open on other PCs)</td>
-<td style="text-align: left;">Links relative to the project root (<code>도서 번역</code>)</td>
+<td style="text-align: left;">Local absolute-path links (do not open on other PCs)</td>
+<td style="text-align: left;">Project-relative links</td>
 <td style="text-align: left;">Skill path rule (no drive-letter absolute paths)</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:20 · 원본: 중국침구3대서적_동일별명_및_24경혈쌍_주치_임상공통점_종합심층분석_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -482,6 +495,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

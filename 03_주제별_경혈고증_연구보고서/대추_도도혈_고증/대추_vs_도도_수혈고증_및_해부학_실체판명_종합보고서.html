@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -56,8 +66,8 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <article>
 <h1 id="gv14-vs-gv13">📜 [혈위고증 종합권위본] 대추(GV14) vs 도도(GV13) 수혈고증 및 해부학적 실체 판명 보고서</h1>
 <blockquote>
-<p><strong>프레임워크</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: 같은 폴더에 csv/xlsx 없음 — 3대 원전 <code>chunks_refined</code>(<code>针灸腧穴通考(下)_401-480.md</code> L1537-1760, <code>中国针灸穴位通鉴(上卷)_161-240.md</code> L4068-4090)로 대조<br>
-<strong>구판</strong>: Version 2.6 (2026-10-03) 원본은 <code>_구판_v2.6/</code>에 보관<br>
+<p><strong>프레임워크</strong>: v2.7 (2026-10-04 정제) · <strong>적용 범위</strong>: Rank 1~4 문헌 고증(필요 시 Rank 5) · <strong>ARI</strong>: 미산정(고증 보고서) · <strong>근거 데이터</strong>: 별도 데이터셋 없음 — 3대 원전 정제본(《针灸腧穴通考》(下) PDF 401–480쪽 L1537-1760, 《中国针灸穴位通鉴》(上卷) PDF 161–240쪽 L4068-4090)로 대조<br>
+<strong>구판</strong>: Version 2.6 (2026-10-03) 원본은 구판 보관본(내부)에 보관<br>
 <strong>분석 프레임워크</strong>: Acupoint Substrate Identification Framework (출토문헌 실증주의 훈고학적 교감)<br>
 <strong>마스터 근거 원칙</strong>: 경혈 해부학적 실체 판명 로직 원칙<br>
 <strong>근거 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》 (황룡상 교수 문헌학적 교감)<br>
@@ -68,7 +78,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p>독맥(督脈)의 <strong>대추혈(大椎, GV14)</strong>과 <strong>도도혈(陶道, GV13)</strong>은 역대 침구 문헌에서 다음과 같은 중대한 학술적 쟁점을 지니고 있습니다:
 1. <strong>명칭의 중복 및 공유(구판 쟁점 — 원전 근거 없음)</strong>: 구판은 《太平聖惠方》, 《針灸聚英》 등 일부 고문헌이 도도혈을 "一名 大椎(일명 대추)"로 기재해 두 혈위 간 명칭 간섭이 생겼다고 보았으나, 3대 원전에서는 이 기재가 확인되지 않는다(아래 주).
    - <em>(v2.7 대조 주)</em> 3대 원전에서 이 기재를 확인하지 못함. 《穴位通鉴》 陶道 조는 "别名 无"로 적고, 《腧穴通考》 陶道 조에도 이명이 없다. 원전에서 확인되는 "一名"은 "百劳一穴，一名大椎"(《窦太师针经》)로, 도도가 아니라 백로와 대추의 관계다. 따라서 이 쟁점은 <strong>'대추'가 骨名(T1)이자 穴名(그 위 함요처)으로 함께 쓰인 데서 오는 혼선</strong>으로 읽는 것이 원전에 맞는다(《腧穴通考》 "切不可將'大椎'穴與'大椎'骨相混").
-   - <em>(2026-10-24 정제 주)</em> 3대 원전 전 편 전수 검색에서 陶道에 붙은 "一名大椎"는 0건이다. 《穴位通鉴》 陶道 조가 인용한 두 책의 조문 — 《太平圣惠方》 "在项大椎节下间，俯而取之陷者中"(99：3185), 《针灸聚英》 "主痎疟寒热，洒淅，烦满汗不出…"(1：120) — 에도 이명은 없고, 같은 조의 [别名]은 "无"다(<code>중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_05_督脉(2).md</code> L239·L269·L337·L413). 《腧穴通考》 陶道 조도 같은 두 책을 주치 출처로 인용하면서 이명을 적지 않는다(<code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_21_下_督脉穴-1.md</code> L1935·L1941). 원전의 "一名大椎"는 "百劳一穴，一名大椎"(《窦太师针经》, 같은 파일 L2017) 하나뿐이다.
+   - <em>(2026-10-24 정제 주)</em> 3대 원전 전 편 전수 검색에서 陶道에 붙은 "一名大椎"는 0건이다. 《穴位通鉴》 陶道 조가 인용한 두 책의 조문 — 《太平圣惠方》 "在项大椎节下间，俯而取之陷者中"(99：3185), 《针灸聚英》 "主痎疟寒热，洒淅，烦满汗不出…"(1：120) — 에도 이명은 없고, 같은 조의 [别名]은 "无"다(《中国针灸穴位通鉴》 督脉(2) L239·L269·L337·L413). 《腧穴通考》 陶道 조도 같은 두 책을 주치 출처로 인용하면서 이명을 적지 않는다(《针灸腧穴通考》 下 督脉穴-1 L1935·L1941). 원전의 "一名大椎"는 "百劳一穴，一名大椎"(《窦太师针经》, 같은 파일 L2017) 하나뿐이다.
 2. <strong>척추 분절의 전이 (C7 vs T1)</strong>: 고대 해부학에서 7경추(C7)를 '崇骨(숭골)' 또는 '項骨(항골)'로 보고 1흉추(T1)를 '大椎'로 보았는가, 아니면 C7 자체를 '大椎'로 정의하였는가에 대한 시대별 인식 변화.
 3. <strong>'上陷(상함)' vs '下間(하간/절간)'의 훈고학적 실체</strong>: "大椎上陷中"과 "大椎節下間"이라는 조문이 지칭하는 실제 척추 극돌기 간극의 해부학적 정위.</p>
 <hr>
@@ -94,7 +104,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><strong>《针灸腧穴通考》</strong></td>
-<td style="text-align: left;">"黃龍祥 考: 《素問·氣府論》'大椎上節'者, 頸椎與胸椎之交接處也. 古人指第1胸椎爲大椎, 後世漸以第7頸椎爲大椎, 故陶道與大椎之名往往相代." <em>(v2.7 대조 주: 이 문장은 <code>chunks_refined</code>에서 찾을 수 없다. 작성자의 재구성 요약으로 보이며 직접 인용으로 쓰지 않는다. 실제 대응 조문: 《小品方》 "大椎上节以上属颈崇骨也。大椎与崇骨相接处，其节最高硕也"(《医心方》卷十六 脚注); 문헌분석 "作为骨名，'大椎'…是指第一胸椎；作为穴名，'大椎'在第一胸椎棘突上陷中"; 《素问注证发微》 "今人误取高骨为大椎". 《腧穴通考》(下) 인쇄 1220-1222쪽)</em></td>
+<td style="text-align: left;">"黃龍祥 考: 《素問·氣府論》'大椎上節'者, 頸椎與胸椎之交接處也. 古人指第1胸椎爲大椎, 後世漸以第7頸椎爲大椎, 故陶道與大椎之名往往相代." <em>(v2.7 대조 주: 이 문장은 원전 정제본에서 찾을 수 없다. 작성자의 재구성 요약으로 보이며 직접 인용으로 쓰지 않는다. 실제 대응 조문: 《小品方》 "大椎上节以上属颈崇骨也。大椎与崇骨相接处，其节最高硕也"(《医心方》卷十六 脚注); 문헌분석 "作为骨名，'大椎'…是指第一胸椎；作为穴名，'大椎'在第一胸椎棘突上陷中"; 《素问注证发微》 "今人误取高骨为大椎". 《腧穴通考》(下) 인쇄 1220-1222쪽)</em></td>
 <td style="text-align: left;"><strong>황룡상 교수의 고증(원문 기준으로 정정)</strong>: 고대에는 T1을 骨名 '大椎'로 불렀고, 穴名 대추는 처음부터 그 위 함요처(C7-T1)였다. 도도가 '대추'라는 이명을 가졌다는 기술은 원전에 없다. 명대(《素问注证发微》)에 "項骨의 높은 뼈(C7)를 大椎로 잘못 잡는다"는 비판이 있어 <strong>骨名의 기준이 흔들린 것</strong>은 확인되나, 혈 위치 자체가 옮겨졌다는 근거는 없다.</td>
 </tr>
 </tbody>
@@ -189,7 +199,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">2절 표 《穴位通鉴》·《证治通鉴》 행</td>
 <td style="text-align: left;">인용부호 안의 문장을 원문처럼 제시</td>
 <td style="text-align: left;">"요약, 직접 인용 아님" 표기</td>
-<td style="text-align: left;"><code>chunks_refined</code>에서 해당 문장 미검출</td>
+<td style="text-align: left;">원전 정제본에서 해당 문장 미검출</td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
@@ -270,7 +280,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">1절 쟁점 1</td>
 <td style="text-align: left;">도도 "一名 大椎" 기재를 쟁점으로 제시(v2.7 주로 '원전 미확인'만 표기)</td>
 <td style="text-align: left;">'구판 쟁점 — 원전 근거 없음'으로 명시, 3대 원전 전수 검색 결과 주 추가</td>
-<td style="text-align: left;"><code>中国针灸穴位通鉴_05_督脉(2).md</code> L239·L269·L337·L413; <code>针灸腧穴通考_21_下_督脉穴-1.md</code> L1935·L1941·L2017</td>
+<td style="text-align: left;">《中国针灸穴位通鉴》 督脉(2) L239·L269·L337·L413; 《针灸腧穴通考》 下 督脉穴-1 L1935·L1941·L2017</td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
@@ -296,7 +306,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">머리말</td>
-<td style="text-align: left;">마스터 원칙 xlsx <code>file:///g:/…</code> 절대 링크</td>
+<td style="text-align: left;">마스터 원칙 문서의 로컬 절대 경로 링크</td>
 <td style="text-align: left;">프로젝트 루트 기준 상대 링크</td>
 <td style="text-align: left;">스킬 경로 표기 규칙</td>
 </tr>
@@ -305,9 +315,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <ul>
 <li>v2.7 이력의 '남은 한계'(《太平聖惠方》·《針灸聚英》 원서 미대조)는 그대로 남는다. 다만 3대 원전이 인용한 두 책의 陶道 조문에도 이명이 없어, 원서에서 기재가 새로 확인될 가능성은 낮다.</li>
 </ul>
-<p class="meta">생성: 2026-10-24 13:19 · 원본: 대추_vs_도도_수혈고증_및_해부학_실체판명_종합보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -315,6 +329,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

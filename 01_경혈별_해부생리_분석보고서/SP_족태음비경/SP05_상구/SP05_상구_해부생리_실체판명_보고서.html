@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -59,7 +69,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>프레임워크</strong>: v2.7 · <strong>ARI</strong>: ARI v3.0 | ARI-Core 75.0 ± 1.3 (B) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 71.9 (B, 등급 불변) · <strong>이중 채점</strong>: 독립 채점 2회, SI 1건 조정 완료 · <strong>반사 기전</strong>: B-Check 7/12 미부합 → <strong>가설</strong></p>
 <p><strong>핵심 3대 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》
 <strong>Layer A 실증 DB</strong>: 통합 생의학 마스터 DB v3.0 (역색인 SP5 33편 중 <strong>SP05를 실제 자극·관찰한 6편</strong>만 판정에 사용, 8절 ① 표)
-<strong>Layer B 참조 등록부</strong>: <code>01_Framework/layer_b_reference_registry.md</code> (B-Check 6항목, 부합 기준 ≥ 8/12)
+<strong>Layer B 참조 등록부</strong>: 4계층 참조 등록부(B1~B4) (B-Check 6항목, 부합 기준 ≥ 8/12)
 <strong>해부 온톨로지</strong>: FMA 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정(B1 보조, 등록부 미등재), 부록 A
 <strong>도량형 환산</strong>: 한대 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$)</p>
 </blockquote>
@@ -77,7 +87,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;">《针灸腧穴通考》</td>
-<td style="text-align: left;">"部位：在足内侧，内踝前下方，舟骨粗隆与内踝尖连线中点凹陷中。" / "取穴：于内踝前缘直线与内踝下缘横线的交点处取穴，前为中封，后为照海。" — <code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_09_上_足太阴脾经穴.md</code> L969~971</td>
+<td style="text-align: left;">"部位：在足内侧，内踝前下方，舟骨粗隆与内踝尖连线中点凹陷中。" / "取穴：于内踝前缘直线与内踝下缘横线的交点处取穴，前为中封，后为照海。" — 《针灸腧穴通考》 上 足太阴脾经穴 L969~971</td>
 <td style="text-align: left;">안쪽복사 앞아래, 발배뼈 거친면–안쪽복사 끝 연결선 중점의 오목. 앞은 중봉, 뒤는 조해</td>
 <td style="text-align: left;">현대 정위</td>
 </tr>
@@ -101,7 +111,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">《中国针灸穴位通鉴》</td>
-<td style="text-align: left;">"脾……行于商丘，商丘内踝之下陷者之中也，为经。(《灵枢经·本输》1：8)" / 별명 "无。" — <code>중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_31_足太阴脾经(1).md</code> L1040, L1044</td>
+<td style="text-align: left;">"脾……行于商丘，商丘内踝之下陷者之中也，为经。(《灵枢经·本输》1：8)" / 별명 "无。" — 《中国针灸穴位通鉴》 足太阴脾经(1) L1040, L1044</td>
 <td style="text-align: left;">오수혈 경금(經金)</td>
 <td style="text-align: left;">출처</td>
 </tr>
@@ -119,13 +129,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">《中国针灸证治通鉴》</td>
-<td style="text-align: left;">《明堂经》 상구 주치 "主寒热善呕。厥头痛，面肿起。脾虚令人病寒不乐，好太息。腹满响响然，不便，心下有寒痛。阴股内痛，气痈，狐疝走上下…痔，骨蚀。…绝子。小儿咳而泄…" — <code>중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_05_第壹编_第七篇_足太阴脾经_手少阴心经_手太阳小肠经.md</code> L118~126</td>
+<td style="text-align: left;">《明堂经》 상구 주치 "主寒热善呕。厥头痛，面肿起。脾虚令人病寒不乐，好太息。腹满响响然，不便，心下有寒痛。阴股内痛，气痈，狐疝走上下…痔，骨蚀。…绝子。小儿咳而泄…" — 《中国针灸证治通鉴》 第壹编 第七篇 足太阴脾经 手少阴心经 手太阳小肠经 L118~126</td>
 <td style="text-align: left;">단독 주치 목록</td>
 <td style="text-align: left;">$P_{single}$ 근거</td>
 </tr>
 <tr>
 <td style="text-align: left;">《中国针灸证治通鉴》</td>
-<td style="text-align: left;">"商丘，在内踝前陷中，主偏风，痹脚不得履地，刺风，头风，热风，阴痹，针入三分，留三呼，泻五吸，疾出之，忌灸。" — <code>中国针灸证治通鉴_14_第叁编_内科病症_四中风至八痉证.md</code> L194 / "身寒痹：曲池、列缺、环跳、风市、委中、商丘、中封、临泣(《神应经·痹厥部》)" — <code>中国针灸证治通鉴_02_…量化概念.md</code> L172</td>
+<td style="text-align: left;">"商丘，在内踝前陷中，主偏风，痹脚不得履地，刺风，头风，热风，阴痹，针入三分，留三呼，泻五吸，疾出之，忌灸。" — 《中国针灸证治通鉴》 第叁编 内科病症 四中风至八痉证 L194 / "身寒痹：曲池、列缺、环跳、风市、委中、商丘、中封、临泣(《神应经·痹厥部》)" — 《中国针灸证治通鉴》 …量化概念 L172</td>
 <td style="text-align: left;">《千金翼》 단독 조문 / 《神应经》 8혈 배오</td>
 <td style="text-align: left;">$P_{single}$ / $P_{comb}$ 분리</td>
 </tr>
@@ -845,7 +855,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">87.5</td>
 <td style="text-align: center;">90.63</td>
 <td style="text-align: left;">아래 하위 4항목 평균</td>
-<td style="text-align: left;">通考 <code>_09_上_足太阴脾经穴.md</code> L939~1095</td>
+<td style="text-align: left;">通考 上 足太阴脾经穴 L939~1095</td>
 </tr>
 <tr>
 <td style="text-align: left;">$S_{clarity}$ (0.35)</td>
@@ -935,7 +945,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 5. 《千金翼方》 '忌灸'와 《明堂》 '灸三壮'의 이문은 해결되지 않았다(침 금기는 아님).</p>
 <hr>
 <h2 id="a-fma-fma-510">부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)</h2>
-<p>생성: <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile SP05 --md</code> (2026-10-23). 수동 보정 2건(아래)을 반영했다.</p>
+<p>생성: FMA 5.1.0 경혈 프로파일 조회(SP05, 2026-10-23). 수동 보정 2건(아래)을 반영했다.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1053,7 +1063,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">2026-10-23</td>
 <td style="text-align: left;">전체</td>
-<td style="text-align: left;">ari_analyzer.py 템플릿 초안(21:00): 원전 발췌 원문 덩어리, 범용 Layer mm 경계(2.5/6.5/16.5/22mm), 교재 비교 일반문, 단일 채점 ARI-Core 81.2·S_reflex 100, B-Check 9/12 "확정", "실측 논문 33편 전수 역색인"</td>
+<td style="text-align: left;">자동 초안 생성기 템플릿 초안(21:00): 원전 발췌 원문 덩어리, 범용 Layer mm 경계(2.5/6.5/16.5/22mm), 교재 비교 일반문, 단일 채점 ARI-Core 81.2·S_reflex 100, B-Check 9/12 "확정", "실측 논문 33편 전수 역색인"</td>
 <td style="text-align: left;">Tier 3 재작성(10대 구성 요소 전수), 이중 채점 ARI-Core 75.0 ± 1.3(B), B-Check 7/12 미부합(가설)</td>
 <td style="text-align: left;">정본 Rank 0~7·4·5절</td>
 </tr>
@@ -1069,7 +1079,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">4·6절·부록 A</td>
 <td style="text-align: left;">범용 층차, FMA 표의 none 2건</td>
 <td style="text-align: left;">구조 순서 층차표, 그림 4-1 횡단면 모식도, FMA:43905 수동 대응·FMA:47050 힘줄 보정·김재효 중복 행 제외</td>
-<td style="text-align: left;">FMA 5.1.0; <code>.claude/skills/acupoint-anatomy/scripts/fma/figures/SP05_cross_section.py</code></td>
+<td style="text-align: left;">FMA 5.1.0; 그림 생성 스크립트(내부)</td>
 </tr>
 <tr>
 <td style="text-align: left;">2026-10-23</td>
@@ -1083,7 +1093,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">8절</td>
 <td style="text-align: left;">papers.id 57·793·846·848·958·1421 등 10편(PMID 공란) 인용, B-Check 9</td>
 <td style="text-align: left;">SP05 실제 자극·관찰 6편 + 문헌 1편, 오적중 제외 목록, B-Check 7(②=1·③④⑤⑥=1), 외부 검색 로그 표, 그림 8-1</td>
-<td style="text-align: left;">마스터DB.json SP5 역색인·sync_log 21:42:19; PubMed efetch 초록 대조</td>
+<td style="text-align: left;">통합 생의학 마스터 DB SP5 역색인·sync_log 21:42:19; PubMed efetch 초록 대조</td>
 </tr>
 <tr>
 <td style="text-align: left;">2026-10-23</td>
@@ -1096,7 +1106,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">2026-10-23</td>
 <td style="text-align: left;">구판 보관</td>
 <td style="text-align: left;">—</td>
-<td style="text-align: left;">템플릿 md·html·xlsx를 <code>_구판_template_20261023/</code>에 보관</td>
+<td style="text-align: left;">템플릿 md·html·xlsx를 구판 보관본(내부)에 보관</td>
 <td style="text-align: left;">—</td>
 </tr>
 <tr>
@@ -1104,13 +1114,17 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">1절·4절</td>
 <td style="text-align: left;">《穴位通鉴》 국소해부 인용 "L1076, L1242", X 좌표 "通鉴 L1076"</td>
 <td style="text-align: left;">인용 순서대로 "L1242, L1082", "通鉴 L1082"(L1076은 取穴 조문 '内踝微前'). 6절 "L1240~1246"(局部解剖 1~4)은 맞음</td>
-<td style="text-align: left;"><code>中国针灸穴位通鉴_31_足太阴脾经(1).md</code> L1082·L1242</td>
+<td style="text-align: left;">《中国针灸穴位通鉴》 足太阴脾经(1) L1082·L1242</td>
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:20 · 원본: SP05_상구_해부생리_실체판명_보고서.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1118,6 +1132,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

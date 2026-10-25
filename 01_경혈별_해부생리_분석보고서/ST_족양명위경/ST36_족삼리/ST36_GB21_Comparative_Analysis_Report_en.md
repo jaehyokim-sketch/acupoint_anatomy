@@ -1,10 +1,10 @@
 # Comparative Anatomical Substrate Analysis: Zusanli (足三里, ST36) vs Jianjing (肩井, GB21)
 
 > **Framework**: v2.7 (revised 2026-10-04) · **Nature of report**: a summary report comparing the finalised results of two individual reports (no independent scoring)
-> **ST36**: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 77.1 (B, grade unchanged) — [ST36 report](ST36_족삼리_해부생리_실체판명_보고서_en.md)
-> **GB21**: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65.6 (C, grade unchanged) — [GB21 report](../../GB_족소양담경/GB21_견정/GB21_견정_해부생리_실체판명_보고서_en.md)
-> **Canonical source**: `01_Framework/acupoint_anatomical_logic_framework.md` (Framework v2.7) · Evidence principles: Principles for Acupoint Anatomical Substrate Identification
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **ST36**: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 77.1 (B, grade unchanged) — [ST36 report](ST36_족삼리_해부생리_실체판명_보고서_en.html)
+> **GB21**: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65.6 (C, grade unchanged) — [GB21 report](../../GB_족소양담경/GB21_견정/GB21_견정_해부생리_실체판명_보고서_en.html)
+> **Canonical source**: Acupoint Substrate Identification Logic Framework (canonical) (Framework v2.7) · Evidence principles: Principles for Acupoint Anatomical Substrate Identification
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ---
 
@@ -70,7 +70,7 @@ This report compares **Zusanli (足三里, ST36)** of the Stomach Meridian of Fo
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Section 2 matrix | 11 rows | 4 rows added: FMA reference entities, nerve trunks, spinal segments, ultrasound measurements | `fma_query.py profile ST36/GB21`, `fma_neo4j.py query shared_structure` (0 results), PubMed PMID 42500462 · 29507586 |
+| Section 2 matrix | 11 rows | 4 rows added: FMA reference entities, nerve trunks, spinal segments, ultrasound measurements | FMA profile query, Neo4j shared-structure query (0 results), PubMed PMID 42500462 · 29507586 |
 | Section 3 | 3 findings | Item 4 (two axes of safety, TI comparison) added, and schematics of the two points placed side by side | papers.id 1896 · 1431 |
 | Scores | ARI, SI and B-Check of the two reports cited | **No change** (this report does no independent scoring) | — |
 
@@ -78,4 +78,4 @@ This report compares **Zusanli (足三里, ST36)** of the Stomach Meridian of Fo
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Whole document | No English edition | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts and classical quotations; links point to the English editions of the two individual reports | Korean edition `ST36_GB21_Comparative_Analysis_Report.md` |
+| Whole document | No English edition | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts and classical quotations; links point to the English editions of the two individual reports | Korean edition |

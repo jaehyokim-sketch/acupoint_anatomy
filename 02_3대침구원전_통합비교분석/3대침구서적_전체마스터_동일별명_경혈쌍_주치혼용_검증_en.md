@@ -1,7 +1,7 @@
 # 🏛️ Master Verification of Indication Mixing Among All Acupoint Pairs Sharing the Same Alias (別名), Based on the Complete Database of the Three Specialist Acupuncture Classics
 
-> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: Three Classics Shared-Alias Point Pair Indication Conflation Verification Dataset (48 pairs, no indication-comparison column) · Collation against the classics: the 'alias (別名)' entries and the 「針灸穴名別名索引」 (899 parsed items) of *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), and 「提要索隱·穴名」 of *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) · **Base analysis dataset**: [`中国针灸穴位通鉴 분석데이터셋/`](../../%E4%B8%AD%E5%9B%BD%E9%92%88%E7%81%B8%E7%A9%B4%E4%BD%8D%E9%80%9A%E9%89%B4%20%EB%B6%84%EC%84%9D%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B) (12 files including `중국침구혈위통감_동일별명_공유경혈_목록.csv`)
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so file names and strings in `code` are given exactly as they appear on disk and in the data.
+> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: Three Classics Shared-Alias Point Pair Indication Conflation Verification Dataset (48 pairs, no indication-comparison column) · Collation against the classics: the 'alias (別名)' entries and the 「針灸穴名別名索引」 (899 parsed items) of *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), and 「提要索隱·穴名」 of *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) · **Base analysis dataset**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) derived analysis datasets (12 files including the unpublished supplementary CSV dataset)
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script, so strings in `code` are given exactly as they appear in those editions and in the data.
 
 > ⚠️ **v2.7 verification summary**: Collating the "shared aliases" of the 48 pairs against the alias records of the three classics, **only 1 pair was confirmed as an alias of both points (2%: #15 手三里–足三里 '三里')**, 3 pairs are similar names or confirmed on one side only (#27, #29, #30), and **44 pairs (92%) are not confirmed**. Most of the "shared aliases" of the unconfirmed pairs (雲門, 氣穴, 風府, 風池, 上星, 通天, 承靈, 腦空, 曲差, 委中, etc.) are the standard names of other points; it is presumed that point names appearing adjacently in the body text of the classics were wrongly extracted as aliases. Moreover, this 48-pair list does not contain the 24 Google-Sheet pairs (Shimen (石門)–Mingmen (命門), Cuanzhu (攢竹)–Guangming (光明), etc.) that the text said it "included", and the 'mechanism classification' in the table (e.g. classifying the 氣穴 pairs as "lower He-Sea compatibility type") does not match the definitions in the text. The "100% proof" in this report does not hold, and the conclusion wording in all 48 rows is the same sentence repeated automatically.
 
@@ -113,9 +113,8 @@ This master report, based on a full scan and exegetical (訓詁學) textual anal
 
 ## 📁 List of Generated Master Analysis Files (same folder)
 
-- 📝 **Master Markdown report**: [3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.md](3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.md)
 - 📊 **Master Excel file**: Three Classics Shared-Alias Point Pair Master Dataset
-- 📄 **Master CSV file**: [3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.csv](3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증.csv)
+- 📄 **Master CSV file**: the unpublished supplementary CSV dataset
 
 ---
 
@@ -133,11 +132,11 @@ This master report, based on a full scan and exegetical (訓詁學) textual anal
 | Conclusion column of all 48 rows | "… proven to have been integrated." | "… hypothesis that they were integrated (not quantitatively verified)." | Same sentence repeated automatically, no supporting figures |
 | Complete list table | (none) | Added the `v2.7 confirmation of alias in the classics` column (✓1 · △3 · ✗44) | Collation with the alias records of the three classics |
 | Historical change 1–4 | "origin of mixing", "establishment of point-combination methods", "completion of the distinction and resolution of confusion in the Ming-Qing period", "establishment of point-combination guidelines" | Causal judgement / prescriptions not found / Song-dynasty attempt → Ming-dynasty re-mixing / WHO B1-05, no guideline cited | 《針灸腧穴通考》 name-and-substance study of 上廉 (LI9), Layer B B1-05 |
-| File guide | Absolute link `file:///D:/…` | Relative link within the same folder | Actual storage location |
+| File guide | Local absolute-path link | Relative link within the same folder | Actual storage location |
 | PMID/DOI · Layer B | None in the text | — | 0 items to check or correct |
 
 ## Refinement History (2026-10-24)
 
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
-| Header links | Absolute `file:///g:/내 드라이브/도서 번역/…` links (do not open on other PCs) | Links relative to the project root (`도서 번역`) | Skill path rule (no drive-letter absolute paths) |
+| Header links | Local absolute-path links (do not open on other PCs) | Project-relative links | Skill path rule (no drive-letter absolute paths) |

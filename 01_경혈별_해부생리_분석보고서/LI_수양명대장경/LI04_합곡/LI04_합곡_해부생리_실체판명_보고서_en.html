@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -62,15 +72,15 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 - <strong>Dual scoring</strong>: two independent rounds (raters A and B); 3 discrepancies of 15 points or more reconciled · <strong>⚠ Many texts contraindicate needling in pregnancy</strong> (flag kept separate from the SI, Section 5)</p>
 <p><strong>Three Primary Classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)
 <strong>Layer A Empirical Database</strong>: Integrated Biomedical Master DB v3.0 (of the 118 papers in the LI4 inverted index, only the <strong>19 papers in which LI4 stimulation or observation was confirmed from the full text or abstract</strong> are used for the verdict — Section 8 ①)
-<strong>Layer B Reference Registry</strong>: <code>01_Framework/layer_b_reference_registry.md</code> (6-item B-Check, concordance threshold ≥ 8/12)
+<strong>Layer B Reference Registry</strong>: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 <strong>Anatomical Ontology</strong>: local index of FMA 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s (B1 supplementary, not yet in the registry). Details in Appendix A
 <strong>Metrological Standard</strong>: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 </blockquote>
-<p><strong>Source file abbreviations</strong> (all under <code>01_도서_번역_및_원전/</code>)
-- [通考] <code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_04_上_手阳明大肠经穴-1.md</code> — 合谷 L657–1005
-- [通鑑] <code>중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_11_手阳明大肠经(1).md</code> — 合谷 L962–1400
-- [證治04] <code>중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_04_第壹编_第七篇_手太阴肺经_手阳明大肠经_足阳明胃经.md</code> — 合谷 L312–342</p>
+<p><strong>Source abbreviations</strong> (refined editions of the three classics)
+- [通考] 《針灸腧穴通考》 上 手陽明大腸經穴-1 — 合谷 L657–1005
+- [通鑑] 《中國針灸穴位通鑑》 手陽明大腸經(1) — 合谷 L962–1400
+- [證治04] 《中國針灸證治通鑑》 第壹編 第七篇 手太陰肺經 手陽明大腸經 足陽明胃經 — 合谷 L312–342</p>
 <hr>
 <h2 id="1-classical-literature-screening-table-three-primary-classics-excerpts">1. Classical Literature Screening Table (Three Primary Classics Excerpts)</h2>
 <div class="table-wrap"><table>
@@ -287,7 +297,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p>KJH DB (Acupoint Nomenclature & Alias Comparative Database, sheet <code>경혈 종합 목록</code> (comprehensive acupoint list), row 70: 67, LI04, <code>합곡</code> (Hapgok), 合谷, "合骨, 含口, 虎口, 中魁, 河口").</p>
+<p>KJH DB (Acupoint Nomenclature &amp; Alias Comparative Database, sheet <code>경혈 종합 목록</code> (comprehensive acupoint list), row 70: 67, LI04, <code>합곡</code> (Hapgok), 合谷, "合骨, 含口, 虎口, 中魁, 河口").</p>
 <hr>
 <h2 id="4-3d-spatial-coordinates-layer-15-stratification-diagram">4. 3D Spatial Coordinates &amp; Layer 1–5 Stratification Diagram</h2>
 <p>The two Targets are described separately (split in Section 7).</p>
@@ -1128,7 +1138,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <li><strong>T2 ARI-Core</strong>: A = 0.40×62.5 + 0.35×75 + 0.25×75 = 70.0, B = 0.40×56.25 + 0.35×75 + 0.25×75 = 67.5 → <strong>68.75 ± 1.25 → C (possible / hypothesis)</strong>. The upper bound of 70.0 touches the B boundary. Sensitivity (equal weights): A 70.8, B 68.75 → 69.8 (C; grade unchanged on the mean — A alone would be B, so recorded as "near the boundary").</li>
 <li><strong>Split verdict</strong>: ΔARI-Core = 68.75 − 61.25 = <strong>7.5 &lt; 10</strong> → no prevailing Target can be declared; <strong>both Targets are reported side by side</strong>. T1 scores higher on classical concordance ($S_{orig}$), T2 on anatomical substrate and reflex evidence ($S_{clarity}$, $S_{reflex}$).</li>
 <li><strong>Reconciliation record</strong>: 3 discrepancies of 15 points or more — T1 $S_{clarity}$ (50 vs 25), T2 $S_{clarity}$ (100 vs 75), T2 SI (75 vs 50). Reconciled on the grounds given in the tables above. The $S_{orig}$ mean difference (6.25) was below 15 points and is reported as mean ± half-range. B-Check T2 ⑤ (A 2, B 1) final 1; ⑥ (A 2, B 1) reconciled to 2.</li>
-<li><strong>Earlier-edition score</strong>: the 'ARI Score 95.15' in <code>_구판_v2.3_20260903/</code> (v2.3, four-factor weighted sum) is not compared.</li>
+<li><strong>Earlier-edition score</strong>: the 'ARI Score 95.15' in the internal archive (v2.3, four-factor weighted sum) is not compared.</li>
 </ul>
 <p><strong>Standard notation</strong>
 - T1: <code>ARI v3.0 | ARI-Core 61.25 ± 1.25 (C) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 59.4 (C, grade unchanged)</code>
@@ -1147,7 +1157,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 4. <strong>Needle syncope (暈針)</strong>: systemic reactions (needle syncope) are reported with strong stimulation, so the first treatment is safer in the supine position (《新編針灸學》).</p>
 <hr>
 <h2 id="appendix-a-fma-anatomical-substrate-profile-fma-510">Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)</h2>
-<p>Generated by <code>python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LI04 --md</code> (2026-10-24), supplemented with <code>entity</code>.</p>
+<p>Generated by FMA 5.1.0 acupoint profile query (LI04; 2026-10-24), supplemented with individual entity queries.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1282,7 +1292,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tbody>
 <tr>
 <td style="text-align: left;">Whole document</td>
-<td style="text-align: left;">v2.3 earlier draft (2026-09-03, 2.5 KB, 'ARI Score 95.15') — <code>_구판_v2.3_20260903/</code></td>
+<td style="text-align: left;">v2.3 earlier draft (2026-09-03, 2.5 KB, 'ARI Score 95.15') — the internal archive</td>
 <td style="text-align: left;">New Tier 3 v2.7 report: 10 required components, two-Target split, dual scoring, FMA cross-check, Figures 4-1 and 8-1</td>
 <td style="text-align: left;">Canon Rank 0–7</td>
 </tr>
@@ -1346,7 +1356,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Whole document</td>
 <td style="text-align: left;">Automatically generated "English" edition: Korean body text with only headings and some terms replaced</td>
 <td style="text-align: left;">Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations</td>
-<td style="text-align: left;">Korean edition <code>LI04_합곡_해부생리_실체판명_보고서.md</code></td>
+<td style="text-align: left;">Korean edition</td>
 </tr>
 <tr>
 <td style="text-align: left;">Title</td>
@@ -1387,9 +1397,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:25 · 원본: LI04_합곡_해부생리_실체판명_보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:50 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -1397,6 +1411,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

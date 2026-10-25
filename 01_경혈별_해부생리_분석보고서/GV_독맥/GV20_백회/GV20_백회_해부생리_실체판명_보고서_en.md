@@ -2,10 +2,10 @@
 
 > **Framework**: v2.7 (revised 2026-10-04) · **ARI**: ARI v3.0 | ARI-Core 71.2 ± 2.5 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 68.8 (C, grade changes → weight-sensitive) · **Dual scoring**: completed by two independent raters
 
-> **Source materials**: three primary classics `01_도서_번역_및_원전/<원전>/chunks_refined/` · alias DB Acupoint Nomenclature & Alias Comparative Database · needling-depth DB Classical Needling Depth Database · textbook datasets Common Textbook Anatomical Structure Dataset, Kim Jaehyo Anatomical Structure Dataset · Layer A Integrated Biomedical Master DB v3.0 · Layer B `01_Framework/layer_b_reference_registry.md`
-> **First written**: 2026-07-31 (v2.6) · **Revised**: 2026-10-04 (v2.7; the earlier edition is kept in `_구판_v2.6/`) · **FMA supplement**: 2026-10-23 (the pre-supplement edition is kept in `_구판_v2.7_20261023/`)
+> **Source materials**: three primary classics (refined editions) · alias DB Acupoint Nomenclature & Alias Comparative Database · needling-depth DB Classical Needling Depth Database · textbook datasets Common Textbook Anatomical Structure Dataset, Kim Jaehyo Anatomical Structure Dataset · Layer A Integrated Biomedical Master DB v3.0 · Layer B Layer B Reference Registry
+> **First written**: 2026-07-31 (v2.6) · **Revised**: 2026-10-04 (v2.7; the earlier edition is kept in the internal archive) · **FMA supplement**: 2026-10-23 (the pre-supplement edition is kept in the internal archive)
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their nerve trunks, spinal segments and venous drainage chains are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ---
 
@@ -24,11 +24,11 @@
 |:---|:---|:---|
 | Point code | GV20 (Governor Vessel (督脈)) | — |
 | Name | Baihui 百會 / 百会, Bǎihuì | — |
-| Earliest source | *Huangdi Mingtang Jing* (《黃帝明堂經》) | `针灸腧穴通考(下)_401-480.md` L2387 "出《黃帝明堂經》" |
-| Meridian qi convergence (脈氣所發) | **督脈、足太陽之會** (crossing point of the Governor Vessel (督脈) and the foot Taiyang (足太陽)) (《黃帝明堂經》). The "crossing point of the hand and foot Shaoyang (手足少陽) and the foot Jueyin (足厥陰)" is a statement of later texts such as *Zhenjiu Juying* (《針灸聚英》) | `针灸腧穴通考(下)_401-480.md` 【類屬】; `穴位通鉴(上卷)_241-320.md` 五.歸經與穴性, item 2 |
-| Classical location | "在前頂後一寸五分，頂中央旋毛中，陷可容指" | `针灸腧穴通考(下)_401-480.md` L2433 |
+| Earliest source | *Huangdi Mingtang Jing* (《黃帝明堂經》) | 《針灸腧穴通考》(下) PDF pp. 401–480 L2387 "出《黃帝明堂經》" |
+| Meridian qi convergence (脈氣所發) | **督脈、足太陽之會** (crossing point of the Governor Vessel (督脈) and the foot Taiyang (足太陽)) (《黃帝明堂經》). The "crossing point of the hand and foot Shaoyang (手足少陽) and the foot Jueyin (足厥陰)" is a statement of later texts such as *Zhenjiu Juying* (《針灸聚英》) | 《針灸腧穴通考》(下) PDF pp. 401–480 【類屬】; `《穴位通鑑》(上卷) PDF pp. 241–320` 五.歸經與穴性, item 2 |
+| Classical location | "在前頂後一寸五分，頂中央旋毛中，陷可容指" | 《針灸腧穴通考》(下) PDF pp. 401–480 L2433 |
 | Modern standard location | On the head, 5 cun directly above the midpoint of the anterior hairline (or the midpoint of the line joining the apices of the two auricles) | B1-05; Tongkao 【定位】 location and point-finding |
-| Classical needling | 刺入三分 (《黃帝明堂經》) / 針入二分 (*Tongren* (《銅人》)) / Dou's (竇氏) '沿皮向前·向後一寸' | `针灸腧穴通考(下)_401-480.md` L2592–2600 |
+| Classical needling | 刺入三分 (《黃帝明堂經》) / 針入二分 (*Tongren* (《銅人》)) / Dou's (竇氏) '沿皮向前·向後一寸' | 《針灸腧穴通考》(下) PDF pp. 401–480 L2592–2600 |
 | Modern needling | 平刺 0.5–0.8 寸 (4th–7th editions of 《針灸學》); Korean textbooks: transverse insertion 5–8 fen | Tongkao 【操作】, item 7; needling-depth DB sheet 1, row 46 |
 
 ---
@@ -37,18 +37,18 @@
 
 | Classic | File & line | Original text | English collation |
 |:---|:---|:---|:---|
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | `中国针灸穴位通鉴(上卷)_241-320.md` L1374 | "百會，一名三陽五會，在前頂後一寸五分。頂中央旋毛中陷可容指。督脈足太陽之會。"（《針灸甲乙經》3：39） | Baihui is also called Sanyang Wuhui (三陽五會). 1 cun 5 fen behind Qianding (前頂), in the hair whorl (旋毛) at the centre of the vertex, in a depression that admits a finger. Crossing point of the Governor Vessel (督脈) and the foot Taiyang (足太陽) |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | 《中國針灸穴位通鑑》(上卷) PDF pp. 241–320 L1374 | "百會，一名三陽五會，在前頂後一寸五分。頂中央旋毛中陷可容指。督脈足太陽之會。"（《針灸甲乙經》3：39） | Baihui is also called Sanyang Wuhui (三陽五會). 1 cun 5 fen behind Qianding (前頂), in the hair whorl (旋毛) at the centre of the vertex, in a depression that admits a finger. Crossing point of the Governor Vessel (督脈) and the foot Taiyang (足太陽) |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | same, L1589 | "刺入三分，灸三壯。"（《針灸甲乙經》3：39） | Insert 3 fen; moxibustion 3 cones |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | same, L1654 | "[別名]有十 … 至於涅丸宮（出《中華針灸學》）泥丸宮、維會（出《針灸學》）均不見於古代針灸文獻，不可從。" | 涅丸宮, 泥丸宮 and 維會 do not appear in ancient acupuncture literature and should not be followed |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | `针灸腧穴通考(下)_401-480.md` L2397 | "【名實考】一名三陽五會（《黃帝明堂經》）；一名天滿（《針灸資生經》）。… 宋以前針灸方中'頂上回毛'、'頂上旋毛'、'頂上回髮'等，均指本穴，今人不識，以為別是一穴，歸入奇穴類。" | The aliases are 三陽五會 (*Mingtang Jing*) and 天滿 (*Zisheng Jing*). The pre-Song '頂上回毛' and '頂上旋毛' also denote this point, but are now mistaken for a separate (extra) point |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | 《針灸腧穴通考》(下) PDF pp. 401–480 L2397 | "【名實考】一名三陽五會（《黃帝明堂經》）；一名天滿（《針灸資生經》）。… 宋以前針灸方中'頂上回毛'、'頂上旋毛'、'頂上回髮'等，均指本穴，今人不識，以為別是一穴，歸入奇穴類。" | The aliases are 三陽五會 (*Mingtang Jing*) and 天滿 (*Zisheng Jing*). The pre-Song '頂上回毛' and '頂上旋毛' also denote this point, but are now mistaken for a separate (extra) point |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2414 | "《竇太師針經》'維會'者 … 乃'臍中'穴別名，吳崐注極是。現存甲抄本兩見於'神闕'與本穴下，誤也 …《針灸聚英》所說'巔上'乃本穴之部位" | '維會' is an alias of Qizhong (臍中, Shenque (神闕)). Its additional entry under Baihui in the Jia manuscript (甲抄本) is an error. '巔上' is a location term for this point |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2462 | "今實際觀察發現：頭頂旋毛處確有明顯的凹陷（也有個體不明顯）… 應當優先採用體表標誌定位 … 如果被檢者有兩個旋毛和凹陷者，以靠近中線者為準。" | A depression actually exists at the hair whorl (with individual variation). Surface landmarks take precedence over bone-proportional measurement. With two whorls, use the one closer to the midline |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2476–2479 | "主痎瘧。癲疾。耳鳴。痙。頂上痛，風頭重，目如脫，不可左右顧。熱病汗出而善嘔。小兒驚癇。（《黃帝明堂經》）… 百會、玉枕主卒起僵仆 … **按**：此乃《黃帝明堂經》'囟會'穴主治，孫思邈誤錄於此。" | Original indications in the *Mingtang Jing*. The 《千金》 indication 'sudden collapse on rising (卒起僵仆)' is a mistaken transfer of an indication of Xinhui (囟會) |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2501 | "不能因為本穴有治療'脫肛'作用，就類推出：凡是臟器下垂的病症皆可治療。因此 7 版教材中'胃下垂、腎下垂'二症暫不收錄。" | The effect on prolapse of the rectum (脫肛) must not be extrapolated to all visceral ptosis; gastroptosis (胃下垂) and nephroptosis (腎下垂) of the 7th edition are removed |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | same, L2592–2612 | "【操作】斜刺或平刺。1. 刺入三分，灸五壯。（《黃帝明堂經》）… 4. 針入二分，得氣即瀉 …（《銅人》）… 8. 可向前後或左右橫刺 0.5~1.5 寸 … 注意：針刺時如小兒囟門未合，以及腦積水思考[sic]，均宜謹慎。（上海《針灸學》）" | Oblique or transverse insertion. *Mingtang Jing* 3 fen, *Tongren* 2 fen. Shanghai 《針灸學》: caution with an unclosed infant fontanelle and in patients with hydrocephalus (the source's '思考' is read as a misprint for '患者', patients; the quotation is left as printed) |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | `中国针灸证治通鉴_321-400.md` L1543 | "小兒脫肛瀉血，每廁臟腑撮痛不可忍者，灸百會一穴三壯，在頭中心陷者是也，炷如小麥大。"（《太平聖惠方·明堂》卷一百） | For prolapse of the rectum with bloody stools (脫肛瀉血) in children, 3 moxa cones at Baihui alone |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《中國針灸證治通鑑》 PDF pp. 321–400 L1543 | "小兒脫肛瀉血，每廁臟腑撮痛不可忍者，灸百會一穴三壯，在頭中心陷者是也，炷如小麥大。"（《太平聖惠方·明堂》卷一百） | For prolapse of the rectum with bloody stools (脫肛瀉血) in children, 3 moxa cones at Baihui alone |
 | *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | same, L1559 | "治脫肛刺督脈百會一穴，在頂中央旋毛中可容豆，針入二分，可灸七壯，至七七壯，即止。"（《針經摘英集》） | For prolapse of the rectum, needle Baihui alone to 2 fen |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | `中国针灸证治通鉴_161-240.md` L3126 | "治風頭痛方……又方：灸百會三、二七即瘥。" | Moxibustion at Baihui for wind headache (風頭痛) |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | 《中國針灸證治通鑑》 PDF pp. 161–240 L3126 | "治風頭痛方……又方：灸百會三、二七即瘥。" | Moxibustion at Baihui for wind headache (風頭痛) |
 | *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | same, L1106 | "尸厥暴死不省人事：百會、人中、啞門、臑會、合谷、中衝。" | Corpse-like reversal (尸厥) — multi-point prescription (derived from combination) |
 
 > The *Tongkao* 'anatomical description' quotation in Sections 2.4 and 7.1 of the earlier edition ("帽狀腱膜 … 上矢狀竇 … convergence of 枕大神經 and 眶上神經") **was a fabricated quotation not found in the original text and has been deleted**. The *Tongkao* entry on GV20 (L2387–2612) contains no description of anatomical structures.
@@ -136,7 +136,7 @@ GV20 aliases in the KJH DB (Acupoint Nomenclature & Alias Comparative Database, 
 
 ### 4.4 FMA Substrate Cross-check (by Layer)
 
-Structure names from the two textbooks; IDs and relations from FMA 5.1.0 (`fma_query.py profile GV20`).
+Structure names from the two textbooks; IDs and relations from FMA 5.1.0 (FMA profile query).
 
 | Layer | Structure | FMA | FMA relation | Nerve trunk / vascular chain (FMA) | Spinal segment |
 |:---|:---|:---|:---|:---|:---|
@@ -414,7 +414,7 @@ There is one Target, so the ΔARI-Core decision does not apply. If the location 
 
 ## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile GV20 --md` (2026-10-23).
+Generated by FMA 5.1.0 acupoint profile query (GV20; 2026-10-23).
 
 | Category | Textbook term | FMA substrate | Match | Source | Parent trunk / drainage chain | Segment |
 |:---|:---|:---|:---|:---|:---|:---|
@@ -443,17 +443,17 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 | Location | Original content | Change | Basis |
 |:---|:---|:---|:---|
 | Header | — | Added FMA 5.1.0 anatomical ontology line and FMA supplement date | FMA Acupoint Anatomical Ontology Mapping Registry |
-| Section 4.3 | Text cross-section only | Added Figure 4-1 coronal anatomical schematic (PNG) | `.claude/skills/acupoint-anatomy/scripts/fma/figures/GV20_cross_section.py` |
-| Section 4.4 (new) | — | FMA cross-check table by layer; 3 FMA notes (is_a misclassification of the occipital vein, C2 as the only segment, cutaneous territory not recorded) | `fma_query.py profile GV20`, `entity 50802` |
+| Section 4.3 | Text cross-section only | Added Figure 4-1 coronal anatomical schematic (PNG) | figure-generation script (internal) |
+| Section 4.4 (new) | — | FMA cross-check table by layer; 3 FMA notes (is_a misclassification of the occipital vein, C2 as the only segment, cutaneous territory not recorded) | FMA profile query, `entity 50802` |
 | Section 6 | 4-column textbook comparison | FMA adjudication column; nerve difference interpreted as V1/V3 different trunks (complementary), vascular difference as trunk/branch | FMA is_a chains |
 | Section 8.2 | Hypothesised circuit table | Added Figure 8-1 FMA peripheral pathway (Mermaid) — verdict (not concordant, 6/12) unchanged | FMA:65443→8788; 52655→52638→52621; 53000→52996; 50791→50767 |
 | Section 8.3 | B-Check ①, ② rationale | Added FMA IDs and segment (C2) pointers (scores unchanged: ① = 1, ② = 1) | Section 4.4 |
 | Section 8.4 | 2026-10-04 log | Added rows for the 2026-10-23 Rank 6 re-run (10 new papers, papers.id 2256–2265, all multi-point, animal or review → verdict unchanged) | `_metadata.sync_log` 2026-10-23T21:43:54 |
 | Section 10.1 | $S_{clarity}$ rationale | Noted FMA confirmation (score unchanged at 75) | Section 6, Appendix A |
-| Appendix A (new) | — | FMA profile table | `fma_query.py profile GV20 --md` |
+| Appendix A (new) | — | FMA profile table | FMA profile query |
 | ARI | ARI-Core 71.2 ± 2.5 (B, weight-sensitive), SI 75 | **No change** | Skill section 5-1 |
 | Canonical consistency check | — | Confirmed absence of earlier-edition wording relative to v2.7, non-rubric scores and 'established' verdict wording ('confirmed alias' is an alias-adjudication term unrelated to the B-Check verdict) | Canonical Rank 7, 4.2 |
-| Archive | — | Pre-supplement md, html and xlsx kept in `_구판_v2.7_20261023/` | — |
+| Archive | — | Pre-supplement md, html and xlsx kept in the internal archive | — |
 
 ---
 
@@ -461,7 +461,7 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 | Location (earlier edition) | Original content | Change | Basis |
 |:---|:---|:---|:---|
-| Header | Framework v2.6, 22 Master ASIA, Principle n · Line n | v2.7 notation block; references to the earlier framework deleted | 01_Framework/acupoint_anatomical_logic_framework.md |
+| Header | Framework v2.6, 22 Master ASIA, Principle n · Line n | v2.7 notation block; references to the earlier framework deleted | Acupoint Substrate Identification Logic Framework (canonical) |
 | Header link | Needling-depth DB link pointed to the logic-principles xlsx | Correct file name Classical Needling Depth Database | File list of Master Datasets Registry |
 | 1. Point properties | Crossing point of 足太陽 · 手少陽 · 足少陽 · 足厥陰 | The classics give "督脈、足太陽之會". 手足少陽 · 厥陰 are later | Tongkao 【類屬】; Xuewei Tongjian 五.歸經 |
 | 1. Classical location | 《甲乙經》 "…旋毛中" | 《黃帝明堂經》 "…旋毛中，陷可容指" | Tongkao L2433 |
@@ -492,12 +492,12 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 | 6.1 | RAS arousal · vestibulo-cortical · serotonin/melatonin · paradoxical inhibition · DMN | Deleted; replaced with a hypothesis table based on Layer B IDs and papers.id | B-Check 6/12; Section 8.1 |
 | 6.2 | 枕小神經 etc. in the nerve table | Reconstructed from the textbook datasets | Textbook datasets |
 | 7.1 | *Tongkao* cross-validation of 5 items, "complete agreement" | **Fabricated comparison deleted** | Tongkao L2387–2612 |
-| 7.2 | Earlier 5-factor ARI 94.9 | ARI v3.0 profile 71.2 ± 2.5 (B), SI 75 | final_GV20.json |
+| 7.2 | Earlier 5-factor ARI 94.9 | ARI v3.0 profile 71.2 ± 2.5 (B), SI 75 | dual-scoring record |
 | 8.2 | Consistency audit (all items agree) | Deleted (comparing identical outputs is no ground for reliability) | framework Rank 7 |
 | Rank 5 comparison table | Common Textbook "frontal belly · supratrochlear nerve", Kim Jaehyo "occipitofrontalis" | Dataset values (Common Textbook: greater occipital nerve · auriculotemporal nerve; Kim Jaehyo: pericranium · supraorbital · supratrochlear nerves) | Common Textbook dataset rows 216–221; Kim Jaehyo rows 321–330 |
 | 9. Conclusion | "Final established anatomical substrate", "perpendicular insertion absolutely forbidden" | Probable (B); perpendicular insertion allowed by the classics, skull blocks deeper penetration; caution in children | Tongkao L2594, L2612 |
 | New | — | Section 8 (Layer A · B-Check · search log), Section 10 (ARI v3.0); Sections 1, 2, 3, 5, 6, 9 restructured | WRITER_BRIEF |
-| Earlier-edition score | — | Earlier v2.6 score 94.9 (not comparable) | `_구판_v2.6/` |
+| Earlier-edition score | — | Earlier v2.6 score 94.9 (not comparable) | the internal archive |
 
 ---
 
@@ -505,7 +505,7 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 | Location | Original content | Change | Basis |
 |:---|:---|:---|:---|
-| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `GV20_백회_해부생리_실체판명_보고서.md` |
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition |
 | Title | "GV20 (百會, Baihui (百會, GV20))" duplicated annotation | Title in the standard monograph form | — |
 | Classical quotations | Simplified characters (e.g. 百会, 针灸, 脱肛) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |
 
@@ -513,5 +513,5 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
-| Section 1, 《針灸腧穴通考》 needling row | "以及腦積水思考" (no misprint marker) | Quotation kept + `[sic]`; the interpretation column reads '思考' as a misprint for '患者' | `침구수혈통고(针灸腧穴通考)/针灸腧穴通考_22_下_督脉穴-2.md` L1035 — the printed edition itself reads "思考", so the quotation is not altered. From context (listed alongside an unclosed infant fontanelle) the intended word is '患者' |
+| Section 1, 《針灸腧穴通考》 needling row | "以及腦積水思考" (no misprint marker) | Quotation kept + `[sic]`; the interpretation column reads '思考' as a misprint for '患者' | 《針灸腧穴通考》 下 督脈穴-2 L1035 — the printed edition itself reads "思考", so the quotation is not altered. From context (listed alongside an unclosed infant fontanelle) the intended word is '患者' |
 | Textbook title | *Meridian and Acupoint Studies* (經絡經穴學) | (經絡腧穴學) | The Korean edition names the textbook *Gyeongnak Suhyeolhak* (經絡腧穴學; suhyeol = 腧穴); 經絡經穴學 was a mistranslation carried over from the earlier ST36 English edition |

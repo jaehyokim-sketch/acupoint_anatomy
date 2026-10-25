@@ -5,12 +5,12 @@
 
 > **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (Huang Longxiang, 黃龍祥)
 > **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 — GB39 evidence pack: of 29 landmark papers and 18 locally mapped papers, **5 mechanistic/clinical studies that actually include GB39** (papers.id 1610 · 1612 · 1615 · 1902 · 1903, all multi-point or animal) + 1 textual study on location (1624)
-> **Layer B Reference Registry**: [`layer_b_reference_registry.md`](../../../../01_Framework/layer_b_reference_registry.md) (6-item B-Check, concordance threshold ≥ 8/12)
+> **Layer B Reference Registry**: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 > **Needling-depth DB**: Classical Needling Depth Database sheet 1, row 344 (N0 = 342)
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 > **Metrological Standard**: Han-dynasty (漢代) standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$), 1 cun = 10 fen = 23 mm (for depth conversion; surface positions use bone-proportional cun)
 > **Analysis Targets**: **T1** classical source location (*Huangdi Mingtang Jing* (《黃帝明堂經》) "在足外踝上三寸動者(脈)中, 足三陽絡, 按之陽明脈絕乃取之" = the anterior tibial artery pulse point on the tibial side) / **T2** WHO and current-textbook location (外踝尖上 3寸, 腓骨前緣)
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 > **Summary**: The earlier edition took the classical "動脈中" to be the perforating branch of the fibular artery and analysed a single point with Δ 3–7 mm. However, the *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) and papers.id 1624 hold that the vessel is the **anterior tibial artery** and that the original position is **on the tibial side**. The Δ estimated independently by each of the two raters is about 20–35 mm (> 15 mm), so the analysis branches into T1 and T2. ΔARI-Core = 3.8 (< 10), so **neither Target is declared superior and both are reported side by side**. For both Targets the B-Check is not concordant, so the reflex mechanism is a **hypothesis**.
 
@@ -20,9 +20,9 @@
 
 | Text (source file & line) | Original excerpt (location & depth) | Indications | Collation & remarks |
 | :--- | :--- | :--- | :--- |
-| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)**, entry 懸鍾 (`针灸腧穴通考(下)_321-400.md` L529–658, printed pp.1106–1109) and the entry 陽輔 "'陽輔'、'懸鍾'與'絕骨'穴辨" (same file, L414–437) | "懸鍾，在足外踝上三寸動者中，足三陽絡，按之陽明脈絕乃取之。" (《黃帝明堂經》, L421) / "懸鍾，一名絕骨，在外踝上三寸動者中，足三陽絡。" (《千金要方》 卷二十九, L426 · 558) / modern 【定位】 "外踝尖上 3 寸，腓骨前緣" (L569) | "主腹滿，胃中有熱不嗜食，小兒腹滿不能食飲。" (《黃帝明堂經》, L542) | ① "《黃帝明堂經》所謂'陽明脈'……也即足背動脈，由於它是脛前動脈的下行支……人體測量學調查的結果表明：在外踝上三寸，靠近足陽明經脈行處，用力按壓，則衝陽脈搏動消失……後人及今人……將懸鍾穴定於足少陽經脈線上……此處不僅不能觸及動脈搏動，通過按壓也不能使足背處的衝陽脈搏動消失" (L548–552). ② "既是'按之陽明脈絕'處，則定位宜略偏向脛側……因而出現了名實分離的現象" (L431). ③ "'絕骨'穴不見於《黃帝明堂經》" (L431), "'絕骨'歸入奇穴類" (L437). ④ Meridian attribution (歸經), note (按): "將這樣一個位於陽明脈上而又主治陽明胃病的腧穴歸入足少陽經，難以成立" (L615). ⑤ "《黃帝明堂經》的'懸鍾'已經名存實亡了" (L658). **The 《通考》 contains no description of the superficial fibular nerve (淺腓骨神經) or the perforating branch of the fibular artery (腓骨動脈).** |
-| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)**, entry 懸鍾 (`中国针灸穴位通鉴(下卷)_161-240.md` L52–346) | Source (出處) "懸鍾，在足外踝上三寸動者脈中，足三陽經，按之陽明脈絕乃取之。" (《針灸甲乙經》 3:55, L54 — the OCR reading "經" is read as "絡" following the 《通考》 and L136 "足三陽絡") / 24 location (部位) entries (L80–132), e.g. "在足外踝上三寸動脈中。" (《銅人》 5:20 · 《聚英》 · 《大成》, L90), "足外踝上三寸動脈中，尋摸尖骨者是。足三陽之大絡，按之陽明脈絕乃取之。" (《針灸大成》 7:209, L110) / "刺入六分，留七呼，灸五壯。" (《甲乙》 etc., L236) | "腹滿，胃中有熱，不嗜食，懸鍾主之。" (《甲乙》 9:124), "小兒腹滿，不能食飲，懸鍾主之。" (《甲乙》 12:154) (L154–156) | Explanation of the name (釋義): "穴在足外踝上三寸動者脈中，即脛前動脈處" (《經穴釋義匯解》, L74). Regional anatomy: "在腓骨前緣……有脛前動脈的分支，分佈著腓淺神經" (《新針灸學》), "腓淺神經；腓深神經；脛前動脈" (《針灸學簡編》) (L276–288). Concluding remarks: the alias 絕骨 "首出《備急千金要方》卷29" (L342), "髓會不宜作別名" (L292) |
-| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** (`中国针灸证治通鉴_*.md`, 7 chunks; 懸鍾 and 絕骨 occur 196 times on 165 lines) | (Prescription collection — almost no location descriptions) | "乃若胃熱治懸鍾" (`_161-240.md` L4132), "腹滿不食：中脘針，絕骨、下三里" (`_241-320.md` L2972) | Context of occurrences (±80 characters, overlap allowed, reference values): lower-limb wei (痿), bi (痹), foot (足), shin (脛), knee (膝) 113; leg qi (腳氣) 20; stroke (中風) 16; malaria (瘧) 11; nape/neck (項 · 頸) 9; stomach/abdominal fullness (胃 · 腹滿) 7; stiff neck (落枕) 2. Mostly **combination** prescriptions with 足三里 and others. `_1-80.md` L1236, note (按): "'絕骨'穴不見於《明堂經》，後世醫家或以之為懸鍾穴，或以之為陽輔穴" |
+| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)**, entry 懸鍾 (《針灸腧穴通考》(下) PDF pp. 321–400 L529–658, printed pp.1106–1109) and the entry 陽輔 "'陽輔'、'懸鍾'與'絕骨'穴辨" (same file, L414–437) | "懸鍾，在足外踝上三寸動者中，足三陽絡，按之陽明脈絕乃取之。" (《黃帝明堂經》, L421) / "懸鍾，一名絕骨，在外踝上三寸動者中，足三陽絡。" (《千金要方》 卷二十九, L426 · 558) / modern 【定位】 "外踝尖上 3 寸，腓骨前緣" (L569) | "主腹滿，胃中有熱不嗜食，小兒腹滿不能食飲。" (《黃帝明堂經》, L542) | ① "《黃帝明堂經》所謂'陽明脈'……也即足背動脈，由於它是脛前動脈的下行支……人體測量學調查的結果表明：在外踝上三寸，靠近足陽明經脈行處，用力按壓，則衝陽脈搏動消失……後人及今人……將懸鍾穴定於足少陽經脈線上……此處不僅不能觸及動脈搏動，通過按壓也不能使足背處的衝陽脈搏動消失" (L548–552). ② "既是'按之陽明脈絕'處，則定位宜略偏向脛側……因而出現了名實分離的現象" (L431). ③ "'絕骨'穴不見於《黃帝明堂經》" (L431), "'絕骨'歸入奇穴類" (L437). ④ Meridian attribution (歸經), note (按): "將這樣一個位於陽明脈上而又主治陽明胃病的腧穴歸入足少陽經，難以成立" (L615). ⑤ "《黃帝明堂經》的'懸鍾'已經名存實亡了" (L658). **The 《通考》 contains no description of the superficial fibular nerve (淺腓骨神經) or the perforating branch of the fibular artery (腓骨動脈).** |
+| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)**, entry 懸鍾 (《中國針灸穴位通鑑》(下卷) PDF pp. 161–240 L52–346) | Source (出處) "懸鍾，在足外踝上三寸動者脈中，足三陽經，按之陽明脈絕乃取之。" (《針灸甲乙經》 3:55, L54 — the OCR reading "經" is read as "絡" following the 《通考》 and L136 "足三陽絡") / 24 location (部位) entries (L80–132), e.g. "在足外踝上三寸動脈中。" (《銅人》 5:20 · 《聚英》 · 《大成》, L90), "足外踝上三寸動脈中，尋摸尖骨者是。足三陽之大絡，按之陽明脈絕乃取之。" (《針灸大成》 7:209, L110) / "刺入六分，留七呼，灸五壯。" (《甲乙》 etc., L236) | "腹滿，胃中有熱，不嗜食，懸鍾主之。" (《甲乙》 9:124), "小兒腹滿，不能食飲，懸鍾主之。" (《甲乙》 12:154) (L154–156) | Explanation of the name (釋義): "穴在足外踝上三寸動者脈中，即脛前動脈處" (《經穴釋義匯解》, L74). Regional anatomy: "在腓骨前緣……有脛前動脈的分支，分佈著腓淺神經" (《新針灸學》), "腓淺神經；腓深神經；脛前動脈" (《針灸學簡編》) (L276–288). Concluding remarks: the alias 絕骨 "首出《備急千金要方》卷29" (L342), "髓會不宜作別名" (L292) |
+| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** (refined edition, 7 chunks; 懸鍾 and 絕骨 occur 196 times on 165 lines) | (Prescription collection — almost no location descriptions) | "乃若胃熱治懸鍾" (PDF pp. 161–240 L4132), "腹滿不食：中脘針，絕骨、下三里" (PDF pp. 241–320 L2972) | Context of occurrences (±80 characters, overlap allowed, reference values): lower-limb wei (痿), bi (痹), foot (足), shin (脛), knee (膝) 113; leg qi (腳氣) 20; stroke (中風) 16; malaria (瘧) 11; nape/neck (項 · 頸) 9; stomach/abdominal fullness (胃 · 腹滿) 7; stiff neck (落枕) 2. Mostly **combination** prescriptions with 足三里 and others. PDF pp. 1–80 L1236, note (按): "'絕骨'穴不見於《明堂經》，後世醫家或以之為懸鍾穴，或以之為陽輔穴" |
 
 ---
 
@@ -385,7 +385,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$
 
 ## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile GB39 --md` (2026-10-23). The match level `exact` means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.
+Generated by: FMA 5.1.0 acupoint profile query (GB39; 2026-10-23). The match level `exact` means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.
 
 | Category | Textbook term | FMA entity | Match | Source | Innervation / parent trunk | Spinal segments |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -415,14 +415,14 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
 | Header | — | FMA 5.1.0 anatomical ontology line added | FMA Acupoint Anatomical Ontology Mapping Registry |
-| Section 4 | Text layer diagram only | Figure 4-1 cross-sectional schematic (T1 and T2 shown together), 4-3 FMA cross-check table by layer, 3 notes on the limits of FMA modelling | `fma_query.py profile GB39`; figure script `.claude/skills/acupoint-anatomy/scripts/fma/figures/GB39_cross_section.py` |
+| Section 4 | Text layer diagram only | Figure 4-1 cross-sectional schematic (T1 and T2 shown together), 4-3 FMA cross-check table by layer, 3 notes on the limits of FMA modelling | FMA profile query; figure-generation script (internal) |
 | Section 6 | Textbook comparison | FMA adjudication (7 common · 1 Common Textbook only · 6 Kim Jaehyo only); membership of the Kim Jaehyo-only structures in the posterior compartment and tibial nerve confirmed by FMA compartments | FMA contained_in FMA:85203 · 85206 · 312109 |
 | Section 8 ② | Basis of B-Check ① and ② | FMA ID and segmental_supply pointers added for both T1 and T2 (**scores unchanged**: T1 5/12, T2 6/12) | FMA segmental_supply |
 | Section 8 ③ | 2026-10-04 log | Rows added for the 2026-10-23 Rank 6 re-run (PubMed 16 · OpenAlex 24 · Crossref 0, 7 new) — new papers not reflected in the verdict | `_metadata.sync_log` GB39 2026-10-23T21:43:36 |
 | Section 8 ⑤ | — | Figure 8-1 FMA peripheral afferent pathway (Mermaid) | FMA:44771 · 44699 → 19039 → 19034 → 5909; FMA:22593 → 19035 |
-| Appendix A | — | FMA profile table | `fma_query.py profile GB39 --md` |
+| Appendix A | — | FMA profile table | FMA profile query |
 | ARI | T1 51.2 ± 0 (D·H) / T2 55.0 ± 0 (C) | **No change** — FMA is B1 supplementary evidence and does not change rubric levels | Skill section 5-1 |
-| Archive of earlier edition | — | md, html and xlsx before the supplement archived in `_구판_v2.7_20261023/` | — |
+| Archive of earlier edition | — | md, html and xlsx before the supplement archived in the internal archive | — |
 
 ---
 
@@ -431,23 +431,23 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
 | Header | v2.6; needling-depth DB link wrongly pointing to the logic-principles xlsx | v2.7 citation block (T1 and T2 ARI notation); needling-depth DB link corrected | final_GB39M notation; Master Datasets Registry |
-| 《通考》 quotations in Sections 2.4, 7.1 and 9 | "懸鍾(絕骨)穴位於外踝上三寸, 腓骨前緣… 淺腓骨神經(L4-S1)… 腓骨動脈 perforating branch… '動脈' is the pulse of the perforating branch of the fibular artery" (Tongkao collation column), "complete agreement on 5 items" | **Deleted as fabricated quotations.** Replaced by the actual text of the 《通考》 (pulse-based location, anterior tibial artery, tibial side, 名實分離, 名存實亡, implausible meridian attribution). The 《通考》 contains no description of the 淺腓骨神經 or the perforating branch of the 腓骨動脈 | `针灸腧穴通考(下)_321-400.md` L431 · 437 · 542 · 548–552 · 615 · 658 |
-| Original text in Sections 1, 2.2.1 and 5.1 | 《甲乙》 "在足外踝上三寸動脈中", 《明堂》 "在足外踝上三寸" | Full text "在足外踝上三寸動者脈中, 足三陽絡, 按之陽明脈絕乃取之" restored | `中国针灸穴位通鉴(下卷)_161-240.md` L54; 《通考》 L421 |
+| 《通考》 quotations in Sections 2.4, 7.1 and 9 | "懸鍾(絕骨)穴位於外踝上三寸, 腓骨前緣… 淺腓骨神經(L4-S1)… 腓骨動脈 perforating branch… '動脈' is the pulse of the perforating branch of the fibular artery" (Tongkao collation column), "complete agreement on 5 items" | **Deleted as fabricated quotations.** Replaced by the actual text of the 《通考》 (pulse-based location, anterior tibial artery, tibial side, 名實分離, 名存實亡, implausible meridian attribution). The 《通考》 contains no description of the 淺腓骨神經 or the perforating branch of the 腓骨動脈 | 《針灸腧穴通考》(下) PDF pp. 321–400 L431 · 437 · 542 · 548–552 · 615 · 658 |
+| Original text in Sections 1, 2.2.1 and 5.1 | 《甲乙》 "在足外踝上三寸動脈中", 《明堂》 "在足外踝上三寸" | Full text "在足外踝上三寸動者脈中, 足三陽絡, 按之陽明脈絕乃取之" restored | 《中國針灸穴位通鑑》(下卷) PDF pp. 161–240 L54; 《通考》 L421 |
 | 銅人 · 千金 · 大成 in Section 2.2.1 | 《銅人》 "絕骨穴在足外踝上三寸", 《千金》 "絕骨, 在外踝上三寸", 《大成》 "足外踝上三寸, 足少陽, 陽維之會" | 《銅人》 5:20 "在足外踝上三寸動脈中", 《千金》 卷29 "懸鍾，一名絕骨，在外踝上三寸動者中，足三陽絡", 《大成》 7:209 "足外踝上三寸動脈中，尋摸尖骨者是。足三陽之大絡，按之陽明脈絕乃取之" | 《通鑑》 L90 · 110; 《通考》 L426 |
 | Aliases in Section 2.1 | 絕骨 "the same point in all texts since the *Jiayi Jing* (甲乙經), no risk of conflation", "ancient name for the fibula", 縣鍾 | 絕骨 is absent from the 《明堂》 and first becomes an alias of Xuanzhong in 《千金》 卷29. KJH and the two textbooks also list it under GB38 → high risk of conflation. 縣鍾 deleted, 足三陽絡 added | KJH comprehensive acupoint list rows 344 · 345; Common Textbook and Kim Jaehyo xlsx rows 342 · 343; 《通鑑》 L342; 《通考》 L431 |
 | Depth in Sections 2.2.2 and 2.2.3 | "Jiayi Jing 34" entered as if it were a depth value; μ 6.2 fen, σ 1.0 fen | 34 stated to be a sequence number; statistics deleted; heterogeneous depths from the 《脈經》, 《玉龍經》, 《指微》, 竇氏, 橫透 etc. added | Needling-depth xlsx sheet 1 row 344; 《通鑑》 L234–274 |
 | Indications in Sections 2.3 and 3.2 | $P_{single}$ = 頸項強痛 · 落枕 · 下肢痿痹 · 足脛疼痛; original indications omitted | $P_{single}$ = 腹滿 · 胃中有熱 · 不嗜食 · 小兒腹滿 (《明堂》). 頸項強 = 《千金》 卷18 絕骨 indication mixed in; 落枕 = modern 《針灸學簡編》 (combination); 五淋 · 濕痹 = 陽輔 indications mixed in | 《通考》 L542 · 627–647 · 686; 《通鑑》 L154–156 · 230 · 342 |
-| Δ in Section 4.2 | 0.3–0.7 cm, "below the separation criterion, single analysis" | Δ ≈ 20–35 mm (independent estimates by 2 raters) → T1/T2 branch; Section 7 newly created | final_GB39M.json override_note; papers.id 1624 |
+| Δ in Section 4.2 | 0.3–0.7 cm, "below the separation criterion, single analysis" | Δ ≈ 20–35 mm (independent estimates by 2 raters) → T1/T2 branch; Section 7 newly created | adjudication record; papers.id 1624 |
 | Substrate of "動脈中" in Sections 5.1 and 6.2 | Perforating branch of the fibular artery | Anterior tibial artery (the perforating-branch interpretation has no basis in the classical sources) | 《通考》 L548–552; 《通鑑》 L74; papers.id 1624 |
 | Layers in Sections 5.3 and 8.1 | Superficial fibular nerve at 8–14 mm (Layer 3b), fibular periosteum as Layer 4, cortical bone "金禁" | Superficial fibular nerve = Layer 1 (subcutis), Layer 4 = anterior tibial artery and veins + deep fibular nerve, Layer 5 = periosteum. "金禁" deleted (no '0' in the DB) | Canonical Rank 5 layer definitions; needling-depth xlsx row 344; B1-01 · B1-03 |
-| Safety in Section 5.2 | "No risk of injury to the main trunk of the fibular artery"; Layer 4 risk structures omitted | Possibility of contact with Layer 4 (anterior tibial artery, deep fibular nerve) stated for T1 and T2 separately, together with records of deep insertion (《指微》 46 mm, 竇氏 57.5 mm) | final_GB39M.json S_safety rationale |
+| Safety in Section 5.2 | "No risk of injury to the main trunk of the fibular artery"; Layer 4 risk structures omitted | Possibility of contact with Layer 4 (anterior tibial artery, deep fibular nerve) stated for T1 and T2 separately, together with records of deep insertion (《指微》 46 mm, 竇氏 57.5 mm) | S_safety scoring rationale |
 | Mechanism in Sections 6.1 and 9 | "L4-S1 → ascent to segments C3-C5 → reflex relaxation of neck muscles", "periosteal stimulation = basis of 髓會" | Deleted. Replaced by a hypothesis diagram based on the B-Check evidence | No basis in the registry or Layer A (final T2 override_note) |
 | Rank 5 textbook table | "Mutually complementary consistency", "perfect collation" | Actual differences analysed (flexor hallucis longus, fibular artery and veins, fibularis tertius vs fibularis longus) | Common Textbook and Kim Jaehyo xlsx, row 343 each |
-| Section 8 | No Layer A, B-Check or search log | papers.id table (including quotation of the location conclusion of 1624), B-Check for T1 and T2 (5/12 · 6/12), sync_log table added | pack_GB39.md; final_GB39M.json bcheck; 1624 full-text PDF |
+| Section 8 | No Layer A, B-Check or search log | papers.id table (including quotation of the location conclusion of 1624), B-Check for T1 and T2 (5/12 · 6/12), sync_log table added | evidence pack; B-Check scoring record; 1624 full-text PDF |
 | Section 8, bibliographic data for papers.id 1624 | (Not cited) | 針刺研究 2021;46(1), DOI 10.13702/j.1000-0607.200282. The journal name recorded in the master DB (World Journal of Acupuncture-Moxibustion) differs from the full-text PDF (DB correction needed) | `03_주제별_경혈고증_연구보고서/현종혈_고증_및_문헌연구/04_참고논문_PDF/2021-침자연구-Location of acupoint Xuanzhong_GB39.pdf` |
 | Section 8 audit table | Consistency audit of report ↔ Excel, "all items agree" | Deleted (comparing outputs of the same process is not grounds for reliability; canonical Rank 7) | Canonical Rank 7 cross-validation clause |
-| Section 10 | v2.6 five-factor ARI | T1 51.2 ± 0 (D·H) / T2 55 ± 0 (C, weight-sensitive); sub-items, gates, branch and adjudication record | final_GB39M.json |
-| Section 10 | — | Earlier v2.6 score 93.6 (not comparable) | Earlier report in `_구판_v2.6/` |
+| Section 10 | v2.6 five-factor ARI | T1 51.2 ± 0 (D·H) / T2 55 ± 0 (C, weight-sensitive); sub-items, gates, branch and adjudication record | dual-scoring record |
+| Section 10 | — | Earlier v2.6 score 93.6 (not comparable) | Earlier report in the internal archive |
 | Items not confirmed | — | The attribution of 《難經》 Difficulty 45 (45難) "髓會絕骨" to 陽輔 could not be found directly in the chunks of the three primary classics and is described only as "attribution undetermined". Bibliographic data for the 《通考》's "人體測量學調查" unconfirmed. The mm-level Δ and depths for T1 and T2 are raters' estimates, without imaging measurement | — |
 
 ---
@@ -456,7 +456,7 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `GB39_현종_해부생리_실체판명_보고서.md` |
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition |
 | Title | Korean title with duplicated name annotations | Title in the common English-edition format "[Acupoint Anatomical & Physiological Substrate Monograph] Xuanzhong (懸鍾, GB39)"; duplicates removed | ST36 English edition |
 | Figure 4-1 | Image path checked | Kept as the actual file name `GB39_현종_횡단면_해부모식도.png` | File in the report folder |
 | Layer A papers 1610, 1612, 1615 | Korean-language titles | Given as English translations marked "[in Korean]" | Master DB |
@@ -467,6 +467,6 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
-| Header links | Absolute `file:///g:/내 드라이브/도서 번역/…` links (do not open on other PCs) | Links relative to the project root (`도서 번역`) | Skill path rule (no drive-letter absolute paths) |
+| Header links | Local absolute-path links (do not open on other PCs) | Project-relative links | Skill path rule (no drive-letter absolute paths) |
 | Textbook title | *Meridian and Acupoint Studies* (經絡經穴學) | (經絡腧穴學) | The Korean edition names the textbook *Gyeongnak Suhyeolhak* (經絡腧穴學; suhyeol = 腧穴); 經絡經穴學 was a mistranslation carried over from the earlier ST36 English edition |
 | Section 8, papers.id 1624 | Journal "針刺研究 46(1) (journal as recorded in the DB: World Journal of Acupuncture-Moxibustion)", "No PMID" | "針刺研究 46(1):73–75", PMID 33559430. In the master DB, `journal` of `papers` 1624 corrected to Zhen Ci Yan Jiu (針刺研究) (backup `backup/*20261024_refine1624*`); export-xlsx and validate OK | PubMed PMID 33559430 metadata (Zhen Ci Yan Jiu 2021;46(1):73-5, DOI 10.13702/j.1000-0607.200282) and the full-text PDF |

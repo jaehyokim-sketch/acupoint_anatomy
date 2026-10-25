@@ -4,10 +4,10 @@
 
 > **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
 > **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 (of the 33 papers in the SP5 inverted index, only **the 6 papers that actually stimulated or observed SP05** are used for the verdict; Section 8, Table ①)
-> **Layer B Reference Registry**: `01_Framework/layer_b_reference_registry.md` (6-item B-Check, concordance threshold ≥ 8/12)
+> **Layer B Reference Registry**: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 > **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry); Appendix A
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\text{mm}$)
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ---
 
@@ -15,15 +15,15 @@
 
 | Classic | Original excerpt (file & line) | English summary | Remarks |
 | :--- | :--- | :--- | :--- |
-| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "部位：在足內側，內踝前下方，舟骨粗隆與內踝尖連線中點凹陷中。" / "取穴：於內踝前緣直線與內踝下緣橫線的交點處取穴，前為中封，後為照海。" — `침구수혈통고(针灸腧穴通考)/针灸腧穴通考_09_上_足太阴脾经穴.md` L969–971 | Anteroinferior to the medial malleolus, in the depression at the midpoint of the line joining the tuberosity of the navicular and the tip of the medial malleolus. Zhongfeng (中封) lies in front, Zhaohai (照海) behind | Modern location |
+| *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "部位：在足內側，內踝前下方，舟骨粗隆與內踝尖連線中點凹陷中。" / "取穴：於內踝前緣直線與內踝下緣橫線的交點處取穴，前為中封，後為照海。" — 《針灸腧穴通考》 上 足太陰脾經穴 L969–971 | Anteroinferior to the medial malleolus, in the depression at the midpoint of the line joining the tuberosity of the navicular and the tip of the medial malleolus. Zhongfeng (中封) lies in front, Zhaohai (照海) behind | Modern location |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "內踝之下陷者之中也。(《靈樞·本輸》)" / "在足內踝下微前陷者中。(《黃帝明堂經》…《醫宗金鑑》)" / "在內踝前宛宛中。(《針灸甲乙經》卷十)" / "在內踝前陷中。(《千金翼方》卷二十六)" — same file, L973–979 | 《本輸》 'below'; 《明堂》 'below and slightly anterior'; 《甲乙》 vol. 10 and 《千金翼》 'anterior' | "本穴定位，古今文獻一致" (L1005) |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "刺入三分，留七呼，灸三壯。(《黃帝明堂經》)" / "針五分，灸七壯。(《竇太師針經》)" / "直刺0.5~0.8寸。(4、5、6、7版《針灸學》)" / "亦可橫刺透解溪，進針1~1.5寸。(上海《針灸學》)" — same file, L1079–1095 | Han dynasty 3 fen; modern 5–8 fen; transverse through-needling | Calculation table in Section 5 |
 | *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) | "《黃帝明堂經》編者皆歸於本穴主治，顯然是將上述兩條《內經》條文中的'足太陰'理解為'商丘'穴。教材中'黃疸'一症，未詳所出，暫不列於主治項下。" — same file, L1055 | The compilers of 《明堂》 read '足太陰' in the *Neijing* (《內經》) as Shangqiu (商丘) and incorporated those indications. The source of 'jaundice (黃疸)' is unknown | Sections 2 and 9 |
-| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "脾……行於商丘，商丘內踝之下陷者之中也，為經。(《靈樞經·本輸》1：8)" / alias "無。" — `중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_31_足太阴脾经(1).md` L1040, L1044 | River point (經穴), Metal (金), of the five transport points (五輸穴) | Source |
+| *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "脾……行於商丘，商丘內踝之下陷者之中也，為經。(《靈樞經·本輸》1：8)" / alias "無。" — 《中國針灸穴位通鑑》 足太陰脾經(1) L1040, L1044 | River point (經穴), Metal (金), of the five transport points (五輸穴) | Source |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "針入三分，留三呼，瀉五吸，疾出之，忌灸。(《千金翼方》26：321)" / "（刺可入同身寸之四分…）(王冰注)" — same file, L1212–1216 | 《千金翼》 contraindicates moxibustion — a textual variant against 《明堂》 '灸三壯' | Sections 5 and 10 |
 | *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) | "在內踝前下方與舟狀骨結節之間，小腿十字韌帶的下側，有來自脛前動脈的內踝前動脈，分佈著小腿內側皮神經（隱神經）和來自腓淺神經的足背內側皮神經。(《新針灸學》：207、《針灸學》)" / "在內踝之前下部，前脛骨筋腱之內側。(《中國針灸學》：86)" — same file, L1242, L1082 | Below the cruciate ligament (inferior extensor retinaculum), medial to the tendon of tibialis anterior; anterior medial malleolar artery, saphenous nerve, medial dorsal cutaneous nerve | Textual basis for the layers in Sections 4 and 6 |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Indications of Shangqiu (商丘) in the 《明堂經》: "主寒熱善嘔。厥頭痛，面腫起。脾虛令人病寒不樂，好太息。腹滿響響然，不便，心下有寒痛。陰股內痛，氣癰，狐疝走上下…痔，骨蝕。…絕子。小兒咳而泄…" — `중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_05_第壹编_第七篇_足太阴脾经_手少阴心经_手太阳小肠经.md` L118–126 | List of single-point indications | Basis for $P_{single}$ |
-| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "商丘，在內踝前陷中，主偏風，痹腳不得履地，刺風，頭風，熱風，陰痹，針入三分，留三呼，瀉五吸，疾出之，忌灸。" — `中国针灸证治通鉴_14_第叁编_内科病症_四中风至八痉证.md` L194 / "身寒痹：曲池、列缺、環跳、風市、委中、商丘、中封、臨泣(《神應經·痹厥部》)" — `中国针灸证治通鉴_02_…量化概念.md` L172 | Single-point entry in 《千金翼》 / 8-point combination in 《神應經》 | Separation of $P_{single}$ / $P_{comb}$ |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | Indications of Shangqiu (商丘) in the 《明堂經》: "主寒熱善嘔。厥頭痛，面腫起。脾虛令人病寒不樂，好太息。腹滿響響然，不便，心下有寒痛。陰股內痛，氣癰，狐疝走上下…痔，骨蝕。…絕子。小兒咳而泄…" — 《中國針灸證治通鑑》 第壹編 第七篇 足太陰脾經 手少陰心經 手太陽小腸經 L118–126 | List of single-point indications | Basis for $P_{single}$ |
+| *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) | "商丘，在內踝前陷中，主偏風，痹腳不得履地，刺風，頭風，熱風，陰痹，針入三分，留三呼，瀉五吸，疾出之，忌灸。" — 《中國針灸證治通鑑》 第叄編 內科病症 四中風至八痙證 L194 / "身寒痹：曲池、列缺、環跳、風市、委中、商丘、中封、臨泣(《神應經·痹厥部》)" — 《中國針灸證治通鑑》 …量化概念 L172 | Single-point entry in 《千金翼》 / 8-point combination in 《神應經》 | Separation of $P_{single}$ / $P_{comb}$ |
 
 ---
 
@@ -242,7 +242,7 @@ flowchart TB
 
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
-| $S_{orig}$ (0.40) | 93.75 | 87.5 | 90.63 | Mean of the 4 sub-items below | Tongkao `_09_上_足太阴脾经穴.md` L939–1095 |
+| $S_{orig}$ (0.40) | 93.75 | 87.5 | 90.63 | Mean of the 4 sub-items below | Tongkao 上 足太陰脾經穴 L939–1095 |
 | $S_{clarity}$ (0.35) | 75 | 75 | 75 | 4 structures shared by the two textbooks agree + differences in scope (adjudicated by FMA) + B1 confirmation; no point-specific measurement → below 100 | Section 6; refine and Kim Jaehyo comprehensive row 134; FMA:45262 · 21376 · 22532 |
 | $S_{reflex}$ (0.25) | 50 | 50 | 50 | 6 Layer A papers (4 animal, 1 human RCT, 1 observational), but B-Check 7 (< 8) does not meet the requirement for 75 → "B-Check 6–7" level | Section 8 ①②; papers.id 2211 · 2212 · 2214 |
 | SI ($S_{safety}$) | 75 | 50 → **75** (adjudicated) | 75 | No contraindication to needling. The 8-fen upper limit approaches the joint capsule, but classical and textbook 3–5 fen and the transverse method are stated, and the great saphenous vein can be avoided visually | Section 5; needling-depth DB row 135 |
@@ -281,7 +281,7 @@ Limits on the scope of application:
 
 ## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile SP05 --md` (2026-10-23). Two manual corrections (below) are reflected.
+Generated by FMA 5.1.0 acupoint profile query (SP05; 2026-10-23). Two manual corrections (below) are reflected.
 
 | Category | Textbook term | FMA substrate | Match | Source | Innervation / parent trunk | Spinal segment |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -305,13 +305,13 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 | Date | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- | :--- |
-| 2026-10-23 | Whole document | ari_analyzer.py template draft (21:00): unprocessed blocks of classical text, generic Layer mm boundaries (2.5/6.5/16.5/22 mm), generic textbook-comparison sentence, single-scored ARI-Core 81.2 and S_reflex 100, B-Check 9/12 "confirmed", "full inverted index of 33 measured papers" | Tier 3 rewrite (all 10 components), dual-scored ARI-Core 75.0 ± 1.3 (B), B-Check 7/12 not concordant (hypothesis) | Canonical Rank 0–7, sections 4 and 5 |
+| 2026-10-23 | Whole document | automatic draft generator template draft (21:00): unprocessed blocks of classical text, generic Layer mm boundaries (2.5/6.5/16.5/22 mm), generic textbook-comparison sentence, single-scored ARI-Core 81.2 and S_reflex 100, B-Check 9/12 "confirmed", "full inverted index of 33 measured papers" | Tier 3 rewrite (all 10 components), dual-scored ARI-Core 75.0 ± 1.3 (B), B-Check 7/12 not concordant (hypothesis) | Canonical Rank 0–7, sections 4 and 5 |
 | 2026-10-23 | Sections 1, 2, 3, 7, 9 | Block quotations from the classics, aliases "-" | Citations with line numbers from the three primary classics, primary/secondary stratification table, spelling variants 商坵 and 商邱, no-split verdict, separation of $P_{single}$ / $P_{comb}$ | Tongkao `_09_上` L939–1095; Tongjian `_31_(1)` L1036–1260; Zhengzhi Tongjian `_05` L118, `_14` L194, `_02` L172; KJH row 136 |
-| 2026-10-23 | Sections 4, 6, Appendix A | Generic layers, 2 'none' entries in the FMA table | Layer table by order of structures, Figure 4-1 transverse-section schematic, manual match FMA:43905, tendon correction FMA:47050, exclusion of the Kim Jaehyo duplicate row | FMA 5.1.0; `.claude/skills/acupoint-anatomy/scripts/fma/figures/SP05_cross_section.py` |
+| 2026-10-23 | Sections 4, 6, Appendix A | Generic layers, 2 'none' entries in the FMA table | Layer table by order of structures, Figure 4-1 transverse-section schematic, manual match FMA:43905, tendon correction FMA:47050, exclusion of the Kim Jaehyo duplicate row | FMA 5.1.0; figure-generation script (internal) |
 | 2026-10-23 | Section 5 | Formula description only | Fen → mm calculation table by text; 忌灸 (moxibustion) distinguished | Needling-depth DB row 135; Tongjian L1210–1234; Tongkao L1079–1095 |
-| 2026-10-23 | Section 8 | Cited 10 papers including papers.id 57 · 793 · 846 · 848 · 958 · 1421 (PMIDs blank), B-Check 9 | 6 papers that actually stimulated or observed SP05 + 1 literature paper, list of excluded false hits, B-Check 7 (② = 1; ③④⑤⑥ = 1), external search log table, Figure 8-1 | Master DB .json SP5 inverted index and sync_log 21:42:19; abstracts checked against PubMed efetch |
+| 2026-10-23 | Section 8 | Cited 10 papers including papers.id 57 · 793 · 846 · 848 · 958 · 1421 (PMIDs blank), B-Check 9 | 6 papers that actually stimulated or observed SP05 + 1 literature paper, list of excluded false hits, B-Check 7 (② = 1; ③④⑤⑥ = 1), external search log table, Figure 8-1 | Integrated Biomedical Master DB SP5 inverted index and sync_log 21:42:19; abstracts checked against PubMed efetch |
 | 2026-10-23 | Section 10 | S_orig 75, S_clarity 75, S_reflex 100, SI 75, "rigorously verified" | S_orig 93.75/87.5, S_clarity 75, S_reflex 50, SI 75 (adjudicated), conclusion with scope limits | Rubric in section 4.2 |
-| 2026-10-23 | Archive of earlier edition | — | Template md, html and xlsx kept in `_구판_template_20261023/` | — |
+| 2026-10-23 | Archive of earlier edition | — | Template md, html and xlsx kept in the internal archive | — |
 
 ---
 
@@ -319,7 +319,7 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Whole document | Automatically generated "English" edition: Korean body text with only some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `SP05_상구_해부생리_실체판명_보고서.md` |
+| Whole document | Automatically generated "English" edition: Korean body text with only some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition |
 | Title, body | Duplicated annotations such as "Shangqiu (商丘, SP05)(SP05)" | Duplicates removed | — |
 | Figure 4-1 | Image path corrupted by term replacement (`SP05_Shangqiu (商丘, SP05)_…png`), so the image was missing from the HTML | Restored to the actual file name | File in the report folder |
 | Classical quotations | Simplified characters (e.g. 针, 内踝, 灵枢) | Converted to Traditional characters; file names, line pointers and search-query strings unchanged | Routing rule on Traditional Chinese collation |
@@ -328,4 +328,4 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
-| Sections 1 and 4 | 《穴位通鑑》 local-anatomy quotations "L1076, L1242"; X coordinate "Tongjian L1076" | "L1242, L1082" in quotation order; "Tongjian L1082" (L1076 is the locating passage '內踝微前'). The Section 6 range "L1240–1246" (局部解剖 items 1–4) is correct | `中国针灸穴位通鉴_31_足太阴脾经(1).md` L1082, L1242 |
+| Sections 1 and 4 | 《穴位通鑑》 local-anatomy quotations "L1076, L1242"; X coordinate "Tongjian L1076" | "L1242, L1082" in quotation order; "Tongjian L1082" (L1076 is the locating passage '內踝微前'). The Section 6 range "L1240–1246" (局部解剖 items 1–4) is correct | 《中國針灸穴位通鑑》 足太陰脾經(1) L1082, L1242 |

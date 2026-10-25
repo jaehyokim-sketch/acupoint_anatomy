@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -56,9 +66,9 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <article>
 <h1 id="fengfu-as-an-alias-of-futu-literary-sources-and-textual-analysis-of-the-point">📜 Fengfu (風府) as an Alias of Futu (扶突): Literary Sources and Textual Analysis of the Point</h1>
 <blockquote>
-<p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual research (Rank 5 where needed) · <strong>ARI</strong>: not calculated (textual-research report) · <strong>Source data</strong>: no csv/xlsx in the same folder — compared against the three primary classics in <code>chunks_refined</code> (<code>针灸腧穴通考(上)_1-80.md</code> L855-879, <code>(上)_241-320.md</code> L392-540, <code>(下)_401-480.md</code> L2066-2187; <code>中国针灸穴位通鉴(上卷)_481-560.md</code> L3816-3928)</p>
+<p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual research (Rank 5 where needed) · <strong>ARI</strong>: not calculated (textual-research report) · <strong>Source data</strong>: no separate dataset — compared against the refined editions of the three primary classics (《針灸腧穴通考》(上) PDF pp. 1–80 L855-879, (上) PDF pp. 241–320 L392-540, (下) PDF pp. 401–480 L2066-2187; 《中國針灸穴位通鑑》(上卷) PDF pp. 481–560 L3816-3928)</p>
 <p><strong>Key v2.7 correction</strong>: In the three primary classics the only aliases of Futu (扶突) are <strong>水穴</strong> (《黃帝明堂經》, 《外臺秘要》) and <strong>水泉</strong> (《古法新解會元針灸學》); 'Fengfu (風府)' is not confirmed as an alias of Futu. The relation with Fengfu runs through <strong>舌本 (an alternative name of Fengfu)</strong>, used together with Futu in a prescription of 《靈樞·寒熱病》. The title's "Fengfu as an alias of Futu" is retained as a working title referring to this relation.</p>
-<p><strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<p><strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 </blockquote>
 <p>Based on the textual research on acupoints (腧穴考證) and the analysis of ancient textual passages in the three specialist acupuncture works — <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》), <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) and <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) — this report sets out in detail the literary sources in which an alias of <strong>Futu (扶突, LI18)</strong> appears in connection with <strong>Fengfu (風府, GV16)</strong>, and the medical-historical background of how this arose.</p>
 <hr>
@@ -72,7 +82,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <blockquote>
 <p><strong>"舌本，一名風府，在項入髮際一寸督脈上."</strong>
 <em>(Here </em><em>'Sheben (舌本)' is also called 'Fengfu (風府)'</em><em>, and lies on the Governor Vessel (督脈), 1 cun above the hairline at the back of the neck.)</em></p>
-<p><em>(2026-10-24 refinement note)</em> The earlier reading "在項<strong>人</strong>髮際" is a misprint found only once, in the 按 of the Futu entry of 《腧穴通考》 (<code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_05_上_手阳明大肠经穴-2.md</code> L1953). The same Yang Shangshan (楊上善) note reads "入髮際" in the 《腧穴通考》 general discussion (<code>针灸腧穴通考_02_上_序·凡例·总论-2.md</code> L1804), the Futu textual analysis (<code>…_05_…md</code> L1939), the Fengfu entry (<code>针灸腧穴通考_22_下_督脉穴-2.md</code> L197) and 《證治通鑑》 (<code>중국침구증치통감(中国针灸证治通鉴)/中国针灸证治通鉴_14_第叁编_内科病症_四中风至八痉证.md</code> L1071), and the juan is given as "卷二十六".</p>
+<p><em>(2026-10-24 refinement note)</em> The earlier reading "在項<strong>人</strong>髮際" is a misprint found only once, in the 按 of the Futu entry of 《腧穴通考》 (《針灸腧穴通考》 上 手陽明大腸經穴-2 L1953). The same Yang Shangshan (楊上善) note reads "入髮際" in the 《腧穴通考》 general discussion (《針灸腧穴通考》 上 序·凡例·總論-2 L1804), the Futu textual analysis (<code>…_05_…md</code> L1939), the Fengfu entry (《針灸腧穴通考》 下 督脈穴-2 L197) and 《證治通鑑》 (《中國針灸證治通鑑》 第叄編 內科病症 四中風至八痙證 L1071), and the juan is given as "卷二十六".</p>
 </blockquote>
 <h4 id="3-waitai-miyao-juan-39-compiled-by-wang-tao-tang-dynasty">③ <em>Waitai Miyao</em> (《外臺秘要》), juan 39 (compiled by Wang Tao (王燾), Tang dynasty)</h4>
 <blockquote>
@@ -84,7 +94,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <h3 id="2-textual-causes-of-the-transfer-and-alias-sharing-in-the-literature">🔬 2. Textual Causes of the Transfer (傳移) and Alias Sharing in the Literature</h3>
 <p>According to the textual research on acupoints (腧穴考證) in volume 2 (pp. 58, 62–65) of the <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》), there are <strong>two main medical-historical causes</strong> for Futu (扶突) and Fengfu (風府) becoming entangled in the literature through alternative names and indications.</p>
 <blockquote>
-<p><em>(v2.7 page note)</em> "pp. 58, 62–65" are PDF page numbers of the <code>chunks_refined</code> files. The relevant descriptions are in the entries on 風府 (PDF p.62 = printed p.1234) and 腦戶 (PDF p.65 = printed p.1237) in volume 2, while the core argument is in the general section (printed pp.14-15) and the entry on 扶突 (printed pp.231-232) of <strong>volume 1</strong>. The expression that they were entangled through 'alternative names' is not confirmed in the primary sources; what the primary sources describe is the <strong>misattribution of indication passages</strong>.</p>
+<p><em>(v2.7 page note)</em> "pp. 58, 62–65" are PDF page numbers of the refined-edition files. The relevant descriptions are in the entries on 風府 (PDF p.62 = printed p.1234) and 腦戶 (PDF p.65 = printed p.1237) in volume 2, while the core argument is in the general section (printed pp.14-15) and the entry on 扶突 (printed pp.231-232) of <strong>volume 1</strong>. The expression that they were entangled through 'alternative names' is not confirmed in the primary sources; what the primary sources describe is the <strong>misattribution of indication passages</strong>.</p>
 </blockquote>
 <h4 id="1-misreading-of-punctuation-in-the-compilation-of-the-waitai-miyao-tang-dynasty">① Misreading of punctuation (斷句錯誤) in the compilation of the <em>Waitai Miyao</em> (Tang dynasty)</h4>
 <ul>
@@ -145,7 +155,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 2 introduction</td>
 <td style="text-align: left;">Vol. 2 pp.58, 62–65 / "alternative names and indications"</td>
 <td style="text-align: left;">Correspondence of PDF and printed pages, evidence from vol. 1 added, alternative names not confirmed</td>
-<td style="text-align: left;"><code>chunks_refined</code> PAGE markers</td>
+<td style="text-align: left;">the refined classics PAGE markers</td>
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
@@ -198,7 +208,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 1 ①</td>
 <td style="text-align: left;">"暴喑氣硬"</td>
 <td style="text-align: left;">"暴喑氣鞕"</td>
-<td style="text-align: left;">《靈樞·寒熱病》 as quoted in 《腧穴通考》 (<code>针灸腧穴通考_02_上_序·凡例·总论-2.md</code> L1804)</td>
+<td style="text-align: left;">《靈樞·寒熱病》 as quoted in 《腧穴通考》 (《針灸腧穴通考》 上 序·凡例·總論-2 L1804)</td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
@@ -217,9 +227,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tbody>
 </table></div>
 <p>The mixed Korean–Chinese book title 《중국침구혈位통감》 in the Korean edition was also corrected to 《中国针灸穴位通鉴》; the English edition already used the correct title.</p>
-<p class="meta">생성: 2026-10-24 13:20 · 원본: 부돌_별칭_풍부_문헌출처_및_고증분석_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -227,6 +241,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

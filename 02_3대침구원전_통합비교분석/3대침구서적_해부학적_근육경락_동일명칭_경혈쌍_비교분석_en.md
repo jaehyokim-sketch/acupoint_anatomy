@@ -1,7 +1,7 @@
 # 🏛️ In-Depth Analysis of Acupoint Pairs Sharing the Same Name on an Anatomical and Muscle-Meridian Basis, from a Comparison of the Three Acupuncture Classics with the Google-Sheet List of 361 Points
 
 > **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: Anatomical Same-Name Point Pairs Comparison Dataset (18 pairs, no column comparing indications quantitatively) · Collation against the classics: the 'alias (別名)' entry of each point and the 「針灸穴名別名索引」 (899 parsed items) in *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), and 「提要索隱·穴名」 in *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so file names in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges refer to those editions.
 
 > ⚠️ **v2.7 verification summary**: Collating the "shared name" of each of the 18 pairs against the alias records of the three classics, **3 pairs (17%) were confirmed as sharing an alias in the classics: #5 清冷淵–青靈, #8 橫骨–曲骨 [屈骨], #17 犢鼻–膝眼**; 1 pair appears only in later literature (#7), 1 pair merely shares characters of the standard names (#4), and **13 pairs (72%) are not confirmed as aliases in the classics**. The data files (csv/xlsx) contain no figures comparing indications, so every statement of "100% identical/matching indications" is **the author's judgement, not quantitatively verified**. The "100% matching against the Google Sheet of 361 points" cannot be checked because that sheet is not in this folder.
 
@@ -80,8 +80,7 @@ This final report compares the complete database (45 PDFs, some 4,200 pages) of 
 ## 📁 List of Generated Files (same folder)
 
 - 📊 **Excel comparison of anatomical same-name acupoint pairs**: Anatomical Same-Name Point Pairs Comparison Dataset
-- 📄 **CSV comparison of anatomical same-name acupoint pairs**: [3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.csv](3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.csv)
-- 📝 **Markdown comparison of anatomical same-name acupoint pairs**: [3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.md](3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석.md)
+- 📄 **CSV comparison of anatomical same-name acupoint pairs**: the unpublished supplementary CSV dataset
 
 ---
 
@@ -98,5 +97,5 @@ This final report compares the complete database (45 PDFs, some 4,200 pages) of 
 | 'Google Sheet comparison' column, 18 rows of the comparison table | "100% matching against the Google Sheet … and the three-classics DB" | "Recorded as compared with the Google Sheet (sheet not kept, match rate not verified)" | The sheet file is not in the folder |
 | 'Indication mixing' column of the comparison table, 16 places | "… 100% identical / matching / identically mixed" | "(overlapping categories, not quantitatively verified)" | Same |
 | Comparison table | (none) | Added the `v2.7 confirmation of alias in the classics` column (✓3 · △2 · ✗13) | Collation with the alias records of the three classics |
-| File guide | Absolute link `file:///D:/…` | Relative link within the same folder | Actual storage location |
+| File guide | Local absolute-path link | Relative link within the same folder | Actual storage location |
 | PMID/DOI · Layer B | None in the text | — | 0 items to check or correct |

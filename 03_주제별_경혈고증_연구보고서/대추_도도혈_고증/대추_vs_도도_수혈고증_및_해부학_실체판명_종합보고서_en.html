@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -56,20 +66,20 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <article>
 <h1 id="authoritative-comprehensive-edition-on-acupoint-textual-verification-dazhui-gv14-vs-taodao-gv13-textual-verification-of-the-points-and-identification-of-their-anatomical-substrate">📜 [Authoritative Comprehensive Edition on Acupoint Textual Verification] Dazhui (大椎, GV14) vs Taodao (陶道, GV13): Textual Verification of the Points and Identification of Their Anatomical Substrate</h1>
 <blockquote>
-<p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual verification (Rank 5 where needed) · <strong>ARI</strong>: not scored (textual-verification report) · <strong>Source data</strong>: no csv/xlsx in this folder — collated against the three classics in <code>chunks_refined</code> (<code>针灸腧穴通考(下)_401-480.md</code> L1537-1760, <code>中国针灸穴位通鉴(上卷)_161-240.md</code> L4068-4090)<br>
-<strong>Previous edition</strong>: the original Version 2.6 (2026-10-03) is kept in <code>_구판_v2.6/</code><br>
+<p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual verification (Rank 5 where needed) · <strong>ARI</strong>: not scored (textual-verification report) · <strong>Source data</strong>: no separate dataset — collated against the refined editions of the three classics (《針灸腧穴通考》(下) PDF pp. 401–480 L1537-1760, 《中國針灸穴位通鑑》(上卷) PDF pp. 161–240 L4068-4090)<br>
+<strong>Previous edition</strong>: the original Version 2.6 (2026-10-03) is kept in the internal archive<br>
 <strong>Analytical framework</strong>: Acupoint Substrate Identification Framework (exegetical (訓詁學) collation grounded in the positivism of excavated texts)<br>
 <strong>Master principles of evidence</strong>: Principles for Acupoint Anatomical Substrate Identification<br>
 <strong>Source classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) (philological collation by Professor Huang Longxiang (黃龍祥))<br>
 <strong>Consolidation history</strong>: Five previously scattered reports (supervision report, historical change, the expressions 間/節間, 上陷 vs 下間 exegesis, hypothesis testing) were fully merged into a single authoritative edition under the principle of consolidating documents with ≥ 50% overlap.<br>
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
 </blockquote>
 <hr>
 <h2 id="1-overview-of-the-core-textual-verification-and-statement-of-the-problem">🏛️ 1. Overview of the Core Textual Verification and Statement of the Problem</h2>
 <p>The <strong>Dazhui point (大椎, GV14)</strong> and the <strong>Taodao point (陶道, GV13)</strong> of the Governor Vessel (督脈) carry the following major academic issues in the acupuncture literature through the ages:
 1. <strong>Duplication and sharing of names (issue raised in the earlier edition — no basis in the classics)</strong>: The earlier edition held that some ancient texts, such as 《太平聖惠方》 and 《針灸聚英》, record Taodao as "一名大椎" ("also called Dazhui"), producing name interference between the two points; this record is not found in the three classics (see notes below).
    - <em>(v2.7 collation note)</em> This record could not be confirmed in the three classics. The Taodao (陶道) entry of 《穴位通鑑》 gives "別名 無", and the Taodao entry of 《腧穴通考》 also lists no alternative name. The "一名" that is confirmed in the classics is "百勞一穴，一名大椎" (《竇太師針經》), which concerns the relationship between Bailao (百勞) and Dazhui, not Taodao. The issue is therefore more faithfully read as <strong>confusion arising from '大椎' being used both as a bone name (T1) and as a point name (the depression above it)</strong> (《腧穴通考》: "切不可將'大椎'穴與'大椎'骨相混").
-   - <em>(2026-10-24 refinement note)</em> A full search of every chapter of the three classics finds no instance of "一名大椎" attached to Taodao (陶道). The passages of the two books quoted in the Taodao entry of 《穴位通鑑》 — 《太平聖惠方》 "在項大椎節下間，俯而取之陷者中" (99:3185) and 《針灸聚英》 "主痎瘧寒熱，灑淅，煩滿汗不出…" (1:120) — give no alternative name either, and the entry's [別名] reads "無" (<code>중국침구혈위통감(中国针灸穴位通鉴)/中国针灸穴位通鉴_05_督脉(2).md</code> L239, L269, L337, L413). The Taodao entry of 《腧穴通考》 cites the same two books for its indications without recording any alternative name (<code>침구수혈통고(针灸腧穴通考)/针灸腧穴通考_21_下_督脉穴-1.md</code> L1935, L1941). The only "一名大椎" in the classics is "百勞一穴，一名大椎" (《竇太師針經》, same file L2017).
+   - <em>(2026-10-24 refinement note)</em> A full search of every chapter of the three classics finds no instance of "一名大椎" attached to Taodao (陶道). The passages of the two books quoted in the Taodao entry of 《穴位通鑑》 — 《太平聖惠方》 "在項大椎節下間，俯而取之陷者中" (99:3185) and 《針灸聚英》 "主痎瘧寒熱，灑淅，煩滿汗不出…" (1:120) — give no alternative name either, and the entry's [別名] reads "無" (《中國針灸穴位通鑑》 督脈(2) L239, L269, L337, L413). The Taodao entry of 《腧穴通考》 cites the same two books for its indications without recording any alternative name (《針灸腧穴通考》 下 督脈穴-1 L1935, L1941). The only "一名大椎" in the classics is "百勞一穴，一名大椎" (《竇太師針經》, same file L2017).
 2. <strong>Shift of the vertebral segment (C7 vs T1)</strong>: Historical change in whether ancient anatomy regarded the 7th cervical vertebra (C7) as '崇骨' (Chonggu) or '項骨' (Xianggu) and the 1st thoracic vertebra (T1) as '大椎', or defined C7 itself as '大椎'.
 3. <strong>The exegetical substrate of '上陷' (upper depression) vs '下間' (lower interval / inter-segment)</strong>: The anatomical location of the actual interspinous gaps referred to by the passages "大椎上陷中" and "大椎節下間".</p>
 <hr>
@@ -95,7 +105,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;"><strong><em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)</strong></td>
-<td style="text-align: left;">"黃龍祥 考: 《素問·氣府論》'大椎上節'者, 頸椎與胸椎之交接處也. 古人指第1胸椎爲大椎, 後世漸以第7頸椎爲大椎, 故陶道與大椎之名往往相代." <em>(v2.7 collation note: this sentence cannot be found in <code>chunks_refined</code>. It appears to be the author's reconstructed summary and is not used as a direct quotation. Actual corresponding passages: 《小品方》 "大椎上節以上屬頸崇骨也。大椎與崇骨相接處，其節最高碩也" (footnote in 《醫心方》 Volume 16); textual analysis "作為骨名，'大椎'…是指第一胸椎；作為穴名，'大椎'在第一胸椎棘突上陷中"; 《素問注證發微》 "今人誤取高骨為大椎". 《腧穴通考》 (Vol. 2), printed pp. 1220–1222)</em></td>
+<td style="text-align: left;">"黃龍祥 考: 《素問·氣府論》'大椎上節'者, 頸椎與胸椎之交接處也. 古人指第1胸椎爲大椎, 後世漸以第7頸椎爲大椎, 故陶道與大椎之名往往相代." <em>(v2.7 collation note: this sentence cannot be found in the refined classics. It appears to be the author's reconstructed summary and is not used as a direct quotation. Actual corresponding passages: 《小品方》 "大椎上節以上屬頸崇骨也。大椎與崇骨相接處，其節最高碩也" (footnote in 《醫心方》 Volume 16); textual analysis "作為骨名，'大椎'…是指第一胸椎；作為穴名，'大椎'在第一胸椎棘突上陷中"; 《素問注證發微》 "今人誤取高骨為大椎". 《腧穴通考》 (Vol. 2), printed pp. 1220–1222)</em></td>
 <td style="text-align: left;"><strong>Professor Huang Longxiang's textual verification (corrected against the original text)</strong>: In antiquity T1 was called '大椎' as a bone name, and the point Dazhui was from the outset the depression above it (C7–T1). The classics contain no statement that Taodao had the alternative name 'Dazhui'. A Ming-dynasty criticism (《素問注證發微》) that "people wrongly take the high bone of the nape (C7) as 大椎" confirms that <strong>the reference for the bone name wavered</strong>, but there is no evidence that the point location itself moved.</td>
 </tr>
 </tbody>
@@ -190,7 +200,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 2 table, rows for 《穴位通鑑》 · 《證治通鑑》</td>
 <td style="text-align: left;">Sentences in quotation marks presented as if original text</td>
 <td style="text-align: left;">Marked "summary, not a direct quotation"</td>
-<td style="text-align: left;">The sentences were not found in <code>chunks_refined</code></td>
+<td style="text-align: left;">The sentences were not found in the refined classics</td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
@@ -271,7 +281,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 1, issue 1</td>
 <td style="text-align: left;">Taodao "一名大椎" presented as an issue (v2.7 note only said "not confirmed in the classics")</td>
 <td style="text-align: left;">Marked as "issue raised in the earlier edition — no basis in the classics"; note added with the result of a full search of the three classics</td>
-<td style="text-align: left;"><code>中国针灸穴位通鉴_05_督脉(2).md</code> L239, L269, L337, L413; <code>针灸腧穴通考_21_下_督脉穴-1.md</code> L1935, L1941, L2017</td>
+<td style="text-align: left;">《中國針灸穴位通鑑》 督脈(2) L239, L269, L337, L413; 《針灸腧穴通考》 下 督脈穴-1 L1935, L1941, L2017</td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
@@ -297,7 +307,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">Header</td>
-<td style="text-align: left;">Absolute <code>file:///g:/…</code> link to the master-principles xlsx</td>
+<td style="text-align: left;">Local absolute-path link to the master-principles document</td>
 <td style="text-align: left;">Relative link from the project root</td>
 <td style="text-align: left;">Skill path rule</td>
 </tr>
@@ -306,9 +316,13 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <ul>
 <li>The remaining limitation in the v2.7 history (the original books 《太平聖惠方》 and 《針灸聚英》 not collated) still stands. Because the Taodao passages of both books quoted in the three classics carry no alternative name, a new confirmation in the originals is unlikely.</li>
 </ul>
-<p class="meta">생성: 2026-10-24 13:19 · 원본: 대추_vs_도도_수혈고증_및_해부학_실체판명_종합보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -316,6 +330,35 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

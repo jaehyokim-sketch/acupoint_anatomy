@@ -47,8 +47,18 @@ pre.mermaid { background: var(--card); text-align: center; }
 figure.diagram { margin: 1.5em 0; text-align: center; overflow-x: auto; }
 figure.diagram img { max-width: 100%; height: auto; background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
 figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+/* 반응형 이미지 및 뷰포트 최적화 */
+article img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); background: #ffffff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+article img:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+p:has(> img) { text-align: center; margin: 1.5em 0; }
 .meta { color: var(--muted); font-size: .85rem; margin-top: 24px; }
 .katex-display { overflow-x: auto; overflow-y: hidden; }
+/* 라이트박스 확대 모달 */
+.lightbox-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; cursor: zoom-out; padding: 24px; box-sizing: border-box; }
+.lightbox-modal.active { display: flex; }
+.lightbox-modal img { max-width: 95vw; max-height: 92vh; object-fit: contain; margin: 0; border: none; border-radius: 6px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 18px; right: 26px; color: #ffffff; font-size: 34px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -57,7 +67,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <h1 id="large-intestine-disorders-and-dysenterydiarrhoea-across-the-eras-in-the-three-classics-and-the-textual-proof-that-shanglian-meant-shangjuxu-an-integrated-comparative-report">🏛️ Large-Intestine Disorders and Dysentery/Diarrhoea Across the Eras in the Three Classics, and the Textual Proof That 'Shanglian' Meant 'Shangjuxu': An Integrated Comparative Report</h1>
 <blockquote>
 <p><strong>Framework</strong>: v2.7 (refined 2026-10-04) · <strong>Scope</strong>: Rank 1–4 textual verification (Rank 5 where needed) · <strong>ARI</strong>: not scored (textual-verification report) · <strong>Source data</strong>: Large Intestine Disease Chronological Acupoint Analysis Dataset (538 keyword-hit snippet rows), Large Intestine Disease Textual Analysis Dataset
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files and data are simplified-script editions, so file names and search keywords in <code>code</code> are given exactly as they appear on disk and in the data.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions and data are in simplified script, so search keywords in <code>code</code> are given exactly as they appear in them.</p>
 </blockquote>
 <p>This integrated report compares and fuses two studies built on the database (45 PDFs, some 4,200 pages) of the three specialist acupuncture classics <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》), <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) and <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》): <strong>① a quantitative, era-by-era analysis of the acupoints used in acupuncture-moxibustion treatment of large-intestine disorders and dysentery/diarrhoea (Report A)</strong>, and <strong>② an evidence-based textual verification that 'Shanglian' (上廉) and 'Xialian' (下廉) in the ancient literature were abbreviations of 'Shangjuxu' (上巨虛) and 'Xiajuxu' (下巨虛) (Report B)</strong>.</p>
 <blockquote>
@@ -128,10 +138,9 @@ Among the snippets classified under the Pre-Qin to Wei-Jin period in <strong>Rep
 <hr>
 <h2 id="file-storage-guide-same-folder">📁 File Storage Guide (same folder)</h2>
 <ul>
-<li>📝 <strong>Markdown report</strong>: <a href="3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.md">3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.md</a></li>
 <li>📊 <strong>Integrated comparison Excel</strong>: Large Intestine Disease Textual Analysis Dataset</li>
-<li>📄 <strong>Integrated comparison CSV</strong>: <a href="3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.csv">3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.csv</a></li>
-<li>📄 <strong>Original snippet data</strong>: <a href="3대서적_대장병증_이질_설사_침구치료_시대별_경혈분석.csv">3대서적_대장병증_이질_설사_침구치료_시대별_경혈분석.csv</a></li>
+<li>📄 <strong>Integrated comparison CSV</strong>: the unpublished supplementary CSV dataset</li>
+<li>📄 <strong>Original snippet data</strong>: the unpublished supplementary CSV dataset</li>
 </ul>
 <hr>
 <h2 id="v27-refinement-history-2026-10-04">v2.7 Refinement History (2026-10-04)</h2>
@@ -155,7 +164,7 @@ Among the snippets classified under the Pre-Qin to Wei-Jin period in <strong>Rep
 <td style="text-align: left;">Integrated conclusion</td>
 <td style="text-align: left;">"<strong>fully proven</strong> by cross-validation of quantitative statistics and textual verification"</td>
 <td style="text-align: left;">"of the 36 Shanglian rows, 18 explicitly ST37 (50%), 14 related to LI9, 4 indeterminate — partial support"</td>
-<td style="text-align: left;">Re-reading of snippets in <code>…시대별_경혈분석.csv</code> (strings <code>巨虚上廉</code>/<code>上巨虚</code> vs <code>手阳明</code>/<code>曲池下</code>)</td>
+<td style="text-align: left;">Re-reading of snippets in the unpublished supplementary CSV dataset (strings <code>巨虚上廉</code>/<code>上巨虚</code> vs <code>手阳明</code>/<code>曲池下</code>)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Integrated conclusion</td>
@@ -219,7 +228,7 @@ Among the snippets classified under the Pre-Qin to Wei-Jin period in <strong>Rep
 </tr>
 <tr>
 <td style="text-align: left;">File guide</td>
-<td style="text-align: left;">Absolute link <code>file:///D:/도서 번역/…</code></td>
+<td style="text-align: left;">Local absolute-path link</td>
 <td style="text-align: left;">Relative link within the same folder</td>
 <td style="text-align: left;">Actual storage location</td>
 </tr>
@@ -231,9 +240,13 @@ Among the snippets classified under the Pre-Qin to Wei-Jin period in <strong>Rep
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-24 13:10 · 원본: 3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서_en.md · build_report_html.py (Framework v2.7)</p>
+<p class="meta">생성: 2026-10-25 11:51 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
+<div class="lightbox-modal" id="lightboxModal">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
@@ -241,6 +254,35 @@ Among the snippets classified under the Pre-Qin to Wei-Jin period in <strong>Rep
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
 const dark = matchMedia("(prefers-color-scheme: dark)").matches;
 mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "default" });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  if (modal && modalImg) {
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Enlarged diagram';
+        modal.classList.add('active');
+      });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target !== modalImg) {
+        modal.classList.remove('active');
+      }
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

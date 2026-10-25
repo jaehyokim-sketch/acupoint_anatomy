@@ -5,11 +5,11 @@
 
 > **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》, Huang Longxiang 黃龍祥)
 > **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 — LU6 evidence pack: of 32 landmark papers (including 28 external) and 20 locally mapped papers, **4 LU6-specific mechanism/imaging studies** (papers.id 1682, 1683, 1684, 1806) + 1 human clinical observation (1726)
-> **Layer B Reference Registry**: [`layer_b_reference_registry.md`](../../../../01_Framework/layer_b_reference_registry.md) (6-item B-Check, concordance threshold ≥ 8/12)
+> **Layer B Reference Registry**: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 > **Metrological Standard**: Han-dynasty (漢代) standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$), 1 cun (寸) = 10 fen = 23 mm
 > **Analysis Targets**: **T1** WHO/textbook standard Kongzui (腕上七寸, on the line joining Chize (尺澤, LU05) and Taiyuan (太淵, LU09)) / **T2** Sawada-style (澤田) Kongzui haemorrhoid reaction point (尺澤下二寸, 《針灸真髓》 1941)
-> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
+> **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 ---
 
@@ -17,9 +17,9 @@
 
 | Classic (source file & line) | Original excerpt (location & depth) | Indications | Collation & remarks |
 | :--- | :--- | :--- | :--- |
-| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)**, entry 孔最 (`针灸腧穴通考(上)_81-160.md` L2300–2467, printed pp. 123–126) | "孔冣……手太陰郄，在腕上七寸。"(《黃帝內經明堂》, Yang Shangshan's (楊上善) commentary, L2320) / "刺入三分，灸五壯。"(《黃帝明堂經》, 【操作】) / Sawada (澤田氏): "尺澤穴下二寸。"(《針灸真髓》, L2324) | "可以出汗。頭痛，振寒，臂厥，熱，汗不出。"(《黃帝內經明堂》) / "吐血失喑，腫痛惡血。"(《太平聖惠方·針經》) / "治熱病汗不出……咳逆，臂厥痛。"(《銅人》) | ① The Ming-dynasty 《針灸集書》 "上骨以近骨邊" and 《針灸大成》 "側取" confuse the point with the location of Lieque (列缺, LU07) → "仍以《黃帝明堂經》、《銅人腧穴針灸圖經》為準". ② Forearm bone-proportional lengths of 10, 12 and 12.5 cun mean the texts are "identical in wording but different in fact" (文同而實不同). ③ Gao Wu (高武) misread "腫痛" as "咽腫痛". ④ **Appendix: tracing 'Kongzui treats haemorrhoids' (附: 孔最治痔溯源)** — the textbook indication "haemorrhoids (痔疾)" is a mistransmission (訛傳) from Sawada's homonymous point at a different location |
-| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)**, entry 孔最 (`中国针灸穴位通鉴(上卷)_321-400.md` L880–1060) | Source: "孔最，手太陽之。"(《針灸甲乙經》 3:49 — as given by the OCR; taken to be a misprint/lacuna for "太陰之郄"; the Tongkao has "手太陰郄") / Location: "去腕七寸。"(《甲乙》, 《千金》, 《外臺》, 《聖惠》, 《銅人》 etc.) / "刺入三分，留三呼，灸五壯。"(《甲乙》) | "熱病汗不出，上□及孔最主之。"(OCR lacuna) "厥頭痛，孔最主之。"(《甲乙》 vols. 7 and 9) / "頭痛，振寒，臂厥，熱，汗不出。"(《明堂類成》) | Alias: "無" (none). Locations scattered in early-modern texts: 《針灸集成》 "尺澤下三寸半", 《中華針灸學》 "尺澤下三寸", 《新針灸學》 "離尺澤穴五寸". Local anatomy: "上層是肱橈肌之內緣，下層為屈拇長肌之外緣，深部有橈動脈和神經通過"(《新針灸學》) |
-| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** (`中国针灸证治通鉴_161-240.md` L1738, 1782; `_241-320.md` L704, 854, 856, 1626–1638) | (no location given — a prescription compendium) | "傷寒熱病身無汗，細詳孔最患無妨。"(《針灸玉龍經·玉龍歌》) / "熱病煩心，汗不出：中衝、勞宮……孔最三壯至五壯，即汗。"(《針灸捷徑》) / haemoptysis (咯血) "孔最配尺澤。強刺激為主。"(遼寧中醫雜誌 1980) / asthma (哮喘) "孔最、魚際。"(中醫雜誌 1989) | Classical combinations all belong to the **diaphoresis (汗不出)** group; modern combinations to the **haemoptysis (咯血) and asthma (哮喘)** group. Among the three classics, haemorrhoid prescriptions are dealt with only in the Tongkao appendix (collation of the mistransmission) |
+| ***Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)**, entry 孔最 (《針灸腧穴通考》(上) PDF pp. 81–160 L2300–2467, printed pp. 123–126) | "孔冣……手太陰郄，在腕上七寸。"(《黃帝內經明堂》, Yang Shangshan's (楊上善) commentary, L2320) / "刺入三分，灸五壯。"(《黃帝明堂經》, 【操作】) / Sawada (澤田氏): "尺澤穴下二寸。"(《針灸真髓》, L2324) | "可以出汗。頭痛，振寒，臂厥，熱，汗不出。"(《黃帝內經明堂》) / "吐血失喑，腫痛惡血。"(《太平聖惠方·針經》) / "治熱病汗不出……咳逆，臂厥痛。"(《銅人》) | ① The Ming-dynasty 《針灸集書》 "上骨以近骨邊" and 《針灸大成》 "側取" confuse the point with the location of Lieque (列缺, LU07) → "仍以《黃帝明堂經》、《銅人腧穴針灸圖經》為準". ② Forearm bone-proportional lengths of 10, 12 and 12.5 cun mean the texts are "identical in wording but different in fact" (文同而實不同). ③ Gao Wu (高武) misread "腫痛" as "咽腫痛". ④ **Appendix: tracing 'Kongzui treats haemorrhoids' (附: 孔最治痔溯源)** — the textbook indication "haemorrhoids (痔疾)" is a mistransmission (訛傳) from Sawada's homonymous point at a different location |
+| ***Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》)**, entry 孔最 (《中國針灸穴位通鑑》(上卷) PDF pp. 321–400 L880–1060) | Source: "孔最，手太陽之。"(《針灸甲乙經》 3:49 — as given by the OCR; taken to be a misprint/lacuna for "太陰之郄"; the Tongkao has "手太陰郄") / Location: "去腕七寸。"(《甲乙》, 《千金》, 《外臺》, 《聖惠》, 《銅人》 etc.) / "刺入三分，留三呼，灸五壯。"(《甲乙》) | "熱病汗不出，上□及孔最主之。"(OCR lacuna) "厥頭痛，孔最主之。"(《甲乙》 vols. 7 and 9) / "頭痛，振寒，臂厥，熱，汗不出。"(《明堂類成》) | Alias: "無" (none). Locations scattered in early-modern texts: 《針灸集成》 "尺澤下三寸半", 《中華針灸學》 "尺澤下三寸", 《新針灸學》 "離尺澤穴五寸". Local anatomy: "上層是肱橈肌之內緣，下層為屈拇長肌之外緣，深部有橈動脈和神經通過"(《新針灸學》) |
+| ***Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》)** (《中國針灸證治通鑑》 PDF pp. 161–240 L1738, 1782; PDF pp. 241–320 L704, 854, 856, 1626–1638) | (no location given — a prescription compendium) | "傷寒熱病身無汗，細詳孔最患無妨。"(《針灸玉龍經·玉龍歌》) / "熱病煩心，汗不出：中衝、勞宮……孔最三壯至五壯，即汗。"(《針灸捷徑》) / haemoptysis (咯血) "孔最配尺澤。強刺激為主。"(遼寧中醫雜誌 1980) / asthma (哮喘) "孔最、魚際。"(中醫雜誌 1989) | Classical combinations all belong to the **diaphoresis (汗不出)** group; modern combinations to the **haemoptysis (咯血) and asthma (哮喘)** group. Among the three classics, haemorrhoid prescriptions are dealt with only in the Tongkao appendix (collation of the mistransmission) |
 
 ---
 
@@ -358,7 +358,7 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$
 
 ## Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)
 
-Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile LU06 --md` (2026-10-23). Match level `exact` means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.
+Generated by: FMA 5.1.0 acupoint profile query (LU06; 2026-10-23). Match level `exact` means that the textbook's English term matched an FMA label, synonym or Latin name exactly after normalisation.
 
 | Category | Textbook term | FMA substrate | Match | Source | Innervation / parent trunk | Spinal segment |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -388,15 +388,15 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 | :--- | :--- | :--- | :--- |
 | Header | — | Added FMA 5.1.0 anatomical ontology line | FMA Acupoint Anatomical Ontology Mapping Registry |
 | Section 4 layer diagram, Section 6 | "Deep thumb flexor" (Kim Jaehyo textbook label as given) | Corrected to **flexor pollicis longus**, with the textbook's original label given alongside | English flexor pollicis longus = FMA:38481; slip in the textbook dataset |
-| Section 4 | Text layer diagram only | Figure 4-1 cross-section schematic (T1 level), FMA cross-check table by layer, 2 FMA notes (source of segments, label error) | `fma_query.py profile LU06`; figure script `.claude/skills/acupoint-anatomy/scripts/fma/figures/LU06_cross_section.py` |
+| Section 4 | Text layer diagram only | Figure 4-1 cross-section schematic (T1 level), FMA cross-check table by layer, 2 FMA notes (source of segments, label error) | FMA profile query; figure-generation script (internal) |
 | Section 6 | 4-column textbook comparison | FMA adjudication column; interpretation of the nature of the differences (Common Textbook = admixture of ulnar-side, ulnar-nerve structures / Kim Jaehyo = extension to deeper layers) | FMA nerve_supply, segmental_supply |
 | Section 8 ② | B-Check ①, ② rationale | Added T1 FMA IDs and segment pointers (**scores unchanged**: T1 7/12, T2 4/12) | FMA segmental_supply |
 | Section 8 ③ | 2026-10-04 log | Added rows for the 2026-10-23 Rank 6 re-run (PubMed 9, OpenAlex 16, Crossref 0, 0 new) | `_metadata.sync_log` LU6 2026-10-23T21:44:38 |
 | Section 8 ⑤ | — | Figure 8-1 FMA peripheral afferent pathway (Mermaid) | FMA:38485, 38459, 38450, 292885, 39080 trunks |
-| Appendix A | — | FMA profile table | `fma_query.py profile LU06 --md` |
+| Appendix A | — | FMA profile table | FMA profile query |
 | ARI | T1 71.2 ± 0 (B) / T2 35 ± 0 (D·H) | **No change** — FMA is B1-supplementary evidence and does not change rubric levels | Skill section 5-1 |
 | Check of earlier-edition wording | The automated check flagged 1 instance of "full inverted index" | This is a **quotation of deleted earlier-edition wording** kept in the 'Original content' column of the v2.7 revision history below, so it was not changed (history preserved). No earlier-edition wording in the body text | Header row of the v2.7 revision history of this report |
-| Archive | — | Pre-supplement md, html and xlsx kept in `_구판_v2.7_20261023/` | — |
+| Archive | — | Pre-supplement md, html and xlsx kept in the internal archive | — |
 
 ---
 
@@ -404,21 +404,21 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Header | "full inverted index of 48 measured papers" | Replaced by evidence-pack counts (32 landmark, 20 local; 4 LU6-specific papers + 1 clinical) | pack_LU6.md |
-| Section 1 | OCR of the *Xuewei Tongjian* table of contents (GV25–28 etc.), a fragment on 八關大刺 from the *Zhengzhi Tongjian*, page numbers from the Tongkao table of contents | Original-text excerpts from the 孔最 entries (location, depth, indications, collation) | Tongkao `(上)_81-160.md` L2300–2467; *Xuewei Tongjian* `(上卷)_321-400.md` L880–1060; *Zhengzhi Tongjian* `_161-240.md` L1738, 1782, `_241-320.md` L704, 854, 856 |
+| Header | "full inverted index of 48 measured papers" | Replaced by evidence-pack counts (32 landmark, 20 local; 4 LU6-specific papers + 1 clinical) | evidence pack |
+| Section 1 | OCR of the *Xuewei Tongjian* table of contents (GV25–28 etc.), a fragment on 八關大刺 from the *Zhengzhi Tongjian*, page numbers from the Tongkao table of contents | Original-text excerpts from the 孔最 entries (location, depth, indications, collation) | Tongkao (上) PDF pp. 81–160 L2300–2467; *Xuewei Tongjian* (上卷) PDF pp. 321–400 L880–1060; *Zhengzhi Tongjian* PDF pp. 161–240 L1738, 1782, PDF pp. 241–320 L704, 854, 856 |
 | Section 2 | Generic placeholder text | Table of the path primary → re-recorded → supplemented → Ming variants → Sawada → mistransmission | Tongkao L2316–2438 |
 | Section 3 | Alias "-" only, wording "completely blocked" | Table handling the variant character 孔冣, Sawada's homonymous point and confusion with 列缺 | KJH row 61; Tongkao L2306, 2316, 2324 |
 | Section 4 | Layer mm values common to all points (0–2.5/…/over 22 mm), "joint capsule" | Estimated X, Y, Z coordinates by Target; LU6 layers by structure (textbooks, local anatomy in the *Xuewei Tongjian*) | Textbook xlsx row 59; *Xuewei Tongjian* local anatomy (局部解剖) |
 | Section 5 | Conversion formula only | Table of fen and mm by text | Needling-depth xlsx sheet 1, row 60 |
 | Section 6 | Boilerplate without structure names | Actual comparison of muscles, nerves and vessels; disagreement in 2 secondary muscles stated | Common Textbook and Kim Jaehyo xlsx, row 59 each |
-| Section 7 | Generic rule sentence | T1/T2 split (Δ ≈ 3 cun) carried out, T1 declared superior | final_LU06.json |
-| Section 8 B-Check | ① 2, ② 2, ⑤ 2, total 9/12 "confirmed", no papers.id | T1 final 2·1·1·1·1·1 = 7/12 not concordant, T2 4/12 hypothesis, reference IDs and papers.id given | final_LU06.json bcheck |
-| Section 8 Layer A | 17, 795, 1458, 1461, 1002, 1678 etc. listed as empirical evidence, PMIDs blank | Rebuilt around the LU6-specific 1682, 1683, 1684, 1806, 1726; mistransmission papers 1561, 1563, 1564, 1723 separated as counter-evidence; unsuitable items excluded | pack_LU6.md; master DB papers |
-| Section 8 | No external search log | sync_log table added | pack_LU6.md |
+| Section 7 | Generic rule sentence | T1/T2 split (Δ ≈ 3 cun) carried out, T1 declared superior | dual-scoring record |
+| Section 8 B-Check | ① 2, ② 2, ⑤ 2, total 9/12 "confirmed", no papers.id | T1 final 2·1·1·1·1·1 = 7/12 not concordant, T2 4/12 hypothesis, reference IDs and papers.id given | B-Check scoring record |
+| Section 8 Layer A | 17, 795, 1458, 1461, 1002, 1678 etc. listed as empirical evidence, PMIDs blank | Rebuilt around the LU6-specific 1682, 1683, 1684, 1806, 1726; mistransmission papers 1561, 1563, 1564, 1723 separated as counter-evidence; unsuitable items excluded | evidence pack; master DB papers |
+| Section 8 | No external search log | sync_log table added | evidence pack |
 | Section 9 | Placeholder | Separation of P_single / P_comb / grafted indication (haemorrhoid 痔疾 mistransmission) | Tongkao 【適應症】 and 附; *Zhengzhi Tongjian* |
-| Section 10 | Single Target, S_orig 85 (value outside the rubric), S_reflex 75, ARI-Core 79.0 B, "rigorously verified" | T1 71.2 ± 0 (B, weight-sensitive) / T2 35 ± 0 (D·H); sub-items, gates, adjudication record and branch decision | final_LU06.json |
-| Section 10 | — | Earlier-edition v2.6 score 79.0 (not comparable) | Earlier-edition report `_구판_v2.6/` |
-| xlsx | B-Check sheet "B3-11 (Longhurst)", "B3-16 (Torres-Rosas)", "papers.id #1 / PMID to be checked" | Labels in sheet 4 of the earlier edition corrected to the registry (B3-11 = 2008 review of analgesic mechanisms, B3-16 = 2020 experiment on the NPY sympathetic pathway) and the "papers.id #1" pointer replaced by 1806; new B-Check sheet added. Neither reference is used in the final v2.7 scoring | layer_b_reference_registry.md L64, 69 |
+| Section 10 | Single Target, S_orig 85 (value outside the rubric), S_reflex 75, ARI-Core 79.0 B, "rigorously verified" | T1 71.2 ± 0 (B, weight-sensitive) / T2 35 ± 0 (D·H); sub-items, gates, adjudication record and branch decision | dual-scoring record |
+| Section 10 | — | Earlier-edition v2.6 score 79.0 (not comparable) | Earlier-edition report the internal archive |
+| xlsx | B-Check sheet "B3-11 (Longhurst)", "B3-16 (Torres-Rosas)", "papers.id #1 / PMID to be checked" | Labels in sheet 4 of the earlier edition corrected to the registry (B3-11 = 2008 review of analgesic mechanisms, B3-16 = 2020 experiment on the NPY sympathetic pathway) and the "papers.id #1" pointer replaced by 1806; new B-Check sheet added. Neither reference is used in the final v2.7 scoring | Layer B Reference Registry L64, 69 |
 
 ---
 
@@ -426,7 +426,7 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition `LU06_공최_해부생리_실체판명_보고서.md` |
+| Whole document | Automatically generated "English" edition: Korean body text with only headings and some terms replaced | Fully translated into English from the Korean edition (same content, scores and evidence pointers); Traditional Chinese (繁體字) given for point, meridian and classic names, TCM concepts, indications and classical quotations | Korean edition |
 | Title and body | "Kongzui (孔最, LU06)(孔最, LU06)" and similar duplicated annotations | Duplicates removed | — |
 | Figure 4-1 | Image path corrupted by term replacement (`LU06_Kongzui (孔最, LU06)_…png`), so the image was missing from the HTML | Restored to the actual file name | Files in the report folder |
 | Classical quotations | Simplified characters (e.g. 针, 泽, 渊, 鉴) | Converted to Traditional characters; file names and line pointers unchanged | Routing rule on Traditional Chinese collation |
@@ -435,5 +435,5 @@ Generated by: `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py p
 
 | Location | Original wording | Revised wording | Basis |
 | :--- | :--- | :--- | :--- |
-| Header links | Absolute `file:///g:/내 드라이브/도서 번역/…` links (do not open on other PCs) | Links relative to the project root (`도서 번역`) | Skill path rule (no drive-letter absolute paths) |
+| Header links | Local absolute-path links (do not open on other PCs) | Project-relative links | Skill path rule (no drive-letter absolute paths) |
 | Textbook title | *Meridian and Acupoint Studies* (經絡經穴學) | (經絡腧穴學) | The Korean edition names the textbook *Gyeongnak Suhyeolhak* (經絡腧穴學; suhyeol = 腧穴); 經絡經穴學 was a mistranslation carried over from the earlier ST36 English edition |
