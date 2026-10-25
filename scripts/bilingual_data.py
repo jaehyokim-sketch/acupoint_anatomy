@@ -307,7 +307,7 @@ BILINGUAL_CARDS = [
   },
   # 16. Headache Comprehensive
   {
-    "category": "headache",
+    "category": "matrix",
     "search": "두통침구 동의보감 Donguibogam Headache 종합보고서 Comprehensive Report 16종 두통 신경해부 매트릭스 백회 찬죽 풍지 합곡 임상 배혈",
     "code_badge": "REPORT",
     "code_style": "background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);",
@@ -320,14 +320,14 @@ BILINGUAL_CARDS = [
     "desc_ko": "《동의보감》 두통문(頭痛門) 수록 16대 두통 유형별 표준 침구 처방, 주치 혈위의 신경학적 지배 분절 및 삼차-신경혈관 복합체(Trigeminovascular system) 기전 통합 분석 모노그래프.",
     "desc_en": "Comprehensive monograph mapping classical acupuncture prescriptions for 16 headache patterns in *Donguibogam* to neuroanatomical innervations and trigeminovascular pain transmission circuits.",
     "tags": ["#동의보감", "#Donguibogam", "#두통매트릭스", "#Headache", "#삼차신경혈관", "#백회", "#찬죽", "#풍지"],
-    "cat_label_ko": "두통 임상 매트릭스",
+    "cat_label_ko": "임상 매트릭스",
     "cat_label_en": "Clinical Matrix",
     "btn_ko": "",
     "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/Donguibogam_Headache_Acupuncture_Comprehensive_Report.html"
   },
   # 17. Headache Analysis
   {
-    "category": "headache",
+    "category": "matrix",
     "search": "두통처방 상세분석 Donguibogam Headache Analysis Report 주치 빈도 배혈 원리 삼차신경 경추신경총 교차 분석",
     "code_badge": "ANALYSIS",
     "code_style": "background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);",
@@ -340,12 +340,32 @@ BILINGUAL_CARDS = [
     "desc_ko": "두통 16패턴에 투입된 경혈의 빈도 분석, 주치 중첩도 및 삼차신경 제1지(V1)와 경추신경총(C2-C3)의 수렴 투사 배혈 로직을 통계적으로 실증한 심층 연구 보고서.",
     "desc_en": "Statistical and network analysis of acupoints across 16 headache patterns in *Donguibogam*, validating convergence of trigeminal V1 afferents and cervical C2–C3 nerve plexuses.",
     "tags": ["#처방분석", "#PrescriptionAnalytics", "#두통배혈", "#네트워크", "#삼차경추복합체", "#빈도분석"],
-    "cat_label_ko": "두통 임상 매트릭스",
+    "cat_label_ko": "임상 매트릭스",
     "cat_label_en": "Clinical Matrix",
     "btn_ko": "",
     "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/Donguibogam_Headache_Analysis_Report.html"
   },
-  # 18. Classics 1
+  # 18. Hand-Taiyin Shidong Matrix
+  {
+    "category": "matrix",
+    "search": "수태음 시동병 해부 유사도 매트릭스 영추경맥 靈樞 經脈 수태음폐경 是動病 폐장만팽팽 缺盆痛 交兩手而瞀 臂厥 心滂滂如痛 음양십일맥구경 황룡상 태연 Taiyuan 列缺 經渠 孔最 尺澤 俠白 天府 38혈 FMA 5.1 UPGMA BodyParts3D 팔신경얼기 목신경얼기 심통 관상동맥 심교통 Hand-Taiyin Shidong Disorder Anatomical Matrix Lingshu Jingmai Taiyuan UPGMA",
+    "code_badge": "MATRIX · LU",
+    "code_style": "background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3);",
+    "status_badge": "Category 4 · UPGMA r=0.961 · FMA 5.1 & BodyParts3D",
+    "status_style": "background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);",
+    "title_ko": "수태음 시동병 해부 유사도",
+    "title_en": "Hand-Taiyin Shidong Anatomical Matrix",
+    "subtitle_ko": "《靈樞·經脈》 수태음 시동병 대응 38혈 침구해부 층위 종합보고서",
+    "subtitle_en": "Anatomical Similarity Strata of 38 Shidong Acupoints in Lingshu Jingmai",
+    "desc_ko": "《통고》 361혈 전수 파싱으로 도출한 수태음 시동병 대응 38혈(1층 20혈·2층 11혈·3층 7혈). FMA 5.1 온톨로지와 BodyParts3D 기반 가중 Jaccard 계층 군집(코페네틱 0.961, ARI 1.000)으로 본경 사슬(태연~천부)과 분절 축(C5–T1, C1–C4, 흉추후지)을 실증한 임상 매트릭스 정본 보고서.",
+    "desc_en": "Full textual parse of 361 Tongkao acupoint indications yields 38 points corresponding to the Hand-Taiyin shidong disorder (Tier I: 20, Tier II: 11, Tier III: 7). UPGMA hierarchical clustering (cophenetic r=0.961, ARI 1.000) maps FMA 5.1 and BodyParts3D geometries to reveal meridian chain and segmental axes.",
+    "tags": ["#영추경맥", "#수태음폐경", "#시동병", "#Shidong", "#임상매트릭스", "#UPGMA", "#FMA5_1", "#BodyParts3D", "#태연", "#38혈분석"],
+    "cat_label_ko": "임상 매트릭스",
+    "cat_label_en": "Clinical Matrix",
+    "btn_ko": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%81%EC%B6%94%EA%B2%BD%EB%A7%A5_%EC%88%98%ED%83%9C%EC%9D%8C%EC%8B%9C%EB%8F%99%EB%B3%91_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%81%EC%B6%94%EA%B2%BD%EB%A7%A5_%EC%88%98%ED%83%9C%EC%9D%8C%EC%8B%9C%EB%8F%99%EB%B3%91_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%81%EC%B6%94%EA%B2%BD%EB%A7%A5_%EC%88%98%ED%83%9C%EC%9D%8C%EC%8B%9C%EB%8F%99%EB%B3%91_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%81%EC%B6%94%EA%B2%BD%EB%A7%A5_%EC%88%98%ED%83%9C%EC%9D%8C%EC%8B%9C%EB%8F%99%EB%B3%91_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
+  },
+  # 19. Classics 1
   {
     "category": "classics",
     "search": "CLASSICS-1 근육 경락 동일명칭 경혈쌍 비교분석 3대서적 수혈통고 침구문헌 해부학적 명칭 동일성",
