@@ -951,9 +951,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <!-- Stats Bar -->
     <div class="stats-bar">
       <div class="stat-card">
-        <span class="stat-num">28편 (56종)</span>
+        <span class="stat-num">27편 (54종)</span>
         <span class="stat-label-ko">한·영 듀얼 전문 리포트</span>
-        <span class="stat-label-en">28 Dual-Language Monographs</span>
+        <span class="stat-label-en">27 Dual-Language Monographs</span>
       </div>
       <div class="stat-card">
         <span class="stat-num">14개소</span>

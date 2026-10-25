@@ -89,6 +89,9 @@ python .agents/skills/acupoint-anatomy/scripts/sync_master_db.py --trigger rank6
 python .agents/skills/acupoint-anatomy/scripts/fma/fma_query.py profile <경혈코드> --md   # 보고서용 표준 마크다운 표 생성
 python .agents/skills/acupoint-anatomy/scripts/fma/fma_query.py entity "<구조명 또는 FMA ID>" # 특정 해부구조 상세 조회
 python .agents/skills/acupoint-anatomy/scripts/fma/fma_query.py path "<말초신경>" "<줄기신경>"  # 신경 주행 최단 경로 추적
+python .agents/skills/acupoint-anatomy/scripts/fma/fma_visualizer.py graph <경혈코드>         # Neo4j 기반 FMA 신경해부 지식 그래프 이미지(.png) 생성
+python .agents/skills/acupoint-anatomy/scripts/fma/fma_visualizer.py cross-section <경혈코드> # 혈위별 횡단면 해부 모식도(.png) 생성
+python .agents/skills/acupoint-anatomy/scripts/fma/fma_visualizer.py all <경혈코드>           # 지식 그래프 및 횡단면 모식도 일괄 생성
 ```
 
 **Rank 0~7 단계별 FMA 근거 보강 체계**:
@@ -124,6 +127,12 @@ python .agents/skills/acupoint-anatomy/scripts/fma/fma_query.py path "<말초신
   python .agents/skills/acupoint-anatomy/scripts/build_report_html.py <보고서경로.md>
   ```
   - **도식 PNG 렌더링**: 한글·한자가 섞인 문자 도식(┌─│ 등 상자 그림, 화살표, 층차도 등)은 브라우저 글꼴 폭 불일치로 인한 줄바꿈·선 어긋남 왜곡을 원천 방지하기 위해 고정 격자 PNG로 렌더링되며, Mermaid 다이어그램은 Playwright로 사전 렌더링된 고해상도 PNG로 자동 삽입(Data URI 내장)된다.
+
+- **HTML 공개본 원본 자료 비노출 규정** (정본 Rank 7): `.html`(한국어·영어)은 외부 공유용이므로 원본·중간 데이터 파일의 저장 위치·파일명·링크를 노출하지 않는다. HTML은 `.md`에서 빌드되므로 `.md` 본문부터 지킨다.
+  - 금지: 드라이브 문자·`file:///` 링크·`내 드라이브`, 저장소 경로(`02_Master_Datasets/…`, `01_도서_번역_및_원전/…`·`chunks_refined`, `01_Framework/…`, `.agents/…`, `.claude/…`), `.xlsx`·`.json`·`.csv` 등 데이터 파일명과 그 링크(보고서 자신의 분석데이터 `.xlsx`, `final_*.json` 등 중간 산출물 포함), 실행 명령·파일 크기·PC 이름·계정·API 키.
+  - 대체: 정본 대체 표기표의 기술명(예: "통합 생의학 마스터 DB v3.0", 영어본 "Integrated Biomedical Master DB v3.0"). 원전은 서명·편명으로 인용하고, 파일 경로·chunk ID 등 근거 포인터는 내부용 `.xlsx`에만 기록한다.
+  - 허용: PMID, DOI, FMA:ID, Layer B 참조 ID, `papers.id`, 공개 외부 URL.
+  - 빌드 직후 `.md`·`.html`을 정본의 금지 패턴 정규식으로 검색해 0건(공개 URL 내 적중 제외)을 확인하고, 적중 시 `.md`를 고쳐 다시 빌드한다.
 
 
 ### Tier 3 종합 보고서 필수 10대 구성 요소 (정본 5절)

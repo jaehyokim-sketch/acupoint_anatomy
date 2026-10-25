@@ -485,27 +485,7 @@ BILINGUAL_CARDS = [
     "btn_ko": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%88%AD%EA%B3%A8%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%88%AD%EA%B3%A8_%EA%B2%BD%EC%99%B8%EA%B8%B0%ED%98%88_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
     "btn_en": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%88%AD%EA%B3%A8%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%88%AD%EA%B3%A8_%EA%B2%BD%EC%99%B8%EA%B8%B0%ED%98%88_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
   },
-  # 25. Topic: GB39 ASIA
-  {
-    "category": "topic",
-    "search": "GB39-ASIA 현종 Xuanzhong ASIA 해부학적 실체분석 신경학적 척수손상 감각점 L5 종아리신경",
-    "code_badge": "GB39-ASIA",
-    "code_style": "background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);",
-    "status_badge": "ASIA Neurological Standard · L5 Dermatome Verified",
-    "status_style": "background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);",
-    "title_ko": "현종 ASIA 실체",
-    "title_en": "GB39 Xuanzhong ASIA Anatomical Analysis",
-    "subtitle_ko": "현종혈 ASIA(미국척수손상학회) 신경학적 표준 기준 해부학적 실체분석",
-    "subtitle_en": "Anatomical Substrate Identification based on ASIA Neurological Standards",
-    "desc_ko": "미국척수손상학회(ASIA) 국제 신경학적 평가 표준에 입각하여 현종(GB39)의 피부신경 분절(L5 피부분절) 및 종아리신경 지배 영역을 현대 신경학적 평가 지표와 1:1 대조 실증.",
-    "desc_en": "Examines GB39 (Xuanzhong) based on the American Spinal Injury Association (ASIA) International Standards, matching L5 key sensory points and peroneal nerve supply to neurological assessment metrics.",
-    "tags": ["#GB39", "#현종", "#ASIA", "#척수손상평가", "#L5피부분절", "#종아리신경", "#NeurologicalStandards"],
-    "cat_label_ko": "주제별 고증연구",
-    "cat_label_en": "Thematic Collation",
-    "btn_ko": "",
-    "btn_en": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%ED%98%84%EC%A2%85%ED%98%88_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EB%AC%B8%ED%97%8C%EC%97%B0%EA%B5%AC/02_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EC%8B%A4%EC%B2%B4%EB%B6%84%EC%84%9D_ASIA/GB39_Xuanzhong_Anatomical_Analysis.html"
-  },
-  # 26. Topic: LR05-BL40
+  # 25. Topic: LR05-BL40
   {
     "category": "topic",
     "search": "LR05-BL40 중도 요유 위중 Zhongdu Yaoshu Weizhong 연계 고증 임상배혈 요통 비뇨생식 척추-하지 반사",
