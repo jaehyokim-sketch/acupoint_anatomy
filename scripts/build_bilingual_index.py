@@ -36,9 +36,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>경혈 해부생리학 & 침구 임상 분석 포털 | Acupoint Anatomy & Clinical Acupuncture Archive</title>
-  <meta name="description" content="한의학 경혈의 신경해부학적 5층차 실체 판명(Framework v2.7, ARI v3.0), 3대 침구 원전 비교고증 및 동의보감 두통 임상 매트릭스 공식 한·영 듀얼 연구 포털"/>
+  <meta name="description" content="경락, 경혈 및 침구의학 문헌 통감 전수 고증, 한대(漢代) 도량형 실측 심도 및 Layer B 4계층 참조 등록부·생의학 DB 기반 경혈 및 침구 임상 해부생리 분석 포털"/>
   <meta property="og:title" content="Acupoint Anatomy & Clinical Acupuncture Archive | 경혈 해부생리학 포털"/>
-  <meta property="og:description" content="24종 한·영 듀얼 전문 리포트, 3대 원전 전수 비교 및 신경해부학 실체 판명 디지털 아카이브"/>
+  <meta property="og:description" content="경락, 경혈 및 침구의학 문헌 통감 전수 고증 및 신경해부학 실체 판명 디지털 아카이브"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -941,10 +941,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     </h2>
     <div class="hero-descriptions">
       <p class="hero-desc-ko">
-        핵심 3대 원전(혈위통감·증치통감·수혈통고) 전수 고증, 한대(漢代) 도량형 실측 심도(1푼=2.3mm) 및 Layer B 4계층 참조 등록부와 통합 생의학 DB(PubMed·Crossref)에 기반하고, 독립 2인 이중 채점(ARI v3.0)으로 판정한 경혈 해부생리 및 동의보감 두통 임상 매트릭스 공식 온라인 포털입니다.
+        경락, 경혈 및 침구의학 문헌 통감(혈위통감·증치통감·수혈통고 등)을 전수 고증하고 한대(漢代) 도량형 실측 심도(1푼=2.3mm) 및 Layer B 4계층 참조 등록부와 통합 생의학 DB(PubMed·Crossref)에 기반하고, 독립 2인 이중 채점(ARI v3.0)으로 판정한 경혈 및 침구의학 임상에 대한 해부생리 분석 결과를 공유하는 포털입니다.
       </p>
       <p class="hero-desc-en">
-        The official digital library integrating classical textual criticism from the Three Acupuncture Canons (*Tongjian*, *Zhengzhi Tongjian*, *Tongkao*), ancient Han needling depth (1 fen = 2.3 mm), Layer B biomedical registry, and dual-assessor ARI v3.0 reliability scoring for acupoint substrates (Layer 1–5) and *Donguibogam* clinical matrix.
+        A dedicated research portal sharing anatomical and physiological analysis of acupoints and acupuncture clinical practice—grounded in comprehensive textual criticism of meridian, acupoint, and acupuncture canons (*Tongjian*, *Zhengzhi Tongjian*, *Tongkao*, etc.), ancient Han dynasty measured needling depth (1 fen = 2.3 mm), the Layer B 4-tier reference registry, and integrated biomedical databases (PubMed·Crossref), evaluated by dual-assessor independent scoring (ARI v3.0).
       </p>
     </div>
 
