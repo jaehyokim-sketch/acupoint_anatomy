@@ -37,8 +37,8 @@ BILINGUAL_CARDS = [
     "title_en": "Tianfu (天府, LU03) & Xiabai (俠白, LU04)",
     "subtitle_ko": "LU03·LU04 해부생리학적 실체 판명 통합보고서",
     "subtitle_en": "Integrated Anatomical Substrate & Neuroreflex Verification Report",
-    "desc_ko": "⚠ 천부 고전점 = 위팔두갈래근 안쪽 가쪽홈(ARI-Core 56.2~62.5, C), WHO점 = 근육 가쪽 모서리 바깥(41.2~43.8, D). 두 점의 거리가 15mm 이상 벌어져 분기 분석했다. 근피신경과 위팔두갈래근(B), 혈관신경다발 접근 시 자침 심도 주의.",
-    "desc_en": "⚠ Classical Tianfu point aligns with medial groove of biceps brachii (ARI 56.2–62.5, C), whereas WHO standard point lies lateral to biceps border (41.2–43.8, D). Spatial displacement Δ > 15 mm triggers split analysis; focuses on musculocutaneous nerve and brachial bundle precautions.",
+    "desc_ko": "⚠ 천부 고전점 = 위팔두갈래근 안쪽 가쪽홈(ARI-Core 56.2~62.5, C), WHO점 = 근육 가쪽 모서리 바깥(41.2~43.8, D). 고전·촉진점(Target 1≡2, 위팔동맥 박동처)과 WHO점(Target 3)의 거리 약 28~29mm가 분기 기준(10mm)을 넘어 Tri-Target 분기 분석했다. 근피신경과 위팔두갈래근(B), 혈관신경다발 접근 시 자침 심도 주의.",
+    "desc_en": "⚠ Classical Tianfu point aligns with medial groove of biceps brachii (ARI 56.2–62.5, C), whereas WHO standard point lies lateral to biceps border (41.2–43.8, D). The ≈28–29 mm gap between the classical/palpation locus (Target 1≡2, brachial artery pulse) and the WHO point (Target 3) exceeds the 10 mm threshold, triggering Tri-Target split analysis; focuses on musculocutaneous nerve and brachial bundle precautions.",
     "tags": ["#LU03", "#LU04", "#천부", "#협백", "#Tianfu", "#Xiabai", "#근피신경", "#MusculocutaneousNerve", "#상완이두근"],
     "cat_label_ko": "경혈별 해부생리",
     "cat_label_en": "Acupoint Anatomy",
@@ -57,8 +57,8 @@ BILINGUAL_CARDS = [
     "title_en": "Zusanli (足三里, ST36)",
     "subtitle_ko": "ST36 족삼리 해부생리학 실체 판명 보고서",
     "subtitle_en": "ST36 Zusanli Anatomical Substrate & Neuroreflex Verification Monograph",
-    "desc_ko": "깊은종아리신경·앞정강동정맥 혈관신경다발과 앞정강근. 체성-내장 반사는 B-Check 9/12로 마우스 실증과 임상 특이성이 부합(B3-15~17). FMA 온톨로지 신경 전달망 및 근골격 초음파(TI 1.09) 실측 데이터를 결합한 표준 정본 보고서.",
-    "desc_en": "Neurovascular bundle of deep peroneal nerve and anterior tibial artery within tibialis anterior. Somato-autonomic reflex achieves B-Check 9/12 with mouse models and clinical specificity. Incorporates FMA 5.1 ontology neural chain and musculoskeletal ultrasound (TI 1.09) metrics.",
+    "desc_ko": "깊은종아리신경·앞정강동정맥 혈관신경다발과 앞정강근. 체성-내장 반사는 B-Check 9/12로 마우스 실증과 임상 특이성이 부합(B3-15~17). FMA 온톨로지 신경 전달망 및 근골격 초음파(TI 1.09) 실측 데이터를 결합한 표준 정본 보고서. Tri-Target(10mm) 재판정: 표준점 Target 1≡3(77.5, B)이 앞정강근·긴발가락폄근 사이 촉진점 Target 2(56.25 ± 1.25, C·H, 이중 채점)보다 단독 우위 확정.",
+    "desc_en": "Neurovascular bundle of deep peroneal nerve and anterior tibial artery within tibialis anterior. Somato-autonomic reflex achieves B-Check 9/12 with mouse models and clinical specificity. Incorporates FMA 5.1 ontology neural chain and musculoskeletal ultrasound (TI 1.09) metrics. Tri-Target (10 mm) re-assessment: standard point Target 1≡3 (77.5, B) confirmed as superior to the tibialis anterior–EDL palpation locus Target 2 (56.25 ± 1.25, C·H, dual-scored).",
     "tags": ["#ST36", "#족삼리", "#Zusanli", "#깊은종아리신경", "#DeepPeronealNerve", "#앞정강근", "#TibialisAnterior", "#FMA", "#초음파"],
     "cat_label_ko": "경혈별 해부생리",
     "cat_label_en": "Acupoint Anatomy",
@@ -97,8 +97,8 @@ BILINGUAL_CARDS = [
     "title_en": "Taiyuan (太淵, LU09)",
     "subtitle_ko": "LU09 태연 해부생리학 실체 판명 분석 모노그래프",
     "subtitle_en": "LU09 Taiyuan Anatomical Substrate & Neuroreflex Verification Monograph",
-    "desc_ko": "손목 앞쪽 손목주름 위, 노동맥 박동처와 노쪽손목굽힘근 힘줄 사이. 가쪽피하신경 말초지와 노동맥 신경총 분포. 고전 '脈會' 원리 규명 및 동맥 천자를 피하는 사자(斜刺)·천자(淺刺) 자침 안전 가이드라인 수립(SI 25 ⚠).",
-    "desc_en": "Radial wrist crease between radial artery and flexor carpi radialis tendon. Involves lateral antebrachial cutaneous nerve and radial periarterial plexus. Explains classical 'Vessel Convergence' (脈會) and establishes oblique shallow needling guidelines to prevent arterial injury (SI 25 ⚠).",
+    "desc_ko": "손목 앞쪽 손목주름 위, 노동맥 박동처와 노쪽손목굽힘근 힘줄 사이. 가쪽피하신경 말초지와 노동맥 신경총 분포. 고전 '脈會' 원리 규명 및 동맥 천자를 피하는 사자(斜刺)·천자(淺刺) 자침 안전 가이드라인 수립(SI 50).",
+    "desc_en": "Radial wrist crease between radial artery and flexor carpi radialis tendon. Involves lateral antebrachial cutaneous nerve and radial periarterial plexus. Explains classical 'Vessel Convergence' (脈會) and establishes oblique shallow needling guidelines to prevent arterial injury (SI 50).",
     "tags": ["#LU09", "#태연", "#Taiyuan", "#노동맥", "#RadialArtery", "#노쪽손목굽힘근", "#맥회", "#VesselMeeting"],
     "cat_label_ko": "경혈별 해부생리",
     "cat_label_en": "Acupoint Anatomy",
@@ -137,8 +137,8 @@ BILINGUAL_CARDS = [
     "title_en": "Sanyinjiao (三陰交, SP06)",
     "subtitle_ko": "SP06 삼음교 해부생리학 실체 판명 보고서",
     "subtitle_en": "SP06 Sanyinjiao Anatomical Substrate & Dual Tier Collation Monograph",
-    "desc_ko": "고전 황제명당경 8촌 정위(T1, 41.3, D)와 천금·현대 3촌 정위(T2, 75.0, B) 공간 변위(Δ ≈ 115mm) 분기 검증. 정강신경과 뒤정강동맥, 긴발가락굽힘근. B-Check 10/12로 골반강 자율신경·비뇨생식기 조절 반사 확정 기술.",
-    "desc_en": "Resolves spatial displacement (Δ ≈ 115 mm) between Mingtang 8-cun location (Tier 1, 41.3, D) and modern 3-cun standard (Tier 2, 75.0, B). Involves tibial nerve, posterior tibial artery, flexor digitorum longus. B-Check 10/12 confirms pelvic autonomic and urogenital reflex specificity.",
+    "desc_ko": "고전 황제명당경 8촌 정위(Target 1≡2, 41.3, D)와 천금·현대 3촌 정위(Target 3, 75.0, B) 공간 변위(Δ ≈ 115mm) 분기 검증. 정강신경과 뒤정강동맥, 긴발가락굽힘근. B-Check 10/12로 골반강 자율신경·비뇨생식기 조절 반사 확정 기술.",
+    "desc_en": "Resolves spatial displacement (Δ ≈ 115 mm) between Mingtang 8-cun location (Target 1≡2, 41.3, D) and modern 3-cun standard (Target 3, 75.0, B). Involves tibial nerve, posterior tibial artery, flexor digitorum longus. B-Check 10/12 confirms pelvic autonomic and urogenital reflex specificity.",
     "tags": ["#SP06", "#삼음교", "#Sanyinjiao", "#정강신경", "#TibialNerve", "#뒤정강동맥", "#비뇨생식반사", "#삼음교차"],
     "cat_label_ko": "경혈별 해부생리",
     "cat_label_en": "Acupoint Anatomy",
@@ -157,8 +157,8 @@ BILINGUAL_CARDS = [
     "title_en": "Hegu (合谷, LI04)",
     "subtitle_ko": "LI04 합곡 해부생리학 실체 판명 보고서",
     "subtitle_en": "LI04 Hegu Anatomical Substrate & Facial Pain Reflex Verification Monograph",
-    "desc_ko": "제1등쪽뼈사이근(First dorsal interosseous)과 엄지모음근. 노신경 얕은가지와 자신경 심지. 고전 호구(虎口) 적백육제점(T1)과 제2중수골 중점 가쪽(T2) 대조. 삼차신경 척수핵(SpV) 투사를 통한 두면부 진통 반사 B-Check 9/12 부합.",
-    "desc_en": "First dorsal interosseous muscle and adductor pollicis. Innervated by superficial radial and deep ulnar nerves. Compares classical web margin (Tier 1) and mid-second metacarpal lateral border (Tier 2). Trigeminal spinal nucleus projection explains facial analgesia (B-Check 9/12).",
+    "desc_ko": "제1등쪽뼈사이근(First dorsal interosseous)과 엄지모음근. 노신경 얕은가지와 자신경 심지. 고전 호구(虎口) 적백육제점·노동맥 촉지점(Target 1≡2)과 제2중수골 중점 가쪽(Target 3) 대조. 삼차신경 척수핵(SpV) 투사를 통한 두면부 진통 반사 B-Check 9/12 부합.",
+    "desc_en": "First dorsal interosseous muscle and adductor pollicis. Innervated by superficial radial and deep ulnar nerves. Compares the classical web margin / radial pulse locus (Target 1≡2) and the mid-second metacarpal lateral border (Target 3). Trigeminal spinal nucleus projection explains facial analgesia (B-Check 9/12).",
     "tags": ["#LI04", "#합곡", "#Hegu", "#제1등쪽뼈사이근", "#FirstDorsalInterosseous", "#노신경", "#삼차신경진통", "#사총혈"],
     "cat_label_ko": "경혈별 해부생리",
     "cat_label_en": "Acupoint Anatomy",
@@ -360,10 +360,10 @@ BILINGUAL_CARDS = [
     "desc_ko": "3대 침구 원전 대조 결과 18개 경혈쌍 중 원전에서 동일 별명이 확인된 3쌍을 엄격 선별. 구판의 '주치 100% 일치' 오류를 '주치 범주 중첩'으로 정정하고 해부학적 명칭 동일성에 따른 근막 연결 기전을 가설 검증.",
     "desc_en": "Strict collation across 3 classics identifying 3 confirmed homonymous pairs out of 18 candidates. Rectifies former '100% indication match' claims into categorical overlap and evaluates fascial continuous pathways.",
     "tags": ["#침구원전", "#Classics", "#근육경락", "#동일명칭", "#수혈통고", "#고증학", "#Fascia"],
-    "cat_label_ko": "침구원전 비교분석",
+    "cat_label_ko": "고전문헌 통합비교분석",
     "cat_label_en": "Classical Canons",
-    "btn_ko": "02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EA%B7%BC%EC%9C%A1%EA%B2%BD%EB%9D%BD_%EB%8F%99%EC%9D%BC%EB%AA%85%EC%B9%AD_%EA%B2%BD%ED%98%88%EC%8C%8D_%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D.html",
-    "btn_en": "02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EA%B7%BC%EC%9C%A1%EA%B2%BD%EB%9D%BD_%EB%8F%99%EC%9D%BC%EB%AA%85%EC%B9%AD_%EA%B2%BD%ED%98%88%EC%8C%8D_%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D_en.html"
+    "btn_ko": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EA%B7%BC%EC%9C%A1%EA%B2%BD%EB%9D%BD_%EB%8F%99%EC%9D%BC%EB%AA%85%EC%B9%AD_%EA%B2%BD%ED%98%88%EC%8C%8D_%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D.html",
+    "btn_en": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EA%B7%BC%EC%9C%A1%EA%B2%BD%EB%9D%BD_%EB%8F%99%EC%9D%BC%EB%AA%85%EC%B9%AD_%EA%B2%BD%ED%98%88%EC%8C%8D_%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D_en.html"
   },
   # 19. Classics 2
   {
@@ -380,10 +380,10 @@ BILINGUAL_CARDS = [
     "desc_ko": "구판의 동일 별명 후보 48쌍 중 두 혈 모두의 별명으로 원전에서 실재 확인된 것은 1쌍(三里: 족삼리·수삼리)뿐임을 문헌 실증. 나머지 추출 오류와 정명 혼용을 전수 정정하여 주치 전이 왜곡을 차단.",
     "desc_en": "Textual audit proving that out of 48 homonymous alias candidate pairs, only 1 pair (Sanli: ST36 & LI10) is legitimately verified in canons. Corrects extraction biases and prevents spurious indication conflations.",
     "tags": ["#별명고증", "#AliasAudit", "#주치혼용", "#삼리", "#원전실증", "#문헌비평"],
-    "cat_label_ko": "침구원전 비교분석",
+    "cat_label_ko": "고전문헌 통합비교분석",
     "cat_label_en": "Classical Canons",
-    "btn_ko": "02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%EC%A0%84%EC%B2%B4%EB%A7%88%EC%8A%A4%ED%84%B0_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98%ED%98%BC%EC%9A%A9_%EA%B2%80%EC%A6%9D.html",
-    "btn_en": "02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%EC%A0%84%EC%B2%B4%EB%A7%88%EC%8A%A4%ED%84%B0_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98%ED%98%BC%EC%9A%A9_%EA%B2%80%EC%A6%9D_en.html"
+    "btn_ko": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%EC%A0%84%EC%B2%B4%EB%A7%88%EC%8A%A4%ED%84%B0_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98%ED%98%BC%EC%9A%A9_%EA%B2%80%EC%A6%9D.html",
+    "btn_en": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%EC%A0%84%EC%B2%B4%EB%A7%88%EC%8A%A4%ED%84%B0_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98%ED%98%BC%EC%9A%A9_%EA%B2%80%EC%A6%9D_en.html"
   },
   # 20. Classics 3
   {
@@ -400,10 +400,10 @@ BILINGUAL_CARDS = [
     "desc_ko": "혈위통감·증치통감·수혈통고 3대 원전의 임상 주치 기록을 통합 역색인하여 24개 핵심 경혈쌍의 실제 배혈 공통점과 차이점을 신경분절 및 경락 교회 이론으로 재해석.",
     "desc_en": "Integrated cross-index of indication records from the three canons, reinterpreting true prescription overlaps and discrepancies across 24 pairs via neural segment and convergent channel theories.",
     "tags": ["#24경혈쌍", "#24Pairs", "#임상공통점", "#주치분석", "#배혈원리", "#침구임상"],
-    "cat_label_ko": "침구원전 비교분석",
+    "cat_label_ko": "고전문헌 통합비교분석",
     "cat_label_en": "Classical Canons",
-    "btn_ko": "02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/%EC%A4%91%EA%B5%AD%EC%B9%A8%EA%B5%AC3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EB%B0%8F_24%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98_%EC%9E%84%EC%83%81%EA%B3%B5%ED%86%B5%EC%A0%90_%EC%A2%85%ED%95%A9%EC%8B%AC%EC%B8%B5%EB%B6%84%EC%84%9D.html",
-    "btn_en": "02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/%EC%A4%91%EA%B5%AD%EC%B9%A8%EA%B5%AC3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EB%B0%8F_24%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98_%EC%9E%84%EC%83%81%EA%B3%B5%ED%86%B5%EC%A0%90_%EC%A2%85%ED%95%A9%EC%8B%AC%EC%B8%B5%EB%B6%84%EC%84%9D_en.html"
+    "btn_ko": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/%EC%A4%91%EA%B5%AD%EC%B9%A8%EA%B5%AC3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EB%B0%8F_24%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98_%EC%9E%84%EC%83%81%EA%B3%B5%ED%86%B5%EC%A0%90_%EC%A2%85%ED%95%A9%EC%8B%AC%EC%B8%B5%EB%B6%84%EC%84%9D.html",
+    "btn_en": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/%EC%A4%91%EA%B5%AD%EC%B9%A8%EA%B5%AC3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EB%B0%8F_24%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98_%EC%9E%84%EC%83%81%EA%B3%B5%ED%86%B5%EC%A0%90_%EC%A2%85%ED%95%A9%EC%8B%AC%EC%B8%B5%EB%B6%84%EC%84%9D_en.html"
   },
   # 21. Classics 4
   {
@@ -420,10 +420,10 @@ BILINGUAL_CARDS = [
     "desc_ko": "한대 《영추·본수》 상렴(上廉)에서 명당경·갑을경·천금방을 거쳐 청대 《침구봉원》에 이르기까지 이질·설사 대장병증 주치 혈위의 통시적 변천사와 상거허(ST37) 하합혈 고증.",
     "desc_en": "Diachronic textual study tracing the evolution of acupoint indications for dysentery/diarrhea from Han-dynasty *Lingshu* (Shanglian) through *Jiayi*, *Qianjin*, to Qing-dynasty texts, verifying Shangjuxu (ST37).",
     "tags": ["#대장병증", "#LargeIntestine", "#이질설사", "#상거허", "#ST37", "#시대별변천", "#통시적고증"],
-    "cat_label_ko": "침구원전 비교분석",
+    "cat_label_ko": "고전문헌 통합비교분석",
     "cat_label_en": "Classical Canons",
-    "btn_ko": "02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8C%80%EC%9E%A5%EB%B3%91%EC%A6%9D_%EC%9D%B4%EC%A7%88%EC%84%A4%EC%82%AC_%EC%8B%9C%EB%8C%80%EB%B3%84%EB%B6%84%EC%84%9D_%EB%B0%8F_%EC%83%81%EB%A0%B4%EA%B1%B0%ED%97%88_%EA%B3%A0%EC%A6%9D%ED%95%A9%EC%9D%BC_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
-    "btn_en": "02_3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%9B%90%EC%A0%84_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8C%80%EC%9E%A5%EB%B3%91%EC%A6%9D_%EC%9D%B4%EC%A7%88%EC%84%A4%EC%82%AC_%EC%8B%9C%EB%8C%80%EB%B3%84%EB%B6%84%EC%84%9D_%EB%B0%8F_%EC%83%81%EB%A0%B4%EA%B1%B0%ED%97%88_%EA%B3%A0%EC%A6%9D%ED%95%A9%EC%9D%BC_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
+    "btn_ko": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8C%80%EC%9E%A5%EB%B3%91%EC%A6%9D_%EC%9D%B4%EC%A7%88%EC%84%A4%EC%82%AC_%EC%8B%9C%EB%8C%80%EB%B3%84%EB%B6%84%EC%84%9D_%EB%B0%8F_%EC%83%81%EB%A0%B4%EA%B1%B0%ED%97%88_%EA%B3%A0%EC%A6%9D%ED%95%A9%EC%9D%BC_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "btn_en": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8C%80%EC%9E%A5%EB%B3%91%EC%A6%9D_%EC%9D%B4%EC%A7%88%EC%84%A4%EC%82%AC_%EC%8B%9C%EB%8C%80%EB%B3%84%EB%B6%84%EC%84%9D_%EB%B0%8F_%EC%83%81%EB%A0%B4%EA%B1%B0%ED%97%88_%EA%B3%A0%EC%A6%9D%ED%95%A9%EC%9D%BC_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
   },
   # 22. Topic: Four Command
   {

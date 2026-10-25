@@ -994,7 +994,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <span>경혈 해부생리 · Acupoints</span> <span class="tab-count">13</span>
       </button>
       <button class="tab-btn" data-filter="classics">
-        <span>침구원전 비교 · Classics</span> <span class="tab-count">4</span>
+        <span>고전문헌 비교 · Classics</span> <span class="tab-count">4</span>
       </button>
       <button class="tab-btn" data-filter="topic">
         <span>주제별 고증 · Thematic</span> <span class="tab-count">7</span>
