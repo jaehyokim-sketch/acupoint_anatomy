@@ -564,6 +564,26 @@ BILINGUAL_CARDS = [
     "cat_label_en": "Thematic Collation",
     "btn_ko": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B6%80%EB%8F%8C%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%B6%80%EB%8F%8C_%EB%B3%84%EC%B9%AD_%ED%92%8D%EB%B6%80_%EB%AC%B8%ED%97%8C%EC%B6%9C%EC%B2%98_%EB%B0%8F_%EA%B3%A0%EC%A6%9D%EB%B6%84%EC%84%9D.html",
     "btn_en": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B6%80%EB%8F%8C%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%B6%80%EB%8F%8C_%EB%B3%84%EC%B9%AD_%ED%92%8D%EB%B6%80_%EB%AC%B8%ED%97%8C%EC%B6%9C%EC%B2%98_%EB%B0%8F_%EA%B3%A0%EC%A6%9D%EB%B6%84%EC%84%9D_en.html"
+  },
+  # 28. Matrix: Frozen Shoulder (Loujianfeng)
+  {
+    "category": "matrix",
+    "search": "오십견 누견풍 견주염 유착성 관절낭염 Frozen Shoulder Loujianfeng Adhesive Capsulitis 견우 견료 견내릉 천종 운문 거골 조구 승산 견삼침 회전근개 극상근 극하근 견갑하근 FMA 5.1 증치통감 수혈통고 침구봉원 황룡상",
+    "code_badge": "MATRIX · SHOULDER",
+    "code_style": "background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);",
+    "status_badge": "Category 4 · Clinical Matrix · FMA 5.1 & Motion Needling",
+    "status_style": "background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);",
+    "title_ko": "오십견·누견풍 임상매트릭스",
+    "title_en": "Frozen Shoulder (Loujianfeng) Clinical Matrix",
+    "subtitle_ko": "《證治通鑑》 상지병증·누견풍 고증 및 관절운동학 매트릭스 종합보고서",
+    "subtitle_en": "Textual Collation & Kinesiological Matrix Monograph on Adhesive Capsulitis",
+    "desc_ko": "《증치통감》 상지병증·누견풍 및 《수혈통고》 고증에 기반한 오십견(유착성 관절낭염) 침구 치료 종합보고서. 견삼침·천종·운문의 회전근개 해부 매핑, 《침구봉원》 심부 관통자(貫刺), 5대 운동제한 방향별 선혈, '조구투승산(條山)' DNIC 비판 및 ARI v3.0 안전성 평가 완비.",
+    "desc_en": "Comprehensive monograph on frozen shoulder (adhesive capsulitis) based on *Zhengzhi Tongjian* and *Tongkao*. Features rotator cuff 5-layer FMA mapping (Jian San Zhen, Tianzong, Yunmen), deep through-needling, 5-directional ROM matrix, critique of Tiaokou (DNIC), and ARI v3.0 safety profile.",
+    "tags": ["#오십견", "#누견풍", "#FrozenShoulder", "#AdhesiveCapsulitis", "#견삼침", "#천종", "#운문", "#견우", "#조구투승산", "#FMA5_1", "#임상매트릭스"],
+    "cat_label_ko": "임상 매트릭스",
+    "cat_label_en": "Clinical Matrix",
+    "btn_ko": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%A4%EC%8B%AD%EA%B2%AC_%EB%88%84%EA%B2%AC%ED%92%8D_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%A4%EC%8B%AD%EA%B2%AC_%EB%88%84%EA%B2%AC%ED%92%8D_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%A4%EC%8B%AD%EA%B2%AC_%EB%88%84%EA%B2%AC%ED%92%8D_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%A4%EC%8B%AD%EA%B2%AC_%EB%88%84%EA%B2%AC%ED%92%8D_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
   }
 ]
 

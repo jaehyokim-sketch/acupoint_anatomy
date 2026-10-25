@@ -1,0 +1,188 @@
+{
+ "code": "GV29",
+ "name_kr": "인당",
+ "note": "교재 데이터셋 미수록 — B1 수작업 대응",
+ "structures": [
+  {
+   "fma_id": 46769,
+   "fma_label": "Procerus",
+   "category": "근육",
+   "match": [
+    "exact"
+   ],
+   "relations": {},
+   "nerve_trunks": {
+    "53291": [
+     [
+      53291,
+      "Temporal branch of facial nerve"
+     ],
+     [
+      0,
+      "Facial nerve"
+     ]
+    ]
+   },
+   "branch_chain": [],
+   "is_a": [
+    [
+     0,
+     "Muscle of nose"
+    ]
+   ],
+   "segments": {
+    "direct": {},
+    "inferred_from_nerve_chain": []
+   }
+  },
+  {
+   "fma_id": 46794,
+   "fma_label": "Corrugator supercilii",
+   "category": "근육",
+   "match": [
+    "exact"
+   ],
+   "relations": {},
+   "nerve_trunks": {
+    "53291": [
+     [
+      53291,
+      "Temporal branch of facial nerve"
+     ],
+     [
+      0,
+      "Facial nerve"
+     ]
+    ]
+   },
+   "branch_chain": [],
+   "is_a": [
+    [
+     0,
+     "Muscle of eyebrow"
+    ]
+   ],
+   "segments": {
+    "direct": {},
+    "inferred_from_nerve_chain": []
+   }
+  },
+  {
+   "fma_id": 52642,
+   "fma_label": "Supratrochlear nerve",
+   "category": "신경",
+   "match": [
+    "exact"
+   ],
+   "relations": {},
+   "nerve_trunks": {},
+   "branch_chain": [
+    [
+     0,
+     "Frontal nerve"
+    ],
+    [
+     0,
+     "Ophthalmic nerve"
+    ],
+    [
+     0,
+     "Trigeminal nerve"
+    ]
+   ],
+   "is_a": [],
+   "segments": {
+    "direct": {},
+    "inferred_from_nerve_chain": []
+   }
+  },
+  {
+   "fma_id": 52693,
+   "fma_label": "Infratrochlear nerve",
+   "category": "신경",
+   "match": [
+    "exact"
+   ],
+   "relations": {},
+   "nerve_trunks": {},
+   "branch_chain": [
+    [
+     0,
+     "Ophthalmic nerve"
+    ],
+    [
+     0,
+     "Trigeminal nerve"
+    ]
+   ],
+   "is_a": [],
+   "segments": {
+    "direct": {},
+    "inferred_from_nerve_chain": []
+   }
+  },
+  {
+   "fma_id": 50025,
+   "fma_label": "Supratrochlear artery",
+   "category": "혈관",
+   "match": [
+    "exact"
+   ],
+   "relations": {},
+   "nerve_trunks": {},
+   "branch_chain": [
+    [
+     0,
+     "Ophthalmic artery"
+    ]
+   ],
+   "is_a": [],
+   "segments": {
+    "direct": {},
+    "inferred_from_nerve_chain": []
+   }
+  },
+  {
+   "fma_id": 50898,
+   "fma_label": "Supratrochlear vein",
+   "category": "혈관",
+   "match": [
+    "exact"
+   ],
+   "relations": {},
+   "nerve_trunks": {},
+   "branch_chain": [
+    [
+     0,
+     "Angular vein"
+    ]
+   ],
+   "is_a": [],
+   "segments": {
+    "direct": {},
+    "inferred_from_nerve_chain": []
+   }
+  },
+  {
+   "fma_id": 50000,
+   "fma_label": "Dorsal nasal artery",
+   "category": "혈관",
+   "match": [
+    "exact"
+   ],
+   "relations": {},
+   "nerve_trunks": {},
+   "branch_chain": [
+    [
+     0,
+     "Ophthalmic artery"
+    ]
+   ],
+   "is_a": [],
+   "segments": {
+    "direct": {},
+    "inferred_from_nerve_chain": []
+   }
+  }
+ ]
+}
