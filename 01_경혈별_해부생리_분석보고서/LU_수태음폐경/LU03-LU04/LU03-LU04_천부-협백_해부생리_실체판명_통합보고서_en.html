@@ -62,10 +62,10 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 - pLU3: <code>ARI v3.0 | ARI-Core 41.2 ± 0 (D·H) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 39.6 (D, grade unchanged)</code>
 - pLU4: <code>ARI v3.0 | ARI-Core 43.8 ± 2.5 (D·H) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 41.7 (D, grade unchanged)</code></p>
 <p><strong>Date of integration</strong>: 2026-10-03 (v2.7 revision 2026-10-04, FMA supplement 2026-10-23; see the revision histories at the end)
-<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>; details in Appendix A.
+<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 <strong>Reports integrated (originals kept in <code>_원본_보관/</code>, pre-revision edition kept in <code>_구판_v2.6/</code>)</strong>:
-- <code>LU03_천부/LU03_천부_해부생리_실체판명_보고서.md·.html·.xlsx</code>
-- <code>LU04_협백/LU04_협백_해부생리_실체판명_보고서.md·.html·.xlsx</code>
+- <code>LU03_천부/LU03_천부_해부생리_실체판명_보고서.md · .html · databook</code>
+- <code>LU04_협백/LU04_협백_해부생리_실체판명_보고서.md · .html · databook</code>
 - <code>_원본_보관/LU_비교분석_구판/LU3_LU4_Comparative_Analysis_Report.md·.html</code>
 <strong>Principle of integration</strong>: because content overlap among the three reports exceeded 50%, they were merged into a single authoritative edition built around the comparative-analysis report. During integration the text was re-checked against the Three Primary Classics, the master datasets and the original papers, and contradictions and factual errors among the earlier reports were corrected (§11, correction audit table).
 <strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk. In evidence pointers, "Xuewei Tongjian" = 《中國針灸穴位通鑑》, "Zhengzhi Tongjian" = 《中國針灸證治通鑑》 and "Tongkao" = 《針灸腧穴通考》, followed by the chunk-file range and line number.</p>
@@ -257,7 +257,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <th style="text-align: center;">Code</th>
 <th style="text-align: center;">Standard name</th>
-<th style="text-align: center;">KJH DB (<code>경혈명_비교_정리_KJH.xlsx</code>)</th>
+<th style="text-align: center;">KJH DB (Acupoint Nomenclature & Alias Comparative Database)</th>
 <th style="text-align: center;">Xuewei Tongjian (《穴位通鑑》)</th>
 <th style="text-align: left;">Verdict</th>
 </tr>
@@ -281,7 +281,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <p><strong>How 天會 came to be misattributed (dataset collation)</strong>
 - The current KJH file (row 57 LU03, row 274 PC01) and the Common Textbook and Kim Jaehyo datasets (<code>경혈_기본정보_마스터</code> row 55 LU03, row 272 PC01) all record the same '天會' for both LU03 and PC01.
-- <code>경혈명_비교_정리_KJH_backup.xlsx</code>, first extracted from the lecture slides, gives the LU03 alias as '–' (<code>01_수태음폐경_각론</code> slide 31) and the PC01 alias as '天會' (<code>03_수궐음심포경</code> slide 33). The '天會' for LU03 is therefore <strong>presumed to be a PC01 value copied in error during dataset compilation</strong>, not something on the original slide.
+- Acupoint Nomenclature & Alias Comparative Backup Dataset, first extracted from the lecture slides, gives the LU03 alias as '–' (<code>01_수태음폐경_각론</code> slide 31) and the PC01 alias as '天會' (<code>03_수궐음심포경</code> slide 33). The '天會' for LU03 is therefore <strong>presumed to be a PC01 value copied in error during dataset compilation</strong>, not something on the original slide.
 - Background to the contamination (presumed): Tianchi (天池) and Tianfu (天府) are both described as "腋下三寸" and appear together in the list of '天'-character points in 《靈樞·本輸》 (Tongkao (下)_81-160 L557). Their names and location wording overlap, making them easy to confuse.
 - Action: the alias '天會' of Tianfu (天府) has been deleted from the report. The original datasets (KJH and the two textbook xlsx files) were not modified in this revision and need to be checked by the dataset maintainer.</p>
 <p>Confusion with neighbouring points:
@@ -527,7 +527,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </ul>
 <hr>
 <h2 id="5-needling-depth-calculation-table-rank-5-1-fen-23-mm">5. Needling Depth Calculation Table (Rank 5: 1 fen = 2.3 mm)</h2>
-<p><code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code> Sheet 1, rows 56 (LU03) and 57 (LU04) (identical values for the two points), collated with the classics:</p>
+<p>Classical Needling Depth Database Sheet 1, rows 56 (LU03) and 57 (LU04) (identical values for the two points), collated with the classics:</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -633,7 +633,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p>Sources: <code>경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx</code> <code>해부구조_개별항목_상세</code> rows 273–284, <code>김재효 수업_경혈_해부구조_데이터셋.xlsx</code> <code>해부구조_개별항목_상세</code> rows 399–412 (registry B2-09).</p>
+<p>Sources: Common Textbook Anatomical Structure Dataset <code>해부구조_개별항목_상세</code> rows 273–284, Kim Jaehyo Anatomical Structure Dataset <code>해부구조_개별항목_상세</code> rows 399–412 (registry B2-09).</p>
 <p><strong>FMA adjudication</strong> (Appendix A): LU03 has 1 shared FMA entity (cephalic vein FMA:13324) · 6 Common Textbook only · 5 Kim Jaehyo only; LU04 has 1 shared · 6 Common Textbook only · 3 Kim Jaehyo only. For biceps brachii the Common Textbook records the whole muscle (FMA:37670) and Kim Jaehyo the long head (FMA:37683, a part of the whole); only the IDs differ and it is the same muscle, so the structures actually shared are two: <strong>biceps brachii + cephalic vein</strong>.</p>
 <ul>
 <li><strong>Meaning of the difference seen through FMA</strong>: the Common Textbook's median nerve (FMA:14385) and brachial artery/vein (FMA:22689, 22934) form the neurovascular bundle of the medial bicipital groove (FMA:74569 Medial bicipital groove), i.e. <strong>T1-side structures</strong>. Kim Jaehyo's musculocutaneous nerve (FMA:37064), superior lateral cutaneous nerve of arm (FMA:65303) and posterior cutaneous nerve of forearm (FMA:39145) are <strong>T2-side structures</strong> between biceps brachii and brachialis and in the lateral skin. In FMA both the musculocutaneous and median nerves continue from the lateral cord of the brachial plexus (FMA:45235), but their positions in the arm differ, so the verdict above — "mixed type (Common Textbook) vs consistently lateral type (Kim Jaehyo)" — is confirmed at the ID level. This adjudication does not change the $S_{clarity}$ level.</li>
@@ -686,7 +686,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <hr>
 <h2 id="8-biomedical-reflex-pathway-diagram-external-search-log-rank-6">8. Biomedical Reflex Pathway Diagram &amp; External Search Log (Rank 6)</h2>
-<h3 id="81-layer-a-papers-___dbjson-after-the-2026-10-04-sync">8.1 Layer A Papers (<code>경혈_생의학_신경반사_마스터DB.json</code>, after the 2026-10-04 sync)</h3>
+<h3 id="81-layer-a-papers-___dbjson-after-the-2026-10-04-sync">8.1 Layer A Papers (Integrated Biomedical Master DB v3.0, after the 2026-10-04 sync)</h3>
 <p><strong>Point-specific studies (mechanistic or clinical studies of cLU or pLU stimulation alone): 0 papers.</strong> Below are studies whose prescriptions include LU3 or LU4, and literature studies.</p>
 <div class="table-wrap"><table>
 <thead>
@@ -2185,7 +2185,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Header block</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">Line on the FMA 5.1.0 anatomical ontology added; FMA supplement date added to the date-of-integration line</td>
-<td style="text-align: left;"><code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code></td>
+<td style="text-align: left;">FMA Acupoint Anatomical Ontology Mapping Registry</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 4</td>
@@ -2391,8 +2391,8 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p><em>Evidence files</em>: <code>01_도서_번역_및_원전/{中国针灸穴位通鉴, 中国针灸证治通鉴, 针灸腧穴通考}/chunks_refined/</code>, <code>02_Master_Datasets/</code> (KJH, needling depth, Common Textbook, Kim Jaehyo, biomedical master DB, 361 CSV), <code>01_Framework/layer_b_reference_registry.md</code>, original PDF of Song Seok-mo (2022).
-<em>Data book</em>: <code>LU03-LU04_천부-협백_해부생리_통합분석데이터.xlsx</code> / <em>Web report</em>: <code>LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.html</code></p>
+<p><em>Evidence files</em>: <code>01_도서_번역_및_원전/{中国针灸穴位通鉴, 中国针灸证治通鉴, 针灸腧穴通考}/chunks_refined/</code>, Master Datasets Registry (KJH, needling depth, Common Textbook, Kim Jaehyo, biomedical master DB, 361 CSV), <code>01_Framework/layer_b_reference_registry.md</code>, original PDF of Song Seok-mo (2022).
+<em>Data book</em>: Tianfu-Xiabai Integrated Anatomical Analysis Databook / <em>Web report</em>: <code>LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.html</code></p>
 <p class="meta">생성: 2026-10-24 13:07 · 원본: LU03-LU04_천부-협백_해부생리_실체판명_통합보고서_en.md · build_report_html.py (Framework v2.7)</p>
 </article>
 </main>

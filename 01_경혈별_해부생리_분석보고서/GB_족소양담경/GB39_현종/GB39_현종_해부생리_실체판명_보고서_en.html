@@ -59,10 +59,10 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>Framework</strong>: v2.7 (revised 2026-10-04) · <strong>ARI</strong>: T1 <code>ARI v3.0 | ARI-Core 51.2 ± 0 (D·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 47.9 (D, grade unchanged)</code>
 T2 <code>ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 54.2 (D, grade changes → weight-sensitive)</code> · <strong>Dual scoring</strong>: two independent raters, adjudicated</p>
 <p><strong>Three Primary Classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) (Huang Longxiang, 黃龍祥)
-<strong>Layer A Empirical Database</strong>: <a href="../../../../02_Master_Datasets/%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json"><code>경혈_생의학_신경반사_마스터DB.json</code></a> — GB39 evidence pack: of 29 landmark papers and 18 locally mapped papers, <strong>5 mechanistic/clinical studies that actually include GB39</strong> (papers.id 1610 · 1612 · 1615 · 1902 · 1903, all multi-point or animal) + 1 textual study on location (1624)
+<strong>Layer A Empirical Database</strong>: <a href="../../../../%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json">Integrated Biomedical Master DB v3.0</a> — GB39 evidence pack: of 29 landmark papers and 18 locally mapped papers, <strong>5 mechanistic/clinical studies that actually include GB39</strong> (papers.id 1610 · 1612 · 1615 · 1902 · 1903, all multi-point or animal) + 1 textual study on location (1624)
 <strong>Layer B Reference Registry</strong>: <a href="../../../../01_Framework/layer_b_reference_registry.md"><code>layer_b_reference_registry.md</code></a> (6-item B-Check, concordance threshold ≥ 8/12)
-<strong>Needling-depth DB</strong>: <a href="../../../../02_Master_Datasets/%EC%B9%A8%EA%B5%AC%EB%AC%B8%ED%97%8C%EB%B3%84%20%EC%9E%90%EC%B9%A8%EA%B9%8A%EC%9D%B4%20%EC%A0%95%EB%A6%AC_AI%20%EB%B6%84%EC%84%9D%EC%9A%A9.xlsx"><code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code></a> sheet 1, row 344 (N0 = 342)
-<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>; details in Appendix A.
+<strong>Needling-depth DB</strong>: Classical Needling Depth Database sheet 1, row 344 (N0 = 342)
+<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 <strong>Metrological Standard</strong>: Han-dynasty (漢代) standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$), 1 cun = 10 fen = 23 mm (for depth conversion; surface positions use bone-proportional cun)
 <strong>Analysis Targets</strong>: <strong>T1</strong> classical source location (<em>Huangdi Mingtang Jing</em> (《黃帝明堂經》) "在足外踝上三寸動者(脈)中, 足三陽絡, 按之陽明脈絕乃取之" = the anterior tibial artery pulse point on the tibial side) / <strong>T2</strong> WHO and current-textbook location (外踝尖上 3寸, 腓骨前緣)
 <strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
@@ -178,7 +178,7 @@ T2 <code>ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | provisional weights 0.40/0.35
 <thead>
 <tr>
 <th style="text-align: left;">Alias</th>
-<th style="text-align: left;">KJH DB (<code>경혈명_비교_정리_KJH.xlsx</code>, comprehensive acupoint list)</th>
+<th style="text-align: left;">KJH DB (Acupoint Nomenclature & Alias Comparative Database, comprehensive acupoint list)</th>
 <th style="text-align: left;">Alias columns of the two textbooks</th>
 <th style="text-align: left;">Classical basis</th>
 <th style="text-align: left;">Risk of conflation</th>
@@ -553,8 +553,8 @@ T2 <code>ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | provisional weights 0.40/0.35
 <thead>
 <tr>
 <th style="text-align: left;">Category</th>
-<th style="text-align: left;">Common Textbook of Acupoint Studies (<code>경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx</code> row 343; <em>Acupoint Studies</em> vol. 2, p.457)</th>
-<th style="text-align: left;">Kim Jaehyo textbook (<code>김재효 수업_경혈_해부구조_데이터셋.xlsx</code> row 343)</th>
+<th style="text-align: left;">Common Textbook of Acupoint Studies (Common Textbook Anatomical Structure Dataset row 343; <em>Acupoint Studies</em> vol. 2, p.457)</th>
+<th style="text-align: left;">Kim Jaehyo textbook (Kim Jaehyo Anatomical Structure Dataset row 343)</th>
 <th style="text-align: left;">Common</th>
 <th style="text-align: left;">Differences &amp; interpretation</th>
 </tr>
@@ -1520,7 +1520,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <td style="text-align: left;">Header</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA 5.1.0 anatomical ontology line added</td>
-<td style="text-align: left;"><code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code></td>
+<td style="text-align: left;">FMA Acupoint Anatomical Ontology Mapping Registry</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 4</td>
@@ -1588,7 +1588,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <td style="text-align: left;">Header</td>
 <td style="text-align: left;">v2.6; needling-depth DB link wrongly pointing to the logic-principles xlsx</td>
 <td style="text-align: left;">v2.7 citation block (T1 and T2 ARI notation); needling-depth DB link corrected</td>
-<td style="text-align: left;">final_GB39M.json notation; 02_Master_Datasets</td>
+<td style="text-align: left;">final_GB39M notation; Master Datasets Registry</td>
 </tr>
 <tr>
 <td style="text-align: left;">《通考》 quotations in Sections 2.4, 7.1 and 9</td>
@@ -1776,7 +1776,7 @@ $$\text{SI} = S_{safety} \quad (\text{not added in})$$</p>
 <tr>
 <td style="text-align: left;">Section 8, papers.id 1624</td>
 <td style="text-align: left;">Journal "針刺研究 46(1) (journal as recorded in the DB: World Journal of Acupuncture-Moxibustion)", "No PMID"</td>
-<td style="text-align: left;">"針刺研究 46(1):73–75", PMID 33559430. In the master DB, <code>journal</code> of <code>papers</code> 1624 corrected to Zhen Ci Yan Jiu (針刺研究) (backup <code>02_Master_Datasets/backup/*20261024_refine1624*</code>); export-xlsx and validate OK</td>
+<td style="text-align: left;">"針刺研究 46(1):73–75", PMID 33559430. In the master DB, <code>journal</code> of <code>papers</code> 1624 corrected to Zhen Ci Yan Jiu (針刺研究) (backup <code>backup/*20261024_refine1624*</code>); export-xlsx and validate OK</td>
 <td style="text-align: left;">PubMed PMID 33559430 metadata (Zhen Ci Yan Jiu 2021;46(1):73-5, DOI 10.13702/j.1000-0607.200282) and the full-text PDF</td>
 </tr>
 </tbody>

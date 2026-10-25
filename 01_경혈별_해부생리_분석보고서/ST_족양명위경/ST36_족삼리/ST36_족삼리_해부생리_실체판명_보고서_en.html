@@ -58,10 +58,10 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <blockquote>
 <p><strong>Framework</strong>: v2.7 (revised 2026-10-04) · <strong>ARI</strong>: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 77.1 (B, grade unchanged) · <strong>Dual scoring</strong>: completed by two independent raters</p>
 <p><strong>Three Primary Classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》)
-<strong>Layer A Empirical Database</strong>: <code>02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json</code> (ST36 evidence pack: 38 landmark papers, 109 locally mapped papers, 39 external papers — only the 15 papers in Table 8-① are used for the mechanism verdict)
+<strong>Layer A Empirical Database</strong>: Integrated Biomedical Master DB v3.0 (ST36 evidence pack: 38 landmark papers, 109 locally mapped papers, 39 external papers — only the 15 papers in Table 8-① are used for the mechanism verdict)
 <strong>Layer B Reference Registry</strong>: <code>01_Framework/layer_b_reference_registry.md</code> (6-item B-Check, concordance threshold ≥ 8/12)
 <strong>Metrological Standard</strong>: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
-<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>; details in Appendix A.
+<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 <strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
 </blockquote>
 <hr>
@@ -232,7 +232,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p>The KJH DB (<code>경혈명_비교_정리_KJH.xlsx</code>, row 122: No. 119, ST36, 족삼리 (Joksamni), 足三里, "下三里, 鬼邪") agrees with the alias columns of both textbook datasets.</p>
+<p>The KJH DB (Acupoint Nomenclature & Alias Comparative Database, row 122: No. 119, ST36, 족삼리 (Joksamni), 足三里, "下三里, 鬼邪") agrees with the alias columns of both textbook datasets.</p>
 <hr>
 <h2 id="4-3d-spatial-coordinates-layer-15-anatomical-substrate-diagram">4. 3D Spatial Coordinates &amp; Layer 1–5 Anatomical Substrate Diagram</h2>
 <ul>
@@ -371,7 +371,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </ul>
 <hr>
 <h2 id="5-classical-needling-depth-calculation-table-han-dynasty-1-fen-23-mm">5. Classical Needling Depth Calculation Table (Han Dynasty 1 fen = 2.3 mm)</h2>
-<p>Source: <code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code>, sheet 1, row 121 (N0 = 119), supplemented by the three primary classics.</p>
+<p>Source: Classical Needling Depth Database, sheet 1, row 121 (N0 = 119), supplemented by the three primary classics.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -466,7 +466,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <thead>
 <tr>
 <th style="text-align: left;">Category</th>
-<th style="text-align: left;">Common Textbook of Acupoint Studies (refine.xlsx detail sheet rows 650–655; <em>Acupoint Studies</em> vol. 1, p. 331)</th>
+<th style="text-align: left;">Common Textbook of Acupoint Studies (Common Textbook dataset detail sheet rows 650–655; <em>Acupoint Studies</em> vol. 1, p. 331)</th>
 <th style="text-align: left;">Kim Jaehyo textbook (detail sheet rows 954–959)</th>
 <th style="text-align: left;">FMA adjudication</th>
 <th style="text-align: left;">Assessment</th>
@@ -1143,7 +1143,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Header</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">Added FMA 5.1.0 anatomical ontology line</td>
-<td style="text-align: left;"><code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code></td>
+<td style="text-align: left;">FMA Acupoint Anatomical Ontology Mapping Registry</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 4</td>
@@ -1271,7 +1271,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Section 6</td>
 <td style="text-align: left;">Generic sentence "the two textbooks agree"</td>
 <td style="text-align: left;">Actual structure names; cutaneous-nerve difference stated</td>
-<td style="text-align: left;">Common Textbook refine.xlsx detail rows 650–655; Kim Jaehyo xlsx detail rows 954–959</td>
+<td style="text-align: left;">Common Textbook Common Textbook dataset detail rows 650–655; Kim Jaehyo xlsx detail rows 954–959</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 7</td>

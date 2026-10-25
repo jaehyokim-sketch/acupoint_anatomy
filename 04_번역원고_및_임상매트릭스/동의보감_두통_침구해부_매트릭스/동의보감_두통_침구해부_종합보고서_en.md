@@ -10,7 +10,7 @@
 >
 > **Anatomical basis**: FMA 5.1.0 (`fma_query.py profile`), two-textbook mapping table, B1 normative anatomy (B1-01, B1-02, B1-03) · 3D: BodyParts3D 4.0 (B1 supplementary)
 > **Layer A**: papers linked in the integrated DB (state as of 2026-10-25), collated with PubMed metadata. `sync_master_db.py` was not run (**external search incomplete**).
-> **Datasheet**: [`동의보감_두통_해부임상_매트릭스.xlsx`](동의보감_두통_해부임상_매트릭스.xlsx) (11 sheets) · Reproduction scripts: `scripts/`
+> **Datasheet**: Donguibogam Headache Clinical Acupuncture Anatomy Matrix Analysis Databook (11 sheets) · Reproduction scripts: `scripts/`
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). Quotations from Donguibogam are reproduced as they stand in the source. The *Tongkao* (《通考》) and *Zhengzhi Tongjian* (《證治通鑑》) files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk; the form "胆中" is kept as written because its relation to 膻中 is at issue (Section 2). The old-edition quotations audited in Section 12 are reproduced unaltered as evidence.
 
 ---
@@ -267,7 +267,7 @@ Only FMA structures that have meshes and are shared by two or more points within
 | File | Contents |
 | :-- | :-- |
 | `동의보감_두통_침구해부_종합보고서.md`·`.html` / `_en.md`·`_en.html` | This report (Korean and English) |
-| `동의보감_두통_해부임상_매트릭스.xlsx` | 1 headache types · 2 鍼灸法 prescriptions · 3 single-point indication tiers · 4 evidence entries · 5 FMA anatomical features · 6 similarity matrix · 7 strata · 8 Layer A · 9 old-edition audit (quotations) · 10 old-edition audit (types and points) · 11 methods |
+| Donguibogam Headache Clinical Anatomy Matrix Databook | 1 headache types · 2 鍼灸法 prescriptions · 3 single-point indication tiers · 4 evidence entries · 5 FMA anatomical features · 6 similarity matrix · 7 strata · 8 Layer A · 9 old-edition audit (quotations) · 10 old-edition audit (types and points) · 11 methods |
 | `Fig1`~`Fig5_*_ko.png` / `_en.png` | 7 figures × 2 languages |
 | `scripts/` | `headache_indications.py` (Ranks 1–4) → `hd_similarity.py` (similarity, strata, TCC) → `hd_figures.py`·`hd_render3d.py` (figures) → `hd_matrix.py` (xlsx) · `audit_old.py` (old-edition audit). Single-point indication parsing uses the output (`indications.json`) of `../영추경맥_수태음시동병_매트릭스/scripts/extract_indications.py` |
 | `_구판_20261024/` | The 29 old-edition outputs (HTML dashboard, 9×36 grid figure, 2 xlsx files, zip) — archived without modification |

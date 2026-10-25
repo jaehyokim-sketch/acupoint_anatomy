@@ -61,12 +61,12 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <hr>
 <blockquote>
 <p><strong>Governing principle documents</strong>: <code>01_Framework/acupoint_anatomical_logic_framework.md</code> (v2.7) · <code>01_Framework/layer_b_reference_registry.md</code> (Layer B Reference Registry v1.0)
-<strong>Source datasets</strong> (<code>02_Master_Datasets/</code>):
-1. <code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code>, sheet 1, row 181 (BL02)
-2. <code>경혈명_비교_정리_KJH.xlsx</code>, 'Comprehensive acupoint list' sheet, row 182; 'Primary name–alias match list (Case A)' sheet, row 4
-3. <code>경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx</code> entry 179 (BL02, <em>Acupoint Studies</em> vol. 1, p. 628) · <code>김재효 수업_경혈_해부구조_데이터셋.xlsx</code> entry 179 (BL02)
+<strong>Source datasets</strong> (Master Datasets Registry):
+1. Classical Needling Depth Database, sheet 1, row 181 (BL02)
+2. Acupoint Nomenclature & Alias Comparative Database, 'Comprehensive acupoint list' sheet, row 182; 'Primary name–alias match list (Case A)' sheet, row 4
+3. Common Textbook Anatomical Structure Dataset entry 179 (BL02, <em>Acupoint Studies</em> vol. 1, p. 628) · Kim Jaehyo Anatomical Structure Dataset entry 179 (BL02)
 <strong>Three Primary Classics</strong> (<code>01_도서_번역_및_원전/&lt;원전&gt;/chunks_refined/</code>): <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) <code>针灸腧穴通考(上)_561-640.md</code> (lines 2310–2590) · <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) <code>中国针灸穴位通鉴(上卷)_881-960.md</code> (lines 2480–2712) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》), prescription entries in each chapter
-<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>; details in Appendix A
+<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A
 <strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
 </blockquote>
 <h3 id="summary">Summary</h3>
@@ -269,7 +269,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <hr>
 <h2 id="3-alias-verification-table-kjh-db-cross-check">3. Alias Verification Table (KJH DB Cross-check)</h2>
-<p>BL02 aliases in the KJH DB (<code>경혈명_비교_정리_KJH.xlsx</code>, 'Comprehensive acupoint list' sheet, row 182): <strong>始光, 光明, 圓柱, 夜光, 明光, 眉頭圓柱, 眉本, 魚頭</strong></p>
+<p>BL02 aliases in the KJH DB (Acupoint Nomenclature & Alias Comparative Database, 'Comprehensive acupoint list' sheet, row 182): <strong>始光, 光明, 圓柱, 夜光, 明光, 眉頭圓柱, 眉本, 魚頭</strong></p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -535,7 +535,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </ul>
 <hr>
 <h2 id="5-needling-depth-calculation-table">5. Needling Depth Calculation Table</h2>
-<p>Source: <code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code>, sheet 1, row 181 (BL02). Rules: integer = fen, '0' = contraindicated for needling (禁針), blank = not described. Conversion: 1 fen = 2.3 mm (Han-dynasty standard).</p>
+<p>Source: Classical Needling Depth Database, sheet 1, row 181 (BL02). Rules: integer = fen, '0' = contraindicated for needling (禁針), blank = not described. Conversion: 1 fen = 2.3 mm (Han-dynasty standard).</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -622,7 +622,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <thead>
 <tr>
 <th style="text-align: left;">Category</th>
-<th style="text-align: left;">Common Textbook of Acupoint Studies (refine.xlsx entry 179, <em>Acupoint Studies</em> vol. 1, p. 628)</th>
+<th style="text-align: left;">Common Textbook of Acupoint Studies (Common Textbook dataset entry 179, <em>Acupoint Studies</em> vol. 1, p. 628)</th>
 <th style="text-align: left;">Kim Jaehyo textbook dataset (entry 179)</th>
 <th style="text-align: left;">FMA adjudication</th>
 <th style="text-align: left;">Similarities / differences</th>
@@ -1036,7 +1036,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">75</td>
 <td style="text-align: center;"><strong>75</strong></td>
 <td style="text-align: left;">The two textbooks agree + standard entities confirmed by normative anatomy and FMA (the nerve difference is a trunk/branch-level difference in FMA). No BL2-specific cadaveric or imaging measurement → below 100</td>
-<td style="text-align: left;">refine.xlsx and Kim Jaehyo entry 179; <em>Tongkao</em> (《通考》) 相關解剖學基礎; B1-01, B1-05, B2-09; FMA:52642 · 52638</td>
+<td style="text-align: left;">Common Textbook dataset and Kim Jaehyo entry 179; <em>Tongkao</em> (《通考》) 相關解剖學基礎; B1-01, B1-05, B2-09; FMA:52642 · 52638</td>
 </tr>
 <tr>
 <td style="text-align: left;">S_reflex</td>
@@ -1176,7 +1176,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <li><strong>Substrate verdict — probable (B, ARI-Core 81.2 ± 1.2)</strong>: the most probable anatomical substrate of BL2 is the <strong>supratrochlear nerve (V1), artery and vein emerging from the frontal notch (額切跡; supratrochlear notch)</strong> and the overlying <strong>corrugator supercilii and orbicularis oculi</strong>. The classical location, the two textbooks, the anatomical description in the <em>Tongkao</em> (《通考》) and the normative anatomy references agree on this. However, there is no cadaveric or imaging study measuring BL2 alone, so the verdict is not raised to "confirmed".</li>
 <li><strong>Reflex mechanism</strong>: concordant at B-Check 8/12. The pathway trigeminal V1 afferent → spinal trigeminal nucleus and superior salivatory nucleus → lacrimal gland and ocular surface is <strong>inferred to BL2 from multi-point studies that include BL2 (mostly animal, 3 human)</strong>. There is no BL2-alone mechanism study.</li>
 <li><strong>Classical indications</strong>: eye disorders (目不明 · 目赤腫痛 · 瞼瞤動) and pain of the supraorbital ridge (眉棱骨痛) have single-point records. The lacrimation (流淚) group is either derived from combinations or results from the mistaken inclusion of Chengqi (承泣) indications.</li>
-<li><strong>Formula version</strong>: ARI v3.0, provisional weights (unvalidated). Not compared with the earlier v2.6 score. Numerical comparison between outputs of the same work (.md ↔ .xlsx) is only a consistency audit, not evidence of reliability. Reliability is judged only by dual scoring.</li>
+<li><strong>Formula version</strong>: ARI v3.0, provisional weights (unvalidated). Not compared with the earlier v2.6 score. Numerical comparison between outputs of the same work (report ↔ databook) is only a consistency audit, not evidence of reliability. Reliability is judged only by dual scoring.</li>
 </ol>
 <hr>
 <h2 id="appendix-a-fma-anatomical-substrate-profile-fma-510">Appendix A. FMA Anatomical Substrate Profile (FMA 5.1.0)</h2>
@@ -1320,7 +1320,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Header</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">Added FMA 5.1.0 anatomical ontology line</td>
-<td style="text-align: left;"><code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code></td>
+<td style="text-align: left;">FMA Acupoint Anatomical Ontology Mapping Registry</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 4.4</td>
@@ -1442,7 +1442,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Former Section 1</td>
 <td style="text-align: left;">Aliases 烏列 · 大空 · 元柱</td>
 <td style="text-align: left;">烏列 and 大空 deleted (no basis); 元柱 = homophonic substitution for 員柱. The 8 KJH aliases arranged in a table</td>
-<td style="text-align: left;"><code>경혈명_비교_정리_KJH.xlsx</code> 'Comprehensive acupoint list' row 182; <em>Tongkao</em> (《通考》) 名實考 7, note</td>
+<td style="text-align: left;">Acupoint Nomenclature & Alias Comparative Database 'Comprehensive acupoint list' row 182; <em>Tongkao</em> (《通考》) 名實考 7, note</td>
 </tr>
 <tr>
 <td style="text-align: left;">Former Section 1</td>

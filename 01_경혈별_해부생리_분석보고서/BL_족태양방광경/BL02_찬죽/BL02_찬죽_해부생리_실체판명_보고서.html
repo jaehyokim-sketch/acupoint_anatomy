@@ -61,12 +61,12 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <hr>
 <blockquote>
 <p><strong>근거 원칙 문서</strong>: <code>01_Framework/acupoint_anatomical_logic_framework.md</code> (v2.7) · <code>01_Framework/layer_b_reference_registry.md</code> (Layer B 참조 등록부 v1.0)
-<strong>근거 데이터셋</strong> (<code>02_Master_Datasets/</code>):
-1. <code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code> 시트1 181행(BL02)
-2. <code>경혈명_비교_정리_KJH.xlsx</code> '경혈 종합 목록' 182행, '본명-이명 일치 목록(Case A)' 4행
-3. <code>경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx</code> 179번(BL02, 경혈학 上 p.628) · <code>김재효 수업_경혈_해부구조_데이터셋.xlsx</code> 179번(BL02)
+<strong>근거 데이터셋</strong> (마스터 데이터셋 레지스트리):
+1. 역대 침구문헌 자침심도 데이터베이스 시트1 181행(BL02)
+2. 경혈명·이명 대조 표준 데이터베이스 '경혈 종합 목록' 182행, '본명-이명 일치 목록(Case A)' 4행
+3. 경혈학 공통교재 해부구조 데이터셋 179번(BL02, 경혈학 上 p.628) · 김재효 교수 경혈 해부구조 데이터셋 179번(BL02)
 <strong>3대 원전</strong> (<code>01_도서_번역_및_원전/&lt;원전&gt;/chunks_refined/</code>): 《针灸腧穴通考》 <code>针灸腧穴通考(上)_561-640.md</code> (2310~2590행) · 《中国针灸穴位通鉴》 <code>中国针灸穴位通鉴(上卷)_881-960.md</code> (2480~2712행) · 《中国针灸证治通鉴》 각 장 처방 조문
-<strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 지배신경·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>, 상세는 부록 A</p>
+<strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 지배신경·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리, 상세는 부록 A</p>
 </blockquote>
 <h3 id="_1">요약</h3>
 <ul>
@@ -268,7 +268,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <hr>
 <h2 id="3-kjh-db">3. 이명·별칭 검증 표 (KJH DB 대조)</h2>
-<p>KJH DB(<code>경혈명_비교_정리_KJH.xlsx</code> 경혈 종합 목록 182행) BL02 이명: <strong>始光, 光明, 圓柱, 夜光, 明光, 眉頭圓柱, 眉本, 魚頭</strong></p>
+<p>KJH DB(경혈명·이명 대조 표준 데이터베이스 경혈 종합 목록 182행) BL02 이명: <strong>始光, 光明, 圓柱, 夜光, 明光, 眉頭圓柱, 眉本, 魚頭</strong></p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -534,7 +534,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </ul>
 <hr>
 <h2 id="5">5. 자침 깊이 계산표</h2>
-<p>출처: <code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code> 시트1 181행(BL02). 규칙: 정수 = 푼, '0' = 금침, blank = 미기술. 환산: 1푼 = 2.3mm(한대 기준).</p>
+<p>출처: 역대 침구문헌 자침심도 데이터베이스 시트1 181행(BL02). 규칙: 정수 = 푼, '0' = 금침, blank = 미기술. 환산: 1푼 = 2.3mm(한대 기준).</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -621,7 +621,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <thead>
 <tr>
 <th style="text-align: left;">비교 항목</th>
-<th style="text-align: left;">경혈학 공통교재 (refine.xlsx 179번, 경혈학 上 p.628)</th>
+<th style="text-align: left;">경혈학 공통교재 (공통교재 데이터셋 179번, 경혈학 上 p.628)</th>
 <th style="text-align: left;">김재효 교재 데이터셋 (179번)</th>
 <th style="text-align: left;">FMA 판별</th>
 <th style="text-align: left;">공통점 / 차이점</th>
@@ -1035,7 +1035,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: center;">75</td>
 <td style="text-align: center;"><strong>75</strong></td>
 <td style="text-align: left;">2대 교재 일치 + 규범 해부서·FMA 표준 실체 확인(신경 차이는 FMA상 줄기/가지 수준 차이). BL2 특이 사체·영상 실측 없음 → 100 미달</td>
-<td style="text-align: left;">refine.xlsx·김재효 179번; 《通考》 相关解剖学基础; B1-01, B1-05, B2-09; FMA:52642·52638</td>
+<td style="text-align: left;">공통교재 데이터셋·김재효 179번; 《通考》 相关解剖学基础; B1-01, B1-05, B2-09; FMA:52642·52638</td>
 </tr>
 <tr>
 <td style="text-align: left;">S_reflex</td>
@@ -1175,7 +1175,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <li><strong>실체 판정 — 개연(B, ARI-Core 81.2 ± 1.2)</strong>: BL2의 해부 실체는 <strong>额切迹(도르래위패임)에서 나오는 도르래위 신경(V1)·동정맥</strong>과 그 위의 <strong>눈썹주름근·눈둘레근</strong>으로 보는 것이 가장 개연성이 높다. 고전 정위·2대 교재·《通考》 해부 기술·규범 해부서가 이 점에서 일치한다. 하지만 BL2만 실측한 사체·영상 연구가 없어 "확정"으로 올리지 않는다.</li>
 <li><strong>반사 기전</strong>: B-Check 8/12로 부합한다. 삼차신경 V1 구심 → 삼차신경 척수핵·위침분비핵 → 눈물샘·안표면으로 이어지는 경로는 <strong>BL2를 포함한 복합 혈위 연구(동물 다수, 인체 3편)를 BL2에 유추</strong>한 것이다. BL2 단독 기전 연구는 없다.</li>
 <li><strong>고전 주치</strong>: 안질환(目不明·目赤腫痛·瞼瞤動)과 眉棱骨痛은 단독 기록이 있다. 流淚 계열은 배오 파생이거나 承泣 주치가 잘못 섞인 것이다.</li>
-<li><strong>산출식 버전</strong>: ARI v3.0, 잠정 가중치(미검증). 구판 v2.6 점수와 비교하지 않는다. 동일 산출물 간(.md ↔ .xlsx) 수치 대조는 정합성 감사일 뿐 신뢰도 근거가 아니다. 신뢰도는 이중 채점으로만 판단한다.</li>
+<li><strong>산출식 버전</strong>: ARI v3.0, 잠정 가중치(미검증). 구판 v2.6 점수와 비교하지 않는다. 동일 산출물 간(보고서 ↔ 데이터북) 수치 대조는 정합성 감사일 뿐 신뢰도 근거가 아니다. 신뢰도는 이중 채점으로만 판단한다.</li>
 </ol>
 <hr>
 <h2 id="a-fma-fma-510">부록 A. FMA 해부 실체 프로파일 (FMA 5.1.0)</h2>
@@ -1319,7 +1319,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">머리말</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA 5.1.0 해부 온톨로지 줄 추가</td>
-<td style="text-align: left;"><code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code></td>
+<td style="text-align: left;">FMA 경혈 해부 온톨로지 매핑 레지스트리</td>
 </tr>
 <tr>
 <td style="text-align: left;">4.4절</td>
@@ -1441,7 +1441,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">구 1절</td>
 <td style="text-align: left;">이명 烏列·大空·元柱</td>
 <td style="text-align: left;">烏列·大空 삭제(근거 없음), 元柱 = 员柱 동음 차용. KJH 이명 8종 표로 정리</td>
-<td style="text-align: left;"><code>경혈명_비교_정리_KJH.xlsx</code> 경혈 종합 목록 182행; 《通考》 名实考 7 按</td>
+<td style="text-align: left;">경혈명·이명 대조 표준 데이터베이스 경혈 종합 목록 182행; 《通考》 名实考 7 按</td>
 </tr>
 <tr>
 <td style="text-align: left;">구 1절</td>

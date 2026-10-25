@@ -4,7 +4,7 @@
 
 > **⚠ Safety warning (SI 0)**: Directly beneath Jianjing (肩井) lie the pleural cupula (胸膜頂) and the apex of the lung (肺尖). The *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) states "不可向前下方刺入或直刺過深，以免損傷胸膜頂和肺尖引起氣胸" and records that about 90 % of needling-induced pneumothoraces occur at 肩井. In the needling-depth DB the *Dongui Bogam* (《東醫寶鑑》) value is `0` (contraindicated for needling, 禁鍼; cited source 'Tongren' (銅人)), and texts from 《類經圖翼》 onwards record "孕婦禁針" (needling forbidden in pregnancy). This report does not give a single fixed safe needling depth (see Sections 5 and 10).
 
-> **Source datasets**: `02_Master_Datasets/침구문헌별 자침깊이 정리_AI 분석용.xlsx` (sheet 1, Excel row 326, N0 324) · `경혈명_비교_정리_KJH.xlsx` (comprehensive acupoint list, row 327) · `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx` (sheet `경혈별_해부구조_종합`, row 325; *Acupoint Studies* vol. 2, p.384) · `김재효 수업_경혈_해부구조_데이터셋.xlsx` (sheet `경혈별_해부구조_종합`, row 325) · master DB `경혈_생의학_신경반사_마스터DB.json`
+> **Source datasets**: Classical Needling Depth Database (sheet 1, Excel row 326, N0 324) · Acupoint Nomenclature & Alias Comparative Database (comprehensive acupoint list, row 327) · Common Textbook Anatomical Structure Dataset (sheet `경혈별_해부구조_종합`, row 325; *Acupoint Studies* vol. 2, p.384) · Kim Jaehyo Anatomical Structure Dataset (sheet `경혈별_해부구조_종합`, row 325) · master DB Integrated Biomedical Master DB v3.0
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
 ---
@@ -311,7 +311,7 @@ Earlier v2.6 scores: classical location 96.0 / WHO location 94.0 — not compara
 | Old Section 5 | "8 fen 18.4 mm, 45° oblique 13.0 mm, kept below the 15 mm lung-apex boundary, lung-apex safety ensured" | The 15 mm boundary has no source, 8-fen perpendicular insertion exceeds that boundary, the vertical-component calculation is not a safety criterion, *Dongui Bogam* contraindication reflected → SI 0 | Needling-depth DB row 326; papers.id 1431, 1432, 1876 |
 | Old Section 6-2 | "Stimulation of the cervical sympathetic ganglia → oxytocin → uterine contraction in difficult labour" | Deleted (anatomical position does not match; no evidence) | Issues raised by Raters A and B; B-Check ⑤ |
 | Old Section 7 diagram | "Layer 4 rhomboid + adjacent cervical sympathetic ganglion", mm boundaries by layer | Textbook-based layer schematic; mm boundaries removed | Common Textbook and Kim Jaehyo row 325 |
-| Old Section 9 | Audit wording "GB21_Jianjing_Anatomical_Analysis.xlsx … numerical consistency" | Deleted (non-existent file name; a consistency audit is not grounds for reliability) | Framework Rank 7 'cross-validation' |
+| Old Section 9 | Audit wording "GB21 Jianjing Anatomical Analysis Databook … numerical consistency" | Deleted (non-existent file name; a consistency audit is not grounds for reliability) | Framework Rank 7 'cross-validation' |
 | Textbook comparison table | "Mutually complementary consistency", "perfect collation" | Common and differing items described separately | Both textbooks, row 325 |
 | Formulas | LaTeX broken by `\t` and `\r` control characters | Valid LaTeX | — |
 | Sections 8 and 10 (new) | No Layer A, B-Check, search log or ARI v3.0 tables | Added | final_GB21.json; pack_GB21.md |

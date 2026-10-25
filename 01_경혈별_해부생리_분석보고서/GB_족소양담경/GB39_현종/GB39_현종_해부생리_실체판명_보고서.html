@@ -59,10 +59,10 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>프레임워크</strong>: v2.7 (2026-10-04 개정) · <strong>ARI</strong>: T1 <code>ARI v3.0 | ARI-Core 51.2 ± 0 (D·H) | SI 50 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 47.9 (D, 등급 불변)</code>
 T2 <code>ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 54.2 (D, 등급 변동 → 가중치 민감)</code> · <strong>이중 채점</strong>: 독립 채점자 2인, 조정 완료</p>
 <p><strong>핵심 3대 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》(黄龙祥)
-<strong>Layer A 실증 DB</strong>: <a href="../../../../02_Master_Datasets/%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json"><code>경혈_생의학_신경반사_마스터DB.json</code></a> — GB39 근거 묶음: 랜드마크 29편·로컬 매핑 18편 중 <strong>GB39가 실제 포함된 기전·임상 연구 5편</strong>(papers.id 1610·1612·1615·1902·1903, 모두 복합 혈위 또는 동물) + 정위 문헌 연구 1편(1624)
+<strong>Layer A 실증 DB</strong>: <a href="../../../../%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json">통합 생의학 마스터 DB v3.0</a> — GB39 근거 묶음: 랜드마크 29편·로컬 매핑 18편 중 <strong>GB39가 실제 포함된 기전·임상 연구 5편</strong>(papers.id 1610·1612·1615·1902·1903, 모두 복합 혈위 또는 동물) + 정위 문헌 연구 1편(1624)
 <strong>Layer B 참조 등록부</strong>: <a href="../../../../01_Framework/layer_b_reference_registry.md"><code>layer_b_reference_registry.md</code></a> (B-Check 6항목, 부합 기준 ≥ 8/12)
-<strong>자침깊이 DB</strong>: <a href="../../../../02_Master_Datasets/%EC%B9%A8%EA%B5%AC%EB%AC%B8%ED%97%8C%EB%B3%84%20%EC%9E%90%EC%B9%A8%EA%B9%8A%EC%9D%B4%20%EC%A0%95%EB%A6%AC_AI%20%EB%B6%84%EC%84%9D%EC%9A%A9.xlsx"><code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code></a> 시트1 344행(N0=342)
-<strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 지배신경·척수 분절·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>, 상세는 부록 A
+<strong>자침깊이 DB</strong>: 역대 침구문헌 자침심도 데이터베이스 시트1 344행(N0=342)
+<strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 지배신경·척수 분절·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리, 상세는 부록 A
 <strong>도량형 환산</strong>: 한대(漢代) 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$), 1촌 = 10푼 = 23mm(심도 환산용. 체표 위치는 골도 비례 촌)
 <strong>분석 Target</strong>: <strong>T1</strong> 고전 원전 정위(《黄帝明堂经》 "在足外踝上三寸動者(脈)中, 足三陽絡, 按之陽明脈絶乃取之" = 경골 쪽 앞정강동맥 박동점) / <strong>T2</strong> WHO·현행 교재 정위(外踝尖上 3寸, 腓骨前緣)</p>
 <p><strong>요약</strong>: 구판 보고서는 고전 "動脈中"을 종아리동맥 관통가지로 보고 Δ 3~7mm로 단일 분석했다. 그러나 《针灸腧穴通考》와 papers.id 1624는 그 맥이 <strong>앞정강동맥</strong>이고 원위치가 <strong>경골 쪽</strong>이라고 본다. 두 채점자가 각각 추정한 Δ는 약 20~35mm(&gt; 15mm)이므로 T1·T2로 분기했다. ΔARI-Core = 3.8(&lt; 10)이어서 <strong>어느 Target도 우위로 선언하지 않고 둘을 병기</strong>한다. 두 Target 모두 B-Check 미부합이므로 반사 기전은 <strong>가설</strong>이다.</p>
@@ -177,7 +177,7 @@ T2 <code>ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | 잠정 가중치 0.40/0.35/0.
 <thead>
 <tr>
 <th style="text-align: left;">이명</th>
-<th style="text-align: left;">KJH DB (<code>경혈명_비교_정리_KJH.xlsx</code> 경혈 종합 목록)</th>
+<th style="text-align: left;">KJH DB (경혈명·이명 대조 표준 데이터베이스 경혈 종합 목록)</th>
 <th style="text-align: left;">2대 교재 이명 열</th>
 <th style="text-align: left;">원전 근거</th>
 <th style="text-align: left;">혼용 위험</th>
@@ -552,8 +552,8 @@ T2 <code>ARI v3.0 | ARI-Core 55 ± 0 (C) | SI 75 | 잠정 가중치 0.40/0.35/0.
 <thead>
 <tr>
 <th style="text-align: left;">구분</th>
-<th style="text-align: left;">경혈학 공통교재 (<code>경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx</code> 343행, 경혈학 하 p.457)</th>
-<th style="text-align: left;">김재효 교재 (<code>김재효 수업_경혈_해부구조_데이터셋.xlsx</code> 343행)</th>
+<th style="text-align: left;">경혈학 공통교재 (경혈학 공통교재 해부구조 데이터셋 343행, 경혈학 하 p.457)</th>
+<th style="text-align: left;">김재효 교재 (김재효 교수 경혈 해부구조 데이터셋 343행)</th>
 <th style="text-align: left;">공통</th>
 <th style="text-align: left;">차이 및 해석</th>
 </tr>
@@ -1519,7 +1519,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">머리말</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA 5.1.0 해부 온톨로지 줄 추가</td>
-<td style="text-align: left;"><code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code></td>
+<td style="text-align: left;">FMA 경혈 해부 온톨로지 매핑 레지스트리</td>
 </tr>
 <tr>
 <td style="text-align: left;">4절</td>
@@ -1587,7 +1587,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <td style="text-align: left;">머리말</td>
 <td style="text-align: left;">v2.6, 자침깊이 DB 링크가 로직 원칙 xlsx로 잘못 연결</td>
 <td style="text-align: left;">v2.7 인용 블록(T1·T2 ARI 표기), 자침깊이 DB 링크 정정</td>
-<td style="text-align: left;">final_GB39M.json notation; 02_Master_Datasets</td>
+<td style="text-align: left;">final_GB39M 표기; 마스터 데이터셋</td>
 </tr>
 <tr>
 <td style="text-align: left;">2.4·7.1·9절 《通考》 인용</td>
@@ -1719,7 +1719,7 @@ $$\text{SI} = S_{safety} \quad (\text{합산하지 않음})$$</p>
 <tr>
 <td style="text-align: left;">8절 papers.id 1624</td>
 <td style="text-align: left;">저널 "针刺研究 46(1) (DB 저널 표기: World Journal of Acupuncture-Moxibustion)", "PMID 없음"</td>
-<td style="text-align: left;">"针刺研究 46(1):73-75", PMID 33559430. 마스터 DB <code>papers</code> 1624의 <code>journal</code>을 Zhen Ci Yan Jiu (针刺研究)로 정정(백업 <code>02_Master_Datasets/backup/*20261024_refine1624*</code>), export-xlsx·validate OK</td>
+<td style="text-align: left;">"针刺研究 46(1):73-75", PMID 33559430. 마스터 DB <code>papers</code> 1624의 <code>journal</code>을 Zhen Ci Yan Jiu (针刺研究)로 정정(백업 <code>backup/*20261024_refine1624*</code>), export-xlsx·validate OK</td>
 <td style="text-align: left;">PubMed PMID 33559430 메타데이터(Zhen Ci Yan Jiu 2021;46(1):73-5, DOI 10.13702/j.1000-0607.200282)·본문 PDF</td>
 </tr>
 </tbody>

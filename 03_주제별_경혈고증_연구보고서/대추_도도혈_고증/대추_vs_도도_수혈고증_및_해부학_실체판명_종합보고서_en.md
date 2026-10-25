@@ -3,7 +3,7 @@
 > **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: no csv/xlsx in this folder — collated against the three classics in `chunks_refined` (`针灸腧穴通考(下)_401-480.md` L1537-1760, `中国针灸穴位通鉴(上卷)_161-240.md` L4068-4090)  
 > **Previous edition**: the original Version 2.6 (2026-10-03) is kept in `_구판_v2.6/`  
 > **Analytical framework**: Acupoint Substrate Identification Framework (exegetical (訓詁學) collation grounded in the positivism of excavated texts)  
-> **Master principles of evidence**: [`경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx`](../../../02_Master_Datasets/%EA%B2%BD%ED%98%88%EC%9D%98%20%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81%20%EC%8B%A4%EC%B2%B4%EB%A5%BC%20%ED%8C%90%EB%AA%85%ED%95%98%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EB%A1%9C%EC%A7%81%28logic%29%20%EC%9B%90%EC%B9%99.xlsx)  
+> **Master principles of evidence**: Principles for Acupoint Anatomical Substrate Identification  
 > **Source classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (philological collation by Professor Huang Longxiang (黃龍祥))  
 > **Consolidation history**: Five previously scattered reports (supervision report, historical change, the expressions 間/節間, 上陷 vs 下間 exegesis, hypothesis testing) were fully merged into a single authoritative edition under the principle of consolidating documents with ≥ 50% overlap.  
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.

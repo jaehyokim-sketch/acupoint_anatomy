@@ -3,7 +3,7 @@
 > **Framework**: v2.7 (Tier 3, Rank 0–7 executed) · **ARI**: v3.0 dual scoring · **Date**: 2026-10-12
 > **Subject of analysis**: a lecture question ("Tianshu (天樞) lies at the level of the umbilicus, T10, and Guanyuan (關元) at the level of T11–12 — if the Front-Mu points (募穴) are neural-segment reaction points, isn't this a contradiction?") and the lecturer's answer ("Guanyuan does not treat the anatomical small intestine; it treats the disease pattern called 'Small Intestine (小腸)'")
 > **Source classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (refined edition `chunks_refined`)
-> **Source data**: `천추_관원_모혈분절_문헌고증_DB.xlsx` (this folder) · Integrated Biomedical DB v3.0 (`02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json`, synchronised at Rank 6 on 2026-10-12)
+> **Source data**: Tianshu & Guanyuan Mu-Point Segmental Concordance Database (this folder) · Integrated Biomedical DB v3.0 (Integrated Biomedical Master DB v3.0, synchronised at Rank 6 on 2026-10-12)
 > **Related analysis**: The literary-historical side of the same question was covered in the Huang Longxiang (黃龍祥) skill review (conversation of 2026-10-12); this report covers the anatomical, neural-segment and reflex-mechanism side.
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 

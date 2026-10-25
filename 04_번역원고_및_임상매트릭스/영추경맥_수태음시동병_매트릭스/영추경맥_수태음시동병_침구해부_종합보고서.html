@@ -68,9 +68,9 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <blockquote>
 <p><strong>프레임워크</strong>: v2.7 · <strong>분류</strong>: Category 4 증상별 침구해부 임상 매트릭스 · <strong>적용 범위</strong>: Rank 0~6(FMA 연동), Rank 7 ARI는 <strong>미산정</strong>(38혈 주제 매트릭스 — 개별 혈 ARI는 Category 1 보고서에서 산정)
 <strong>3대 원전</strong>: 《针灸腧穴通考》 25편 361혈 【适应症】 전수 파싱(주 자료) · 《中国针灸穴位通鉴》·《中国针灸证治通鉴》 대조(시동병 원문·是動 처방)
-<strong>해부 근거</strong>: FMA 5.1.0 로컬 색인(<code>fma_query.py profile</code>, 2대 교재 대응표 <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>) + B1 규범 해부(B1-01·B1-02·B1-03) 분절 보완 · 3D 형상: BodyParts3D 4.0(B1 보조)
-<strong>Layer A</strong>: <code>02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json</code>(2026-10-24 상태, <code>acupoint_inverted_index</code>) + PubMed 메타데이터 대조. 이번 분석에서는 <code>sync_master_db.py</code>를 실행하지 않았다(38혈 일괄 동기화는 별도 작업).
-<strong>데이터시트</strong>: <a href="영추경맥_수태음시동병_해부임상_매트릭스.xlsx"><code>영추경맥_수태음시동병_해부임상_매트릭스.xlsx</code></a> (10시트) · 재현 스크립트: <code>scripts/</code> 폴더</p>
+<strong>해부 근거</strong>: FMA 5.1.0 로컬 색인(<code>fma_query.py profile</code>, 2대 교재 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리) + B1 규범 해부(B1-01·B1-02·B1-03) 분절 보완 · 3D 형상: BodyParts3D 4.0(B1 보조)
+<strong>Layer A</strong>: 통합 생의학 마스터 DB v3.0(2026-10-24 상태, <code>acupoint_inverted_index</code>) + PubMed 메타데이터 대조. 이번 분석에서는 <code>sync_master_db.py</code>를 실행하지 않았다(38혈 일괄 동기화는 별도 작업).
+<strong>데이터시트</strong>: 영추경맥 수태음시동병 침구해부 임상 매트릭스 분석 데이터북 (10시트) · 재현 스크립트: <code>scripts/</code> 폴더</p>
 </blockquote>
 <hr>
 <h2 id="0">0. 요약</h2>
@@ -1466,7 +1466,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <td style="text-align: left;">영어판(번체자 병기)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>영추경맥_수태음시동병_해부임상_매트릭스.xlsx</code></td>
+<td style="text-align: left;">영추경맥 수태음시동병 침구해부 임상 매트릭스 데이터북</td>
 <td style="text-align: left;">1 시동병 층차 · 2 후보·주치 층 · 3 근거조문(290행) · 4 FMA 해부 특징 · 5 유사도 행렬 · 6 층위 · 7 太淵 기준 순위 · 8 분절 정합 · 9 Layer A · 10 방법·감사</td>
 </tr>
 <tr>

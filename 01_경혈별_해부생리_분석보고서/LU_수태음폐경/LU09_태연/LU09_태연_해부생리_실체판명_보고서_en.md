@@ -3,7 +3,7 @@
 > **Framework**: v2.7 · **ARI**: ARI v3.0 | ARI-Core 68.75 ± 0 (C) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 66.7 (C, grade unchanged) · **Dual scoring**: two independent rounds (raters A and B); 3 discrepancies of 15 points or more reconciled
 
 > **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
-> **Layer A Empirical Database**: `02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json` (of the 41 papers in the LU9 inverted index, only the **15 papers with confirmed LU9 stimulation** are used for the verdict — Section 8 ①)
+> **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 (of the 41 papers in the LU9 inverted index, only the **15 papers with confirmed LU9 stimulation** are used for the verdict — Section 8 ①)
 > **Layer B Reference Registry**: `01_Framework/layer_b_reference_registry.md` (6-item B-Check, concordance threshold ≥ 8/12)
 > **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry). Details in Appendix A
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
@@ -63,7 +63,7 @@
 | (wrongly assigned to 魚際) | 1957 Nanjing 《針灸學》 → Korean textbooks | — | 太泉 and 鬼心 wrongly listed as aliases of Yuji (魚際, LU10) — [通考] L2473 |
 | 太淵 as 'vessel' | 《素問·氣交變大論》 "太淵絕者，死不治" | — | Distinguishes the whole cun-kou vessel (pulse-taking site) from the point 太淵 — [通考] L2221·2287 |
 
-The KJH DB (`경혈명_비교_정리_KJH.xlsx`, sheet `경혈 종합 목록` (comprehensive acupoint list), row 64: 61, LU09, `태연` (Taeyeon), 太淵, "太泉, 鬼心, 大泉, 大渕") agrees with the alias columns of the two textbook datasets ("太泉, 鬼心").
+The KJH DB (Acupoint Nomenclature & Alias Comparative Database, sheet `경혈 종합 목록` (comprehensive acupoint list), row 64: 61, LU09, `태연` (Taeyeon), 太淵, "太泉, 鬼心, 大泉, 大渕") agrees with the alias columns of the two textbook datasets ("太泉, 鬼心").
 
 ---
 
@@ -112,7 +112,7 @@ The KJH DB (`경혈명_비교_정리_KJH.xlsx`, sheet `경혈 종합 목록` (co
 
 ## 5. Classical Needling Depth Calculation Table
 
-Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 63 (N0 = 61), supplemented by [通考] 【操作】.
+Source: Classical Needling Depth Database, sheet 1, row 63 (N0 = 61), supplemented by [通考] 【操作】.
 
 | Text | Fen (分) | Depth (× 2.3 mm) | Layer reached (estimated) | Remarks |
 | :--- | :---: | :---: | :--- | :--- |
@@ -136,7 +136,7 @@ Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 63
 
 ## 6. Textbook Comparison Table
 
-| Category | Korean common textbook of acupoint studies (refine.xlsx summary sheet, row 62) | Kim Jaehyo textbook (summary sheet, row 62) | FMA adjudication | Assessment |
+| Category | Korean common textbook of acupoint studies (Common Textbook dataset summary sheet, row 62) | Kim Jaehyo textbook (summary sheet, row 62) | FMA adjudication | Assessment |
 | :--- | :--- | :--- | :--- | :--- |
 | Muscle / tendon | Abductor pollicis longus, flexor carpi radialis, extensor pollicis longus | Flexor carpi radialis (tendon), brachioradialis (tendon), flexor pollicis longus (tendon), pronator quadratus, pronator teres, flexor digitorum superficialis, palmar carpal ligament | Shared FMA:38459 / Common Textbook only 38515 · 38521 / Kim Jaehyo only 38485 · 40689 · 38481 · 38673 · 38453 · 38450 · 38469 · 38582 | **Disagree**: only flexor carpi radialis is shared |
 | Nerve | Lateral cutaneous nerve of forearm, superficial branch of radial nerve | Same | FMA:39080, 292885 | Agree |

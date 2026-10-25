@@ -1,6 +1,6 @@
 # 🏛️ Large-Intestine Disorders and Dysentery/Diarrhoea Across the Eras in the Three Classics, and the Textual Proof That 'Shanglian' Meant 'Shangjuxu': An Integrated Comparative Report
 
-> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: `3대서적_대장병증_이질_설사_침구치료_시대별_경혈분석.csv/.xlsx` (538 keyword-hit snippet rows), `3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.csv/.xlsx`
+> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual verification (Rank 5 where needed) · **ARI**: not scored (textual-verification report) · **Source data**: Large Intestine Disease Chronological Acupoint Analysis Dataset (538 keyword-hit snippet rows), Large Intestine Disease Textual Analysis Dataset
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files and data are simplified-script editions, so file names and search keywords in `code` are given exactly as they appear on disk and in the data.
 
 This integrated report compares and fuses two studies built on the database (45 PDFs, some 4,200 pages) of the three specialist acupuncture classics *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》), *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) and *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》): **① a quantitative, era-by-era analysis of the acupoints used in acupuncture-moxibustion treatment of large-intestine disorders and dysentery/diarrhoea (Report A)**, and **② an evidence-based textual verification that 'Shanglian' (上廉) and 'Xialian' (下廉) in the ancient literature were abbreviations of 'Shangjuxu' (上巨虛) and 'Xiajuxu' (下巨虛) (Report B)**.
@@ -47,7 +47,7 @@ This integrated report compares and fuses two studies built on the database (45 
 ## 📁 File Storage Guide (same folder)
 
 - 📝 **Markdown report**: [3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.md](3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.md)
-- 📊 **Integrated comparison Excel**: [3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.xlsx](3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.xlsx)
+- 📊 **Integrated comparison Excel**: Large Intestine Disease Textual Analysis Dataset
 - 📄 **Integrated comparison CSV**: [3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.csv](3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서.csv)
 - 📄 **Original snippet data**: [3대서적_대장병증_이질_설사_침구치료_시대별_경혈분석.csv](3대서적_대장병증_이질_설사_침구치료_시대별_경혈분석.csv)
 

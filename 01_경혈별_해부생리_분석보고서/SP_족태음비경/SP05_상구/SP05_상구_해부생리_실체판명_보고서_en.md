@@ -3,7 +3,7 @@
 > **Framework**: v2.7 · **ARI**: ARI v3.0 | ARI-Core 75.0 ± 1.3 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 71.9 (B, grade unchanged) · **Dual scoring**: two independent scorings, 1 SI item adjudicated · **Reflex mechanism**: B-Check 7/12, not concordant → **hypothesis**
 
 > **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
-> **Layer A Empirical Database**: `02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json` (of the 33 papers in the SP5 inverted index, only **the 6 papers that actually stimulated or observed SP05** are used for the verdict; Section 8, Table ①)
+> **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 (of the 33 papers in the SP5 inverted index, only **the 6 papers that actually stimulated or observed SP05** are used for the verdict; Section 8, Table ①)
 > **Layer B Reference Registry**: `01_Framework/layer_b_reference_registry.md` (6-item B-Check, concordance threshold ≥ 8/12)
 > **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry); Appendix A
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\text{mm}$)
@@ -52,7 +52,7 @@
 | 商邱 | Qing and Republican texts — taboo avoidance (避諱) of Confucius's personal name (丘) (Tongkao L959) | Listed | Taboo-avoidance spelling. Same point |
 | (no alias) | *Xuewei Tongjian* (《穴位通鑑》) "別名 無" (L1044) | — | The two above are spelling variants, not aliases |
 
-This agrees with the KJH DB (`경혈명_비교_정리_KJH.xlsx`, comprehensive list row 136: 133, SP05, Sanggu (Korean reading), 商丘, "商坵, 商邱"). No record of confusion with Shangyang (商陽, LI1) or Shangqu (商曲, KI17), which contain '商', or with Qiuxu (丘墟, GB40), which contains '丘', was found in the three primary classics.
+This agrees with the KJH DB (Acupoint Nomenclature & Alias Comparative Database, comprehensive list row 136: 133, SP05, Sanggu (Korean reading), 商丘, "商坵, 商邱"). No record of confusion with Shangyang (商陽, LI1) or Shangqu (商曲, KI17), which contain '商', or with Qiuxu (丘墟, GB40), which contains '丘', was found in the three primary classics.
 
 ---
 
@@ -98,7 +98,7 @@ This agrees with the KJH DB (`경혈명_비교_정리_KJH.xlsx`, comprehensive l
 
 ## 5. Needling Depth Calculation Table
 
-Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, Excel row 135 (N0 133, SP05), supplemented by the three primary classics.
+Source: Classical Needling Depth Database, sheet 1, Excel row 135 (N0 133, SP05), supplemented by the three primary classics.
 
 | Text | Fen (分) | Depth (× 2.3 mm) | Layer reached (estimated) | Remarks |
 | :--- | :---: | :---: | :--- | :--- |
@@ -121,7 +121,7 @@ Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, Excel 
 
 ## 6. Textbook Comparison Table of Anatomical Structures
 
-| Category | Common Textbook of Acupoint Studies (refine.xlsx comprehensive sheet row 134) | Kim Jaehyo textbook (comprehensive sheet row 134) | FMA adjudication | Assessment |
+| Category | Common Textbook of Acupoint Studies (Common Textbook dataset comprehensive sheet row 134) | Kim Jaehyo textbook (comprehensive sheet row 134) | FMA adjudication | Assessment |
 | :--- | :--- | :--- | :--- | :--- |
 | Muscles & ligaments | Tibialis anterior | Tibialis anterior, deltoid ligament (+1 broken duplicate row) | FMA:22532 shared / FMA:44055 Kim Jaehyo only | Kim Jaehyo records down to the deep ligament |
 | Nerves | Saphenous nerve, medial dorsal cutaneous nerve | Saphenous nerve | FMA:45262 shared / FMA:44809 Common Textbook only | The Common Textbook adds a cutaneous nerve on the dorsal side of the foot |

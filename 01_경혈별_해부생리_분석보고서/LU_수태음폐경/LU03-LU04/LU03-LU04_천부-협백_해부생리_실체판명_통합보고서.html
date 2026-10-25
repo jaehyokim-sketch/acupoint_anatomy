@@ -62,10 +62,10 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 - pLU3: <code>ARI v3.0 | ARI-Core 41.2 ± 0 (D·H) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 39.6 (D, 등급 불변)</code>
 - pLU4: <code>ARI v3.0 | ARI-Core 43.8 ± 2.5 (D·H) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 41.7 (D, 등급 불변)</code></p>
 <p><strong>통합 일자</strong>: 2026-10-03 (v2.7 개정 2026-10-04, FMA 보강 2026-10-23, 맨 끝 개정 이력 참조)
-<strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 지배신경·척수 분절·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>, 상세는 부록 A
+<strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 지배신경·척수 분절·신경 줄기를 대조(B1 보조, 등록부 미등재). 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리, 상세는 부록 A
 <strong>통합 대상 (원본은 <code>_원본_보관/</code>, 개정 전 판은 <code>_구판_v2.6/</code>에 보존)</strong>:
-- <code>LU03_천부/LU03_천부_해부생리_실체판명_보고서.md·.html·.xlsx</code>
-- <code>LU04_협백/LU04_협백_해부생리_실체판명_보고서.md·.html·.xlsx</code>
+- <code>LU03_천부/LU03_천부_해부생리_실체판명_보고서.md·.html·데이터북</code>
+- <code>LU04_협백/LU04_협백_해부생리_실체판명_보고서.md·.html·데이터북</code>
 - <code>_원본_보관/LU_비교분석_구판/LU3_LU4_Comparative_Analysis_Report.md·.html</code>
 <strong>통합 원칙</strong>: 세 보고서의 내용 중복도가 50%를 넘으므로 비교분석 보고서를 중심으로 단일 권위본으로 합침(Merge). 통합 과정에서 3대 원전·마스터 데이터셋·논문 원문과 다시 대조하여, 기존 보고서 사이의 모순과 사실 오류를 바로잡음(§11 정정 감사표).</p>
 </blockquote>
@@ -256,7 +256,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <th style="text-align: center;">코드</th>
 <th style="text-align: center;">표준명</th>
-<th style="text-align: center;">KJH DB (<code>경혈명_비교_정리_KJH.xlsx</code>)</th>
+<th style="text-align: center;">KJH DB (경혈명·이명 대조 표준 데이터베이스)</th>
 <th style="text-align: center;">《穴位通鉴》</th>
 <th style="text-align: left;">판정</th>
 </tr>
@@ -280,7 +280,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <p><strong>天會 오귀속 경위 (데이터셋 대조)</strong>
 - 현행 KJH(행 57 LU03, 행 274 PC01)와 공통교재·김재효 데이터셋(<code>경혈_기본정보_마스터</code> 행 55 LU03, 행 272 PC01)은 모두 LU03과 PC01에 똑같이 '天會'를 적고 있다.
-- 강의 슬라이드에서 처음 추출한 <code>경혈명_비교_정리_KJH_backup.xlsx</code>는 LU03 이명을 '–'(01_수태음폐경_각론 slide31), PC01 이명을 '天會'(03_수궐음심포경 slide33)로 적는다. 따라서 LU03의 '天會'는 원 슬라이드가 아니라 <strong>데이터셋 정리 과정에서 PC01 값이 잘못 옮겨진 것으로 추정</strong>된다.
+- 강의 슬라이드에서 처음 추출한 경혈명·이명 대조 백업 데이터셋는 LU03 이명을 '–'(01_수태음폐경_각론 slide31), PC01 이명을 '天會'(03_수궐음심포경 slide33)로 적는다. 따라서 LU03의 '天會'는 원 슬라이드가 아니라 <strong>데이터셋 정리 과정에서 PC01 값이 잘못 옮겨진 것으로 추정</strong>된다.
 - 혼입 배경(추정): 天池와 天府는 모두 "腋下三寸"으로 기술되고, 《灵枢·本输》의 '天' 자 혈 목록에 함께 나온다(《通考(下)_81-160》 L557). 천부와 이름·위치 표현이 겹쳐 혼동되기 쉽다.
 - 처리: 보고서에서 천부 이명 '天會'를 삭제했다. 원 데이터셋(KJH·2대 교재 xlsx)은 이 개정에서 수정하지 않았으며, 데이터셋 담당자 확인이 필요하다.</p>
 <p>인접 혈과의 혼동:
@@ -526,7 +526,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </ul>
 <hr>
 <h2 id="5-rank-5-1-23mm">5. 자침 깊이 계산표 (Rank 5: 1푼 = 2.3mm)</h2>
-<p><code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code> 시트1 행 56(LU03)·57(LU04) (두 혈 값 동일) 및 원전 대조:</p>
+<p>역대 침구문헌 자침심도 데이터베이스 시트1 행 56(LU03)·57(LU04) (두 혈 값 동일) 및 원전 대조:</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -632,7 +632,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p>출처: <code>경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx</code> <code>해부구조_개별항목_상세</code> 행 273~284, <code>김재효 수업_경혈_해부구조_데이터셋.xlsx</code> <code>해부구조_개별항목_상세</code> 행 399~412 (등록부 B2-09).</p>
+<p>출처: 경혈학 공통교재 해부구조 데이터셋 <code>해부구조_개별항목_상세</code> 행 273~284, 김재효 교수 경혈 해부구조 데이터셋 <code>해부구조_개별항목_상세</code> 행 399~412 (등록부 B2-09).</p>
 <p><strong>FMA 판별</strong> (부록 A): LU03 공통 FMA 실체 1개(노쪽피부정맥 FMA:13324) · 공통교재 단독 6개 · 김재효 단독 5개, LU04 공통 1 · 공통교재 단독 6 · 김재효 단독 3. 위팔두갈래근은 공통교재가 근육 전체(FMA:37670), 김재효가 긴갈래(FMA:37683, 전체의 부분)로 적어 ID가 다를 뿐 같은 근육이므로 실제 공통 구조는 <strong>위팔두갈래근 + 노쪽피부정맥</strong> 두 개다.</p>
 <ul>
 <li><strong>FMA로 본 차이의 의미</strong>: 공통교재의 정중신경(FMA:14385)·위팔동정맥(FMA:22689·22934)은 안쪽 위팔두갈래근고랑(FMA:74569 Medial bicipital groove)의 신경혈관다발, 즉 <strong>T1 쪽 구조</strong>다. 김재효의 근육피부신경(FMA:37064)·위가쪽위팔피부신경(FMA:65303)·뒤아래팔피부신경(FMA:39145)은 위팔두갈래근과 위팔근 사이·가쪽 피부의 <strong>T2 쪽 구조</strong>다. FMA상 근육피부신경과 정중신경은 모두 팔신경얼기 가쪽다발(FMA:45235)에서 이어지지만 위팔에서의 위치가 다르므로, 위 "혼합형(공통교재) vs 가쪽 정위 일관형(김재효)" 판정을 ID 수준에서 확인한다. 이 판별은 $S_{clarity}$ 단계를 바꾸지 않는다.</li>
@@ -685,7 +685,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </table></div>
 <hr>
 <h2 id="8-rank-6">8. 생의학적 반사 기전도 및 외부 검색 로그 (Rank 6)</h2>
-<h3 id="81-layer-a-___dbjson-2026-10-04">8.1 Layer A 논문 (<code>경혈_생의학_신경반사_마스터DB.json</code>, 2026-10-04 동기화 후)</h3>
+<h3 id="81-layer-a-___dbjson-2026-10-04">8.1 Layer A 논문 (통합 생의학 마스터 DB v3.0, 2026-10-04 동기화 후)</h3>
 <p><strong>경혈 특이 연구(cLU·pLU 단독 자극의 기전·임상): 0편.</strong> 아래는 LU3·LU4가 처방에 포함된 연구와 문헌 연구이다.</p>
 <div class="table-wrap"><table>
 <thead>
@@ -2184,7 +2184,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">머리 인용 블록</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA 5.1.0 해부 온톨로지 줄 추가, 통합 일자 줄에 FMA 보강일 병기</td>
-<td style="text-align: left;"><code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code></td>
+<td style="text-align: left;">FMA 경혈 해부 온톨로지 매핑 레지스트리</td>
 </tr>
 <tr>
 <td style="text-align: left;">4절</td>
@@ -2364,8 +2364,8 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p><em>근거 파일</em>: <code>01_도서_번역_및_원전/{中国针灸穴位通鉴, 中国针灸证治通鉴, 针灸腧穴通考}/chunks_refined/</code>, <code>02_Master_Datasets/</code> (KJH, 자침깊이, 공통교재, 김재효, 생의학 마스터DB, 361 CSV), <code>01_Framework/layer_b_reference_registry.md</code>, 송석모(2022) 원문 PDF.
-<em>데이터북</em>: <code>LU03-LU04_천부-협백_해부생리_통합분석데이터.xlsx</code> / <em>웹리포트</em>: <code>LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.html</code></p>
+<p><em>근거 파일</em>: <code>01_도서_번역_및_원전/{中国针灸穴位通鉴, 中国针灸证治通鉴, 针灸腧穴通考}/chunks_refined/</code>, 마스터 데이터셋 레지스트리 (KJH, 자침깊이, 공통교재, 김재효, 생의학 마스터DB, 361 CSV), <code>01_Framework/layer_b_reference_registry.md</code>, 송석모(2022) 원문 PDF.
+<em>데이터북</em>: 천부-협백 해부생리 통합 분석 데이터북 / <em>웹리포트</em>: <code>LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.html</code></p>
 <p class="meta">생성: 2026-10-23 21:55 · 원본: LU03-LU04_천부-협백_해부생리_실체판명_통합보고서.md · build_report_html.py (Framework v2.7)</p>
 </article>
 </main>

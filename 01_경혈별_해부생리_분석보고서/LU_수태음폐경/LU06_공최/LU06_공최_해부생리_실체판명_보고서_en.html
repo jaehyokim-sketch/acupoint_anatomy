@@ -59,9 +59,9 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <p><strong>Framework</strong>: v2.7 (revised 2026-10-04) · <strong>ARI</strong>: T1 <code>ARI v3.0 | ARI-Core 71.2 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 68.8 (C, grade changes → weight-sensitive)</code>
 T2 <code>ARI v3.0 | ARI-Core 35 ± 0 (D·H) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 33.3 (D, grade unchanged)</code> · <strong>Dual scoring</strong>: completed by two independent raters</p>
 <p><strong>Three Primary Classics</strong>: <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) · <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) · <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》, Huang Longxiang 黃龍祥)
-<strong>Layer A Empirical Database</strong>: <a href="../../../../02_Master_Datasets/%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json"><code>경혈_생의학_신경반사_마스터DB.json</code></a> — LU6 evidence pack: of 32 landmark papers (including 28 external) and 20 locally mapped papers, <strong>4 LU6-specific mechanism/imaging studies</strong> (papers.id 1682, 1683, 1684, 1806) + 1 human clinical observation (1726)
+<strong>Layer A Empirical Database</strong>: <a href="../../../../%EA%B2%BD%ED%98%88_%EC%83%9D%EC%9D%98%ED%95%99_%EC%8B%A0%EA%B2%BD%EB%B0%98%EC%82%AC_%EB%A7%88%EC%8A%A4%ED%84%B0DB.json">Integrated Biomedical Master DB v3.0</a> — LU6 evidence pack: of 32 landmark papers (including 28 external) and 20 locally mapped papers, <strong>4 LU6-specific mechanism/imaging studies</strong> (papers.id 1682, 1683, 1684, 1806) + 1 human clinical observation (1726)
 <strong>Layer B Reference Registry</strong>: <a href="../../../../01_Framework/layer_b_reference_registry.md"><code>layer_b_reference_registry.md</code></a> (6-item B-Check, concordance threshold ≥ 8/12)
-<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>; details in Appendix A.
+<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 <strong>Metrological Standard</strong>: Han-dynasty (漢代) standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$), 1 cun (寸) = 10 fen = 23 mm
 <strong>Analysis Targets</strong>: <strong>T1</strong> WHO/textbook standard Kongzui (腕上七寸, on the line joining Chize (尺澤, LU05) and Taiyuan (太淵, LU09)) / <strong>T2</strong> Sawada-style (澤田) Kongzui haemorrhoid reaction point (尺澤下二寸, 《針灸真髓》 1941)
 <strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
@@ -196,7 +196,7 @@ T2 <code>ARI v3.0 | ARI-Core 35 ± 0 (D·H) | SI 50 | provisional weights 0.40/0
 <tr>
 <td style="text-align: left;">Standard code &amp; point name</td>
 <td style="text-align: left;">LU06 Gongchoe / Kongzui (孔最) (Lung Meridian of Hand-Taiyin, 手太陰肺經)</td>
-<td style="text-align: left;">KJH <code>경혈명_비교_정리_KJH.xlsx</code>, row 61</td>
+<td style="text-align: left;">KJH Acupoint Nomenclature & Alias Comparative Database, row 61</td>
 <td style="text-align: left;">—</td>
 </tr>
 <tr>
@@ -406,7 +406,7 @@ T2 <code>ARI v3.0 | ARI-Core 35 ± 0 (D·H) | SI 50 | provisional weights 0.40/0
 </ul>
 <hr>
 <h2 id="5-classical-needling-depth-calculation-table-han-dynasty-23-mm-conversion-layers-reached">5. Classical Needling Depth Calculation Table (Han Dynasty 2.3 mm Conversion &amp; Layers Reached)</h2>
-<p>Source: <code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code>, sheet 1, row 60 (LU06). No '0' ('Contraindicated for needling (禁針)') value.</p>
+<p>Source: Classical Needling Depth Database, sheet 1, row 60 (LU06). No '0' ('Contraindicated for needling (禁針)') value.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -484,7 +484,7 @@ T2 <code>ARI v3.0 | ARI-Core 35 ± 0 (D·H) | SI 50 | provisional weights 0.40/0
 </ul>
 <hr>
 <h2 id="6-textbook-comparison-table-common-textbook-vs-kim-jaehyo-textbook">6. Textbook Comparison Table (Common Textbook vs. Kim Jaehyo Textbook)</h2>
-<p>Source: <code>경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx</code>, sheet <code>경혈별_해부구조_종합</code>, row 59 (<em>Acupoint Studies</em> vol. 1, p. 54) · <code>김재효 수업_경혈_해부구조_데이터셋.xlsx</code>, sheet <code>경혈별_해부구조_종합</code>, row 59.</p>
+<p>Source: Common Textbook Anatomical Structure Dataset, sheet <code>경혈별_해부구조_종합</code>, row 59 (<em>Acupoint Studies</em> vol. 1, p. 54) · Kim Jaehyo Anatomical Structure Dataset, sheet <code>경혈별_해부구조_종합</code>, row 59.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1454,7 +1454,7 @@ $$\text{SI} = S_{safety} \quad (\text{not summed})$$</p>
 <td style="text-align: left;">Header</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">Added FMA 5.1.0 anatomical ontology line</td>
-<td style="text-align: left;"><code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code></td>
+<td style="text-align: left;">FMA Acupoint Anatomical Ontology Mapping Registry</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 4 layer diagram, Section 6</td>

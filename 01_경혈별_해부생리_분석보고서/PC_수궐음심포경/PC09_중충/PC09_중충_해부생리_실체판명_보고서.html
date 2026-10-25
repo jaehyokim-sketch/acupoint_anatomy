@@ -61,9 +61,9 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <hr>
 <blockquote>
 <p><strong>근거 원칙 문서</strong>: <code>01_Framework/acupoint_anatomical_logic_framework.md</code>(v2.7), <code>01_Framework/layer_b_reference_registry.md</code>
-<strong>근거 데이터셋</strong>: <code>02_Master_Datasets/침구문헌별 자침깊이 정리_AI 분석용.xlsx</code>(시트1 282행), <code>경혈명_비교_정리_KJH.xlsx</code>(경혈 종합 목록 283행), <code>경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx</code>(경혈별_해부구조_통합 281행), <code>김재효 수업_경혈_해부구조_데이터셋.xlsx</code>(경혈별_해부구조_종합 281행)
+<strong>근거 데이터셋</strong>: 역대 침구문헌 자침심도 데이터베이스(시트1 282행), 경혈명·이명 대조 표준 데이터베이스(경혈 종합 목록 283행), 경혈학 공통교재 해부구조 데이터셋(경혈별_해부구조_통합 281행), 김재효 교수 경혈 해부구조 데이터셋(경혈별_해부구조_종합 281행)
 <strong>3대 원전</strong>: 《中国针灸穴位通鉴》(上卷)_401-480.md L2922~3175 · 《针灸腧穴通考》(下)_81-160.md L1628~1745 · 《中国针灸证治通鉴》_81-160.md L178~, _161-240.md 외
-<strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 신경 줄기·척수 분절을 대조(B1 보조, 등록부 미등재). 대응표 <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>, 상세는 부록 A</p>
+<strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 신경 줄기·척수 분절을 대조(B1 보조, 등록부 미등재). 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리, 상세는 부록 A</p>
 </blockquote>
 <h3 id="_1">결론 요약</h3>
 <p>중충은 <strong>중지 말절 첨단 중앙의 지문 피부·피하(Layer 1)</strong> 에 위치한다. 해부 실체로는 <strong>정중신경에서 나온 고유바닥쪽손가락신경(감각신경)의 말단 분지와 고유바닥쪽손가락동맥의 말단 동맥망</strong>이 가장 개연성이 높다. 다만 이 판단은 두 교재와 표준 해부학서(B1-01·B1-03)가 서로 일치한다는 수준의 근거이며, PC9 자체를 사체나 초음파로 실측한 연구는 없다. 정혈 사혈의 각성·구급 효과를 설명하는 반사 기전은 B-Check 6/12(미부합)이므로 <strong>가설</strong>로만 기술한다. 종합 판정은 <strong>ARI-Core 67.5 ± 1.2, 등급 C(가능·가설)</strong> 이다. 자침 안전지수는 <strong>SI 100</strong>이다(모든 문헌이 1푼=2.3mm이고 금침 문헌 없음).</p>
@@ -206,7 +206,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>경혈명_비교_정리_KJH.xlsx</code> 경혈 종합 목록 283행</td>
+<td style="text-align: left;">경혈명·이명 대조 표준 데이터베이스 경혈 종합 목록 283행</td>
 <td style="text-align: left;">PC09 중충 中衝, 이명 <strong>'-'</strong></td>
 <td style="text-align: left;">이명 없음</td>
 </tr>
@@ -345,7 +345,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </ul>
 <hr>
 <h2 id="5">5. 자침 깊이 계산표</h2>
-<p>출처: <code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code> 시트1 282행(PC09). 1푼 = 2.3 mm.</p>
+<p>출처: 역대 침구문헌 자침심도 데이터베이스 시트1 282행(PC09). 1푼 = 2.3 mm.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1106,7 +1106,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">머리말</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">FMA 5.1.0 해부 온톨로지 줄 추가</td>
-<td style="text-align: left;"><code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code></td>
+<td style="text-align: left;">FMA 경혈 해부 온톨로지 매핑 레지스트리</td>
 </tr>
 <tr>
 <td style="text-align: left;">4절</td>
@@ -1274,7 +1274,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 <tr>
 <td style="text-align: left;">9절 감사</td>
-<td style="text-align: left;">"PC9_Zhongchong_Anatomical_Analysis.xlsx"와 수치 정합 주장</td>
+<td style="text-align: left;">"PC9 중충 해부분석 데이터북"와 수치 정합 주장</td>
 <td style="text-align: left;">삭제(파일명 불일치, 정합성 감사는 신뢰도 근거가 아님)</td>
 <td style="text-align: left;">정본 Rank 7</td>
 </tr>

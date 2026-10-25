@@ -68,9 +68,9 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <blockquote>
 <p><strong>Framework</strong>: v2.7 · <strong>Classification</strong>: Category 4 symptom-based acupuncture-anatomy clinical matrix · <strong>Scope</strong>: Ranks 0–6 (FMA-linked); Rank 7 ARI <strong>not scored</strong> (a 38-point thematic matrix — ARI for individual points is scored in the Category 1 reports)
 <strong>Three Primary Classics</strong>: full parse of the 【適應症】 (indications) entries of the 361 points in the 25 parts of <em>Zhenjiu Shuxue Tongkao</em> (《針灸腧穴通考》) (primary source) · collated against <em>Zhongguo Zhenjiu Xuewei Tongjian</em> (《中國針灸穴位通鑑》) and <em>Zhongguo Zhenjiu Zhengzhi Tongjian</em> (《中國針灸證治通鑑》) (shidong original text and 是動 prescriptions)
-<strong>Anatomical basis</strong>: local index of FMA 5.1.0 (<code>fma_query.py profile</code>; two-textbook mapping table <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>) + segmental supplementation from B1 normative anatomy (B1-01, B1-02, B1-03) · 3D shapes: BodyParts3D 4.0 (B1 supplementary)
-<strong>Layer A</strong>: <code>02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json</code> (state as of 2026-10-24, <code>acupoint_inverted_index</code>) + collation with PubMed metadata. <code>sync_master_db.py</code> was not run for this analysis (batch synchronisation of the 38 points is a separate task).
-<strong>Datasheet</strong>: <a href="영추경맥_수태음시동병_해부임상_매트릭스.xlsx"><code>영추경맥_수태음시동병_해부임상_매트릭스.xlsx</code></a> (10 sheets) · Reproduction scripts: <code>scripts/</code> folder
+<strong>Anatomical basis</strong>: local index of FMA 5.1.0 (<code>fma_query.py profile</code>; two-textbook mapping table FMA Acupoint Anatomical Ontology Mapping Registry) + segmental supplementation from B1 normative anatomy (B1-01, B1-02, B1-03) · 3D shapes: BodyParts3D 4.0 (B1 supplementary)
+<strong>Layer A</strong>: Integrated Biomedical Master DB v3.0 (state as of 2026-10-24, <code>acupoint_inverted_index</code>) + collation with PubMed metadata. <code>sync_master_db.py</code> was not run for this analysis (batch synchronisation of the 38 points is a separate task).
+<strong>Datasheet</strong>: Lingshu Jingmai Lung Channel Shidong Clinical Acupuncture Anatomy Matrix Analysis Databook (10 sheets) · Reproduction scripts: <code>scripts/</code> folder
 <strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
 </blockquote>
 <hr>
@@ -1467,7 +1467,7 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <td style="text-align: left;">English edition (with Traditional Chinese characters)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>영추경맥_수태음시동병_해부임상_매트릭스.xlsx</code></td>
+<td style="text-align: left;">Lingshu Jingmai Lung Channel Shidong Clinical Anatomy Matrix Databook</td>
 <td style="text-align: left;">1 shidong textual strata · 2 candidates and indication tiers · 3 evidence entries (290 rows) · 4 FMA anatomical features · 5 similarity matrix · 6 strata · 7 ranking relative to 太淵 · 8 segmental concordance · 9 Layer A · 10 methods and audit</td>
 </tr>
 <tr>

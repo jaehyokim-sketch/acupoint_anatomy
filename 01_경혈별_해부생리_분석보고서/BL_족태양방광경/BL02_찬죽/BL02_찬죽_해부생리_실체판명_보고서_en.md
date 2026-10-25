@@ -5,12 +5,12 @@
 ---
 
 > **Governing principle documents**: `01_Framework/acupoint_anatomical_logic_framework.md` (v2.7) · `01_Framework/layer_b_reference_registry.md` (Layer B Reference Registry v1.0)
-> **Source datasets** (`02_Master_Datasets/`):
-> 1. `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 181 (BL02)
-> 2. `경혈명_비교_정리_KJH.xlsx`, 'Comprehensive acupoint list' sheet, row 182; 'Primary name–alias match list (Case A)' sheet, row 4
-> 3. `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx` entry 179 (BL02, *Acupoint Studies* vol. 1, p. 628) · `김재효 수업_경혈_해부구조_데이터셋.xlsx` entry 179 (BL02)
+> **Source datasets** (Master Datasets Registry):
+> 1. Classical Needling Depth Database, sheet 1, row 181 (BL02)
+> 2. Acupoint Nomenclature & Alias Comparative Database, 'Comprehensive acupoint list' sheet, row 182; 'Primary name–alias match list (Case A)' sheet, row 4
+> 3. Common Textbook Anatomical Structure Dataset entry 179 (BL02, *Acupoint Studies* vol. 1, p. 628) · Kim Jaehyo Anatomical Structure Dataset entry 179 (BL02)
 > **Three Primary Classics** (`01_도서_번역_및_원전/<원전>/chunks_refined/`): *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) `针灸腧穴通考(上)_561-640.md` (lines 2310–2590) · *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) `中国针灸穴位通鉴(上卷)_881-960.md` (lines 2480–2712) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), prescription entries in each chapter
-> **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: `02_Master_Datasets/FMA/acupoint_fma_mapping.json`; details in Appendix A
+> **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
 ### Summary
@@ -62,7 +62,7 @@
 
 ## 3. Alias Verification Table (KJH DB Cross-check)
 
-BL02 aliases in the KJH DB (`경혈명_비교_정리_KJH.xlsx`, 'Comprehensive acupoint list' sheet, row 182): **始光, 光明, 圓柱, 夜光, 明光, 眉頭圓柱, 眉本, 魚頭**
+BL02 aliases in the KJH DB (Acupoint Nomenclature & Alias Comparative Database, 'Comprehensive acupoint list' sheet, row 182): **始光, 光明, 圓柱, 夜光, 明光, 眉頭圓柱, 眉本, 魚頭**
 
 | Alias | Earliest source (chronological) | KJH DB | Verdict (based on the *Tongkao* (《通考》) 名實考 and notes) |
 | :--- | :--- | :---: | :--- |
@@ -159,7 +159,7 @@ Structure names from the two textbooks; IDs and relations from FMA 5.1.0 (`fma_q
 
 ## 5. Needling Depth Calculation Table
 
-Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 181 (BL02). Rules: integer = fen, '0' = contraindicated for needling (禁針), blank = not described. Conversion: 1 fen = 2.3 mm (Han-dynasty standard).
+Source: Classical Needling Depth Database, sheet 1, row 181 (BL02). Rules: integer = fen, '0' = contraindicated for needling (禁針), blank = not described. Conversion: 1 fen = 2.3 mm (Han-dynasty standard).
 
 | Text (DB column) | DB value (fen) | Converted depth (mm) | Layer reached (assuming perpendicular insertion) | Remarks |
 | :--- | :---: | :---: | :--- | :--- |
@@ -180,7 +180,7 @@ Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 18
 
 ## 6. Textbook Comparison Table of Anatomical Structures (Common Textbook vs. Kim Jaehyo Textbook)
 
-| Category | Common Textbook of Acupoint Studies (refine.xlsx entry 179, *Acupoint Studies* vol. 1, p. 628) | Kim Jaehyo textbook dataset (entry 179) | FMA adjudication | Similarities / differences |
+| Category | Common Textbook of Acupoint Studies (Common Textbook dataset entry 179, *Acupoint Studies* vol. 1, p. 628) | Kim Jaehyo textbook dataset (entry 179) | FMA adjudication | Similarities / differences |
 | :--- | :--- | :--- | :--- | :--- |
 | Muscles | Orbicularis oculi, frontalis, corrugator supercilii | Orbicularis oculi, depressor supercilii, corrugator supercilii, frontal belly of occipitofrontalis | Shared FMA:46779 · 46757 · 46794 / Kim Jaehyo only FMA:46798 | 3 shared. The Kim Jaehyo textbook adds depressor supercilii |
 | Nerves | Facial nerve, frontal nerve | Supraorbital nerve, supratrochlear nerve, temporal branches of the facial nerve | Common Textbook FMA:50868 · 52638 / Kim Jaehyo FMA:52655 · 52642 · 53291 — **in FMA `is_a` and trunk relations, the Common Textbook items are the parent trunks of the Kim Jaehyo items** | The frontal nerve is the parent nerve of the supraorbital and supratrochlear nerves, so the hierarchy is consistent. The Kim Jaehyo textbook is more specific, at branch level |
@@ -315,7 +315,7 @@ $P_{single}$ is **not calculated quantitatively**. The earlier edition's 0.90–
 | Index | Rater A | Rater B | Mean | Rubric-level rationale | Evidence pointers |
 | :--- | :---: | :---: | :---: | :--- | :--- |
 | S_orig | 93.75 | 87.5 | **90.6** | The primary source specifies both location and depth; no ancient disagreement on location; the 光明 confusion is resolved chronologically; *Tongkao* (《通考》) collation reflected | `针灸腧穴通考(上)_561-640.md` 名實考 · 定位 · 操作; `中国针灸穴位通鉴(上卷)_881-960.md` 二.別名 · 七; KJH Case A |
-| S_clarity | 75 | 75 | **75** | The two textbooks agree + standard entities confirmed by normative anatomy and FMA (the nerve difference is a trunk/branch-level difference in FMA). No BL2-specific cadaveric or imaging measurement → below 100 | refine.xlsx and Kim Jaehyo entry 179; *Tongkao* (《通考》) 相關解剖學基礎; B1-01, B1-05, B2-09; FMA:52642 · 52638 |
+| S_clarity | 75 | 75 | **75** | The two textbooks agree + standard entities confirmed by normative anatomy and FMA (the nerve difference is a trunk/branch-level difference in FMA). No BL2-specific cadaveric or imaging measurement → below 100 | Common Textbook dataset and Kim Jaehyo entry 179; *Tongkao* (《通考》) 相關解剖學基礎; B1-01, B1-05, B2-09; FMA:52642 · 52638 |
 | S_reflex | 75 | 75 | **75** | Human studies + many animal studies + B-Check 8. All multi-point, so 100 not possible | papers.id 1979, 1981, 1994, 1997, 1998, 1999, 2000, 2001, 2003 |
 | S_safety → SI | 0 | 0 (75 before adjudication) | **0** | A text prohibiting needling exists (*Yixue Rumen* (《醫學入門》) "禁用針灸") → rubric 0 | *Tongkao* (《通考》) 【操作】 9; *Xuewei Tongjian* (《穴位通鑑》) 七.16; needling-depth DB row 181 (no '0') |
 
@@ -361,7 +361,7 @@ $P_{single}$ is **not calculated quantitatively**. The earlier edition's 0.90–
 2. **Substrate verdict — probable (B, ARI-Core 81.2 ± 1.2)**: the most probable anatomical substrate of BL2 is the **supratrochlear nerve (V1), artery and vein emerging from the frontal notch (額切跡; supratrochlear notch)** and the overlying **corrugator supercilii and orbicularis oculi**. The classical location, the two textbooks, the anatomical description in the *Tongkao* (《通考》) and the normative anatomy references agree on this. However, there is no cadaveric or imaging study measuring BL2 alone, so the verdict is not raised to "confirmed".
 3. **Reflex mechanism**: concordant at B-Check 8/12. The pathway trigeminal V1 afferent → spinal trigeminal nucleus and superior salivatory nucleus → lacrimal gland and ocular surface is **inferred to BL2 from multi-point studies that include BL2 (mostly animal, 3 human)**. There is no BL2-alone mechanism study.
 4. **Classical indications**: eye disorders (目不明 · 目赤腫痛 · 瞼瞤動) and pain of the supraorbital ridge (眉棱骨痛) have single-point records. The lacrimation (流淚) group is either derived from combinations or results from the mistaken inclusion of Chengqi (承泣) indications.
-5. **Formula version**: ARI v3.0, provisional weights (unvalidated). Not compared with the earlier v2.6 score. Numerical comparison between outputs of the same work (.md ↔ .xlsx) is only a consistency audit, not evidence of reliability. Reliability is judged only by dual scoring.
+5. **Formula version**: ARI v3.0, provisional weights (unvalidated). Not compared with the earlier v2.6 score. Numerical comparison between outputs of the same work (report ↔ databook) is only a consistency audit, not evidence of reliability. Reliability is judged only by dual scoring.
 
 ---
 
@@ -395,7 +395,7 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 
 | Location | Original content | Change | Basis |
 | :--- | :--- | :--- | :--- |
-| Header | — | Added FMA 5.1.0 anatomical ontology line | `02_Master_Datasets/FMA/acupoint_fma_mapping.json` |
+| Header | — | Added FMA 5.1.0 anatomical ontology line | FMA Acupoint Anatomical Ontology Mapping Registry |
 | Section 4.4 | Text sagittal-section diagram only | Added Figure 4-1, sagittal-section anatomical schematic (PNG) | `.claude/skills/acupoint-anatomy/scripts/fma/figures/BL02_cross_section.py` |
 | Section 4.5 (new) | — | FMA cross-check table by layer; 3 FMA notes (segments not applicable, angular vein communication not recorded, innervation of frontalis not recorded) | `fma_query.py profile BL02`, `entity 50893`, `ancestors 53379` |
 | Section 6 | 4-column textbook comparison | FMA adjudication column; interpretation of the nerve difference as a difference in recorded level (trunk/branch) | FMA is_a / branch_of chains |
@@ -420,7 +420,7 @@ Generated by `python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py pr
 | Former 2.1-3, Section 5 | *Dongui Bogam* (《東醫寶鑑》) (citing 《銅人》) insertion 3 fen | 1 fen (2.3 mm) | Needling-depth xlsx sheet 1 row 181, 'Dongui Bogam' = 1, cited source = 《銅人》 |
 | Former Section 5 | Modern textbooks 3–5 fen (6.9–11.5 mm), μ = 9.2 mm, σ = 1.8 mm | Common textbooks 2–3 fen (4.6–6.9 mm). μ and σ deleted; DB range 2.3–6.9 mm | Needling-depth xlsx row 181 |
 | Former Section 5 | *Chimgu Gyeongheombang* (《鍼灸經驗方》) missing | Added *Chimgu Gyeongheombang* (《鍼灸經驗方》) 1 fen | Needling-depth xlsx row 181 |
-| Former Section 1 | Aliases 烏列 · 大空 · 元柱 | 烏列 and 大空 deleted (no basis); 元柱 = homophonic substitution for 員柱. The 8 KJH aliases arranged in a table | `경혈명_비교_정리_KJH.xlsx` 'Comprehensive acupoint list' row 182; *Tongkao* (《通考》) 名實考 7, note |
+| Former Section 1 | Aliases 烏列 · 大空 · 元柱 | 烏列 and 大空 deleted (no basis); 元柱 = homophonic substitution for 員柱. The 8 KJH aliases arranged in a table | Acupoint Nomenclature & Alias Comparative Database 'Comprehensive acupoint list' row 182; *Tongkao* (《通考》) 名實考 7, note |
 | Former Section 1 | Same-name clash of 光明 not described; percentage expression "complete filtering" | Added separate records of the same-name different points GB37 光明 and Dunhuang 光明 | KJH 'Primary name–alias match list' row 4; *Tongkao* (《通考》) 同名異穴 note |
 | Former 4.1, Section 7 | "hwachasangjeolno / anhwasangjeolno (Supratrochlear Notch)" | Frontal notch (額切跡; supratrochlear notch). Distinguished from the supraorbital notch (眶上切跡) | *Tongkao* (《通考》) note on the national-standard correction, textual analysis |
 | Former 4.2, Section 7 | Layer 5 = eyeball, risk "when inserted perpendicularly at z > 11.5 mm" | A perpendicular needle stops at the periosteum of the frontal bone at the frontal notch (額切跡). The risk lies in inferoposteriorly angled insertion. Layer order corrected to the framework definitions | Framework Rank 5 Layer definitions; B1-01 · B1-03; final_BL02 rationale S_safety |

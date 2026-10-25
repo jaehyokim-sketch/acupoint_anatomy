@@ -57,9 +57,9 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <h1 id="acupoint-anatomical-physiological-substrate-monograph-baihui-gv20">[Acupoint Anatomical &amp; Physiological Substrate Monograph] Baihui (百會, GV20)</h1>
 <blockquote>
 <p><strong>Framework</strong>: v2.7 (revised 2026-10-04) · <strong>ARI</strong>: ARI v3.0 | ARI-Core 71.2 ± 2.5 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 68.8 (C, grade changes → weight-sensitive) · <strong>Dual scoring</strong>: completed by two independent raters</p>
-<p><strong>Source materials</strong>: three primary classics <code>01_도서_번역_및_원전/&lt;원전&gt;/chunks_refined/</code> · alias DB <code>02_Master_Datasets/경혈명_비교_정리_KJH.xlsx</code> · needling-depth DB <code>02_Master_Datasets/침구문헌별 자침깊이 정리_AI 분석용.xlsx</code> · textbook datasets <code>02_Master_Datasets/경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx</code>, <code>02_Master_Datasets/김재효 수업_경혈_해부구조_데이터셋.xlsx</code> · Layer A <code>02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json</code> · Layer B <code>01_Framework/layer_b_reference_registry.md</code>
+<p><strong>Source materials</strong>: three primary classics <code>01_도서_번역_및_원전/&lt;원전&gt;/chunks_refined/</code> · alias DB Acupoint Nomenclature & Alias Comparative Database · needling-depth DB Classical Needling Depth Database · textbook datasets Common Textbook Anatomical Structure Dataset, Kim Jaehyo Anatomical Structure Dataset · Layer A Integrated Biomedical Master DB v3.0 · Layer B <code>01_Framework/layer_b_reference_registry.md</code>
 <strong>First written</strong>: 2026-07-31 (v2.6) · <strong>Revised</strong>: 2026-10-04 (v2.7; the earlier edition is kept in <code>_구판_v2.6/</code>) · <strong>FMA supplement</strong>: 2026-10-23 (the pre-supplement edition is kept in <code>_구판_v2.7_20261023/</code>)
-<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their nerve trunks, spinal segments and venous drainage chains are cross-checked (B1 supplementary, not yet in the registry). Mapping table: <code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code>; details in Appendix A.
+<strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their nerve trunks, spinal segments and venous drainage chains are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 <strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in <code>code</code> refer to those files as they are named on disk.</p>
 </blockquote>
 <hr>
@@ -311,7 +311,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </blockquote>
 <hr>
 <h2 id="3-alias-verification-table-kjh-db-collation">3. Alias Verification Table (KJH DB Collation)</h2>
-<p>GV20 aliases in the KJH DB (<code>경혈명_비교_정리_KJH.xlsx</code>, sheet <code>경혈 종합 목록</code>, row 47): 三陽五會, 天山, 天滿, 巓上, 泥丸宮, 涅丸宮, 維會, 鬼門 (天滿 and 巓上 entered twice).</p>
+<p>GV20 aliases in the KJH DB (Acupoint Nomenclature & Alias Comparative Database, sheet <code>경혈 종합 목록</code>, row 47): 三陽五會, 天山, 天滿, 巓上, 泥丸宮, 涅丸宮, 維會, 鬼門 (天滿 and 巓上 entered twice).</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -561,7 +561,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </ul>
 <hr>
 <h2 id="5-needling-depth-calculation-table">5. Needling Depth Calculation Table</h2>
-<p>Raw values from the needling-depth DB (<code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code>, sheet 1, row 46, N0 = 44). 1 fen = 2.3 mm.</p>
+<p>Raw values from the needling-depth DB (Classical Needling Depth Database, sheet 1, row 46, N0 = 44). 1 fen = 2.3 mm.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -650,7 +650,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <thead>
 <tr>
 <th style="text-align: left;">Category</th>
-<th style="text-align: left;">Common Textbook of Acupoint Studies (refine.xlsx, sheet <code>해부구조_개별항목_상세</code> rows 216–221; <em>Acupoint Studies</em> vol. 2, p. 761)</th>
+<th style="text-align: left;">Common Textbook of Acupoint Studies (Common Textbook dataset, sheet <code>해부구조_개별항목_상세</code> rows 216–221; <em>Acupoint Studies</em> vol. 2, p. 761)</th>
 <th style="text-align: left;">Kim Jaehyo textbook (dataset, sheet <code>해부구조_개별항목_상세</code> rows 321–330)</th>
 <th style="text-align: left;">FMA adjudication</th>
 <th style="text-align: left;">Similarities / differences</th>
@@ -1658,7 +1658,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Header</td>
 <td style="text-align: left;">—</td>
 <td style="text-align: left;">Added FMA 5.1.0 anatomical ontology line and FMA supplement date</td>
-<td style="text-align: left;"><code>02_Master_Datasets/FMA/acupoint_fma_mapping.json</code></td>
+<td style="text-align: left;">FMA Acupoint Anatomical Ontology Mapping Registry</td>
 </tr>
 <tr>
 <td style="text-align: left;">Section 4.3</td>
@@ -1749,8 +1749,8 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <tr>
 <td style="text-align: left;">Header link</td>
 <td style="text-align: left;">Needling-depth DB link pointed to the logic-principles xlsx</td>
-<td style="text-align: left;">Correct file name <code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code></td>
-<td style="text-align: left;">File list of 02_Master_Datasets</td>
+<td style="text-align: left;">Correct file name Classical Needling Depth Database</td>
+<td style="text-align: left;">File list of Master Datasets Registry</td>
 </tr>
 <tr>
 <td style="text-align: left;">1. Point properties</td>
@@ -1942,7 +1942,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <td style="text-align: left;">Rank 5 comparison table</td>
 <td style="text-align: left;">Common Textbook "frontal belly · supratrochlear nerve", Kim Jaehyo "occipitofrontalis"</td>
 <td style="text-align: left;">Dataset values (Common Textbook: greater occipital nerve · auriculotemporal nerve; Kim Jaehyo: pericranium · supraorbital · supratrochlear nerves)</td>
-<td style="text-align: left;">refine.xlsx rows 216–221; Kim Jaehyo rows 321–330</td>
+<td style="text-align: left;">Common Textbook dataset rows 216–221; Kim Jaehyo rows 321–330</td>
 </tr>
 <tr>
 <td style="text-align: left;">9. Conclusion</td>

@@ -6,7 +6,7 @@
 > **Dual scoring**: two independent scorings; 3 disagreements of 15 points or more adjudicated · **Branch decision**: ΔARI-Core 33.8, ± intervals do not overlap → T2 superior
 
 > **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
-> **Layer A Empirical Database**: `02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json` (of the 68 papers in the SP6 inverted index, **only the 15 that actually stimulated or observed SP6** are used for the verdict, Table 8-①. Rank 6 run with the search script revised on 2026-10-23)
+> **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 (of the 68 papers in the SP6 inverted index, **only the 15 that actually stimulated or observed SP6** are used for the verdict, Table 8-①. Rank 6 run with the search script revised on 2026-10-23)
 > **Layer B Reference Registry**: `01_Framework/layer_b_reference_registry.md` (6-item B-Check, concordance threshold ≥ 8/12)
 > **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry); Appendix A
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\text{mm}$)
@@ -60,7 +60,7 @@
 | 承命 | 1957 Nanjing 《針灸學》 (citing a Japanese textbook) / 《千金要方》 "承命 在內踝後上行三寸動脈上" (L1129, L1171) | Listed | **A separate point** (pulsation site 3 cun behind and above). Not used as an alias |
 | 下之三里 · 下三里 | Japanese popular names — Terao Ryūjun (寺尾隆純), 《十四經腧穴弁解》 (1784) "以三陰交為'下三里'" (L1131); alias 2 in the *Xuewei Tongjian* (L1314) | 下之三里 listed | Not a Chinese point name. Beware of confusion with ST36 (上三里) — consistent with Section 3 of the ST36 report |
 
-The KJH DB (`경혈명_비교_정리_KJH.xlsx`, master list, Excel row 137: 134, SP06, Samumgyo, 三陰交, "承命, 太陰, 下之三里, 足太陰交, 足太陰, 三交") lists names from the T1 and T2 lineages and a separate point (承命) together on one line. It must be read by lineage, as in the table above. In addition, from *Taiping Shenghui Fang* (《太平聖惠方》) onward, 三陰交 indications became mixed into Lougu (漏谷, SP7) (Tongkao L1415–1423).
+The KJH DB (Acupoint Nomenclature & Alias Comparative Database, master list, Excel row 137: 134, SP06, Samumgyo, 三陰交, "承命, 太陰, 下之三里, 足太陰交, 足太陰, 三交") lists names from the T1 and T2 lineages and a separate point (承命) together on one line. It must be read by lineage, as in the table above. In addition, from *Taiping Shenghui Fang* (《太平聖惠方》) onward, 三陰交 indications became mixed into Lougu (漏谷, SP7) (Tongkao L1415–1423).
 
 ---
 
@@ -111,7 +111,7 @@ The KJH DB (`경혈명_비교_정리_KJH.xlsx`, master list, Excel row 137: 134,
 
 ## 5. Classical Needling Depth Calculation Table
 
-Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, Excel row 136 (N0 134, SP06), supplemented by Tongkao 【操作】 (L1353–1385).
+Source: Classical Needling Depth Database, sheet 1, Excel row 136 (N0 134, SP06), supplemented by Tongkao 【操作】 (L1353–1385).
 
 | Text | Fen (分) | Depth (× 2.3 mm) | Layer reached (estimated) | Remarks |
 | :--- | :---: | :---: | :--- | :--- |
@@ -134,7 +134,7 @@ Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, Excel 
 
 ## 6. Textbook Comparison Table (T2)
 
-| Category | Common Textbook of Acupoint Studies (refine.xlsx master sheet row 135) | Kim Jaehyo textbook (master sheet row 135) | FMA adjudication | Assessment |
+| Category | Common Textbook of Acupoint Studies (Common Textbook dataset master sheet row 135) | Kim Jaehyo textbook (master sheet row 135) | FMA adjudication | Assessment |
 | :--- | :--- | :--- | :--- | :--- |
 | Muscles | Soleus, flexor digitorum longus | Soleus, flexor digitorum longus, **tibialis posterior** | FMA:22542, 51071 shared / FMA:51099 Kim Jaehyo only | Kim Jaehyo lists down to a deeper layer |
 | Nerves | Medial crural cutaneous branches of saphenous nerve; tibial nerve in the deep layer | Same | FMA:75559, 19035 (Common Textbook term mapped manually) | Agree |

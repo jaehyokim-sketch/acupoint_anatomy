@@ -1,6 +1,6 @@
 # Validity Assessment of a Paper on the Composition Principles of the Four Command Points (四總穴) and the Twelve Heavenly Star Points (天星十二穴) (Peer-Review Report)
 
-> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual research (Rank 5 where needed) · **ARI**: not calculated (textual-research report) · **Source data**: `사총혈_천성십이혈_문헌고증_DB.xlsx`
+> **Framework**: v2.7 (refined 2026-10-04) · **Scope**: Rank 1–4 textual research (Rank 5 where needed) · **ARI**: not calculated (textual-research report) · **Source data**: Four Command & Twelve Star Points Textual Database
 
 > **Paper under review**: Yoon Da-eun, Moon Hee-young, Ryu Yeon-hee, Chae Younbyoung. "Principle of major acupoints composition: focus on Four Command and Star Twelve points" [in Korean]. *Journal of Korean Medicine* 45(3):226-233, 2024. https://doi.org/10.13048/jkm.24052 (Review Article)
 >   *(v2.7 check: doi.org and Crossref give the title "Principle of major acupoints composition: focus on Four Command and Star Twelve points", authors Yoon, Moon, Ryu, Chae, and 45(3), all matching. The Crossref metadata registers the pages as 235-242, but the printed page of the local PDF reads "J Korean Med. 2024;45(3):226-233", so 226-233 is retained. The p.227–230 references in the text also follow the printed pages)*
@@ -192,8 +192,8 @@ The paper groups "distal point selection" as a single principle. From the neural
 
 *Evidence files*
 - Source-text chunks: `01_도서_번역_및_원전/中国针灸证治通鉴/chunks_refined/中国针灸证治通鉴_81-160.md` (L2626-2632), `_161-240.md` (L158), `_481-543.md` (bibliography) / `中国针灸穴位通鉴/chunks_refined/(上卷)_321-400.md`, `_481-560.md`, `_801-880.md`, `_1041-1120.md` / `针灸腧穴通考/chunks_refined/(上)_1-80.md` (L2100-2125)
-- Master datasets: `02_Master_Datasets/김재효 수업_경혈_해부구조_데이터셋.xlsx`, `경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx`, `경혈_생의학_신경반사_마스터DB.json`
-- Databook: `사총혈_천성십이혈_문헌고증_DB.xlsx` / Web report: `사총혈_천성십이혈_구성원리_가설검증_및_피어리뷰_보고서.html`
+- Master datasets: Kim Jaehyo Anatomical Structure Dataset, Common Textbook Anatomical Structure Dataset, Integrated Biomedical Master DB v3.0
+- Databook: Four Command & Twelve Star Points Textual Database / Web report: `사총혈_천성십이혈_구성원리_가설검증_및_피어리뷰_보고서.html`
 
 ## v2.7 Refinement History (2026-10-04)
 

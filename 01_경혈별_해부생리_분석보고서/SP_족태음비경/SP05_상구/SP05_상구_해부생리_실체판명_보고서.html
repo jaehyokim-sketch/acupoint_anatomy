@@ -58,7 +58,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <blockquote>
 <p><strong>프레임워크</strong>: v2.7 · <strong>ARI</strong>: ARI v3.0 | ARI-Core 75.0 ± 1.3 (B) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 71.9 (B, 등급 불변) · <strong>이중 채점</strong>: 독립 채점 2회, SI 1건 조정 완료 · <strong>반사 기전</strong>: B-Check 7/12 미부합 → <strong>가설</strong></p>
 <p><strong>핵심 3대 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》
-<strong>Layer A 실증 DB</strong>: <code>02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json</code> (역색인 SP5 33편 중 <strong>SP05를 실제 자극·관찰한 6편</strong>만 판정에 사용, 8절 ① 표)
+<strong>Layer A 실증 DB</strong>: 통합 생의학 마스터 DB v3.0 (역색인 SP5 33편 중 <strong>SP05를 실제 자극·관찰한 6편</strong>만 판정에 사용, 8절 ① 표)
 <strong>Layer B 참조 등록부</strong>: <code>01_Framework/layer_b_reference_registry.md</code> (B-Check 6항목, 부합 기준 ≥ 8/12)
 <strong>해부 온톨로지</strong>: FMA 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정(B1 보조, 등록부 미등재), 부록 A
 <strong>도량형 환산</strong>: 한대 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$)</p>
@@ -237,7 +237,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </tr>
 </tbody>
 </table></div>
-<p>KJH DB(<code>경혈명_비교_정리_KJH.xlsx</code> 종합 목록 행 136: 133, SP05, 상구, 商丘, "商坵, 商邱")와 일치한다. '商'이 들어간 商阳(LI1)·商曲(KI17), '丘'가 들어간 丘墟(GB40)와 혼용된 기록은 3대 원전에서 찾지 못했다.</p>
+<p>KJH DB(경혈명·이명 대조 표준 데이터베이스 종합 목록 행 136: 133, SP05, 상구, 商丘, "商坵, 商邱")와 일치한다. '商'이 들어간 商阳(LI1)·商曲(KI17), '丘'가 들어간 丘墟(GB40)와 혼용된 기록은 3대 원전에서 찾지 못했다.</p>
 <hr>
 <h2 id="4-3d-layer-15">4. 3D 공간 좌표 및 Layer 1~5 층차 구조도</h2>
 <ul>
@@ -333,7 +333,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 </ul>
 <hr>
 <h2 id="5">5. 자침 깊이 계산표</h2>
-<p>출처: <code>침구문헌별 자침깊이 정리_AI 분석용.xlsx</code> 시트1 Excel 행 135(N0 133, SP05), 보조로 3대 원전.</p>
+<p>출처: 역대 침구문헌 자침심도 데이터베이스 시트1 Excel 행 135(N0 133, SP05), 보조로 3대 원전.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -434,7 +434,7 @@ figure.diagram-text img { image-rendering: -webkit-optimize-contrast; image-rend
 <thead>
 <tr>
 <th style="text-align: left;">구분</th>
-<th style="text-align: left;">경혈학 공통교재 (refine.xlsx 종합 시트 행 134)</th>
+<th style="text-align: left;">경혈학 공통교재 (공통교재 데이터셋 종합 시트 행 134)</th>
 <th style="text-align: left;">김재효 교재 (종합 시트 행 134)</th>
 <th style="text-align: left;">FMA 판별</th>
 <th style="text-align: left;">평가</th>

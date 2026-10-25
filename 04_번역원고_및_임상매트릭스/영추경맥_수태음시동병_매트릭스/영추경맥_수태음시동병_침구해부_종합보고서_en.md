@@ -2,9 +2,9 @@
 
 > **Framework**: v2.7 · **Classification**: Category 4 symptom-based acupuncture-anatomy clinical matrix · **Scope**: Ranks 0–6 (FMA-linked); Rank 7 ARI **not scored** (a 38-point thematic matrix — ARI for individual points is scored in the Category 1 reports)
 > **Three Primary Classics**: full parse of the 【適應症】 (indications) entries of the 361 points in the 25 parts of *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (primary source) · collated against *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) and *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) (shidong original text and 是動 prescriptions)
-> **Anatomical basis**: local index of FMA 5.1.0 (`fma_query.py profile`; two-textbook mapping table `02_Master_Datasets/FMA/acupoint_fma_mapping.json`) + segmental supplementation from B1 normative anatomy (B1-01, B1-02, B1-03) · 3D shapes: BodyParts3D 4.0 (B1 supplementary)
-> **Layer A**: `02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json` (state as of 2026-10-24, `acupoint_inverted_index`) + collation with PubMed metadata. `sync_master_db.py` was not run for this analysis (batch synchronisation of the 38 points is a separate task).
-> **Datasheet**: [`영추경맥_수태음시동병_해부임상_매트릭스.xlsx`](영추경맥_수태음시동병_해부임상_매트릭스.xlsx) (10 sheets) · Reproduction scripts: `scripts/` folder
+> **Anatomical basis**: local index of FMA 5.1.0 (`fma_query.py profile`; two-textbook mapping table FMA Acupoint Anatomical Ontology Mapping Registry) + segmental supplementation from B1 normative anatomy (B1-01, B1-02, B1-03) · 3D shapes: BodyParts3D 4.0 (B1 supplementary)
+> **Layer A**: Integrated Biomedical Master DB v3.0 (state as of 2026-10-24, `acupoint_inverted_index`) + collation with PubMed metadata. `sync_master_db.py` was not run for this analysis (batch synchronisation of the 38 points is a separate task).
+> **Datasheet**: Lingshu Jingmai Lung Channel Shidong Clinical Acupuncture Anatomy Matrix Analysis Databook (10 sheets) · Reproduction scripts: `scripts/` folder
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
 ---
@@ -320,7 +320,7 @@ For each cluster, up to seven FMA structures with meshes that are shared by at l
 | :-- | :-- |
 | `영추경맥_수태음시동병_침구해부_종합보고서.md`·`.html` | This report (Korean) |
 | `영추경맥_수태음시동병_침구해부_종합보고서_en.md`·`.html` | English edition (with Traditional Chinese characters) |
-| `영추경맥_수태음시동병_해부임상_매트릭스.xlsx` | 1 shidong textual strata · 2 candidates and indication tiers · 3 evidence entries (290 rows) · 4 FMA anatomical features · 5 similarity matrix · 6 strata · 7 ranking relative to 太淵 · 8 segmental concordance · 9 Layer A · 10 methods and audit |
+| Lingshu Jingmai Lung Channel Shidong Clinical Anatomy Matrix Databook | 1 shidong textual strata · 2 candidates and indication tiers · 3 evidence entries (290 rows) · 4 FMA anatomical features · 5 similarity matrix · 6 strata · 7 ranking relative to 太淵 · 8 segmental concordance · 9 Layer A · 10 methods and audit |
 | `Fig1`~`Fig4_*_ko.png` / `_en.png` | 8 figures × 2 languages |
 | `scripts/` | `extract_indications.py` (Ranks 1–4) → `anatomy_similarity.py` (FMA similarity, strata) → `make_figures.py`·`render3d.py` (figures) → `build_matrix.py` (xlsx) |
 

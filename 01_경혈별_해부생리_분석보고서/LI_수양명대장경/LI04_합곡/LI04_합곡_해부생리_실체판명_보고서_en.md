@@ -6,7 +6,7 @@
 > - **Dual scoring**: two independent rounds (raters A and B); 3 discrepancies of 15 points or more reconciled · **⚠ Many texts contraindicate needling in pregnancy** (flag kept separate from the SI, Section 5)
 
 > **Three Primary Classics**: *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》) · *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》)
-> **Layer A Empirical Database**: `02_Master_Datasets/경혈_생의학_신경반사_마스터DB.json` (of the 118 papers in the LI4 inverted index, only the **19 papers in which LI4 stimulation or observation was confirmed from the full text or abstract** are used for the verdict — Section 8 ①)
+> **Layer A Empirical Database**: Integrated Biomedical Master DB v3.0 (of the 118 papers in the LI4 inverted index, only the **19 papers in which LI4 stimulation or observation was confirmed from the full text or abstract** are used for the verdict — Section 8 ①)
 > **Layer B Reference Registry**: `01_Framework/layer_b_reference_registry.md` (6-item B-Check, concordance threshold ≥ 8/12)
 > **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry). Details in Appendix A
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
@@ -67,7 +67,7 @@
 | 虎邊 | Same book | — | Site of the modern Hegu (T2); only the needling method differs — [通考] L707·709 |
 | 中魁 · 河口 | Alias column of the KJH DB | Listed | **Risk of confusion**: 中魁 shares its name with an extra point on the middle finger. The classical source of 河口 could not be found in this cross-check (unverifiable) |
 
-KJH DB (`경혈명_비교_정리_KJH.xlsx`, sheet `경혈 종합 목록` (comprehensive acupoint list), row 70: 67, LI04, `합곡` (Hapgok), 合谷, "合骨, 含口, 虎口, 中魁, 河口").
+KJH DB (Acupoint Nomenclature & Alias Comparative Database, sheet `경혈 종합 목록` (comprehensive acupoint list), row 70: 67, LI04, `합곡` (Hapgok), 合谷, "合骨, 含口, 虎口, 中魁, 河口").
 
 ---
 
@@ -123,7 +123,7 @@ T1 (classical, just distal to the junction of the bases of the 1st and 2nd metac
 
 ## 5. Classical Needling Depth Calculation Table
 
-Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 69 (N0 = 67), supplemented by [通考] 【操作】 and [通鑑] section 7 (七).
+Source: Classical Needling Depth Database, sheet 1, row 69 (N0 = 67), supplemented by [通考] 【操作】 and [通鑑] section 7 (七).
 
 | Text | Fen (分) | Depth (× 2.3 mm) | Layer reached (T2, estimated) | Remarks |
 | :--- | :---: | :---: | :--- | :--- |
@@ -149,7 +149,7 @@ Source: `침구문헌별 자침깊이 정리_AI 분석용.xlsx`, sheet 1, row 69
 
 ## 6. Textbook Comparison Table
 
-| Category | Korean common textbook of acupoint studies (refine.xlsx summary sheet, row 68) | Kim Jaehyo textbook (summary sheet, row 68) | FMA adjudication | Assessment |
+| Category | Korean common textbook of acupoint studies (Common Textbook dataset summary sheet, row 68) | Kim Jaehyo textbook (summary sheet, row 68) | FMA adjudication | Assessment |
 | :--- | :--- | :--- | :--- | :--- |
 | Muscle | First dorsal interosseous, (deep layer) transverse head of adductor pollicis | First dorsal interosseous, transverse head of adductor pollicis (English: oblique head) | Shared FMA:37424 / transverse head 46120 (Common Textbook) / oblique head 46119 (Kim Jaehyo, English) | First dorsal interosseous agrees. For the head of adductor pollicis there is a **Korean–English mismatch within the Kim Jaehyo textbook** |
 | Nerve | Dorsal digital nerve | Dorsal digital nerve (from the radial nerve), deep branch of ulnar nerve | Dorsal digital nerve → FMA set 75490 (under review) / deep branch of ulnar nerve 44877 (Kim Jaehyo only) | Kim Jaehyo adds the deep-layer motor nerve (ulnar) |

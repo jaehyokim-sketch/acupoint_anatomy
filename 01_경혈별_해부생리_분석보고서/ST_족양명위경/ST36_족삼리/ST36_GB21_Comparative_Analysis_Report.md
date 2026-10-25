@@ -3,7 +3,7 @@
 > **프레임워크**: v2.7 (2026-10-04 개정) · **성격**: 두 개별 보고서의 확정 결과를 비교하는 요약 보고서(독자 채점 없음)
 > **ST36**: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 77.1 (B, 등급 불변) — [ST36 보고서](ST36_족삼리_해부생리_실체판명_보고서.md)
 > **GB21**: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 65.6 (C, 등급 불변) — [GB21 보고서](../../GB_족소양담경/GB21_견정/GB21_견정_해부생리_실체판명_보고서.md)
-> **정본**: `01_Framework/acupoint_anatomical_logic_framework.md` (Framework v2.7) · 근거 원칙: `02_Master_Datasets/경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx`
+> **정본**: `01_Framework/acupoint_anatomical_logic_framework.md` (Framework v2.7) · 근거 원칙: 경혈 해부학적 실체 판명 로직 원칙
 
 ---
 

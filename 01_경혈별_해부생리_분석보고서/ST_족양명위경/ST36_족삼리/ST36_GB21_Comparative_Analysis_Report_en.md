@@ -3,7 +3,7 @@
 > **Framework**: v2.7 (revised 2026-10-04) · **Nature of report**: a summary report comparing the finalised results of two individual reports (no independent scoring)
 > **ST36**: ARI v3.0 | ARI-Core 77.5 ± 0 (B) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 77.1 (B, grade unchanged) — [ST36 report](ST36_족삼리_해부생리_실체판명_보고서_en.md)
 > **GB21**: ARI v3.0 | ARI-Core 67.5 ± 1.2 (C) | SI 0 ⚠ | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 65.6 (C, grade unchanged) — [GB21 report](../../GB_족소양담경/GB21_견정/GB21_견정_해부생리_실체판명_보고서_en.md)
-> **Canonical source**: `01_Framework/acupoint_anatomical_logic_framework.md` (Framework v2.7) · Evidence principles: `02_Master_Datasets/경혈의 해부학적 실체를 판명하기 위한 로직(logic) 원칙.xlsx`
+> **Canonical source**: `01_Framework/acupoint_anatomical_logic_framework.md` (Framework v2.7) · Evidence principles: Principles for Acupoint Anatomical Substrate Identification
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited source files are simplified-script editions, so the file names and line numbers in `code` refer to those files as they are named on disk.
 
 ---
