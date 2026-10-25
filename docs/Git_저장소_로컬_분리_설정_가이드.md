@@ -52,7 +52,7 @@ graph LR
 |---|---|---|---|---|
 | `acupoint_anatomy` | `jaehyokim-sketch/acupoint_anatomy` | `도서 번역\acupoint_anatomy` | `deploy_to_gdrive.bat` | 없음 |
 | `huanglongxiang-scholar` | `jaehyokim-sketch/huanglongxiang-scholar` | `도서 번역\01_황룡상 스킬` | `deploy_to_gdrive.bat` | 도서 삽화 이미지 (Step 5-1) |
-| `amari-gl-dmn` | `jaehyokim-sketch/amari-gl-dmn` (+ 원격 `repo-joint`) | `논문작업\비평형열역학` | robocopy (§5-2) | **약 7.7GB, 503개 파일** (Step 5-2) |
+| `amari-gl-dmn` | `jaehyokim-sketch/amari-gl-dmn` | `논문작업\비평형열역학` | robocopy (§5-2) | **약 7.7GB, 503개 파일** (Step 5-2) |
 | `IPE-Report` | `jaehyokim-sketch/-IPE-Report` | `강의\02_IPE\.deploy_ipe_report` | robocopy (§5-2) | 없음 |
 | `km-healthcare-stats` | `jaehyokim-sketch/km-healthcare-stats` | `한의 의료서비스 통계` | robocopy (§5-2) | `.gitignore` 제외 자료 (Step 5-3) |
 
@@ -93,8 +93,6 @@ git clone https://jaehyokim-sketch@github.com/jaehyokim-sketch/huanglongxiang-sc
 ```powershell
 cd C:\workspace
 git clone https://jaehyokim-sketch@github.com/jaehyokim-sketch/amari-gl-dmn.git
-# 보조 원격(경혈-관절 역학 저장소)도 원 PC와 동일하게 등록
-git -C 'C:\workspace\amari-gl-dmn' remote add repo-joint https://github.com/jaehyokim-sketch/acupoint-joint-mechanics.git
 ```
 
 #### 4) IPE 보고서 배포 저장소 (`IPE-Report`)
@@ -318,7 +316,7 @@ robocopy 'C:\workspace\km-healthcare-stats' 'G:\내 드라이브\한의 의료�
 
 | Drive 경로 | 처리 결과 |
 |---|---|
-| `논문작업\비평형열역학` | `C:\workspace\amari-gl-dmn`으로 분리 (작업 트리 7.7GB와 미커밋 변경 전부 이전) |
+| `논문작업\비평형열역학` | `C:\workspace\amari-gl-dmn`으로 분리 (작업 트리 7.7GB와 미커밋 변경 전부 이전). 존재하지 않는 저장소(`acupoint-joint-mechanics`, 404)를 가리키던 보조 원격 `repo-joint` 삭제 |
 | `강의\02_IPE\.deploy_ipe_report` | `C:\workspace\IPE-Report`로 분리 |
 | `한의 의료서비스 통계` | `C:\workspace\km-healthcare-stats`로 분리. GitHub와 갈라진 상태(로컬 2커밋 / 원격 2커밋)였던 것을 `origin/main` 위로 rebase 후 푸시(`1ca3a60..dac11f7`)한 뒤 Drive `.git` 제거. rebase 이전 상태는 로컬 브랜치 `backup/pre-sync-2026-10-25`로 보존 (원 PC에만 존재) |
 | `행정\한의학 교육과 의료 통합\km_repo_clean2` | `km-healthcare-stats`의 중복 클론(커밋 전부 GitHub에 존재) → 로컬 사본 없이 Drive `.git`만 제거. 같은 폴더의 `sync_d_drive_repo.py`는 `index.html`만 읽으므로 영향 없음 |
