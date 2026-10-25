@@ -205,7 +205,7 @@ def resolve_acupoint_key(query):
 MCP_TOOLS = [
     {
         "name": "get_acupoint_anatomy_profile",
-        "description": "361개 표준 경혈의 3D 공간 정위 좌표, 한대(漢代 1푼=2.3mm) 환산 자침 심도, Layer 1~5 층차별 해부학적 실체(신경·혈관·근막), 2대 교재(경혈학공통교재 vs 김재효교재) 비교 및 공간 변위 분기(Δ > 15mm) 프로파일을 반환합니다.",
+        "description": "361개 표준 경혈의 3D 공간 정위 좌표, 한대(漢代 1푼=2.3mm) 환산 자침 심도, Layer 1~5 층차별 해부학적 실체(신경·혈관·근막), 2대 교재(경혈학공통교재 vs 김재효교재) 비교 및 공간 변위 분기(Δ > 10mm) 프로파일을 반환합니다.",
         "inputSchema": {
             "type": "object",
             "properties": {
