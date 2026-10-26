@@ -43,7 +43,7 @@
 | `search_biomedical_reflex_db` | 특정 경혈의 체성-내장 반사 경로, 지배신경, 신경전달물질 및 PubMed 실증 논문 검색 | `acupoint_code`, `query_term`, `organ_filter`, `limit` |
 | `get_layer_b_registry` | Layer B 4계층 참조 등록부(B1~B4) 및 B-Check 6항목 기준 조회 | `category` (`"all"`, `"B1"`, `"B2"`, `"B3"`, `"B4"`), `ref_id` (예: `"B3-17"`) |
 | `calculate_ari_v3_score` | 4대 세부 지표($S_{orig}, S_{clarity}, S_{reflex}, S_{safety}$) 기반 ARI-Core, 등급, SI, 민감도 산출 | `s_orig`, `s_clarity`, `s_reflex`, `s_safety`, `has_layer_a_papers`, `dual_scoring` |
-| `search_classic_records` | 3대 원전(통감·증치통감·유혈통고) 및 마스터 데이터셋 고전 기록 조회 | `query`, `acupoint_code`, `era_filter` |
+| `search_classic_records` | 4대 원전(혈위통감·수혈통고·증치통감·경락통감) 정제 코퍼스 전문 검색 — 경혈 장(파일·행 범위·소절)과 부위/定位·简要结语 발췌, 검색어 적중 행(파일·행 번호), 번체·간체 통합 | `acupoint`, `query`, `classic_book`, `limit`, `excerpt_chars` |
 | `get_framework_protocol` | Framework v2.7의 Rank 0~7 작업 순위, Tier 1~3 양식, 10대 보고서 필수 항목 조회 | `rank_number` (`0`~`7`), `tier_level` (`1`, `2`, `3`), `section` |
 
 ---

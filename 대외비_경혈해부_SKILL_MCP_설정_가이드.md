@@ -120,7 +120,7 @@ git push -u origin main
 2. **`search_biomedical_reflex_db`**: 체성-내장 반사 회로, 척수 분절, 지배신경 및 PubMed 실증 논문 검색
 3. **`get_layer_b_registry`**: Layer B 4계층 참조 등록부(B1~B4) 및 B-Check 6항목 기준 조회
 4. **`calculate_ari_v3_score`**: 4대 지표 기반 ARI-Core, 등급, SI, 민감도 자동 계산 엔진
-5. **`search_classic_records`**: 3대 원전(통감·증치통감·유혈통고) 고전 기록 검색
+5. **`search_classic_records`**: 4대 원전(혈위통감·수혈통고·증치통감·경락통감) 정제 코퍼스 전문 검색 — 경혈 장 발췌 및 검색어 적중 행(파일·행 번호), 번체·간체 통합
 6. **`get_framework_protocol`**: Framework v2.7의 Rank 0~7 순위, Tier 1~3 양식, 10대 보고서 구성 요소 조회
 
 ---

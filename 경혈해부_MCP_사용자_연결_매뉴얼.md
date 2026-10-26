@@ -162,7 +162,7 @@
 | **`search_biomedical_reflex_db`** | Layer A 통합 마스터 DB에서 체성-내장/자율신경 반사 회로, 척수 분절, 지배신경 및 PubMed/OpenAlex 실측 논문 검색 |
 | **`get_layer_b_registry`** | Layer B 4계층 참조 등록부(B1 해부기반, B2 신경반사, B3 전침매개변수, B4 근막기계수용체) 및 B-Check 6항목(12점 만점, $\ge 8/12$ 통과 기준) 조회 |
 | **`calculate_ari_v3_score`** | 4대 지표($S_{orig}, S_{clarity}, S_{reflex}, S_{safety}$) 기반 ARI-Core, 등급(A~D), SI, 3대 비보상형 게이트, 가중치 민감도 자동 계산 |
-| **`search_classic_records`** | 핵심 3대 원전(**혈위통감 41편, 증치통감 62편, 수혈통고 25편+496개 삽화**) 고전 취혈 정위 변천, 자침 심도, 단독 효능($P_{single}$) 원문 정밀 대조 |
+| **`search_classic_records`** | 4대 원전(**혈위통감 41편, 수혈통고 25편, 증치통감 원문·한글번역 62편, 경락통감 39편**) 정제 코퍼스 전문 검색. `acupoint`를 주면 혈위통감·수혈통고의 해당 경혈 장(파일·행 범위·소절 목차)과 부위/定位·简要结语 원문을, 증치통감·경락통감에서는 혈명이 나오는 행을 돌려준다. `query`를 주면 모든 검색어가 든 행을 파일·행 번호와 함께 돌려준다(번체·간체 통합, 예: `兩筋間`=`两筋间`). `classic_book`·`limit`·`excerpt_chars`로 범위 조절 |
 | **`get_framework_protocol`** | Framework v2.7의 8대 작업 순위(Rank 0~7), Tier 1~3 차등 응답 규격, 10대 보고서 필수 구성 요소 요강 반환 |
 
 ---

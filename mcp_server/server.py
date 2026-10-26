@@ -10,7 +10,7 @@ Supported Tools:
   3. search_biomedical_reflex_db : Layer A biomedical reflex database, neural pathways, spinal segments, receptors, evidence
   4. get_layer_b_registry        : Layer B 4-tier reference registry (B1~B4) and B-Check 6-item compliance criteria
   5. calculate_ari_v3_score      : ARI v3.0 profile calculation (ARI-Core, Grade A~D, Gate 1~3, SI, Sensitivity)
-  6. search_classic_records      : Historical origin, ancient depth, and single-point indications (P_single)
+  6. search_classic_records      : Full-text search of the four primary classics (point chapters, excerpts, keyword hits with file/line)
   7. get_framework_protocol      : Framework v2.7 Rank 0~7 workflow, Tier 1~3 rules, 10 essential report components
 
 Usage:
@@ -294,25 +294,32 @@ MCP_TOOLS = [
     },
     {
         "name": "search_classic_records",
-        "description": "핵심 3대 원전(《中国针灸穴位通鉴》·《中国针灸证治通鉴》·《针灸腧穴通考》) 및 표준 DB에서 특정 경혈의 고전문헌 정위, 자침 깊이, 단독 자침 고유 효능(P_single)을 검색합니다.",
+        "description": "4대 원전(《中国针灸穴位通鉴》·《针灸腧穴通考》·《中国针灸证治通鉴》·《中国针灸经络通鉴》) 정제 코퍼스를 직접 검색합니다. 경혈을 주면 《穴位通鉴》·《腧穴通考》의 해당 경혈 장(파일·행 범위·소절 목차)과 부위/定位·简要结语 원문 발췌를, 《证治通鉴》·《经络通鉴》에서는 혈명이 나오는 행을 돌려줍니다. query를 주면 모든 검색어가 들어 있는 행을 파일·행 번호와 함께 돌려줍니다(번체·간체 통합, 예: '兩筋間'='两筋间').",
         "inputSchema": {
             "type": "object",
             "properties": {
                 "acupoint": {
                     "type": "string",
-                    "description": "경혈명 또는 코드 (예: ST36, LU5, 족삼리, 곡택, 百会)"
+                    "description": "경혈 코드 또는 혈명 (예: ST36, LU5, CV12, EX-HN3, 족삼리, 足三里, 百会). query만으로 검색할 때는 생략"
+                },
+                "query": {
+                    "type": "string",
+                    "description": "원문 검색어. 공백으로 나누면 모든 검색어가 한 행에 있어야 적중 (예: '两筋间', '针入 五分', '跗上动脉'). acupoint와 함께 주면 그 경혈 장(또는 혈명 주변 행) 안에서만 검색"
                 },
                 "classic_book": {
                     "type": "string",
-                    "enum": ["all", "穴位通鉴", "证治通鉴", "腧穴通考"],
-                    "description": "특정 원전 필터링"
+                    "enum": ["all", "穴位通鉴", "腧穴通考", "证治通鉴", "经络通鉴"],
+                    "description": "특정 원전만 검색 (기본값: all)"
                 },
                 "limit": {
                     "type": "integer",
-                    "description": "반환할 최대 결과 수 (기본값: 10)"
+                    "description": "원전별 최대 적중 행 수 (기본값: 10, 최대 50)"
+                },
+                "excerpt_chars": {
+                    "type": "integer",
+                    "description": "경혈 장 핵심 소절 발췌 길이(소절당 글자 수, 기본값: 1200, 200~4000)"
                 }
-            },
-            "required": ["acupoint"]
+            }
         }
     },
     {
@@ -801,35 +808,339 @@ def handle_calculate_ari_v3_score(arguments):
     return "\n".join(report)
 
 
+# 원전 코퍼스 접근 (로컬): data/classics/<원전>/*.md
+CLASSICS_DIR = os.path.join(PROJECT_ROOT, "data", "classics")
+CLASSICS_SOURCE_LABEL = CLASSICS_DIR
+_CLASSIC_CACHE = {}
+
+
+def _classics_list_files(book_dir):
+    d = os.path.join(CLASSICS_DIR, book_dir)
+    if not os.path.isdir(d):
+        return []
+    return sorted(f for f in os.listdir(d) if f.endswith(".md"))
+
+
+def _classics_read(book_dir, name):
+    try:
+        with open(os.path.join(CLASSICS_DIR, book_dir, name), "r", encoding="utf-8", errors="replace") as f:
+            return f.read()
+    except OSError:
+        return ""
+
+
+def _classics_prefetch(book_dir, names):
+    """로컬은 필요할 때 읽으므로 미리 읽지 않는다."""
+    return None
+
+
+# ---------------------------------------------------------------------------
+# 4대 원전 고전문헌 검색 (search_classic_records)
+#   data/classics/<원전>/*.md 정제 코퍼스를 직접 읽는다.
+#   - 혈위별 장(章)이 있는 《穴位通鉴》·《腧穴通考》: 경혈 코드·혈명으로 해당 장을 찾아 목차와 핵심 소절 발췌
+#   - 편별 구성인 《证治通鉴》·《经络通鉴》: 혈명이 나오는 행을 검색
+#   - query: 공백으로 나눈 모든 검색어가 한 행에 있으면 적중. 번체·간체를 같은 글자로 본다
+# ---------------------------------------------------------------------------
+CLASSIC_BOOKS = [  # (필터 키, 디렉토리, 표기)
+    ("穴位通鉴", "中国针灸穴位通鉴", "《中国针灸穴位通鉴》"),
+    ("腧穴通考", "针灸腧穴通考", "《针灸腧穴通考》"),
+    ("证治通鉴", "中国针灸证治通鉴", "《中国针灸证治通鉴》"),
+    ("经络通鉴", "中国针灸经络通鉴", "《中国针灸经络通鉴》"),
+]
+POINT_SECTION_BOOKS = ("穴位通鉴", "腧穴通考")
+KEY_SUBSECTIONS = ("部位", "定位", "简要结语")  # 경혈 장에서 발췌할 소절
+MERIDIAN_FILE_KEYS = {
+    "LU": "手太阴肺经", "LI": "手阳明大肠经", "ST": "足阳明胃经", "SP": "足太阴脾经",
+    "HT": "手少阴心经", "SI": "手太阳小肠经", "BL": "足太阳膀胱经", "KI": "足少阴肾经",
+    "PC": "手厥阴心包经", "TE": "手少阳三焦经", "SJ": "手少阳三焦经", "GB": "足少阳胆经",
+    "LR": "足厥阴肝经", "LV": "足厥阴肝经", "GV": "督脉", "DU": "督脉", "CV": "任脉",
+    "RN": "任脉", "EX": "经外",
+}
+CLASSIC_OUTPUT_LIMIT = 14000  # 응답 최대 글자 수
+
+# 번체→간체 대응표: 원전 코퍼스·보고서·동의보감에 실제로 나오는 글자를 OpenCC t2s로 변환해 추린 1,444쌍
+# (끝의 '䯒胻'은 OpenCC가 바꾸지 않는 한국 문헌 이체자). OpenCC가 설치되어 있으면 검색어에는 OpenCC를 먼저 적용한다.
+_T2S_PAIRS = (
+    "㶆𫞛㿗𤻊䌋𦈘䱀𫚐䲅𫚜並并乾干亂乱亞亚佈布佔占來来侖仑侶侣係系俠侠倉仓個个們们倖幸倫伦偉伟側侧傑杰備备傳传傴伛傷伤傾倾僂偻僅仅僕仆僞伪僥侥價价儀仪儈侩儉俭儘尽優优"
+    "儲储儼俨兌兑兒儿內内兩两冊册凍冻凜凛別别刪删則则剋克剛刚剝剥創创劃划劇剧劉刘劍剑劑剂劚㔉勁劲勑𠡠動动務务勝胜勞劳勢势勣𪟝勸劝勻匀匯汇匱匮區区協协卻却卽即厠厕厭厌"
+    "厲厉參参叄叁叢丛吳吴呂吕員员哯𠯟問问啓启啞哑喎㖞喚唤喪丧喫吃單单嗇啬嘆叹嘔呕嘗尝嘯啸噓嘘噦哕噯嗳噴喷嚙啮嚥咽嚨咙嚮向嚲亸嚴严國国圍围園园圓圆圖图團团執执堅坚堊垩"
+    "報报場场塊块塗涂塚冢塤埙塵尘墜坠墮堕墳坟墻墙壓压壘垒壜坛壞坏壟垄壯壮壺壶壽寿夢梦夾夹奧奥奪夺姦奸婦妇嬋婵嬰婴孫孙學学宮宫寢寝實实寧宁審审寫写寬宽寶宝將将專专尋寻"
+    "對对導导屍尸屢屡層层屬属岡冈峯峰島岛峽峡崑昆崗岗崙仑嵐岚嶄崭嶺岭巔巅巖岩帥帅師师帳帐帶带幃帏幘帻幹干幾几庫库廁厕廚厨廟庙廢废廣广廩廪廬庐廳厅弔吊張张強强彈弹彌弥"
+    "彎弯彙汇彥彦彫雕彿佛後后徑径從从復复徵征徹彻恥耻悅悦悵怅悶闷悽凄惡恶惱恼惲恽惻恻愛爱愾忾慄栗態态慍愠慘惨慣惯慮虑慳悭慶庆慾欲憂忧憊惫憐怜憑凭憒愦憤愤憲宪憶忆憹𢙐"
+    "懇恳應应懲惩懶懒懷怀懸悬懼惧懾慑戀恋戔戋戰战戱戯戶户挾挟捨舍捫扪捲卷掃扫掛挂採采揀拣揚扬換换揮挥損损搖摇搗捣搵揾搶抢摳抠摶抟摺折摻掺撈捞撏挦撓挠撥拨撫抚撲扑擁拥"
+    "擇择擊击據据擠挤擣捣擬拟擲掷擴扩擷撷擺摆擻擞擾扰攙搀攝摄攢攒攣挛攤摊攪搅敎教敗败敵敌數数斂敛斃毙斅𢽾斬斩斷断於于旣既時时晉晋晛𬀪晝昼暈晕暢畅暫暂曆历曉晓曠旷書书"
+    "會会朧胧朮术東东査查梔栀條条梟枭棄弃棊棋棖枨棗枣棲栖椏桠楊杨楓枫業业極极榦干榮荣構构槍枪樂乐樑梁樓楼標标樞枢樣样樳桪樹树樺桦橈桡橋桥機机橫横檉柽檟槚檢检檳槟櫚榈"
+    "櫛栉櫟栎櫻樱欄栏權权欖榄欽钦歟欤歡欢歲岁歷历歸归殘残殞殒殭僵殺杀殼壳毆殴氣气氳氲汙污決决沒没沖冲況况泝溯洩泄洶汹涇泾淒凄淚泪淨净淪沦淵渊淺浅渙涣減减測测渾浑湊凑"
+    "湧涌湯汤準准溝沟溫温滄沧滅灭滌涤滎荥滯滞滲渗滾滚滿满漁渔漚沤漢汉漬渍漲涨漸渐漿浆潑泼潔洁潛潜潤润潰溃澆浇澗涧澤泽澱淀濁浊濃浓濕湿濛蒙濟济濱滨濺溅濼泺濾滤瀆渎瀉泻"
+    "瀋沈瀝沥瀾澜灑洒灘滩灣湾災灾為为烏乌無无煇𪸩煉炼煩烦熱热熾炽燁烨燈灯燒烧燖𬊈營营燭烛燾焘爇𦶟爍烁爐炉爛烂爭争爲为爾尔牀床牽牵犢犊狀状狹狭猶犹猻狲獄狱獨独獮狝獲获"
+    "獵猎獷犷獸兽獺獭獻献現现瑤瑶瑩莹瑪玛璣玑璫珰環环璽玺瓊琼甌瓯甕瓮產产産产甦苏畢毕畫画異异畵画當当疊叠痙痉痠酸痾疴瘂痖瘍疡瘓痪瘡疮瘧疟瘲疭瘻瘘療疗癆痨癇痫癉瘅癘疠"
+    "癡痴癢痒癤疖癥症癧疬癩癞癬癣癭瘿癮瘾癰痈癱瘫癲癫發发皰疱皸皲皺皱盃杯盜盗盞盏盡尽監监盤盘盧卢盪荡眞真眥眦睍𪾢瞞瞒瞤𥆧瞶瞆瞼睑矇蒙矓眬矯矫硃朱硯砚碩硕確确磑硙磚砖"
+    "磣碜磧碛礎础礙碍礦矿礪砺礬矾礱砻祕秘祿禄禍祸禦御禮礼禱祷禿秃稈秆稜棱稟禀種种稱称穀谷積积穡穑穢秽穩稳穭穞窩窝窮穷窯窑窺窥竄窜竅窍竇窦竈灶竊窃竚𥩟竪竖競竞筆笔箇个"
+    "節节範范築筑篤笃篩筛簡简簣篑簽签簾帘籃篮籙箓籟籁籠笼籤签籬篱糝糁糞粪糲粝紀纪約约紅红紆纡紇纥紋纹納纳紐纽純纯紗纱紙纸級级紛纷紜纭細细紵纻紹绍紺绀紿绐絀绌終终絃弦"
+    "組组絆绊絍𫟃結结絕绝絙𫄠絞绞絡络給给絨绒統统絲丝絳绛絶绝絹绢經经綜综綠绿綣绻維维綱纲網网綳绷綴缀綸纶綻绽綽绰綾绫綿绵緊紧緋绯線线緡缗緣缘編编緩缓緯纬練练緻致縈萦"
+    "縊缢縛缚縞缟縣县縫缝縮缩縱纵縳䌸縷缕總总績绩繃绷繆缪繒缯織织繕缮繞绕繩绳繫系繰缲繳缴繼继纊纩續续纍累纏缠纔才纖纤纜缆罈坛罌罂罰罚罵骂罷罢羅罗羈羁羣群義义羶膻習习"
+    "翹翘聖圣聞闻聯联聰聪聲声聳耸聵聩聶聂職职聽听聾聋肅肃脅胁脈脉脛胫脩修脫脱脹胀腎肾腦脑腪𣍯腫肿腳脚腸肠膃腽膕腘膚肤膠胶膩腻膽胆膾脍膿脓臉脸臍脐臏膑臘腊臚胪臟脏臥卧"
+    "臨临臺台與与興兴舉举舊旧舘馆艱艰苧苎荊荆莊庄莖茎莢荚莧苋華华菴庵萊莱萬万萵莴葉叶葒荭葦苇葯药葷荤蒔莳蒼苍蓀荪蓋盖蓮莲蓯苁蓴莼蓽荜蔔卜蔞蒌蔣蒋蔭荫蔯𫈟蕎荞蕩荡蕪芜"
+    "蕭萧蕷蓣蕽𫇽薈荟薊蓟薑姜薔蔷薘荙薟莶薦荐薹苔薺荠藍蓝藝艺藥药藪薮藭䓖藶苈藺蔺蘆芦蘇苏蘊蕴蘋苹蘚藓蘭兰蘿萝處处虛虚虜虏號号虧亏蛻蜕蜆蚬蝕蚀蝟猬蝦虾蝸蜗螄蛳螢萤螻蝼"
+    "蟄蛰蟬蝉蟯蛲蟲虫蟶蛏蟻蚁蠅蝇蠆虿蠍蝎蠐蛴蠟蜡蠣蛎蠱蛊衆众衊蔑術术衛卫衝冲袞衮裏里補补裝装裡里製制複复襖袄襠裆襯衬襲袭見见規规視视親亲覷觑覺觉覽览觀观觴觞觸触訂订"
+    "計计討讨訐讦訓训訖讫託托記记訛讹訝讶訟讼訣诀訪访設设許许訶诃診诊註注詁诂詐诈詔诏詢询詣诣試试詩诗詫诧詮诠話话該该詳详詵诜誅诛誇夸誌志認认誕诞誘诱語语誠诚誣诬誤误"
+    "誥诰誦诵說说誰谁誹诽調调諄谆談谈請请論论諦谛諱讳諳谙諶谌諸诸諺谚謀谋謂谓謐谧謔谑謗谤謙谦講讲謝谢謫谪謬谬謳讴謹谨謾谩譆𫍻證证譏讥識识譜谱譫谵議议護护讀读變变讎雠"
+    "讓让讚赞豈岂豐丰貓猫貝贝貞贞負负財财貢贡貧贫貨货貪贪貫贯責责貯贮貳贰貴贵買买費费貼贴貽贻貿贸賁贲資资賈贾賊贼賓宾賜赐賞赏賢贤賣卖賤贱賦赋質质賴赖賽赛贅赘贈赠贊赞"
+    "趕赶趙赵趨趋趲趱跡迹踐践踰逾蹠跖蹤踪蹻𫏋躊踌躋跻躍跃躑踯躡蹑軀躯車车軍军軒轩軟软軫轸軸轴較较輈辀載载輒辄輔辅輕轻輟辍輩辈輪轮輯辑輸输輿舆轂毂轄辖轅辕轆辘轉转轡辔"
+    "轢轹轤轳辦办辭辞農农迴回逕迳這这連连進进遊游運运過过達达違违遙遥遞递遠远適适遲迟遷迁選选遺遗遼辽還还邇迩邊边鄒邹鄭郑鄰邻鄲郸酈郦醃腌醞酝醫医醬酱醲𬪩醶𫑷釀酿釅酽"
+    "釋释釐厘釘钉針针釣钓釵钗鈍钝鈐钤鈔钞鈴铃鈹铍鉅巨鉗钳鉛铅鉢钵鉤钩銀银銅铜銖铢銘铭銚铫銳锐銷销銹锈鋅锌鋌铤鋒锋鋟锓鋤锄鋪铺鋸锯鋼钢錄录錐锥錘锤錙锱錠锭錢钱錦锦錫锡"
+    "錯错鍉𫔂鍊炼鍋锅鍛锻鍵键鍼针鍾钟鎊镑鎌镰鎭镇鏃镞鏡镜鏤镂鏽锈鐘钟鐵铁鐶镮鐸铎鐺铛鑄铸鑑鉴鑒鉴鑕锧鑞镴鑠铄鑰钥鑱镵鑷镊鑽钻鑿凿長长門门閃闪閉闭開开閏闰閑闲閒闲間间"
+    "閔闵閣阁閨闺閩闽閫阃閭闾閱阅閹阉閻阎闇暗闊阔闌阑闔阖闕阙關关闡阐闢辟陝陕陣阵陰阴陳陈陸陆陽阳階阶際际隨随險险隱隐隻只雖虽雙双雛雏雜杂離离難难雲云電电霧雾霽霁靂雳"
+    "靈灵靜静靨靥韋韦韌韧韓韩韜韬韻韵響响頂顶頃顷項项順顺須须頌颂頏颃預预頑顽頓顿頗颇領领頤颐頦颏頭头頰颊頷颔頸颈頹颓頻频顆颗額额顏颜顔颜願愿顙颡類类顧顾顫颤顬颥顯显"
+    "顱颅顳颞顴颧風风颯飒飄飘飛飞飢饥飥饦飩饨飪饪飯饭飱飧飲饮飴饴飼饲飽饱飾饰餅饼餉饷養养餌饵餒馁餓饿餔𫗦餘余餛馄餧𫗪館馆餳饧餺馎餾馏饅馒饉馑饌馔饑饥饒饶饗飨饘𫗴饞馋"
+    "馬马馭驭馮冯馳驰駁驳駃𫘝駐驻駕驾駝驼駭骇駱骆駿骏騁骋騃𫘤騎骑騰腾騷骚騾骡驀蓦驅驱驕骄驗验驚惊驛驿驟骤驢驴髏髅體体髖髋髮发鬆松鬚须鬢鬓鬧闹鬨哄鬱郁魎魉魘魇魚鱼魯鲁"
+    "鮎鲇鮑鲍鮒鲋鮓鲊鮠𬶏鮦鲖鮫鲛鮮鲜鮰𫚔鯁鲠鯇鲩鯉鲤鯔鲻鯗鲞鯪鲮鯽鲫鰈鲽鰌䲡鰍鳅鰒鳆鰕𫚥鰟鳑鰥鳏鰱鲢鰻鳗鰾鳔鱔鳝鱖鳜鱗鳞鱟鲎鱧鳢鱯鳠鱸鲈鱺鲡鳥鸟鳧凫鳩鸠鳳凤鳴鸣鳶鸢"
+    "鴆鸩鴉鸦鴛鸳鴝鸲鴞鸮鴟鸱鴣鸪鴦鸯鴨鸭鴷䴕鴻鸿鴽𫛪鴿鸽鵂鸺鵑鹃鵒鹆鵓鹁鵜鹈鵝鹅鵩𫛳鵪鹌鵬鹏鵰雕鵲鹊鶉鹑鶊鹒鶒𫛶鶚鹗鶡鹖鶩鹜鶬鸧鶯莺鶴鹤鶹鹠鶻鹘鷀鹚鷄鸡鷉䴘鷓鹧鷗鸥"
+    "鷥鸶鷦鹪鷴鹇鷸鹬鷹鹰鷺鹭鷿𬸯鸂㶉鸇鹯鸕鸬鸛鹳鹵卤鹽盐麗丽麥麦麨𪎊麩麸麪面麴曲麽么黃黄點点黨党黲黪黴霉黶黡黿鼋齊齐齋斋齒齿齔龀齗龂齘𬹼齠龆齡龄齦龈齲龋齶腭齼𬺓龍龙"
+    "龐庞龔龚龜龟䯒胻"
+)
+_T2S_TABLE = {ord(_T2S_PAIRS[i]): _T2S_PAIRS[i + 1] for i in range(0, len(_T2S_PAIRS), 2)}
+_OPENCC = []
+
+
+def _classic_norm(text):
+    """번체·이체자를 간체로 맞춘다(코퍼스 행에 사용, 표 기반이라 빠르다)."""
+    return text.translate(_T2S_TABLE)
+
+
+def _classic_norm_query(text):
+    """검색어 정규화: OpenCC가 있으면 먼저 적용한 뒤 대응표로 마무리."""
+    if not _OPENCC:
+        try:
+            import opencc
+            _OPENCC.append(opencc.OpenCC("t2s").convert)
+        except Exception:
+            _OPENCC.append(None)
+    if _OPENCC[0]:
+        try:
+            text = _OPENCC[0](text)
+        except Exception:
+            pass
+    return _classic_norm(text)
+
+
+def _classic_lines(book_dir, name):
+    key = f"{book_dir}/{name}"
+    cached = _CLASSIC_CACHE.get(key)
+    if cached is None:
+        text = _classics_read(book_dir, name)
+        raw = text.splitlines()
+        cached = (raw, [_classic_norm(l) for l in raw])
+        if raw:  # 읽기 실패(빈 문자열)는 캐시하지 않고 다음 호출에서 다시 시도
+            _CLASSIC_CACHE[key] = cached
+    return cached
+
+
+def _classic_heading_level(line):
+    n = len(line) - len(line.lstrip("#"))
+    return n if n and line[n:n + 1] == " " else 0
+
+
+def _classic_heading_name(line):
+    """'#### 足三里 Zúsānlǐ ST 36' / '### （三十六）足三里 Zúsānlǐ ST36 出…' → '足三里'"""
+    body = re.sub(r"^#+\s*", "", line)
+    body = re.sub(r"^（[^）]*）", "", body).strip()
+    return body.split()[0] if body else ""
+
+
+def _classic_code_regex(code):
+    m = re.match(r"^([A-Z]{2})-?0*(\d+)$", (code or "").upper().replace(" ", ""))
+    if m:
+        p, n = m.groups()
+        return re.compile(rf"\b{p}\s?0?{int(n)}\b")
+    if re.match(r"^EX-[A-Z]+\d+$", (code or "").upper()):
+        return re.compile(rf"\b{re.escape(code.upper())}\b")
+    return None
+
+
+def _classic_snippet(raw, norm, terms, width=130):
+    pos = min([norm.find(t) for t in terms if norm.find(t) >= 0] or [0])
+    start = max(0, pos - width)
+    end = min(len(raw), pos + width)
+    s = raw[start:end].strip()
+    return ("…" if start > 0 else "") + s + ("…" if end < len(raw) else "")
+
+
+def _classic_resolve_point(acupoint):
+    """경혈 입력 → (코드, 혈명 후보 목록). 마스터 CSV 우선, 실패 시 간체 혈명·코드 형식으로 판정."""
+    pdata = resolve_acupoint_key(acupoint) if acupoint else None
+    if not pdata and acupoint:
+        target = _classic_norm_query(acupoint.strip())
+        for p in get_cached_master_csv().values():
+            if p.get("name_cn") and _classic_norm(p["name_cn"]) == target:
+                pdata = p
+                break
+    if pdata:
+        names = [_classic_norm(pdata.get("name_cn", ""))]
+        return pdata.get("code", ""), [n for n in names if n], pdata
+    raw = acupoint.strip()
+    if _classic_code_regex(raw):
+        return raw.upper(), [], None
+    return "", [_classic_norm_query(raw)], None
+
+
+def _classic_files_for(book_dir, code):
+    files = _classics_list_files(book_dir)
+    key = MERIDIAN_FILE_KEYS.get((code or "")[:2].upper())
+    preferred = [f for f in files if key and key in f]
+    return preferred, files
+
+
+def _classic_find_section(book_dir, code, names):
+    """혈위별 장을 찾는다 → (파일명, 시작 행 index, 끝 행 index, 간체 혈명) 또는 None"""
+    code_re = _classic_code_regex(code) if code else None
+    preferred, files = _classic_files_for(book_dir, code)
+    rest = [f for f in files if f not in preferred]
+    # 경혈 장은 ###·#### 수준이다. 파일 제목(#·##)에도 코드가 들어 있을 수 있어 3~4 수준을 먼저 찾는다
+    for min_lv in (3, 1):
+        for group in (preferred, rest):
+            _classics_prefetch(book_dir, group)
+            for fname in group:
+                raw, norm = _classic_lines(book_dir, fname)
+                for i, line in enumerate(norm):
+                    lv = _classic_heading_level(line)
+                    if not lv or lv < min_lv or lv > 4:
+                        continue
+                    hname = _classic_heading_name(line)
+                    if (code_re and code_re.search(line)) or (names and hname in names):
+                        end = len(raw)
+                        for j in range(i + 1, len(raw)):
+                            lj = _classic_heading_level(norm[j])
+                            if lj and lj <= lv:
+                                end = j
+                                break
+                        return fname, i, end, hname
+    return None
+
+
+def _classic_title(line):
+    return re.sub(r"<a id=[^>]*></a>", "", line.lstrip("#")).strip()
+
+
+def _classic_excerpt(raw, start, end, max_chars):
+    out, size = [], 0
+    for line in raw[start:end]:
+        s = re.sub(r"<a id=[^>]*></a>", "", line).strip()
+        if not s or s.startswith(">") or s.startswith("![") or s.startswith("〔p."):
+            continue  # 한글 번역 인용행·그림·쪽 표지는 생략(원문만)
+        out.append(s)
+        size += len(s)
+        if size >= max_chars:
+            out.append("…(생략)")
+            break
+    return out
+
+
 def handle_search_classic_records(arguments):
-    target = arguments.get("acupoint", "").strip()
-    book_filter = arguments.get("classic_book", "all")
-    limit = arguments.get("limit", 10)
+    acupoint = (arguments.get("acupoint") or "").strip()
+    query = (arguments.get("query") or "").strip()
+    book_filter = arguments.get("classic_book") or "all"
+    try:
+        limit = max(1, min(int(arguments.get("limit") or 10), 50))
+    except (TypeError, ValueError):
+        limit = 10
+    try:
+        excerpt_chars = max(200, min(int(arguments.get("excerpt_chars") or 1200), 4000))
+    except (TypeError, ValueError):
+        excerpt_chars = 1200
 
-    pdata = resolve_acupoint_key(target)
-    code = pdata["code"] if pdata else target
-    name_kr = pdata["name_kr"] if pdata else target
-    name_cn = pdata["name_cn"] if pdata else target
+    if not acupoint and not query:
+        return "⚠ `acupoint`(경혈 코드·혈명) 또는 `query`(검색어) 가운데 하나 이상을 입력하세요. 예: acupoint='ST36', query='两筋间'"
 
+    books = [b for b in CLASSIC_BOOKS if book_filter in ("all", b[0])]
+    if not books:
+        return f"⚠ 알 수 없는 원전 필터: {book_filter}. 사용 가능: all, " + ", ".join(b[0] for b in CLASSIC_BOOKS)
+    if not any(_classics_list_files(b[1]) for b in books):
+        return f"⚠ 원전 코퍼스를 읽을 수 없습니다 ({CLASSICS_SOURCE_LABEL}). `data/classics/<원전>/*.md`가 있는지 확인하세요."
+    terms = [_classic_norm_query(t) for t in query.split()] if query else []
+
+    code, names, pdata = _classic_resolve_point(acupoint) if acupoint else ("", [], None)
+    title = f"'{acupoint}'" if acupoint else ""
+    if pdata:
+        title = f"{pdata.get('code')} {pdata.get('name_kr')}/{pdata.get('name_cn')}"
     out = [
-        f"# 📜 핵심 3대 원전 고전문헌 대조 검색: '{target}' ({code} {name_kr}/{name_cn})",
-        f"- **검색 원전 필터**: {book_filter}",
+        f"# 📜 4대 원전 고전문헌 검색: {title}{' · ' if title and query else ''}{('검색어 ' + repr(query)) if query else ''}",
+        f"- **원전 필터**: {book_filter} · **최대 적중**: 원전별 {limit}건 · 번체/간체 통합 검색",
         "",
-        "### 1. 《中国针灸穴位通鉴》(중국침구혈위통감) 정위 변천",
-        f"- **기본 출전**: {pdata.get('classics', '《针灸甲乙经》')} 등 역대 100여 종 침구의서 편년체 수록",
-        f"- **취혈 랜드마크**: {pdata.get('meridian_kr', '해당 경락')} 상 정위 체위 및 골도분촌 측정 기준",
-        "",
-        "### 2. 《中国针灸证治通鉴》(중국침구증치통감) 주치증 및 단독 자침 효과 ($P_{single}$)",
-        "- **단독 선혈 ($P_{single}$)**: 복합 처방 배오 파생 효과를 배제한 단독 경혈 고유 주치증 분리",
-        "- **주요 적응증**: 해당 척수 분절 및 체성-내장 반사 연계 병증",
-        "",
-        "### 3. 《针灸腧穴通考》(침구수혈통고) 황룡상 교수 고증 및 교감",
-        "- **문헌 층차**: 선진·한대 원형 취혈점 vs 명청대 전사 왜곡 비판 교정",
-        f"- **이명 교감**: {pdata.get('aliases_hanja', '-')} (필사 오류 및 혼용 차단)",
-        "",
-        "> 💡 **원전 전문 열람**: 프로젝트 내부 `01_도서_번역_및_원전/` 코퍼스를 참조하세요."
     ]
-    return "\n".join(out)
+
+    resolved_name = names[0] if names else ""
+    sections = {}
+    if acupoint:
+        for key, bdir, label in books:
+            if key in POINT_SECTION_BOOKS:
+                sec = _classic_find_section(bdir, code, names)
+                if sec:
+                    sections[key] = sec
+                    resolved_name = resolved_name or sec[3]
+    point_names = [resolved_name] if resolved_name else []
+
+    for key, bdir, label in books:
+        out.append(f"## {label}")
+        sec = sections.get(key)
+        if key in POINT_SECTION_BOOKS and acupoint:
+            if not sec:
+                out.append(f"- 해당 경혈 장(章)을 찾지 못했습니다 (코드 {code or '-'}, 혈명 {resolved_name or '-'}).")
+                out.append("")
+                continue
+            fname, s, e, hname = sec
+            raw, norm = _classic_lines(bdir, fname)
+            out.append(f"- **경혈 장**: `{fname}` L{s + 1}–{e} — {_classic_title(raw[s])[:80]}")
+            subs = [(i, _classic_title(raw[i])) for i in range(s + 1, e)
+                    if _classic_heading_level(norm[i]) > _classic_heading_level(norm[s])]
+            if subs:
+                out.append("- **소절**: " + " · ".join(f"{t} (L{i + 1})" for i, t in subs[:20]))
+            if terms:
+                hits = [i for i in range(s, e) if all(t in norm[i] for t in terms)]
+                out.append(f"- **검색어 적중** {len(hits)}건" + (f" (상위 {limit}건)" if len(hits) > limit else ""))
+                for i in hits[:limit]:
+                    out.append(f"  - L{i + 1}: {_classic_snippet(raw[i], norm[i], terms)}")
+            else:
+                for i, t in subs:
+                    if any(k in _classic_norm(t) for k in KEY_SUBSECTIONS):
+                        lv = _classic_heading_level(norm[i])
+                        j = next((k for k in range(i + 1, e) if 0 < _classic_heading_level(norm[k]) <= lv), e)
+                        out.append(f"\n### {t} (L{i + 1}–{j})")
+                        out.extend(_classic_excerpt(raw, i + 1, j, excerpt_chars))
+            out.append("")
+            continue
+
+        # 편별 원전 검색(또는 경혈 미지정 시 전 원전 검색)
+        files = _classics_list_files(bdir)
+        _classics_prefetch(bdir, files)
+        must = terms or point_names
+        if not must:
+            out.append("- 혈명을 확정하지 못해 검색하지 않았습니다. `query`를 함께 입력하세요.")
+            out.append("")
+            continue
+        hits = []
+        for fname in files:
+            raw, norm = _classic_lines(bdir, fname)
+            for i, line in enumerate(norm):
+                if not all(t in line for t in must):
+                    continue
+                if terms and point_names:  # 경혈+검색어: 같은 행이나 바로 앞뒤 행에 혈명이 있어야 적중
+                    window = "".join(norm[max(0, i - 1):i + 2])
+                    if not any(n in window for n in point_names):
+                        continue
+                hits.append((fname, i))
+        out.append(f"- **적중** {len(hits)}건 (검색: {' + '.join(must)})" + (f", 상위 {limit}건 표시" if len(hits) > limit else ""))
+        for fname, i in hits[:limit]:
+            raw, norm = _classic_lines(bdir, fname)
+            tag = " [한글번역]" if fname.endswith("_한글번역.md") else ""
+            out.append(f"  - `{fname}`{tag} L{i + 1}: {_classic_snippet(raw[i], norm[i], must)}")
+        out.append("")
+
+    out.append("> 행 번호는 `data/classics/<원전>/` 정제 마크다운 기준. 《证治通鉴》은 원문을 기준 텍스트로 하고 같은 편 `_한글번역` 파일과 대조한다(정본 Rank 1 & 2).")
+    text = "\n".join(out)
+    if len(text) > CLASSIC_OUTPUT_LIMIT:
+        text = text[:CLASSIC_OUTPUT_LIMIT] + "\n\n…(응답 길이 제한으로 생략 — `classic_book`·`limit`·`query`로 범위를 좁히세요)"
+    return text
 
 
 def handle_get_framework_protocol(arguments):
@@ -945,6 +1256,16 @@ def main():
 
             elif method == "ping":
                 response = {"jsonrpc": "2.0", "id": req_id, "result": {}}
+                sys.stdout.write(json.dumps(response, ensure_ascii=False) + "\n")
+                sys.stdout.flush()
+
+            elif req_id is not None:
+                # 지원하지 않는 요청에도 응답해야 클라이언트가 시간 초과까지 기다리지 않는다
+                response = {
+                    "jsonrpc": "2.0",
+                    "id": req_id,
+                    "error": {"code": -32601, "message": f"Method not found: {method}"}
+                }
                 sys.stdout.write(json.dumps(response, ensure_ascii=False) + "\n")
                 sys.stdout.flush()
 
