@@ -45,7 +45,12 @@
    ```
 5. **MCP 서버 등록**: `python acupoint_anatomy\scripts\register_mcp.py`
 
-## 3. 주간 DB 배치 주의
+## 3. 주간 DB 배치 (Google Drive `도서 번역` 기준)
 
-- 통합 생의학 마스터 DB 주간 배치(`AcupointMasterDB_WeeklySync`)는 **한 PC에만** 등록한다.
-- 배치를 돌리는 PC의 프로젝트 경로는 반드시 Google Drive와 동기화되는 `도서 번역`이어야 한다. 2026-10-25에는 김재효연구실 PC의 동기화되지 않은 `D:\도서 번역`(10/12 상태)에서 배치가 돌아 Drive의 DB를 덮어썼다(2026-10-26 복구).
+- 통합 생의학 마스터 DB 주간 배치(`AcupointMasterDB_WeeklySync`, 일요일 03:00)는 **Google Drive `도서 번역` 안의 스크립트로만** 등록·실행한다. 2026-10-25에는 김재효연구실 PC의 동기화되지 않은 `D:\도서 번역`(10/12 상태)에서 배치가 돌아 Drive의 DB를 덮어썼다(2026-10-26 복구).
+- **등록**(PC마다 1회, 기존 등록은 덮어씀): Google Drive의 `도서 번역\.agents\skills\acupoint-anatomy\scripts\register_weekly_task.cmd`를 실행한다.
+  - Drive 밖 사본(예: `D:\도서 번역\…`)의 등록 스크립트는 등록을 거부한다.
+  - 작업은 `cmd.exe /c "<Drive 경로>\weekly_sync.cmd"`로 등록된다. 예전 방식은 경로의 공백에서 실행 파일이 잘려(`G:\내`) 0x80070002로 실패했다.
+- **실제 실행 PC**: Drive의 `02_Master_Datasets\weekly_sync_host.txt` 첫 줄에 적힌 컴퓨터 이름(현재 **김재효연구실**)만 배치를 실행한다. 다른 PC에 등록된 작업은 실행 시점에 건너뛰고 배치 로그에 그 사실만 남긴다. 담당 PC를 바꾸려면 이 파일의 이름만 고친다.
+- **안전 점검**(`weekly_guard.py`): 프로젝트 경로에 "내 드라이브"/"My Drive"가 없으면 실행하지 않는다(Drive 경로 이름이 다른 PC는 `ACUPOINT_ALLOW_NON_DRIVE_ROOT=1`). `ACUPOINT_WEEKLY_DRYRUN=1`로 판정만 확인할 수 있다.
+- 배치를 실행하려면 그 시각에 Google Drive 데스크톱이 실행 중이고 사용자가 로그온해 있어야 한다. 놓친 실행은 다음 로그온 때 실행된다(StartWhenAvailable).
