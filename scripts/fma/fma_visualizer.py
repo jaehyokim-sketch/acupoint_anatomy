@@ -280,11 +280,20 @@ def generate_cross_section_diagram(code: str, out_path: Path) -> bool:
 
 
 def cmd_graph(code: str, out_file: str = None, dpi: int = 200) -> str:
-    """그래프 이미지 단독 생성 CLI 핸들러."""
-    runner = Runner()
-    G, name_kr = build_network_graph(code, runner)
-    runner.close()
-    
+    """그래프 이미지 단독 생성 CLI 핸들러. Neo4j에 연결할 수 없으면 원인·해결 명령을 알리고 None을 돌려준다."""
+    try:
+        runner = Runner()
+        try:
+            G, name_kr = build_network_graph(code, runner)
+        finally:
+            runner.close()
+    except Exception as e:
+        first = str(e).strip().splitlines()[0] if str(e).strip() else type(e).__name__
+        print(f"[visualizer] ⚠ Neo4j 연결 실패({type(e).__name__}): {first}\n"
+              "  → 서버 기동: python .claude/skills/acupoint-anatomy/scripts/fma/fma_neo4j.py server start\n"
+              "  → 데이터 미적재 시: … fma_neo4j.py load   (연결 정보: NEO4J_URI·NEO4J_USER·NEO4J_PASSWORD)")
+        return None
+
     if not G:
         print(f"[visualizer] 경혈 {code}의 Neo4j 지식 그래프 데이터가 없습니다.")
         return None
@@ -351,7 +360,8 @@ def main():
         sys.exit(0)
         
     if args.command == "graph":
-        cmd_graph(args.code.upper(), args.out, dpi=args.dpi)
+        if cmd_graph(args.code.upper(), args.out, dpi=args.dpi) is None:
+            sys.exit(2)
     elif args.command == "cross-section":
         cmd_cross_section(args.code.upper(), args.out)
     elif args.command == "all":

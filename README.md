@@ -138,6 +138,7 @@ acupoint_anatomy/
     ├── build_mcp_reference_data.py              # 참조 JSON·원전 색인 생성
     ├── build_remote_server.py                   # remote_server.py 생성
     ├── sync_claude_skill.py                     # Claude Code 스킬 Drive ↔ 로컬 워크스페이스 동기화
+    ├── run_ari_analyzer_local.py                # Drive ari_analyzer.py 호출 → 초안을 로컬 저장소에 생성(비노출 정리·HTML 재빌드)
     ├── check_environment.py · sync_master_db.py · ari_analyzer.py
     └── build_report_html.py · render_diagrams.py
 ```

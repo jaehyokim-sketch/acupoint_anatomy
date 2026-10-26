@@ -183,13 +183,24 @@ def cmd_server(a):
             time.sleep(1)
         sys.exit(f"[server] 90초 안에 bolt 포트가 열리지 않았습니다. 로그 확인: {home / 'logs' / 'console.log'}")
     if a.action == "stop":
-        if not pidf.exists():
-            print("[server] PID 파일이 없습니다 (이 스크립트로 시작하지 않았거나 이미 종료).")
+        pid = "—"
+        if pidf.exists():
+            pid = pidf.read_text().strip()
+            subprocess.run(["taskkill", "/PID", pid, "/T", "/F"], capture_output=True)
+            pidf.unlink()
+            time.sleep(2)
+        if not _port_open() and pid == "—":
+            print("[server] 실행 중인 서버가 없습니다 (bolt 7687 닫힘)")
             return
-        pid = pidf.read_text().strip()
-        subprocess.run(["taskkill", "/PID", pid, "/T", "/F"], capture_output=True)
-        pidf.unlink()
-        print(f"[server] 종료 (pid {pid})" + (" — 포트가 아직 열려 있음" if _port_open() else ""))
+        if _port_open():
+            # 콘솔 래퍼만 끝나고 java 본체가 남는 경우: 7687을 듣는 java 중 이 NEO4J_HOME의 것만 종료
+            ps = ("$c=Get-NetTCPConnection -LocalPort 7687 -State Listen -ErrorAction SilentlyContinue|Select-Object -First 1;"
+                  "if($c){$p=Get-CimInstance Win32_Process -Filter \"ProcessId=$($c.OwningProcess)\";"
+                  f"if($p.CommandLine -like '*{home.name}*'){{Stop-Process -Id $p.ProcessId -Force;'killed '+$p.ProcessId}}}}")
+            r = subprocess.run(["powershell", "-NoProfile", "-Command", ps], capture_output=True, text=True)
+            print(f"[server] java 본체 정리: {r.stdout.strip() or '해당 없음'}")
+            time.sleep(2)
+        print(f"[server] 종료 (pid {pid})" + (" — 포트가 아직 열려 있음" if _port_open() else " — bolt 7687 닫힘"))
 
 
 def _csv_rows(name):

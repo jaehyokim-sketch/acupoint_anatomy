@@ -25,14 +25,27 @@ FMA_NS = "http://purl.org/sig/ont/fma/"
 SCRIPT_DIR = Path(__file__).resolve().parent
 
 
+def _is_project_root(p: Path) -> bool:
+    return (p / "01_Framework").exists() and (p / "02_Master_Datasets").exists()
+
+
 def find_project_root() -> Path:
-    cur = SCRIPT_DIR
-    for _ in range(8):
-        if (cur / "01_Framework").exists() and (cur / "02_Master_Datasets").exists():
-            return cur
-        if cur.parent == cur:
-            break
-        cur = cur.parent
+    """스크립트 위치에서 위로 → 현재 폴더에서 위로 → ACUPOINT_PROJECT_ROOT·ACUPOINT_DRIVE_ROOT → 기본 Drive 경로 순.
+    로컬 워크스페이스(C:/workspace/.claude/skills/…)의 스킬 사본을 어느 폴더에서 실행해도 Drive 프로젝트를 찾게 한다."""
+    for start in (SCRIPT_DIR, Path.cwd().resolve()):
+        cur = start
+        for _ in range(8):
+            if _is_project_root(cur):
+                return cur
+            if cur.parent == cur:
+                break
+            cur = cur.parent
+    for env in ("ACUPOINT_PROJECT_ROOT", "ACUPOINT_DRIVE_ROOT"):
+        if os.environ.get(env) and _is_project_root(Path(os.environ[env])):
+            return Path(os.environ[env])
+    default = Path(r"G:\내 드라이브\도서 번역")
+    if _is_project_root(default):
+        return default
     return Path.cwd().resolve()
 
 

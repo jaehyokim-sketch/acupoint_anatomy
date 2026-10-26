@@ -164,7 +164,7 @@ def step_index():
     con.commit()
     con.close()
     tmp.replace(INDEX_PATH)
-    print(f"[index] entity {len(ent):,} / term {len(terms):,} / edge {len(edges):,}  ({time.time() - t:.0f}s) → {INDEX_PATH}")
+    print(f"[index] entity {len({e['fma_id'] for e in ent.values()}):,} / term {len(terms):,} / edge {len(edges):,}  ({time.time() - t:.0f}s) → {INDEX_PATH}")
 
 
 # ---------------------------------------------------------------- map (교재 영문 용어 → FMA)
@@ -258,7 +258,13 @@ class Matcher:
         for cand, how in cands:
             pool = self.by_term.get(cand) or self.by_squash.get(cand.replace(" ", ""))
             if pool:
-                return self._pick(pool, region[0] if region and how != "exact+region" else None) + (how,)
+                f, label = self._pick(pool, region[0] if region and how != "exact+region" else None)
+                # 일반 용어("dorsal digital nerve")가 특정 기원 신경의 집합("... of radial nerve")에 동의어로만 걸린 경우는 확정하지 않는다
+                lab_n = norm(label or "")
+                m = re.search(r"\bof (\w+ nerve)$", lab_n)
+                if lab_n.startswith("set of ") and m and m.group(1) not in n:
+                    how = "set(검토)" if how in ("exact", "exact(set)") else how + "(검토)"
+                return f, label, how
         return None
 
     def _fuzzy(self, text):
@@ -327,6 +333,12 @@ class Matcher:
         variants, parent_hint = self._variants(text)
         for v in variants:
             v = re.sub(r"\b(\d{1,2})th\b", lambda m: {1: "1st", 2: "2nd", 3: "3rd"}.get(int(m.group(1)), m.group(0)), v)
+            # 손등 'dorsal digital nerve (from radial/ulnar nerve)' → FMA 'Set of dorsal digital branches of X' (일반 대조보다 먼저)
+            if parent_hint and re.fullmatch(r"dorsal digital nerve", norm(v)):
+                hit = self._exact(f"set of dorsal digital branches of {parent_hint}")
+                if hit and norm(parent_hint) in norm(hit[1]):
+                    out.append({"variant": v, "fma_id": hit[0], "fma_label": hit[1], "match": "exact(set)"})
+                    continue
             hit = self._exact(v, region)
             if hit:
                 out.append({"variant": v, "fma_id": hit[0], "fma_label": hit[1], "match": hit[2]})
@@ -335,12 +347,6 @@ class Matcher:
             if hit:
                 out.append({"variant": v, "fma_id": hit[0], "fma_label": hit[1], "match": "fuzzy(검토)"})
                 continue
-            # 손등 'dorsal digital nerve (from radial/ulnar nerve)' → FMA 'Set of dorsal digital branches of X'
-            if parent_hint and re.fullmatch(r"dorsal digital nerve", norm(v)):
-                hit = self._exact(f"set of dorsal digital branches of {parent_hint}")
-                if hit:
-                    out.append({"variant": v, "fma_id": hit[0], "fma_label": hit[1], "match": "exact(set)"})
-                    continue
             # "... branch of X" → 상위 X (branch_of 근사)
             mb = re.search(r"\b(?:branch(?:es)?|brs?\.?|ramus|rami) of (?:the )?(.+)$", v, re.I)
             target = mb.group(1) if mb else parent_hint
@@ -442,11 +448,30 @@ def step_neo4j_csv():
         w.writerow(["fmaId:ID(FMA)", "label", "taId", ":LABEL"])
         for fid, label, ta in con.execute("SELECT fma_id, label, ta_id FROM entity"):
             w.writerow([fid, label, ta or "", "Anatomy"])
+    # FMA에 branch_of/tributary_of가 없고 is_a 클래스명('Branch of X', 'Tributary of X')으로만 줄기가 드러나는 실체에
+    # 파생 관계 BRANCH_OF_INFERRED를 만든다 (fma_query.py trunk_chain과 같은 규칙). 예: Deep fibular nerve → Common fibular nerve
+    label_to_id = {}
+    for tn, fid in con.execute("SELECT term_norm, fma_id FROM term WHERE kind IN ('label','preferred')"):
+        label_to_id.setdefault(tn, fid)
+    has_trunk = {s for (s,) in con.execute("SELECT DISTINCT src FROM edge WHERE rel IN ('branch_of','tributary_of')")}
+    labels = dict(con.execute("SELECT fma_id, label FROM entity"))
+    inferred = set()
+    for s, d in con.execute("SELECT src, dst FROM edge WHERE rel='is_a'"):
+        if s in has_trunk:
+            continue
+        m = re.match(r"^((?:[\w-]+ )*?(?:branch|tributary|ramus)) of (.+)$", labels.get(d) or "", re.I)
+        if m:
+            t = label_to_id.get(norm(m.group(2)))
+            if t and t != s:
+                inferred.add((s, t))
     with io.open(NEO4J_DIR / "fma_rels.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         w.writerow([":START_ID(FMA)", ":END_ID(FMA)", ":TYPE"])
         for s, rel, d in con.execute("SELECT src, rel, dst FROM edge"):
             w.writerow([s, d, rel.upper()])
+        for s, t in sorted(inferred):
+            w.writerow([s, t, "BRANCH_OF_INFERRED"])
+    print(f"[neo4j-csv] 파생 줄기 관계 BRANCH_OF_INFERRED {len(inferred):,}")
     # 경혈 노드와 경혈→FMA 대응 관계 (대응표가 있을 때)
     if MAPPING_JSON.exists():
         rows = json.loads(io.open(MAPPING_JSON, encoding="utf-8").read())["rows"]
@@ -463,7 +488,7 @@ def step_neo4j_csv():
             w.writerow([":START_ID(Acupoint)", ":END_ID(FMA)", "source", "category", "match", ":TYPE"])
             seen = set()
             for r in rows:
-                if r["fma_id"] and not r["match"].startswith(("fuzzy", "none")):
+                if r["fma_id"] and not r["match"].startswith(("fuzzy", "none")) and "검토" not in r["match"]:
                     k = (r["code"], r["fma_id"], r["source"])
                     if k not in seen:
                         seen.add(k)
