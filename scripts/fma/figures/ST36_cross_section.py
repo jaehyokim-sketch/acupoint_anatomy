@@ -27,7 +27,7 @@ def blob(ax, pts, fc, ec="#555", lw=0.9, z=2, alpha=1.0, ls="-"):
 
 
 fig, ax = plt.subplots(figsize=(13, 10.4), dpi=170)
-ax.set_xlim(-118, 118); ax.set_ylim(-84, 82); ax.set_aspect("equal"); ax.axis("off")
+ax.set_xlim(-118, 118); ax.set_ylim(-92, 88); ax.set_aspect("equal"); ax.axis("off")
 
 skin = [(0, 50), (24, 46), (42, 34), (54, 12), (54, -14), (46, -38), (24, -58), (0, -64), (-24, -60),
         (-44, -46), (-54, -22), (-54, 2), (-44, 26), (-24, 44)]
@@ -42,7 +42,8 @@ ax.plot([6, 13, 20, 26], [8, 3, -3, -10], color="#6d5f8f", lw=2.2, zorder=4.2)  
 
 # 앞칸 근육
 blob(ax, [(-8, 41), (8, 41), (13, 30), (12, 16), (7, 10), (-1, 20), (-6, 32)], "#d9534f", "#8f2d2a", 1.1, 3)   # 앞정강근
-blob(ax, [(15, 39), (30, 33), (37, 20), (34, 4), (27, -6), (19, 1), (14, 15), (14, 28)], "#e57f6c", "#8f2d2a", 1.1, 3)  # 긴발가락폄근
+blob(ax, [(16.5, 39), (31, 33), (37.5, 20), (34.5, 4), (27.5, -6), (20.5, 1), (15.5, 15), (15.5, 28)], "#e57f6c", "#8f2d2a", 1.1, 3)  # 긴발가락폄근
+ax.plot([13.9, 14.0, 13.8], [41, 28, 15], color="#7b2fbf", lw=0.9, ls=(0, (3, 2)), zorder=3.6)                # 앞정강근–긴발가락폄근 근간 중격(兩筋間)
 # 가쪽칸
 blob(ax, [(38, 22), (49, 12), (50, -12), (42, -22), (36, -20), (38, -6), (36, 8)], "#d88c6f", "#8f4a2a", 1.0, 3)  # 긴종아리근
 # 뒤칸 깊은층
@@ -72,15 +73,33 @@ dot(-50, 4, 1.2, NERVE); dot(-47, 13, 1.2, NERVE)             # 두렁신경 안
 dot(2, -61, 1.8, VEIN)                                         # 작은두렁정맥
 dot(47, -32, 1.4, NERVE)                                       # 가쪽장딴지피부신경
 
-# ST36 자침 경로
-ax.plot([3, 3], [59, 47], color="#222", lw=1.0, zorder=7)
-ax.add_patch(FancyArrowPatch((3, 47.5), (8.5, 15.5), arrowstyle="-|>", mutation_scale=16, lw=2.0, color="#111", zorder=8))
-ax.add_patch(FancyArrowPatch((3, 47.5), (1.0, 14.0), arrowstyle="-|>", mutation_scale=12, lw=1.2, color="#666", ls="--", zorder=8))
+# 가로 방향 3계통 자침 경로 (보고서 7절): Target 1≡3 · Target 2 · 내측 편위(기록만)
+T13, T2, MED = "#111", "#7b2fbf", "#8a8a8a"
+# Target 1≡3: 胻外廉 / WHO — 정강뼈 앞모서리 외측 1횡지, 앞정강근 근복
+ax.add_patch(FancyArrowPatch((3, 48.5), (8.5, 15.5), arrowstyle="-|>", mutation_scale=16, lw=2.0, color=T13, zorder=8))
+ax.add_patch(FancyArrowPatch((3, 48.5), (1.0, 14.0), arrowstyle="-|>", mutation_scale=12, lw=1.1, color="#666", ls="--", zorder=8))
+# Target 2: 兩筋間 — 근간 중격을 따라 앞정강 신경혈관속으로
+ax.add_patch(FancyArrowPatch((13.9, 47.5), (13.6, 14.2), arrowstyle="-|>", mutation_scale=16, lw=2.0, color=T2, zorder=8))
+# 내측 편위: 《圣惠》 筋骨之间 — 정강뼈 가쪽면과 앞정강근 사이
+ax.add_patch(FancyArrowPatch((-9.5, 47.5), (-4.5, 27.5), arrowstyle="-|>", mutation_scale=12, lw=1.4, color=MED, ls="-.", zorder=8))
+for x, y, c in [(3, 49.6, T13), (13.9, 48.6, T2), (-9.5, 48.2, MED)]:
+    ax.plot([x], [y + 1.2], marker="v", ms=7, color=c, zorder=9)
 ax.plot([-15], [46.5], marker="v", ms=8, color="#7d6f4f", zorder=9)
-ax.text(7, 58, "ST36 족삼리 자침점", ha="left", va="center", fontsize=12.5, weight="bold", zorder=9)
-ax.annotate("", xy=(-15, 53), xytext=(3, 53), arrowprops=dict(arrowstyle="<->", lw=0.9, color="#444"))
-ax.text(-6, 54.5, "1횡지(중지)", ha="center", fontsize=8.5, color="#333")
-ax.text(-17, 49, "정강뼈 앞모서리", ha="right", fontsize=8.5, color="#5b4f33")
+# 정강뼈 앞모서리 기준 가로 거리(추정)
+ax.annotate("", xy=(-15, 53.5), xytext=(3, 53.5), arrowprops=dict(arrowstyle="<->", lw=0.9, color="#444"))
+ax.text(-16.5, 53.5, "정강뼈 앞모서리 ↔ 1횡지 ≈ 1.5~2cm", ha="right", va="center", fontsize=8.2, color="#333")
+ax.annotate("", xy=(-15, 58.5), xytext=(13.9, 58.5), arrowprops=dict(arrowstyle="<->", lw=0.9, color=T2))
+ax.text(-16.5, 58.5, "정강뼈 앞모서리 ↔ ≈ 2.5~3.5cm (추정) · 「訛穴」 '自骨邊橫量一寸'", ha="right", va="center", fontsize=8.2, color=T2)
+# 계통 라벨
+ax.annotate("Target 1≡3 · 胻外廉 / WHO\n《灵枢》《明堂》 · 《铜人》 卷上 '大筋内' → 앞정강근 근복",
+            xy=(3, 51.5), xytext=(1, 66), fontsize=9.3, color=T13, weight="bold", ha="right", va="center",
+            arrowprops=dict(arrowstyle="-", lw=0.7, color=T13, relpos=(1, 0)))
+ax.annotate("Target 2 · 兩筋間 (근간 중격)\n王冰 주 · 《铜人》 卷下 · 《圣济》 · 「訛穴」",
+            xy=(13.9, 50.5), xytext=(20, 67), fontsize=9.3, color=T2, weight="bold", ha="left", va="center",
+            arrowprops=dict(arrowstyle="-", lw=0.7, color=T2, relpos=(0, 0)))
+ax.annotate("내측 편위 (기록만, Target 제외)\n《太平圣惠方》 '筋骨之间'",
+            xy=(-9.5, 49.6), xytext=(-40, 46.5), fontsize=8.8, color="#666", ha="right", va="center",
+            arrowprops=dict(arrowstyle="-", lw=0.7, color=MED, relpos=(1, 0.5)))
 
 
 def lab(x, y, tx, ty, text, color="#222", fs=9.2):
@@ -90,7 +109,7 @@ def lab(x, y, tx, ty, text, color="#222", fs=9.2):
 
 
 R, L = 64, -64
-lab(4, 33, R, 60, "② 앞정강근 Tibialis anterior  FMA:22532\n    지배: 깊은종아리신경 · 분절 L4(주)·L5", "#8f2d2a")
+lab(4, 33, R, 57.5, "② 앞정강근 Tibialis anterior  FMA:22532\n    지배: 깊은종아리신경 · 분절 L4(주)·L5", "#8f2d2a")
 lab(26, 22, R, 44, "② 긴발가락폄근 Extensor digitorum longus  FMA:22534\n    지배: 깊은종아리신경 · 분절 L5(주)·S1", "#8f2d2a")
 lab(15.6, 11.2, R, 28, "③ 깊은종아리신경 Deep fibular nerve  FMA:44771", "#8a6d00")
 lab(10.5, 9.5, R, 17, "③ 앞정강동맥·정맥 Anterior tibial a./v.  FMA:43894 / 44331", "#b02020")
@@ -109,10 +128,14 @@ lab(-20, -34, L, -30, "가자미근 Soleus", "#6e3a2e")
 lab(-26, -52, L, -48, "장딴지근 안쪽·가쪽갈래", "#5e2e24")
 lab(2, -61, L, -64, "작은두렁정맥 (피하, 뒤)", "#2f5fb3")
 
-ax.text(-114, 80, "족삼리(ST36) 높이 하퇴 상1/3 횡단면 — 해부 실체 모식도", fontsize=15.5, weight="bold", va="top")
-ax.text(-114, 73.5, "오른다리 · 위에서 내려다봄 · 앞쪽=위, 안쪽=왼쪽 · 축척 아님", fontsize=9.5, color="#444", va="top")
-ax.text(-114, -72, "실선 화살표: 직자 경로(犊鼻下3寸, 정강뼈 앞모서리 외측 1횡지) → ② 앞정강근 근복(고전 1촌 자입 도달층, 추정) → ③ 사이막 앞 신경혈관속(현대 상한 2촌 직자 시 근접, 추정)\n"
-        "점선 화살표: 정강뼈 쪽으로 약간 기울인 자침(\"直刺，稍偏向胫骨方向\", 通考 L3506) — 신경혈관속 회피\n"
+ax.text(-114, 86, "족삼리(ST36) 높이 하퇴 상1/3 횡단면 — 가로 방향 3계통 해부 실체 모식도", fontsize=15.5, weight="bold", va="top")
+ax.text(-114, 79.5, "오른다리 · 위에서 내려다봄 · 앞쪽=위, 안쪽=왼쪽 · 축척 아님 · 세로 위치는 3계통 모두 膝下(犊鼻下) 3寸", fontsize=9.5, color="#444", va="top")
+ax.text(-114, -72, "검정 실선: Target 1≡3 — 정강뼈 앞모서리 외측 1횡지, ② 앞정강근 근복(고전 1촌 23mm 도달층) → 현대 상한 2촌 직자 시 ③ 신경혈관속 근접(추정). "
+        "회색 점선: 정강뼈 쪽으로 약간 기울인 자침(\"直刺，稍偏向胫骨方向\", 通考) — ③ 회피\n"
+        "보라 실선: Target 2 — '兩筋間' = 앞정강근–긴발가락폄근 근간 중격(보라 파선). 근복을 거치지 않고 중격을 따라 ③ 앞정강동맥·깊은종아리신경에 닿는다. "
+        "'極重按之 則足跗上動脈止'(王冰)·'以手按兩筋間 則足跗上太衝脈不動'(「訛穴」)은\n    이 깊이에서 앞정강동맥이 눌리는 소견으로 읽힌다(추론). 《铜人》 卷下 '針入五分'(11.5mm)이 심도 상한 근거. "
+        "Target 2–3 Δ ≈ 10~15mm(추정, 분기 경계값 근접)\n"
+        "회색 일점쇄선: 《太平圣惠方》 '胻骨外，大筋内，筋骨之间' — 정강뼈 가쪽면과 앞정강근 사이. 《通考》 '过于偏内侧' → Target으로 세우지 않고 기록만\n"
         "①~④는 보고서 4절 Layer 순서. 구조·FMA ID·지배·분절은 FMA 5.1.0(contained_in · nerve_supply · segmental_supply)과 2대 교재 데이터셋 기준. "
         "층 두께·거리는 ST36 실측값이 없어 임의 배치",
         fontsize=8.6, color="#333", va="top", linespacing=1.55)
