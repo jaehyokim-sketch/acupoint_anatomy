@@ -136,6 +136,15 @@
   },
   {
     "index": 16,
+    "badge": "CV12",
+    "title": "중완 (中脘)",
+    "rel_html": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/CV_%EC%9E%84%EB%A7%A5/CV12_%EC%A4%91%EC%99%84/CV12_%EC%A4%91%EC%99%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "html_exists": true,
+    "md_exists": true,
+    "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\01_경혈별_해부생리_분석보고서\\CV_임맥\\CV12_중완\\CV12_중완_해부생리_실체판명_보고서"
+  },
+  {
+    "index": 17,
     "badge": "MATRIX · HEADACHE",
     "title": "동의보감 두통 침구해부",
     "rel_html": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%EB%91%90%ED%86%B5_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
@@ -144,7 +153,7 @@
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\04_번역원고_및_임상매트릭스\\동의보감_두통_침구해부_매트릭스\\동의보감_두통_침구해부_종합보고서"
   },
   {
-    "index": 17,
+    "index": 18,
     "badge": "MATRIX · LU",
     "title": "수태음 시동병 해부 유사도",
     "rel_html": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%81%EC%B6%94%EA%B2%BD%EB%A7%A5_%EC%88%98%ED%83%9C%EC%9D%8C%EC%8B%9C%EB%8F%99%EB%B3%91_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%81%EC%B6%94%EA%B2%BD%EB%A7%A5_%EC%88%98%ED%83%9C%EC%9D%8C%EC%8B%9C%EB%8F%99%EB%B3%91_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
@@ -153,7 +162,7 @@
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\04_번역원고_및_임상매트릭스\\영추경맥_수태음시동병_매트릭스\\영추경맥_수태음시동병_침구해부_종합보고서"
   },
   {
-    "index": 18,
+    "index": 19,
     "badge": "CLASSICS-1",
     "title": "근육·경락 동일명칭",
     "rel_html": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%ED%95%B4%EB%B6%80%ED%95%99%EC%A0%81_%EA%B7%BC%EC%9C%A1%EA%B2%BD%EB%9D%BD_%EB%8F%99%EC%9D%BC%EB%AA%85%EC%B9%AD_%EA%B2%BD%ED%98%88%EC%8C%8D_%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D.html",
@@ -162,7 +171,7 @@
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\02_고전문헌_통합비교분석\\3대침구서적_해부학적_근육경락_동일명칭_경혈쌍_비교분석"
   },
   {
-    "index": 19,
+    "index": 20,
     "badge": "CLASSICS-2",
     "title": "동일별명 주치혼용",
     "rel_html": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%B9%A8%EA%B5%AC%EC%84%9C%EC%A0%81_%EC%A0%84%EC%B2%B4%EB%A7%88%EC%8A%A4%ED%84%B0_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98%ED%98%BC%EC%9A%A9_%EA%B2%80%EC%A6%9D.html",
@@ -171,7 +180,7 @@
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\02_고전문헌_통합비교분석\\3대침구서적_전체마스터_동일별명_경혈쌍_주치혼용_검증"
   },
   {
-    "index": 20,
+    "index": 21,
     "badge": "CLASSICS-3",
     "title": "24경혈쌍 임상공통점",
     "rel_html": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/%EC%A4%91%EA%B5%AD%EC%B9%A8%EA%B5%AC3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8F%99%EC%9D%BC%EB%B3%84%EB%AA%85_%EB%B0%8F_24%EA%B2%BD%ED%98%88%EC%8C%8D_%EC%A3%BC%EC%B9%98_%EC%9E%84%EC%83%81%EA%B3%B5%ED%86%B5%EC%A0%90_%EC%A2%85%ED%95%A9%EC%8B%AC%EC%B8%B5%EB%B6%84%EC%84%9D.html",
@@ -180,7 +189,7 @@
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\02_고전문헌_통합비교분석\\중국침구3대서적_동일별명_및_24경혈쌍_주치_임상공통점_종합심층분석"
   },
   {
-    "index": 21,
+    "index": 22,
     "badge": "CLASSICS-4",
     "title": "대장병증 시대별분석",
     "rel_html": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/3%EB%8C%80%EC%84%9C%EC%A0%81_%EB%8C%80%EC%9E%A5%EB%B3%91%EC%A6%9D_%EC%9D%B4%EC%A7%88%EC%84%A4%EC%82%AC_%EC%8B%9C%EB%8C%80%EB%B3%84%EB%B6%84%EC%84%9D_%EB%B0%8F_%EC%83%81%EB%A0%B4%EA%B1%B0%ED%97%88_%EA%B3%A0%EC%A6%9D%ED%95%A9%EC%9D%BC_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
@@ -189,7 +198,7 @@
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\02_고전문헌_통합비교분석\\3대서적_대장병증_이질설사_시대별분석_및_상렴거허_고증합일_보고서"
   },
   {
-    "index": 22,
+    "index": 23,
     "badge": "REVIEW",
     "title": "사총혈·천성십이혈 구성원리",
     "rel_html": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%82%AC%EC%B4%9D%ED%98%88_%EC%B2%9C%EC%84%B1%EC%8B%AD%EC%9D%B4%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%82%AC%EC%B4%9D%ED%98%88_%EC%B2%9C%EC%84%B1%EC%8B%AD%EC%9D%B4%ED%98%88_%EA%B5%AC%EC%84%B1%EC%9B%90%EB%A6%AC_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EB%B0%8F_%ED%94%BC%EC%96%B4%EB%A6%AC%EB%B7%B0_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
@@ -198,7 +207,7 @@
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\03_주제별_경혈고증_연구보고서\\사총혈_천성십이혈_고증\\사총혈_천성십이혈_구성원리_가설검증_및_피어리뷰_보고서"
   },
   {
-    "index": 23,
+    "index": 24,
     "badge": "GV14-GV13",
     "title": "대추 vs 도도",
     "rel_html": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%8C%80%EC%B6%94_%EB%8F%84%EB%8F%84%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%8C%80%EC%B6%94_vs_%EB%8F%84%EB%8F%84_%EC%88%98%ED%98%88%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%ED%95%B4%EB%B6%80%ED%95%99_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
@@ -207,7 +216,7 @@
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\03_주제별_경혈고증_연구보고서\\대추_도도혈_고증\\대추_vs_도도_수혈고증_및_해부학_실체판명_종합보고서"
   },
   {
-    "index": 24,
+    "index": 25,
     "badge": "EX-HN",
     "title": "숭골 (崇骨)",
     "rel_html": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%88%AD%EA%B3%A8%ED%98%88_%EA%B3%A0%EC%A6%9D/%EC%88%AD%EA%B3%A8_%EA%B2%BD%EC%99%B8%EA%B8%B0%ED%98%88_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
@@ -216,7 +225,7 @@
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\03_주제별_경혈고증_연구보고서\\숭골혈_고증\\숭골_경외기혈_고증_및_가설검증_종합보고서"
   },
   {
-    "index": 25,
+    "index": 26,
     "badge": "LR05-BL40",
     "title": "중도·요유·위중",
     "rel_html": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%A4%91%EB%8F%84_%EC%9A%94%EC%9C%A0_%EC%9C%84%EC%A4%91_%EA%B3%A0%EC%A6%9D/%EC%A4%91%EB%8F%84_%EC%9A%94%EC%9C%A0_%EC%9C%84%EC%A4%91_%EC%97%B0%EA%B3%84_%EA%B3%A0%EC%A6%9D_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%B0%B0%ED%98%88_%EC%9A%94%EC%95%BD%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
@@ -225,7 +234,7 @@
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\03_주제별_경혈고증_연구보고서\\중도_요유_위중_고증\\중도_요유_위중_연계_고증_및_임상배혈_요약보고서"
   },
   {
-    "index": 26,
+    "index": 27,
     "badge": "LI18",
     "title": "부돌 (扶突)",
     "rel_html": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B6%80%EB%8F%8C%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%B6%80%EB%8F%8C_%EB%B3%84%EC%B9%AD_%ED%92%8D%EB%B6%80_%EB%AC%B8%ED%97%8C%EC%B6%9C%EC%B2%98_%EB%B0%8F_%EA%B3%A0%EC%A6%9D%EB%B6%84%EC%84%9D.html",
@@ -234,7 +243,7 @@
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\03_주제별_경혈고증_연구보고서\\부돌혈_고증\\부돌_별칭_풍부_문헌출처_및_고증분석"
   },
   {
-    "index": 27,
+    "index": 28,
     "badge": "MATRIX · SHOULDER",
     "title": "오십견·누견풍 임상매트릭스",
     "rel_html": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%A4%EC%8B%AD%EA%B2%AC_%EB%88%84%EA%B2%AC%ED%92%8D_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%A4%EC%8B%AD%EA%B2%AC_%EB%88%84%EA%B2%AC%ED%92%8D_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html",

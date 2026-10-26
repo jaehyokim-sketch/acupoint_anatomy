@@ -305,7 +305,27 @@ BILINGUAL_CARDS = [
     "btn_ko": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC09_%EC%A4%91%EC%B6%A9/PC09_%EC%A4%91%EC%B6%A9_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
     "btn_en": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC09_%EC%A4%91%EC%B6%A9/PC09_%EC%A4%91%EC%B6%A9_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
   },
-  # 16. Donguibogam Headache Clinical Matrix
+  # 16. CV12
+  {
+    "category": "acupoint",
+    "search": "CV12 중완 Zhongwan 中脘 임맥 백선 linea alba 배곧은근집 transversalis fascia 갈비사이신경 T7 T8 위배벽동정맥 초음파 ANIR 간좌엽 ARI v3.0 A 90.0 SI 50 체성내장반사 위의모혈 부회",
+    "code_badge": "CV12",
+    "code_style": "background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);",
+    "status_badge": "ARI v3.0 · 90.0 (A) · SI 50 · FMA 5.1 & US ANIR",
+    "status_style": "background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);",
+    "title_ko": "중완 (中脘)",
+    "title_en": "Zhongwan (中脘, CV12)",
+    "subtitle_ko": "CV12 중완 해부생리학 실체 판명 학술 모노그래프",
+    "subtitle_en": "CV12 Zhongwan Anatomical Substrate & Neuroreflex Verification Monograph",
+    "desc_ko": "임맥의 중완(위의 모혈·부회). 백선 정중앙을 자입점으로 하여 T7·T8 전피지 및 체성-내장 반사(대내장신경·DMV)를 통한 위 운동·위산 조절. 원광대 연구팀 초음파 실측(papers.id 1444, n=83)으로 허용 자침 깊이(ANIR 25.3 ± 10.2mm) 및 직하 간 좌엽(62.7%)·위 전벽 확인. 체형별 권고 심도(저체중 ≤ 10mm, 정상 ≤ 15mm, 과체중 ≤ 30mm) 제시. 단일 Target 1≡2≡3(90.0, A, 확정) 및 SI 50.",
+    "desc_en": "Zhongwan (CV12, Front-Mu of Stomach & Hui-Meeting of Fu). Pierces linea alba; stimulates T7-T8 anterior cutaneous nerves driving somato-visceral reflexes via splanchnic and vagal efferents. Ultrasound measurement (papers.id 1444, n=83) verifies allowable needle insertion range (ANIR 25.3 ± 10.2 mm) and underlying left liver lobe (62.7%)/stomach wall. Establishes BMI-stratified depth safety (underweight ≤ 10 mm, normal ≤ 15 mm). Single Target 1≡2≡3 (90.0, Grade A, Confirmed) and SI 50.",
+    "tags": ["#CV12", "#중완", "#Zhongwan", "#임맥", "#위모혈", "#부회", "#백선", "#ANIR", "#초음파실측", "#체성내장반사"],
+    "cat_label_ko": "경혈별 해부생리",
+    "cat_label_en": "Acupoint Anatomy",
+    "btn_ko": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/CV_%EC%9E%84%EB%A7%A5/CV12_%EC%A4%91%EC%99%84/CV12_%EC%A4%91%EC%99%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "btn_en": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/CV_%EC%9E%84%EB%A7%A5/CV12_%EC%A4%91%EC%99%84/CV12_%EC%A4%91%EC%99%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html"
+  },
+  # 17. Donguibogam Headache Clinical Matrix
   {
     "category": "matrix",
     "search": "동의보감 두통 침구해부 Donguibogam Headache 종합보고서 매트릭스 15절 9처방 20혈 백회 찬죽 풍지 합곡 전정 인당 태양 곡빈 풍문 FMA 5.1 UPGMA 삼차경수복합체 TCC",
