@@ -1,19 +1,37 @@
 # [경혈해부] 스킬 규칙 — Google Drive 정본 기준 PC 설정 가이드
 
 > 2026-10-26 결정: GOYANGSOON PC와 김재효연구실 PC는 모두 **Google Drive `도서 번역` 폴더의 정본**을 스킬 규칙으로 쓴다. 각 PC의 로컬 사본은 Drive를 그대로 따르는 읽기 전용 미러다.
+>
+> **같은 날 추가 결정 — `C:\workspace`의 모든 작업: 김재효연구실 PC ⇄ Google Drive 정본 → GOYANGSOON PC 로컬 미러.** 정책 파일은 Drive `도서 번역\.claude\drive_canonical_policy.json`(`editor_host` = 김재효연구실)이다.
+
+## 0. PC 역할
+
+| | 김재효연구실 PC (편집 PC) | GOYANGSOON PC (미러 PC) |
+| :--- | :--- | :--- |
+| Drive 정본(스킬 규칙·지침·`01_Framework`·`02_Master_Datasets`·`01_도서_번역_및_원전`, 각 저장소 Drive 폴더의 지침 파일) | 고친다 | **고치지 않는다** (PreToolUse hook이 막음) |
+| 로컬 미러 | 세션 시작 hook으로 Drive와 맞춤 | 세션 시작 hook으로 Drive와 맞춤(읽기 전용) |
+| 산출물(보고서·코드) | 커밋·푸시 → `deploy_to_gdrive.py` | 같음 |
+| `sync_master_db.py` (Drive DB 갱신) | 실제 실행 | `--dry-run`만 (병합은 편집 PC) |
+| `sync_skill_settings.py` | `--apply` 가능 | `--check`만 |
+| 주간 DB 배치 | 실행 PC(`weekly_sync_host.txt`) | 건너뜀 |
+
+- 미러 PC에서 규칙·정본 변경이 필요하면 바꿀 내용을 정리해 사용자에게 알리고, 편집 PC에서 반영한다.
+- 배포 스크립트는 지침 파일(`CLAUDE.md`·`AGENTS.md`·`GEMINI.md`·`.claude/`·`.agents/`)을 Drive로 올리거나 지우지 않는다(Drive 쪽이 정본).
 
 ## 1. 무엇이 정본이고 무엇이 미러인가
 
-| 정본 (Google Drive `도서 번역`) | 로컬 미러 | 비고 |
+| 정본 (Google Drive) | 로컬 미러 | 비고 |
 | :--- | :--- | :--- |
-| `.claude/skills/acupoint-anatomy/**` | `C:\workspace\.claude\skills\acupoint-anatomy\` | Claude Code 스킬 본문·FMA/초음파 스크립트·WORKLOG |
-| `.claude/workspace_CLAUDE.md` | `C:\workspace\CLAUDE.md` | 로컬 워크스페이스 지침 |
-| `01_Framework/` 정본·Layer B 등록부·DB 설계 | `acupoint_anatomy/framework/` | 저장소 사본(바뀌면 커밋) |
-| `.agents/skills/acupoint-anatomy/SKILL.md` | `acupoint_anatomy/skill/SKILL.md` | 〃 |
-| `02_Master_Datasets/layer_b_reference_registry.json` | `acupoint_anatomy/data/` | 〃 |
+| `도서 번역/.claude/skills/acupoint-anatomy/**` | `C:\workspace\.claude\skills\acupoint-anatomy\` | Claude Code 스킬 본문·FMA/초음파 스크립트·WORKLOG |
+| `도서 번역/.claude/workspace_CLAUDE.md` | `C:\workspace\CLAUDE.md` | 로컬 워크스페이스 지침 |
+| `도서 번역/01_Framework/` 정본·Layer B 등록부·DB 설계 | `acupoint_anatomy/framework/` | 저장소 사본(바뀌면 커밋) |
+| `도서 번역/.agents/skills/acupoint-anatomy/SKILL.md` | `acupoint_anatomy/skill/SKILL.md` | 〃 |
+| `도서 번역/02_Master_Datasets/` 마스터 DB(JSON·xlsx)·KJH xlsx·마스터 CSV·교재 2종·자침깊이·로직 원칙·ARI 데이터셋·`layer_b_reference_registry.json`·`FMA/acupoint_fma_mapping.json` | `acupoint_anatomy/data/` | 바이트 단위 미러. 교재·자침깊이 xlsx가 바뀌면 `mcp_reference_data.json` 자동 재생성. 바뀌면 커밋 |
+| 다른 저장소의 Drive 배포 폴더에 있는 `CLAUDE.md`·`AGENTS.md`·`GEMINI.md`·`.claude/settings.json`·`.claude/skills|commands/`·`.agents/rules|skills/` | `C:\workspace\<저장소>\` 같은 경로 | 저장소↔Drive 폴더는 각 `deploy_to_gdrive.py`의 배포 경로로 찾는다(현재 `amari-gl-dmn` ↔ `논문작업\비평형열역학`) |
+| `도서 번역/.agents/skills/huanglongxiang-scholar/` | `huanglongxiang-scholar/skill/` 등 | [황룡상] — `huanglongxiang-scholar/scripts/sync_skill_copies.py` |
 
 - 미러는 `acupoint_anatomy/scripts/sync_claude_skill.py`가 **Drive → 로컬 단방향**으로 맞춘다.
-- 로컬 미러를 직접 고치면 다음 동기화 때 `C:\workspace\.claude\skill_sync_backup\<시각>\`에 보관된 뒤 Drive본으로 덮어써진다. **규칙은 Drive 정본에서 고친다.**
+- 로컬 미러를 직접 고치면 다음 동기화 때 `C:\workspace\.claude\skill_sync_backup\<시각>\`에 보관된 뒤 Drive본으로 덮어써진다. **규칙은 편집 PC에서 Drive 정본을 고친다.**
 - Drive에 연결되지 않은 상태에서는 아무것도 바꾸지 않는다.
 
 ## 2. PC별 1회 설정
@@ -24,7 +42,9 @@
 2. **저장소**: `C:\workspace\acupoint_anatomy`에 GitHub 저장소를 clone(이미 있으면 `git pull`).
 3. **미러 생성**: `cd C:\workspace` → `python acupoint_anatomy\scripts\sync_claude_skill.py`
    - `C:\workspace\.claude\skills\acupoint-anatomy\`와 `C:\workspace\CLAUDE.md`가 Drive 정본으로 만들어진다. `--check`로 차이만 볼 수 있다.
-4. **세션 시작 자동 동기화(hook)**: `C:\workspace\.claude\settings.json`에 다음을 넣는다(파일이 있으면 `hooks` 항목만 합친다). Claude Code에서 `/hooks`로 확인할 수 있다.
+4. **hook**: `C:\workspace\.claude\settings.json`(PC별 파일)에 다음을 넣는다(파일이 있으면 `hooks` 항목만 합친다). Claude Code에서 `/hooks`로 확인할 수 있다.
+   - SessionStart 두 개: Drive → 로컬 미러([경혈해부]·지침·데이터, [황룡상]).
+   - PreToolUse 하나: 정본·미러 편집 차단. 두 PC에 똑같이 넣는다. 편집 PC에서는 스크립트가 정책 파일을 보고 아무것도 막지 않는다.
    ```json
    {
      "hooks": {
@@ -36,6 +56,24 @@
                "command": "python \"C:/workspace/acupoint_anatomy/scripts/sync_claude_skill.py\" --quiet || true",
                "timeout": 120,
                "statusMessage": "[경혈해부] 스킬 규칙을 Google Drive 정본에 맞추는 중"
+             },
+             {
+               "type": "command",
+               "command": "python \"C:/workspace/huanglongxiang-scholar/scripts/sync_skill_copies.py\" --apply --quiet || true",
+               "timeout": 120,
+               "statusMessage": "[황룡상] 스킬 규칙을 Google Drive 정본에 맞추는 중"
+             }
+           ]
+         }
+       ],
+       "PreToolUse": [
+         {
+           "matcher": "Edit|Write|MultiEdit|NotebookEdit",
+           "hooks": [
+             {
+               "type": "command",
+               "command": "python \"C:/workspace/acupoint_anatomy/scripts/drive_canonical_guard.py\"",
+               "timeout": 15
              }
            ]
          }
