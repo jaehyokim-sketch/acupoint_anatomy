@@ -49,6 +49,7 @@
 | 2026-10-26 | Claude Code | **스킬 규칙 Google Drive 정본 기준 전환**(사용자 결정 — GOYANGSOON·김재효연구실 PC 모두 Drive 정본 사용): `scripts/sync_claude_skill.py`를 양방향에서 **Drive → 로컬 단방향 미러**로 변경(로컬 수정본은 `C:\workspace\.claude\skill_sync_backup\`에 보관 후 덮어씀, Drive 미연결 시 무변경, `--check`·`--quiet`). 미러 대상: Drive `.claude/skills/acupoint-anatomy/**`→워크스페이스 스킬, Drive `.claude/workspace_CLAUDE.md`(신설)→`C:\workspace\CLAUDE.md`, `01_Framework/` 3종·`.agents` SKILL.md·Layer B JSON→저장소 `framework/`·`skill/`·`data/`. 스킬 래퍼 2·8절에 원칙 추가, `docs/스킬규칙_Drive정본_PC설정_가이드.md` 신설. 세션 시작 hook(`C:\workspace\.claude\settings.json`, SessionStart → `sync_claude_skill.py --quiet`)은 사용자 승인 후 등록 완료(일치 시 무출력, 차이 시 반영 내역·로컬 수정 보관 안내) | 사용자 지시 2026-10-26 |
 | 2026-10-26 | Claude Code | **주간 DB 배치 Google Drive `도서 번역` 기준 재등록**(사용자 결정): 공용 `weekly_sync.cmd`·`register_weekly_task.cmd` 개정(ASCII 전용 — chcp 65001 cmd의 한글 비교 불안정 확인) + `weekly_guard.py` 신설(Drive 경로 확인·배치 담당 PC 확인·dry-run). 배치 담당 PC는 Drive `02_Master_Datasets\weekly_sync_host.txt`(현재 김재효연구실)로 지정 — 다른 PC 작업은 건너뜀. 이 PC 작업 실패(0x80070002) 원인 = schtasks /TR 따옴표가 경로 공백에서 잘려 실행 파일이 `G:\내`로 등록됨 → PowerShell `cmd.exe /c "<Drive 경로>\weekly_sync.cmd"`로 재등록, 즉시 실행 결과 0·로그 '담당 아님 건너뜀' 확인. 시험: Drive 밖 사본 배치·등록 거부(4), 담당 PC 판정 정상. 김재효연구실 PC는 Drive의 `register_weekly_task.cmd`를 한 번 실행해 D: 사본 등록을 덮어써야 함. 변경 전 스크립트는 `02_Master_Datasets\backup\restore_20261026\` | 사용자 지시 2026-10-26 |
 | 2026-10-26 | Claude Code (GOYANGSOON) | **C:\workspace 전체 Google Drive 정본 원칙: 김재효연구실 PC ⇄ Drive 정본 → GOYANGSOON PC 로컬 미러**(사용자 결정). 정책 파일 Drive `.claude/drive_canonical_policy.json`(editor_host=김재효연구실) 신설, 워크스페이스 지침·두 스킬 변경 관리 절·Antigravity 가이드에 PC 역할 반영. `sync_claude_skill.py` 확장: ② 다른 저장소 지침 파일(각 deploy_to_gdrive.py 배포 폴더 → 로컬) ③ 데이터 정본(`02_Master_Datasets` 10종+FMA 대응표 → `data/`, 바이트 단위, 교재·자침깊이 변경 시 `mcp_reference_data.json` 자동 재생성). 첫 미러로 `data/김재효 수업_경혈_해부구조_데이터셋.xlsx`(LU06 `깊은엄지굽힘근`→`긴엄지굽힘근`, Drive 정본)·자침깊이 xlsx(숫자 형식) 갱신. `drive_canonical_guard.py`(PreToolUse) 신설: 미러 PC에서 Drive 정본·로컬 미러 Edit/Write 차단(48건 시험). 6개 저장소 deploy_to_gdrive.py가 지침 파일을 배포·prune하지 않도록 수정. 미러 PC 규칙: `sync_master_db.py`는 --dry-run, `sync_skill_settings.py`는 --check만, 작업 기록은 이 저장소 WORKLOG에만 | 사용자 지시 2026-10-26 |
+| 2026-10-26 | Claude Code (GOYANGSOON) | **CV12 중완 Tier 3 신규 작성**(`01_경혈별_해부생리_분석보고서/CV_임맥/CV12_중완/`). 초안 생성기 산출본(범용 Layer 경계·ARI 81.25 B)을 폐기하고 4대 원전 직접 대조로 전면 재작성: 《穴位通鉴》 下卷 任脉篇 中脘章(L1003~1552) 部位·针法·局部解剖·简要结语, 《腧穴通考》 下册 任脉穴篇(L7~660) 【名实考】·'胃管'与'中管'穴辨·【定位】 文献分析·【操作】, 《证治通鉴》 10편 中脘 주치(원문·한글번역 대조) + 霍乱·腹痛·脏腑病证편 배오 전수, 《经络通鉴》 第贰编 第三篇 L811·L853·L857·第五篇 L123~146 교감. **교감 성과**: ① 《医学纲目》 '上脘下一寸五分' 내적 모순 오기 ② 《太平圣惠方》 中管/胃管 2혈 분할을 陰都 기재로 역증 ③ 《甲乙经》 '刺入二分'이 '一寸二分' 탈자라는 穴位通鉴 각주[1] 확인. **Tri-Target 1≡2≡3 단일**(쌍별 Δ ≈ 0mm — 겉보기 이설은 기준점(鸠尾骨/胸剑结合) 차이로 모두 '구미골–배꼽 중점'에 수렴). **혈위 특이 초음파 실측**(papers.id 1444, n=83) 원문 대조로 ANIR 25.3 ± 10.2mm·간 좌엽 62.7%·Table 2 체형별 전수 수록 → Layer 1~5 mm 경계를 실측값에 고정하고 체형별 권고 상한 신설(저체중 ≤ 10 · 정상 ≤ 15 · 과체중 ≤ 30mm). B-Check 9/12(B3-17은 등록부 한계 '복부 미적용'이라 B3-06으로 교체). **ARI-Core 90.0 ± 1.25 (A) · SI 50 · 민감도 88.5 (A, 불변)**. 실측 기반 2패널 모식도 신규(구판 범용 모식도 삭제 — Layer 5를 '골막·관절낭'으로 표기해 복벽 혈위에 부적합), 분석 데이터북 13시트 전면 교체. 감사: 자침깊이 DB의 '황제명당경 2푼 / 갑을경 12푼' 귀속이 원전과 역전된 것으로 보임(값·환산은 동일, 정본 수정은 편집 PC 소관). 미러 PC이므로 Rank 0은 점검 전용(드리프트 없음), Rank 6은 점검 전용 — 신규 18편 DB 미병합 | [CC] 보고서 10-5절 감사 기록 |
 
 ## 2. 외부 폴더 이관 기록 (2026-10-23)
 
@@ -65,11 +66,12 @@
 - 각 폴더에 `.md`·`.html`·`.xlsx` 3종이 그대로 있다(파일명 변경 없음).
 - 구판 점수 95~97.5는 4요인 가중 합산·게이트 없는 채점이라 ARI v3.0 값과 비교하지 않는다(정본 Rank 7). LI04·SP06은 이 구판을 근거 자료로만 쓰고 v2.7로 새로 작성한다.
 
-## 3. 보고서 현황 색인 (1분류, 2026-10-25 기준 — 12건 모두 Framework 2.7.7 Tri-Target·4대 원전 반영)
+## 3. 보고서 현황 색인 (1분류, 2026-10-26 기준 — 13건: 12건 Framework 2.7.7 Tri-Target·4대 원전 반영 + CV12 신규 2.7.10)
 
 | 경혈 | 현행 판 | FMA | 횡단면 모식도 | 비고 |
 | :--- | :--- | :---: | :---: | :--- |
 | BL02 찬죽 | v2.7 + FMA (10-23) | 있음 | 시상 단면 | 점수 불변 |
+| CV12 중완 | Tier 3 v2.7.10 (10-26 신규) | 있음 | 상복벽 횡단 + 체형별 ANIR(그림 4-1 A·B) | 단일 Target 1≡2≡3 **90.0 ± 1.25 (A)** · SI 50 · B-Check 9/12 부합; 혈위 특이 초음파 실측 papers.id 1444(ANIR 25.3 ± 10.2mm, 간 좌엽 62.7%); 《腧穴通考》 '胃管'与'中管' 교감; 후속 — 영문본·신규 18편 병합 |
 | GB21 견정 | v2.7 + FMA (10-23, 다른 도구 추가분 정정) | 있음 | 시상 단면 | 원문 확인 초음파 수치(1431·1896) |
 | GB39 현종 | v2.7 + FMA (10-23) | 있음 | 하퇴 하1/3 횡단 | 신규 7편 다음 개정 때 검토 |
 | GV20 백회 | v2.7 + FMA (10-23) | 있음 | 정수리 관상 단면 | 점수 불변 |
