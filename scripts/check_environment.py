@@ -21,7 +21,27 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
         pass
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-ROOT = SCRIPT_DIR.parents[3]
+
+
+def find_project_root() -> Path:
+    for env in ("ACUPOINT_PROJECT_ROOT", "ACUPOINT_DRIVE_ROOT"):
+        val = os.environ.get(env)
+        if val and (Path(val) / "01_Framework").exists():
+            return Path(val)
+    curr = SCRIPT_DIR
+    for _ in range(8):
+        if (curr / "01_Framework").exists() and (curr / "02_Master_Datasets").exists():
+            return curr
+        if curr.parent == curr:
+            break
+        curr = curr.parent
+    default = Path(r"G:\내 드라이브\도서 번역")
+    if (default / "01_Framework").exists():
+        return default
+    return SCRIPT_DIR.parents[min(len(SCRIPT_DIR.parents) - 1, 3)]
+
+
+ROOT = find_project_root()
 TASK_NAME = "AcupointMasterDB_WeeklySync"
 PACKAGES = [
     ("requests", True),
