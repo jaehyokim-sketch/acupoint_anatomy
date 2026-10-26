@@ -4,7 +4,7 @@ deploy_to_gdrive.py - Deploy/Sync acupoint_anatomy artifacts from Local to Googl
 Usage:
     python deploy_to_gdrive.py [--dry-run]
 """
-import os, sys, shutil, argparse
+import atexit, os, sys, shutil, argparse
 
 # Support utf-8 console output on Windows
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -32,6 +32,36 @@ IGNORE_EXTENSIONS = {
     ".swp",
     ".bak"
 }
+
+# Google Drive 정본 원칙(2026-10-26): Drive 쪽 파일이 로컬보다 새로우면(다른 PC나 Drive에서 고친 파일)
+# 덮어쓰지 않고 목록만 알린다. 로컬 판으로 바꾸려면 Drive 파일을 확인한 뒤 로컬 파일을 다시 저장하고 배포한다.
+NEWER_ON_DRIVE = []
+
+
+def _report_newer_on_drive():
+    if NEWER_ON_DRIVE:
+        print(f"[주의] Drive 쪽이 더 새로운 파일 {len(NEWER_ON_DRIVE)}개는 덮어쓰지 않았습니다:")
+        for p in NEWER_ON_DRIVE[:30]:
+            print(f"  [DRIVE NEWER] {p}")
+
+
+atexit.register(_report_newer_on_drive)
+
+
+def _same_content(src_file, dest_file, limit=50 * 1024 * 1024):
+    """내용이 같으면(줄바꿈 CRLF/LF 차이만 있어도) True. 같으면 로컬 수정 시각을 Drive에 맞춰 다음 비교를 빠르게 한다."""
+    try:
+        if max(os.path.getsize(src_file), os.path.getsize(dest_file)) > limit:
+            return False
+        with open(src_file, "rb") as a, open(dest_file, "rb") as b:
+            sa, sb = a.read(), b.read()
+        if sa != sb and sa.replace(b"\r\n", b"\n") != sb.replace(b"\r\n", b"\n"):
+            return False
+        os.utime(src_file, (os.path.getatime(src_file), os.path.getmtime(dest_file)))
+        return True
+    except OSError:
+        return False
+
 
 def sync_to_gdrive(dry_run=False, prune=False):
     print("=" * 60)
@@ -79,7 +109,9 @@ def sync_to_gdrive(dry_run=False, prune=False):
             else:
                 src_stat = os.stat(src_file)
                 dst_stat = os.stat(dest_file)
-                if src_stat.st_size != dst_stat.st_size or abs(src_stat.st_mtime - dst_stat.st_mtime) > 1.0:
+                if dst_stat.st_mtime > src_stat.st_mtime + 2.0 and src_stat.st_size != dst_stat.st_size or dst_stat.st_mtime > src_stat.st_mtime + 2.0 and open(src_file, 'rb').read() != open(dest_file, 'rb').read():
+                    NEWER_ON_DRIVE.append(os.path.relpath(src_file, LOCAL_REPO))
+                elif (src_stat.st_size != dst_stat.st_size or abs(src_stat.st_mtime - dst_stat.st_mtime) > 1.0) and not _same_content(src_file, dest_file):
                     need_copy = True
 
             if need_copy:

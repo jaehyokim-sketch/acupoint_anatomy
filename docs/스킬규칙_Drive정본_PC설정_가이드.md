@@ -10,7 +10,7 @@
 | :--- | :--- | :--- |
 | Drive 정본(스킬 규칙·지침·`01_Framework`·`02_Master_Datasets`·`01_도서_번역_및_원전`, 각 저장소 Drive 폴더의 지침 파일) | 고친다 | **고치지 않는다** (PreToolUse hook이 막음) |
 | 로컬 미러 | 세션 시작 hook으로 Drive와 맞춤 | 세션 시작 hook으로 Drive와 맞춤(읽기 전용) |
-| 산출물(보고서·코드) | 커밋·푸시 → `deploy_to_gdrive.py` | 같음 |
+| 산출물(보고서·코드) | 커밋·푸시, Drive 배포(Stop hook이 자동으로 `deploy_to_gdrive.py` 실행) | 같음 — 이 PC에서 만든 결과물도 Drive에 동기화한다 |
 | `sync_master_db.py` (Drive DB 갱신) | 실제 실행 | `--dry-run`만 (병합은 편집 PC) |
 | `sync_skill_settings.py` | `--apply` 가능 | `--check`만 |
 | 주간 DB 배치 | 실행 PC(`weekly_sync_host.txt`) | 건너뜀 |
@@ -45,6 +45,13 @@
 4. **hook**: `C:\workspace\.claude\settings.json`(PC별 파일)에 다음을 넣는다(파일이 있으면 `hooks` 항목만 합친다). Claude Code에서 `/hooks`로 확인할 수 있다.
    - SessionStart 두 개: Drive → 로컬 미러([경혈해부]·지침·데이터, [황룡상]).
    - PreToolUse 하나: 정본·미러 편집 차단. 두 PC에 똑같이 넣는다. 편집 PC에서는 스크립트가 정책 파일을 보고 아무것도 막지 않는다.
+   - Stop 하나: 응답이 끝날 때마다 워크스페이스 결과물을 Drive에 자동 배포한다(`deploy_workspace_outputs.py`).
+     - 지난 배포 뒤 파일이 바뀐 저장소만 그 저장소의 `deploy_to_gdrive.py`를 실행하며, `--prune`은 쓰지 않는다.
+     - 각 배포 스크립트는 다음을 지킨다.
+       - 지침 파일(`CLAUDE.md`·`AGENTS.md`·`GEMINI.md`·`.claude/`·`.agents/`)은 올리지 않는다.
+       - **Drive 쪽이 더 새로운 파일은 덮어쓰지 않고 알린다.**
+       - 내용이 같으면(줄바꿈 차이 포함) 복사하지 않는다.
+     - Drive가 연결되지 않으면 건너뛰고 다음에 다시 시도한다. 수동 실행: `python acupoint_anatomy\scripts\deploy_workspace_outputs.py [--all|--dry-run|--repo <이름>]`.
    ```json
    {
      "hooks": {
@@ -62,6 +69,18 @@
                "command": "python \"C:/workspace/huanglongxiang-scholar/scripts/sync_skill_copies.py\" --apply --quiet || true",
                "timeout": 120,
                "statusMessage": "[황룡상] 스킬 규칙을 Google Drive 정본에 맞추는 중"
+             }
+           ]
+         }
+       ],
+       "Stop": [
+         {
+           "hooks": [
+             {
+               "type": "command",
+               "command": "python \"C:/workspace/acupoint_anatomy/scripts/deploy_workspace_outputs.py\" || true",
+               "timeout": 900,
+               "statusMessage": "워크스페이스 결과물을 Google Drive에 배포하는 중"
              }
            ]
          }
