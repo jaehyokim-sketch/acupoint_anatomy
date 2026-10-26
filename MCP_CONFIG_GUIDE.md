@@ -8,8 +8,11 @@
 
 | 방식 | 설명 | 장점 | 권장 대상 |
 | :--- | :--- | :--- | :--- |
-| **A. 원격 GitHub 스트리밍 (`remote_server.py`)** | GitHub API를 통해 On-Demand로 최신 데이터 스트리밍 | 로컬 디스크 공간 절약, 여러 PC에서 동일한 설정 유지 | **모든 사용자 권장** |
-| **B. 로컬 직접 연결 (`server.py`)** | 로컬에 Clone된 저장소의 파이썬 서버 직접 실행 | 0ms 무지연, 완전 오프라인 동작 가능 | 로컬 분석 및 개발자 |
+| **A. 원격 GitHub 스트리밍 (`remote_server.py`)** | 파일 하나로 GitHub 저장소 데이터를 받아 씀. 원전 목록은 `data/classics/index.json`(SHA-1)으로 확인해 API 호출 제한과 무관, 원전은 디스크 캐시, `--ttl`(기본 1시간)마다 갱신 확인 | 저장소 없이 사용, 여러 PC에서 같은 설정 | 외부 사용자·저장소 없는 PC |
+| **B. 로컬 직접 연결 (`server.py`)** | 로컬에 Clone된 저장소의 서버 직접 실행. 보조 문헌(《東醫寶鑑》 등)·FMA 로컬 색인 사용 가능 | 무지연, 오프라인 동작 | **저장소를 가진 PC 권장** |
+
+> **Claude Code**: 저장소에서 `python scripts/register_mcp.py`(로컬) 또는 `--remote`(원격)를 실행하면 이 PC의 Python·저장소 경로로 사용자 범위에 등록된다. 다른 IDE용 JSON은 `--print-json`으로 얻는다.
+> 도구 로직은 `mcp_server/acupoint_core.py` 하나에 있고, `remote_server.py`는 `scripts/build_remote_server.py`가 생성한다(직접 고치지 않음).
 
 ---
 
@@ -104,6 +107,7 @@
       ],
       "autoApprove": [
         "get_acupoint_anatomy_profile",
+        "get_fma_anatomy_profile",
         "search_biomedical_reflex_db",
         "get_layer_b_registry",
         "calculate_ari_v3_score",
@@ -127,7 +131,7 @@
     "acupoint-anatomy-local": {
       "command": "python",
       "args": [
-        "d:/도서 번역/acupoint_anatomy/mcp_server/server.py"
+        "<저장소 경로>/mcp_server/server.py"
       ],
       "env": {
         "PYTHONIOENCODING": "utf-8"
@@ -146,12 +150,12 @@
 ```powershell
 # PowerShell 관리자/일반 터미널에서 실행
 $repo = "jaehyokim-sketch/acupoint_anatomy"
-$token = "ghp_xxxxxxxxxxxxxxxxxxxx" # 개인 토큰 입력
+# 공개 저장소는 토큰 불필요. 비공개 포크일 때만 --token <PAT> 인자를 추가
 
 $targetDir = "$HOME\.acupoint_anatomy_mcp"
 if (!(Test-Path $targetDir)) { New-Item -ItemType Directory -Path $targetDir -Force }
 
-Copy-Item "d:\도서 번역\acupoint_anatomy\mcp_server\remote_server.py" "$targetDir\remote_server.py" -Force
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/$repo/main/mcp_server/remote_server.py" -OutFile "$targetDir\remote_server.py"
 
 Write-Host "✅ remote_server.py 가 $targetDir 로 복사되었습니다." -ForegroundColor Green
 Write-Host "💡 상단의 JSON 설정을 복사하여 각 IDE 설정 파일에 등록하십시오." -ForegroundColor Cyan
@@ -163,8 +167,8 @@ Write-Host "💡 상단의 JSON 설정을 복사하여 각 IDE 설정 파일에 
 
 AI 어시스턴트에게 다음과 같이 요청하면 자동으로 경혈해부 MCP 도구가 호출됩니다:
 
-1. **경혈 해부학적 5층차 및 3D 정위 조회**:
-   > "[경혈해부] ST36 족삼리의 5층차 해부학적 실체와 1푼=2.3mm 기준 자침 심도를 알려줘."
+1. **경혈 데이터 프로파일(교재 해부구조·문헌별 자침 깊이)**:
+   > "[경혈해부] ST36 족삼리의 2대 교재 해부구조와 문헌별 자침 깊이를 1푼=2.3mm로 환산해줘."
 2. **체성-내장 반사 및 PubMed 실증 논문 검색**:
    > "[경혈해부] PC6 내관혈의 미주신경-심장 자율신경 반사 회로와 관련 논문을 찾아줘."
 3. **Layer B 참조 등록부 및 B-Check 검증**:

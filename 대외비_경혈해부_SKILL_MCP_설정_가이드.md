@@ -31,7 +31,7 @@ graph TD
     subgraph Streaming Server ["mcp_server/remote_server.py"]
         Cache["In-Memory LRU Cache (10분 TTL)"]
         Streamer["GitHub Raw Content API Streamer"]
-        Tools["6대 MCP 도구 엔진"]
+        Tools["7대 MCP 도구 (acupoint_core.py)"]
     end
 
     MCP_Client <-->|stdio JSON-RPC 2.0| Streaming Server
@@ -114,14 +114,17 @@ git push -u origin main
 
 ---
 
-## 5. 제공되는 6대 핵심 MCP 도구
+## 5. 제공되는 7대 핵심 MCP 도구
 
-1. **`get_acupoint_anatomy_profile`**: 361 경혈의 5층차 해부 구조, 3D 좌표, 표준 심도, 신경/혈관 지배 구조 조회
-2. **`search_biomedical_reflex_db`**: 체성-내장 반사 회로, 척수 분절, 지배신경 및 PubMed 실증 논문 검색
-3. **`get_layer_b_registry`**: Layer B 4계층 참조 등록부(B1~B4) 및 B-Check 6항목 기준 조회
-4. **`calculate_ari_v3_score`**: 4대 지표 기반 ARI-Core, 등급, SI, 민감도 자동 계산 엔진
-5. **`search_classic_records`**: 4대 원전(혈위통감·수혈통고·증치통감·경락통감) 정제 코퍼스 전문 검색 — 경혈 장 발췌 및 검색어 적중 행(파일·행 번호), 번체·간체 통합
-6. **`get_framework_protocol`**: Framework v2.7의 Rank 0~7 순위, Tier 1~3 양식, 10대 보고서 구성 요소 조회
+1. **`get_acupoint_anatomy_profile`**: 마스터 CSV·2대 교재 해부구조 비교·문헌별 자침 깊이(푼→2.3mm)·통합 DB 요약·기존 보고서 ARI 표기 (층차·Tri-Target·ARI 값은 만들지 않음)
+2. **`get_fma_anatomy_profile`**: FMA 5.1.0 실체 대응, 로컬 색인이 있으면 신경 지배 줄기·척수 분절 합집합(B-Check ②)
+3. **`search_biomedical_reflex_db`**: Layer A 검색 — 경혈 코드 정확 대조·키워드 모든 단어 포함, 인용 제외 상태 기본 제외, 설계는 키워드 추정
+4. **`get_layer_b_registry`**: Layer B 4계층 등록부(43편)와 B-Check 판정 규칙(≥ 8/12 그리고 ①·② ≥ 1)
+5. **`calculate_ari_v3_score`**: ARI-Core·SI·게이트·등급·민감도, 이중 채점(`*_b`)·Tri-Target 우위 판정(`targets`), 루브릭 값 검증
+6. **`search_classic_records`**: 4대 원전(+보조 문헌 《東醫寶鑑》) 전문 검색 — 경혈 장 발췌, 혈명·별명 행(관련도순·원문/번역 중복 제거), 검색어 행(행 경계·문장부호 무시, 번체/간체·이체자 통합)
+7. **`get_framework_protocol`**: 정본 절별 추출(summary·tiers·ranks·rank0~7·b_check·rubrics·components·history·all)
+
+> 등록: 저장소에서 `python scripts/register_mcp.py` (Claude Code 사용자 범위, 다른 IDE는 `--print-json`). 데이터·로직 변경 후 `scripts/build_mcp_reference_data.py`·`scripts/build_remote_server.py` 실행.
 
 ---
 
