@@ -10,7 +10,22 @@ import atexit, os, sys, shutil, argparse
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 LOCAL_REPO = r"C:\workspace\acupoint_anatomy"
-GDRIVE_DEST = r"G:\내 드라이브\도서 번역\acupoint_anatomy"
+DEFAULT_DEST = "G:\\내 드라이브\\도서 번역\\acupoint_anatomy"
+
+def resolve_gdrive_dest():
+    if os.path.exists(DEFAULT_DEST):
+        return DEFAULT_DEST
+    # If Google Drive is mapped to a drive root directly (e.g. D:\ on editor PC)
+    for letter in ['D', 'G', 'H', 'E', 'F']:
+        alt2 = DEFAULT_DEST.replace("G:\\내 드라이브", f"{letter}:")
+        if os.path.exists(alt2):
+            return alt2
+        alt = DEFAULT_DEST.replace('G:', f"{letter}:").replace('D:', f"{letter}:")
+        if os.path.exists(alt):
+            return alt
+    return DEFAULT_DEST
+
+GDRIVE_DEST = resolve_gdrive_dest()
 
 IGNORE_DIRS = {
     ".git",
