@@ -1,6 +1,7 @@
-# Intrapericardial Needle Injury from Chest Acupuncture: Textual Investigation and Risk Assessment for a 50 mm Needle
+# Intrapericardial Needle Injury from Chest Acupuncture: Textual Investigation and Risk Assessment for a Needle with 50 mm Insertion Depth
 
 > **Incident**: While three needles were being inserted into the chest, one went in deep and caused a small myocardial tear inside the pericardium (hemopericardium)
+> **Needle condition**: needle body (針身) length 50 mm excluding the handle (針柄), i.e., a maximum insertion depth of 50 mm. All depths are insertion depths measured from the skin point
 > **Category**: Topic-based acupoint investigation and hypothesis testing (Tier 3) · **Framework**: v2.7 (incl. 2.7.10) · **Scoring**: ARI v3.0 (provisional weights 0.40/0.35/0.25, dual scoring)
 > **Anatomical basis**: FMA (Foundational Model of Anatomy) 5.1.0 local index + geometric measurement on BodyParts3D 4.0 meshes (FMA-ID based, CC BY 4.0)
 > **Four core classics**: Zhongguo Zhenjiu Xuewei Tongjian (《中國針灸穴位通鑑》), Conception Vessel (任脈), Kidney Meridian (足少陰腎經) and Stomach Meridian (足陽明胃經) chapters · Zhenjiu Shuxue Tongkao (《針灸腧穴通考》), corresponding chapters · Zhongguo Zhenjiu Zhengzhi Tongjian (《中國針灸證治通鑑》), Part II "Acupuncture contraindications (針灸禁忌)" and Part III "Gynecological and pediatric disorders (婦兒科病證)" · Zhongguo Zhenjiu Jingluo Tongjian (《中國針灸經絡通鑑》), Part I "Evolution of meridian theory (經絡學說的演變)" and Part III Pericardium Meridian (手厥陰) chapter (supplementary: Dongui Bogam (《東醫寶鑑》), Acupuncture chapter)
@@ -12,7 +13,7 @@
 
 1. **The points that best fit the incident are the left parasternal Kidney Meridian points — Shenfeng (神封, KI23), Bulang (步廊, KI22), Lingxu (靈墟, KI24) — and Danzhong (膻中, CV17) when a sternal foramen is present.** In all four, the perpendicular needle path reaches the anterior wall of the **right ventricle** (BodyParts3D measurement). The right ventricular free wall is thin (about 3–5 mm), so even a fine needle can tear it and cause hemopericardium. This matches "a small myocardial tear inside the pericardium".
 2. **The typical "three needles on the chest" combination is Danzhong (膻中, CV17) plus bilateral Rugen (乳根, ST18).** In 《中國針灸證治通鑑》, prescriptions for insufficient lactation (乳少) and acute mastitis (乳癰) combine Danzhong (膻中), Rugen (乳根) and Shaoze (少澤, SI1). If this was the combination, the deep needle was most likely (a) a perpendicular Danzhong (膻中) needle passing through a sternal foramen, or (b) a medially angled left Rugen (乳根) needle (the cardiac apex lies under left Rugen).
-3. **Risk of a 50 mm needle**: 50 mm is **2.7–4.3 times** the standard upper depth for chest points (5–8 fen = 11.5–18.4 mm). In the BodyParts3D reference model a 50 mm perpendicular needle stops just short of the heart (left Lingxu (靈墟) 52.1 mm, left Shenfeng (神封) 56.5 mm, left Bulang (步廊) 57.2 mm), but this model places structures about 30% deeper than an MRI-measured cohort. After correcting for that ratio, all four points **reach the right ventricle at 36–40 mm**. Danzhong (膻中) with a sternal foramen (prevalence 4.3–10.5%) reaches the right ventricle at 46.8 mm even without correction, and at about 33 mm after correction.
+3. **Risk of a needle with 50 mm insertion depth (50 mm body, handle excluded)**: fully inserted, 50 mm is **2.7–4.3 times** the standard upper depth for chest points (5–8 fen = 11.5–18.4 mm). In the BodyParts3D reference model a 50 mm perpendicular insertion stops just short of the heart (left Lingxu (靈墟) 52.1 mm, left Shenfeng (神封) 56.5 mm, left Bulang (步廊) 57.2 mm), but this model places structures about 30% deeper than an MRI-measured cohort. After correcting for that ratio, all three points **reach the right ventricle at 36–40 mm**. Danzhong (膻中) with a sternal foramen (prevalence 4.3–10.5%) reaches the right ventricle at 46.8 mm even without correction, and at about 33 mm after correction. **In other words, at risk grade I points the heart is reached with only 65–80% (33–40 mm) of the 50 mm needle body inserted** (Section 4-3, insertion-depth scenarios).
 4. **Where classical warnings and modern anatomy diverge**: The classics listed Danzhong (膻中) and Jiuwei (鳩尾, CV15) as needle-prohibited points (禁針穴) but never prohibited left Bulang (步廊) or Shenfeng (神封). The general part of 《中國針灸證治通鑑》 points this out and comments that, to avoid injuring the heart, "it is rather left Bulang (步廊) and Shenfeng (神封) that should be forbidden from deep needling". The FMA and 3D results support this comment. However, the same passage's claim that Danzhong (膻中) is safe "because the sternum lies beneath it" ignores the sternal foramen variant and needs correction.
 5. **ARI v3.0 (five points, dual scoring)**: Danzhong (膻中, CV17) 78.75 ± 1.25 (B) SI 0 ⚠ · Shenfeng (神封, KI23, left) 75.0 ± 1.25 (B) SI 25 ⚠ · Bulang (步廊, KI22, left) 72.5 ± 1.25 (B, weight-sensitive) SI 25 ⚠ · Rugen (乳根, ST18, left) 71.25 ± 2.5 (B) SI 25 ⚠ · Jiuwei (鳩尾, CV15) 70.0 ± 1.25 (B, weight-sensitive) SI 0 ⚠. All five fall under **Gate 3 (⚠ safety caution)**.
 
@@ -25,7 +26,8 @@
 | Item | Content |
 | :--- | :--- |
 | Incident | Three needles in the chest; one went deep and caused a small myocardial tear inside the pericardium (hemopericardium) |
-| Needle length assumed | 50 mm (≈ 21.7 fen ≈ 2.2 cun; Han-dynasty 1 fen = 2.3 mm). Worst case: inserted up to the handle |
+| Needle condition | **Needle body (針身) length 50 mm, handle (針柄) excluded** → maximum insertion depth 50 mm (≈ 21.7 fen ≈ 2.2 cun; Han-dynasty 1 fen = 2.3 mm). The length in commercial needle sizes (e.g., 0.25 × 50 mm) usually denotes the body length without the handle |
+| Insertion-depth scenarios | Worst case = the whole 50 mm body below the skin (inserted to the needle root). Because practitioners usually leave part of the body exposed, 30 and 40 mm insertions were also assessed (Section 4-3) |
 | Why no single point was assumed | The incident record gives no point names → all chest and epigastric points over the cardiac projection were screened in 3D |
 | Points measured in 3D (10 points, 18 sites) | Danzhong (膻中, CV17), Zhongting (中庭, CV16), Jiuwei (鳩尾, CV15), Juque (巨闕, CV14), Lingxu (靈墟, KI24), Shenfeng (神封, KI23), Bulang (步廊, KI22), Yingchuang (膺窗, ST16), Rugen (乳根, ST18), Tianchi (天池, PC1), Qimen (期門, LR14) (bilateral points on both sides) |
 | Points dual-scored with ARI (5 points) | Danzhong (膻中, CV17), Jiuwei (鳩尾, CV15), Shenfeng (神封, KI23, left), Bulang (步廊, KI22, left), Rugen (乳根, ST18, left) — high cardiac reach in 3D or classical needling prohibition |
@@ -90,12 +92,13 @@
 - **Coordinates**: X = left (+)/right (−) of the midline, Y = anteroposterior (anterior −), Z = height above the soles (superior +). In the framework's X (medio-lateral) · Y (proximo-distal) · Z (depth) system, the tables give "distance from midline" (X), "height" (Y) and "depth" (Z).
 - **B-cun**: WHO 2008, distance between the midpoints of the clavicles = 8 B-cun → **1 B-cun = 19.2 mm**.
 - **Skin points**: each intercostal space was located by cutting the inferior border of rib/costal cartilage n and the superior border of rib n+1 at the same X and taking the midpoint. Danzhong (膻中): midline at the 4th intercostal level; Jiuwei (鳩尾), Juque (巨闕): 1 and 2 B-cun below the xiphisternal junction (Z 1182.1 mm).
+- **Definition of insertion depth**: every distance is measured along the needle path from the skin point. "Reached at 50 mm" therefore means the whole 50 mm needle body (handle excluded) is below the skin; handle length does not enter the calculation.
 - **Insertion direction**: normal to the local 12 mm skin patch (perpendicular needling). Angled insertion was assessed with 600 random directions in each 30°, 45° and 60° cone around the normal. Intersections by the Möller–Trumbore ray–triangle algorithm.
 - **Limitations (important)**: (1) BodyParts3D has **no pericardium mesh**, and the heart mesh consists mainly of chamber casts, papillary muscles and coronary vessels, with no epicardial surface. Measured values are "distance to the first cardiac structure (usually a ventricular cavity)"; the true pericardium lies shallower by the thickness of the right ventricular free wall (about 3–5 mm, B1-01). (2) **The lung mesh contains only bronchi and pulmonary vessels, with no parenchymal surface**, so pneumothorax risk could not be measured (blue circles in the figure). (3) A single reference model cannot reflect differences in body habitus, sex, respiration or posture → supplemented by calibration and a critical habitus factor (4-3).
 
-### 4-2. Skin-point coordinates and 50 mm perpendicular paths (BodyParts3D raw values)
+### 4-2. Skin-point coordinates and perpendicular paths to 50 mm insertion depth (BodyParts3D raw values)
 
-| Point | Distance from midline (mm) | Height Z (mm) | First bone, perpendicular (mm) | First costal cartilage (mm) | Heart, perpendicular (mm) | Skin → heart, shortest (mm) | Liver, perpendicular (mm) | 50 mm perpendicular reaches heart |
+| Point | Distance from midline (mm) | Height Z (mm) | First bone, perpendicular (mm) | First costal cartilage (mm) | Heart, perpendicular (mm) | Skin → heart, shortest (mm) | Liver, perpendicular (mm) | Heart reached at 50 mm perpendicular insertion |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | :---: |
 | Danzhong (膻中, CV17) | 1.9 | 1209.7 | 4.8 (sternum) | — | 46.8 (behind sternum) | 40.4 | — | Blocked by sternum. **Reaches if sternal foramen** |
 | Zhongting (中庭, CV16) | 3.0 | 1183.1 | 0.7 (sternum) | — | — | 45.3 | — | No |
@@ -120,27 +123,50 @@
 - **Cardiac structure first hit on the perpendicular path**: Danzhong (膻中), left Lingxu (靈墟), left Shenfeng (神封) → cavity of right ventricle (FMA:9291); left Bulang (步廊) → anterior papillary muscle of right ventricle (FMA:7260); left Yingchuang (膺窗) → cavity of left ventricle (FMA:9466). Each requires perforating the anterior wall of the right or left ventricle.
 - **Angled insertion (uncorrected)**: the share of directions within a 30° cone in which the heart lies within 50 mm with no bone in the way was 21.5% at left Lingxu (靈墟) (45° cone 9.8%, 60° cone 7.2%; if costal cartilage also blocks, 12.8%, 6.8%, 4.8%). All other points were 0% before correction.
 
-![BodyParts3D chest axial sections with 50 mm perpendicular needle paths](Chest_acupoints_axial_50mm_needle_en.png)
+![BodyParts3D chest axial sections with perpendicular paths to 50 mm insertion depth](Chest_acupoints_axial_50mm_needle_en.png)
 
 ### 4-3. Habitus calibration and critical habitus factor k*
 
-To align the single reference model with measured subjects, an **MRI study measuring the same condition (papers.id 2476, PMID 22741258, 10 adults)** was used as the calibration point. There, the dangerous depth for perpendicular needling at Jiuwei (鳩尾) was **16.99 ± 2.86 mm**, whereas the first organ (liver) on the same path in BodyParts3D was at 24.3 mm. The model thus places structures about 1.43 times deeper than the measured cohort; the calibration factor is **k_cal = 16.99 / 24.3 = 0.70** (± 1 SD range 0.58–0.82). Because there is only one calibration point, the **critical habitus factor k* = 50 / measured depth** is given as well ("a 50 mm needle reaches the heart in anyone whose depths are k* times the model's or less").
+To align the single reference model with measured subjects, an **MRI study measuring the same condition (papers.id 2476, PMID 22741258, 10 adults)** was used as the calibration point. There, the dangerous depth for perpendicular needling at Jiuwei (鳩尾) was **16.99 ± 2.86 mm**, whereas the first organ (liver) on the same path in BodyParts3D was at 24.3 mm. The model thus places structures about 1.43 times deeper than the measured cohort; the calibration factor is **k_cal = 16.99 / 24.3 = 0.70** (± 1 SD range 0.58–0.82). Because there is only one calibration point, the **critical habitus factor k* = 50 / measured depth** is given as well ("a 50 mm insertion reaches the heart in anyone whose depths are k* times the model's or less"), with **k* = 50 mm (insertion depth) / measured depth**.
 
-| Point | Model raw (mm) | Corrected (mm, k = 0.70) | Corrected range (mm, k = 0.58–0.82) | k* (perpendicular) | k* (any direction) | 50 mm verdict (corrected) |
+| Point | Model raw (mm) | Corrected (mm, k = 0.70) | Corrected range (mm, k = 0.58–0.82) | k* (perpendicular) | k* (any direction) | Verdict at 50 mm insertion (corrected) |
 | :--- | ---: | ---: | :---: | ---: | ---: | :--- |
 | Danzhong (膻中, CV17) with sternal foramen | 46.8 | 32.7 | 27.2–38.2 | **1.07** | 1.24 | **Reaches** — even in the reference model |
 | Lingxu (靈墟, KI24) left | 52.1 | 36.4 | 30.3–42.6 | **0.96** | 1.19 | **Reaches** |
-| Shenfeng (神封, KI23) left | 56.5 | 39.5 | 32.8–46.2 | **0.885** | 0.975 | **Reaches** |
-| Bulang (步廊, KI22) left | 57.2 | 40.0 | 33.2–46.7 | **0.874** | 0.928 | **Reaches** |
+| Shenfeng (神封, KI23) left | 56.5 | 39.5 | 32.9–46.2 | **0.885** | 0.975 | **Reaches** |
+| Bulang (步廊, KI22) left | 57.2 | 40.0 | 33.3–46.7 | **0.874** | 0.928 | **Reaches** |
 | Yingchuang (膺窗, ST16) left | 67.4 | 47.1 | 39.2–55.1 | 0.742 | 0.935 | Borderline (reaches in thin patients) |
-| Rugen (乳根, ST18) left (angled, shortest) | 59.0 | 41.2 | 34.3–48.2 | — | 0.847 | **Reaches if angled medially** |
-| Tianchi (天池, PC1) left (angled, shortest) | 56.7 | 39.6 | 32.9–46.5 | — | 0.882 | Reaches if angled medially |
-| Jiuwei (鳩尾, CV15) (30–45° cranial tilt) | 68.0–68.6 | 47.6–48.0 | 39.4–56.3 | — | — | **Borderline** — can reach when tilted upward |
-| Juque (巨闕, CV14) (45–60° cranial tilt) | 81.7–87.5 | 57.2–61.3 | 47.4–71.8 | — | — | Mostly does not reach |
-| Right parasternal and nipple-line points (shortest) | 60.5–96.1 | 42.3–67.2 | — | — | 0.52–0.83 | Only right Lingxu borderline; others do not reach |
+| Rugen (乳根, ST18) left (angled, shortest) | 59.0 | 41.3 | 34.3–48.2 | — | 0.847 | **Reaches if angled medially** |
+| Tianchi (天池, PC1) left (angled, shortest) | 56.7 | 39.6 | 33.0–46.3 | — | 0.882 | Reaches if angled medially |
+| Jiuwei (鳩尾, CV15) (30–45° cranial tilt) | 68.0–68.6 | 47.5–48.0 | 39.5–56.0 | — | — | **Borderline** — can reach when tilted upward |
+| Juque (巨闕, CV14) (45–60° cranial tilt) | 81.7–87.5 | 57.1–61.2 | 47.5–71.5 | — | — | Mostly does not reach |
+| Right Lingxu (靈墟, KI24) · right Shenfeng (神封, KI23) (shortest) | 60.5 · 67.2 | 42.3 · 47.0 | 35.2–49.4 · 39.1–54.9 | — | 0.826 · 0.744 | Borderline reach only when angled along the shortest line (toward the sternum and costal cartilages, so bony block is likely; 0% of paths within a 60° cone before correction) |
+| Right Bulang (步廊) · Yingchuang (膺窗) · Rugen (乳根) · Tianchi (天池) (shortest) | 72.4–96.1 | 50.6–67.2 | — | — | 0.52–0.69 | Do not reach |
 
 - Depths in this table are to the ventricular cavity, so **the pericardium is 3–5 mm shallower**. The corrected values therefore err toward underestimating the risk.
 - Jiuwei (鳩尾) cranial-tilt details (model raw): 0° liver 24.3 mm · 15° liver 27.6 mm · 30° diaphragm 40.7 mm then heart 68.6 mm · 45° diaphragm 13.8 mm then heart 68.0 mm · 60° xiphoid 11.0 mm. The Tongkao's "no upward oblique needling" and the Zhengzhi Tongjian's "turning the tip upward may injure the heart" are geometrically confirmed.
+
+#### Heart reach by insertion depth (how much of the 50 mm body actually went in)
+
+In practice part of the needle body is often left outside the skin, so insertions of 30, 40 and 50 mm of the 50 mm body were judged separately. Symbols: **●** = reached at the corrected mean (k = 0.70) · **◐** = within the corrected range (k = 0.58–0.82), i.e., reached in thinner patients · **○** = not reached.
+
+| Point (path) | Corrected depth to ventricular cavity (mm) | Estimated depth to pericardium (mm) | Share of 50 mm body needed | 30 mm inserted | 40 mm inserted | 50 mm inserted (full body) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Danzhong (膻中, CV17) (sternal foramen, perpendicular) | 32.7 | about 28–30 | 65% | ◐ | ● | ● |
+| Lingxu (靈墟, KI24) left (perpendicular) | 36.4 | about 31–33 | 73% | ○ | ● | ● |
+| Tianchi (天池, PC1) left (medially angled) | 39.6 | about 35–37 | 79% | ○ | ● | ● |
+| Shenfeng (神封, KI23) left (perpendicular) | 39.5 | about 35–37 | 79% | ○ | ● | ● |
+| Bulang (步廊, KI22) left (perpendicular) | 40.0 | about 35–37 | 80% | ○ | ● | ● |
+| Rugen (乳根, ST18) left (medially angled) | 41.3 | about 36–38 | 83% | ○ | ◐ | ● |
+| Lingxu (靈墟, KI24) right (shortest line) | 42.3 | about 37–39 | 85% | ○ | ◐ | ● |
+| Yingchuang (膺窗, ST16) left (perpendicular) | 47.1 | about 42–44 | 94% | ○ | ◐ | ● |
+| Shenfeng (神封, KI23) right (shortest line) | 47.0 | about 42–44 | 94% | ○ | ◐ | ● |
+| Jiuwei (鳩尾, CV15) (tilted 30–45° upward) | 47.5–48.0 | about 43–45 | 95–96% | ○ | ◐ | ● |
+| Juque (巨闕, CV14) (tilted 45–60° upward) | 57.1–61.2 | about 52–58 | 114–122% | ○ | ○ | ◐ |
+
+- Estimated depth to pericardium = corrected depth to the ventricular cavity − right ventricular free wall thickness (3–5 mm, B1-01). Hemopericardium can start once the pericardium is pierced, so this is where the danger zone really begins.
+- **Key point**: at risk grade I points (left Lingxu, Shenfeng, Bulang; Danzhong with a sternal foramen) the heart is reached with **only 65–80% (33–40 mm) of the 50 mm body inserted**. At 30 mm only Danzhong with a sternal foramen is reached, in thinner patients. A needle with a 50 mm body therefore cannot be considered safe merely because it is not fully inserted.
+- At Jiuwei (鳩尾) the liver comes before the heart on a perpendicular path: MRI dangerous depth 16.99 mm (papers.id 2476) → risk of liver puncture from 30 mm insertion onward.
 
 ### 4-4. Layer 1–5 structure — left Shenfeng (神封) and Bulang (步廊) (most likely incident path)
 
@@ -177,11 +203,11 @@ flowchart LR
 | Chimgu Gyeongheombang (《鍼灸經驗方》) | **0 = prohibited** | 3 fen = 6.9 mm | not stated | not stated | not stated |
 | Zhenjiu Shuxue Tongkao (《針灸腧穴通考》) | not stated, transverse | 5–10 fen = 11.5–23.0 mm, oblique | 5–8 fen = 11.5–18.4 mm | 5–8 fen = 11.5–18.4 mm | not stated, oblique/transverse |
 | Korean common textbooks (meridian & point / acupuncture) | 3–5 fen = 6.9–11.5 mm | 3–6 fen / 5–10 fen = 6.9–23.0 mm | 5–8 fen = 11.5–18.4 mm | 5–8 fen = 11.5–18.4 mm | 5–8 fen = 11.5–18.4 mm |
-| **50 mm as multiple of standard upper limit** | **4.3×** (11.5 mm) | **2.2×** (23.0 mm) / 2.9× MRI safe depth | **2.7×** (18.4 mm) | **2.7×** (18.4 mm) | **2.7×** (18.4 mm) |
+| **50 mm insertion as multiple of standard upper limit** | **4.3×** (11.5 mm) | **2.2×** (23.0 mm) / 2.9× MRI safe depth | **2.7×** (18.4 mm) | **2.7×** (18.4 mm) | **2.7×** (18.4 mm) |
 | Layer reached (standard upper limit) | Layer 1–2 (presternal) | Layer 3–4 (linea alba, transversalis fascia) | Layer 2–3 | Layer 2–3 | Layer 2–3 |
-| Layer reached (50 mm) | With sternal foramen: **Layer 5 heart** | Liver (perpendicular), **heart (tilted upward)** | **Layer 5 heart** | **Layer 5 heart** | Layer 5 pleura and lung; heart if angled |
+| Layer reached (50 mm insertion) | With sternal foramen: **Layer 5 heart** | Liver (perpendicular), **heart (tilted upward)** | **Layer 5 heart** | **Layer 5 heart** | Layer 5 pleura and lung; heart if angled |
 
-- '0' = needling prohibited; 'not stated' = no entry (distinguished from prohibition). 50 mm = 21.7 fen, deeper than any source permits.
+- '0' = needling prohibited; 'not stated' = no entry (distinguished from prohibition). An insertion depth of 50 mm (full body) = 21.7 fen, deeper than any source permits.
 
 ---
 
@@ -312,15 +338,15 @@ flowchart TB
 - Rugen (乳根, ST18) L: `ARI v3.0 | ARI-Core 71.25 ± 2.5 (B) | ⚠ | SI 25 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 70.8 (B, grade unchanged)`
 - Jiuwei (鳩尾, CV15): `ARI v3.0 | ARI-Core 70.0 ± 1.25 (B) | ⚠ | SI 0 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 67.7 (C, weight-sensitive)`
 
-### 10-3. Overall 50 mm needle risk grading (FMA · BodyParts3D geometry + calibration)
+### 10-3. Overall risk grading for 50 mm insertion depth (FMA · BodyParts3D geometry + calibration)
 
-| Risk grade | Points | Basis at 50 mm | Structure at risk |
+| Risk grade | Points | Basis at 50 mm insertion depth | Structure at risk |
 | :---: | :--- | :--- | :--- |
-| **I (very high)** | Left Shenfeng (神封, KI23), left Bulang (步廊, KI22), left Lingxu (靈墟, KI24) | Through the intercostal space with no bony block; right ventricle at corrected 36–40 mm. k* 0.87–0.96 → reached perpendicularly if the patient is only 4–13% thinner than the model | Right ventricular anterior wall, anterior papillary muscle |
-| **I (conditional, very high)** | Danzhong (膻中, CV17) + sternal foramen | With a sternal foramen (4.3–10.5%, common in the lower third of the sternum at the 5th costal cartilage level) the right ventricle is at 46.8 mm even in the model, about 33 mm corrected. Without a foramen the sternum blocks | Right ventricle |
+| **I (very high)** | Left Shenfeng (神封, KI23), left Bulang (步廊, KI22), left Lingxu (靈墟, KI24) | Through the intercostal space with no bony block; right ventricle at corrected 36–40 mm → reached with only 73–80% of the 50 mm body inserted. k* 0.87–0.96 → reached with the full body inserted perpendicularly if the patient is only 4–13% thinner than the model | Right ventricular anterior wall, anterior papillary muscle |
+| **I (conditional, very high)** | Danzhong (膻中, CV17) + sternal foramen | With a sternal foramen (4.3–10.5%, common in the lower third of the sternum at the 5th costal cartilage level) the right ventricle is at 46.8 mm even in the model, about 33 mm corrected (65% of the body). Without a foramen the sternum blocks | Right ventricle |
 | **II (high)** | Left Rugen (乳根, ST18), left Tianchi (天池, PC1), Jiuwei (鳩尾, CV15) | Not reached perpendicularly. Rugen and Tianchi: corrected shortest about 40 mm when angled medially; the cardiac apex lies under Rugen (reference anatomy). Jiuwei: heart at corrected about 48 mm when tilted 30–45° upward; liver at about 17 mm perpendicularly | Left ventricular apex, inferior right ventricular wall, liver |
 | **III (moderate)** | Left Yingchuang (膺窗, ST16), Juque (巨闕, CV14), Zhongting (中庭, CV16) | Heart reached only in thin patients (k ≤ 0.74); Juque reaches liver first | Left ventricle, liver |
-| **IV (low cardiac risk; pneumothorax risk separate)** | Right parasternal and nipple-line points, Qimen (期門, LR14) | Shortest corrected distance to heart 42–77 mm. Pneumothorax could not be assessed (no lung parenchyma mesh) | Lung (pneumothorax), liver |
+| **IV (low cardiac risk; pneumothorax risk separate)** | Right parasternal and nipple-line points, Qimen (期門, LR14) | Right Lingxu and Shenfeng reach the heart borderline (corrected 42.3 and 47.0 mm) only when angled along the shortest line (toward the sternum and costal cartilages, bony block likely); others corrected ≥ 50.6 mm, not reached. Pneumothorax could not be assessed (no lung parenchyma mesh) | Lung (pneumothorax), liver |
 
 ### 10-4. Incident reconstruction hypotheses (in order of likelihood)
 
@@ -330,12 +356,12 @@ flowchart TB
 
 **Differentiation**: chest CT (sternal foramen, needle track, hematoma location) → sternal foramen with retrosternal hematoma suggests Hypothesis 1(a); a left parasternal intercostal track suggests Hypothesis 2. A tear at the apex (left ventricle) on echocardiography or surgery suggests Hypothesis 1(b); a right ventricular anterior wall tear suggests 1(a) or 2.
 
-### 10-5. Clinical safety recommendations (when using 50 mm needles)
+### 10-5. Clinical safety recommendations (when using needles with a 50 mm body)
 
-1. **Do not needle the left parasternal region (3rd–5th intercostal spaces, 2 cun lateral) or Danzhong (膻中) perpendicularly with a 50 mm needle.** Use oblique or transverse insertion and stay within the subcutis and pectoralis major (within about 15 mm). Follow the Tongkao's "不宜深刺和直刺".
+1. **Do not needle the left parasternal region (3rd–5th intercostal spaces, 2 cun lateral) or Danzhong (膻中) perpendicularly with a 50 mm-body needle.** Even without full insertion the heart is reached at 33–40 mm (Section 4-3). Use oblique or transverse insertion and stay within the subcutis and pectoralis major (within about 15 mm). Follow the Tongkao's "不宜深刺和直刺".
 2. **Always needle Danzhong (膻中) transversely (平刺).** A sternal foramen cannot be palpated, so do not rely on "the sternum makes it safe" (presternal soft tissue was only 4.8 mm in the model).
 3. **Needle Jiuwei (鳩尾) and Juque (巨闕) obliquely downward**, never with the tip upward; limit perpendicular depth to about 17 mm (MRI measurement).
-4. For chest points, **choosing a needle of 25–30 mm or shorter** is the most reliable safeguard (a 50 mm needle is more than twice the permitted depth of any chest point in the literature).
+4. For chest points, **choosing a needle whose body (handle excluded) is 25–30 mm or shorter** is the most reliable safeguard. A 50 mm-body needle is more than twice the permitted depth of any chest point in the literature, so depth must be controlled by feel alone. A 25 mm-body needle, even fully inserted, stays short of the corrected lower bound for Danzhong with a sternal foramen (27.2 mm).
 5. Needle more shallowly in thin, elderly or female patients (posture changes can make the intercostal spaces under the breast shallower), and in patients with cardiomegaly or sternal and xiphoid variants.
 6. If syncope, hypotension, chest pain or belching (the Neijing's "其動為噫") follows needling, suspect cardiac tamponade at once and transfer to emergency care.
 
@@ -383,3 +409,4 @@ flowchart TB
 | Date | Content |
 | :--- | :--- |
 | 2026-10-27 | First edition (Tier 3, topic investigation). Four-classic comparison, FMA · BodyParts3D 50 mm needle-path geometry (10 points, 18 sites), MRI-based calibration and critical habitus factor, ARI v3.0 dual scoring for 5 points |
+| 2026-10-27 (revision) | Needle condition clarified as **50 mm needle body (handle excluded) = maximum insertion depth 50 mm** (geometry was already measured as insertion depth from the skin, so no values changed). Added 30/40/50 mm insertion scenarios and estimated pericardial depths to Section 4-3. Corrected the shortest-line verdict for right Lingxu and Shenfeng to borderline reach (previously not reached); rechecked corrected values to one decimal (k = 0.6992). Figure captions and recommendations revised to body length. ARI scores unchanged |
