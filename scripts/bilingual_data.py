@@ -285,7 +285,27 @@ BILINGUAL_CARDS = [
     "btn_ko": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/ST_%EC%A1%B1%EC%96%91%EB%AA%85%EC%9C%84%EA%B2%BD/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC/ST36_GB21_Comparative_Analysis_Report.html",
     "btn_en": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/ST_%EC%A1%B1%EC%96%91%EB%AA%85%EC%9C%84%EA%B2%BD/ST36_%EC%A1%B1%EC%82%BC%EB%A6%AC/ST36_GB21_Comparative_Analysis_Report_en.html"
   },
-  # 15. PC09
+  # 15. PC06
+  {
+    "category": "acupoint",
+    "search": "PC06 내관 Neiguan 內關 수궐음심포경 정중신경 Median Nerve 앞뼈사이신경 긴손바닥근 노쪽손목굽힘근 고립속핵 NTS rVLM 구토중추 CTZ 체성자율신경반사 ARI v3.0 A 100.0 SI 87.5 Cochrane 심통 구토 FMA 5.1",
+    "code_badge": "PC06",
+    "code_style": "background: rgba(6, 182, 212, 0.12); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.25);",
+    "status_badge": "ARI v3.0 · 100.0 (A) · SI 87.5 · FMA 5.1 & Cochrane",
+    "status_style": "background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);",
+    "title_ko": "내관 (內關)",
+    "title_en": "Neiguan (內關, PC06)",
+    "subtitle_ko": "PC06 내관 해부생리학 실체 판명 학술 모노그래프",
+    "subtitle_en": "PC06 Neiguan Anatomical Substrate & Neuroreflex Verification Monograph",
+    "desc_ko": "전완 전면 원위부, 긴손바닥근 힘줄과 노쪽손목굽힘근 힘줄 사이(Layer 2). 직자 시 정중신경 본간(Median n., C6–T1, Layer 3) 및 앞뼈사이신경·동정맥(Layer 4) 타깃. 체성-자율신경 반사(고립속핵 NTS 투사, 구토중추 CTZ 억제 및 rVLM 교감 흥분 차단)로 급성 심통·심계 및 오심·구토 기전 규명. Cochrane 고찰 및 신경생리학 실증으로 B-Check 12/12 만점 및 ARI-Core 100점(A, 확정 정합 혈위) 도출.",
+    "desc_en": "Distal anterior forearm between tendons of palmaris longus and flexor carpi radialis (Layer 2). Core targets include median nerve trunk (C6–T1, Layer 3) and anterior interosseous neurovascular bundle (Layer 4). Somato-autonomic reflex via solitary tract nucleus (NTS) inhibits emetic CTZ signaling and rVLM sympathetic outflow. Achieves perfect B-Check 12/12 and ARI-Core 100 (Grade A, Confirmed).",
+    "tags": ["#PC06", "#내관", "#Neiguan", "#정중신경", "#MedianNerve", "#구토중추", "#NTS", "#Cochrane", "#FMA5_1"],
+    "cat_label_ko": "경혈별 해부생리",
+    "cat_label_en": "Acupoint Anatomy",
+    "btn_ko": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC06_%EB%82%B4%EA%B4%80/PC06_%EB%82%B4%EA%B4%80_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "btn_en": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC06_%EB%82%B4%EA%B4%80/PC06_%EB%82%B4%EA%B4%80_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
+  },
+  # 16. PC09
   {
     "category": "acupoint",
     "search": "PC09 중충 Zhongchong 中衝 수궐음심포경 중지 손가락 끝 정혈 사혈 고유바닥쪽손가락신경 응급개규 留三呼 요측손톱각 ARI v3.0 C 67.5 SI 100",
@@ -305,7 +325,7 @@ BILINGUAL_CARDS = [
     "btn_ko": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC09_%EC%A4%91%EC%B6%A9/PC09_%EC%A4%91%EC%B6%A9_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
     "btn_en": "01_%EA%B2%BD%ED%98%88%EB%B3%84_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C/PC_%EC%88%98%EA%B6%90%EC%9D%8C%EC%8B%AC%ED%8F%AC%EA%B2%BD/PC09_%EC%A4%91%EC%B6%A9/PC09_%EC%A4%91%EC%B6%A9_%ED%95%B4%EB%B6%80%EC%83%9D%EB%A6%AC_%EC%8B%A4%EC%B2%B4%ED%8C%90%EB%AA%85_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
   },
-  # 16. CV12
+  # 17. CV12
   {
     "category": "acupoint",
     "search": "CV12 중완 Zhongwan 中脘 임맥 백선 linea alba 배곧은근집 transversalis fascia 갈비사이신경 T7 T8 위배벽동정맥 초음파 ANIR 간좌엽 ARI v3.0 A 90.0 SI 50 체성내장반사 위의모혈 부회",
