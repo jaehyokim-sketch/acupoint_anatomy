@@ -111,3 +111,17 @@
 - **실제 실행 PC**: Drive의 `02_Master_Datasets\weekly_sync_host.txt` 첫 줄에 적힌 컴퓨터 이름(현재 **김재효연구실**)만 배치를 실행한다. 다른 PC에 등록된 작업은 실행 시점에 건너뛰고 배치 로그에 그 사실만 남긴다. 담당 PC를 바꾸려면 이 파일의 이름만 고친다.
 - **안전 점검**(`weekly_guard.py`): 프로젝트 경로에 "내 드라이브"/"My Drive"가 없으면 실행하지 않는다(Drive 경로 이름이 다른 PC는 `ACUPOINT_ALLOW_NON_DRIVE_ROOT=1`). `ACUPOINT_WEEKLY_DRYRUN=1`로 판정만 확인할 수 있다.
 - 배치를 실행하려면 그 시각에 Google Drive 데스크톱이 실행 중이고 사용자가 로그온해 있어야 한다. 놓친 실행은 다음 로그온 때 실행된다(StartWhenAvailable).
+
+## 4. PC별 실제 설정 현황 (2026-10-27 점검 및 동기화 완료)
+
+| 점검 항목 | 김재효연구실 PC (편집 PC) | GOYANGSOON PC (미러 PC) | 비고 |
+| :--- | :--- | :--- | :--- |
+| **호스트명 (`COMPUTERNAME`)** | `김재효연구실` | `GOYANGSOON` | 정책 파일 `drive_canonical_policy.json` 일치 |
+| **Google Drive 동기화 경로** | `D:\도서 번역` (D:\ 미러링) | `G:\내 드라이브\도서 번역` | 김재효연구실 PC는 G: 바로가기가 D:\를 가리킴 |
+| **환경변수 `ACUPOINT_DRIVE_ROOT`** | `D:\도서 번역` | 기본값(`G:\내 드라이브\도서 번역`) 또는 명시 | `setx`로 영구 등록 완료 |
+| **환경변수 `ACUPOINT_ALLOW_NON_DRIVE_ROOT`** | `1` | 불필요 (`내 드라이브` 경로 포함) | 경로 안전 가드 통과용 |
+| **Claude Code Hooks (`settings.json`)** | `SessionStart`(2건) / `Stop`(1건) / `PreToolUse`(1건) 설정 완료 | 동일 | `drive_canonical_guard.py`가 편집 PC에서는 허용, 미러 PC에서는 차단 |
+| **스킬 동기화 상태** | [경혈해부]·[황룡상] 전역/로컬 미러 최신 동기화 완료 | 동일 | Drive 정본 기준 차이 0건 |
+| **MCP 서버 (`acupoint-anatomy`)** | `Python312` 절대경로 + `ACUPOINT_EXTRA_CLASSICS` (東醫寶鑑 경로) 등록 완료 | 동일 | `.claude.json`, Desktop config, Antigravity mcp config 연동 |
+| **주간 DB 배치 스케줄러** | `AcupointMasterDB_WeeklySync` 등록 완료 (일요일 03:00) | 건너뜀 | `weekly_guard.py` 실행 조건 충족 (`김재효연구실`) |
+
