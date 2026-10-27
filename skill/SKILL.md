@@ -86,15 +86,16 @@ python .agents/skills/acupoint-anatomy/scripts/sync_master_db.py --trigger rank6
 
 워싱턴 대학교 FMA(Foundational Model of Anatomy, v5.1.0: 실체 104,720 · 관계 259,140) 및 `02_Master_Datasets/FMA/acupoint_fma_mapping.json` (361개 전 경혈 매핑 6,122행)을 연동하여, 교재 해부 용어를 국제 표준 실체 ID(FMA:ID)로 고정하고 지배신경·척수 분절·신경 줄기 경로를 정량적으로 추적한다.
 
-**실행 명령어** (`.agents/skills/acupoint-anatomy/scripts/fma/`, 프로젝트 루트에서 실행):
+**실행 명령어** (정본 `.claude/skills/acupoint-anatomy/scripts/fma/`, 프로젝트 루트에서 실행. `.agents/skills/acupoint-anatomy/scripts/fma/`는 옛 사본이므로 쓰지 않는다 — `.agents/rules/fma-integration.md`):
 ```bash
-python .agents/skills/acupoint-anatomy/scripts/fma/fma_query.py profile <경혈코드> --md   # 보고서용 표준 마크다운 표 생성
-python .agents/skills/acupoint-anatomy/scripts/fma/fma_query.py entity "<구조명 또는 FMA ID>" # 특정 해부구조 상세 조회
-python .agents/skills/acupoint-anatomy/scripts/fma/fma_query.py path "<말초신경>" "<줄기신경>"  # 신경 주행 최단 경로 추적
-python .agents/skills/acupoint-anatomy/scripts/fma/fma_visualizer.py graph <경혈코드>         # Neo4j 기반 FMA 신경해부 지식 그래프 이미지(.png) 생성
-python .agents/skills/acupoint-anatomy/scripts/fma/fma_visualizer.py cross-section <경혈코드> # 혈위별 횡단면 해부 모식도(.png) 생성
-python .agents/skills/acupoint-anatomy/scripts/fma/fma_visualizer.py all <경혈코드>           # 지식 그래프 및 횡단면 모식도 일괄 생성
+python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py profile <경혈코드> --md   # 보고서용 표준 마크다운 표 생성
+python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py entity "<구조명 또는 FMA ID>" # 특정 해부구조 상세 조회
+python .claude/skills/acupoint-anatomy/scripts/fma/fma_query.py path "<말초신경>" "<줄기신경>"  # 신경 주행 최단 경로 추적
+python .claude/skills/acupoint-anatomy/scripts/fma/fma_visualizer.py graph <경혈코드> --out "<보고서 폴더>/<코드>_fma_network.png"         # Neo4j 기반 FMA 신경해부 지식 그래프 이미지(.png) 생성
+python .claude/skills/acupoint-anatomy/scripts/fma/fma_visualizer.py cross-section <경혈코드> --out "<보고서 폴더>/<코드>_<혈명>_횡단면_해부모식도.png" # 혈위별 횡단면 해부 모식도(.png) 생성
+python .claude/skills/acupoint-anatomy/scripts/fma/fma_visualizer.py all <경혈코드> --dir "<보고서 폴더>"           # 지식 그래프 및 횡단면 모식도 일괄 생성
 ```
+> 출력은 로컬 저장소 보고서 폴더(`C:\workspace\acupoint_anatomy\01_경혈별_해부생리_분석보고서\<경락>\<경혈>\`)로 지정한다(.agents/rules/fma-integration.md 5항).
 
 **Rank 0~7 단계별 FMA 근거 보강 체계**:
 1. **Rank 5 (10대 요소 ④)**: Layer 1~5 층차표의 각 구조물에 표준 `FMA:ID` 병기 및 `contained_in`(구획) 확인.
@@ -152,7 +153,7 @@ python .agents/skills/acupoint-anatomy/scripts/fma/fma_visualizer.py all <경혈
 
 ## 9. PC 독립성과 운영
 
-- 첫 사용 PC: `python .agents/skills/acupoint-anatomy/scripts/check_environment.py` → `pip install -r .agents/skills/acupoint-anatomy/scripts/requirements.txt` (FMA 추가 패키지: `pip install -r .agents/skills/acupoint-anatomy/scripts/fma/requirements-fma.txt`).
+- 첫 사용 PC: `python .agents/skills/acupoint-anatomy/scripts/check_environment.py` → `pip install -r .agents/skills/acupoint-anatomy/scripts/requirements.txt` (FMA 추가 패키지: `pip install -r .claude/skills/acupoint-anatomy/scripts/fma/requirements-fma.txt`).
 - 로컬 논문 폴더: `ACUPOINT_PAPERS_DIR` 환경변수 → 프로젝트 루트 상위 폴더의 `학습자료/실험 및 연구 논문` → DB 기록값 순으로 해석.
 - 환경변수(사용자 계정): `OPENALEX_MAILTO`(연구자 이메일), `NCBI_API_KEY`(선택), `NEO4J_URI`/`USER`/`PASSWORD`(선택, FMA Neo4j 분석).
 - 주간 배치: `register_weekly_task.cmd`로 **한 PC에만** 등록(일요일 03:00, `weekly_sync.cmd`).

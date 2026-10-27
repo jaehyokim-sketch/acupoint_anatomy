@@ -11,6 +11,7 @@ sync_claude_skill.py — C:\\workspace 작업을 Google Drive 정본 기준으�
   <DRIVE>/.claude/workspace_CLAUDE.md                              → <WORKSPACE>/CLAUDE.md
   <DRIVE>/01_Framework/{정본·등록부·DB 설계}.md                     → <REPO>/framework/
   <DRIVE>/.agents/skills/acupoint-anatomy/SKILL.md                 → <REPO>/skill/SKILL.md
+  <DRIVE>/.claude/skills/acupoint-anatomy/scripts/fma/**           → <REPO>/scripts/fma/   (MCP 서버가 불러오는 FMA 스크립트, 파일 단위)
   ② 다른 저장소의 지침 파일 — 각 저장소 deploy_to_gdrive.py의 Drive 배포 폴더가 정본 위치
   <배포 폴더>/{CLAUDE,AGENTS,GEMINI}.md · .claude/settings.json · .claude/{skills,commands}/** · .agents/{rules,skills}/**
                                                                    → <WORKSPACE>/<저장소>/ 같은 경로
@@ -56,6 +57,9 @@ REPO_FILES = [  # (Drive 기준 상대경로, 저장소 기준 상대경로)
     ("01_Framework/biomedical_master_db_sync_design.md", "framework/biomedical_master_db_sync_design.md"),
     (".agents/skills/acupoint-anatomy/SKILL.md", "skill/SKILL.md"),
     ("02_Master_Datasets/layer_b_reference_registry.json", "data/layer_b_reference_registry.json"),
+]
+REPO_TREES = [  # (Drive 기준 폴더, 저장소 기준 폴더) — 파일 단위 미러. Drive에 없는 저장소 파일은 그대로 둔다
+    (".claude/skills/acupoint-anatomy/scripts/fma", "scripts/fma"),
 ]
 WORKSPACE_FILES = [  # (Drive 기준 상대경로, 워크스페이스 기준 상대경로)
     (".claude/workspace_CLAUDE.md", "CLAUDE.md"),
@@ -199,6 +203,8 @@ def main():
     #    (src, dst, 상태 키, 표시 이름, 보관 경로, 커밋할 저장소 이름 또는 None, 바이트 비교 여부)
     repo_changed, data_changed = [], []
     targets = [(drive / d, repo / r, f"repo:{r}", f"저장소 {r}", f"repo/{r}", repo.name, False) for d, r in REPO_FILES]
+    targets += [(src, repo / r / rel, f"repo:{r}/{rel}", f"저장소 {r}/{rel}", f"repo/{r}/{rel}", repo.name, False)
+                for d, r in REPO_TREES for rel, src in sorted(skill_files(drive / d).items())]
     targets += [(drive / "02_Master_Datasets" / d, repo / "data" / r, f"data:{r}", f"데이터 data/{r}",
                  f"repo/data/{r}", repo.name, True) for d, r in DATA_FILES]
     targets += [(drive / d, ws / w, f"ws:{w}", f"워크스페이스 {w}", f"workspace/{w}", None, False) for d, w in WORKSPACE_FILES]
