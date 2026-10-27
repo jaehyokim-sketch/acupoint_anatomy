@@ -565,6 +565,26 @@ BILINGUAL_CARDS = [
     "btn_ko": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B6%80%EB%8F%8C%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%B6%80%EB%8F%8C_%EB%B3%84%EC%B9%AD_%ED%92%8D%EB%B6%80_%EB%AC%B8%ED%97%8C%EC%B6%9C%EC%B2%98_%EB%B0%8F_%EA%B3%A0%EC%A6%9D%EB%B6%84%EC%84%9D.html",
     "btn_en": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B6%80%EB%8F%8C%ED%98%88_%EA%B3%A0%EC%A6%9D/%EB%B6%80%EB%8F%8C_%EB%B3%84%EC%B9%AD_%ED%92%8D%EB%B6%80_%EB%AC%B8%ED%97%8C%EC%B6%9C%EC%B2%98_%EB%B0%8F_%EA%B3%A0%EC%A6%9D%EB%B6%84%EC%84%9D_en.html"
   },
+  # 30. Topic: Chest acupoints · intrapericardial needle injury (50 mm)
+  {
+    "category": "topic",
+    "search": "흉부 경혈 심장막 자상 심장압전 혈심낭 우심실 천공 50mm 침 위험도 膻中 단중 CV17 鳩尾 구미 CV15 神封 신봉 KI23 步廊 보랑 KI22 靈墟 영허 KI24 乳根 유근 ST18 흉골공 sternal foramen cardiac tamponade hemopericardium right ventricle pericardium BodyParts3D FMA 금침 禁針 증치통감 수혈통고 ARI v3.0 SI 0 25",
+    "code_badge": "CV17 · KI22-23 · ST18 · CV15",
+    "code_style": "background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);",
+    "status_badge": "ARI v3.0 · 5혈 70.0~78.75 (B) · SI 0~25 ⚠",
+    "status_style": "background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3);",
+    "title_ko": "흉부 경혈 심장막 자상",
+    "title_en": "Intrapericardial Needle Injury from Chest Points",
+    "subtitle_ko": "흉부 경혈 심장막 내 자상 사건 고증 및 50 mm 침 위험도 평가 보고서",
+    "subtitle_en": "Textual Investigation and 50 mm Needle Risk Assessment with FMA · BodyParts3D",
+    "desc_ko": "⚠ 가슴 3침 중 1침 심자로 생긴 심장막 내 미세 심근 파열 사건을 4대 원전과 FMA·BodyParts3D 3D 기하로 분석. 좌측 神封·步廊·靈墟 직자와 흉골공이 있는 膻中은 우심실에 닿으며(MRI 보정 33~40 mm), 50 mm 침은 흉부 표준 상한의 2.7~4.3배. 《證治通鑑》의 '좌측 步廊·神封 禁深刺' 평가를 지지하고 膻中 안전설은 흉골공(4.3~10.5%)으로 수정.",
+    "desc_en": "⚠ Analyses an intrapericardial myocardial tear from one deep needle among three chest needles using the four classics and FMA · BodyParts3D geometry. Perpendicular needling at left Shenfeng (神封), Bulang (步廊), Lingxu (靈墟) and at Danzhong (膻中) with a sternal foramen reaches the right ventricle (33–40 mm after MRI calibration); 50 mm is 2.7–4.3× the standard chest depth.",
+    "tags": ["#CV17", "#KI23", "#KI22", "#ST18", "#CV15", "#심장압전", "#CardiacTamponade", "#흉골공", "#SternalForamen", "#50mm침", "#BodyParts3D", "#FMA5_1"],
+    "cat_label_ko": "주제별 고증연구",
+    "cat_label_en": "Thematic Collation",
+    "btn_ko": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%ED%9D%89%EB%B6%80%EA%B2%BD%ED%98%88_%EC%8B%AC%EC%9E%A5%EB%A7%89%EC%9E%90%EC%83%81_%EA%B3%A0%EC%A6%9D/%ED%9D%89%EB%B6%80%EA%B2%BD%ED%98%88_%EC%8B%AC%EC%9E%A5%EB%A7%89%EC%9E%90%EC%83%81_50mm%EC%B9%A8_%EC%9C%84%ED%97%98%EB%8F%84_%EA%B3%A0%EC%A6%9D_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "btn_en": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%ED%9D%89%EB%B6%80%EA%B2%BD%ED%98%88_%EC%8B%AC%EC%9E%A5%EB%A7%89%EC%9E%90%EC%83%81_%EA%B3%A0%EC%A6%9D/%ED%9D%89%EB%B6%80%EA%B2%BD%ED%98%88_%EC%8B%AC%EC%9E%A5%EB%A7%89%EC%9E%90%EC%83%81_50mm%EC%B9%A8_%EC%9C%84%ED%97%98%EB%8F%84_%EA%B3%A0%EC%A6%9D_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
+  },
   # 28. Matrix: Frozen Shoulder (Loujianfeng)
   {
     "category": "matrix",

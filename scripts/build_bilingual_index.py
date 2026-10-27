@@ -1209,7 +1209,17 @@ def generate_card_html(c):
 def main():
     cards_html = "\n".join(generate_card_html(c) for c in BILINGUAL_CARDS)
     full_html = HTML_TEMPLATE.replace("{CARDS_HTML}", cards_html)
-    
+
+    # 탭 개수·결과 수는 카드 데이터에서 계산 (headache 카드는 matrix 탭에 합산)
+    import re
+    counts = {"all": len(BILINGUAL_CARDS)}
+    for c in BILINGUAL_CARDS:
+        cat = "matrix" if c["category"] == "headache" else c["category"]
+        counts[cat] = counts.get(cat, 0) + 1
+    for f, n in counts.items():
+        full_html = re.sub(r'(data-filter="%s">\s*<span>[^<]*</span> <span class="tab-count">)\d+' % f, r"\g<1>%d" % n, full_html)
+    full_html = re.sub(r"Showing \d+ / \d+", "Showing %d / %d" % (counts["all"], counts["all"]), full_html)
+
     out_path = repo_root / "index.html"
     out_path.write_text(full_html, encoding="utf-8")
     print(f"Successfully generated bilingual refined index.html ({out_path.stat().st_size} bytes)")
