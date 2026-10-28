@@ -585,6 +585,26 @@ BILINGUAL_CARDS = [
     "btn_ko": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%ED%9D%89%EB%B6%80%EA%B2%BD%ED%98%88_%EC%8B%AC%EC%9E%A5%EB%A7%89%EC%9E%90%EC%83%81_%EA%B3%A0%EC%A6%9D/%ED%9D%89%EB%B6%80%EA%B2%BD%ED%98%88_%EC%8B%AC%EC%9E%A5%EB%A7%89%EC%9E%90%EC%83%81_50mm%EC%B9%A8_%EC%9C%84%ED%97%98%EB%8F%84_%EA%B3%A0%EC%A6%9D_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
     "btn_en": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%ED%9D%89%EB%B6%80%EA%B2%BD%ED%98%88_%EC%8B%AC%EC%9E%A5%EB%A7%89%EC%9E%90%EC%83%81_%EA%B3%A0%EC%A6%9D/%ED%9D%89%EB%B6%80%EA%B2%BD%ED%98%88_%EC%8B%AC%EC%9E%A5%EB%A7%89%EC%9E%90%EC%83%81_50mm%EC%B9%A8_%EC%9C%84%ED%97%98%EB%8F%84_%EA%B3%A0%EC%A6%9D_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
   },
+  # 31. Topic: SP17-SP20 needling depth and respiration (pleura)
+  {
+    "category": "topic",
+    "search": "식두 천계 흉향 주영 食竇 天谿 胸鄕 周榮 SP17 SP18 SP19 SP20 자침 깊이 호흡 흡기 호기 흉막 기흉 pneumothorax pleura respiration inspiration expiration 체형 자침 방향 사자 횡자 평자 向外平刺 沿皮向外 循經考穴編 흉벽 두께 chest wall thickness BodyParts3D FMA 수혈통고 ARI v3.0 SI 25",
+    "code_badge": "SP17 · SP18 · SP19 · SP20",
+    "code_style": "background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);",
+    "status_badge": "ARI v3.0 · 4혈 60.0~66.25 (C) · SI 25 ⚠",
+    "status_style": "background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3);",
+    "title_ko": "흉벽혈 자침 깊이와 호흡",
+    "title_en": "Needling Depth and Respiration at SP17–SP20",
+    "subtitle_ko": "식두·천계·흉향·주영: 흉막 거리는 호흡·체형·자침 방향 중 무엇에 좌우되는가",
+    "subtitle_en": "Breathing vs Body Habitus vs Needle Direction for Pleural Distance, with FMA · BodyParts3D",
+    "desc_ko": "⚠ 흡기·호기에 따른 흉막 거리 변화는 1 mm 안팎(추론)으로, 체형(약 2배)·자침 각도(sin θ)·자세(약 7 mm)보다 훨씬 작다. BodyParts3D 흉벽 두께를 생체 초음파로 보정하면 食竇는 교재 상한 직자 시 흉막까지 약 3 mm. 《循經考穴編》 '沿皮向外一寸五分' 가쪽 평자는 3D에서 흉벽에 닿지 않는다.",
+    "desc_en": "⚠ The inspiratory–expiratory change in pleural distance is about 1 mm (inference), far smaller than body habitus (~2×), needle angle (sin θ) or posture (~7 mm). After calibrating BodyParts3D to in-vivo ultrasound, perpendicular needling at Shidou (食竇) to the textbook maximum leaves ~3 mm; the lateral transverse method of 《循經考穴編》 never reaches the chest wall in 3D.",
+    "tags": ["#SP17", "#SP18", "#SP19", "#SP20", "#기흉", "#Pneumothorax", "#호흡", "#Respiration", "#흉벽두께", "#ChestWall", "#BodyParts3D", "#FMA5_1"],
+    "cat_label_ko": "주제별 고증연구",
+    "cat_label_en": "Thematic Collation",
+    "btn_ko": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%8B%9D%EB%91%90%EC%B2%9C%EA%B3%84%ED%9D%89%ED%96%A5%EC%A3%BC%EC%98%81_%EC%9E%90%EC%B9%A8%EA%B9%8A%EC%9D%B4_%ED%98%B8%ED%9D%A1_%EA%B3%A0%EC%A6%9D/%EC%8B%9D%EB%91%90%EC%B2%9C%EA%B3%84%ED%9D%89%ED%96%A5%EC%A3%BC%EC%98%81_%EC%9E%90%EC%B9%A8%EA%B9%8A%EC%9D%B4%EC%99%80_%ED%98%B8%ED%9D%A1_%EA%B3%A0%EC%A6%9D_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "btn_en": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%8B%9D%EB%91%90%EC%B2%9C%EA%B3%84%ED%9D%89%ED%96%A5%EC%A3%BC%EC%98%81_%EC%9E%90%EC%B9%A8%EA%B9%8A%EC%9D%B4_%ED%98%B8%ED%9D%A1_%EA%B3%A0%EC%A6%9D/%EC%8B%9D%EB%91%90%EC%B2%9C%EA%B3%84%ED%9D%89%ED%96%A5%EC%A3%BC%EC%98%81_%EC%9E%90%EC%B9%A8%EA%B9%8A%EC%9D%B4%EC%99%80_%ED%98%B8%ED%9D%A1_%EA%B3%A0%EC%A6%9D_%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
+  },
   # 28. Matrix: Frozen Shoulder (Loujianfeng)
   {
     "category": "matrix",
