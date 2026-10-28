@@ -1220,6 +1220,10 @@ def main():
         full_html = re.sub(r'(data-filter="%s">\s*<span>[^<]*</span> <span class="tab-count">)\d+' % f, r"\g<1>%d" % n, full_html)
     full_html = re.sub(r"Showing \d+ / \d+", "Showing %d / %d" % (counts["all"], counts["all"]), full_html)
 
+    dual_count = sum(1 for c in BILINGUAL_CARDS if c.get('btn_ko') and c.get('btn_en'))
+    full_html = re.sub(r'<span class="stat-num">\d+편 \(\d+종\)</span>', f'<span class="stat-num">{dual_count}편 ({dual_count*2}종)</span>', full_html)
+    full_html = re.sub(r'<span class="stat-label-en">\d+ Dual-Language Monographs</span>', f'<span class="stat-label-en">{dual_count} Dual-Language Monographs</span>', full_html)
+
     out_path = repo_root / "index.html"
     out_path.write_text(full_html, encoding="utf-8")
     print(f"Successfully generated bilingual refined index.html ({out_path.stat().st_size} bytes)")

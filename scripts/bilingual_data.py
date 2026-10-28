@@ -624,6 +624,26 @@ BILINGUAL_CARDS = [
     "cat_label_en": "Clinical Matrix",
     "btn_ko": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%A4%EC%8B%AD%EA%B2%AC_%EB%88%84%EA%B2%AC%ED%92%8D_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%A4%EC%8B%AD%EA%B2%AC_%EB%88%84%EA%B2%AC%ED%92%8D_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
     "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%A4%EC%8B%AD%EA%B2%AC_%EB%88%84%EA%B2%AC%ED%92%8D_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%A4%EC%8B%AD%EA%B2%AC_%EB%88%84%EA%B2%AC%ED%92%8D_%EC%B9%A8%EA%B5%AC%ED%95%B4%EB%B6%80_%EC%A2%85%ED%95%A9%EB%B3%B4%EA%B3%A0%EC%84%9C_en.html"
+  },
+  # 32. Matrix: Gout Acupuncture Treatment Guideline
+  {
+    "category": "matrix",
+    "search": "통풍 통풍성관절염 침구치료지침 Gout Acupuncture Treatment Guideline 한의표준임상진료지침 급성기 간헐기 만성기 자락 발관 화침 전침 온침 삼음교 족삼리 음릉천 곡지 아시혈 비유 신유 태계 관원 SP6 ST36 SP9 LI11 BL20 BL23 KI3 CV4 요산 강하 RR 0.14 메타분석",
+    "code_badge": "GUIDELINE · GOUT",
+    "code_style": "background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);",
+    "status_badge": "Category 4 · Clinical Guideline · GRADE B/C & 40 RCT Meta-Analysis",
+    "status_style": "background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);",
+    "title_ko": "통풍 침구치료지침",
+    "title_en": "Gout Acupuncture Treatment Guideline",
+    "subtitle_ko": "2022 한의표준임상진료지침 및 68편 임상문헌·메타분석 기반 침구치료 종합보고서",
+    "subtitle_en": "Synthesis of 2022 CPG Recommendations & 68 Clinical Trials / Meta-Analysis",
+    "desc_ko": "2022 한의표준임상진료지침(CPG) 권고와 68편 중국 임상문헌(40 RCT 메타분석 포함)을 체계적으로 융합한 통풍 침구치료 종합보고서. 급성기 국소 자락·기본혈(SP6·ST36·SP9·LI11)·화침·전침 병행 프로토콜, 간헐기·만성기 비신 보익(BL20·BL23·KI3·CV4) 온침·뜸 요법, 변증별(습열온결·어열·비허·간신음허) 시술 전략 및 양방 약물 대비 안전성(RR 0.14) 평가 완비.",
+    "desc_en": "Comprehensive clinical monograph synthesizing the 2022 Korean Medicine Gout Guideline and 68 clinical trials (including a 40-RCT meta-analysis). Outlines acute-stage protocols combining collateral bloodletting, core acupoints (SP6, ST36, SP9, LI11), fire needling, and electroacupuncture, alongside intercritical/chronic spleen-kidney tonification (BL20, BL23, KI3, CV4) with warm needling and moxibustion. Features syndrome differentiation and safety evaluation (RR 0.14 vs. conventional pharmacotherapy).",
+    "tags": ["#통풍", "#Gout", "#침구치료지침", "#임상매트릭스", "#한의표준임상진료지침", "#자락발관", "#화침", "#전침", "#SP6_ST36_SP9", "#요산강하", "#메타분석"],
+    "cat_label_ko": "임상 매트릭스",
+    "cat_label_en": "Clinical Matrix",
+    "btn_ko": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%ED%86%B5%ED%92%8D_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C/%ED%86%B5%ED%92%8D_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%ED%86%B5%ED%92%8D_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C/Gout_Acupuncture_Guideline_Report_EN.html"
   }
 ]
 
