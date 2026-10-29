@@ -45,3 +45,7 @@ scratch/
 _archive/
 _구판_html/
 *_구판*
+
+# Local-only Data (large / copyrighted images, stray DB)
+data/Anatomy image DB/
+data/biomedical_reflex_master.db
