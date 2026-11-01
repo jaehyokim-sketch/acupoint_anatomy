@@ -644,6 +644,26 @@ BILINGUAL_CARDS = [
     "cat_label_en": "Clinical Matrix",
     "btn_ko": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%ED%86%B5%ED%92%8D_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C/%ED%86%B5%ED%92%8D_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
     "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%ED%86%B5%ED%92%8D_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C/Gout_Acupuncture_Guideline_Report_EN.html"
+  },
+  # 33. Matrix: Hemorrhoid Acupuncture Treatment Guideline
+  {
+    "category": "matrix",
+    "search": "치질 치핵 치루 침구치료지침 Hemorrhoid Acupuncture Treatment Guideline 장강 승산 차료 백회 이백 공최 은교 GV1 BL57 BL32 GV20 EX-UE2 LU6 GV28 사와다켄 澤田健 음부신경 정강신경 항문곧창자정맥얼기 FMA S2수렴 조은별 김재효 2021",
+    "code_badge": "GUIDELINE · HEMORRHOID",
+    "code_style": "background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);",
+    "status_badge": "Category 4 · Clinical Guideline · Zhengzhi Tongjian & FMA Neuroanatomy",
+    "status_style": "background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);",
+    "title_ko": "치질(치핵) 침구치료지침",
+    "title_en": "Hemorrhoid Acupuncture Treatment Guideline",
+    "subtitle_ko": "해부생리학적 기전 및 문헌고증 기반 임상 프로토콜 종합보고서",
+    "subtitle_en": "Synthesis of Neuroanatomical Mechanisms and Textual-Critical Clinical Protocols",
+    "desc_ko": "《증치통감》·《수혈통고》 고전문헌 전수 분석과 FMA 온톨로지 신경해부학(음부신경·정강신경 S2 분절 수렴 및 거항근 조절)을 융합한 치질 침구치료지침. 장강(GV1)·승산(BL57)·차료(BL32) 정통 배오 및 공최(LU6)의 사와다 켄(澤田健) 독창혈 문헌고증 규명, 병기별(급성통증·출혈·만성탈출) 프로토콜 및 자침 안전 심도 완비.",
+    "desc_en": "Comprehensive clinical practice guideline synthesizing classical Zhengzhi Tongjian records with FMA neuroanatomy (pudendal/tibial nerve S2 spinal convergence and levator ani suspension). Features orthodox Changqiang (GV1) and Chengshan (BL57) synergy, textual critique of Kongzui (LU6, Sawada point), stage-specific protocols, and precise needling safety depths.",
+    "tags": ["#치질", "#치핵", "#Hemorrhoid", "#침구치료지침", "#임상매트릭스", "#장강_승산", "#FMA", "#신경반사", "#사와다켄_공최"],
+    "cat_label_ko": "임상 매트릭스",
+    "cat_label_en": "Clinical Matrix",
+    "btn_ko": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%B9%98%EC%A7%88_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%B9%98%EC%A7%88_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%B9%98%EC%A7%88_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C/Hemorrhoid_Acupuncture_Guideline_Report_EN.html"
   }
 ]
 
