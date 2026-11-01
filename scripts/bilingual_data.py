@@ -664,6 +664,26 @@ BILINGUAL_CARDS = [
     "cat_label_en": "Clinical Matrix",
     "btn_ko": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%B9%98%EC%A7%88_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C/%EC%B9%98%EC%A7%88_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
     "btn_en": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%B9%98%EC%A7%88_%EC%B9%A8%EA%B5%AC%EC%B9%98%EB%A3%8C%EC%A7%80%EC%B9%A8_%EB%B3%B4%EA%B3%A0%EC%84%9C/Hemorrhoid_Acupuncture_Guideline_Report_EN.html"
+  },
+  # 34. Topic: GV20 Somnolence & Sleep-Wake Neuroanatomy Report
+  {
+    "category": "topic",
+    "search": "백회 GV20 두풍다수 수면각성조절 기면증 과다수면 불면증 명당경 갑을경 태평성혜방 FMA 대후두신경 안와상신경 망상체 ARAS 시상하부 VLPO Orexin Somnolence Sleep-Wake Neuroanatomy 양방향신경조절",
+    "code_badge": "GV20 · SLEEP-WAKE",
+    "code_style": "background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);",
+    "status_badge": "Thematic Collation · FMA 5.1 & Sleep-Wake Neuroanatomy",
+    "status_style": "background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);",
+    "title_ko": "백회 두풍다수·수면각성 신경해부 고증",
+    "title_en": "Baihui (GV20) Somnolence & Sleep-Wake Regulation",
+    "subtitle_ko": "두풍다수(頭風多睡) 문헌 층차 및 수면-각성 신경해부학적 기전 고증보고서",
+    "subtitle_en": "Historiographical Stratification and Neuroanatomical Mechanisms of Baihui (GV20) in 'Somnolence due to Head-Wind' and Sleep-Wake Regulation",
+    "desc_ko": "백회의 '두풍다수(頭風多睡)' 주치가 《명당경》·《갑을경》(3세기)이 아닌 송대 《태평성혜방》(992년)의 층차임을 규명하고, 현대의 '불매(不寐)' 주치와의 역전 현상을 분석. 두개골 차단(FMA:52737) 하 두피 5층 자침 표적과 대후두신경(C2)·안와상신경(V1) ➔ 뇌간 망상체(ARAS)·시상하부(VLPO/Orexin) 투사를 통한 수면-각성 양방향 신경조절(Bidirectional Neuromodulation) 기전 정립.",
+    "desc_en": "Philological critique demonstrating that 'somnolence due to head-wind' (頭風多睡) at GV20 originates from the 10th-century Song text Taiping Shenghuifang rather than 3rd-century classics, resolving the historical inversion with modern 'insomnia' indications. Details FMA 5-layer scalp needling beneath the calvarial barrier, mapping C2/V1 afferents to the brainstem ARAS and hypothalamic sleep centers (VLPO/Orexin) via bidirectional somatosensory-autonomic reflexes.",
+    "tags": ["#GV20", "#백회", "#두풍다수", "#수면각성조절", "#Somnolence", "#FMA", "#ARAS", "#망상체", "#대후두신경", "#안와상신경", "#양방향신경조절"],
+    "cat_label_ko": "주제별 고증연구",
+    "cat_label_en": "Thematic Collation",
+    "btn_ko": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B0%B1%ED%9A%8C_%EB%91%90%ED%92%8D%EB%8B%A4%EC%88%98_%EC%88%98%EB%A9%B4%EA%B0%81%EC%84%B1_%EC%8B%A0%EA%B2%BD%ED%95%B4%EB%B6%80%EA%B3%A0%EC%A6%9D/%EB%B0%B1%ED%9A%8C_%EB%91%90%ED%92%8D%EB%8B%A4%EC%88%98_%EC%88%98%EB%A9%B4%EA%B0%81%EC%84%B1_%EC%8B%A0%EA%B2%BD%ED%95%B4%EB%B6%80_%EA%B3%A0%EC%A6%9D%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
+    "btn_en": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B0%B1%ED%9A%8C_%EB%91%90%ED%92%8D%EB%8B%A4%EC%88%98_%EC%88%98%EB%A9%B4%EA%B0%81%EC%84%B1_%EC%8B%A0%EA%B2%BD%ED%95%B4%EB%B6%80%EA%B3%A0%EC%A6%9D/GV20_Somnolence_SleepWake_Neuroanatomy_Report_EN.html"
   }
 ]
 
