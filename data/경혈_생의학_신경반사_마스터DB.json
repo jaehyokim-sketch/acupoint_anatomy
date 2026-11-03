@@ -4,8 +4,8 @@
     "version": "3.0_unified",
     "description": "국제 공인 신경반사 회로, 랜드마크 논문(PMID/DOI), 로컬 소장 논문 역색인 및 외부 API 수집 논문이 통합된 단일 마스터 데이터셋 (v3.0: papers 레지스트리 + 영구 ID + manifest 증분 동기화)",
     "integrated_at": "2026-10-03T18:11:53.767363",
-    "total_acupoints_indexed": 284,
-    "total_local_papers": 1933,
+    "total_acupoints_indexed": 285,
+    "total_local_papers": 1934,
     "source_local_dir": "G:\\내 드라이브\\학습자료\\실험 및 연구 논문",
     "sync_log": [
       {
@@ -2193,21 +2193,42 @@
         "action": "sp6_fulltext_link",
         "updated_papers": 86,
         "total_sp6_indexed": 172
+      },
+      {
+        "ts": "2026-11-02T12:50:49",
+        "trigger": "batch",
+        "action": "enrich",
+        "source": "pubmed",
+        "http_status": 200,
+        "fetched": 77,
+        "added": 14
+      },
+      {
+        "ts": "2026-11-02T12:50:49",
+        "trigger": "batch",
+        "action": "scan-local",
+        "source": "local",
+        "http_status": null,
+        "fetched": 2104,
+        "added": 1,
+        "deduped": 0,
+        "duration_ms": 131720,
+        "note": "updated=0 moved=0 missing=0 enriched=14"
       }
     ],
     "schema_version": 3,
     "migrated_at": "2026-10-04T08:13:36",
     "last_local_scan": {
-      "at": "2026-10-28T18:57:21",
-      "files_seen": 2103,
-      "added": 177,
+      "at": "2026-11-02T12:50:49",
+      "files_seen": 2104,
+      "added": 1,
       "updated": 0,
       "moved": 0,
-      "missing": 88,
-      "unchanged": 1926,
-      "duplicates_marked": 2,
-      "enriched": 0,
-      "duration_ms": 19765
+      "missing": 0,
+      "unchanged": 2103,
+      "duplicates_marked": 0,
+      "enriched": 14,
+      "duration_ms": 131720
     },
     "last_api_sync": {
       "at": "2026-10-28T11:28:15",
@@ -2219,12 +2240,12 @@
       }
     },
     "counts": {
-      "papers_total": 2665,
-      "local_active": 1933,
+      "papers_total": 2666,
+      "local_active": 1934,
       "local_missing": 93,
       "local_duplicate": 194,
       "external": 445,
-      "acupoints_indexed": 284
+      "acupoints_indexed": 285
     },
     "relevance_rejections": {
       "CV14": [
@@ -3092,6 +3113,9 @@
       2506,
       2623
     ],
+    "GB1": [
+      2683
+    ],
     "GB10": [
       375,
       1534,
@@ -3326,7 +3350,8 @@
       2573,
       2621,
       2633,
-      2658
+      2658,
+      2683
     ],
     "GB38": [
       275,
@@ -3440,7 +3465,8 @@
       1434
     ],
     "GB8": [
-      1611
+      1611,
+      2683
     ],
     "GV11": [
       382,
@@ -4196,7 +4222,8 @@
       2652,
       2666,
       2667,
-      2670
+      2670,
+      2683
     ],
     "LI5": [
       218,
@@ -4645,7 +4672,8 @@
       2386,
       2518,
       2522,
-      2547
+      2547,
+      2683
     ],
     "PC8": [
       248,
@@ -4732,7 +4760,8 @@
       1625,
       2355,
       2609,
-      2630
+      2630,
+      2683
     ],
     "SI5": [
       275
@@ -4931,7 +4960,8 @@
       2626,
       2627,
       2630,
-      2671
+      2671,
+      2683
     ],
     "SP6": [
       5,
@@ -5700,7 +5730,8 @@
       234,
       376,
       1501,
-      2574
+      2574,
+      2683
     ],
     "TE4": [
       410
@@ -57166,7 +57197,8 @@
       "file_size": 768303,
       "mtime": 1790578778.1,
       "content_hash": "9e5ad6c1548b9a6b5497a4209dc748d06458d2cc",
-      "text_extracted": true
+      "text_extracted": true,
+      "enrich_checked_at": "2026-11-02T12:48:39"
     },
     {
       "file_path": "2022_Journal of Acupuncture Research_Kang K_Usage Status and Regional Variations of Acupotomy in a Korean Medicine Clinic - A Single-Center, Retrospective Analysis of Medical Records.pdf",
@@ -95521,16 +95553,30 @@
       "year": 2024,
       "volume_issue": "2024",
       "doi": "10.13703/j.0255-2930.20240423-k0001",
-      "pmid": "",
+      "pmid": "39401821",
       "abstract_snippet": "中国针灸2024 年10 月第44 卷第10 期Chinese Acupuncture & Moxibustion，Oct. 2024，Vol. 44 No. 10 ·1203· DOI：10.13703/j.0255-2930.20240423-k0001 引用格式：黄龙祥. 从老官山出土金伤死候简看伤科及法医学、针灸学对人体要害部位的 认识［J］. 中国针灸, 2024, 44（10）: 1203-1213. 从老官山出土金伤死候简看伤科及法医学、针灸学 对人体要害部位的认识 黄龙祥 （中国中医科学院针灸研究所，北京100700） “金伤”，又作“金疮”“金创”，是指金刃所致 之疮伤。金伤",
       "snippet": "中国针灸2024 年10 月第44 卷第10 期Chinese Acupuncture & Moxibustion，Oct. 2024，Vol. 44 No. 10 ·1203· DOI：10.13703/j.0255-2930.20240423-k0001 引用格式：黄龙祥. 从老官山出土金伤死候简看伤科及法医学、针灸学对人体要害部位的 认识［J］. 中国针灸, 2024, 44（10）: 1203-1213. 从老官山出土金伤死候简看伤科及法医学、针灸学 对人体要害部位的认识 黄龙祥 （中国中医科学院针灸研究所，北京100700） “金伤”，又作“金疮”“金创”，是指金刃所致 之疮伤。金伤",
       "detected_acupoints": [
         "LI14",
         "ST9"
       ],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "Laoguanshan medical bamboo slips",
+        "bamboo slips of metal-weapon-injury induced lethal symptoms",
+        "exploration of novel approach",
+        "literature research",
+        "vital parts of the human body"
+      ],
+      "mesh": [
+        "Acupuncture Therapy",
+        "China",
+        "Forensic Medicine",
+        "History, Ancient",
+        "Humans",
+        "Male",
+        "Medicine in Literature"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/2024_中国针灸_黄龙祥_test.pdf",
       "filename": "2024_中国针灸_黄龙祥_test.pdf",
@@ -95546,8 +95592,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:43",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1597
+      "updated_at": "2026-11-02T12:48:42",
+      "duplicate_of": 1597,
+      "enrich_checked_at": "2026-11-02T12:48:41",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39401821/",
+      "official_title": "Recognition on the vital parts of the human body in traumatology, forensic medicine and acupuncture from Laoguanshan unearthed bamboo slips of metal-weapon-injury induced lethal symptoms]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2334,
@@ -95633,16 +95685,30 @@
       "year": 2024,
       "volume_issue": "2024",
       "doi": "10.13703/j.0255-2930.20240423-k0001",
-      "pmid": "",
+      "pmid": "39401821",
       "abstract_snippet": "中国针灸2024 年10 月第44 卷第10 期Chinese Acupuncture & Moxibustion，Oct. 2024，Vol. 44 No. 10 ·1203· DOI：10.13703/j.0255-2930.20240423-k0001 引用格式：黄龙祥. 从老官山出土金伤死候简看伤科及法医学、针灸学对人体要害部位的 认识［J］. 中国针灸, 2024, 44（10）: 1203-1213. 从老官山出土金伤死候简看伤科及法医学、针灸学 对人体要害部位的认识 黄龙祥 （中国中医科学院针灸研究所，北京100700） “金伤”，又作“金疮”“金创”，是指金刃所致 之疮伤。金伤",
       "snippet": "中国针灸2024 年10 月第44 卷第10 期Chinese Acupuncture & Moxibustion，Oct. 2024，Vol. 44 No. 10 ·1203· DOI：10.13703/j.0255-2930.20240423-k0001 引用格式：黄龙祥. 从老官山出土金伤死候简看伤科及法医学、针灸学对人体要害部位的 认识［J］. 中国针灸, 2024, 44（10）: 1203-1213. 从老官山出土金伤死候简看伤科及法医学、针灸学 对人体要害部位的认识 黄龙祥 （中国中医科学院针灸研究所，北京100700） “金伤”，又作“金疮”“金创”，是指金刃所致 之疮伤。金伤",
       "detected_acupoints": [
         "LI14",
         "ST9"
       ],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "Laoguanshan medical bamboo slips",
+        "bamboo slips of metal-weapon-injury induced lethal symptoms",
+        "exploration of novel approach",
+        "literature research",
+        "vital parts of the human body"
+      ],
+      "mesh": [
+        "Acupuncture Therapy",
+        "China",
+        "Forensic Medicine",
+        "History, Ancient",
+        "Humans",
+        "Male",
+        "Medicine in Literature"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/_구_파일명_중복_보관/2024_中国针灸_黄龙祥_test.pdf",
       "filename": "2024_中国针灸_黄龙祥_test.pdf",
@@ -95658,8 +95724,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:43",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1597
+      "updated_at": "2026-11-02T12:48:45",
+      "duplicate_of": 1597,
+      "enrich_checked_at": "2026-11-02T12:48:43",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39401821/",
+      "official_title": "Recognition on the vital parts of the human body in traumatology, forensic medicine and acupuncture from Laoguanshan unearthed bamboo slips of metal-weapon-injury induced lethal symptoms]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2337,
@@ -96057,7 +96129,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:44",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1600
+      "duplicate_of": 1600,
+      "enrich_checked_at": "2026-11-02T12:48:46"
     },
     {
       "id": 2348,
@@ -96134,7 +96207,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:45",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1545
+      "duplicate_of": 1545,
+      "enrich_checked_at": "2026-11-02T12:48:48"
     },
     {
       "id": 2350,
@@ -96218,11 +96292,11 @@
       "status": "duplicate",
       "title": "《经穴名称与定位》（GB_...346–2021）标准解读_武晓冬",
       "authors": "",
-      "journal": "",
-      "year": null,
-      "volume_issue": "",
+      "journal": "Zhongguo Zhen Jiu",
+      "year": 2022,
+      "volume_issue": "42(5): 579-82",
       "doi": "10.13703/j.0255-2930.20220117-k0001",
-      "pmid": "",
+      "pmid": "35543953",
       "abstract_snippet": "中国针灸2022 年5 月第42 卷第5 期Chinese Acupuncture & Moxibustion，May 2022，Vol. 42 No. 5 ·579· DOI：10.13703/j.0255-2930.20220117-k0001 中图分类号：R 224 文献标志码：A 《经穴名称与定位》（GB/T 12346–2021）标准解读* 武晓冬，黄龙祥，赵京生 （中国中医科学院针灸研究所，北京100700） 2021 年11 月26 日，国家市场监督管理总局、 国家标准化管理委员会发布了《经穴名称与定位》 （GB/T 12346-2021）（以下简称2021 版国标）。此标 准替",
       "snippet": "中国针灸2022 年5 月第42 卷第5 期Chinese Acupuncture & Moxibustion，May 2022，Vol. 42 No. 5 ·579· DOI：10.13703/j.0255-2930.20220117-k0001 中图分类号：R 224 文献标志码：A 《经穴名称与定位》（GB/T 12346–2021）标准解读* 武晓冬，黄龙祥，赵京生 （中国中医科学院针灸研究所，北京100700） 2021 年11 月26 日，国家市场监督管理总局、 国家标准化管理委员会发布了《经穴名称与定位》 （GB/T 12346-2021）（以下简称2021 版国标）。此标 准替",
       "detected_acupoints": [
@@ -96233,9 +96307,20 @@
         "GV25",
         "LI14"
       ],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "GB/T 12346–2021",
+        "Nomenclature and Location of Meridian Points",
+        "acupuncture and moxibustion",
+        "national standard"
+      ],
+      "mesh": [
+        "Acupuncture Points",
+        "Acupuncture Therapy",
+        "China",
+        "Meridians",
+        "Moxibustion"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/_구_파일명_중복_보관/《经穴名称与定位》（GB_...346–2021）标准解读_武晓冬.pdf",
       "filename": "《经穴名称与定位》（GB_...346–2021）标准解读_武晓冬.pdf",
@@ -96251,8 +96336,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:45",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1590
+      "updated_at": "2026-11-02T12:48:50",
+      "duplicate_of": 1590,
+      "enrich_checked_at": "2026-11-02T12:48:49",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35543953/",
+      "official_title": "Interpretation of China national standard Nomenclature and Location of Meridian Points (GB/T 12346-2021)]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2353,
@@ -96524,7 +96615,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:46",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1533
+      "duplicate_of": 1533,
+      "enrich_checked_at": "2026-11-02T12:48:52"
     },
     {
       "id": 2360,
@@ -96559,7 +96651,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:46",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1532
+      "duplicate_of": 1532,
+      "enrich_checked_at": "2026-11-02T12:48:53"
     },
     {
       "id": 2361,
@@ -96824,17 +96917,30 @@
       "status": "duplicate",
       "title": "中医学理论体系重构的典范—...英《医学纲目》理论创新启示_黄龙祥",
       "authors": "",
-      "journal": "",
-      "year": null,
-      "volume_issue": "",
+      "journal": "Zhongguo Zhen Jiu",
+      "year": 2021,
+      "volume_issue": "41(8): 823-33",
       "doi": "10.13703/j.0255-2930.20210318-0001",
-      "pmid": "",
+      "pmid": "34369688",
       "abstract_snippet": "中国针灸2021 年8 月第41 卷第8 期Chinese Acupuncture & Moxibustion，Aug. 2021，Vol. 41 No. 8 ·823· 编者按：在创刊40 周年之际，《中国针灸》开设“创刊40 周年纪念专栏”，特邀请朱兵、黄龙祥、赵 京生、刘炜宏、梁繁荣、李永明、杨金生、张建斌、张树剑等专家学者，从“针灸理论体系的构建” 和“针灸新时期的发展方向”方面撰写文章。这一系列文章系统、深入地探讨了针灸学理论体系构建 的基础和典范，针灸学科的守正创新、教材编写和流派研究存在的问题，穴位的本质、特异性及未来 研究方向，针灸治疗的可能靶点。另外，2021 年还是中国中医",
       "snippet": "中国针灸2021 年8 月第41 卷第8 期Chinese Acupuncture & Moxibustion，Aug. 2021，Vol. 41 No. 8 ·823· 编者按：在创刊40 周年之际，《中国针灸》开设“创刊40 周年纪念专栏”，特邀请朱兵、黄龙祥、赵 京生、刘炜宏、梁繁荣、李永明、杨金生、张建斌、张树剑等专家学者，从“针灸理论体系的构建” 和“针灸新时期的发展方向”方面撰写文章。这一系列文章系统、深入地探讨了针灸学理论体系构建 的基础和典范，针灸学科的守正创新、教材编写和流派研究存在的问题，穴位的本质、特异性及未来 研究方向，针灸治疗的可能靶点。另外，2021 年还是中国中医",
       "detected_acupoints": [],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "LOU Ying",
+        "Yi Xue Gang Mu (An Outline of Medicine)",
+        "case study",
+        "theoretic innovation"
+      ],
+      "mesh": [
+        "Acupuncture Therapy",
+        "China",
+        "Drugs, Chinese Herbal",
+        "Humans",
+        "Medicine",
+        "Medicine, Chinese Traditional",
+        "Phytotherapy"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/_구_파일명_중복_보관/中医学理论体系重构的典范—...英《医学纲目》理论创新启示_黄龙祥.pdf",
       "filename": "中医学理论体系重构的典范—...英《医学纲目》理论创新启示_黄龙祥.pdf",
@@ -96850,8 +96956,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:46",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1584
+      "updated_at": "2026-11-02T12:48:56",
+      "duplicate_of": 1584,
+      "enrich_checked_at": "2026-11-02T12:48:54",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34369688/",
+      "official_title": "Masterpiece of reconstruction of theoretical system of traditional Chinese medicine-revelation of LOU Ying's Yi Xue Gang Mu (An Outline of Medicine)]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2369,
@@ -96959,7 +97071,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:47",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1572
+      "duplicate_of": 1572,
+      "enrich_checked_at": "2026-11-02T12:48:57"
     },
     {
       "id": 2372,
@@ -97074,7 +97187,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:47",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1571
+      "duplicate_of": 1571,
+      "enrich_checked_at": "2026-11-02T12:48:58"
     },
     {
       "id": 2375,
@@ -97114,7 +97228,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:47",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1564
+      "duplicate_of": 1564,
+      "enrich_checked_at": "2026-11-02T12:48:59"
     },
     {
       "id": 2376,
@@ -97185,7 +97300,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:47",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1562
+      "duplicate_of": 1562,
+      "enrich_checked_at": "2026-11-02T12:49:01"
     },
     {
       "id": 2378,
@@ -97290,7 +97406,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:47",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1568
+      "duplicate_of": 1568,
+      "enrich_checked_at": "2026-11-02T12:49:02"
     },
     {
       "id": 2381,
@@ -97361,7 +97478,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:48",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1553
+      "duplicate_of": 1553,
+      "enrich_checked_at": "2026-11-02T12:49:03"
     },
     {
       "id": 2383,
@@ -97613,7 +97731,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:48",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1573
+      "duplicate_of": 1573,
+      "enrich_checked_at": "2026-11-02T12:49:05"
     },
     {
       "id": 2390,
@@ -97737,19 +97856,32 @@
       "status": "duplicate",
       "title": "指尖针尖下的人体形态结构探索发现及再发现_黄龙祥",
       "authors": "",
-      "journal": "",
-      "year": null,
-      "volume_issue": "",
+      "journal": "Zhongguo Zhen Jiu",
+      "year": 2026,
+      "volume_issue": "46(8): 1219-1233",
       "doi": "10.13703/j.0255-2930.20250331-0004",
-      "pmid": "",
+      "pmid": "42618234",
       "abstract_snippet": "中国针灸2026 年8 月第46 卷第8 期Chinese Acupuncture & Moxibustion，Aug. 2026，Vol. 46 No. 8 ·1219· DOI：10.13703/j.0255-2930.20250331-0004 引用格式：黄龙祥. 指尖针尖下的人体形态结构探索发现及再发现［J］. 中国针灸, 2026, 46（8）: 1219-1233. 指尖针尖下的人体形态结构探索发现及再发现 黄龙祥 （中国中医科学院针灸研究所，北京100700） 外科学家、解剖学家维萨里（Andreas Vesalius） 1543 年出版的代表作，乃现代人体解剖学的奠基之 作，书",
       "snippet": "中国针灸2026 年8 月第46 卷第8 期Chinese Acupuncture & Moxibustion，Aug. 2026，Vol. 46 No. 8 ·1219· DOI：10.13703/j.0255-2930.20250331-0004 引用格式：黄龙祥. 指尖针尖下的人体形态结构探索发现及再发现［J］. 中国针灸, 2026, 46（8）: 1219-1233. 指尖针尖下的人体形态结构探索发现及再发现 黄龙祥 （中国中医科学院针灸研究所，北京100700） 外科学家、解剖学家维萨里（Andreas Vesalius） 1543 年出版的代表作，乃现代人体解剖学的奠基之 作，书",
       "detected_acupoints": [
         "BL53"
       ],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "acupuncture theory of physical body",
+        "anthropology of body constitution",
+        "human anatomy",
+        "human morphology",
+        "theoretical innovation"
+      ],
+      "mesh": [
+        "Acupuncture",
+        "Acupuncture Points",
+        "Acupuncture Therapy",
+        "History, Ancient",
+        "Human Body",
+        "Humans"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/_구_파일명_중복_보관/指尖针尖下的人体形态结构探索发现及再发现_黄龙祥.pdf",
       "filename": "指尖针尖下的人体形态结构探索发现及再发现_黄龙祥.pdf",
@@ -97765,8 +97897,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:49",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1602
+      "updated_at": "2026-11-02T12:49:08",
+      "duplicate_of": 1602,
+      "enrich_checked_at": "2026-11-02T12:49:07",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42618234/",
+      "official_title": "Discovery and rediscovery of morphological structure of human body explored by manual detection and acupuncture practice]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2394,
@@ -97907,7 +98045,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:49",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1565
+      "duplicate_of": 1565,
+      "enrich_checked_at": "2026-11-02T12:49:09"
     },
     {
       "id": 2398,
@@ -98155,7 +98294,8 @@
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:50",
       "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1598
+      "duplicate_of": 1598,
+      "enrich_checked_at": "2026-11-02T12:49:11"
     },
     {
       "id": 2405,
@@ -98197,17 +98337,30 @@
       "status": "duplicate",
       "title": "窦汉卿针灸理论与儒家理学关系初探_李宝金",
       "authors": "",
-      "journal": "",
-      "year": null,
-      "volume_issue": "",
+      "journal": "Zhongguo Zhen Jiu",
+      "year": 2018,
+      "volume_issue": "38(2): 203-8",
       "doi": "10.13703/j.0255-2930.2018.02.027",
-      "pmid": "",
+      "pmid": "29473367",
       "abstract_snippet": "中国针灸2018 年2 月第38 卷第2 期Chinese Acupuncture & Moxibustion，Feb. 2018，Vol. 38 No. 2 ·203· DOI：10.13703/j.0255-2930.2018.02.027 中图分类号：R 245 文献标志码：A 窦汉卿针灸理论与儒家理学关系初探 李宝金，指导：黄龙祥 （中国中医科学院针灸研究所，北京 100700） 16 年前我始学针灸时的较大困惑是，临床针刺 治疗取穴一般会比针灸教材和典籍中多一些，针刺手 法的临床运用却较少。这些差异促使我对取穴精少、 手法细致的金元针灸医家窦汉卿产生了兴趣，并对其 生平及针灸学术思想",
       "snippet": "中国针灸2018 年2 月第38 卷第2 期Chinese Acupuncture & Moxibustion，Feb. 2018，Vol. 38 No. 2 ·203· DOI：10.13703/j.0255-2930.2018.02.027 中图分类号：R 245 文献标志码：A 窦汉卿针灸理论与儒家理学关系初探 李宝金，指导：黄龙祥 （中国中医科学院针灸研究所，北京 100700） 16 年前我始学针灸时的较大困惑是，临床针刺 治疗取穴一般会比针灸教材和典籍中多一些，针刺手 法的临床运用却较少。这些差异促使我对取穴精少、 手法细致的金元针灸医家窦汉卿产生了兴趣，并对其 生平及针灸学术思想",
       "detected_acupoints": [],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "CHENG-ZHU Neo-Confucianism",
+        "Confucian",
+        "DOU Hanqing",
+        "acupuncture-moxibustion theory"
+      ],
+      "mesh": [
+        "Acupuncture",
+        "China",
+        "Confucianism",
+        "History, Medieval",
+        "Humans",
+        "Medicine",
+        "Moxibustion"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/_구_파일명_중복_보관/窦汉卿针灸理论与儒家理学关系初探_李宝金.pdf",
       "filename": "窦汉卿针灸理论与儒家理学关系初探_李宝金.pdf",
@@ -98223,8 +98376,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:50",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1579
+      "updated_at": "2026-11-02T12:49:14",
+      "duplicate_of": 1579,
+      "enrich_checked_at": "2026-11-02T12:49:12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29473367/",
+      "official_title": "The relationship between acupuncture-moxibustion theory of DOU Hanqing and Neo- Confucianism]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2407,
@@ -98232,17 +98391,29 @@
       "status": "duplicate",
       "title": "筋病刺法的演变与经筋学说的兴衰_黄龙祥",
       "authors": "",
-      "journal": "",
-      "year": null,
-      "volume_issue": "",
+      "journal": "Zhongguo Zhen Jiu",
+      "year": 2023,
+      "volume_issue": "43(8): 855-67",
       "doi": "10.13703/j.0255-2930.20230316-k0002",
-      "pmid": "",
+      "pmid": "37577879",
       "abstract_snippet": "中国针灸2023 年8 月第43 卷第8 期Chinese Acupuncture & Moxibustion，Aug. 2023，Vol. 43 No. 8 ·855· 编者按：《中国针灸》编辑部于2022 年11 月24 日发布了2023 年“经筋与经筋疗法”征文通知。 截止到2023 年3 月底，4 个多月时间收到100 多篇经筋方面的学术论文，体现了经筋与经筋疗法是中 医针灸学术研究与临床应用的热点、重点之一。从这些论文中，我们发现广大中医针灸人士在大力地 运用经筋学说，研究经筋学术。特别是在疼痛性病症、软组织病症、痉挛性病症、骨关节病症、皮肤 疾病、疑难病症，甚至多种癌症等诊治方面，",
       "snippet": "中国针灸2023 年8 月第43 卷第8 期Chinese Acupuncture & Moxibustion，Aug. 2023，Vol. 43 No. 8 ·855· 编者按：《中国针灸》编辑部于2022 年11 月24 日发布了2023 年“经筋与经筋疗法”征文通知。 截止到2023 年3 月底，4 个多月时间收到100 多篇经筋方面的学术论文，体现了经筋与经筋疗法是中 医针灸学术研究与临床应用的热点、重点之一。从这些论文中，我们发现广大中医针灸人士在大力地 运用经筋学说，研究经筋学术。特别是在疼痛性病症、软组织病症、痉挛性病症、骨关节病症、皮肤 疾病、疑难病症，甚至多种癌症等诊治方面，",
       "detected_acupoints": [],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "acupuncture techniques of jin diseases",
+        "dry needling",
+        "jingjin doctrine",
+        "theoretic innovation"
+      ],
+      "mesh": [
+        "Acupuncture Points",
+        "Acupuncture Therapy",
+        "Humans",
+        "Medicine, Chinese Traditional",
+        "Meridians",
+        "Moxibustion"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/_구_파일명_중복_보관/筋病刺法的演变与经筋学说的兴衰_黄龙祥.pdf",
       "filename": "筋病刺法的演变与经筋学说的兴衰_黄龙祥.pdf",
@@ -98258,8 +98429,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:50",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1592
+      "updated_at": "2026-11-02T12:49:18",
+      "duplicate_of": 1592,
+      "enrich_checked_at": "2026-11-02T12:49:15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37577879/",
+      "official_title": "Evolution of acupuncture techniques for jin diseases and the rise and fall of jingjin doctrine]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2408,
@@ -98267,19 +98444,30 @@
       "status": "duplicate",
       "title": "经外奇穴标准化的目标、路径与标志性成果_李宝金",
       "authors": "",
-      "journal": "",
-      "year": null,
-      "volume_issue": "",
+      "journal": "Zhongguo Zhen Jiu",
+      "year": 2020,
+      "volume_issue": "40(11): 1241-4",
       "doi": "10.13703/j.0255-2930.20191021-k0003",
-      "pmid": "",
+      "pmid": "33788496",
       "abstract_snippet": "中国针灸2020 年11 月第40 卷第11 期Chinese Acupuncture & Moxibustion，Nov. 2020，Vol. 40 No. 11 ·1241· DOI：10.13703/j.0255-2930.20191021-k0003 中图分类号：R 245 文献标志码：A 经外奇穴标准化的目标、路径与标志性成果* 李宝金1，武晓冬2，黄龙祥2 （1 北京中医药大学针灸推拿学院，北京100029；2 中国中医科学院针灸研究所，北京100700） “经外奇穴”是指“经”外奇效之穴，此概念只 有当腧穴“正经”被确立之后或腧穴归经完成之后才 能产生。《黄帝明堂经》作为“明堂",
       "snippet": "中国针灸2020 年11 月第40 卷第11 期Chinese Acupuncture & Moxibustion，Nov. 2020，Vol. 40 No. 11 ·1241· DOI：10.13703/j.0255-2930.20191021-k0003 中图分类号：R 245 文献标志码：A 经外奇穴标准化的目标、路径与标志性成果* 李宝金1，武晓冬2，黄龙祥2 （1 北京中医药大学针灸推拿学院，北京100029；2 中国中医科学院针灸研究所，北京100700） “经外奇穴”是指“经”外奇效之穴，此概念只 有当腧穴“正经”被确立之后或腧穴归经完成之后才 能产生。《黄帝明堂经》作为“明堂",
       "detected_acupoints": [
         "GV24"
       ],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "Huangdi Mingtang Jing",
+        "approach",
+        "extraordinary points",
+        "objective",
+        "standardization",
+        "symbolic achievement"
+      ],
+      "mesh": [
+        "Acupuncture Points",
+        "Meridians",
+        "Reference Standards"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/_구_파일명_중복_보관/经外奇穴标准化的目标、路径与标志性成果_李宝金.pdf",
       "filename": "经外奇穴标准化的目标、路径与标志性成果_李宝金.pdf",
@@ -98295,8 +98483,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:50",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1582
+      "updated_at": "2026-11-02T12:49:22",
+      "duplicate_of": 1582,
+      "enrich_checked_at": "2026-11-02T12:49:20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33788496/",
+      "official_title": "Objective, approach and symbolic achievement of the standardization on extraordinary points]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2409,
@@ -98524,20 +98718,32 @@
       "status": "duplicate",
       "title": "老官山出土汉简脉书简解读_黄龙祥",
       "authors": "",
-      "journal": "",
-      "year": null,
-      "volume_issue": "",
+      "journal": "Zhongguo Zhen Jiu",
+      "year": 2018,
+      "volume_issue": "38(1): 97-107",
       "doi": "10.13703/j.0255-2930.2018.01.027",
-      "pmid": "",
+      "pmid": "29354945",
       "abstract_snippet": "中国针灸2018 年1 月第38 卷第1 期Chinese Acupuncture & Moxibustion，Jan. 2018，Vol. 38 No. 1 ·97· DOI：10.13703/j.0255-2930.2018.01.027 中图分类号：R 245 文献标志码：A 老官山出土汉简脉书简解读 黄龙祥 （中国中医科学院针灸研究所，北京100700） 关于老官山出土文献的研究，从已经发表的老官山出 土医简的研究论文和专书来看，分歧最大的在于医简的命 名，成都中医药大学和成都文物考古研究所联合组成的整 理小组（以下简称“整理小组”）拟定的命名方案与之前公 布的书名已有较大的不同，或许",
       "snippet": "中国针灸2018 年1 月第38 卷第1 期Chinese Acupuncture & Moxibustion，Jan. 2018，Vol. 38 No. 1 ·97· DOI：10.13703/j.0255-2930.2018.01.027 中图分类号：R 245 文献标志码：A 老官山出土汉简脉书简解读 黄龙祥 （中国中医科学院针灸研究所，北京100700） 关于老官山出土文献的研究，从已经发表的老官山出 土医简的研究论文和专书来看，分歧最大的在于医简的命 名，成都中医药大学和成都文物考古研究所联合组成的整 理小组（以下简称“整理小组”）拟定的命名方案与之前公 布的书名已有较大的不同，或许",
       "detected_acupoints": [
         "LI14",
         "LI8"
       ],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "Laoguanshan",
+        "derived meridians",
+        "pulse diagnosis",
+        "twelve meridians"
+      ],
+      "mesh": [
+        "Heart Rate",
+        "History, Ancient",
+        "Humans",
+        "Medicine, Chinese Traditional",
+        "Meridians",
+        "Moxibustion"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/_구_파일명_중복_보관/老官山出土汉简脉书简解读_黄龙祥.pdf",
       "filename": "老官山出土汉简脉书简解读_黄龙祥.pdf",
@@ -98553,8 +98759,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:51",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1580
+      "updated_at": "2026-11-02T12:49:24",
+      "duplicate_of": 1580,
+      "enrich_checked_at": "2026-11-02T12:49:23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29354945/",
+      "official_title": "Study on the bamboo slips of Maishu in the Han Dynasty excavated in Laoguanshan]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2416,
@@ -98997,17 +99209,28 @@
       "status": "duplicate",
       "title": "论俞穴_黄龙祥",
       "authors": "",
-      "journal": "",
-      "year": null,
-      "volume_issue": "",
+      "journal": "Zhongguo Zhen Jiu",
+      "year": 2023,
+      "volume_issue": "43(10): 1189-201",
       "doi": "10.13703/j.0255-2930.20230227-0002",
-      "pmid": "",
+      "pmid": "37802528",
       "abstract_snippet": "中国针灸 2023 年 10 月第 43 卷第 10 期Chinese Acupuncture & Moxibustion， Oct. 2023， Vol. 43 No. 10 论俞穴* 黄龙祥 （中国中医科学院针灸研究所，北京 100700） ［摘 要］ 俞穴为针灸学的立足之本，要说明白针灸之理，必先明俞穴的结构与功能。通过发掘《黄帝内经》有 关俞穴分类、分布、结构的论述，提炼出“奇正论”“节交论”“关机论”三论，指出俞穴按有无固定位置分为 “经俞”和“奇俞”两大类，经俞又分为脉俞、骨空、气穴、募穴四类；俞穴分布总规律是在“节之交”，俞穴特 别是大俞要穴分布的密度与关节大小及其功能的复杂度呈",
       "snippet": "中国针灸 2023 年 10 月第 43 卷第 10 期Chinese Acupuncture & Moxibustion， Oct. 2023， Vol. 43 No. 10 论俞穴* 黄龙祥 （中国中医科学院针灸研究所，北京 100700） ［摘 要］ 俞穴为针灸学的立足之本，要说明白针灸之理，必先明俞穴的结构与功能。通过发掘《黄帝内经》有 关俞穴分类、分布、结构的论述，提炼出“奇正论”“节交论”“关机论”三论，指出俞穴按有无固定位置分为 “经俞”和“奇俞”两大类，经俞又分为脉俞、骨空、气穴、募穴四类；俞穴分布总规律是在“节之交”，俞穴特 别是大俞要穴分布的密度与关节大小及其功能的复杂度呈",
       "detected_acupoints": [],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "acupoints",
+        "acupuncture",
+        "classification",
+        "rule of distribution",
+        "structure"
+      ],
+      "mesh": [
+        "Acupuncture",
+        "Acupuncture Points",
+        "Acupuncture Therapy",
+        "Meridians"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/_구_파일명_중복_보관/论俞穴_黄龙祥.pdf",
       "filename": "论俞穴_黄龙祥.pdf",
@@ -99023,8 +99246,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:52",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1593
+      "updated_at": "2026-11-02T12:49:27",
+      "duplicate_of": 1593,
+      "enrich_checked_at": "2026-11-02T12:49:25",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37802528/",
+      "official_title": "On acupoints]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2429,
@@ -99207,17 +99436,33 @@
       "status": "duplicate",
       "title": "输穴概念阐释、术语审定及与针灸科学探索的互动_黄龙祥",
       "authors": "",
-      "journal": "",
-      "year": null,
-      "volume_issue": "",
+      "journal": "Zhongguo Zhen Jiu",
+      "year": 2026,
+      "volume_issue": "46(8): 1303-1318",
       "doi": "10.13703/j.0255-2930.20250617-k0001",
-      "pmid": "",
+      "pmid": "42618244",
       "abstract_snippet": "中国针灸2026 年8 月第46 卷第8 期Chinese Acupuncture & Moxibustion，Aug. 2026，Vol. 46 No. 8 ·1303· DOI：10.13703/j.0255-2930.20250617-k0001 引用格式：黄龙祥. 输穴概念阐释、术语审定及与针灸科学探索的互动［J］. 中国 针灸, 2026, 46（8）: 1303-1318. 输穴概念阐释、术语审定及与针灸科学探索的互动 黄龙祥 （中国中医科学院针灸研究所，北京100700） ［摘 要］ “输穴”，作为针灸学的核心概念，在不同时代有不同的术语，输穴术语标准化工作为古今医家及政 府高度",
       "snippet": "中国针灸2026 年8 月第46 卷第8 期Chinese Acupuncture & Moxibustion，Aug. 2026，Vol. 46 No. 8 ·1303· DOI：10.13703/j.0255-2930.20250617-k0001 引用格式：黄龙祥. 输穴概念阐释、术语审定及与针灸科学探索的互动［J］. 中国 针灸, 2026, 46（8）: 1303-1318. 输穴概念阐释、术语审定及与针灸科学探索的互动 黄龙祥 （中国中医科学院针灸研究所，北京100700） ［摘 要］ “输穴”，作为针灸学的核心概念，在不同时代有不同的术语，输穴术语标准化工作为古今医家及政 府高度",
       "detected_acupoints": [],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "English translation",
+        "concept",
+        "definition",
+        "experimental research",
+        "shuxue",
+        "standardization research",
+        "terminology"
+      ],
+      "mesh": [
+        "Acupuncture Therapy",
+        "China",
+        "History, Ancient",
+        "Humans",
+        "Medicine, Chinese Traditional",
+        "Moxibustion",
+        "Terminology as Topic"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/_구_파일명_중복_보관/输穴概念阐释、术语审定及与针灸科学探索的互动_黄龙祥.pdf",
       "filename": "输穴概念阐释、术语审定及与针灸科学探索的互动_黄龙祥.pdf",
@@ -99233,8 +99478,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:53",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1601
+      "updated_at": "2026-11-02T12:49:30",
+      "duplicate_of": 1601,
+      "enrich_checked_at": "2026-11-02T12:49:28",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42618244/",
+      "official_title": "Concept elaboration of shuxue and approval of terminology: interaction with scientific exploration of acupuncture and moxibustion]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2435,
@@ -99383,17 +99634,28 @@
       "status": "duplicate",
       "title": "针灸所七十年筑基路上的几行脚印_黄龙祥",
       "authors": "",
-      "journal": "",
-      "year": null,
-      "volume_issue": "",
+      "journal": "Zhongguo Zhen Jiu",
+      "year": 2021,
+      "volume_issue": "41(11): 1183-90",
       "doi": "10.13703/j.0255-2930.20210814-0002",
-      "pmid": "",
+      "pmid": "34762367",
       "abstract_snippet": "中国针灸2021 年11 月第41 卷第11 期Chinese Acupuncture & Moxibustion，Nov. 2021，Vol. 41 No. 11 ·1183· 编者按：在中国中医科学院针灸研究所迎来建所70 周年华诞之际，本刊特设“建所70 周年纪念专栏” 以示祝贺。诚邀黄龙祥、吴中朝、张立剑等从针灸文献和基础理论研究、针灸医院建设、针灸国际交 流等方面，梳理针灸研究所由小到大、由弱到强的成长历程以及未来的发展方向和思考。3 位撰稿人 不约而同提到一个人——针灸研究所第一任所长朱琏，她与她的《新针灸学》拉开了构建针灸理论创 新的序幕，开启了针灸国际交流对外开放的大门，铺就了",
       "snippet": "中国针灸2021 年11 月第41 卷第11 期Chinese Acupuncture & Moxibustion，Nov. 2021，Vol. 41 No. 11 ·1183· 编者按：在中国中医科学院针灸研究所迎来建所70 周年华诞之际，本刊特设“建所70 周年纪念专栏” 以示祝贺。诚邀黄龙祥、吴中朝、张立剑等从针灸文献和基础理论研究、针灸医院建设、针灸国际交 流等方面，梳理针灸研究所由小到大、由弱到强的成长历程以及未来的发展方向和思考。3 位撰稿人 不约而同提到一个人——针灸研究所第一任所长朱琏，她与她的《新针灸学》拉开了构建针灸理论创 新的序幕，开启了针灸国际交流对外开放的大门，铺就了",
       "detected_acupoints": [],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "Institute of Acupuncture and Moxibustion, China Academy of Chinese Medical Sciences",
+        "development history",
+        "future prospects",
+        "the 70's anniversary"
+      ],
+      "mesh": [
+        "Acupuncture",
+        "Acupuncture Therapy",
+        "China",
+        "Medicine, East Asian Traditional",
+        "Moxibustion"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "황룡상 교수 논문 모음/_구_파일명_중복_보관/针灸所七十年筑基路上的几行脚印_黄龙祥.pdf",
       "filename": "针灸所七十年筑基路上的几行脚印_黄龙祥.pdf",
@@ -99409,8 +99671,14 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-27T13:48:53",
-      "updated_at": "2026-10-27T13:48:53",
-      "duplicate_of": 1585
+      "updated_at": "2026-11-02T12:49:33",
+      "duplicate_of": 1585,
+      "enrich_checked_at": "2026-11-02T12:49:32",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34762367/",
+      "official_title": "Footprints on the foundation road of Institute of Acupuncture and Moxibustion in seventy years]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2440,
@@ -102677,7 +102945,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:02",
-      "updated_at": "2026-10-28T18:57:02"
+      "updated_at": "2026-10-28T18:57:02",
+      "enrich_checked_at": "2026-11-02T12:49:35"
     },
     {
       "id": 2508,
@@ -102973,7 +103242,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:03",
-      "updated_at": "2026-10-28T18:57:03"
+      "updated_at": "2026-10-28T18:57:03",
+      "enrich_checked_at": "2026-11-02T12:49:37"
     },
     {
       "id": 2516,
@@ -103407,7 +103677,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:03",
-      "updated_at": "2026-10-28T18:57:03"
+      "updated_at": "2026-10-28T18:57:03",
+      "enrich_checked_at": "2026-11-02T12:49:38"
     },
     {
       "id": 2527,
@@ -103455,7 +103726,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:03",
-      "updated_at": "2026-10-28T18:57:03"
+      "updated_at": "2026-10-28T18:57:03",
+      "enrich_checked_at": "2026-11-02T12:49:40"
     },
     {
       "id": 2528,
@@ -103964,7 +104236,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:04",
-      "updated_at": "2026-10-28T18:57:04"
+      "updated_at": "2026-10-28T18:57:04",
+      "enrich_checked_at": "2026-11-02T12:49:41"
     },
     {
       "id": 2542,
@@ -104126,7 +104399,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:05",
-      "updated_at": "2026-10-28T18:57:05"
+      "updated_at": "2026-10-28T18:57:05",
+      "enrich_checked_at": "2026-11-02T12:49:42"
     },
     {
       "id": 2546,
@@ -104355,7 +104629,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:05",
-      "updated_at": "2026-10-28T18:57:05"
+      "updated_at": "2026-10-28T18:57:05",
+      "enrich_checked_at": "2026-11-02T12:49:44"
     },
     {
       "id": 2552,
@@ -104801,7 +105076,7 @@
       "year": 2017,
       "volume_issue": "2017",
       "doi": "10.13703/j.0255-2930.2017.10.012",
-      "pmid": "",
+      "pmid": "29354976",
       "abstract_snippet": "中国针灸2017 年10 月第37 卷第10 期Chinese Acupuncture & Moxibustion，Oct. 2017，Vol. 37 No. 10 ·1073· DOI：10.13703/j.0255-2930.2017.10.012 中图分类号：R 245 文献标志码：A 从三阴交–悬钟的经穴效应探讨相对穴与经穴 效应的关系* 辛思源1，杨志新1，郭建恩1，陆宏通1，王 培2，庞 嘉1，张 欢1 （1.承德医学院，河北承德067000；2.北京中医药大学针灸推拿学院） 相对穴，是指四肢内外侧或躯干前后方相对位 置上的部分针灸腧穴，如内关与外关、曲池与少海、 阴陵泉与阳陵泉",
       "snippet": "中国针灸2017 年10 月第37 卷第10 期Chinese Acupuncture & Moxibustion，Oct. 2017，Vol. 37 No. 10 ·1073· DOI：10.13703/j.0255-2930.2017.10.012 中图分类号：R 245 文献标志码：A 从三阴交–悬钟的经穴效应探讨相对穴与经穴 效应的关系* 辛思源1，杨志新1，郭建恩1，陆宏通1，王 培2，庞 嘉1，张 欢1 （1.承德医学院，河北承德067000；2.北京中医药大学针灸推拿学院） 相对穴，是指四肢内外侧或躯干前后方相对位 置上的部分针灸腧穴，如内关与外关、曲池与少海、 阴陵泉与阳陵泉",
       "detected_acupoints": [
@@ -104812,9 +105087,20 @@
         "LI4",
         "SP6"
       ],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "Point GB 39 (Xuanzhong)",
+        "Point SP 6 (Sanyinjiao)",
+        "acupoint effect",
+        "opposite acupoints",
+        "specificity"
+      ],
+      "mesh": [
+        "Acupuncture Points",
+        "Acupuncture Therapy",
+        "Humans",
+        "Meridians"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "삼음교 SP6/2017_中国针灸_辛思源_从三阴交-悬钟的经穴效应探讨相对穴与经穴效应的关系.pdf",
       "filename": "2017_中国针灸_辛思源_从三阴交-悬钟的经穴效应探讨相对穴与经穴效应的关系.pdf",
@@ -104830,7 +105116,13 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:06",
-      "updated_at": "2026-10-28T18:57:06"
+      "updated_at": "2026-11-02T12:49:47",
+      "enrich_checked_at": "2026-11-02T12:49:46",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29354976/",
+      "official_title": "Relationship between opposite acupoints and acupoint effect from acupoint effect of Sanyinjiao (SP 6)-Xuanzhong (GB 39)]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2565,
@@ -104874,7 +105166,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:06",
-      "updated_at": "2026-10-28T18:57:06"
+      "updated_at": "2026-10-28T18:57:06",
+      "enrich_checked_at": "2026-11-02T12:49:48"
     },
     {
       "id": 2566,
@@ -105257,7 +105550,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:07",
-      "updated_at": "2026-10-28T18:57:07"
+      "updated_at": "2026-10-28T18:57:07",
+      "enrich_checked_at": "2026-11-02T12:49:50"
     },
     {
       "id": 2576,
@@ -105452,7 +105746,7 @@
       "year": 2021,
       "volume_issue": "2021",
       "doi": "10.13703/j.0255-2930.20201111-k0001",
-      "pmid": "",
+      "pmid": "34369692",
       "abstract_snippet": "中国针灸2021 年8 月第41 卷第8 期Chinese Acupuncture & Moxibustion，Aug. 2021，Vol. 41 No. 8 ·845· DOI：10.13703/j.0255-2930.20201111-k0001 中图分类号：R 246.1 文献标志码：A 针刺双向调节效应——“调神健脾”法针刺治疗肠易 激综合征多中心随机对照试验亚组分析* 郭 静1△，孙建华1，陈 璐1，耿 昊1，杨国辉2，沈蓉蓉3，丁 敏4，陆 瑾5，刘 炼6，方向东7，裴丽霞1 （1 南京中医药大学附属医院针灸康复科，江苏南京 210029；2 沭阳县中医院；3 南通市中医院；4 ",
       "snippet": "中国针灸2021 年8 月第41 卷第8 期Chinese Acupuncture & Moxibustion，Aug. 2021，Vol. 41 No. 8 ·845· DOI：10.13703/j.0255-2930.20201111-k0001 中图分类号：R 246.1 文献标志码：A 针刺双向调节效应——“调神健脾”法针刺治疗肠易 激综合征多中心随机对照试验亚组分析* 郭 静1△，孙建华1，陈 璐1，耿 昊1，杨国辉2，沈蓉蓉3，丁 敏4，陆 瑾5，刘 炼6，方向东7，裴丽霞1 （1 南京中医药大学附属医院针灸康复科，江苏南京 210029；2 沭阳县中医院；3 南通市中医院；4 ",
       "detected_acupoints": [
@@ -105464,9 +105758,24 @@
         "ST36",
         "ST37"
       ],
-      "keywords": [],
-      "mesh": [],
-      "language": "",
+      "keywords": [
+        "Tiaoshen Jianpi",
+        "acupuncture",
+        "bidirectional regulation",
+        "irritable bowel syndrome",
+        "multicenter randomized controlled trial",
+        "subgroup analysis"
+      ],
+      "mesh": [
+        "Acupuncture Points",
+        "Acupuncture Therapy",
+        "Diarrhea",
+        "Humans",
+        "Irritable Bowel Syndrome",
+        "Quality of Life",
+        "Treatment Outcome"
+      ],
+      "language": "chi",
       "evidence_level": null,
       "file_path": "삼음교 SP6/2021_中国针灸_郭静_针刺双向调节效应——“调神健脾”法针刺治疗肠易激综合征多中心随机对照试验亚组分析.pdf",
       "filename": "2021_中国针灸_郭静_针刺双向调节效应——“调神健脾”法针刺治疗肠易激综合征多中心随机对照试验亚组分析.pdf",
@@ -105482,7 +105791,13 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:08",
-      "updated_at": "2026-10-28T18:57:08"
+      "updated_at": "2026-11-02T12:49:53",
+      "enrich_checked_at": "2026-11-02T12:49:51",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34369692/",
+      "official_title": "Bidirectional regulation of acupuncture: a subgroup analysis of multicenter randomized controlled trial of acupuncture with Tiaoshen Jianpi for irritable bowel syndrome]",
+      "also_found_in": [
+        "pubmed"
+      ]
     },
     {
       "id": 2582,
@@ -105736,7 +106051,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:09",
-      "updated_at": "2026-10-28T18:57:09"
+      "updated_at": "2026-10-28T18:57:09",
+      "enrich_checked_at": "2026-11-02T12:49:55"
     },
     {
       "id": 2589,
@@ -105966,7 +106282,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:09",
-      "updated_at": "2026-10-28T18:57:09"
+      "updated_at": "2026-10-28T18:57:09",
+      "enrich_checked_at": "2026-11-02T12:49:57"
     },
     {
       "id": 2595,
@@ -106008,7 +106325,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:09",
-      "updated_at": "2026-10-28T18:57:09"
+      "updated_at": "2026-10-28T18:57:09",
+      "enrich_checked_at": "2026-11-02T12:49:59"
     },
     {
       "id": 2596,
@@ -106199,7 +106517,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:10",
-      "updated_at": "2026-10-28T18:57:10"
+      "updated_at": "2026-10-28T18:57:10",
+      "enrich_checked_at": "2026-11-02T12:50:00"
     },
     {
       "id": 2601,
@@ -106272,7 +106591,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:10",
-      "updated_at": "2026-10-28T18:57:10"
+      "updated_at": "2026-10-28T18:57:10",
+      "enrich_checked_at": "2026-11-02T12:50:01"
     },
     {
       "id": 2603,
@@ -106309,7 +106629,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:10",
-      "updated_at": "2026-10-28T18:57:10"
+      "updated_at": "2026-10-28T18:57:10",
+      "enrich_checked_at": "2026-11-02T12:50:03"
     },
     {
       "id": 2604,
@@ -106347,7 +106668,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:10",
-      "updated_at": "2026-10-28T18:57:10"
+      "updated_at": "2026-10-28T18:57:10",
+      "enrich_checked_at": "2026-11-02T12:50:04"
     },
     {
       "id": 2605,
@@ -106388,7 +106710,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:11",
-      "updated_at": "2026-10-28T18:57:11"
+      "updated_at": "2026-10-28T18:57:11",
+      "enrich_checked_at": "2026-11-02T12:50:05"
     },
     {
       "id": 2606,
@@ -106678,7 +107001,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:11",
-      "updated_at": "2026-10-28T18:57:11"
+      "updated_at": "2026-10-28T18:57:11",
+      "enrich_checked_at": "2026-11-02T12:50:07"
     },
     {
       "id": 2613,
@@ -106909,7 +107233,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:12",
-      "updated_at": "2026-10-28T18:57:12"
+      "updated_at": "2026-10-28T18:57:12",
+      "enrich_checked_at": "2026-11-02T12:50:08"
     },
     {
       "id": 2619,
@@ -107025,7 +107350,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:12",
-      "updated_at": "2026-10-28T18:57:12"
+      "updated_at": "2026-10-28T18:57:12",
+      "enrich_checked_at": "2026-11-02T12:50:09"
     },
     {
       "id": 2622,
@@ -107109,7 +107435,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:13",
-      "updated_at": "2026-10-28T18:57:13"
+      "updated_at": "2026-10-28T18:57:13",
+      "enrich_checked_at": "2026-11-02T12:50:11"
     },
     {
       "id": 2624,
@@ -107199,7 +107526,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:13",
-      "updated_at": "2026-10-28T18:57:13"
+      "updated_at": "2026-10-28T18:57:13",
+      "enrich_checked_at": "2026-11-02T12:50:12"
     },
     {
       "id": 2626,
@@ -107317,7 +107645,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:13",
-      "updated_at": "2026-10-28T18:57:13"
+      "updated_at": "2026-10-28T18:57:13",
+      "enrich_checked_at": "2026-11-02T12:50:13"
     },
     {
       "id": 2629,
@@ -107354,7 +107683,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:13",
-      "updated_at": "2026-10-28T18:57:13"
+      "updated_at": "2026-10-28T18:57:13",
+      "enrich_checked_at": "2026-11-02T12:50:15"
     },
     {
       "id": 2630,
@@ -107405,7 +107735,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:14",
-      "updated_at": "2026-10-28T18:57:14"
+      "updated_at": "2026-10-28T18:57:14",
+      "enrich_checked_at": "2026-11-02T12:50:16"
     },
     {
       "id": 2631,
@@ -107439,7 +107770,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:14",
-      "updated_at": "2026-10-28T18:57:14"
+      "updated_at": "2026-10-28T18:57:14",
+      "enrich_checked_at": "2026-11-02T12:50:17"
     },
     {
       "id": 2632,
@@ -107481,7 +107813,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:14",
-      "updated_at": "2026-10-28T18:57:14"
+      "updated_at": "2026-10-28T18:57:14",
+      "enrich_checked_at": "2026-11-02T12:50:18"
     },
     {
       "id": 2633,
@@ -107521,7 +107854,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:14",
-      "updated_at": "2026-10-28T18:57:14"
+      "updated_at": "2026-10-28T18:57:14",
+      "enrich_checked_at": "2026-11-02T12:50:20"
     },
     {
       "id": 2634,
@@ -107782,7 +108116,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:15",
-      "updated_at": "2026-10-28T18:57:15"
+      "updated_at": "2026-10-28T18:57:15",
+      "enrich_checked_at": "2026-11-02T12:50:21"
     },
     {
       "id": 2641,
@@ -107819,7 +108154,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:15",
-      "updated_at": "2026-10-28T18:57:15"
+      "updated_at": "2026-10-28T18:57:15",
+      "enrich_checked_at": "2026-11-02T12:50:23"
     },
     {
       "id": 2642,
@@ -107853,7 +108189,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:15",
-      "updated_at": "2026-10-28T18:57:15"
+      "updated_at": "2026-10-28T18:57:15",
+      "enrich_checked_at": "2026-11-02T12:50:25"
     },
     {
       "id": 2643,
@@ -107928,7 +108265,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:15",
-      "updated_at": "2026-10-28T18:57:15"
+      "updated_at": "2026-10-28T18:57:15",
+      "enrich_checked_at": "2026-11-02T12:50:26"
     },
     {
       "id": 2645,
@@ -107965,7 +108303,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:15",
-      "updated_at": "2026-10-28T18:57:15"
+      "updated_at": "2026-10-28T18:57:15",
+      "enrich_checked_at": "2026-11-02T12:50:27"
     },
     {
       "id": 2646,
@@ -107999,7 +108338,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:16",
-      "updated_at": "2026-10-28T18:57:16"
+      "updated_at": "2026-10-28T18:57:16",
+      "enrich_checked_at": "2026-11-02T12:50:29"
     },
     {
       "id": 2647,
@@ -108101,7 +108441,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:16",
-      "updated_at": "2026-10-28T18:57:16"
+      "updated_at": "2026-10-28T18:57:16",
+      "enrich_checked_at": "2026-11-02T12:50:30"
     },
     {
       "id": 2650,
@@ -108138,7 +108479,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:16",
-      "updated_at": "2026-10-28T18:57:16"
+      "updated_at": "2026-10-28T18:57:16",
+      "enrich_checked_at": "2026-11-02T12:50:31"
     },
     {
       "id": 2651,
@@ -108175,7 +108517,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:16",
-      "updated_at": "2026-10-28T18:57:16"
+      "updated_at": "2026-10-28T18:57:16",
+      "enrich_checked_at": "2026-11-02T12:50:32"
     },
     {
       "id": 2652,
@@ -108214,7 +108557,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:16",
-      "updated_at": "2026-10-28T18:57:16"
+      "updated_at": "2026-10-28T18:57:16",
+      "enrich_checked_at": "2026-11-02T12:50:34"
     },
     {
       "id": 2653,
@@ -108384,7 +108728,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:17",
-      "updated_at": "2026-10-28T18:57:17"
+      "updated_at": "2026-10-28T18:57:17",
+      "enrich_checked_at": "2026-11-02T12:50:35"
     },
     {
       "id": 2658,
@@ -108455,7 +108800,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:17",
-      "updated_at": "2026-10-28T18:57:17"
+      "updated_at": "2026-10-28T18:57:17",
+      "enrich_checked_at": "2026-11-02T12:50:36"
     },
     {
       "id": 2660,
@@ -108526,7 +108872,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:18",
-      "updated_at": "2026-10-28T18:57:18"
+      "updated_at": "2026-10-28T18:57:18",
+      "enrich_checked_at": "2026-11-02T12:50:38"
     },
     {
       "id": 2662,
@@ -108563,7 +108910,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:18",
-      "updated_at": "2026-10-28T18:57:18"
+      "updated_at": "2026-10-28T18:57:18",
+      "enrich_checked_at": "2026-11-02T12:50:40"
     },
     {
       "id": 2663,
@@ -108599,7 +108947,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:18",
-      "updated_at": "2026-10-28T18:57:18"
+      "updated_at": "2026-10-28T18:57:18",
+      "enrich_checked_at": "2026-11-02T12:50:41"
     },
     {
       "id": 2664,
@@ -108776,7 +109125,8 @@
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:19",
       "updated_at": "2026-10-28T18:57:21",
-      "duplicate_of": 502
+      "duplicate_of": 502,
+      "enrich_checked_at": "2026-11-02T12:50:42"
     },
     {
       "id": 2669,
@@ -108810,7 +109160,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:19",
-      "updated_at": "2026-10-28T18:57:19"
+      "updated_at": "2026-10-28T18:57:19",
+      "enrich_checked_at": "2026-11-02T12:50:44"
     },
     {
       "id": 2670,
@@ -108849,7 +109200,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:19",
-      "updated_at": "2026-10-28T18:57:19"
+      "updated_at": "2026-10-28T18:57:19",
+      "enrich_checked_at": "2026-11-02T12:50:45"
     },
     {
       "id": 2671,
@@ -108888,7 +109240,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:19",
-      "updated_at": "2026-10-28T18:57:19"
+      "updated_at": "2026-10-28T18:57:19",
+      "enrich_checked_at": "2026-11-02T12:50:47"
     },
     {
       "id": 2672,
@@ -109200,7 +109553,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:20",
-      "updated_at": "2026-10-28T18:57:20"
+      "updated_at": "2026-10-28T18:57:20",
+      "enrich_checked_at": "2026-11-02T12:50:48"
     },
     {
       "id": 2681,
@@ -109234,7 +109588,8 @@
       },
       "text_extracted": true,
       "added_at": "2026-10-28T18:57:20",
-      "updated_at": "2026-10-28T18:57:20"
+      "updated_at": "2026-10-28T18:57:20",
+      "enrich_checked_at": "2026-11-02T12:50:49"
     },
     {
       "id": 2682,
@@ -109271,6 +109626,49 @@
       "updated_at": "2026-10-28T18:57:21",
       "duplicate_of": 2402,
       "duplicate_reason": "same normalized title + year (no DOI)"
+    },
+    {
+      "id": 2683,
+      "origin": "local",
+      "status": "active",
+      "title": "透穴刺法的古代文献源流与问题探讨_李宝金",
+      "authors": "",
+      "journal": "",
+      "year": null,
+      "volume_issue": "",
+      "doi": "",
+      "pmid": "",
+      "abstract_snippet": "项目来源：北京市社会科学基金青年项目（Ｎｏ．１９ＬＳＣ０１１）；北京中医药大学中央高校基本科研业务费青年教师项目（Ｎｏ．２０１９－ＪＹＢ－ＪＳ－ ０３２）；北京中医药大学针灸推拿学院２０２０年度重大传染病防治应急攻关项目（Ｎｏ．２０２０－ＺＴＸＹ－ＸＧＺＸ－００４） 第一作者：李宝金，讲师，研究方向：针灸文献、学术史、基础理论研究。Ｅ－ｍａｉｌ： ｌｉｂａｏｊｉｎ１９８１＠ｓｉｎａ．ｃｏｍ 透穴刺法的古代文献源流与问题探讨 李宝金１，黄龙祥２ （ １北京中医药大学针灸推拿学院，北京１０００２９；２中国中医科学院针灸研究所，北京１００７００） 【摘 要】 金元医家窦汉卿为透穴刺法初创者已为学界共",
+      "snippet": "项目来源：北京市社会科学基金青年项目（Ｎｏ．１９ＬＳＣ０１１）；北京中医药大学中央高校基本科研业务费青年教师项目（Ｎｏ．２０１９－ＪＹＢ－ＪＳ－ ０３２）；北京中医药大学针灸推拿学院２０２０年度重大传染病防治应急攻关项目（Ｎｏ．２０２０－ＺＴＸＹ－ＸＧＺＸ－００４） 第一作者：李宝金，讲师，研究方向：针灸文献、学术史、基础理论研究。Ｅ－ｍａｉｌ： ｌｉｂａｏｊｉｎ１９８１＠ｓｉｎａ．ｃｏｍ 透穴刺法的古代文献源流与问题探讨 李宝金１，黄龙祥２ （ １北京中医药大学针灸推拿学院，北京１０００２９；２中国中医科学院针灸研究所，北京１００７００） 【摘 要】 金元医家窦汉卿为透穴刺法初创者已为学界共",
+      "detected_acupoints": [
+        "GB1",
+        "GB37",
+        "GB8",
+        "LI4",
+        "PC7",
+        "SI4",
+        "SP5",
+        "TE3"
+      ],
+      "keywords": [],
+      "mesh": [],
+      "language": "",
+      "evidence_level": null,
+      "file_path": "황룡상 교수 논문 모음/透穴刺法的古代文献源流与问题探讨_李宝金.pdf",
+      "filename": "透穴刺法的古代文献源流与问题探讨_李宝金.pdf",
+      "ext": ".pdf",
+      "file_size": 207878,
+      "mtime": 1793181645.549,
+      "content_hash": "36c4156f936bbac124c9bbab9101c0bbc26cead1",
+      "parsed_filename": {
+        "year": null,
+        "journal": "",
+        "author": "",
+        "title": "透穴刺法的古代文献源流与问题探讨_李宝金"
+      },
+      "text_extracted": true,
+      "added_at": "2026-11-02T12:48:38",
+      "updated_at": "2026-11-02T12:48:38"
     }
   ],
   "BL1": {
@@ -116641,9 +117039,10 @@
       2573,
       2621,
       2633,
-      2658
+      2658,
+      2683
     ],
-    "local_papers_count": 18,
+    "local_papers_count": 19,
     "local_papers_sample": [
       {
         "id": 422,
@@ -117566,15 +117965,22 @@
     "standard_anatomy_reference": "",
     "clinical_indications_mapped": "",
     "local_paper_ids": [
-      1611
+      1611,
+      2683
     ],
-    "local_papers_count": 1,
+    "local_papers_count": 2,
     "local_papers_sample": [
       {
         "id": 1611,
         "filename": "2004_中医药学刊_郭向军_悬钟穴的应用及定位考证.pdf",
         "year": 2004,
         "doi": "10.13193/j.archtcm.2004.12.130.guoxj.065"
+      },
+      {
+        "id": 2683,
+        "filename": "透穴刺法的古代文献源流与问题探讨_李宝金.pdf",
+        "year": null,
+        "doi": ""
       }
     ],
     "landmark_paper_ids": [],
@@ -121844,9 +122250,10 @@
       2652,
       2666,
       2667,
-      2670
+      2670,
+      2683
     ],
-    "local_papers_count": 113,
+    "local_papers_count": 114,
     "local_papers_sample": [
       {
         "id": 17,
@@ -124516,9 +124923,10 @@
       1574,
       2518,
       2522,
-      2547
+      2547,
+      2683
     ],
-    "local_papers_count": 18,
+    "local_papers_count": 19,
     "local_papers_sample": [
       {
         "id": 292,
@@ -125353,9 +125761,10 @@
       1581,
       1625,
       2609,
-      2630
+      2630,
+      2683
     ],
-    "local_papers_count": 9,
+    "local_papers_count": 10,
     "local_papers_sample": [
       {
         "id": 373,
@@ -126402,9 +126811,10 @@
       2626,
       2627,
       2630,
-      2671
+      2671,
+      2683
     ],
-    "local_papers_count": 19,
+    "local_papers_count": 20,
     "local_papers_sample": [
       {
         "id": 8,
@@ -131220,9 +131630,10 @@
       234,
       376,
       1501,
-      2574
+      2574,
+      2683
     ],
-    "local_papers_count": 4,
+    "local_papers_count": 5,
     "local_papers_sample": [
       {
         "id": 234,
@@ -131246,6 +131657,12 @@
         "id": 2574,
         "filename": "2018_江苏中医药_谢桂楠_中医治疗低血压的研究进展.pdf",
         "year": 2018,
+        "doi": ""
+      },
+      {
+        "id": 2683,
+        "filename": "透穴刺法的古代文献源流与问题探讨_李宝金.pdf",
+        "year": null,
         "doi": ""
       }
     ],
@@ -144740,6 +145157,12 @@
       "mtime": 1793181394.529,
       "hash": "885ed571649331bbb0d70ca21dca0664f44ea16f"
     },
+    "황룡상 교수 논문 모음/透穴刺法的古代文献源流与问题探讨_李宝金.pdf": {
+      "id": 2683,
+      "size": 207878,
+      "mtime": 1793181645.549,
+      "hash": "36c4156f936bbac124c9bbab9101c0bbc26cead1"
+    },
     "황룡상 교수 논문 모음/기타 저자 논문/2003_中国中医基础医学杂志_张维波_古代经络概念与现代经络研究.pdf": {
       "id": 2205,
       "size": 242672,
@@ -144820,9 +145243,18 @@
     "landmark_papers": [],
     "standard_anatomy_reference": "",
     "clinical_indications_mapped": "",
-    "local_paper_ids": [],
-    "local_papers_count": 0,
-    "local_papers_sample": [],
+    "local_paper_ids": [
+      2683
+    ],
+    "local_papers_count": 1,
+    "local_papers_sample": [
+      {
+        "id": 2683,
+        "filename": "透穴刺法的古代文献源流与问题探讨_李宝金.pdf",
+        "year": null,
+        "doi": ""
+      }
+    ],
     "landmark_paper_ids": [],
     "external_paper_ids": [],
     "external_papers_count": 0,
