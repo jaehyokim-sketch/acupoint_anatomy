@@ -9,6 +9,7 @@ sync_claude_skill.py — C:\\workspace 작업을 Google Drive 정본 기준으�
   ① 스킬 규칙·지침
   <DRIVE>/.claude/skills/acupoint-anatomy/**                       → <WORKSPACE>/.claude/skills/acupoint-anatomy/   (전체 미러)
   <DRIVE>/.claude/workspace_CLAUDE.md                              → <WORKSPACE>/CLAUDE.md
+  <DRIVE>/FMA_3D_해부_통합설정_가이드.md                             → <WORKSPACE>/FMA_3D_해부_통합설정_가이드.md
   <DRIVE>/01_Framework/{정본·등록부·DB 설계}.md                     → <REPO>/framework/
   <DRIVE>/.agents/skills/acupoint-anatomy/SKILL.md                 → <REPO>/skill/SKILL.md
   <DRIVE>/.claude/skills/acupoint-anatomy/scripts/fma/**           → <REPO>/scripts/fma/   (MCP 서버가 불러오는 FMA 스크립트, 파일 단위)
@@ -63,6 +64,7 @@ REPO_TREES = [  # (Drive 기준 폴더, 저장소 기준 폴더) — 파일 단�
 ]
 WORKSPACE_FILES = [  # (Drive 기준 상대경로, 워크스페이스 기준 상대경로)
     (".claude/workspace_CLAUDE.md", "CLAUDE.md"),
+    ("FMA_3D_해부_통합설정_가이드.md", "FMA_3D_해부_통합설정_가이드.md"),   # FMA·3D·SMPL-X·Acupoint_US 새 PC 설정 (VS Code·Antigravity)
 ]
 DATA_FILES = [  # (Drive 02_Master_Datasets 기준, 저장소 data/ 기준) — 바이트 단위 미러
     ("경혈_생의학_신경반사_마스터DB.json", "경혈_생의학_신경반사_마스터DB.json"),
