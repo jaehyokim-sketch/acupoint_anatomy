@@ -74,6 +74,8 @@ DATA_FILES = [  # (Drive 02_Master_Datasets 기준, 저장소 data/ 기준) — 
     ("경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx", "경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx"),
     ("김재효 수업_경혈_해부구조_데이터셋.xlsx", "김재효 수업_경혈_해부구조_데이터셋.xlsx"),
     ("침구문헌별 자침깊이 정리_AI 분석용.xlsx", "침구문헌별 자침깊이 정리_AI 분석용.xlsx"),
+    ("자입깊이_문헌평균_추정.json", "자입깊이_문헌평균_추정.json"),     # fma/needle_depth.py build (편집 PC)
+    ("자입깊이_문헌평균_추정.xlsx", "자입깊이_문헌평균_추정.xlsx"),
     ("FMA/acupoint_fma_mapping.json", "acupoint_fma_mapping.json"),
 ]
 MCP_REF_INPUTS = {"경혈학공통교재 경혈_해부구조_데이터셋_refine.xlsx", "김재효 수업_경혈_해부구조_데이터셋.xlsx",

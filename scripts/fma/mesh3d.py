@@ -318,13 +318,8 @@ def cmd_distance(a):
 PALETTE = {"근육": "#d9534f", "신경": "#f2c230", "혈관": "#e0302b", "뼈": "#efe8d2"}
 
 
-def render(items, out, title="", view="xz", note=""):
-    """pyvista로 3D 장면만 찍고(오프스크린), 범례·제목·주석은 matplotlib으로 얹는다(한글 글꼴 사용)."""
+def _scene_pyvista(items, view):
     import pyvista as pv
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
-    from matplotlib.patches import Patch
     pv.OFF_SCREEN = True
     pl = pv.Plotter(off_screen=True, window_size=(1400, 1600))
     pl.set_background("white")
@@ -339,6 +334,61 @@ def render(items, out, title="", view="xz", note=""):
     pl.camera.zoom(1.2)
     img = pl.screenshot(return_img=True)
     pl.close()
+    return img
+
+
+def _scene_matplotlib(items, view):
+    """VTK 없이 그리는 대체 경로(Windows 애플리케이션 제어가 VTK DLL을 막는 PC). 면 단위 램버트 음영 + 깊이 정렬."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib.colors import to_rgb
+    from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+    # pyvista 시점과 맞춤: xz = 앞(−Y)에서, yz = 옆(+X)에서, xy = 위에서, iso = 앞에서 왼쪽으로 35°·위 15°
+    elev, azim = {"xz": (0, -90), "yz": (0, 0), "xy": (90, -90), "iso": (15, -125)}[view]
+    e, az = np.radians(elev), np.radians(azim)
+    eye = np.array([np.cos(e) * np.cos(az), np.cos(e) * np.sin(az), np.sin(e)])
+    light = eye + np.array([0.3, 0.2, 0.6])
+    light /= np.linalg.norm(light)
+    fig = plt.figure(figsize=(7, 8), dpi=200)
+    ax = fig.add_axes([0, 0, 1, 1], projection="3d")
+    polys, cols, depth = [], [], []
+    for m, color, label, opacity in items:
+        tri = m.vertices[m.faces]
+        nrm = np.cross(tri[:, 1] - tri[:, 0], tri[:, 2] - tri[:, 0])
+        nrm /= np.linalg.norm(nrm, axis=1, keepdims=True) + 1e-12
+        shade = 0.35 + 0.65 * np.abs(nrm @ light)
+        rgb = np.clip(np.array(to_rgb(color))[None, :] * shade[:, None], 0, 1)
+        polys.append(tri)
+        cols.append(np.c_[rgb, np.full(len(tri), opacity)])
+        depth.append(tri.mean(1) @ eye)
+    tri, col, dep = np.concatenate(polys), np.concatenate(cols), np.concatenate(depth)
+    order = np.argsort(dep)                       # 먼 면부터
+    ax.add_collection3d(Poly3DCollection(tri[order], facecolors=col[order], edgecolors="none", linewidths=0))
+    allv = tri.reshape(-1, 3)
+    lo, hi = allv.min(0), allv.max(0)
+    ax.set_xlim(lo[0], hi[0]); ax.set_ylim(lo[1], hi[1]); ax.set_zlim(lo[2], hi[2])
+    ax.set_box_aspect(hi - lo)
+    ax.view_init(elev=elev, azim=azim)
+    ax.set_proj_type("ortho")
+    ax.axis("off")
+    fig.canvas.draw()
+    img = np.asarray(fig.canvas.buffer_rgba())[..., :3].copy()
+    plt.close(fig)
+    return img
+
+
+def render(items, out, title="", view="xz", note=""):
+    """3D 장면을 찍고(pyvista, 안 되면 matplotlib 대체), 범례·제목·주석은 matplotlib으로 얹는다(한글 글꼴 사용)."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import Patch
+    try:
+        img = _scene_pyvista(items, view)
+    except Exception as ex:   # noqa: BLE001 — VTK DLL 차단·OpenGL 없음 등
+        print(f"   [render] pyvista 사용 불가({type(ex).__name__}) → matplotlib 대체 렌더러")
+        img = _scene_matplotlib(items, view)
     plt.rcParams["font.family"] = ["Malgun Gothic", "Microsoft YaHei"]
     fig = plt.figure(figsize=(12, 11), dpi=150)
     ax = fig.add_axes([0.0, 0.06, 0.62, 0.88]); ax.imshow(img); ax.axis("off")
@@ -425,6 +475,180 @@ def cmd_acupoint(a):
     print(f"[acupoint] → {outdir}")
 
 
+# ---------------------------------------------------------------- depth (교재 구조 목록 기준 경혈 위치·깊이 추정)
+SKIN_FMA = 7163
+PUN_MM = 2.3                        # 1푼 = 2.3 mm (스킬 3절 환산)
+CAT_COLOR = {"근육": ["#d9534f", "#e57f6c", "#c96b5a", "#b5574a", "#e0907a"], "신경": "#f2c230", "동맥": "#e0302b",
+             "정맥": "#2f6fd0", "뼈": "#efe8d2", "피부": "#f0c8a6"}
+
+
+def _code(s):
+    m_ = re.fullmatch(r"([A-Za-z]+)-?(\d+)", s.strip())
+    return f"{m_.group(1).upper()}{int(m_.group(2)):02d}" if m_ else s.strip()
+
+
+def _surface(m, n):
+    from scipy.spatial import cKDTree
+    pts = np.asarray(m.sample(n))
+    return pts, cKDTree(pts)
+
+
+def _textbook_structures(code, source, side):
+    """대응표(교재 xlsx → FMA)에서 source 교재 행만 골라 BodyParts3D 메쉬를 불러온다."""
+    rows = [r for r in json.loads(MAPPING_JSON.read_text(encoding="utf-8"))["rows"] if r["code"] == code and r["source"] == source]
+    if not rows:
+        sys.exit(f"[depth] 대응표에 {code}({source}) 행이 없습니다")
+    cov = json.loads((SHARE_BP3D / "acupoint_mesh_coverage.json").read_text(encoding="utf-8")).get(code, {})
+    out, missing, seen, cache = [], [], set(), {}
+    for r in rows:
+        name = f"{r['term_kr']} ({r['variant']})"
+        if not r["fma_id"] or r["match"].startswith(("fuzzy", "none")) or "검토" in r["match"]:
+            missing.append(f"{name} — FMA 대응 {r['match']}")
+            continue
+        c = cov.get(str(r["fma_id"])) or {}
+        mf = c.get("mesh_fma")
+        if mf is None:
+            missing.append(f"{name} — BodyParts3D 메쉬 없음")
+            continue
+        if mf in seen:
+            continue
+        seen.add(mf)
+        if mf not in cache:
+            cache[mf] = load_mesh(mf, side)[0]
+        if cache[mf] is None:
+            missing.append(f"{name} — {side} 측 메쉬 없음")
+            continue
+        cat = r["category"]
+        if cat == "혈관":
+            cat = "정맥" if "vein" in (c.get("mesh_label") or r["fma_label"]).lower() else "동맥"
+        level = c.get("level")
+        if r["match"].startswith("parent"):
+            level = f"{level} · 상위 구조 대응"
+        out.append({"mesh": cache[mf], "fma": mf, "label": f"{r['term_kr']} · {c.get('mesh_label') or r['fma_label']}",
+                    "term": r["term_kr"], "category": cat, "level": level, "match": r["match"]})
+    return out, missing
+
+
+def cmd_depth(a):
+    """교재가 경혈 아래에 둔 근육들이 함께 놓이는 피부 영역을 후보 위치로 삼고, 그 영역에서 구조별 깊이(피부→구조 표면 최소 거리)를 잰다."""
+    from mesh3d_viewer import build_html
+    np.random.seed(0)                # 표면 표본점 고정 → 같은 입력이면 같은 깊이
+    code = _code(a.code)
+    structs, missing = _textbook_structures(code, a.source, a.side)
+    if not structs:
+        sys.exit(f"[depth] {code}: 메쉬가 있는 교재 구조가 없습니다. 없는 구조: {missing}")
+    anchors = [s for s in structs if s["category"] == "근육"] or structs
+    print(f"[depth] {code} ({a.source} 교재) · 메쉬 구조 {len(structs)} · 위치 기준 {', '.join(s['term'] for s in anchors)}")
+    # 1) 피부 후보 영역: 기준 근육들의 경계상자(+30 mm) 안 피부 표면 표본점
+    skin = load_mesh(SKIN_FMA)[0]
+    if skin is None:
+        sys.exit("[depth] BodyParts3D 피부(FMA:7163) 메쉬가 없습니다")
+    lo = np.min([s["mesh"].bounds[0] for s in anchors], 0) - 30
+    hi = np.max([s["mesh"].bounds[1] for s in anchors], 0) + 30
+    keep = np.all((skin.triangles_center >= lo) & (skin.triangles_center <= hi), axis=1)
+    patch = skin.submesh([np.nonzero(keep)[0]], append=True)
+    cand = np.asarray(patch.sample(max(4000, int(patch.area / 4))))           # 약 2 mm 간격
+    trees = {id(s): _surface(s["mesh"], 30000)[1] for s in structs}
+    dist = {id(s): trees[id(s)].query(cand)[0] for s in structs}
+    if a.point:
+        p = np.array([float(v) for v in a.point.split(",")])
+        near = np.linalg.norm(cand - p, axis=1) <= a.radius
+        if not near.any():
+            sys.exit(f"[depth] --point 반경 {a.radius} mm 안에 피부 표본점이 없습니다(피부면 위 좌표를 주세요)")
+        region, how = near, f"지정 좌표 반경 {a.radius:g} mm 피부 영역"
+        best = cand[np.argmin(np.linalg.norm(cand - p, axis=1))]
+    else:
+        # 기준 근육 모두에 가장 가까운 피부점: score = max_k d_k. 최솟값 + tol 이내를 후보 영역으로 둔다.
+        score = np.max([dist[id(s)] for s in anchors], 0)
+        region = score <= score.min() + a.tol
+        best = cand[np.argmin(score)]
+        how = f"기준 근육 모두에 가장 가까운 피부점(최대 거리 최솟값 {score.min():.1f} mm) + {a.tol:g} mm 이내"
+    rp = cand[region]
+    span = rp.max(0) - rp.min(0) if len(rp) > 1 else np.zeros(3)
+    # 2) 구조별 깊이
+    rows = []
+    for s in structs:
+        d = dist[id(s)][region]
+        db = float(trees[id(s)].query(best)[0])
+        rows.append({"structure": s["label"], "category": s["category"], "fma_id": s["fma"], "mesh_level": s["level"],
+                     "depth_mm_at_point": round(db, 1), "depth_pun_at_point": round(db / PUN_MM, 1),
+                     "depth_mm_median": round(float(np.median(d)), 1), "depth_mm_p10": round(float(np.percentile(d, 10)), 1),
+                     "depth_mm_p90": round(float(np.percentile(d, 90)), 1)})
+    rows.sort(key=lambda r: r["depth_mm_at_point"])
+    # 문헌 자입 깊이 평균(needle_depth.py, 푼 × 2.3 mm)과 대조: 대표점에서 그 깊이 안에 표면이 있는 구조
+    from needle_depth import load as load_needle_depth, summary_line
+    lit = load_needle_depth().get(code)
+    lit_res = None
+    if lit and lit["all"]["n"]:
+        mm = lit["all"]["mean_mm"]
+        for r in rows:
+            r["within_literature_mean"] = r["depth_mm_at_point"] <= mm
+        lit_res = {"summary": summary_line(lit), "mean_pun": lit["all"]["mean_pun"], "mean_mm": mm,
+                   "classic_mm": lit["classic"]["mean_mm"], "modern_mm": lit["modern"]["mean_mm"],
+                   "modern_range_mm": lit["modern"].get("range_mm"), "forbidden_sources": lit["forbidden_sources"],
+                   "reached_at_point": [r["structure"] for r in rows if r["within_literature_mean"]]}
+    elif lit:
+        lit_res = {"summary": summary_line(lit), "mean_mm": None, "forbidden_sources": lit["forbidden_sources"]}
+    res = {"code": code, "source": a.source, "side": a.side, "method": how, "candidate_points": int(region.sum()),
+           "candidate_extent_mm": span.round(1).tolist(), "point_mm": best.round(1).tolist(), "depths": rows,
+           "literature_depth": lit_res, "missing_structures": missing, "attribution": ATTRIB,
+           "caveat": ("BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 "
+                      "정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다.")}
+    outdir = Path(a.out) if a.out else data_dir() / "mesh_results"
+    outdir.mkdir(parents=True, exist_ok=True)
+    (outdir / f"{code}_depth.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    side_kr = {"right": "오른쪽", "left": "왼쪽"}[a.side]
+    md = [f"### {code} 경혈 위치 기준 깊이 추정 ({a.source} 교재 구조 · BodyParts3D, {side_kr})", "",
+          f"- 위치 기준: {how} · 후보 피부점 {int(region.sum()):,}개, 후보 영역 크기(X·Y·Z) {' × '.join(f'{v:.0f}' for v in span)} mm",
+          "- 깊이 = 피부점 → 구조 표면 최소 직선거리(mm). 푼 = mm ÷ 2.3"]
+    if lit_res:
+        md.append(f"- 문헌 자입 깊이(침구문헌별 자침깊이 정리, 1푼 = 2.3 mm): {lit_res['summary']}")
+    if lit_res and lit_res.get("mean_mm"):
+        md.append(f"- 대표점에서 문헌 평균 깊이({lit_res['mean_mm']} mm) 안에 표면이 있는 구조: "
+                  + (", ".join(lit_res["reached_at_point"]) or "없음"))
+    md += ["", "| 구조 | 구분 | FMA | 대표점 깊이 mm (푼) | 후보 영역 중앙값 mm (10–90%) | 문헌 평균 깊이 이내 |",
+           "| :--- | :--- | :--- | ---: | ---: | :---: |"]
+    md += [f"| {r['structure']} | {r['category']} | FMA:{r['fma_id']} | {r['depth_mm_at_point']} ({r['depth_pun_at_point']}) | "
+           f"{r['depth_mm_median']} ({r['depth_mm_p10']}–{r['depth_mm_p90']}) | "
+           f"{'예' if r.get('within_literature_mean') else ('아니오' if 'within_literature_mean' in r else '–')} |" for r in rows]
+    if missing:
+        md += ["", "메쉬가 없어 깊이를 재지 못한 교재 구조: " + "; ".join(missing)]
+    md += ["", f"> {res['caveat']} {ATTRIB}"]
+    (outdir / f"{code}_depth.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    # 3) 상호작용 3D 모델: 교재 구조 + 피부 조각 + 후보 영역 대표점과 깊이 선
+    items, k = [], 0
+    for s in structs:
+        col = CAT_COLOR.get(s["category"], "#999999")
+        if isinstance(col, list):
+            col, k = col[k % len(col)], k + 1
+        items.append({**s, "color": col, "opacity": 0.55 if s["category"] == "근육" else 1.0})
+    for cq in [c for c in (a.context or "").split(",") if c.strip()]:
+        cf = resolve(cq.strip())
+        cm, _ = load_mesh(cf, a.side)
+        if cm is not None:
+            items.append({"mesh": cm, "fma": cf, "label": _label(cf), "category": "뼈", "color": CAT_COLOR["뼈"], "opacity": 0.9, "role": "context"})
+    items.append({"mesh": patch, "fma": SKIN_FMA, "label": "피부(후보 영역 주변)", "category": "피부", "color": CAT_COLOR["피부"],
+                  "opacity": 0.18, "role": "context"})
+    dlist = [{"label": s["label"], "mm": float(trees[id(s)].query(best)[0]), "closest": trees[id(s)].data[trees[id(s)].query(best)[1]].tolist()}
+             for s in structs]
+    dlist.sort(key=lambda d: d["mm"])
+    notes = [f"{ATTRIB}.", res["caveat"], f"위치 기준: {how}. 후보 영역 크기(X·Y·Z) {' × '.join(f'{v:.0f}' for v in span)} mm.",
+             (f"문헌 자입 깊이: {lit_res['summary']}. 분홍 구는 대표점에서 문헌 평균 깊이까지의 직선거리 반경입니다." if lit_res else ""),
+             ("메쉬가 없어 빠진 교재 구조: " + "; ".join(missing)) if missing else ""]
+    reach = {"mm": lit_res["mean_mm"], "label": f"문헌 평균 {lit_res['mean_pun']}푼 = {lit_res['mean_mm']} mm"} if lit_res and lit_res.get("mean_mm") else None
+    html_out = build_html(items, outdir / f"{code}_mesh3d_model.html", f"{code} 경혈 해부 3D 모델 · {a.source} 교재 구조",
+                          f"BodyParts3D 4.0 · FMA 대응 · {side_kr} · 단위 mm · 분홍 점 = 교재 구조로 추정한 대표 피부점", notes,
+                          point=best, distances=dlist, reach=reach)
+    if lit_res:
+        print(f"[depth] 문헌: {lit_res['summary']}")
+    for r in rows:
+        print(f"  {r['depth_mm_at_point']:6.1f} mm ({r['depth_pun_at_point']:4.1f}푼)  중앙 {r['depth_mm_median']:5.1f} "
+              f"[{r['depth_mm_p10']}–{r['depth_mm_p90']}]  {r['category']} {r['structure']}")
+    print(f"[depth] 후보 영역 {int(region.sum())}점 · 크기 {span.round(0).tolist()} mm · 대표점 {best.round(1).tolist()}")
+    print(f"[depth] → {outdir / f'{code}_depth.md'} · {html_out}")
+    return res
+
+
 def cmd_oap(a):
     if a.action == "list":
         for k, v in OAP_ATLASES.items():
@@ -457,10 +681,18 @@ def main():
     s = sub.add_parser("acupoint"); s.add_argument("code"); s.add_argument("--side", choices=["left", "right"], default="right")
     s.add_argument("--out"); s.add_argument("--view", default="iso", choices=["xz", "yz", "xy", "iso"])
     s.add_argument("--context", help="위치 참고용 주변 구조 FMA ID/이름, 쉼표 구분 (예: 24476,24479 = 정강뼈·종아리뼈)")
+    s = sub.add_parser("depth", help="교재 구조 목록으로 경혈 위치(피부 후보 영역)를 정하고 구조별 깊이를 잰다 + 3D 모델 HTML")
+    s.add_argument("code"); s.add_argument("--side", choices=["left", "right"], default="right")
+    s.add_argument("--source", default="김재효", choices=["김재효", "공통교재"], help="대응표의 교재 (기본: 김재효 수업 데이터셋)")
+    s.add_argument("--point", help="경혈 추정 피부 좌표 x,y,z (BodyParts3D mm). 주면 이 점 주변으로 위치를 고정")
+    s.add_argument("--radius", type=float, default=5.0, help="--point 주변 후보 반경 mm (기본 5)")
+    s.add_argument("--tol", type=float, default=5.0, help="후보 영역 허용 폭 mm (기본 5)")
+    s.add_argument("--context", help="위치 참고용 주변 구조 FMA ID/이름, 쉼표 구분 (예: 24476,24479 = 정강뼈·종아리뼈)")
+    s.add_argument("--out")
     s = sub.add_parser("oap"); s.add_argument("action", choices=["list", "measure"]); s.add_argument("atlas", nargs="?"); s.add_argument("structure", nargs="?")
     a = ap.parse_args()
     {"fetch": cmd_fetch, "index": cmd_index, "measure": cmd_measure, "render": cmd_render, "distance": cmd_distance,
-     "acupoint": cmd_acupoint, "oap": cmd_oap}[a.cmd](a)
+     "acupoint": cmd_acupoint, "depth": cmd_depth, "oap": cmd_oap}[a.cmd](a)
 
 
 if __name__ == "__main__":
