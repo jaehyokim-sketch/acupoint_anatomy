@@ -39,9 +39,10 @@ def _b64(a, dtype):
     return base64.b64encode(np.ascontiguousarray(a, dtype=dtype).tobytes()).decode("ascii")
 
 
-def build_html(items, out, title, subtitle, notes, point=None, distances=None, reach=None):
+def build_html(items, out, title, subtitle, notes, point=None, distances=None, reach=None, paths=None):
     """items: [{mesh, color, label, category, fma, level, opacity, role}] · point: BodyParts3D 좌표 [x,y,z] · distances: [{label, mm, closest}]
-    reach: {mm, label} — 대표점 중심의 깊이 반경 구(문헌 평균 자입 깊이)"""
+    reach: {mm, label} — 대표점 중심의 깊이 반경 구(문헌 평균 자입 깊이)
+    paths: [{label, color, start, end, ticks: [{mm, label}]}] — 자침 경로(피부점 → 끝점)와 깊이 눈금"""
     allv = np.concatenate([to_view(it["mesh"].vertices) for it in items])
     center = (allv.min(0) + allv.max(0)) / 2
     size = float((allv.max(0) - allv.min(0)).max())
@@ -53,7 +54,11 @@ def build_html(items, out, title, subtitle, notes, point=None, distances=None, r
         objs.append({"label": it["label"], "cat": it["category"], "fma": it.get("fma"), "level": it.get("level") or "",
                      "role": it.get("role", "structure"), "color": it["color"], "opacity": it["opacity"],
                      "pos": _b64(v, "<f4"), "idx": _b64(m.faces, "<u4"), "anchor": anchor.round(2).tolist()})
-    data = {"objs": objs, "size": round(size, 1), "point": None, "distances": distances or [], "reach": reach}
+    data = {"objs": objs, "size": round(size, 1), "point": None, "distances": distances or [], "reach": reach, "paths": []}
+    for p in paths or []:
+        s, e = to_view(p["start"]) - center, to_view(p["end"]) - center
+        data["paths"].append({"label": p["label"], "color": p["color"], "start": s.round(2).tolist(), "end": e.round(2).tolist(),
+                              "ticks": p.get("ticks", [])})
     if point is not None:
         data["point"] = (to_view(point) - center).round(2).tolist()
         for d in data["distances"]:
@@ -122,6 +127,15 @@ if(D.point){const P=new THREE.Vector3(...D.point);const s=new THREE.Mesh(new THR
  if(D.reach){const g=new THREE.Mesh(new THREE.SphereGeometry(D.reach.mm,32,20),new THREE.MeshBasicMaterial({color:0xff8fe6,wireframe:true,transparent:true,opacity:.22,depthWrite:false}));g.position.copy(P);scene.add(g);
   rows.unshift(`<tr><td><b>${D.reach.label}</b></td><td class="n">반경 구</td></tr>`)}
  document.getElementById('dist').innerHTML='<tr><th>구조</th><th>최소 거리</th></tr>'+rows.join('');document.getElementById('dist-box').hidden=false}
+// 자침 경로: 피부점(구) → 끝점, 깊이 눈금(작은 구 + 라벨)
+for(const p of D.paths||[]){const S=new THREE.Vector3(...p.start),E=new THREE.Vector3(...p.end),dir=E.clone().sub(S),len=dir.length();dir.normalize();
+ const col=new THREE.Color(p.color),mat=new THREE.MeshBasicMaterial({color:col,depthTest:false,transparent:true});
+ const cyl=new THREE.Mesh(new THREE.CylinderGeometry(.45,.45,len,10),mat);cyl.position.copy(S.clone().add(E).multiplyScalar(.5));cyl.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),dir);cyl.renderOrder=6;scene.add(cyl);
+ const s=new THREE.Mesh(new THREE.SphereGeometry(1.8,16,12),mat);s.position.copy(S);s.renderOrder=6;scene.add(s);
+ const el=document.createElement('span');el.className='lbl';el.textContent=p.label;el.style.color=el.style.borderColor=p.color;stage.appendChild(el);extra.push({el,v:S.clone().addScaledVector(dir,-6)});
+ for(const t of p.ticks||[]){const v=S.clone().addScaledVector(dir,t.mm),k=new THREE.Mesh(new THREE.SphereGeometry(.9,10,8),mat);k.position.copy(v);k.renderOrder=6;scene.add(k);
+  const tl=document.createElement('span');tl.className='lbl dist';tl.textContent=t.label;tl.style.color=tl.style.borderColor=p.color;tl.style.fontSize='10.5px';stage.appendChild(tl);extra.push({el:tl,v,tick:true})}}
+const showTicks=()=>document.getElementById('show-labels').checked;
 // 보기
 const R=D.size*2.1,VIEWS={'정면':[0,0,1],'뒤':[0,0,-1],'환자 오른쪽':[-1,0,0],'환자 왼쪽':[1,0,0],'위':[0,1,.001],'아래':[0,-1,.001],'사위':[-.7,.35,.75]};
 function view(name){const d=new THREE.Vector3(...VIEWS[name]).normalize();controls.target.set(0,0,0);camera.position.copy(d.multiplyScalar(R));camera.up.set(0,1,0);controls.update();document.querySelectorAll('#views button').forEach(b=>b.setAttribute('aria-pressed',b.textContent===name))}
@@ -142,7 +156,7 @@ function resize(){const w=stage.clientWidth,h=stage.clientHeight;renderer.setSiz
 new ResizeObserver(resize).observe(stage);resize();view('사위');
 const showLabels=document.getElementById('show-labels');
 function place(el,v,ok){const p=v.clone().project(camera);const vis=ok&&p.z<1&&Math.abs(p.x)<1&&Math.abs(p.y)<1;el.style.display=vis?'block':'none';if(vis){el.style.left=(p.x*.5+.5)*stage.clientWidth+'px';el.style.top=(-p.y*.5+.5)*stage.clientHeight+'px'}}
-(function loop(){requestAnimationFrame(loop);controls.update();for(const o of objs)place(o.el,o.anchor,showLabels.checked&&o.mesh.visible&&(o.role!=='context'||selected===objs.indexOf(o)));for(const x of extra)place(x.el,x.v,true);renderer.render(scene,camera)})();
+(function loop(){requestAnimationFrame(loop);controls.update();for(const o of objs)place(o.el,o.anchor,showLabels.checked&&o.mesh.visible&&(o.role!=='context'||selected===objs.indexOf(o)));for(const x of extra)place(x.el,x.v,!x.tick||showTicks());renderer.render(scene,camera)})();
 window.Mesh3DModel={scene,camera,objs};
 </script></body></html>
 '''
