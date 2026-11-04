@@ -1,0 +1,18 @@
+{
+  "_설명": "C:\\workspace 로컬 Git 저장소 등록부. Git 저장소(.git)는 이 표의 로컬 폴더에만 두고, Google Drive 폴더에는 두지 않는다. drive는 '내 드라이브' 기준 상대경로(편집 PC D:\\, 미러 PC G:\\내 드라이브\\). remote가 null이면 GitHub 원격이 없는 로컬 전용 저장소다. workspace_sync.py가 읽는다.",
+  "updated": "2026-11-04",
+  "repos": [
+    {"name": "acupoint_anatomy", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/acupoint_anatomy.git", "drive": "도서 번역\\acupoint_anatomy", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
+    {"name": "huanglongxiang-scholar", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/huanglongxiang-scholar.git", "drive": "도서 번역\\01_황룡상 스킬", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
+    {"name": "classics", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/classics.git", "drive": "도서 번역\\classics", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
+    {"name": "Acupoint_US", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/Acupoint_US.git", "drive": "도서 번역\\Acupoint_US", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
+    {"name": "amari-gl-dmn", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/amari-gl-dmn.git", "drive": "논문작업\\비평형열역학", "user": ["jaehyokim-sketch", "medicdog@wku.ac.kr"], "drive_only_data": true},
+    {"name": "IPE-Report", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/-IPE-Report.git", "drive": "강의\\02_IPE\\.deploy_ipe_report", "user": ["Jaehyo Kim", "jaehyo.kim@gmail.com"]},
+    {"name": "km-healthcare-stats", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/km-healthcare-stats.git", "drive": "한의 의료서비스 통계", "user": ["jaehyokim-sketch", "jaehyokim-sketch@users.noreply.github.com"], "drive_exclude": ["04_CLI_대화세션_아카이브"]},
+    {"name": "proxy-form-system", "remote": null, "drive": "행정\\위임장_작성_시스템", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
+    {"name": "anatomy-act-reform-2026", "remote": null, "drive": "행정\\2026-시체해부법", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
+    {"name": "km-integrated-education", "remote": null, "drive": "행정\\한의학 교육과 의료 통합", "user": ["jaehyokim", "jaehyo.kim@gmail.com"], "drive_exclude": ["km_repo_clean", "km_repo_clean2"]},
+    {"name": "anthropic-claude-integration", "remote": null, "drive": "anthropic-claude-integration", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
+    {"name": "학습일지 평가", "remote": null, "drive": "강의\\04_평가 및 학습활동 자료\\학습일지 평가", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]}
+  ]
+}
