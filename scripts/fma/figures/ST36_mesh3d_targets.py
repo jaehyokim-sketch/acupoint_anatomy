@@ -14,8 +14,10 @@ ST36_mesh3d_targets.py — 족삼리 Tri-Target 정위점을 BodyParts3D 4.0 표
 판정: 직자선이 각 메쉬를 들어가고 나오는 깊이(광선 교차, 바깥에서 출발 가정), 문헌 깊이에서 침끝이 놓이는 구조,
       침끝과 직자선 전체의 앞정강동·정맥 최근접 거리(깊은종아리신경은 메쉬가 없어 동반 혈관으로 대리).
 
-사용: python ST36_mesh3d_targets.py --out "<보고서 폴더>"
+사용: python ST36_mesh3d_targets.py --out "<보고서 폴더>" [--skin bp3d | smplx:<이름>]
 출력: <out>/ST36_족삼리_3D해부_Target별_직자경로.png (실제 메쉬 가로 단면), ST36_족삼리_3D해부_모델.html, ST36_족삼리_3D해부_측정.json
+  --skin smplx:<이름>: 정위(골도분촌·정강뼈 앞모서리)는 그대로 두고 피부면만 smplx_skin.py로 골격에 등록한 체형 피부로 바꾼다.
+  파일명에 _smplx-<이름>이 붙고, 단면 그림에 BodyParts3D 피부를 점선으로 함께 그린다. 음수 깊이 = 구조가 체형 피부 밖(정합 오차).
 """
 import argparse
 import json
@@ -38,6 +40,7 @@ TARGETS = [("Target 1 (胫骨之外廉)", "#6c7a89", 10.0), ("Target 1≡3 (WHO 
 LIT = [("《铜人》 卷下 5푼", 11.5), ("고전 4종 평균 9.5푼", 21.9), ("7종 평균 11.86푼", 27.3), ("현대 3종 평균 15푼", 34.5),
        ("현대 상한 2촌", 46.0), ("《窦太师》 25푼", 57.5)]
 NEEDLE = 60.0
+OFF = 30.0                               # 광선 출발점을 피부 밖 30 mm에 둔다(체형 피부 밖으로 나온 구조도 바깥에서 들어가며 센다)
 
 
 def loop_at(mesh, z, near):
@@ -90,11 +93,14 @@ def ray_intervals(mesh, o, d):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True)
+    ap.add_argument("--skin", default="bp3d", help="피부면: bp3d(기본) 또는 smplx:<이름>")
     a = ap.parse_args()
     out = Path(a.out)
     np.random.seed(0)
     meshes = {f: M.load_mesh(f, SIDE)[0] for f, *_ in STRUCT}
-    skin = M.load_mesh(M.SKIN_FMA)[0]
+    skin, sk = M.skin_surface(a.skin)
+    bskin = M.load_mesh(M.SKIN_FMA)[0] if sk["signed"] else None
+    sfx = sk["suffix"]
     tib, fib = meshes[24476], meshes[24479]
     # 종향: 슬관절선(가쪽관절융기 위끝) ~ 가쪽복사 끝 = 16寸
     tv = tib.vertices
@@ -123,7 +129,7 @@ def main():
               "edl_width_ml_mm": round(float(np.ptp(edl_l[:, 0])), 1), "edl_depth_ap_mm": round(float(np.ptp(edl_l[:, 1])), 1),
               "crest_to_septum_entry_mm": round(float(np.linalg.norm((septum - crest)[:2])), 1),
               "crest_to_septum_entry_ml_mm": round(float(crest[0] - septum[0]), 1)}
-    res = {"model": "BodyParts3D 4.0 오른다리", "z_knee_mm": round(z_knee, 1), "z_lateral_malleolus_mm": round(z_mall, 1),
+    res = {"model": "BodyParts3D 4.0 오른다리", "skin": sk["label"], "z_knee_mm": round(z_knee, 1), "z_lateral_malleolus_mm": round(z_mall, 1),
            "cun_mm": round(cun, 2), "level_z_mm": round(z, 1), "crest_skin_mm": skin_loop[ic].round(1).tolist(),
            "skin_to_crest_mm": round(float(np.linalg.norm(skin_loop[ic] - crest)), 1), "targets": []}
     paths, sections = [], []
@@ -138,11 +144,11 @@ def main():
             p = arc_walk(skin_loop, ic, step, arc)
             n = inward_normal(skin_loop, p, center)
         arc_v = groove_arc if arc is None else arc
-        o = p - n * 0.5
+        o = p - n * OFF
         hits = {}
         for f, nm, *_ in STRUCT:
             iv = ray_intervals(meshes[f], o, n)
-            hits[nm] = [(round(s - 0.5, 1), None if e is None else round(e - 0.5, 1)) for s, e in iv if s - 0.5 <= NEEDLE]
+            hits[nm] = [(round(s - OFF, 1), None if e is None else round(e - OFF, 1)) for s, e in iv if s - OFF <= NEEDLE]
 
         def tip_in(dmm):
             inside = [nm for nm, iv in hits.items() if any(s <= dmm and (e is None or dmm <= e) for s, e in iv)]
@@ -181,22 +187,28 @@ def main():
                                       "classic_mm": nd["classic"]["mean_mm"], "modern_mm": nd["modern"]["mean_mm"]}
     res["caveat"] = ("BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영) 측정, 규범 해부 형상 참고(B1 보조). "
                      "정위점은 골도분촌과 횡향 거리 가정으로 놓은 것이며 경혈 실측(B2)이 아니다. 깊은종아리신경은 메쉬가 없어 앞정강동정맥으로 대리")
+    if sk["signed"]:
+        res["caveat"] += (". 피부면은 BodyParts3D 골격 관절 중심에 등록한 SMPL-X 통계 체형 피부이며 근육·지방 층은 BodyParts3D 그대로라 "
+                          "체형 차이는 피하층 두께 차이로만 나타나는 근사다. 음수 깊이 = 구조 표면이 체형 피부 밖(정합 오차)")
+        res["skin_joint_error_mm"] = sk.get("joint_error_mm")
+    attrib = " ".join(x for x in (M.ATTRIB, sk["attribution"]) if x)
     out.mkdir(parents=True, exist_ok=True)
-    (out / "ST36_족삼리_3D해부_측정.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
-    draw_section(meshes, skin, z, center, sections, res, out / "ST36_족삼리_3D해부_Target별_직자경로.png")
+    (out / f"ST36_족삼리_3D해부_측정{sfx}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    draw_section(meshes, skin, z, center, sections, res, out / f"ST36_족삼리_3D해부_Target별_직자경로{sfx}.png", sk, bskin, attrib)
     items = [{"mesh": meshes[f], "fma": f, "label": nm, "category": "근육" if role == "근육" else ("뼈" if role == "뼈" else ("동맥" if "동맥" in nm else "정맥" if "정맥" in nm else "막")),
               "color": c, "opacity": 0.5 if role == "근육" else (0.85 if role in ("뼈", "막") else 1.0), "role": "context" if role == "뼈" else "structure"}
              for f, nm, c, role in STRUCT]
     lo, hi = center - [70, 70, 90], center + [70, 70, 90]
     keep = np.all((skin.triangles_center >= lo) & (skin.triangles_center <= hi), axis=1)
-    items.append({"mesh": skin.submesh([np.nonzero(keep)[0]], append=True), "fma": M.SKIN_FMA, "label": "피부", "category": "피부",
+    items.append({"mesh": skin.submesh([np.nonzero(keep)[0]], append=True), "fma": M.SKIN_FMA,
+                  "label": "피부" if not sk["signed"] else sk["label"], "category": "피부",
                   "color": "#f0c8a6", "opacity": 0.15, "role": "context"})
-    notes = [f"{M.ATTRIB}.", res["caveat"] + ".",
+    notes = [f"{attrib}.", res["caveat"] + ".",
              f"정위: 슬관절선~가쪽복사 끝 16寸(이 모델 1寸 = {cun:.1f} mm), 犊鼻下 3寸. Target 1 = 정강뼈 앞모서리 위 피부에서 가쪽 10 mm, "
              f"Target 1≡3 = 17.5 mm(1횡지), Target 2 = 앞정강근–긴발가락폄근 근간 중격 입구 위 피부점(앞모서리에서 근육 수준 직선 {sx:.1f} mm), 중격 쪽 자입. "
              "막대 = 자입선 60 mm(Target 1·1≡3은 피부에 수직), 눈금 = 11.5·27.3·46 mm."]
-    build_html(items, out / "ST36_족삼리_3D해부_모델.html", "족삼리(ST36) 3D 해부 모델 · Tri-Target 직자 경로",
-               "BodyParts3D 4.0 · FMA 대응 · 오른다리 · 단위 mm · 犊鼻下 3寸 높이", notes, paths=paths)
+    build_html(items, out / f"ST36_족삼리_3D해부_모델{sfx}.html", "족삼리(ST36) 3D 해부 모델 · Tri-Target 직자 경로",
+               f"BodyParts3D 4.0 · 피부: {sk['label']} · FMA 대응 · 오른다리 · 단위 mm · 犊鼻下 3寸 높이", notes, paths=paths)
     print(json.dumps({k: res[k] for k in ("cun_mm", "level_z_mm", "skin_to_crest_mm", "delta_mm", "muscle")}, ensure_ascii=False))
     for t in res["targets"]:
         print(f"\n{t['target']}  호 {t['arc_from_crest_mm']} mm · 피하 {t['subcutaneous_mm']} mm · 동맥 최근접 {t['closest_artery_on_path']}")
@@ -207,7 +219,7 @@ def main():
             print(f"   {l['literature']:16} {l['depth_mm']:5.1f} mm → {', '.join(l['tip_in'])} · 동맥 {l['artery_mm']} · 정맥 {l['vein_mm']}")
 
 
-def draw_section(meshes, skin, z, center, sections, res, out):
+def draw_section(meshes, skin, z, center, sections, res, out, skin_info=None, bskin=None, attrib=M.ATTRIB):
     """실제 메쉬를 犊鼻下 3寸 가로면으로 자른 단면 + Target별 직자선과 문헌 깊이 눈금 (위에서 내려다봄, 앞이 위)"""
     import matplotlib
     matplotlib.use("Agg")
@@ -219,6 +231,10 @@ def draw_section(meshes, skin, z, center, sections, res, out):
     P = lambda v: np.c_[-(v[:, 0] - center[0]), -(v[:, 1] - center[1])]
     sk = loop_at(skin, z, center)
     ax.add_patch(Polygon(P(sk), closed=True, fc="#f6e3d3", ec="#c9a184", lw=1.2, zorder=1))
+    if bskin is not None:            # 체형 피부일 때 BodyParts3D 피부 단면을 점선으로 겹쳐 피하 두께 차이를 보인다
+        bl = P(loop_at(bskin, z, center))
+        ax.plot(*np.vstack([bl, bl[:1]]).T, color="#8a6a50", lw=1.0, ls="--", zorder=6, label="BodyParts3D 피부")
+        ax.legend(loc="lower right", fontsize=8.5, frameon=False)
     order = [(24476, 3), (24479, 3), (22532, 2), (22534, 2), (35187, 4), (43894, 5), (44331, 5)]
     names = {f: (nm, c) for f, nm, c, _ in STRUCT}
     for f, zo in order:
@@ -266,9 +282,9 @@ def draw_section(meshes, skin, z, center, sections, res, out):
     ax.text(0.99, 0.5, "가쪽 →", transform=ax.transAxes, ha="right", fontsize=10, color="#555")
     ax.plot([x0 + 4, x0 + 14], [y0 + 6] * 2, color="k", lw=2)
     ax.text(x0 + 9, y0 + 3, "10 mm", ha="center", va="top", fontsize=8.5)
-    fig.suptitle("족삼리(ST36) 犊鼻下 3寸 높이 실제 메쉬 가로 단면 · Tri-Target 직자 경로 (BodyParts3D 4.0, 오른다리, 위에서 내려다봄)",
+    fig.suptitle("족삼리(ST36) 犊鼻下 3寸 높이 실제 메쉬 가로 단면 · Tri-Target 직자 경로 (BodyParts3D 4.0" + ("" if not skin_info or not skin_info.get("signed") else f" · 피부 {skin_info['label']}") + ", 오른다리, 위에서 내려다봄)",
                  x=0.01, ha="left", fontsize=12, weight="bold")
-    fig.text(0.01, 0.01, f"{M.ATTRIB}. 단일 표준 성인 모델 — 개인차·자세·피하지방 미반영, 경혈 위치 실측 아님. "
+    fig.text(0.01, 0.01, f"{attrib}. 단일 표준 성인 모델 — 개인차·자세·피하지방 미반영, 경혈 위치 실측 아님. "
              "Target 1·1≡3 자입선 = 피부에 수직, Target 2 = 근간 중격을 따라 신경혈관속 방향. 점 = 깊이 11.5·27.3·46 mm. "
              "깊은종아리신경은 메쉬가 없어 그리지 않았다(앞정강동정맥과 함께 종아리뼈사이막 앞을 지난다)", fontsize=7.6, color="#444", wrap=True)
     fig.savefig(out, facecolor="white", bbox_inches="tight")

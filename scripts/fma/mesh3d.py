@@ -482,6 +482,25 @@ CAT_COLOR = {"근육": ["#d9534f", "#e57f6c", "#c96b5a", "#b5574a", "#e0907a"], 
              "정맥": "#2f6fd0", "뼈": "#efe8d2", "피부": "#f0c8a6"}
 
 
+def skin_surface(spec="bp3d"):
+    """피부면 선택: 'bp3d'(FMA:7163) 또는 'smplx:<이름>'(smplx_skin.py register로 골격에 등록한 체형 피부).
+    반환 (mesh, info) — info: label·attribution·suffix(출력 파일명 꼬리)·signed(피부 밖 구조를 음수 깊이로 표시할지)"""
+    spec = (spec or "bp3d").strip()
+    if spec == "bp3d":
+        return load_mesh(SKIN_FMA)[0], {"spec": spec, "label": "BodyParts3D 4.0 피부(FMA:7163)", "attribution": "", "suffix": "",
+                                         "signed": False}
+    if not spec.startswith("smplx:"):
+        sys.exit(f"[skin] --skin은 bp3d 또는 smplx:<이름>입니다: {spec}")
+    from smplx_skin import load_body
+    name = spec.split(":", 1)[1]
+    mesh, meta = load_body(name)
+    desc = f"SMPL-X 체형 피부 {name}"
+    if meta.get("bmi"):
+        desc += f" ({meta.get('gender', '')} · 키 {meta.get('stature_m')} m · BMI {meta.get('bmi')})"
+    return mesh, {"spec": spec, "label": desc, "attribution": meta.get("attribution", ""), "suffix": f"_smplx-{name}",
+                  "signed": True, "joint_error_mm": meta.get("joint_error_mm")}
+
+
 def _code(s):
     m_ = re.fullmatch(r"([A-Za-z]+)-?(\d+)", s.strip())
     return f"{m_.group(1).upper()}{int(m_.group(2)):02d}" if m_ else s.strip()
@@ -539,37 +558,62 @@ def cmd_depth(a):
         sys.exit(f"[depth] {code}: 메쉬가 있는 교재 구조가 없습니다. 없는 구조: {missing}")
     anchors = [s for s in structs if s["category"] == "근육"] or structs
     print(f"[depth] {code} ({a.source} 교재) · 메쉬 구조 {len(structs)} · 위치 기준 {', '.join(s['term'] for s in anchors)}")
-    # 1) 피부 후보 영역: 기준 근육들의 경계상자(+30 mm) 안 피부 표면 표본점
-    skin = load_mesh(SKIN_FMA)[0]
-    if skin is None:
-        sys.exit("[depth] BodyParts3D 피부(FMA:7163) 메쉬가 없습니다")
+    # 1) 피부 후보 영역: 기준 근육들의 경계상자(+30 mm) 안 피부 표면 표본점. 위치는 항상 BodyParts3D 피부에서 정한다
+    #    (체형 피부는 근육에 바짝 붙는 곳이 많아 '근육에 가장 가까운 점'이 위치 기준이 되지 못한다).
     lo = np.min([s["mesh"].bounds[0] for s in anchors], 0) - 30
     hi = np.max([s["mesh"].bounds[1] for s in anchors], 0) + 30
-    keep = np.all((skin.triangles_center >= lo) & (skin.triangles_center <= hi), axis=1)
-    patch = skin.submesh([np.nonzero(keep)[0]], append=True)
-    cand = np.asarray(patch.sample(max(4000, int(patch.area / 4))))           # 약 2 mm 간격
+
+    def _patch(sm):
+        keep = np.all((sm.triangles_center >= lo) & (sm.triangles_center <= hi), axis=1)
+        pt = sm.submesh([np.nonzero(keep)[0]], append=True)
+        return pt, np.asarray(pt.sample(max(4000, int(pt.area / 4))))        # 약 2 mm 간격
+
+    bskin = load_mesh(SKIN_FMA)[0]
+    if bskin is None:
+        sys.exit("[depth] BodyParts3D 피부(FMA:7163) 메쉬가 없습니다")
+    patch, cand = _patch(bskin)
     trees = {id(s): _surface(s["mesh"], 30000)[1] for s in structs}
     dist = {id(s): trees[id(s)].query(cand)[0] for s in structs}
     if a.point:
         p = np.array([float(v) for v in a.point.split(",")])
         near = np.linalg.norm(cand - p, axis=1) <= a.radius
         if not near.any():
-            sys.exit(f"[depth] --point 반경 {a.radius} mm 안에 피부 표본점이 없습니다(피부면 위 좌표를 주세요)")
+            sys.exit(f"[depth] --point 반경 {a.radius} mm 안에 피부 표본점이 없습니다(BodyParts3D 피부면 위 좌표를 주세요)")
         region, how = near, f"지정 좌표 반경 {a.radius:g} mm 피부 영역"
-        best = cand[np.argmin(np.linalg.norm(cand - p, axis=1))]
+        ib = int(np.argmin(np.linalg.norm(cand - p, axis=1)))
     else:
         # 기준 근육 모두에 가장 가까운 피부점: score = max_k d_k. 최솟값 + tol 이내를 후보 영역으로 둔다.
         score = np.max([dist[id(s)] for s in anchors], 0)
         region = score <= score.min() + a.tol
-        best = cand[np.argmin(score)]
+        ib = int(np.argmin(score))
         how = f"기준 근육 모두에 가장 가까운 피부점(최대 거리 최솟값 {score.min():.1f} mm) + {a.tol:g} mm 이내"
+    skin, sk = skin_surface(a.skin)
+    print(f"[depth] 피부면: {sk['label']}")
+    if sk["signed"]:
+        # BodyParts3D 피부에서 정한 위치를 체형 피부의 가장 가까운 점으로 옮기고, 깊이는 체형 피부에서 잰다.
+        # 부호: 구조 최근접점이 체형 피부 밖이면 음수(정합 오차로 구조가 피부를 뚫고 나온 곳).
+        from scipy.spatial import cKDTree
+        patch, cand2 = _patch(skin)
+        dj, j = cKDTree(cand).query(cand2)
+        region2 = region[j] & (dj <= 40)
+        moved = np.linalg.norm(cand2 - cand[ib], axis=1)
+        ib, shift = int(np.argmin(moved)), float(moved.min())
+        region2[ib] = True
+        region, cand = region2, cand2
+        dist = {}
+        for s in structs:
+            d, k = trees[id(s)].query(cand)
+            inside = skin.nearest.signed_distance(trees[id(s)].data[k]) >= -0.5     # trimesh: 안쪽 양수
+            dist[id(s)] = np.where(inside, d, -d)
+        how += f" → 체형 피부의 가장 가까운 점으로 옮김(대표점 이동 {shift:.1f} mm)"
+    best = cand[ib]
     rp = cand[region]
     span = rp.max(0) - rp.min(0) if len(rp) > 1 else np.zeros(3)
     # 2) 구조별 깊이
     rows = []
     for s in structs:
         d = dist[id(s)][region]
-        db = float(trees[id(s)].query(best)[0])
+        db = float(dist[id(s)][ib])
         rows.append({"structure": s["label"], "category": s["category"], "fma_id": s["fma"], "mesh_level": s["level"],
                      "depth_mm_at_point": round(db, 1), "depth_pun_at_point": round(db / PUN_MM, 1),
                      "depth_mm_median": round(float(np.median(d)), 1), "depth_mm_p10": round(float(np.percentile(d, 10)), 1),
@@ -589,16 +633,20 @@ def cmd_depth(a):
                    "reached_at_point": [r["structure"] for r in rows if r["within_literature_mean"]]}
     elif lit:
         lit_res = {"summary": summary_line(lit), "mean_mm": None, "forbidden_sources": lit["forbidden_sources"]}
-    res = {"code": code, "source": a.source, "side": a.side, "method": how, "candidate_points": int(region.sum()),
+    res = {"code": code, "source": a.source, "side": a.side, "skin": sk["label"], "method": how, "candidate_points": int(region.sum()),
            "candidate_extent_mm": span.round(1).tolist(), "point_mm": best.round(1).tolist(), "depths": rows,
-           "literature_depth": lit_res, "missing_structures": missing, "attribution": ATTRIB,
+           "literature_depth": lit_res, "missing_structures": missing, "attribution": " ".join(x for x in (ATTRIB, sk["attribution"]) if x),
            "caveat": ("BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 "
-                      "정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다.")}
+                      "정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다."
+                      + ("" if not sk["signed"] else " 피부면은 BodyParts3D 골격 관절 중심에 등록한 SMPL-X 통계 체형 피부이며, 근육·지방 층은 "
+                         "BodyParts3D 그대로라 체형 차이는 피하층 두께 차이로만 나타나는 근사다. 음수 깊이 = 구조 표면이 체형 피부 밖에 놓임(정합 오차)."))}
+    if sk.get("joint_error_mm"):
+        res["skin_joint_error_mm"] = sk["joint_error_mm"]
     outdir = Path(a.out) if a.out else data_dir() / "mesh_results"
     outdir.mkdir(parents=True, exist_ok=True)
-    (outdir / f"{code}_depth.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    (outdir / f"{code}_depth{sk['suffix']}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     side_kr = {"right": "오른쪽", "left": "왼쪽"}[a.side]
-    md = [f"### {code} 경혈 위치 기준 깊이 추정 ({a.source} 교재 구조 · BodyParts3D, {side_kr})", "",
+    md = [f"### {code} 경혈 위치 기준 깊이 추정 ({a.source} 교재 구조 · BodyParts3D, {side_kr})", "", f"- 피부면: {sk['label']}",
           f"- 위치 기준: {how} · 후보 피부점 {int(region.sum()):,}개, 후보 영역 크기(X·Y·Z) {' × '.join(f'{v:.0f}' for v in span)} mm",
           "- 깊이 = 피부점 → 구조 표면 최소 직선거리(mm). 푼 = mm ÷ 2.3"]
     if lit_res:
@@ -613,8 +661,8 @@ def cmd_depth(a):
            f"{'예' if r.get('within_literature_mean') else ('아니오' if 'within_literature_mean' in r else '–')} |" for r in rows]
     if missing:
         md += ["", "메쉬가 없어 깊이를 재지 못한 교재 구조: " + "; ".join(missing)]
-    md += ["", f"> {res['caveat']} {ATTRIB}"]
-    (outdir / f"{code}_depth.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    md += ["", f"> {res['caveat']} {res['attribution']}"]
+    (outdir / f"{code}_depth{sk['suffix']}.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     # 3) 상호작용 3D 모델: 교재 구조 + 피부 조각 + 후보 영역 대표점과 깊이 선
     items, k = [], 0
     for s in structs:
@@ -627,17 +675,17 @@ def cmd_depth(a):
         cm, _ = load_mesh(cf, a.side)
         if cm is not None:
             items.append({"mesh": cm, "fma": cf, "label": _label(cf), "category": "뼈", "color": CAT_COLOR["뼈"], "opacity": 0.9, "role": "context"})
-    items.append({"mesh": patch, "fma": SKIN_FMA, "label": "피부(후보 영역 주변)", "category": "피부", "color": CAT_COLOR["피부"],
+    items.append({"mesh": patch, "fma": SKIN_FMA, "label": "피부(후보 영역 주변)" if not sk["signed"] else f"{sk['label']} (후보 영역 주변)", "category": "피부", "color": CAT_COLOR["피부"],
                   "opacity": 0.18, "role": "context"})
-    dlist = [{"label": s["label"], "mm": float(trees[id(s)].query(best)[0]), "closest": trees[id(s)].data[trees[id(s)].query(best)[1]].tolist()}
+    dlist = [{"label": s["label"], "mm": float(dist[id(s)][ib]), "closest": trees[id(s)].data[trees[id(s)].query(best)[1]].tolist()}
              for s in structs]
     dlist.sort(key=lambda d: d["mm"])
-    notes = [f"{ATTRIB}.", res["caveat"], f"위치 기준: {how}. 후보 영역 크기(X·Y·Z) {' × '.join(f'{v:.0f}' for v in span)} mm.",
+    notes = [f"{res['attribution']}.", res["caveat"], f"위치 기준: {how}. 후보 영역 크기(X·Y·Z) {' × '.join(f'{v:.0f}' for v in span)} mm.",
              (f"문헌 자입 깊이: {lit_res['summary']}. 분홍 구는 대표점에서 문헌 평균 깊이까지의 직선거리 반경입니다." if lit_res else ""),
              ("메쉬가 없어 빠진 교재 구조: " + "; ".join(missing)) if missing else ""]
     reach = {"mm": lit_res["mean_mm"], "label": f"문헌 평균 {lit_res['mean_pun']}푼 = {lit_res['mean_mm']} mm"} if lit_res and lit_res.get("mean_mm") else None
-    html_out = build_html(items, outdir / f"{code}_mesh3d_model.html", f"{code} 경혈 해부 3D 모델 · {a.source} 교재 구조",
-                          f"BodyParts3D 4.0 · FMA 대응 · {side_kr} · 단위 mm · 분홍 점 = 교재 구조로 추정한 대표 피부점", notes,
+    html_out = build_html(items, outdir / f"{code}_mesh3d_model{sk['suffix']}.html", f"{code} 경혈 해부 3D 모델 · {a.source} 교재 구조",
+                          f"BodyParts3D 4.0 · 피부: {sk['label']} · FMA 대응 · {side_kr} · 단위 mm · 분홍 점 = 교재 구조로 추정한 대표 피부점", notes,
                           point=best, distances=dlist, reach=reach)
     if lit_res:
         print(f"[depth] 문헌: {lit_res['summary']}")
@@ -645,7 +693,8 @@ def cmd_depth(a):
         print(f"  {r['depth_mm_at_point']:6.1f} mm ({r['depth_pun_at_point']:4.1f}푼)  중앙 {r['depth_mm_median']:5.1f} "
               f"[{r['depth_mm_p10']}–{r['depth_mm_p90']}]  {r['category']} {r['structure']}")
     print(f"[depth] 후보 영역 {int(region.sum())}점 · 크기 {span.round(0).tolist()} mm · 대표점 {best.round(1).tolist()}")
-    print(f"[depth] → {outdir / f'{code}_depth.md'} · {html_out}")
+    md_out = outdir / f"{code}_depth{sk['suffix']}.md"
+    print(f"[depth] → {md_out} · {html_out}")
     return res
 
 
@@ -688,6 +737,7 @@ def main():
     s.add_argument("--radius", type=float, default=5.0, help="--point 주변 후보 반경 mm (기본 5)")
     s.add_argument("--tol", type=float, default=5.0, help="후보 영역 허용 폭 mm (기본 5)")
     s.add_argument("--context", help="위치 참고용 주변 구조 FMA ID/이름, 쉼표 구분 (예: 24476,24479 = 정강뼈·종아리뼈)")
+    s.add_argument("--skin", default="bp3d", help="피부면: bp3d(기본, FMA:7163) 또는 smplx:<이름>(smplx_skin.py register 등록 체형)")
     s.add_argument("--out")
     s = sub.add_parser("oap"); s.add_argument("action", choices=["list", "measure"]); s.add_argument("atlas", nargs="?"); s.add_argument("structure", nargs="?")
     a = ap.parse_args()
