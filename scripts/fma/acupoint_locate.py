@@ -282,29 +282,35 @@ def loc_CV14():
 
 
 RIBS = {"right": {2: 7882, 3: 7909, 4: 7957, 5: 8066, 6: 8175}, "left": {2: 8012, 3: 8039, 4: 8148, 5: 8093, 6: 8202}}
+CARTILAGE = {"right": {2: 7886, 3: 7913, 4: 7976, 5: 8070, 6: 8194}, "left": {2: 8031, 3: 8058, 4: 8167, 5: 8112, 6: 8221}}
+
+
+def _anterior_rib(n, side, x):
+    """n번 갈비뼈 + 늑연골의 앞쪽 조각에서 x 근처 정점(뒤쪽 갈비뼈머리를 집지 않도록 가장 앞쪽 35 mm 안만)"""
+    v = np.vstack([V(RIBS[side][n], side), V(CARTILAGE[side][n], side)])
+    for band in (4, 8, 12, 16):
+        s = v[np.abs(v[:, 0] - x) <= band]
+        if len(s) >= 3:
+            s = s[s[:, 1] <= s[:, 1].min() + 35]
+            if len(s) >= 3:
+                return s
+    return np.empty((0, 3))
 
 
 def _intercostal_z(n, x, side="right"):
-    """n번째 갈비사이공간(n번 갈비뼈 아래) 높이: x 위치 앞쪽에서 n번 갈비뼈 아래끝과 n+1번 갈비뼈 위끝의 중간"""
-    a = V(RIBS[side][n], side); b = V(RIBS[side][n + 1], side)
-    for band in (4, 8, 12, 16):
-        sa = a[np.abs(a[:, 0] - x) <= band]; sb = b[np.abs(b[:, 0] - x) <= band]
-        if len(sa) >= 3 and len(sb) >= 3:
-            break
+    """n번째 갈비사이공간 높이: x에서 n번 갈비뼈(늑연골) 앞쪽 조각 아래끝과 n+1번 위끝의 중간(흉부경혈 보고서 4-1절과 같은 방법)"""
+    sa, sb = _anterior_rib(n, side, x), _anterior_rib(n + 1, side, x)
     if len(sb) >= 3 and len(sa) < 3:
-        # 위 갈비뼈 메쉬가 이 X까지 오지 않음(예: 오른쪽 제2갈비뼈는 X −97 mm까지) → 아래 갈비뼈 위끝 + 8 mm(갈비사이 반폭)로 근사
-        sb = sb[sb[:, 1] < np.median(sb[:, 1])]
-        NOTE.append(f"제{n}갈비뼈 메쉬가 x = {x:.0f} mm까지 오지 않아 제{n + 1}갈비뼈 위끝 + 8 mm로 근사")
+        NOTE.append(f"제{n}갈비뼈 앞쪽 조각이 x = {x:.0f} mm까지 오지 않아 제{n + 1}갈비뼈 위끝 + 8 mm로 근사")
         return float(sb[:, 2].max() + 8.0)
-    if not len(sa) or not len(sb):
-        sys.exit(f"[locate] x = {x:.1f}에서 제{n}·{n + 1}갈비뼈 정점이 없습니다")
-    sa = sa[sa[:, 1] < np.median(sa[:, 1])]; sb = sb[sb[:, 1] < np.median(sb[:, 1])]
+    if len(sa) < 3 or len(sb) < 3:
+        sys.exit(f"[locate] x = {x:.1f}에서 제{n}·{n + 1}갈비뼈 앞쪽 정점이 없습니다")
     return float((sa[:, 2].min() + sb[:, 2].max()) / 2)
 
 
 def loc_CV17():
-    z = _intercostal_z(4, -25)
-    return _anterior_midline(z), {"cun": None, "basis": "제4갈비사이공간 높이"}, f"앞 정중선, 제4갈비사이공간 높이(z = {z:.1f})"
+    z = _intercostal_z(4, -30)
+    return _anterior_midline(z), {"cun": None, "basis": "제4갈비사이공간 높이(정중선 옆 늑연골)"}, f"앞 정중선, 제4갈비사이공간 높이(z = {z:.1f})"
 
 
 def chest_cun(side="right"):
@@ -323,20 +329,20 @@ def _chest_lateral(n, cun_lat=6, side="right"):
     return p, {"cun": cun, "basis": "정중선~빗장뼈 중간선(젖꼭지선) = 4寸"},         f"{'왼' if side == 'left' else '오른'}쪽 제{n}갈비사이공간(z = {z:.1f}), 정중선 가쪽 {cun_lat}寸(x = {x:.1f})"
 
 
-def loc_SP17():
-    return _chest_lateral(5)
+def loc_SP17(side="right"):
+    return _chest_lateral(5, 6, side)
 
 
-def loc_SP18():
-    return _chest_lateral(4)
+def loc_SP18(side="right"):
+    return _chest_lateral(4, 6, side)
 
 
-def loc_SP19():
-    return _chest_lateral(3)
+def loc_SP19(side="right"):
+    return _chest_lateral(3, 6, side)
 
 
-def loc_SP20():
-    return _chest_lateral(2)
+def loc_SP20(side="right"):
+    return _chest_lateral(2, 6, side)
 
 
 def loc_KI22(side="left"):
@@ -388,7 +394,7 @@ def loc_SI09():
     z_ax, f = _posterior_axillary_z()
     z = z_ax + 1 * f["cun"]
     c = center_at(13303, z)
-    return skin_ray(c, (0.35, 1.0, 0)), f, f"겨드랑이 뒤주름 끝 위 1寸(z = {z:.1f}): 위팔뼈 단면 중심에서 뒤·약간 안쪽"
+    return skin_ray(c, (0.0, 1.0, 0)), f, f"겨드랑이 뒤주름 끝 위 1寸(z = {z:.1f}): 위팔뼈 단면 중심에서 바로 뒤쪽(팔을 내린 자세)"
 
 
 def _spine_of_scapula():
@@ -402,7 +408,7 @@ def loc_SI10():
     sp = _spine_of_scapula()
     near = sp[np.abs(sp[:, 0] - p9[0]) <= 15]
     z = float(near[:, 2].min()) - 4 if len(near) else p9[2] + 40
-    o = np.array([p9[0] + 15, p9[1] - 25, z])
+    o = np.array([p9[0], p9[1] - 25, z])
     return skin_ray(o, (0, 1.0, 0)), f, f"노수: 견정(SI9) 바로 위, 어깨뼈가시 아래 오목(z = {z:.1f})"
 
 

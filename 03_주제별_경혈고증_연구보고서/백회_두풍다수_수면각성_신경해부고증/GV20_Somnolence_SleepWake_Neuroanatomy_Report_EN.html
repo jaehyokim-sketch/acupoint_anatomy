@@ -71,7 +71,8 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <strong>Thematic Scope</strong>: Philological Stratification and FMA Neuroanatomical Evaluation of the Classical Indication "Somnolence due to Head-Wind" (頭風多睡) and Its Translation to Sleep-Wake Regulation<br>
 <strong>Anatomical Ontology</strong>: FMA 5.1.0 Index (Scalp layers FMA:7163, Galea aponeurotica FMA:46768, Greater occipital nerve FMA:65443 [C2], Supra-orbital nerve FMA:52655 [CN V1], Parietal emissary vein FMA:50791, Parietal bone FMA:52737)<br>
 <strong>Evidence DB</strong>: Comprehensive Classics Database (<em>Tongjian</em> &amp; <em>Tongkao</em>), Layer A Master Biomedical DB v3.0, Layer B 4-Tier Reference Registry (v1.0)<br>
-<strong>Institution</strong>: Wonkwang University College of Korean Medicine · Department of Meridian &amp; Acupoint</p>
+<strong>Institution</strong>: Wonkwang University College of Korean Medicine · Department of Meridian &amp; Acupoint
+<strong>3D anatomical measurement (2026-11-05)</strong>: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). <strong>ARI scores unchanged.</strong></p>
 </blockquote>
 <hr>
 <h2 id="0-executive-summary-verdict">0. Executive Summary &amp; Verdict</h2>
@@ -144,6 +145,51 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li><strong>Needling Depth &amp; Method</strong>: Transverse/horizontal needling (沿皮刺, 15–30°, 0.5–0.8 cun / 11.5–18.4 mm) along the subaponeurotic plane. Perpendicular puncture is strictly contraindicated.</li>
 <li><strong>Afferent Innervation</strong>: Greater occipital nerve (FMA:65443, C2 posterior ramus) and Supra-orbital nerve (FMA:52655, CN V1 frontal branch).</li>
 </ul>
+<p><strong>3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)</strong></p>
+<p>Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.</p>
+<ul>
+<li><strong>Location (right side)</strong>: WHO standard location approximated from bone landmarks by proportional bone measurement.</li>
+<li><strong>Literature needling depth</strong>: seven-source mean 3.83 fen = 8.8 mm (classical 5.8 mm, modern 14.9 mm).</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Structure</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">FMA</th>
+<th style="text-align: right;">BodyParts3D skin mm (fen)</th>
+<th style="text-align: right;">Candidate-region median (10–90%)</th>
+<th style="text-align: right;">Body-shape skin BMI 24</th>
+<th style="text-align: right;">Body-shape skin BMI 30</th>
+<th style="text-align: center;">Within literature mean 8.8 mm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">parietal bone <em>(reference)</em></td>
+<td style="text-align: left;">reference (not in textbook list)</td>
+<td style="text-align: left;">FMA:9613</td>
+<td style="text-align: right;">5.3 (2.3)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">yes</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Shift of the representative point onto the body-shape skin: BMI 24 10.5 mm · BMI 30 11.1 mm</li>
+<li>‡ Not used because the registration error is large (point shift &gt; 10 mm or the body-shape skin passes through a structure)</li>
+<li><em>(reference)</em> = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position</li>
+<li>Rows removed from the table: 5 (textbook structure mapped to a mesh of a different kind, only to a distant parent-structure mesh, or more than 60 mm from the located point)</li>
+<li>Textbook structures without a BodyParts3D mesh (not measured): 5</li>
+<li><strong>Interactive 3D model</strong>: <a href="GV20_mesh3d_model.html">Baihui (百會, GV20) 3D anatomical model</a> (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)</li>
+<li><strong>How to read it</strong>:</li>
+<li>① The shallowest structure (parietal bone) lies 5.3 mm deep with the BodyParts3D skin. The body-shape skin is not compared here because its registration error is large.</li>
+<li>② With the BodyParts3D skin, 1 structure(s) have their surface within the seven-source mean depth (8.8 mm): parietal bone.</li>
+<li><strong>Comparison with the report</strong>: consistent with the scalp layers in Section 3 (scalp Layers 1–5 over the parietal bone), the parietal bone surface lies 5.3 mm deep in the standard model. The oblique or transverse insertion of 11.5–18.4 mm recommended in this report therefore has to run flat within this thin scalp, while a perpendicular needle meets bone at a little over 2.3 fen. The head has no joint landmarks for registering the body-shape skin, so the BMI values are not used. The location and values are the same as in the 3D measurement of the per-acupoint GV20 report.</li>
+<li><strong>Limitations</strong>: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).</li>
+</ul>
 <hr>
 <h2 id="4-central-sleep-wake-reflex-pathways-bidirectional-action">4. Central Sleep-Wake Reflex Pathways &amp; Bidirectional Action</h2>
 <p>Afferent inputs from C2 and CN V1 converge onto the <strong>Trigeminocervical Complex (TCC)</strong> in the upper cervical cord and caudal brainstem, projecting to central sleep-wake nuclei:</p>
@@ -161,6 +207,26 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li><strong>Mechanistic Rating</strong>: <strong>Probable (개연)</strong>.</li>
 <li><strong>Limitations</strong>: GV20 is rarely applied as a single point in human trials; it is almost universally combined with EX-HN1 (Sishencong), GV24 (Shenting), or SP6 (Sanyinjiao). Thus, sleep-wake modulation represents a system-level somatosensory-autonomic reflex rather than an isolated point-exclusive phenomenon.</li>
 </ul>
+<h3 id="effect-of-the-3d-anatomical-measurement-on-scoring-2026-11-05">Effect of the 3D anatomical measurement on scoring (2026-11-05)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">New evidence</th>
+<th style="text-align: left;">Item that could be affected</th>
+<th style="text-align: left;">Review</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement')</td>
+<td style="text-align: left;">$S_{clarity}$ · SI</td>
+<td style="text-align: left;">The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition</td>
+<td style="text-align: left;">Step unchanged</td>
+</tr>
+</tbody>
+</table></div>
+<p>→ No rubric step changes, so no dual re-scoring was done.</p>
 <hr>
 <h2 id="6-revised-clinical-statement">6. Revised Clinical Statement</h2>
 <blockquote>
@@ -177,7 +243,50 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li>Standring S (ed). <em>Gray's Anatomy</em>. 42nd ed. Elsevier; 2020 (FMA 5.1.0).</li>
 <li>Saper CB, et al. Sleep state switching. <em>Neuron</em>. 2010;68(6):1023-1042.</li>
 </ol>
-<p class="meta">생성: 2026-11-01 11:13 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
+<h2 id="2026-11-05-3d-anatomical-measurement-record">2026-11-05 3D anatomical measurement record</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Original</th>
+<th style="text-align: left;">Change</th>
+<th style="text-align: left;">Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Header</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Added a 3D anatomical measurement line (scores unchanged)</td>
+<td style="text-align: left;">This revision</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 4</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>New '3D anatomical measurement' subsection</strong>: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model</td>
+<td style="text-align: left;">BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 5</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">One line comparing the structures within the seven-source mean depth</td>
+<td style="text-align: left;">Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 10</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged)</td>
+<td style="text-align: left;">Canonical Rank 7 rubric</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scores</td>
+<td style="text-align: left;">Existing ARI and SI</td>
+<td style="text-align: left;"><strong>No change</strong></td>
+<td style="text-align: left;">Scoring-effect table in Section 10</td>
+</tr>
+</tbody>
+</table></div>
+<p class="meta">생성: 2026-11-05 16:12 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

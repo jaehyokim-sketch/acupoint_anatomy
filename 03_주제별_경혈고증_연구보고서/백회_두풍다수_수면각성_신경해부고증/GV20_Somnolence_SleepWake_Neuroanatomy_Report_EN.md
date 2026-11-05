@@ -6,6 +6,7 @@
 > **Anatomical Ontology**: FMA 5.1.0 Index (Scalp layers FMA:7163, Galea aponeurotica FMA:46768, Greater occipital nerve FMA:65443 [C2], Supra-orbital nerve FMA:52655 [CN V1], Parietal emissary vein FMA:50791, Parietal bone FMA:52737)  
 > **Evidence DB**: Comprehensive Classics Database (*Tongjian* & *Tongkao*), Layer A Master Biomedical DB v3.0, Layer B 4-Tier Reference Registry (v1.0)  
 > **Institution**: Wonkwang University College of Korean Medicine · Department of Meridian & Acupoint
+> **3D anatomical measurement (2026-11-05)**: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). **ARI scores unchanged.**
 
 ---
 
@@ -101,6 +102,29 @@ graph TD
 - **Needling Depth & Method**: Transverse/horizontal needling (沿皮刺, 15–30°, 0.5–0.8 cun / 11.5–18.4 mm) along the subaponeurotic plane. Perpendicular puncture is strictly contraindicated.
 - **Afferent Innervation**: Greater occipital nerve (FMA:65443, C2 posterior ramus) and Supra-orbital nerve (FMA:52655, CN V1 frontal branch).
 
+**3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)**
+
+Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.
+
+- **Location (right side)**: WHO standard location approximated from bone landmarks by proportional bone measurement.
+- **Literature needling depth**: seven-source mean 3.83 fen = 8.8 mm (classical 5.8 mm, modern 14.9 mm).
+
+| Structure | Type | FMA | BodyParts3D skin mm (fen) | Candidate-region median (10–90%) | Body-shape skin BMI 24 | Body-shape skin BMI 30 | Within literature mean 8.8 mm |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | :---: |
+| parietal bone *(reference)* | reference (not in textbook list) | FMA:9613 | 5.3 (2.3) | — | —‡ | —‡ | yes |
+
+- Shift of the representative point onto the body-shape skin: BMI 24 10.5 mm · BMI 30 11.1 mm
+- ‡ Not used because the registration error is large (point shift > 10 mm or the body-shape skin passes through a structure)
+- *(reference)* = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position
+- Rows removed from the table: 5 (textbook structure mapped to a mesh of a different kind, only to a distant parent-structure mesh, or more than 60 mm from the located point)
+- Textbook structures without a BodyParts3D mesh (not measured): 5
+- **Interactive 3D model**: [Baihui (百會, GV20) 3D anatomical model](GV20_mesh3d_model.html) (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)
+- **How to read it**:
+  - ① The shallowest structure (parietal bone) lies 5.3 mm deep with the BodyParts3D skin. The body-shape skin is not compared here because its registration error is large.
+  - ② With the BodyParts3D skin, 1 structure(s) have their surface within the seven-source mean depth (8.8 mm): parietal bone.
+- **Comparison with the report**: consistent with the scalp layers in Section 3 (scalp Layers 1–5 over the parietal bone), the parietal bone surface lies 5.3 mm deep in the standard model. The oblique or transverse insertion of 11.5–18.4 mm recommended in this report therefore has to run flat within this thin scalp, while a perpendicular needle meets bone at a little over 2.3 fen. The head has no joint landmarks for registering the body-shape skin, so the BMI values are not used. The location and values are the same as in the 3D measurement of the per-acupoint GV20 report.
+- **Limitations**: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
+
 ---
 
 ## 4. Central Sleep-Wake Reflex Pathways & Bidirectional Action
@@ -122,6 +146,15 @@ This homeostatic bidirectional regulation resolves the historical divergence bet
 - **Mechanistic Rating**: **Probable (개연)**.
 - **Limitations**: GV20 is rarely applied as a single point in human trials; it is almost universally combined with EX-HN1 (Sishencong), GV24 (Shenting), or SP6 (Sanyinjiao). Thus, sleep-wake modulation represents a system-level somatosensory-autonomic reflex rather than an isolated point-exclusive phenomenon.
 
+### Effect of the 3D anatomical measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement') | $S_{clarity}$ · SI | The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition | Step unchanged |
+
+→ No rubric step changes, so no dual re-scoring was done.
+
+
 ---
 
 ## 6. Revised Clinical Statement
@@ -139,3 +172,13 @@ This homeostatic bidirectional regulation resolves the historical divergence bet
 5. Huangfu Mi, *Zhenjiu Jiayijing*, 282 CE, Book 3.
 6. Standring S (ed). *Gray's Anatomy*. 42nd ed. Elsevier; 2020 (FMA 5.1.0).
 7. Saper CB, et al. Sleep state switching. *Neuron*. 2010;68(6):1023-1042.
+
+## 2026-11-05 3D anatomical measurement record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | — | Added a 3D anatomical measurement line (scores unchanged) | This revision |
+| Section 4 | — | **New '3D anatomical measurement' subsection**: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model | BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0 |
+| Section 5 | — | One line comparing the structures within the seven-source mean depth | Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm |
+| Section 10 | — | Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged) | Canonical Rank 7 rubric |
+| Scores | Existing ARI and SI | **No change** | Scoring-effect table in Section 10 |

@@ -109,7 +109,6 @@ Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID
 | Levator scapulae | muscle | FMA:32519 | 42.4 (18.5) | 41.5 (39.3–43.1) | —‡ | —‡ | no |
 | Splenius cervicis | muscle | FMA:22681 | 53.2 (23.1) | 52.7 (49.2–54.5) | —‡ | —‡ | no |
 | scapula *(reference)* | reference (not in textbook list) | FMA:13394 | 54.8 (23.8) | — | —‡ | —‡ | no |
-| right lung *(reference)* | reference (not in textbook list) | FMA:7309 | 70.2 (30.5) | — | —‡ | —‡ | no |
 
 - Shift of the representative point onto the body-shape skin: BMI 24 25.4 mm · BMI 30 20.6 mm
 - ‡ Not used because the registration error is large (point shift > 10 mm or the body-shape skin passes through a structure)
@@ -120,7 +119,7 @@ Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID
 - **How to read it**:
   - ① The shallowest structure (descending part of trapezius) lies 22.5 mm deep with the BodyParts3D skin. The body-shape skin is not compared here because its registration error is large.
   - ② With the BodyParts3D skin, 0 structure(s) have their surface within the seven-source mean depth (13.2 mm).
-- **Relation to pneumothorax risk**: in the standard model the surface of the right lung mesh lies 70.2 mm deep. The pleural cupula (FMA:27534) has no BodyParts3D mesh, so this is not a direct measurement of the distance to the cupula and lung apex. As Section 5-1 notes, individual variation is large, so no safe depth is set from this model value (SI 0 kept). The body-shape skin registration error is large over the shoulder and back (point shift 21–25 mm), so the BMI values are not used.
+- **Relation to pneumothorax risk**: the pleural cupula (FMA:27534) has no BodyParts3D mesh, and the lung mesh contains only bronchi and pulmonary vessels without a parenchymal surface, so this model cannot measure the distance to the cupula and lung apex. The lung is therefore not in the table. As Section 5-1 notes, individual variation is large, so no safe depth is set from this model (SI 0 kept). The body-shape skin registration error is large over the shoulder and back (point shift 21–25 mm), so the BMI values are not used.
 - **Limitations**: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
 
 ## 5. Needling Depth Calculation Table (1 fen = 2.3 mm)

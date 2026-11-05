@@ -1,0 +1,146 @@
+{
+ "code": "SI09",
+ "source": "김재효",
+ "side": "right",
+ "skin": "SMPL-X 체형 피부 male_bmi30 (male · 키 1.722 m · BMI 29.87)",
+ "method": "지정 좌표 반경 6 mm 피부 영역 → 체형 피부의 가장 가까운 점으로 옮김(대표점 이동 1.0 mm)",
+ "candidate_points": 34,
+ "candidate_extent_mm": [
+  10.5,
+  3.2,
+  12.4
+ ],
+ "point_mm": [
+  -185.8,
+  5.4,
+  1247.3
+ ],
+ "depths": [
+  {
+   "structure": "어깨휘돌이동ㆍ정맥 · Circumflex scapular vein",
+   "category": "정맥",
+   "fma_id": 77498,
+   "mesh_level": "exact",
+   "depth_mm_at_point": -82.4,
+   "depth_pun_at_point": -35.8,
+   "depth_mm_median": -82.9,
+   "depth_mm_p10": -85.4,
+   "depth_mm_p90": -80.6,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "어깨휘돌이동ㆍ정맥 · Circumflex scapular artery",
+   "category": "동맥",
+   "fma_id": 23179,
+   "mesh_level": "exact",
+   "depth_mm_at_point": -81.5,
+   "depth_pun_at_point": -35.4,
+   "depth_mm_median": -82.0,
+   "depth_mm_p10": -84.3,
+   "depth_mm_p90": -79.6,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "뒤위팔휘돌이동ㆍ정맥 · Posterior circumflex humeral artery",
+   "category": "동맥",
+   "fma_id": 22684,
+   "mesh_level": "exact",
+   "depth_mm_at_point": -79.8,
+   "depth_pun_at_point": -34.7,
+   "depth_mm_median": -79.9,
+   "depth_mm_p10": -81.3,
+   "depth_mm_p90": -78.6,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "큰원근 · Teres major",
+   "category": "근육",
+   "fma_id": 32549,
+   "mesh_level": "exact",
+   "depth_mm_at_point": -56.3,
+   "depth_pun_at_point": -24.5,
+   "depth_mm_median": -56.1,
+   "depth_mm_p10": -59.7,
+   "depth_mm_p90": -52.1,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "위팔세갈래근의 긴갈래 · Long head of triceps brachii",
+   "category": "근육",
+   "fma_id": 37692,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 43.2,
+   "depth_pun_at_point": 18.8,
+   "depth_mm_median": 40.9,
+   "depth_mm_p10": -41.7,
+   "depth_mm_p90": 46.3,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "겨드랑동ㆍ정맥 · Axillary artery",
+   "category": "동맥",
+   "fma_id": 22654,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 94.2,
+   "depth_pun_at_point": 41.0,
+   "depth_mm_median": 94.3,
+   "depth_mm_p10": 92.4,
+   "depth_mm_p90": 95.8,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "뒤위팔휘돌이동ㆍ정맥 · Axillary vein",
+   "category": "정맥",
+   "fma_id": 13329,
+   "mesh_level": "ancestor+1",
+   "depth_mm_at_point": 102.5,
+   "depth_pun_at_point": 44.6,
+   "depth_mm_median": 101.6,
+   "depth_mm_p10": 100.2,
+   "depth_mm_p90": 104.6,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "SI09 견정: 7종 평균 10.25푼 = 23.6 mm (n=6, 중앙값 10.25푼, 범위 8–12.5푼) · 고전 8.0푼(n=3) · 현대 12.5푼(n=3)",
+  "mean_pun": 10.25,
+  "mean_mm": 23.6,
+  "classic_mm": 18.4,
+  "modern_mm": 28.7,
+  "modern_range_mm": [
+   23.0,
+   34.5
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": [
+   "어깨휘돌이동ㆍ정맥 · Circumflex scapular vein",
+   "어깨휘돌이동ㆍ정맥 · Circumflex scapular artery",
+   "뒤위팔휘돌이동ㆍ정맥 · Posterior circumflex humeral artery",
+   "큰원근 · Teres major"
+  ]
+ },
+ "missing_structures": [
+  "넓은등근 (latissimus dorsi) — BodyParts3D 메쉬 없음",
+  "어깨세모근 (deltoid) — BodyParts3D 메쉬 없음",
+  "위가쪽위팔피부신경 (superior lateral brachial cutaneous nerve) — BodyParts3D 메쉬 없음",
+  "노신경 (radial nerve) — BodyParts3D 메쉬 없음",
+  "가슴등신경 (thoracodorsal nerve) — BodyParts3D 메쉬 없음",
+  "아래쪽어깨밑신경 (lower subscapular nerve) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International Body surface generated with SMPL-X (Pavlakos et al., CVPR 2019), © Max Planck Institute for Intelligent Systems, SMPL-X Body License CC BY 4.0 (https://smpl-x.is.tue.mpg.de/bodylicense.html). Changes: shape set to target stature/BMI, posed and registered to BodyParts3D 4.0 joint centres",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다. 피부면은 BodyParts3D 골격 관절 중심에 등록한 SMPL-X 통계 체형 피부이며, 근육·지방 층은 BodyParts3D 그대로라 체형 차이는 피하층 두께 차이로만 나타나는 근사다. 음수 깊이 = 구조 표면이 체형 피부 밖에 놓임(정합 오차).",
+ "skin_joint_error_mm": {
+  "hip_left": 20.7,
+  "hip_right": 22.4,
+  "knee_left": 11.3,
+  "knee_right": 20.5,
+  "ankle_left": 10.3,
+  "ankle_right": 10.5,
+  "shoulder_left": 4.6,
+  "shoulder_right": 2.4,
+  "elbow_left": 5.1,
+  "elbow_right": 0.8,
+  "wrist_left": 0.4,
+  "wrist_right": 3.0
+ }
+}

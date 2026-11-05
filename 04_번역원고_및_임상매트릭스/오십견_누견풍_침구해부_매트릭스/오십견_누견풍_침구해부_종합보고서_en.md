@@ -7,6 +7,7 @@
 > **Datasheet**: Frozen Shoulder Clinical Acupuncture Anatomy Matrix Analysis Databook (9 complete sheets: Classical Texts, Modern Literature, Tongkao Critique, FMA Anatomy, ROM Direction Matrix, Phase Protocols, Tiaokou Pedigree, Biomedical Evidence, ARI v3.0 Profile + 6 refinement sheets added 2026-10-25)
 > **2026-10-25 Refinement (Claude Code)**: Added an FMA 5.1.0 anatomical analysis with figures (Section 11) and audited the classical citations, FMA correspondences, kinesiology, Layer A citations, and ARI (Section 12). The original text is retained; changed judgments are marked *(Refinement note)*.
 > **Script Standard**: Classical citations and TCM terminology are rendered in Traditional Chinese characters (繁體字).
+> **2026-11-05 3D depth supplement**: 3D depths at proportional-bone locations of eight main shoulder points with SMPL-X body-shape skin supplementary values (Section 11.5). Normative anatomical geometry (B1 supplementary); scores unchanged.
 
 ---
 
@@ -385,6 +386,13 @@ $$\text{Safety Index (SI)} = S_{safety} \quad (\text{Independently Tracked})$$
   - **SI 25 for Yunmen (雲門) and Jugu (巨骨)**: Supported only by narrative. The Section 11 3D measurements (rib proxy) reinforce the basis for Yunmen and restrict the hazard for Jugu to a specific direction (medial and inferior).
   - Per-acupoint ARI will be recalculated with dual scoring in Category 1 reports (priority: Jianyu [肩髃], Tianzong [天宗], Yunmen [雲門]).
 
+### Effect of the 3D depth measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| 3D depths at proportional-bone locations of eight shoulder points + body-shape skin (Section 11.5) | $S_{clarity}$ · SI | Layer order and structures within the literature mean depth are confirmed in standard 3D geometry. Single standard model (B1 supplementary), not a point-specific measurement (B2) | Unchanged |
+
+
 ---
 
 ## 9. Modern Clinical Evidence Synthesis & Guideline Alignment
@@ -603,6 +611,30 @@ An external review stated that no major orthopaedic or physical therapy guidelin
 | FMA:32550 Teres minor | 32.78 | 85×68×96 | No (approx.) |
 | FMA:32549 Teres major | 37.44 | 86×81×96 | No (approx.) |
 
+### 11.5 3D depths at proportional-bone locations and the body-shape skin (2026-11-05, B1 supplementary)
+
+Eight main shoulder points were placed at proportional-bone locations approximated from BodyParts3D bone landmarks (acromion, humerus, spine of scapula, clavicle and the axillary-fold muscles), and the shortest distances to the textbook structures and reference structures (superficial muscles, underlying bones) were measured. Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, BMI 24 and 30) were also measured.
+
+| Point | Shallowest structure (BodyParts3D mm) | Underlying bone (mm) | Seven-source mean (mm) | Structures within mean | Body-shape skin (point shift BMI 24 / 30 mm) |
+| :--- | :--- | :--- | ---: | ---: | :--- |
+| Jianyu (肩髃, LI15) | clavicular part of deltoid 8.7 | humerus 20.7 | 18.9 | 2 | not used (registration error) (13.1 / 12.9) |
+| Jianliao (肩髎, TE14) | acromial part of deltoid 23.6 | scapula (acromion) 38.5 | 22.4 | 0 | usable: BMI 30 (13.0 / 6.2) |
+| Jianzhen (肩貞, SI9) | spinal part of deltoid 19.7 | scapula 66.8 | 23.6 | 1 | not used (registration error) (13.8 / 1.0) |
+| Naoshu (臑兪, SI10) | spinal part of deltoid 18.7 | scapula 66.6 | 20.7 | 1 | usable: BMI 30 (14.2 / 1.1) |
+| Tianzong (天宗, SI11) | ascending part of trapezius 23.6 | scapula 37.2 | 14.4 | 0 | not used (registration error) (55.0 / 28.8) |
+| Yunmen (雲門, LU2) | Cephalic vein 15.0 | clavicle 33.6 | 14.4 | 0 | not used (registration error) (15.4 / 15.1) |
+| Jugu (巨骨, LI16) | descending part of trapezius 24.4 | clavicle 23.6 | 25.3 | 2 | not used (registration error) (19.8 / 10.7) |
+| Jianjing (肩井, GB21) | descending part of trapezius 22.6 | scapula 54.8 | 13.2 | 0 | not used (registration error) (25.4 / 20.6) |
+
+- **How to read it**:
+  - ① Jianyu (LI15) is the shallowest, with deltoid at 8.7 mm; two parts of deltoid lie within the literature mean depth (18.9 mm). The humerus lies at 20.7 mm.
+  - ② At the posterior and superior points (Jianliao, Jianzhen, Naoshu, Tianzong, Jugu, Jianjing) the first muscle (deltoid or trapezius) lies at about 19–24 mm. The literature mean depths (13–25 mm) end before this first muscle layer (Jianjing, Tianzong) or within it.
+  - ③ At Yunmen (LU2) pectoralis major lies at 35.1 mm and the clavicle at 33.6 mm. The BodyParts3D lung mesh contains only bronchi and pulmonary vessels without a parenchymal surface, so the pneumothorax distance cannot be measured here (the rib distances of Fig. E3 in Section 11.4 stand).
+  - ④ Around the shoulder the body-shape skin point shift is 10–55 mm, so it is mostly not used: the shoulder-joint landmarks of the SMPL-X registration and the skin shape around deltoid differ from BodyParts3D.
+- Per-point structure depth tables are in the databook sheet '3D해부_깊이'. Limitation: single standard model; locations are bone-landmark approximations (B1 supplementary, not acupoint measurement B2).
+- Sources: BodyParts3D, © The Database Center for Life Science, CC BY 4.0. Body surface generated with SMPL-X (Pavlakos et al., CVPR 2019), © Max Planck Institute for Intelligent Systems, SMPL-X Body License CC BY 4.0.
+
+
 ## 12. Refinement Audit Summary (2026-10-25)
 
 | Item | Result | Action |
@@ -628,3 +660,9 @@ An external review stated that no major orthopaedic or physical therapy guidelin
 | 2026-10-25 | Added FMA analysis and figures (Figures A–D, 3D E1–E3); audited citations, kinesiology, Layer A, and ARI; inserted refinement notes; added 6 refinement sheets to the xlsx | Claude Code (internal analysis and figure scripts) |
 | 2026-10-25 | Verified an external review (guideline recommendation status) against JOSPT 2013 full text, BESS 2025 PMC full text, AFP 2011, Cochrane 2005 full text, and Ben-Arie 2020 full text; corrected Section 9 item 4 and added Section 9.1 | Claude Code (NCBI E-utilities, PMC) |
 | 2026-10-25 | Checked the Korean Medicine Clinical Practice Guideline for shoulder pain (2020) source PDF: recommendations R1, R3, R4, R5, R9, R10, R12 and their supporting RCTs (Johansson 2005 and 2011, Vas 2008, Sun 2001) verified in PubMed. Supplemented Section 9 items 3–4; added Section 9.2 | Claude Code (pypdf, NCBI E-utilities) |
+
+## 2026-11-05 3D depth supplement record
+
+| Location | Change | Basis |
+| :--- | :--- | :--- |
+| Header, Section 11.5, Section 8 | Summary table of 3D depths at proportional-bone locations of eight shoulder points, body-shape skin supplementary values, scoring-effect table (unchanged), databook sheet '3D해부_깊이' | BodyParts3D 4.0, SMPL-X Body License CC BY 4.0 |

@@ -1,0 +1,150 @@
+{
+ "code": "TE13",
+ "source": "김재효",
+ "side": "right",
+ "skin": "SMPL-X 체형 피부 male_bmi30 (male · 키 1.722 m · BMI 29.87)",
+ "method": "지정 좌표 반경 6 mm 피부 영역 → 체형 피부의 가장 가까운 점으로 옮김(대표점 이동 2.6 mm)",
+ "candidate_points": 41,
+ "candidate_extent_mm": [
+  6.1,
+  10.7,
+  9.9
+ ],
+ "point_mm": [
+  -224.4,
+  -18.9,
+  1272.0
+ ],
+ "depths": [
+  {
+   "structure": "깊은위팔동ㆍ정맥 · Deep brachial artery",
+   "category": "동맥",
+   "fma_id": 22695,
+   "mesh_level": "exact",
+   "depth_mm_at_point": -114.3,
+   "depth_pun_at_point": -49.7,
+   "depth_mm_median": -114.4,
+   "depth_mm_p10": -116.4,
+   "depth_mm_p90": -112.8,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "위팔세갈래근의 가쪽갈래 · Lateral head of triceps brachii",
+   "category": "근육",
+   "fma_id": 37694,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 44.4,
+   "depth_pun_at_point": 19.3,
+   "depth_mm_median": 44.5,
+   "depth_mm_p10": 43.3,
+   "depth_mm_p90": 45.9,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "뒤위팔휘돌이동ㆍ정맥 · Posterior circumflex humeral artery",
+   "category": "동맥",
+   "fma_id": 22684,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 64.2,
+   "depth_pun_at_point": 27.9,
+   "depth_mm_median": 65.0,
+   "depth_mm_p10": 61.9,
+   "depth_mm_p90": 67.5,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "위팔세갈래근의 긴갈래 · Long head of triceps brachii",
+   "category": "근육",
+   "fma_id": 37692,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 65.6,
+   "depth_pun_at_point": 28.5,
+   "depth_mm_median": 64.6,
+   "depth_mm_p10": -65.8,
+   "depth_mm_p90": 65.6,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "겨드랑신경 · Axillary artery",
+   "category": "신경",
+   "fma_id": 22654,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 97.1,
+   "depth_pun_at_point": 42.2,
+   "depth_mm_median": 97.4,
+   "depth_mm_p10": 95.9,
+   "depth_mm_p90": 98.6,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "뒤위팔휘돌이동ㆍ정맥 · Axillary vein",
+   "category": "정맥",
+   "fma_id": 13329,
+   "mesh_level": "ancestor+1",
+   "depth_mm_at_point": 105.6,
+   "depth_pun_at_point": 45.9,
+   "depth_mm_median": 106.1,
+   "depth_mm_p10": 104.5,
+   "depth_mm_p90": 107.4,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "깊은위팔동ㆍ정맥 · Brachial vein",
+   "category": "정맥",
+   "fma_id": 22934,
+   "mesh_level": "ancestor+1",
+   "depth_mm_at_point": 106.7,
+   "depth_pun_at_point": 46.4,
+   "depth_mm_median": 107.0,
+   "depth_mm_p10": -106.6,
+   "depth_mm_p90": 108.0,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "노신경 · Radial artery",
+   "category": "신경",
+   "fma_id": 22730,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 256.3,
+   "depth_pun_at_point": 111.4,
+   "depth_mm_median": 256.0,
+   "depth_mm_p10": 253.6,
+   "depth_mm_p90": 259.7,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "TE13 노회: 7종 평균 9.08푼 = 20.9 mm (n=6, 중앙값 9.75푼, 범위 5–12.5푼) · 고전 5.67푼(n=3) · 현대 12.5푼(n=3)",
+  "mean_pun": 9.08,
+  "mean_mm": 20.9,
+  "classic_mm": 13.0,
+  "modern_mm": 28.7,
+  "modern_range_mm": [
+   23.0,
+   34.5
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": [
+   "깊은위팔동ㆍ정맥 · Deep brachial artery"
+  ]
+ },
+ "missing_structures": [
+  "뒤위팔피부신경 (posterior brachial cutaneous nerve) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International Body surface generated with SMPL-X (Pavlakos et al., CVPR 2019), © Max Planck Institute for Intelligent Systems, SMPL-X Body License CC BY 4.0 (https://smpl-x.is.tue.mpg.de/bodylicense.html). Changes: shape set to target stature/BMI, posed and registered to BodyParts3D 4.0 joint centres",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다. 피부면은 BodyParts3D 골격 관절 중심에 등록한 SMPL-X 통계 체형 피부이며, 근육·지방 층은 BodyParts3D 그대로라 체형 차이는 피하층 두께 차이로만 나타나는 근사다. 음수 깊이 = 구조 표면이 체형 피부 밖에 놓임(정합 오차).",
+ "skin_joint_error_mm": {
+  "hip_left": 20.7,
+  "hip_right": 22.4,
+  "knee_left": 11.3,
+  "knee_right": 20.5,
+  "ankle_left": 10.3,
+  "ankle_right": 10.5,
+  "shoulder_left": 4.6,
+  "shoulder_right": 2.4,
+  "elbow_left": 5.1,
+  "elbow_right": 0.8,
+  "wrist_left": 0.4,
+  "wrist_right": 3.0
+ }
+}

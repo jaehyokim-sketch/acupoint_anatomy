@@ -88,7 +88,8 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li><strong>ARI v3.0 (four points, dual scoring)</strong>: Shidou 66.25 ± 1.25 (C) · Tianxi 66.25 ± 1.25 (C·H) · Xiongxiang 60.0 ± 1.25 (C) · Zhourong 66.25 ± 1.25 (C). All four have SI 25 and trigger <strong>Gate 3 (⚠ safety caution)</strong>. Concordance with the classical sources is high (S_orig 81–94), but there is no human mechanistic evidence (S_reflex 25), so all remain grade C.</li>
 </ol>
 <blockquote>
-<p>This report is an anatomical and philological safety analysis. BodyParts3D is a single normative model and does not reflect individual variation, breathing or posture. Safe depth for an individual patient should be set from body-habitus assessment and, where possible, ultrasound.</p>
+<p>This report is an anatomical and philological safety analysis. BodyParts3D is a single normative model and does not reflect individual variation, breathing or posture. Safe depth for an individual patient should be set from body-habitus assessment and, where possible, ultrasound.
+<strong>Body-shape skin supplementary measurement (2026-11-05)</strong>: with only the skin surface replaced by an SMPL-X body-shape skin (BMI 24 and 30), the chest-wall-entry ratio is 0.78–1.18, so the excess chest-wall depth of BodyParts3D (ultrasound correction k = 0.571) comes from the model's muscle and subcutaneous layers, not the skin surface (Section 4-5). <strong>Scores unchanged.</strong></p>
 </blockquote>
 <hr>
 <h2 id="0-question-and-scope">0. Question and scope</h2>
@@ -689,6 +690,87 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <ul>
 <li><strong>Neither textbook lists Layer 5 (pleura, lung)</strong> (Section 6). Their anatomy stops at the intercostal muscles, and the presence of the pleura 1–2 mm beneath is not in the tables.</li>
 </ul>
+<h3 id="4-5-body-shape-skin-supplementary-measurement-and-the-ultrasound-correction-2026-11-05-b1-supplementary">4-5. Body-shape skin supplementary measurement and the ultrasound correction (2026-11-05, B1 supplementary)</h3>
+<p>Left and right skin points were placed again by the Section 4-1 method (at the same X, the mid-height between the lower edge of the anterior part of rib/cartilage n and the upper edge of rib n+1, 6 cun lateral to the midline), the muscle and bone meshes were kept as BodyParts3D, and only the skin surface was replaced by an SMPL-X statistical body-shape skin (male, BMI 24 and 30). The shortest distances to pectoralis major and to chest-wall entry (the nearest intercostal-muscle surface) were measured (1 cun = 19.0–19.4 mm). Chest-wall entry is a shortest straight-line distance to the intercostal surface, a different quantity from 'axial perpendicular: pleura' in Section 4-2, so comparison is made only as a ratio between skin surfaces within this measurement.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Point</th>
+<th style="text-align: center;">Pectoralis major: BodyParts3D / BMI 24 / BMI 30 (mm)</th>
+<th style="text-align: center;">Chest-wall entry (nearest intercostal muscle): BodyParts3D / BMI 24 / BMI 30 (mm)</th>
+<th style="text-align: center;">Point shift BMI 24 / 30</th>
+<th style="text-align: center;">Body-shape skin ratio (chest-wall entry, usable BMI)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Zhourong SP20 (left)</td>
+<td style="text-align: center;">15.0 / 5.3 / 16.3</td>
+<td style="text-align: center;">39.6 / 31.0 / 40.6</td>
+<td style="text-align: center;">8.5 / 1.7</td>
+<td style="text-align: center;">0.78–1.03</td>
+</tr>
+<tr>
+<td style="text-align: left;">Xiongxiang SP19 (left)</td>
+<td style="text-align: center;">9.4 / 4.6 / 15.9</td>
+<td style="text-align: center;">41.6 / 36.7 / 49.2</td>
+<td style="text-align: center;">5.3 / 7.9</td>
+<td style="text-align: center;">0.88–1.18</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tianxi SP18 (left)</td>
+<td style="text-align: center;">6.4 / —‡ / 0.5</td>
+<td style="text-align: center;">38.0 / —‡ / 33.3</td>
+<td style="text-align: center;">19.7 / 6.0</td>
+<td style="text-align: center;">0.88</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shidou SP17 (left)</td>
+<td style="text-align: center;">11.0 / —‡ / —‡</td>
+<td style="text-align: center;">30.7 / —‡ / —‡</td>
+<td style="text-align: center;">28.0 / 15.4</td>
+<td style="text-align: center;">—‡</td>
+</tr>
+<tr>
+<td style="text-align: left;">Zhourong SP20 (right)</td>
+<td style="text-align: center;">14.6 / 9.1 / 5.9</td>
+<td style="text-align: center;">40.7 / 36.5 / 32.5</td>
+<td style="text-align: center;">5.4 / 9.0</td>
+<td style="text-align: center;">0.80–0.90</td>
+</tr>
+<tr>
+<td style="text-align: left;">Xiongxiang SP19 (right)</td>
+<td style="text-align: center;">10.3 / 12.0 / 8.2</td>
+<td style="text-align: center;">42.8 / 44.6 / 40.4</td>
+<td style="text-align: center;">2.2 / 2.5</td>
+<td style="text-align: center;">0.94–1.04</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tianxi SP18 (right)</td>
+<td style="text-align: center;">7.0 / —‡ / 2.1</td>
+<td style="text-align: center;">39.4 / —‡ / 35.7</td>
+<td style="text-align: center;">9.3 / 5.0</td>
+<td style="text-align: center;">0.91</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shidou SP17 (right)</td>
+<td style="text-align: center;">12.3 / —‡ / —‡</td>
+<td style="text-align: center;">32.3 / —‡ / —‡</td>
+<td style="text-align: center;">23.6 / 18.5</td>
+<td style="text-align: center;">—‡</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>‡ = not used because of registration error (point shift &gt; 10 mm or the body-shape skin passes through a structure). Body-shape skin ratio = body-shape skin value ÷ BodyParts3D value.</li>
+<li><strong>How to read it</strong>:</li>
+<li>① With the usable body-shape skin, the chest-wall-entry ratio is 0.78–1.18 (mostly 0.88–1.04), far larger than the Section 4-3 ultrasound correction factor k = 0.571.</li>
+<li>② Most of the reason the BodyParts3D chest wall is thicker than in vivo therefore lies in the model's muscle and subcutaneous layers, not in the position of the skin surface. The Section 4-3 correction is kept.</li>
+<li>③ At Shidou (SP17), on the lateral chest wall near the axilla, the body-shape skin point shift is 15–28 mm, so it is not used. For the same reason as limitation ② in Section 4-1 (arms-down posture), model values here are of low reliability.</li>
+<li>④ Pectoralis major is shallowest at SP18 (6.4–7.0 mm) and deepest at SP20 (14.6–15.0 mm) (BodyParts3D).</li>
+<li>Per-point structure depths (textbook structures, pectoralis major, serratus anterior) are in the databook sheet '3D해부_깊이'.</li>
+<li>Sources: BodyParts3D, © The Database Center for Life Science, CC BY 4.0. Body surface generated with SMPL-X (Pavlakos et al., CVPR 2019), © Max Planck Institute for Intelligent Systems, SMPL-X Body License CC BY 4.0.</li>
+</ul>
 <hr>
 <h2 id="5-needling-depth-table-needling-depth-by-classical-source-db-1-fen-23-mm">5. Needling depth table (Needling Depth by Classical Source DB, 1 fen = 2.3 mm)</h2>
 <div class="table-wrap"><table>
@@ -1218,6 +1300,25 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li><strong>In high-risk groups (COPD, emphysema, previous pneumothorax, acute asthma, mechanical ventilation), avoid needling these four points or use transverse needling only.</strong> Where possible, confirm pleural depth by ultrasound.</li>
 <li>If sudden chest pain, cough (《素問》 "其動爲欬") or breathlessness appears during or after needling, suspect pneumothorax and refer. Pneumothorax may appear several hours later.</li>
 </ol>
+<h3 id="effect-of-the-body-shape-skin-supplementary-measurement-on-scoring-2026-11-05">Effect of the body-shape skin supplementary measurement on scoring (2026-11-05)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">New evidence</th>
+<th style="text-align: left;">Item that could be affected</th>
+<th style="text-align: left;">Review</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Body-shape skin (SMPL-X BMI 24 and 30) chest-wall entry depths (Section 4-5)</td>
+<td style="text-align: left;">SI · correction factor</td>
+<td style="text-align: left;">The chest-wall-entry ratio of 0.78–1.18 gives no basis to change the ultrasound correction (k = 0.571). Statistical body-shape skin registration estimate (B1 supplementary)</td>
+<td style="text-align: left;">Unchanged</td>
+</tr>
+</tbody>
+</table></div>
 <h3 id="10-5-audit-record">10-5. Audit record</h3>
 <div class="table-wrap"><table>
 <thead>
@@ -1327,9 +1428,13 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <td style="text-align: left;">2026-10-28</td>
 <td style="text-align: left;">First version (Tier 3, topic study). Comparison of the four classics; analysis of breathing vs habitus, direction and posture; BodyParts3D chest-wall thickness measurement (4 points, 8 sites, cone and tilted paths); calibration against in-vivo ultrasound and CT literature; ARI v3.0 dual scoring of 4 points</td>
 </tr>
+<tr>
+<td style="text-align: left;">2026-11-05</td>
+<td style="text-align: left;">New Section 4-5: left and right SP17–SP20 skin points re-located; pectoralis major and chest-wall entry depths compared between BodyParts3D and an SMPL-X body-shape skin (BMI 24 and 30) (chest-wall-entry ratio 0.78–1.18); scoring-effect table in Section 10 (unchanged); databook sheet '3D해부_깊이'. Scores unchanged</td>
+</tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-28 11:44 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
+<p class="meta">생성: 2026-11-05 16:13 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

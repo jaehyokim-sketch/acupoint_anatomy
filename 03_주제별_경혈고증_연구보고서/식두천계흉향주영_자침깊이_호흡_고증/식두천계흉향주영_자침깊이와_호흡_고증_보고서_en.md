@@ -23,6 +23,7 @@
 6. **ARI v3.0 (four points, dual scoring)**: Shidou 66.25 ± 1.25 (C) · Tianxi 66.25 ± 1.25 (C·H) · Xiongxiang 60.0 ± 1.25 (C) · Zhourong 66.25 ± 1.25 (C). All four have SI 25 and trigger **Gate 3 (⚠ safety caution)**. Concordance with the classical sources is high (S_orig 81–94), but there is no human mechanistic evidence (S_reflex 25), so all remain grade C.
 
 > This report is an anatomical and philological safety analysis. BodyParts3D is a single normative model and does not reflect individual variation, breathing or posture. Safe depth for an individual patient should be set from body-habitus assessment and, where possible, ultrasound.
+> **Body-shape skin supplementary measurement (2026-11-05)**: with only the skin surface replaced by an SMPL-X body-shape skin (BMI 24 and 30), the chest-wall-entry ratio is 0.78–1.18, so the excess chest-wall depth of BodyParts3D (ultrasound correction k = 0.571) comes from the model's muscle and subcutaneous layers, not the skin surface (Section 4-5). **Scores unchanged.**
 
 ---
 
@@ -208,6 +209,31 @@ flowchart LR
 
 - **Neither textbook lists Layer 5 (pleura, lung)** (Section 6). Their anatomy stops at the intercostal muscles, and the presence of the pleura 1–2 mm beneath is not in the tables.
 
+### 4-5. Body-shape skin supplementary measurement and the ultrasound correction (2026-11-05, B1 supplementary)
+
+Left and right skin points were placed again by the Section 4-1 method (at the same X, the mid-height between the lower edge of the anterior part of rib/cartilage n and the upper edge of rib n+1, 6 cun lateral to the midline), the muscle and bone meshes were kept as BodyParts3D, and only the skin surface was replaced by an SMPL-X statistical body-shape skin (male, BMI 24 and 30). The shortest distances to pectoralis major and to chest-wall entry (the nearest intercostal-muscle surface) were measured (1 cun = 19.0–19.4 mm). Chest-wall entry is a shortest straight-line distance to the intercostal surface, a different quantity from 'axial perpendicular: pleura' in Section 4-2, so comparison is made only as a ratio between skin surfaces within this measurement.
+
+| Point | Pectoralis major: BodyParts3D / BMI 24 / BMI 30 (mm) | Chest-wall entry (nearest intercostal muscle): BodyParts3D / BMI 24 / BMI 30 (mm) | Point shift BMI 24 / 30 | Body-shape skin ratio (chest-wall entry, usable BMI) |
+| :--- | :---: | :---: | :---: | :---: |
+| Zhourong SP20 (left) | 15.0 / 5.3 / 16.3 | 39.6 / 31.0 / 40.6 | 8.5 / 1.7 | 0.78–1.03 |
+| Xiongxiang SP19 (left) | 9.4 / 4.6 / 15.9 | 41.6 / 36.7 / 49.2 | 5.3 / 7.9 | 0.88–1.18 |
+| Tianxi SP18 (left) | 6.4 / —‡ / 0.5 | 38.0 / —‡ / 33.3 | 19.7 / 6.0 | 0.88 |
+| Shidou SP17 (left) | 11.0 / —‡ / —‡ | 30.7 / —‡ / —‡ | 28.0 / 15.4 | —‡ |
+| Zhourong SP20 (right) | 14.6 / 9.1 / 5.9 | 40.7 / 36.5 / 32.5 | 5.4 / 9.0 | 0.80–0.90 |
+| Xiongxiang SP19 (right) | 10.3 / 12.0 / 8.2 | 42.8 / 44.6 / 40.4 | 2.2 / 2.5 | 0.94–1.04 |
+| Tianxi SP18 (right) | 7.0 / —‡ / 2.1 | 39.4 / —‡ / 35.7 | 9.3 / 5.0 | 0.91 |
+| Shidou SP17 (right) | 12.3 / —‡ / —‡ | 32.3 / —‡ / —‡ | 23.6 / 18.5 | —‡ |
+
+- ‡ = not used because of registration error (point shift > 10 mm or the body-shape skin passes through a structure). Body-shape skin ratio = body-shape skin value ÷ BodyParts3D value.
+- **How to read it**:
+  - ① With the usable body-shape skin, the chest-wall-entry ratio is 0.78–1.18 (mostly 0.88–1.04), far larger than the Section 4-3 ultrasound correction factor k = 0.571.
+  - ② Most of the reason the BodyParts3D chest wall is thicker than in vivo therefore lies in the model's muscle and subcutaneous layers, not in the position of the skin surface. The Section 4-3 correction is kept.
+  - ③ At Shidou (SP17), on the lateral chest wall near the axilla, the body-shape skin point shift is 15–28 mm, so it is not used. For the same reason as limitation ② in Section 4-1 (arms-down posture), model values here are of low reliability.
+  - ④ Pectoralis major is shallowest at SP18 (6.4–7.0 mm) and deepest at SP20 (14.6–15.0 mm) (BodyParts3D).
+- Per-point structure depths (textbook structures, pectoralis major, serratus anterior) are in the databook sheet '3D해부_깊이'.
+- Sources: BodyParts3D, © The Database Center for Life Science, CC BY 4.0. Body surface generated with SMPL-X (Pavlakos et al., CVPR 2019), © Max Planck Institute for Intelligent Systems, SMPL-X Body License CC BY 4.0.
+
+
 ---
 
 ## 5. Needling depth table (Needling Depth by Classical Source DB, 1 fen = 2.3 mm)
@@ -381,6 +407,13 @@ flowchart TB
 7. **In high-risk groups (COPD, emphysema, previous pneumothorax, acute asthma, mechanical ventilation), avoid needling these four points or use transverse needling only.** Where possible, confirm pleural depth by ultrasound.
 8. If sudden chest pain, cough (《素問》 "其動爲欬") or breathlessness appears during or after needling, suspect pneumothorax and refer. Pneumothorax may appear several hours later.
 
+### Effect of the body-shape skin supplementary measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| Body-shape skin (SMPL-X BMI 24 and 30) chest-wall entry depths (Section 4-5) | SI · correction factor | The chest-wall-entry ratio of 0.78–1.18 gives no basis to change the ultrasound correction (k = 0.571). Statistical body-shape skin registration estimate (B1 supplementary) | Unchanged |
+
+
 ### 10-5. Audit record
 
 | Item | Content |
@@ -425,3 +458,4 @@ flowchart TB
 | Date | Content |
 | :--- | :--- |
 | 2026-10-28 | First version (Tier 3, topic study). Comparison of the four classics; analysis of breathing vs habitus, direction and posture; BodyParts3D chest-wall thickness measurement (4 points, 8 sites, cone and tilted paths); calibration against in-vivo ultrasound and CT literature; ARI v3.0 dual scoring of 4 points |
+| 2026-11-05 | New Section 4-5: left and right SP17–SP20 skin points re-located; pectoralis major and chest-wall entry depths compared between BodyParts3D and an SMPL-X body-shape skin (BMI 24 and 30) (chest-wall-entry ratio 0.78–1.18); scoring-effect table in Section 10 (unchanged); databook sheet '3D해부_깊이'. Scores unchanged |

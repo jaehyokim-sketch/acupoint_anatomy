@@ -18,6 +18,7 @@
 5. **ARI v3.0 (five points, dual scoring)**: Danzhong (膻中, CV17) 78.75 ± 1.25 (B) SI 0 ⚠ · Shenfeng (神封, KI23, left) 75.0 ± 1.25 (B) SI 25 ⚠ · Bulang (步廊, KI22, left) 72.5 ± 1.25 (B, weight-sensitive) SI 25 ⚠ · Rugen (乳根, ST18, left) 71.25 ± 2.5 (B) SI 25 ⚠ · Jiuwei (鳩尾, CV15) 70.0 ± 1.25 (B, weight-sensitive) SI 0 ⚠. All five fall under **Gate 3 (⚠ safety caution)**.
 
 > This report is an anatomical and textual risk analysis. It does not make a legal judgment about negligence or causation in the individual case. Confirming the actual needle path requires the patient's chest CT (sternal foramen, needle track) and the echocardiographic or surgical location of the tear (right ventricular anterior wall vs. left ventricular apex).
+> **Body-shape skin supplementary measurement (2026-11-05)**: heart distances were re-measured at the Section 4-2 skin points with only the skin surface replaced by an SMPL-X body-shape skin (BMI 24 and 30). The anterior-chest skin surface is almost the same as BodyParts3D (ratio 0.98–1.09), so the depth overestimate behind the Section 4-3 correction comes from internal structure, not the skin surface (Section 4-5). **Risk grades and scores unchanged.**
 
 ---
 
@@ -190,6 +191,29 @@ flowchart LR
 ```
 
 - **Neither textbook lists Layer 5** (Section 6). Their structures end at the intercostal muscles and transversus thoracis; the pleura and pericardium 1–2 cm deeper are absent. A 50 mm needle accident happens precisely in this "off-textbook layer".
+
+### 4-5. Body-shape skin supplementary measurement and the correction factor (2026-11-05, B1 supplementary)
+
+The skin points of Section 4-2 (distance from the midline and height) were kept, and the muscle, bone and heart meshes were left as BodyParts3D. Only the skin surface was replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30), and the shortest distance from the skin point to the heart (ventricular cavity) was measured again. The BodyParts3D skin values agree with Section 4-2 within 0.5 mm.
+
+| Point | Pectoralis major BodyParts3D / BMI 24 / BMI 30 (mm) | Skin point→heart shortest: BodyParts3D (Section 4-2 value) | BMI 24 | BMI 30 | Point shift BMI 24 / 30 | Body-shape skin ratio (heart shortest, usable BMI) |
+| :--- | :---: | :---: | ---: | ---: | :---: | :---: |
+| Lingxu KI24 (left) | 8.0 / —‡ / 10.3 | 42.3 (42.2) | —‡ | 44.7 | 15.6 / 2.4 | 1.06 |
+| Shenfeng KI23 (left) | 6.8 / —‡ / 6.7 | 51.3 (51.3) | —‡ | 51.3 | 14.9 / 0.4 | 1.00 |
+| Bulang KI22 (left) | 6.5 / —‡ / 10.2 | 54.0 (53.9) | —‡ | 58.6 | 10.6 / 4.6 | 1.09 |
+| Rugen ST18 (left) | 2.1 / —‡ / 0.9 | 59.3 (59.0) | —‡ | 58.1 | 14.7 / 1.3 | 0.98 |
+| Danzhong CV17 | — | 40.7 (40.4) | —‡ | 50.0 | 5.6 / 9.4 | 1.23 |
+| Jiuwei CV15 | — | 58.2 (57.7) | 61.2 | —‡ | 5.2 / 19.6 | 1.05 |
+
+- ‡ = not used because of registration error (point shift > 10 mm or the body-shape skin passes through a structure). Body-shape skin ratio = body-shape skin value ÷ BodyParts3D value.
+- **How to read it**:
+  - ① With the usable body-shape skin (mainly BMI 30, point shift 0.4–4.6 mm), the heart-distance ratio at left Lingxu, Shenfeng, Bulang and Rugen is 0.98–1.09. Over the anterior chest the body-shape skin lies almost where the BodyParts3D skin lies.
+  - ② The depth overestimate of the model shown by the Section 4-3 correction factor (k_cal = 0.70, MRI measurement papers.id 2476) is therefore **not explained by the position of the skin surface**. It should be attributed to internal differences such as the anteroposterior depth of the model's thorax and the position of the heart. The Section 4-3 correction and the critical build factor k* are kept.
+  - ③ At Danzhong (CV17) the ratio is 1.23 at BMI 30, i.e. deeper, because the body-shape skin lies about 9 mm further out over the sternum (sternum at 4.1 mm with BodyParts3D → 13.4 mm at BMI 30). This matches the thicker midline subcutis of obese builds.
+  - ④ The muscle and fat layers remain those of BodyParts3D, so the body-shape skin does not measure how real chest-wall thickness changes with BMI. These values are a supplementary check and are not used as a basis for the correction factor.
+- Per-point structure depths (textbook structures, pectoralis major, sternum, heart, liver) are in the databook sheet '3D해부_깊이'.
+- Sources: BodyParts3D, © The Database Center for Life Science, CC BY 4.0. Body surface generated with SMPL-X (Pavlakos et al., CVPR 2019), © Max Planck Institute for Intelligent Systems, SMPL-X Body License CC BY 4.0.
+
 
 ---
 
@@ -365,6 +389,13 @@ flowchart TB
 5. Needle more shallowly in thin, elderly or female patients (posture changes can make the intercostal spaces under the breast shallower), and in patients with cardiomegaly or sternal and xiphoid variants.
 6. If syncope, hypotension, chest pain or belching (the Neijing's "其動為噫") follows needling, suspect cardiac tamponade at once and transfer to emergency care.
 
+### Effect of the body-shape skin supplementary measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| Body-shape skin (SMPL-X BMI 24 and 30) heart distances (Section 4-5) | SI · risk grade · correction factor | The anterior-chest skin surface is almost the same as BodyParts3D (ratio 0.98–1.09), so there is no basis to change the Section 4-3 correction, k* or the risk grades. Statistical body-shape skin registration estimate (B1 supplementary) | Unchanged |
+
+
 ### 10-6. Audit record
 
 | Item | Content |
@@ -410,3 +441,4 @@ flowchart TB
 | :--- | :--- |
 | 2026-10-27 | First edition (Tier 3, topic investigation). Four-classic comparison, FMA · BodyParts3D 50 mm needle-path geometry (10 points, 18 sites), MRI-based calibration and critical habitus factor, ARI v3.0 dual scoring for 5 points |
 | 2026-10-27 (revision) | Needle condition clarified as **50 mm needle body (handle excluded) = maximum insertion depth 50 mm** (geometry was already measured as insertion depth from the skin, so no values changed). Added 30/40/50 mm insertion scenarios and estimated pericardial depths to Section 4-3. Corrected the shortest-line verdict for right Lingxu and Shenfeng to borderline reach (previously not reached); rechecked corrected values to one decimal (k = 0.6992). Figure captions and recommendations revised to body length. ARI scores unchanged |
+| 2026-11-05 | New Section 4-5: heart distances re-measured at the Section 4-2 skin points with an SMPL-X body-shape skin (BMI 24 and 30) (BodyParts3D values reproduced within 0.5 mm; body-shape skin ratio 0.98–1.09, Danzhong 1.23); scoring-effect table in Section 10 (unchanged); databook sheet '3D해부_깊이'. Risk grades and scores unchanged |

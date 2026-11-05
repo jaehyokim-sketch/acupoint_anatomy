@@ -69,7 +69,8 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <p><strong>프레임워크</strong>: Framework v2.7 (Rank 0~7 통합 프로토콜) · <strong>ARI</strong>: ARI v3.0 예비 단일 채점 (Tier 2/3) · <strong>작성일</strong>: 2026-11-03<br>
 <strong>분석 대상</strong>: 수소양삼초경 노회(TE13, 臑會) vs 수태양소장경 견정(SI9, 肩貞) 국소 해부학 및 신경생리학적 비교 고증<br>
 <strong>근거 원전</strong>: 《中国针灸穴位通鉴》 · 《中国针灸证治通鉴》 · 《针灸腧穴通考》 · 《中国针灸经络通鉴》 · 《東醫寶鑑》<br>
-<strong>근거 데이터</strong>: FMA 5.1.0 해부 온톨로지 매핑 데이터셋 · 통합 생의학 마스터 DB v3.0 · 2대 해부학 교재 데이터셋 (경혈학 공통교재 / 김재효 교수 교재)  </p>
+<strong>근거 데이터</strong>: FMA 5.1.0 해부 온톨로지 매핑 데이터셋 · 통합 생의학 마스터 DB v3.0 · 2대 해부학 교재 데이터셋 (경혈학 공통교재 / 김재효 교수 교재)<br>
+<strong>3D 해부 측정(2026-11-05)</strong>: BodyParts3D 4.0 표준 모델에서 골도분촌으로 정위한 피부점의 구조별 깊이와, 피부면만 SMPL-X 체형 피부(BMI 24·30)로 바꾼 보조값을 측정했다(4절 '3D 해부 측정', 상호작용 3D 모델). 규범 해부 형상 참고(B1 보조)이며 <strong>ARI 점수 불변</strong></p>
 </blockquote>
 <hr>
 <h2 id="0-executive-summary">0. 요약 (Executive Summary)</h2>
@@ -288,6 +289,154 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tr>
 </tbody>
 </table></div>
+<p><strong>3D 해부 측정 — BodyParts3D 4.0 표준 모델 + SMPL-X 체형 피부 (2026-11-05, B1 보조)</strong></p>
+<p>FMA ID로 연결된 BodyParts3D 4.0 메쉬에서 교재 구조를 불러와, 뼈 기준점(관절선·뼈끝·돌기)으로 근사한 골도분촌 정위점의 구조별 깊이를 쟀다. 같은 정위점에서 피부면만 SMPL-X 통계 체형 피부(남성, 키 1.72 m, BMI 24·30)로 바꾼 값을 나란히 적는다.</p>
+<p><em>노회(臑會, TE13)</em></p>
+<ul>
+<li><strong>정위(오른쪽)</strong>: 견료(봉우리 뒤아래) 아래 3寸(z = 1271.2), 어깨세모근 뒤아래 모서리: 위팔뼈 단면 중심에서 뒤·가쪽 · 1寸 = 23.91 mm (겨드랑이 앞주름(큰가슴근 가쪽 아래끝)~팔오금 가로주름(위팔뼈 아래끝) = 9寸)</li>
+<li><strong>문헌 자입 깊이</strong>: 7종 평균 9.08푼 = 20.9 mm (n=6, 중앙값 9.75푼, 범위 5–12.5푼) · 고전 5.67푼(n=3) · 현대 12.5푼(n=3)</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">구조</th>
+<th style="text-align: left;">구분</th>
+<th style="text-align: left;">FMA</th>
+<th style="text-align: right;">BodyParts3D 피부 mm (푼)</th>
+<th style="text-align: right;">후보 영역 중앙값 (10–90%)</th>
+<th style="text-align: right;">체형 피부 BMI 24</th>
+<th style="text-align: right;">체형 피부 BMI 30</th>
+<th style="text-align: center;">문헌 평균 20.9 mm 이내</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">어깨세모근 가시부분 <em>(기준 구조)</em></td>
+<td style="text-align: left;">기준(교재 목록 외)</td>
+<td style="text-align: left;">FMA:34679</td>
+<td style="text-align: right;">15.5 (6.7)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">예</td>
+</tr>
+<tr>
+<td style="text-align: left;">위팔세갈래근의 가쪽갈래</td>
+<td style="text-align: left;">근육</td>
+<td style="text-align: left;">FMA:37694</td>
+<td style="text-align: right;">41.8 (18.2)</td>
+<td style="text-align: right;">41.1 (39.2–43.7)</td>
+<td style="text-align: right;">33.8</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+<tr>
+<td style="text-align: left;">위팔뼈 <em>(기준 구조)</em></td>
+<td style="text-align: left;">기준(교재 목록 외)</td>
+<td style="text-align: left;">FMA:13303</td>
+<td style="text-align: right;">58.6 (25.5)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">50.2</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>체형 피부 대표점 이동(BodyParts3D 정위점 → 가장 가까운 체형 피부점): BMI 24 9.6 mm · BMI 30 2.6 mm</li>
+<li>‡ 정합 오차가 커서(대표점 이동 &gt; 10 mm 또는 체형 피부가 구조를 관통 — BMI 30 관통 1개 구조) 이 열의 값은 쓰지 않는다</li>
+<li><em>(기준 구조)</em> = 교재 구조 목록에는 없지만 층 위치를 가늠하려고 함께 잰 표층 근육·바닥 뼈·장기</li>
+<li>표에서 뺀 행: 대응표에서 교재 구조와 메쉬 종류가 맞지 않는 행 겨드랑신경, 노신경; 상위 구조 메쉬로만 대응되어 먼 곳에서 잡힌 행 깊은위팔동ㆍ정맥, 뒤위팔휘돌이동ㆍ정맥; 정위점에서 60 mm 넘게 떨어진 교재 구조 깊은위팔동ㆍ정맥, 뒤위팔휘돌이동ㆍ정맥, 위팔세갈래근의 긴갈래</li>
+<li>메쉬가 없어 재지 못한 교재 구조: 뒤위팔피부신경</li>
+<li><strong>상호작용 3D 모델</strong>: <a href="TE13_mesh3d_model.html">노회(臑會, TE13) 3D 해부 모델</a> (교재 구조·피부 조각·정위점과 구조별 깊이 선. 브라우저에서 돌려 볼 수 있다)</li>
+<li><strong>읽는 법</strong>:</li>
+<li>① 가장 얕은 구조(어깨세모근 가시부분)까지 BodyParts3D 피부에서 15.5 mm, 체형 피부에서 BMI 24 6.0 mm다. 피부면 차이는 9.5~9.5 mm다.</li>
+<li>② 문헌 7종 평균 깊이(20.9 mm) 안에 표면이 있는 구조는 BodyParts3D 피부 기준 1개(어깨세모근 가시부분)다. 체형 피부 BMI 24 기준으로는 1개다.</li>
+</ul>
+<p><em>견정(肩貞, SI9)</em></p>
+<ul>
+<li><strong>정위(오른쪽)</strong>: 겨드랑이 뒤주름 끝 위 1寸(z = 1247.5): 위팔뼈 단면 중심에서 바로 뒤쪽(팔을 내린 자세) · 1寸 = 23.91 mm (겨드랑이 앞주름(큰가슴근 가쪽 아래끝)~팔오금 가로주름(위팔뼈 아래끝) = 9寸)</li>
+<li><strong>문헌 자입 깊이</strong>: 7종 평균 10.25푼 = 23.6 mm (n=6, 중앙값 10.25푼, 범위 8–12.5푼) · 고전 8.0푼(n=3) · 현대 12.5푼(n=3)</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">구조</th>
+<th style="text-align: left;">구분</th>
+<th style="text-align: left;">FMA</th>
+<th style="text-align: right;">BodyParts3D 피부 mm (푼)</th>
+<th style="text-align: right;">후보 영역 중앙값 (10–90%)</th>
+<th style="text-align: right;">체형 피부 BMI 24</th>
+<th style="text-align: right;">체형 피부 BMI 30</th>
+<th style="text-align: center;">문헌 평균 23.6 mm 이내</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">어깨세모근 가시부분 <em>(기준 구조)</em></td>
+<td style="text-align: left;">기준(교재 목록 외)</td>
+<td style="text-align: left;">FMA:34679</td>
+<td style="text-align: right;">19.7 (8.6)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">예</td>
+</tr>
+<tr>
+<td style="text-align: left;">위팔세갈래근의 긴갈래</td>
+<td style="text-align: left;">근육</td>
+<td style="text-align: left;">FMA:37692</td>
+<td style="text-align: right;">42.4 (18.4)</td>
+<td style="text-align: right;">42.0 (39.5–44.5)</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+<tr>
+<td style="text-align: left;">큰원근</td>
+<td style="text-align: left;">근육</td>
+<td style="text-align: left;">FMA:32549</td>
+<td style="text-align: right;">54.3 (23.6)</td>
+<td style="text-align: right;">54.6 (52.7–57.6)</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+<tr>
+<td style="text-align: left;">어깨뼈 <em>(기준 구조)</em></td>
+<td style="text-align: left;">기준(교재 목록 외)</td>
+<td style="text-align: left;">FMA:13394</td>
+<td style="text-align: right;">66.8 (29.0)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+<tr>
+<td style="text-align: left;">위팔뼈 <em>(기준 구조)</em></td>
+<td style="text-align: left;">기준(교재 목록 외)</td>
+<td style="text-align: left;">FMA:13303</td>
+<td style="text-align: right;">69.4 (30.2)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>체형 피부 대표점 이동(BodyParts3D 정위점 → 가장 가까운 체형 피부점): BMI 24 13.8 mm · BMI 30 1.0 mm</li>
+<li>‡ 정합 오차가 커서(대표점 이동 &gt; 10 mm 또는 체형 피부가 구조를 관통 — BMI 24 관통 2개 구조; BMI 30 관통 3개 구조) 이 열의 값은 쓰지 않는다</li>
+<li><em>(기준 구조)</em> = 교재 구조 목록에는 없지만 층 위치를 가늠하려고 함께 잰 표층 근육·바닥 뼈·장기</li>
+<li>표에서 뺀 행: 상위 구조 메쉬로만 대응되어 먼 곳에서 잡힌 행 뒤위팔휘돌이동ㆍ정맥; 정위점에서 60 mm 넘게 떨어진 교재 구조 겨드랑동ㆍ정맥, 뒤위팔휘돌이동ㆍ정맥, 어깨휘돌이동ㆍ정맥</li>
+<li>메쉬가 없어 재지 못한 교재 구조: 가슴등신경, 넓은등근, 노신경, 아래쪽어깨밑신경, 어깨세모근, 위가쪽위팔피부신경</li>
+<li><strong>상호작용 3D 모델</strong>: <a href="SI09_mesh3d_model.html">견정(肩貞, SI9) 3D 해부 모델</a> (교재 구조·피부 조각·정위점과 구조별 깊이 선. 브라우저에서 돌려 볼 수 있다)</li>
+<li><strong>읽는 법</strong>:</li>
+<li>① 가장 얕은 구조(어깨세모근 가시부분)까지 BodyParts3D 피부에서 19.7 mm다. 이 부위는 체형 피부 정합 오차가 커서 비교하지 않는다.</li>
+<li>② 문헌 7종 평균 깊이(23.6 mm) 안에 표면이 있는 구조는 BodyParts3D 피부 기준 1개(어깨세모근 가시부분)다.</li>
+<li><strong>보고서 서술과의 대조</strong>: 4-1절은 두 혈의 권장 심도를 15~25 mm로 추정했다. 표준 모델에서 첫 근육인 어깨세모근 가시부분까지 노회(TE13)는 15.5 mm, 견정(SI9)은 19.7 mm로 둘 다 이 범위에 든다. 그 아래 Layer 3 근육은 노회의 위팔세갈래근 가쪽갈래 41.8 mm, 견정의 위팔세갈래근 긴갈래 42.4 mm·큰원근 54.3 mm로, 권장 심도(25 mm)보다 깊다. 따라서 권장 심도의 자입은 두 혈 모두 어깨세모근 층에서 끝난다(표준 모델 기준). 견정은 체형 피부가 겨드랑이 쪽에서 깊은 구조를 관통하는 정합 오차가 있어 BMI 값은 쓰지 않는다.</li>
+<li><strong>한계</strong>: 한 사람의 표준 모델(BodyParts3D)과 통계 체형 피부(SMPL-X) 정합 추정이다. 정위점은 뼈 기준점으로 근사한 골도분촌 위치이고, 깊이는 피부점에서 구조 표면까지의 최소 직선거리라 자입 방향 깊이와 다를 수 있다. 개인차·자세·근긴장은 반영되지 않으므로 이 mm는 층 순서·상대 깊이의 근거로만 쓰고 생체 안전 깊이로 옮기지 않는다. 규범 해부 형상 참고(B1 보조)이며 경혈 실측(B2)이 아니다.</li>
+</ul>
 <hr>
 <h2 id="5-23mm">5. 자침 깊이 계산표 (한대 2.3mm 환산 및 안전 범위)</h2>
 <div class="table-wrap"><table>
@@ -355,7 +504,12 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <ul>
 <li><strong>위험 구조물 및 안전 제언</strong>:</li>
 <li><strong>노회(TE13)</strong>: 35mm 이상 과도한 심자 시 위팔뼈 노신경고랑의 <strong>노신경(Radial n.)</strong>을 직접 자극하여 손목하수(Wrist drop) 또는 엄지-검지 배측 감각이상을 초래할 수 있습니다.</li>
-<li><strong>견정(SI9)</strong>: 전내측(액와강) 방향으로 깊게 사자할 경우 액와혈관속 및 상완신경총 손상 위험이 있으므로, 환자를 정좌위로 팔을 내리게 하고 <strong>견관절면을 향해 약간 외상방 또는 직자</strong>하는 것이 안전합니다.</li>
+<li>
+<p><strong>견정(SI9)</strong>: 전내측(액와강) 방향으로 깊게 사자할 경우 액와혈관속 및 상완신경총 손상 위험이 있으므로, 환자를 정좌위로 팔을 내리게 하고 <strong>견관절면을 향해 약간 외상방 또는 직자</strong>하는 것이 안전합니다.</p>
+</li>
+<li>
+<p><strong>3D 해부 측정 대조(2026-11-05, B1 보조)</strong>: 노회(臑會, TE13): 문헌 7종 평균 20.9 mm 안에 표면이 있는 구조는 BodyParts3D 피부 기준 어깨세모근 가시부분, 체형 피부 BMI 24 기준 1개; 견정(肩貞, SI9): 문헌 7종 평균 23.6 mm 안에 표면이 있는 구조는 BodyParts3D 피부 기준 어깨세모근 가시부분(4절 '3D 해부 측정' 표). 직선거리 기준 도달 가능성 표시이며 손상 위험 판정이 아니다.</p>
+</li>
 </ul>
 <hr>
 <h2 id="6-vs">6. 해부학 구조 교재 비교표 (공통교재 vs 김재효 교재)</h2>
@@ -594,6 +748,26 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tbody>
 </table></div>
 <p>$$\mathbf{ARI\ v3.0 \mid ARI\text{-}Core\ 62.5\ (C\cdot H) \mid SI\ 75 \mid 잠정\ 가중치\ 0.40/0.35/0.25 \mid 민감도(등가중치):\ 58.3\ (C)}$$</p>
+<h3 id="3d-2026-11-05">3D 해부 측정의 채점 영향 (2026-11-05)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">추가 근거</th>
+<th style="text-align: left;">영향을 받을 수 있는 항목</th>
+<th style="text-align: left;">검토</th>
+<th style="text-align: left;">결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BodyParts3D 4.0 골도분촌 정위점의 구조별 깊이 + SMPL-X 체형 피부(BMI 24·30) 보조값(4절 '3D 해부 측정')</td>
+<td style="text-align: left;">$S_{clarity}$ · SI</td>
+<td style="text-align: left;">교재 구조의 층 순서와 문헌 평균 깊이 안의 구조를 표준 3D 형상으로 확인했다. 한 사람 표준 모델과 통계 체형 피부 정합 추정(B1 보조)이며 혈위 특이 실측(B2)이 아니므로 루브릭의 단계 조건에 해당하지 않는다</td>
+<td style="text-align: left;">단계 불변</td>
+</tr>
+</tbody>
+</table></div>
+<p>→ 루브릭 단계가 바뀌는 항목이 없으므로 이중 재채점은 하지 않았다.</p>
 <hr>
 <h3 id="10-2">10-2. 종합 비교 결론 및 임상 권고</h3>
 <ol>
@@ -606,7 +780,50 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li><strong>자침 안전 지침</strong>:
    - 두 경혈 모두 12~23mm(0.5~1.0촌)의 직자가 가장 이상적이며, TE13은 위팔뼈 골막과의 마찰을 피하고, SI9는 액와강 중심부를 향한 전내측 사자를 절대 금기합니다.</li>
 </ol>
-<p class="meta">생성: 2026-11-03 10:13 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
+<h2 id="2026-11-05-3d">2026-11-05 3D 해부 측정 보강 이력</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">위치</th>
+<th style="text-align: left;">원래 내용</th>
+<th style="text-align: left;">바꾼 내용</th>
+<th style="text-align: left;">근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">머리말</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">3D 해부 측정 줄 추가(점수 불변)</td>
+<td style="text-align: left;">이번 개정</td>
+</tr>
+<tr>
+<td style="text-align: left;">4절</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>'3D 해부 측정' 소절 신설</strong>: 뼈 기준점으로 근사한 골도분촌 정위점, 구조별 깊이표(BodyParts3D 피부·SMPL-X 체형 피부 BMI 24·30), 읽는 법, 상호작용 3D 모델 링크</td>
+<td style="text-align: left;">BodyParts3D 4.0(CC BY 4.0), SMPL-X Body License CC BY 4.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">5절</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">문헌 7종 평균 깊이 안에 표면이 있는 구조 대조 한 줄</td>
+<td style="text-align: left;">자침깊이 DB 7종 같은 가중치 평균, 1푼 = 2.3mm</td>
+</tr>
+<tr>
+<td style="text-align: left;">10절</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">'3D 해부 측정의 채점 영향' 표(단계 불변)</td>
+<td style="text-align: left;">정본 Rank 7 루브릭</td>
+</tr>
+<tr>
+<td style="text-align: left;">점수</td>
+<td style="text-align: left;">기존 ARI·SI</td>
+<td style="text-align: left;"><strong>변경 없음</strong></td>
+<td style="text-align: left;">10절 채점 영향 표</td>
+</tr>
+</tbody>
+</table></div>
+<p class="meta">생성: 2026-11-05 16:12 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">
