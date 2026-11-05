@@ -69,7 +69,8 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <p><strong>프레임워크</strong>: v2.7 (2026-10-04 개정, 2.7.7 반영) · <strong>Tri-Target</strong>: Target 1≡3 단일 채점, Target 2(旋毛·'陷可容指' 촉진 오목) 설정 불가 — 해부 공간·Δ 미특정(7절) · <strong>ARI</strong>: ARI v3.0 | ARI-Core 71.2 ± 2.5 (B) | SI 75 | 잠정 가중치 0.40/0.35/0.25 | 민감도(등가중치): 68.8 (C, 등급 변동 → 가중치 민감) · <strong>이중 채점</strong>: 독립 채점자 2인, 조정 완료</p>
 <p><strong>근거 자료</strong>: 4대 원전 정제본(《中国针灸穴位通鉴》·《中国针灸证治通鉴》·《针灸腧穴通考》·《中国针灸经络通鉴》) · 이명 DB 경혈명·이명 대조 표준 데이터베이스 · 자침깊이 DB 역대 침구문헌 자침심도 데이터베이스 · 교재 데이터셋 경혈학 공통교재 해부구조 데이터셋, 김재효 교수 경혈 해부구조 데이터셋 · Layer A 통합 생의학 마스터 DB v3.0 · Layer B Layer B 참조 등록부
 <strong>최초 작성</strong>: 2026-07-31 (v2.6) · <strong>개정</strong>: 2026-10-04 (v2.7, 구판은 구판 보관본(내부) 보관) · <strong>FMA 보강</strong>: 2026-10-23 (보강 전 판은 구판 보관본(내부)) · <strong>두부 자세 정위 원칙 실측 검증</strong>: 2026-10-29 (가쪽반고리관 수평 굴곡 최고점 원칙·귓불–귀끝 연장선을 BodyParts3D 표준 모델 정중 시상 단면으로 검증, 7.2절)
-<strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 신경 줄기·척수 분절·정맥 배출 사슬을 대조(B1 보조, 등록부 미등재). 정위 원칙 검증에 쓴 두개계측 랜드마크(Vertex FMA:46484, Sagittal suture FMA:52929, Nasion FMA:264779, Inion FMA:76624), 가쪽반고리관(FMA:60193), 귓바퀴(Lobule FMA:60984, Apex FMA:61178), 대뇌 이랑(Precentral gyrus FMA:72661·72662, Postcentral gyrus FMA:72665·72666)은 4.4.2절. 3D 형상은 BodyParts3D 4.0(CC BY 4.0, 단일 표준 모델 — 규범 형상 참고, B1 보조). 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리, 상세는 부록 A</p>
+<strong>해부 온톨로지</strong>: FMA(Foundational Model of Anatomy) 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정하고 신경 줄기·척수 분절·정맥 배출 사슬을 대조(B1 보조, 등록부 미등재). 정위 원칙 검증에 쓴 두개계측 랜드마크(Vertex FMA:46484, Sagittal suture FMA:52929, Nasion FMA:264779, Inion FMA:76624), 가쪽반고리관(FMA:60193), 귓바퀴(Lobule FMA:60984, Apex FMA:61178), 대뇌 이랑(Precentral gyrus FMA:72661·72662, Postcentral gyrus FMA:72665·72666)은 4.4.2절. 3D 형상은 BodyParts3D 4.0(CC BY 4.0, 단일 표준 모델 — 규범 형상 참고, B1 보조). 대응표 FMA 경혈 해부 온톨로지 매핑 레지스트리, 상세는 부록 A
+<strong>3D 해부 측정(2026-11-05)</strong>: BodyParts3D 4.0 표준 모델에서 골도분촌으로 정위한 피부점의 구조별 깊이와, 피부면만 SMPL-X 체형 피부(BMI 24·30)로 바꾼 보조값을 측정했다(4절 '3D 해부 측정', 상호작용 3D 모델). 규범 해부 형상 참고(B1 보조)이며 <strong>ARI 점수 불변</strong></p>
 </blockquote>
 <hr>
 <h2 id="0">0. 요약 결론</h2>
@@ -770,6 +771,51 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tr>
 </tbody>
 </table></div>
+<p><strong>3D 해부 측정 — BodyParts3D 4.0 표준 모델 + SMPL-X 체형 피부 (2026-11-05, B1 보조)</strong></p>
+<p>FMA ID로 연결된 BodyParts3D 4.0 메쉬에서 교재 구조를 불러와, 뼈 기준점(관절선·뼈끝·돌기)으로 근사한 골도분촌 정위점의 구조별 깊이를 쟀다. 같은 정위점에서 피부면만 SMPL-X 통계 체형 피부(남성, 키 1.72 m, BMI 24·30)로 바꾼 값을 나란히 적는다.</p>
+<ul>
+<li><strong>정위(오른쪽)</strong>: 정수리 정중선, 양 귀끝 연결선 높이(y = -83.9): 위쪽 피부 · 기준점: 정중선 × 양 귀끝 연결선(관자뼈 중심 앞뒤 위치로 근사)</li>
+<li><strong>문헌 자입 깊이</strong>: 7종 평균 3.83푼 = 8.8 mm (n=6, 중앙값 3.0푼, 범위 2–6.5푼) · 고전 2.5푼(n=4) · 현대 6.5푼(n=2)</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">구조</th>
+<th style="text-align: left;">구분</th>
+<th style="text-align: left;">FMA</th>
+<th style="text-align: right;">BodyParts3D 피부 mm (푼)</th>
+<th style="text-align: right;">후보 영역 중앙값 (10–90%)</th>
+<th style="text-align: right;">체형 피부 BMI 24</th>
+<th style="text-align: right;">체형 피부 BMI 30</th>
+<th style="text-align: center;">문헌 평균 8.8 mm 이내</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">마루뼈 <em>(기준 구조)</em></td>
+<td style="text-align: left;">기준(교재 목록 외)</td>
+<td style="text-align: left;">FMA:9613</td>
+<td style="text-align: right;">5.3 (2.3)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">예</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>체형 피부 대표점 이동(BodyParts3D 정위점 → 가장 가까운 체형 피부점): BMI 24 10.5 mm · BMI 30 11.1 mm</li>
+<li>‡ 정합 오차가 커서(대표점 이동 &gt; 10 mm 또는 체형 피부가 구조를 관통 — BMI 24 대표점 이동 10.5 mm; BMI 30 대표점 이동 11.1 mm) 이 열의 값은 쓰지 않는다</li>
+<li><em>(기준 구조)</em> = 교재 구조 목록에는 없지만 층 위치를 가늠하려고 함께 잰 표층 근육·바닥 뼈·장기</li>
+<li>표에서 뺀 행: 대응표에서 교재 구조와 메쉬 종류가 맞지 않는 행 머리덮개널힘줄; 상위 구조 메쉬로만 대응되어 먼 곳에서 잡힌 행 뒤통수동ㆍ정맥; 정위점에서 60 mm 넘게 떨어진 교재 구조 위눈확신경, 위도르래신경</li>
+<li>메쉬가 없어 재지 못한 교재 구조: 마루이끌정맥, 머리뼈바깥막, 얕은관자동ㆍ정맥의 마루가지, 큰뒤통수신경</li>
+<li><strong>상호작용 3D 모델</strong>: <a href="GV20_mesh3d_model.html">백회(百會, GV20) 3D 해부 모델</a> (교재 구조·피부 조각·정위점과 구조별 깊이 선. 브라우저에서 돌려 볼 수 있다)</li>
+<li><strong>읽는 법</strong>:</li>
+<li>① 가장 얕은 구조(마루뼈)까지 BodyParts3D 피부에서 5.3 mm다. 이 부위는 체형 피부 정합 오차가 커서 비교하지 않는다.</li>
+<li>② 문헌 7종 평균 깊이(8.8 mm) 안에 표면이 있는 구조는 BodyParts3D 피부 기준 1개(마루뼈)다.</li>
+<li><strong>보고서 서술과의 대조</strong>: 4절의 두피 층차 추정(머리뼈바깥막 약 5.5–7 mm)과 표준 모델의 마루뼈 깊이 5.3 mm가 맞는다. 고전 刺入三分(6.9 mm)이 뼈막에 닿을 수 있다는 4절 판단과 같다. 머리에는 체형 피부를 맞출 관절 기준점이 없어 BMI 값은 쓰지 않는다. 머리덮개널힘줄은 메쉬가 상위 구조(머리 전체)로만 대응되어 표에서 뺐다.</li>
+<li><strong>한계</strong>: 한 사람의 표준 모델(BodyParts3D)과 통계 체형 피부(SMPL-X) 정합 추정이다. 정위점은 뼈 기준점으로 근사한 골도분촌 위치이고, 깊이는 피부점에서 구조 표면까지의 최소 직선거리라 자입 방향 깊이와 다를 수 있다. 개인차·자세·근긴장은 반영되지 않으므로 이 mm는 층 순서·상대 깊이의 근거로만 쓰고 생체 안전 깊이로 옮기지 않는다. 규범 해부 형상 참고(B1 보조)이며 경혈 실측(B2)이 아니다.</li>
+</ul>
 <hr>
 <h2 id="5">5. 자침 깊이 계산표</h2>
 <p>자침깊이 DB(역대 침구문헌 자침심도 데이터베이스, 시트1 행46, N0=44) 원값. 1푼 = 2.3mm.</p>
@@ -853,7 +899,12 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li><strong>금침('0') 기록: 없음.</strong></li>
 <li>고전 직자 범위: 2~3푼 = 4.6~6.9mm. 원전에 각도 기재는 없으며(명당경 "刺入三分", 동인 "针入二分"), 窦氏 이후 沿皮刺가 명시된다.</li>
 <li>현대 평자 5~8푼은 두피 안을 지나는 경로 길이이므로 수직 심도로 환산하지 않는다(구판의 θ=15°/20° 삼각법과 μ 2.6푼·σ 0.4푼은 근거 없는 임의값이어서 삭제했다).</li>
-<li>체형 변수: 소아 숫구멍 미폐쇄·뇌수종에는 신중(上海《针灸学》, 通考 L2612).</li>
+<li>
+<p>체형 변수: 소아 숫구멍 미폐쇄·뇌수종에는 신중(上海《针灸学》, 通考 L2612).</p>
+</li>
+<li>
+<p><strong>3D 해부 측정 대조(2026-11-05, B1 보조)</strong>: 문헌 7종 평균 8.8 mm 안에 표면이 있는 구조는 BodyParts3D 피부 기준 마루뼈(4절 '3D 해부 측정' 표). 직선거리 기준 도달 가능성 표시이며 손상 위험 판정이 아니다.</p>
+</li>
 </ul>
 <hr>
 <h2 id="6">6. 해부학 구조 교재 비교표</h2>
@@ -1927,6 +1978,26 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tr>
 </tbody>
 </table></div>
+<h3 id="3d-2026-11-05">3D 해부 측정의 채점 영향 (2026-11-05)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">추가 근거</th>
+<th style="text-align: left;">영향을 받을 수 있는 항목</th>
+<th style="text-align: left;">검토</th>
+<th style="text-align: left;">결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BodyParts3D 4.0 골도분촌 정위점의 구조별 깊이 + SMPL-X 체형 피부(BMI 24·30) 보조값(4절 '3D 해부 측정')</td>
+<td style="text-align: left;">$S_{clarity}$ · SI</td>
+<td style="text-align: left;">교재 구조의 층 순서와 문헌 평균 깊이 안의 구조를 표준 3D 형상으로 확인했다. 한 사람 표준 모델과 통계 체형 피부 정합 추정(B1 보조)이며 혈위 특이 실측(B2)이 아니므로 루브릭의 단계 조건에 해당하지 않는다</td>
+<td style="text-align: left;">단계 불변</td>
+</tr>
+</tbody>
+</table></div>
+<p>→ 루브릭 단계가 바뀌는 항목이 없으므로 이중 재채점은 하지 않았다.</p>
 <h3 id="107">10.7 최종 결론</h3>
 <ol>
 <li>GV20의 해부 실체는 <strong>개연(B)</strong> 수준이다. 두정부 정중선 시상봉합 위 두피에서 피부·치밀 피하층(큰뒤통수신경 C2 + 삼차신경 V1/V3 말단, 뒤통수동맥–얕은관자동맥 마루가지 문합)과 머리덮개널힘줄(galea)이 핵심이고, 그 아래가 건막하 소성결합조직(마루이끌정맥)과 머리뼈바깥막이다. 혈위 특이 실측이 없어 "확정"은 아니다.</li>
@@ -2564,7 +2635,50 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-29 19:05 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
+<h2 id="2026-11-05-3d">2026-11-05 3D 해부 측정 보강 이력</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">위치</th>
+<th style="text-align: left;">원래 내용</th>
+<th style="text-align: left;">바꾼 내용</th>
+<th style="text-align: left;">근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">머리말</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">3D 해부 측정 줄 추가(점수 불변)</td>
+<td style="text-align: left;">이번 개정</td>
+</tr>
+<tr>
+<td style="text-align: left;">4절</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>'3D 해부 측정' 소절 신설</strong>: 뼈 기준점으로 근사한 골도분촌 정위점, 구조별 깊이표(BodyParts3D 피부·SMPL-X 체형 피부 BMI 24·30), 읽는 법, 상호작용 3D 모델 링크</td>
+<td style="text-align: left;">BodyParts3D 4.0(CC BY 4.0), SMPL-X Body License CC BY 4.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">5절</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">문헌 7종 평균 깊이 안에 표면이 있는 구조 대조 한 줄</td>
+<td style="text-align: left;">자침깊이 DB 7종 같은 가중치 평균, 1푼 = 2.3mm</td>
+</tr>
+<tr>
+<td style="text-align: left;">10절</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">'3D 해부 측정의 채점 영향' 표(단계 불변)</td>
+<td style="text-align: left;">정본 Rank 7 루브릭</td>
+</tr>
+<tr>
+<td style="text-align: left;">점수</td>
+<td style="text-align: left;">기존 ARI·SI</td>
+<td style="text-align: left;"><strong>변경 없음</strong></td>
+<td style="text-align: left;">10절 채점 영향 표</td>
+</tr>
+</tbody>
+</table></div>
+<p class="meta">생성: 2026-11-05 15:36 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

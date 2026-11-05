@@ -1,0 +1,140 @@
+{
+ "code": "LU09",
+ "source": "김재효",
+ "side": "right",
+ "skin": "BodyParts3D 4.0 피부(FMA:7163)",
+ "method": "지정 좌표 반경 6 mm 피부 영역",
+ "candidate_points": 46,
+ "candidate_extent_mm": [
+  10.7,
+  8.3,
+  8.0
+ ],
+ "point_mm": [
+  -277.3,
+  -140.5,
+  810.5
+ ],
+ "depths": [
+  {
+   "structure": "노동ㆍ정맥 · Radial artery",
+   "category": "동맥",
+   "fma_id": 22730,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 13.6,
+   "depth_pun_at_point": 5.9,
+   "depth_mm_median": 14.4,
+   "depth_mm_p10": 9.9,
+   "depth_mm_p90": 17.0,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "노쪽손목굽힘근 · Flexor carpi radialis",
+   "category": "근육",
+   "fma_id": 38459,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 17.3,
+   "depth_pun_at_point": 7.5,
+   "depth_mm_median": 17.4,
+   "depth_mm_p10": 14.5,
+   "depth_mm_p90": 21.0,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "긴엄지굽힘근 · Flexor pollicis longus",
+   "category": "근육",
+   "fma_id": 38481,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 18.0,
+   "depth_pun_at_point": 7.8,
+   "depth_mm_median": 17.7,
+   "depth_mm_p10": 15.3,
+   "depth_mm_p90": 20.7,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "위팔노근 · Brachioradialis",
+   "category": "근육",
+   "fma_id": 38485,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 18.5,
+   "depth_pun_at_point": 8.0,
+   "depth_mm_median": 19.0,
+   "depth_mm_p10": 14.7,
+   "depth_mm_p90": 21.4,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "노동ㆍ정맥 · Radial vein",
+   "category": "정맥",
+   "fma_id": 22947,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 20.9,
+   "depth_pun_at_point": 9.1,
+   "depth_mm_median": 21.8,
+   "depth_mm_p10": 17.9,
+   "depth_mm_p90": 25.6,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "네모엎침근 · Pronator quadratus",
+   "category": "근육",
+   "fma_id": 38453,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 22.7,
+   "depth_pun_at_point": 9.9,
+   "depth_mm_median": 23.9,
+   "depth_mm_p10": 19.4,
+   "depth_mm_p90": 27.2,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "얕은손가락굽힘근 · Flexor digitorum superficialis",
+   "category": "근육",
+   "fma_id": 38469,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 25.3,
+   "depth_pun_at_point": 11.0,
+   "depth_mm_median": 25.3,
+   "depth_mm_p10": 22.4,
+   "depth_mm_p90": 28.7,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "노쪽피부정맥 · Cephalic vein",
+   "category": "정맥",
+   "fma_id": 13324,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 33.4,
+   "depth_pun_at_point": 14.5,
+   "depth_mm_median": 33.4,
+   "depth_mm_p10": 30.4,
+   "depth_mm_p90": 35.4,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "LU09 태연: 7종 평균 2.86푼 = 6.6 mm (n=7, 중앙값 2.0푼, 범위 2–4푼) · 고전 2.0푼(n=4) · 현대 4.0푼(n=3)",
+  "mean_pun": 2.86,
+  "mean_mm": 6.6,
+  "classic_mm": 4.6,
+  "modern_mm": 9.2,
+  "modern_range_mm": [
+   6.9,
+   11.5
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": []
+ },
+ "missing_structures": [
+  "손목굽힘근지지띠 (palmar carpal ligament) — FMA 대응 none",
+  "위팔노근의 힘줄 (tendon of the brachioradialis) — BodyParts3D 메쉬 없음",
+  "노쪽손목굽힘근의 힘줄 (tendon of the flexor carpi radialis) — BodyParts3D 메쉬 없음",
+  "긴엄지굽힘근의 힘줄 (tendon of the flexor pollicis longus) — BodyParts3D 메쉬 없음",
+  "원엎침근 (pronator teres) — BodyParts3D 메쉬 없음",
+  "가쪽아래팔피부신경 (lateral antebrachial cutaneous nerve) — BodyParts3D 메쉬 없음",
+  "노신경의 얕은가지 (superficial branch of the radial nerve) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다."
+}

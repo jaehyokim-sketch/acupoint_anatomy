@@ -38,6 +38,7 @@ Zhongchong (中衝, PC9) lies in **the fingerprint skin and subcutis at the cent
 | *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》), index of vessel names | ◇手心主 · ◇手厥陰 · ◇手心主之筋 etc. (page-number index) | Index only — no direct point information | Record of search scope |
 
 > The *Tongkao* quotation in the v2.6 earlier edition, "在中指尖端... 實爲固有指神經與固有指動靜脈, 點刺出血", **is a fabricated quotation not found** in the *Tongkao* article on PC9 (L1628–1745) and has been deleted. The *Dongui Bogam* (《東醫寶鑑》) quotation was also deleted because it gives no page of the original and could not be verified. For the *Dongui Bogam*, only the needling-depth DB value (1 fen, cited source given as '靈樞') is kept, in Section 5.
+> **3D anatomical measurement (2026-11-05)**: the depth to the distal phalanx at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). **ARI scores unchanged.**
 
 ---
 
@@ -124,6 +125,22 @@ Zhongchong (中衝, PC9) lies in **the fingerprint skin and subcutis at the cent
 - **FMA note 2 — compartment of flexor digitorum profundus**: FMA records flexor digitorum profundus as `contained_in Space of anterior compartment of arm` (anterior compartment of the arm). The muscle lies in the anterior compartment of the forearm, so this is regarded as an FMA modelling error and is not cited. The segments C8 · T1 are values for the whole muscle, not restricted to the middle-finger belly (supplied by the anterior interosseous branch of the median nerve).
 - **FMA note 3 — set entities**: many digital nerves and vessels map only to "Set of …" entities (sets for the whole hand). They cannot be narrowed to individual middle-finger entities (e.g. the radial proper palmar digital nerve of the middle finger), so FMA pins only the kind of structure, and the finger position is described from the textbooks and B1.
 
+**3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)**
+
+None of the textbook structures of PC9 (proper palmar digital nerve, digital arteries and veins) has a BodyParts3D mesh. The skin point at the centre of the fingertip, reached from the tip of the distal phalanx of the middle finger (FMA:23947) along the finger axis, was therefore used as the location, and the distance from that point to the surface of the distal phalanx was measured.
+
+| Skin surface | Located point → distal phalanx surface (mm) | Note |
+| :--- | ---: | :--- |
+| BodyParts3D skin (default) | 2.5 | 1 fen = 2.3 mm |
+| Body-shape skin BMI 24 | —‡ | point shift 12.8 mm |
+| Body-shape skin BMI 30 | 1.7 | point shift 8.0 mm |
+
+- ‡ The fingers have no joint landmarks in the body-shape skin registration (it stops at the wrist), so finger posture does not match. The BMI 24 value, with a point shift over 10 mm, is not used.
+- **How to read it**:
+  - ① In the standard model the distal phalanx lies 2.5 mm beneath the fingertip skin, so the tip of a one-fen (2.3 mm) pricking needle sits just in front of the bone surface.
+  - ② Section 4 states that a one-fen (2.3 mm) perpendicular insertion or pricking at the centre of the tip ends within Layer 1 and does not reach the periosteum of the tuberosity of the distal phalanx. The model value agrees with this judgement at its limit; in people with thinner fingertip soft tissue a one-fen prick may reach the periosteum.
+- **Limitations**: single standard model; individual variation in fingertip soft-tissue thickness is not reflected. The nerves and vessels have no meshes, so the depths of the textbook structures were not measured. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
+
 ---
 
 ## 5. Needling Depth Calculation Table
@@ -143,6 +160,8 @@ Source: Classical Needling Depth Database, sheet 1, row 282 (PC09). 1 fen = 2.3 
 - **'0' (Contraindicated for needling (禁鍼)) entries: none. 'blank' (not described) entries: none.**
 - Note: 《玉龍經》 "無病不用，用則令人悶" (Tongjian L3090) restricts use but is not a contraindication to needling. "禁灸" in 《循經考穴編》 and 《針灸指南》 prohibits moxibustion. 《新編針灸學》 "針二分至三分" (4.6–6.9 mm) is an extended value from a single modern text and is not in the DB.
 - Safety verdict: the entire standard depth stays within Layer 1 and is more than 10 mm from any major nerve trunk, artery or organ. Pricking to bleed takes place in the terminal microvascular network. The fingertip is extremely painful, so attention should be paid to stimulus reactions such as vasovagal syncope (a general clinical precaution, not a contraindication in the literature).
+
+- **Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)**: in the standard model the fingertip skin–distal phalanx distance is 2.5 mm, so the one fen (2.3 mm) of the literature stops just in front of the bone surface (Section 4 '3D anatomical measurement').
 
 ---
 
@@ -343,6 +362,15 @@ The earlier edition's single-point efficacy probabilities (0.95/0.92/0.91, 'Leve
 - Adjudication (2026-10-04): only Rater A split the radial nail-root-corner variant (from Dou Taishi (竇太師) onward) off as T2. However, its distance from the centre of the tip is about 10–15 mm, short of the then canonical Rank 5 branching threshold (Δ > 15 mm), so it was adjusted to a single Target. 2026-10-25 re-check: the threshold has been lowered to Δ > 10 mm, but this variant is a later alternative view that corresponds to none of the classical text, a palpation phrase or the WHO standard, so it is excluded from the Targets under the canonical Rank 5 Target exclusion rule (Section 7). On the same day $S_{orig}$ ④ was re-scored 50 → 75 by both raters on the basis of the *Jingluo Tongjian* collation (difference 0, no adjudication needed). The variant is described in the location note of Section 4 (for reference, A's T2 scores: S_orig 50 / S_clarity 50 / S_reflex 50 / SI 100). The inter-rater conflicts record is not a direct conflict.
 - B-Check item ①: A gave 2 points and B gave 1. Following B's rationale that there is no depth-specific measurement at PC9, the final score is 1.
 
+### Effect of the 3D anatomical measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement') | $S_{clarity}$ · SI | The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition | Step unchanged |
+
+→ No rubric step changes, so no dual re-scoring was done.
+
+
 ### 10.6 Final Conclusion
 
 The anatomical substrate of Zhongchong (中衝, PC9) is best regarded, at **grade B (probable)** (ARI-Core 70.0 ± 1.2, weight-sensitive — on the B lower boundary), as **the terminals of the proper palmar digital nerve (median nerve, sensory) and the terminal arterial network of the proper palmar digital arteries in the fingerprint skin and subcutis of the tip of the middle finger (Layer 1)**. The location has remained the centre of the tip from 《靈樞·本輸》 and the *Mingtang Jing* (《明堂經》) through to the WHO standard, and the three Tri-Target positions (classical text, palpation-based locus, WHO) all merge within 10 mm (Target 1≡2≡3). The radial nail-corner variant is a later alternative view arising from the influence of the location of Laogong (勞宮) and of '中指內廉' in 《靈樞·邪客》 (*Tongkao* 名實考); the 《邪客》 text and commentaries collected in the *Jingluo Tongjian* also read '內廉' as a meridian path rather than a point location. Needling to 1 fen (2.3 mm) or pricking to bleed is very safe (SI 100). However, there is no PC9-only evidence for the emergency and arousal effects of Jing-Well bloodletting, which are likely to be a non-specific response to noxious stimulation, so the reflex mechanism remains at the hypothesis stage. Raising the verdict would require ultrasound measurement of the fingertip soft tissue at PC9 and human studies comparing PC9-only stimulation with stimulation of other fingertips (controls).
@@ -451,3 +479,13 @@ Generated by FMA 5.1.0 acupoint profile query (PC09; 2026-10-23).
 | Sections 10.1 · 10.4 | $S_{orig}$ A 68.75 / B 75.0, ARI-Core 67.5 ± 1.2 (C), sensitivity 65.6 (C, grade unchanged) | $S_{orig}$ A 75.0 / B 81.25, ARI-Core **70.0 ± 1.2 (B)**, sensitivity 67.7 (C) → **weight-sensitive**, near the boundary | Canonical Rank 7 |
 | Header · summary · Section 10.6 | Grade C (possible/hypothesis) | Grade B (probable, weight-sensitive). The reflex mechanism remains a hypothesis at B-Check 6/12 | Re-scoring above |
 | Sections 4 · 7 · 10.5 variant location | "Outside the Tri-Target definitions → not a branching candidate"; Rater A's reference value marked 'single scoring (preliminary) — dual scoring required' | Excluded from the Targets under the canonical Rank 5 **Target exclusion rule**; the reference value is kept only as a historical record and is not subject to scoring or dual scoring | Canonical Rank 5 (codified 2026-10-25) |
+
+## 2026-11-05 3D anatomical measurement record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | — | Added a 3D anatomical measurement line (scores unchanged) | This revision |
+| Section 4 | — | **New '3D anatomical measurement' subsection**: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model | BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0 |
+| Section 5 | — | One line comparing the structures within the seven-source mean depth | Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm |
+| Section 10 | — | Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged) | Canonical Rank 7 rubric |
+| Scores | Existing ARI and SI | **No change** | Scoring-effect table in Section 10 |

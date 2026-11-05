@@ -1,0 +1,96 @@
+{
+ "code": "BL02",
+ "source": "김재효",
+ "side": "right",
+ "skin": "SMPL-X 체형 피부 male_bmi30 (male · 키 1.722 m · BMI 29.87)",
+ "method": "지정 좌표 반경 6 mm 피부 영역 → 체형 피부의 가장 가까운 점으로 옮김(대표점 이동 11.0 mm)",
+ "candidate_points": 32,
+ "candidate_extent_mm": [
+  12.5,
+  7.0,
+  13.7
+ ],
+ "point_mm": [
+  -16.4,
+  -191.4,
+  1537.0
+ ],
+ "depths": [
+  {
+   "structure": "눈확위동ㆍ정맥 · Ophthalmic artery",
+   "category": "동맥",
+   "fma_id": 49868,
+   "mesh_level": "ancestor+1",
+   "depth_mm_at_point": -27.3,
+   "depth_pun_at_point": -11.9,
+   "depth_mm_median": -27.4,
+   "depth_mm_p10": -27.6,
+   "depth_mm_p90": -27.3,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "도르래위신경 · Supratrochlear nerve",
+   "category": "신경",
+   "fma_id": 52642,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 17.1,
+   "depth_pun_at_point": 7.4,
+   "depth_mm_median": 17.1,
+   "depth_mm_p10": 16.7,
+   "depth_mm_p90": 17.8,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "눈확위신경 · Supra-orbital nerve",
+   "category": "신경",
+   "fma_id": 52655,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 21.7,
+   "depth_pun_at_point": 9.4,
+   "depth_mm_median": 21.7,
+   "depth_mm_p10": 19.8,
+   "depth_mm_p90": 23.5,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "BL02 찬죽: 7종 평균 2.14푼 = 4.9 mm (n=7, 중앙값 2.5푼, 범위 1–3푼) · 고전 2.0푼(n=4) · 현대 2.33푼(n=3)",
+  "mean_pun": 2.14,
+  "mean_mm": 4.9,
+  "classic_mm": 4.6,
+  "modern_mm": 5.4,
+  "modern_range_mm": [
+   3.8,
+   6.9
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": [
+   "눈확위동ㆍ정맥 · Ophthalmic artery"
+  ]
+ },
+ "missing_structures": [
+  "눈둘레근 (orbicularis oculi) — BodyParts3D 메쉬 없음",
+  "눈썹내림근 (depressor supercilii) — BodyParts3D 메쉬 없음",
+  "눈썹주름근 (corrugator supercilii) — BodyParts3D 메쉬 없음",
+  "뒤통수이마근의 이마힘살 (frontal belly of the occipitofrontalis) — BodyParts3D 메쉬 없음",
+  "얼굴신경의 관자가지 (temporal branch of the facial nerve) — BodyParts3D 메쉬 없음",
+  "눈확위동ㆍ정맥 (supraorbial vein) — BodyParts3D 메쉬 없음",
+  "도르래위동ㆍ정맥 (supratrochlear vein) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International Body surface generated with SMPL-X (Pavlakos et al., CVPR 2019), © Max Planck Institute for Intelligent Systems, SMPL-X Body License CC BY 4.0 (https://smpl-x.is.tue.mpg.de/bodylicense.html). Changes: shape set to target stature/BMI, posed and registered to BodyParts3D 4.0 joint centres",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다. 피부면은 BodyParts3D 골격 관절 중심에 등록한 SMPL-X 통계 체형 피부이며, 근육·지방 층은 BodyParts3D 그대로라 체형 차이는 피하층 두께 차이로만 나타나는 근사다. 음수 깊이 = 구조 표면이 체형 피부 밖에 놓임(정합 오차).",
+ "skin_joint_error_mm": {
+  "hip_left": 20.7,
+  "hip_right": 22.4,
+  "knee_left": 11.3,
+  "knee_right": 20.5,
+  "ankle_left": 10.3,
+  "ankle_right": 10.5,
+  "shoulder_left": 4.6,
+  "shoulder_right": 2.4,
+  "elbow_left": 5.1,
+  "elbow_right": 0.8,
+  "wrist_left": 0.4,
+  "wrist_right": 3.0
+ }
+}

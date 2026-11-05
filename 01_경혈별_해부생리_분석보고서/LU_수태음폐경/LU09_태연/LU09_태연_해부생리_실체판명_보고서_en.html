@@ -72,7 +72,8 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <strong>Layer B Reference Registry</strong>: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 <strong>Anatomical Ontology</strong>: local index of FMA 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s (B1 supplementary, not yet in the registry). Details in Appendix A
 <strong>Metrological Standard</strong>: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
+<strong>3D anatomical measurement (2026-11-05)</strong>: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). <strong>ARI scores unchanged.</strong></p>
 </blockquote>
 <p><strong>Source abbreviations</strong> (refined editions of the four classics)
 - [通考] 《針灸腧穴通考》 上 手太陰肺經穴 — 太淵 L2193–2455
@@ -455,6 +456,129 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li>The <strong>bellies of pronator teres (FMA:38450) and flexor digitorum superficialis (FMA:38469)</strong> listed in the Kim Jaehyo textbook are proximal forearm structures and are not present at the level of the distal wrist crease (B1-01). The same textbook omits abductor pollicis longus, and the <strong>extensor pollicis longus (FMA:38521)</strong> listed in the Common Textbook is a tendon of the third dorsal compartment and lies outside the needle path. Discussed in Section 6.</li>
 <li>The palmar carpal ligament (Kim Jaehyo) has no corresponding FMA entity (none).</li>
 </ul>
+<p><strong>3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)</strong></p>
+<p>Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.</p>
+<ul>
+<li><strong>Location (right side)</strong>: WHO standard location approximated from bone landmarks by proportional bone measurement; 1 cun = 18.61 mm.</li>
+<li><strong>Literature needling depth</strong>: seven-source mean 2.86 fen = 6.6 mm (classical 4.6 mm, modern 9.2 mm).</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Structure</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">FMA</th>
+<th style="text-align: right;">BodyParts3D skin mm (fen)</th>
+<th style="text-align: right;">Candidate-region median (10–90%)</th>
+<th style="text-align: right;">Body-shape skin BMI 24</th>
+<th style="text-align: right;">Body-shape skin BMI 30</th>
+<th style="text-align: center;">Within literature mean 6.6 mm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Radial artery</td>
+<td style="text-align: left;">artery</td>
+<td style="text-align: left;">FMA:22730</td>
+<td style="text-align: right;">13.6 (5.9)</td>
+<td style="text-align: right;">14.4 (9.9–17.0)</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">9.1</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Flexor carpi radialis</td>
+<td style="text-align: left;">muscle</td>
+<td style="text-align: left;">FMA:38459</td>
+<td style="text-align: right;">17.3 (7.5)</td>
+<td style="text-align: right;">17.4 (14.5–21.0)</td>
+<td style="text-align: right;">12.2</td>
+<td style="text-align: right;">10.5</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Flexor pollicis longus</td>
+<td style="text-align: left;">muscle</td>
+<td style="text-align: left;">FMA:38481</td>
+<td style="text-align: right;">18.0 (7.8)</td>
+<td style="text-align: right;">17.7 (15.3–20.7)</td>
+<td style="text-align: right;">10.3</td>
+<td style="text-align: right;">10.3</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Brachioradialis</td>
+<td style="text-align: left;">muscle</td>
+<td style="text-align: left;">FMA:38485</td>
+<td style="text-align: right;">18.5 (8.0)</td>
+<td style="text-align: right;">19.0 (14.7–21.4)</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: right;">13.7</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">radius <em>(reference)</em></td>
+<td style="text-align: left;">reference (not in textbook list)</td>
+<td style="text-align: left;">FMA:23463</td>
+<td style="text-align: right;">18.6 (8.1)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: right;">13.3</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Radial vein</td>
+<td style="text-align: left;">vein</td>
+<td style="text-align: left;">FMA:22947</td>
+<td style="text-align: right;">20.9 (9.1)</td>
+<td style="text-align: right;">21.8 (17.9–25.6)</td>
+<td style="text-align: right;">14.4</td>
+<td style="text-align: right;">16.1</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pronator quadratus</td>
+<td style="text-align: left;">muscle</td>
+<td style="text-align: left;">FMA:38453</td>
+<td style="text-align: right;">22.7 (9.9)</td>
+<td style="text-align: right;">23.9 (19.4–27.2)</td>
+<td style="text-align: right;">15.9</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Flexor digitorum superficialis</td>
+<td style="text-align: left;">muscle</td>
+<td style="text-align: left;">FMA:38469</td>
+<td style="text-align: right;">25.3 (11.0)</td>
+<td style="text-align: right;">25.3 (22.4–28.7)</td>
+<td style="text-align: right;">19.7</td>
+<td style="text-align: right;">18.5</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cephalic vein</td>
+<td style="text-align: left;">vein</td>
+<td style="text-align: left;">FMA:13324</td>
+<td style="text-align: right;">33.4 (14.5)</td>
+<td style="text-align: right;">33.4 (30.4–35.4)</td>
+<td style="text-align: right;">24.7</td>
+<td style="text-align: right;">27.8</td>
+<td style="text-align: center;">no</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Shift of the representative point onto the body-shape skin: BMI 24 9.5 mm · BMI 30 7.4 mm</li>
+<li><em>(reference)</em> = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position</li>
+<li>Textbook structures without a BodyParts3D mesh (not measured): 7</li>
+<li><strong>Interactive 3D model</strong>: <a href="LU09_mesh3d_model.html">Taiyuan (太淵, LU9) 3D anatomical model</a> (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)</li>
+<li><strong>How to read it</strong>:</li>
+<li>① The shallowest structure (Radial artery) lies 13.6 mm deep with the BodyParts3D skin and 5.6 mm (BMI 24) · 9.1 mm (BMI 30) with the body-shape skin, a skin-surface difference of 4.5–8.0 mm.</li>
+<li>② With the BodyParts3D skin, 0 structure(s) have their surface within the seven-source mean depth (6.6 mm). With the BMI 24 body-shape skin the number is 1.</li>
+<li><strong>Comparison with the report</strong>: Section 4 states that the radial artery can be touched within the range from the classical 2 fen (4.6 mm) to the textbook 5 fen (11.5 mm). In the standard model it lies deeper, at 13.6 mm. With the body-shape skin it lies at 5.6 mm (BMI 24) and 9.1 mm (BMI 30), within the Section 4 range. The difference appears to come from the thick BodyParts3D subcutis at the wrist, and it does not change the Section 4 advice to push the pulse aside.</li>
+<li><strong>Limitations</strong>: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).</li>
+</ul>
 <hr>
 <h2 id="5-classical-needling-depth-calculation-table">5. Classical Needling Depth Calculation Table</h2>
 <p>Source: Classical Needling Depth Database, sheet 1, row 63 (N0 = 61), supplemented by [通考] 【操作】.</p>
@@ -557,7 +681,12 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </table></div>
 <ul>
 <li>The needling-depth DB contains no 'Contraindicated for needling (禁鍼)' (<code>'0'</code>) and no 'not described' (<code>'blank'</code>) entry. There are, however, a recommendation to avoid needling (《針方六集》), a contraindication in pregnancy (《竇太師針經》) and a warning of haemorrhage from the cun-kou vessel (《素問·刺禁論》, [通考] L2147).</li>
-<li>Safety range: everything from the classical 2 fen (4.6 mm) to the textbook 5 fen (11.5 mm) stays within Layer 2 (between the tendons), but <strong>the radial artery lies in that layer</strong>. The artery is avoided not by depth but <strong>by position (pushing the pulse aside)</strong> (7th edition "避開橈動脈", [通鑑] L1029 "勿刺傷橈動脈"). The 1 寸 (23 mm) perpendicular insertion of the 4th–6th editions was reduced in later textbooks.</li>
+<li>
+<p>Safety range: everything from the classical 2 fen (4.6 mm) to the textbook 5 fen (11.5 mm) stays within Layer 2 (between the tendons), but <strong>the radial artery lies in that layer</strong>. The artery is avoided not by depth but <strong>by position (pushing the pulse aside)</strong> (7th edition "避開橈動脈", [通鑑] L1029 "勿刺傷橈動脈"). The 1 寸 (23 mm) perpendicular insertion of the 4th–6th editions was reduced in later textbooks.</p>
+</li>
+<li>
+<p><strong>Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)</strong>: structures whose surface lies within the seven-source mean of 6.6 mm: none (BodyParts3D skin); 1 with the BMI 24 body-shape skin (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.</p>
+</li>
 </ul>
 <hr>
 <h2 id="6-textbook-comparison-table">6. Textbook Comparison Table</h2>
@@ -1135,6 +1264,26 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li><strong>Earlier-edition score</strong>: the template draft's 'ARI-Core 79.0 (B)' was computed from default values (85/75/75/75) without evidence pointers and is not compared with the v3.0 scoring (the internal archive).</li>
 </ul>
 <p><strong>Standard notation</strong>: <code>ARI v3.0 | ARI-Core 68.75 ± 0 (C) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 66.7 (C, grade unchanged)</code></p>
+<h3 id="effect-of-the-3d-anatomical-measurement-on-scoring-2026-11-05">Effect of the 3D anatomical measurement on scoring (2026-11-05)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">New evidence</th>
+<th style="text-align: left;">Item that could be affected</th>
+<th style="text-align: left;">Review</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement')</td>
+<td style="text-align: left;">$S_{clarity}$ · SI</td>
+<td style="text-align: left;">The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition</td>
+<td style="text-align: left;">Step unchanged</td>
+</tr>
+</tbody>
+</table></div>
+<p>→ No rubric step changes, so no dual re-scoring was done.</p>
 <h3 id="final-conclusion">Final Conclusion</h3>
 <p>The anatomical substrate of Taiyuan (太淵, LU09) is at the <strong>possible (C)</strong> level. Its location has been consistently "掌後陷者中" since the Han, and in modern times it has been fixed in the depression between the radial styloid process and the scaphoid, on the ulnar side of the abductor pollicis longus tendon. The classical text position (Target 1), the gap between the two tendons indicated by "陷者中" (Target 2, insertion reference) and the WHO location (Target 3) merge into a single Target, pairwise within 10 mm (estimated). The <em>Zhongguo Zhenjiu Jingluo Tongjian</em> (《中國針灸經絡通鑑》) regards the early 'Hand-Taiyin' as the whole cun-kou between Taiyuan and Jingqu, supporting the <em>Tongkao</em>'s discrimination that the debate over the 'artery' marker arose from the overlap of the concepts of vessel and point. At this level the two textbooks agree on the flexor carpi radialis tendon, the radial artery, the superficial branch of the radial nerve and the lateral cutaneous nerve of the forearm, and all of these structures are confirmed as standard FMA entities. The muscle lists, however, diverge because each textbook covers a different level.</p>
 <p>Factors that lowered the grade:
@@ -1588,7 +1737,50 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-25 21:58 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
+<h2 id="2026-11-05-3d-anatomical-measurement-record">2026-11-05 3D anatomical measurement record</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Original</th>
+<th style="text-align: left;">Change</th>
+<th style="text-align: left;">Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Header</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Added a 3D anatomical measurement line (scores unchanged)</td>
+<td style="text-align: left;">This revision</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 4</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>New '3D anatomical measurement' subsection</strong>: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model</td>
+<td style="text-align: left;">BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 5</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">One line comparing the structures within the seven-source mean depth</td>
+<td style="text-align: left;">Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 10</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged)</td>
+<td style="text-align: left;">Canonical Rank 7 rubric</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scores</td>
+<td style="text-align: left;">Existing ARI and SI</td>
+<td style="text-align: left;"><strong>No change</strong></td>
+<td style="text-align: left;">Scoring-effect table in Section 10</td>
+</tr>
+</tbody>
+</table></div>
+<p class="meta">생성: 2026-11-05 15:37 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

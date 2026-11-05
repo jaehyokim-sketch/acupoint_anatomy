@@ -1,0 +1,102 @@
+{
+ "code": "GB21",
+ "source": "김재효",
+ "side": "right",
+ "skin": "BodyParts3D 4.0 피부(FMA:7163)",
+ "method": "지정 좌표 반경 6 mm 피부 영역",
+ "candidate_points": 58,
+ "candidate_extent_mm": [
+  10.8,
+  10.8,
+  6.5
+ ],
+ "point_mm": [
+  -86.2,
+  -40.1,
+  1391.5
+ ],
+ "depths": [
+  {
+   "structure": "어깨올림근 · Levator scapulae",
+   "category": "근육",
+   "fma_id": 32519,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 42.4,
+   "depth_pun_at_point": 18.5,
+   "depth_mm_median": 41.5,
+   "depth_mm_p10": 39.3,
+   "depth_mm_p90": 43.1,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "목널판근 · Splenius cervicis",
+   "category": "근육",
+   "fma_id": 22681,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 53.2,
+   "depth_pun_at_point": 23.1,
+   "depth_mm_median": 52.7,
+   "depth_mm_p10": 49.2,
+   "depth_mm_p90": 54.5,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "가로목동ㆍ정맥 · Transverse cervical artery",
+   "category": "동맥",
+   "fma_id": 10664,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 68.1,
+   "depth_pun_at_point": 29.6,
+   "depth_mm_median": 67.6,
+   "depth_mm_p10": 65.5,
+   "depth_mm_p90": 69.9,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "가로목동ㆍ정맥 · Subclavian vein",
+   "category": "정맥",
+   "fma_id": 4725,
+   "mesh_level": "ancestor+2",
+   "depth_mm_at_point": 90.0,
+   "depth_pun_at_point": 39.1,
+   "depth_mm_median": 89.5,
+   "depth_mm_p10": 87.3,
+   "depth_mm_p90": 91.7,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "더부신경 · Nervous system",
+   "category": "신경",
+   "fma_id": 7157,
+   "mesh_level": "ancestor+2",
+   "depth_mm_at_point": 109.2,
+   "depth_pun_at_point": 47.5,
+   "depth_mm_median": 109.2,
+   "depth_mm_p10": 105.0,
+   "depth_mm_p90": 112.4,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "GB21 견정(담): 7종 평균 5.75푼 = 13.2 mm (n=6, 중앙값 5.75푼, 범위 5–6.5푼) · 고전 5.0푼(n=3) · 현대 6.5푼(n=3) · 금침 기재: 동의보감",
+  "mean_pun": 5.75,
+  "mean_mm": 13.2,
+  "classic_mm": 11.5,
+  "modern_mm": 14.9,
+  "modern_range_mm": [
+   11.5,
+   18.4
+  ],
+  "forbidden_sources": [
+   "동의보감"
+  ],
+  "reached_at_point": []
+ },
+ "missing_structures": [
+  "등세모근 (trapezius) — BodyParts3D 메쉬 없음",
+  "빗장위신경 (supraclavicular nerve) — BodyParts3D 메쉬 없음",
+  "등쪽어깨신경 (dorsal scapular nerve) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다."
+}

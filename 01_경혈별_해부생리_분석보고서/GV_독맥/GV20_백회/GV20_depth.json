@@ -1,0 +1,104 @@
+{
+ "code": "GV20",
+ "source": "김재효",
+ "side": "right",
+ "skin": "BodyParts3D 4.0 피부(FMA:7163)",
+ "method": "지정 좌표 반경 6 mm 피부 영역",
+ "candidate_points": 63,
+ "candidate_extent_mm": [
+  10.8,
+  10.6,
+  2.2
+ ],
+ "point_mm": [
+  -0.3,
+  -83.2,
+  1641.3
+ ],
+ "depths": [
+  {
+   "structure": "머리덮개널힘줄 · Head proper",
+   "category": "근육",
+   "fma_id": 54545,
+   "mesh_level": "ancestor+2",
+   "depth_mm_at_point": 5.4,
+   "depth_pun_at_point": 2.4,
+   "depth_mm_median": 5.8,
+   "depth_mm_p10": 3.8,
+   "depth_mm_p90": 7.0,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "위도르래신경 · Supratrochlear nerve",
+   "category": "신경",
+   "fma_id": 52642,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 119.1,
+   "depth_pun_at_point": 51.8,
+   "depth_mm_median": 117.4,
+   "depth_mm_p10": 115.8,
+   "depth_mm_p90": 119.6,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "위눈확신경 · Supra-orbital nerve",
+   "category": "신경",
+   "fma_id": 52655,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 119.1,
+   "depth_pun_at_point": 51.8,
+   "depth_mm_median": 117.4,
+   "depth_mm_p10": 115.8,
+   "depth_mm_p90": 119.6,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "뒤통수동ㆍ정맥 · Common carotid artery",
+   "category": "동맥",
+   "fma_id": 3939,
+   "mesh_level": "ancestor+2",
+   "depth_mm_at_point": 269.6,
+   "depth_pun_at_point": 117.2,
+   "depth_mm_median": 267.9,
+   "depth_mm_p10": 267.3,
+   "depth_mm_p90": 269.7,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "뒤통수동ㆍ정맥 · Brachiocephalic vein",
+   "category": "정맥",
+   "fma_id": 4723,
+   "mesh_level": "ancestor+2",
+   "depth_mm_at_point": 294.6,
+   "depth_pun_at_point": 128.1,
+   "depth_mm_median": 293.1,
+   "depth_mm_p10": 292.3,
+   "depth_mm_p90": 294.8,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "GV20 백회: 7종 평균 3.83푼 = 8.8 mm (n=6, 중앙값 3.0푼, 범위 2–6.5푼) · 고전 2.5푼(n=4) · 현대 6.5푼(n=2)",
+  "mean_pun": 3.83,
+  "mean_mm": 8.8,
+  "classic_mm": 5.8,
+  "modern_mm": 14.9,
+  "modern_range_mm": [
+   11.5,
+   18.4
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": [
+   "머리덮개널힘줄 · Head proper"
+  ]
+ },
+ "missing_structures": [
+  "머리뼈바깥막 (pericranium) — BodyParts3D 메쉬 없음",
+  "큰뒤통수신경 (greater occipital nerve) — BodyParts3D 메쉬 없음",
+  "얕은관자동ㆍ정맥의 마루가지 (parietal branch of the superficial temporal artery) — BodyParts3D 메쉬 없음",
+  "얕은관자동ㆍ정맥의 마루가지 (parietal branch of the superficial temporal vein) — BodyParts3D 메쉬 없음",
+  "마루이끌정맥 (parietal emissary vein) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다."
+}

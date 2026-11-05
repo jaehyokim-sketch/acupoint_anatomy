@@ -1,0 +1,158 @@
+{
+ "code": "PC06",
+ "source": "김재효",
+ "side": "right",
+ "skin": "BodyParts3D 4.0 피부(FMA:7163)",
+ "method": "지정 좌표 반경 6 mm 피부 영역",
+ "candidate_points": 50,
+ "candidate_extent_mm": [
+  10.9,
+  3.7,
+  10.9
+ ],
+ "point_mm": [
+  -246.0,
+  -132.2,
+  842.3
+ ],
+ "depths": [
+  {
+   "structure": "아래팔중간정맥 · Median antebrachial vein",
+   "category": "정맥",
+   "fma_id": 22967,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 2.7,
+   "depth_pun_at_point": 1.2,
+   "depth_mm_median": 2.1,
+   "depth_mm_p10": 0.2,
+   "depth_mm_p90": 4.0,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "노쪽손목굽힘근 · Flexor carpi radialis",
+   "category": "근육",
+   "fma_id": 38459,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 3.5,
+   "depth_pun_at_point": 1.5,
+   "depth_mm_median": 2.4,
+   "depth_mm_p10": 1.6,
+   "depth_mm_p90": 3.6,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "긴손바닥근 · Palmaris longus",
+   "category": "근육",
+   "fma_id": 38462,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 5.5,
+   "depth_pun_at_point": 2.4,
+   "depth_mm_median": 7.1,
+   "depth_mm_p10": 2.4,
+   "depth_mm_p90": 9.7,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "얕은손가락굽힘근 · Flexor digitorum superficialis",
+   "category": "근육",
+   "fma_id": 38469,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 5.6,
+   "depth_pun_at_point": 2.4,
+   "depth_mm_median": 5.1,
+   "depth_mm_p10": 2.9,
+   "depth_mm_p90": 6.5,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "깊은손가락굽힘근 · Flexor digitorum profundus",
+   "category": "근육",
+   "fma_id": 38478,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 9.3,
+   "depth_pun_at_point": 4.1,
+   "depth_mm_median": 8.5,
+   "depth_mm_p10": 7.0,
+   "depth_mm_p90": 10.3,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "네모엎침근 · Pronator quadratus",
+   "category": "근육",
+   "fma_id": 38453,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 11.7,
+   "depth_pun_at_point": 5.1,
+   "depth_mm_median": 10.6,
+   "depth_mm_p10": 9.4,
+   "depth_mm_p90": 12.1,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "긴엄지굽힘근 · Flexor pollicis longus",
+   "category": "근육",
+   "fma_id": 38481,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 15.0,
+   "depth_pun_at_point": 6.5,
+   "depth_mm_median": 13.4,
+   "depth_mm_p10": 11.6,
+   "depth_mm_p90": 15.8,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "앞뼈사이동ㆍ정맥 · Ulnar vein",
+   "category": "정맥",
+   "fma_id": 22950,
+   "mesh_level": "ancestor+1",
+   "depth_mm_at_point": 16.5,
+   "depth_pun_at_point": 7.2,
+   "depth_mm_median": 17.8,
+   "depth_mm_p10": 13.2,
+   "depth_mm_p90": 19.8,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "앞뼈사이동ㆍ정맥 · Anterior interosseous artery",
+   "category": "동맥",
+   "fma_id": 22810,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 25.1,
+   "depth_pun_at_point": 10.9,
+   "depth_mm_median": 24.2,
+   "depth_mm_p10": 21.9,
+   "depth_mm_p90": 26.3,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "PC06 내관: 7종 평균 4.93푼 = 11.3 mm (n=7, 중앙값 5.0푼, 범위 2–7.5푼) · 고전 3.0푼(n=4) · 현대 7.5푼(n=3)",
+  "mean_pun": 4.93,
+  "mean_mm": 11.3,
+  "classic_mm": 6.9,
+  "modern_mm": 17.2,
+  "modern_range_mm": [
+   11.5,
+   23.0
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": [
+   "아래팔중간정맥 · Median antebrachial vein",
+   "노쪽손목굽힘근 · Flexor carpi radialis",
+   "긴손바닥근 · Palmaris longus",
+   "얕은손가락굽힘근 · Flexor digitorum superficialis",
+   "깊은손가락굽힘근 · Flexor digitorum profundus"
+  ]
+ },
+ "missing_structures": [
+  "안쪽아래팔피부신경 (medial antebrachial cutaneous nerve) — BodyParts3D 메쉬 없음",
+  "가쪽아래팔피부신경의 앞가지 (anterior branch of the lateral antebrachial cutaneous nerve) — BodyParts3D 메쉬 없음",
+  "정중신경 (median nerve) — BodyParts3D 메쉬 없음",
+  "아래팔의 앞뼈사이신경 (anterior interosseous nerve of the forearm) — BodyParts3D 메쉬 없음",
+  "가쪽아래팔피부신경 (lateral antebrachial cutaneous n.) — BodyParts3D 메쉬 없음",
+  "정중신경동반정맥 (accompanying artery of the median nerve) — FMA 대응 none",
+  "정중신경동반동맥 (accompanying a. of median nerve) — FMA 대응 none"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다."
+}

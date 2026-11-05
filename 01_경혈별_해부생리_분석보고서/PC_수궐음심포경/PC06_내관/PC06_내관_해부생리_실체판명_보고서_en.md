@@ -8,6 +8,7 @@
 > **Underlying Datasets**: Historical Acupuncture Needling Depth Database, Acupoint Name & Alias Concordance Database, Textbook Acupoint Anatomical Datasets  
 > **Four Classical Canon Sources**: *Compendium of Chinese Acupuncture Acupoints* (*Xuewei Tongjian*), *Textual Criticism of Acupuncture Acupoints* (*Tongkao*), *Compendium of Acupuncture Syndromes and Treatments* (*Zhengzhi Tongjian*), *Compendium of Acupuncture Meridians* (*Jingluo Tongjian*)  
 > **Anatomical Ontology**: FMA (Foundational Model of Anatomy) 5.1.0 Local Index (15 mapped entities, Spinal Segments C6–T1)
+> **3D anatomical measurement (2026-11-05)**: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). **ARI scores unchanged.**
 
 ### Executive Summary
 
@@ -72,6 +73,8 @@ The biomedical reflex mechanisms are well-established: $A\beta/A\delta$ afferent
 | *Zhenjiu Jingyanfang* | 5 fen | **11.5 mm** | Layer 3 deep to Layer 4 (Traversing FDS muscle) | Evokes electric radiating sensation along median nerve |
 | Standard Textbooks | 5 – 10 fen | **11.5 – 23.0 mm** | Layer 4 (AIN) to Layer 5 (Pronator quadratus) | Deep puncture; can achieve through-and-through to TE05 |
 
+- **Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)**: structures whose surface lies within the seven-source mean of 11.3 mm: Median antebrachial vein, Flexor carpi radialis, Palmaris longus, Flexor digitorum superficialis, Flexor digitorum profundus (BodyParts3D skin) (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.
+
 ---
 
 ## 6. Layer-by-Layer Anatomical Entities (Layer 1 – 5)
@@ -99,6 +102,38 @@ The biomedical reflex mechanisms are well-established: $A\beta/A\delta$ afferent
 └────────────────────────────────────────────────────────────────────────┘
      (18.0 – 23.0 mm) ── [Deep Boundary: Opposing surfaces of radius/ulna / Transfixion to TE05]
 ```
+
+**3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)**
+
+Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.
+
+- **Location (right side)**: WHO standard location approximated from bone landmarks by proportional bone measurement; 1 cun = 18.61 mm.
+- **Literature needling depth**: seven-source mean 4.93 fen = 11.3 mm (classical 6.9 mm, modern 17.2 mm).
+
+| Structure | Type | FMA | BodyParts3D skin mm (fen) | Candidate-region median (10–90%) | Body-shape skin BMI 24 | Body-shape skin BMI 30 | Within literature mean 11.3 mm |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | :---: |
+| Median antebrachial vein | vein | FMA:22967 | 2.7 (1.2) | 2.1 (0.2–4.0) | —‡ | —‡ | yes |
+| Flexor carpi radialis | muscle | FMA:38459 | 3.5 (1.5) | 2.4 (1.6–3.6) | —‡ | —‡ | yes |
+| Palmaris longus | muscle | FMA:38462 | 5.5 (2.4) | 7.1 (2.4–9.7) | —‡ | —‡ | yes |
+| Flexor digitorum superficialis | muscle | FMA:38469 | 5.6 (2.4) | 5.1 (2.9–6.5) | —‡ | —‡ | yes |
+| Flexor digitorum profundus | muscle | FMA:38478 | 9.3 (4.1) | 8.5 (7.0–10.3) | —‡ | —‡ | yes |
+| Pronator quadratus | muscle | FMA:38453 | 11.7 (5.1) | 10.6 (9.4–12.1) | —‡ | —‡ | no |
+| Flexor pollicis longus | muscle | FMA:38481 | 15.0 (6.5) | 13.4 (11.6–15.8) | —‡ | —‡ | no |
+| Ulnar vein *(parent-structure mesh)* | vein | FMA:22950 | 16.5 (7.2) | 17.8 (13.2–19.8) | —‡ | —‡ | no |
+| ulna *(reference)* | reference (not in textbook list) | FMA:23466 | 20.9 (9.1) | — | —‡ | —‡ | no |
+| radius *(reference)* | reference (not in textbook list) | FMA:23463 | 21.2 (9.2) | — | —‡ | —‡ | no |
+| Anterior interosseous artery | artery | FMA:22810 | 25.1 (10.9) | 24.2 (21.9–26.3) | —‡ | —‡ | no |
+
+- Shift of the representative point onto the body-shape skin: BMI 24 5.9 mm · BMI 30 3.7 mm
+- ‡ Not used because the registration error is large (point shift > 10 mm or the body-shape skin passes through a structure)
+- *(reference)* = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position
+- Textbook structures without a BodyParts3D mesh (not measured): 7
+- **Interactive 3D model**: [Neiguan (內關, PC6) 3D anatomical model](PC06_mesh3d_model.html) (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)
+- **How to read it**:
+  - ① The shallowest structure (Median antebrachial vein) lies 2.7 mm deep with the BodyParts3D skin. The body-shape skin is not compared here because its registration error is large.
+  - ② With the BodyParts3D skin, 5 structure(s) have their surface within the seven-source mean depth (11.3 mm): Median antebrachial vein, Flexor carpi radialis, Palmaris longus, Flexor digitorum superficialis, Flexor digitorum profundus.
+- **Comparison with the report**: the median nerve has no BodyParts3D mesh. The depth between flexor digitorum superficialis (5.6 mm) and flexor digitorum profundus (9.3 mm), where the median nerve runs, agrees with the Section 5 judgement that 3 fen (6.9 mm) reaches the level of the median nerve sheath. Near the wrist the body-shape skin passes 2–3 mm through superficial structures, so the BMI values are not used.
+- **Limitations**: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
 
 ---
 
@@ -227,6 +262,15 @@ ARI v3.0 | ARI-Core 100 ± 0 (A) | SI 87.5 ± 12.5 | Provisional Weights 0.40/0.
 
 - **Gates 1 – 3**: None triggered (no score penalties).
 
+### Effect of the 3D anatomical measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement') | $S_{clarity}$ · SI | The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition | Step unchanged |
+
+→ No rubric step changes, so no dual re-scoring was done.
+
+
 ### 12-2. Clinical Needling & Safety Guidelines
 1. **Median Nerve Protection**:
    - At a depth of 5–12 mm (Layer 3), the needle reaches the median nerve trunk.
@@ -236,3 +280,13 @@ ARI v3.0 | ARI-Core 100 ± 0 (A) | SI 87.5 ± 12.5 | Provisional Weights 0.40/0.
 3. **Recommended Needling Depths**:
    - Autonomic/anti-emetic regulation: **3 – 5 fen (7.0 – 11.5 mm)** perpendicular or slightly oblique.
    - Deep muscle spasm & neurological rehabilitation: **5 – 8 fen (11.5 – 18.0 mm)**.
+
+## 2026-11-05 3D anatomical measurement record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | — | Added a 3D anatomical measurement line (scores unchanged) | This revision |
+| Section 4 | — | **New '3D anatomical measurement' subsection**: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model | BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0 |
+| Section 5 | — | One line comparing the structures within the seven-source mean depth | Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm |
+| Section 10 | — | Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged) | Canonical Rank 7 rubric |
+| Scores | Existing ARI and SI | **No change** | Scoring-effect table in Section 10 |

@@ -14,6 +14,7 @@
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
 
 > **Summary**: The earlier edition took the classical "動脈中" to be the perforating branch of the fibular artery and analysed a single point with Δ 3–7 mm. However, the *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) and papers.id 1624 hold that the vessel is the **anterior tibial artery** and that the original position is **on the tibial side**. Re-checked as a Tri-Target, the classical text position (Target 1) has its transverse position fixed only by the pulse (動者脈中), so it is the same point as the palpation-based anatomical locus (Target 2) (Target 1≡2). The Δ between Target 1≡2 and the WHO standard location (Target 3) was estimated independently by each of the two raters at about 20–35 mm (estimated, > 10 mm), so the analysis branches into **Target 1≡2 vs Target 3**. ΔARI-Core = 3.8 (< 10), so **neither Target is declared superior and both are reported side by side**. For both Targets the B-Check is not concordant, so the reflex mechanism is a **hypothesis**. The *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) independently records the interpretation "陽明脈 = dorsalis pedis artery, the descending branch of the anterior tibial artery — firm pressure over 懸鍾 abolishes the 衝陽 pulse" (Part 01), supporting the substrate interpretation of Target 1≡2, but it does not change any score level.
+> **3D anatomical measurement (2026-11-05)**: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). **ARI scores unchanged.**
 
 ---
 
@@ -124,6 +125,37 @@ Fascia──┼──────────┼──────────�
 - FMA places the fibular vein (FMA:44558) as a *Tributary of femoral vein* (drains_into Femoral vein). In normative anatomy the fibular veins join the posterior tibial veins and continue into the popliteal vein, so this relation is regarded as a feature of FMA modelling and is not cited (described per B1-01).
 - FMA gives segments only in the `segmental_supply` of muscles, not for nerves themselves. Nerve segments (e.g. common fibular nerve L4–S2) are given per B1-01 and B1-02.
 
+**3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)**
+
+Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.
+
+- **Location (right side)**: WHO standard location approximated from bone landmarks by proportional bone measurement; 1 cun = 24.95 mm.
+- **Literature needling depth**: seven-source mean 6.21 fen = 14.3 mm (classical 13.8 mm, modern 14.9 mm).
+
+| Structure | Type | FMA | BodyParts3D skin mm (fen) | Candidate-region median (10–90%) | Body-shape skin BMI 24 | Body-shape skin BMI 30 | Within literature mean 14.3 mm |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | :---: |
+| Extensor digitorum longus | muscle | FMA:22534 | 5.3 (2.3) | 5.1 (3.3–6.6) | —‡ | —‡ | yes |
+| Fibularis tertius | muscle | FMA:22538 | 7.7 (3.4) | 7.4 (5.5–8.4) | —‡ | —‡ | yes |
+| fibula *(reference)* | reference (not in textbook list) | FMA:24479 | 9.1 (4.0) | — | —‡ | —‡ | yes |
+| Extensor hallucis longus | muscle | FMA:22533 | 11.1 (4.8) | 10.9 (8.1–12.8) | —‡ | —‡ | yes |
+| Fibularis brevis | muscle | FMA:22540 | 18.9 (8.2) | 17.7 (14.9–21.7) | —‡ | —‡ | no |
+| Flexor hallucis longus | muscle | FMA:22593 | 21.3 (9.3) | 20.0 (17.9–22.8) | —‡ | —‡ | no |
+| Anterior tibial vein | vein | FMA:44331 | 22.7 (9.9) | 22.6 (19.0–25.4) | —‡ | —‡ | no |
+| Anterior tibial artery | artery | FMA:43894 | 30.0 (13.1) | 29.9 (26.3–32.7) | —‡ | —‡ | no |
+| Fibular vein | vein | FMA:44558 | 45.6 (19.8) | 45.0 (43.0–46.3) | —‡ | —‡ | no |
+
+- Shift of the representative point onto the body-shape skin: BMI 24 14.5 mm · BMI 30 18.8 mm
+- ‡ Not used because the registration error is large (point shift > 10 mm or the body-shape skin passes through a structure)
+- *(reference)* = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position
+- Rows removed from the table: 1 (textbook structure mapped to a mesh of a different kind, only to a distant parent-structure mesh, or more than 60 mm from the located point)
+- Textbook structures without a BodyParts3D mesh (not measured): 4
+- **Interactive 3D model**: [Xuanzhong (懸鍾, GB39) 3D anatomical model](GB39_mesh3d_model.html) (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)
+- **How to read it**:
+  - ① The shallowest structure (Extensor digitorum longus) lies 5.3 mm deep with the BodyParts3D skin. The body-shape skin is not compared here because its registration error is large.
+  - ② With the BodyParts3D skin, 4 structure(s) have their surface within the seven-source mean depth (14.3 mm): Extensor digitorum longus, Fibularis tertius, fibula, Extensor hallucis longus.
+- **Comparison with the report**: Section 4-1 gives a perpendicular insertion of 5–8 fen (11.5–18.4 mm) at Target 3 (anterior border of the fibula). In the standard model the fibular surface lies 9.1 mm deep, so a perpendicular needle can meet the bone within 5 fen. At this level the body-shape skin lies 14–19 mm outside the BodyParts3D skin, so its values are not used.
+- **Limitations**: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
+
 ---
 
 ## 📏 5. Needling Depth Calculation Table (Han-Dynasty 2.3 mm Conversion and Layer Reached)
@@ -148,6 +180,8 @@ Fascia──┼──────────┼──────────�
 - The earlier edition's μ = 6.2 fen and σ = 1.0 fen had no derivation and have been deleted.
 - **T1≡2 safety caution**: by definition the needle is inserted directly over an arterial pulse point, so perpendicular insertion of 6 fen reaches Layer 4. The pulse should be located and the artery avoided, or the depth limited to about 10 mm (Rater A's recommendation; no measurement).
 - **T3 safety caution**: 5–6 fen stays within Layers 2–3, but at 8 fen (18.4 mm) or more, in thin subjects, and with the deep insertions of the 《指微》 and 竇氏, the needle may reach the anterior tibial artery and deep fibular nerve (Layer 4). Without imaging measurements a 10 mm margin has not been confirmed.
+
+- **Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)**: structures whose surface lies within the seven-source mean of 14.3 mm: Extensor digitorum longus, Fibularis tertius, fibula, Extensor hallucis longus (BodyParts3D skin) (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.
 
 ---
 
@@ -408,6 +442,15 @@ Target 1 and Target 2 are merged with Δ ≤ 10 mm (estimated), leaving two inde
 | T1≡2 | Basis for branching | — | Independent estimates by the two raters, Δ ≈ 20–35 mm (median about 25 mm) > 15 mm (criterion at the time of scoring; also above the 10 mm criterion of 2026-10-25) → old T1/T2 branch (now Target 1≡2 vs Target 3). The "difficulty of palpating the pulse" in papers.id 1624 concerns location, not a conflict about mechanism |
 | T3 | — | No disagreement of 15 points or more | The earlier edition's "L4-S1 → C3-C5 somato-somatic relaxation reflex" was an unsupported statement and has been deleted (not reflected in the B-Check). The 頸項強 indication is the 《千金》 "絕骨" indication mixed in (Rank 3) |
 
+### Effect of the 3D anatomical measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement') | $S_{clarity}$ · SI | The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition | Step unchanged |
+
+→ No rubric step changes, so no dual re-scoring was done.
+
+
 ### 10-5. Final Conclusion
 
 - **T1≡2 classical pulse point** — **undetermined / hypothesis (D·H)**. Xuanzhong (懸鍾) in the *Huangdi Mingtang Jing* (《黃帝明堂經》) is a point defined not by a bony landmark but by a pulse: the pulsating site 3 cun above the lateral malleolus (外踝) where firm pressure abolishes the pulse on the dorsum of the foot (衝陽). This vessel is the **anterior tibial artery** (《通考》 L548–552, 《經穴釋義匯解》, papers.id 1624), and the position lies between the anterior border of the tibia and the anterior border of the fibula, on the tibial side. The candidate substrate is the **anterior tibial artery and veins + deep fibular nerve (Layer 4)**, and the original indications are **abdominal fullness (腹滿), heat in the stomach (胃中有熱) and no desire to eat (不嗜食)** (stomach disorders). However, there is no Layer A study needling at this position (Gate 2), and 1624 reports that palpation of the pulse and abolition of the 衝陽 pulse are hard to reproduce, so the reproducibility of the palpation landmark is unverified. The reflex mechanism (lower-limb somatic afferents → medulla and vagus → gastric function) is a **hypothesis (animal only)** inferred from animal evidence at other points. Because the needle is inserted directly over the pulse point, the artery must be avoided and the depth limited (SI 50).
@@ -522,3 +565,13 @@ Generated by: FMA 5.1.0 acupoint profile query (GB39; 2026-10-23). The match lev
 | Section 10 | Titles of 10-1 · 10-2 · 10-3 with T1 · T2; ④ "Collation in the 《通考》" | Target 1≡2 · Target 3; Tri-Target decision paragraph in 10-3; ④ "Collation in the 《通考》 and 《經絡通鑑》" re-checked — no new grounds such as a measurement reference, **score unchanged** (both Targets A 75 / B 75); Tri-Target and four-classics items added to the conclusion | Rubric 4.2 item ④, Rank 7 decision rule |
 | Non-disclosure | Internal folder path and backup path in revision-history rows | Replaced by descriptive names "(internal)" | Rank 7 HTML non-disclosure rule |
 | Scores | Target 1≡2 (old T1) ARI-Core 51.2 ± 0 (D·H), SI 50 / Target 3 (old T2) 55.0 ± 0 (C, weight-sensitive), SI 75 | **No change**. No single-scored (preliminary) Target | — |
+
+## 2026-11-05 3D anatomical measurement record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | — | Added a 3D anatomical measurement line (scores unchanged) | This revision |
+| Section 4 | — | **New '3D anatomical measurement' subsection**: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model | BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0 |
+| Section 5 | — | One line comparing the structures within the seven-source mean depth | Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm |
+| Section 10 | — | Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged) | Canonical Rank 7 rubric |
+| Scores | Existing ARI and SI | **No change** | Scoring-effect table in Section 10 |

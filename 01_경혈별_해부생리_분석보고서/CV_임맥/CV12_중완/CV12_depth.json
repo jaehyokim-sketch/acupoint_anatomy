@@ -1,0 +1,103 @@
+{
+ "code": "CV12",
+ "source": "김재효",
+ "side": "right",
+ "skin": "BodyParts3D 4.0 피부(FMA:7163)",
+ "method": "지정 좌표 반경 6 mm 피부 영역",
+ "candidate_points": 49,
+ "candidate_extent_mm": [
+  11.4,
+  2.6,
+  11.1
+ ],
+ "point_mm": [
+  -0.2,
+  -213.7,
+  1070.9
+ ],
+ "depths": [
+  {
+   "structure": "백색선 · Linea alba",
+   "category": "근육",
+   "fma_id": 11336,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 5.4,
+   "depth_pun_at_point": 2.3,
+   "depth_mm_median": 6.5,
+   "depth_mm_p10": 4.8,
+   "depth_mm_p90": 7.2,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "위배벽동ㆍ정맥 · Superior epigastric artery",
+   "category": "동맥",
+   "fma_id": 10646,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 18.5,
+   "depth_pun_at_point": 8.0,
+   "depth_mm_median": 19.5,
+   "depth_mm_p10": 18.2,
+   "depth_mm_p90": 22.2,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "얕은배벽동ㆍ정맥 · Superficial epigastric artery",
+   "category": "동맥",
+   "fma_id": 20734,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 130.5,
+   "depth_pun_at_point": 56.7,
+   "depth_mm_median": 131.4,
+   "depth_mm_p10": 126.6,
+   "depth_mm_p90": 135.8,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "얕은배벽동ㆍ정맥 · Superficial epigastric vein",
+   "category": "정맥",
+   "fma_id": 44318,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 142.0,
+   "depth_pun_at_point": 61.7,
+   "depth_mm_median": 142.5,
+   "depth_mm_p10": 138.3,
+   "depth_mm_p90": 147.5,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "위배벽동ㆍ정맥 · Superior epigastric vein",
+   "category": "정맥",
+   "fma_id": 4731,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 142.0,
+   "depth_pun_at_point": 61.7,
+   "depth_mm_median": 142.5,
+   "depth_mm_p10": 138.3,
+   "depth_mm_p90": 147.5,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "CV12 중완: 7종 평균 9.29푼 = 21.4 mm (n=7, 중앙값 10.0푼, 범위 2–12.5푼) · 고전 7.5푼(n=4) · 현대 11.67푼(n=3)",
+  "mean_pun": 9.29,
+  "mean_mm": 21.4,
+  "classic_mm": 17.2,
+  "modern_mm": 26.8,
+  "modern_range_mm": [
+   19.2,
+   34.5
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": [
+   "백색선 · Linea alba",
+   "위배벽동ㆍ정맥 · Superior epigastric artery"
+  ]
+ },
+ "missing_structures": [
+  "배곧은근집 (rectus sheath) — BodyParts3D 메쉬 없음",
+  "배가로근막 (transversalis fascia) — BodyParts3D 메쉬 없음",
+  "여덟째 갈비사이신경의 앞쪽피부가지 (anterior cutaneous branch of the 8th intercostal nerve) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다."
+}

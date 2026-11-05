@@ -562,6 +562,9 @@ def cmd_depth(a):
     #    (체형 피부는 근육에 바짝 붙는 곳이 많아 '근육에 가장 가까운 점'이 위치 기준이 되지 못한다).
     lo = np.min([s["mesh"].bounds[0] for s in anchors], 0) - 30
     hi = np.max([s["mesh"].bounds[1] for s in anchors], 0) + 30
+    if a.point:                      # 정위 좌표가 근육에서 30 mm 넘게 떨어진 피부(두꺼운 피하)여도 후보 상자에 들게 한다
+        _p = np.array([float(v) for v in a.point.split(",")])
+        lo, hi = np.minimum(lo, _p - a.radius - 10), np.maximum(hi, _p + a.radius + 10)
 
     def _patch(sm):
         keep = np.all((sm.triangles_center >= lo) & (sm.triangles_center <= hi), axis=1)
@@ -600,11 +603,18 @@ def cmd_depth(a):
         ib, shift = int(np.argmin(moved)), float(moved.min())
         region2[ib] = True
         region, cand = region2, cand2
+        # 안/밖 판정: 구조 최근접점에서 가장 가까운 체형 피부 표본점의 바깥 법선과의 내적(> 0.5 mm면 피부 밖).
+        # trimesh signed_distance보다 수백 배 빠르다(SMPL-X 메쉬는 면 방향이 바깥쪽으로 일관).
+        import trimesh
+        spts, sfi = trimesh.sample.sample_surface(skin, max(200000, int(skin.area / 2)), seed=0)
+        snrm, stree = skin.face_normals[sfi], cKDTree(spts)
         dist = {}
         for s in structs:
             d, k = trees[id(s)].query(cand)
-            inside = skin.nearest.signed_distance(trees[id(s)].data[k]) >= -0.5     # trimesh: 안쪽 양수
-            dist[id(s)] = np.where(inside, d, -d)
+            q = trees[id(s)].data[k]
+            _, js = stree.query(q)
+            outside = np.einsum("ij,ij->i", q - spts[js], snrm[js]) > 0.5
+            dist[id(s)] = np.where(outside, -d, d)
         how += f" → 체형 피부의 가장 가까운 점으로 옮김(대표점 이동 {shift:.1f} mm)"
     best = cand[ib]
     rp = cand[region]

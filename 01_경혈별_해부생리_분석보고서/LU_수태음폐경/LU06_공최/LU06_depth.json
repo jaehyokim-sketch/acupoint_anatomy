@@ -1,0 +1,127 @@
+{
+ "code": "LU06",
+ "source": "김재효",
+ "side": "right",
+ "skin": "BodyParts3D 4.0 피부(FMA:7163)",
+ "method": "지정 좌표 반경 6 mm 피부 영역",
+ "candidate_points": 61,
+ "candidate_extent_mm": [
+  9.6,
+  5.8,
+  11.0
+ ],
+ "point_mm": [
+  -256.7,
+  -117.0,
+  934.5
+ ],
+ "depths": [
+  {
+   "structure": "노쪽피부정맥 · Cephalic vein",
+   "category": "정맥",
+   "fma_id": 13324,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 10.1,
+   "depth_pun_at_point": 4.4,
+   "depth_mm_median": 8.1,
+   "depth_mm_p10": 6.2,
+   "depth_mm_p90": 11.2,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "위팔노근 · Brachioradialis",
+   "category": "근육",
+   "fma_id": 38485,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 11.1,
+   "depth_pun_at_point": 4.8,
+   "depth_mm_median": 9.0,
+   "depth_mm_p10": 7.3,
+   "depth_mm_p90": 11.7,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "얕은손가락굽힘근 · Flexor digitorum superficialis",
+   "category": "근육",
+   "fma_id": 38469,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 15.7,
+   "depth_pun_at_point": 6.8,
+   "depth_mm_median": 15.3,
+   "depth_mm_p10": 13.3,
+   "depth_mm_p90": 17.6,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "노동ㆍ정맥 · Radial vein",
+   "category": "정맥",
+   "fma_id": 22947,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 16.8,
+   "depth_pun_at_point": 7.3,
+   "depth_mm_median": 16.0,
+   "depth_mm_p10": 14.2,
+   "depth_mm_p90": 17.3,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "노쪽손목굽힘근 · Flexor carpi radialis",
+   "category": "근육",
+   "fma_id": 38459,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 18.0,
+   "depth_pun_at_point": 7.8,
+   "depth_mm_median": 18.9,
+   "depth_mm_p10": 15.3,
+   "depth_mm_p90": 22.3,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "깊은엄지굽힘근 · Flexor pollicis longus",
+   "category": "근육",
+   "fma_id": 38481,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 23.8,
+   "depth_pun_at_point": 10.4,
+   "depth_mm_median": 23.5,
+   "depth_mm_p10": 21.6,
+   "depth_mm_p90": 24.1,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "노동ㆍ정맥 · Radial artery",
+   "category": "동맥",
+   "fma_id": 22730,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 28.9,
+   "depth_pun_at_point": 12.6,
+   "depth_mm_median": 26.7,
+   "depth_mm_p10": 25.0,
+   "depth_mm_p90": 29.6,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "LU06 공최: 7종 평균 4.93푼 = 11.3 mm (n=7, 중앙값 3.0푼, 범위 3–7.5푼) · 고전 3.0푼(n=4) · 현대 7.5푼(n=3)",
+  "mean_pun": 4.93,
+  "mean_mm": 11.3,
+  "classic_mm": 6.9,
+  "modern_mm": 17.2,
+  "modern_range_mm": [
+   11.5,
+   23.0
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": [
+   "노쪽피부정맥 · Cephalic vein",
+   "위팔노근 · Brachioradialis"
+  ]
+ },
+ "missing_structures": [
+  "원엎침근 (pronator teres) — BodyParts3D 메쉬 없음",
+  "가쪽아래팔피부신경 (lateral antebrachial cutaneous nerve) — BodyParts3D 메쉬 없음",
+  "노신경의 얕은가지 (superficial branch of the radial nerve) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다."
+}

@@ -1,0 +1,102 @@
+{
+ "code": "SP05",
+ "source": "김재효",
+ "side": "right",
+ "skin": "SMPL-X 체형 피부 male_bmi24 (male · 키 1.7218 m · BMI 23.91)",
+ "method": "지정 좌표 반경 6 mm 피부 영역 → 체형 피부의 가장 가까운 점으로 옮김(대표점 이동 1.6 mm)",
+ "candidate_points": 28,
+ "candidate_extent_mm": [
+  5.3,
+  10.7,
+  10.0
+ ],
+ "point_mm": [
+  -49.5,
+  -94.5,
+  -10.5
+ ],
+ "depths": [
+  {
+   "structure": "앞정강근 · Tibialis anterior",
+   "category": "근육",
+   "fma_id": 22532,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 24.0,
+   "depth_pun_at_point": 10.4,
+   "depth_mm_median": 23.9,
+   "depth_mm_p10": 20.4,
+   "depth_mm_p90": 27.6,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "큰두렁정맥 · Great saphenous vein",
+   "category": "정맥",
+   "fma_id": 21376,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 24.8,
+   "depth_pun_at_point": 10.8,
+   "depth_mm_median": 25.2,
+   "depth_mm_p10": 21.6,
+   "depth_mm_p90": 28.5,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "안쪽발목동맥 · Anterior tibial artery",
+   "category": "동맥",
+   "fma_id": 43894,
+   "mesh_level": "ancestor+1",
+   "depth_mm_at_point": 25.0,
+   "depth_pun_at_point": 10.9,
+   "depth_mm_median": 25.2,
+   "depth_mm_p10": 23.7,
+   "depth_mm_p90": 28.7,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "안쪽복사동맥그물 · External iliac artery",
+   "category": "동맥",
+   "fma_id": 18805,
+   "mesh_level": "ancestor+1",
+   "depth_mm_at_point": 66.9,
+   "depth_pun_at_point": 29.1,
+   "depth_mm_median": 65.1,
+   "depth_mm_p10": 62.1,
+   "depth_mm_p90": 70.5,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "SP05 상구: 7종 평균 4.14푼 = 9.5 mm (n=7, 중앙값 3.0푼, 범위 3–6.5푼) · 고전 3.0푼(n=4) · 현대 5.67푼(n=3)",
+  "mean_pun": 4.14,
+  "mean_mm": 9.5,
+  "classic_mm": 6.9,
+  "modern_mm": 13.0,
+  "modern_range_mm": [
+   10.0,
+   16.1
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": []
+ },
+ "missing_structures": [
+  "발목관절의 삼각인대 (deltoid ligament of the ankle joint) — BodyParts3D 메쉬 없음",
+  "발목관절의 안쪽힘줄 ligament of ankle joint) (medial (deltoid) — FMA 대응 none",
+  "두렁신경 (saphenous nerve) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International Body surface generated with SMPL-X (Pavlakos et al., CVPR 2019), © Max Planck Institute for Intelligent Systems, SMPL-X Body License CC BY 4.0 (https://smpl-x.is.tue.mpg.de/bodylicense.html). Changes: shape set to target stature/BMI, posed and registered to BodyParts3D 4.0 joint centres",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다. 피부면은 BodyParts3D 골격 관절 중심에 등록한 SMPL-X 통계 체형 피부이며, 근육·지방 층은 BodyParts3D 그대로라 체형 차이는 피하층 두께 차이로만 나타나는 근사다. 음수 깊이 = 구조 표면이 체형 피부 밖에 놓임(정합 오차).",
+ "skin_joint_error_mm": {
+  "hip_left": 26.5,
+  "hip_right": 27.1,
+  "knee_left": 9.5,
+  "knee_right": 19.1,
+  "ankle_left": 9.7,
+  "ankle_right": 10.4,
+  "shoulder_left": 4.5,
+  "shoulder_right": 1.7,
+  "elbow_left": 5.0,
+  "elbow_right": 1.1,
+  "wrist_left": 1.2,
+  "wrist_right": 2.0
+ }
+}

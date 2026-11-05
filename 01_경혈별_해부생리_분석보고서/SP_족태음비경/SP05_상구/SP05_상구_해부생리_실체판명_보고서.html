@@ -71,7 +71,8 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <strong>Layer A 실증 DB</strong>: 통합 생의학 마스터 DB v3.0 (역색인 SP5 33편 중 <strong>SP05를 실제 자극·관찰한 6편</strong>만 판정에 사용, 8절 ① 표)
 <strong>Layer B 참조 등록부</strong>: 4계층 참조 등록부(B1~B4) (B-Check 6항목, 부합 기준 ≥ 8/12)
 <strong>해부 온톨로지</strong>: FMA 5.1.0 로컬 색인 — 교재 구조를 <code>FMA:ID</code>로 고정(B1 보조, 등록부 미등재), 부록 A
-<strong>도량형 환산</strong>: 한대 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$)</p>
+<strong>도량형 환산</strong>: 한대 기준 1푼(分) = 2.3mm ($z = \text{푼} \times 2.3\text{mm}$)
+<strong>3D 해부 측정(2026-11-05)</strong>: BodyParts3D 4.0 표준 모델에서 골도분촌으로 정위한 피부점의 구조별 깊이와, 피부면만 SMPL-X 체형 피부(BMI 24·30)로 바꾼 보조값을 측정했다(4절 '3D 해부 측정', 상호작용 3D 모델). 규범 해부 형상 참고(B1 보조)이며 <strong>ARI 점수 불변</strong></p>
 </blockquote>
 <hr>
 <h2 id="1-4">1. 문헌 스크리닝 표 (4대 원전 원문 발췌)</h2>
@@ -373,6 +374,100 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li>김재효 데이터셋의 셋째 근육 행 "발목관절의 안쪽힘줄 ligament of ankle joint) (medial (deltoid)"는 삼각인대가 괄호 처리 중 깨져 들어간 <strong>중복 행</strong>이다(FMA 미대응). 구조로 세지 않는다.</li>
 <li>교재는 '앞정강근'을 적지만 상구 높이에서는 근복이 아니라 힘줄이다. 근육의 분절(L4·L5)은 힘줄 자극의 구심 분절과 같다고 보지 않고 참고로만 둔다.</li>
 </ul>
+<p><strong>3D 해부 측정 — BodyParts3D 4.0 표준 모델 + SMPL-X 체형 피부 (2026-11-05, B1 보조)</strong></p>
+<p>FMA ID로 연결된 BodyParts3D 4.0 메쉬에서 교재 구조를 불러와, 뼈 기준점(관절선·뼈끝·돌기)으로 근사한 골도분촌 정위점의 구조별 깊이를 쟀다. 같은 정위점에서 피부면만 SMPL-X 통계 체형 피부(남성, 키 1.72 m, BMI 24·30)로 바꾼 값을 나란히 적는다.</p>
+<ul>
+<li><strong>정위(오른쪽)</strong>: 안쪽복사 앞아래 오목: 안쪽복사 끝과 발배뼈거친면을 잇는 선의 중점에서 가장 가까운 피부점 · 기준점: 안쪽복사 끝·발배뼈거친면</li>
+<li><strong>문헌 자입 깊이</strong>: 7종 평균 4.14푼 = 9.5 mm (n=7, 중앙값 3.0푼, 범위 3–6.5푼) · 고전 3.0푼(n=4) · 현대 5.67푼(n=3)</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">구조</th>
+<th style="text-align: left;">구분</th>
+<th style="text-align: left;">FMA</th>
+<th style="text-align: right;">BodyParts3D 피부 mm (푼)</th>
+<th style="text-align: right;">후보 영역 중앙값 (10–90%)</th>
+<th style="text-align: right;">체형 피부 BMI 24</th>
+<th style="text-align: right;">체형 피부 BMI 30</th>
+<th style="text-align: center;">문헌 평균 9.5 mm 이내</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">정강뼈(안쪽복사) <em>(기준 구조)</em></td>
+<td style="text-align: left;">기준(교재 목록 외)</td>
+<td style="text-align: left;">FMA:24476</td>
+<td style="text-align: right;">11.2 (4.9)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">9.1</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+<tr>
+<td style="text-align: left;">목말뼈 <em>(기준 구조)</em></td>
+<td style="text-align: left;">기준(교재 목록 외)</td>
+<td style="text-align: left;">FMA:9708</td>
+<td style="text-align: right;">11.4 (5.0)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">11.2</td>
+<td style="text-align: right;">11.4</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+<tr>
+<td style="text-align: left;">발배뼈 <em>(기준 구조)</em></td>
+<td style="text-align: left;">기준(교재 목록 외)</td>
+<td style="text-align: left;">FMA:24499</td>
+<td style="text-align: right;">15.9 (6.9)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">16.7</td>
+<td style="text-align: right;">16.8</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+<tr>
+<td style="text-align: left;">앞정강근</td>
+<td style="text-align: left;">근육</td>
+<td style="text-align: left;">FMA:22532</td>
+<td style="text-align: right;">24.4 (10.6)</td>
+<td style="text-align: right;">25.0 (22.2–28.7)</td>
+<td style="text-align: right;">24.0</td>
+<td style="text-align: right;">23.1</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+<tr>
+<td style="text-align: left;">큰두렁정맥</td>
+<td style="text-align: left;">정맥</td>
+<td style="text-align: left;">FMA:21376</td>
+<td style="text-align: right;">25.6 (11.1)</td>
+<td style="text-align: right;">26.2 (22.5–29.9)</td>
+<td style="text-align: right;">24.8</td>
+<td style="text-align: right;">23.3</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+<tr>
+<td style="text-align: left;">안쪽발목동맥 <em>(상위 구조 메쉬)</em></td>
+<td style="text-align: left;">동맥</td>
+<td style="text-align: left;">FMA:43894</td>
+<td style="text-align: right;">26.8 (11.7)</td>
+<td style="text-align: right;">27.4 (24.5–30.6)</td>
+<td style="text-align: right;">25.0</td>
+<td style="text-align: right;">24.2</td>
+<td style="text-align: center;">아니오</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>체형 피부 대표점 이동(BodyParts3D 정위점 → 가장 가까운 체형 피부점): BMI 24 1.6 mm · BMI 30 1.4 mm</li>
+<li><em>(기준 구조)</em> = 교재 구조 목록에는 없지만 층 위치를 가늠하려고 함께 잰 표층 근육·바닥 뼈·장기</li>
+<li>표에서 뺀 행: 상위 구조 메쉬로만 대응되어 먼 곳에서 잡힌 행 안쪽복사동맥그물</li>
+<li>메쉬가 없어 재지 못한 교재 구조: 두렁신경, 발목관절의 삼각인대, 발목관절의 안쪽힘줄 ligament of ankle joint)</li>
+<li><strong>상호작용 3D 모델</strong>: <a href="SP05_mesh3d_model.html">상구(商丘, SP5) 3D 해부 모델</a> (교재 구조·피부 조각·정위점과 구조별 깊이 선. 브라우저에서 돌려 볼 수 있다)</li>
+<li><strong>읽는 법</strong>:</li>
+<li>① 가장 얕은 구조(정강뼈(안쪽복사))까지 BodyParts3D 피부에서 11.2 mm, 체형 피부에서 BMI 24 9.1 mm · BMI 30 8.7 mm다. 피부면 차이는 2.1~2.5 mm다.</li>
+<li>② 문헌 7종 평균 깊이(9.5 mm) 안에 표면이 있는 구조는 BodyParts3D 피부 기준 0개다. 체형 피부 BMI 24 기준으로는 1개(정강뼈(안쪽복사))다.</li>
+<li><strong>보고서 서술과의 대조</strong>: 4절은 고전 3푼(6.9 mm)이 지지띠·앞정강근 힘줄 층에 머물고, 상한 8푼(18.4 mm)이 삼각인대·관절주머니에 가깝다고 추정했다. 표준 모델에서 안쪽복사(정강뼈)·목말뼈 표면까지 11.2–11.4 mm여서, 수직 직자로는 8푼 전에 뼈 높이에 이른다. 표의 앞정강근은 근육 메쉬까지의 거리라 힘줄 위치보다 멀게 잡혔다.</li>
+<li><strong>한계</strong>: 한 사람의 표준 모델(BodyParts3D)과 통계 체형 피부(SMPL-X) 정합 추정이다. 정위점은 뼈 기준점으로 근사한 골도분촌 위치이고, 깊이는 피부점에서 구조 표면까지의 최소 직선거리라 자입 방향 깊이와 다를 수 있다. 개인차·자세·근긴장은 반영되지 않으므로 이 mm는 층 순서·상대 깊이의 근거로만 쓰고 생체 안전 깊이로 옮기지 않는다. 규범 해부 형상 참고(B1 보조)이며 경혈 실측(B2)이 아니다.</li>
+</ul>
 <hr>
 <h2 id="5">5. 자침 깊이 계산표</h2>
 <p>출처: 역대 침구문헌 자침심도 데이터베이스 시트1 Excel 행 135(N0 133, SP05), 보조로 4대 원전(《经络通鉴》에는 상구 심도 신규 기재 없음 — 马莳 《本输》 주 "针三分，灸三壮"(经络通鉴 11편 L492)은 《明堂》 계승).</p>
@@ -468,7 +563,12 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </table></div>
 <ul>
 <li>금침('0') 기록 없음, 'blank' 없음(DB 해당 열 기준). 《千金翼方》 '忌灸'는 <strong>뜸</strong> 금기 이문이며 침 금기가 아니다.</li>
-<li>안전 범위: 3~5푼은 피하·지지띠 아래 결합조직에 머문다. 8푼 직자는 삼각인대 앞섬유·관절주머니에 가까워 관절강 천자 가능성이 있다(추정, 실측 없음). 큰두렁정맥·두렁신경이 자침점 안쪽 피하를 지나므로 정맥을 눈으로 확인하고 피한다.</li>
+<li>
+<p>안전 범위: 3~5푼은 피하·지지띠 아래 결합조직에 머문다. 8푼 직자는 삼각인대 앞섬유·관절주머니에 가까워 관절강 천자 가능성이 있다(추정, 실측 없음). 큰두렁정맥·두렁신경이 자침점 안쪽 피하를 지나므로 정맥을 눈으로 확인하고 피한다.</p>
+</li>
+<li>
+<p><strong>3D 해부 측정 대조(2026-11-05, B1 보조)</strong>: 문헌 7종 평균 9.5 mm 안에 표면이 있는 구조는 BodyParts3D 피부 기준 없음, 체형 피부 BMI 24 기준 1개(4절 '3D 해부 측정' 표). 직선거리 기준 도달 가능성 표시이며 손상 위험 판정이 아니다.</p>
+</li>
 </ul>
 <hr>
 <h2 id="6">6. 해부학 구조 교재 비교표</h2>
@@ -1041,6 +1141,26 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li><strong>분기 판정 (Tri-Target)</strong>: 세 Target의 쌍별 Δ가 모두 10mm 이내(추정)라 Target 1≡2≡3 단일 Target — 독립 분기 없음, ΔARI-Core 판정 해당 없음.</li>
 <li><strong>조정 기록</strong>: SI가 A 75·B 50으로 25점 차(≥ 15)라 조정했다. B는 "직자 시 Layer 4 신경혈관속 직접 접촉"(50단계)으로 보았으나, 상구 옆 혈관은 피하의 큰두렁정맥으로 육안·촉지로 피할 수 있고, 관절주머니는 신경혈관속이 아니며, 문헌이 3~5푼 심도와 횡자법을 명시하므로 75단계("사자·횡자로 회피 가능, 문헌에 각도·심도 제한 명시")로 확정했다. 나머지 하위 점수의 차이는 $S_{orig}$ ① 1항목(25점, 평균 반영 시 6.25점)으로 조정 대상이 아니다.</li>
 </ul>
+<h3 id="3d-2026-11-05">3D 해부 측정의 채점 영향 (2026-11-05)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">추가 근거</th>
+<th style="text-align: left;">영향을 받을 수 있는 항목</th>
+<th style="text-align: left;">검토</th>
+<th style="text-align: left;">결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BodyParts3D 4.0 골도분촌 정위점의 구조별 깊이 + SMPL-X 체형 피부(BMI 24·30) 보조값(4절 '3D 해부 측정')</td>
+<td style="text-align: left;">$S_{clarity}$ · SI</td>
+<td style="text-align: left;">교재 구조의 층 순서와 문헌 평균 깊이 안의 구조를 표준 3D 형상으로 확인했다. 한 사람 표준 모델과 통계 체형 피부 정합 추정(B1 보조)이며 혈위 특이 실측(B2)이 아니므로 루브릭의 단계 조건에 해당하지 않는다</td>
+<td style="text-align: left;">단계 불변</td>
+</tr>
+</tbody>
+</table></div>
+<p>→ 루브릭 단계가 바뀌는 항목이 없으므로 이중 재채점은 하지 않았다.</p>
 <h3 id="_3">최종 결론</h3>
 <p>상구(SP05)의 해부학적 실체는 <strong>개연(B)</strong> 수준이다. 위치는 《灵枢·本输》 이래 안쪽복사 앞아래 오목으로 고금이 일치하고, 그 아래 두렁신경·큰두렁정맥(피하), 앞정강근 힘줄 안쪽 오목, 깊은 곳의 삼각인대·관절주머니가 2대 교재·《穴位通鉴》 국소해부·FMA 표준 실체로 확인된다. 다만 고전 주치의 중심인 비위 증후를 설명하는 반사 경로는 상구에서 검증되지 않았다(B-Check 7/12, <strong>가설</strong>).</p>
 <p>《中国针灸经络通鉴》 교감은 ① 족태음 경맥이 안쪽복사 앞모서리를 지나고 주가들이 상구를 그 경과점으로 둔다는 점, ② 《灵枢·经脉》 '外踝'가 '内踝'의 필사 오류이며 안쪽복사 앞의 '눈에 보이는 맥'이 피하 큰두렁정맥으로 읽힌다는 점, ③ 《明堂》의 '足太阴→상구' 주치 귀속이 경락론적 확장이 아니라 경맥혈 독해라는 점을 더했다. 이 교감으로 루브릭 단계가 바뀌지는 않는다. 고전 문헌(Target 1)·촉진 실체화(Target 2)·WHO(Target 3) 세 위치는 서로 10mm 이내(추정)인 하나의 오목이다(Target 1≡2≡3).</p>
@@ -1287,7 +1407,50 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-25 14:21 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
+<h2 id="2026-11-05-3d">2026-11-05 3D 해부 측정 보강 이력</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">위치</th>
+<th style="text-align: left;">원래 내용</th>
+<th style="text-align: left;">바꾼 내용</th>
+<th style="text-align: left;">근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">머리말</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">3D 해부 측정 줄 추가(점수 불변)</td>
+<td style="text-align: left;">이번 개정</td>
+</tr>
+<tr>
+<td style="text-align: left;">4절</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>'3D 해부 측정' 소절 신설</strong>: 뼈 기준점으로 근사한 골도분촌 정위점, 구조별 깊이표(BodyParts3D 피부·SMPL-X 체형 피부 BMI 24·30), 읽는 법, 상호작용 3D 모델 링크</td>
+<td style="text-align: left;">BodyParts3D 4.0(CC BY 4.0), SMPL-X Body License CC BY 4.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">5절</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">문헌 7종 평균 깊이 안에 표면이 있는 구조 대조 한 줄</td>
+<td style="text-align: left;">자침깊이 DB 7종 같은 가중치 평균, 1푼 = 2.3mm</td>
+</tr>
+<tr>
+<td style="text-align: left;">10절</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">'3D 해부 측정의 채점 영향' 표(단계 불변)</td>
+<td style="text-align: left;">정본 Rank 7 루브릭</td>
+</tr>
+<tr>
+<td style="text-align: left;">점수</td>
+<td style="text-align: left;">기존 ARI·SI</td>
+<td style="text-align: left;"><strong>변경 없음</strong></td>
+<td style="text-align: left;">10절 채점 영향 표</td>
+</tr>
+</tbody>
+</table></div>
+<p class="meta">생성: 2026-11-05 15:37 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

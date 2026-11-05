@@ -1,0 +1,163 @@
+{
+ "code": "GB39",
+ "source": "김재효",
+ "side": "right",
+ "skin": "SMPL-X 체형 피부 male_bmi30 (male · 키 1.722 m · BMI 29.87)",
+ "method": "지정 좌표 반경 6 mm 피부 영역 → 체형 피부의 가장 가까운 점으로 옮김(대표점 이동 18.8 mm)",
+ "candidate_points": 35,
+ "candidate_extent_mm": [
+  3.3,
+  16.3,
+  8.6
+ ],
+ "point_mm": [
+  -122.0,
+  -65.9,
+  45.2
+ ],
+ "depths": [
+  {
+   "structure": "긴발가락폄근 · Extensor digitorum longus",
+   "category": "근육",
+   "fma_id": 22534,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 24.2,
+   "depth_pun_at_point": 10.5,
+   "depth_mm_median": 23.8,
+   "depth_mm_p10": 23.6,
+   "depth_mm_p90": 24.6,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "셋째종아리근 · Fibularis tertius",
+   "category": "근육",
+   "fma_id": 22538,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 24.2,
+   "depth_pun_at_point": 10.5,
+   "depth_mm_median": 26.3,
+   "depth_mm_p10": 26.0,
+   "depth_mm_p90": 27.0,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "짧은종아리근 · Fibularis brevis",
+   "category": "근육",
+   "fma_id": 22540,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 25.0,
+   "depth_pun_at_point": 10.9,
+   "depth_mm_median": 32.3,
+   "depth_mm_p10": 30.0,
+   "depth_mm_p90": 34.2,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "긴엄지폄근 · Extensor hallucis longus",
+   "category": "근육",
+   "fma_id": 22533,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 30.3,
+   "depth_pun_at_point": 13.2,
+   "depth_mm_median": 28.5,
+   "depth_mm_p10": 27.6,
+   "depth_mm_p90": 30.3,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "긴엄지굽힘근 · Flexor hallucis longus",
+   "category": "근육",
+   "fma_id": 22593,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 36.2,
+   "depth_pun_at_point": 15.7,
+   "depth_mm_median": 38.2,
+   "depth_mm_p10": 37.7,
+   "depth_mm_p90": 39.0,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "앞정강동ㆍ정맥 · Anterior tibial vein",
+   "category": "정맥",
+   "fma_id": 44331,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 41.6,
+   "depth_pun_at_point": 18.1,
+   "depth_mm_median": 36.9,
+   "depth_mm_p10": 35.0,
+   "depth_mm_p90": 39.7,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "앞정강동ㆍ정맥 · Anterior tibial artery",
+   "category": "동맥",
+   "fma_id": 43894,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 48.8,
+   "depth_pun_at_point": 21.2,
+   "depth_mm_median": 43.6,
+   "depth_mm_p10": 41.2,
+   "depth_mm_p90": 46.5,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "종아리동ㆍ정맥 · Fibular vein",
+   "category": "정맥",
+   "fma_id": 44558,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 58.0,
+   "depth_pun_at_point": 25.2,
+   "depth_mm_median": 63.5,
+   "depth_mm_p10": 62.3,
+   "depth_mm_p90": 64.7,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "종아리동ㆍ정맥 · Posterior tibial artery",
+   "category": "동맥",
+   "fma_id": 43895,
+   "mesh_level": "ancestor+1",
+   "depth_mm_at_point": 106.1,
+   "depth_pun_at_point": 46.1,
+   "depth_mm_median": 102.5,
+   "depth_mm_p10": 99.3,
+   "depth_mm_p90": 105.5,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "GB39 현종: 7종 평균 6.21푼 = 14.3 mm (n=7, 중앙값 6.0푼, 범위 6–6.5푼) · 고전 6.0푼(n=4) · 현대 6.5푼(n=3)",
+  "mean_pun": 6.21,
+  "mean_mm": 14.3,
+  "classic_mm": 13.8,
+  "modern_mm": 14.9,
+  "modern_range_mm": [
+   11.5,
+   18.4
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": []
+ },
+ "missing_structures": [
+  "가쪽장딴지피부신경 (lateral sural cutaneous nerve) — BodyParts3D 메쉬 없음",
+  "깊은종아리신경 (deep fibular nerve) — BodyParts3D 메쉬 없음",
+  "얕은종아리신경 (superficial fibular nerve) — BodyParts3D 메쉬 없음",
+  "종아리동맥의 관통가지 (perforating branch of the fibular artery) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International Body surface generated with SMPL-X (Pavlakos et al., CVPR 2019), © Max Planck Institute for Intelligent Systems, SMPL-X Body License CC BY 4.0 (https://smpl-x.is.tue.mpg.de/bodylicense.html). Changes: shape set to target stature/BMI, posed and registered to BodyParts3D 4.0 joint centres",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다. 피부면은 BodyParts3D 골격 관절 중심에 등록한 SMPL-X 통계 체형 피부이며, 근육·지방 층은 BodyParts3D 그대로라 체형 차이는 피하층 두께 차이로만 나타나는 근사다. 음수 깊이 = 구조 표면이 체형 피부 밖에 놓임(정합 오차).",
+ "skin_joint_error_mm": {
+  "hip_left": 20.7,
+  "hip_right": 22.4,
+  "knee_left": 11.3,
+  "knee_right": 20.5,
+  "ankle_left": 10.3,
+  "ankle_right": 10.5,
+  "shoulder_left": 4.6,
+  "shoulder_right": 2.4,
+  "elbow_left": 5.1,
+  "elbow_right": 0.8,
+  "wrist_left": 0.4,
+  "wrist_right": 3.0
+ }
+}

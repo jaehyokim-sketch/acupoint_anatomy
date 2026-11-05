@@ -75,7 +75,8 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <strong>Anatomical Ontology</strong>: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s and their innervation, spinal segments and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 <strong>Reports integrated</strong>: the LU03 Tianfu (天府) report, the LU04 Xiabai (俠白) report and the earlier LU3–LU4 comparative-analysis report. The originals and the pre-revision edition are kept internally.
 <strong>Principle of integration</strong>: because content overlap among the three reports exceeded 50%, they were merged into a single authoritative edition built around the comparative-analysis report. During integration the text was re-checked against the Three Primary Classics (re-collated against the four primary classics on 2026-10-25, with the <em>Zhongguo Zhenjiu Jingluo Tongjian</em> (《中國針灸經絡通鑑》) added), the master datasets and the original papers, and contradictions and factual errors among the earlier reports were corrected (§11, correction audit table).
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions. In evidence pointers, "Xuewei Tongjian" = 《中國針灸穴位通鑑》, "Zhengzhi Tongjian" = 《中國針灸證治通鑑》 and "Tongkao" = 《針灸腧穴通考》, followed by the PDF page range and line number.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions. In evidence pointers, "Xuewei Tongjian" = 《中國針灸穴位通鑑》, "Zhengzhi Tongjian" = 《中國針灸證治通鑑》 and "Tongkao" = 《針灸腧穴通考》, followed by the PDF page range and line number.
+<strong>3D anatomical measurement (2026-11-05)</strong>: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). <strong>ARI scores unchanged.</strong></p>
 </blockquote>
 <hr>
 <h2 id="0-executive-summary">0. Executive Summary</h2>
@@ -592,6 +593,132 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li>Among the Kim Jaehyo textbook terms, "superior lateral cutaneous nerve" lacks "of arm", so automatic mapping failed; it is mapped manually to FMA:65303 <em>Superior lateral cutaneous nerve of arm</em>. "dorsal antebrachial cutaneous n., C5-6" is regarded as a duplicate designation of the same structure as the textbook's posterior cutaneous nerve of forearm (FMA:39145 <em>Posterior cutaneous nerve of forearm</em>) (automatic mapping: none).</li>
 <li>FMA segments exist only in the muscles' <code>segmental_supply</code> (biceps brachii and coracobrachialis C5, C6; deltoid C5 primary, C6), not in the nerves themselves. Nerve segments are described from B1-01 and B1-03. The T1 and T2 cutaneous nerves in T1 L1 above are not in the textbook datasets and have been supplemented from FMA and normative anatomy (segmental basis of H1 in 8.2).</li>
 </ul>
+<p><strong>3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)</strong></p>
+<p>Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.</p>
+<p><em>Tianfu (天府, LU3)</em></p>
+<ul>
+<li><strong>Location (right side)</strong>: WHO standard location approximated from bone landmarks by proportional bone measurement; 1 cun = 23.91 mm.</li>
+<li><strong>Literature needling depth</strong>: seven-source mean 5.58 fen = 12.8 mm (classical 8.4 mm, modern 17.2 mm).</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Structure</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">FMA</th>
+<th style="text-align: right;">BodyParts3D skin mm (fen)</th>
+<th style="text-align: right;">Candidate-region median (10–90%)</th>
+<th style="text-align: right;">Body-shape skin BMI 24</th>
+<th style="text-align: right;">Body-shape skin BMI 30</th>
+<th style="text-align: center;">Within literature mean 12.8 mm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Long head of biceps brachii</td>
+<td style="text-align: left;">muscle</td>
+<td style="text-align: left;">FMA:37683</td>
+<td style="text-align: right;">9.3 (4.0)</td>
+<td style="text-align: right;">7.7 (6.8–9.4)</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cephalic vein</td>
+<td style="text-align: left;">vein</td>
+<td style="text-align: left;">FMA:13324</td>
+<td style="text-align: right;">28.1 (12.2)</td>
+<td style="text-align: right;">28.0 (25.5–30.1)</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">humerus <em>(reference)</em></td>
+<td style="text-align: left;">reference (not in textbook list)</td>
+<td style="text-align: left;">FMA:13303</td>
+<td style="text-align: right;">35.1 (15.3)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">no</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Shift of the representative point onto the body-shape skin: BMI 24 21.8 mm · BMI 30 16.0 mm</li>
+<li>‡ Not used because the registration error is large (point shift &gt; 10 mm or the body-shape skin passes through a structure)</li>
+<li><em>(reference)</em> = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position</li>
+<li>Textbook structures without a BodyParts3D mesh (not measured): 6</li>
+<li><strong>Interactive 3D model</strong>: <a href="LU03_mesh3d_model.html">Tianfu (天府, LU3) 3D anatomical model</a> (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)</li>
+<li><strong>How to read it</strong>:</li>
+<li>① The shallowest structure (Long head of biceps brachii) lies 9.3 mm deep with the BodyParts3D skin. The body-shape skin is not compared here because its registration error is large.</li>
+<li>② With the BodyParts3D skin, 1 structure(s) have their surface within the seven-source mean depth (12.8 mm): Long head of biceps brachii.</li>
+</ul>
+<p><em>Xiabai (俠白, LU4)</em></p>
+<ul>
+<li><strong>Location (right side)</strong>: WHO standard location approximated from bone landmarks by proportional bone measurement; 1 cun = 23.91 mm.</li>
+<li><strong>Literature needling depth</strong>: seven-source mean 5.58 fen = 12.8 mm (classical 8.4 mm, modern 17.2 mm).</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Structure</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">FMA</th>
+<th style="text-align: right;">BodyParts3D skin mm (fen)</th>
+<th style="text-align: right;">Candidate-region median (10–90%)</th>
+<th style="text-align: right;">Body-shape skin BMI 24</th>
+<th style="text-align: right;">Body-shape skin BMI 30</th>
+<th style="text-align: center;">Within literature mean 12.8 mm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Long head of biceps brachii</td>
+<td style="text-align: left;">muscle</td>
+<td style="text-align: left;">FMA:37683</td>
+<td style="text-align: right;">8.6 (3.7)</td>
+<td style="text-align: right;">7.1 (6.4–8.7)</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cephalic vein</td>
+<td style="text-align: left;">vein</td>
+<td style="text-align: left;">FMA:13324</td>
+<td style="text-align: right;">26.6 (11.5)</td>
+<td style="text-align: right;">25.1 (23.0–27.7)</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">humerus <em>(reference)</em></td>
+<td style="text-align: left;">reference (not in textbook list)</td>
+<td style="text-align: left;">FMA:13303</td>
+<td style="text-align: right;">37.7 (16.4)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: right;">—‡</td>
+<td style="text-align: center;">no</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Shift of the representative point onto the body-shape skin: BMI 24 20.1 mm · BMI 30 15.8 mm</li>
+<li>‡ Not used because the registration error is large (point shift &gt; 10 mm or the body-shape skin passes through a structure)</li>
+<li><em>(reference)</em> = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position</li>
+<li>Textbook structures without a BodyParts3D mesh (not measured): 4</li>
+<li><strong>Interactive 3D model</strong>: <a href="LU04_mesh3d_model.html">Xiabai (俠白, LU4) 3D anatomical model</a> (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)</li>
+<li><strong>How to read it</strong>:</li>
+<li>① The shallowest structure (Long head of biceps brachii) lies 8.6 mm deep with the BodyParts3D skin. The body-shape skin is not compared here because its registration error is large.</li>
+<li>② With the BodyParts3D skin, 1 structure(s) have their surface within the seven-source mean depth (12.8 mm): Long head of biceps brachii.</li>
+<li><strong>Comparison with the report</strong>: Section 4 gives depths as estimates from general anatomical knowledge. In the standard model the long head of biceps brachii lies 8.6–9.3 mm deep and the humerus 35–38 mm. The body-shape skin registration error is large on the upper arm (point shift 16–22 mm; it passes through biceps brachii), so the BMI values are not used.</li>
+<li><strong>Limitations</strong>: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).</li>
+</ul>
 <hr>
 <h2 id="5-needling-depth-calculation-table-rank-5-1-fen-23-mm">5. Needling Depth Calculation Table (Rank 5: 1 fen = 2.3 mm)</h2>
 <p>Classical Needling Depth Database Sheet 1, rows 56 (LU03) and 57 (LU04) (identical values for the two points), collated with the classics:</p>
@@ -662,6 +789,9 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
   3. Withdraw the needle immediately if an electric-shock sensation (median-nerve stimulation) occurs.
   4. Do not apply direct moxibustion.
 - The earlier comparative report's recommendation of "oblique needling as if grazing the arterial wall" is <strong>withdrawn for safety reasons.</strong></p>
+<ul>
+<li><strong>Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)</strong>: Tianfu (天府, LU3): structures whose surface lies within the seven-source mean of 12.8 mm: Long head of biceps brachii (BodyParts3D skin); Xiabai (俠白, LU4): structures whose surface lies within the seven-source mean of 12.8 mm: Long head of biceps brachii (BodyParts3D skin) (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.</li>
+</ul>
 <hr>
 <h2 id="6-textbook-comparison-table-of-anatomical-structures-common-textbook-vs-kim-jaehyo">6. Textbook Comparison Table of Anatomical Structures (Common Textbook vs. Kim Jaehyo)</h2>
 <div class="table-wrap"><table>
@@ -1964,6 +2094,26 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tr>
 </tbody>
 </table></div>
+<h3 id="effect-of-the-3d-anatomical-measurement-on-scoring-2026-11-05">Effect of the 3D anatomical measurement on scoring (2026-11-05)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">New evidence</th>
+<th style="text-align: left;">Item that could be affected</th>
+<th style="text-align: left;">Review</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement')</td>
+<td style="text-align: left;">$S_{clarity}$ · SI</td>
+<td style="text-align: left;">The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition</td>
+<td style="text-align: left;">Step unchanged</td>
+</tr>
+</tbody>
+</table></div>
+<p>→ No rubric step changes, so no dual re-scoring was done.</p>
 <h3 id="final-conclusion-on-substrate-identification">Final Conclusion on Substrate Identification</h3>
 <ol>
 <li><strong>Anatomical substrate of the classical Tianfu (天府) and Xiabai (俠白) (cLU3 C·H, cLU4 C·H — possible/hypothetical)</strong>: on both classical and anatomical grounds it is most plausibly the <strong>pulsation site of the brachial artery and its neurovascular bundle</strong> in the medial bicipital groove (L4: median nerve, periarterial sympathetic plexus). It was originally <strong>a Hand-Taiyin marker pulse (手太陰標脈, a diagnostic pulsation site) converted into an acupoint</strong>. Because there are no point-specific measurements and no point-specific Layer A, it is not established. The reflex mechanisms (H1, H3) are <strong>hypotheses</strong>.</li>
@@ -2623,7 +2773,50 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-25 21:58 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
+<h2 id="2026-11-05-3d-anatomical-measurement-record">2026-11-05 3D anatomical measurement record</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Original</th>
+<th style="text-align: left;">Change</th>
+<th style="text-align: left;">Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Header</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Added a 3D anatomical measurement line (scores unchanged)</td>
+<td style="text-align: left;">This revision</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 4</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>New '3D anatomical measurement' subsection</strong>: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model</td>
+<td style="text-align: left;">BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 5</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">One line comparing the structures within the seven-source mean depth</td>
+<td style="text-align: left;">Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 10</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged)</td>
+<td style="text-align: left;">Canonical Rank 7 rubric</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scores</td>
+<td style="text-align: left;">Existing ARI and SI</td>
+<td style="text-align: left;"><strong>No change</strong></td>
+<td style="text-align: left;">Scoring-effect table in Section 10</td>
+</tr>
+</tbody>
+</table></div>
+<p class="meta">생성: 2026-11-05 15:36 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

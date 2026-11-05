@@ -1,0 +1,104 @@
+{
+ "code": "SP06",
+ "source": "김재효",
+ "side": "right",
+ "skin": "BodyParts3D 4.0 피부(FMA:7163)",
+ "method": "지정 좌표 반경 6 mm 피부 영역",
+ "candidate_points": 62,
+ "candidate_extent_mm": [
+  4.7,
+  9.8,
+  11.7
+ ],
+ "point_mm": [
+  -45.0,
+  -66.0,
+  70.6
+ ],
+ "depths": [
+  {
+   "structure": "긴발가락굽힘근 · Flexor digitorum longus",
+   "category": "근육",
+   "fma_id": 51071,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 6.7,
+   "depth_pun_at_point": 2.9,
+   "depth_mm_median": 6.2,
+   "depth_mm_p10": 4.0,
+   "depth_mm_p90": 8.6,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "뒤정강동ㆍ정맥 · Posterior tibial vein",
+   "category": "정맥",
+   "fma_id": 44332,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 11.5,
+   "depth_pun_at_point": 5.0,
+   "depth_mm_median": 10.8,
+   "depth_mm_p10": 7.7,
+   "depth_mm_p90": 14.8,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "가자미근 · Soleus",
+   "category": "근육",
+   "fma_id": 22542,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 12.8,
+   "depth_pun_at_point": 5.6,
+   "depth_mm_median": 11.9,
+   "depth_mm_p10": 9.6,
+   "depth_mm_p90": 14.7,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "큰두렁정맥 · Great saphenous vein",
+   "category": "정맥",
+   "fma_id": 21376,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 25.0,
+   "depth_pun_at_point": 10.9,
+   "depth_mm_median": 25.4,
+   "depth_mm_p10": 21.2,
+   "depth_mm_p90": 28.5,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "뒤정강동ㆍ정맥 · Posterior tibial artery",
+   "category": "동맥",
+   "fma_id": 43895,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 136.5,
+   "depth_pun_at_point": 59.4,
+   "depth_mm_median": 136.6,
+   "depth_mm_p10": 132.9,
+   "depth_mm_p90": 139.8,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "SP06 삼음교: 7종 평균 7.07푼 = 16.3 mm (n=7, 중앙값 3.0푼, 범위 3–12.5푼) · 고전 3.0푼(n=4) · 현대 12.5푼(n=3)",
+  "mean_pun": 7.07,
+  "mean_mm": 16.3,
+  "classic_mm": 6.9,
+  "modern_mm": 28.7,
+  "modern_range_mm": [
+   23.0,
+   34.5
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": [
+   "긴발가락굽힘근 · Flexor digitorum longus",
+   "뒤정강동ㆍ정맥 · Posterior tibial vein",
+   "가자미근 · Soleus"
+  ]
+ },
+ "missing_structures": [
+  "뒤정강근 (posterior tibialis) — FMA 대응 none",
+  "두렁신경의 안쪽종아리피부가지 (medial crural cutaneous branch of the saphenous nerve) — BodyParts3D 메쉬 없음",
+  "정강신경 (tibial nerve) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다."
+}

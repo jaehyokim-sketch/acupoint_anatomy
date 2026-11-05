@@ -6,6 +6,7 @@
 > **First written**: 2026-07-31 (v2.6) · **Revised**: 2026-10-04 (v2.7; the earlier edition is kept in the internal archive) · **FMA supplement**: 2026-10-23 (the pre-supplement edition is kept in the internal archive) · **Measured check of head-posture localization principles**: 2026-10-29 (apex under lateral-canal-horizontal flexion and the earlobe–apex line, tested on the midsagittal section of the BodyParts3D reference model; Section 7.2)
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their nerve trunks, spinal segments and venous drainage chains are cross-checked (B1 supplementary, not yet in the registry). Structures used to test the localization principles (Vertex FMA:46484, Sagittal suture FMA:52929, Nasion FMA:264779, Inion FMA:76624, Lateral semicircular canal FMA:60193, Apex of pinna FMA:61178, Lobule of pinna FMA:60984, Precentral gyrus FMA:72661·72662, Postcentral gyrus FMA:72665·72666) are listed in Section 4.4.2. 3D shape: BodyParts3D 4.0 (CC BY 4.0, a single reference model — normative shape reference, B1 supplementary). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A.
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
+> **3D anatomical measurement (2026-11-05)**: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). **ARI scores unchanged.**
 
 ---
 
@@ -197,6 +198,29 @@ Structures used in Section 7.2. All FMA IDs and names were confirmed in the FMA 
 | Cerebrum | Central sulcus | FMA:83752 | Central sulcus | Check of Taylor-Haughton 54% | Upper end at about N-I 57% in the model (about 1 cm from the predicted 54%) |
 | Cerebrum | Paracentral lobule | FMA:77534 | Paracentral lobule | Medial continuation of the pre- and postcentral gyri | No BodyParts3D mesh — position inferred indirectly from the dorsal ends of the pre- and postcentral gyri |
 
+**3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)**
+
+Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.
+
+- **Location (right side)**: WHO standard location approximated from bone landmarks by proportional bone measurement.
+- **Literature needling depth**: seven-source mean 3.83 fen = 8.8 mm (classical 5.8 mm, modern 14.9 mm).
+
+| Structure | Type | FMA | BodyParts3D skin mm (fen) | Candidate-region median (10–90%) | Body-shape skin BMI 24 | Body-shape skin BMI 30 | Within literature mean 8.8 mm |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | :---: |
+| parietal bone *(reference)* | reference (not in textbook list) | FMA:9613 | 5.3 (2.3) | — | —‡ | —‡ | yes |
+
+- Shift of the representative point onto the body-shape skin: BMI 24 10.5 mm · BMI 30 11.1 mm
+- ‡ Not used because the registration error is large (point shift > 10 mm or the body-shape skin passes through a structure)
+- *(reference)* = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position
+- Rows removed from the table: 5 (textbook structure mapped to a mesh of a different kind, only to a distant parent-structure mesh, or more than 60 mm from the located point)
+- Textbook structures without a BodyParts3D mesh (not measured): 5
+- **Interactive 3D model**: [Baihui (百會, GV20) 3D anatomical model](GV20_mesh3d_model.html) (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)
+- **How to read it**:
+  - ① The shallowest structure (parietal bone) lies 5.3 mm deep with the BodyParts3D skin. The body-shape skin is not compared here because its registration error is large.
+  - ② With the BodyParts3D skin, 1 structure(s) have their surface within the seven-source mean depth (8.8 mm): parietal bone.
+- **Comparison with the report**: the Section 4 scalp-layer estimate (pericranium about 5.5–7 mm) agrees with the parietal-bone depth of 5.3 mm in the standard model, as does the Section 4 judgement that the classical 刺入三分 (6.9 mm) can reach the pericranium. The head has no joint landmarks for registering the body-shape skin, so the BMI values are not used. The galea aponeurotica maps only to a parent-structure mesh (the whole head) and was removed from the table.
+- **Limitations**: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
+
 ---
 
 ## 5. Needling Depth Calculation Table
@@ -219,6 +243,8 @@ Raw values from the needling-depth DB (Classical Needling Depth Database, sheet 
 - Classical perpendicular range: 2–3 fen = 4.6–6.9 mm. The classics give no angle (*Mingtang Jing* "刺入三分", *Tongren* "針入二分"); 沿皮刺 is stated explicitly from Dou (竇氏) onward.
 - The modern transverse 5–8 fen is a path length within the scalp and is not converted to vertical depth (the earlier edition's θ = 15°/20° trigonometry and μ 2.6 fen · σ 0.4 fen were arbitrary values without basis and have been deleted).
 - Body-type variables: caution with an unclosed infant fontanelle and with hydrocephalus (Shanghai 《針灸學》, Tongkao L2612).
+
+- **Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)**: structures whose surface lies within the seven-source mean of 8.8 mm: parietal bone (BodyParts3D skin) (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.
 
 ---
 
@@ -513,6 +539,15 @@ Full re-check of 2026-10-29 (Rank 0: no drift; Rank 6 dry-run: 6 new candidates;
 | S_safety | 0 | No | — |
 | Adjudication note | needs_adjudication: none | | Rater B's conflict record (papers.id 1961, 旋毛 position ≠ bone-proportional position) is a location issue, not a conflict over the reflex mechanism, so 'hypothesis' is not applied to the B-Check verdict. The issue is stated in the location and branching section of the main text (Section 7). No item differed by 15 points or more. |
 
+### Effect of the 3D anatomical measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement') | $S_{clarity}$ · SI | The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition | Step unchanged |
+
+→ No rubric step changes, so no dual re-scoring was done.
+
+
 ### 10.7 Final Conclusion
 
 1. The anatomical substrate of GV20 is at the **probable (B)** level. In the scalp over the sagittal suture on the parietal midline, the core consists of the skin and dense subcutaneous layer (greater occipital nerve C2 + trigeminal V1/V3 terminals; anastomosis of the occipital artery with the parietal branch of the superficial temporal artery) and the epicranial aponeurosis (galea), beneath which lie the subaponeurotic loose connective tissue (parietal emissary vein) and the pericranium. There is no point-specific measurement, so it is not "established".
@@ -664,3 +699,13 @@ A draft entered earlier the same day (header and Sections 0, 4.1, 4.3, 4.4.2 and
 | Sections 10.5 and 10.7 | (draft history claimed a 10.7 supplement, but the text was unchanged) | Full re-check decision added to 10.5 (ARI unchanged); conclusion item 6 added to 10.7 | Section 7.2 |
 | ARI | ARI-Core 71.2 ± 2.5 (B), SI 75 | **Score unchanged** | Evidence for rubric steps unchanged |
 | Not verifiable | — | A study measuring the lateral canal plane, ear landmarks and bone-proportional GV20 in the same subjects (no Layer A study) | — |
+
+## 2026-11-05 3D anatomical measurement record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | — | Added a 3D anatomical measurement line (scores unchanged) | This revision |
+| Section 4 | — | **New '3D anatomical measurement' subsection**: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model | BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0 |
+| Section 5 | — | One line comparing the structures within the seven-source mean depth | Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm |
+| Section 10 | — | Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged) | Canonical Rank 7 rubric |
+| Scores | Existing ARI and SI | **No change** | Scoring-effect table in Section 10 |

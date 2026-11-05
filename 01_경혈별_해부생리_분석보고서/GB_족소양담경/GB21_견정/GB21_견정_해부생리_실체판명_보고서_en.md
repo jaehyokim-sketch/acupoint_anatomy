@@ -6,6 +6,7 @@
 
 > **Source datasets**: Classical Needling Depth Database (sheet 1, Excel row 326, N0 324) · Acupoint Nomenclature & Alias Comparative Database (comprehensive acupoint list, row 327) · Common Textbook Anatomical Structure Dataset (sheet `경혈별_해부구조_종합`, row 325; *Acupoint Studies* vol. 2, p.384) · Kim Jaehyo Anatomical Structure Dataset (sheet `경혈별_해부구조_종합`, row 325) · master DB Integrated Biomedical Master DB v3.0
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
+> **3D anatomical measurement (2026-11-05)**: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). **ARI scores unchanged.**
 
 ---
 
@@ -95,6 +96,33 @@ Collation with the *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通
 
 The two points in the earlier diagram — the "classical depression point (posterior −1 cm, trapezius/rhomboid depression)" and the "WHO highest point (anterior +1 cm)" — and "Layer 4 rhomboid + adjacent cervical sympathetic ganglion" have been deleted. The rhomboids do not lie in the suprascapular region (肩上), and the cervical sympathetic ganglia (anterolateral to the vertebral column) are not on the needling path of Jianjing.
 
+**3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)**
+
+Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.
+
+- **Location (right side)**: WHO standard location approximated from bone landmarks by proportional bone measurement.
+- **Literature needling depth**: seven-source mean 5.75 fen = 13.2 mm (classical 11.5 mm, modern 14.9 mm).
+
+| Structure | Type | FMA | BodyParts3D skin mm (fen) | Candidate-region median (10–90%) | Body-shape skin BMI 24 | Body-shape skin BMI 30 | Within literature mean 13.2 mm |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | :---: |
+| descending part of trapezius *(reference)* | reference (not in textbook list) | FMA:32557 | 22.5 (9.8) | — | —‡ | —‡ | no |
+| Levator scapulae | muscle | FMA:32519 | 42.4 (18.5) | 41.5 (39.3–43.1) | —‡ | —‡ | no |
+| Splenius cervicis | muscle | FMA:22681 | 53.2 (23.1) | 52.7 (49.2–54.5) | —‡ | —‡ | no |
+| scapula *(reference)* | reference (not in textbook list) | FMA:13394 | 54.8 (23.8) | — | —‡ | —‡ | no |
+| right lung *(reference)* | reference (not in textbook list) | FMA:7309 | 70.2 (30.5) | — | —‡ | —‡ | no |
+
+- Shift of the representative point onto the body-shape skin: BMI 24 25.4 mm · BMI 30 20.6 mm
+- ‡ Not used because the registration error is large (point shift > 10 mm or the body-shape skin passes through a structure)
+- *(reference)* = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position
+- Rows removed from the table: 3 (textbook structure mapped to a mesh of a different kind, only to a distant parent-structure mesh, or more than 60 mm from the located point)
+- Textbook structures without a BodyParts3D mesh (not measured): 3
+- **Interactive 3D model**: [Jianjing (肩井, GB21) 3D anatomical model](GB21_mesh3d_model.html) (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)
+- **How to read it**:
+  - ① The shallowest structure (descending part of trapezius) lies 22.5 mm deep with the BodyParts3D skin. The body-shape skin is not compared here because its registration error is large.
+  - ② With the BodyParts3D skin, 0 structure(s) have their surface within the seven-source mean depth (13.2 mm).
+- **Relation to pneumothorax risk**: in the standard model the surface of the right lung mesh lies 70.2 mm deep. The pleural cupula (FMA:27534) has no BodyParts3D mesh, so this is not a direct measurement of the distance to the cupula and lung apex. As Section 5-1 notes, individual variation is large, so no safe depth is set from this model value (SI 0 kept). The body-shape skin registration error is large over the shoulder and back (point shift 21–25 mm), so the BMI values are not used.
+- **Limitations**: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
+
 ## 5. Needling Depth Calculation Table (1 fen = 2.3 mm)
 
 Needling-depth DB, sheet 1, Excel row 326 (N0 324, GB21).
@@ -134,6 +162,8 @@ Interpretation:
 2. The TI of 1.54 in 1896 indicates a margin between the effective and hazardous depths at GB21, but as an exploratory study of 39 participants it is not used as grounds for changing the SI level.
 3. SI 0 rests on the text contraindicating needling (*Dongui Bogam* `0`) and on the pneumothorax record in the 《通考》, and is not altered by the ultrasound values. The procedural principle, following the 《通考》, is **to avoid anterior-inferior insertion and excessively deep perpendicular insertion**; there is no classical or textbook basis for forbidding perpendicular insertion as such.
 4. The values that another tool inserted into this section on 2026-10-23 (pleura 20.5 ± 3.2 mm, minimum 15.2 mm, layer thicknesses 3.5 · 7.8 · 8.5 mm, first rib 19.5 mm, safety margin 0.2–2.0 mm) and the 'ultrasound B-mode structural diagram' figure have been deleted because these values do not appear in the original texts of the cited papers (revision history after Section 10; archived in the internal archive).
+
+- **Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)**: structures whose surface lies within the seven-source mean of 13.2 mm: none (BodyParts3D skin) (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.
 
 ## 6. Anatomical Structure Textbook Comparison Table (Common Textbook vs. Kim Jaehyo Textbook)
 
@@ -319,6 +349,15 @@ The Tri-Target re-check found all pairwise Δ between Targets 1, 2 and 3 to be w
 - Items differing by 15 points or more: **none** (`needs_adjudication` empty list). The largest sub-score difference is 6.25 points in $S_{orig}$ (sub-item ④, 75 vs 100).
 - override_note: "Branch removed: both raters confirmed that the difference between the classical location (明堂 · 甲乙 '在肩上陷者中, 缺盆上, 大骨前') and the WHO location is Δ ≤ 15 mm (A: ±1 cm in the report diagram; B: the 《針灸腧穴通考》 interprets the classical description as the midpoint between 大椎 and the acromion). The canonical Rank 5 branching criterion is not met → adjusted to a single Target (classical = WHO), and the WHO-location scoring (T2) was adopted as final. For reference, separate scores for the classical location: A 62.5/50/50/0, B 68.75/50/50/0. S_safety 0 agreed by both raters on the basis of the needling-depth DB *Dongui Bogam* '0' (contraindicated for needling) → ⚠."
 
+### Effect of the 3D anatomical measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement') | $S_{clarity}$ · SI | The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition | Step unchanged |
+
+→ No rubric step changes, so no dual re-scoring was done.
+
+
 ### 10-7. Final Conclusion
 
 1. **⚠ Safety warning takes priority**: Jianjing (肩井) is a point at high risk of pneumothorax, lying directly above the pleural cupula and lung apex (《通考》: about 90 % of needling-induced pneumothoraces). Because of a text contraindicating needling (*Dongui Bogam* `0`, citing 'Tongren' (銅人)) and "孕婦禁針" (《類經圖翼》), the SI is 0. Since the classical text position, the palpation-based locus and the modern location are the same point (Target 1≡2≡3), the earlier edition's statement that "the classical location carries no lung-apex risk" is **withdrawn as incorrect**. Perpendicular insertion at the 8-fen upper limit (18.4 mm) may reach the pleura depending on body build, posture and respiration (1431, 1432), and calculating the vertical component of 45° oblique insertion alone cannot guarantee safety. Anterior-inferior insertion and excessively deep perpendicular insertion are to be avoided (《通考》).
@@ -400,3 +439,13 @@ Earlier v2.6 scores: classical location 96.0 / WHO location 94.0 — not compara
 | Section 7 | "Not Applicable (Branch Withdrawn)", Dual-Target (classical vs WHO), criterion Δ > 15 mm | Tri-Target coordinate table and pairwise Δ table (T1–T2, T1–T3, T2–T3 all ≤ 10 mm, estimated) → Target 1≡2≡3; mapping of earlier labels (old T1 discarded, old T2 → Target 3). States that the two points of the earlier diagram (about 20 mm apart) would exceed the 10 mm criterion but are excluded as candidates because they rest on a fabricated quotation | Rank 5 Tri-Target (branch criterion Δ > 10 mm) |
 | Sections 10-1, 10-2, 10-5, 10-7 | Single Target (classical = WHO); ④ "Collation in the 《通考》" | Target 1≡2≡3 notation; ④ "Collation in the 《通考》 and 《經絡通鑑》" re-checked — no grounds to change level, **score unchanged** (A 75 / B 100); conclusion item 4 added | Rubric 4.2 item ④ |
 | Scores | ARI v3.0 \| ARI-Core 67.5 ± 1.2 (C) \| SI 0 ⚠ \| sensitivity 65.6 (C) | **No change** | — |
+
+## 2026-11-05 3D anatomical measurement record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | — | Added a 3D anatomical measurement line (scores unchanged) | This revision |
+| Section 4 | — | **New '3D anatomical measurement' subsection**: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model | BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0 |
+| Section 5 | — | One line comparing the structures within the seven-source mean depth | Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm |
+| Section 10 | — | Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged) | Canonical Rank 7 rubric |
+| Scores | Existing ARI and SI | **No change** | Scoring-effect table in Section 10 |

@@ -72,7 +72,8 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <strong>Layer B Reference Registry</strong>: four-tier reference registry (B1–B4) (6-item B-Check, concordance threshold ≥ 8/12)
 <strong>Anatomical Ontology</strong>: local index of FMA 5.1.0 — textbook structures are pinned to <code>FMA:ID</code>s (B1 supplementary, not yet in the registry); Appendix A
 <strong>Metrological Standard</strong>: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\text{mm}$)
-<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.</p>
+<strong>Note on script</strong>: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
+<strong>3D anatomical measurement (2026-11-05)</strong>: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). <strong>ARI scores unchanged.</strong></p>
 </blockquote>
 <hr>
 <h2 id="1-classical-literature-screening-table-four-primary-classics-excerpts">1. Classical Literature Screening Table (Four Primary Classics Excerpts)</h2>
@@ -374,6 +375,100 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li>The third muscle row in the Kim Jaehyo dataset, "'medial tendon of the ankle joint' ligament of ankle joint) (medial (deltoid)", is a <strong>duplicate row</strong> produced when the deltoid ligament entry was broken during parenthesis processing (no FMA match). It is not counted as a structure.</li>
 <li>The textbooks list 'tibialis anterior', but at the level of Shangqiu (商丘) it is tendon, not muscle belly. The muscle's segments (L4, L5) are not assumed to equal the afferent segments of tendon stimulation and are kept for reference only.</li>
 </ul>
+<p><strong>3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)</strong></p>
+<p>Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.</p>
+<ul>
+<li><strong>Location (right side)</strong>: WHO standard location approximated from bone landmarks by proportional bone measurement.</li>
+<li><strong>Literature needling depth</strong>: seven-source mean 4.14 fen = 9.5 mm (classical 6.9 mm, modern 13.0 mm).</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Structure</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">FMA</th>
+<th style="text-align: right;">BodyParts3D skin mm (fen)</th>
+<th style="text-align: right;">Candidate-region median (10–90%)</th>
+<th style="text-align: right;">Body-shape skin BMI 24</th>
+<th style="text-align: right;">Body-shape skin BMI 30</th>
+<th style="text-align: center;">Within literature mean 9.5 mm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">tibia (medial malleolus) <em>(reference)</em></td>
+<td style="text-align: left;">reference (not in textbook list)</td>
+<td style="text-align: left;">FMA:24476</td>
+<td style="text-align: right;">11.2 (4.9)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">9.1</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">talus <em>(reference)</em></td>
+<td style="text-align: left;">reference (not in textbook list)</td>
+<td style="text-align: left;">FMA:9708</td>
+<td style="text-align: right;">11.4 (5.0)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">11.2</td>
+<td style="text-align: right;">11.4</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">navicular <em>(reference)</em></td>
+<td style="text-align: left;">reference (not in textbook list)</td>
+<td style="text-align: left;">FMA:24499</td>
+<td style="text-align: right;">15.9 (6.9)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">16.7</td>
+<td style="text-align: right;">16.8</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tibialis anterior</td>
+<td style="text-align: left;">muscle</td>
+<td style="text-align: left;">FMA:22532</td>
+<td style="text-align: right;">24.4 (10.6)</td>
+<td style="text-align: right;">25.0 (22.2–28.7)</td>
+<td style="text-align: right;">24.0</td>
+<td style="text-align: right;">23.1</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Great saphenous vein</td>
+<td style="text-align: left;">vein</td>
+<td style="text-align: left;">FMA:21376</td>
+<td style="text-align: right;">25.6 (11.1)</td>
+<td style="text-align: right;">26.2 (22.5–29.9)</td>
+<td style="text-align: right;">24.8</td>
+<td style="text-align: right;">23.3</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Anterior tibial artery <em>(parent-structure mesh)</em></td>
+<td style="text-align: left;">artery</td>
+<td style="text-align: left;">FMA:43894</td>
+<td style="text-align: right;">26.8 (11.7)</td>
+<td style="text-align: right;">27.4 (24.5–30.6)</td>
+<td style="text-align: right;">25.0</td>
+<td style="text-align: right;">24.2</td>
+<td style="text-align: center;">no</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Shift of the representative point onto the body-shape skin: BMI 24 1.6 mm · BMI 30 1.4 mm</li>
+<li><em>(reference)</em> = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position</li>
+<li>Rows removed from the table: 1 (textbook structure mapped to a mesh of a different kind, only to a distant parent-structure mesh, or more than 60 mm from the located point)</li>
+<li>Textbook structures without a BodyParts3D mesh (not measured): 3</li>
+<li><strong>Interactive 3D model</strong>: <a href="SP05_mesh3d_model.html">Shangqiu (商丘, SP5) 3D anatomical model</a> (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)</li>
+<li><strong>How to read it</strong>:</li>
+<li>① The shallowest structure (tibia (medial malleolus)) lies 11.2 mm deep with the BodyParts3D skin and 9.1 mm (BMI 24) · 8.7 mm (BMI 30) with the body-shape skin, a skin-surface difference of 2.1–2.5 mm.</li>
+<li>② With the BodyParts3D skin, 0 structure(s) have their surface within the seven-source mean depth (9.5 mm). With the BMI 24 body-shape skin the number is 1.</li>
+<li><strong>Comparison with the report</strong>: Section 4 estimates that the classical 3 fen (6.9 mm) stays in the retinaculum and tibialis anterior tendon layer, and that the upper limit of 8 fen (18.4 mm) approaches the deltoid ligament and joint capsule. In the standard model the medial malleolus (tibia) and talus surfaces lie 11.2–11.4 mm deep, so a perpendicular needle reaches bone level before 8 fen. The tibialis anterior row measures to the muscle mesh, so it lies farther than the tendon.</li>
+<li><strong>Limitations</strong>: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).</li>
+</ul>
 <hr>
 <h2 id="5-needling-depth-calculation-table">5. Needling Depth Calculation Table</h2>
 <p>Source: Classical Needling Depth Database, sheet 1, Excel row 135 (N0 133, SP05), supplemented by the four primary classics (the <em>Jingluo Tongjian</em> (《經絡通鑑》) adds no new depth for Shangqiu (商丘) — Ma Shi's (馬蒔) commentary on 《本輸》 "針三分，灸三壯" (Jingluo Tongjian ch. 11 L492) follows 《明堂》).</p>
@@ -469,7 +564,12 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </table></div>
 <ul>
 <li>No 'Contraindicated for needling (禁鍼)' ('0') entry and no 'blank' entry (per the relevant DB columns). The '忌灸' of <em>Qianjin Yifang</em> (《千金翼方》) is a textual variant contraindicating <strong>moxibustion</strong>, not needling.</li>
-<li>Safety range: 3–5 fen stays in the subcutis and the connective tissue beneath the retinaculum. Perpendicular insertion of 8 fen comes close to the anterior fibres of the deltoid ligament and the joint capsule, so puncture of the joint cavity is possible (estimated, not measured). The great saphenous vein and saphenous nerve run subcutaneously medial to the needling point, so the vein should be identified visually and avoided.</li>
+<li>
+<p>Safety range: 3–5 fen stays in the subcutis and the connective tissue beneath the retinaculum. Perpendicular insertion of 8 fen comes close to the anterior fibres of the deltoid ligament and the joint capsule, so puncture of the joint cavity is possible (estimated, not measured). The great saphenous vein and saphenous nerve run subcutaneously medial to the needling point, so the vein should be identified visually and avoided.</p>
+</li>
+<li>
+<p><strong>Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)</strong>: structures whose surface lies within the seven-source mean of 9.5 mm: none (BodyParts3D skin); 1 with the BMI 24 body-shape skin (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.</p>
+</li>
 </ul>
 <hr>
 <h2 id="6-textbook-comparison-table-of-anatomical-structures">6. Textbook Comparison Table of Anatomical Structures</h2>
@@ -1042,6 +1142,26 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 <li><strong>Branch decision (Tri-Target)</strong>: all pairwise Δ among the three Targets are within 10 mm (estimated), so Target 1≡2≡3 is a single Target — no independent branch; the ΔARI-Core rule does not apply.</li>
 <li><strong>Adjudication record</strong>: the SI differed by 25 points (A 75, B 50; ≥ 15), so it was adjudicated. B had taken it as "direct contact with the Layer 4 neurovascular bundle on perpendicular insertion" (level 50), but the vessel beside Shangqiu (商丘) is the subcutaneous great saphenous vein, which can be avoided by sight and palpation; the joint capsule is not a neurovascular bundle; and the literature states a depth of 3–5 fen and the transverse method. The score was therefore fixed at level 75 ("avoidable by oblique or transverse insertion; angle and depth limits stated in the literature"). The only other sub-score difference is one item, $S_{orig}$ ① (25 points, 6.25 points after averaging), which is not subject to adjudication.</li>
 </ul>
+<h3 id="effect-of-the-3d-anatomical-measurement-on-scoring-2026-11-05">Effect of the 3D anatomical measurement on scoring (2026-11-05)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">New evidence</th>
+<th style="text-align: left;">Item that could be affected</th>
+<th style="text-align: left;">Review</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement')</td>
+<td style="text-align: left;">$S_{clarity}$ · SI</td>
+<td style="text-align: left;">The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition</td>
+<td style="text-align: left;">Step unchanged</td>
+</tr>
+</tbody>
+</table></div>
+<p>→ No rubric step changes, so no dual re-scoring was done.</p>
 <h3 id="final-conclusion">Final Conclusion</h3>
 <p>The anatomical substrate of Shangqiu (商丘, SP05) is established at the <strong>probable (B)</strong> level. Its location, the anteroinferior depression of the medial malleolus, has been consistent past and present since 《靈樞·本輸》; beneath it, the saphenous nerve and great saphenous vein (subcutaneous), the depression medial to the tibialis anterior tendon, and deeper the deltoid ligament and joint capsule are confirmed by the two textbooks, the local anatomy of the <em>Xuewei Tongjian</em> (《穴位通鑑》) and FMA standard entities. However, the reflex pathway that would explain the spleen–stomach syndromes at the core of the classical indications has not been verified at Shangqiu (商丘) (B-Check 7/12, <strong>hypothesis</strong>).</p>
 <p>Collation with the <em>Zhongguo Zhenjiu Jingluo Tongjian</em> (《中國針灸經絡通鑑》) added three points: ① the Foot Taiyin (足太陰) channel passes along the anterior border of the medial malleolus, and commentators place Shangqiu (商丘) on that course; ② '外踝' in 《靈樞·經脈》 is a scribal error for '內踝', and the 'visible vessel' in front of the medial malleolus reads as the subcutaneous great saphenous vein; ③ the 《明堂》 attribution of '足太陰' indications to Shangqiu (商丘) is a channel-point reading, not an over-extension of meridian theory. This collation does not change any rubric level. The classical text position (Target 1), the palpation-based anatomical locus (Target 2) and the WHO standard location (Target 3) form a single depression within 10 mm of each other (estimated; Target 1≡2≡3).</p>
@@ -1338,7 +1458,50 @@ p:has(> img) { text-align: center; margin: 1.5em 0; }
 </tr>
 </tbody>
 </table></div>
-<p class="meta">생성: 2026-10-25 14:21 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
+<h2 id="2026-11-05-3d-anatomical-measurement-record">2026-11-05 3D anatomical measurement record</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Original</th>
+<th style="text-align: left;">Change</th>
+<th style="text-align: left;">Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Header</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Added a 3D anatomical measurement line (scores unchanged)</td>
+<td style="text-align: left;">This revision</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 4</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>New '3D anatomical measurement' subsection</strong>: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model</td>
+<td style="text-align: left;">BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 5</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">One line comparing the structures within the seven-source mean depth</td>
+<td style="text-align: left;">Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm</td>
+</tr>
+<tr>
+<td style="text-align: left;">Section 10</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged)</td>
+<td style="text-align: left;">Canonical Rank 7 rubric</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scores</td>
+<td style="text-align: left;">Existing ARI and SI</td>
+<td style="text-align: left;"><strong>No change</strong></td>
+<td style="text-align: left;">Scoring-effect table in Section 10</td>
+</tr>
+</tbody>
+</table></div>
+<p class="meta">생성: 2026-11-05 15:37 · 원광대학교 한의과대학 경혈학교실 (Wonkwang University College of Korean Medicine, Dept. Meridian &amp; Acupoint)</p>
 </article>
 </main>
 <div class="lightbox-modal" id="lightboxModal">

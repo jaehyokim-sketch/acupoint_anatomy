@@ -1,0 +1,27 @@
+{
+ "code": "PC09",
+ "loc": {
+  "code": "PC09",
+  "side": "right",
+  "point_mm": [
+   -278.4,
+   -193.8,
+   650.6
+  ],
+  "method": "가운데손가락 끝 중앙: 끝마디뼈 끝에서 손가락 축 방향(아래)",
+  "basis": "가운데손가락 끝마디뼈 끝",
+  "cun_mm": null,
+  "frame": "BodyParts3D 4.0 (mm, +X left, -Y anterior, +Z up)",
+  "caveat": "WHO 표준 위치의 골도분촌을 BodyParts3D 뼈 기준점으로 근사한 좌표(규범 해부 형상 참고, B1 보조). 경혈 실측(B2)이 아니다"
+ },
+ "bone": "끝마디뼈(가운데손가락) · Distal phalanx of middle finger FMA:23947",
+ "bp3d_mm": 2.5,
+ "male_bmi24": {
+  "shift_mm": 12.8,
+  "depth_mm": 2.4
+ },
+ "male_bmi30": {
+  "shift_mm": 8.0,
+  "depth_mm": 1.7
+ }
+}

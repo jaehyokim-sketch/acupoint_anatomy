@@ -9,6 +9,7 @@
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — all 9 textbook structures map `exact`; spinal segment union **T7 · T8** (B1 supplementary, not yet in the registry). Full table in Appendix A
 > **Point-specific measurement**: one upper-abdominal ultrasound observational study (`papers.id` 1444, n = 83) — skin-to-parietal-peritoneum distance (ANIR) 25.3 ± 10.2 mm; left lobe of the liver visualised in 62.7 %
 > **Note on script**: classical quotations, point names, text titles and TCM terms are given in Traditional Chinese (繁體字); simplified forms are not used. Anatomical terms follow *Terminologia Anatomica* and the approved English labels of FMA 5.1.0.
+> **3D anatomical measurement (2026-11-05)**: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). **ARI scores unchanged.**
 
 ---
 
@@ -147,6 +148,31 @@
 - The linea alba, rectus sheath and transversalis fascia are connective-tissue entities for which **FMA records no segmental supply**, so the segment union is derived from the two nerves alone. Layers 4–5 are absent from both textbooks and therefore have no FMA mapping; they are supplied from normative anatomy (B1-01) and from the point-specific measurements.
 - **Dynamic variation (kinesiology)**: the thickness of the abdominal wall and the position of the viscera change with respiration, posture and intra-abdominal pressure. The original study itself lists "variation with respiration and posture" as a limitation. The values are to be read as supine, end-expiratory values; in the seated position and on inspiration the left lobe of the liver may descend further.
 
+**3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)**
+
+Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.
+
+- **Location (right side)**: WHO standard location approximated from bone landmarks by proportional bone measurement; 1 cun = 28.31 mm.
+- **Literature needling depth**: seven-source mean 9.29 fen = 21.4 mm (classical 17.2 mm, modern 26.8 mm).
+
+| Structure | Type | FMA | BodyParts3D skin mm (fen) | Candidate-region median (10–90%) | Body-shape skin BMI 24 | Body-shape skin BMI 30 | Within literature mean 21.4 mm |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | :---: |
+| Linea alba | muscle | FMA:11336 | 5.4 (2.3) | 6.5 (4.8–7.2) | 0.5 | 11.3 | yes |
+| Superior epigastric artery | artery | FMA:10646 | 18.5 (8.0) | 19.5 (18.2–22.2) | 16.4 | 25.0 | yes |
+| stomach *(reference)* | reference (not in textbook list) | FMA:7148 | 25.3 (11.0) | — | 20.3 | 31.2 | no |
+| liver *(reference)* | reference (not in textbook list) | FMA:7197 | 28.5 (12.4) | — | 24.1 | 35.0 | no |
+
+- Shift of the representative point onto the body-shape skin: BMI 24 8.0 mm · BMI 30 5.2 mm
+- *(reference)* = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position
+- Rows removed from the table: 3 (textbook structure mapped to a mesh of a different kind, only to a distant parent-structure mesh, or more than 60 mm from the located point)
+- Textbook structures without a BodyParts3D mesh (not measured): 3
+- **Interactive 3D model**: [Zhongwan (中脘, CV12) 3D anatomical model](CV12_mesh3d_model.html) (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)
+- **How to read it**:
+  - ① The shallowest structure (Linea alba) lies 5.4 mm deep with the BodyParts3D skin and 0.5 mm (BMI 24) · 11.3 mm (BMI 30) with the body-shape skin, a skin-surface difference of -5.9–4.9 mm.
+  - ② With the BodyParts3D skin, 2 structure(s) have their surface within the seven-source mean depth (21.4 mm): Linea alba, Superior epigastric artery. With the BMI 24 body-shape skin the number is 3.
+- **Comparison with the ultrasound measurement**: the measured subcutaneous tissue in Section 4-2 (papers.id 1444) is 16.0 ± 7.7 mm. In the standard model the linea alba lies 5.4 mm deep, shallower than measured. Unlike the limbs (e.g., ST36), the model's abdominal subcutaneous layer is thinner than the in-vivo mean. The BMI 30 body-shape skin (11.3 mm) is closer to the measured mean. The stomach (25.3 mm) and liver (28.5 mm) depths in the table should therefore be taken as deeper in vivo by about the subcutaneous difference (about 10 mm).
+- **Limitations**: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
+
 ---
 
 ## 5. Needling Depth Calculation Table (Han-dynasty standard, 1 fen = 2.3 mm)
@@ -208,6 +234,8 @@ The mean − 1 SD (approximately the 16th percentile) is taken as a conservative
 | All groups | — | On perpendicular insertion, **remain within the linea alba** | — | No oblique upward transverse insertion to either side — contraindicated in hepatosplenomegaly and in gastroduodenal ulcer (*Tongkao* 【操作】) |
 
 > **Difference from the figure proposed in the request**: the "within 15–20 mm for thin builds" of the request corresponds to **the mean ANIR of the underweight group itself (15.4 mm)**, so roughly half of that group would be perforated. This report revises the limit conservatively upward to **≤ 10 mm for underweight subjects** on a mean − 1 SD basis. On the measured data, 15–20 mm is better read as **the upper limit for normal-weight subjects**.
+
+- **Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)**: structures whose surface lies within the seven-source mean of 21.4 mm: Linea alba, Superior epigastric artery (BodyParts3D skin); 3 with the BMI 24 body-shape skin (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.
 
 ---
 
@@ -409,6 +437,15 @@ $$\text{ARI-Core} = 0.40\,S_{orig} + 0.35\,S_{clarity} + 0.25\,S_{reflex} \qquad
 | B | 87.5 | 100 | 75 | 50 | **88.75** | 87.50 |
 | **Mean ± half-range** | **90.625 ± 3.125** | **100 ± 0** | **75 ± 0** | **50 ± 0** | **90.0 ± 1.25** | **88.5** |
 
+### Effect of the 3D anatomical measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement') | $S_{clarity}$ · SI | The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition | Step unchanged |
+
+→ No rubric step changes, so no dual re-scoring was done.
+
+
 ### 10-4. Final Notation and Conclusion
 
 ```
@@ -480,3 +517,13 @@ ARI v3.0 | ARI-Core 90.0 +/- 1.25 (A) | SI 50 | provisional weights 0.40/0.35/0.
 ---
 
 *Prepared under the Acupoint Anatomical Substrate Adjudication Logic System, Version 2.7 (Ranks 0–7 fully developed; all ten required Tier 3 elements included) · 2026-10-26. English edition of the Korean monograph of the same date; all content, scores and verdicts are identical to the Korean canonical text.*
+
+## 2026-11-05 3D anatomical measurement record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | — | Added a 3D anatomical measurement line (scores unchanged) | This revision |
+| Section 4 | — | **New '3D anatomical measurement' subsection**: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model | BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0 |
+| Section 5 | — | One line comparing the structures within the seven-source mean depth | Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm |
+| Section 10 | — | Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged) | Canonical Rank 7 rubric |
+| Scores | Existing ARI and SI | **No change** | Scoring-effect table in Section 10 |

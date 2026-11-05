@@ -1,0 +1,120 @@
+{
+ "code": "CV12",
+ "source": "김재효",
+ "side": "right",
+ "skin": "SMPL-X 체형 피부 male_bmi24 (male · 키 1.7218 m · BMI 23.91)",
+ "method": "지정 좌표 반경 6 mm 피부 영역 → 체형 피부의 가장 가까운 점으로 옮김(대표점 이동 8.0 mm)",
+ "candidate_points": 30,
+ "candidate_extent_mm": [
+  12.2,
+  6.0,
+  10.4
+ ],
+ "point_mm": [
+  2.8,
+  -209.0,
+  1072.7
+ ],
+ "depths": [
+  {
+   "structure": "얕은배벽동ㆍ정맥 · Superficial epigastric vein",
+   "category": "정맥",
+   "fma_id": 44318,
+   "mesh_level": "exact",
+   "depth_mm_at_point": -144.1,
+   "depth_pun_at_point": -62.7,
+   "depth_mm_median": -144.6,
+   "depth_mm_p10": -147.1,
+   "depth_mm_p90": -139.3,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "위배벽동ㆍ정맥 · Superior epigastric vein",
+   "category": "정맥",
+   "fma_id": 4731,
+   "mesh_level": "exact",
+   "depth_mm_at_point": -144.1,
+   "depth_pun_at_point": -62.7,
+   "depth_mm_median": -144.6,
+   "depth_mm_p10": -147.1,
+   "depth_mm_p90": -139.3,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "얕은배벽동ㆍ정맥 · Superficial epigastric artery",
+   "category": "동맥",
+   "fma_id": 20734,
+   "mesh_level": "exact",
+   "depth_mm_at_point": -132.6,
+   "depth_pun_at_point": -57.7,
+   "depth_mm_median": -132.1,
+   "depth_mm_p10": -134.6,
+   "depth_mm_p90": -125.5,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "백색선 · Linea alba",
+   "category": "근육",
+   "fma_id": 11336,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 0.5,
+   "depth_pun_at_point": 0.2,
+   "depth_mm_median": 0.4,
+   "depth_mm_p10": -3.0,
+   "depth_mm_p90": 2.3,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "위배벽동ㆍ정맥 · Superior epigastric artery",
+   "category": "동맥",
+   "fma_id": 10646,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 16.4,
+   "depth_pun_at_point": 7.1,
+   "depth_mm_median": 12.5,
+   "depth_mm_p10": 8.3,
+   "depth_mm_p90": 18.2,
+   "within_literature_mean": true
+  }
+ ],
+ "literature_depth": {
+  "summary": "CV12 중완: 7종 평균 9.29푼 = 21.4 mm (n=7, 중앙값 10.0푼, 범위 2–12.5푼) · 고전 7.5푼(n=4) · 현대 11.67푼(n=3)",
+  "mean_pun": 9.29,
+  "mean_mm": 21.4,
+  "classic_mm": 17.2,
+  "modern_mm": 26.8,
+  "modern_range_mm": [
+   19.2,
+   34.5
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": [
+   "얕은배벽동ㆍ정맥 · Superficial epigastric vein",
+   "위배벽동ㆍ정맥 · Superior epigastric vein",
+   "얕은배벽동ㆍ정맥 · Superficial epigastric artery",
+   "백색선 · Linea alba",
+   "위배벽동ㆍ정맥 · Superior epigastric artery"
+  ]
+ },
+ "missing_structures": [
+  "배곧은근집 (rectus sheath) — BodyParts3D 메쉬 없음",
+  "배가로근막 (transversalis fascia) — BodyParts3D 메쉬 없음",
+  "여덟째 갈비사이신경의 앞쪽피부가지 (anterior cutaneous branch of the 8th intercostal nerve) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International Body surface generated with SMPL-X (Pavlakos et al., CVPR 2019), © Max Planck Institute for Intelligent Systems, SMPL-X Body License CC BY 4.0 (https://smpl-x.is.tue.mpg.de/bodylicense.html). Changes: shape set to target stature/BMI, posed and registered to BodyParts3D 4.0 joint centres",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다. 피부면은 BodyParts3D 골격 관절 중심에 등록한 SMPL-X 통계 체형 피부이며, 근육·지방 층은 BodyParts3D 그대로라 체형 차이는 피하층 두께 차이로만 나타나는 근사다. 음수 깊이 = 구조 표면이 체형 피부 밖에 놓임(정합 오차).",
+ "skin_joint_error_mm": {
+  "hip_left": 26.5,
+  "hip_right": 27.1,
+  "knee_left": 9.5,
+  "knee_right": 19.1,
+  "ankle_left": 9.7,
+  "ankle_right": 10.4,
+  "shoulder_left": 4.5,
+  "shoulder_right": 1.7,
+  "elbow_left": 5.0,
+  "elbow_right": 1.1,
+  "wrist_left": 1.2,
+  "wrist_right": 2.0
+ }
+}

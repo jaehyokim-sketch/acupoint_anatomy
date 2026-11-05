@@ -1,0 +1,106 @@
+{
+ "code": "LI04",
+ "source": "김재효",
+ "side": "right",
+ "skin": "SMPL-X 체형 피부 male_bmi30 (male · 키 1.722 m · BMI 29.87)",
+ "method": "지정 좌표 반경 6 mm 피부 영역 → 체형 피부의 가장 가까운 점으로 옮김(대표점 이동 1.6 mm)",
+ "candidate_points": 29,
+ "candidate_extent_mm": [
+  9.6,
+  6.8,
+  8.5
+ ],
+ "point_mm": [
+  -291.4,
+  -117.4,
+  756.1
+ ],
+ "depths": [
+  {
+   "structure": "손등정맥그물 · Dorsal venous network of hand",
+   "category": "동맥",
+   "fma_id": 67977,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 10.4,
+   "depth_pun_at_point": 4.5,
+   "depth_mm_median": 8.5,
+   "depth_mm_p10": 4.2,
+   "depth_mm_p90": 12.0,
+   "within_literature_mean": true
+  },
+  {
+   "structure": "노쪽집게동맥 · Arteria radialis indicis",
+   "category": "동맥",
+   "fma_id": 22763,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 22.5,
+   "depth_pun_at_point": 9.8,
+   "depth_mm_median": 20.7,
+   "depth_mm_p10": 18.5,
+   "depth_mm_p90": 23.0,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "엄지모음근의 가로갈래 · Oblique head of adductor pollicis",
+   "category": "근육",
+   "fma_id": 46119,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 24.1,
+   "depth_pun_at_point": 10.5,
+   "depth_mm_median": 23.7,
+   "depth_mm_p10": 23.3,
+   "depth_mm_p90": 24.1,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "등쪽손허리동ㆍ정맥 · Dorsal metacarpal vein",
+   "category": "정맥",
+   "fma_id": 22954,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 797.1,
+   "depth_pun_at_point": 346.6,
+   "depth_mm_median": 794.3,
+   "depth_mm_p10": 791.1,
+   "depth_mm_p90": 797.6,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "LI04 합곡: 7종 평균 4.93푼 = 11.3 mm (n=7, 중앙값 3.0푼, 범위 3–7.5푼) · 고전 3.0푼(n=4) · 현대 7.5푼(n=3)",
+  "mean_pun": 4.93,
+  "mean_mm": 11.3,
+  "classic_mm": 6.9,
+  "modern_mm": 17.2,
+  "modern_range_mm": [
+   11.5,
+   23.0
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": [
+   "손등정맥그물 · Dorsal venous network of hand"
+  ]
+ },
+ "missing_structures": [
+  "첫째 등쪽뼈사이근 (1st dorsal interosseous muscle) — BodyParts3D 메쉬 없음",
+  "등쪽손가락신경 (dorsal digital nerve) — BodyParts3D 메쉬 없음",
+  "자신경의 깊은가지 (deep branch of the ulnar nerve) — BodyParts3D 메쉬 없음",
+  "자신경의 깊은분지 (deep branch of ulnar nerve) — BodyParts3D 메쉬 없음",
+  "등쪽손허리동ㆍ정맥 (dorsal metacarpal artery) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International Body surface generated with SMPL-X (Pavlakos et al., CVPR 2019), © Max Planck Institute for Intelligent Systems, SMPL-X Body License CC BY 4.0 (https://smpl-x.is.tue.mpg.de/bodylicense.html). Changes: shape set to target stature/BMI, posed and registered to BodyParts3D 4.0 joint centres",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다. 피부면은 BodyParts3D 골격 관절 중심에 등록한 SMPL-X 통계 체형 피부이며, 근육·지방 층은 BodyParts3D 그대로라 체형 차이는 피하층 두께 차이로만 나타나는 근사다. 음수 깊이 = 구조 표면이 체형 피부 밖에 놓임(정합 오차).",
+ "skin_joint_error_mm": {
+  "hip_left": 20.7,
+  "hip_right": 22.4,
+  "knee_left": 11.3,
+  "knee_right": 20.5,
+  "ankle_left": 10.3,
+  "ankle_right": 10.5,
+  "shoulder_left": 4.6,
+  "shoulder_right": 2.4,
+  "elbow_left": 5.1,
+  "elbow_right": 0.8,
+  "wrist_left": 0.4,
+  "wrist_right": 3.0
+ }
+}

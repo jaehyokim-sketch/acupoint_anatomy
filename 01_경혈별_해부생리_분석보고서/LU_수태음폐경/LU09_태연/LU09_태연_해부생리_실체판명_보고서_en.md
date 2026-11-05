@@ -8,6 +8,7 @@
 > **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry). Details in Appendix A
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
+> **3D anatomical measurement (2026-11-05)**: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). **ARI scores unchanged.**
 
 **Source abbreviations** (refined editions of the four classics)
 - [通考] 《針灸腧穴通考》 上 手太陰肺經穴 — 太淵 L2193–2455
@@ -127,6 +128,35 @@ The KJH DB (Acupoint Nomenclature & Alias Comparative Database, sheet `경혈 �
 - The **bellies of pronator teres (FMA:38450) and flexor digitorum superficialis (FMA:38469)** listed in the Kim Jaehyo textbook are proximal forearm structures and are not present at the level of the distal wrist crease (B1-01). The same textbook omits abductor pollicis longus, and the **extensor pollicis longus (FMA:38521)** listed in the Common Textbook is a tendon of the third dorsal compartment and lies outside the needle path. Discussed in Section 6.
 - The palmar carpal ligament (Kim Jaehyo) has no corresponding FMA entity (none).
 
+**3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)**
+
+Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.
+
+- **Location (right side)**: WHO standard location approximated from bone landmarks by proportional bone measurement; 1 cun = 18.61 mm.
+- **Literature needling depth**: seven-source mean 2.86 fen = 6.6 mm (classical 4.6 mm, modern 9.2 mm).
+
+| Structure | Type | FMA | BodyParts3D skin mm (fen) | Candidate-region median (10–90%) | Body-shape skin BMI 24 | Body-shape skin BMI 30 | Within literature mean 6.6 mm |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | :---: |
+| Radial artery | artery | FMA:22730 | 13.6 (5.9) | 14.4 (9.9–17.0) | 5.6 | 9.1 | no |
+| Flexor carpi radialis | muscle | FMA:38459 | 17.3 (7.5) | 17.4 (14.5–21.0) | 12.2 | 10.5 | no |
+| Flexor pollicis longus | muscle | FMA:38481 | 18.0 (7.8) | 17.7 (15.3–20.7) | 10.3 | 10.3 | no |
+| Brachioradialis | muscle | FMA:38485 | 18.5 (8.0) | 19.0 (14.7–21.4) | 10.0 | 13.7 | no |
+| radius *(reference)* | reference (not in textbook list) | FMA:23463 | 18.6 (8.1) | — | 10.0 | 13.3 | no |
+| Radial vein | vein | FMA:22947 | 20.9 (9.1) | 21.8 (17.9–25.6) | 14.4 | 16.1 | no |
+| Pronator quadratus | muscle | FMA:38453 | 22.7 (9.9) | 23.9 (19.4–27.2) | 15.9 | 18.1 | no |
+| Flexor digitorum superficialis | muscle | FMA:38469 | 25.3 (11.0) | 25.3 (22.4–28.7) | 19.7 | 18.5 | no |
+| Cephalic vein | vein | FMA:13324 | 33.4 (14.5) | 33.4 (30.4–35.4) | 24.7 | 27.8 | no |
+
+- Shift of the representative point onto the body-shape skin: BMI 24 9.5 mm · BMI 30 7.4 mm
+- *(reference)* = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position
+- Textbook structures without a BodyParts3D mesh (not measured): 7
+- **Interactive 3D model**: [Taiyuan (太淵, LU9) 3D anatomical model](LU09_mesh3d_model.html) (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)
+- **How to read it**:
+  - ① The shallowest structure (Radial artery) lies 13.6 mm deep with the BodyParts3D skin and 5.6 mm (BMI 24) · 9.1 mm (BMI 30) with the body-shape skin, a skin-surface difference of 4.5–8.0 mm.
+  - ② With the BodyParts3D skin, 0 structure(s) have their surface within the seven-source mean depth (6.6 mm). With the BMI 24 body-shape skin the number is 1.
+- **Comparison with the report**: Section 4 states that the radial artery can be touched within the range from the classical 2 fen (4.6 mm) to the textbook 5 fen (11.5 mm). In the standard model it lies deeper, at 13.6 mm. With the body-shape skin it lies at 5.6 mm (BMI 24) and 9.1 mm (BMI 30), within the Section 4 range. The difference appears to come from the thick BodyParts3D subcutis at the wrist, and it does not change the Section 4 advice to push the pulse aside.
+- **Limitations**: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
+
 ---
 
 ## 5. Classical Needling Depth Calculation Table
@@ -150,6 +180,8 @@ Source: Classical Needling Depth Database, sheet 1, row 63 (N0 = 61), supplement
 
 - The needling-depth DB contains no 'Contraindicated for needling (禁鍼)' (`'0'`) and no 'not described' (`'blank'`) entry. There are, however, a recommendation to avoid needling (《針方六集》), a contraindication in pregnancy (《竇太師針經》) and a warning of haemorrhage from the cun-kou vessel (《素問·刺禁論》, [通考] L2147).
 - Safety range: everything from the classical 2 fen (4.6 mm) to the textbook 5 fen (11.5 mm) stays within Layer 2 (between the tendons), but **the radial artery lies in that layer**. The artery is avoided not by depth but **by position (pushing the pulse aside)** (7th edition "避開橈動脈", [通鑑] L1029 "勿刺傷橈動脈"). The 1 寸 (23 mm) perpendicular insertion of the 4th–6th editions was reduced in later textbooks.
+
+- **Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)**: structures whose surface lies within the seven-source mean of 6.6 mm: none (BodyParts3D skin); 1 with the BMI 24 body-shape skin (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.
 
 ---
 
@@ -321,6 +353,15 @@ Of the 41 papers in the inverted index, only those whose abstract confirms LU9 (
 
 **Standard notation**: `ARI v3.0 | ARI-Core 68.75 ± 0 (C) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 66.7 (C, grade unchanged)`
 
+### Effect of the 3D anatomical measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement') | $S_{clarity}$ · SI | The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition | Step unchanged |
+
+→ No rubric step changes, so no dual re-scoring was done.
+
+
 ### Final Conclusion
 
 The anatomical substrate of Taiyuan (太淵, LU09) is at the **possible (C)** level. Its location has been consistently "掌後陷者中" since the Han, and in modern times it has been fixed in the depression between the radial styloid process and the scaphoid, on the ulnar side of the abductor pollicis longus tendon. The classical text position (Target 1), the gap between the two tendons indicated by "陷者中" (Target 2, insertion reference) and the WHO location (Target 3) merge into a single Target, pairwise within 10 mm (estimated). The *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》) regards the early 'Hand-Taiyin' as the whole cun-kou between Taiyuan and Jingqu, supporting the *Tongkao*'s discrimination that the debate over the 'artery' marker arose from the overlap of the concepts of vessel and point. At this level the two textbooks agree on the flexor carpi radialis tendon, the radial artery, the superficial branch of the radial nerve and the lateral cutaneous nerve of the forearm, and all of these structures are confirmed as standard FMA entities. The muscle lists, however, diverge because each textbook covers a different level.
@@ -428,3 +469,13 @@ Generated by FMA 5.1.0 acupoint profile query (LU09; 2026-10-23).
 | Section 10 split verdict | ③ "borderline and recorded in Section 7" | ③ is not a Target regardless of Δ and is recorded only as a reference alternative view | Same |
 | 'Unresolved' row of the 2026-10-25 Framework 2.7.7 record | Δ of ③ requires measurement | No effect on the verdict (excluded from Targets); measurement is for reference only | Same |
 | ARI | 68.75 ± 0 (C), SI 50 | **No change** | — |
+
+## 2026-11-05 3D anatomical measurement record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | — | Added a 3D anatomical measurement line (scores unchanged) | This revision |
+| Section 4 | — | **New '3D anatomical measurement' subsection**: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model | BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0 |
+| Section 5 | — | One line comparing the structures within the seven-source mean depth | Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm |
+| Section 10 | — | Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged) | Canonical Rank 7 rubric |
+| Scores | Existing ARI and SI | **No change** | Scoring-effect table in Section 10 |

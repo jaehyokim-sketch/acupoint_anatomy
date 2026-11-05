@@ -10,6 +10,7 @@
 > **Analysis Targets (Tri-Target, split threshold Δ > 10 mm)**: **Target 1≡2≡3** standard Kongzui — Target 1 (classical text position: 《明堂》 "去腕七寸", 12.5-cun scale) ≡ Target 2 (palpation-based anatomical locus: post-Song "宛宛中" and "骨間陷中" → insertion reference at the medial border of brachioradialis) ≡ Target 3 (WHO standard location: 腕上七寸 on the line joining Chize (尺澤, LU05) and Taiyuan (太淵, LU09), 12-cun scale), pairwise Δ ≤ 10 mm (estimated) → single Target. **Sawada Kongzui** (尺澤下 3 finger-breadths / approx. 2–3 cun, 《針灸真髓》 1941; anal congestion diagnostic/reaction point) corresponds to none of the classical text, a palpation phrase or the WHO standard; as a modern newly created point it is not set as a Target and is neither branched nor scored under the Rank 5 **Target exclusion rule** (location note in Section 4, reference alternative view in 7-2)
 > **Mapping from earlier labels**: former T1 (standard Kongzui) → Target 1≡2≡3 · former T2 (Sawada Kongzui) → reference alternative view (excluded from Targets, 2026-10-25). The dual scoring of the standard Kongzui is carried over; the 2026-10-04 scoring of the former T2 (35 ± 0, D·H) is withdrawn from the verdict and kept only as a record in 10-2.
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
+> **3D anatomical measurement (2026-11-05)**: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). **ARI scores unchanged.**
 
 ---
 
@@ -138,6 +139,34 @@
 - FMA records segments only in the `segmental_supply` of muscles. Of the segment union C5–T1, **C8 and T1 come only from structures listed by one textbook — Common Textbook only (flexor carpi ulnaris) or Kim Jaehyo only (flexor digitorum superficialis, flexor pollicis longus)** — whereas the structures shared by both textbooks (brachioradialis, flexor carpi radialis, pronator teres) are **C5–C7**.
 - The Kim Jaehyo textbook dataset's "deep thumb flexor (flexor pollicis longus)" is, on the basis of the English term and FMA (FMA:38481 *Flexor pollicis longus*), a slip for **flexor pollicis longus** (literally 'long thumb flexor'). The body text corrects the label and gives the textbook's original label alongside it.
 
+**3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)**
+
+Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.
+
+- **Location (right side)**: WHO standard location approximated from bone landmarks by proportional bone measurement; 1 cun = 18.61 mm.
+- **Literature needling depth**: seven-source mean 4.93 fen = 11.3 mm (classical 6.9 mm, modern 17.2 mm).
+
+| Structure | Type | FMA | BodyParts3D skin mm (fen) | Candidate-region median (10–90%) | Body-shape skin BMI 24 | Body-shape skin BMI 30 | Within literature mean 11.3 mm |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | :---: |
+| Cephalic vein | vein | FMA:13324 | 10.1 (4.4) | 8.1 (6.2–11.2) | 4.4 | 8.7 | yes |
+| Brachioradialis | muscle | FMA:38485 | 11.1 (4.8) | 9.0 (7.3–11.7) | 3.9 | 9.8 | yes |
+| Flexor digitorum superficialis | muscle | FMA:38469 | 15.7 (6.8) | 15.3 (13.3–17.6) | 10.7 | 15.5 | no |
+| Radial vein | vein | FMA:22947 | 16.8 (7.3) | 16.0 (14.2–17.3) | 10.0 | 16.1 | no |
+| Flexor carpi radialis | muscle | FMA:38459 | 18.0 (7.8) | 18.9 (15.3–22.3) | 18.0 | 18.3 | no |
+| Flexor pollicis longus | muscle | FMA:38481 | 23.8 (10.4) | 23.5 (21.6–24.1) | 17.1 | 23.1 | no |
+| radius *(reference)* | reference (not in textbook list) | FMA:23463 | 27.1 (11.8) | — | 20.1 | 26.3 | no |
+| Radial artery | artery | FMA:22730 | 28.9 (12.6) | 26.7 (25.0–29.6) | 21.8 | 27.5 | no |
+
+- Shift of the representative point onto the body-shape skin: BMI 24 6.7 mm · BMI 30 1.1 mm
+- *(reference)* = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position
+- Textbook structures without a BodyParts3D mesh (not measured): 3
+- **Interactive 3D model**: [Kongzui (孔最, LU6) 3D anatomical model](LU06_mesh3d_model.html) (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)
+- **How to read it**:
+  - ① The shallowest structure (Cephalic vein) lies 10.1 mm deep with the BodyParts3D skin and 4.4 mm (BMI 24) · 8.7 mm (BMI 30) with the body-shape skin, a skin-surface difference of 1.4–5.7 mm.
+  - ② With the BodyParts3D skin, 2 structure(s) have their surface within the seven-source mean depth (11.3 mm): Cephalic vein, Brachioradialis. With the BMI 24 body-shape skin the number is 4.
+- **Comparison with the report**: Section 4 estimates that the classical 3 fen (6.9 mm) stays in the subcutis to superficial fascia, and that a modern one-cun (23 mm) insertion reaches the radial vessels under brachioradialis (Layer 4). In the standard model brachioradialis lies at 11.1 mm (body-shape skin 3.9–9.8 mm) and the radial vessels at 16.8 mm (10.0–16.1 mm), in the same order. A one-cun insertion passes the depth of the radial artery.
+- **Limitations**: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
+
 
 ---
 
@@ -159,6 +188,8 @@ Source: Classical Needling Depth Database, sheet 1, row 60 (LU06). No '0' ('Cont
 | (Reference, excluded from Targets) Sawada Kongzui (《針灸真髓》) | blank | Not described (missing) | — |
 
 - The classical depth is consistently 3 fen (6.9 mm) and stays superficial. A perpendicular insertion at the early-modern/modern upper limit of 1 cun (23 mm) can reach the radial artery and the superficial branch of the radial nerve beneath brachioradialis (Layer 4), so the pulse should be checked and the depth controlled at the medial border of brachioradialis, or the needle inserted obliquely (basis for SI 75).
+
+- **Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)**: structures whose surface lies within the seven-source mean of 11.3 mm: Cephalic vein, Brachioradialis (BodyParts3D skin); 4 with the BMI 24 body-shape skin (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.
 
 ---
 
@@ -405,6 +436,15 @@ The three Tri-Target positions (classical text, palpation-based locus, WHO) merg
 | T1≡2≡3 | $S_{clarity}$ | A 50 / B 75 (25-point difference, ≥ 15) | The main nerve and vessel structures agree between the two textbooks and only secondary muscles differ, so level 75 of canon 4.2 ("the two textbooks agree + confirmed by a standard anatomy text") fits better → A adjusted to 75 |
 | T1≡2≡3 | $S_{orig}$ sub-items ① and ④ | A 100/75, B 75/100 | The means are equal (81.25), so no adjudication was needed; reported as the mean of the sub-items |
 
+### Effect of the 3D anatomical measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement') | $S_{clarity}$ · SI | The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition | Step unchanged |
+
+→ No rubric step changes, so no dual re-scoring was done.
+
+
 ### 10-5. Final Conclusion
 
 - **Standard Kongzui Target 1≡2≡3 (腕上七寸)** — **Probable (B, weight-sensitive)**. The classical text position (《明堂》 去腕七寸), the gap at the medial border of brachioradialis indicated by the palpation phrases (insertion reference) and the WHO location are a single Target, pairwise within 10 mm (estimated). The anatomical substrate is the subcutaneous and fascial layer at the medial border of brachioradialis (lateral cutaneous nerve of forearm, cephalic vein), and a perpendicular insertion of 23 mm reaches the radial artery and veins and the superficial branch of the radial nerve (Layer 4). The location rests on *Huangdi Mingtang Jing* (《黃帝明堂經》) "在腕上七寸", but because forearm bone-proportional scales differed between periods (12.5 cun in ancient classics vs 10 cun in early-modern transition vs 12 cun in WHO standard), the actual location relative to the wrist crease varies between 140 and 175 mm, with the contemporary international consensus established at 7 cun above the wrist crease on a 12-cun scale (approx. 146 mm). The reflex mechanism (airway smooth muscle relaxation) is limited to rat studies with point combinations and is not concordant on the B-Check (7/12), so it is described as a **hypothesis**. With equal weights it falls to C (68.8), so grade B depends on the provisional weights.
@@ -557,3 +597,13 @@ Generated by: FMA 5.1.0 acupoint profile query (LU06; 2026-10-23). Match level `
 | 10-4 | Sawada adjudication row | Removed (not scored) | Same |
 | 10-5 | Sawada Kongzui "undetermined, hypothesis (D·H)", branch verdict "standard Kongzui superior" | Sawada Kongzui ungraded as a reference alternative view; verdict on the single Target | Same |
 | ARI | Standard Kongzui 71.2 ± 0 (B), SI 75 | **No change** | — |
+
+## 2026-11-05 3D anatomical measurement record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | — | Added a 3D anatomical measurement line (scores unchanged) | This revision |
+| Section 4 | — | **New '3D anatomical measurement' subsection**: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model | BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0 |
+| Section 5 | — | One line comparing the structures within the seven-source mean depth | Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm |
+| Section 10 | — | Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged) | Canonical Rank 7 rubric |
+| Scores | Existing ARI and SI | **No change** | Scoring-effect table in Section 10 |

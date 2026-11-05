@@ -11,6 +11,7 @@
 > **Anatomical Ontology**: local index of FMA 5.1.0 — textbook structures are pinned to `FMA:ID`s (B1 supplementary, not yet in the registry). Details in Appendix A
 > **Metrological Standard**: Han-dynasty standard, 1 fen (分) = 2.3 mm ($z = \text{fen} \times 2.3\,\text{mm}$)
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
+> **3D anatomical measurement (2026-11-05)**: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). **ARI scores unchanged.**
 
 **Source abbreviations** (refined editions of the four classics)
 - [通考] 《針灸腧穴通考》 上 手陽明大腸經穴-1 — 合谷 L657–1005
@@ -131,6 +132,33 @@ Target 1≡2 (classical/palpation, just distal to the junction of the bases of t
 - The Kim Jaehyo textbook is internally inconsistent: the Korean text says the "**transverse** head of adductor pollicis" while the English says "**oblique** head". The Common Textbook gives the transverse head. Discussed in Section 6.
 - FMA records no segments for the nerves themselves. The segments of the superficial branch of the radial nerve (C6–C7) are supplemented from B1-01 and an animal tracing result (papers.id 2297: tracer injected at LI4 detected in the C6 and C7 dorsal root ganglia, mouse).
 
+**3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)**
+
+Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.
+
+- **Location (right side)**: WHO standard location approximated from bone landmarks by proportional bone measurement.
+- **Literature needling depth**: seven-source mean 4.93 fen = 11.3 mm (classical 6.9 mm, modern 17.2 mm).
+
+| Structure | Type | FMA | BodyParts3D skin mm (fen) | Candidate-region median (10–90%) | Body-shape skin BMI 24 | Body-shape skin BMI 30 | Within literature mean 11.3 mm |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | :---: |
+| Dorsal venous network of hand | artery | FMA:67977 | 10.2 (4.4) | 10.3 (7.5–12.0) | —‡ | 10.4 | yes |
+| second metacarpal *(reference)* | reference (not in textbook list) | FMA:23900 | 12.1 (5.3) | — | —‡ | 12.1 | no |
+| Arteria radialis indicis | artery | FMA:22763 | 24.7 (10.7) | 24.0 (22.6–25.1) | —‡ | 22.5 | no |
+| Oblique head of adductor pollicis | muscle | FMA:46119 | 27.4 (11.9) | 26.3 (24.6–27.8) | —‡ | 24.1 | no |
+| first metacarpal *(reference)* | reference (not in textbook list) | FMA:23899 | 27.9 (12.1) | — | —‡ | 24.0 | no |
+
+- Shift of the representative point onto the body-shape skin: BMI 24 6.4 mm · BMI 30 1.6 mm
+- ‡ Not used because the registration error is large (point shift > 10 mm or the body-shape skin passes through a structure)
+- *(reference)* = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position
+- Rows removed from the table: 1 (textbook structure mapped to a mesh of a different kind, only to a distant parent-structure mesh, or more than 60 mm from the located point)
+- Textbook structures without a BodyParts3D mesh (not measured): 5
+- **Interactive 3D model**: [Hegu (合谷, LI4) 3D anatomical model](LI04_mesh3d_model.html) (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)
+- **How to read it**:
+  - ① The shallowest structure (Dorsal venous network of hand) lies 10.2 mm deep with the BodyParts3D skin and 10.4 mm (BMI 30) with the body-shape skin, a skin-surface difference of -0.2–-0.2 mm.
+  - ② With the BodyParts3D skin, 1 structure(s) have their surface within the seven-source mean depth (11.3 mm): Dorsal venous network of hand.
+- **Comparison with the report**: Section 4 gives no millimetre boundaries and estimates that deep structures lie near the one-cun (23 mm) upper limit. In the standard model the radialis indicis artery lies at 24.7 mm and the transverse head of adductor pollicis at 27.4 mm, just below the one-cun limit. The BMI 24 body-shape skin passes through the dorsal venous network and is not used; only the BMI 30 values are used.
+- **Limitations**: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
+
 ---
 
 ## 5. Classical Needling Depth Calculation Table
@@ -156,6 +184,8 @@ Source: Classical Needling Depth Database, sheet 1, row 69 (N0 = 67), supplement
 - **Target 3 safety**: the standard 5–10 fen stays within the first dorsal interosseous (Layer 2) to adductor pollicis (Layer 3). Branches of the deep ulnar nerve run inside the first dorsal interosseous (papers.id 2292), so perpendicular insertion may contact the nerve. **The texts specify angle and posture restrictions**, such as the 1959 Shanghai "針尖偏向第二掌骨方向……成80度角" ([通考] L701) and the 7th edition's "手呈半握拳狀". Through-needling of 2–3 cun reaches the deep palmar layer (Layer 4: deep palmar arch, deep branch of ulnar nerve).
 - **Target 1≡2 safety**: the classical point (insertion reference point) is the radial artery pulsation itself ("動脈應手"). At this level the radial artery passes between the two heads of the first dorsal interosseous into the palm (B1-01). Even at 3 fen (6.9 mm) the needle is in the same layer as the artery, so the pulse must be pushed aside.
 - Needle syncope (暈針): 《新編針灸學》 states "全身反應很大，防止發生休克……最好臥位" ([通鑑] L1310). Watch for vasovagal reactions.
+
+- **Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)**: structures whose surface lies within the seven-source mean of 11.3 mm: Dorsal venous network of hand (BodyParts3D skin) (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.
 
 ---
 
@@ -358,6 +388,15 @@ The English descriptions of the *Zhengzhi Tongjian* (《證治通鑑》) indicat
 - Target 1≡2: `ARI v3.0 | ARI-Core 61.25 ± 1.25 (C) | SI 50 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 59.4 (C, grade unchanged)`
 - Target 3: `ARI v3.0 | ARI-Core 68.75 ± 1.25 (C) | SI 75 | provisional weights 0.40/0.35/0.25 | sensitivity (equal weights): 69.8 (C, grade unchanged)` · ⚠ texts contraindicating needling in pregnancy
 
+### Effect of the 3D anatomical measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement') | $S_{clarity}$ · SI | The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition | Step unchanged |
+
+→ No rubric step changes, so no dual re-scoring was done.
+
+
 ### Final Conclusion
 
 In the Tri-Target verdict, Hegu (合谷, LI04) exists at **two sites** (`Target 1≡2 vs Target 3`). The classical text position (Target 1, '岐骨之間') and the position the palpation phrase points to (Target 2, '動脈應手') merge into one place — just distal to the junction where the bases of the 1st and 2nd metacarpals meet, the pulse-taking site where the radial artery pulsation can be felt. The modern WHO location (Target 3) was moved, from the 1964 textbook onward, to the midpoint of the radial side of the 2nd metacarpal. The two sites are about 2–3 cm apart (estimated), and neither can be judged superior to the other (ΔARI-Core 7.5).
@@ -445,3 +484,13 @@ Generated by FMA 5.1.0 acupoint profile query (LI04; 2026-10-24), supplemented w
 | Section 10 | Sub-scores T1 and T2; $S_{orig}$ ④ 'collation by the *Tongkao*' | Target 1≡2 and Target 3 labels; ④ re-checked as 'collation by the *Tongkao* and *Jingluo Tongjian*' — level unchanged (75). Split verdict restated under the Tri-Target rule (ΔARI 7.5 < 10 → reported side by side) | Canon Rank 7 $S_{orig}$ ④ and Tri-Target verdict rule |
 | ARI | Per-Target ARI-Core 61.25 ± 1.25 (C) / 68.75 ± 1.25 (C), SI 50 / 75 | **Scores unchanged** (positions unchanged → earlier dual scores carried over) | Canon Rank 7 |
 | Unverifiable | — | All pairwise Δ values are estimates (no measurements). The Target 1–2 merger relies on the *Tongkao*'s identification of the two as the same site | — |
+
+## 2026-11-05 3D anatomical measurement record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | — | Added a 3D anatomical measurement line (scores unchanged) | This revision |
+| Section 4 | — | **New '3D anatomical measurement' subsection**: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model | BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0 |
+| Section 5 | — | One line comparing the structures within the seven-source mean depth | Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm |
+| Section 10 | — | Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged) | Canonical Rank 7 rubric |
+| Scores | Existing ARI and SI | **No change** | Scoring-effect table in Section 10 |

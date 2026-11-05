@@ -12,6 +12,7 @@
 > **Four Primary Classics** (refined editions): *Zhenjiu Shuxue Tongkao* (《針灸腧穴通考》) (上) PDF pp. 561–640 (lines 2310–2590) · *Zhongguo Zhenjiu Xuewei Tongjian* (《中國針灸穴位通鑑》) (上卷) PDF pp. 881–960 (lines 2480–2712) · *Zhongguo Zhenjiu Zhengzhi Tongjian* (《中國針灸證治通鑑》), prescription entries in each chapter (Chinese original as reference text, collated with the Korean translation) · *Zhongguo Zhenjiu Jingluo Tongjian* (《中國針灸經絡通鑑》), Foot-Taiyang (Part 24) and Hand-Shaoyang (Part 27) sections, etc.
 > **Anatomical Ontology**: local index of the FMA (Foundational Model of Anatomy) 5.1.0 — textbook structures are pinned to `FMA:ID`s and their innervation and nerve trunks are cross-checked (B1 supplementary, not yet in the registry). Mapping table: FMA Acupoint Anatomical Ontology Mapping Registry; details in Appendix A
 > **Note on script**: Classical quotations and TCM terms are given in Traditional Chinese (繁體字). The cited refined editions are in simplified script; PDF page ranges and line numbers refer to those editions.
+> **3D anatomical measurement (2026-11-05)**: structure depths at the proportional-bone location on the BodyParts3D 4.0 standard model, with supplementary values using an SMPL-X body-shape skin (BMI 24 and 30) (Section 4 '3D anatomical measurement', interactive 3D model). Normative anatomical geometry (B1 supplementary). **ARI scores unchanged.**
 
 ### Summary
 - **⚠ Safety caution (SI 0)**: Under the rubric the SI is 0 because the classics (《通考》 and 《穴位通鑑》) record the statement "禁用針灸" (no needling, no moxibustion; 禁針·禁灸) from vol. 1 of *Yixue Rumen* (《醫學入門》). This is **a single record in one later, Ming-dynasty text**; most texts from the *Huangdi Mingtang Jing* (《黃帝明堂經》) and *Jiayi Jing* (《甲乙經》) onward, and the needling-depth DB, describe an insertion of **1–3 fen (2.3–6.9 mm)**. The needling-depth DB contains no '0' (contraindicated for needling) entry. The real risk lies in **direction** rather than depth. A perpendicular needle reaches the bony surface of the frontal bone at the frontal notch (額切跡) at a shallow depth, but a needle angled inferoposteriorly (toward the orbit) and inserted deeply can enter the orbit and may cause bleeding (haematoma) from the supratrochlear vessels. Most classical and modern texts recommend **transverse (horizontal) insertion along the skin (沿皮)**.
@@ -165,6 +166,31 @@ Structure names from the two textbooks; IDs and relations from FMA 5.1.0 (FMA pr
 - **FMA note 2 — angular vein communication**: FMA records the angular vein only as a tributary of the facial vein and does not record its communication with the superior ophthalmic vein (→ cavernous sinus). This communication is based on normative anatomy (B1-01) and is described only as a route to consider in supratrochlear venous bleeding or infection.
 - **FMA note 3 — innervation of frontalis**: FMA has no `nerve_supply` for frontalis. Innervation by the temporal branches of the facial nerve is stated on the basis of B1-01.
 
+**3D anatomical measurement — BodyParts3D 4.0 standard model + SMPL-X body-shape skin (2026-11-05, B1 supplementary)**
+
+Textbook structures were loaded from the BodyParts3D 4.0 meshes linked by FMA ID, and the depth of each structure was measured at a location placed by proportional bone measurement (cun) approximated from bone landmarks (joint lines, bone ends, processes). Values with only the skin surface replaced by an SMPL-X statistical body-shape skin (male, height 1.72 m, BMI 24 and 30) are given alongside.
+
+- **Location (right side)**: WHO standard location approximated from bone landmarks by proportional bone measurement.
+- **Literature needling depth**: seven-source mean 2.14 fen = 4.9 mm (classical 4.6 mm, modern 5.4 mm).
+
+| Structure | Type | FMA | BodyParts3D skin mm (fen) | Candidate-region median (10–90%) | Body-shape skin BMI 24 | Body-shape skin BMI 30 | Within literature mean 4.9 mm |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | :---: |
+| Supratrochlear nerve | nerve | FMA:52642 | 6.2 (2.7) | 5.8 (4.0–7.3) | —‡ | —‡ | no |
+| frontal bone *(reference)* | reference (not in textbook list) | FMA:52734 | 7.0 (3.0) | — | —‡ | —‡ | no |
+| Supra-orbital nerve | nerve | FMA:52655 | 14.0 (6.1) | 14.5 (11.3–17.6) | —‡ | —‡ | no |
+| Ophthalmic artery *(parent-structure mesh)* | artery | FMA:49868 | 16.4 (7.1) | 15.4 (13.8–17.0) | —‡ | —‡ | no |
+
+- Shift of the representative point onto the body-shape skin: BMI 24 11.3 mm · BMI 30 11.0 mm
+- ‡ Not used because the registration error is large (point shift > 10 mm or the body-shape skin passes through a structure)
+- *(reference)* = superficial muscle, underlying bone or organ not in the textbook list, measured to show layer position
+- Textbook structures without a BodyParts3D mesh (not measured): 7
+- **Interactive 3D model**: [Cuanzhu (攢竹, BL2) 3D anatomical model](BL02_mesh3d_model.html) (textbook structures, a skin patch, the located point and depth lines; it can be rotated in a browser; its interface is in Korean)
+- **How to read it**:
+  - ① The shallowest structure (Supratrochlear nerve) lies 6.2 mm deep with the BodyParts3D skin. The body-shape skin is not compared here because its registration error is large.
+  - ② With the BodyParts3D skin, 0 structure(s) have their surface within the seven-source mean depth (4.9 mm).
+- **Comparison with the report**: Section 4 states that a perpendicular needle at BL2 meets the frontal bone within a few millimetres. In the standard model the frontal bone lies 7.0 mm deep, and the seven-source mean (4.9 mm) stops in the soft tissue in front of the bone. This agrees with the Section 4 judgement that the risk lies in direction rather than depth. The head and face have no joint landmarks for registering the body-shape skin, so the BMI values are not used.
+- **Limitations**: this is a single standard model (BodyParts3D) with a statistical body-shape skin (SMPL-X) registration estimate. The location is a proportional-bone position approximated from bone landmarks, and depth is the shortest straight-line distance from the skin point to the structure surface, which may differ from depth along the needle. Individual variation, posture and muscle tone are not reflected, so these millimetres are used only for layer order and relative depth and are not transferred to in-vivo safe depths. Normative anatomical geometry (B1 supplementary), not an acupoint measurement (B2).
+
 ---
 
 ## 5. Needling Depth Calculation Table
@@ -185,6 +211,8 @@ Source: Classical Needling Depth Database, sheet 1, row 181 (BL02). Rules: integ
 
 - **Range**: all DB values 2.3–6.9 mm. There is no '0' in the DB. The earlier edition's mean μ = 9.2 mm and standard deviation σ = 1.8 mm had no source and did not match the DB, so they were **deleted**.
 - **Angle-correction example** ($z_{vertical} = L \times \sin\theta$): inserting the primary-source 3 fen (L = 6.9 mm) along the skin as Dou (竇氏) describes (θ ≈ 15°) gives $z = 6.9 \times \sin 15^\circ \approx 1.8\text{mm}$, remaining in Layer 1–2. This is a worked example of the angle effect, not a BL2 measurement. The earlier edition's $11.5 \times \sin 20^\circ$ calculation used an unsupported 5-fen input and was deleted.
+
+- **Comparison with the 3D anatomical measurement (2026-11-05, B1 supplementary)**: structures whose surface lies within the seven-source mean of 4.9 mm: none (BodyParts3D skin) (Section 4 '3D anatomical measurement' table). This indicates straight-line reachability, not a judgement of injury risk.
 
 ---
 
@@ -383,6 +411,15 @@ $P_{single}$ is **not calculated quantitatively**. The earlier edition's 0.90–
 - **S_safety adjudication (A 0 / B 75 → 0)**: both raters confirmed the *Yixue Rumen* (《醫學入門》) vol. 1 "禁用針灸" recorded in the *Xuewei Tongjian* (《穴位通鑑》) and in 《針灸腧穴通考》(上) PDF pp. 561–640 【操作】 9. Level 0 of canonical section 4.2 ("a text prohibiting needling exists") was applied literally and B was adjusted to 0 → ⚠ safety caution. The text also notes that most texts in the needling-depth DB give 1–3 fen (2.3–6.9 mm) and that the prohibition is a single record in a later text. On the DB criterion alone, the SI would be 75 (avoidable by oblique or transverse insertion; angle and depth limits stated in the literature).
 - The conflict over moxibustion (灸法) (《甲乙》 灸三壯 vs. 《千金翼》 忌灸 and Dou (竇氏) 禁灸) and the direction of effect in item ⑤ (classical 流淚 vs. promotion of secretion in dry eye) are not direct conflicts, so the B-Check 'hypothesis' restriction was not applied.
 
+### Effect of the 3D anatomical measurement on scoring (2026-11-05)
+
+| New evidence | Item that could be affected | Review | Result |
+| :--- | :--- | :--- | :--- |
+| BodyParts3D 4.0 structure depths at the proportional-bone location + SMPL-X body-shape skin (BMI 24 and 30) supplementary values (Section 4 '3D anatomical measurement') | $S_{clarity}$ · SI | The layer order of the textbook structures and the structures within the literature mean depth are confirmed in standard 3D geometry. This is a single standard model with a statistical body-shape skin registration estimate (B1 supplementary), not a point-specific measurement (B2), so it does not meet the rubric's step condition | Step unchanged |
+
+→ No rubric step changes, so no dual re-scoring was done.
+
+
 ### 10.6 Final Conclusion
 
 1. **⚠ Safety warning (read first)**: SI 0 derives from **a single record in one later, Ming-dynasty text**, the "禁用針灸" of *Yixue Rumen* (《醫學入門》) vol. 1. From the *Huangdi Mingtang Jing* (《黃帝明堂經》) and *Jiayi Jing* (《甲乙經》) (3 fen), through 《千金翼》, 《銅人》 and Dou (竇氏) (1 fen) and 《聚英》 (1–3 fen), to modern textbooks and the *Tongkao* (《通考》) (0.1–0.3 cun), **most texts accept an insertion of 1–3 fen (2.3–6.9 mm)**. The practical precautions are: ① do not angle the needle toward the orbit (inferoposteriorly) and insert deeply (including the "臥針直抵睛明" criticised in 《聚英》); ② beware of bleeding (haematoma) from the supratrochlear vessels passing through the frontal notch (額切跡); ③ use transverse (horizontal) insertion along the skin (沿皮) as the default. Most later texts also prohibit moxibustion at this point.
@@ -490,3 +527,13 @@ Generated by FMA 5.1.0 acupoint profile query (BL02; 2026-10-23). Match level `e
 | Section 10 | "Target T1 (single)"; ④ "*Tongkao* collation" | "Target 1≡2≡3 (single; earlier label T1)"; ④ "collation in the *Tongkao* and *Jingluo Tongjian*" re-checked — no collation of the location wording, no grounds to move the level, **score unchanged** (A 100 / B 75); 10.4 branch-decision wording; conclusion item 5 added | Rubric 4.2 item ④ |
 | Ancillary wording in Sections 1, 3 and 5 | "does not appear in any of the three primary classics" (《靈樞·本輸》 quotation; 烏列 · 大空), "recorded only in the three primary classics" (《醫學入門》) | Updated to the four primary classics, with the results of the 《經絡通鑑》 search (在顏下 only in the Hand-Yangming 標 entry of the 《靈樞·衛氣》; 0 hits for 烏列 · 大空 · 禁用針灸) | Full search of the 《中國針灸經絡通鑑》 |
 | Scores | ARI v3.0 \| ARI-Core 81.2 ± 1.2 (B) \| SI 0 ⚠ \| sensitivity 80.2 (B) | **No change**. No single-scored (preliminary) Target | — |
+
+## 2026-11-05 3D anatomical measurement record
+
+| Location | Original | Change | Basis |
+| :--- | :--- | :--- | :--- |
+| Header | — | Added a 3D anatomical measurement line (scores unchanged) | This revision |
+| Section 4 | — | **New '3D anatomical measurement' subsection**: proportional-bone location approximated from bone landmarks, structure depth table (BodyParts3D skin and SMPL-X body-shape skin BMI 24 and 30), reading notes, link to the interactive 3D model | BodyParts3D 4.0 (CC BY 4.0), SMPL-X Body License CC BY 4.0 |
+| Section 5 | — | One line comparing the structures within the seven-source mean depth | Needling-depth DB, seven sources, equal-weight mean, 1 fen = 2.3 mm |
+| Section 10 | — | Table 'Effect of the 3D anatomical measurement on scoring' (steps unchanged) | Canonical Rank 7 rubric |
+| Scores | Existing ARI and SI | **No change** | Scoring-effect table in Section 10 |

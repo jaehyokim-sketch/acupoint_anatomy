@@ -1,0 +1,80 @@
+{
+ "code": "BL02",
+ "source": "김재효",
+ "side": "right",
+ "skin": "BodyParts3D 4.0 피부(FMA:7163)",
+ "method": "지정 좌표 반경 6 mm 피부 영역",
+ "candidate_points": 56,
+ "candidate_extent_mm": [
+  9.2,
+  6.2,
+  9.7
+ ],
+ "point_mm": [
+  -14.5,
+  -181.1,
+  1540.2
+ ],
+ "depths": [
+  {
+   "structure": "도르래위신경 · Supratrochlear nerve",
+   "category": "신경",
+   "fma_id": 52642,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 6.2,
+   "depth_pun_at_point": 2.7,
+   "depth_mm_median": 5.8,
+   "depth_mm_p10": 4.0,
+   "depth_mm_p90": 7.3,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "눈확위신경 · Supra-orbital nerve",
+   "category": "신경",
+   "fma_id": 52655,
+   "mesh_level": "exact",
+   "depth_mm_at_point": 14.0,
+   "depth_pun_at_point": 6.1,
+   "depth_mm_median": 14.5,
+   "depth_mm_p10": 11.3,
+   "depth_mm_p90": 17.6,
+   "within_literature_mean": false
+  },
+  {
+   "structure": "눈확위동ㆍ정맥 · Ophthalmic artery",
+   "category": "동맥",
+   "fma_id": 49868,
+   "mesh_level": "ancestor+1",
+   "depth_mm_at_point": 16.4,
+   "depth_pun_at_point": 7.1,
+   "depth_mm_median": 15.4,
+   "depth_mm_p10": 13.8,
+   "depth_mm_p90": 17.0,
+   "within_literature_mean": false
+  }
+ ],
+ "literature_depth": {
+  "summary": "BL02 찬죽: 7종 평균 2.14푼 = 4.9 mm (n=7, 중앙값 2.5푼, 범위 1–3푼) · 고전 2.0푼(n=4) · 현대 2.33푼(n=3)",
+  "mean_pun": 2.14,
+  "mean_mm": 4.9,
+  "classic_mm": 4.6,
+  "modern_mm": 5.4,
+  "modern_range_mm": [
+   3.8,
+   6.9
+  ],
+  "forbidden_sources": [],
+  "reached_at_point": []
+ },
+ "missing_structures": [
+  "눈둘레근 (orbicularis oculi) — BodyParts3D 메쉬 없음",
+  "눈썹내림근 (depressor supercilii) — BodyParts3D 메쉬 없음",
+  "눈썹주름근 (corrugator supercilii) — BodyParts3D 메쉬 없음",
+  "뒤통수이마근의 이마힘살 (frontal belly of the occipitofrontalis) — BodyParts3D 메쉬 없음",
+  "얼굴신경의 관자가지 (temporal branch of the facial nerve) — BodyParts3D 메쉬 없음",
+  "눈확위동ㆍ정맥 (supraorbial vein) — BodyParts3D 메쉬 없음",
+  "도르래위동ㆍ정맥 (supratrochlear vein) — BodyParts3D 메쉬 없음"
+ ],
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International",
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영). 경혈 위치는 교재 구조 목록에서 정한 후보 영역이며 정위 실측(B2)이 아니다. 깊이는 피부점에서 구조 표면까지의 최소 직선거리로, 자침 방향 깊이와 다를 수 있다."
+}
