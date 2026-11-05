@@ -1,0 +1,366 @@
+{
+ "model": "BodyParts3D 4.0 오른다리",
+ "skin": "SMPL-X 체형 피부 male_bmi24 (male · 키 1.7218 m · BMI 23.91)",
+ "z_knee_mm": 373.9,
+ "z_lateral_malleolus_mm": -25.3,
+ "cun_mm": 24.95,
+ "level_z_mm": 299.1,
+ "crest_skin_mm": [
+  -85.7,
+  -114.4,
+  299.1
+ ],
+ "skin_to_crest_mm": 2.7,
+ "targets": [
+  {
+   "target": "Target 1 (胫骨之外廉)",
+   "arc_from_crest_mm": 10.0,
+   "skin_point_mm": [
+    -95.1,
+    -110.9,
+    299.1
+   ],
+   "direction": [
+    0.35,
+    0.937,
+    0.0
+   ],
+   "hits": {
+    "앞정강근": [
+     [
+      1.6,
+      5.3
+     ]
+    ],
+    "긴발가락폄근": [],
+    "종아리뼈사이막": [],
+    "앞정강동맥": [],
+    "앞정강정맥": [],
+    "정강뼈": [
+     [
+      1.5,
+      37.7
+     ]
+    ],
+    "종아리뼈": []
+   },
+   "subcutaneous_mm": 1.5,
+   "closest_artery_on_path": {
+    "mm": 12.8,
+    "at_depth_mm": 32.8
+   },
+   "closest_vein_on_path": {
+    "mm": 18.5,
+    "at_depth_mm": 30.0
+   },
+   "literature_tips": [
+    {
+     "literature": "《铜人》 卷下 5푼",
+     "depth_mm": 11.5,
+     "tip_in": [
+      "정강뼈"
+     ],
+     "artery_mm": 22.9,
+     "vein_mm": 19.4
+    },
+    {
+     "literature": "고전 4종 평균 9.5푼",
+     "depth_mm": 21.9,
+     "tip_in": [
+      "정강뼈"
+     ],
+     "artery_mm": 15.9,
+     "vein_mm": 18.9
+    },
+    {
+     "literature": "7종 평균 11.86푼",
+     "depth_mm": 27.3,
+     "tip_in": [
+      "정강뼈"
+     ],
+     "artery_mm": 13.7,
+     "vein_mm": 18.6
+    },
+    {
+     "literature": "현대 3종 평균 15푼",
+     "depth_mm": 34.5,
+     "tip_in": [
+      "정강뼈"
+     ],
+     "artery_mm": 12.9,
+     "vein_mm": 19.0
+    },
+    {
+     "literature": "현대 상한 2촌",
+     "depth_mm": 46.0,
+     "tip_in": [
+      "근육 밖 연부조직(피하·근막·근간)"
+     ],
+     "artery_mm": 17.3,
+     "vein_mm": 23.6
+    },
+    {
+     "literature": "《窦太师》 25푼",
+     "depth_mm": 57.5,
+     "tip_in": [
+      "근육 밖 연부조직(피하·근막·근간)"
+     ],
+     "artery_mm": 25.7,
+     "vein_mm": 31.2
+    }
+   ]
+  },
+  {
+   "target": "Target 1≡3 (WHO 1횡지)",
+   "arc_from_crest_mm": 17.5,
+   "skin_point_mm": [
+    -102.1,
+    -108.3,
+    299.1
+   ],
+   "direction": [
+    0.35,
+    0.937,
+    0.0
+   ],
+   "hits": {
+    "앞정강근": [
+     [
+      0.8,
+      25.2
+     ]
+    ],
+    "긴발가락폄근": [],
+    "종아리뼈사이막": [
+     [
+      27.7,
+      29.8
+     ]
+    ],
+    "앞정강동맥": [],
+    "앞정강정맥": [],
+    "정강뼈": [],
+    "종아리뼈": []
+   },
+   "subcutaneous_mm": 0.8,
+   "closest_artery_on_path": {
+    "mm": 5.9,
+    "at_depth_mm": 32.0
+   },
+   "closest_vein_on_path": {
+    "mm": 11.1,
+    "at_depth_mm": 30.0
+   },
+   "literature_tips": [
+    {
+     "literature": "《铜人》 卷下 5푼",
+     "depth_mm": 11.5,
+     "tip_in": [
+      "앞정강근"
+     ],
+     "artery_mm": 18.8,
+     "vein_mm": 14.0
+    },
+    {
+     "literature": "고전 4종 평균 9.5푼",
+     "depth_mm": 21.9,
+     "tip_in": [
+      "앞정강근"
+     ],
+     "artery_mm": 10.2,
+     "vein_mm": 12.2
+    },
+    {
+     "literature": "7종 평균 11.86푼",
+     "depth_mm": 27.3,
+     "tip_in": [
+      "근육 밖 연부조직(피하·근막·근간)"
+     ],
+     "artery_mm": 7.0,
+     "vein_mm": 11.3
+    },
+    {
+     "literature": "현대 3종 평균 15푼",
+     "depth_mm": 34.5,
+     "tip_in": [
+      "근육 밖 연부조직(피하·근막·근간)"
+     ],
+     "artery_mm": 6.2,
+     "vein_mm": 11.8
+    },
+    {
+     "literature": "현대 상한 2촌",
+     "depth_mm": 46.0,
+     "tip_in": [
+      "근육 밖 연부조직(피하·근막·근간)"
+     ],
+     "artery_mm": 13.1,
+     "vein_mm": 17.9
+    },
+    {
+     "literature": "《窦太师》 25푼",
+     "depth_mm": 57.5,
+     "tip_in": [
+      "근육 밖 연부조직(피하·근막·근간)"
+     ],
+     "artery_mm": 23.2,
+     "vein_mm": 27.1
+    }
+   ],
+   "arc_range_mm": {
+    "15.0": [
+     -99.7,
+     -109.1,
+     299.1
+    ],
+    "20.0": [
+     -104.4,
+     -107.4,
+     299.1
+    ]
+   }
+  },
+  {
+   "target": "Target 2 (两筋间)",
+   "arc_from_crest_mm": 31.5,
+   "skin_point_mm": [
+    -115.2,
+    -103.3,
+    299.1
+   ],
+   "direction": [
+    0.456,
+    0.89,
+    0.0
+   ],
+   "hits": {
+    "앞정강근": [
+     [
+      9.0,
+      24.4
+     ]
+    ],
+    "긴발가락폄근": [],
+    "종아리뼈사이막": [],
+    "앞정강동맥": [
+     [
+      28.1,
+      35.1
+     ]
+    ],
+    "앞정강정맥": [],
+    "정강뼈": [],
+    "종아리뼈": []
+   },
+   "subcutaneous_mm": 9.0,
+   "closest_artery_on_path": {
+    "mm": 0.2,
+    "at_depth_mm": 28.2
+   },
+   "closest_vein_on_path": {
+    "mm": 0.6,
+    "at_depth_mm": 29.8
+   },
+   "literature_tips": [
+    {
+     "literature": "《铜人》 卷下 5푼",
+     "depth_mm": 11.5,
+     "tip_in": [
+      "앞정강근"
+     ],
+     "artery_mm": 16.2,
+     "vein_mm": 10.2
+    },
+    {
+     "literature": "고전 4종 평균 9.5푼",
+     "depth_mm": 21.9,
+     "tip_in": [
+      "앞정강근"
+     ],
+     "artery_mm": 6.1,
+     "vein_mm": 2.9
+    },
+    {
+     "literature": "7종 평균 11.86푼",
+     "depth_mm": 27.3,
+     "tip_in": [
+      "근육 밖 연부조직(피하·근막·근간)"
+     ],
+     "artery_mm": 0.9,
+     "vein_mm": 1.2
+    },
+    {
+     "literature": "현대 3종 평균 15푼",
+     "depth_mm": 34.5,
+     "tip_in": [
+      "앞정강동맥"
+     ],
+     "artery_mm": 0.6,
+     "vein_mm": 2.6
+    },
+    {
+     "literature": "현대 상한 2촌",
+     "depth_mm": 46.0,
+     "tip_in": [
+      "근육 밖 연부조직(피하·근막·근간)"
+     ],
+     "artery_mm": 10.7,
+     "vein_mm": 12.8
+    },
+    {
+     "literature": "《窦太师》 25푼",
+     "depth_mm": 57.5,
+     "tip_in": [
+      "근육 밖 연부조직(피하·근막·근간)"
+     ],
+     "artery_mm": 21.8,
+     "vein_mm": 24.0
+    }
+   ]
+  }
+ ],
+ "muscle": {
+  "ta_width_ml_mm": 22.9,
+  "ta_depth_ap_mm": 29.3,
+  "edl_width_ml_mm": 13.7,
+  "edl_depth_ap_mm": 20.1,
+  "crest_to_septum_entry_mm": 30.0,
+  "crest_to_septum_entry_ml_mm": 25.4,
+  "path_to_septum_entry_mm": 0.3
+ },
+ "delta_mm": {
+  "T2-T3": 12.5,
+  "T2-T3_range": [
+   10.0,
+   15.0
+  ],
+  "T1-T3": 7.5,
+  "T1-T3_range": [
+   0.0,
+   15.0
+  ],
+  "T1-T2": 20.0,
+  "note": "Y(犊鼻下 3寸)는 세 Target이 같으므로 Δ는 X(가로) 차이. Target 2는 근육 단면에서 잰 값, 1횡지는 가정값"
+ },
+ "needle_depth_literature": {
+  "all_mean_pun": 11.86,
+  "all_mean_mm": 27.3,
+  "classic_mm": 21.8,
+  "modern_mm": 34.5
+ },
+ "caveat": "BodyParts3D 단일 표준 성인 모델(개인차·자세·피하지방 미반영) 측정, 규범 해부 형상 참고(B1 보조). 정위점은 골도분촌과 횡향 거리 가정으로 놓은 것이며 경혈 실측(B2)이 아니다. 깊은종아리신경은 메쉬가 없어 앞정강동정맥으로 대리. 피부면은 BodyParts3D 골격 관절 중심에 등록한 SMPL-X 통계 체형 피부이며 근육·지방 층은 BodyParts3D 그대로라 체형 차이는 피하층 두께 차이로만 나타나는 근사다. 음수 깊이 = 구조 표면이 체형 피부 밖(정합 오차)",
+ "skin_joint_error_mm": {
+  "hip_left": 26.5,
+  "hip_right": 27.1,
+  "knee_left": 9.5,
+  "knee_right": 19.1,
+  "ankle_left": 9.7,
+  "ankle_right": 10.4,
+  "shoulder_left": 4.5,
+  "shoulder_right": 1.7,
+  "elbow_left": 5.0,
+  "elbow_right": 1.1,
+  "wrist_left": 1.2,
+  "wrist_right": 2.0
+ }
+}
