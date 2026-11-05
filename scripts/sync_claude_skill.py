@@ -10,6 +10,8 @@ sync_claude_skill.py — C:\\workspace 작업을 Google Drive 정본 기준으�
   <DRIVE>/.claude/skills/acupoint-anatomy/**                       → <WORKSPACE>/.claude/skills/acupoint-anatomy/   (전체 미러)
   <DRIVE>/.claude/workspace_CLAUDE.md                              → <WORKSPACE>/CLAUDE.md
   <DRIVE>/FMA_3D_해부_통합설정_가이드.md                             → <WORKSPACE>/FMA_3D_해부_통합설정_가이드.md
+  <DRIVE>/.claude/skills/fma-3d/**                                 → <WORKSPACE>/.claude/skills/fma-3d/   ([FMA 3D] 스킬, 파일 단위)
+  <DRIVE>/.claude/agents/**                                        → <WORKSPACE>/.claude/agents/   (서브에이전트 정의, 파일 단위)
   <DRIVE>/01_Framework/{정본·등록부·DB 설계}.md                     → <REPO>/framework/
   <DRIVE>/.agents/skills/acupoint-anatomy/SKILL.md                 → <REPO>/skill/SKILL.md
   <DRIVE>/.claude/skills/acupoint-anatomy/scripts/fma/**           → <REPO>/scripts/fma/   (MCP 서버가 불러오는 FMA 스크립트, 파일 단위)
@@ -61,6 +63,10 @@ REPO_FILES = [  # (Drive 기준 상대경로, 저장소 기준 상대경로)
 ]
 REPO_TREES = [  # (Drive 기준 폴더, 저장소 기준 폴더) — 파일 단위 미러. Drive에 없는 저장소 파일은 그대로 둔다
     (".claude/skills/acupoint-anatomy/scripts/fma", "scripts/fma"),
+]
+WORKSPACE_TREES = [  # (Drive 기준 폴더, 워크스페이스 기준 폴더) — 파일 단위 미러. Drive에 없는 로컬 파일은 알리기만 한다
+    (".claude/skills/fma-3d", ".claude/skills/fma-3d"),   # [FMA 3D] 스킬 (2026-11-05)
+    (".claude/agents", ".claude/agents"),                 # 서브에이전트 정의(fma-3d-modeler 등)
 ]
 WORKSPACE_FILES = [  # (Drive 기준 상대경로, 워크스페이스 기준 상대경로)
     (".claude/workspace_CLAUDE.md", "CLAUDE.md"),
@@ -205,14 +211,20 @@ def main():
 
     # 2) 저장소 규칙·데이터 사본 · 워크스페이스 지침 · 다른 저장소 지침
     #    (src, dst, 상태 키, 표시 이름, 보관 경로, 커밋할 저장소 이름 또는 None, 바이트 비교 여부)
-    repo_changed, data_changed = [], []
+    repo_changed, data_changed, rule_local_only_ws = [], [], []
     targets = [(drive / d, repo / r, f"repo:{r}", f"저장소 {r}", f"repo/{r}", repo.name, False) for d, r in REPO_FILES]
     targets += [(src, repo / r / rel, f"repo:{r}/{rel}", f"저장소 {r}/{rel}", f"repo/{r}/{rel}", repo.name, False)
                 for d, r in REPO_TREES for rel, src in sorted(skill_files(drive / d).items())]
     targets += [(drive / "02_Master_Datasets" / d, repo / "data" / r, f"data:{r}", f"데이터 data/{r}",
                  f"repo/data/{r}", repo.name, True) for d, r in DATA_FILES]
     targets += [(drive / d, ws / w, f"ws:{w}", f"워크스페이스 {w}", f"workspace/{w}", None, False) for d, w in WORKSPACE_FILES]
+    targets += [(src, ws / w / rel, f"ws:{w}/{rel}", f"워크스페이스 {w}/{rel}", f"workspace/{w}/{rel}", None, False)
+                for d, w in WORKSPACE_TREES for rel, src in sorted(skill_files(drive / d).items())]
+    for d, w in WORKSPACE_TREES:
+        for rel in sorted(set(skill_files(ws / w)) - set(skill_files(drive / d))):
+            rule_local_only_ws.append(f"{w}/{rel}")
     rule_pairs, rule_local_only = repo_rule_targets(ws, drive)
+    rule_local_only += rule_local_only_ws
     targets += [(s, d, f"rules:{name}/{r}", f"{name} {r}", f"repos/{name}/{r}", name, False) for s, d, name, r in rule_pairs]
     for src, dst, key, label, blabel, commit_repo, binary in targets:
         if not src.exists():
