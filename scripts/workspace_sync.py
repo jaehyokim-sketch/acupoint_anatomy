@@ -53,10 +53,12 @@ DEFAULT_SYNC = {
         "editor": ["drive_mirror", "agents_rules", "global_skills", "git_pull", "drive_git_check", "drive_newer_report"],
         "mirror": ["role_notice", "drive_mirror", "agents_rules", "global_skills", "git_pull", "drive_git_check"],
     },
-    "agents_rules_to_workspace": ["drive-canonical-policy.md", "fma-integration.md"],
+    "agents_rules_to_workspace": ["drive-canonical-policy.md", "fma-integration.md", "fma-3d-routing.md"],
     "global_skills": [
         {"from": "도서 번역/.agents/skills/acupoint-anatomy", "items": ["SKILL.md", "references"],
          "to": ["~/.gemini/config/skills/acupoint-anatomy"]},
+        {"from": "도서 번역/.claude/skills/fma-3d", "items": ["SKILL.md"],
+         "to": ["~/.gemini/config/skills/fma-3d"]},
         {"from": "강의/04_평가 및 학습활동 자료/학습일지 평가",
          "items": ["SKILL.md", "학습일지_평가지침.md", "scripts", "references"],
          "to": ["~/.claude/skills/study-log-eval", "~/.gemini/config/skills/study-log-eval"]},
@@ -196,6 +198,10 @@ def iter_items(base: Path, items):
 def step_global_skills(ctx):
     for spec in ctx["sync"].get("global_skills", []):
         base = ctx["my_drive"] / spec["from"]
+        if not base.is_dir():
+            alt = ctx["my_drive"] / (spec["from"] + " agent")
+            if alt.is_dir():
+                base = alt
         if not base.is_dir():
             ctx["warn"].append(f"전역 스킬 원본 없음: {base}")
             continue
