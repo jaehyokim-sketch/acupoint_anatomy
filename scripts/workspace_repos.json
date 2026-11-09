@@ -1,6 +1,6 @@
 {
   "_설명": "C:\\workspace 로컬 Git 저장소 등록부. Git 저장소(.git)는 이 표의 로컬 폴더에만 두고, Google Drive 폴더에는 두지 않는다. drive는 '내 드라이브' 기준 상대경로(편집 PC D:\\, 미러 PC G:\\내 드라이브\\). remote가 null이면 GitHub 원격이 없는 로컬 전용 저장소다. workspace_sync.py가 읽는다.",
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "repos": [
     {"name": "acupoint_anatomy", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/acupoint_anatomy.git", "drive": "도서 번역\\acupoint_anatomy", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
     {"name": "huanglongxiang-scholar", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/huanglongxiang-scholar.git", "drive": "도서 번역\\01_황룡상 스킬", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
@@ -14,6 +14,6 @@
     {"name": "km-integrated-education", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/km-integrated-education.git", "drive": "행정\\한의학 교육과 의료 통합", "user": ["jaehyokim", "jaehyo.kim@gmail.com"], "drive_exclude": ["km_repo_clean", "km_repo_clean2"]},
     {"name": "anthropic-claude-integration", "remote": null, "drive": "anthropic-claude-integration", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
     {"name": "학습일지 평가", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/study-log-eval.git", "drive": "강의\\04_평가 및 학습활동 자료\\학습일지 평가", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
-    {"name": "donguibogam-disease-analysis", "remote": null, "drive": "동의보감 상병명 분석", "user": ["jaehyokim", "jaehyo.kim@gmail.com"], "drive_only_data": true}
+    {"name": "donguibogam-disease-analysis", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/donguibogam-disease-analysis.git", "drive": "동의보감 상병명 분석", "user": ["jaehyokim", "jaehyo.kim@gmail.com"], "drive_only_data": true}
   ]
 }
