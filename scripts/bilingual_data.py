@@ -684,6 +684,46 @@ BILINGUAL_CARDS = [
     "cat_label_en": "Thematic Collation",
     "btn_ko": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B0%B1%ED%9A%8C_%EB%91%90%ED%92%8D%EB%8B%A4%EC%88%98_%EC%88%98%EB%A9%B4%EA%B0%81%EC%84%B1_%EC%8B%A0%EA%B2%BD%ED%95%B4%EB%B6%80%EA%B3%A0%EC%A6%9D/%EB%B0%B1%ED%9A%8C_%EB%91%90%ED%92%8D%EB%8B%A4%EC%88%98_%EC%88%98%EB%A9%B4%EA%B0%81%EC%84%B1_%EC%8B%A0%EA%B2%BD%ED%95%B4%EB%B6%80_%EA%B3%A0%EC%A6%9D%EB%B3%B4%EA%B3%A0%EC%84%9C.html",
     "btn_en": "03_%EC%A3%BC%EC%A0%9C%EB%B3%84_%EA%B2%BD%ED%98%88%EA%B3%A0%EC%A6%9D_%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/%EB%B0%B1%ED%9A%8C_%EB%91%90%ED%92%8D%EB%8B%A4%EC%88%98_%EC%88%98%EB%A9%B4%EA%B0%81%EC%84%B1_%EC%8B%A0%EA%B2%BD%ED%95%B4%EB%B6%80%EA%B3%A0%EC%A6%9D/GV20_Somnolence_SleepWake_Neuroanatomy_Report_EN.html"
+  },
+  # 35. Matrix Explorer: Lingshu Meridian Diseases & Donguibogam Explorer
+  {
+    "category": "matrix",
+    "search": "영추 경맥 병증 시동병 소생병 락맥병 경근병 황룡상 중의백병명원고 동의보감 침구임상변증론치 kcd hira 진료통계 곽애춘 Lingshu Jingmai Donguibogam Shidong Suosheng Luomai Jingjin Explorer",
+    "code_badge": "EXPLORER · KCD",
+    "code_style": "background: rgba(2, 132, 199, 0.15); color: #38bdf8; border: 1px solid rgba(2, 132, 199, 0.35);",
+    "status_badge": "SOP v2.0 · 7-Stage Explorer · 150 KCD Verified",
+    "status_style": "background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);",
+    "title_ko": "영추 경맥병증·동의보감 탐색기",
+    "title_en": "Lingshu Meridian Disease & Donguibogam Explorer",
+    "subtitle_ko": "靈樞 經脈病證·十五絡·十二經筋 7단계 고증 및 HIRA KCD-8/9 듀얼 코딩 탐색기",
+    "subtitle_en": "7-Stage Philological & Clinical Verification Explorer: Guo Aichun, Huang Longxiang, Donguibogam & HIRA KCD",
+    "desc_ko": "『영추』 경맥·경근편의 시동병·소생병·십오락맥병·십이경근병을 곽애춘 정본 원문으로 제시하고, 황룡상 고증(코퍼스 DB) → 『중의백병명원고』 훈고 → 『동의보감』 상응 병증 → 『침구임상변증론치』 변증 → HIRA 현행 KCD-8/9 듀얼 코딩(150개 코드 전수 검증)과 2025년 진료실적까지 7단계로 대조하는 인터랙티브 연구용 웹 탐색기.",
+    "desc_en": "Interactive 7-stage research web explorer mapping Lingshu Shidong, Suosheng, 15 Collateral, and 12 Sinew diseases across Guo Aichun's critical edition, Huang Longxiang's philology, Zhongyi Baibing Mingyuankao, Donguibogam, Bianzhen Lunzhi, and 150 verified HIRA KCD-8/9 codes with 2025 utilization statistics (Korean app).",
+    "tags": ["#영추경맥", "#시동병소생병", "#십오락맥", "#십이경근", "#황룡상고증", "#동의보감상병명", "#HIRA_KCD", "#탐색기"],
+    "cat_label_ko": "임상 매트릭스",
+    "cat_label_en": "Clinical Matrix",
+    "btn_ko": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%81%EC%B6%94_%EA%B2%BD%EB%A7%A5%EB%B3%91%EC%A6%9D_%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%ED%83%90%EC%83%89%EA%B8%B0/youngchu-disease-explorer.html",
+    "btn_en": ""
+  },
+  # 36. Classics: Jingluoxue Dual-SSOT Master Collation
+  {
+    "category": "classics",
+    "search": "경락학 경락학 교감 마스터 공통교재 한의과대학 곽애춘 황룡상 침구학 소문교주 영추교주 경락통감 혈위통감 십이경맥 기경팔맥 인쇄본 762쪽 대조 Version 3.0 Jingluoxue Dual SSOT",
+    "code_badge": "CLASSICS · DUAL-SSOT",
+    "code_style": "background: rgba(15, 118, 110, 0.2); color: #2dd4bf; border: 1px solid rgba(20, 184, 166, 0.4);",
+    "status_badge": "Version 3.0 · 인쇄본 p.1~762 전수 교감",
+    "status_style": "background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);",
+    "title_ko": "경락학 교감 마스터",
+    "title_en": "Jingluoxue (Meridianology) Textbook Dual-SSOT Critical Collation",
+    "subtitle_ko": "한의과대학 공통교재 『경락학(1)』 곽애춘·황룡상 정본 교감 마스터 (Version 3.0)",
+    "subtitle_en": "Line-by-Line Critical Collation of Korean Meridianology Textbook against Guo Aichun & Huang Longxiang Editions",
+    "desc_ko": "한의과대학 공통교재 『경락학(1)』의 한문 원전 오류와 번역 왜곡을 전면 바로잡기 위해 편찬된 학술 정본 교감 마스터. 곽애춘 교수의 《황제내경소문교주어역》·《영추교주어역》과 황룡상 교수의 《중국침구경락통감》·《중국침구혈위통감》을 2대 진실원천(Dual SSOT)으로 삼아 1:1 전편 정밀 대조 및 인쇄본 762쪽 완벽 매핑.",
+    "desc_en": "Comprehensive critical collation of the standard Korean Meridianology textbook (pp. 1–762) against Dual SSOT sources—Guo Aichun's Neijing annotated translations and Huang Longxiang's Tongjian canons—correcting textual corruptions and mistranslations (Korean web edition).",
+    "tags": ["#경락학공통교재", "#곽애춘교주어역", "#황룡상경락통감", "#Dual-SSOT정본", "#인쇄본762쪽대조", "#고전문헌비교"],
+    "cat_label_ko": "고전문헌 비교",
+    "cat_label_en": "Classics Collation",
+    "btn_ko": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/%EA%B2%BD%EB%9D%BD%ED%95%99_%EA%B5%90%EA%B0%90_%EB%A7%88%EC%8A%A4%ED%84%B0/jingluoxue-master.html",
+    "btn_en": ""
   }
 ]
 

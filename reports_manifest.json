@@ -304,5 +304,23 @@
     "html_exists": true,
     "md_exists": true,
     "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\03_주제별_경혈고증_연구보고서\\백회_두풍다수_수면각성_신경해부고증\\백회_두풍다수_수면각성_신경해부_고증보고서"
+  },
+  {
+    "index": 35,
+    "badge": "EXPLORER · KCD",
+    "title": "영추 경맥병증·동의보감 탐색기",
+    "rel_html": "04_%EB%B2%88%EC%97%AD%EC%9B%90%EA%B3%A0_%EB%B0%8F_%EC%9E%84%EC%83%81%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4/%EC%98%81%EC%B6%94_%EA%B2%BD%EB%A7%A5%EB%B3%91%EC%A6%9D_%EB%8F%99%EC%9D%98%EB%B3%B4%EA%B0%90_%ED%83%90%EC%83%89%EA%B8%B0/youngchu-disease-explorer.html",
+    "html_exists": true,
+    "md_exists": false,
+    "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\04_번역원고_및_임상매트릭스\\영추_경맥병증_동의보감_탐색기\\youngchu-disease-explorer"
+  },
+  {
+    "index": 36,
+    "badge": "CLASSICS · DUAL-SSOT",
+    "title": "경락학 교감 마스터",
+    "rel_html": "02_%EA%B3%A0%EC%A0%84%EB%AC%B8%ED%97%8C_%ED%86%B5%ED%95%A9%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D/%EA%B2%BD%EB%9D%BD%ED%95%99_%EA%B5%90%EA%B0%90_%EB%A7%88%EC%8A%A4%ED%84%B0/jingluoxue-master.html",
+    "html_exists": true,
+    "md_exists": false,
+    "base_path": "g:\\내 드라이브\\도서 번역\\acupoint_anatomy\\02_고전문헌_통합비교분석\\경락학_교감_마스터\\jingluoxue-master"
   }
 ]
