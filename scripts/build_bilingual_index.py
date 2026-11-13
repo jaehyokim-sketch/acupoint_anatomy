@@ -1165,7 +1165,7 @@ def generate_card_html(c):
     if c.get("btn_ko"):
         btns.append(f'''<a class="btn-open btn-ko" href="{c['btn_ko']}" target="_blank" title="한국어 정본 학술 보고서 열람">
             <span class="lang-pill">KO</span>
-            <span>한국어 전문</span>
+            <span>{c.get('btn_ko_label', '한국어 전문')}</span>
           </a>''')
     if c.get("btn_en"):
         btns.append(f'''<a class="btn-open btn-en" href="{c['btn_en']}" target="_blank" title="English Monograph with Traditional Chinese Collation">

@@ -5,6 +5,26 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 # 27개 카드의 완벽한 국·영문 병기 마스터 데이터
 BILINGUAL_CARDS = [
+  # 0. Tool — 침구변증 진료지원 시뮬레이터 (침구임상변증 Skill, 2026-11-13)
+  {
+    "category": "matrix",
+    "search": "침구변증 진료지원 시뮬레이터 침구임상변증론치 이세진 李世珍 변증 선혈 배혈 보사 증형 치칙 통합처방 현대기본방 경락변증 증치통감 中国针灸证治通鉴 Clinical Decision Support Simulator Bianzheng Point Selection Tonifying Reducing",
+    "code_badge": "TOOL · 辨證選穴",
+    "code_style": "background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4);",
+    "status_badge": "Engine v1.4 · 222증형 · Python 엔진과 529입력 100% 일치",
+    "status_style": "background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);",
+    "title_ko": "침구변증 진료지원 시뮬레이터",
+    "title_en": "Acupuncture Pattern-Differentiation Clinical Decision Support Simulator",
+    "subtitle_ko": "『침구임상변증론치』(李世珍) 37병 222증형 규칙 · 현대 증례 기본방 · 경락 변증 · 『中国针灸证治通鉴』 대조",
+    "subtitle_en": "Li Shizhen's 37 Diseases / 222 Patterns, Modern Case Core Points, Channel Differentiation & Zhenjiu Zhengzhi Tongjian Collation",
+    "desc_ko": "주소·증상·설·맥(한글·한문)을 넣으면 사진 정리 → 변병 → 변증(증후군·설맥·팔강·원문·병안 점수) → 치칙 → 선혈·배혈(혈별 보사·보사량·가감) → 통합 처방(현대 기본방·경락 변증·증치통감 보강) → 오치 점검까지 브라우저에서 즉시 추론한다. 원서 행 번호·증치통감 출전을 단 근거와 감별 문진을 함께 보인다. 임상 판단 보조 도구.",
+    "desc_en": "Runs entirely in the browser: four-examination intake, disease and pattern differentiation, treatment principle, point selection with tonifying/reducing and dosage, an integrated prescription (modern core points, channel differentiation, Tongjian supplementation) and mistreatment checks, each with line-level citations. A clinical decision aid, not a diagnosis.",
+    "tags": ["#침구변증", "#李世珍", "#변증선혈", "#보사", "#증치통감", "#경락변증", "#ClinicalDecisionSupport"],
+    "cat_label_ko": "임상 도구",
+    "cat_label_en": "Clinical Tool",
+    "btn_ko": "tools/jcl_simulator.html",
+    "btn_ko_label": "시뮬레이터 열기"
+  },
   # 1. Policy
   {
     "category": "policy",
