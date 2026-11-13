@@ -153,14 +153,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "睛明",
+      "aliases_hanja": "泪孔, 泪空, 淚腔, 目內眥, 精明"
+    },
+    "homonym_matches": []
   },
   {
     "num": 179,
     "code": "BL02",
     "name": "찬죽",
     "hanja": "攢竹",
-    "aliases": "始光, 光明, 圓柱, 夜光, 明光, 眉頭圓柱, 眉本, 魚頭",
+    "aliases": "始光, 光明, 圓柱, 夜光, 明光, 眉頭圓柱, 眉本, 魚頭, 員柱",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -341,7 +346,23 @@
         "tongkao_max": 3,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "攢竹",
+      "aliases_hanja": "始光, 光明, 圓柱, 夜光, 明光, 眉頭圓柱, 眉本, 魚頭, 員柱"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "BL02",
+        "src_name": "찬죽",
+        "src_hanja": "攢竹",
+        "match_alias": "光明",
+        "match_pronunciation": "광명",
+        "target_code": "GB37",
+        "target_name": "광명",
+        "target_hanja": "光明"
+      }
+    ]
   },
   {
     "num": 180,
@@ -477,7 +498,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "眉衝",
+      "aliases_hanja": "小竹"
+    },
+    "homonym_matches": []
   },
   {
     "num": 181,
@@ -610,7 +636,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "曲差",
+      "aliases_hanja": "鼻衝"
+    },
+    "homonym_matches": []
   },
   {
     "num": 182,
@@ -755,14 +786,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "五處",
+      "aliases_hanja": "巨處"
+    },
+    "homonym_matches": []
   },
   {
     "num": 183,
     "code": "BL06",
     "name": "승광",
     "hanja": "承光",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -886,7 +922,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "承光",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 184,
@@ -1016,7 +1057,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "通天",
+      "aliases_hanja": "天伯, 天歸, 天白, 天目, 天臼, 天舊"
+    },
+    "homonym_matches": []
   },
   {
     "num": 185,
@@ -1149,14 +1195,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "絡却",
+      "aliases_hanja": "强陽, 絡郄, 腦盖, 反行"
+    },
+    "homonym_matches": []
   },
   {
     "num": 186,
     "code": "BL09",
     "name": "옥침",
     "hanja": "玉枕",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -1283,14 +1334,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "玉枕",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 187,
     "code": "BL10",
     "name": "천주",
     "hanja": "天柱",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -1459,7 +1515,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天柱",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 188,
@@ -1619,14 +1680,30 @@
         "tongkao_max": 7,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大杼",
+      "aliases_hanja": "本神, 百勞, 背兪, 骨會"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "BL11",
+        "src_name": "대저",
+        "src_hanja": "大杼",
+        "match_alias": "本神",
+        "match_pronunciation": "본신",
+        "target_code": "GB13",
+        "target_name": "본신",
+        "target_hanja": "本神"
+      }
+    ]
   },
   {
     "num": 189,
     "code": "BL12",
     "name": "풍문",
     "hanja": "風門",
-    "aliases": "右爲熱府, 左爲風門, 熱府",
+    "aliases": "右爲熱府, 左爲風門, 熱府, 風門熱府",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -1808,14 +1885,19 @@
         "tongkao_max": 8,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "風門",
+      "aliases_hanja": "右爲熱府, 左爲風門, 熱府, 風門熱府"
+    },
+    "homonym_matches": []
   },
   {
     "num": 190,
     "code": "BL13",
     "name": "폐수",
     "hanja": "肺兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -1971,14 +2053,19 @@
         "tongkao_max": 8,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "肺兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 191,
     "code": "BL14",
     "name": "궐음수",
     "hanja": "厥陰兪",
-    "aliases": "厥兪, 心包腧, 闕兪",
+    "aliases": "厥兪, 心包腧, 闕兪, 巨闕兪, 闕輸, 心包兪",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -2131,7 +2218,12 @@
         "tongkao_max": 8,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "厥陰兪",
+      "aliases_hanja": "厥兪, 心包腧, 闕兪, 巨闕兪, 闕輸, 心包兪"
+    },
+    "homonym_matches": []
   },
   {
     "num": 192,
@@ -2316,7 +2408,12 @@
         "tongkao_max": 8,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "心兪",
+      "aliases_hanja": "身樞, 背兪, 督脈兪"
+    },
+    "homonym_matches": []
   },
   {
     "num": 193,
@@ -2464,7 +2561,12 @@
         "tongkao_max": 8,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "督兪",
+      "aliases_hanja": "高益, 高盖"
+    },
+    "homonym_matches": []
   },
   {
     "num": 194,
@@ -2622,14 +2724,19 @@
         "tongkao_max": 8,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "膈兪",
+      "aliases_hanja": "血會"
+    },
+    "homonym_matches": []
   },
   {
     "num": 195,
     "code": "BL18",
     "name": "간수",
     "hanja": "肝兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -2798,14 +2905,19 @@
         "tongkao_max": 8,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "肝兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 196,
     "code": "BL19",
     "name": "담수",
     "hanja": "膽兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -2939,14 +3051,19 @@
         "tongkao_max": 8,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "膽兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 197,
     "code": "BL20",
     "name": "비수",
     "hanja": "脾兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -3102,14 +3219,19 @@
         "tongkao_max": 8,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "脾兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 198,
     "code": "BL21",
     "name": "위수",
     "hanja": "胃兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -3242,14 +3364,19 @@
         "tongkao_max": 8,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "胃兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 199,
     "code": "BL22",
     "name": "삼초수",
     "hanja": "三焦兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -3406,14 +3533,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "三焦兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 200,
     "code": "BL23",
     "name": "신수",
     "hanja": "腎兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -3600,14 +3732,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "腎兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 201,
     "code": "BL24",
     "name": "기해수",
     "hanja": "氣海兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -3730,14 +3867,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "氣海兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 202,
     "code": "BL25",
     "name": "대장수",
     "hanja": "大腸兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -3883,14 +4025,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大腸兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 203,
     "code": "BL26",
     "name": "관원수",
     "hanja": "關元兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -4038,14 +4185,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "關元兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 204,
     "code": "BL27",
     "name": "소장수",
     "hanja": "小腸兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -4225,14 +4377,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "小腸兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 205,
     "code": "BL28",
     "name": "방광수",
     "hanja": "膀胱兪",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -4384,14 +4541,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "膀胱兪",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 206,
     "code": "BL29",
     "name": "중려수",
     "hanja": "中膂兪",
-    "aliases": "中膂, 中膂內兪, 脊內兪, 脊內",
+    "aliases": "中膂, 中膂內兪, 脊內兪, 脊內, 中膂內腧, 脊內腧",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -4532,7 +4694,12 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中膂兪",
+      "aliases_hanja": "中膂, 中膂內兪, 脊內兪, 脊內, 中膂內腧, 脊內腧"
+    },
+    "homonym_matches": []
   },
   {
     "num": 207,
@@ -4700,14 +4867,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "白環兪",
+      "aliases_hanja": "玉房兪, 玉環兪"
+    },
+    "homonym_matches": []
   },
   {
     "num": 208,
     "code": "BL31",
     "name": "상료",
     "hanja": "上髎",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -4852,14 +5024,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "上髎",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 209,
     "code": "BL32",
     "name": "차료",
     "hanja": "次髎",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -5032,14 +5209,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "次髎",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 210,
     "code": "BL33",
     "name": "중료",
     "hanja": "中髎",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -5198,14 +5380,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中髎",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 211,
     "code": "BL34",
     "name": "하료",
     "hanja": "下髎",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -5364,7 +5551,12 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "下髎",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 212,
@@ -5506,7 +5698,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "會陽",
+      "aliases_hanja": "利機"
+    },
+    "homonym_matches": []
   },
   {
     "num": 213,
@@ -5660,14 +5857,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "承扶",
+      "aliases_hanja": "肉郄, 陰關, 皮部, 皮郄, 扶承"
+    },
+    "homonym_matches": []
   },
   {
     "num": 214,
     "code": "BL37",
     "name": "은문",
     "hanja": "殷門",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -5786,14 +5988,19 @@
         "tongkao_max": 20,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "殷門",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 215,
     "code": "BL38",
     "name": "부극",
     "hanja": "浮郄",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -5916,7 +6123,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "浮郄",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 216,
@@ -6064,7 +6276,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "委陽",
+      "aliases_hanja": "都中"
+    },
+    "homonym_matches": []
   },
   {
     "num": 217,
@@ -6220,14 +6437,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "委中",
+      "aliases_hanja": "中郄, 委中央, 腿凹, 血郄, 郄中"
+    },
+    "homonym_matches": []
   },
   {
     "num": 218,
     "code": "BL41",
     "name": "부분",
     "hanja": "附分",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -6379,7 +6601,12 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "附分",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 219,
@@ -6548,14 +6775,19 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "魄戶",
+      "aliases_hanja": "魂戶"
+    },
+    "homonym_matches": []
   },
   {
     "num": 220,
     "code": "BL43",
     "name": "고황",
     "hanja": "膏肓",
-    "aliases": "膏肓腧, 膏盲, 督脈兪",
+    "aliases": "膏肓腧, 膏盲, 督脈兪, 膏肓輸",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -6704,14 +6936,19 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "膏肓",
+      "aliases_hanja": "膏肓腧, 膏盲, 督脈兪, 膏肓輸"
+    },
+    "homonym_matches": []
   },
   {
     "num": 221,
     "code": "BL44",
     "name": "신당",
     "hanja": "神堂",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -6856,7 +7093,12 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "神堂",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 222,
@@ -7015,14 +7257,19 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "譩譆",
+      "aliases_hanja": "五膚兪"
+    },
+    "homonym_matches": []
   },
   {
     "num": 223,
     "code": "BL46",
     "name": "격관",
     "hanja": "膈關",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -7172,14 +7419,19 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "膈關",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 224,
     "code": "BL47",
     "name": "혼문",
     "hanja": "魂門",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -7326,7 +7578,12 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "魂門",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 225,
@@ -7475,14 +7732,19 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陽綱",
+      "aliases_hanja": "陽剛"
+    },
+    "homonym_matches": []
   },
   {
     "num": 226,
     "code": "BL49",
     "name": "의사",
     "hanja": "意舍",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -7634,14 +7896,19 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "意舍",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 227,
     "code": "BL50",
     "name": "위창",
     "hanja": "胃倉",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -7785,7 +8052,12 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "胃倉",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 228,
@@ -7927,14 +8199,19 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "肓門",
+      "aliases_hanja": "下盲"
+    },
+    "homonym_matches": []
   },
   {
     "num": 229,
     "code": "BL52",
     "name": "지실",
     "hanja": "志室",
-    "aliases": "精宮",
+    "aliases": "精宮, 神關",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -8054,14 +8331,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "志室",
+      "aliases_hanja": "精宮, 神關"
+    },
+    "homonym_matches": []
   },
   {
     "num": 230,
     "code": "BL53",
     "name": "포황",
     "hanja": "胞肓",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -8198,14 +8480,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "胞肓",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 231,
     "code": "BL54",
     "name": "질변",
     "hanja": "秩邊",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -8364,14 +8651,19 @@
         "tongkao_max": 20,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "秩邊",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 232,
     "code": "BL55",
     "name": "합양",
     "hanja": "合陽",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -8515,7 +8807,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "合陽",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 233,
@@ -8650,7 +8947,12 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "承筋",
+      "aliases_hanja": "直腸, 直陽, 腨腸, 眞腸, 腓腸"
+    },
+    "homonym_matches": []
   },
   {
     "num": 234,
@@ -8806,14 +9108,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "承山",
+      "aliases_hanja": "肉柱, 腸山, 魚腹, 傷山, 玉柱, 魚腹山"
+    },
+    "homonym_matches": []
   },
   {
     "num": 235,
     "code": "BL58",
     "name": "비양",
     "hanja": "飛揚",
-    "aliases": "厥陽, 飛陽",
+    "aliases": "厥陽, 飛陽, 蜚揚",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -8985,14 +9292,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "飛揚",
+      "aliases_hanja": "厥陽, 飛陽, 蜚揚"
+    },
+    "homonym_matches": []
   },
   {
     "num": 236,
     "code": "BL59",
     "name": "부양",
     "hanja": "跗陽",
-    "aliases": "",
+    "aliases": "付陽, 附陽",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -9139,7 +9451,12 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "跗陽",
+      "aliases_hanja": "付陽, 附陽"
+    },
+    "homonym_matches": []
   },
   {
     "num": 237,
@@ -9331,14 +9648,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "崑崙",
+      "aliases_hanja": "外崑崙, 安邪"
+    },
+    "homonym_matches": []
   },
   {
     "num": 238,
     "code": "BL61",
     "name": "복삼",
     "hanja": "僕參",
-    "aliases": "仆參, 安邪",
+    "aliases": "仆參, 安邪, 安耶",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -9471,14 +9793,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "僕參",
+      "aliases_hanja": "仆參, 安邪, 安耶"
+    },
+    "homonym_matches": []
   },
   {
     "num": 239,
     "code": "BL62",
     "name": "신맥",
     "hanja": "申脈",
-    "aliases": "",
+    "aliases": "陽蹻",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -9618,7 +9945,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "申脈",
+      "aliases_hanja": "陽蹻"
+    },
+    "homonym_matches": []
   },
   {
     "num": 240,
@@ -9777,14 +10109,30 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "金門",
+      "aliases_hanja": "關梁, 梁門"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "BL63",
+        "src_name": "금문",
+        "src_hanja": "金門",
+        "match_alias": "梁門",
+        "match_pronunciation": "양문",
+        "target_code": "ST21",
+        "target_name": "양문",
+        "target_hanja": "梁門"
+      }
+    ]
   },
   {
     "num": 241,
     "code": "BL64",
     "name": "경골",
     "hanja": "京骨",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -9926,14 +10274,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "京骨",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 242,
     "code": "BL65",
     "name": "속골",
     "hanja": "束骨",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -10070,14 +10423,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "束骨",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 243,
     "code": "BL66",
     "name": "족통곡",
     "hanja": "足通谷",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -10208,14 +10566,19 @@
         "tongkao_max": 3,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "足通谷",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 244,
     "code": "BL67",
     "name": "지음",
     "hanja": "至陰",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태양방광경",
     "meridian_en": "Bladder Meridian",
     "meridian_ab": "BL",
@@ -10359,7 +10722,12 @@
         "tongkao_max": 1,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "至陰",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 1,
@@ -10534,7 +10902,23 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "會陰",
+      "aliases_hanja": "下板, 下極, 下郄, 下陰別, 屛翳, 金門"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "CV01",
+        "src_name": "회음",
+        "src_hanja": "會陰",
+        "match_alias": "金門",
+        "match_pronunciation": "금문",
+        "target_code": "BL63",
+        "target_name": "금문",
+        "target_hanja": "金門"
+      }
+    ]
   },
   {
     "num": 2,
@@ -10687,7 +11071,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "曲骨",
+      "aliases_hanja": "回骨, 尿胞, 屈骨, 骨端, 屈骨端"
+    },
+    "homonym_matches": []
   },
   {
     "num": 3,
@@ -10856,7 +11245,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中極",
+      "aliases_hanja": "氣原, 氣實, 氣魚, 玉泉"
+    },
+    "homonym_matches": []
   },
   {
     "num": 4,
@@ -11064,7 +11458,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "關元",
+      "aliases_hanja": "三結交, 上氣海, 下肓, 下記, 丹田, 大中極, 太中極, 次門, 肓原"
+    },
+    "homonym_matches": []
   },
   {
     "num": 5,
@@ -11237,7 +11636,23 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "石門",
+      "aliases_hanja": "丹田, 命門, 精露, 絶子, 絶孕, 利機"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "CV05",
+        "src_name": "석문",
+        "src_hanja": "石門",
+        "match_alias": "命門",
+        "match_pronunciation": "명문",
+        "target_code": "GV04",
+        "target_name": "명문",
+        "target_hanja": "命門"
+      }
+    ]
   },
   {
     "num": 6,
@@ -11427,7 +11842,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "氣海",
+      "aliases_hanja": "下氣海, 下肓, 丹田, 脖胦, 脖映, 季映"
+    },
+    "homonym_matches": []
   },
   {
     "num": 7,
@@ -11583,7 +12003,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陰交",
+      "aliases_hanja": "丹田, 少因, 橫戶"
+    },
+    "homonym_matches": []
   },
   {
     "num": 8,
@@ -11743,7 +12168,23 @@
         "tongkao_max": 0,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "神闕",
+      "aliases_hanja": "命帶, 氣合, 氣舍, 維會, 臍中, 關會, 關陰"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "CV08",
+        "src_name": "신궐",
+        "src_hanja": "神闕",
+        "match_alias": "氣舍",
+        "match_pronunciation": "기사",
+        "target_code": "ST11",
+        "target_name": "기사",
+        "target_hanja": "氣舍"
+      }
+    ]
   },
   {
     "num": 9,
@@ -11884,7 +12325,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "水分",
+      "aliases_hanja": "中守, 分水, 蛇頭, 逆注"
+    },
+    "homonym_matches": []
   },
   {
     "num": 10,
@@ -12011,14 +12457,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "下脘",
+      "aliases_hanja": "下管"
+    },
+    "homonym_matches": []
   },
   {
     "num": 11,
     "code": "CV11",
     "name": "건리",
     "hanja": "建里",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "임맥",
     "meridian_en": "Conception Vessel",
     "meridian_ab": "CV",
@@ -12156,7 +12607,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "建里",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 12,
@@ -12297,7 +12753,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中脘",
+      "aliases_hanja": "上紀, 中管, 中胃, 大倉, 太倉, 胃中, 胃募, 胃管, 胃脘"
+    },
+    "homonym_matches": []
   },
   {
     "num": 13,
@@ -12450,7 +12911,23 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "上脘",
+      "aliases_hanja": "上管, 上紀, 上關, 胃脘"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "CV13",
+        "src_name": "상완",
+        "src_hanja": "上脘",
+        "match_alias": "上關",
+        "match_pronunciation": "상관",
+        "target_code": "GB03",
+        "target_name": "상관",
+        "target_hanja": "上關"
+      }
+    ]
   },
   {
     "num": 14,
@@ -12613,14 +13090,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "巨闕",
+      "aliases_hanja": "心募"
+    },
+    "homonym_matches": []
   },
   {
     "num": 15,
     "code": "CV15",
     "name": "구미",
     "hanja": "鳩尾",
-    "aliases": "尾翳, 膏原, 𩩲骬",
+    "aliases": "尾翳, 膏原, 𩩲骬, 髑骬",
     "meridian_ko": "임맥",
     "meridian_en": "Conception Vessel",
     "meridian_ab": "CV",
@@ -12758,14 +13240,19 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "鳩尾",
+      "aliases_hanja": "尾翳, 膏原, 𩩲骬, 髑骬"
+    },
+    "homonym_matches": []
   },
   {
     "num": 16,
     "code": "CV16",
     "name": "중정",
     "hanja": "中庭",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "임맥",
     "meridian_en": "Conception Vessel",
     "meridian_ab": "CV",
@@ -12876,14 +13363,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中庭",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 17,
     "code": "CV17",
     "name": "단중",
     "hanja": "膻中",
-    "aliases": "上氣海, 元兒, 元見, 炎元, 胸堂",
+    "aliases": "上氣海, 元兒, 元見, 炎元, 胸堂, 亶中",
     "meridian_ko": "임맥",
     "meridian_en": "Conception Vessel",
     "meridian_ab": "CV",
@@ -13018,7 +13510,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "膻中",
+      "aliases_hanja": "上氣海, 元兒, 元見, 炎元, 胸堂, 亶中"
+    },
+    "homonym_matches": []
   },
   {
     "num": 18,
@@ -13155,7 +13652,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "玉堂",
+      "aliases_hanja": "玉英"
+    },
+    "homonym_matches": []
   },
   {
     "num": 19,
@@ -13270,14 +13772,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "紫宮",
+      "aliases_hanja": "胸紫宮"
+    },
+    "homonym_matches": []
   },
   {
     "num": 20,
     "code": "CV20",
     "name": "화개",
     "hanja": "華蓋",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "임맥",
     "meridian_en": "Conception Vessel",
     "meridian_ab": "CV",
@@ -13385,14 +13892,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "華蓋",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 21,
     "code": "CV21",
     "name": "선기",
     "hanja": "璇璣",
-    "aliases": "旋機",
+    "aliases": "旋機, 璿璣",
     "meridian_ko": "임맥",
     "meridian_en": "Conception Vessel",
     "meridian_ab": "CV",
@@ -13512,7 +14024,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "璇璣",
+      "aliases_hanja": "旋機, 璿璣"
+    },
+    "homonym_matches": []
   },
   {
     "num": 22,
@@ -13683,7 +14200,12 @@
         "tongkao_max": 2,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天突",
+      "aliases_hanja": "五戶, 天瞿, 玉戶"
+    },
+    "homonym_matches": []
   },
   {
     "num": 23,
@@ -13838,7 +14360,12 @@
         "tongkao_max": 8,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "廉泉",
+      "aliases_hanja": "本地, 本池, 舌本"
+    },
+    "homonym_matches": []
   },
   {
     "num": 24,
@@ -14010,7 +14537,23 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "承漿",
+      "aliases_hanja": "天池, 懸漿, 重漿, 鬼市, 玉池, 華池"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "CV24",
+        "src_name": "승장",
+        "src_hanja": "承漿",
+        "match_alias": "天池",
+        "match_pronunciation": "천지",
+        "target_code": "PC01",
+        "target_name": "천지",
+        "target_hanja": "天池"
+      }
+    ]
   },
   {
     "num": 304,
@@ -14162,7 +14705,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "瞳子髎",
+      "aliases_hanja": "前關, 太陽, 後曲, 瞳子窌"
+    },
+    "homonym_matches": []
   },
   {
     "num": 305,
@@ -14295,7 +14843,33 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "聽會",
+      "aliases_hanja": "上關, 听, 呵, 後關, 機關, 聽呵, 聽河, 耳門"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "GB02",
+        "src_name": "청회",
+        "src_hanja": "聽會",
+        "match_alias": "上關",
+        "match_pronunciation": "상관",
+        "target_code": "GB03",
+        "target_name": "상관",
+        "target_hanja": "上關"
+      },
+      {
+        "src_code": "GB02",
+        "src_name": "청회",
+        "src_hanja": "聽會",
+        "match_alias": "耳門",
+        "match_pronunciation": "이문",
+        "target_code": "TE21",
+        "target_name": "이문",
+        "target_hanja": "耳門"
+      }
+    ]
   },
   {
     "num": 306,
@@ -14448,14 +15022,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "上關",
+      "aliases_hanja": "太陽, 客主, 客主人"
+    },
+    "homonym_matches": []
   },
   {
     "num": 307,
     "code": "GB04",
     "name": "함염",
     "hanja": "頷厭",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -14576,7 +15155,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "頷厭",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 308,
@@ -14711,14 +15295,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "懸顱",
+      "aliases_hanja": "米嚙, 髓中, 髓空, 背解, 腰戶, 腰柱, 髓孔"
+    },
+    "homonym_matches": []
   },
   {
     "num": 309,
     "code": "GB06",
     "name": "현리",
     "hanja": "懸釐",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -14838,14 +15427,19 @@
         "tongkao_max": 8,
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "懸釐",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 310,
     "code": "GB07",
     "name": "곡빈",
     "hanja": "曲鬢",
-    "aliases": "曲友",
+    "aliases": "曲友, 曲髮",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -14962,7 +15556,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "曲鬢",
+      "aliases_hanja": "曲友, 曲髮"
+    },
+    "homonym_matches": []
   },
   {
     "num": 311,
@@ -15098,7 +15697,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "率谷",
+      "aliases_hanja": "率角, 率骨, 耳炎, 蟀谷, 蟀容"
+    },
+    "homonym_matches": []
   },
   {
     "num": 312,
@@ -15233,14 +15837,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天衝",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 313,
     "code": "GB10",
     "name": "부백",
     "hanja": "浮白",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -15364,14 +15973,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "浮白",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 314,
     "code": "GB11",
     "name": "두규음",
     "hanja": "頭竅陰",
-    "aliases": "枕骨, 竅陰",
+    "aliases": "竅陰, 首竅陰",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -15490,7 +16104,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "頭竅陰",
+      "aliases_hanja": "竅陰, 首竅陰"
+    },
+    "homonym_matches": []
   },
   {
     "num": 315,
@@ -15664,14 +16283,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "完骨",
+      "aliases_hanja": "頭完骨"
+    },
+    "homonym_matches": []
   },
   {
     "num": 316,
     "code": "GB13",
     "name": "본신",
     "hanja": "本神",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -15803,14 +16427,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "本神",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 317,
     "code": "GB14",
     "name": "양백",
     "hanja": "陽白",
-    "aliases": "",
+    "aliases": "板眉",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -15933,7 +16562,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陽白",
+      "aliases_hanja": "板眉"
+    },
+    "homonym_matches": []
   },
   {
     "num": 318,
@@ -16093,7 +16727,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "頭臨泣",
+      "aliases_hanja": "臨泣"
+    },
+    "homonym_matches": []
   },
   {
     "num": 319,
@@ -16219,14 +16858,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "目窓",
+      "aliases_hanja": "正滎, 目窗, 至榮"
+    },
+    "homonym_matches": []
   },
   {
     "num": 320,
     "code": "GB17",
     "name": "정영",
     "hanja": "正營",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -16341,14 +16985,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "正營",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 321,
     "code": "GB18",
     "name": "승령",
     "hanja": "承靈",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -16474,7 +17123,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "承靈",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 322,
@@ -16659,14 +17313,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "腦空",
+      "aliases_hanja": "顳顬, 顳額"
+    },
+    "homonym_matches": []
   },
   {
     "num": 323,
     "code": "GB20",
     "name": "풍지",
     "hanja": "風池",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -16876,7 +17535,12 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "風池",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 324,
@@ -17050,7 +17714,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "肩井",
+      "aliases_hanja": "膊井, 膽肩井"
+    },
+    "homonym_matches": []
   },
   {
     "num": 325,
@@ -17197,7 +17866,23 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "淵腋",
+      "aliases_hanja": "泉液, 泉淵, 泉腋, 淵液, 腋門, 掖間, 曲腋"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "GB22",
+        "src_name": "연액",
+        "src_hanja": "淵腋",
+        "match_alias": "腋門",
+        "match_pronunciation": "액문",
+        "target_code": "TE02",
+        "target_name": "액문",
+        "target_hanja": "液門"
+      }
+    ]
   },
   {
     "num": 326,
@@ -17326,7 +18011,12 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "輒筋",
+      "aliases_hanja": "神光, 膽募"
+    },
+    "homonym_matches": []
   },
   {
     "num": 327,
@@ -17475,7 +18165,12 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "日月",
+      "aliases_hanja": "神光, 膽募"
+    },
+    "homonym_matches": []
   },
   {
     "num": 328,
@@ -17635,14 +18330,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "京門",
+      "aliases_hanja": "氣兪, 氣府, 腎募"
+    },
+    "homonym_matches": []
   },
   {
     "num": 329,
     "code": "GB26",
     "name": "대맥",
     "hanja": "帶脈",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -17786,14 +18486,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "帶脈",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 330,
     "code": "GB27",
     "name": "오추",
     "hanja": "五樞",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -17937,7 +18642,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "五樞",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 331,
@@ -18096,7 +18806,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "維道",
+      "aliases_hanja": "外樞"
+    },
+    "homonym_matches": []
   },
   {
     "num": 332,
@@ -18232,7 +18947,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "居髎",
+      "aliases_hanja": "居窌, 股居髎"
+    },
+    "homonym_matches": []
   },
   {
     "num": 333,
@@ -18380,7 +19100,12 @@
         "tongkao_max": 30,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "環跳",
+      "aliases_hanja": "分中, 樞中, 環谷, 鐶跳, 髀厭, 髀樞, 髖骨"
+    },
+    "homonym_matches": []
   },
   {
     "num": 334,
@@ -18521,7 +19246,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "風市",
+      "aliases_hanja": "垂手"
+    },
+    "homonym_matches": []
   },
   {
     "num": 335,
@@ -18644,7 +19374,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中瀆",
+      "aliases_hanja": "中犢"
+    },
+    "homonym_matches": []
   },
   {
     "num": 336,
@@ -18769,7 +19504,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "膝陽關",
+      "aliases_hanja": "寒府, 關陵, 陽陵"
+    },
+    "homonym_matches": []
   },
   {
     "num": 337,
@@ -18918,7 +19658,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陽陵泉",
+      "aliases_hanja": "筋會, 陽之陵泉"
+    },
+    "homonym_matches": []
   },
   {
     "num": 338,
@@ -19061,14 +19806,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陽交",
+      "aliases_hanja": "別陽, 足窌, 足髎"
+    },
+    "homonym_matches": []
   },
   {
     "num": 339,
     "code": "GB36",
     "name": "외구",
     "hanja": "外丘",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -19208,14 +19958,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "外丘",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 340,
     "code": "GB37",
     "name": "광명",
     "hanja": "光明",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -19346,7 +20101,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "光明",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 341,
@@ -19515,7 +20275,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陽輔",
+      "aliases_hanja": "分肉, 分間, 絶骨"
+    },
+    "homonym_matches": []
   },
   {
     "num": 342,
@@ -19665,14 +20430,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "懸鍾",
+      "aliases_hanja": "絶骨, 足三陽絡, 髓會"
+    },
+    "homonym_matches": []
   },
   {
     "num": 343,
     "code": "GB40",
     "name": "구허",
     "hanja": "丘墟",
-    "aliases": "坵墟",
+    "aliases": "坵墟, 蹄谿",
     "meridian_ko": "족소양담경",
     "meridian_en": "Gallbladder Meridian",
     "meridian_ab": "GB",
@@ -19847,7 +20617,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "丘墟",
+      "aliases_hanja": "坵墟, 蹄谿"
+    },
+    "homonym_matches": []
   },
   {
     "num": 344,
@@ -20035,7 +20810,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "足臨泣",
+      "aliases_hanja": "臨泣"
+    },
+    "homonym_matches": []
   },
   {
     "num": 345,
@@ -20193,7 +20973,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "地五會",
+      "aliases_hanja": "地五"
+    },
+    "homonym_matches": []
   },
   {
     "num": 346,
@@ -20378,7 +21163,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "俠谿",
+      "aliases_hanja": "夾溪"
+    },
+    "homonym_matches": []
   },
   {
     "num": 347,
@@ -20527,7 +21317,12 @@
         "tongkao_max": 1,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "足竅陰",
+      "aliases_hanja": "竅陰"
+    },
+    "homonym_matches": []
   },
   {
     "num": 25,
@@ -20691,7 +21486,12 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "長强",
+      "aliases_hanja": "氣之陰郄, 撅骨, 尾翠骨, 龜骨, 尾閭, 三分閭, 河車路, 朝天岭, 曺溪路, 尾骨下空, 窮骨, 骶骨, 龍虎, 厥骨, 骨骶"
+    },
+    "homonym_matches": []
   },
   {
     "num": 26,
@@ -20824,14 +21624,19 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "腰兪",
+      "aliases_hanja": "背解, 髓孔, 腰柱, 腰戶, 腰空, 腰注, 髓空, 髓兪, 髓府"
+    },
+    "homonym_matches": []
   },
   {
     "num": 27,
     "code": "GV03",
     "name": "요양관",
     "hanja": "腰陽關",
-    "aliases": "陽關",
+    "aliases": "陽關, 背陽關",
     "meridian_ko": "독맥",
     "meridian_en": "Governor Vessel",
     "meridian_ab": "GV",
@@ -20971,7 +21776,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "腰陽關",
+      "aliases_hanja": "陽關, 背陽關"
+    },
+    "homonym_matches": []
   },
   {
     "num": 28,
@@ -21164,7 +21974,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "命門",
+      "aliases_hanja": "屬累, 竹經, 精宮"
+    },
+    "homonym_matches": []
   },
   {
     "num": 29,
@@ -21313,7 +22128,12 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "懸樞",
+      "aliases_hanja": "懸柱"
+    },
+    "homonym_matches": []
   },
   {
     "num": 30,
@@ -21475,14 +22295,19 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "脊中",
+      "aliases_hanja": "兪柱, 兪腧, 神宗, 脊兪, 龜尾, 窮骨"
+    },
+    "homonym_matches": []
   },
   {
     "num": 31,
     "code": "GV07",
     "name": "중추",
     "hanja": "中樞",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "독맥",
     "meridian_en": "Governor Vessel",
     "meridian_ab": "GV",
@@ -21604,14 +22429,19 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中樞",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 32,
     "code": "GV08",
     "name": "근축",
     "hanja": "筋縮",
-    "aliases": "筋策",
+    "aliases": "筋策, 縮筋",
     "meridian_ko": "독맥",
     "meridian_en": "Governor Vessel",
     "meridian_ab": "GV",
@@ -21763,7 +22593,12 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "筋縮",
+      "aliases_hanja": "筋策, 縮筋"
+    },
+    "homonym_matches": []
   },
   {
     "num": 33,
@@ -21923,7 +22758,12 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "至陽",
+      "aliases_hanja": "肺底"
+    },
+    "homonym_matches": []
   },
   {
     "num": 34,
@@ -22083,7 +22923,12 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "靈臺",
+      "aliases_hanja": "肺底"
+    },
+    "homonym_matches": []
   },
   {
     "num": 35,
@@ -22240,7 +23085,12 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "神道",
+      "aliases_hanja": "臟兪, 藏兪, 衝道"
+    },
+    "homonym_matches": []
   },
   {
     "num": 36,
@@ -22404,14 +23254,19 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "身柱",
+      "aliases_hanja": "塵氣, 尖氣, 智利毛, 知利氣"
+    },
+    "homonym_matches": []
   },
   {
     "num": 37,
     "code": "GV13",
     "name": "도도",
     "hanja": "陶道",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "독맥",
     "meridian_en": "Governor Vessel",
     "meridian_ab": "GV",
@@ -22538,14 +23393,19 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陶道",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 38,
     "code": "GV14",
     "name": "대추",
     "hanja": "大椎",
-    "aliases": "百勞",
+    "aliases": "百勞, 大頤",
     "meridian_ko": "독맥",
     "meridian_en": "Governor Vessel",
     "meridian_ab": "GV",
@@ -22715,7 +23575,12 @@
         "tongkao_max": 10,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大椎",
+      "aliases_hanja": "百勞, 大頤"
+    },
+    "homonym_matches": []
   },
   {
     "num": 39,
@@ -22874,7 +23739,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "瘂門",
+      "aliases_hanja": "啞門, 舌橫, 舌根, 瘖門, 舌腫, 舌厭, 橫舌, 厭舌"
+    },
+    "homonym_matches": []
   },
   {
     "num": 40,
@@ -23053,7 +23923,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "風府",
+      "aliases_hanja": "舌本, 舌木, 鬼枕, 曺溪, 鬼穴, 鬼林, 熱府, 鬼本"
+    },
+    "homonym_matches": []
   },
   {
     "num": 41,
@@ -23203,7 +24078,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "腦戶",
+      "aliases_hanja": "匝風, 合顱, 會額, 腦風, 頷顱"
+    },
+    "homonym_matches": []
   },
   {
     "num": 42,
@@ -23338,7 +24218,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "强間",
+      "aliases_hanja": "大羽"
+    },
+    "homonym_matches": []
   },
   {
     "num": 43,
@@ -23481,7 +24366,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "後頂",
+      "aliases_hanja": "交衝"
+    },
+    "homonym_matches": []
   },
   {
     "num": 44,
@@ -23688,14 +24578,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "百會",
+      "aliases_hanja": "三陽五會, 天山, 天滿, 巓上, 泥丸宮, 涅丸宮, 維會, 鬼門"
+    },
+    "homonym_matches": []
   },
   {
     "num": 45,
     "code": "GV21",
     "name": "전정",
     "hanja": "前頂",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "독맥",
     "meridian_en": "Governor Vessel",
     "meridian_ab": "GV",
@@ -23834,14 +24729,19 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "前頂",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 46,
     "code": "GV22",
     "name": "신회",
     "hanja": "顖會",
-    "aliases": "頂門, 顖上, 顖門, 鬼門",
+    "aliases": "頂門, 顖上, 顖門, 鬼門, 天窗",
     "meridian_ko": "독맥",
     "meridian_en": "Governor Vessel",
     "meridian_ab": "GV",
@@ -23989,7 +24889,23 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "顖會",
+      "aliases_hanja": "頂門, 顖上, 顖門, 鬼門, 天窗"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "GV22",
+        "src_name": "신회",
+        "src_hanja": "顖會",
+        "match_alias": "天窗",
+        "match_pronunciation": "천창",
+        "target_code": "SI16",
+        "target_name": "천창",
+        "target_hanja": "天窓"
+      }
+    ]
   },
   {
     "num": 47,
@@ -24160,14 +25076,30 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "上星",
+      "aliases_hanja": "思堂, 明堂, 神堂, 鬼堂"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "GV23",
+        "src_name": "상성",
+        "src_hanja": "上星",
+        "match_alias": "神堂",
+        "match_pronunciation": "신당",
+        "target_code": "BL44",
+        "target_name": "신당",
+        "target_hanja": "神堂"
+      }
+    ]
   },
   {
     "num": 48,
     "code": "GV24",
     "name": "신정",
     "hanja": "神庭",
-    "aliases": "髮際",
+    "aliases": "髮際, 督脈",
     "meridian_ko": "독맥",
     "meridian_en": "Governor Vessel",
     "meridian_ab": "GV",
@@ -24311,7 +25243,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "神庭",
+      "aliases_hanja": "髮際, 督脈"
+    },
+    "homonym_matches": []
   },
   {
     "num": 49,
@@ -24442,7 +25379,12 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "素髎",
+      "aliases_hanja": "准頭, 準頭, 面正, 面玉, 面王, 鼻准"
+    },
+    "homonym_matches": []
   },
   {
     "num": 50,
@@ -24645,14 +25587,19 @@
         "tongkao_max": 5,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "水溝",
+      "aliases_hanja": "人中, 鬼客廳, 鬼宮, 鬼市"
+    },
+    "homonym_matches": []
   },
   {
     "num": 51,
     "code": "GV27",
     "name": "태단",
     "hanja": "兌端",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "독맥",
     "meridian_en": "Governor Vessel",
     "meridian_ab": "GV",
@@ -24775,7 +25722,12 @@
         "tongkao_max": 3,
         "tongkao_method": "사자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "兌端",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 52,
@@ -24921,7 +25873,12 @@
         "tongkao_max": 3,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "齦交",
+      "aliases_hanja": "懸命, 斷交, 斷縫筋中, 斷音, 鬼祿, 齒根肉"
+    },
+    "homonym_matches": []
   },
   {
     "num": 150,
@@ -25115,14 +26072,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "極泉",
+      "aliases_hanja": "掖間"
+    },
+    "homonym_matches": []
   },
   {
     "num": 151,
     "code": "HT02",
     "name": "청령",
     "hanja": "靑靈",
-    "aliases": "靑靈泉, 淸冷淵, 靑靈",
+    "aliases": "靑靈泉, 淸冷淵, 靑冷泉",
     "meridian_ko": "수소음심경",
     "meridian_en": "Heart Meridian",
     "meridian_ab": "HT",
@@ -25262,7 +26224,23 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "靑靈",
+      "aliases_hanja": "靑靈泉, 淸冷淵, 靑冷泉"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "HT02",
+        "src_name": "청령",
+        "src_hanja": "靑靈",
+        "match_alias": "淸冷淵",
+        "match_pronunciation": "청랭연",
+        "target_code": "TE11",
+        "target_name": "청랭연",
+        "target_hanja": "淸冷淵"
+      }
+    ]
   },
   {
     "num": 152,
@@ -25425,14 +26403,30 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "少海",
+      "aliases_hanja": "曲折, 曲節, 陰少海"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "HT03",
+        "src_name": "음소해",
+        "src_hanja": "少海",
+        "match_alias": "少海",
+        "match_pronunciation": "소해",
+        "target_code": "SI08",
+        "target_name": "양소해",
+        "target_hanja": "小海"
+      }
+    ]
   },
   {
     "num": 153,
     "code": "HT04",
     "name": "영도",
     "hanja": "靈道",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수소음심경",
     "meridian_en": "Heart Meridian",
     "meridian_ab": "HT",
@@ -25573,7 +26567,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "靈道",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 154,
@@ -25736,14 +26735,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "通里",
+      "aliases_hanja": "通理"
+    },
+    "homonym_matches": []
   },
   {
     "num": 155,
     "code": "HT06",
     "name": "음극",
     "hanja": "陰郄",
-    "aliases": "少陰郄, 石宮",
+    "aliases": "少陰郄, 石宮, 手少陰郄",
     "meridian_ko": "수소음심경",
     "meridian_en": "Heart Meridian",
     "meridian_ab": "HT",
@@ -25906,7 +26910,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陰郄",
+      "aliases_hanja": "少陰郄, 石宮, 手少陰郄"
+    },
+    "homonym_matches": []
   },
   {
     "num": 156,
@@ -26067,7 +27076,23 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "神門",
+      "aliases_hanja": "中都, 兌厲, 兌衝, 銳中"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "HT07",
+        "src_name": "신문",
+        "src_hanja": "神門",
+        "match_alias": "中都",
+        "match_pronunciation": "중도",
+        "target_code": "LR06",
+        "target_name": "중도",
+        "target_hanja": "中都"
+      }
+    ]
   },
   {
     "num": 157,
@@ -26233,7 +27258,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "少府",
+      "aliases_hanja": "兌骨"
+    },
+    "homonym_matches": []
   },
   {
     "num": 158,
@@ -26381,7 +27411,12 @@
         "tongkao_max": 1,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "少衝",
+      "aliases_hanja": "經始"
+    },
+    "homonym_matches": []
   },
   {
     "num": 245,
@@ -26611,7 +27646,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "湧泉",
+      "aliases_hanja": "厥心, 地府, 地沖, 地衝, 地衢, 跟心, 蹶心"
+    },
+    "homonym_matches": []
   },
   {
     "num": 246,
@@ -26817,14 +27857,30 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "然谷",
+      "aliases_hanja": "龍泉, 龍淵"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "KI02",
+        "src_name": "연곡",
+        "src_hanja": "然谷",
+        "match_alias": "龍泉",
+        "match_pronunciation": "용천",
+        "target_code": "KI01",
+        "target_name": "용천",
+        "target_hanja": "湧泉"
+      }
+    ]
   },
   {
     "num": 247,
     "code": "KI03",
     "name": "태계",
     "hanja": "太谿",
-    "aliases": "呂細, 內崑崙",
+    "aliases": "呂細, 內崑崙, 足少陰, 少陰",
     "meridian_ko": "족소음신경",
     "meridian_en": "Kidney Meridian",
     "meridian_ab": "KI",
@@ -27015,14 +28071,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "太谿",
+      "aliases_hanja": "呂細, 內崑崙, 足少陰, 少陰"
+    },
+    "homonym_matches": []
   },
   {
     "num": 248,
     "code": "KI04",
     "name": "대종",
     "hanja": "大鍾",
-    "aliases": "太鍾",
+    "aliases": "太鍾, 太鐘",
     "meridian_ko": "족소음신경",
     "meridian_en": "Kidney Meridian",
     "meridian_ab": "KI",
@@ -27198,14 +28259,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大鍾",
+      "aliases_hanja": "太鍾, 太鐘"
+    },
+    "homonym_matches": []
   },
   {
     "num": 249,
     "code": "KI05",
     "name": "수천",
     "hanja": "水泉",
-    "aliases": "",
+    "aliases": "水源, 水原",
     "meridian_ko": "족소음신경",
     "meridian_en": "Kidney Meridian",
     "meridian_ab": "KI",
@@ -27337,14 +28403,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "水泉",
+      "aliases_hanja": "水源, 水原"
+    },
+    "homonym_matches": []
   },
   {
     "num": 250,
     "code": "KI06",
     "name": "조해",
     "hanja": "照海",
-    "aliases": "陰蹻",
+    "aliases": "陰蹻, 太陰蹻, 漏陰",
     "meridian_ko": "족소음신경",
     "meridian_en": "Kidney Meridian",
     "meridian_ab": "KI",
@@ -27517,7 +28588,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "照海",
+      "aliases_hanja": "陰蹻, 太陰蹻, 漏陰"
+    },
+    "homonym_matches": []
   },
   {
     "num": 251,
@@ -27696,7 +28772,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "復溜",
+      "aliases_hanja": "伏兪, 伏白, 伏臼, 外兪, 外名, 外命, 昌陽"
+    },
+    "homonym_matches": []
   },
   {
     "num": 252,
@@ -27852,7 +28933,12 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "交信",
+      "aliases_hanja": "伏白, 昌陽"
+    },
+    "homonym_matches": []
   },
   {
     "num": 253,
@@ -28002,14 +29088,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "築賓",
+      "aliases_hanja": "腨腸, 腿肚"
+    },
+    "homonym_matches": []
   },
   {
     "num": 254,
     "code": "KI10",
     "name": "음곡",
     "hanja": "陰谷",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소음신경",
     "meridian_en": "Kidney Meridian",
     "meridian_ab": "KI",
@@ -28184,7 +29275,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陰谷",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 255,
@@ -28336,7 +29432,23 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "橫骨",
+      "aliases_hanja": "下極, 居骨, 曲骨, 髓空"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "KI11",
+        "src_name": "횡골",
+        "src_hanja": "橫骨",
+        "match_alias": "曲骨",
+        "match_pronunciation": "곡골",
+        "target_code": "CV02",
+        "target_name": "곡골",
+        "target_hanja": "曲骨"
+      }
+    ]
   },
   {
     "num": 256,
@@ -28476,7 +29588,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大赫",
+      "aliases_hanja": "陰維, 陰關"
+    },
+    "homonym_matches": []
   },
   {
     "num": 257,
@@ -28608,7 +29725,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "氣穴",
+      "aliases_hanja": "右名子戶, 左名氣穴, 胞門, 子戶"
+    },
+    "homonym_matches": []
   },
   {
     "num": 258,
@@ -28780,14 +29902,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "四滿",
+      "aliases_hanja": "髓中, 髓府"
+    },
+    "homonym_matches": []
   },
   {
     "num": 259,
     "code": "KI15",
     "name": "중주",
     "hanja": "中注",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소음신경",
     "meridian_en": "Kidney Meridian",
     "meridian_ab": "KI",
@@ -28913,7 +30040,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中注",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 260,
@@ -29045,7 +30177,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "肓兪",
+      "aliases_hanja": "肓腧, 肓輸"
+    },
+    "homonym_matches": []
   },
   {
     "num": 261,
@@ -29183,14 +30320,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "商曲",
+      "aliases_hanja": "商舍, 高曲"
+    },
+    "homonym_matches": []
   },
   {
     "num": 262,
     "code": "KI18",
     "name": "석관",
     "hanja": "石關",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소음신경",
     "meridian_en": "Kidney Meridian",
     "meridian_ab": "KI",
@@ -29324,7 +30466,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "石關",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 263,
@@ -29451,7 +30598,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陰都",
+      "aliases_hanja": "石宮, 通關, 食宮"
+    },
+    "homonym_matches": []
   },
   {
     "num": 264,
@@ -29582,7 +30734,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "腹通谷",
+      "aliases_hanja": "通穀, 通谷"
+    },
+    "homonym_matches": []
   },
   {
     "num": 265,
@@ -29727,7 +30884,23 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "幽門",
+      "aliases_hanja": "上門, 上關, 幽關"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "KI21",
+        "src_name": "유문",
+        "src_hanja": "幽門",
+        "match_alias": "上關",
+        "match_pronunciation": "상관",
+        "target_code": "GB03",
+        "target_name": "상관",
+        "target_hanja": "上關"
+      }
+    ]
   },
   {
     "num": 266,
@@ -29860,14 +31033,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "步廊",
+      "aliases_hanja": "步郞"
+    },
+    "homonym_matches": []
   },
   {
     "num": 267,
     "code": "KI23",
     "name": "신봉",
     "hanja": "神封",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소음신경",
     "meridian_en": "Kidney Meridian",
     "meridian_ab": "KI",
@@ -30013,7 +31191,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "神封",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 268,
@@ -30166,14 +31349,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "靈墟",
+      "aliases_hanja": "靈墻"
+    },
+    "homonym_matches": []
   },
   {
     "num": 269,
     "code": "KI25",
     "name": "신장",
     "hanja": "神藏",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족소음신경",
     "meridian_en": "Kidney Meridian",
     "meridian_ab": "KI",
@@ -30319,7 +31507,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "神藏",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 270,
@@ -30456,7 +31649,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "彧中",
+      "aliases_hanja": "域中, 或中"
+    },
+    "homonym_matches": []
   },
   {
     "num": 271,
@@ -30594,14 +31792,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "兪府",
+      "aliases_hanja": "腧府, 輸府"
+    },
+    "homonym_matches": []
   },
   {
     "num": 64,
     "code": "LI01",
     "name": "상양",
     "hanja": "商陽",
-    "aliases": "絶陽",
+    "aliases": "絶陽, 而明",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -30765,7 +31968,12 @@
         "tongkao_max": 1,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "商陽",
+      "aliases_hanja": "絶陽, 而明"
+    },
+    "homonym_matches": []
   },
   {
     "num": 65,
@@ -30943,7 +32151,12 @@
         "tongkao_max": 3,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "二間",
+      "aliases_hanja": "間谷"
+    },
+    "homonym_matches": []
   },
   {
     "num": 66,
@@ -31116,7 +32329,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "三間",
+      "aliases_hanja": "小谷, 少谷"
+    },
+    "homonym_matches": []
   },
   {
     "num": 67,
@@ -31366,7 +32584,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "合谷",
+      "aliases_hanja": "合骨, 含口, 虎口, 中魁, 河口"
+    },
+    "homonym_matches": []
   },
   {
     "num": 68,
@@ -31532,14 +32755,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陽谿",
+      "aliases_hanja": "中魁, 河口"
+    },
+    "homonym_matches": []
   },
   {
     "num": 69,
     "code": "LI06",
     "name": "편력",
     "hanja": "偏歷",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -31711,14 +32939,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "偏歷",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 70,
     "code": "LI07",
     "name": "온류",
     "hanja": "溫溜",
-    "aliases": "池頭, 蛇頭, 逆注",
+    "aliases": "池頭, 蛇頭, 逆注, 溫留",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -31881,14 +33114,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "溫溜",
+      "aliases_hanja": "池頭, 蛇頭, 逆注, 溫留"
+    },
+    "homonym_matches": []
   },
   {
     "num": 71,
     "code": "LI08",
     "name": "하렴",
     "hanja": "下廉",
-    "aliases": "蛇頭, 逆注",
+    "aliases": "蛇頭, 逆注, 手下廉",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -32018,14 +33256,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "下廉",
+      "aliases_hanja": "蛇頭, 逆注, 手下廉"
+    },
+    "homonym_matches": []
   },
   {
     "num": 72,
     "code": "LI09",
     "name": "상렴",
     "hanja": "上廉",
-    "aliases": "",
+    "aliases": "手上廉",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -32142,7 +33385,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "上廉",
+      "aliases_hanja": "手上廉"
+    },
+    "homonym_matches": []
   },
   {
     "num": 73,
@@ -32298,7 +33546,12 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "手三里",
+      "aliases_hanja": "鬼臣"
+    },
+    "homonym_matches": []
   },
   {
     "num": 74,
@@ -32498,14 +33751,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "曲池",
+      "aliases_hanja": "鬼臣"
+    },
+    "homonym_matches": []
   },
   {
     "num": 75,
     "code": "LI12",
     "name": "주료",
     "hanja": "肘髎",
-    "aliases": "",
+    "aliases": "肘窌, 肘聊",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -32627,14 +33885,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "肘髎",
+      "aliases_hanja": "肘窌, 肘聊"
+    },
+    "homonym_matches": []
   },
   {
     "num": 76,
     "code": "LI13",
     "name": "수오리",
     "hanja": "手五里",
-    "aliases": "",
+    "aliases": "臂五里",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -32758,14 +34021,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "手五里",
+      "aliases_hanja": "臂五里"
+    },
+    "homonym_matches": []
   },
   {
     "num": 77,
     "code": "LI14",
     "name": "비노",
     "hanja": "臂臑",
-    "aliases": "",
+    "aliases": "頸衝, 頭衝, 臂腦",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -32906,14 +34174,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "臂臑",
+      "aliases_hanja": "頸衝, 頭衝, 臂腦"
+    },
+    "homonym_matches": []
   },
   {
     "num": 78,
     "code": "LI15",
     "name": "견우",
     "hanja": "肩髃",
-    "aliases": "中肩井, 扁骨",
+    "aliases": "中肩井, 扁骨, 肩尖",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -33051,14 +34324,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "肩髃",
+      "aliases_hanja": "中肩井, 扁骨, 肩尖"
+    },
+    "homonym_matches": []
   },
   {
     "num": 79,
     "code": "LI16",
     "name": "거골",
     "hanja": "巨骨",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -33164,14 +34442,19 @@
         "tongkao_max": 7,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "巨骨",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 80,
     "code": "LI17",
     "name": "천정",
     "hanja": "天鼎",
-    "aliases": "",
+    "aliases": "天頂",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -33310,7 +34593,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天鼎",
+      "aliases_hanja": "天頂"
+    },
+    "homonym_matches": []
   },
   {
     "num": 81,
@@ -33473,14 +34761,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "扶突",
+      "aliases_hanja": "水穴, 水天, 水門"
+    },
+    "homonym_matches": []
   },
   {
     "num": 82,
     "code": "LI19",
     "name": "화료",
     "hanja": "禾髎",
-    "aliases": "䪼, 口禾髎, 長頰, 長頻, 長顪, 長髎, 鼻和髎",
+    "aliases": "䪼, 口禾髎, 長頰, 長頻, 長顪, 長髎, 鼻和髎, 和髎",
     "meridian_ko": "수양명대장경",
     "meridian_en": "Large Intestine Meridian",
     "meridian_ab": "LI",
@@ -33604,7 +34897,23 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "禾髎",
+      "aliases_hanja": "䪼, 口禾髎, 長頰, 長頻, 長顪, 長髎, 鼻和髎, 和髎"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "LI19",
+        "src_name": "화료",
+        "src_hanja": "禾髎",
+        "match_alias": "和髎",
+        "match_pronunciation": "이화료",
+        "target_code": "TE22",
+        "target_name": "이화료",
+        "target_hanja": "和髎"
+      }
+    ]
   },
   {
     "num": 83,
@@ -33754,14 +35063,30 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "迎香",
+      "aliases_hanja": "衝陽, 內迎香"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "LI20",
+        "src_name": "영향",
+        "src_hanja": "迎香",
+        "match_alias": "衝陽",
+        "match_pronunciation": "충양",
+        "target_code": "ST42",
+        "target_name": "충양",
+        "target_hanja": "衝陽"
+      }
+    ]
   },
   {
     "num": 348,
     "code": "LR01",
     "name": "대돈",
     "hanja": "大敦",
-    "aliases": "大順, 水泉",
+    "aliases": "大順, 水泉, 大訓",
     "meridian_ko": "족궐음간경",
     "meridian_en": "Liver Meridian",
     "meridian_ab": "LR",
@@ -33918,14 +35243,30 @@
         "tongkao_max": 2,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大敦",
+      "aliases_hanja": "大順, 水泉, 大訓"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "LR01",
+        "src_name": "대돈",
+        "src_hanja": "大敦",
+        "match_alias": "水泉",
+        "match_pronunciation": "수천",
+        "target_code": "KI05",
+        "target_name": "수천",
+        "target_hanja": "水泉"
+      }
+    ]
   },
   {
     "num": 349,
     "code": "LR02",
     "name": "행간",
     "hanja": "行間",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족궐음간경",
     "meridian_en": "Liver Meridian",
     "meridian_ab": "LR",
@@ -34124,7 +35465,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "行間",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 350,
@@ -34365,7 +35711,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "太衝",
+      "aliases_hanja": "大冲"
+    },
+    "homonym_matches": []
   },
   {
     "num": 351,
@@ -34496,7 +35847,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中封",
+      "aliases_hanja": "懸泉"
+    },
+    "homonym_matches": []
   },
   {
     "num": 352,
@@ -34645,7 +36001,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "蠡溝",
+      "aliases_hanja": "交儀"
+    },
+    "homonym_matches": []
   },
   {
     "num": 353,
@@ -34788,7 +36149,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中都",
+      "aliases_hanja": "中郄"
+    },
+    "homonym_matches": []
   },
   {
     "num": 354,
@@ -34918,14 +36284,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "膝關",
+      "aliases_hanja": "陰關"
+    },
+    "homonym_matches": []
   },
   {
     "num": 355,
     "code": "LR08",
     "name": "곡천",
     "hanja": "曲泉",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족궐음간경",
     "meridian_en": "Liver Meridian",
     "meridian_ab": "LR",
@@ -35123,7 +36494,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "曲泉",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 356,
@@ -35270,7 +36646,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陰包",
+      "aliases_hanja": "陰毛, 陰胞"
+    },
+    "homonym_matches": []
   },
   {
     "num": 357,
@@ -35415,14 +36796,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "足五里",
+      "aliases_hanja": "五里"
+    },
+    "homonym_matches": []
   },
   {
     "num": 358,
     "code": "LR11",
     "name": "음렴",
     "hanja": "陰廉",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족궐음간경",
     "meridian_en": "Liver Meridian",
     "meridian_ab": "LR",
@@ -35551,7 +36937,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陰廉",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 359,
@@ -35684,14 +37075,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "急脈",
+      "aliases_hanja": "羊矢, 小腸氣"
+    },
+    "homonym_matches": []
   },
   {
     "num": 360,
     "code": "LR13",
     "name": "장문",
     "hanja": "章門",
-    "aliases": "季肋, 季脇, 後章門, 肘尖, 肪髎, 脇髎, 脾募, 臟會, 長平, 長手",
+    "aliases": "季肋, 季脇, 後章門, 肘尖, 肪髎, 脇髎, 脾募, 臟會, 長平, 長手, 脅窌",
     "meridian_ko": "족궐음간경",
     "meridian_en": "Liver Meridian",
     "meridian_ab": "LR",
@@ -35833,7 +37229,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "章門",
+      "aliases_hanja": "季肋, 季脇, 後章門, 肘尖, 肪髎, 脇髎, 脾募, 臟會, 長平, 長手, 脅窌"
+    },
+    "homonym_matches": []
   },
   {
     "num": 361,
@@ -36000,7 +37401,12 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "期門",
+      "aliases_hanja": "肝募"
+    },
+    "homonym_matches": []
   },
   {
     "num": 53,
@@ -36152,14 +37558,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中府",
+      "aliases_hanja": "膺中兪"
+    },
+    "homonym_matches": []
   },
   {
     "num": 54,
     "code": "LU02",
     "name": "운문",
     "hanja": "雲門",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수태음폐경",
     "meridian_en": "Lung Meridian",
     "meridian_ab": "LU",
@@ -36298,7 +37709,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "雲門",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 55,
@@ -36450,14 +37866,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天府",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 56,
     "code": "LU04",
     "name": "협백",
     "hanja": "俠白",
-    "aliases": "",
+    "aliases": "夾白, 挾白",
     "meridian_ko": "수태음폐경",
     "meridian_en": "Lung Meridian",
     "meridian_ab": "LU",
@@ -36602,7 +38023,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "俠白",
+      "aliases_hanja": "夾白, 挾白"
+    },
+    "homonym_matches": []
   },
   {
     "num": 57,
@@ -36781,14 +38207,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "尺澤",
+      "aliases_hanja": "鬼受"
+    },
+    "homonym_matches": []
   },
   {
     "num": 58,
     "code": "LU06",
     "name": "공최",
     "hanja": "孔最",
-    "aliases": "",
+    "aliases": "孔冣",
     "meridian_ko": "수태음폐경",
     "meridian_en": "Lung Meridian",
     "meridian_ab": "LU",
@@ -36944,7 +38375,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "孔最",
+      "aliases_hanja": "孔冣"
+    },
+    "homonym_matches": []
   },
   {
     "num": 59,
@@ -37124,14 +38560,19 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "列缺",
+      "aliases_hanja": "裂缺"
+    },
+    "homonym_matches": []
   },
   {
     "num": 60,
     "code": "LU08",
     "name": "경거",
     "hanja": "經渠",
-    "aliases": "",
+    "aliases": "手太陰",
     "meridian_ko": "수태음폐경",
     "meridian_en": "Lung Meridian",
     "meridian_ab": "LU",
@@ -37269,14 +38710,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "經渠",
+      "aliases_hanja": "手太陰"
+    },
+    "homonym_matches": []
   },
   {
     "num": 61,
     "code": "LU09",
     "name": "태연",
     "hanja": "太淵",
-    "aliases": "太泉, 鬼心",
+    "aliases": "太泉, 鬼心, 大泉, 大渕",
     "meridian_ko": "수태음폐경",
     "meridian_en": "Lung Meridian",
     "meridian_ab": "LU",
@@ -37436,14 +38882,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "太淵",
+      "aliases_hanja": "太泉, 鬼心, 大泉, 大渕"
+    },
+    "homonym_matches": []
   },
   {
     "num": 62,
     "code": "LU10",
     "name": "어제",
     "hanja": "魚際",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수태음폐경",
     "meridian_en": "Lung Meridian",
     "meridian_ab": "LU",
@@ -37605,7 +39056,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "魚際",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 63,
@@ -37767,7 +39223,12 @@
         "tongkao_max": 1,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "少商",
+      "aliases_hanja": "鬼信"
+    },
+    "homonym_matches": []
   },
   {
     "num": 272,
@@ -37929,7 +39390,12 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天池",
+      "aliases_hanja": "天會"
+    },
+    "homonym_matches": []
   },
   {
     "num": 273,
@@ -38044,14 +39510,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天泉",
+      "aliases_hanja": "天溫, 天濕"
+    },
+    "homonym_matches": []
   },
   {
     "num": 274,
     "code": "PC03",
     "name": "곡택",
     "hanja": "曲澤",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수궐음심포경",
     "meridian_en": "Pericardium Meridian",
     "meridian_ab": "PC",
@@ -38223,7 +39694,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "曲澤",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 275,
@@ -38404,14 +39880,30 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "郄門",
+      "aliases_hanja": "四白"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "PC04",
+        "src_name": "극문",
+        "src_hanja": "郄門",
+        "match_alias": "四白",
+        "match_pronunciation": "사백",
+        "target_code": "ST02",
+        "target_name": "사백",
+        "target_hanja": "四白"
+      }
+    ]
   },
   {
     "num": 276,
     "code": "PC05",
     "name": "간사",
     "hanja": "間使",
-    "aliases": "歸路",
+    "aliases": "歸路, 鬼路",
     "meridian_ko": "수궐음심포경",
     "meridian_en": "Pericardium Meridian",
     "meridian_ab": "PC",
@@ -38607,7 +40099,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "間使",
+      "aliases_hanja": "歸路, 鬼路"
+    },
+    "homonym_matches": []
   },
   {
     "num": 277,
@@ -38844,14 +40341,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "內關",
+      "aliases_hanja": "陰維"
+    },
+    "homonym_matches": []
   },
   {
     "num": 278,
     "code": "PC07",
     "name": "대릉",
     "hanja": "大陵",
-    "aliases": "",
+    "aliases": "心主, 手心主, 手厥陰",
     "meridian_ko": "수궐음심포경",
     "meridian_en": "Pericardium Meridian",
     "meridian_ab": "PC",
@@ -39055,7 +40557,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大陵",
+      "aliases_hanja": "心主, 手心主, 手厥陰"
+    },
+    "homonym_matches": []
   },
   {
     "num": 279,
@@ -39258,14 +40765,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "勞宮",
+      "aliases_hanja": "五里, 掌中, 歸路, 鬼窟, 五星"
+    },
+    "homonym_matches": []
   },
   {
     "num": 280,
     "code": "PC09",
     "name": "중충",
     "hanja": "中衝",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수궐음심포경",
     "meridian_en": "Pericardium Meridian",
     "meridian_ab": "PC",
@@ -39419,7 +40931,12 @@
         "tongkao_max": 1,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中衝",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 159,
@@ -39592,7 +41109,12 @@
         "tongkao_max": 1,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "少澤",
+      "aliases_hanja": "小吉, 少吉"
+    },
+    "homonym_matches": []
   },
   {
     "num": 160,
@@ -39789,14 +41311,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "前谷",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 161,
     "code": "SI03",
     "name": "후계",
     "hanja": "後谿",
-    "aliases": "",
+    "aliases": "手太陽",
     "meridian_ko": "수태양소장경",
     "meridian_en": "Small Intestine Meridian",
     "meridian_ab": "SI",
@@ -39980,14 +41507,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "後谿",
+      "aliases_hanja": "手太陽"
+    },
+    "homonym_matches": []
   },
   {
     "num": 162,
     "code": "SI04",
     "name": "완골",
     "hanja": "腕骨",
-    "aliases": "椀骨",
+    "aliases": "椀骨, 完骨, 捥骨, 脘骨",
     "meridian_ko": "수태양소장경",
     "meridian_en": "Small Intestine Meridian",
     "meridian_ab": "SI",
@@ -40197,14 +41729,30 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "腕骨",
+      "aliases_hanja": "椀骨, 完骨, 捥骨, 脘骨"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "SI04",
+        "src_name": "완골",
+        "src_hanja": "腕骨",
+        "match_alias": "完骨",
+        "match_pronunciation": "완골",
+        "target_code": "GB12",
+        "target_name": "완골(담)",
+        "target_hanja": "完骨"
+      }
+    ]
   },
   {
     "num": 163,
     "code": "SI05",
     "name": "양곡",
     "hanja": "陽谷",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수태양소장경",
     "meridian_en": "Small Intestine Meridian",
     "meridian_ab": "SI",
@@ -40393,14 +41941,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陽谷",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 164,
     "code": "SI06",
     "name": "양로",
     "hanja": "養老",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수태양소장경",
     "meridian_en": "Small Intestine Meridian",
     "meridian_ab": "SI",
@@ -40541,14 +42094,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "養老",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 165,
     "code": "SI07",
     "name": "지정",
     "hanja": "支正",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수태양소장경",
     "meridian_en": "Small Intestine Meridian",
     "meridian_ab": "SI",
@@ -40703,7 +42261,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "支正",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 166,
@@ -40870,14 +42433,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "小海",
+      "aliases_hanja": "肘曲泉, 陽小海"
+    },
+    "homonym_matches": []
   },
   {
     "num": 167,
     "code": "SI09",
     "name": "견정",
     "hanja": "肩貞",
-    "aliases": "",
+    "aliases": "肩眞, 肩正",
     "meridian_ko": "수태양소장경",
     "meridian_en": "Small Intestine Meridian",
     "meridian_ab": "SI",
@@ -41021,7 +42589,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "肩貞",
+      "aliases_hanja": "肩眞, 肩正"
+    },
+    "homonym_matches": []
   },
   {
     "num": 168,
@@ -41160,14 +42733,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "臑兪",
+      "aliases_hanja": "臑文, 臑穴"
+    },
+    "homonym_matches": []
   },
   {
     "num": 169,
     "code": "SI11",
     "name": "천종",
     "hanja": "天宗",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수태양소장경",
     "meridian_en": "Small Intestine Meridian",
     "meridian_ab": "SI",
@@ -41281,14 +42859,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天宗",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 170,
     "code": "SI12",
     "name": "병풍",
     "hanja": "秉風",
-    "aliases": "肩解各一, 謂秉風二穴也",
+    "aliases": "肩解各一, 謂秉風二穴也, 景風",
     "meridian_ko": "수태양소장경",
     "meridian_en": "Small Intestine Meridian",
     "meridian_ab": "SI",
@@ -41404,14 +42987,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "秉風",
+      "aliases_hanja": "肩解各一, 謂秉風二穴也, 景風"
+    },
+    "homonym_matches": []
   },
   {
     "num": 171,
     "code": "SI13",
     "name": "곡원",
     "hanja": "曲垣",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수태양소장경",
     "meridian_en": "Small Intestine Meridian",
     "meridian_ab": "SI",
@@ -41523,7 +43111,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "曲垣",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 172,
@@ -41657,7 +43250,12 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "肩外兪",
+      "aliases_hanja": "肩外"
+    },
+    "homonym_matches": []
   },
   {
     "num": 173,
@@ -41813,14 +43411,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "肩中兪",
+      "aliases_hanja": "肩中"
+    },
+    "homonym_matches": []
   },
   {
     "num": 174,
     "code": "SI16",
     "name": "천창",
     "hanja": "天窓",
-    "aliases": "天窗, 天籠, 窓籠, 窓聾",
+    "aliases": "天窗, 天籠, 窓籠, 窓聾, 天牕, 窗聾, 窗籠",
     "meridian_ko": "수태양소장경",
     "meridian_en": "Small Intestine Meridian",
     "meridian_ab": "SI",
@@ -41978,7 +43581,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天窓",
+      "aliases_hanja": "天窗, 天籠, 窓籠, 窓聾, 天牕, 窗聾, 窗籠"
+    },
+    "homonym_matches": []
   },
   {
     "num": 175,
@@ -42164,7 +43772,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天容",
+      "aliases_hanja": "會顱, 匝風"
+    },
+    "homonym_matches": []
   },
   {
     "num": 176,
@@ -42321,7 +43934,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "顴髎",
+      "aliases_hanja": "兌骨, 椎髎, 權髎"
+    },
+    "homonym_matches": []
   },
   {
     "num": 177,
@@ -42457,14 +44075,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "聽宮",
+      "aliases_hanja": "多所聞"
+    },
+    "homonym_matches": []
   },
   {
     "num": 129,
     "code": "SP01",
     "name": "은백",
     "hanja": "隱白",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -42606,14 +44229,19 @@
         "tongkao_max": 1,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "隱白",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 130,
     "code": "SP02",
     "name": "대도",
     "hanja": "大都",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -42752,14 +44380,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大都",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 131,
     "code": "SP03",
     "name": "태백",
     "hanja": "太白",
-    "aliases": "龍淵",
+    "aliases": "龍淵, 大白",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -42923,14 +44556,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "太白",
+      "aliases_hanja": "龍淵, 大白"
+    },
+    "homonym_matches": []
   },
   {
     "num": 132,
     "code": "SP04",
     "name": "공손",
     "hanja": "公孫",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -43086,14 +44724,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "公孫",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 133,
     "code": "SP05",
     "name": "상구",
     "hanja": "商丘",
-    "aliases": "",
+    "aliases": "商坵, 商邱",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -43240,14 +44883,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "商丘",
+      "aliases_hanja": "商坵, 商邱"
+    },
+    "homonym_matches": []
   },
   {
     "num": 134,
     "code": "SP06",
     "name": "삼음교",
     "hanja": "三陰交",
-    "aliases": "承命, 太陰, 下之三里, 足太陰交",
+    "aliases": "承命, 太陰, 下之三里, 足太陰交, 足太陰, 三交",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -43452,7 +45100,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "三陰交",
+      "aliases_hanja": "承命, 太陰, 下之三里, 足太陰交, 足太陰, 三交"
+    },
+    "homonym_matches": []
   },
   {
     "num": 135,
@@ -43606,7 +45259,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "漏谷",
+      "aliases_hanja": "太陰絡"
+    },
+    "homonym_matches": []
   },
   {
     "num": 136,
@@ -43758,14 +45416,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "地機",
+      "aliases_hanja": "脾舍, 地箕"
+    },
+    "homonym_matches": []
   },
   {
     "num": 137,
     "code": "SP09",
     "name": "음릉천",
     "hanja": "陰陵泉",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -43955,7 +45618,12 @@
         "tongkao_max": 20,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陰陵泉",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 138,
@@ -44108,14 +45776,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "血海",
+      "aliases_hanja": "白蟲窠, 血郄, 血郊"
+    },
+    "homonym_matches": []
   },
   {
     "num": 139,
     "code": "SP11",
     "name": "기문",
     "hanja": "箕門",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -44242,7 +45915,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "箕門",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 140,
@@ -44420,14 +46098,30 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "衝門",
+      "aliases_hanja": "慈宮, 前章門, 上慈宮"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "SP12",
+        "src_name": "충문",
+        "src_hanja": "衝門",
+        "match_alias": "慈宮",
+        "match_pronunciation": "자궁",
+        "target_code": "CV19",
+        "target_name": "자궁",
+        "target_hanja": "紫宮"
+      }
+    ]
   },
   {
     "num": 141,
     "code": "SP13",
     "name": "부사",
     "hanja": "府舍",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -44548,14 +46242,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "府舍",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 142,
     "code": "SP14",
     "name": "복결",
     "hanja": "腹結",
-    "aliases": "腸窟, 腹屈",
+    "aliases": "腸窟, 腹屈, 腸屈",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -44675,14 +46374,19 @@
         "tongkao_max": 20,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "腹結",
+      "aliases_hanja": "腸窟, 腹屈, 腸屈"
+    },
+    "homonym_matches": []
   },
   {
     "num": 143,
     "code": "SP15",
     "name": "대횡",
     "hanja": "大橫",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -44804,14 +46508,19 @@
         "tongkao_max": 20,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大橫",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 144,
     "code": "SP16",
     "name": "복애",
     "hanja": "腹哀",
-    "aliases": "",
+    "aliases": "腸哀",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -44936,14 +46645,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "腹哀",
+      "aliases_hanja": "腸哀"
+    },
+    "homonym_matches": []
   },
   {
     "num": 145,
     "code": "SP17",
     "name": "식두",
     "hanja": "食竇",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -45076,14 +46790,19 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "食竇",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 146,
     "code": "SP18",
     "name": "천계",
     "hanja": "天谿",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -45230,14 +46949,19 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天谿",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 147,
     "code": "SP19",
     "name": "흉향",
     "hanja": "胸鄕",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -45365,14 +47089,19 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "胸鄕",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 148,
     "code": "SP20",
     "name": "주영",
     "hanja": "周榮",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족태음비경",
     "meridian_en": "Spleen Meridian",
     "meridian_ab": "SP",
@@ -45508,7 +47237,12 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "周榮",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 149,
@@ -45648,14 +47382,19 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大包",
+      "aliases_hanja": "泉腋"
+    },
+    "homonym_matches": []
   },
   {
     "num": 84,
     "code": "ST01",
     "name": "승읍",
     "hanja": "承泣",
-    "aliases": "面闚",
+    "aliases": "面闚, 面窌",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -45806,14 +47545,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "承泣",
+      "aliases_hanja": "面闚, 面窌"
+    },
+    "homonym_matches": []
   },
   {
     "num": 85,
     "code": "ST02",
     "name": "사백",
     "hanja": "四白",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -45969,14 +47713,19 @@
         "tongkao_max": 3,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "四白",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 86,
     "code": "ST03",
     "name": "거료",
     "hanja": "巨髎",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -46128,7 +47877,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "巨髎",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 87,
@@ -46270,7 +48024,23 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "地倉",
+      "aliases_hanja": "會維, 胃維"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "ST04",
+        "src_name": "지창",
+        "src_hanja": "地倉",
+        "match_alias": "胃維",
+        "match_pronunciation": "위유",
+        "target_code": "BL21",
+        "target_name": "위수",
+        "target_hanja": "胃兪"
+      }
+    ]
   },
   {
     "num": 88,
@@ -46406,7 +48176,12 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大迎",
+      "aliases_hanja": "髓孔"
+    },
+    "homonym_matches": []
   },
   {
     "num": 89,
@@ -46554,14 +48329,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "頰車",
+      "aliases_hanja": "曲牙, 機關, 牙車, 鬼床"
+    },
+    "homonym_matches": []
   },
   {
     "num": 90,
     "code": "ST07",
     "name": "하관",
     "hanja": "下關",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -46719,14 +48499,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "下關",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 91,
     "code": "ST08",
     "name": "두유",
     "hanja": "頭維",
-    "aliases": "顙大",
+    "aliases": "顙大, 維角, 玄角, 頭縫",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -46857,7 +48642,12 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "頭維",
+      "aliases_hanja": "顙大, 維角, 玄角, 頭縫"
+    },
+    "homonym_matches": []
   },
   {
     "num": 92,
@@ -47032,7 +48822,12 @@
         "tongkao_max": 4,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "人迎",
+      "aliases_hanja": "五會, 天五會"
+    },
+    "homonym_matches": []
   },
   {
     "num": 93,
@@ -47167,14 +48962,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "水突",
+      "aliases_hanja": "天門, 水門"
+    },
+    "homonym_matches": []
   },
   {
     "num": 94,
     "code": "ST11",
     "name": "기사",
     "hanja": "氣舍",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -47334,7 +49134,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "氣舍",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 95,
@@ -47472,14 +49277,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "缺盆",
+      "aliases_hanja": "天蓋, 尺蓋"
+    },
+    "homonym_matches": []
   },
   {
     "num": 96,
     "code": "ST13",
     "name": "기호",
     "hanja": "氣戶",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -47615,14 +49425,19 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "氣戶",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 97,
     "code": "ST14",
     "name": "고방",
     "hanja": "庫房",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -47752,14 +49567,19 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "庫房",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 98,
     "code": "ST15",
     "name": "옥예",
     "hanja": "屋翳",
-    "aliases": "",
+    "aliases": "尾翳",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -47894,14 +49714,19 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "屋翳",
+      "aliases_hanja": "尾翳"
+    },
+    "homonym_matches": []
   },
   {
     "num": 99,
     "code": "ST16",
     "name": "응창",
     "hanja": "膺窓",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -48032,14 +49857,19 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "膺窓",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 100,
     "code": "ST17",
     "name": "유중",
     "hanja": "乳中",
-    "aliases": "",
+    "aliases": "乳首",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -48170,14 +50000,19 @@
         "tongkao_max": 0,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "乳中",
+      "aliases_hanja": "乳首"
+    },
+    "homonym_matches": []
   },
   {
     "num": 101,
     "code": "ST18",
     "name": "유근",
     "hanja": "乳根",
-    "aliases": "",
+    "aliases": "薛息",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -48326,14 +50161,19 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "乳根",
+      "aliases_hanja": "薛息"
+    },
+    "homonym_matches": []
   },
   {
     "num": 102,
     "code": "ST19",
     "name": "불용",
     "hanja": "不容",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -48464,14 +50304,19 @@
         "tongkao_max": 8,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "不容",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 103,
     "code": "ST20",
     "name": "승만",
     "hanja": "承滿",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -48611,14 +50456,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "承滿",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 104,
     "code": "ST21",
     "name": "양문",
     "hanja": "梁門",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -48745,14 +50595,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "梁門",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 105,
     "code": "ST22",
     "name": "관문",
     "hanja": "關門",
-    "aliases": "",
+    "aliases": "關明",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -48892,7 +50747,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "關門",
+      "aliases_hanja": "關明"
+    },
+    "homonym_matches": []
   },
   {
     "num": 106,
@@ -49026,14 +50886,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "太乙",
+      "aliases_hanja": "太一"
+    },
+    "homonym_matches": []
   },
   {
     "num": 107,
     "code": "ST24",
     "name": "활육문",
     "hanja": "滑肉門",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -49160,7 +51025,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "滑肉門",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 108,
@@ -49313,14 +51183,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天樞",
+      "aliases_hanja": "長溪, 谷門, 長谷, 循際, 循元, 補元, 穀門"
+    },
+    "homonym_matches": []
   },
   {
     "num": 109,
     "code": "ST26",
     "name": "외릉",
     "hanja": "外陵",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -49438,14 +51313,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "外陵",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 110,
     "code": "ST27",
     "name": "대거",
     "hanja": "大巨",
-    "aliases": "腋門",
+    "aliases": "腋門, 掖門, 液門",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -49587,14 +51467,30 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "大巨",
+      "aliases_hanja": "腋門, 掖門, 液門"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "ST27",
+        "src_name": "대거",
+        "src_hanja": "大巨",
+        "match_alias": "液門",
+        "match_pronunciation": "액문",
+        "target_code": "TE02",
+        "target_name": "액문",
+        "target_hanja": "液門"
+      }
+    ]
   },
   {
     "num": 111,
     "code": "ST28",
     "name": "수도",
     "hanja": "水道",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -49747,14 +51643,19 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "水道",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 112,
     "code": "ST29",
     "name": "귀래",
     "hanja": "歸來",
-    "aliases": "玉泉",
+    "aliases": "玉泉, 豀穴, 腸遺, 遺道",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -49887,7 +51788,12 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "歸來",
+      "aliases_hanja": "玉泉, 豀穴, 腸遺, 遺道"
+    },
+    "homonym_matches": []
   },
   {
     "num": 113,
@@ -50037,14 +51943,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "氣衝",
+      "aliases_hanja": "氣街, 羊屎, 氣堂"
+    },
+    "homonym_matches": []
   },
   {
     "num": 114,
     "code": "ST31",
     "name": "비관",
     "hanja": "髀關",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -50163,14 +52074,19 @@
         "tongkao_max": 20,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "髀關",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 115,
     "code": "ST32",
     "name": "복토",
     "hanja": "伏兎",
-    "aliases": "外丘",
+    "aliases": "外丘, 外勾",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -50284,7 +52200,23 @@
         "tongkao_max": 20,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "伏兎",
+      "aliases_hanja": "外丘, 外勾"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "ST32",
+        "src_name": "복토",
+        "src_hanja": "伏兎",
+        "match_alias": "外丘",
+        "match_pronunciation": "외구",
+        "target_code": "GB36",
+        "target_name": "외구",
+        "target_hanja": "外丘"
+      }
+    ]
   },
   {
     "num": 116,
@@ -50411,7 +52343,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陰市",
+      "aliases_hanja": "陰鼎"
+    },
+    "homonym_matches": []
   },
   {
     "num": 117,
@@ -50556,7 +52493,12 @@
         "tongkao_max": 12,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "梁丘",
+      "aliases_hanja": "鶴頂, 膀骨"
+    },
+    "homonym_matches": []
   },
   {
     "num": 118,
@@ -50673,7 +52615,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "犢鼻",
+      "aliases_hanja": "外膝眼"
+    },
+    "homonym_matches": []
   },
   {
     "num": 119,
@@ -50881,14 +52828,19 @@
         "tongkao_max": 20,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "足三里",
+      "aliases_hanja": "下三里, 鬼邪"
+    },
+    "homonym_matches": []
   },
   {
     "num": 120,
     "code": "ST37",
     "name": "상거허",
     "hanja": "上巨虛",
-    "aliases": "上廉, 巨虛上廉, 足上廉",
+    "aliases": "上廉, 巨虛上廉, 足上廉, 巨虛",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -51049,14 +53001,30 @@
         "tongkao_max": 20,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "上巨虛",
+      "aliases_hanja": "上廉, 巨虛上廉, 足上廉, 巨虛"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "ST37",
+        "src_name": "상거허",
+        "src_hanja": "上巨虛",
+        "match_alias": "上廉",
+        "match_pronunciation": "상렴",
+        "target_code": "LI09",
+        "target_name": "상렴",
+        "target_hanja": "上廉"
+      }
+    ]
   },
   {
     "num": 121,
     "code": "ST38",
     "name": "조구",
     "hanja": "條口",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -51168,7 +53136,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "條口",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 122,
@@ -51322,14 +53295,30 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "下巨虛",
+      "aliases_hanja": "下廉, 巨虛下廉, 足下廉"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "ST39",
+        "src_name": "하거허",
+        "src_hanja": "下巨虛",
+        "match_alias": "下廉",
+        "match_pronunciation": "하렴",
+        "target_code": "LI08",
+        "target_name": "하렴",
+        "target_hanja": "下廉"
+      }
+    ]
   },
   {
     "num": 123,
     "code": "ST40",
     "name": "풍륭",
     "hanja": "豊隆",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -51525,7 +53514,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "豊隆",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 124,
@@ -51698,14 +53692,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "解谿",
+      "aliases_hanja": "鞋帶"
+    },
+    "homonym_matches": []
   },
   {
     "num": 125,
     "code": "ST42",
     "name": "충양",
     "hanja": "衝陽",
-    "aliases": "會原",
+    "aliases": "會原, 趺陽",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -51863,14 +53862,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "衝陽",
+      "aliases_hanja": "會原, 趺陽"
+    },
+    "homonym_matches": []
   },
   {
     "num": 126,
     "code": "ST43",
     "name": "함곡",
     "hanja": "陷谷",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -52011,14 +54015,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陷谷",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 127,
     "code": "ST44",
     "name": "내정",
     "hanja": "內庭",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -52187,14 +54196,19 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "內庭",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 128,
     "code": "ST45",
     "name": "여태",
     "hanja": "厲兌",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "족양명위경",
     "meridian_en": "Stomach Meridian",
     "meridian_ab": "ST",
@@ -52364,14 +54378,19 @@
         "tongkao_max": 1,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "厲兌",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 281,
     "code": "TE01",
     "name": "관충",
     "hanja": "關衝",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수소양삼초경",
     "meridian_en": "Triple Energizer Meridian",
     "meridian_ab": "TE",
@@ -52536,7 +54555,12 @@
         "tongkao_max": 1,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "關衝",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 282,
@@ -52702,7 +54726,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "液門",
+      "aliases_hanja": "掖門, 腋門"
+    },
+    "homonym_matches": []
   },
   {
     "num": 283,
@@ -52882,7 +54911,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "中渚",
+      "aliases_hanja": "下都"
+    },
+    "homonym_matches": []
   },
   {
     "num": 284,
@@ -53032,7 +55066,12 @@
         "tongkao_max": 5,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "陽池",
+      "aliases_hanja": "別陽"
+    },
+    "homonym_matches": []
   },
   {
     "num": 285,
@@ -53195,7 +55234,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "外關",
+      "aliases_hanja": "陽維"
+    },
+    "homonym_matches": []
   },
   {
     "num": 286,
@@ -53369,14 +55413,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "支溝",
+      "aliases_hanja": "飛虎, 飛虛"
+    },
+    "homonym_matches": []
   },
   {
     "num": 287,
     "code": "TE07",
     "name": "회종",
     "hanja": "會宗",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수소양삼초경",
     "meridian_en": "Triple Energizer Meridian",
     "meridian_ab": "TE",
@@ -53505,7 +55554,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "會宗",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 288,
@@ -53639,14 +55693,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "三陽絡",
+      "aliases_hanja": "通門, 通間, 通關, 過門, 門通"
+    },
+    "homonym_matches": []
   },
   {
     "num": 289,
     "code": "TE09",
     "name": "사독",
     "hanja": "四瀆",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수소양삼초경",
     "meridian_en": "Triple Energizer Meridian",
     "meridian_ab": "TE",
@@ -53782,7 +55841,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "四瀆",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 290,
@@ -53933,7 +55997,23 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天井",
+      "aliases_hanja": "淸冷泉, 靑靈"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "TE10",
+        "src_name": "천정",
+        "src_hanja": "天井",
+        "match_alias": "靑靈",
+        "match_pronunciation": "청령",
+        "target_code": "HT02",
+        "target_name": "청령",
+        "target_hanja": "靑靈"
+      }
+    ]
   },
   {
     "num": 291,
@@ -54055,7 +56135,23 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "淸冷淵",
+      "aliases_hanja": "淸冷泉, 靑昊, 靑靈"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "TE11",
+        "src_name": "청랭연",
+        "src_hanja": "淸冷淵",
+        "match_alias": "靑靈",
+        "match_pronunciation": "청영",
+        "target_code": "HT02",
+        "target_name": "청령",
+        "target_hanja": "靑靈"
+      }
+    ]
   },
   {
     "num": 292,
@@ -54190,7 +56286,12 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "消濼",
+      "aliases_hanja": "消歷, 消爍, 消癧, 消鑠"
+    },
+    "homonym_matches": []
   },
   {
     "num": 293,
@@ -54325,14 +56426,30 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "臑會",
+      "aliases_hanja": "臑兪, 臑支, 臑窃, 臑腧, 臑髎, 臑窌"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "TE13",
+        "src_name": "노회",
+        "src_hanja": "臑會",
+        "match_alias": "臑兪",
+        "match_pronunciation": "노수",
+        "target_code": "SI10",
+        "target_name": "노수",
+        "target_hanja": "臑兪"
+      }
+    ]
   },
   {
     "num": 294,
     "code": "TE14",
     "name": "견료",
     "hanja": "肩髎",
-    "aliases": "肩窌",
+    "aliases": "肩窌, 肩聊",
     "meridian_ko": "수소양삼초경",
     "meridian_en": "Triple Energizer Meridian",
     "meridian_ab": "TE",
@@ -54444,14 +56561,19 @@
         "tongkao_max": 15,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "肩髎",
+      "aliases_hanja": "肩窌, 肩聊"
+    },
+    "homonym_matches": []
   },
   {
     "num": 295,
     "code": "TE15",
     "name": "천료",
     "hanja": "天髎",
-    "aliases": "天窌",
+    "aliases": "天窌, 天扇",
     "meridian_ko": "수소양삼초경",
     "meridian_en": "Triple Energizer Meridian",
     "meridian_ab": "TE",
@@ -54582,7 +56704,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天髎",
+      "aliases_hanja": "天窌, 天扇"
+    },
+    "homonym_matches": []
   },
   {
     "num": 296,
@@ -54759,14 +56886,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "天牖",
+      "aliases_hanja": "天聽, 天聽轉聽"
+    },
+    "homonym_matches": []
   },
   {
     "num": 297,
     "code": "TE17",
     "name": "예풍",
     "hanja": "翳風",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수소양삼초경",
     "meridian_en": "Triple Energizer Meridian",
     "meridian_ab": "TE",
@@ -54938,7 +57070,12 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "翳風",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 298,
@@ -55049,14 +57186,19 @@
         "tongkao_max": 5,
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "瘈脈",
+      "aliases_hanja": "資脈, 體脈"
+    },
+    "homonym_matches": []
   },
   {
     "num": 299,
     "code": "TE19",
     "name": "노식",
     "hanja": "顱息",
-    "aliases": "顱䪿, 顱顖",
+    "aliases": "顱䪿, 顱顖, 陽維",
     "meridian_ko": "수소양삼초경",
     "meridian_en": "Triple Energizer Meridian",
     "meridian_ab": "TE",
@@ -55169,14 +57311,19 @@
         "tongkao_max": 5,
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "顱息",
+      "aliases_hanja": "顱䪿, 顱顖, 陽維"
+    },
+    "homonym_matches": []
   },
   {
     "num": 300,
     "code": "TE20",
     "name": "각손",
     "hanja": "角孫",
-    "aliases": "",
+    "aliases": "-",
     "meridian_ko": "수소양삼초경",
     "meridian_en": "Triple Energizer Meridian",
     "meridian_ab": "TE",
@@ -55307,7 +57454,12 @@
         "tongkao_max": 5,
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "角孫",
+      "aliases_hanja": "-"
+    },
+    "homonym_matches": []
   },
   {
     "num": 301,
@@ -55435,14 +57587,19 @@
         "tongkao_max": 10,
         "tongkao_method": ""
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "耳門",
+      "aliases_hanja": "小耳, 耳前"
+    },
+    "homonym_matches": []
   },
   {
     "num": 302,
     "code": "TE22",
     "name": "이화료",
     "hanja": "和髎",
-    "aliases": "耳和髎",
+    "aliases": "耳和髎, 和窌",
     "meridian_ko": "수소양삼초경",
     "meridian_en": "Triple Energizer Meridian",
     "meridian_ab": "TE",
@@ -55568,14 +57725,30 @@
         "tongkao_max": ".",
         "tongkao_method": "사자,횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "和髎",
+      "aliases_hanja": "耳和髎, 和窌"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "TE22",
+        "src_name": "이화료",
+        "src_hanja": "和髎",
+        "match_alias": "和窌",
+        "match_pronunciation": "화료",
+        "target_code": "LI19",
+        "target_name": "화료",
+        "target_hanja": "禾髎"
+      }
+    ]
   },
   {
     "num": 303,
     "code": "TE23",
     "name": "사죽공",
     "hanja": "絲竹空",
-    "aliases": "巨窌, 巨髎, 目髎",
+    "aliases": "巨窌, 巨髎, 目髎, 目窌",
     "meridian_ko": "수소양삼초경",
     "meridian_en": "Triple Energizer Meridian",
     "meridian_ab": "TE",
@@ -55721,6 +57894,22 @@
         "tongkao_max": ".",
         "tongkao_method": "횡자"
       }
-    }
+    },
+    "kjh_naming": {
+      "slide_hanja": "絲竹空",
+      "aliases_hanja": "巨窌, 巨髎, 目髎, 目窌"
+    },
+    "homonym_matches": [
+      {
+        "src_code": "TE23",
+        "src_name": "사죽공",
+        "src_hanja": "絲竹空",
+        "match_alias": "巨窌",
+        "match_pronunciation": "거료",
+        "target_code": "ST03",
+        "target_name": "거료",
+        "target_hanja": "巨髎"
+      }
+    ]
   }
 ]
