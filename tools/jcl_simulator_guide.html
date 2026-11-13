@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="[침구변증] 침구변증 진료지원 시뮬레이터 사용 지침서 — 입력, 추론 모드, 결과 읽기, 출처 표기, 한계">
+<title>침구변증 시뮬레이터 사용 지침서</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@500;700&display=swap">
+<style>
+:root {
+  --paper: #F3F5F3; --sheet: #FFFFFF; --ink: #1C2425; --ink-2: #4B5658; --ink-3: #79848A; --rule: #D8DEDB; --rule-2: #E8ECEA;
+  --accent: #1E5B56; --accent-soft: #E1EEEB;
+  --bu: #A0650F; --bu-bg: #FBF0DC; --sa: #275B86; --sa-bg: #E2ECF6; --moxa: #943C20; --moxa-bg: #F8E6DE;
+  --bleed: #9E2239; --bleed-bg: #F8E0E5; --even: #5B6270; --even-bg: #ECEDF1;
+  --l-li: #1E5B56; --l-mod: #3D7536; --l-ch: #17717F; --l-zz: #75488A; --l-zm: #4A2A7A;
+  --warn: #AE2229; --warn-bg: #FBE7E7; --caution: #8C6100; --caution-bg: #FBF2D9;
+  --f-display: "Noto Serif KR", "Batang", serif;
+  --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "Consolas", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #111617; --sheet: #192022; --ink: #E3E9E7; --ink-2: #A9B4B2; --ink-3: #7D8A89; --rule: #2C3739; --rule-2: #222B2D;
+  --accent: #6CC0B4; --accent-soft: #1C3331;
+  --bu: #E3A84B; --bu-bg: #3A2B12; --sa: #84B5E0; --sa-bg: #172A3B; --moxa: #E5906B; --moxa-bg: #3A2117; --bleed: #EF8296; --bleed-bg: #3C1720;
+  --even: #A5ABB6; --even-bg: #262A31; --l-li: #6CC0B4; --l-mod: #8DC487; --l-ch: #6AC6D3; --l-zz: #C69CDA; --l-zm: #A88BE0;
+  --warn: #F2838A; --warn-bg: #3A1A1C; --caution: #E7C162; --caution-bg: #352B12; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #111617; --sheet: #192022; --ink: #E3E9E7; --ink-2: #A9B4B2; --ink-3: #7D8A89; --rule: #2C3739; --rule-2: #222B2D;
+  --accent: #6CC0B4; --accent-soft: #1C3331;
+  --bu: #E3A84B; --bu-bg: #3A2B12; --sa: #84B5E0; --sa-bg: #172A3B; --moxa: #E5906B; --moxa-bg: #3A2117; --bleed: #EF8296; --bleed-bg: #3C1720;
+  --even: #A5ABB6; --even-bg: #262A31; --l-li: #6CC0B4; --l-mod: #8DC487; --l-ch: #6AC6D3; --l-zz: #C69CDA; --l-zm: #A88BE0;
+  --warn: #F2838A; --warn-bg: #3A1A1C; --caution: #E7C162; --caution-bg: #352B12; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.7;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-bottom: 64px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 700; margin: 0; text-wrap: balance; }
+a { color: var(--accent); }
+code, .mono { font-family: var(--f-mono); font-size: 0.86em; }
+code { background: var(--rule-2); border-radius: 3px; padding: 0 4px; }
+.wrap { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 36px; }
+@media (max-width: 900px) { .wrap { grid-template-columns: minmax(0, 1fr); } .toc { display: none; } }
+header.top { max-width: 1120px; margin: 0 auto; padding: 32px 0 20px; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+header.top h1 { font-size: 30px; letter-spacing: -0.01em; }
+header.top h1 small { font-size: 15px; font-weight: 500; color: var(--ink-2); margin-left: 8px; font-family: var(--f-body); }
+header.top p { color: var(--ink-2); max-width: 72ch; margin: 8px 0 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.back { display: inline-flex; padding: 4px 12px; border-radius: 4px; font-size: 13px; font-weight: 600; border: 1px solid var(--accent); color: var(--accent); text-decoration: none; margin-bottom: 12px; }
+.back:hover { background: var(--accent); color: var(--sheet); }
+.tag { font-size: 12px; border: 1px solid var(--rule); border-radius: 999px; padding: 1px 9px; color: var(--ink-2); background: var(--sheet); white-space: nowrap; }
+.toc { position: sticky; top: 16px; align-self: start; font-size: 13.5px; }
+.toc ol { list-style: none; margin: 0; padding: 0; counter-reset: t; }
+.toc li { counter-increment: t; margin: 2px 0; }
+.toc a { color: var(--ink-2); text-decoration: none; display: block; padding: 3px 8px; border-left: 2px solid var(--rule); }
+.toc a::before { content: counter(t) ". "; color: var(--ink-3); font-family: var(--f-mono); font-size: 12px; }
+.toc a:hover { color: var(--accent); border-color: var(--accent); }
+main section { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 22px 26px; margin-bottom: 18px; min-width: 0; }
+@media (max-width: 600px) { main section { padding: 18px 16px; } }
+section h2 { font-size: 21px; margin-bottom: 12px; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+section h2 .no { font-family: var(--f-mono); font-size: 13px; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: 0 6px; }
+section h3 { font-size: 16px; margin: 20px 0 8px; }
+p { margin: 8px 0; }
+ul, ol { margin: 6px 0; padding-left: 22px; }
+li { margin: 3px 0; }
+.tbl { overflow-x: auto; margin: 10px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th { text-align: left; font-size: 12.5px; letter-spacing: 0.03em; color: var(--ink-2); border-bottom: 1px solid var(--rule); padding: 7px 10px; white-space: nowrap; }
+td { border-bottom: 1px solid var(--rule-2); padding: 8px 10px; vertical-align: top; }
+td.k { white-space: nowrap; font-weight: 600; }
+.note { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 10px 14px; border-radius: 4px; margin: 12px 0; font-size: 14px; }
+.warn { border-left: 3px solid var(--warn); background: var(--warn-bg); padding: 10px 14px; border-radius: 4px; margin: 12px 0; font-size: 14px; }
+.caution { border-left: 3px solid var(--caution); background: var(--caution-bg); padding: 10px 14px; border-radius: 4px; margin: 12px 0; font-size: 14px; }
+.op { display: inline-block; font-size: 12px; font-weight: 600; padding: 0 7px; border-radius: 3px; line-height: 1.7; white-space: nowrap; }
+.op.bu { color: var(--bu); background: var(--bu-bg); } .op.sa { color: var(--sa); background: var(--sa-bg); }
+.op.moxa { color: var(--moxa); background: var(--moxa-bg); } .op.bleed { color: var(--bleed); background: var(--bleed-bg); } .op.even { color: var(--even); background: var(--even-bg); }
+.needle { display: inline-flex; gap: 6px; align-items: center; padding: 3px 9px 3px 8px; border-radius: 4px; border: 1px solid var(--rule); background: var(--paper); border-left: 3px solid var(--lc); font-size: 13.5px; }
+.kcd-chip { font-family: var(--f-mono); font-size: 12px; border: 1px solid var(--rule); border-radius: 3px; padding: 0 6px; background: var(--paper); color: var(--ink-2); white-space: nowrap; }
+.kcd-chip b { color: var(--ink); margin-right: 4px; }
+.kcd-chip.new { border-style: dashed; }
+.swatch { display: inline-block; width: 11px; height: 11px; border-radius: 2px; vertical-align: -1px; margin-right: 5px; }
+/* 화면 구성도 */
+.mock { display: grid; grid-template-columns: 0.9fr 2fr; gap: 10px; margin: 12px 0; font-size: 12.5px; }
+@media (max-width: 600px) { .mock { grid-template-columns: 1fr; } }
+.mock .pane { border: 1px dashed var(--rule); border-radius: 6px; padding: 10px; background: var(--paper); }
+.mock .pane b { display: block; font-family: var(--f-display); font-size: 14px; margin-bottom: 6px; }
+.mock .row { border: 1px solid var(--rule-2); background: var(--sheet); border-radius: 3px; padding: 3px 7px; margin: 4px 0; color: var(--ink-2); }
+.mock .row.hi { border-color: var(--accent); color: var(--accent); }
+.steps { counter-reset: s; list-style: none; padding: 0; }
+.steps > li { counter-increment: s; position: relative; padding-left: 38px; margin: 10px 0; }
+.steps > li::before { content: counter(s); position: absolute; left: 0; top: 1px; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--sheet); font-family: var(--f-mono); font-size: 13px; display: grid; place-items: center; }
+.kbd { font-family: var(--f-mono); font-size: 12px; border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--sheet); white-space: nowrap; }
+footer.foot { max-width: 1120px; margin: 24px auto 0; color: var(--ink-3); font-size: 12.5px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="back" href="jcl_simulator.html">← 시뮬레이터 열기</a>
+  <h1>침구변증 시뮬레이터 사용 지침서 <small>針灸辨證 選穴 시뮬레이터 · [침구변증] 스킬</small></h1>
+  <p>환자의 주소·증상·설·맥을 넣으면 『침구임상변증론치』(李世珍)와 『中国针灸证治通鉴』을 근거로 변병 → 변증 → 치칙 → 선혈·보사를 추론하는 진료지원 도구의 사용법이다. 입력하는 법, 세 가지 추론 모드, 결과 화면을 읽는 법, 근거 표기와 한계를 설명한다.</p>
+  <div class="tags">
+    <span class="tag">2026-11-13 판</span><span class="tag">엔진 [침구변증] infer.py v1.4 이식판</span>
+    <span class="tag">각론 37병 · 증치통감 70병증</span><span class="tag">Python 엔진과 결과 100% 일치</span>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="toc" aria-label="차례"><ol>
+  <li><a href="#s1">무엇을 하는 도구인가</a></li>
+  <li><a href="#s2">열기와 화면 구성</a></li>
+  <li><a href="#s3">입력하기</a></li>
+  <li><a href="#s4">추론 모드 세 가지</a></li>
+  <li><a href="#s5">결과 요약 카드 읽기</a></li>
+  <li><a href="#s6">단계별 기록지 읽기</a></li>
+  <li><a href="#s7">따라 해 보기</a></li>
+  <li><a href="#s8">근거·출처 표기</a></li>
+  <li><a href="#s9">신뢰도와 한계</a></li>
+  <li><a href="#s10">자주 묻는 질문</a></li>
+</ol></nav>
+
+<main>
+<section id="s1">
+  <h2><span class="no">1</span>무엇을 하는 도구인가</h2>
+  <p>이 시뮬레이터는 [침구변증] 스킬의 추론 엔진을 브라우저에서 그대로 돌린다. 입력을 바꾸면 바로 다시 계산하고, 결과를 아홉 단계의 진료 기록지처럼 보여 준다.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>단계</th><th>하는 일</th></tr></thead>
+    <tbody>
+      <tr><td class="k">1 사진 정리</td><td>증상을 개념으로 바꾸고 설·맥 특징을 뽑아 팔강(寒熱·虛實·表裏) 경향을 계산한다</td></tr>
+      <tr><td class="k">2 변병</td><td>병명을 각론 37병 또는 증치통감 70병증에 대응시키고, 해당 KCD-9 코드를 보인다</td></tr>
+      <tr><td class="k">3 변증</td><td>증형 후보를 점수로 줄 세우고 감별 문진 항목을 낸다(이병동치 참고 포함)</td></tr>
+      <tr><td class="k">4 변경</td><td>경락진찰 반응점을 처방혈과 대조한다</td></tr>
+      <tr><td class="k">5 치칙</td><td>확정 증형의 원서 주증·치칙·취혈 원문을 보인다</td></tr>
+      <tr><td class="k">6 선혈·배혈</td><td>李氏 처방(혈별 補瀉·보사량·가감)을 고른다</td></tr>
+      <tr><td class="k">7 현대 기본방·경락 변증</td><td>현대 증례 논문의 상용혈과 통증 부위 경락의 원위혈을 더한다</td></tr>
+      <tr><td class="k">8 증치통감 대조·보강</td><td>역대 처방과 대조해 보강혈을 고르고 통합 처방(최대 10혈)을 만든다</td></tr>
+      <tr><td class="k">9 오치 점검</td><td>보사 극성·허실·한열 방향·혈 수·임부 금침혈을 검사한다</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><b>임상 판단 보조 도구다.</b> 최종 진단과 시술은 면허 의료인이 사진(四診)으로 확인해 결정한다. KCD 코드는 참고용이며, 진단 코드 확정은 의무기록 규정을 따른다.</div>
+</section>
+
+<section id="s2">
+  <h2><span class="no">2</span>열기와 화면 구성</h2>
+  <h3>여는 곳</h3>
+  <ul>
+    <li><b>웹판(공개)</b>: <a href="https://jaehyokim-sketch.github.io/acupoint_anatomy/tools/jcl_simulator.html">jaehyokim-sketch.github.io/acupoint_anatomy/tools/jcl_simulator.html</a></li>
+    <li><b>로컬 파일</b>: 저장소의 <code>simulator\web\jcl_simulator.html</code>을 브라우저로 연다. 인터넷 없이도 동작한다(글꼴만 온라인).</li>
+    <li>파일 하나에 엔진과 지식베이스(약 8MB)가 모두 들어 있어, 처음 여는 데 몇 초 걸릴 수 있다.</li>
+  </ul>
+  <h3>화면 구성</h3>
+  <div class="mock" aria-hidden="true">
+    <div class="pane"><b>환자 입력(왼쪽)</b>
+      <div class="row">예시 환자 불러오기… · 비우기</div>
+      <div class="row">주소(主訴)</div>
+      <div class="row hi">병명 · 증형 지정</div>
+      <div class="row">KCD-9 코드 칩</div>
+      <div class="row">증상(한 줄에 하나)</div>
+      <div class="row">설(舌) · 맥(脈) + 빠른 입력 칩</div>
+      <div class="row">경락진찰 · 환부 · 발작 시기 · 임신</div>
+      <div class="row">추론 근거 안내 줄</div>
+    </div>
+    <div class="pane"><b>추론 기록지(오른쪽)</b>
+      <div class="row hi">요약 카드: 확정 증형 · 치칙 · KCD-9 · 적합도 · 처방 칩 · 처방 복사</div>
+      <div class="row">1 사진 정리 · 2 변병 · 3 변증</div>
+      <div class="row">4 변경 · 5 치칙 · 6 선혈·배혈과 보사</div>
+      <div class="row">7 현대 기본방·경락 변증 · 8 증치통감 대조·보강</div>
+      <div class="row">9 오치 방지 점검 · 참고(유사 병안 / 고전 조문)</div>
+    </div>
+  </div>
+  <p>좁은 화면(휴대전화)에서는 입력지가 위, 기록지가 아래로 놓인다.</p>
+</section>
+
+<section id="s3">
+  <h2><span class="no">3</span>입력하기</h2>
+  <p>칸을 바꿀 때마다 0.2초 뒤 자동으로 다시 계산한다(입력지 제목 옆에 계산 시간 <span class="mono">ms</span>가 보인다). 따로 실행 단추는 없다.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>칸</th><th>쓰는 법</th><th>예</th></tr></thead>
+    <tbody>
+      <tr><td class="k">예시 환자</td><td>8가지 예시를 불러와 입력 칸을 채운다. <b>비우기</b>는 모든 칸을 지운다</td><td>불면 6개월, 급성 요통 촉진 압통, 황달(증치통감 병증) 등</td></tr>
+      <tr><td class="k">주소(主訴)</td><td>환자가 호소하는 주된 문제와 기간</td><td>불면 반년 / 右足第一跖趾关节红肿热痛3天</td></tr>
+      <tr><td class="k">병명</td><td>목록에서 고른다. 고르는 출처에 따라 <a href="#s4">추론 모드</a>가 바뀐다. 모르면 <b>자동 판정(변병)</b>으로 둔다</td><td>두통 頭痛 (李) / 황달 黃疸 (鄧&amp;黃)</td></tr>
+      <tr><td class="k">증형 지정</td><td>(선택) 변증을 이미 정했으면 그 증형을 고른다. (鄧&amp;黃) 병명이면 '변증 유형 지정'으로 바뀌어 그 편의 유형이 나온다</td><td>심비양허 (李) / 양황(陽黃) (鄧&amp;黃)</td></tr>
+      <tr><td class="k">증상</td><td><b>한 줄에 하나</b>씩. 한글·한문 모두 받는다. 간체는 번체로 바꿔 넣는 것이 정확하다. 변증 용어(습열·간양상항·신허 등)를 적으면 그 범주의 증형에 가점이 붙는다</td><td>잠들기 어렵고 쉽게 깸<br>夜寐不安 · 舌紅苔薄黃</td></tr>
+      <tr><td class="k">설(舌)</td><td>자유 서술. 아래 칩(담백·홍·강·자암·반대·치흔·박백태·황태·황니태·백니태·소태·무태)을 누르면 쉼표로 이어 붙는다</td><td>혀가 담백, 박백태</td></tr>
+      <tr><td class="k">맥(脈)</td><td>자유 서술. 칩(부·침·지·삭·현·활·세·약·긴·삽·유·무력·유력)은 <b>붙여 쓴다</b></td><td>현세삭 / 脈弦細數</td></tr>
+      <tr><td class="k">경락진찰</td><td>압통·결절·索 위치를 한 줄에 하나씩. 혈 이름이 있으면 처방과 대조(4 변경)하고, 부위 소견은 경락 변증(7단계)에 쓴다</td><td>허리 오른쪽 L4 옆 압통<br>오금 위중 압통</td></tr>
+      <tr><td class="k">환부</td><td>국소 혈 이름. 환부 취혈은 瀉·소량으로 치표 보조에만 쓴다</td><td>아시혈</td></tr>
+      <tr><td class="k">발작 시기</td><td>발작기·완해기 등. 치표·치본 판단(심시도세)에 쓴다</td><td>완해기</td></tr>
+      <tr><td class="k">임신 중</td><td>체크하면 임부 금침혈을 고르지 않고, 오치 점검에서 경고한다</td><td></td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>정확도를 올리는 입력.</b> ① 병명을 아는 경우 고른다(원서 병안 검증에서 변증 Top-1이 크게 오른다). ② 설과 맥을 빠뜨리지 않는다. ③ 겸증을 함께 적는다. ④ 변증 용어를 알면 증상 칸에 한 줄로 적는다.</div>
+</section>
+
+<section id="s4">
+  <h2><span class="no">4</span>추론 모드 세 가지</h2>
+  <p>병명 목록은 두 출처의 병명을 가나다순으로 합친 것이다. 각 병명 뒤의 표기로 출처를 구분한다. <b>(李)</b>는 『침구임상변증론치』(李世珍) 각론 37병, <b>(鄧&amp;黃)</b>는 『中国针灸证治通鉴』(鄧良月·黃龍祥 주편) 70병증이다. 어떤 병명·증형을 고르느냐에 따라 근거 문헌이 달라진다. 지금 모드는 입력지 아래 <b>추론 근거</b> 줄에 나온다.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>입력</th><th>근거</th><th>적용 단계</th><th>처방</th></tr></thead>
+    <tbody>
+      <tr><td>병명 <b>자동 판정</b> + 증상·설·맥·경락진찰·환부</td><td>[침구변증] 전 과정(두 문헌 + 현대 증례·경락 변증)</td><td>1~9 전부</td><td><b>통합 처방</b>: 李氏 치본 + 현대 기본방 + 경락 변증 + 증치통감 보강(최대 10혈)</td></tr>
+      <tr><td>병명을 <b>(李)</b>에서 고르거나 (李) 증형을 지정</td><td>『침구임상변증론치』만</td><td>1~6, 9 (7·8은 '적용 안 함'으로 표시)</td><td><b>李氏 처방</b></td></tr>
+      <tr><td>병명을 <b>(鄧&amp;黃)</b>에서 고름(변증 유형 지정 포함)</td><td>『中国针灸证治通鉴』만</td><td>1~9의 틀로 표시(5 = 자구법, 7 = 적용 안 함)</td><td><b>증치통감 처방</b> 4혈(입력 변증 용어로 같은 편의 변증 유형을 대조)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="caution"><b>예시 환자에 따라 모드가 다르다.</b> 불면 6개월·요통 10년·명치 통증 3종은 병명이 비어 있어 <b>종합 모드</b>로 계산된다. 요통 3년·급성 요통·황달·학질·두통 증례 5종은 병명이 들어 있어 (李) 또는 (鄧&amp;黃) 모드가 된다. 이 5종에서 현대 기본방·경락 변증·증치통감 보강까지 보려면 병명을 <b>자동 판정(변병)</b>으로 바꾼다.</div>
+  <p>같은 이름이 두 출처에 다 있는 병(두통·요통·중풍 등)은 목록에 두 줄로 나온다. 예: <span class="mono">고창 鼓脹 (李)</span>과 <span class="mono">고창 鼓脹 (鄧&amp;黃)</span>. 증치통감 모드에서 '변증 유형 미판정'이 나오면, 증상 칸에 변증 용어(예: 습열)를 적거나 변증 유형을 지정한다.</p>
+</section>
+
+<section id="s5">
+  <h2><span class="no">5</span>결과 요약 카드 읽기</h2>
+  <ul>
+    <li><b>확정 증형</b>: 1위 증형 이름(출처 표기 포함)과 병명·각론 행 번호. 증형을 지정했으면 '지정함'과 <b>지정 해제</b> 단추가 나온다.</li>
+    <li><b>치칙</b>: 그 증형의 원서 치칙.</li>
+    <li><b>KCD-9 칩</b>: 병증에 상응하는 KCD-9 현행 코드. 코드가 바뀐 것은 지침서 코드를 괄호로 병기하고, 점선 칩은 지침서에 없던 병의 KCD-9 신규 대응이다. 칩에 마우스를 올리면 지침서 쪽과 확인 상태가 보인다.<br>
+      예: <span class="kcd-chip"><b>U86.1</b>울증(鬱證) <span style="opacity:.7">(지침서 U22.1)</span></span> <span class="kcd-chip"><b>F32</b>우울에피소드</span> <span class="kcd-chip new"><b>A03.9</b>상세불명의 시겔라증</span></li>
+    <li><b>적합도와 2위와 차이</b>: 차이가 0.03보다 작으면 '감별 필요'가 붙는다. 3단계의 감별 문진을 확인한다.</li>
+    <li><b>처방 칩</b>: 혈 이름 · 보사 · 한자와 WHO 코드. 왼쪽 막대 색이 층을 뜻한다.</li>
+    <li><b>처방 복사</b>: 증형·치칙·KCD-9·처방을 글로 복사한다(브라우저가 막으면 아래에 글이 나와 직접 선택해 복사).</li>
+  </ul>
+  <h3>보사 표기</h3>
+  <p><span class="op bu">보</span> 補 · <span class="op sa">사</span> 瀉 · <span class="op moxa">뜸</span> 灸 · <span class="op bleed">점자출혈</span> 點刺出血 · <span class="op even">평보평사</span> 平補平瀉. '보 · 加灸'처럼 부가 수기가 붙기도 한다. 선사후보·선소사후다보 같은 순서 수기는 원서 표기를 따른다.</p>
+  <h3>처방 층(칩 왼쪽 막대 색)</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>색</th><th>층</th><th>뜻</th></tr></thead>
+    <tbody>
+      <tr><td><span class="swatch" style="background:var(--l-li)"></span></td><td>李氏 치본</td><td>원서 각론 증형의 취혈과 가감 — 주처방</td></tr>
+      <tr><td><span class="swatch" style="background:var(--l-mod)"></span></td><td>현대 기본방</td><td>그 병 현대 증례 논문의 30% 이상이 쓴 혈(두통·요통·불매·면탄·통풍). 李氏 변증 처방이 아니다</td></tr>
+      <tr><td><span class="swatch" style="background:var(--l-ch)"></span></td><td>경락 변증</td><td>통증 부위 → 경락 → 원위혈(예: 허리 → 족태양 위중·곤륜, 발가락 → 태충·태백)</td></tr>
+      <tr><td><span class="swatch" style="background:var(--l-zz)"></span></td><td>증치통감 보강</td><td>『中国针灸证治通鉴』 역대 처방과 가장 많이 겹치는 혈</td></tr>
+    </tbody>
+  </table></div>
+  <p class="mono" style="color:var(--ink-3)">예: <span class="needle" style="--lc:var(--l-li)"><b>신문</b><span class="op bu">보</span></span> <span class="needle" style="--lc:var(--l-mod)"><b>백회</b><span class="op bu">보</span></span> <span class="needle" style="--lc:var(--l-zz)"><b>내관</b><span class="op even">평보평사</span></span></p>
+  <div class="note">李氏 방식(선혈정전)으로 시술하면 李氏 처방에 현대·경락·보강 혈 가운데 1~2개만 더한다. 현대 임상 방식(기본방 + 국소·원위혈)이면 통합 처방 전체를 쓴다.</div>
+</section>
+
+<section id="s6">
+  <h2><span class="no">6</span>단계별 기록지 읽기</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>단계</th><th>볼 것</th><th>쓰는 법</th></tr></thead>
+    <tbody>
+      <tr><td class="k">1 사진 정리</td><td>찾은 증상 개념(한자 표제와 입력 낱말), 설·맥 특징, 팔강 막대</td><td>입력한 증상이 개념으로 잡히지 않았으면 표현을 바꾸거나 한자로 적어 본다</td></tr>
+      <tr><td class="k">2 변병</td><td>대응한 병과 이유, KCD-9 칩, 증치통감 대응 편과 그 편의 개관(조문 수·시대·상용혈·하위 병증·변증 유형 처방)</td><td>개관의 변증 유형 이름을 누르면 그 유형으로 추론한다</td></tr>
+      <tr><td class="k">3 변증</td><td>상위 5개 증형 표: 일치 개념(실선)·빠진 개념(점선), 점수 구성 막대, 적합도</td><td><b>이 증형으로</b>를 누르면 그 증형을 지정해 다시 계산한다. 감별 문진 항목은 환자에게 확인할 질문이다. 시탐법·겸증·이병동치 안내도 여기에 나온다</td></tr>
+      <tr><td class="k">4 변경</td><td>경락진찰 반응점 ↔ 처방혈: 일치(변증 지지) / 대체·가감혈(우선 고려) / 처방 밖(재검토)</td><td>반응점이 처방 밖이면 변증을 다시 본다</td></tr>
+      <tr><td class="k">5 치칙</td><td>원서 주증·치칙·취혈 원문, 대안 처방 선택 이유, 심시도세</td><td>원서와 입력이 맞는지 원문으로 확인한다</td></tr>
+      <tr><td class="k">6 선혈·배혈과 보사</td><td>혈·코드·보사·역할·보사량·근거(각론 행), 침약회통 대응, 배오 구조, 적용한 가감·가감 후보, 원서 대체 처방, 李氏 보사 수기</td><td>'가감 후보'의 '확인할 것'은 문진으로 확인한 뒤 적용한다</td></tr>
+      <tr><td class="k">7 현대 기본방·경락 변증</td><td>증례 논문 비율 막대, 통증 부위 → 경락 → 원위혈</td><td>(종합 모드만) 통증 낱말 앞뒤 16자 안에 부위 낱말이 있어야 부위로 인정한다</td></tr>
+      <tr><td class="k">8 증치통감 대조·보강</td><td>李氏 처방혈의 고전 근거(조문 수·시대·대표 출전), 동병동증·동병동위·이병동증 처방, 증상 유사 고전 조문, 통합 처방 표(층·보사량·근거)</td><td>'같은 병증 편에 없음 — 李氏 고유 배혈'은 증치통감에 근거가 없는 李氏 혈이다</td></tr>
+      <tr><td class="k">9 오치 점검</td><td>경고(빨강)·주의(노랑)</td><td>보사 극성·허실 역행·한열 방향·혈 수·임부 금침혈. 통합 처방에서 나온 항목은 '(통합 처방)'이 붙는다</td></tr>
+      <tr><td class="k">참고</td><td>유사 병안 3례(원서 병안 425례) 또는 증상이 비슷한 고전 조문(증치통감 모드)</td><td>원서 병안의 변증·취혈·결과를 함께 본다</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="s7">
+  <h2><span class="no">7</span>따라 해 보기</h2>
+  <h3>A. 불면 환자 — 스킬 전 과정으로 종합하기</h3>
+  <ol class="steps">
+    <li><b>예시 환자 불러오기…</b>에서 '예시 · 불면 6개월, 두근거림·건망·식욕부진'을 고른다(시뮬레이터를 처음 열면 이 예시가 들어 있다). 병명이 비어 있어 엔진이 변병(불매)부터 추론하고, 입력지 아래 추론 근거가 '[침구변증] 전 과정 1~9단계'로 나온다.</li>
+    <li>요약 카드에서 확정 증형(심비양허)·치칙·KCD-9 칩(G47.0·F51.0)과 <b>통합 처방</b>을 본다. 칩 색으로 李氏·현대 기본방·경락 변증·증치통감 보강을 구분한다.</li>
+    <li>3단계 변증 표에서 2위와의 차이를 보고, 감별 문진 항목을 환자에게 확인한다.</li>
+    <li>7·8단계에서 더해진 혈의 근거(증례 논문 비율, 증치통감 출전)를 확인하고 <b>처방 복사</b>로 기록한다.</li>
+  </ol>
+  <h3>B. 같은 환자 — 원서 근거만으로 보기</h3>
+  <ol class="steps">
+    <li>병명에서 <span class="mono">불매 不寐 (李)</span>를 고른다. 추론 근거가 '침구임상변증론치(병명·증형 선택) — 1~6·9단계'로 바뀐다.</li>
+    <li>요약 카드가 <b>李氏 처방</b>이 되고, 7·8단계는 '적용하지 않음'으로 표시된다.</li>
+    <li>6단계에서 혈별 보사·보사량·근거(각론 행)를 원서 취혈 원문(5단계)과 대조한다.</li>
+  </ol>
+  <h3>C. 각론에 없는 병 — 증치통감으로 추론하기</h3>
+  <ol class="steps">
+    <li>'예시 · 황달(증치통감 병증)'을 불러온다. 병명이 <span class="mono">황달 黃疸 (鄧&amp;黃)</span>이 된다.</li>
+    <li>2단계 개관에서 변증 유형(양황·음황)을 보고, 유형 이름을 눌러 그 유형으로 추론한다. 또는 증상 칸에 '습열'을 한 줄 더한다.</li>
+    <li>요약 카드의 증치통감 처방 4혈과, 5단계 자구법(뜸·출혈 비율과 보사 결정 규칙)을 확인한다.</li>
+  </ol>
+  <h3>D. 통증 — 촉진 소견으로 경락 변증하기</h3>
+  <ol class="steps">
+    <li>'예시 · 급성 요통, 촉진 압통(경락 변증)'을 불러오고 병명을 자동 판정으로 바꾼다.</li>
+    <li>경락진찰의 '오금 위중 압통'은 4단계에서 처방혈과 대조되고, '허리 … 압통'은 7단계 경락 변증(족태양)에 쓰인다.</li>
+  </ol>
+</section>
+
+<section id="s8">
+  <h2><span class="no">8</span>근거·출처 표기</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>표기</th><th>뜻</th></tr></thead>
+    <tbody>
+      <tr><td class="k">(李)</td><td>『침구임상변증론치』(李世珍) — 각론 37병·222증형·병안 425례</td></tr>
+      <tr><td class="k">(鄧&amp;黃)</td><td>『中国针灸证治通鉴』(鄧良月·黃龍祥 주편) 제3편 — 70병증 6,214조문</td></tr>
+      <tr><td class="k">각론 L행 · p.쪽</td><td>원서 번역본 각론의 행 번호와 원서 쪽 표지</td></tr>
+      <tr><td class="k">총론 n-(m)</td><td>원서 총론의 절 번호(예: 총론 2-(9) 선혈정전)</td></tr>
+      <tr><td class="k">증치통감 분책NN L행</td><td>증치통감 한글 번역 분책 번호와 행</td></tr>
+      <tr><td class="k">[n]</td><td>李世珍 학파·침구 변증 논문 12편의 번호(보사 수기 등)</td></tr>
+      <tr><td class="k">증례 논문 N편 중 x%</td><td>현대 기본방 — 그 병 증례 논문에서 그 혈을 쓴 비율</td></tr>
+      <tr><td class="k">KCD-9 칩</td><td>『임상한의사를 위한 KCD지침서 개정증보판』에서 고른 코드를 KOICD KCD-9(2026-11-13 조회)로 확인한 현행 코드</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="s9">
+  <h2><span class="no">9</span>신뢰도와 한계</h2>
+  <h3>검증 결과(2026-11-13)</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>검증</th><th>결과</th></tr></thead>
+    <tbody>
+      <tr><td>원서 병안 344례(병명 제공, 자기 병안 제외)</td><td>변병 98.3% · 변증 Top-1 70.6% · Top-3 87.3% (정답 대응을 넓힌 206례 잠정값 Top-1 59.2%)</td></tr>
+      <tr><td>두통 84 · 요통 30 · 불면 67례(증례 논문, 맹검)</td><td>통합 처방이 논문 첫 진료 처방과 1혈 이상 일치: 92.9% · 86.7% · 91.0%</td></tr>
+      <tr><td>면탄 66례 · 통풍 55건(CNKI 증례·연구 처방)</td><td>통합 처방 1혈 이상 일치 100% · 90.9%, 재현율 40.1% · 37.7%</td></tr>
+      <tr><td>브라우저 엔진 ↔ Python 스킬 엔진</td><td>1,244개 입력에서 결과 100% 일치 · 같은 입력이면 언제나 같은 결과</td></tr>
+    </tbody>
+  </table></div>
+  <h3>알아 둘 한계</h3>
+  <ul>
+    <li>'일치'의 정답은 논문 저자 한 사람의 첫 진료 처방이다. 다른 처방이 틀렸다는 뜻은 아니다.</li>
+    <li>재현율(논문 처방 가운데 엔진이 맞힌 비율)은 30~44% 수준이다. 엔진 처방은 출발점이며 그대로 쓰는 처방이 아니다.</li>
+    <li>현대 기본방은 두통·요통·불매·면탄·통풍만 있다. 다른 병명에서는 7단계의 이 층이 비어 있다.</li>
+    <li>통풍처럼 각론 밖 병은 李氏 증형이 증후군이 가장 가까운 다른 병의 증형으로 잡힐 수 있다(예: 열 징후가 있어도 풍한습비·행비). 처방 층과 증치통감 근거를 함께 본다.</li>
+    <li>적합도 점수는 확률이 아니다. 1·2위 차이가 작으면 감별 문진을 먼저 한다.</li>
+    <li>원서·논문에 없는 혈 효능은 보여 주지 않는다.</li>
+  </ul>
+</section>
+
+<section id="s10">
+  <h2><span class="no">10</span>자주 묻는 질문</h2>
+  <h3>증형을 내가 정했는데 다른 증형이 나온다</h3>
+  <p><b>증형 지정</b>에서 그 증형을 고르거나, 3단계 표의 <b>이 증형으로</b>를 누른다. 지정하면 요약 카드에 '지정함'이 붙고, <b>지정 해제</b>로 되돌린다.</p>
+  <h3>병명을 골랐더니 현대 기본방·증치통감 보강이 사라졌다</h3>
+  <p>(李) 병명을 고르면 『침구임상변증론치』만 쓰는 모드가 된다. 전 과정을 보려면 병명을 <b>자동 판정</b>으로 둔다(4절).</p>
+  <h3>'변증 근거 부족' 경고가 나온다</h3>
+  <p>입력에서 증상 개념·설맥·변증 용어를 하나도 찾지 못한 경우다. 설과 맥, 겸증을 더 적는다. 이 경우 종합 모드의 통합 처방은 증치통감 병증 처방만으로 만든다.</p>
+  <h3>한문 원문을 그대로 넣어도 되나</h3>
+  <p>된다. 번체가 가장 정확하다. 증례 논문의 간체 원문은 번체로 바꿔 넣는다.</p>
+  <h3>KCD 칩에 '미확인'이 있다</h3>
+  <p>아직 KOICD KCD-9에서 확인하지 않은 코드다(현재 M10 통풍 1건).</p>
+  <h3>결과를 저장하려면</h3>
+  <p><b>처방 복사</b>로 요약을 글로 옮긴다. 화면 전체는 브라우저 인쇄(<span class="kbd">Ctrl</span>+<span class="kbd">P</span>)로 PDF로 저장할 수 있다. 입력 내용은 브라우저에 저장되지 않는다.</p>
+</section>
+</main>
+</div>
+
+<footer class="foot">
+  <p>[침구변증] 스킬 · 침구변증 진료지원 시뮬레이터 사용 지침서 · 2026-11-13. 임상 판단 보조 도구이며, 최종 진단과 시술은 면허 의료인이 결정한다. 스킬 로직의 상세는 저장소의 <code>SKILL.md</code>·<code>references/선혈추론_로직_명세.md</code>를 본다.</p>
+</footer>
+</body>
+</html>

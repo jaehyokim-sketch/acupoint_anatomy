@@ -53,6 +53,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .masthead h1 small { font-size: 15px; font-weight: 500; color: var(--ink-2); margin-left: 6px; }
 .masthead p { margin: 4px 0 0; color: var(--ink-2); max-width: 70ch; }
 .provenance { display: flex; flex-wrap: wrap; gap: 6px; }
+.topnav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; margin-bottom: 8px; }
+.menu-link { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 4px; font-size: 13px; font-weight: 600;
+  border: 1px solid var(--accent); color: var(--accent); background: var(--sheet); text-decoration: none; white-space: nowrap; }
+.menu-link:hover { background: var(--accent); color: var(--accent-ink); }
 .tag { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; font-size: 12px; border: 1px solid var(--rule); color: var(--ink-2); background: var(--sheet); white-space: nowrap; }
 
 .workbench { max-width: 1320px; margin: 18px auto 0; display: grid; grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); gap: 20px; align-items: start; }
@@ -168,11 +172,16 @@ ul.plain { margin: 0; padding-left: 18px; } ul.plain li { margin: 2px 0; }
     <h1>침구변증 진료지원 <small>針灸辨證 選穴 시뮬레이터</small></h1>
     <p>환자의 주소·증상·설·맥을 넣으면 『침구임상변증론치』(李世珍) 규칙으로 변병 → 변증 → 치칙 → 선혈·보사를 추론하고, 현대 기본방·경락 변증·『中国针灸证治通鉴』 대조로 통합 처방을 만든다. 병명·증형을 고르면 그 문헌만, 증상으로만 입력하면 전 과정을 종합해 추론한다.</p>
   </div>
+  <div>
+  <nav class="topnav" aria-label="메뉴">
+    <a class="menu-link" href="jcl_simulator_guide.html" target="_blank" rel="noopener" title="입력·추론 모드·결과 읽기·근거 표기·한계">사용 지침서 ↗</a>
+  </nav>
   <div class="provenance">
     <span class="tag">엔진 [침구변증] infer.py v1.4 이식판</span>
     <span class="tag">각론 37병 · 222증형 · 병안 425례</span>
     <span class="tag">증치통감 70병증 · 6,214조문</span>
     <span class="tag">Python 엔진과 881개 입력 대조 · 변증·李氏 처방 100% 일치</span>
+  </div>
   </div>
 </header>
 
