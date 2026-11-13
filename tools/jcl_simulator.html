@@ -1115,8 +1115,14 @@ ul.plain { margin: 0; padding-left: 18px; } ul.plain li { margin: 2px 0; }
   const SRC_LI = "(李)", SRC_ZZ = "(鄧&黃)";
   const isZZ = () => fDis.value.startsWith("zz|");
   const ko = (a, b) => a.localeCompare(b, "ko");
+  // 각론 병명 한자(원서 각론 표제): 부기(附) 제거, '、' → '·'. 표제에 한자가 없는 병은 표준 표기로 채운다
+  const HZ_FIX = { "복통": "腹痛", "고창": "鼓脹" };
+  const LI_HZ = {};
+  for (const s of DATA.syndromes) if (!(s.disease in LI_HZ)) LI_HZ[s.disease] = (s.disease_hz || "").replace(/（附[^）]*）/gu, "").replace(/、/gu, "·").trim();
+  for (const [k, v] of Object.entries(HZ_FIX)) if (!LI_HZ[k]) LI_HZ[k] = v;
+  const liName = (d) => (LI_HZ[d] ? `${d} ${LI_HZ[d]}` : d);
   const DIS_OPTS = [
-    ...DISEASES.map((d) => ({ key: d, ord: 0, value: d, text: `${d} ${SRC_LI}` })),
+    ...DISEASES.map((d) => ({ key: d, ord: 0, value: d, text: `${liName(d)} ${SRC_LI}` })),
     ...ZSECS.map(([n, hz]) => ({ key: n, ord: 1, value: "zz|" + n, text: `${n}${hz ? " " + hz : ""} ${SRC_ZZ}` })),
   ].sort((a, b) => ko(a.key, b.key) || a.ord - b.ord);
   fDis.innerHTML = `<option value="">자동 판정(변병) — 증상으로 종합 추론</option>` +
@@ -1137,7 +1143,7 @@ ul.plain { margin: 0; padding-left: 18px; } ul.plain li { margin: 2px 0; }
     const groups = {};
     for (const s of list) (groups[s.disease] = groups[s.disease] || []).push(s);
     fSyn.innerHTML = `<option value="">변증 결과를 따름</option>` + Object.entries(groups).sort((a, b) => ko(a[0], b[0])).map(([g, ss]) =>
-      `<optgroup label="${esc(g)} ${SRC_LI}">` + ss.map((s) => `<option value="${s.id}">${esc(s.name_full)} ${SRC_LI}</option>`).join("") + `</optgroup>`).join("");
+      `<optgroup label="${esc(liName(g))} ${SRC_LI}">` + ss.map((s) => `<option value="${s.id}">${esc(s.name_full)} ${SRC_LI}</option>`).join("") + `</optgroup>`).join("");
     if ([...fSyn.options].some((o) => o.value === cur)) fSyn.value = cur;
   }
   fPre.innerHTML = `<option value="">예시 환자 불러오기…</option>` + PRESETS.map((p, i) => `<option value="${i}">${esc(p.label)}</option>`).join("");
@@ -1364,7 +1370,7 @@ ul.plain { margin: 0; padding-left: 18px; } ul.plain li { margin: 2px 0; }
     const forced = top[0].forced;
     out.push(`<article class="sheet"><div class="verdict">
       <div><div class="eyebrow">확정 증형${forced ? " · 지정함" : ""} · 근거 ${mix ? "[침구변증] 전 과정(침구임상변증론치 + 논문 + 中国针灸证治通鉴)" : "침구임상변증론치"}</div>
-        <div class="syn">${esc(s.name)} <span style="font-size:15px" class="muted">${SRC_LI}</span><small>${esc(s.disease)} ${SRC_LI} · 각론 L${s.line} · p.${s.page}${forced ? ` · <button type="button" class="linkbtn" id="btn-clear-syn">지정 해제</button>` : ""}</small></div>
+        <div class="syn">${esc(s.name)} <span style="font-size:15px" class="muted">${SRC_LI}</span><small>${esc(liName(s.disease))} ${SRC_LI} · 각론 L${s.line} · p.${s.page}${forced ? ` · <button type="button" class="linkbtn" id="btn-clear-syn">지정 해제</button>` : ""}</small></div>
         <div class="rule-line"><span class="muted">치칙</span> ${esc(s["치칙"])}</div>
         <div class="conf"><span>적합도 ${top[0].score.toFixed(3)}</span><span class="meter"><i style="width:${Math.min(100, top[0].score * 100)}%"></i></span>
           <span>${second ? `2위와 차이 ${gap.toFixed(3)}${gap < 0.03 ? " — 감별 필요" : ""}` : ""}</span></div>
@@ -1381,7 +1387,7 @@ ul.plain { margin: 0; padding-left: 18px; } ul.plain li { margin: 2px 0; }
 
     // 2 변병
     const zs = mix ? I.zinfo : null;
-    const two = [r.bian_bing.length ? `<ul class="plain">${r.bian_bing.map((d) => `<li><b>${esc(d.disease)}</b> ${SRC_LI} <span class="muted">${esc(d.why)}</span></li>`).join("")}</ul>`
+    const two = [r.bian_bing.length ? `<ul class="plain">${r.bian_bing.map((d) => `<li><b>${esc(liName(d.disease))}</b> ${SRC_LI} <span class="muted">${esc(d.why)}</span></li>`).join("")}</ul>`
       : `<p class="empty" style="margin:0">각론 37병에 직접 대응하는 병명을 찾지 못해 222증형 전체를 대상으로 증후군을 대조했다(이병동치, 총론 2-(1)).${zs ? "" : " 병명을 고르면 변증 정확도가 크게 오른다."}</p>`];
     if (zs) two.push(`<p style="margin:8px 0 0"><span class="muted">『中国针灸证治通鉴』 대응</span> <b>${esc(zs.scope)}</b> <span class="faint">— 대조·보강은 8단계</span></p>`);
     if (zs) for (const sec of zs.sections.slice(0, 2)) two.push(zOverview(sec));
@@ -1393,7 +1399,7 @@ ul.plain { margin: 0; padding-left: 18px; } ul.plain li { margin: 2px 0; }
     const rows = top.map((t, i) => {
       const segs = W.map(([k, w, c]) => `<i class="${c}" style="width:${(w * t.parts[k]) / maxS * 100}%" title="${k} ${t.parts[k]}"></i>`).join("") +
         (t.parts["변증용어"] ? `<i class="c-term" style="width:${t.parts["변증용어"] / maxS * 100}%" title="변증 용어 +${t.parts["변증용어"]}"></i>` : "");
-      return `<tr class="${i === 0 ? "top" : ""}"><td class="num">${i + 1}</td><td><b>${esc(t.name)}</b> <span class="faint">${esc(t.disease)} ${SRC_LI}</span>${t.cross ? ' <span class="tag">이병동치</span>' : ""}
+      return `<tr class="${i === 0 ? "top" : ""}"><td class="num">${i + 1}</td><td><b>${esc(t.name)}</b> <span class="faint">${esc(liName(t.disease))} ${SRC_LI}</span>${t.cross ? ' <span class="tag">이병동치</span>' : ""}
         <div class="cpills" style="margin-top:4px">${t.matched.map((m) => `<span class="cpill hit">${esc(m)}</span>`).join("")}${t.tongue_match.map((m) => `<span class="cpill hit">舌${esc(m)}</span>`).join("")}${t.pulse_match.map((m) => `<span class="cpill hit">脈${esc(m)}</span>`).join("")}${t.missing.slice(0, 6).map((m) => `<span class="cpill miss">${esc(m)}</span>`).join("")}</div></td>
         <td><span class="stack">${segs}</span></td><td class="num">${t.score.toFixed(3)}</td>
         <td>${i === 0 && t.forced ? '<span class="faint">지정</span>' : i === 0 ? "" : `<button type="button" class="linkbtn" data-force="${t.id}">이 증형으로</button>`}</td></tr>`;
