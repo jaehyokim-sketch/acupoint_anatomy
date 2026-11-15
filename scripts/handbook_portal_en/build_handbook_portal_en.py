@@ -178,7 +178,7 @@ def main():
     # 데이터 줄을 뺀 나머지에 한글이 남았는지 검사
     rest = "\n".join(l for l in out.split("\n")
                      if not l.startswith("    const POINTS_DATA") and not l.startswith("    const MERIDIANS"))
-    allowed_ko = ("lang-switch", "경혈학 핸드북 포털 · English Edition", "title=\"한국어판\"")
+    allowed_ko = ("lang-switch", "page-view-counter", "경혈학 핸드북 포털 · English Edition", "title=\"한국어판\"")
     left = [l.strip()[:120] for l in rest.split("\n")
             if HANGUL.search(l) and not any(a in l for a in allowed_ko)]
     if left:
@@ -198,6 +198,8 @@ def main():
 # (한국어 원문, 영어) — 원본에 없으면 오류
 UI_REPLACEMENTS = [
     ('<html lang="ko">', '<html lang="en">'),
+    ('          <span class="page-view-counter" style="display:inline-flex;align-items:center;margin:0 4px;vertical-align:middle;" title="Views 열람 횟수"><a href="https://hits.sh/jaehyokim-sketch.github.io/acupoint_anatomy/tools/acupoint-handbook.html/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-flex;align-items:center;"><img src="https://hits.sh/jaehyokim-sketch.github.io/acupoint_anatomy/tools/acupoint-handbook.html.svg?style=flat-square&label=%EC%A1%B0%ED%9A%8C%EC%88%98&color=2563eb&labelColor=0f172a" alt="Views" style="height:20px;vertical-align:middle;border-radius:3px;" /></a></span>',
+     '          <span class="page-view-counter" style="display:inline-flex;align-items:center;margin:0 4px;vertical-align:middle;" title="Views 열람 횟수"><a href="https://hits.sh/jaehyokim-sketch.github.io/acupoint_anatomy/tools/acupoint-handbook-en.html/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-flex;align-items:center;"><img src="https://hits.sh/jaehyokim-sketch.github.io/acupoint_anatomy/tools/acupoint-handbook-en.html.svg?style=flat-square&label=%EC%A1%B0%ED%9A%8C%EC%88%98&color=2563eb&labelColor=0f172a" alt="Views" style="height:20px;vertical-align:middle;border-radius:3px;" /></a></span>'),
     ("<title>경혈학 핸드북 포털 (Acupoint Handbook Portal) — 14경맥 361경혈 표준 정본</title>",
      "<title>Acupoint Handbook Portal — 361 Standard Acupoints of the 14 Meridians</title>"),
     ('content="14경맥 361종 경혈 핸드북 포털: 김재효 수업자료 및 경혈학 공통교재 해부구조 데이터셋, 문헌별 자침깊이(명당경·갑을경·경험방·동의보감·공통교재·통고), 황룡상 고증 침구법, 표준 KCD 질병코드 연계, KJH 경혈명 비교정리 및 본명-이명 혼동주의 경보"',

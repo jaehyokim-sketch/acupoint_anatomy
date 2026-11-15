@@ -8,6 +8,7 @@ data/master_361_acupoints_dataset.json(SSOT) → tools/acupoint-handbook.html
 - 2026-11-15: '핸드북 자구법'(handbook.puncture_method) 표시·검색·자침법 필터 제거.
   마스터 JSON에는 필드가 남아 있으나(PDF 서식 틀만 남은 깨진 추출 텍스트) 포털에는 넣지 않는다.
 - 2026-11-15: 헤더 영문판 전환 링크, 출처에 최수빈(KMD) 추가
+- 2026-11-15: 헤더 hits.sh 조회수 배지(커밋 5d67590) 반영
 
 사용: python scripts/generate_handbook_portal.py [--no-en] [--no-lecture-copy]
 """
@@ -710,6 +711,7 @@ html_template = """<!DOCTYPE html>
           <p>14경맥 361종 표준 경혈 정본: 원광대 한의과대학 핸드북 · 7대 문헌군 자침깊이 · 황룡상 고증 침구법 · KCD-8 질병코드 · KJH 경혈명 및 이명 대조</p>
         </div>
         <div class="header-badges">
+          <span class="page-view-counter" style="display:inline-flex;align-items:center;margin:0 4px;vertical-align:middle;" title="Views 열람 횟수"><a href="https://hits.sh/jaehyokim-sketch.github.io/acupoint_anatomy/tools/acupoint-handbook.html/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-flex;align-items:center;"><img src="https://hits.sh/jaehyokim-sketch.github.io/acupoint_anatomy/tools/acupoint-handbook.html.svg?style=flat-square&label=%EC%A1%B0%ED%9A%8C%EC%88%98&color=2563eb&labelColor=0f172a" alt="Views" style="height:20px;vertical-align:middle;border-radius:3px;" /></a></span>
           <span class="badge gold">14경맥 361혈 전수 완비</span>
           <span class="badge">7대 문헌군 자침깊이</span>
           <span class="badge">황룡상 침구법 &amp; KCD-8</span>
