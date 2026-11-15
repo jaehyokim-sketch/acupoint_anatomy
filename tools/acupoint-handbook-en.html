@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <script src="../auth.js" data-portal="false"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acupoint Handbook Portal — 361 Standard Acupoints of the 14 Meridians</title>
   <meta name="description" content="Acupoint handbook portal for the 361 acupoints of the 14 meridians: anatomical structure datasets (Prof. Jae-Hyo Kim's lecture data and the Common Textbook of Acupoint Science), needling depth by classical literature (Mingtangjing, Jiayijing, Gyeongheombang, Donguibogam, Common Textbook, Tongkao), acupuncture-moxibustion methods verified by Huang Longxiang, KCD disease code mapping, and KJH acupoint name comparison with standard-name/alias confusion alerts">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,12 +30,19 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
     body {
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
       background-color: var(--bg-main);
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      touch-action: pan-y;
+      -webkit-overflow-scrolling: touch;
     }
 
     header {
@@ -444,6 +450,8 @@
     .depth-table-wrapper {
       margin-top: 0.35rem;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-x pan-y;
     }
     .depth-table {
       width: 100%;
@@ -627,11 +635,134 @@
     footer strong { color: #f1f5f9; }
 
     @media (max-width: 900px) {
+      header {
+        position: relative;
+        top: auto;
+        padding: 1.25rem 1rem 1rem;
+        box-shadow: none;
+      }
+      .header-content {
+        gap: 0.85rem;
+      }
+      .title-area h1 {
+        font-size: 1.35rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+      }
+      .title-area h1 span:last-child {
+        font-size: 0.82rem;
+        opacity: 0.85;
+      }
+      .title-area p {
+        font-size: 0.8rem;
+        line-height: 1.45;
+        margin-top: 0.25rem;
+      }
+      .header-badges {
+        gap: 0.35rem;
+      }
+      .badge {
+        font-size: 0.72rem;
+        padding: 0.2rem 0.55rem;
+      }
       .search-filter-bar {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        padding: 0.6rem;
+      }
+      .search-box {
+        grid-column: 1 / -1;
+      }
+      .search-box input {
+        height: 38px;
+        font-size: 0.88rem;
+        touch-action: pan-y;
+      }
+      .filter-select {
+        height: 38px;
+        font-size: 0.82rem;
+        padding: 0 0.5rem;
+        touch-action: pan-y;
+      }
+      #specialFilter {
+        grid-column: 1 / -1;
+      }
+      .container {
+        padding: 0 0.85rem;
+        margin: 1rem auto 2.5rem;
+        width: 100%;
+      }
+      .stats-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+      }
+      .stat-card {
+        padding: 0.75rem 0.85rem;
+      }
+      .stat-card .label {
+        font-size: 0.72rem;
+      }
+      .stat-card .value {
+        font-size: 1.25rem;
+      }
+      .meridian-tabs {
+        gap: 0.35rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .meridian-pill {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.65rem;
+        flex-shrink: 0;
       }
       .points-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+        min-width: 0;
+      }
+      .point-card {
+        width: 100%;
+        min-width: 0;
+      }
+      .card-header {
+        padding: 0.85rem 1rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .card-body {
+        padding: 1rem;
+        gap: 1rem;
+      }
+      .btn-top {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 44px;
+        height: 44px;
+        z-index: 1000;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-content {
+        gap: 0.75rem;
+      }
+      .title-area h1 {
+        font-size: 1.2rem;
+      }
+      .search-filter-bar {
+        grid-template-columns: 1fr;
+      }
+      .search-box, #specialFilter {
+        grid-column: auto;
+      }
+      .stats-strip {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
       }
     }
   </style>
