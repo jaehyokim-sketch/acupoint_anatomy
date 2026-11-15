@@ -1,0 +1,114 @@
+{
+ "_note": "경혈학 핸드북 포털 영문판 번역 대응표. 주치증(531)은 indications_en.json.",
+ "indication_files": ["indications_en.json"],
+ "indications": {},
+ "categories": {
+  "눈": "Eye",
+  "머리": "Head",
+  "뇌질환": "Brain disorders",
+  "항문": "Anus",
+  "얼굴": "Face",
+  "호흡기": "Respiratory",
+  "코": "Nose",
+  "전신-발열": "Systemic - Fever",
+  "귀": "Ear",
+  "목": "Neck",
+  "어깨": "Shoulder",
+  "등": "Back",
+  "피부-등": "Skin - Back",
+  "척추": "Spine",
+  "구강, 침샘 및 턱": "Oral cavity, salivary glands & jaw",
+  "순환계-가슴": "Circulatory - Chest",
+  "위장관-상": "Upper GI tract",
+  "신경계": "Nervous system",
+  "위장관-중": "Middle GI tract",
+  "간담": "Liver & gallbladder",
+  "비뇨기": "Urinary",
+  "위장관-하": "Lower GI tract",
+  "전신-대사성": "Systemic - Metabolic",
+  "남성": "Male",
+  "여성": "Female",
+  "다리": "Leg",
+  "위장관": "GI tract",
+  "배": "Abdomen",
+  "팔": "Arm",
+  "옆구리": "Flank",
+  "발": "Foot",
+  "전신-허로": "Systemic - Consumptive fatigue (虛勞)",
+  "신경계-가슴": "Nervous system - Chest",
+  "내분비": "Endocrine",
+  "겨드랑이": "Axilla",
+  "전신-피부": "Systemic - Skin",
+  "피부": "Skin",
+  "손": "Hand",
+  "순환계": "Circulatory",
+  "전신": "Systemic",
+  "가슴": "Chest",
+  "입": "Mouth",
+  "피부-손": "Skin - Hand",
+  "피부-전신": "Skin - Systemic",
+  "전신-혈액": "Systemic - Blood",
+  "순환계-전신": "Circulatory - Systemic",
+  "골반": "Pelvis",
+  "전신-담음": "Systemic - Phlegm-fluid (痰飮)"
+ },
+ "methods": {
+  "직자": "Perpendicular",
+  "사자": "Oblique",
+  "횡자": "Transverse",
+  "사자,횡자": "Oblique, Transverse",
+  "직자,사자": "Perpendicular, Oblique"
+ },
+ "dongui_source": {
+  "동인": "Tongren (銅人)",
+  "입문": "Yixue Rumen (入門)",
+  "영추": "Lingshu (靈樞)",
+  "자생": "Zisheng (資生)",
+  "강목": "Gangmu (綱目)",
+  "갑을": "Jiayi (甲乙)",
+  "뜸 전용": "Moxibustion only",
+  "동인/ 12, 입문": "Tongren / 12, Yixue Rumen",
+  "동인/ 15, 입문": "Tongren / 15, Yixue Rumen",
+  "동인/ 20, 입문": "Tongren / 20, Yixue Rumen",
+  "동인, 금침언급": "Tongren, needling prohibited"
+ },
+ "depth_terms": {
+  " 푼 (금침)": " fen (needling prohibited)",
+  " 푼": " fen"
+ },
+ "moxa_values": {
+  "0(가구)": "0 (可灸, moxibustion permitted)",
+  "없음(3)": "None (3)",
+  "없음(0)": "None (0)",
+  "없음(3,0)": "None (3, 0)",
+  "없음": "None"
+ },
+ "depth_hlx_values": {
+  "자출혈如豆(1푼)": "Prick to bleed, bean-sized (如豆) (1 fen)",
+  "없음": "None"
+ },
+ "anatomy_fill": {
+  "목빗근의 복장뼈 갈래": "sternal head of the sternocleidomastoid",
+  "발꿈치힘줄": "calcaneal tendon",
+  "열한째 갈비사이신경": "11th intercostal nerve",
+  "열째 갈비사이신경": "10th intercostal nerve",
+  "등쪽손가락동맥": "dorsal digital artery",
+  "눈확아래동": "infraorbital artery",
+  "얼굴동": "facial artery",
+  "발목관절의 안쪽힘줄": "medial tendon of the ankle joint",
+  "작은원근 -> 큰원근 (1안)": "teres minor -> teres major (option 1)",
+  "inferior thyroid artery and vein) (아래방패동ㆍ정맥)": "inferior thyroid artery and vein"
+ },
+ "point_override": {
+  "GV10": {
+   "_note": "영문판 PDF의 GV10 Location·Guide가 한국어로 남아 있어 GV9·GV11 영문 문형에 맞춰 번역",
+   "location": "In the upper back region, in the depression inferior to the spinous process of the T6, on the posterior median line",
+   "guide": "GV10 is located at the same level as BL16 and BL45."
+  }
+ },
+ "common_override": {
+  "LI01": {
+   "vessel": ["proper palmar digital artery", "palmar digital vein", "dorsal digital artery"]
+  }
+ }
+}
