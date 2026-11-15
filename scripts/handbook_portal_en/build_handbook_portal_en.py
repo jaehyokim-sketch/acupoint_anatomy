@@ -10,6 +10,7 @@
   (영문 병기가 없는 항목은 translations_en.json의 anatomy_fill)
 - 주치증·분류·자침깊이 출전·자침법: translations_en.json
 - 그 밖의 값(KCD 코드·한자·이명·자침깊이 수치·장수)은 한국어 포털 그대로
+- 주의(Caution)는 영문판에만 표기한다(2026-11-15 사용자 결정). 한국어판에는 넣지 않는다.
 
 영문 POINTS_DATA는 한국어판과 같은 키 구조를 유지하고 값만 영어로 바꾼다
 (name=한국 한자음 로마자, meridian_ko=영문 경맥명, *_bilingual·*_ko=영문 목록).
