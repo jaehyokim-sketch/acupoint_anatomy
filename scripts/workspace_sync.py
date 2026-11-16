@@ -53,19 +53,29 @@ DEFAULT_SYNC = {
         "editor": ["drive_mirror", "agents_rules", "global_skills", "git_pull", "drive_git_check", "drive_newer_report"],
         "mirror": ["role_notice", "drive_mirror", "agents_rules", "global_skills", "git_pull", "drive_git_check"],
     },
-    "agents_rules_to_workspace": ["drive-canonical-policy.md", "fma-integration.md", "fma-3d-routing.md"],
+    "agents_rules_to_workspace": [
+        "drive-canonical-policy.md",
+        "fma-integration.md",
+        "fma-3d-routing.md",
+        "acupoint-anatomy-routing.md",
+        "huanglongxiang-routing.md",
+    ],
     "global_skills": [
         {"from": "도서 번역/.agents/skills/acupoint-anatomy", "items": ["SKILL.md", "references"],
          "to": ["~/.gemini/config/skills/acupoint-anatomy"]},
-        {"from": "도서 번역/.agents/skills/fma-3d", "items": ["SKILL.md"],   # Antigravity판(Claude판은 .claude/skills/fma-3d)
-         "to": ["~/.gemini/config/skills/fma-3d"]},
         {"from": "강의/04_평가 및 학습활동 자료/학습일지 평가",
          "items": ["SKILL.md", "학습일지_평가지침.md", "scripts", "references"],
          "to": ["~/.claude/skills/study-log-eval", "~/.gemini/config/skills/study-log-eval"]},
+        {"from": "도서 번역/.agents/skills/fma-3d", "items": ["SKILL.md"],   # Antigravity판(Claude판은 .claude/skills/fma-3d)
+         "to": ["~/.gemini/config/skills/fma-3d"]},
         {"from": "동의보감 상병명 분석",
          "items": ["SKILL.md", "동의보감_상병명_분석_스킬_구현_로직_매뉴얼.md"],
          "to": ["~/.claude/skills/donguibogam-disease-analysis",
                 "~/.gemini/config/skills/donguibogam-disease-analysis"]},
+        {"from": "도서 번역/침구임상변증 Skill",
+         "items": ["SKILL.md", "references"],
+         "to": ["~/.claude/skills/jcl-bianzheng-xuanxue",
+                "~/.gemini/config/skills/jcl-bianzheng-xuanxue"]},
     ],
 }
 SKIP_DIRS = {".git", "__pycache__", ".pytest_cache", ".mypy_cache", "node_modules", ".venv", "venv", ".idea", ".vscode",
