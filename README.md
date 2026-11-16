@@ -45,7 +45,7 @@
 | `search_biomedical_reflex_db` | Layer A 검색 — 경혈은 랜드마크·역색인·검출 혈위로 정확히 대조, 키워드는 모든 단어 포함. duplicate·missing·superseded 기본 제외, 설계(인체·동물·리뷰)는 키워드 추정 | `query`, `evidence_filter` (`all`/`human`/`animal`/`review`/`mechanism`), `include_inactive`, `limit` |
 | `get_layer_b_registry` | Layer B 4계층 등록부와 B-Check 판정 규칙 | `category` (`all`/`B1`~`B4`), `reference_id` (예: `"B3-17"`), `query` |
 | `calculate_ari_v3_score` | ARI v3.0 — 게이트·등급·SI·민감도, 채점자 B 입력 시 이중 채점, `targets` 입력 시 Tri-Target 우위 판정 | `s_orig`(또는 `s_orig_items`), `s_clarity`, `s_reflex`, `s_safety`, `*_b`, `layer_a_count`, `targets` |
-| `search_classic_records` | 4대 원전(+보조 문헌) 정제 코퍼스 전문 검색 — 경혈 장(파일·행·소절)·부위/定位·简要结语 발췌, 혈명·별명 행(관련도순, 원문·번역 중복 제거), 검색어 행(행 경계·문장부호 무시, 번체/간체·이체자 통합) | `acupoint`, `query`, `classic_book`, `include_aliases`, `limit`, `excerpt_chars`, `max_chars` |
+| `search_classic_records` | 4대 원전(+《中国针灸刺灸法通鉴》·보조 문헌) 정제 코퍼스 전문 검색 — 경혈 장(파일·행·소절)·부위/定位·简要结语 발췌, 혈명·별명 행(관련도순, 원문·번역 중복 제거), 검색어 행(행 경계·문장부호 무시, 번체/간체·이체자 통합) | `acupoint`, `query`, `classic_book`, `include_aliases`, `limit`, `excerpt_chars`, `max_chars` |
 | `get_framework_protocol` | 정본의 해당 절을 제목 기준으로 잘라 반환(목차·Tier·Rank 0~7·B-Check·루브릭·10대 구성 요소·문서 이력) | `section` (`summary`, `tiers`, `ranks`, `rank0`~`rank7`, `b_check`, `rubrics`, `components`, `history`, `all`) |
 
 ---
@@ -127,7 +127,7 @@ acupoint_anatomy/
 │   ├── layer_b_reference_registry.json          # Layer B 등록부
 │   ├── acupoint_fma_mapping.json                # 경혈↔FMA 대응표
 │   ├── mcp_reference_data.json                  # (생성) 교재·자침깊이·보고서 색인
-│   └── classics/<4대 원전>/*.md · index.json    # 원전 정제 마크다운 · (생성) 파일 목록·SHA-1
+│   └── classics/<4대 원전·자구법통감>/*.md · index.json # 원전 정제 마크다운(한글명(한자명) 폴더) · (생성) 파일 목록·SHA-1
 ├── mcp_server/
 │   ├── acupoint_core.py                         # 도구 7종 공통 로직
 │   ├── server.py                                # 로컬 백엔드

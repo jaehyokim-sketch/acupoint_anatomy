@@ -1101,7 +1101,8 @@ def handle_search_classic_records(args):
         # 행 단위 검색: 편별 원전, 또는 장을 찾지 못한 보조 문헌, 또는 경혈 미지정
         files = BACKEND.classics_list(dir_id)
         BACKEND.classics_prefetch(dir_id, files)
-        if not terms and not names and not alias_list:
+        book_names = list(dict.fromkeys(names + ([prec["name_kr"]] if key == "刺灸法通鉴" and prec and len(prec.get("name_kr", "")) >= 2 else [])))
+        if not terms and not book_names and not alias_list:
             blk.append("- 혈명을 확정하지 못해 검색하지 않았습니다. `query`를 함께 입력하세요.")
             blocks.append(blk)
             continue
@@ -1117,11 +1118,11 @@ def handle_search_classic_records(args):
                     if not ok:
                         continue
                 via_alias = False
-                if names or alias_list:
+                if book_names or alias_list:
                     window = "".join(comp[max(0, i - 1):i + (3 if span else 2)]) if terms else comp[i] + (comp[i + 1] if span else "")
-                    if any(n in window for n in names):
+                    if any(n in window for n in book_names):
                         pass
-                    elif alias_list and any(_alias_ok(window, a, names, others) for a in alias_list):
+                    elif alias_list and any(_alias_ok(window, a, book_names, others) for a in alias_list):
                         via_alias = True
                     else:
                         continue
@@ -1129,21 +1130,22 @@ def handle_search_classic_records(args):
                 if key_txt in seen:
                     continue
                 seen.add(key_txt)
-                score = (4 if any(n in comp[i] for n in names) else 0) + (0 if via_alias else 1) \
-                    + (1 if not fname.endswith("_한글번역.md") else 0) - (3 if _front_matter(fname) else 0) \
+                is_tr = fname.endswith("_한글번역.md") or (key == "刺灸法通鉴" and bool(re.search(r"[\uac00-\ud7a3]", raw[i])))
+                score = (4 if any(n in comp[i] for n in book_names) else 0) + (0 if via_alias else 1) \
+                    + (0 if is_tr else 1) - (3 if _front_matter(fname) else 0) \
                     + sum(comp[i].count(t) for t in terms)
-                found.append((score, fname, i, span, via_alias))
+                found.append((score, fname, i, span, via_alias, is_tr))
         found.sort(key=lambda x: (-x[0], files.index(x[1]), x[2]))
-        n_tr = sum(1 for f in found if f[1].endswith("_한글번역.md"))
+        n_tr = sum(1 for f in found if f[5])
         n_alias = sum(1 for f in found if f[4])
-        must = terms or names
+        must = terms or book_names
         blk.append(f"- **적중** {len(found)}건 (검색: {' + '.join(must + (['별명 ' + '/'.join(alias_list)] if alias_list and not terms else []))})"
                    + (f" · 한글번역 {n_tr}건" if n_tr else "") + (f" · 별명 적중 {n_alias}건" if n_alias else "")
                    + (f" · 관련도순 상위 {limit}건" if len(found) > limit else ""))
-        for score, fname, i, span, via_alias in found[:limit]:
+        for score, fname, i, span, via_alias, is_tr in found[:limit]:
             raw, norm, _ = _lines(dir_id, fname)
             text = raw[i] + (" ⏎ " + raw[i + 1] if span else "")
-            tags = (" [한글번역]" if fname.endswith("_한글번역.md") else "") + (" [별명]" if via_alias else "")
+            tags = (" [한글번역]" if is_tr else "") + (" [별명]" if via_alias else "")
             blk.append(f"  - `{fname}`{tags} L{i + 1}{'–' + str(i + 2) if span else ''}: {_snippet(text, norm_text(text), must or alias_list)}")
         blocks.append(blk)
 
@@ -1214,7 +1216,7 @@ def tool_definitions():
                          "items": {"type": "object", "properties": {"name": {"type": "string"}, "ari_core": {"type": "number"}, "half_range": {"type": "number"}}}}},
              "required": ["s_orig", "s_clarity", "s_reflex", "s_safety"]}},
         {"name": "search_classic_records",
-         "description": "4대 원전(《中国针灸穴位通鉴》·《针灸腧穴通考》·《中国针灸证治通鉴》·《中国针灸经络通鉴》)과 설정된 보조 문헌(예: 《東醫寶鑑》)의 정제 코퍼스를 직접 검색한다. acupoint: 혈위별 장(파일·행 범위·소절)과 부위/定位·简要结语 발췌, 편별 원전에서는 혈명·별명 행(관련도순, 원문·번역 중복 제거). query: 모든 검색어가 든 행(행 경계·문장부호 무시, 번체/간체·이체자 통합).",
+         "description": "4대 원전(《中国针灸穴位通鉴》·《针灸腧穴通考》·《中国针灸证治通鉴》·《中国针灸经络通鉴》)·《中国针灸刺灸法通鉴》(번역본)과 설정된 보조 문헌(예: 《東醫寶鑑》)의 정제 코퍼스를 직접 검색한다. acupoint: 혈위별 장(파일·행 범위·소절)과 부위/定位·简要结语 발췌, 편별 원전에서는 혈명·별명 행(관련도순, 원문·번역 중복 제거). query: 모든 검색어가 든 행(행 경계·문장부호 무시, 번체/간체·이체자 통합).",
          "inputSchema": {"type": "object", "properties": {
              "acupoint": {"type": "string", "description": "경혈 코드 또는 혈명 (ST36, EX-HN3, 족삼리, 足三里, 百会)"},
              "query": {"type": "string", "description": "원문 검색어. 공백으로 나누면 모든 단어 포함 (예: '兩筋間', '针入 五分')"},
@@ -1324,10 +1326,11 @@ REMOTE_DATA_PATHS = {
     "reference_json": "data/mcp_reference_data.json",
 }
 REMOTE_BOOKS = [
-    ("穴位通鉴", "中国针灸穴位通鉴", "《中国针灸穴位通鉴》"),
-    ("腧穴通考", "针灸腧穴通考", "《针灸腧穴通考》"),
-    ("证治通鉴", "中国针灸证治通鉴", "《中国针灸证治通鉴》"),
-    ("经络通鉴", "中国针灸经络通鉴", "《中国针灸经络通鉴》"),
+    ("穴位通鉴", "중국침구혈위통감(中国针灸穴位通鉴)", "《中国针灸穴位通鉴》"),
+    ("腧穴通考", "침구수혈통고(针灸腧穴通考)", "《针灸腧穴通考》"),
+    ("证治通鉴", "중국침구증치통감(中国针灸证治通鉴)", "《中国针灸证治通鉴》"),
+    ("经络通鉴", "중국침구경락통감(中国针灸经络通鉴)", "《中国针灸经络通鉴》"),
+    ("刺灸法通鉴", "중국침구자구법통감(中國鍼灸刺灸法通鑑)", "《中国针灸刺灸法通鉴》"),
 ]
 
 
