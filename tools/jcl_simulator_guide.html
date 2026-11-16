@@ -14,7 +14,7 @@
   --accent: #1E5B56; --accent-soft: #E1EEEB;
   --bu: #A0650F; --bu-bg: #FBF0DC; --sa: #275B86; --sa-bg: #E2ECF6; --moxa: #943C20; --moxa-bg: #F8E6DE;
   --bleed: #9E2239; --bleed-bg: #F8E0E5; --even: #5B6270; --even-bg: #ECEDF1;
-  --l-li: #1E5B56; --l-mod: #3D7536; --l-ch: #17717F; --l-zz: #75488A; --l-zm: #4A2A7A;
+  --l-li: #0B7A6F; --l-mod: #B0177C; --l-ch: #5B8C00; --l-zz: #5E35B1; --l-zm: #5E35B1; --l-ink: #FFFFFF;
   --warn: #AE2229; --warn-bg: #FBE7E7; --caution: #8C6100; --caution-bg: #FBF2D9;
   --f-display: "Noto Serif KR", "Batang", serif;
   --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
@@ -24,13 +24,13 @@
   --paper: #111617; --sheet: #192022; --ink: #E3E9E7; --ink-2: #A9B4B2; --ink-3: #7D8A89; --rule: #2C3739; --rule-2: #222B2D;
   --accent: #6CC0B4; --accent-soft: #1C3331;
   --bu: #E3A84B; --bu-bg: #3A2B12; --sa: #84B5E0; --sa-bg: #172A3B; --moxa: #E5906B; --moxa-bg: #3A2117; --bleed: #EF8296; --bleed-bg: #3C1720;
-  --even: #A5ABB6; --even-bg: #262A31; --l-li: #6CC0B4; --l-mod: #8DC487; --l-ch: #6AC6D3; --l-zz: #C69CDA; --l-zm: #A88BE0;
+  --even: #A5ABB6; --even-bg: #262A31; --l-li: #3FD0C0; --l-mod: #F06BC0; --l-ch: #A8D530; --l-zz: #A98BFF; --l-zm: #A98BFF; --l-ink: #10181A;
   --warn: #F2838A; --warn-bg: #3A1A1C; --caution: #E7C162; --caution-bg: #352B12; color-scheme: dark; } }
 :root[data-theme="dark"] {
   --paper: #111617; --sheet: #192022; --ink: #E3E9E7; --ink-2: #A9B4B2; --ink-3: #7D8A89; --rule: #2C3739; --rule-2: #222B2D;
   --accent: #6CC0B4; --accent-soft: #1C3331;
   --bu: #E3A84B; --bu-bg: #3A2B12; --sa: #84B5E0; --sa-bg: #172A3B; --moxa: #E5906B; --moxa-bg: #3A2117; --bleed: #EF8296; --bleed-bg: #3C1720;
-  --even: #A5ABB6; --even-bg: #262A31; --l-li: #6CC0B4; --l-mod: #8DC487; --l-ch: #6AC6D3; --l-zz: #C69CDA; --l-zm: #A88BE0;
+  --even: #A5ABB6; --even-bg: #262A31; --l-li: #3FD0C0; --l-mod: #F06BC0; --l-ch: #A8D530; --l-zz: #A98BFF; --l-zm: #A98BFF; --l-ink: #10181A;
   --warn: #F2838A; --warn-bg: #3A1A1C; --caution: #E7C162; --caution-bg: #352B12; color-scheme: dark; }
 
 * { box-sizing: border-box; }
@@ -75,7 +75,13 @@ td.k { white-space: nowrap; font-weight: 600; }
 .op { display: inline-block; font-size: 12px; font-weight: 600; padding: 0 7px; border-radius: 3px; line-height: 1.7; white-space: nowrap; }
 .op.bu { color: var(--bu); background: var(--bu-bg); } .op.sa { color: var(--sa); background: var(--sa-bg); }
 .op.moxa { color: var(--moxa); background: var(--moxa-bg); } .op.bleed { color: var(--bleed); background: var(--bleed-bg); } .op.even { color: var(--even); background: var(--even-bg); }
-.needle { display: inline-flex; gap: 6px; align-items: center; padding: 3px 9px 3px 8px; border-radius: 4px; border: 1px solid var(--rule); background: var(--paper); border-left: 3px solid var(--lc); font-size: 13.5px; }
+.needle { display: inline-flex; gap: 6px; align-items: center; padding: 3px 9px 3px 6px; border-radius: 4px; border: 1px solid color-mix(in srgb, var(--lc) 45%, var(--rule)); background: color-mix(in srgb, var(--lc) 10%, var(--paper)); border-left: 6px solid var(--lc); font-size: 13.5px; }
+.needle::before { content: var(--lt); font-family: var(--f-display); font-weight: 700; font-size: 12px; line-height: 1.45; color: var(--l-ink); background: var(--lc); border-radius: 3px; padding: 0 4px; }
+.needle { --lt: "李"; }
+.needle[data-layer=modern] { --lc: var(--l-mod); --lt: "現"; } .needle[data-layer=channel] { --lc: var(--l-ch); --lt: "經"; }
+.needle[data-layer=zztj] { --lc: var(--l-zz); --lt: "鑑"; } .needle[data-layer=zmain] { --lc: var(--l-zm); --lt: "鑑"; }
+.lbadge { display: inline-block; min-width: 1.5em; text-align: center; font-family: var(--f-display); font-weight: 700; font-size: 12px; line-height: 1.45; color: var(--l-ink); border-radius: 3px; padding: 0 3px; margin-right: 5px; vertical-align: 1px; }
+
 .kcd-chip { font-family: var(--f-mono); font-size: 12px; border: 1px solid var(--rule); border-radius: 3px; padding: 0 6px; background: var(--paper); color: var(--ink-2); white-space: nowrap; }
 .kcd-chip b { color: var(--ink); margin-right: 4px; }
 .kcd-chip.new { border-style: dashed; }
@@ -217,22 +223,22 @@ footer.foot { max-width: 1120px; margin: 24px auto 0; color: var(--ink-3); font-
     <li><b>KCD-9 칩</b>: 병증에 상응하는 KCD-9 현행 코드. 코드가 바뀐 것은 지침서 코드를 괄호로 병기하고, 점선 칩은 지침서에 없던 병의 KCD-9 신규 대응이다. 칩에 마우스를 올리면 지침서 쪽과 확인 상태가 보인다.<br>
       예: <span class="kcd-chip"><b>U86.1</b>울증(鬱證) <span style="opacity:.7">(지침서 U22.1)</span></span> <span class="kcd-chip"><b>F32</b>우울에피소드</span> <span class="kcd-chip new"><b>A03.9</b>상세불명의 시겔라증</span></li>
     <li><b>적합도와 2위와 차이</b>: 차이가 0.03보다 작으면 '감별 필요'가 붙는다. 3단계의 감별 문진을 확인한다.</li>
-    <li><b>처방 칩</b>: 혈 이름 · 보사 · 한자와 WHO 코드. 왼쪽 막대 색이 층을 뜻한다.</li>
+    <li><b>처방 칩</b>: 혈 이름 · 보사 · 한자와 WHO 코드. 칩 앞 글자 표지(李·現·經·鑑)와 왼쪽 막대 색이 층을 뜻한다.</li>
     <li><b>처방 복사</b>: 증형·치칙·KCD-9·처방을 글로 복사한다(브라우저가 막으면 아래에 글이 나와 직접 선택해 복사).</li>
   </ul>
   <h3>보사 표기</h3>
   <p><span class="op bu">보</span> 補 · <span class="op sa">사</span> 瀉 · <span class="op moxa">뜸</span> 灸 · <span class="op bleed">점자출혈</span> 點刺出血 · <span class="op even">평보평사</span> 平補平瀉. '보 · 加灸'처럼 부가 수기가 붙기도 한다. 선사후보·선소사후다보 같은 순서 수기는 원서 표기를 따른다.</p>
-  <h3>처방 층(칩 왼쪽 막대 색)</h3>
+  <h3>처방 층(칩 앞 글자 표지와 왼쪽 막대 색)</h3>
   <div class="tbl"><table>
-    <thead><tr><th>색</th><th>층</th><th>뜻</th></tr></thead>
+    <thead><tr><th>표지·색</th><th>층</th><th>뜻</th></tr></thead>
     <tbody>
-      <tr><td><span class="swatch" style="background:var(--l-li)"></span></td><td>李氏 치본</td><td>원서 각론 증형의 취혈과 가감 — 주처방</td></tr>
-      <tr><td><span class="swatch" style="background:var(--l-mod)"></span></td><td>현대 기본방</td><td>그 병 현대 증례 논문의 30% 이상이 쓴 혈(두통·요통·불매·면탄·통풍). 李氏 변증 처방이 아니다</td></tr>
-      <tr><td><span class="swatch" style="background:var(--l-ch)"></span></td><td>경락 변증</td><td>통증 부위 → 경락 → 원위혈(예: 허리 → 족태양 위중·곤륜, 발가락 → 태충·태백)</td></tr>
-      <tr><td><span class="swatch" style="background:var(--l-zz)"></span></td><td>증치통감 보강</td><td>『中国针灸证治通鉴』 역대 처방과 가장 많이 겹치는 혈</td></tr>
+      <tr><td><b class="lbadge" style="background:var(--l-li)">李</b><span class="swatch" style="background:var(--l-li)"></span></td><td>李氏 치본</td><td>원서 각론 증형의 취혈과 가감 — 주처방</td></tr>
+      <tr><td><b class="lbadge" style="background:var(--l-mod)">現</b><span class="swatch" style="background:var(--l-mod)"></span></td><td>현대 기본방</td><td>그 병 현대 증례 논문의 30% 이상이 쓴 혈(두통·요통·불매·면탄·통풍). 李氏 변증 처방이 아니다</td></tr>
+      <tr><td><b class="lbadge" style="background:var(--l-ch)">經</b><span class="swatch" style="background:var(--l-ch)"></span></td><td>경락 변증</td><td>통증 부위 → 경락 → 원위혈(예: 허리 → 족태양 위중·곤륜, 발가락 → 태충·태백)</td></tr>
+      <tr><td><b class="lbadge" style="background:var(--l-zz)">鑑</b><span class="swatch" style="background:var(--l-zz)"></span></td><td>증치통감 보강</td><td>『中国针灸证治通鉴』 역대 처방과 가장 많이 겹치는 혈</td></tr>
     </tbody>
   </table></div>
-  <p class="mono" style="color:var(--ink-3)">예: <span class="needle" style="--lc:var(--l-li)"><b>신문</b><span class="op bu">보</span></span> <span class="needle" style="--lc:var(--l-mod)"><b>백회</b><span class="op bu">보</span></span> <span class="needle" style="--lc:var(--l-zz)"><b>내관</b><span class="op even">평보평사</span></span></p>
+  <p class="mono" style="color:var(--ink-3)">예: <span class="needle" data-layer="li" style="--lc:var(--l-li)"><b>신문</b><span class="op bu">보</span></span> <span class="needle" data-layer="modern"><b>백회</b><span class="op bu">보</span></span> <span class="needle" data-layer="zztj"><b>내관</b><span class="op even">평보평사</span></span></p>
   <div class="note">李氏 방식(선혈정전)으로 시술하면 李氏 처방에 현대·경락·보강 혈 가운데 1~2개만 더한다. 현대 임상 방식(기본방 + 국소·원위혈)이면 통합 처방 전체를 쓴다.</div>
 </section>
 

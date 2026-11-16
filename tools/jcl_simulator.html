@@ -17,7 +17,7 @@
   --accent: #1E5B56; --accent-soft: #E1EEEB; --accent-ink: #FFFFFF;
   --bu: #A0650F; --bu-bg: #FBF0DC; --sa: #275B86; --sa-bg: #E2ECF6; --moxa: #943C20; --moxa-bg: #F8E6DE;
   --bleed: #9E2239; --bleed-bg: #F8E0E5; --even: #5B6270; --even-bg: #ECEDF1;
-  --l-li: #1E5B56; --l-mod: #3D7536; --l-ch: #17717F; --l-zz: #75488A; --l-zm: #4A2A7A;
+  --l-li: #0B7A6F; --l-mod: #B0177C; --l-ch: #5B8C00; --l-zz: #5E35B1; --l-zm: #5E35B1; --l-ink: #FFFFFF;
   --warn: #AE2229; --warn-bg: #FBE7E7; --caution: #8C6100; --caution-bg: #FBF2D9; --ok: #2F6E3C;
   --f-display: "Noto Serif KR", "Nanum Myeongjo", "Batang", serif;
   --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
@@ -28,13 +28,13 @@
   --paper: #111617; --sheet: #192022; --ink: #E3E9E7; --ink-2: #A9B4B2; --ink-3: #7D8A89; --rule: #2C3739; --rule-2: #222B2D;
   --accent: #6CC0B4; --accent-soft: #1C3331; --accent-ink: #0E1A19;
   --bu: #E3A84B; --bu-bg: #3A2B12; --sa: #84B5E0; --sa-bg: #172A3B; --moxa: #E5906B; --moxa-bg: #3A2117; --bleed: #EF8296; --bleed-bg: #3C1720;
-  --even: #A5ABB6; --even-bg: #262A31; --l-li: #6CC0B4; --l-mod: #8DC487; --l-ch: #6AC6D3; --l-zz: #C69CDA; --l-zm: #A88BE0;
+  --even: #A5ABB6; --even-bg: #262A31; --l-li: #3FD0C0; --l-mod: #F06BC0; --l-ch: #A8D530; --l-zz: #A98BFF; --l-zm: #A98BFF; --l-ink: #10181A;
   --warn: #F2838A; --warn-bg: #3A1A1C; --caution: #E7C162; --caution-bg: #352B12; --ok: #86C893; color-scheme: dark; } }
 :root[data-theme="dark"] {
   --paper: #111617; --sheet: #192022; --ink: #E3E9E7; --ink-2: #A9B4B2; --ink-3: #7D8A89; --rule: #2C3739; --rule-2: #222B2D;
   --accent: #6CC0B4; --accent-soft: #1C3331; --accent-ink: #0E1A19;
   --bu: #E3A84B; --bu-bg: #3A2B12; --sa: #84B5E0; --sa-bg: #172A3B; --moxa: #E5906B; --moxa-bg: #3A2117; --bleed: #EF8296; --bleed-bg: #3C1720;
-  --even: #A5ABB6; --even-bg: #262A31; --l-li: #6CC0B4; --l-mod: #8DC487; --l-ch: #6AC6D3; --l-zz: #C69CDA; --l-zm: #A88BE0;
+  --even: #A5ABB6; --even-bg: #262A31; --l-li: #3FD0C0; --l-mod: #F06BC0; --l-ch: #A8D530; --l-zz: #A98BFF; --l-zm: #A98BFF; --l-ink: #10181A;
   --warn: #F2838A; --warn-bg: #3A1A1C; --caution: #E7C162; --caution-bg: #352B12; --ok: #86C893; color-scheme: dark; }
 
 * { box-sizing: border-box; }
@@ -103,10 +103,14 @@ textarea { resize: vertical; min-height: 64px; line-height: 1.5; }
 .meter i { display: block; height: 100%; background: var(--accent); }
 
 .tray { display: flex; flex-wrap: wrap; gap: 6px; }
-.needle { display: inline-grid; grid-template-columns: auto auto; align-items: center; gap: 0 6px; padding: 5px 9px 5px 8px; border-radius: 4px; border: 1px solid var(--rule); background: var(--paper); border-left: 3px solid var(--lc, var(--l-li)); }
+.needle { display: inline-grid; grid-template-columns: auto auto auto; align-items: center; gap: 0 6px; padding: 5px 9px 5px 6px; border-radius: 4px; border: 1px solid color-mix(in srgb, var(--lc) 45%, var(--rule)); background: color-mix(in srgb, var(--lc) 10%, var(--paper)); border-left: 6px solid var(--lc); }
+.needle::before { content: var(--lt); grid-row: 1 / span 2; align-self: center; font-family: var(--f-display); font-weight: 700; font-size: 12px; line-height: 1.45; color: var(--l-ink); background: var(--lc); border-radius: 3px; padding: 0 4px; }
 .needle b { font-weight: 600; }
-.needle .c { grid-column: 1 / -1; font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-3); }
-.needle[data-layer=modern] { --lc: var(--l-mod); } .needle[data-layer=channel] { --lc: var(--l-ch); } .needle[data-layer=zztj] { --lc: var(--l-zz); } .needle[data-layer=zmain] { --lc: var(--l-zm); }
+.needle .c { grid-column: 2 / -1; font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-3); }
+.needle { --lc: var(--l-li); --lt: "李"; }
+.needle[data-layer=modern] { --lc: var(--l-mod); --lt: "現"; } .needle[data-layer=channel] { --lc: var(--l-ch); --lt: "經"; }
+.needle[data-layer=zztj] { --lc: var(--l-zz); --lt: "鑑"; } .needle[data-layer=zmain] { --lc: var(--l-zm); --lt: "鑑"; }
+.lbadge { display: inline-block; min-width: 1.5em; text-align: center; font-family: var(--f-display); font-weight: 700; font-size: 12px; line-height: 1.45; color: var(--l-ink); border-radius: 3px; padding: 0 3px; margin-right: 5px; vertical-align: 1px; }
 .op { display: inline-block; font-size: 11.5px; font-weight: 600; padding: 0 6px; border-radius: 3px; line-height: 1.6; white-space: nowrap; }
 .op.bu { color: var(--bu); background: var(--bu-bg); } .op.sa { color: var(--sa); background: var(--sa-bg); }
 .op.moxa { color: var(--moxa); background: var(--moxa-bg); } .op.bleed { color: var(--bleed); background: var(--bleed-bg); } .op.even { color: var(--even); background: var(--even-bg); }
@@ -1468,6 +1472,7 @@ ul.plain { margin: 0; padding-left: 18px; } ul.plain li { margin: 2px 0; }
   // [침구변증] 스킬 원칙의 단계 순서: 1 사진 정리 → 2 변병 → 3 변증(이병동치 참고) → 4 변경 → 5 치칙 → 6 선혈·배혈(보사·보사량·가감)
   // → 7 현대 기본방·경락 변증 → 8 증치통감 대조·보강 → 9 오치 점검. (李) 모드는 7·8을 적용하지 않는다(근거 문헌 한정).
   const LAYER_VAR = { li: "li", modern: "mod", channel: "ch", zztj: "zz" };
+  const LAYER_TAG = { li: "李", modern: "現", channel: "經", zztj: "鑑" };   // 칩 앞 글자 표지(색을 구별하기 어려울 때·흑백 인쇄)
   const notApplied = (why) => `<p class="empty">${why}</p>`;
   function meridianBody(list, palp, afterNote) {
     if (list.length) return `<ul class="plain">${list.map((m) => `<li>${esc(m.finding)} → ${esc(m.point)}: <b>${esc(m.status)}</b></li>`).join("")}</ul>`;
@@ -1496,7 +1501,7 @@ ul.plain { margin: 0; padding-left: 18px; } ul.plain li { margin: 2px 0; }
       </div>
       <div><div class="eyebrow" style="display:flex;justify-content:space-between;gap:8px">${mix ? "통합 처방" : "李氏 처방"} ${tray.length}혈 <button type="button" class="linkbtn" id="btn-copy">처방 복사</button></div>
         <div class="tray" style="margin-top:6px">${tray.map(needle).join("")}</div>
-        ${mix ? `<div class="legend">${Object.entries(LAYER).map(([k, v]) => `<span><i style="background:var(--l-${LAYER_VAR[k]})"></i>${v}</span>`).join("")}</div>` : ""}
+        ${mix ? `<div class="legend">${Object.entries(LAYER).map(([k, v]) => `<span><b class="lbadge" style="background:var(--l-${LAYER_VAR[k]})">${LAYER_TAG[k]}</b>${v}</span>`).join("")}</div>` : ""}
         <pre id="copy-fallback" class="mono" hidden style="white-space:pre-wrap;margin:8px 0 0"></pre>
       </div></div>
       ${alerts.length ? `<div class="alerts" style="margin-top:14px">${alerts.join("")}</div>` : ""}</article>`);
