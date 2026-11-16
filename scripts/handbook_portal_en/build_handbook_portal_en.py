@@ -178,7 +178,7 @@ def main():
     # 데이터 줄을 뺀 나머지에 한글이 남았는지 검사
     rest = "\n".join(l for l in out.split("\n")
                      if not l.startswith("    const POINTS_DATA") and not l.startswith("    const MERIDIANS"))
-    allowed_ko = ("lang-switch", "page-view-counter", "경혈학 핸드북 포털 · English Edition", "title=\"한국어판\"")
+    allowed_ko = ("lang-switch", "page-view-counter", "원광대학교 한의과대학 경혈학 핸드북 포털", "경혈학 핸드북 포털 · English Edition", "title=\"한국어판\"")
     left = [l.strip()[:120] for l in rest.split("\n")
             if HANGUL.search(l) and not any(a in l for a in allowed_ko)]
     if left:
@@ -200,14 +200,14 @@ UI_REPLACEMENTS = [
     ('<html lang="ko">', '<html lang="en">'),
     ('          <span class="page-view-counter" style="display:inline-flex;align-items:center;margin:0 4px;vertical-align:middle;" title="Views 열람 횟수"><a href="https://hits.sh/jaehyokim-sketch.github.io/acupoint_anatomy/tools/acupoint-handbook.html/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-flex;align-items:center;"><img src="https://hits.sh/jaehyokim-sketch.github.io/acupoint_anatomy/tools/acupoint-handbook.html.svg?style=flat-square&label=%EC%A1%B0%ED%9A%8C%EC%88%98&color=2563eb&labelColor=0f172a" alt="Views" style="height:20px;vertical-align:middle;border-radius:3px;" /></a></span>',
      '          <span class="page-view-counter" style="display:inline-flex;align-items:center;margin:0 4px;vertical-align:middle;" title="Views 열람 횟수"><a href="https://hits.sh/jaehyokim-sketch.github.io/acupoint_anatomy/tools/acupoint-handbook-en.html/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-flex;align-items:center;"><img src="https://hits.sh/jaehyokim-sketch.github.io/acupoint_anatomy/tools/acupoint-handbook-en.html.svg?style=flat-square&label=%EC%A1%B0%ED%9A%8C%EC%88%98&color=2563eb&labelColor=0f172a" alt="Views" style="height:20px;vertical-align:middle;border-radius:3px;" /></a></span>'),
-    ("<title>경혈학 핸드북 포털 (Acupoint Handbook Portal) — 14경맥 361경혈 표준 정본</title>",
-     "<title>Acupoint Handbook Portal — 361 Standard Acupoints of the 14 Meridians</title>"),
+    ("<title>원광대학교 한의과대학 경혈학 핸드북 포털 (Wonkwang Univ. College of Korean Med. Acupoint Handbook Portal) — 14경맥 361경혈 표준 정본</title>",
+     "<title>원광대학교 한의과대학 경혈학 핸드북 포털 (Wonkwang Univ. College of Korean Med. Acupoint Handbook Portal) — 361 Standard Acupoints of the 14 Meridians</title>"),
     ('content="14경맥 361종 경혈 핸드북 포털: 김재효 수업자료 및 경혈학 공통교재 해부구조 데이터셋, 문헌별 자침깊이(명당경·갑을경·경험방·동의보감·공통교재·통고), 황룡상 고증 침구법, 표준 KCD 질병코드 연계, KJH 경혈명 비교정리 및 본명-이명 혼동주의 경보"',
      'content="Acupoint handbook portal for the 361 acupoints of the 14 meridians: anatomical structure datasets (Prof. Jae-Hyo Kim\'s lecture data and the Common Textbook of Acupoint Science), needling depth by classical literature (Mingtangjing, Jiayijing, Gyeongheombang, Donguibogam, Common Textbook, Tongkao), acupuncture-moxibustion methods verified by Huang Longxiang, KCD disease code mapping, and KJH acupoint name comparison with standard-name/alias confusion alerts"'),
-    ("""            <span>경혈학 핸드북 포털</span>
-            <span style="font-size: 1rem; font-weight: 500; opacity: 0.8;">Acupoint Handbook Portal</span>""",
-     """            <span>Acupoint Handbook Portal</span>
-            <span style="font-size: 1rem; font-weight: 500; opacity: 0.8;">경혈학 핸드북 포털 · English Edition</span>"""),
+    ("""            <span>원광대학교 한의과대학 경혈학 핸드북 포털</span>
+            <span style="font-size: 1rem; font-weight: 500; opacity: 0.8;">Wonkwang Univ. College of Korean Med. Acupoint Handbook Portal</span>""",
+     """            <span>Wonkwang Univ. College of Korean Med. Acupoint Handbook Portal</span>
+            <span style="font-size: 1rem; font-weight: 500; opacity: 0.8;">원광대학교 한의과대학 경혈학 핸드북 포털 · English Edition</span>"""),
     ("<p>14경맥 361종 표준 경혈 정본: 원광대 한의과대학 핸드북 · 7대 문헌군 자침깊이 · 황룡상 고증 침구법 · KCD-8 질병코드 · KJH 경혈명 및 이명 대조</p>",
      "<p>Standard reference for the 361 acupoints of the 14 meridians: Wonkwang University College of Korean Medicine Handbook · needling depth in 7 literature groups · acupuncture-moxibustion methods verified by Huang Longxiang · KCD-8 disease codes · KJH acupoint name &amp; alias comparison</p>"),
     ('<span class="badge gold">14경맥 361혈 전수 완비</span>', '<span class="badge gold">All 361 points of the 14 meridians</span>'),
@@ -236,8 +236,8 @@ UI_REPLACEMENTS = [
     ('35 Pairs (34혈)', '35 Pairs (34 pts)'),
     ('data-meridian="ALL">전체 <span', 'data-meridian="ALL">All <span'),
     ('title="맨 위로"', 'title="Back to top"'),
-    ("<p><strong>경혈학 핸드북 포털 (Acupoint Handbook Portal) v1.2</strong></p>",
-     "<p><strong>Acupoint Handbook Portal v1.2 — English Edition</strong></p>"),
+    ("<p><strong>원광대학교 한의과대학 경혈학 핸드북 포털 (Wonkwang Univ. College of Korean Med. Acupoint Handbook Portal) v1.2</strong></p>",
+     "<p><strong>원광대학교 한의과대학 경혈학 핸드북 포털 (Wonkwang Univ. College of Korean Med. Acupoint Handbook Portal) v1.2 — English Edition</strong></p>"),
     ("<p>학술 고증 및 데이터 출처: 《핸드북(한 영) 한글판》 (원광대학교 한의과대학 경혈학교실 &amp; 최수빈(KMD)) · 《침구문헌별 자침깊이 정리_AI 분석용》 (황제명당경·침구갑을경·침구경험방·동의보감·경락수혈학·침구의학·침구수혈통고) · 《김재효 수업_경혈_해부구조_데이터셋》 · 《경혈학공통교재 해부구조 데이터셋》 · 《경혈별 주치증 정리 V2》 (황룡상 교수 고증 침구법 &amp; KCD-8 질병코드 연계) · 《경혈명_비교_정리_KJH》 (표준 한자명·이명 및 본명-이명 일치 Case A 경보)</p>",
      "<p>Sources: <i>Acupoint Handbook (Korean/English), English Edition</i> (Department of Acupoint Science, College of Korean Medicine, Wonkwang University &amp; Subin Choi, KMD) · <i>Needling Depth by Acupuncture Literature</i> (Huangdi Mingtangjing, Zhenjiu Jiayijing, Chimgu Gyeongheombang, Donguibogam, Meridian &amp; Acupoint Textbook, Acupuncture Medicine, Zhenjiu Shuxue Tongkao) · <i>Prof. Jae-Hyo Kim's Lecture Dataset of Acupoint Anatomy</i> · <i>Common Textbook Anatomy Dataset</i> · <i>Indications by Acupoint V2</i> (methods verified by Prof. Huang Longxiang &amp; KCD-8 disease codes) · <i>KJH Acupoint Name Comparison</i> (standard hanja names, aliases and Case A standard-name/alias match alerts). Indication terms were translated from the Korean edition.</p>"),
     ("opt.textContent = `${m.name} (${m.code}) - ${m.count}혈`;",

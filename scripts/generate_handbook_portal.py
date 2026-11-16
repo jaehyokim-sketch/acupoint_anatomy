@@ -65,9 +65,8 @@ html_template = """<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <script src="../auth.js" data-portal="false"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>경혈학 핸드북 포털 (Acupoint Handbook Portal) — 14경맥 361경혈 표준 정본</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>원광대학교 한의과대학 경혈학 핸드북 포털 (Wonkwang Univ. College of Korean Med. Acupoint Handbook Portal) — 14경맥 361경혈 표준 정본</title>
   <meta name="description" content="14경맥 361종 경혈 핸드북 포털: 김재효 수업자료 및 경혈학 공통교재 해부구조 데이터셋, 문헌별 자침깊이(명당경·갑을경·경험방·동의보감·공통교재·통고), 황룡상 고증 침구법, 표준 KCD 질병코드 연계, KJH 경혈명 비교정리 및 본명-이명 혼동주의 경보">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,12 +93,19 @@ html_template = """<!DOCTYPE html>
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
     body {
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
       background-color: var(--bg-main);
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      touch-action: pan-y;
+      -webkit-overflow-scrolling: touch;
     }
 
     header {
@@ -507,6 +513,8 @@ html_template = """<!DOCTYPE html>
     .depth-table-wrapper {
       margin-top: 0.35rem;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-x pan-y;
     }
     .depth-table {
       width: 100%;
@@ -690,11 +698,134 @@ html_template = """<!DOCTYPE html>
     footer strong { color: #f1f5f9; }
 
     @media (max-width: 900px) {
+      header {
+        position: relative;
+        top: auto;
+        padding: 1.25rem 1rem 1rem;
+        box-shadow: none;
+      }
+      .header-content {
+        gap: 0.85rem;
+      }
+      .title-area h1 {
+        font-size: 1.35rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+      }
+      .title-area h1 span:last-child {
+        font-size: 0.82rem;
+        opacity: 0.85;
+      }
+      .title-area p {
+        font-size: 0.8rem;
+        line-height: 1.45;
+        margin-top: 0.25rem;
+      }
+      .header-badges {
+        gap: 0.35rem;
+      }
+      .badge {
+        font-size: 0.72rem;
+        padding: 0.2rem 0.55rem;
+      }
       .search-filter-bar {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        padding: 0.6rem;
+      }
+      .search-box {
+        grid-column: 1 / -1;
+      }
+      .search-box input {
+        height: 38px;
+        font-size: 0.88rem;
+        touch-action: pan-y;
+      }
+      .filter-select {
+        height: 38px;
+        font-size: 0.82rem;
+        padding: 0 0.5rem;
+        touch-action: pan-y;
+      }
+      #specialFilter {
+        grid-column: 1 / -1;
+      }
+      .container {
+        padding: 0 0.85rem;
+        margin: 1rem auto 2.5rem;
+        width: 100%;
+      }
+      .stats-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+      }
+      .stat-card {
+        padding: 0.75rem 0.85rem;
+      }
+      .stat-card .label {
+        font-size: 0.72rem;
+      }
+      .stat-card .value {
+        font-size: 1.25rem;
+      }
+      .meridian-tabs {
+        gap: 0.35rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .meridian-pill {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.65rem;
+        flex-shrink: 0;
       }
       .points-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+        min-width: 0;
+      }
+      .point-card {
+        width: 100%;
+        min-width: 0;
+      }
+      .card-header {
+        padding: 0.85rem 1rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .card-body {
+        padding: 1rem;
+        gap: 1rem;
+      }
+      .btn-top {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 44px;
+        height: 44px;
+        z-index: 1000;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-content {
+        gap: 0.75rem;
+      }
+      .title-area h1 {
+        font-size: 1.2rem;
+      }
+      .search-filter-bar {
+        grid-template-columns: 1fr;
+      }
+      .search-box, #specialFilter {
+        grid-column: auto;
+      }
+      .stats-strip {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
       }
     }
   </style>
@@ -705,8 +836,8 @@ html_template = """<!DOCTYPE html>
       <div class="header-top">
         <div class="title-area">
           <h1>
-            <span>경혈학 핸드북 포털</span>
-            <span style="font-size: 1rem; font-weight: 500; opacity: 0.8;">Acupoint Handbook Portal</span>
+            <span>원광대학교 한의과대학 경혈학 핸드북 포털</span>
+            <span style="font-size: 1rem; font-weight: 500; opacity: 0.8;">Wonkwang Univ. College of Korean Med. Acupoint Handbook Portal</span>
           </h1>
           <p>14경맥 361종 표준 경혈 정본: 원광대 한의과대학 핸드북 · 7대 문헌군 자침깊이 · 황룡상 고증 침구법 · KCD-8 질병코드 · KJH 경혈명 및 이명 대조</p>
         </div>
@@ -781,7 +912,7 @@ html_template = """<!DOCTYPE html>
   </button>
 
   <footer>
-    <p><strong>경혈학 핸드북 포털 (Acupoint Handbook Portal) v1.2</strong></p>
+    <p><strong>원광대학교 한의과대학 경혈학 핸드북 포털 (Wonkwang Univ. College of Korean Med. Acupoint Handbook Portal) v1.2</strong></p>
     <p>학술 고증 및 데이터 출처: 《핸드북(한 영) 한글판》 (원광대학교 한의과대학 경혈학교실 &amp; 최수빈(KMD)) · 《침구문헌별 자침깊이 정리_AI 분석용》 (황제명당경·침구갑을경·침구경험방·동의보감·경락수혈학·침구의학·침구수혈통고) · 《김재효 수업_경혈_해부구조_데이터셋》 · 《경혈학공통교재 해부구조 데이터셋》 · 《경혈별 주치증 정리 V2》 (황룡상 교수 고증 침구법 &amp; KCD-8 질병코드 연계) · 《경혈명_비교_정리_KJH》 (표준 한자명·이명 및 본명-이명 일치 Case A 경보)</p>
     <p style="margin-top: 0.5rem;">© 2026 Jae-Hyo Kim. All Rights Reserved. Hosted via GitHub Pages.</p>
   </footer>
