@@ -13,7 +13,7 @@
     {"name": "anatomy-act-reform-2026", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/anatomy-act-reform-2026.git", "drive": "행정\\2026-시체해부법", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
     {"name": "km-integrated-education", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/km-integrated-education.git", "drive": "행정\\한의학 교육과 의료 통합", "user": ["jaehyokim", "jaehyo.kim@gmail.com"], "drive_exclude": ["km_repo_clean", "km_repo_clean2"]},
     {"name": "anthropic-claude-integration", "remote": null, "drive": "anthropic-claude-integration", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
-    {"name": "학습일지 평가", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/study-log-eval.git", "drive": "강의\\04_평가 및 학습활동 자료\\학습일지 평가", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
+    {"name": "평가체계/학습일지 평가", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/study-log-eval.git", "drive": "강의\\04_평가 및 학습활동 자료\\학습일지 평가", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]},
     {"name": "donguibogam-disease-analysis", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/donguibogam-disease-analysis.git", "drive": "동의보감 상병명 분석", "user": ["jaehyokim", "jaehyo.kim@gmail.com"], "drive_only_data": true},
     {"name": "침구임상변증 Skill", "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/jcl-bianzheng-skill.git", "drive": "도서 번역\\침구임상변증 Skill", "user": ["jaehyokim", "jaehyo.kim@gmail.com"]}
   ]

@@ -67,7 +67,16 @@ def main():
         state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         state = {}
-    repos = [p for p in sorted(WORKSPACE.iterdir()) if p.is_dir() and (p / "deploy_to_gdrive.py").exists()]
+    repos = []
+    for p in sorted(WORKSPACE.iterdir()):
+        if not p.is_dir() or p.name in SKIP_DIRS:
+            continue
+        if (p / "deploy_to_gdrive.py").exists():
+            repos.append(p)
+        else:
+            for sub in sorted(p.iterdir()):
+                if sub.is_dir() and sub.name not in SKIP_DIRS and (sub / "deploy_to_gdrive.py").exists():
+                    repos.append(sub)
     if args.repo:
         repos = [p for p in repos if p.name in args.repo]
 
