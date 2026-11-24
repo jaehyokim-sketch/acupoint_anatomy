@@ -44,7 +44,12 @@ NEWER_RE = re.compile(r"\[DRIVE NEWER\]\s*(.+)")
 def fingerprint(repo: Path) -> str:
     h = hashlib.sha1()
     for root, dirs, files in os.walk(repo):
-        dirs[:] = sorted(d for d in dirs if d not in SKIP_DIRS)
+        dirs[:] = sorted(
+            d for d in dirs
+            if d not in SKIP_DIRS
+            and not (Path(root) / d / ".git").exists()
+            and not (Path(root) / d / "deploy_to_gdrive.py").exists()
+        )
         for f in sorted(files):
             try:
                 st = os.stat(os.path.join(root, f))
@@ -73,12 +78,11 @@ def main():
             continue
         if (p / "deploy_to_gdrive.py").exists():
             repos.append(p)
-        else:
-            for sub in sorted(p.iterdir()):
-                if sub.is_dir() and sub.name not in SKIP_DIRS and (sub / "deploy_to_gdrive.py").exists():
-                    repos.append(sub)
+        for sub in sorted(p.iterdir()):
+            if sub.is_dir() and sub.name not in SKIP_DIRS and (sub / "deploy_to_gdrive.py").exists():
+                repos.append(sub)
     if args.repo:
-        repos = [p for p in repos if p.name in args.repo]
+        repos = [p for p in repos if p.name in args.repo or p.relative_to(WORKSPACE).as_posix() in args.repo]
 
     report, newer_all, failed = [], [], []
     for repo in repos:
