@@ -71,7 +71,7 @@
     },
     {
       "name": "학사행정",
-      "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/proxy-form-system.git",
+      "remote": null,
       "drive": "행정\\위임장_작성_시스템",
       "user": [
         "jaehyokim",
