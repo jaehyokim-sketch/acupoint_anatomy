@@ -12,6 +12,7 @@ sync_claude_skill.py — C:\\workspace 작업을 Google Drive 정본 기준으�
   <DRIVE>/FMA_3D_해부_통합설정_가이드.md                             → <WORKSPACE>/FMA_3D_해부_통합설정_가이드.md
   <DRIVE>/.claude/skills/fma-3d/**                                 → <WORKSPACE>/.claude/skills/fma-3d/   ([FMA 3D] 스킬, 파일 단위)
   <DRIVE>/.claude/agents/**                                        → <WORKSPACE>/.claude/agents/   (서브에이전트 정의, 파일 단위)
+  <DRIVE>/.claude/skills/baemunhong-donguibogam/**                 → <WORKSPACE>/.claude/skills/baemunhong-donguibogam/   ([배문홍] 스킬, 파일 단위)
   <DRIVE>/FMA_3D_스킬_에이전트_설정_가이드.md                         → <WORKSPACE>/FMA_3D_스킬_에이전트_설정_가이드.md
   <DRIVE>/01_Framework/{정본·등록부·DB 설계}.md                     → <REPO>/framework/
   <DRIVE>/.agents/skills/acupoint-anatomy/SKILL.md                 → <REPO>/skill/SKILL.md
@@ -68,6 +69,7 @@ REPO_TREES = [  # (Drive 기준 폴더, 저장소 기준 폴더) — 파일 단�
 WORKSPACE_TREES = [  # (Drive 기준 폴더, 워크스페이스 기준 폴더) — 파일 단위 미러. Drive에 없는 로컬 파일은 알리기만 한다
     (".claude/skills/fma-3d", ".claude/skills/fma-3d"),   # [FMA 3D] 스킬 (2026-11-05)
     (".claude/agents", ".claude/agents"),                 # 서브에이전트 정의(fma-3d-modeler 등)
+    (".claude/skills/baemunhong-donguibogam", ".claude/skills/baemunhong-donguibogam"),   # [배문홍] 스킬 (2026-11-24)
 ]
 WORKSPACE_FILES = [  # (Drive 기준 상대경로, 워크스페이스 기준 상대경로)
     (".claude/workspace_CLAUDE.md", "CLAUDE.md"),
