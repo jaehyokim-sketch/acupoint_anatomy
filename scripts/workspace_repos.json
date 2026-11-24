@@ -49,7 +49,7 @@
       "drive_only_data": true
     },
     {
-      "name": "강의/IPE-Report",
+      "name": "평가체계/IPE-Report",
       "remote": "https://jaehyokim-sketch@github.com/jaehyokim-sketch/-IPE-Report.git",
       "drive": "강의\\02_IPE\\.deploy_ipe_report",
       "user": [
