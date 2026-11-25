@@ -20,7 +20,7 @@ open 단계(정책 파일 on_ide_open에서 고른다)
   drive_mirror       Drive 정본 → 로컬 미러(sync_claude_skill.py, huanglongxiang sync_skill_copies.py --apply)
   agents_rules       Drive .agents/rules/의 지정 규칙 → C:\\workspace\\.agents\\rules\\ (Antigravity 워크스페이스 규칙)
   global_skills      Drive 스킬 → ~/.gemini·~/.claude 전역 스킬 사본(Drive 쪽이 더 새로운 파일만)
-  git_pull           각 저장소 git fetch 후 fast-forward만(로컬 커밋과 갈라졌거나 충돌하면 알리기만)
+  git_pull           workspace_repos.json 기준 origin URL 자동 갱신 후 각 저장소 git fetch 및 fast-forward만(로컬 커밋과 갈라졌거나 충돌하면 알리기만)
   drive_git_check    Drive 배포 폴더에 .git이 생겼는지 점검(삭제하지 않고 알림)
   drive_newer_report Drive 배포 폴더에서 로컬보다 새로운 산출물 목록(복사하지 않음). 스트리밍 Drive에서는 느리므로 편집 PC 기본
   role_notice        미러 PC 안내(정본 수정 금지)
@@ -137,6 +137,26 @@ def git(repo: Path, *args, timeout=120):
         return 127, "", str(e)
 
 
+def sync_origin_url(repo: Path, desired_remote) -> str:
+    """Align local git 'origin' remote URL with workspace_repos.json without modifying local-only repos."""
+    if not desired_remote:
+        return ""
+    want = str(desired_remote).strip()
+    code, cur_url, _ = git(repo, "remote", "get-url", "origin")
+    if code != 0:
+        rc, _, err = git(repo, "remote", "add", "origin", want)
+        return "origin 추가" if rc == 0 else f"origin 추가 실패({err})"
+    cur = cur_url.strip()
+    if cur != want:
+        rc, _, err = git(repo, "remote", "set-url", "origin", want)
+        if rc != 0:
+            return f"origin URL 갱신 실패({err})"
+        if "ghp_" in cur or "github_pat_" in cur:
+            return "토큰 포함 URL 교체"
+        return f"origin URL 갱신 → {want}"
+    return ""
+
+
 def same_text_or_bytes(a: Path, b: Path) -> bool:
     try:
         x, y = a.read_bytes(), b.read_bytes()
@@ -240,27 +260,59 @@ def pull_one(repo_info):
     repo = WORKSPACE / name
     if not (repo / ".git").is_dir():
         return name, "없음", "이 PC에 없음 (bootstrap 필요)" if (repo_info.get("remote") or repo_info.get("drive")) else ""
+    remote_notes = []
+    if not repo_info.get("unregistered") and repo_info.get("remote"):
+        rnote = sync_origin_url(repo, repo_info["remote"])
+        if "실패" in rnote:
+            return name, "오류", rnote
+        if rnote:
+            remote_notes.append(rnote)
     code, upstream, _ = git(repo, "rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}")
     if code != 0:
-        return name, "로컬", "원격 없음(로컬 전용)" if not repo_info.get("remote") else "upstream 미설정 (install 필요)"
+        if not repo_info.get("remote"):
+            return name, "로컬", "원격 없음(로컬 전용)"
+        fcode, _, ferr = git(repo, "fetch", "--quiet", "origin", timeout=90)
+        if fcode != 0:
+            return name, "오류", f"fetch 실패: {ferr.splitlines()[-1] if ferr else fcode}"
+        _, br, _ = git(repo, "rev-parse", "--abbrev-ref", "HEAD")
+        if git(repo, "rev-parse", "--verify", "--quiet", f"origin/{br}")[0] == 0:
+            git(repo, "branch", f"--set-upstream-to=origin/{br}", br)
+            remote_notes.append(f"upstream origin/{br} 설정")
+        else:
+            return name, "로컬", "upstream 미설정 (install 필요)"
     code, _, err = git(repo, "fetch", "--quiet", timeout=90)
     if code != 0:
         return name, "오류", f"fetch 실패: {err.splitlines()[-1] if err else code}"
     _, counts, _ = git(repo, "rev-list", "--left-right", "--count", "HEAD...@{u}")
     ahead, behind = (int(x) for x in counts.split()) if counts else (0, 0)
+    r_prefix = "; ".join(remote_notes)
     if behind == 0:
-        return name, "최신", f"푸시 대기 {ahead}커밋" if ahead else ""
+        msg = f"푸시 대기 {ahead}커밋" if ahead else ""
+        return name, "최신", (f"{r_prefix}; {msg}" if (r_prefix and msg) else (r_prefix or msg))
     if ahead:
-        return name, "갈라짐", f"로컬 {ahead} / 원격 {behind} 커밋 — 직접 pull --rebase 또는 merge"
+        msg = f"로컬 {ahead} / 원격 {behind} 커밋 — 직접 pull --rebase 또는 merge"
+        return name, "갈라짐", (f"{r_prefix}; {msg}" if r_prefix else msg)
     code, _, err = git(repo, "merge", "--ff-only", "--quiet", "@{u}")
     if code != 0:
-        return name, "보류", f"원격 {behind}커밋을 받지 못함(로컬 변경과 충돌): {err.splitlines()[-1] if err else ''}"
-    return name, "받음", f"원격 {behind}커밋 fast-forward"
+        msg = f"원격 {behind}커밋을 받지 못함(로컬 변경과 충돌): {err.splitlines()[-1] if err else ''}"
+        return name, "보류", (f"{r_prefix}; {msg}" if r_prefix else msg)
+    msg = f"원격 {behind}커밋 fast-forward"
+    return name, "받음", (f"{r_prefix}; {msg}" if r_prefix else msg)
 
 
 def step_git_pull(ctx):
+    initial = workspace_repos()
+    first = [r for r in initial if r["name"] == "acupoint_anatomy"]
+    first_res = {}
+    if first:
+        res = pull_one(first[0])
+        first_res[first[0]["name"]] = res
+    # Reload registry after pulling acupoint_anatomy so new workspace_repos.json origin URLs apply immediately
+    repos_now = workspace_repos()
+    rest = [r for r in repos_now if r["name"] != "acupoint_anatomy"]
     with ThreadPoolExecutor(max_workers=6) as ex:
-        results = list(ex.map(pull_one, workspace_repos()))
+        rest_res = dict(zip([r["name"] for r in rest], ex.map(pull_one, rest)))
+    results = [first_res[r["name"]] if r["name"] in first_res else rest_res[r["name"]] for r in repos_now]
     local_only = [n for n, s, note in results if s == "로컬" and note.startswith("원격 없음")]
     for name, state, note in results:
         if note and name not in local_only:
@@ -393,8 +445,13 @@ def cmd_status(args):
         _, st, _ = git(repo, "status", "--porcelain")
         dgit = "있음!" if r.get("drive") and (ctx["my_drive"] / r["drive"] / ".git").exists() else "-"
         remote = up if code == 0 else ("로컬 전용" if not r.get("remote") else "upstream 없음")
+        mismatch = ""
+        if not r.get("unregistered") and r.get("remote"):
+            uc, cur_url, _ = git(repo, "remote", "get-url", "origin")
+            if uc != 0 or cur_url.strip() != r["remote"].strip():
+                mismatch = "  (origin 불일치)"
         say(f"{r['name']:<30} {br:<6} {remote:<10} {counts.replace(chr(9), '/') if counts else '-':<7} "
-            f"{len(st.splitlines()) if st else 0:<5} {dgit}" + ("  (등록부에 없음)" if r.get("unregistered") else ""))
+            f"{len(st.splitlines()) if st else 0:<5} {dgit}" + ("  (등록부에 없음)" if r.get("unregistered") else "") + mismatch)
     return 0
 
 
@@ -467,13 +524,9 @@ def cmd_install(args):
             git(repo, "config", "user.email", r["user"][1])
         git(repo, "config", "credential.helper", "manager")
         if r.get("remote"):
-            code, url, _ = git(repo, "remote", "get-url", "origin")
-            if code != 0:
-                git(repo, "remote", "add", "origin", r["remote"])
-                notes.append("origin 추가")
-            elif "ghp_" in url or "github_pat_" in url:
-                git(repo, "remote", "set-url", "origin", r["remote"])
-                notes.append("토큰 포함 URL 교체")
+            rnote = sync_origin_url(repo, r["remote"])
+            if rnote:
+                notes.append(rnote)
             if git(repo, "rev-parse", "--abbrev-ref", "@{u}")[0] != 0:
                 _, br, _ = git(repo, "rev-parse", "--abbrev-ref", "HEAD")
                 git(repo, "fetch", "--quiet", "origin", timeout=90)
